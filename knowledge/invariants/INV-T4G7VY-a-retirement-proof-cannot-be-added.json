@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "A repeated retirement request trusts the retained proof, so the proof must be unwritable by any other operation; the family states the recoverable retirement this protects."
+  },
+  "applicability": "Generic task-document operations over a sprint row that carries a retirement proof.",
+  "conditions": [
+    "Only task_doc.retire_master writes such a row."
+  ],
+  "exclusions": [
+    "task_doc.retire_master itself."
+  ],
+  "id": "INV-T4G7VY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md; notes/reports/260928-MIK-L41-worker-R3.md; notes/reports/260928-MIK-L41-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R41@v3-retirement-proof-protected",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A retirement proof cannot be added, changed or removed through the generic task-document operations; only task_doc.retire_master writes it.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/canvas/policy.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba79fc48cc97689f936b1a0038c1cea35a33f307",
+        "content": "sha256:ef729c9534a31d55d9aff5dbeb2bbdbfbb84522b3c5359a5bc4f2bafd724c928",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_headers"
+        }
+      },
+      "id": "RLZ-4KXBEZ",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The headers are the served form of the policy; a response without them is outside the policy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ba79fc48cc97689f936b1a0038c1cea35a33f307",
+        "content": "sha256:ebad952d94900b1a34819a298dcfcda7371703bac06547d079c94cfc4e595040",
+        "locator": {
+          "kind": "symbol",
+          "name": "frame_sandbox"
+        }
+      },
+      "id": "RLZ-T63AYR",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The sandbox token set is computed once here so no route can serve a frame with a weaker set.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

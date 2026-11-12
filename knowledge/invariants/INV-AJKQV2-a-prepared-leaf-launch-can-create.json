@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The race lets a live leaf agent outlive the closing archive and removal; the mark and merge prevent it across three files."
+  },
+  "applicability": "The prepared-start boundary between a leaf closing archive pass and a not-yet-created launch.",
+  "conditions": [
+    "The closing mark is durable under the existing receipt lock and is written before host I/O.",
+    "A stale ordinary publication merges the same request's retirement metadata."
+  ],
+  "exclusions": [
+    "A created agent inside an already-entered RPC is archived on return, not prevented.",
+    "The host's absence is not asserted to be atomic."
+  ],
+  "id": "INV-AJKQV2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/deterministic-positive.log (4 passed/5 subtests); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/deterministic-removed-fix.log (6 expected failures/1 passed/11 deselected, exact original module paths and SHA printed); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/replay-message-preservation.log (5 passed/20 subtests); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.evidence/fix-verification-A1/final-binding-and-archive-readback.json.",
+        "notes/reports/role-launch/260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.memory-r1.md (MEM-2); 260928-MIK-L76-reviewer-0894c933-985c-4b4d-bbda-1aeb444948a3.memory-r1.evidence/route-knowledge.md#ks-2; historical fixed A-1 producer and CODE094687 remain historical/non-normative"
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "A-1",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A prepared leaf start cannot create an agent past its leaf's closing boundary and then publish a running retired start: the closing mark is read before replay and under the lock after creation, a not-yet-entered creation is refused, and an already-entered creation's minted target stays owed until its returned agent is archived and the start refused, without erasing the retirement record.",
+  "status": "proposed",
+  "supersedes": []
+}

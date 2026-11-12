@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized in the lifecycle admission layer, which classifies the mode before authority mismatch, and in the application worktree tools it guards; the terminal-archive test guards the refusal."
+  },
+  "applicability": "Cleanup of a terminal-archived contract that carries the removed mode.",
+  "conditions": [
+    "The contract is terminal and surviving.",
+    "Cleanup runs in the default admission."
+  ],
+  "exclusions": [
+    "Live contracts and non-mode authority mismatches, which keep their own refusals."
+  ],
+  "id": "INV-6GBJC6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "configured_contract_admission.py::_admit_terminal_surviving_contract classifies nonexternal mode for default cleanup after the terminal locator/surviving contract read and before repository-authority mismatch can become a developer decision. The existing classifier supplies contract/raw-mode/reason/remedy. allow_disabled_memory=True status/abandon retries and external terminal contracts continue through the retained archive/location/configured-repository checks. test_cleanup_of_a_terminal_archived_disabled_contract_is_refused constructs a genuine abandon archive and proves dry+real cleanup state/status memory-opt-out-refused, ok:false and no developerDecisionRequired. Independent qualified Python 3.14.8 ONE three-module run: 124 passed, EXIT=0, PID933961, 2026-10-10T12:14:31.159216Z–12:14:50.323397Z; exact argv/cwd/env and whole streams in notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r2.evidence/pytest-result.json and pytest.stdout.log (SHA c51285ede6a88c4b08784ab5b97f2c7bb727b6a733a57363198d58aaad673a5a).",
+        "Curator-owned F01 attribution repair: complete original producer input is notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r6.curator-handoff.json (SHA-256 3ad6cd419e6a447b8cbe8371201b317965fffd5110fc6cd9b052bd8047705f72), entry L50-CODE-R1-F03, with every original producer field unchanged. Named original plus separate curator resolution: notes/reports/role-launch/260928-MIK-L50-curator-8f6ac14e-c1c0-43fe-b347-6b8ed2158727.evidence/named-producer-inputs.json. Existing origin.handoff.path notes/reports/260928-MIK-L50-curator-handoff-list.json is the historical CURATOR-OWNED WRITER PROJECTION, not the original producer input; expanded L50-CUR-EXP items belong to the Curator. F04 projection represents seven of nine targets: both original proof.stdout targets remain in original input and are not code realizations. Four other retained findings match all nine producer fields. F05 and requirement adjudication remain task-local in the complete seven-entry original; no waiver or lost evidence."
+      ],
+      "path": "notes/reports/260928-MIK-L50-curator-handoff-list.json"
+    },
+    "handoffEntry": "L50-CODE-R1-F03",
+    "leaf": "260928-MIK-L50",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A genuine surviving terminal-archived disabled contract now receives the named opt-out cleanup refusal without a developer decision; F03 is fixed.",
+  "status": "proposed",
+  "supersedes": []
+}

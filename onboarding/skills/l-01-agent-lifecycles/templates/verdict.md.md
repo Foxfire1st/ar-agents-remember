@@ -1,18 +1,24 @@
 # skills/l-01-agent-lifecycles/templates/verdict.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/templates/verdict.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6096941f41204c9a7d6ccb2b29f6b2e862ed56b4`|
-| lastVerifiedCommitDate | 2026-09-10T09:57:27+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
+## Current Canonical Contract
+
+The verdict is an independent evidence artifact and recommendation, never the decider's decision. Its variants distinguish organizational leaf, accumulated atomic-master integration, master/super exit and loop review; atomic child leaves do not receive a separate route verdict. Each exact requirement attempt has independent packet/evidence-class/refutation rationale in the shared append-only journal. Baseline review covers its bound criteria; fix verification adjudicates only sealed outstanding IDs and their fixes, with no added/reopened/reset successor findings. CODE rounds and MEMORY passes remain separate, and any beyond-settings approval remains recorded. A loop adaptation removes gate machinery instead of inventing a loop gate. Outside-list observations go to the developer. Complete curation remains its owner's standing operation, distinct from optional full quality/test requests.
+
+## Round recording and file transport
+
+The Reviewer records ordinary CODE round/result; the task document and recorded architect/developer approval govern beyond-settings work. Fix verification is an ordinary round. Verdict content is carried as a file, and remains evidence for the gate owner rather than a decision.
+
+## Carry-over criterion
+
+The super-exit carry-over criterion names the kept procedure `skills/c-10-adopt-memory-baseline/workflows/carryover-from-branch.md`, checked against the recorded landing line.
+
+## Message/file transport
+
+This canonical template requires messages to be short wake-ups naming requested work or a handover and its files. Report, verdict, list and evidence contents travel through file-only `body` or existing-file `attach`, not pasted into message text. Within a shared task, files stay with its record and a leaf workspace exposes the message-folder link. Text uses the effective settings limit without a pinned number. The canonical source and the packaged copy share this contract; transport does not change their existing write/start powers, peer destinations or independent acceptance authority.
 
 ## Governing Overview
 
-[lifecycle overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
@@ -29,13 +35,11 @@ independent rationale. Missing rationale, invalid citations, wrong-class proof, 
 or absent developer approval forces rejection, and any rejected revision forbids an overall pass.
 
 The verdict separately records route coverage, bound criteria catalogs, durable-evidence lifecycle
-proof, and ranked findings. Delta review rechecks only previously rejected revisions and direct
-regressions while retaining earlier accepted rows.
+proof, and ranked findings. Every verdict fills its Catalog Binding section with the review type, the catalogs the Reviewer's binding table gives for it and, for each conditional catalog, whether its condition holds for this change and why; a verdict without that section is incomplete, and the Criteria Catalog Results table then covers every bound catalog. Fix verification rechecks only sealed outstanding identifiers and their fixes while retaining
+accepted rows. Rule 4 takes the three review lenses from `reference/review-baseline.md#check-baseline-evidence`.
 
-Each adjudication is now a separate immutable reviewer record bound to the exact worker attempt,
-leaf manifestation, and candidate. Rejections carry one closed failure class. A reviewer may prove
-direct regression, but the owning manager or flat-run architect must record the bounded
-invalidation; the verdict never rewrites the worker record, requirement, or acceptance state by
+Each adjudication is a separate immutable reviewer record bound to the exact worker attempt,
+leaf manifestation, and candidate. Rejections carry one closed failure class. The verdict never rewrites the worker record, requirement, or acceptance state by
 itself.
 
 The reviewer appends that record to the same single physical leaf journal as the worker attempt.
@@ -58,61 +62,41 @@ later candidate does not reopen an already accepted attempt.
 - PASS or PASS-WITH-NOTES is invalid while any requirement is rejected.
 - Worker rationale cannot be copied as reviewer reasoning without independent inspection.
 - Requirement adjudication cannot replace stable-contract-or-expiry review.
-- Acceptance never floats to a later candidate, and an accepted attempt stays closed without an
-  authorized invalidation trigger.
+- Acceptance never floats to a later candidate, and an accepted attempt stays closed.
 
 ### Todos
 
 None.
 
-
 ## CCR-R12@v5 Handoff Boundary
 
-This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction; full quality, full tests, full memory quality, certification, and review are explicit requests rather than automatic template gates.
+This template records the exact targeted or scoped checks and their failed or not-run status as handoff evidence. Closeout and integration consume the prepared code, memory-content, and ledger transaction and carry the complete memory-quality result that normal curation always runs; full code quality, full-suite tests, certification, and review are explicit requests rather than automatic template gates.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source governs this verdict template.
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Independent exact-attempt/candidate adjudication is mandatory in every variant. | `## Mandatory Requirement Adjudication Block (repeat once per stable ID + version in every variant)` | skills/l-01-agent-lifecycles/templates/verdict.md:60-105 |
-| Leaf review accounts for every material route and returns a recordable packet. | `## Standalone/Organizational Leaf Route-Review Variant` | skills/l-01-agent-lifecycles/templates/verdict.md:113-171 |
-| Delta review retains accepted rows and rechecks rejected rows plus direct regressions. | `## Loop-Review Adaptation (leaf full-loop · plan review)` | skills/l-01-agent-lifecycles/templates/verdict.md:364-380 |
-
-## Cross-Repo References
+### Cross-Repo References
 
 Repository-specific criteria, tests, and evidence classes are supplied by the reviewed target
 repository and its requirement packets.
 
-## 2026-08-27 Attempt Boundary Clarification
+## Canonical Source Ownership
 
-Attempt publication is phase-sensitive: validate before append, and treat append plus the exact
-review handoff as one formal boundary. A malformed row that never reached review is preserved by a
-non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
-independent reviewer rejection permits a successor.
+The verified byte-equal package copy is derived output, not an independent role/task/permission authority.
 
-## Update History
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `## Standalone/Organizational Leaf Route-Review Variant` repointed to skills/l-01-agent-lifecycles/templates/verdict.md:113-171. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it. [7]
 
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `## Loop-Review Adaptation (leaf full-loop · plan review)` repointed to skills/l-01-agent-lifecycles/templates/verdict.md:364-380. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES. [1]
 
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
+- Organizational leaf and accumulated atomic-master variants account for every major route with its backing report, bound candidate and recordable packet; atomic children receive no separate route-review verdict. [2]
 
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
+- A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the review operation's two sanctioned routes. [3]
 
-- 2026-08-27T20:45+02:00 — Bound reviewer append behavior to the same single physical leaf
-  journal and made the verdict a link-only consumer of that authoritative record.
-- 2026-08-27T19:59+02:00 — M42 clarification: distinguished stale in-review candidates from
-  unrelated post-acceptance candidates, which do not reopen accepted work.
-- 2026-08-27T18:06+02:00 — M41-M43: added exact attempt/candidate reviewer records, independent
-  append-only separation, the five failure classes, and owner-recorded regression invalidation.
-- 2026-08-27T14:52+02:00 — Created onboarding for exact-version independent adjudication and
-  monotonic delta review.
+- The verdict template keeps ordinary Reviewer CODE recording, the separate MEMORY lane, the decider's gate acceptance and recorded beyond-settings approval distinct; its artifact is recommendation evidence rather than a gate decision. [4]
+
+- Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts. Repaired-item verification is an ordinary round within the settings limit. [5]
+
+- Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope, and names the bound catalogs in its Catalog Binding section (a verdict without it is incomplete); CODE and MEMORY remain separate and no verdict decides the gate. [6]

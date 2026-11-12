@@ -1,0 +1,408 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/record_landing.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_landing_result"
+        }
+      },
+      "id": "RLZ-4NWKSS",
+      "invariant": "INV-95NQR7",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F02",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Never records a landing for a contract carrying the removed mode; the entry refuses first.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_pair_recorded_refusal"
+        }
+      },
+      "id": "RLZ-5Z5DFP",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "The actual recorded-leaf branch delegates to leaf_pair_refusal; its recorded-closeout helper freezes the recorded closeout parents when the judged memory equals or descends from it, and freezes nothing for unrelated ancestry. The master request builder is not leaf enforcement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "record_landing_result"
+        }
+      },
+      "id": "RLZ-AQ9CB7",
+      "invariant": "INV-HAQRFD",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 2 recorded-leaf-landing",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The public recorded route delegates commit/target/gate preconditions to _record_preconditions before dry-run success or recording. Converted leaf judgment and missing-memory-base refusal remain; these precondition failures now return structured refused WorktreeCommandResult values, with the cause preserved, rather than raising them.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_knowledge_gate_refusal"
+        }
+      },
+      "id": "RLZ-BQ1Y8W",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "This helper probes the memory line and supplied candidate, preserves named probe errors, refuses missing/legacy candidates through the central conversion rule, and sends a present converted candidate to the leaf/master validator. It does not establish that the outer record_landing_result has not already read integration status.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:455130952fa8445077398d7bf51ae2a5d132a0ba5d56b830e0569c1888f109d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_pair_recorded_refusal"
+        }
+      },
+      "id": "RLZ-GRYDY3",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Requires the contract’s recorded memory base, refuses its absence, and passes it as the single initial base to the leaf-publication judgment, preserving the refusal boundary against two-base sync reporting.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_legacy_format_next_step"
+        }
+      },
+      "id": "RLZ-KW7HDH",
+      "invariant": "INV-H8WSA9",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "The no-converted-memory branch substitutes complete root values as argument values, not a template string.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+        "content": "sha256:673ea2bc1b9ccd163ab2403332c8f4695e70f987ef2e85072d63fec96e70df75",
+        "locator": {
+          "end": 402,
+          "kind": "line_range",
+          "start": 398
+        }
+      },
+      "id": "RLZ-XJG9AA",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "curator-support-7",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Without a recorded memory base, landing uses the landed commit's first parent only. Passing both parents would misclassify a merge-commit publication as sync reporting and let unchanged stale-anchor memory avoid the required landing refusal.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Cleanup refuses until the cell this route sets reads completed. (`integration_status`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:5b2dabcf533809bbd3c64a97e487ce0364eb6080680d2d7beb4f356a27723862",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 779
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:4c86521612be2517f89c2085c7b3a5bed24d086752973b41125c1a4071905a2f",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 680
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The dashboard PR probe whose `None`/`missing` polarity must not be read as \"never landed\". (`_pr_for`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b10e8d11a56dde41541379da91cb8b3f34ca45",
+            "content": "sha256:f4797f34bc5b1ce411745d91020c5f41fce563d61837ac7ef7cfc381d8c690aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pr_for"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The MCP tool and payload that expose this operation. (`worktree_record_landing`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:7b1130828c97fc13ad0c6c5c74b0e63baff4a713546aeba8cd5e8bf20aac96f1",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23805a3cc7fbb5f58d96584b7b4e3ce915c3eab9",
+            "content": "sha256:4b08a1f122026f5d3ce5012d93a4796f8b12aa73ec9c93b654ceace8e0b7b5e8",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The application-layer entry point that confines the contract and builds the arguments. (`worktree_record_landing_tool`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:a80c928b9b90ede0a248d30f8fc52e8d63feaf13b076be23e1e59b361ec36a5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_record_landing_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Unconverted memory: the lock decides, before a memory commit is required.\n\nAnchor: `_knowledge_gate_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:fa77810c4763bdad630925b17db42d1962c9f5e839a09b5a25fe043d41511f2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_gate_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Conversion guidance follows the central case value, with exact sync arguments or separately carried first-conversion argv; unknown supplies no step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:f613a6a61432a27bece004bb66cd25454ac696b02f272e41fe210b34cd52ca7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_legacy_format_next_step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The handler consults the landing preconditions before dry/apply publication and retains the actual code and memory facts.\n\nAnchor: `record_landing_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared writer this route calls, and the cell it publishes. (`record_landed_integration`)\n\nAnchor: `record_landed_integration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:7fd8930b7266dacdcc697badbaef5cfc5bd6cb7c8a107ebdb0fb8538c23ab6ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landed_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The local route that already recorded its own landing. (`_integrated_result`)\n\nAnchor: `_integrated_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:7e0afbd8d9e318e9847056e83dfe8a8bc0e578ad69976f341a823b0ae146dbc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrated_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `already-recorded` guard covers both landing states, so a checkpointed series is never upgraded into a reclaimable integration. (`contract.integration_status in {\"completed\", \"checkpointed\"}`)\n\nAnchor: `record_landing_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The checkpointed summary preserves its still-open state and names worktree_integrate as its completion route.\n\nAnchor: `record_landing_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:94e64fb092fd78ab42a89bc0b576504d016d9f34918201306df365d0c0a91193",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94685bc678c71945d51aad8a4f89fceafe0d1de7",
+            "content": "sha256:f4a4dbbbac572268bf652e1c74764051c15d05cf8b8e33bd824c1ff25847a8b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_landing_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

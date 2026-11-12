@@ -1,91 +1,117 @@
 # mcp/tests/conftest.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/conftest.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:51:32+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
 
 ## Purpose
 
-Composes ordinary isolated pytest and an explicit Dagger-only certification option. Default host unit/integration development is supported without pretending to be a lifecycle worker, MCP process or certifying executor.
+Composes the ordinary, isolated pytest process for this repository and offers certification as an
+explicit option. A plain test run on a developer machine works without a daemon, a lifecycle-worker
+identity or a Dagger capability; `--certify` asks for genuine Dagger admission before it loads the
+certifying services.
 
 ## Code Commentary
 
-### Logic
+### At import
 
-The candidate’s source and test-support roots are placed first on `sys.path`. Existing hermetic
-bootstrap installs the actual pytest-process environment. A disposable HOME/XDG/CODEX tree and
-isolated Git configuration prevent fixture subprocesses from inheriting the developer’s setup;
-live opt-ins, spawn identity and credential variables are scrubbed before tests import product code.
+- The candidate's `mcp/src` and `mcp/test_support` are put first on `sys.path`.
+- The hermetic bootstrap activates the environment of this pytest process
+  (`activate_current_pytest_environment`).
+- A temporary directory under `/tmp` becomes `HOME`, the XDG config, data and cache homes and
+  `CODEX_HOME`; a private `TMUX_TMPDIR` scopes tmux to this pytest process. Git's global and
+  system configuration are switched off. Subprocesses of a fixture
+  therefore do not inherit the developer's setup.
+- Inherited opt-ins and credentials are removed from the environment: every name that starts with
+  `AR_RUN_`, `AR_SPAWN_` or `AR_HOSTED_`, every name that ends with `_API_KEY`, `_ACCESS_TOKEN` or
+  `_AUTH_TOKEN`, and a short list of named variables. A test that needs such an input builds its
+  own environment. Inherited `TMUX` and `TMUX_PANE` are removed so a fixture cannot attach through
+  the developer's launcher state.
+- `pytest_plugins` registers three plugins: `pytest_bootstrap`, `evidence_lanes`, and
+  `database_retirement_guard`. The second
+  carries the collection hook that loads the lane manifest through `load_lane_manifest` and refuses
+  the run when the loader refuses. Because that loader lists the repository's files through Git, a
+  test run needs a Git checkout. The third registration watches the worker process for the
+  database access and file mutation routes named by the retirement guard; the registration is
+  a source fact, not evidence that this curation executed the guard.
 
-The lane manifest is read once into an integration-file set. Default `not integration` collection
-skips those files before importing them; collected integration members receive their marker.
-`pytest_collection_finish` counts selected parametrized items directly and raises UsageError for
-invalid or exceeded budgets. Pyproject supplies the operative 1000 unit/150 integration values;
-the parser’s standalone integration fallback is 100, so it must not be mistaken for repository policy.
+### Hooks
 
-`--certify` explicitly requests genuine Dagger admission and then imports the certifying service
-plugin. Ordinary integration tests bind/reset worktree services through their fixture; units request
-that fixture only when necessary. Shared bootstrap owns test-state restoration. Unconfigure restores
-the prior environment and removes the disposable tree.
+- `pytest_addoption` registers the two ini names `unit_case_budget` and `integration_case_budget`
+  without a default, and the option `--certify`. The budgets are declared once, in the
+  repository-root `pyproject.toml` under `[tool.pytest.ini_options]`.
+- `pytest_configure` reads the `[files]` table of `mcp/tests/test-evidence-lanes.toml` and keeps
+  the files of the `integration` and `stress-durability` lanes as the set of integration files.
+  This is the first read of the manifest in a test run and it does not go through the loader. When
+  the manifest cannot be read or does not parse, the hook raises a `pytest.UsageError` with the
+  text of `unreadable_catalog` from `catalog_canonical.py`: the file's name, the error and, for a
+  parse error, the sentence that two rows may have been interleaved by a merge and that the file is
+  restored from the landed commit. It refuses by name a manifest without a `[files]` table and a
+  table that lacks the `integration` or `stress-durability` lane it reads. With `--certify` the
+  hook then prepares the certifying bootstrap and imports the certifying plugin; a refused Dagger
+  admission becomes a `pytest.UsageError`.
+- `pytest_ignore_collect` skips the integration files before they are imported when the mark
+  expression is exactly `not integration`.
+- `pytest_collection_modifyitems` gives every item of an integration file the `integration` marker.
+- `pytest_collection_finish` counts the collected items with and without that marker and compares
+  each count with its budget. A budget below 1, which is what an undeclared budget reads as, or a
+  count above the budget ends the run with a `pytest.UsageError`.
+- `pytest_unconfigure` attempts bounded `tmux kill-server` while the private environment still
+  targets the test-owned server. Its `finally` restores the environment, closes the bootstrap's
+  lease and removes the temporary directory even when tmux cleanup times out or fails to start.
+  The original cleanup exception remains visible; no developer default server is targeted.
 
-### Invariants And Boundaries
+### Fixtures
 
-- Direct host pytest is development feedback; it does not mint a certificate.
-- Missing Dagger authority refuses `--certify`; no fake capability or role identity is supplied.
-- Budget enforcement counts the selected population without a nested collection or source census.
-- Unit collection avoids unnecessary application composition and integration imports.
-- Explicit environment/global restoration and cleanup remain mandatory.
+- `_user_settings_home` is automatic and sets each test's `XDG_CONFIG_HOME` to its own temporary user-config directory. `_user_settings_env_intact` is an automatic teardown enforcement for MIK-R137 rule2: after the test yields, it derives the settings write path through the single `_user_settings_guard.user_settings_path_for_write` owner. Refusal of the account's real path becomes an AssertionError. A derived path must be the test's `tmp_path`/descendant or the run-wide isolated root/descendant; both are allowed because fixture teardown order need not retain the per-test environment. Outside either root fails by name rather than repairing the environment. A test that clears environment for an assertion must restore what it cleared; the guard carries protection while it is cleared. No guard, allowlist or real account settings are changed or probed by this curation.
+- `worktree_services` binds the default worktree services for one test and resets them afterwards.
+- `_integration_composition` is automatic: a test with the `integration` marker gets
+  `worktree_services` unless the run uses `--certify`. A unit test asks for the fixture only when
+  it needs that boundary.
 
-## Docs References
+The module is a governed test artifact: `mcp/tests/evidence-lifecycle.toml` holds its row with the
+scope `all-tests`.
 
-No external Domain Documentation source is configured; these are repository-owned implementation facts.
+## Evidence
 
-## Repo-Internal References
+- Automatic settings teardown derives through the single write guard and fails for a real-account refusal or a path outside the per-test/run-wide temporary roots; it never repairs or relaxes settings. [19]
 
-The exact source declarations below establish the current behavior; this inventory is not execution evidence.
+- The candidate's source and test-support roots come first on the import path. [1]
+- The two budget names are registered without a default, beside the certify option. [2]
+- Integration files are skipped before import in a run that excludes integration. [4]
+- The collected items are counted against the two budgets. [5]
+- The worktree services are bound and reset by a fixture. [6]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate paths and disposable scrubbed environment | `REPOSITORY_ROOT` | mcp/tests/conftest.py:15-68 |
-| Budget config and explicit certification option | `pytest_addoption` | mcp/tests/conftest.py:72-81 |
-| Single lane read and genuine certification admission | `pytest_configure` | mcp/tests/conftest.py:84-107 |
-| Skip integration imports for default units | `pytest_ignore_collect` | mcp/tests/conftest.py:110-117 |
-| Selected item budgets and explicit tradeoff refusal | `pytest_collection_finish` | mcp/tests/conftest.py:127-138 |
-| Explicit bind/reset application composition | `worktree_services` | mcp/tests/conftest.py:151-163 |
-| Restore environment and remove temporary root | `pytest_unconfigure` | mcp/tests/conftest.py:166-170 |
-
-## Cross-Repo References
-
-No separate cross-repository authority is established by this file.
-
-## Update History
-
-- 2026-09-06T21:51:32+00:00 — Reconciled the retained IAS implementation and diagnostic testing policy with current source citations; prior verification provenance is retained and no new test or review result is claimed.
-
-- 2026-08-28T11:32+02:00 — No content impact: shortened a stale explanatory comment; collection,
-  lane classification, and Dagger admission behavior are unchanged.
-
-- 2026-08-28T10:03:40+02:00 — Reconciled the current certifying composition after Candidate A
-  retirement; no host Python entrypoint or compatibility bypass remains.
-
-- 2026-08-25T15:44+02:00 — PDLS whole-system reconciliation updated the implementation summary
-  above after source and requirement review. Verification remains closeout-owned.
+> Retained earlier citation wording: - The environment is restored and the temporary directory removed. [7]
 
 
-- 2026-08-24T21:23+02:00 — 260824-PDLS replaced the monolithic root guard/fixture implementation
-  with explicit admission, hermetic bootstrap, shared hooks, and certifying-only service composition.
-- 2026-08-10T18:31+02:00 — The predecessor established explicit checkout test mode and owned-global
-  restoration; that still-valid behavior moved to production testing modules.
-- 2026-08-05T00:00+02:00 — The predecessor established Dagger-only collection, candidate path/Git
-  isolation, disposable identity, cache isolation, deterministic order, and service binding; PDLS
-  preserves those contracts behind separate owners.
+> Retained earlier citation wording: - The isolated home directories and the switched-off Git configuration. [8]
+
+
+> Retained earlier citation wording: - The removal of inherited opt-ins and credentials. [9]
+
+
+- The lane manifest is read once for the integration files, an unreadable manifest is explained, and certification asks for Dagger admission. [13]
+- The refusal text for a manifest that cannot be read or parsed. [14]
+- The start-up hook explains a lane manifest that does not parse, and refuses by name a manifest without a `[files]` table or without the two lanes it reads. [15]
+
+
+- The pytest environment owns a private tmux directory. [16]
+- Environment, lease and temporary cleanup follow an attempted private-server kill even on failure. [17]
+- Inherited tmux launcher variables are scrubbed from the test environment. [18]
+
+- The three registered plugins and the comment on the Git checkout. [10]
+
+## Outside scratch isolation and ownership at teardown
+
+The session fixture gives code running in this pytest process an isolated outside scratch parent and restores the previous parent and socket limit at teardown. A product served in a subprocess does not load this fixture and can allocate under the normal product parent. Teardown examines both parents and removes only roots whose marker proves that their coordination root is this run's own temporary base or lies beneath it; roots owned by parallel workers remain. [20]
+
+- The environment is restored and the temporary directory removed.  Anchor: `pytest_unconfigure` [7]
+
+
+- The isolated home directories and the switched-off Git configuration. [8]
+
+
+- The removal of inherited opt-ins and credentials. [9]
+
+- Per-process fixture isolation, subprocess exception and coordination-root ownership at teardown. \[20] [20]

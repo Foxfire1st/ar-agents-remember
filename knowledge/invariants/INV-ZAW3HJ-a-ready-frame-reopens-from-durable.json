@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A retained page that cannot be reopened without a model, or that silently adopts a new comparison, defeats the durability the developer asked for."
+  },
+  "applicability": "Every retained explanation revision and every staleness answer the review page shows.",
+  "conditions": [
+    "A part id satisfies the shared part-id grammar and is not the reserved whole-page id.",
+    "A claim belongs to one part and every claim of the revision belongs to a part.",
+    "Staleness is computed per basis, so a part is stale when one of its claims' bases moved."
+  ],
+  "exclusions": [
+    "A revision stored before part maps, which is answered whole-page.",
+    "The store's own FrameStaleness, which remains the whole-page answer and names the changed sides."
+  ],
+  "id": "INV-ZAW3HJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A5-verdict.md; A5-fixed-list-verification.md; A5-checks-complete/; prior A4 full-criterion account retained"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "MIK-R103@v1",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A retained revision carries the part map readiness admitted for it, and a staleness answer names each stale part with the reason its claim bases moved, falling back to the whole page when a revision holds no usable part map or holds a stale claim no part admits; a revision's bounds are bytes per revision and bytes per task, the lineage and revision-count ceilings are gone, and a retained revision leaves the store only through the developer's removal control.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "One registered case protects the served card and the stale-index markers, and the function is the only place that decides a card is missing; a wrong answer here loses an existing card silently, which is the defect the requirement records."
+  },
+  "applicability": "A paired read whose route index does not list a file that lies inside the onboarding scope.",
+  "conditions": [
+    "The card exists at its own path in the read's memory worktree."
+  ],
+  "exclusions": [
+    "A file outside the onboarding scope: answered as before.",
+    "A card that exists but cannot be read: missing with the reason, never served in part."
+  ],
+  "id": "INV-4N6Y14",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_a_card_omitted_by_a_stale_route_index_is_served_registered; evidence/focused-reviewer-tests.log; Worker F08-negative-control.log"
+      ],
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "F08",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A registered paired read serves an existing in-scope card omitted by a stale route index and identifies the stale index and refresh action.",
+  "status": "proposed",
+  "supersedes": []
+}

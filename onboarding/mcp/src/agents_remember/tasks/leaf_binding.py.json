@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/tasks/leaf_binding.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Typed source and binding records carry one exact composite identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b23d8dc20cb24cc389eed627fc491735506f913d",
+            "content": "sha256:3d64ed908ba892c56a8672b309c8475eea03b7886e36bdfccebe9790b66d9a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "CanonicalLeafBindingError"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b23d8dc20cb24cc389eed627fc491735506f913d",
+            "content": "sha256:3abb5370d563fea8843d3d177c69268b7a056996adab76f2ee327b5279e9dc59",
+            "locator": {
+              "kind": "symbol",
+              "name": "CanonicalLeafSource"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b23d8dc20cb24cc389eed627fc491735506f913d",
+            "content": "sha256:3f70f5980e33ab7b8c4fb8153e30466345a3ac396e02528982bf8c2a7a5fe228",
+            "locator": {
+              "kind": "symbol",
+              "name": "CanonicalLeafBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parent-row selection and source derivation reject ambiguous or non-canonical rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b23d8dc20cb24cc389eed627fc491735506f913d",
+            "content": "sha256:f8fa2de118666e374136688bea12d346ceef085a8a888eb77ded8c4905961713",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_leaf_parent_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b23d8dc20cb24cc389eed627fc491735506f913d",
+            "content": "sha256:f0643f3a4fb42a54b9549b380fbb5f99e2b35b0fabe6b2f83dce625e318213ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_leaf_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Full binding verifies parent, child, address, row, id, and stem together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b23d8dc20cb24cc389eed627fc491735506f913d",
+            "content": "sha256:d900d8a9bb5eb8d0284c09e7680ab6c6f635cf643aa28876ff62577234caabdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_canonical_leaf_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

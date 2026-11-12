@@ -1,0 +1,30 @@
+{
+  "anchor": {
+    "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+    "content": "sha256:8b3efdde5f6c1f7931136d45555b3c6dfd1f4b88c8e0b834f0e0e652311cb681",
+    "locator": {
+      "end": 275,
+      "kind": "line_range",
+      "start": 254
+    },
+    "path": "dashboard/src/explainer/model.ts"
+  },
+  "id": "WKN-B8Z195",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-27",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "While an explainer is live, the reference that the button Explain adds carries four empty tree ids, the explainer refuses its send as an invalid request, and after a reload the pick and the text are gone although the page says that they stay."
+}

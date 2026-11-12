@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationBuild.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No stale-parts block is drawn before a revision exists, even where the host cannot read staleness; once a revision exists the top badge states it",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df374b656dbcfbcc3b7280bd9b068cdd57520388",
+            "content": "sha256:65f82a3625a55f705d0a6805a57fc717321d3e1a62a5226c774851c41cda0326",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

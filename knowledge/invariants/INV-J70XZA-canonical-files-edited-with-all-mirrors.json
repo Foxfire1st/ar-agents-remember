@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The boundary-propagation test enforces every declared copy carries the corrected boundary clauses; without it one harness would read stale authority boundaries undetected."
+  },
+  "applicability": "Canonical skill files edited under this leaf and all generated copies in the harness starters and the MCP package data.",
+  "conditions": [
+    "sync-skills.py --check passes 9/9; wording-test pins move with the change and name it."
+  ],
+  "exclusions": [
+    "Copy content disputes: the canonical tree wins."
+  ],
+  "id": "INV-J70XZA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-skills.py --check 9/9; test_sync_scripts pin-aligned (retired clauses out, provenance wording corrected); worker-brief gloss corrected"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 7",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Canonical files edited with all mirrors regenerated; wording tests asserting retired sentences changed with them and named.",
+  "status": "proposed",
+  "supersedes": []
+}

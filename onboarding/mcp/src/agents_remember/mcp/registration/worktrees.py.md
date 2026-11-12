@@ -1,35 +1,25 @@
 # mcp/src/agents_remember/mcp/registration/worktrees.py
 
-| Field                  | Value                                                        |
-| ---------------------- | ------------------------------------------------------------ |
-| repository             | agents-remember                                               |
-| path                   | `mcp/src/agents_remember/mcp/registration/worktrees.py`       |
-| doc_type               | `file-level-onboarding`                                       |
-| lastUpdated | 2026-09-04T20:19:44+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
-| governingOverview      | `overview.md`                                                 |
-
 ## Governing Overview
 
 [registration route overview](overview.md)
 
-## 260731-EFA-L8 Change
-
-The tool-registration functions gained bare-`*` keyword-only signatures (the 19
-PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
-already pass keywords. Registered tools are unchanged.
-
 ## Purpose
 
 `register_worktree_tools(server, config)` declares the **working half** of a worktree-backed task:
-`worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync`, and — since
-260831-LOCR-L37 — `worktree_pause`. The landing half (closeout, integrate, cleanup, abandon) is a
+`worktree_start`, `worktree_enclosure_adopt`, `worktree_attach`, `worktree_status`, `worktree_sync` and
+`worktree_pause`. The landing half (closeout, integrate, cleanup, abandon) is a
 separate family in `closeout.py`, and `worktree_checkpoint_landing` — the explicitly requested
 **publication** of an unfinished master — belongs to that half, not this one. The module docstring
 says "create, re-attach, observe, sync, stop" for exactly that reason.
 
 ## Code Commentary
+
+Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time.
+
+### Current Contract
+
+The flat registrars retain their existing locator/provider/transaction owners while compact descriptions name outcomes and the longer reference. Status can include a copied-file drift notice. Current sync accepts contract_path, memory_sync_choice, resolution_action, dry_run and sync_source; it packs the admitted continue/cancel action and the repository-default source into one SyncResolutionInput. Content resolution is authored/staged in files, not a knowledge_resolution/reconcile input. Generic pause state/next wording invents neither a resume verb nor publication authority. The current worktree_sync source description is 600 characters, at the unchanged 600 limit; its state list, next-call/log guidance, pre-sync review, raw-memory-merge boundary, landing/fast-forward judgments and the sync_source="repository-default" line remain. Description compression changes neither signature nor forwarding behavior and is not live registration evidence.
 
 ### Logic
 
@@ -41,26 +31,9 @@ its application entry point takes — who the task is, what it is cut from, and 
 - `TaskBases(source_branch, work_branch, memory_mode, memory_choice, stale_base_choice)`.
 - `StartExecution(dry_run, skip_provider_setup, retry_provider_setup)`.
 
-Its docstring carries two contracts that are invisible in the types. The **stale-base preflight**:
-a start refuses when the source branch is behind or diverged from its remote tracking branch, and
-the blocked `choose_stale_base_recovery` result is cleared by re-running with
-`stale_base_choice='fast-forward'` or `'proceed-stale'`. And the **async provider setup**: start
-returns within seconds with the providers block reporting `starting` plus a `progressFile`; the
-caller polls `worktree_status` until a terminal state (a seed copy takes seconds, a refused seed
-falls back to a full reindex flagged `seedFallback`), and re-runs with `retry_provider_setup=true`
-after a failed or stale setup.
 
-`worktree_attach` and `worktree_status` both pack their five locators into a `TaskRef` — the same
-bundle `resolve_context` uses. Attach is read-only (it mutates no git) and takes `on_unsaved`
-(`save` promotes an unsaved fleeting lifecycle, `discard` abandons it) to clear the save gate.
-Status reports phase, dirty flags, next-step hints, and the live provider-setup block.
+Worktree attach re-attaches to an existing task contract without mutating Git and reports its addressed state/next call. Its current signature has no on_unsaved save/discard operand or public resolve_context fallback. Status keeps actual lifecycle/dirty/next-step/provider information through the retained contract owner.
 
-`worktree_sync(contract_path, memory_sync_choice, resolution_action, dry_run)` forwards flat with
-shared `Literal` types. Its help now describes retained code/chosen-memory conflicts: the agent
-resolves and stages in the reported worktree, then calls the same contract with
-`resolution_action='continue'`, or restores pinned pre-sync heads with `cancel`. It does not expose
-an operation id or promise abort-on-conflict behavior. `skip-memory` is an admission/preflight
-choice, not a way to change an already-running generation.
 
 ### Invariants And Boundaries
 
@@ -70,37 +43,35 @@ choice, not a way to change an already-running generation.
   and `worktree_status` are read-only and take no dry-run flag.
 - Contract creation, git mechanics, provider setup, and lifecycle promotion live in
   `application/worktree_tools.py` and the `worktrees/` package.
-- Registration publishes the shared closed memory-choice/continue/cancel vocabulary; no free-string
-  compatibility parameter or alternate sync tool is registered.
+- Registration publishes the shared closed memory-choice, continue/cancel and sync-source (`repository-default`)
+  vocabulary; no free-string compatibility parameter or alternate sync tool is registered.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Current pause declaration is contract-addressed, publishes nothing, hands control back and identifies separate checkpoint publication. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The stop declaration: single flat `contract_path`, registered description carrying the pause/publish-nothing/hand-back contract and naming the separate publication. | `worktree_pause`; `_register_worktree_stop_tools` | mcp/src/agents_remember/mcp/registration/worktrees.py:199-219 |
-| The public sync declaration exposes typed memory choice and contract-addressed continue/cancel with retained-conflict help. | `worktree_sync` | mcp/src/agents_remember/mcp/registration/worktrees.py:168-194 |
-| The start payload forwards task identity, bases and execution configuration to the application owner. | "def worktree_start_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:43-43 |
-| The attach payload forwards the requested worktree attachment to the application owner. | "def worktree_attach_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:76-76 |
-| The status payload reads status through the application owner. | "def worktree_status_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:98-98 |
-| The sync payload forwards the synchronization request to the application owner. | "def worktree_sync_payload" | mcp/src/agents_remember/mcp/tools/worktree.py:56-56 |
-| The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. | `TaskIdentity` | mcp/src/agents_remember/application/worktree_tool_requests.py:15-29 |
-| The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. | `TaskBases` | mcp/src/agents_remember/application/worktree_tool_requests.py:32-47 |
-| The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. | `StartExecution` | mcp/src/agents_remember/application/worktree_tool_requests.py:50-56 |
-| `TaskRef` — the shared task locator attach and status pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:15-28 |
+- Current public sync takes five arguments and packs the continue/cancel action and the repository-default source into one SyncResolutionInput; there is no knowledge_resolution argument. [2]
 
-## Cross-Repo References
+- **Retained historical source account — superseded by the current contract:** The start payload forwards task identity, bases and execution configuration to the application owner. [3]
+- **Retained historical source account — superseded by the current contract:** The attach payload forwards the requested worktree attachment to the application owner. [4]
+- **Retained historical source account — superseded by the current contract:** The status payload reads status through the application owner. [5]
+- **Retained historical source account — superseded by the current contract:** The sync payload forwards the paired resolution value to the application owner. [6]
+- **Retained historical source account — superseded by the current contract:** The identity parameter object `TaskIdentity` (repo_id, task_name, worktree_name, leaf_id, parent_task, workflow_kind defaulting to `light-task`), defined in the application request boundary. [7]
+- The bases parameter object `TaskBases` (source_branch, work_branch, memory_mode, memory_choice, stale_base_choice), defined in the application request boundary. [8]
+- **Retained historical source account — superseded by the current contract:** The execution parameter object `StartExecution` (dry_run, skip_provider_setup, retry_provider_setup), defined in the application request boundary. [9]
+- **Retained historical source account — superseded by the current contract:** `TaskRef` — the shared task locator attach and status pack. [10]
+
+- The pairing this registrar performs: worktree_sync builds SyncResolutionInput(action=resolution_action, source=sync_source) from the shared continue/cancel and repository-default vocabulary. [11]
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned registration surface.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
 ## L23 Final Candidate Disposition
 
@@ -108,9 +79,6 @@ Public worktree registrations remain task-addressed and immediate-returning. Dur
 identity, candidate trees, worker processes, and recovery state stay behind the application/service
 boundary and are not added to the tool schema.
 
-## 260815-DAG-L4 Authority Boundary
-
-L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -118,27 +86,9 @@ The current source seams include `register_worktree_tools`. The public schema/co
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `register_worktree_tools` at this ownership boundary, re-read and re-cited at the current declaration. | "def register_worktree_tools(" | mcp/src/agents_remember/mcp/registration/worktrees.py:26-31 |
+- Current register_worktree_tools registers the existing start, address, observation and stop owners. [12]
 
-## 260821-CLIVE Stable-Address Registration Contract
 
-Registered help now makes the address chain explicit: start reserves the configured contract
-address and enclosure manifest before exposing work; attach resumes only through that exact locator
-and never scans task/worktree/report paths; status resolves the independent locator and then either
-the live root journal or exact terminal archive/receipt. Conflicting reservations and invalid
-terminal proof fail closed, with no inferred enclosure-root fallback.
-
-## 260831-CCR-L15 Status-Wait Server Tool
-
-**Superseded for the registration surface.** L15 added a `@server.tool()` `worktree_status_wait`
-here, dispatched to `worktree_status_wait_payload`. Neither exists on this route today: the tool is
-not registered, no payload builder remains, and the name is absent from `PUBLIC_TOOLS` and
-`TOOL_RESPONSE_MODELS`. What survives is the response model
-`models/worktree.py::WorktreeStatusWaitResponse` (operation literal `worktree_status_wait`) — a
-declared wire shape with no live registration. This card records the current state rather than the
-L15 state, because the L15 paragraph would otherwise assert a registered tool a caller cannot reach.
 
 ## 260831-LOCR-L37 Stop Registration
 
@@ -146,94 +96,20 @@ L15 state, because the L15 paragraph would otherwise assert a registered tool a 
 one tool, `worktree_pause(contract_path)`. `register_worktree_tools` calls the four in order: start,
 address, observation, stop.
 
-The registered description is the whole public contract an agent reads, and it says the three
-things a stop must say: that it **PAUSES an atomic master** and hands control back to the developer;
-that it **publishes NOTHING** — no ref move, no commit, no landing, no ledger row — while releasing
-the master's atomic-series activation selection and leaving its code and memory work branches,
-worktrees, enclosure and every unstarted leaf exactly as they were; and that the result **proposes no
-next step**, so resuming is the normal attach/start route rather than a pause verb. It names
-`worktree_checkpoint_landing` as the separate, explicitly requested **PUBLICATION** and states that
-pausing never does that.
 
 The signature is flat and single-argument (`contract_path`), like every other tool on this route, so
-the published JSON schema stays a flat object. `mcp/tests/test_tools.py` pins this wording.
+the published JSON schema stays a flat object. `mcp/tests/test_tools.py` pins its "PAUSE an atomic master" and
+"Publishes NOTHING" wording.
 
 **Two verbs, two registrars, two halves.** This file registers the stop; `closeout.py` registers the
-publication. Neither is reachable through the other, and the split is the point: before L37 an agent
-that wanted to stop a master found only a protected-branch publication under the name it reached for.
+publication. Neither is reachable through the other.
 
-## Update History
-- 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_start_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:43-43. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_attach_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:76-76. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_status_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:98-98. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T17:20:55+00:00: Generated citation repair: "def worktree_sync_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:56-56. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical
-  projection): re-read the `register_worktree_tools` claim against the current source and re-cited it to
-  the declaration itself, `"def register_worktree_tools("` at
-  `mcp/src/agents_remember/mcp/registration/worktrees.py:26-31`. The range covers the function the claim
-  names and the wording holds unchanged.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded `_register_worktree_stop_tools` and the new
-  `worktree_pause(contract_path)` declaration — the four-registrar order, the flat single-argument
-  signature, and the registered description's three claims (pauses an atomic master and hands control
-  back; publishes nothing while releasing the atomic-series selection; proposes no next step, with
-  resuming on the normal attach/start route) plus its naming of `worktree_checkpoint_landing` as the
-  separate publication. Added the stop section, the reference row, and the note that the stop and the
-  publication are two verbs in two halves of the worktree surface. Verification metadata remains
-  closeout-owned; no acceptance claim.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "def worktree_start_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:42-42. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "def worktree_attach_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:75-75. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "def worktree_status_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:87-87. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "def worktree_sync_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:55-55. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `worktree_sync` repointed to mcp/src/agents_remember/mcp/registration/worktrees.py:168-194. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def worktree_start_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:41-41. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def worktree_attach_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:74-74. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def worktree_status_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:86-86. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def worktree_sync_payload" repointed to mcp/src/agents_remember/mcp/tools/worktree.py:54-54. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `register_worktree_tools` repointed to mcp/src/agents_remember/mcp/registration/worktrees.py:25-29. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `worktree_sync` repointed to mcp/src/agents_remember/mcp/registration/worktrees.py:233-259. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait` server-tool registration under the observation tools.
-- 2026-09-03T12:30+02:00 — 260831-CCR provenance-debt repair: replaced the terse multi-anchor `TaskIdentity`, `TaskBases`, `StartExecution` row with three rows, one per distinct definition, pointing each anchor at its unique class definition in application/worktree_tool_requests.py (15-29, 32-47, 50-56) and naming the per-object fields. The names previously resolved 3 times each because worktree_tools.py only imports and annotates them (import lines 113-115, signature annotations 121-124 and 229-232), so occurrence matching found three sites per name; each claim now maps to exactly one definition and verifies uniquely.
-
-- 2026-08-26T08:45+02:00 — Restored canonical Docs/Cross-Repo reference sections for the changed
-  public worktree registration card.
-
-- 2026-08-26T08:30+02:00 — Rebounded the public worktree-registration citation to the frozen
-  helper extent after final consolidation.
-
-- 2026-08-26T03:37+02:00 — Updated the registered sync signature/help for typed retained-conflict
-  continuation and exact cancellation. No operation-id or fallback surface was added. Verification
-  remains post-Dagger/closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: merged stable locator, strict attach, and terminal-aware status semantics. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+## 260915-KS-L40 The Authored Sync Resolution On The Public Surface
 
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+Current sync qualification: the flat signature is contract_path, memory_sync_choice, resolution_action, dry_run and sync_source. It builds SyncResolutionInput(action=resolution_action, source=sync_source); continue/cancel resolve retained file conflicts and sync_source="repository-default" pulls each repository's default branch. Memory merges belong to this route, and incoming converted fast-forwards validate before refs move. There is no knowledge_resolution argument and no reconcile action (`SyncResolutionAction` is `continue` or `cancel`).
 
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+- Current sync accepts contract_path, memory_sync_choice, resolution_action, dry_run and sync_source and packs the continue/cancel action and the repository-default source into one SyncResolutionInput; its compact description is 600 characters with whitespace collapsed, at the 600 limit. [13]
 
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-- 2026-08-14T06:32+02:00 — No public schema impact: L23 preserves the worktree registration surface
-  while closeout/integration run as task-addressed durable operations behind it. Verification
-  remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-02T20:47+02:00 — 260731-EFA-L6 W2-B01 curator: anchored 3 citation rows; scoped citation fixing regenerated the source ranges.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. The four working-half
-  declarations moved out of `server.py`; start now packs into `TaskIdentity`/`TaskBases`/
-  `StartExecution` and attach/status into `TaskRef`. Verification metadata pinned to the pre-change
-  commit until closeout stamps the L2 code commit.
+- Worktree declarations use light worktree_tool_requests types and lazily access existing payloads; enclosure adoption resolves its request class with its payload at call time. [14]

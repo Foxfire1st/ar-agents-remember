@@ -1,0 +1,141 @@
+{
+  "path": "mcp/tests/test_paseo_install_no_stop.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+        "content": "sha256:97d4a26bdcee232f61bba7d5ba773bf6fe76a2ad777ea69319bee39b646b18b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_install_protects_live_host_at_irreversible_sites"
+        }
+      },
+      "facet": "a live host observed later is still protected before every irreversible site",
+      "id": "PRF-AGR4G1",
+      "invariant": "INV-EQH5X6",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §9 preflight",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+        "content": "sha256:d462470c3843148339400e508890c83cae4ef93cd9cc075012547d1bbede4c25",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_install_applies_live_settings_and_defers_a_late_restart"
+        }
+      },
+      "facet": "a live daemon setting whose apply/reload answers restartRequired keeps its written value and the running host (no stop/start) and is reported as a late restart reason",
+      "id": "PRF-CB63WR",
+      "invariant": "INV-FM3V0M",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §9 late restart",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+        "content": "sha256:a610071fa53ff837f9693820d6f3d4aedc6ca6668a98e52c882ecd2a18d70ee5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_running_host_on_another_node_is_deferred_before_node_or_home_changes"
+        }
+      },
+      "facet": "Install defers the live Node mismatch before mutation; explicit provision restarts once, reports the earlier folder as unused, retains its marker, and the next provision changes nothing.",
+      "id": "PRF-FW8AFM",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+        "content": "sha256:8627d1d969466fe6ed2b035d988c16b9722a340afc4df3776613327fee500aec",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_install_preserves_live_host_after_successful_admission"
+        }
+      },
+      "facet": "a live host is preserved after admission, with no npm run, staging or setting write",
+      "id": "PRF-J13VEW",
+      "invariant": "INV-EQH5X6",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §9 preflight",
+        "leaf": "260928-MIK-L96"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The post-admission preservation case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+            "content": "sha256:8627d1d969466fe6ed2b035d988c16b9722a340afc4df3776613327fee500aec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_preserves_live_host_after_successful_admission"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The irreversible-site case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+            "content": "sha256:97d4a26bdcee232f61bba7d5ba773bf6fe76a2ad777ea69319bee39b646b18b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_protects_live_host_at_irreversible_sites"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The late-restart case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+            "content": "sha256:d462470c3843148339400e508890c83cae4ef93cd9cc075012547d1bbede4c25",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_install_applies_live_settings_and_defers_a_late_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The locked-input case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f4eefe190aeda7e299f77c8d8b44c821a634640",
+            "content": "sha256:81244aea977bfadbecc497d20a32d646a481a6acdfd5c0992a99cf8d7a3524a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_fake_npm_requires_provision_to_supply_each_locked_input"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

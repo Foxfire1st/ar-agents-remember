@@ -1,0 +1,79 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "benchmarks/docs/benchmarks-methodology.md",
+  "id": "DPD-VXKNMA",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-benchmarks-docs-benchmarks-methodology-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "ac70f6a036cf924f45dc6928b64e4b359768008e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py"
+    },
+    {
+      "blob": "ac76ec64057a6893daa0f473b52ee8c8482e6475",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/constants.py"
+    },
+    {
+      "blob": "2319cd59f5fe4cb132f6cf2dc90b3c4a2a718e60",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/execution.py"
+    },
+    {
+      "blob": "116438c260885ed8f6a908cf588f6c2a1675eca7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/analysis.py"
+    },
+    {
+      "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
+    },
+    {
+      "blob": "058b38584bb8c501173d9793dbaeba6a983041e5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/services.py"
+    },
+    {
+      "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
+    },
+    {
+      "blob": "65949714952ae6e1d1063da49cc2055cda8bba99",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/roots.py"
+    },
+    {
+      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/runtime.py"
+    },
+    {
+      "blob": "019a87725e9c3d11fb5c479ff128adb76c8ec41d",
+      "kind": "file",
+      "path": "benchmarks/cases/tensorflow-check-numerics-xla/case.json"
+    },
+    {
+      "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+      "kind": "file",
+      "path": "scripts/sync-runtime.py"
+    }
+  ]
+}

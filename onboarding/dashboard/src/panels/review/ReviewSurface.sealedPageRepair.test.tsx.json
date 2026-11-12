@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.sealedPageRepair.test.tsx",
+  "realizes": [],
+  "references": {
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F05 main attribution uses the held destination counts and states pending without another read', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab89fc9bf94c7f13e4ad278e9a021c4c5ff8c9d",
+            "content": "sha256:d707df52a184495064b04b71a5711b80c7f22174bd81271ad5e008d4b88e222a",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F08 every non-tree complete-file trigger gives a named refusal without selecting an unrelated range', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab89fc9bf94c7f13e4ad278e9a021c4c5ff8c9d",
+            "content": "sha256:61c98cb17451d5a593a530d98906e028afb382b8a20f5b9dd9b762e6f5b17732",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 75
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F04 an opened comparison retains its lane and inventory after a held subject answers another comparison', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab89fc9bf94c7f13e4ad278e9a021c4c5ff8c9d",
+            "content": "sha256:6ada883e1ecaf6783c538a967917efbdfccd99b1e4fc666b3993eb1dac13db61",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('F10 All gives linked binary and mode-only files one non-text badge without changing all-linked text or cockpit rows', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3ab89fc9bf94c7f13e4ad278e9a021c4c5ff8c9d",
+            "content": "sha256:e6fe14f97aabf277f06564d165713a60f28f163542b079c8bbfc9d515c193874",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+        "content": "sha256:54dcef3cf9e26597b1446734e030a9cba88a037132c80c974d9c0283bfc082d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "takeOwnLookBack"
+        }
+      },
+      "id": "RLZ-JVAAV2",
+      "invariant": "INV-CJ4VN0",
+      "origin": {
+        "handoffEntry": "PNT-R05@v2 §7 / standalone preservation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Separates the look a page started with from later shared-storage writes before it attributes future standalone app writes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+        "content": "sha256:732ad30d942e3371b616a1d77863a69fb72c772e1d23ff8a19a5db498b19043b",
+        "locator": {
+          "kind": "symbol",
+          "name": "bootstrapEmbed"
+        }
+      },
+      "id": "RLZ-TZ0Y3A",
+      "invariant": "INV-7QV5CQ",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 8",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "A frame load calls the migration instead of closing the list; the host's own stored state decides what the user sees.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

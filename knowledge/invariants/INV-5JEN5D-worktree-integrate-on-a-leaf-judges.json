@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "A hand-edited closeout cell or older producer could otherwise publish an unjudged pair to the parent."
+  },
+  "applicability": "Leaf integration preview and apply before any ref publication.",
+  "conditions": [
+    "The closeout cell supplies the exact pair and the current parent-memory tip is a validator base."
+  ],
+  "exclusions": [
+    "Broad MQC, coherence, test and independent-review campaigns are not run here."
+  ],
+  "id": "INV-5JEN5D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152/role-launch/260928-MIK-L52-worker-7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152.md (SHA-256 ef7cff4d9b5140ebecdc1997c2df1fa8dc3ad81222e17dc63b2746cccab1bdf6); mcp/tests/test_master_chain_public_routes.py (leaf control + hand-edited cell)"
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "MIK-R52@v1 rule 3 leaf-integration",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "worktree_integrate on a leaf judges the closeout cells' pair once more before any ref moves, preview and apply; refusals carry knowledge-gate-refused with every finding.",
+  "status": "proposed",
+  "supersedes": []
+}

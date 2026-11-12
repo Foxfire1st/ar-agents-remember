@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/repository_profiles/execution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/repository_profiles/execution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T22:25+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification overview](../overview.md)
@@ -63,11 +53,11 @@ No task-independent follow-up was identified in this profile-selection adapter.
 
 Execution admission accepts optional CandidateSourceSelection and passes it unchanged into compile_repository_profile_plan, binding the selected source applicability into the resulting exact candidate plan. Executor and decoder lookup remain profile-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `admit_repository_profile_execution` carries the current contract described above. | "def admit_repository_profile_execution" | mcp/src/agents_remember/certification/repository_profiles/execution.py:41-81 |
+- `admit_repository_profile_execution` carries the current contract described above. [1]
 
-## Docs References
+## Evidence
+
+### Docs References
 
 CCR-R22@v1 requires one admitted profile to declare explicit selections, including the canonical
 local/pre-commit and closeout profiles as selections over the same rail definitions, never copied
@@ -84,11 +74,9 @@ certificate names the exact admitted profile and its gate-specific plan digest
 repository owns the concrete selections and applicability.
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No Domain Documentation source is configured; the requirement context above is background, while executable behavior is cited below. | — | — |
+No Domain Documentation source is configured; the requirement context above is background, while executable behavior is cited below.
 
-## Repo-Internal References
+### Repo-Internal References
 
 `clean_executor._admit_prepared_profile` is the production consumer: it admits the execution
 against the exact sandboxed candidate. `_write_sandbox_manifest` serializes the admitted profile
@@ -96,34 +84,12 @@ source digest, full plan, executor/decoder definitions, runtime-authority snapsh
 artifact definitions; the profile and plan identity therefore remain tied to that sandbox.
 
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One-call selection/plan/executor/decoder/artifact admission for an exact candidate. | `admit_repository_profile_execution` | mcp/src/agents_remember/certification/repository_profiles/execution.py:38-76 |
-| The sandbox admits the profile execution against its prepared candidate tree. | "def _admit_prepared_profile" | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66 |
-| The sandbox manifest records profile execution and frozen runtime authority. | "def _write_sandbox_manifest" | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
+- One-call selection/plan/executor/decoder/artifact admission for an exact candidate. [2]
+- The sandbox admits the profile execution against its prepared candidate tree. [3]
+- The sandbox manifest records profile execution and frozen runtime authority. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned by this profile-selection adapter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=4e67b32f1acb1ccf3009976fe6c25f40e09ec6fec67b41f23d4f1342853a81df; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-07T01:15:32+02:00 — Timestamp-format repair of the earlier 2026-09-07 event (original exact time unrecorded): Reconciled current source-selection and ownership semantics against the retained verification baseline; prior pins and history remain unchanged.
-
-
-- 2026-09-05T22:25+00:00 — L30 incoming-reference review: projected the retained source-backed claim to its current owner extent; preserved this unchanged source file's genuine verification hash/date.
-
-
-- 2026-09-05T08:27+02:00 — L31 native curator: Retained exact-candidate profile admission after reading the clean-executor consumer; documented the serialized runtime-authority snapshot and regenerated exact admission/manifest evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
-
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new exact-candidate profile-execution admission module of the repository-owned certification profile package.
+No applicable cross-repository source was found.

@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/detail-panel/worktreeSpine.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8d090c4203b6555e1594976610af77c6527bebd4",
+        "content": "sha256:e1ab2484c3d3dc5b37c9e52cdbbf6a5d597f1a042507017bdabedde251f1945d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KQBWPA",
+      "invariant": "INV-H2G4R2",
+      "origin": {
+        "handoffEntry": "L192-W-R199-01",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The spine no longer maps a provider/engine state onto the row and labels a missing checkout as missing; the label and the retired-lane removal are the whole-file contract here.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d090c4203b6555e1594976610af77c6527bebd4",
+            "content": "sha256:96042e85e98cb3cdc0b976641cc00a8ff49692ba7a2b596a6c827267f7ec6c4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSpine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,104 @@
+{
+  "path": "mcp/tests/test_master_chain_public_routes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+        "content": "sha256:bbf5b49ae71ddc0ecf90b185b442cde47c15141c8da3cb8cd37a528f876b281d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_hand_merge_refuses_through_the_public_recorded_route"
+        }
+      },
+      "facet": "A hand-made merge refuses through recorded master landing.",
+      "id": "PRF-9SZG6G",
+      "invariant": "INV-3BGCAT",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 4 master-chain-proof",
+        "leaf": "260928-MIK-L52"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+        "content": "sha256:96b3761ce6d86a502a048db5a17f12d4acf6d9525608bca31a5718fc4a938069",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_hand_edited_leaf_closeout_cell_refuses_through_public_leaf_integration"
+        }
+      },
+      "facet": "A hand-edited leaf closeout cell is judged and refused at public integration.",
+      "id": "PRF-A81SGB",
+      "invariant": "INV-5JEN5D",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 3 leaf-integration",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recorded-master dispatch reaches the chain refusal for the actual foreign commit.\n\nAnchor: `test_a_foreign_commit_refuses_through_the_public_recorded_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The final route admits the recorded sync position and produced head.\n\nAnchor: `test_a_managed_sync_merge_passes_through_the_public_final_route`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public leaf integration rejudges the actual edited closeout cell.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "content": "sha256:96b3761ce6d86a502a048db5a17f12d4acf6d9525608bca31a5718fc4a938069",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_edited_leaf_closeout_cell_refuses_through_public_leaf_integration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Original offending-commit identity pins remain on the staying public route calls. Complete world snapshots add refusal-footprint preservation; they are not a new executed rollback result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b4a7d9869c9f3a9e7793676b7dfdf463cd7f667",
+            "content": "sha256:a83872ec2c56177d897795aa4936c27977488e0fb7192d1b8faa78bbe59a84ae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

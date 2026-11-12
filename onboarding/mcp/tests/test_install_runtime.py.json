@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_install_runtime.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime install preserves docker provider state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faa6db59d588645689b09468c67b59d2060fc4ae",
+            "content": "sha256:9c7ae6547d483c51d405c757b129a97eaa24fd28bc7127866f3b2d68cfb3adff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_install_preserves_docker_provider_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Existing settings file is never clobbered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faa6db59d588645689b09468c67b59d2060fc4ae",
+            "content": "sha256:c9a92365d53b5545258ffbe95c7fd5afa30d061d179591cf81ba385606c8d6cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_settings_file_is_never_clobbered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dry run installs and counts the assets without writing settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "faa6db59d588645689b09468c67b59d2060fc4ae",
+            "content": "sha256:5058debc7c913c468c074ee7190f75efcb007acd0fbeb9b1da7979eaa9f2d473",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dry_run_installs_assets_without_writing_settings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

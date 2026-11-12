@@ -1,0 +1,280 @@
+{
+  "path": "mcp/tests/test_knowledge_proofs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's statement of the rules it covers.\n\nAnchor: \"tests that prove an invariant are first-class proof entries\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:c96d2dfa77ba3d0c63814481350ff4213d554a8204cc3ea10c15c7c1ce8d7f0b",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A family with no proof shows `[]`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:cf29eef668463d8c3e86b18349bc5fb57bb6deee9dd2668e988d933b4f3acf3e",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Live invariants without proof; a retired one is excluded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:4e8f0ee59e4dac2a9e38a8452d74ed20d42dacb261a6b17b7b83ef550ba19e86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_lists_live_invariants_without_proof"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The checklist normalizes artifact paths and the informational proof count while actionable count stays zero and the section remains not a gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:cc162acf98173fc3468f60f2cdc618d85d01b5ecd4304bf633a08ad91e6766cd",
+            "locator": {
+              "end": 429,
+              "kind": "line_range",
+              "start": 399
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Migrated evidence is listed, then a curator pass writes the proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:2ad896c89f900e65c36f4115a348f0fc0bc68410ffa14b847ca9ace63663669d",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 432
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The cached index is reused and an unreadable one reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:012da4baaaa18bd21045b5c96a299bd30671cec5316b01266d174e59bf6558ea",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 486
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:ebb05908d076c74907bac8a22bfb3c2902b74eb2329c114409ae4e9ab1aba461",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer runs as this leaf's owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:2708f82dd0fb86f72c4046a5d04a43445e5bfeb547fd1efeede558d0142ed98e",
+            "locator": {
+              "kind": "symbol",
+              "name": "OWNER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:c19db846abeb908c1fd2011ee55ba15281fa1c1b10e64813591a19ea20d26710",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parser's forms, expressions and helper modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:d03f38a8f62baec2e95f3a52e5008280a4474a86832c7b80e5ee3800a06e6bc5",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "No bare row for a file named with a test elsewhere.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:fe2e2e4ca52731f33521f1e759d64af6107f1800fd17e87fdb38cff745422483",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Both forms become proofs once faceted; unresolvable evidence is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:d006d19efce358dc306ca3cbaa62224a68584cc8e5629a303e5cba7a66295cee",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A proof waits for the curator's facet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:c95af7a1bbc79d3a8a1eae9131731e4171e3f7349832637befc86e6fcf0bcc78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_waits_for_the_curator_facet_and_is_offered_the_statement_as_a_draft"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The view cases' tree and read helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:3feaa92e5c0f2bc4e07e617dcf5763ba806f550724bd4e5ef87504cd1cdbcc1f",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 245
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:4c80ede167d4d559ede1dbc83fe5941593a15bbcaf528f55036df7c38325a0fa",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 253
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Invariant and family views carry their proofs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:c0f8cb3191bfe6feece8068f60bedf4084010e1b65a169b06d764e499b54c7a5",
+            "locator": {
+              "end": 302,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Source_context has no top-level proofs, and curation_queue is refused with unknown_view; no database-read case remains here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:bf601201a638f43fc473b5737fc3b4d238bf42d0c502ea93a42a5263f8606d3b",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

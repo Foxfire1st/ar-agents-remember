@@ -1,0 +1,179 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/storage.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "JSON settings parsing produces the storage settings and path-rule models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:b38bb68029c1287d08aff7e0e338422c5c0e24ef5676c308d6c7130b8ecf133f",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:d4b2f86a41e017f61aba163ef9e62e00b57bc58c59ce2ce311b263ac83e21cfb",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:c75360896cf923932be81e2bd79e0fcfa92d8ca59f23e276a379ff56073c1ade",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:682b87112afe697b09e7790df1a258cd693399573045ef4e5750206fe3b0e57a",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:b38bb68029c1287d08aff7e0e338422c5c0e24ef5676c308d6c7130b8ecf133f",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_storage_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:d4b2f86a41e017f61aba163ef9e62e00b57bc58c59ce2ce311b263ac83e21cfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_path_rules"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:09a00d6a73cd9c06afbb213389e0daa943b1c715c411a8f468233c7d65e1a39a",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:493295a44aad255c55b04f3d35ca41cfa3058e6b09238b889fb9982a21c2fbfe",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The storage resolver consumes `StorageSettings` path rules to select storage for a source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b484c1cb2e306642c86d3ef0d07e54deb17d288c",
+            "content": "sha256:e3c374c37685c6130e19bbfc02a485a82c677d0e3173846042589330f34414eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_storage_for_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Missing-onboarding checks call the storage resolver through the public facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
+            "content": "sha256:2dbd718d12347fabace79eb8eee6ff5caa1f2bf84e36994502f844f7372488bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_onboarding_for_source"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1c7b82e4146f0ca94137b49d845adef38178ff5",
+            "content": "sha256:2fbabfec67706e61304225aafc65d2223b77fa79810db4037824e924376948b9",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Storage decisions still serve source-coverage planning; converted knowledge currentness uses the converted checker rather than legacy verification metadata drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc4341be8901147e5a6d72f3d21d0fe09999a003",
+            "content": "sha256:1ab97fb581e81ce813b1fff6a03113ed8c125da6d6968db17d5f175888a036a8",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/memory_quality/converted_check.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

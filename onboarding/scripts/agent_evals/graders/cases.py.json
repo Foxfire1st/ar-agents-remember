@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/cases.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2640bd3db4f52a42d88f73cc2f086f239227130d",
+        "content": "sha256:d2063f1557237fe22c73b1197f19eac41eafba5dd4360c9c827971bc08000caf",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A14BJ1",
+      "invariant": "INV-3X1VPQ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-case-grading",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It grades admitted effects and assembles artifact material, retaining binary path/size/digest rows and validating criterion order, model and evidence.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2640bd3db4f52a42d88f73cc2f086f239227130d",
+            "content": "sha256:d2063f1557237fe22c73b1197f19eac41eafba5dd4360c9c827971bc08000caf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

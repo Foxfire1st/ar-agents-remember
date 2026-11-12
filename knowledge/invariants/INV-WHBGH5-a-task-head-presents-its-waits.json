@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The snapshot adapter constructs forward and reverse references while docHead.tsx renders their known metadata, preventing a task head from presenting only half of the declared dependency relation."
+  },
+  "applicability": "Dependency facts in the head of a task of an ordinary master.",
+  "conditions": [
+    "Waits-for references come from the field; needed-by references are derived from the listed sibling population.",
+    "Known dependency ids and titles stay visible; gone targets remain marked gone and nonnavigable.",
+    "A dependency without a task document has no state and no jump; no second path for task state is added. This is the intentional narrower guarantee in Architect ruling notes/run3/L168-THE-INSTRUCTIONS-OF-THE-REMOVED-ADOPTION-ARE-CORRECTED-A-FILE-LESS-DEPENDENCY-SHOWS-NO-STATE.json (ruling[2])."
+  ],
+  "exclusions": [
+    "Cross-master dependency authoring.",
+    "Inferring dependencies from historical prose."
+  ],
+  "id": "INV-WHBGH5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-freeze-report.md:44-54",
+        "Parent examination of actual F01 changed extents; no new execution or acceptance."
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 4",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A task head presents its waits-for and derived needed-by tasks with their known id and title; state and navigation require the referenced native task entry. A dependency without a task document shows id and title, no state and no jump.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,129 @@
+{
+  "path": "dashboard/src/panels/review/FamilyTree.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+        "content": "sha256:253f02a828adbfe1f0ef50aa9e3fc1fe596665c3787a7ce0c8858d54f887e880",
+        "locator": {
+          "kind": "symbol",
+          "name": "RosterLine"
+        }
+      },
+      "id": "RLZ-ABPMXR",
+      "invariant": "INV-QGHZ02",
+      "origin": {
+        "handoffEntry": "R73-R3-R8",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The reviewer's label is the user-facing half of the definition; it now reads how many anchors are not at their recorded blob instead of calling them unresolved.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+        "content": "sha256:68e512f44797dfd0b31567f195ce6e02e1e117cb3d915897e31599e2b7071025",
+        "locator": {
+          "kind": "symbol",
+          "name": "WalkedTree"
+        }
+      },
+      "id": "RLZ-PV8M2E",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The shape in which the tree component receives the walk: the families to draw, the map from each kept family to the subject it was last read for, the notice, and the sentence about a selected subject without family context.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+        "content": "sha256:253f02a828adbfe1f0ef50aa9e3fc1fe596665c3787a7ce0c8858d54f887e880",
+        "locator": {
+          "kind": "symbol",
+          "name": "RosterLine"
+        }
+      },
+      "id": "RLZ-YRVX77Q4",
+      "invariant": "INV-VPX81HXV",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Prints the roster page's read-owner counts (items returned, total and remaining for this family revision's selection) separately from the loaded member count (members loaded out of members_total recorded membership rows), so cumulative read items are never presented as loaded members.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "56": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export interface WalkedTree {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:813d725a81409c3c4717d145a0454b1628ef6e57b91b08d6f8b2a9af83a27bdc",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export function memberRows(entry: ReviewFamilyContextEntry): MemberRow[] {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:8c4829d58a42f52954e2b65341eb309adc4c470c44528b9a9cb3193b1d6590d1",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export function RosterLine({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:bb187d4906137a6d83a4effdbe5323d613970c6bd0c6bc57025695521682947a",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "FamilyTree.tsx current behavior at this source owner.\n\nAnchor: \"export function RosterNext({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:201756238eb442e095080a5ce1a52c535730a449b26a56bcd52899232981f972",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,197 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/args.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "`WorktreeArgs` implements the retained boundary described above. The following current source boundaries establish the ledger-retirement behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeArgs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Inputs shared by the worktree application layer, CLI, and domain functions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeArgs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Advance the plane-owned operation when this call runs under its detached worker. Source caption: `report_operation_progress`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:047cfa468e99dbf1415f6caacbf8a5b09301bf9edfb371314797b0a8e7b232dd",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`report_operation_progress` publishes progress through the exact worker-owned callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:047cfa468e99dbf1415f6caacbf8a5b09301bf9edfb371314797b0a8e7b232dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "report_operation_progress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Public sync choice and resolution-action vocabularies are owned once by the worktree model.\n\nAnchor: `MemorySyncChoice`, `SyncResolutionAction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:2b9aaf2cbc302df9659dd78655d80e3d18ea666700ab8dad26b007b8bc118b93",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemorySyncChoice"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:5e9062f0836ba065be875d6c3d8cfcf6f6212150edf3daacd4322b2654482cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncResolutionAction"
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Provider setup config is typed through the companion worktree models module. (`WorktreeProviderSetupConfig`)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e811353d50e697906d6ec8a7c1caf3a200a6183",
+            "content": "sha256:241d8b80ee6f95d62acc223023ea8c2513c0277168ae4539f46ccfe864c51e17",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeProviderSetupConfig"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Worktree CLI builds argparse namespaces that this DTO adapts via `from_namespace`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:b8ee544a7c3d76078b145b34a925959caa10038cef5165fd834158251b2591d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "from_namespace"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "content": "sha256:eca716be9819925d70a1c828635b0269c71d46df5c3e54bb7bf1ab3acfeabe00",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2af08192a64805b537a585a25682c679c7b2c4d3",
+            "content": "sha256:732a87f2837e120295c0abd9e2a432657a50fbddda8f1ec98194d8e5be2fe2a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cli.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Gate delegation policy model (kernel-owned since L9).\n\nAnchor: `GatePolicy`, `DEFAULT_GATE_POLICY`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:5ad6d67bc60d6de177ce708a5c0c5a0d88d0083a6c27594f7654f8fece2cfc03",
+            "locator": {
+              "kind": "symbol",
+              "name": "GatePolicy"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:be6012c9a158f4c483512dec2bcaac35fffcbe6109282c065b4011bb7592fdad",
+            "locator": {
+              "kind": "symbol",
+              "name": "DEFAULT_GATE_POLICY"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

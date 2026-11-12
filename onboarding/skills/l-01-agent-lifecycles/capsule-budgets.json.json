@@ -1,0 +1,394 @@
+{
+  "path": "skills/l-01-agent-lifecycles/capsule-budgets.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+        "content": "sha256:f1b84da5dee66bac5819350ada5de35fb725fd821ff08a2ee32de5f60f257dc4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-0XTE5T",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The registry records capsule size_words and budget_words after the outside-scratch guidance and merged-source remeasurement, under the existing capped budget rule.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+        "content": "sha256:f1b84da5dee66bac5819350ada5de35fb725fd821ff08a2ee32de5f60f257dc4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-J2031X",
+      "invariant": "INV-JKD5DE",
+      "origin": {
+        "handoffEntry": "L185-R193-4-legal-maximum-budgets",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The registry is the record the guard reads; the measured maxima and their capped budgets live here and nowhere else.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "All 38 capsule rows carry recorded budgets: capped eleven-tenths budgets, or the measured size for the 8 capsule rows among the 24 budgets one decision names. Anchor: `decisions_D681`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:8da1294e4bfbff6212622fa235f090c6145adce6d233d7e9ec3ced9995fcf825",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:023f488cbb1e6bb1b46081b318144004f7aa4c49134904adbca81fb8ef90781b",
+            "locator": {
+              "end": 5363,
+              "kind": "line_range",
+              "start": 5168
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:6e482f5f34a788049cff65a019d47851fc48a3c79d679a6f1527aee40aa40341",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The registry's capsule, step-detail and handover rows keep their recorded values; the handover rows keep the capped token formula.\n\nAnchor: `handover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:88ca54402454d47e2020ec362dda71145169ceff8500117fc372a1be1510b6c8",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Budgets are min(ceil(size_words * 11 / 10), the applicable ceiling) except the 24 budgets one decision set to their measured sizes and the one detail budget a later decision superseded; the shared digest budget is 1,474. Anchor: `budget_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:6e482f5f34a788049cff65a019d47851fc48a3c79d679a6f1527aee40aa40341",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:f2787cf04da762bc5f0bf94341e22c022213294d67cf40b083d582960606c6ce",
+            "locator": {
+              "end": 3521,
+              "kind": "line_range",
+              "start": 3517
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The no-overrun budget test reads current limits and measurements from `capsule-budgets-current.json` and only the handover rows and provisional records from this registry; other budget tests still read this registry's D656_R8 raises and check its recorded budgets against the D681 limits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:a77f13c9b1e17ffda684e14eb60465d59dc3be53400a6ba7085f1842b7df76d1",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "locator": {
+              "end": 500,
+              "kind": "line_range",
+              "start": 476
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:943733872aca2ebcf224852d2c9cd3baac60a1290bead83167c67c35734afd60",
+            "locator": {
+              "end": 382,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:54cc3405c83a1b8b72afbcbc36cfa21c6dcb36ec39e26e6f2bd8327bc959ae70",
+            "locator": {
+              "end": 830,
+              "kind": "line_range",
+              "start": 805
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The test bounds fresh compiled sizes by the current record's limits; decision recording is registry policy and is not checked by this test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:0374a910975c2810c57c2f2ff2d05016edc4be9b67651c5817f676c4b1cfc935",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_capsule_exceeds_its_recorded_budget"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The registry contains 38 capsule rows and 27 step-detail rows; its ceilings are Architect 4,631, Manager 4,513, Curator 4,100, Reviewer and Bootstrap 4,000, other roles 3,700 and step files 2,700. Anchor: `capsule_ceilings_words`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:df38e3327001fc3c392d82393671a1bc57391d7df980d89fcb1c5ebe2b7129f5",
+            "locator": {
+              "end": 3516,
+              "kind": "line_range",
+              "start": 3509
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:6e482f5f34a788049cff65a019d47851fc48a3c79d679a6f1527aee40aa40341",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:8da1294e4bfbff6212622fa235f090c6145adce6d233d7e9ec3ced9995fcf825",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:7039f3c26e2d2d181b4f873dc42e4aa6a3c731324fb129008a3f55e17bf438ef",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:f1b84da5dee66bac5819350ada5de35fb725fd821ff08a2ee32de5f60f257dc4",
+            "locator": {
+              "end": 5395,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The earlier L88 decision introduced capped capsule/step budgets and recorded fourteen admitted step files at that change; those fourteen are historical measurements, not the current step-file total.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
+            "locator": {
+              "end": 397,
+              "kind": "line_range",
+              "start": 304
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The earlier L88 repair-round decision retains its measured capsule changes under the fixed capsule and detail ceilings; its fourteen-file context remains historical, not a fresh measurement or current registry total.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
+            "locator": {
+              "end": 397,
+              "kind": "line_range",
+              "start": 304
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:1730cd003b24c75b698915352555aee6b29888aabaa2abbf6b17ae4f8271f531",
+            "locator": {
+              "end": 495,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The retained L88 decisions preserve their authority, measurements and fourteen-step-file provenance from that change; later step additions do not rewrite those historical measurements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:96a6a7eced12da510ccf0a2ff81cdee0733966138fe5f59117cd49b0c21d1bb1",
+            "locator": {
+              "end": 397,
+              "kind": "line_range",
+              "start": 304
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:1730cd003b24c75b698915352555aee6b29888aabaa2abbf6b17ae4f8271f531",
+            "locator": {
+              "end": 495,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The registry retains the earlier instruction-change measurement decisions alongside named later ceiling decisions. Each historical measurement describes its own source epoch; the retained decisions are not fresh compiler execution or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:a56b0e7a5572dcd9880bd7dc9649d6e1381f4b088355ff99cbb074e5090b7eaf",
+            "locator": {
+              "end": 2896,
+              "kind": "line_range",
+              "start": 2721
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:6729dacb8fb986785587d60a0d2b8e13cd5f57768e5d9157f066863b30050f29",
+            "locator": {
+              "end": 3565,
+              "kind": "line_range",
+              "start": 3509
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current registry retains decision_L198_post_L194_sync as its historical measurement account. Its recorded values and provenance describe that source epoch, rather than the current matrix or a new execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:78d058ec63d7d3fc8adc39ecb7bc4a8be5c23f711e347bea6e2425b4541c996a",
+            "locator": {
+              "end": 3486,
+              "kind": "line_range",
+              "start": 3268
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

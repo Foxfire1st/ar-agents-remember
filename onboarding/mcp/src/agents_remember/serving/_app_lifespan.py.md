@@ -1,107 +1,84 @@
 # mcp/src/agents_remember/serving/_app_lifespan.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/serving/_app_lifespan.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-31T04:50+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`                                        |
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
-[serving overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Composes serving-process startup and background loops. It migrates all recognized control-plane
-identity logs, including the serving-owned notifier log, before accepting clients, and prevents
-metrics-loop shutdown from returning while an already-started worker thread can still write.
+Own the serving lifetime, its retained background loops and drained shutdown. Terminal catalog observation, notifier sweeps and their health payload readers are absent; one leaf-archive recovery cadence remains.
 
 ## Code Commentary
 
-### Logic
+Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list.
 
-`_to_thread_drained_on_cancel` starts one `asyncio.to_thread` worker as a task and shields it from
-caller cancellation. If the lifespan task is cancelled, it awaits the worker to completion before
-re-raising `CancelledError`. `_metrics_loop` uses that boundary for sampling, record, degradation
-evaluation, and compaction, so shutdown cannot race a still-running metrics write.
+The lifespan first records this dashboard process in the coordination root's running-server records (`register_server(..., "dashboard")`, `runtime/servers/<pid>.json`) and removes that record first in its finally, so `runtime_install` and `server_info` can list it with its build state. Startup compacts the workspace river before projector prime, then starts projection, provider metrics, leaf-archive recovery, held-message delivery and river-compaction tasks. Heap tracing and malloc trimming are separately opt-in. The archive loop awaits one tick through the drained thread boundary, sleeps after each completed attempt and closes its archive owner in finally; it introduces no second recovery timer. Shutdown first closes projector readiness, cancels and awaits the master-preparation task and closes master preparation, then runs the review-tree child shutdown hook as owned startup work, then cancels and awaits every background task. A cancelled shielded worker is awaited before cancellation is re-raised, so serving cannot return while that worker still writes. Provider sampling/recording/degradation/compaction use the same drained boundary. Source inspection does not supply new teardown execution.
 
-The lifespan first runs `migrate_control_plane_identity_logs` in a worker thread, then performs
-compaction/priming and starts the existing projection, liveness, metrics, agent-notifier, and
-diagnostic loops. Shutdown cancels and awaits those tasks through the established lifecycle.
+The serving lifetime retains the shared background ledger and server-side host-start loading watch. Archive recovery, provider metrics, held-message work and each native resume are attributed to their executing worker units. The loading driver uses shared OS lease/progress, records completion or cancellation, and drains before its claim closes. Removed terminal observation and notifier sweeps are not reintroduced by that loading watch. The measured warmup resume receives `run.role_receipts[agent_id]`, so receipt identity is republished before native resume. This reuses the existing loading driver and offload/drain accounting; it is not the host-activity intake and adds no host polling timer.
 
-Each enabled agent-notifier iteration refreshes the terminal catalog through the one liveness
-sweeper immediately before evaluating delivery. Dashboard HTTP polling may perform the same refresh
-for display, but headless message progress no longer depends on a browser requesting terminal state.
-Both that refresh and the following notifier sweep use `_to_thread_drained_on_cancel`: lifespan
-cancellation cannot return while either worker thread is still reading or mutating durable state.
 
-### Conventions
+The lifespan owns the refresher's lifetime, so no reaper of its own is needed. The lifespan consumes the collaborator it was given instead of reaching into cli.
 
-Startup ordering is the compatibility boundary: migrate once before strict current readers.
+## Held-message delivery tick
 
-### Invariants And Boundaries
+`_held_delivery_loop` runs with serving under the shared background ledger and calls `_held_delivery_tick` every `HELD_TURN_END_TICK_SECONDS` (three). Each tick reads the host's activity publication through `turn_ended_agents` and hands the agents whose turn ended to `deliver_ended_turns`, which drains only the receipts a holder named. Every `HELD_DELIVERY_SWEEP_SECONDS` (fifteen) the same tick also runs `sweep_held_messages` as the fallback for receipts no holder named. A failed tick is logged and retried on the next interval; the store keeps everything that still waits, and each tick is one accounted worker unit.
 
-- Serving owns the notifier-log migration.
-- Migration completes before clients or sweeps can parse current rows.
-- No live fallback reader accepts both schemas.
-- Cancelling the metrics loop propagates cancellation only after its current worker-thread call is
-  drained; no metrics mutation may outlive lifespan shutdown.
-- The drain does not turn cancellation into success and does not create a detached fallback worker.
-- Agent-notifier delivery evaluates current control/turn liveness even when no dashboard client is
-  polling; the lifespan reuses the canonical liveness owner rather than duplicating probe logic.
-- Notifier cancellation drains an in-flight liveness refresh or sweep before propagating
-  `CancelledError`; no notifier mutation outlives server shutdown.
+## Periodic Provider Safety Boundary
 
-### Todos
+The provider loop remains periodic: sample labelled containers, record, evaluate degradation with the existing stop callback, compact, then sleep at the configured sample interval. Every stage uses the accounted cancellation-drained offload. A launch-authority map is not a fleet-retirement witness: empty, revoked or malformed authority and a dashboard restart do not prove leftover labelled stacks are gone. Neither page interest nor authority decoding gates this safety sequence. Launch refusal, sampler label discovery, degradation policy and Docker handling keep their own owners. This is the retained landed loop, not an accepted fleet-absence optimization; controlled real-loop regression tests are not a claim that a real fleet was launched.
 
-None.
+## Evidence boundary
 
-## Docs References
+This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.
 
-No Domain Documentation source is configured.
+## Source-bound reference inputs
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Worker-thread cancellation is shielded, drained, and then re-raised. | `_to_thread_drained_on_cancel` | mcp/src/agents_remember/serving/_app_lifespan.py:57-70 |
-| Every blocking metrics operation uses the drained cancellation boundary. | `_metrics_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:73-95 |
-| The serving lifespan performs migration before compaction and loop startup, then cancels and awaits every background task. | `_serving_lifespan` | mcp/src/agents_remember/serving/_app_lifespan.py:195-243 |
 
-| The notifier refreshes liveness before each sweep and drains an in-flight refresh on cancellation. | `_agent_notifier_loop` | mcp/src/agents_remember/serving/_app_lifespan.py:140-181 |
 
-## Cross-Repo References
+- Anchor: Actual startup task set and shutdown order.
 
-No cross-repository implementation dependency governs this file.
 
-## 260821-CLIVE Notifier Registration Wiring
 
-`_agent_notifier_context` binds the serving runtime's inbox execution registrar to the configured
-coordination root and passes it into each notifier sweep. The existing startup, cancellation, and
-background-loop ordering remains intact; the new seam ensures registration happens before inbox
-reconciliation/compaction rather than adding a parallel cleanup loop.
 
-## Update History
 
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: extended the existing
-  shield-and-drain cancellation owner to both notifier liveness refresh and notifier evaluation,
-  preventing post-shutdown background mutation. Verification remains closeout-owned.
+- Anchor: Shielded thread worker is drained before cancellation escapes. [16]
 
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 made each headless notifier sweep refresh canonical terminal liveness before delivery evaluation, removing dashboard polling as an accidental progress dependency. Verification remains closeout-owned.
 
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 parameter-specification migration in `_to_thread_drained_on_cancel` and confirmed that cancellation draining and lifespan ownership remain as documented. Verification remains closeout-owned.
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: recorded lifespan wiring for task-owned inbox execution evidence. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
 
-- 2026-08-14T12:31:43+02:00 — R44 curator: documented the shield-and-drain boundary for all
-  blocking metrics operations and corrected the governing overview link. Verification remains
-  closeout-owned.
 
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `_app_lifespan.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+- Anchor: The shared cancelled-worker drain boundary. [20]
 
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+
+
+
+
+- Anchor: One completion-relative archive-recovery cadence, not terminal observation. [22]
+
+
+
+
+
+- Anchor: Retained metrics operations use the drained boundary. [24]
+
+
+
+
+
+- Anchor: Archive recovery sleeps using its imported tick constant after each attempt. [25]
+
+
+
+
+
+- Anchor: Initial river compaction, projector prime, background tasks, child shutdown and drain.
+
+
+
+- Periodic safety samples, records, evaluates with its existing stop callback and compacts through accounted drained offload, with no page/authority gate. [27]
+- Controlled real-loop tests cover revoked, between-tick, restarted and malformed authority while keeping launch refusal separate. [28]
+
+- Held-delivery collaborators keep usage-read-before-delivery ordering, then trigger moved comparison after ended-seat delivery. The dedicated watcher task joins the owned shutdown task list. [29]
+
+- The serving lifespan registers the dashboard's running-server record at start and removes it first on exit. [30]

@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_planned_knowledge_effects.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+        "content": "sha256:dcff0cccd14fa03c2927949dbb3364f0b68927f3adbdc90a78ac6a2c1685e67a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_effect_requirement_must_name_a_document_packet"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A declared effect requirement must belong to the document typed packet references.",
+      "id": "PRF-85BG12",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-5-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+        "content": "sha256:19186e01428f9275209d5144d57e842e8b131715f94f968cbf63f700e8daf883",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_family_declared_effect_requires_the_same_recorded_effect"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A family declaration matches only the actual same changed-row effect.",
+      "id": "PRF-HC5R70",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-5-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

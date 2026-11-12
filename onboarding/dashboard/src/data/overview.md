@@ -1,496 +1,305 @@
 # dashboard/src/data/ — Cockpit State And Authority Overview
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| sourceRoute            | `dashboard/src/data/`                            |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
 
-## Current Structural Identity Contract
-
-`taskIdentity.ts` derives canonical references from projected real task documents. `sessions.ts`
-stores document+role binding separately from runtime correlation, and `railModel.ts` constructs the
-default Chats hierarchy from task containment. `terminal.ts` posts structural assignment; leaf keys
-remain display/context helpers and never serve as hosted-seat addresses.
-
 ## Purpose
 
-### 260731-EFA-L23 Route Delta
-
-L23 extends the route's volatile-age contract with lifecycle-operation `elapsedSeconds`: server and client strip the same field so operation clocks do not churn structurally unchanged enclosure rows.
-
-This route owns the browser-side state and authority boundaries consumed by the dashboard UI. It
-normalizes terminal catalog rows, keeps session and per-seat cockpit state, reconciles the daemon's
-catalog, drives launch/set/submit lifecycles, and exposes pure derivations for rail, task, command,
-and state-grammar surfaces. Components may project these facts, but must not invent a second
-catalog, delivery ledger, or lifecycle authority.
-
-This overview is the strategic owner for the data plane so the root and panels
-overviews can remain compact. It also records the retirement of the legacy `sessionGroups` model:
-role/spawn hierarchy and attention are now derived by `railModel.ts`, while product-facing grouping
-and rendering live in the canonical Chats cockpit's `SessionRail.tsx`.
-
-## Runtime Identity And Recovery
-
-- `buildIdentity.ts` owns the executing bundle fingerprint and a pure tri-state comparison with the
-  server's optional shipped-dashboard identity; it never reloads the page itself.
-- `harnessCatalog.ts` validates the narrow pre-session `id`/`name`/`detected` envelope and preserves
-  network, HTTP, protocol, valid-empty, and ready distinctions. Request timeout, cancellation, and
-  Retry belong to the dialog-local hook rather than a global store or poller.
-- `terminal.ts` separates WebSocket transport loss from durable terminal exit. Only an explicit
-  server exit ends the session; a boot-owned reattach consumes each identity once, rejects stale
-  callbacks, and replays resize before buffered input without a timer loop.
-
-## Authoritative Session Open
-
-- `terminalOpen.ts` is the sole browser authority for `POST /api/terminal`. It preserves the exact
-  requested identity, validates HTTP and protocol outcomes, and returns a normalized accepted
-  server row or one typed failure. A raw request must return neither harness nor control state;
-  contradictory server evidence fails closed.
-- `terminal.ts` is now the transport/facade layer over that opener. `launchFlow.ts` delegates to the
-  same authority, so the raw button, harness chooser, and contextual launch callers share one
-  response grammar instead of reconstructing acceptance locally.
-- `sessions.ts` materializes and broadcasts a session only from the accepted server row. Network,
-  HTTP, protocol, identity, and server-declared failures leave the registry unchanged; a request is
-  never enough to create a ghost row.
-- The `/dev/bench` injector in `dev/cockpitScenarios.ts` supplies request-matched raw and harness
-  responses through the real client boundary. It does not weaken production validation or grant a
-  second open authority.
-
-## Route Model
-
-### Catalog And Session Identity
-
-- `sessions.ts` owns `OpenSession`, the catalog-backed registry, live-action `activeId`, connection
-  registries, leaf/lifecycle attachment patches, and cross-tab catalog-change notifications. One
-  field is deliberately NOT catalog-sourced: `liveTurnWorking?` carries the
-  focused seat's own conversation-projection live-turn signal, merged at the view layer only
-  (`SessionsView`) — the registry itself never writes it, so the accepted-server-row materialization
-  rule above is unweakened. `stateGrammar.ts`'s `seatVisualState` prefers it over the sweep-lagged
-  catalog `turnState` (a streaming turn must never read settled `turn-ended`) but only AFTER the
-  terminal/fault/blocked-on-human/wait guards, so it can never fake liveness over a real end state.
-  The pending-interaction twin rule (review finding N1):
-  `OpenSession.controlPendingInteractions?` is the ADDITIVE plural (multiplexed harness sub-agent
-  pendings) beside the parent-thread singular slot, and every attention surface —
-  `stateGrammar.ts`'s blocked-on-human guard, `announcer.ts`'s focused-seat suppression,
-  `railModel.ts`'s question triage — derives from `sessions.ts`'s `sessionHasPendingInteraction`
-  (singular slot OR non-empty plural), never the singular slot alone, or a seat blocked SOLELY on a
-  sub-agent approval goes dark.
-- `catalogPoll.ts` is the single catalog read/reconcile boundary. `CockpitShell` owns both its
-  refcounted interval and eager/cross-tab reconciler for the shell lifetime. Remote terminate is
-  removed locally and excluded from the confirming read so a stale echo cannot resurrect it.
-- Cockpit inspection focus is deliberately separate from `activeId`: landed rows remain
-  inspectable, but only a running row can own the action/reload route through `preferLiveSession`.
-- `sessionCockpitStore.ts` owns ephemeral per-seat UI evidence, drafts, queue state, focus, poll
-  health, and layout intent. The inspector's product default is closed; responsive geometry is a
-  separate concern and must not rewrite deliberate operator intent.
-
-### Reliable Submit And Authoritative Withdrawal
-
-- `submitClient.ts` is the whole-message submission boundary. It retains exact request ids and
-  drafts across route errors, distinguishes accepted/queued/rejected/unsupported truth, reconciles
-  ambiguous outcomes, and politely announces focused-seat receipts.
-- `submissionLifecycleClient.ts` polls authoritative submission state and owns withdrawal. Pop-back
-  is not a local queue edit: the client resolves the last queued request, calls the bridge with the
-  expected epoch, applies only an authoritative withdrawn result, and retains recovery/endgame
-  evidence when convergence is uncertain.
-- Queue, submit history, withdrawal recovery, composer draft, and rail/stage notices are projections
-  of the same per-seat store. A failed or ambiguous operation must not move the active route or
-  discard the operator's draft.
-
-### Lifecycle Cleanup And Honest Residuals
-
-- `sessionLifecycle.ts` keeps detailed terminate outcomes, focus-independent stop residuals, and
-  landed-cleanup outcomes. A successful terminate may still carry an informational control-stop
-  residual; it is not reclassified as failure.
-- When landed cleanup returns no authoritative result, the exact `{id,label}` target snapshot is
-  retained in `cleanupFailure` and remains visible/retryable outside the collapsible rail. Partial
-  success keeps both closed and skipped rows/reasons.
-- Exited and retired rows are catalog evidence rather than live PTYs. Landed rows remain read-only
-  inspectable until authoritative cleanup removes them.
-
-### Structured Conversation Projection
-
-- [data/conversation](conversation/overview.md) owns the **reconstructable active-conversation
-  projection**: a pure authority reducer (cursor-ordered apply, eventId+cursor dedupe, block-delta
-  revision gating, gap→re-page tolerance, same-revision→reset, replace-page rehydrate — never an
-  optimistic durable item) plus a thin store orchestrating page/stream/recovery/LRU. It holds only a
-  browser projection rebuilt from the landed L1 page/stream contract and the L3 control routes.
-- [data/conversation-library](conversation-library/overview.md) owns the **reconstructable
-  previous-conversation library projection**: list/preview and the exact-open flow whose focus fires
-  only on `opened` catalog proof, with the caller-stable requestId reconciled under one id.
-- Both are separate, reconstructable stores (R1): reload/pages/events rebuild them from server/native
-  authority; there is no IndexedDB/localStorage/SQLite conversation index and no durable browser item
-  authority (the only persisted UI bit is the hide-thinking boolean). The renderer consuming them is
-  the [session-cockpit/conversation](../panels/session-cockpit/conversation/overview.md) grammar.
-
-### Controls, Keymaps, And Accessibility
-
-- `capabilityCatalog.ts`, `setClient.ts`, and the set/launch helpers separate pre-session envelope
-  truth from exact-session control truth and preserve pending/clamped/refused evidence.
-- [data/keymap overview](keymap/overview.md) owns effective keyboard bindings, browser-reserved
-  rejection, the immutable F6 focus escape, and Emacs/Vim composer profiles.
-- `announcer.ts` is the shared polite/assertive store. Urgent transitions from one hydration are
-  committed as one batch so synchronous seats cannot overwrite one another before assistive
-  technology observes them.
-
-### Dev-Bench Authority Boundary
-
-The `/dev/bench` cockpit scenarios replace transport only. Scenario switches revoke unresolved
-catalog, capability, snapshot, submission-poll, withdrawal, and connection ownership by generation
-before seeding the successor fixture. These reset exports are dev-only authority seams; production
-code must not use them as ordinary recovery APIs.
-
-The shared `dashboardStore.reset()` is the one full dashboard-projection reset used by
-`ScenarioPlayer`. Its single Zustand transaction increments `gen` once and restores every
-scenario-owned projection to its clean initial value, including `closeoutQueues`. This is dev/test
-scenario infrastructure: production does not call `reset()`, and production snapshot/delta queue
-ingestion, ordering/filtering, scheduling, and lifecycle authority remain unchanged.
-
-### 2026-07-24 Resilient Boot And Steady-State Work
-
-- `fetchWithTimeout.ts` aborts a hung browser socket. `inflight.ts` owns only per-key single-flight
-  lifetime: concurrent boot readers share result or rejection, then the identity-guarded slot clears
-  on settle. Repository, harness, terminal, and capability catalogs use the pair.
-- `sessions.ts` preserves state and row identity for a byte-identical catalog beat, while the
-  authoritative poll still replaces any row whose content differs from a local pre-apply.
-- `streamLiveness.ts` gives state and conversation EventSource channels a visible-tab watchdog: sleep
-  is positive evidence, ordinary silence earns at most one quiet cycle, and never-open replacements fail
-  honestly instead of retaining a live cue.
-- A queued receipt is acceptance evidence rather than pre-dispatch proof. The lifecycle authority alone
-  enables withdrawal; dispatching/unknown records wait for a terminal word under the bounded window.
-- Every representable pending adapter interaction uses the direct exact-session route with
-  bridge-epoch evidence. Structured questions send an all-or-nothing answers map; permission,
-  arbitrary-choice, and composer modes send one response string. Lifecycle gates do not transport
-  adapter answers.
-
-### 260731-EFA-L4 Typed Sub-Task Rows And Mirror-Checked Fixtures
-
-- `taskHierarchy.ts` — `ParentTaskMatch.ref` is a **`SeriesSubTaskNode`**, no longer the collapsed
-  `TaskSubTaskRefNode`. Those are two distinct server models (`projection.py::TaskSubTaskRefNode`
-  and `::SeriesSubTaskNode`, both `extra="forbid"`) that the browser mirror used to fold into one
-  interface, and the fold was not free: it invented a `createdAt` on master rows the server never
-  stamps, and lent `linkedLifecycleId` — the cross-series jump — to series rows that never carry
-  one. `findParentTaskMatch` reads `series.subTasks`, so its match is a SERIES row by construction;
-  the narrowed field just says so. `types/projection.ts` now declares both models plus a
-  `SubTaskRow` union for the renderer that shows either.
-- `orderedByCreation` is now **exported** and is this route's single creation-order sort.
-  `panels/DetailPanel.tsx` carried a byte-identical second copy (its own `function
-  orderedByCreation`) and now imports this one instead. The rule is **all-or-nothing**: rows are
-  reordered only when EVERY row carries a `createdAt`, so a partially-stamped list keeps its
-  authored order rather than sorting the stamped rows to the front. A row type that declares no
-  `createdAt` at all — a master's `TaskSubTaskRefNode` — therefore passes through untouched by
-  construction. It is an order-preserving safety net, not the thing that establishes the order:
-  `observer/snapshots.py::_series_subtask_nodes` already applies the same all-or-nothing rule
-  server-side before the rows are served.
-- The route's test suites no longer author their own wire nodes. **Six** of the route's seven
-  changed suites — `interactionAnswer`, `railModel`, `seatEvents`, `setClient`, `store`, and
-  `taskIdentity` — now import the shared builders from `test/fixtures/wire.ts`, which removed the
-  casts that let a fixture assert past the mirror (`as unknown as LifecycleProjection`,
-  `as TaskDocNode`, `as ObserverEvent`, `as never`). The seventh, `taskHierarchy.test.ts`, builds no
-  wire node at all — its only change is the same `TaskSubTaskRefNode` → `SeriesSubTaskNode`
-  narrowing as its source. The cost of the casts is measured rather than hypothetical: a test
-  asserted `refusedPolarity === "amber"` against a fixture that set the field itself on an
-  `extra="forbid"` model, and three tests built a master `TaskDocNode` carrying `createdAt`, which
-  no server model declares. Both compiled, because an assertion turns off excess-property checking.
-- `store.test.ts` is the one suite in the route where the conversion changed what is proven, not
-  just how the fixture is written. It consumed the snapshot as
-  `snapshot as unknown as WorkspaceProjection` — a double cast that turned off assignability, so
-  the fixture could drop a field the store reads and nothing here would notice. It now goes through
-  `test/servedProjection.ts::asServedProjection`, whose parameter type is the check. Its
-  hard-coded `expect(state.metrics?.lifecycleCount).toBe(2)` also became
-  `FIXTURE_LIFECYCLES = projection.lifecycles.length`: the snapshot grew from two lifecycles to six
-  once `contract.test.ts` began requiring every member of every closed vocabulary to be exercised,
-  and six states need six lifecycles.
-
-## Invariants And Boundaries
-
-- **Fixtures are checked against a generated producer contract.** Every wire node a dashboard test
-  builds comes from `test/fixtures/wire.ts` and is type-checked against `types/projection.ts`, which
-  is generated and stale-checked from the Pydantic projection schema. `test/contract.test.ts` measures
-  the separate hand-maintained sample against that mirror
-  `fixtures/snapshot.json` in three directions, and `test/wireFixtureGuard.ts` sweeps the tree for
-  the one-token opt-outs plain `tsc` cannot see (a cast, a `@ts-expect-error`, a literal that lost
-  freshness through a variable, `Object.assign`, `JSON.parse`). `wire.ts` and `snapshot.json` remain
-  hand-maintained fixture/sample artifacts, while the producer-to-TypeScript link is generated. The
-  tests therefore hold fixtures and sample coverage to the generated contract; the generator and
-  stale check hold the contract to the producer schema. Check it with `npm run typecheck`
-  (`tsc -b`) — a bare `tsc --noEmit` proves nothing in this repo, because the root tsconfig is
-  solution-style and compiles no files while still exiting 0.
-- The terminal catalog and bridge responses are authoritative; browser state is a projection and
-  cache, never a replacement history database.
-- Session creation is response-authoritative: only a validated accepted server row may enter the
-  browser registry, receive focus, or become a delivery target. Failed requests create no row.
-- One shell-level catalog driver/reconciler serves every route and tab. View remounts must not create
-  a second timer or listener.
-- `focusedSessionId` may name a landed/ended row for inspection; `activeId` must name a live row for
-  actions. Catalog hydration must not steal deliberate landed focus.
-- Reliable submit and withdrawal preserve request identity. Never resend blindly after an ambiguous
-  boundary and never implement pop-back as a local-only deletion.
-- Operator text, agent-bus messages, lifecycle control, and adapter interaction answers remain
-  distinct authority channels. The structured conversation UI consumes
-  adapter-normalized history/resume from the landed L1/L2/L3 server contracts; it never scrapes or
-  duplicates vendor TUIs, and it holds only a reconstructable projection — no durable browser
-  conversation index and no optimistic durable item authority.
-- Controlled sessions default to the structured `ConversationSurface`. The runner line-log survives
-  only as the default-off read-only terminal-diagnostics drawer and the legacy-raw body. UA-1
-  history/index/resume is now served by the `conversation/` and `conversation-library/` projections
-  documented above.
+This route owns retained dashboard projection state, task/document identity and transport clients for review, change sets, requirements, notes, files, Knowledge and developer grants. Browser state consumes server facts rather than creating a second canonical task, lifecycle, delivery or knowledge authority. The removed terminal catalogue, session/seat store, submit/answer/launch transport and conversation/composer data routes are not current owners.
 
 ## Hot Path Summary
 
-TES-L6 adds sprint-qualified command-seat projection here: terminal rows carry stored
-repository+sprint provenance, `railModel.ts` groups architect/orchestrator/manager by that pair,
-and unbound historical rows remain in a migration-only bucket. For concurrent-sprint grouping or
-ownership-display bugs, start with `sessions.ts`, `railModel.ts`, and their focused tests.
+1. store.ts and selectors.ts retain and derive served native TaskEntry facts without reconstructing a lifecycle/series hierarchy. taskReference.ts spells repository-qualified document and opaque entry selection keys; taskIdentity.ts compares exact references and names the document-backed role-chat leaf. The removed taskHierarchy.ts is not a current client authority.
 
-1. `terminalOpen.ts` validates the sole open request and yields an accepted server row or a typed
-   failure without mutating browser state.
-2. `sessions.ts` commits only the accepted row; catalog reconciliation then keeps terminal truth
-   current while data-layer stores derive focus, lifecycle, control, and delivery
-   evidence without replacing daemon truth.
-3. The canonical Chats cockpit projects those stores into rail, stage, inspector, composer, and
-   status surfaces.
-4. Submit, answer, set, attach, terminate, cleanup, and withdrawal operations cross their dedicated
-   authority routes before local state commits.
-5. Cross-tab invalidations trigger one confirming catalog read; generation guards discard results
-   owned by a retired dev scenario.
+2. stream.ts consumes projection snapshots/deltas; streamLiveness.ts, screenWakeLock.ts, fetchWithTimeout.ts and inflight.ts coordinate browser transport timing and ownership.
 
-## Child Route Onboarding Map
+3. Review entry/summary/catalogue and comparison transports carry selected server identity and typed answer/refusal states. Tree and lane clients are used only where a comparison exists; transport acceptance is not complete schema decoding or dataset truth.
 
-| Child route | Governing overview | Responsibility |
-| --- | --- | --- |
-| `dashboard/src/data/keymap/` | [keymap overview](keymap/overview.md) | Static/effective keyboard bindings, focus zones, browser safety, and composer profiles. |
-| `dashboard/src/data/conversation/` | [conversation overview](conversation/overview.md) | Reconstructable active-conversation projection: pure reducer, resumable stream, store/LRU, formats. |
-| `dashboard/src/data/conversation-library/` | [conversation-library overview](conversation-library/overview.md) | Reconstructable previous-conversation library projection and the exact-open resume flow. |
+4. Task-document body, artifacts, reports, notes, files and requirements use their dedicated readers. Knowledge selections and hash navigation remain separate from task projection.
 
-## File Onboarding Map
+5. actions.ts retains attention dismissal only; directExecutionGrant.ts carries explicit Give/Revoke to server-owned grant authority. Neither creates local approval or a hosted session.
+
+6. Current asynchronous generation ownership prevents retired reads from replacing successor surfaces. Retained development reset/fixture evidence is not product execution.
+
+## Construction And Ownership
+
+`store.ts` constructs the bounded-read owners for the dashboard store: `TaskDocumentResources` for task bodies, and three `ConditionalReads` instances for change-set lists (`changeSets`, capacity 256), file diffs (`changeSetFiles`, capacity 64 and 16 MiB byte bound) and intent summaries (`intentSummaries`, capacity 128). Clients consume these store resources rather than keeping an independent mounted-reader cache.
+
+The route has a child review-keymap overview and separate panel/view owners. Keymaps retain browser-forbidden validation and chrome/review routing, not composer profiles or PTY interception. React consumers own rendering; Python applications and configured serving ports own canonical authority and answer classification.
+
+The review page’s shown-set card reader sorts and deduplicates its invariant IDs, sends chunks of at most 500, and merges chunk answers in order. Its bounded shared answer/in-flight store is keyed on complete task/comparison/chunk identity. Selection makes no card request of its own. Failed acquisitions and transient after-index memory failures remain visible per mount and are retried on Refresh or remount; stable answers and genuinely unconverted record state are retained. This is separate from selected-subject/walk storage.
+
+reviewTrees.ts carries the four code/memory trees and pinning refs, knowledge and index degradation, reopened code-side state, currentness, worklist/history linkage, supplied implementation facts and realization/proof entries on both code sides. Its leaf-wide answer also carries the leaf's highest recorded comparison number, kept apart from the comparison the answer resolved, and the delivered notice: whether the shown comparison is the pair the leaf delivered, with that pair's trees. The leaf-wide result no longer carries an aggregate memory diff grouped by record/source; standalone knowledge-tree comparison is a separate owner. Its vocabulary is snake_case. Requests address live, recorded or numbered comparisons and optionally invariants, not arbitrary paths/tree IDs. Trees, not-converted and refused are distinct answers. The card-entry hook shares in-flight reads and suppresses callbacks after unmount without aborting the shared acquisition; the leaf-wide hook aborts superseded reads and uses sequence guards and retries only reviewer_busy/inputs_changing, up to seven retries after the initial read with delays 1500, 2000, 3000, 4000, 5000, 6000 and 8000 ms. Loading remains until the final outcome, and abort ends the wait. Claims that the server stops work on disconnect require server-path evidence beyond the client abort itself.
+
+Catalogue and summary readers accept an optional recorded comparison number. They transmit it to their own endpoints and include it in their local/retained question identity, preserving the separate leaf-scoped invalidation and generation guards. The summary can wait disabled until the number is known. review.ts no longer declares or exports the source-content expansion client. reviewFamily.ts additionally mirrors the selected revisions’ display versions and writer state/owners/detail.
+
+The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads.
+
+## Invariants And Boundaries
+
+Missing/unavailable/refused answers stay distinguishable from empty data. A declared client type is not a runtime validation guarantee. Source inspection, inherited fixtures and citation renewal provide no new UI, host, test or whole-build acceptance.
+
+## Historical And Verification Limits
+
+Earlier terminal/session/conversation and hosted-delivery accounts are withdrawn as current route facts. Historical producer lists and independent CODE verdicts remain their own bounded evidence, not a new grade from this overview.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
+| Field                  | Value                                            |
+
+| ---------------------- | ------------------------------------------------ |
+
+| sourceRoute            | `dashboard/src/data/`                            |
 
 | Responsibility | File onboarding |
+
 | --- | --- |
-| Catalog and session registry | [catalogPoll.ts](catalogPoll.ts.md) · [sessions.ts](sessions.ts.md) |
-| Cockpit state and announcements | [sessionCockpitStore.ts](sessionCockpitStore.ts.md) · [announcer.ts](announcer.ts.md) |
-| Lifecycle and cleanup | [sessionLifecycle.ts](sessionLifecycle.ts.md) |
-| Reliable submit and withdrawal | [submitClient.ts](submitClient.ts.md) · [submissionLifecycleClient.ts](submissionLifecycleClient.ts.md) |
-| Control/capability truth | [capabilityCatalog.ts](capabilityCatalog.ts.md) · [setClient.ts](setClient.ts.md) |
-| Role/spawn rail derivation | [railModel.ts](railModel.ts.md) |
+
 | Runtime bundle identity | [buildIdentity.ts](buildIdentity.ts.md) |
+
 | Bounded boot transport and single-flight ownership | [fetchWithTimeout.ts](fetchWithTimeout.ts.md) · [inflight.ts](inflight.ts.md) |
-| Strict pre-session harness discovery | [harnessCatalog.ts](harnessCatalog.ts.md) |
-| Authoritative terminal open | [terminalOpen.ts](terminalOpen.ts.md) · [terminal.ts](terminal.ts.md) · [sessions.ts](sessions.ts.md) · [launchFlow.ts](launchFlow.ts.md) |
-| Durable terminal transport | [terminal.ts](terminal.ts.md) · [terminal.test.ts](terminal.test.ts.md) |
+
 | Stream liveness and visible-tab wake policy | [streamLiveness.ts](streamLiveness.ts.md) · [screenWakeLock.ts](screenWakeLock.ts.md) |
 
-## Docs References
+| Review client family mirror | [reviewFamily.ts](reviewFamily.ts.md) |
 
-The curator checked the memory repository's `system/sources.md`; it contains “No entries configured
-yet,” so no Domain Documentation source was available for this route. The current statements were
-verified from same-repository source/tests, the task/worker/reviewer records, and the recovered
-same-repository history pack.
+## Grant mutation adapter
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for the data route. | — | — |
+directExecutionGrant.ts posts Give/Revoke to the developer endpoint and preserves typed refusal. The adapter shapes transport only; product grant and ordinary-start authority remain server-owned.
 
-## Cross-Repo References
+## Current Behavior
 
-The data route's imports and authority calls resolve inside agents-remember; no cross-repository
-implementation source governs this slice. Adapter behavior is consumed through this repository's
-own server contracts, so no external code path is cited as authority.
+the store's three `ConditionalReads` resources now own reference-counted pending fetches: a same-facts joiner receives its own wait over one fetch, a leaving owner cannot abort a live joiner, and the last waiter removes the entry before aborting. `TaskDocumentResources` uses the same waiter rule and `abortableRead.ts` supplies `abortedRead`/`isAbortedRead`/`withAbort`. The task entry's change-set bar, summary and body abort their own reads on a selection change, and an aborted read is not rendered as a failure. The capacity/byte limits and the 256/64/128 resource capacities are unchanged. Earlier sentences that describe a different-facts read as simply aborting the older controller are historical; the waiter count is now part of the contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found for these browser state/authority modules. | — | — |
+## Source-content transition and retained historical references
 
-## Repo-Internal References
+A4-F5 removes SourceContent.tsx, the source-content client and its wire mirrors from data/review.ts, and the expression-card Full file path. The prior client/renderer captions below describe that earlier UI, including its shared transport decoder; they do not claim those consumers survive. The Python source-content models, application reader and serving endpoint remain separate backend API owners. Current changed-file inspection opens the existing viewer on the recorded comparison, and cards keep focused excerpts rather than their own Full file expansion.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Catalog/session ownership and cross-tab reconciliation. | "export function captureCatalogAuthority", "export function notifySessionCatalogChanged" | dashboard/src/data/catalogPoll.ts:44-44; dashboard/src/data/sessions.ts:116-116 |
-| Per-seat UI and evidence state. | "export type EvidenceTier" | dashboard/src/data/sessionCockpitStore.ts:18-18 |
-| Reliable submission and authoritative withdrawal. | "export function createFetchSubmitTransport", "export const VISIBLE_STATUS_POLL_MS" | dashboard/src/data/submissionLifecycleClient.ts:18-18; dashboard/src/data/submitClient.ts:238-238 |
-| Lifecycle termination, residuals, and landed cleanup. | `startRetireResidualSweep` | dashboard/src/data/sessionLifecycle.ts:136-154 |
-| Structural task hierarchy and diagnostic spawn ancestry are built as separate models. | `buildRailModel`; `buildSpawnTree` | dashboard/src/data/railModel.ts:408-434; dashboard/src/data/railModel.ts:462-484 |
-| The shared creation-order helper sorts only when every row has createdAt; unstamped task-document rows retain input order. | `orderedByCreation` | dashboard/src/data/taskHierarchy.ts:145-150 |
-| The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. | `dashboardStore`; `reset`; `ScenarioPlayer` | dashboard/src/data/store.ts:55-55; dashboard/src/data/store.ts:329-401; dashboard/src/dev/ScenarioPlayer.tsx:21-107 |
-| Series sub-task rows carry optional creation time; task-document sub-task references have a separate shape and share a union for readers. | "export interface SeriesSubTaskNode", "export interface TaskSubTaskRefNode", "export type SubTaskRow" | dashboard/src/types/projection.ts:560-560; dashboard/src/types/projection.ts:792-792; dashboard/src/types/projection.ts:814-814 |
-| The server series builder sorts only fully stamped rows before projection. | `_series_subtask_nodes` | mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py:314-331 |
-| The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. | "GENERATED FILE", "is NOT generated; it remains a hand-maintained", "fixture-coverage guard", "def check", "def main" | dashboard/src/test/contract.test.ts:24-24; dashboard/src/test/fixtures/wire.ts:22-22; dashboard/src/types/projection.ts:1-1; scripts/sync-projection-types.py:46-46; scripts/sync-projection-types.py:57-57 |
+The following reference captions describe the prior source epoch. They are preserved as history; their reference numbers below are inert and do not claim current frontend consumers.
 
-## Current Requirement Artifact Boundary
+> - Changed-file navigation belongs to the comparison page ChangeList; SourceContent renders the selected source operands. The retired SourceExplorer is not a current owner. (historical reference 42)
 
-`requirements.ts` reads registered requirement documents using a canonical task selector plus document identity; it does not expose arbitrary-path reads. `taskArtifacts.ts` owns the shared target union so notes and requirement documents carry distinct selectors through the same reader surface. Structured requirement rendering retains the backing document identity rather than treating an arbitrary Markdown link as registered authority.
+> - **The six-member state literal and optional-text side mirror preserve the server contract. This interface is not a discriminated text/state validator and shared transport does not enforce a complete payload guarantee.** (historical reference 43)
 
-## Placement Decision
+> - **The expansion value: both sides, both generation ids, the three-member currentness, and the `path_bound` that says which measured change set admitted the path.** (historical reference 44)
 
-New overview routes for `dev/` and the cockpit-scenario files were considered. Their code is a
-bounded test/fixture authority seam and remains governed by the root overview; creating another
-overview would fragment the product architecture. The high-churn state/authority modules instead
-receive this `data/` overview, while `keymap/` remains its own child and `session-cockpit/` remains
-the UI composition owner. Detailed legacy grouping knowledge was preserved here and in the
-session-cockpit overview before the six obsolete sidecars were removed.
+> - **The source-content envelope whose two states are the two answers this route gives, a refusal being a normal one.** (historical reference 45)
 
-## 260727-CHATS-IM-L2 Route Impact
+> - **Source-content uses the same shared `getReviewJson` status-bearing decoder as the other review reads; the retired direct-fetch exception is historical, not current transport ownership.** (historical reference 46)
 
-Conversation roster derivation now accepts only backend-minted roster identities. Other
-agent-tagged notices, including selected-child history state, remain conversation items and cannot
-create duplicate seats. No catalog, submit-machine, or session-registry ownership changed.
+> - **The generation as an input: the caller's two published tree ids, echoed back in the spelling the route binds.** (historical reference 47)
 
-## 260831-CCR-L23 Task-Local Requirements Client
+> - ExpressionCards.FullFile forwards inventory before/after tree IDs to SourceContent; without both it renders the explicit generation-unavailable message. (historical reference 48)
 
-L23 added the task-local requirement-packet client to this route: `data/requirements.ts`
-(typed `listRequirements`/`readRequirement` over `/api/requirements/{list,read}` plus the
-reserved `requirements/` address/reference resolvers) and the shared
-`data/taskArtifacts.ts` discriminated reader target (`TaskArtifactReaderTarget`: notes vs
-requirements with the task-document selector). Consumers: the requirement-link provider, the
-notes-reader viewer, TaskNotes references, and detail-panel task prose.
+> - The renderer the expansion's fields feed, and its three state-decided branches. (historical reference 49)
 
-## Update History
+## Evidence
 
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T10:16+02:00 — 260913-LCA-L10 curator: re-anchored one citation into `snapshots_impl/_task_documents.py` after that file grew by 52–57 lines for the tolerant read edge (the server series builder `_series_subtask_nodes` moved 260-277 → 314-333; the cited file changed, this route's own sources did not). No dashboard source, renderer, or fixture is in that change set, so the route's behavior and ownership contract are unchanged. Verification metadata unchanged; no verification stamp advanced.
+- The endpoint the comparison call reaches, with no path among its parameters.
 
+- A superseded request is aborted and only the newer answer is shown.
 
+- Review reads share shallow state-bearing-body transport recognition across HTTP statuses.
 
-- 2026-09-05T07:20+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added the registered requirement artifact boundary and repaired creation-order/model evidence to the real owners. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+- Entry catalogue refusal does not remove task-context review reachability.
 
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the new `requirements.ts` client + `taskArtifacts.ts` artifact-target type modules. File-level detail in the new data cards.
+- The change-set read requests the page's own comparison — `chosen ?? resolved`, the number the page chose else the default the frame's limitations name (`useChangeSet.ts:120-124`) — and enables the leaf-wide trees read on that number (`:129`); a chosen number other than the resolved default is marked older rather than replacing the frame.
 
+- Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. 
 
-- 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
-  route citations after reviewed source movement; the data-route ownership contract is unchanged.
-  Verification remains closeout-owned.
+- Whole-file review navigation opens the existing viewer on the recorded comparison; absent range authority produces comparison_not_recorded rather than a substituted source-content expansion. 
 
-- 2026-08-24T12:59+02:00 — 260821-DAGQC-L3 curator: recorded the route-level dev/test invariant
-  that the one canonical dashboard reset is total over scenario-owned projections, including
-  `closeoutQueues`, in one Zustand transaction. Production snapshot/delta queue ingestion,
-  ordering/filtering, scheduling, and lifecycle authority remain unchanged. Verification metadata
-  remains pinned until governed closeout stamps the code commit.
+- The leaf-wide trees answer carries the highest recorded number and the delivered notice beside the comparison it resolved. 
 
-- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
+Retired at the fifth freeze d59c3493: dashboard/src/data/reviewTrees.ts:474-562 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f. Retired means the anchor no longer stands, not that the cited subject was deleted. 
 
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 extends the route's volatile-age contract with lifecycle-operation `elapsedSeconds`: server and client strip the same field so operation clocks do not churn structurally unchanged enclosure rows. Verification provenance remains closeout-owned.
+- Retired at the fifth freeze d59c3493: dashboard/src/data/review.ts:435-460 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; dashboard/src/panels/review/reading/useChangeSet.ts:188-202 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/data/reviewTrees.supersede.test.ts:40-67 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; dashboard/src/data/reviewTransport.ts:162-183 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d21bc8a6c5d30e2394a72d056bff216b766407c2; dashboard/src/data/review.ts:649-673 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f; dashboard/src/data/reviewTrees.ts::mergedCards - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/panels/review/ReviewSurface.tsx::useReviewChangePage - the symbol it cited now occurs 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewSurface.tsx::ReviewChangeOverlay - the symbol it cited now occurs 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- 2026-08-11T23:40+02:00 — No route impact: the `railModel.ts` helper split preserves this route's
-  canonical task-document hierarchy, role-altitude placement, and spawn-provenance separation.
-  Verification metadata remains pinned until governed closeout.
+- The store owns task-document resources and separate bounded conditional-read caches for change-set lists, files and intent summaries. [108]
 
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled this route with the
-  task-document-addressed dashboard data changes; current bodies and file cards now describe
-  canonical `TaskDocumentRef` identity without treating a leaf key as agent routing authority.
+- The mirrored change types and the entry's optional facts. [1]
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: added the sprint-qualified command-group hot path and
-  migration-only legacy boundary. Verification metadata remains pinned until closeout.
+- One file's classification as a single read; a transport failure is `unavailable`. [2]
 
-- 2026-08-09T19:36+02:00 — 260713-TES-L5F2 route impact: the interaction-answer authority is
-  now uniformly exact-session-owned for structured and scalar payloads; lifecycle gates are not
-  an adapter response fallback.
-- 2026-08-08T21:20+02:00 — No route impact: 260713-TES-L1 renamed one store field
-  (`supervisorHeartbeat` → `agentNotifierHeartbeat`) with a legacy-wire fallback in `applySnapshot`;
-  the data route's shape and responsibilities are unchanged and the sidecar for `data/store.ts`
-  carries the detail. Verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
+- The scope that keeps it per surface, only for a tree comparison. [3]
 
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (terminal refactor, submissionWithdrawal extraction, validated narrow). Verification metadata stays pinned until closeout stamps the code commit.
+- The adapter's own statement: the server classifies once and this file only carries the answer. [4]
 
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: replaced the `n/a` table rows with
-  exact anchors and fixer-generated ranges, and deleted two rows whose onboarding-overview sources
-  are not indexable; exact non-fixing check returns zero findings.
+- The lane hook and the per-file single read share the classification transport; a dataset review names no tree comparison. [5]
 
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected the data-route projection boundary:
-  generated/stale-checked mirror, typed fixture builders, and separately measured manual sample.
-  New ranges are explicit `:1-1` curator input.
+- The summary carries the lane's count on both answered states. [6]
 
-- 2026-08-01T10:20+02:00 — 260731-EFA-L4 curator (route impact: one source file, one type contract
-  and one shared helper): `taskHierarchy.ts` is the only non-test source this leaf changed in the
-  route, and it moved twice. `ParentTaskMatch.ref` narrowed from the collapsed `TaskSubTaskRefNode`
-  to `SeriesSubTaskNode` — `findParentTaskMatch` reads `series.subTasks`, so the match was always a
-  series row, and the collapsed interface had been claiming a `createdAt` on master rows the server
-  never stamps plus a `linkedLifecycleId` on series rows that never carry one. And
-  `orderedByCreation` became exported: `panels/DetailPanel.tsx` held a byte-identical copy at the
-  leaf base (`git show HEAD:…/DetailPanel.tsx` L1219-L1224 against `taskHierarchy.ts` L134-L139 —
-  the same six lines) and now imports the one authority. Recorded the all-or-nothing rule and the
-  fact that `observer/snapshots.py::_series_subtask_nodes` already applies it server-side, so the
-  browser copy is a safety net rather than the source of the order. Also recorded the fixture
-  conversion — SIX of the seven changed suites now import `test/fixtures/wire.ts`; the seventh,
-  `taskHierarchy.test.ts`, builds no wire node and only follows the source's type narrowing
-  (checked by grepping each file for `test/fixtures/wire`) — and singled out `store.test.ts`, the
-  one suite where the conversion changed what is proven: `snapshot as unknown as
-  WorkspaceProjection` became `asServedProjection(snapshot)`, and a hard-coded lifecycle count of 2
-  became the fixture's own length, now 6. Recorded as an invariant exactly how far all of that
-  pins anything: `fixture ⊆ mirror` is enforced (`tsc -b` plus `wireFixtureGuard.ts`), mirror-against-
-  snapshot is enforced by `contract.test.ts` in three directions, and **`mirror ⊆ server` is enforced
-  by nothing** — both `test/fixtures/wire.ts` and `fixtures/snapshot.json` are hand-maintained and
-  no generator exists in this repository. Checks run: `npm run typecheck` (`tsc -b`) exits 0 across
-  the three referenced projects; `tsc --noEmit` is NOT a check here and was not used as one. Three
-  `Repo-Internal References` rows added. Verification metadata remains pinned until closeout stamps
-  the commit.
+- The shareable hash, read and written. [7]
 
-- 2026-07-30T12:51+02:00 — 260727-CHATS-IM-L2 curator: roster derivation now accepts
-  only explicit backend roster identities (`codex-agent-`/`claude-agent-`), so selected-child
-  history state and other agent-tagged notices remain transcript content rather than duplicate
-  seats. Verification metadata remains pinned until closeout.
+- A typed answer returned whatever its status; only transport failures throw. [8]
 
-- 2026-07-26T15:40+0200 — 260718-CHATS-L7 curator (route impact: one derivation rule): recorded the
-  review-N1 plural pending rule in Catalog And Session Identity — `controlPendingInteractions?` is
-  the additive multiplexed sub-agent plural beside the parent-thread singular slot, and every
-  attention surface derives from `sessions.ts`'s `sessionHasPendingInteraction` (singular OR
-  non-empty plural) so an agent-only-blocked seat never goes dark. Detail in the
-  [sessions.ts](sessions.ts.md), [stateGrammar.ts](stateGrammar.ts.md),
-  [announcer.ts](announcer.ts.md), and [railModel.ts](railModel.ts.md) sidecars. Source is
-  uncommitted; closeout re-stamps verification.
+- The selection block every answer carries. [9]
 
-- 2026-07-24T13:17:50Z — Route impact: added the resilient boot/steady-state model for bounded
-  transport + single-flight, no-op catalog reconciliation, one-shot SSE liveness, lifecycle-terminal
-  submit settlement, and direct structured interaction answers. Added the new data file cards;
-  verification metadata remains pinned until the code commit.
+- The three locator declarations. [15]
 
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the R9 (audit V5) live-turn seat-state
-  nuance in Catalog And Session Identity — `OpenSession.liveTurnWorking?` is the single
-  projection-sourced ephemeral field (view-layer merge for the focused seat only; `sessions.ts` never
-  writes it, accepted-server-row materialization unweakened), and `stateGrammar.ts`'s
-  `seatVisualState` prefers it over the sweep-lagged catalog `turnState` strictly after the
-  terminal/fault/blocked/wait guards. Detail in the [sessions.ts](sessions.ts.md) and
-  [stateGrammar.ts](stateGrammar.ts.md) sidecars; the `conversation/` child route carries the R10
-  hydrate-retry truth in its own overview. Verification stays pinned until L5F closeout stamps the
-  candidate commit.
-- 2026-07-21T05:30+02:00 — No route impact: 260718-CHATS-L5P (cockpit chrome visual polish) touched one
-  `data/` source — `conversation/format.ts` gained the `shortId` helper (R6) and its `humanizeDuration`
-  became the cockpit-wide single duration authority (R5). Both are presentation conventions inside the
-  `conversation/` child route (recorded in [conversation/overview.md](conversation/overview.md) and the
-  `format.ts` card); the `data/` route model and every state/authority contract are unchanged.
-  Verification metadata unchanged.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 curator (structured Chats renderer, reviewer FINAL PASS):
-  added the two child routes `conversation/` (reconstructable active-conversation projection — pure
-  reducer + resumable stream + store/LRU) and `conversation-library/` (reconstructable
-  previous-conversation projection + exact-open flow), the Structured Conversation Projection route-
-  model section, and corrected the stale invariants — the structured conversation UI is now landed and
-  consumes adapter-normalized history/resume as a reconstructable projection (no durable browser
-  index), and controlled sessions default to the structured surface with the line-log demoted to a
-  read-only diagnostics drawer. Verification metadata remains pinned pending L4 candidate closeout.
+- The member source carrying them. [16]
 
-- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: documented `terminalOpen.ts` as the sole browser open
-  authority, accepted-server-row-only registry mutation, raw-response contradiction checks, shared
-  launch delegation, and request-matched dev fixtures. Verification metadata remains pinned pending
-  candidate closeout.
+- `useReviewCatalogue` owns the behavior described above. [17]
 
-- 2026-07-18T12:43+02:00 — FEUI-L9R: added browser build identity, strict harness discovery, and
-  explicit durable-terminal recovery ownership. Verification metadata remains pinned pending
-  candidate closeout.
+- The entry's summary read and its re-validation generation. [18]
 
-- 2026-07-18T07:22+02:00 — Created during 260715-FEUI-L8 curation to own catalog/session state,
-  reliable submit and withdrawal, lifecycle cleanup, control-authority boundaries, and the
-  `sessionGroups` → `railModel`/`SessionRail` duty transfer. Verification metadata remains pinned to
-  the leaf base because the reviewed L8 candidate is uncommitted; closeout owns candidate stamping.
+- The server builds one native task forest from declared child rows; the browser no longer runs the removed creation-order hierarchy helper. [24]
+
+- The one full scenario-store reset restores every projected collection, including `closeoutQueues`, in one transaction and is invoked by the development scenario player. [25]
+
+- The route's read-only client and its comparison call. [29]
+
+- **The reviewed subject as the server's catalogue lists it — presence beside the label, the count field deleted (`ICR-R09@v1`), still the entry's only legitimate selector source, with no path field on purpose.** [31]
+
+- **The entry read's typed envelope, whose refused form carries a refusal and no entries rather than throwing, and whose answered form carries the labelled totals of the whole catalogue.** [32]
+
+- The closed selector union, the two kinds the server admits. [34]
+
+- The no-store-mutation boundary, stated in the module header. [35]
+
+- The typed result the client returns unchanged. [36]
+
+- The TypeScript interfaces declare a client display projection, not a field-for-field Python mirror: ReviewSourcePane omits relationships, unknown_attribution_changed_paths and attribution; ReviewMovement is a common displayed subset. This is not a claim of runtime field loss. [37]
+
+- **The inventory's wire types, including the byte form of a name this surface cannot print.** [38]
+
+- **The comparison identity that states whether knowledge was compared, and the staleness union that gained the task-context state.** [39]
+
+- The payload whose comparison may be absent, and the pane that says which question was answered. [40]
+
+- **The request that omits the selector when there is none — the task-context entry.** [41]
+
+- The leaf-wide tree answer carries optional currentness, worklist, implementation facts and focused entries, not an aggregate memory-diff field. [109]
+
+- **The generation pins, the published generation identity, and the pins threaded through both master reads.** [54]
+
+- **The new family mirror module, and the re-export that keeps `data/review.ts` the route's one public entry.** [55]
+
+- **The bounded-collection union that lists `family_members` because the server accepts it, and the mirror that never narrows it.** [56]
+
+- **The set a request may name with no cursor, and the reason `family_members` is not in it.** [57]
+
+- **The optional family context whose absence says the body did not come from this route.** [58]
+
+- An incoming link may carry the record its history-row source is about. [59]
+
+- Loading stays shown during the retries. [72]
+
+- Unavailable is shown only after the bounded number of retries. [73]
+
+- No camelCase key in the real body. [74]
+
+- The module comment: one decode per read, nothing selected or substituted, and getJson unchanged. [75]
+
+- The tokens a reader can be shown. [76]
+
+- The codes and their tokens, with the two transient codes of the leaf-wide view. [77]
+
+- An unknown code is carried as domain-refused. [78]
+
+- The one GET: the optional abort signal, the body read whatever the status, and the two failures. [79]
+
+- The review client imports and re-exports the transport surface. [80]
+
+- A 404 typed refusal resolves through the review client with the refusal intact. [81]
+
+- The same body is dropped by getJson: the shared client's semantics are unchanged. [82]
+
+> Retained earlier citation wording: - selectors.ts changes only the memory-mirror comment from drift_check to drift reporting. driftSegments still uses projec — source ownership, not executed visual proof. [83] [84]
+
+- driftSegments reads snapshot counts, returns no segments for a zero total, orders known classifications before unanticipated ones, and emits counts with rounded percentages. This is source ownership, not executed visual proof. [83]
+
+- driftSegments reads snapshot counts, orders known classifications before additional supplied classes and computes rounded percentages. EngineRoomImpl separately consumes stable process and ledger slices; this is source ownership, not fresh executed visual proof. [84]
+
+- Present paging excludes records and allows only knowledge without a cursor. [87]
+
+- Refresh empty-string normalization is specific, rather than universal query normalization. [89]
+
+- Change-set refusal reasons are carried by the current decoder. [91]
+
+- Requirement reads forward context and a path; registered address resolution is listing-based. [92]
+
+- Artifact reader targets also include task reports and decisions. [93]
+
+- Reader transport uses a 120-second bound and accepts a string-state body across statuses. [98]
+
+- Reader hash writer omits empty subject keys while preserving explicit repository/commit. [99]
+
+- Lane missing values become unavailable; undefined comparison suppresses the lane hook's request, while the marker client remains promise-based. [100]
+
+- Entry intent counts and attribution share one response with distinct counted/partial/unavailable states. [101]
+
+- Family change facts and source locator meanings are mirrored rather than recomputed. [102]
+
+- Browser selection keys carry the server entry key verbatim, rather than reconstructing a hierarchy or partially stamped creation ordering. [104]
+
+- Volatile-age equality includes elapsedSeconds. [105]
+
+- Full scenario reset increments generation once and clears closeout queues. [106]
+
+- Drift display consumes reporting counts; `selectors.ts` defines no provider groupings. [107]
+
+- The review wire mirror transports recorded meaning steps with their own attempts/revisions and distinguishes readable none from unavailable. [85]
+
+- The served TaskEntry mirror carries optional document reference, identity, state, parent/children and counts; no separate series-child consumer union is part of the native entry model. [26]
+
+- Membership links each child to one deterministic parent and rejects a cycle; the removed series creation-sort builder is not the current producer. [27]
+
+- The generated projection mirror this route's suites build fixtures from, the manual sample used for coverage, and the fixture/projection stale gates. [28]
+
+- The module comment: what the adapter carries and the three answers it keeps apart. [60]
+
+- The answer of the route. [61]
+
+- One entry on both code sides. [62]
+
+- The request, addressed by number, recorded or invariants, with the optional signal. [63]
+
+- The transient codes and the retry delays. [64]
+
+- The bounded retry of a transient refusal. [65]
+
+- One answer as a read state. [66]
+
+- The comparison a payload names; without it no tree read is made. [67]
+
+- The leaf-wide hook: abort on cleanup, sequence number, retry, and the enabled flag. [69]
+
+- Leaf-wide tree retry is bounded and its hook aborts/sequence-guards superseded reads; the card-entry hook shares in-flight acquisitions without aborting them, suppresses callbacks after cleanup and returns only its current question's cached answer. [103]
+
+- The retained Python source-content model declares six side states; its side validator requires text for present, permits text only for textual states, and keeps absent objects and textless truncation invalid. [43]
+
+- The retained backend expansion carries both requested tree identities, both side values, currentness, path-bound measurement and admission. [44]
+
+- The retained backend content/refused envelope enforces one expansion or one refusal, never both. [45]
+
+- The retained source-content endpoint serializes its port result and preserves unwired and incomplete-generation responses; the removed dashboard source-content client is historical. [46]
+
+- The retained backend request requires task context, path and both exact tree identities; the response assembly echoes the requested pair. [47]
+
+- The retained backend reader distinguishes an absent endpoint entry from an unreadable lookup, then classifies an entry's kind before its bytes. [49]
+
+- The card store admits stable answers and retries transient read failures instead of retaining them. [110]
+
+- Shown-set card reads sort and deduplicate at most500 IDs per chunk and merge in chunk order. [111]
+
+- The catalogue request transmits optional recorded comparison identity. [112]
+
+- Catalogue local keys include the optional number and forward it to the request. [113]
+
+- Intent summaries carry optional comparison identity and can wait until a number is known. [114]
+
+- The family mirror carries selected display versions and recorded writer observations. [115]
+
+- useChangeSetCards reads the page's shown invariant set in sorted distinct chunks of at most 500 and shares only admitted stable answers and in-flight acquisitions; inactive/unbound reads return null. [68]
+
+- Catalogue history/generation remain local keying inputs, while an optional comparison number is transmitted and included in the request identity; entries/totals can be locally defaulted, and incompatible semantic fields are quarantined. [90]
+
+- The catalogue call carries task context and an optional recorded comparison number; it requests navigation identities without a subject selector. [30]
+
+- The existing state stream also carries review.explainer.moved. Its listener ignores a stopped or replaced EventSource, marks a current event alive and publishes the supplied move or clear notice. The moved subscriber set is keyed by the exact repository, master and leaf; it opens no connection or model turn. ReviewSurface owns whether the notice offers Update or renews the deterministic live reads. Anchor: `publishReviewExplainerMoved` [117]
+
+- Changed-file navigation uses ChangeList in the existing comparison viewer; review openers bind its recorded comparison and retain a named unavailable-range answer. [42]

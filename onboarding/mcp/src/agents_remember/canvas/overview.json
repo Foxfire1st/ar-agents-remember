@@ -1,0 +1,269 @@
+{
+  "path": "mcp/src/agents_remember/canvas",
+  "references": {
+    "10": {
+      "note": "The host resolves an evidence reference only against the revision's own admitted packet, or refuses it by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4422d62baf17f38d797d6d80f2e3ecec80afc61d",
+            "content": "sha256:dd83d4dee3a1670a0631d29ee42171545e6c3108b7d7b188b5dc73fe22cc936d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_evidence_reference"
+            },
+            "path": "mcp/src/agents_remember/canvas/evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Publication loads the exact prospective revision once without a model before any ready pointer moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+            "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_prospective_load"
+            },
+            "path": "mcp/src/agents_remember/canvas/presenter.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The static readiness check refuses a page that names something its revision does not carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "content": "sha256:de3a88264aaed8d46e8c01191923f4836e40e77394e485e7e38271f786b90190",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_page"
+            },
+            "path": "mcp/src/agents_remember/canvas/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Kit files are served under the manifest's contract path only when the revision carries them and their bytes equal the manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+            "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "kit_assets"
+            },
+            "path": "mcp/src/agents_remember/canvas/kit.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A state-changing browser request from another page is refused with a named 403 before it reaches a route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+            "content": "sha256:65bfec270f239bff2aa3c9e27eb2b6bf6eab743ef1babc145d132176d38d0129",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefuseCrossOriginWrites"
+            },
+            "path": "mcp/src/agents_remember/serving/write_guard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Every request, reads included, answers only the dashboard's own host and port, against DNS rebinding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+            "content": "sha256:baa7496e08b8674445e4fc3626d179f9dbe5de8ee434d91430bae0d54c206750",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefuseForeignHosts"
+            },
+            "path": "mcp/src/agents_remember/serving/write_guard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The current implementation introduces bound grades, per-part staleness and explicit regeneration; the existing isolated-page, evidence and kit guarantees remain.\n\nAnchor: `parse_frame_message`, `parse_host_message`, `Presenter`, `EXPLAINER_SURFACE`, `build_seat`, `update_seat`, `retire_seat`, `_check_parts`, `part_staleness`, `GradeStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+            "content": "sha256:11a1ad2afc084c83d39327fc30e83c4ffbb59f8ef0a4d80495e8b2ebd226d479",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/protocol.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+            "content": "sha256:15342eb648138b47fd5c27cd077a86757e78bb48613c0cfbaa1ae4bd3452e3d7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/presenter.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74eef9c0dcde10b14d3df3f3c44214cb67d05201",
+            "content": "sha256:8344136c353ad91c81acedf77ba3919dd890803bb1c112b6da8eab273541542a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+            "content": "sha256:6bec01328ea0a358e850c6dfe008cf2e244bd0899ace1833867f97af054dbb40",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+            "content": "sha256:9c21082900e6e75f72e196d9f817747377189faf792020070fe5afab438a9c7f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/readiness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e8d70a583afb47057679f7c836cf3ba3ba14b582",
+            "content": "sha256:ccecc61c21b17e18782ef96265843941657ee0236c264b25ccb825a546e22ac9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_staleness.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b200cb46205832852ad5998ec9eb180146a847e2",
+            "content": "sha256:94425fe54db51c7058377a3449e8336461f13935eeaf5b3a761dec7943226022",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/explainer_grades.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67f8b73c7c956edb2e18c92195e786684ec8777b",
+            "content": "sha256:738f3495b5a4a1bd1e7bd24f1b9c607c7d31015c8e26577970f4af2e6c0dabcb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/canvas/canvas-prospective-load.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Revocation ends one channel or every channel of a frame, and the tombstone keeps the reason rather than the content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "463f5d42482415a98b7acd08b6be102c6dc95af2",
+            "content": "sha256:dd0fdfb9aa606d08603c4489690951b8861a9bb43c96c79345a5ba4847c4fa38",
+            "locator": {
+              "kind": "symbol",
+              "name": "revoke_frame"
+            },
+            "path": "mcp/src/agents_remember/canvas/sessions.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The binding is delivered to the admitted document, never to a navigated window, and departure is announced on pagehide.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "394fa0843197b351b30df497c037e39e84f249cf",
+            "content": "sha256:e3fa195d209072f30d66e80794e5481c369ad3bc928742dcf14a01883bab64c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_document"
+            },
+            "path": "mcp/src/agents_remember/canvas/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One protocol version with a closed operation set validates an envelope against the session's binding before any effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+            "content": "sha256:99c2debffd191b934cdb508e136796f9ff6367dda6d9db448d087287fce75502",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_frame_message"
+            },
+            "path": "mcp/src/agents_remember/canvas/protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A request is debited from the session's rate before the caller parses it, so refusal work is bounded as well.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7dce59b9b16e5cc0a57665565dc026afedcd294d",
+            "content": "sha256:8b0e2f4f9efa469fae3d6cb78edfabed12987f113ab7c36bd0c85426157d380b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequestLedger"
+            },
+            "path": "mcp/src/agents_remember/canvas/protocol.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

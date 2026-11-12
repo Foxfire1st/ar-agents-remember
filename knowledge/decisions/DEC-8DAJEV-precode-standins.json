@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The old forms were weighed and rejected; future grant, reader and publication changes must preserve the chosen product-owned boundary."
+  },
+  "alternatives": [
+    {
+      "option": "Preserve content gates and name tested direct actor/task-binding stand-ins",
+      "reason": "Exact-pair checks remain mandatory while rule11 and generation identity supply concurrency, recovery and canonical leaf ownership.",
+      "status": "chosen"
+    },
+    {
+      "option": "Require identical door/task-intent forms on a no-enclosure direct route",
+      "reason": "Those forms are not the direct owner; omitting their guarantees without tested replacements is not admitted.",
+      "reconsider_when": "Reconsider if a census difference loses its named stand-in or generation ownership changes.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Exact-pair checks remain mandatory while rule11 and generation identity supply concurrency, recovery and canonical leaf ownership."
+  ],
+  "context": "Ordinary closeout actor/task authority uses a door and task intent; direct publication has its own admitted generation.",
+  "decider": "Developer D63/D74 and canonical Architect MIK-R94 scope/two-check rulings",
+  "id": "DEC-8DAJEV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-NQKEQS"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R94",
+        "packet": "requirements/MIK-R94-v1-direct-execution-is-a-property-of-the-task.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D63/D74, canonical 2026-10-07 Architect grant/scope rulings and two-check ruling71f673a42c10f96961a71579ff71412ee6df331bc551e432f86b13094618f8f0; alternatives are the actual old settings/task-flag/enclosure/door forms weighed by those authorities."
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CUR-decision-precode-standins",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

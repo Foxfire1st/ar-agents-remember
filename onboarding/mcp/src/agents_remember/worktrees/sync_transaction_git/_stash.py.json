@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_stash.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "require_side_checkout: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
+            "content": "sha256:50793bd524b8366861a7d51098ec3b5e27accb5316b191a02fc027152176e2e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_side_checkout"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "clear_stale_git_locks: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
+            "content": "sha256:c910ee62a0c17d97dda10775a7456a15345ab2d6ca1e432c447ec3a13b3d5719",
+            "locator": {
+              "kind": "symbol",
+              "name": "clear_stale_git_locks"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "park_worktree_wip: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
+            "content": "sha256:e4b8115cb8983ebabc12b3d8a869980a91955e45365bdcf3e95920ea26a2c6f9",
+            "locator": {
+              "kind": "symbol",
+              "name": "park_worktree_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "apply_parked_wip: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
+            "content": "sha256:65b64237c4ae4e4e8d105904884db988ebba1a694004973367c6b84075b6ce73",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_parked_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "drop_parked_wip: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
+            "content": "sha256:9dd045aacc59e4cade7080d6e431a4a142e72655749697f27105874433d9bffb",
+            "locator": {
+              "kind": "symbol",
+              "name": "drop_parked_wip"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "discard_memory_cache_changes: qualified source contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b9d9aeaf2e52a5d764a430209a1f0ec793e5650",
+            "content": "sha256:30ee024b857f44ec240971a085e7e49adb1e8a90419914b735dff485d65fe1a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_memory_cache_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

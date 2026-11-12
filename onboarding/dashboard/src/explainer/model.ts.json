@@ -1,0 +1,140 @@
+{
+  "path": "dashboard/src/explainer/model.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+        "content": "sha256:9449d1e3cfb4239ccd59d4f5f4c49d52c69ce506966d317f86386dcebb70e75a",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentMenu"
+        }
+      },
+      "id": "RLZ-CM32TG",
+      "invariant": "INV-6P47B6",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE01-default-column",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Places the explainer first and filters additional chats by the exact task scope before the header can select them.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+        "content": "sha256:8f95989bc65f408648f072a4f66cbc81db33f312e0b242e0a25c01f65a8aea13",
+        "locator": {
+          "kind": "symbol",
+          "name": "retireConfirmation"
+        }
+      },
+      "id": "RLZ-SPWWQP",
+      "invariant": "INV-AKRFQY",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE03-retirement",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Names the seat, processes and workspace that end and the saved pages and grades that remain before confirmation.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A live, closed, missing or building seat selects the explainer, and no seat selects the placeholder",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "content": "sha256:b92b0a7d7140882a140a94a8abff064b5b846afea9efa12bbf95bd47ad50fff5",
+            "locator": {
+              "kind": "symbol",
+              "name": "columnSelection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A running build takes precedence over an open form",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "content": "sha256:7b412bfbb4a275615c6968f0f407809b483fd60859fab49111be548bc58ca782",
+            "locator": {
+              "kind": "symbol",
+              "name": "phaseOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Send is refused with nothing to send",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "content": "sha256:526d7332432f4e32e459910f04bdf4a607a428ee01f079712bfe41bfd3792450",
+            "locator": {
+              "kind": "symbol",
+              "name": "canSend"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A build's steps average into its whole percentage",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "content": "sha256:a3bf11c014b3d64479e08d7757c45937a29c9cffa68f5cdaaf041c5137d1d329",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildPercent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only a failed build names a failed step and a reason",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "content": "sha256:171e31cb59045b876b6ee125003240ed484128f3f1c3f1c17aa539808516a573",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildFailure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The menu holds the explainer first and excludes another task's, another repository's and another master's seats",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2330f724a16f373b40e3b6a4105337473746e70",
+            "content": "sha256:9449d1e3cfb4239ccd59d4f5f4c49d52c69ce506966d317f86386dcebb70e75a",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentMenu"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

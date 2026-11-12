@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents writing a document from a different or ambiguous input than the bytes the caller supplied."
+  },
+  "applicability": "Task-document text inputs admitted inline or by regular file on either supported transport.",
+  "conditions": [
+    "A selected file is read once within its byte budget, and its digest identifies the consumed input."
+  ],
+  "exclusions": [
+    "No input is accepted simultaneously inline and by file; no non-regular path or permission bypass is admitted."
+  ],
+  "id": "INV-MJB028",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "TaskDocByFileTests green: /tmp/mik-run3/L111/a06_fast.txt (65 passed, 78 subtests, exit 0); round-8 verdict notes/reports/reviewer/4889df77-3c01-4cc7-a6ae-344b459490bd/round-8/verdict.md"
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "L111-CODE-F01.8 / worker-A06",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "By-file text inputs ride both transports with the file digest in the answer, and same-input-both-ways plus non-regular inputs are refused before writing.",
+  "status": "proposed",
+  "supersedes": []
+}

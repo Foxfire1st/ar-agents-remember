@@ -1,15 +1,5 @@
 # dashboard/src/panels/changeset/DiffPane.tsx
 
-| Field                  | Value                                              |
-| ---------------------- | -------------------------------------------------- |
-| repository             | agents-remember                                    |
-| path                   | `dashboard/src/panels/changeset/DiffPane.tsx`      |
-| doc_type               | `file-level-onboarding`                            |
-| lastUpdated            | 2026-06-29T23:00+02:00                             |
-| lastVerifiedCommitHash | `7c56c11d651972515723b4090b8174087eb5236f`         |
-| lastVerifiedCommitDate | 2026-08-07T20:50:27+02:00|
-| governingOverview      | `overview.md`                                      |
-
 ## Governing Overview
 
 [changeset/ overview](overview.md)
@@ -26,32 +16,13 @@ across the L2 plain code pane and this diff.
 
 ### Logic
 
-Props are `{ before, after, language, mode: "split" | "inline", collapse? = true }`. A `ref` points at a
-host div; an effect builds the editor: **`langExtension(language)`** is awaited (the `@codemirror/lang-*`
-packs are code-split), guarded by a `disposed` flag against a late resolve after teardown. The shared
-`base` extension array is `lineNumbers()`, `EditorState.readOnly.of(true)`,
-`EditorView.editable.of(false)`, `EditorView.lineWrapping`, `codeTheme`, plus the resolved language when
-one exists. `collapseUnchanged` is `{ margin: 3 }` when `collapse` (the change-set view) else `undefined`
-(full-file view shows everything). For `split`: `new MergeView({ a: {doc: before, extensions: base}, b:
-{doc: after, extensions: base}, parent, gutter: true, collapseUnchanged })` — **no `revertControls`**, so
-the diff is read-only. For `inline`: `new EditorView({ parent, state })` whose doc is `after` and whose
-extensions are `unifiedMergeView({ original: before, mergeControls: false, gutter: true, collapseUnchanged
-})` plus `base`. Cleanup sets `disposed = true` and calls `view?.destroy()`. The effect deps are
-`[before, after, language, mode, collapse]`, so the editor is recreated wholesale when any change. Render
-is a single `<div ref className={host} data-testid="diff-pane" />`. The `host` css scopes the
-editor-fill to the **direct** `.cm-editor` (inline/single-editor mode scrolls via its own `.cm-scroller`)
-and makes `.cm-mergeView` the bounded scroll container in split mode — the merge theme grows its inner
-editors to content height and forces their scrollers to `overflow:visible`, so a long split diff scrolls
-as a whole instead of clipping at the panel edge. The `host` css also overrides `@codemirror/merge`'s
-default thin bottom-underline on `.cm-changedText` into a **full-height highlight rectangle** (L4a). Two
-parts make it a box: the **height** — a `linear-gradient(...) bottom / 100% 16px no-repeat` band fills the
-line box (the library default is ~2px → a line) — and the **colour** — a dark, muted fill, low-lightness
-green (`#255a25aa`) for additions (the general rule, covering split `b` + inline) and red (`#5a2525aa`)
-for deletions (the more specific `.cm-merge-a .cm-changedText` rule). The fills are intentionally **not**
-the `--mint`/`--amber` tokens: those are bright foreground tones and, as a background behind the light
-diff text, would wash the glyphs out (a bright fill would need dark text). `!important` is required —
-`@codemirror/merge`'s own runtime-injected rule (`.ͼN.cm-merge-b .cm-changedText`) outranks a plain
-host-scoped selector.
+Props are `{ before, after, language, mode: "split" | "inline", collapse? = true, firstLine?, fit? = false, marks? }`. The split builder makes a read-only before/after MergeView; the inline builder makes a read-only after editor with unifiedMergeView. Both retain shared theme, async language resolution, wrapping, per-side file-relative numbering and explicit teardown. No revert or accept/reject control is installed.
+
+Ordinary panes fill their parent and retain the merge-view scrolling and muted word rectangles. A fitted review pane instead grows to its content without a height cap or inner scroller: its merge view and editor scrollers overflow visibly into the review reading column. Its diff uses red/green whole-row bands, a reserved −/+ marker column, alarm-red deletion text while syntax-token colours remain, hatched split spacers and a faint fold bar. It removes nested word boxes and the merge change gutter only in that fitted presentation. [8]
+
+The unchanged-line collapse margin is three when collapse is enabled. `foldKeys` marks each collapse widget as a focusable button with an accessible expansion label; Enter or Space invokes the widget’s click, expanding that stretch in place. Full-context callers can disable collapse.
+
+Each builder now returns its editor identities and a dedicated Compartment for each marks gutter. `useMarkedPane` still supplies portals, placement, gutterFor and drawn; callers continue to own the marked line/side. For fitted panes a placement update reconfigures those compartments in the existing editors and reports them drawn, keeping the current content while marks arrive. For ordinary panes placement remains a rebuild dependency. Content/language/mode/collapse/first-line changes still rebuild; the disposed guard prevents a late language load from mounting after cleanup, which reports drawn(null) and destroys the current construction. [6]
 
 ### Conventions
 
@@ -65,40 +36,39 @@ the shared theme + language map are reused from the sibling File Viewer (`codemi
 `unifiedMergeView` sets `mergeControls: false`, so there are no accept/reject affordances. Imperative
 lifecycle: exactly one view per `(before, after, language, mode, collapse)`; the `disposed` guard
 prevents mounting after teardown when the async language pack resolves late. Presentational: no data
-fetching — the caller (`ChangeSetPane`) supplies already-fetched content from the L3 file-diff endpoint.
+fetching — the caller (`ChangeSetPane`) supplies already-fetched content from the L3 file-diff endpoint. Which line
+a mark sits on is the caller's decision (the reviewer's markers use the classification owner's side lines); the pane
+only draws what it is given. The no-marks gutter remains empty. Fitted statement and guarantee callers still receive the new fitted sizing and diff presentation; ordinary ChangeSetPane retains the ordinary host.
 `@codemirror/merge` is imported statically (it is in the main bundle).
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
-| The shared CodeMirror theme (chrome + syntax `HighlightStyle`). | `codeTheme` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:49-49 |
-| The lazy language-by-extension map it awaits. | `langExtension` | dashboard/src/panels/file-viewer/langByExtension.ts:8-49 |
-| `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false). | `DiffPane` | dashboard/src/panels/changeset/DiffPane.tsx:48-118 |
-| The column wrapper that mounts it and supplies `mode`/`collapse`. | `ChangeSetPane` | dashboard/src/panels/changeset/ChangeSetPane.tsx:177-218 |
-| The `FileDiff` (before/after content) the caller passes through. | `FileDiff` | dashboard/src/data/changeset.ts:34-41 |
+### Repo-Internal References
 
-## Update History
 
-- 2026-08-03T02:32:19+02:00 — Curator W3-B02: anchored 5 Repo-Internal citation rows with exact
-  CodeMirror/component identifiers, including the `DiffPane` implementation for split/inline
-  construction; the existing `FileDiff` citation and verification metadata remain unchanged.
+- Reuses FilePane's read-only extension set + theme + lang so tokens match plain vs diff. [1]
 
-- 2026-06-29T23:00+02:00 — L4a (diff-highlight polish): the `host` css overrides `@codemirror/merge`'s
-  default thin underline on `.cm-changedText` into a full-height highlight **rectangle** — a
-  `bottom / 100% 16px` band (the height is what makes it a box, not a line) with a dark, muted fill (green
-  `#255a25aa` for additions, red `#5a2525aa` for deletions via `.cm-merge-a`), NOT the bright
-  `--mint`/`--amber` foreground tokens (which would wash out the light diff text), `!important` to beat the
-  library's injected theme. Developer preference. Verification metadata pinned until closeout stamps the
-  L4a commit.
-- 2026-06-29T17:00+02:00 — L4 follow-up (scroll fix): the `host` css scopes the `height:100%` editor-fill
-  to the DIRECT `.cm-editor` (inline mode) and makes `.cm-mergeView` the bounded scroll container in split
-  mode, so a split diff taller than the pane scrolls (the merge theme makes its inner editors grow + their
-  scrollers `overflow:visible`) instead of clipping. Verification metadata pinned until closeout stamps the
-  L4 follow-up commit.
-- 2026-06-29T16:40+02:00 — Created for operations-integration L4 (Change-Set Viewer): the read-only
-  `@codemirror/merge` diff pane (split `MergeView` / inline `unifiedMergeView`, collapse toggle, no
-  revert/merge controls), reusing FilePane's extension set + theme + lazy language packs via an
-  imperative `EditorView`/`MergeView` lifecycle with a `disposed` guard. Verification metadata pinned to
-  the task base until closeout stamps the L4 code commit.
+- The shared CodeMirror theme (chrome + syntax `HighlightStyle`). [2]
+- The lazy language-by-extension map it awaits. [3]
+
+- `split` = MergeView (a=before, b=after, no revertControls); `inline` = unifiedMergeView (mergeControls:false); each side numbered from its own first line when an excerpt is shown. [4]
+
+- What both builders share, including the marked pane's gutter and `drawn` hooks (MIK-L34). [5]
+- The marks gutter, its portals and the reveal this pane hosts. [7]
+- The gutter that keeps a file's own numbering for an excerpt. [9]
+
+- The focused card that passes `firstLine` and `fit`. [10]
+
+
+- The column wrapper that mounts it and supplies `mode`/`collapse`. [11]
+
+
+- The `FileDiff` (before/after content) the caller passes through. [12]
+
+
+- Fitted panes reconfigure marks in existing editors; content changes and ordinary mark changes rebuild with guarded teardown. [6]
+- The content-sized host an expression card uses (MIK-L31). [8]
+- Folds expose native keyboard-equivalent expansion. [13]
+- Fitted mark updates reconfigure dedicated gutter compartments without destroying current editors. [14]
+
+

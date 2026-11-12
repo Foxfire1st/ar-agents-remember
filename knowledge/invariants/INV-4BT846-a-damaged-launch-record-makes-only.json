@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Interpreting damaged records as absence can invite a second agent launch or falsely hide an existing chat."
+  },
+  "applicability": "Malformed launch receipts during single-document and tree chat discovery.",
+  "conditions": [
+    "Both readers share chat-shape projection and preserve unknown versus known-empty.",
+    "Tree corruption is isolated to the document using that receipt."
+  ],
+  "exclusions": [
+    "The separate taskless Projects receipt listing is outside this correction."
+  ],
+  "id": "INV-4BT846",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_document_chats.py › DocumentChatTreeTests::test_a_damaged_record_leaves_its_own_document_unknown_and_every_other_answered (18 shapes), DocumentChatReadTests::test_a_damaged_record_refuses_the_read_of_its_document_and_never_fails_it (5 shapes); red before the repair: notes/reports/worker/c41a5d77-92e0-4b18-a3d6-140c0a7e0b50/after-evidence-attempt3/red/red-F02.txt"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "L140-R1-F02",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A damaged launch record makes only its own document unknown in the answer for the tree and is refused with HTTP 409 by the read of the one document; damage is never answered as a document without a chat, and the other documents keep their answers from the one listing of the host.",
+  "status": "proposed",
+  "supersedes": []
+}

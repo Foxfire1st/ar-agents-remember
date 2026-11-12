@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/application/reviewer_worklist_child.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+        "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "isolated_leaf_worklist"
+        }
+      },
+      "id": "RLZ-52ACVE",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "The serving process's only route to the worklist: builds the request from the contract, the captured trees and the serving build's identity, sends it to the process owner, and raises a process error for a reply that carries an error. It holds no worklist computation of its own.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+        "content": "sha256:28d150c1d0542f6b041c67516ed7e8beb1bab925267b740cbd75c04b7bde8a6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "isolated_leaf_worklist"
+        }
+      },
+      "id": "RLZ-60HKWA",
+      "invariant": "INV-BBPPS5",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-view-depends-on-its-reads",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Replays the reply's read rows into the caller's recording before anything else, also when the computation failed, so the serving process judges the view by every row the child recorded.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+        "content": "sha256:29998f4a3e3b20b2844f3d48d1f5b242b00e6eaa48fec9940911b23bcc940c77",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-S1ZTCF",
+      "invariant": "INV-19P897",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-computation",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "The child's side: checks the operation name and the request digest, refuses a build other than the one the request names, and runs leaf_worklist without persisting over the candidate and base it was given, returning the document, or the error text, with the rows recorded so far.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+        "content": "sha256:52208f9a00d08484e43908c6639a07249b9a984bd3adb79fb988303062e93662",
+        "locator": {
+          "kind": "symbol",
+          "name": "main"
+        }
+      },
+      "id": "RLZ-YEGY04",
+      "invariant": "INV-HHZP57",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-child-lifetime",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Arms the child's lifetime as its first step, before it loads the request.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Default process ownership, optional review input, read replay before error and document/adjunct return.\n\nAnchor: parent boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+            "content": "sha256:329ffb1d9e0580782b9a7f996225207a64aee9dd1d44f08727b959d3a75b3602",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Exact contract fields and typed path/tuple reconstruction.\n\nAnchor: contract reconstruction",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef8e64baf28adf35f3157ef9bc28a146b427f281",
+            "content": "sha256:9be4e7d32d4935c6b1ef66f13f591e381748f3c8457d65b4f65b79512b16b4c2",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

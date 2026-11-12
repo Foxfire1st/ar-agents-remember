@@ -1,0 +1,126 @@
+{
+  "path": "mcp/tests/test_explainer_surface.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:bae06c65e5895c52111647a4f3ca211c608dc7882fc6876c1664c11e2246ee9b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_marker_pointing_at_another_environment_refuses"
+        }
+      },
+      "facet": "A workspace marker cannot redirect a bound server to another environment.",
+      "id": "PRF-0H7GJK",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:77fda51fd7b60b1548deb44018c23d80733ed90d724a8bcdcc4b4846983cb2a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_tool_of_the_bound_server_answers_a_forged_seat_by_name"
+        }
+      },
+      "facet": "All 22 tools refuse a forged calling process by name.",
+      "id": "PRF-29YTXB",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:4a0b79881954fbd1d716c623f8d99e661e29a0fe09de7f42ad42b013c8b72aaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch"
+        }
+      },
+      "facet": "Exercises launch identity, exact roster, named forbidden dispatch or fail-closed missing binding.",
+      "id": "PRF-8272VF",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:11fba851a78c9827c0cc4ee7f5e24afed490b706e78c8fcd93cbbd06ae3ad78b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_new_generation_refuses_the_old_servers_calls"
+        }
+      },
+      "facet": "An old launched server refuses after the leaf generation changes.",
+      "id": "PRF-JFHFSK",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+        "content": "sha256:3e8902c8ca1ac2b6593e331e285972606b8c0c671c5cd4633e4a53e0e3467916",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_a_seat_with_neither_marker_nor_binding_takes_the_ordinary_branch"
+        }
+      },
+      "facet": "The ordinary roster remains deliberate only without either explainer identity word.",
+      "id": "PRF-XB7A0D",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The case `test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch` protects a launched seat with no binding refusing instead of taking the ordinary branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:4a0b79881954fbd1d716c623f8d99e661e29a0fe09de7f42ad42b013c8b72aaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_lost_binding_on_a_launched_explainer_seat_refuses_rather_than_taking_the_ordinary_branch"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_a_new_generation_refuses_the_old_servers_calls` protects a server launched for an old generation refusing the calls made after a resume.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "847c21ecabfbefc20554b1e9520d0e90e7600b3c",
+            "content": "sha256:11fba851a78c9827c0cc4ee7f5e24afed490b706e78c8fcd93cbbd06ae3ad78b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_generation_refuses_the_old_servers_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

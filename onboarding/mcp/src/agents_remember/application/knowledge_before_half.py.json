@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_before_half.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module preflights the derived indexes selected for a review and creates no canonical dataset layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:8e2a4b0a71c4bd61ed1f8412843c92022887e87fbfb4677399486966408c4dce",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "read_dataset_identity returns SnapshotIdentity or a reason for a non-file and for KnowledgeStorageError, apsw.Error or OSError; dataset_identity opens the selected index read-only and closes its connection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:ea63a36aa8c761106e39cb214d7a62520e306ebf1b01377b6acdbc12191c9c98",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Review preflight checks each existing baseline/candidate index in order and returns candidate_dataset_absent for the first unreadable one, putting the read failure in detail, that half in offending_input and a rebuild instruction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd22c4941955ad551d6ed094c6503a0289de477b",
+            "content": "sha256:cbf487aabaf96a0839e0247af46bb2daa53dd79b9bb960b38916942a91c652c6",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "SnapshotIdentity extends KnowledgeModel and validates repository_id with UUID_PATTERN, schema_version with the label-length bound and logical_digest with SHA256_PATTERN.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b2bf18774207aaeb442ff737297b3233369a1f3",
+            "content": "sha256:ed0b1757671c569f93a5ecce887e3462143ef5ebd403a5b7913bf17289a76917",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "dataset_identity produces the SnapshotIdentity used by this module. The separate whole-pair preflight sequences absent-half, unreadable-index and candidate-namespace/receipt refusals; the receipt preflight delegates to review_namespace rather than reading the retired baseline-origin record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e35a60680f871cd002ce6b1ccd3a831d69561ae2",
+            "content": "sha256:4c460ffbfdbf7449e3e20aa81a5d117e56dc60b9e8623f9e866ea34473af68e8",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/application/review_pair_preflight.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:56d8449441ba28672f50dff3a1acde386e7571a9713592c15c268f340e8da2eb",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 437
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

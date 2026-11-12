@@ -1,14 +1,11 @@
 # Python Quality Verification Overview
 
+
 | Field | Value |
+
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/test_support/agents_remember_test_support/code_quality` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `../overview.md` |
+
 
 ## Governing Overview
 
@@ -20,96 +17,161 @@ Repository verification infrastructure for quality planning, exact test selectio
 
 ## Hot Path Summary
 
-`quality_plan.py` owns typed configuration and command planning; `check.py` executes/interprets the rails. `profile_selection.py` publishes the selected population and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `retry_proof.py`, `retry_coverage.py` and child-environment helpers preserve admitted retry inputs without leaking outer retry/progress controls into candidate tests.
+`projection_types.py` renders the dashboard projection contract from the Python wire schemas. It folds the served projection's additional definitions into generated TypeScript and compares that supplemental definition set exactly with its declared renames. A new supplemental definition therefore requires updating that declaration and regenerating the output. Refinements TypeScript cannot enforce structurally, including numeric bounds, lengths and patterns, remain documented beside the affected property. Unsupported schema keywords or shapes refuse generation.
 
-## Operating Model
+Its named vocabularies now concern attention severity, lane and item class, plus process fact state and process health.
 
-Targeted scope is derived from source and declared consumers, never guessed from unknown ownership. Missing, ambiguous, dynamic, stale or contradictory ownership remains explicit and refuses targeted admission instead of widening to a full suite. A full population is an explicit selection. Compare canonical POSIX-string populations while preserving duplicate detection; a differently ordered `Path` list is not a new authority.
+> Retained earlier card wording; superseded by the current account above:
+> Its named vocabularies now concern attention severity/lane and process fact/health only.
+ Task stage/activity/eventAt, task counts and entry membership are rendered from the current Python schema like other model fields; the generator no longer reconstructs a session-state partition, lifecycle-count extension, lifecycle metrics factory or `SubTaskRow` union. Task presentation vocabulary remains a consumer concern, not a second lifecycle model synthesized by this generator.
 
-Coverage and CRAP reports describe the selected production inputs. Their findings are diagnostic, while a broken report tool remains a failure. Retry data may be reused only under its exact admitted candidate, environment, tools, selected population and published artifact identity. Fresh and retained coverage databases remain separate until the owning successful execution merges/publishes them; missing expected artifacts cannot masquerade as known-empty proof.
+`quality_plan.py` owns typed configuration and command planning; `check.py` executes and interprets the rails. `profile_selection.py` derives the selected population, and `profile_rails.py` rederives and validates exact scope before execution. `dependency_ownership.py` and `scope.py` establish supported consumers and explicit product/verification ownership. `catalog_selection.py` reads both catalog versions through the shared reader `parse_catalog`; invalid catalog input remains an explicit selection refusal. `retry_proof.py`, `retry_coverage.py` and the child-environment helper preserve admitted retry inputs and remove outer retry/progress controls from candidate-test environments.
 
-Causal reports distinguish a proved dependent node from an independent same-file node. Missing causal evidence cannot invent safe suppression or broaden unowned selection. Declared report paths and source applicability govern teardown evidence; a skipped clean-room scenario is explicitly non-applicable, not successful execution. Persisted physical producer bytes, export bindings and immutable report generations are distinct from synthetic test payloads.
+## Construction And Ownership
 
-## Local Invariants And Traps
+The plan separates command construction from execution. Its steps distinguish enforcing subprocesses from report-only steps. Profile rails compare the published selector payload with a fresh repository-owned derivation and compare executable scope fields with canonical POSIX-string populations. A differently ordered `Path` list is not a new authority.
 
-Do not reconstruct the deleted host diagnostic analyzer/manifest machinery to permit ordinary pytest: that development loop already exists. Do not add percentage floors, a CRAP exception registry or source-pinning tests to satisfy historical claims. Do not silently grow case budgets or move unit bloat under integration markers. Profile planning, execution and certifying publication stay separate owners.
+The source-derived consumer graph combines imports and qualifying literal references. A path string can therefore establish an edge without an import; the deciding predicates distinguish exact paths from basename and fixture references that need additional read evidence. The evidence catalog's consumer census and the ambient role runner's repository-declared selection consumers are separate authorities. `REPOSITORY_TEST_INPUT_CONSUMERS` overrides the catalog for selection where a repository declaration exists, and the selected declaration must match observed consumers. Neither authority substitutes for the other.
 
-## File-Level Onboarding Map
+The lifecycle loader checks both canonical catalog form and agreement with the source-derived consumer graph. These are separate refusals: canonical catalog bytes do not establish consumer completeness.
 
-Use the generated adjacent route index for existing source/sidecar membership after its owner refreshes it. This overview does not promise one card for a deleted source file or maintain a parallel static inventory.
+`record_integrity.py` compares records that can drift apart: leaf-document status against enclosure closeout/integration cells; master-row status against the status derived from the leaf document; register arrows against declared leaf IDs; and declared prose figures against their source at the stated revision. Each result names its subject and authority populations alongside findings. Register comparison and figure comparison join the combined run only when their inputs are supplied. The helper exposes a CLI as well as callable comparisons; it is not a quality-plan gate.
 
-## Historical Context
+For master rows, `derived_master_status` requires a `Completed` document and a nonempty set of steps all marked `done` before returning `Completed`; completing steps alone is insufficient. Contracts without matching leaf documents are counted rather than judged. The register's free-form prose census remains outside the stated comparison contract: its bucket rule is undeclared.
 
-The original PDLS/CCR entries explain exact-scope, retry and publication repairs. Their historical exact consumer counts and old coverage enforcement are not current policy. Current source and the diagnostic policy below govern; history is retained for provenance.
+`instrument_discipline.py` makes measurement admissibility explicit. A count requires positive and negative witnesses and must use the positive pattern the probe proved. A captured window reports the boundary that closed it, including the line cap. Artifact checks refuse crash-adjacent pass claims, absent run evidence, nonzero exits without result evidence, and clean claims with no stated way to fail. Producer identity requires an existing script, command and revision. Reproduction compares bytes, uses a temporary scratch directory, and returns `matches=False` for a nonzero producer exit or a missing output artifact.
+
+The record-integrity and instrument-discipline tests import these helpers and are listed in the `architecture-fitness` lane. Record-integrity source is 1,110 lines; its test source is 1,140 lines and contains 37 test-function definitions. These are source measurements, not executed or collected-case evidence. Historical record controls look for `AR_COORDINATION_ROOT`, otherwise try a repository-relative coordination root, and skip when required records are unavailable. Their historical prose inputs are pinned to Git revision `e116e5ee`.
+
+## Invariants And Boundaries
+
+Targeted scope is derived from source and declared consumers. Missing, ambiguous, stale or contradictory ownership remains explicit rather than silently widening admission to a full suite. Full population selection is explicit. Keep duplicate detection when comparing canonical populations; sorting must not erase contradictory declarations.
+
+Coverage and CRAP reports describe selected production inputs. Metric findings are diagnostic; broken report tools remain failures. Retry reuse depends on admitted inputs, compatible selection, environment/tool identity and artifact digests. Fresh and retained coverage databases remain separate until a passing delta execution merges and publishes them. Missing expected artifacts cannot masquerade as known-empty proof. The merge owner removes the public artifact pair on a read, merge, analysis or publication failure.
+
+Missing or inconsistent causal evidence fails preflight and runs the already selected pytest population without suppression. It does not license broader unowned selection. The standing distinction between a proved dependent node and an independent same-file node remains part of the causal-report contract; its detailed producer predicates were not independently verified in this bounded account.
+
+Historical teardown proof used frozen source applicability and exact report bytes: a non-applicable scenario required no summary and recorded zero starts, while an applicable scenario required two fresh passing replications and matching candidate/selection identity and teardown checkpoints. That adapter was removed with the old orchestration in MIK L113 and is not a current rail. Physical producer bytes, export bindings and immutable report generations remain distinct from synthetic test payloads.
+
+> Retained earlier card wording; superseded by the current account above:
+> Teardown proof uses frozen source applicability and exact report bytes. A non-applicable scenario must have no summary, and its proof explicitly records zero starts and non-applicability. An applicable scenario requires two passing fresh replications, matching candidate/selection identity and passing teardown checkpoints. Physical producer bytes, export bindings and immutable report generations remain distinct from synthetic test payloads.
+
+
+The final memory adapter requires exactly four selected code terminals before certification. It compares published result bytes with the producer bytes before selecting the terminal. Finalization requires five selected terminals and consumes the original fifth certificate's semantic inputs and references; it refuses absent certificate authority rather than inventing a replacement.
+
+The memory-quality controller revalidates contract scope, executes the requested checks and attaches the curator checklist when publication is requested. `_bounded_quality_response` now retains complete computed finding populations in the whole result; `_answered_quality_response` adds status/reason fields from `quality_result_answer`, while the MCP payload builder uses that answer projection for delivery. These source changes establish no execution or acceptance. The checklist includes route-index, onboarding and knowledge-review inputs, plus the informational `without_proof` population. Its interactive final catalog names missing certification authorities without claiming eligibility.
+
+Do not reconstruct the deleted host diagnostic analyzer/manifest machinery to permit ordinary pytest: the development loop already exists. Do not add percentage floors, a CRAP exception registry or source-pinning tests to satisfy historical claims. Do not silently grow case budgets or move unit bloat under integration markers. Profile planning, execution and certifying publication stay separate owners.
+
 ## Development And Certification Policy
 
-Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run the isolated unit population. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. The repository declares budgets of 1,000 unit and 150 integration parametrized collected cases. Extend or consolidate distinct behavior protection before adding cases; do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
+Ordinary Python development is supported directly through `mcp/.venv/bin/python -m pytest`; four workers run by default. `-m integration` selects the small real-boundary population and `-m ""` selects both. Focused file/node execution, including serial debugging, is valid development work and does not acquire certification authority. These commands require a Git checkout because population enumeration uses tracked files.
 
-Coverage, including changed-line coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
+The root configuration and current test-policy document both declare 10,000 unit and 2,000 integration parametrized collected cases. The unit ceiling has been raised three times since D226's 4,000 — to 5,000, to 6,000 by L54 and to 10,000 by L193's D460 — and the unit ceiling remains 10000 and D579 raises integration to 2000; guard behavior is unchanged. The earlier 1,000/150-versus-4,000/1,000 discrepancy remains a historical source-pair observation, not a present disagreement. Preserve the standing requirement to extend or consolidate distinct behavior protection before adding cases, and to justify budget growth explicitly. Do not restore deleted matrices, private-branch tests or unused fixture machinery because an old milestone names them.
 
-Only genuine Dagger admission and the existing lifecycle owners can issue immutable candidate-bound certifying evidence. A host pytest pass, copied report, green helper result or use of Dagger alone is insufficient. Reuse the existing shared engine and preserve process identity, disposable state, credential isolation, exact candidate and publication ownership. Full-suite execution and whole-master independent review belong to the master aggregation boundary under the current execution policy; this overview does not impose either on every leaf. Focused development evidence remains useful without pretending to be final acceptance.
-## Repo-Internal References
+Coverage, including changed-production coverage, is diagnostic only. No percentage floor requires additional tests. Production-only CRAP retains 20 as a review trigger, not a delivery blocker; tests and verification support are excluded. Lint, formatting, typing, structural rules and test failures still enforce. Diagnostic-tool execution errors remain visible failures distinct from metric findings. There is no coverage baseline, score-exception registry or ratchet.
 
-These current source and policy ranges establish the development/certification distinction and the existing memory preparation surfaces. A citation is source evidence, not a recorded test execution.
+Only genuine Dagger admission and the existing lifecycle owners can issue immutable candidate-bound certifying evidence. A host pytest pass, copied report, green helper result or use of Dagger alone is insufficient. Reuse the shared engine and preserve process identity, disposable state, credential isolation, exact candidate and publication ownership. Focused development evidence remains useful without implying final acceptance. The standing full-suite and whole-master independent-review boundary is retained, but its current execution-policy authority was not verified in this bounded account.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Development commands, budgets, diagnostic metrics and isolation. | `# Python test policy and commands` | docs/design/python-pytest-bootstrap.md:1-50 |
-| Certifying publication and accepting consumers. | `# Python Test Evidence Authority` | docs/design/python-test-evidence.md:1-65 |
-| Exact contract scope, full check and curator worklist publication. | `_resolve_execution`; `_execute_memory_quality`; `_attach_curator_checklist` | mcp/src/agents_remember/application/memory_quality/controller.py:295-441 |
-| Interactive catalog names missing authority without eligibility. | `_attach_final_full_catalog` | mcp/src/agents_remember/application/memory_quality/controller.py:550-586 |
-| Final memory adapter requires the selected four-code-terminal prefix. | "class PreparedMemoryCertificationAdapter:" | mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785 |
-| Finalization consumes original selected fifth-certificate inputs. | `PreparedCloseoutContinuation` | mcp/src/agents_remember/worktrees/integration/closeout/preparation/continuation.py:18-45 |
+## Navigation And Historical Limits
 
-| Exact profile scope and suite execution. | `_require_exact_scope`; `_paths`; `_run_python_suite`; L92-L214 | [Profile rails](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:92-214) |
-| Plan composition and typed command steps. | `CheckConfig`; `Step`; `quality_steps`; L100-L168 | [Quality plan](mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py:100-168) |
-| Teardown proof from source applicability and exact result bytes. | `_verify_teardown`; `_verify_started_teardown`; `_write_teardown_proof`; L253-L359 | [Teardown owner](mcp/test_support/agents_remember_test_support/code_quality/profile_rails.py:253-359) |
+Use the generated adjacent route index for existing source/sidecar membership after its owner refreshes it. This overview does not promise a card for a deleted source file or maintain a parallel static inventory.
 
-## Docs And Cross-Repo References
+Historical PDLS/CCR accounts explain exact-scope, retry and publication repairs; historical consumer counts and coverage enforcement are not current policy. The former fourth/fifth helper descriptions are historical additions, not a current module inventory. The instrument's recorded plural-`findings` regex fault, the register prose-census limitation and the terminal pass's citation-shift example remain historical cautions rather than claims that today's instruments are faultless.
 
-No Domain Documentation entries are configured in the resolved memory root. Current local policy and source owners are cited above; no live external system or sibling repository is used to grant authority.
+The earlier account names citation-binding tests as a worked example of literal edges in both registries, asserts byte-identical route sources between `7b1db4e0` and `5e4eb651`, and describes appended registry rows shifting subsequent citation ranges. Those historical assertions were not re-established against their original Git objects here. The standing preference for citation identities that survive line movement remains; the historical end-of-file append convention does not override the current canonical catalog ordering requirement.
 
-## Update History
+No lifecycle/status metadata in this overview grants execution or acceptance authority. No test execution or current task status is established by this source review; missing lifecycle authority remains an uncertainty.
 
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/test_support/agents_remember_test_support/code_quality` carries local unstaged changes not
-  represented in HEAD. Re-read the card against the frozen on-disk source and re-checked its claims
-  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
-  Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-11T10:26:37+02:00 — De-entanglement cut cleanup at code commit `2fa5e81f`: repointed the `PreparedMemoryCertificationAdapter` citation to `mcp/src/agents_remember/worktrees/integration/closeout/prepared_certification.py:721-785`, where commit `deb032fb` moved the adapter out of `memory_quality/`. Citation path only; the cited claim is unchanged and verification metadata remains pinned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:721-785. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:45:44+00:00: CCR-L24 preparation reviewed `PreparedMemoryCertificationAdapter` and `_attach_final_full_catalog` against the current code candidate; wording retained and ranges regenerated. Verification metadata remains pinned pending final pair composition.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `_attach_final_full_catalog` repointed to mcp/src/agents_remember/application/memory_quality/controller.py:499-535. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T14:39:58+00:00: Generated citation repair: `PreparedMemoryCertificationAdapter` repointed to mcp/src/agents_remember/memory_quality/prepared_certification.py:479-542. No content impact: mechanical anchor-range projection bound to citation source snapshot 5911742cfcc7a53db92b36b80bac02ee49a67204b190c0311a81bcc2e388ad59; claim bytes unchanged; generated by ccr-r10@v1.
+**L184.** The projection-type checker knows the served provider limit, including its exact reset datetimes.
 
-- 2026-09-06T21:56+00:00 — Reconciled the governing route against IAS d3610903 and retained source/card evidence. Replaced obsolete host-test prohibitions, coverage floors and deleted-suite claims with the current preparation/development/certification boundaries. Existing history and verification pins remain preserved; this is semantic memory preparation, not acceptance.
 
-- 2026-09-06T04:32:25+00:00 — L32 private-candidate curation: Added canonical string scope ordering and exact population guards, refreshed the shifted teardown owner ranges, and retained the actual L32/C97 teardown contract; no later L33 source-applicability behavior is imported.
 
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
 
-- 2026-09-06T00:17+02:00 — Reconciled exact ambient-runner ownership, persisted teardown proof and repaired producer/publication boundaries; removed obsolete print-only and missing-producer claims.
 
-- 2026-09-05T07:08+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Removed obsolete safe-full selection behavior; added selector identity, exact rail scope, causal selected-population limit and unproduced teardown-proof boundary. Verification records current source claims, not execution or acceptance.
 
-- 2026-09-01T11:33+02:00 — CCR-L11 Attempt 10 registered the five exact, independently observed
-  `layers.toml` consumers. The declaration avoids safe-full selection without making metadata
-  self-proving or adding a fallback. Verification remains closeout-owned.
 
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 added source-verified exact consumer ownership for `.codex/config.toml`; the candidate resolves completely without global invalidation or a silent narrow fallback. Verification remains closeout-owned.
 
-- 2026-08-29T19:04+02:00 — Reconciled the projection generator with Python 3.13 named-literal
-  schema definitions after the lifecycle-owned fast gate exposed the former inline-only assumption.
-  Verification remains closeout-owned.
 
-- 2026-08-28T04:48+02:00 — Split typed plan construction from quality execution and added the
-  causal-report safe-continuation owner; unavailable evidence now selects the full population.
-- 2026-08-27T19:13+02:00 — Added the explicit all-contexts-affected retry state while retaining
-  missing-artifact refusal.
-- 2026-08-27T18:33+02:00 — Added the explicit retained/fresh coverage-composition owner and
-  outer-wrapper/child-rail environment boundary after the real xdist retry run exposed both
-  ownership collisions.
-- 2026-08-27T11:08+02:00 — Rehomed the quality producer under verification authority; documented
-  explicit package scope, source-derived ownership, persistent Dagger retry, and exact causal
-  behavior. Verification remains closeout-owned.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> Retained earlier citation wording: - Helper test imports, source figures, historical Git pin and conditional record availability.
+
+
+
+
+
+
+
+
+
+
+
+
+## Evidence
+
+- Helper test imports, source figures, historical Git pin and conditional record availability.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test-evidence-lanes.toml:1-635 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a06d2ffcfae2c277f2ae19330c17d09c616b77e8. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [12]
+
+
+- The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [1]
+
+
+- Exact profile scope and suite execution. [13]
+
+- Plan composition and typed command steps. [14]
+
+- Both catalog versions use the shared parser; retain the original deciding range. [16]
+
+- Catalog narrowing preserves removed consumers; parser errors remain named refusals. [17]
+
+- Profile selection declares full mode explicitly and retains incomplete targeted inputs. [19]
+
+- Repository declarations override catalog consumers and must match observed import/literal consumers. [20]
+
+- Literal edges use deciding path/read predicates; standalone prose strings are excluded. [21]
+
+- Canonical form and source-derived consumer completeness are separate catalog checks. [22]
+
+- Record comparisons state both populations; completion requires document status and completed steps; optional comparisons require inputs. [23]
+
+- Instrument admissibility and byte-exact producer reproduction. [24]
+
+- Retry artifacts retain admitted identity, digest checks and passing-delta merge ownership. [26]
+
+- Child environments remove outer invocation controls through the executing caller. [27]
+
+- Missing causal authority fails preflight without suppressing the selected population. [28]
+
+- The current root policy is 10000 unit and 2000 integration selected cases. Collection rejects a lane above its declared ceiling; the raise changes headroom and preserves the guard. [29]
+
+- Projection generation validates schema vocabulary and exact supplemental definitions. [18]
+
+- The named vocabularies are attention severity, lane and item class, plus process fact state and process health. [30]
+
+- Ordinary schema interfaces are rendered without a lifecycle-count extension or injected metrics factory/legacy subtask union. [31]
+
+- Exact contract scope, the full check and curator worklist publication, including the informational without-proof list.  Anchor: `_execute_memory_quality` `_answered_quality_response` `_attach_curator_checklist` [10]
+
+- Interactive catalog names missing authority without eligibility. [11]
+
+- Helper test imports, source figures, historical Git pin and conditional record availability. [25]
+
+- Certifying publication and accepting consumers. [2]

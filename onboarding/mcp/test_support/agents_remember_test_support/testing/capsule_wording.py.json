@@ -1,0 +1,54 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/capsule_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The helper checks affirmative clauses on delivered role/stage surfaces, compiles the owning seat's instructions, obtains moved facets through delivered_step and owning sections, and checks the exact delivered Git-comparison sentence; this source inspection executes none of those checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38252affdb2287f40598285c1f05ac4d5184df84",
+            "content": "sha256:61cc1064d292c269bc348d349d1e93afc539203cfd05dc567adf348bccda1b02",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "clause_surface resolves busy retry through the role-operation pair and message-handover detail, Curator memory facets through the memory-handover pointer, and other relocated facets through their owning sections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38252affdb2287f40598285c1f05ac4d5184df84",
+            "content": "sha256:72e15b5cd6567c0cda5a671c8953f0aab2e6c919b743a617b04da28d09ba7007",
+            "locator": {
+              "kind": "symbol",
+              "name": "clause_surface"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The identity facet reads the delivered memory-handover detail; the other memory facets read the shipped review Boundaries section.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38252affdb2287f40598285c1f05ac4d5184df84",
+            "content": "sha256:2d688b0e5a4054133f78dd4d9341c1480546123086eead13847613c375d3268c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_curator_memory_surface"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

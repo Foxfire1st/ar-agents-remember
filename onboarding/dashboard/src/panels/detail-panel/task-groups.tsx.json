@@ -1,0 +1,340 @@
+{
+  "path": "dashboard/src/panels/detail-panel/task-groups.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:0b3e059ecc80cbe58d820187428f82e3f4d38f2e9df17a707ccf064f28047f2b",
+        "locator": {
+          "kind": "symbol",
+          "name": "MasterNowCells"
+        }
+      },
+      "id": "RLZ-3K8RK7",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Hides the master task row's works/waiting/paused figure (activityPhrase) while the host is unknown.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:d35205fe9e6cf8658a264e2bf4ccb94f2f8f6820bdb9676b67f7467f34020d8f",
+        "locator": {
+          "end": 477,
+          "kind": "line_range",
+          "start": 457
+        }
+      },
+      "id": "RLZ-48F336",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N08",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "OpenGroups uses entry.counts.started/planned and stage-filtered IndexRows. Started entries are linked to Now and planned entries remain Planned, not a reconstructed graph/lifecycle waiting population.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskChildrenBlock"
+        }
+      },
+      "id": "RLZ-9N472M",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-extra-carriers-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Renders served master disagreement evidence independently of the ordinary child index, without repairing membership.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:06c747829dc40ba797bde883f77a2122e94bfb2ced2107347366cb118f03227b",
+        "locator": {
+          "kind": "symbol",
+          "name": "hasTaskContent"
+        }
+      },
+      "id": "RLZ-AGQEGH",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-extra-carriers-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Keeps served disagreement-only master content visible even when there are no normal child rows, intro or discarded rows.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:16695ad77806a8d5b51a1af55642517cae60547f507cb1f41991e51ef4f2a323",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewWord"
+        }
+      },
+      "id": "RLZ-ASRZ5R",
+      "invariant": "INV-Z8HF38",
+      "origin": {
+        "handoffEntry": "F5-V03",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The review cell of a master's table of tasks in work; reads openFindings.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:591618796ac62d81a92dbac7f69d6b5fc99279184b55cb4d7503742ec04c700a",
+        "locator": {
+          "end": 404,
+          "kind": "line_range",
+          "start": 358
+        }
+      },
+      "id": "RLZ-C7FVQY",
+      "invariant": "INV-H2Y6HE",
+      "origin": {
+        "handoffEntry": "F5-V01",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the scope of a row of the sprint document through the Markdown grammar.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:dbe49d5a69cfb1581e9b50572a15ef3854e761048028856d12e1ef937c86cfdc",
+        "locator": {
+          "end": 84,
+          "kind": "line_range",
+          "start": 51
+        }
+      },
+      "id": "RLZ-DN3M1F",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N23",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "TaskIndexRow takes one canonical child entry and its served parent, displays entry id/title, and permits navigation only with entry.reference. It composes current task/master cells without a parallel document-row identity.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:3734d8dc3f42621be9065d01258e25ae30a5a46cb60e88570d1e4e9a87bb86a1",
+        "locator": {
+          "end": 307,
+          "kind": "line_range",
+          "start": 280
+        }
+      },
+      "id": "RLZ-G8WYZY",
+      "invariant": "INV-07RDCZ",
+      "origin": {
+        "handoffEntry": "L150-R9",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Assembles master Now rows with cached major-step details, supplied review counts and informational ready targets, without any direct-execution control or grant mark.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:ecb9c4678b31232029af67f5cedfd91ad0051f90444c7841dcad5fb365b570f7",
+        "locator": {
+          "end": 277,
+          "kind": "line_range",
+          "start": 249
+        }
+      },
+      "id": "RLZ-H3H1XK",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "IndexRows iterates entry.children in supplied order, resolves each key from tasks, filters the requested canonical stage and retains the full-list index+1; no document matching or hierarchy inference selects the rows.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 87
+        }
+      },
+      "id": "RLZ-Q4GTQ8",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This summary accessor reuses producer-supplied major-step done and total values instead of reconstructing a different child-inclusive denominator.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:51469d56adaf0a7cae254495649e81cdb791e2422d464a54e916f0b9885ab86e",
+        "locator": {
+          "end": 439,
+          "kind": "line_range",
+          "start": 420
+        }
+      },
+      "id": "RLZ-VFXNP6",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 16",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This master Tasks placement supplies only the completed group to the capped newest-first preview and keeps the completed-count navigation below it.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
+        "locator": {
+          "end": 354,
+          "kind": "line_range",
+          "start": 319
+        }
+      },
+      "id": "RLZ-WKA99C",
+      "invariant": "INV-07RDCZ",
+      "origin": {
+        "handoffEntry": "L150-R9",
+        "leaf": "260928-MIK-L150"
+      },
+      "rationale": "Assembles the master task index with requirements/history and a completed-time preview, but no direct-execution control or grant mark.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+        "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 87
+        }
+      },
+      "id": "RLZ-XRDYTZ",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This master-index row uses the shared major-only count and mark functions with the same resolved task steps, preserving the major/child data needed by the dot tooltip.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "3": {
+      "note": "Master Tasks keeps discarded-before-start history reachable beside aborted rows, and GroupViewBody renders that discarded audit independently of whether any live child row matches the aborted stage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+            "content": "sha256:fa7f869b5e0c10c7456e25e84cde160963117bb243f176dd804ab1c1a2229016",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 440
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+            "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1609d4607dea0ec7d83e230bda4ea335a0f38151",
+            "content": "sha256:3e8dddad8e79e1422f4a8e1e6959dc77099249dd802a6a87866bdc9b6819a705",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/detail-panel/TaskGroupView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Master Now keeps served step counts and cached major-step dots without grant controls; readiness remains a navigation-only graph display.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+            "content": "sha256:45dc944717cabca5806a3de1d08eebc21df2c3e248053073352e9b928ce42909",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:4b0e890760f7a7c5212f44d899cf754471c6bf0ca26bab4f1ec3552cd5435e95",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 314
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The task block remains present for served disagreements and composes their shared renderer beside, not into, the child groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+            "content": "sha256:ca4eb0d1b1ab38922e22dcb92c3f657574a7ee17fd786e8bce96a0c8410f5446",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 309
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

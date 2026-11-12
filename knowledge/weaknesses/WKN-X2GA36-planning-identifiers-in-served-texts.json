@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+    "content": "sha256:ede406c1afd1ea24a6de64a6a82a175cb0151adee666953453a48e08b020feb0",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
+  },
+  "id": "WKN-X2GA36",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-34",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Served tool descriptions and command help texts hold identifiers of planning (22 places), and so do the descriptions of the explainer's tools and many string constants of the source."
+}

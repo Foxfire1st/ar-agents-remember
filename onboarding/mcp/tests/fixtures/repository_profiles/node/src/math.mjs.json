@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/node/src/math.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source module exercised by the fixture lint/suite/e2e rails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3693648b9d975e760298dec11bd7f6dbaa793ec8",
+            "content": "sha256:857226a09230d8a275b5816aa131f12ba7817785c39248b1cd4790e109091913",
+            "locator": {
+              "kind": "symbol",
+              "name": "add"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

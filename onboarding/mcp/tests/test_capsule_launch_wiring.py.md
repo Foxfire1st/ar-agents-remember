@@ -1,0 +1,246 @@
+# mcp/tests/test_capsule_launch_wiring.py
+
+## Governing Overview
+
+[MCP tests overview](overview.md)
+
+## Purpose
+
+Protects capsule delivery from production launch points to the recorded consumer boundary,
+with internal compilation rather than a restored public compiler tool. The capsule-launch world builds under pytest's `tmp_path`
+(`:122`) rather than a selected short root, and the socket-bearing support builds on a temporary directory of its own
+(`pnt_sandbox_test_support.py:231-232`); this card does not establish a production Unix-domain path limit, and the port
+claim's abstract socket name carries no filesystem path. No provider turn or live process acceptance is implied.
+
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- D13 now asserts role_capsule_compile is absent from registered tools.
+- The second arm compiles directly and asserts ok/instructions, not equality with a public MCP reply.
+- The surrounding producer-to-consumer capsule tests remain.
+
+### Source and authority bounds
+
+- Current D13 case: `mcp/tests/test_capsule_launch_wiring.py:381-414` (its `pytest.mark.anyio` decorator is at line380).
+- Frozen module comparison: `git diff 59b01fb8f72a38d2d27f9c37b8b9ca2513fd3fa0 6db7c75557a5d040db6cc2938c3f8a53f658bebe -- mcp/tests/test_capsule_launch_wiring.py`. This names source inputs and claims no test execution.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
+## Governing Overview
+
+[mcp/tests overview](overview.md)
+
+## Purpose
+
+**The acceptance test nobody had: the compiled capsule read out of a started session's own first
+prompt.** The master built and individually proved every link of the capsule chain — the compiler (L2),
+the admission/MCP surface (L4), the Codex instruction seam (L5), the eve carrier (L7) — and left the top
+severed: **no production launch point supplied a capsule to a session**. Every green test hand-supplied
+the intermediate value, which is exactly why no leaf's suite could see the gap. This module closes it in
+the shape the master's standing rule requires (`notes/leaf-runbook.md`): a production path from producer
+to consumer, with the artifact read from the **consumer's own side**.
+
+`260915-CAPS-L15` added it — 14 cases and one lane row.
+
+## Code Commentary
+
+### Logic
+
+**The acceptance pair (the reason the module exists).** Both cases drive a **production launch point**,
+parse the runner argv token the launch point actually built back out of the base64 the child process
+would exec, run the **real** runner preparation and the **real** adapter factory, and read the capsule
+out of the `thread/start` request the session sent to the vendor boundary. The expected side is the
+**compiler's own result** for the same seat, never a hand-built literal.
+
+| Case | Launch point | Seat |
+| --- | --- | --- |
+| `test_a_task_attached_seat_reads_its_compiled_capsule_out_of_its_own_first_prompt` | the internal spawn primitive `dispatch_agent` calls | a leaf document + role `worker` |
+| `test_a_free_agent_reads_its_compiled_capsule_out_of_its_own_first_prompt` | `POST /api/terminal/{session}`, the dashboard opener | role `bootstrap`, **no** task document |
+
+**The production-chain pair (added in fix round 1, replacing a hand-supplied case).**
+`test_a_production_eve_launch_runs_where_its_capsule_admits_and_the_consumer_accepts` takes the
+**route's own** `TerminalSessionSpec` (cwd **and** env), asserts the cwd is the admitted worktree and
+`AR_WORKSPACE_ROOT` equals it, then feeds exactly those captured values to `parse_runner_config` →
+`_prepare_controlled_launch` → `launch_spec_binding` → `verify_capsule_binding` and requires a non-`None`
+binding. `test_the_spawn_launch_agrees_with_its_capsule_about_the_workspace` exercises the runner's own
+agreement check on the spawn side.
+
+**Why the hand-supplied case was deleted rather than kept beside them.** Its value under test (the
+launch workspace) was supplied by the test, which is precisely the evidence class the sealed finding
+`L15R-2` was about — a green case that could not have failed if the wiring were absent. Keeping it would
+have left a passing case measuring nothing. The two environment preconditions the route case declares
+(`AR_EVE_NODE` pointed at a version-reporting fixture, plus a taught `orchestration.harnesses` row with a
+program on PATH) are **disclosed in the case's own docstring** as documented operator surfaces, and the
+values under test are not among them.
+
+**The surrounding pins.** The rest of the module holds the parts that must stay true around the
+delivery:
+
+- `test_an_uncapsulable_role_refuses_by_name_before_any_host_effect` — HTTP 400 `capsule-unavailable`
+  with the role named, and `host.ensured == []`.
+- `test_the_mode_gate_names_capsule_legacy_and_refused_for_every_seat_class` — the one decision point,
+  for every seat class.
+- `test_the_legacy_launch_payload_is_byte_identical_to_the_pre_capsule_payload` — behaviour 6, measured
+  as bytes rather than asserted as shape.
+- `test_the_delivered_payload_carries_the_capsule_once_and_no_task_context` — the single-carrier bound
+  (`D12`): exactly one `trustedInstructions` key, and the task context never enters argv. **L11 extends
+  it with the argv bound itself**: the token the spawn actually receives is asserted
+  `<= ARGV_TOKEN_BOUND_BYTES < MAX_ARGV_TOKEN_BYTES`, and a carrier padded past the kernel limit must
+  be **refused by name** (measured size, bound, seat) with **no argv returned at all** — so no caller
+  can spawn it. The seed is the failure the bound exists to catch rather than a value chosen to trip
+  it.
+- `test_every_production_launch_request_site_is_wired_or_declares_its_legacy_chain` — walks every
+  `TerminalLaunchRequest(` construction in `mcp/src/agents_remember/**` with `ast` and fails naming the
+  file, the line and the two admissible dispositions; it also fails when the **set** of sites changes,
+  so a fourth launch point cannot appear without a decision.
+- `test_the_declared_legacy_reopen_names_why_it_cannot_carry_a_capsule` — the one declared exclusion.
+- The free agent's two cases: the named absence, and an identity that moves with the seat (a different
+  workspace gives a different semantic digest).
+- `test_the_registered_capsule_operation_resolves_a_repository_through_its_schema` (`D13`) —
+  `{"contract_path","task_path","role"} ⊆ required` and `"contract_path" ∈ properties`, so the declared
+  schema losing the field the resolution depends on fails it.
+- `test_a_refused_stage_refuses_again_in_the_same_process` (`D20`) — a first refusing call followed by a
+  second in the same process must refuse identically and by name, never pass.
+
+**Falsifiability, measured by the builder and re-measured by the reviewer.** Eight seeds each break
+their named case and none survives: the reconciliation removed (route and spawn), the selection not
+following, the wiring removed at the spawn site, a fourth `TerminalLaunchRequest(` site, the mode gate
+reverted, `D13`'s repository resolution reverted, `D20`'s fail-open restored, and the duplication seed.
+Seed `S1`/`S3` (which mutate production modules in place) are also why the builder recorded the one red
+run it saw: a suite reading a concurrently-seeded worktree reported the acceptance case failing with
+`KeyError: 'developerInstructions'`. Re-run with nothing else touching the tree: **0 failed**, twice
+observed. The lesson is in `E5` — never run the mutation probe against a tree a suite is reading.
+
+The 52 skips in the full suite are the named environment guards (including L16's
+`eve_runtime/node_modules` guard); no skip is presented as a pass.
+
+### Conventions
+
+- The two boundary doubles are module-local and deliberately thin: `RecordingTransport` records what the
+  session sent to the vendor boundary; `_FakeHost` doubles the tmux process boundary so no real process
+  is started.
+- The lane row is `unit-regression` in `mcp/tests/test-evidence-lanes.toml` (D9's invariant — the
+  fail-closed loader still names exactly the six historical D9 modules), and the module's three
+  governed-artifact **consumer rows** are the reason `evidence-lifecycle.toml`'s byte pin was re-derived
+  a third time at this leaf's tip (populations unchanged at 4 contracts / 51 artifacts).
+- The expected side of every acceptance assertion is the compiler's own result; a hand-built literal is
+  the defect class this module exists to prevent.
+
+### Invariants And Boundaries
+
+- **A production path from producer to consumer, read at the consumer's side.** A case that
+  hand-supplies the value under test does not belong in this module; that is `L15R-2`'s evidence class
+  and it was deleted.
+- **The enumeration case is the guard against a silent fourth launch point.** A new
+  `TerminalLaunchRequest(` construction must either carry `capsule=capsule` or declare
+  `legacy_launch_capsule(...)` with a reason.
+- **The legacy payload is pinned as bytes**, not as a key set, so an unconditional capsule key breaks
+  the case rather than slipping through.
+- **This module starts no real process and calls no vendor.** The vendor boundary is recorded, not
+  executed; the live system-block read is `E8`'s evidence, not this module's.
+- **A named skip is not a pass.** The environment guards report "skipped" with a reason; nothing here
+  asserts over a skipped path.
+
+### Todos
+
+None. The module is a test population; its coverage limits are the leaf's declared ones rather than
+technical debt here:
+
+- **No case exercises a real vendor model turn** — the capsule's arrival at the consumer's own boundary
+  is what is measured, and a real provider call is not part of any requirement.
+- **A shipped-row eve seat through the dashboard route is not covered** because it is impossible today
+  (the route does not set `session_backend`), which is defect-class and owned by **L17**; the route case
+  therefore teaches a registry row, exactly as the leaf's disclosure says.
+
+## Current audience, delivery and evidence contract
+
+A copied-corpus fixture changes only the source corpus seen by the real launch compiler. The new replacement-route cases require named no-delivery refusals for unmarked section text (with exact source line, including frontmatter), an inapplicable role/operation pair, and a missing required file. The currently retained launch identity/free-agent tests and removed-tool registration check remain; the historical terminal/runner inventory below is not restored.
+
+## Evidence
+
+
+Superseded card wording retained for custody (not certified as true of any source epoch or measured candidate):
+
+> - Source comparison: `mcp/tests/test_capsule_launch_wiring.py:1017-1050`.
+
+> - Source comparison: `git diff HEAD -- mcp/tests/test_capsule_launch_wiring.py (D13 successor)`.
+
+
+### Docs References
+
+No Domain Documentation source is configured in the resolved source registry for this pass.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+
+- The task-attached case compares compile_launch_capsule with compile_task_capsule for the same admitted leaf, asserting identical trusted instruction text and semantic digest. It does not exercise a spawned session. [1]
+
+
+- The free-agent admission case names its absent task plane with free-agent:bootstrap, checks is_taskless, requires a task-document parser refusal of that identity, and checks a sha256 capsule digest. [2]
+
+
+- The negative case: an un-compilable role refuses by name before any host effect. [3]
+
+
+- The one decision point, for every seat class. [4]
+
+
+- The D13 case asserts that role_capsule_compile is absent from registered tools, then compiles through the application entry point using the enclosure contract and requires compiled instructions. [11]
+
+
+- The free agent's named absence, and the identity that moves with the seat. [12]
+
+
+
+- The live launch request value and internal compiler carry capsule identity; removed terminal launch points and the removed resolver are not current production routes. [18]
+
+
+
+> Retained earlier citation wording: - The three governed-artifact rows registering this module as a consumer.
+
+
+
+### Cross-Repo References
+
+The vendor boundary this module records is the installed Codex app-server's thread-open request shape;
+the fixture it is pinned against lives in this repository.
+
+
+- The admitted binding a delivery belongs to: repository, task document path, role and operation, each refused when empty or carrying outer whitespace, and reported under those four names. [20]
+
+
+</details>
+
+
+- Adds a copied shipped corpus fixture while keeping real admission/selection/compilation. Three launch-boundary cases refuse unmarked section text with the exact line (including frontmatter), an operation that does not apply to the requested role, and a missing required operation file; each requires no delivery and a named status. Existing compiler-identity/free-agent/tool-removal cases remain. [22]
+
+- The current task-attached launch asserts equality with the compiler's trusted instructions and semantic digest for the same admitted seat. Workspace-sensitive capsule identity is asserted by a separate free-agent test; it is not a spawn-launch workspace-agreement assertion.  Historical former note: "The spawn side's agreement with its own capsule about the workspace." The former spawn-workspace assertion is historical; the current module has no such test case. [23]
+
+
+
+
+
+
+
+
+
+- The lane row D9's fail-closed loader requires for every new test module.  Anchor: "mcp/tests/test_capsule_launch_wiring.py" [15]
+
+
+- The three governed-artifact rows registering this module as a consumer.
+
+- The three governed-artifact rows registering this module as a consumer.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1064-1064 - the bytes it recorded now occur 91 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1885-1885 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:402-402 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:760-760 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The three governed-artifact rows registering this module as a consumer, beginning with the _user_settings_guard.py row. The `curator_coherence_test_support.py` row registers `test_capsule_launch_wiring.py` as a consumer. The `fixtures/repository_profiles/node/package-lock.json` row registers `test_capsule_launch_wiring.py` as a consumer. [21]

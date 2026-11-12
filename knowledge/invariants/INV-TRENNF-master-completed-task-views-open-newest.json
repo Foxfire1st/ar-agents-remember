@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The optional field, finalizer, completion-time model and table live separately, and their contract prevents removal of finalizer decision writes from erasing the only completion-time source or falsely presenting task-number order as recency."
+  },
+  "applicability": "Ordinary-master completed-task whole lists and newest-five previews, and the finalizer-written completion fact they consume.",
+  "conditions": [
+    "A new completion writes completedAt independently of decision records; older completed documents are not rewritten.",
+    "The legacy fallback reads the exact finalizer record’s at when completedAt is absent.",
+    "The whole view opens newest first, numeric task-number and completion-time sorts are reversible and show the active direction, and unknown times are last for either time direction.",
+    "Sort choice is ephemeral; the preview shows at most five newest completed rows with number, name and time, fewer when fewer exist and none when none exist."
+  ],
+  "exclusions": [
+    "Changing abandoned-list order or sprint-list order.",
+    "Persisting table sort preferences.",
+    "Backfilling older documents."
+  ],
+  "id": "INV-TRENNF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "L162-freeze-report.md:44-54",
+        "Parent full-source inspection on resolved RF01 plus cd2eef binding; native source case declarations remain scoped and unexecuted by Curator."
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 16",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Master completed-task views open newest first with reversible numeric and completion-time sorts, place unknown times last, show up to five newest rows in the master preview, and obtain completion from a finalizer-written completedAt field or a read-only legacy finalizer record.",
+  "status": "proposed",
+  "supersedes": []
+}

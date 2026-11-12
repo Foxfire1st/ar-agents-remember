@@ -1,15 +1,5 @@
 # dashboard/src/data/inflight.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/inflight.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T15:20+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -27,7 +17,7 @@ removes only its own slot after success or rejection, allowing later reads to is
 
 ### Conventions
 
-Callers supply the async read and are responsible for an abort-capable transport bound.
+Callers supply the async read and are responsible for an abort-capable transport bound. The retained production caller is the File Viewer repository catalog; earlier terminal/catalog-poll examples are historical after their retirement.
 
 ### Invariants And Boundaries
 
@@ -38,37 +28,24 @@ one would blur its ownership with a caller's cache policy.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+No relevant external documentation is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The map shares a pending promise and releases it by identity on settle. | `shareInflight` | dashboard/src/data/inflight.ts:21-30 |
-| Repository and terminal catalogs use the helper for boot contention. | "export const fetchRepos = (base"; "export async function fetchTerminalSessionsOrNull(base" | dashboard/src/data/files.ts:108-111; dashboard/src/data/terminal.ts:413-430 |
+- The map shares a pending promise and releases it by identity on settle. [1]
 
-## Cross-Repo References
+- The live repository catalog fetchRepos uses shareInflight for its request; no removed terminal catalog is a current consumer. [2]
+
+- The retained File Viewer repository-catalog read shares its in-flight callback and bounds its fetch; removed terminal/catalog-poll callers are not current consumers. [4]
+
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This is repository-local browser state coordination. | `shareInflight` | dashboard/src/data/inflight.ts:21-30 |
-
-## Update History
-
-- 2026-08-11T15:20+02:00 — Re-anchored both catalog consumers to their unique keyed
-  `shareInflight` calls and refreshed the terminal consumer's moved range.
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 3 citation rows to plain
-  sources with `shareInflight` anchors (inflight.ts 15-30) and added the terminal catalog range
-  (terminal.ts 368-387) beside files.ts 108-111 so the repository+terminal claim carries both
-  consumers. Zero findings remain.
-
-- 2026-07-24T13:17:50Z — Created for bounded boot-read single-flight ownership. Verification hash/date
-  remain pinned to the pre-commit source stamp.
+- This is repository-local browser state coordination. [3]

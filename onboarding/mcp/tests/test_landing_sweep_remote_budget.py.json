@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_landing_sweep_remote_budget.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MIK-R81 rule 6 (F12): one ls-remote per repository and ref per landing sweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c6c1ec3f6a4b64dd1f8fb9b5e8ee07cc318358b",
+            "content": "sha256:0ba9d86a54f6c4ba07ae293f4f6cc81c82e4ccdc73f0574b8ba22962929c06a1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

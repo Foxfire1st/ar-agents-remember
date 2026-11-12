@@ -1,0 +1,91 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/bootstrap/failure-states.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The detail is read only when a step returns a state the seat cannot name, and the role's stop rules stay in force.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3c3b347c8f4a225fc2d55cb2e18ed1332cb6d6",
+            "content": "sha256:4df19560b448d61b106d8904418d730e11dc8f9d32734a7b79f5183d92cddc38",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Bootstrap operation points to the failure states at that moment.\n\nAnchor: `failure-states.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+            "content": "sha256:4182b0940e3c41d282c2b450723276c08074af4f66f87da9a97141b244238236",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Setup states stay distinct: unsupported topology preserves the memory root, a dirty repository is read before adoption, and a coordination root is never built by hand.\n\nAnchor: `memory-mode-unsupported`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3c3b347c8f4a225fc2d55cb2e18ed1332cb6d6",
+            "content": "sha256:6e78e0368bea8f3894fc4be894fda8ae9fb5e94955e967dac963f1c0b5ee89f4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Foundation states, a refused admission and an unusable object are reported with their own codes, and none is worked around.\n\nAnchor: `context-not-admitted`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3c3b347c8f4a225fc2d55cb2e18ed1332cb6d6",
+            "content": "sha256:3c9b1c9b113f02667159ea22b593e4bf32e219571a29d0f4a031a0800438a5d1",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Settings states are reported with their path; a refused write is the developer's decision.\n\nAnchor: `destination-is-symlink`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d3c3b347c8f4a225fc2d55cb2e18ed1332cb6d6",
+            "content": "sha256:7d62c11dced5f89dc18562f16790a3048a8f2046d7390d176272520c6c3a2f68",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

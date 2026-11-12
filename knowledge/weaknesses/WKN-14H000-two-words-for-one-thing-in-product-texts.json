@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+    "content": "sha256:5e1972cd7a58f1da6ec009b67c6e9991545d4aa5155af6cc373aeb967eecb8d7",
+    "locator": {
+      "kind": "symbol",
+      "name": "_resolve_direct_workspace"
+    },
+    "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+  },
+  "id": "WKN-14H000",
+  "kind": "context",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-35",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Texts of the product use a second word for a thing that the documentation names once, for example series contract for the worktree contract here, tool-call log beside toolLog, invariant gate beside knowledge-gate-refused, and leaf beside task in labels."
+}

@@ -1,0 +1,148 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/selection_results.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Repository selection produces one immutable result and validates the declared population and completion state before publication.\n\nAnchor: \"class RepositorySelectionResult(\"; \"def _verify_population(\"; \"def _verify_completion(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:2d06d6321b45fa2ea3e0e7b5d046a7aa72be01cae2c4b6083cacb3b809d8fa67",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:7e09cb8fa3adc269058490dc01b748252abd3714e49c6479769f38e6098c5f67",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The canonical result and its digest-verified contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:2d06d6321b45fa2ea3e0e7b5d046a7aa72be01cae2c4b6083cacb3b809d8fa67",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositorySelectionResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:8b6dd1d56e66c4d167cbc0862520fd574b4d5e140fbd12e4b9d7c46591fec635",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_selection_result_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Typed provider inputs normalized into one immutable selector result.\n\nAnchor: \"class RepositorySelectionDraft\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:67dfb98da8df78efaa0708391eff6f9d3d14bdd6f71ced0ead7c604453a1e12f",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Normalize and content-address one provider result.\n\nAnchor: \"def build_repository_selection_result\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:1ddba15c43dcc0b470138191b39f083b1de3b650cdb4c13476ac4c44a7aa83f2",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Selector population validation checks the declared universe against its selected and excluded members.\n\nAnchor: \"def _verify_population\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:48fd20b6d86ee489e0b36ced6990a1dc4299da54e15a386f74e1b2cb460d9f04",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Selector completion validation enforces the declared completion state.\n\nAnchor: \"def _verify_completion\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:e3810f5cc61f2e617ebb3547bec9eda51fd718bd99ef5d907aa2a7835f4033a4",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Selector output validation requires consistent output reasons.\n\nAnchor: \"def _verify_output_reasons\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+            "content": "sha256:0bfef50fdba74893c4ffa6c50c049e8998c16fb525d70ce7496823685e44a8f8",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

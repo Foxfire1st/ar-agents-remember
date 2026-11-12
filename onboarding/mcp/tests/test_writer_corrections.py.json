@@ -1,0 +1,143 @@
+{
+  "path": "mcp/tests/test_writer_corrections.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "efcb4035a030d70f17dd239206c420e275325530",
+        "content": "sha256:bb6a610e2f2d2f945db19077e1c88524085bcfe18e33ca6028b69d03e3cb9248",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_leaf_without_worklist_is_told_to_compute_it"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A leaf Writer without its persisted worklist refuses and names the compute route.",
+      "id": "PRF-G9K136",
+      "invariant": "INV-A6571D",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-1-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "efcb4035a030d70f17dd239206c420e275325530",
+        "content": "sha256:1f12bc702e4a3a2bd75bd0ef49aba1004831c10ece369f85f85c15bd4acd9ea5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_same_document_attachment_orders_author_first"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Both input orders write one authored invariant before resolving the same-document attachment; the attachment origin is retained.",
+      "id": "PRF-KDPASX",
+      "invariant": "INV-FJQQ5A",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-3-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "efcb4035a030d70f17dd239206c420e275325530",
+        "content": "sha256:b23186f71eea10af0080f47b96bde8e000da7ca839b7ed6efa7702090a61d6c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_same_owner_evidence_can_be_replaced"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: An explicit same-owner replace_evidence request replaces the previous evidence string.",
+      "id": "PRF-S6YTEE",
+      "invariant": "INV-WQBG6R",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-4-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "efcb4035a030d70f17dd239206c420e275325530",
+        "content": "sha256:888cd406a5a54b7d675b00b1305b784daf2e716f5af5df995afeafad93ae9495",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_quoted_typescript_case_evidence_and_proof_keep_title"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Quoted TypeScript case title is preserved in evidence and proof binding.",
+      "id": "PRF-VVFNY2",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-9-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "efcb4035a030d70f17dd239206c420e275325530",
+        "content": "sha256:e78a86d184f23715b797cfcadc351e09173f9b7e44f668d8f6ae8252ce798a7e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_equivalent_unicode_titles_refuse_ambiguous_writer_proof"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Equivalent decoded Unicode titles refuse ambiguous proof binding.",
+      "id": "PRF-VWA21J",
+      "invariant": "INV-B37MWR",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-9-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "efcb4035a030d70f17dd239206c420e275325530",
+        "content": "sha256:68f00a3dfc7d53cee35ca37ba72361cd0a76720a2f2af1315e5c73617ee992ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_same_document_attachment_refuses_statement_mismatch"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Attachment with a different statement refuses instead of silently changing the authored invariant.",
+      "id": "PRF-WAGX24",
+      "invariant": "INV-FJQQ5A",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-3-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "efcb4035a030d70f17dd239206c420e275325530",
+        "content": "sha256:ff115ef027df3e706f7043e5f4597f1af4a93a5a3097988e7e30196bc34b27d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_authored_superseded_uses_derived_rule_text"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: An authored superseded status refuses with the derived-status rule and actionable text.",
+      "id": "PRF-Z6YK5A",
+      "invariant": "INV-DWPSRR",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-8-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes same-document invariant handles, evidence replacement and JavaScript/TypeScript proof-title authoring assertions. Assertions use paired-tree synthetic fixtures and the writer’s actual output fields. A source proof target or test declaration is not a new run result, semantic verdict or replacement for separate producer provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:11936fe4d8ec64a0006fe6c5d211b5efd76bf433e55015fcdd67568df5420a12",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

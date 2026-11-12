@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/conditional_read.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Comparison is shared and independent of representation discovery or generation validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4ed7f7026893587b044c2962ff8f39c2c5c4faa",
+            "content": "sha256:94cd0b85666f2ec2495a6a583c765057fec35deb3b7cece3b75eba7af0a842fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "if_none_match_matches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

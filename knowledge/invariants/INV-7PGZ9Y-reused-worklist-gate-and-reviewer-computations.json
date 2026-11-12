@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Admitting every inspected sibling as a dependency can invalidate sound reuse; omitting genuinely consumed reads can preserve unsound reuse. The explicit bucket and identity distinction prevents both mistakes across the read owners."
+  },
+  "applicability": "Coordination-file observations used by reused worklist, gate and reviewer computations, including explicit ruled-out sibling observations.",
+  "conditions": [
+    "A consumer records the identity it genuinely read; kept dependency observations and explicitly examined observations have separate context buckets.",
+    "An explicitly examined ruled-out sibling stays outside the admitted kept dependency set; strict leaf selection alone marks that ruled-out observation as examined.",
+    "Each recorded_reads capture starts a fresh kept-read dictionary. Its examined bucket is explicitly supplied or inherited from the caller, so nested recorders may add to that shared examined dictionary. Finally resets restore both context bindings; they do not undo mutations of an inherited examined dictionary.",
+    "Readback and currentness may inspect the explicit observation without admitting it as a kept dependency."
+  ],
+  "exclusions": [
+    "The cross-owner kept/examined distinction does not itself accept any reused result or replace exact reviewer-cache input checks.",
+    "No live cache reuse, sibling task mutation, test run or executed reader witness is claimed."
+  ],
+  "id": "INV-7PGZ9Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-6",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-70/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-68-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 6",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Reused worklist, gate and reviewer computations may depend only on genuinely recorded coordination reads, with explicitly examined ruled-out sibling observations kept outside the admitted kept dependency set.",
+  "status": "proposed",
+  "supersedes": []
+}

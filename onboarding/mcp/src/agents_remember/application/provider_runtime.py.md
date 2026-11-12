@@ -1,22 +1,18 @@
 # mcp/src/agents_remember/application/provider_runtime.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/application/provider_runtime.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T15:05+02:00                     |
-| lastVerifiedCommitHash | `96bfe755d2b605d42a9d001714cc7d8eb592a073`                |
-| lastVerifiedCommitDate | 2026-09-14T15:15:20+02:00|
-| governingOverview      | `overview.md`                              |
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
-`application/provider_runtime.py` (260731-EFA-L9) is the provider lifecycle runtime for worktree
-start/teardown, moved out of the `worktrees` package because worktrees ranks below providers and
-may not import them. It combines the former `worktrees/modules/provider_teardown.py` teardown
-mechanics with the background setup launcher and status projection formerly owned by
-`worktrees/modules/provider_async.py`; the composition root binds it into `WorktreeServices`.
+`application/provider_runtime.py` (260731-EFA-L9) retains provider teardown, the
+background setup launcher and legacy setup-progress readers behind `WorktreeServices`.
+It moved out of `worktrees` because that lower-ranked package may not import providers.
+The teardown mechanics came from `worktrees/modules/provider_teardown.py`; the launcher
+and status readers came from `worktrees/modules/provider_async.py`. Ordinary worktree
+start and retry do not launch either retired provider: their plan uses the shared
+never-enabled predicate before reaching this launcher.
 
 Teardown performs full-reclaim teardown of a worktree's isolated provider stack. The lifecycle
 `stop`/`shutdown-all` actions only stop watchers and leave backend containers and networks
@@ -88,10 +84,12 @@ cit:([`launch_provider_setup`], mcp/src/agents_remember/application/provider_run
 
 ### Invariants And Boundaries
 
-- The launcher must return before any provider work happens; the contract must already be
-  written when it is called; `runner`/`thread_factory` are injectable test seams; a dead server
-  mid-setup leaves a stale heartbeat and `retry_provider_setup` is the recovery path — never
-  block teardown on a stale heartbeat.
+- If the retained launcher is explicitly called, it starts a daemon setup thread and
+  returns its starting payload; the contract must already exist and
+  `runner`/`thread_factory` remain injectable seams.
+  A dead setup thread leaves a stale heartbeat, which must not block teardown.
+  `retry_provider_setup` replans through the same retired-provider gate and cannot
+  recover provider provisioning; retained retry/status fields are not launch authority.
 - The module reads persisted settings only; it does not query the live Docker
   daemon for resource discovery.
 - `docker rm -f` is used unconditionally (force-removes even running containers).
@@ -106,38 +104,21 @@ cit:([`launch_provider_setup`], mcp/src/agents_remember/application/provider_run
 - Every `remove_tree` result that reclaimed nothing names its reason, so the `providerRuntime` field
   of a teardown payload can never reach the terminal blocker builder reasonless.
 
-## Docs References
+## Evidence
+
+> Retained earlier citation wording: - Ordinary start and retry return the non-enabled provider plan before the retained background-launch branch; neither retired ID becomes enabled. [5]
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `docker_command` and `run_command` are provided by the provider lifecycle shared layer (re-paired to their real owners; the previous row had the two anchors swapped). | "def run_command"; "def docker_command" | mcp/src/agents_remember/providers/lifecycle/command_runner.py:15-15; mcp/src/agents_remember/providers/lifecycle/docker_runtime.py:18-18 |
-| The one removal path: a not-present path, a dry run, a plain `rmtree`, and the permission-denied reclaim retry whose surviving tree now carries its own reason. | `remove_tree` | mcp/src/agents_remember/application/provider_runtime.py:289-326 |
-| The port the worktree layer reaches this module through; its `teardown` and `remove_tree` members are what a worktree operation can call. | `ProviderLifecyclePort` | mcp/src/agents_remember/worktrees/services.py:54-96 |
-| The focused cases that pin the reason on every non-removal result and the surviving-tree cause. | `test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing`; `test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived` | mcp/tests/test_terminal_blocker_reasons.py:288-311; mcp/tests/test_terminal_blocker_reasons.py:314-352 |
+- `docker_command` and `run_command` are provided by the provider lifecycle shared layer (re-paired to their real owners; the previous row had the two anchors swapped). [1]
+- The one removal path: a not-present path, a dry run, a plain `rmtree`, and the permission-denied reclaim retry whose surviving tree now carries its own reason. [2]
+- The port the worktree layer reaches this module through; its `teardown` and `remove_tree` members are what a worktree operation can call. [3]
+- The focused cases that pin the reason on every non-removal result and the surviving-tree cause. [4]
 
-## Update History
-- 2026-09-14T15:05+02:00 — 260913-LCA-L8 curator: documented that `remove_tree` names a reason on
-  every result that reclaimed nothing — `already-absent`, `permission denied: <error>`, and the new
-  `still present after docker ownership reclaim` on the post-reclaim retry branch, which was the only
-  path in the repository that could answer `removed: False` silently and so the only producer that
-  could hand the terminal blocker builder a reasonless `providerRuntime` item. Recorded it as a named
-  cause on an existing non-removal rather than a new teardown capability. Re-derived the anchors this
-  card keeps: `remove_tree` resolves at `289-326` after the +3 comment lines, `launch_provider_setup`
-  `73-121`, `provider_setup_status` `124-147` and `provider_setup_running` `150-155` are unchanged.
-  Added the `remove_tree`, `ProviderLifecyclePort` and focused-case rows, and corrected the
-  `docker_command`/`run_command` row, whose two anchors were paired with the wrong files. Verification
-  metadata remains closeout-owned.
-
-- 2026-08-04T13:00:51+02:00 — 260731-EFA-L6 S18-B11 curator: reconciled abandon/cleanup ownership and the focused test evidence, and supplied scoped fixer input for generated ranges. Verification metadata unchanged.
-
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 4 citation items; scoped citation check now passes.
-
-- 2026-06-01T00:00+02:00 — Created onboarding for the new provider teardown module.
+- Ordinary start and retry return the non-enabled provider plan before the retained background-launch branch; neither retired ID becomes enabled.  Anchor: `plan_providers_for_start`, `run_or_launch_provider_setup`, `_retry_provider_setup_result`, `provider_enabled` [5]

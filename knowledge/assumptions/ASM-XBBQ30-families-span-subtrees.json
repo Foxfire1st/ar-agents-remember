@@ -1,0 +1,17 @@
+{
+  "basis": "D12 was ruled on families whose code lives in several subtrees. Of the seven families this leaf routed, each has realizations in at least three directories, and five reach across mcp/ and dashboard/.",
+  "id": "ASM-XBBQ30",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "path": "10-decisions.json"
+    },
+    "handoffEntry": "ASM-SPAN",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "proposition": "Families commonly have realizations in more than one subtree of the code.",
+  "revision": 1,
+  "schema": "ar-assumption/v1",
+  "status": "accepted"
+}

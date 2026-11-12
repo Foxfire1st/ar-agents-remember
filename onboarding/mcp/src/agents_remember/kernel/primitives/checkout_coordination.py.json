@@ -1,0 +1,123 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+        "content": "sha256:2a616aad2446a66b3c7baf6b0d359cfb2019c67260b82e52ac7242dd109092cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_durable_write_target"
+        }
+      },
+      "id": "RLZ-6MYWHPT6",
+      "invariant": "INV-WSD92WBN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The boundary is enforced at the config-loading and durable-write entry points, which is where an unpublished checkout's write is stopped.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+        "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkout_cli_location"
+        }
+      },
+      "id": "RLZ-86TVNJBC",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+        "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkout_cli_location"
+        }
+      },
+      "id": "RLZ-P8A63K5E",
+      "invariant": "INV-WSD92WBN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The boundary is enforced at the config-loading and durable-write entry points, which is where an unpublished checkout's write is stopped.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "4": {
+      "note": "`require_linked` holds the guard's whole decision: no location is not refused, a primary location raises `CheckoutCoordinationError`, and a linked location is returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:b103cf69f1e4c4133dd9f152378a447e6b50830fd5271ea27383b718b993a2ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_linked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`checkout_cli_location` keeps the declared-mode bypass and then delegates the decision to `require_linked` over the resolved checkout, so behaviour is unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkout_cli_location"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The location still comes from the imported package path: a `.git` file is a linked worktree, a `.git` directory the primary checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:49d1835236d20dbfff1bf879130a5eb247a6eff0566baa122659fbbf18c2e616",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_checkout_location"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`require_durable_write_target` permits exactly two durable targets — the disposable coordination root and the enclosure `reports/` root — and the lock paths call it before a parent or lockfile exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:2a616aad2446a66b3c7baf6b0d359cfb2019c67260b82e52ac7242dd109092cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_durable_write_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

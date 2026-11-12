@@ -1,0 +1,224 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.intentEntry.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "The re-validation boundary the cases exercise.\n\nAnchor: `IntentEntryRevalidation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0a7c54cada6971928e008079051b6047967d0304ed42d57a70c6a45ef0904beb",
+            "locator": {
+              "end": 854,
+              "kind": "line_range",
+              "start": 854
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shell the cases mount on an injected view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:e76f2fb3a981547b7a44952ce279e847f07d0f12688fbd24ad3d3302c1cbfb8a",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The mode-bar entry used to leave and return to Operations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:921ce3936f37598a6d974e6bad08740bc13b0b7e6b102bad4d72570b039b65a3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The ruled triggers and the request-counting method.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:ef317e2494ac5008633fbf456d7536ee52054a798ba33dbc895378238fc79de4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:8d62195405ee0b9ba11f19ee12e63222a937947da44899d55ef06d7ce10d52de",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Two live leaves seeded into the real store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:cd39786a03447ff7d8055303a3aa89000687b171e093f63ac89043a9c4885c20",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The route stub with the knowledge switch and the read counters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:ef317e2494ac5008633fbf456d7536ee52054a798ba33dbc895378238fc79de4",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The first-ingest sequence every case starts from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:5b1ae71229e24e58ee501a581d3f1f33f794102a9990b9d49a3a3b58f3b630df",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "(a) re-show, once per showing, no catalogue read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:7e75200e2854277a842c60654f8683af83e817c0a9fe2cc40256e97433538ed2",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "(a) opening a task from another view reads once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:3725ba62cb6af0913521c441c5130fac3a5d913c7dd28686814dab207a47fdb8",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "(b) leaving the reviewer re-validates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:c7cdc1255fd296b61da392a0f906ddc92092606d02badc57f354237f9e7ab22f",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "(c) the reviewer's refresh re-validates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb42598c0c350ffa0445f7d80aea0b38979f62b4",
+            "content": "sha256:e8fd8becfed73d543b5c7c076dc5e038b54ca51ee1f2e978054f18c8bd86065c",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The provider under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3feb8a1751db6eca58b6b0be0a1878f10d95367",
+            "content": "sha256:495395edc9c750eb467c472c50a53c55ea59ed7ef0bff8c01a6b1faf156710f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentEntryRevalidation"
+            },
+            "path": "dashboard/src/data/intentEntryRevalidation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

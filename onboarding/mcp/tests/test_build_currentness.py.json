@@ -1,0 +1,319 @@
+{
+  "path": "mcp/tests/test_build_currentness.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+        "content": "sha256:3a9cd996644c4e21c727b7a19a626de2927016c3f95735abf00b40487378f234",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_markdown_does_not_change_python_digest_but_python_addition_and_removal_do"
+        }
+      },
+      "facet": "A Markdown change leaves the digest unchanged while adding or removing a Python file changes it.",
+      "id": "PRF-3Q36FN",
+      "invariant": "INV-HCG93S",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule1 as amended v4",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+        "content": "sha256:9ebfc67b1c5c165343a9ee702e162c661c1acbb9352944dd7d1d401043ee738a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_checkout_is_compared_only_when_status_explicitly_requests_it"
+        }
+      },
+      "facet": "A checkout process carries no comparison on ordinary calls and is compared only when status asks.",
+      "id": "PRF-7AAK2G",
+      "invariant": "INV-HCG93S",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule1 as amended v4",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+        "content": "sha256:581b0e08c853f7867423d93cfaf9740dd6f2a662233a5e5ca6155e3476130d8f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_live_record_names_boot_settings_role_and_disappears_on_cleanup"
+        }
+      },
+      "facet": "A live record names its boot, settings and role and disappears on cleanup.",
+      "id": "PRF-80SK2B",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule3 server inventory",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+        "content": "sha256:893d69e6ac0d7b8c904cb0b06644a23e8cbba343d755ada1ff1e0e00d6119c35",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_changed_python_is_stale_after_the_cache_expires_with_immutable_loaded_identity"
+        }
+      },
+      "facet": "A Python change after load turns the installed build stale once the cache expires, while the loaded identity stays fixed.",
+      "id": "PRF-8T0GEP",
+      "invariant": "INV-HCG93S",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule1 as amended v4",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+        "content": "sha256:1bbe480d666efc35a70209855e80ebfa1e3abb78c7adb566ad4fa358d39de450",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dead_or_reused_pid_records_are_removed_and_bad_records_do_not_hide_live_ones"
+        }
+      },
+      "facet": "Dead or reused process records are removed and unreadable records do not hide live ones.",
+      "id": "PRF-A2V1A4",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule3 server inventory",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+        "content": "sha256:54a0ec16e2da3518ddff0eb1c0f24c16d23024626916c58568a5dd9e2f6c869c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_inventory_identifies_stale_servers_and_role_specific_remedies"
+        }
+      },
+      "facet": "The inventory marks stale servers with the remedy for their role.",
+      "id": "PRF-DCH8GX",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule3 server inventory",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture pins the loaded build to a temporary package and resets the comparison cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:facb2c3492b926894e0a7b1fecfee3e7ab086ef566948f3d6801c624cc5f2fe6",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Each closed server lifetime releases its exit callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:43b030212976163f5a630bd5e3083bd654fa1322bdd6b78b4aa4ec0b0fea0f02",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closed_server_lifetimes_release_their_atexit_callbacks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Dead and pid-reused records are removed and bad records hide no live one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:1bbe480d666efc35a70209855e80ebfa1e3abb78c7adb566ad4fa358d39de450",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dead_or_reused_pid_records_are_removed_and_bad_records_do_not_hide_live_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A failed registration write is logged once and the server continues.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:9103ceb810a475dd36fefdd7d2ee68efceb70b3744f1743e839f8983ced76d76",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registration_write_failures_are_logged_once_without_stopping_server"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Cache entries track live boots and roots at two population sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:779d1a5f6e5d2c43b83045aefbd13f4780d9b501ae43957987b6dab8abe495e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_reclamation_tracks_live_boots_and_roots_at_two_population_sizes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Changed Python turns stale only after the cache window, keeping the loaded identity and first-seen time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:893d69e6ac0d7b8c904cb0b06644a23e8cbba343d755ada1ff1e0e00d6119c35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_changed_python_is_stale_after_the_cache_expires_with_immutable_loaded_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Markdown leaves the Python digest unchanged; adding or removing Python changes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:3a9cd996644c4e21c727b7a19a626de2927016c3f95735abf00b40487378f234",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_markdown_does_not_change_python_digest_but_python_addition_and_removal_do"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A checkout is compared only on explicit request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:9ebfc67b1c5c165343a9ee702e162c661c1acbb9352944dd7d1d401043ee738a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_checkout_is_compared_only_when_status_explicitly_requests_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unreadable or unavailable digests and a missing root answer unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:9567e9a0e2f8efa0a4c596875d4015cab8d32399a1ecfabe9f77233d6a9e8b36",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_installed_or_unavailable_loaded_digest_is_unknown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A wheel under a checkout is an installed build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:a3f20d7df2da0fdb2c3c2bf849a319494b82ba1f9a537124e94f814c1a4d2a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wheel_installed_under_a_checkout_is_still_an_installed_build"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Status and inventory share one digest read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:4e49345d8ec94ae9d057a27e8de163308ce3d15f7d454d7b1742d84faa75be33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_digest_cache_is_shared_between_status_and_inventory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A live record names pid, role, loaded digest, boot time and settings path and disappears on cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:581b0e08c853f7867423d93cfaf9740dd6f2a662233a5e5ca6155e3476130d8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_record_names_boot_settings_role_and_disappears_on_cleanup"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A stale dashboard is told to restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f192a57d72f642157c1c5a081f9327bfec69d6a5",
+            "content": "sha256:54a0ec16e2da3518ddff0eb1c0f24c16d23024626916c58568a5dd9e2f6c869c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_inventory_identifies_stale_servers_and_role_specific_remedies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

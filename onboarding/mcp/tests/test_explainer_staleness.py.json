@@ -1,0 +1,122 @@
+{
+  "path": "mcp/tests/test_explainer_staleness.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d1892461aba51109b150cb9cefdb1931c7e0d6a5",
+        "content": "sha256:31fb84c88160ea31a3dfb4f9cce3c6aa5892cdc4e1e7b8de9bae379026b9cfbe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_report_and_the_manifest_staleness_carry_the_same_stale_parts"
+        }
+      },
+      "facet": "The report and the manifest carry the same stale parts.",
+      "id": "PRF-ZBBPE9",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-A-5",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_line_shift_keeps_a_symbol_and_a_held_line_range_but_never_a_file` protects which locators survive a line shift and which never do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1892461aba51109b150cb9cefdb1931c7e0d6a5",
+            "content": "sha256:553fa658165bb67f3eca84e52388e91a04bcbac8282522080660c8d266c0c5fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_line_shift_keeps_a_symbol_and_a_held_line_range_but_never_a_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_a_card_side_never_read_is_uncomputable_and_an_absent_side_is_a_deletion` protects an unread side being uncomputable and an absent side a deletion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1892461aba51109b150cb9cefdb1931c7e0d6a5",
+            "content": "sha256:675351a3f6880c765501e0fec01978b2f56c110888f1b40dd7f212ccc926073c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_card_side_never_read_is_uncomputable_and_an_absent_side_is_a_deletion"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_merged_hunks_carry_their_grades_onto_one_hunk_all_stale_with_the_highest_chip` protects merged hunks carrying their grades onto one stale hunk with the highest chip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1892461aba51109b150cb9cefdb1931c7e0d6a5",
+            "content": "sha256:3c1ca58f4be430f961488ae9881b4518eb2f6ca8cd2093224e3b9f39ebe2e0d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_merged_hunks_carry_their_grades_onto_one_hunk_all_stale_with_the_highest_chip"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_exactly_the_part_resting_on_the_changed_blob_is_stale` protects only the part resting on the changed blob being stale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1892461aba51109b150cb9cefdb1931c7e0d6a5",
+            "content": "sha256:8559e68c859c9759778c613d3139ea8f2cf27e2bdcafd7f3c29bb72e80d69186",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exactly_the_part_resting_on_the_changed_blob_is_stale"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_the_regeneration_message_names_the_part_its_changed_basis_and_the_stale_grade` protects the regeneration text naming the part, its basis and the stale grade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1892461aba51109b150cb9cefdb1931c7e0d6a5",
+            "content": "sha256:02dc98feaebd9bae4a239696ad32d06f6ade0b59fcbed17989ae6e4591f84b89",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_regeneration_message_names_the_part_its_changed_basis_and_the_stale_grade"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The case `test_the_judgment_sort_orders_by_grade_then_priority_and_puts_the_ungraded_last` protects the judgment sort ordering by grade and priority with ungraded last.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1892461aba51109b150cb9cefdb1931c7e0d6a5",
+            "content": "sha256:419e9689be3ac8828b010a4cda3f87763d65272461a0f19e32a92341b12902d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_judgment_sort_orders_by_grade_then_priority_and_puts_the_ungraded_last"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

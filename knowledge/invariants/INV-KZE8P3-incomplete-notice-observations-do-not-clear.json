@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A torn store read as empty would drop a notice the developer has not seen and reclaim the acknowledgement behind it, which is a silent loss of exactly the fact the feature exists to report. The three-state observation and the quarantine cases pin the distinction."
+  },
+  "applicability": "Terminal-notice observation and the acknowledgements it protects.",
+  "conditions": [
+    "A missing store, a readable store that holds nothing and uninterpretable bytes are three distinct observations.",
+    "Uninterpretable bytes are quarantined beside the store and never read as an empty one.",
+    "An incomplete observation neither clears a visible occurrence nor reclaims its acknowledgement."
+  ],
+  "exclusions": [
+    "Rewriting or deleting unreadable bytes in place.",
+    "Treating a failed read as proof that no notice exists.",
+    "Reclaiming an acknowledgement while its occurrence may still be published."
+  ],
+  "id": "INV-KZE8P3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/267804e5-dd71-51e8-8f1d-d975effaaeaf/role-launch/round4/L190-fix-verification-R4.json#L190-R1-F07; Prior sealed closure retained; not reopened in fixed-list R4."
+      ],
+      "path": "ingest-runA.json"
+    },
+    "handoffEntry": "L190-R1-F07",
+    "leaf": "260928-MIK-L190",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Incomplete notice observations do not clear visible occurrences or prematurely reclaim their acknowledgements.",
+  "status": "proposed",
+  "supersedes": []
+}

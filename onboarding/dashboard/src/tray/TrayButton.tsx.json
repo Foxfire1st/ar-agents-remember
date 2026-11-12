@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/tray/TrayButton.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4a59b3a84a8572b11b1a88ae4df41f6ba7d0477a",
+        "content": "sha256:2b1c8999ef24389b2573c9d30e41f7cad1c32dc17975606a32eccd9830e9bfe7",
+        "locator": {
+          "kind": "symbol",
+          "name": "TrayButton"
+        }
+      },
+      "id": "RLZ-FFHG5V",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Prevents its `mousedown` default, so opening the tray keeps the selection.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns the persistent bottom-bar tray button and closed-tray edge pill.\n\nAnchor: \"export function TrayButton() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a59b3a84a8572b11b1a88ae4df41f6ba7d0477a",
+            "content": "sha256:88331e7cdb0bd1cb97cf395c1cb434d3cf6c1bb56ca628570f7a06db9e5a4710",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Owns the persistent bottom-bar tray button and closed-tray edge pill.\n\nAnchor: \"export const trayBarRow = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a59b3a84a8572b11b1a88ae4df41f6ba7d0477a",
+            "content": "sha256:4586a06921bb24b71b0c7c335660468e59498c88b1755431e46957b854954fb9",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Owns the persistent bottom-bar tray button and closed-tray edge pill.\n\nAnchor: \"export function TrayBarSlot() {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a59b3a84a8572b11b1a88ae4df41f6ba7d0477a",
+            "content": "sha256:d67184b76b08565cf3fd1142559be8a4452d0f78f990c865919dfd5f028841ff",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

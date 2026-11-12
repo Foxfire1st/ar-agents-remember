@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/route_review.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/tasks/route_review.py` |
-| doc_type               | `file-level-onboarding`                 |
-| lastUpdated            | 2026-09-08T22:13:55+02:00                                     |
-| lastVerifiedCommitHash |                                            `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate |                                            2026-09-10T07:24:09+02:00|
-| governingOverview      | `overview.md`                            |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
@@ -28,13 +18,7 @@ introducing a second review-history store.
 and `RouteReviewScope` bind ordered atomic-master children to their canonical task intents.
 `ReviewFinding` is the immutable finding definition used by the review state transition layer.
 
-`ReviewState` carries a monotonic round number, a pending bit, a sealed baseline finding list, and
-the remaining finding IDs. It also persists one nonblank `developerApproval` answer with its
-positive cumulative `additionalRounds` allowance when the ordinary limit is exhausted. Its
-validator requires unique baseline and remaining IDs, makes a zero-round state empty, requires
-remaining IDs to belong to the sealed baseline, and requires the recorded permission and allowance
-to appear together. Missing `TaskDocument.reviewState` is interpreted by the document and
-transition owners as zero state.
+`ReviewApproval` records `by` as architect or developer and trims nonblank approval words. `ReviewState` carries round, pending, the sealed baseline and remaining IDs, plus `limit`, checked `candidateTree` and authority-resolved `candidateIdentity`. A new `approval` and the legacy `developerApproval` are mutually exclusive and pair with positive cumulative `additionalRounds`. A missing or legacy limit defaults to zero as a pre-limit sentinel; the transition/get owners compute the effective settings number plus extras. The validator keeps zero-round state empty, including approval/candidate/limit fields, requires unique baseline and remaining IDs, and requires remaining IDs to belong to the baseline. Missing `TaskDocument.reviewState` remains zero state.
 
 `RouteReviewRecord` remains the candidate-bound persisted evidence record. Its coherence validator
 keeps route verdicts consistent, requires aggregate intent when a scope is present, and treats
@@ -42,11 +26,8 @@ evidence digests, the dependency declaration, and record digest as an all-or-not
 
 ### Invariants And Boundaries
 
-- Review state has no caller-selected purpose, identity, or authentication field; transition
-  admission is owned by `worktrees/review_history.py`.
-- The ordinary three-round limit is enforced by the transition service; this model carries only the
-  bounded recorded developer permission and cumulative allowance used after exhaustion. It does
-  not authenticate the answer or introduce a second authority.
+- Each review state has checked-candidate and authority-resolved identity fields. The operation payload now selects code or memory through reviewKind, and typed recorded rounds retain that kind; no authentication field or approval-authenticity proof is added. Admission is owned by `worktrees/review_history.py`.
+- The transition service enforces the settings number plus cumulative approved extras. This model records architect/developer words without authenticating their author and keeps legacy developerApproval readable.
 - Route-review content addressing remains all-or-nothing, and atomic-master scope remains
   integration-owned.
 
@@ -54,40 +35,47 @@ evidence digests, the dependency declaration, and record digest as an all-or-not
 
 None.
 
-## Docs References
+## Current Contract
+
+ReviewRound records positive round number, finite code/memory kind, whether findings remained when that round was recorded, and optional verdict reference. ReviewState gains a default-empty recordedRounds list; its existing baseline/remaining and approval consistency checks remain. MemoryReviewState is an Annotated ReviewState with an after-validator refusing any recorded row whose kind is not memory. Complete ordered history is checked by review_count_unavailable at counting time, not guaranteed by this list declaration; legacy records are not backfilled or reinterpreted. Each lane shares the same settings-limit/extra-round protocol without sharing a counter or baseline.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
+## Plane-stamped review base
+
+RouteReviewRecord adds optional baseCommit with the same object-ID shape as candidateTree. A missing value leaves a legacy record without a clean-sync stamp; the model alone neither infers ancestry nor admits a changed candidate. Leaf build_route_review stamps the field from its contract and includes it in the record digest. Legacy digest verification excludes None-valued fields. The closeout door, not this model, owns the bounded clean-sync exception.
+
+## Evidence
+
+- The route record carries the optional base stamp and keeps all-or-nothing digest coherence. [3]
+- Leaf record construction stamps the contract code base before computing the record digest. [8]
+
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [4]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [5]
+- Record-only memory identity comes from memory authority, never the sibling code root. [6]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [7]
+
+### Docs References
 
 No external Domain Documentation source governs these repository-owned models.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external source applies. | n/a | n/a |
+No configured external source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Route and child-intent model shapes. | `RouteReviewUnit`; `RouteReviewChildIntent`; `RouteReviewScope` | mcp/src/agents_remember/tasks/route_review.py:36-73 |
-| Fixed-list finding, round-cap permission fields, and review-state validation. | `ReviewFinding`; `ReviewState` | mcp/src/agents_remember/tasks/route_review.py:76-137 |
-| Candidate-bound route record coherence and content-addressing checks. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-197 |
+- Route and child-intent model shapes. [1]
 
-## Source File Binding
+- Fixed-list finding, round-cap permission fields, and review-state validation. [2]
 
-The current L41 source bytes are SHA-256
+
+## Historical L41 Source File Binding
+
+At the historical L41 preparation, the source bytes were SHA-256
 `b117340a17d8b38e60373e7878a609a48b615b1d5a7e75f330b4241a147afeb2`
 (`8050` bytes, `209` lines). The source is an uncommitted preparation candidate, so
 verification metadata remains blank until a genuine commit-owned refresh.
-
-## Update History
-
-- 2026-09-09T14:10+02:00 — CCR-L42 curator intake created/reconfirmed this one-to-one card against the current uncommitted source bytes (SHA-256 `b117340a17d8b38e60373e7878a609a48b615b1d5a7e75f330b4241a147afeb2`, `8050` bytes, `209` lines). Verification remains closeout-owned; no test, review, acceptance, or future commit is asserted.
-
-
-- 2026-09-08T22:13:55+02:00 — CCR-R28 L41 memory curation: refreshed this card to the exact L41
-  source and recorded the ordinary three-round boundary plus the paired developer-approval and
-  cumulative-additional-round fields. The transition service owns the direct recorded-permission
-  behavior; no authentication or second authority is implied.
-
-- 2026-09-08T22:01:43+02:00 — CCR-R27 domain-foundation preparation: created the persisted route-review model card,
-  including the small fixed-list ReviewState semantics, from the exact L40 source. Composition
-  manifest SHA-256: `05d471d6ba42bbcfd76aed54ed592a3478eaa051a21459f45370bf15878b7bb0`; worker evidence only, with no independent review or
-  acceptance claim.

@@ -1,0 +1,320 @@
+{
+  "path": "dashboard/src/panels/detail-panel/docHead.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:9fc6939bd8a2062d86eb0894f991f40d2fe30e5728ddee39ba7270f94c78fe97",
+        "locator": {
+          "end": 453,
+          "kind": "line_range",
+          "start": 425
+        }
+      },
+      "id": "RLZ-0N51EK",
+      "invariant": "INV-M01WK7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (a)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the strip: one cell per fact, the label above the value, the chain from sprint to task among them.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:084521da53daa61c98bb15a13feb17b75e373e8a5dfdd5355ea58a509bb7fba5",
+        "locator": {
+          "end": 108,
+          "kind": "line_range",
+          "start": 106
+        }
+      },
+      "id": "RLZ-1TB49P",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N15",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The selected document head delegates canonical entry words, tone and event age to TaskStatusWord instead of formatting doc.status as an independent task-state vocabulary.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:06f34dbdb440f90876671263b4bf2057a7f1284de8a74595e33c62b1bd85b529",
+        "locator": {
+          "end": 306,
+          "kind": "line_range",
+          "start": 272
+        }
+      },
+      "id": "RLZ-5CZ9GT",
+      "invariant": "INV-PHG1PR",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-PHG1PR",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This objective extent uses the common block spacing with its existing lead style and retains local expansion, measured bounds and the more-reader link.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:86e0fe97440c768c6eeaae08e8392cd0d4ca6d2fc4df860a85d76a618d307f7a",
+        "locator": {
+          "end": 116,
+          "kind": "line_range",
+          "start": 100
+        }
+      },
+      "id": "RLZ-D41GKJ",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Makes the task identity header a quiet host and mounts one named task offer only when a canonical task reference exists.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:7aae1b90ed246b71f156378e9cda87ab599e95833ed50e9ad2f6989de14fd8bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "visibleHeadNotes"
+        }
+      },
+      "id": "RLZ-FHP136",
+      "invariant": "INV-7JGCZN",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Leaves out a note the strip states in a fact of its own: 'Master' and 'Parent portfolio' where the chain names a parent, 'Primary requirement' where that fact stands. What it leaves out takes no place of the six.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:5f6ea0b1a4a21b102c429b90bcf9b66f71f6f2e65d1f927389a52bd7c611b504",
+        "locator": {
+          "end": 120,
+          "kind": "line_range",
+          "start": 104
+        }
+      },
+      "id": "RLZ-FND35A",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "DocHead renders id/title from the canonical entry and task status from that same entry, not duplicated reader-summary identity/status.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:eb2460c8f2ef588681a82364f13779e89074a65b27fe6ad9a7c6577a344c6694",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownHeadNotes"
+        }
+      },
+      "id": "RLZ-H14A6D",
+      "invariant": "INV-7JGCZN",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Applies the bound of six over the short notes in the strip and the long ones in the lines together, and counts what is left.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:2b4046b665d925774facac0fbc88ead3d29a28bf20abe2f6057b7e6702f623e0",
+        "locator": {
+          "end": 423,
+          "kind": "line_range",
+          "start": 412
+        }
+      },
+      "id": "RLZ-MSWTZ4",
+      "invariant": "INV-M01WK7",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (a)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the primary requirement as its link only; the requirement's sentence is left to the Requirements block.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:572ecf3770713a5ae098e124f8bece9369774ef3736c810c6d370c92f545c43b",
+        "locator": {
+          "end": 135,
+          "kind": "line_range",
+          "start": 124
+        }
+      },
+      "id": "RLZ-NVR4JZ",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 4",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Wires both waits-for and needed-by task facts into the same DependencyFact renderer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:0066f0f4af7c035dc923cc72d2e625726ebcdfe3c506e0fe7498b46b7607fa04",
+        "locator": {
+          "kind": "symbol",
+          "name": "HeadNotes"
+        }
+      },
+      "id": "RLZ-PSYJP4",
+      "invariant": "INV-7JGCZN",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws each note as a label and its text and gives the link to all notes where the bound cut some.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:06f34dbdb440f90876671263b4bf2057a7f1284de8a74595e33c62b1bd85b529",
+        "locator": {
+          "end": 306,
+          "kind": "line_range",
+          "start": 272
+        }
+      },
+      "id": "RLZ-W8JDSE",
+      "invariant": "INV-ANN2YJ",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 10 (e)",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The only place the objective is drawn; the body of the page has no objective block any more.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:d37396429351441084354d627e2eb82cf216d6d9882754ac1bfde0ae370b1c12",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 60
+        }
+      },
+      "id": "RLZ-WX7MVM",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-WHBGH5",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "HeadDoc consumes the served waitsForTasks and neededByTasks fields rather than independently deriving those relations.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+        "content": "sha256:27f8cf1461fcf3760aa9b7119bca9ec2d6b85571bb8b0aafbc22d6e9be139754",
+        "locator": {
+          "end": 370,
+          "kind": "line_range",
+          "start": 329
+        }
+      },
+      "id": "RLZ-ZAEPG4",
+      "invariant": "INV-WHBGH5",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 4",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Looks up the exact referenced TaskEntry for its state and jump; without an entry it retains id/title but shows no state and disables navigation, while gone remains explicit.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "Already represented chain/primary metadata is suppressed before the six-note selection; total/more account for all notes.\n\nAnchor: \"function shownHeadNotes(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:db63d930162eadcfdcdf55ffb10a0785ac94ccb65459fd78b9c02e88aa57b925",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 173
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "ObjectiveLead uses shared block spacing, opens its bounded text in place and retains the counted long-full-text own-view link.\n\nAnchor: \"export function ObjectiveLead(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:a0d1e3ca55e89cdd5f3e29956fb24b2bc44ceda7ac8ca717b7c381fda011309f",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dependency identity remains visible, while gone and entry resolution gate task wording and navigation.\n\nAnchor: \"function DependencyFact(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:1d1b3c659da94f32c0e88a59874f951929fe4aa62cae38718480077ca52a8bfd",
+            "locator": {
+              "end": 372,
+              "kind": "line_range",
+              "start": 329
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical task document has one task-reference tray offer in its identity head, and no offer when the entry lacks a document reference.\n\nAnchor: \"<header className={addToTrayHost}\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:413dfe0e714ca7066d3c86bfb97c69365ac356e8a42038ee706b013436348e70",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

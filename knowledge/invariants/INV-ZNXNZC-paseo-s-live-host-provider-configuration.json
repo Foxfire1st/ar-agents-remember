@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized in three files that read, validate and forward the block, and the mistake it prevents is real: a later reader who sees 'providers' retired could retire Paseo's host-provider configuration with it and break the daemon's model selection. The record keeps the two meanings apart."
+  },
+  "applicability": "Paseo's runtime settings as this product forwards them to the daemon it starts.",
+  "conditions": [
+    "A .paseoRuntime block is present in the user's settings and names host providers."
+  ],
+  "exclusions": [
+    "CGC and GrepAI, which are retired search providers and not host providers.",
+    "Any read that would grant an install, prepare, seed, start, query or watch authority."
+  ],
+  "id": "INV-ZNXNZC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_status.py retains the configuration and forwarding coverage; the paired Paseo-forwarding/no-search-activation assertion (E3) remains unauthored and is not claimed as passing."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-06",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Paseo's live host-provider configuration is still required, read, validated and forwarded to the daemon's agents.providers, and no CGC/GrepAI install, start or watch path can be activated by changing it.",
+  "status": "proposed",
+  "supersedes": []
+}

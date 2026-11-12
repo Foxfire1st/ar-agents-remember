@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Memory layer quality-control checks.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77da8baf59bfb86e0b0d37fa905b23f203f0c6bd",
+            "content": "sha256:f29ded93bbae1a69cb25d6d2887d934d62b5ad283e5b9c1cf1e69d7325c63b7a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

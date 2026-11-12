@@ -1,0 +1,92 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The packet chooses typed dependency IDs and derivation over independently authored ordering text because that text has already diverged from the actual graph. The choice governs future authoring and consumers, not this leaf’s schedule."
+  },
+  "alternatives": [
+    {
+      "option": "Store same-master prerequisite IDs in waitsFor and derive nonpersistent waves and views from those IDs and task states.",
+      "reason": "The packet chooses typed dependency IDs and derivation over independently authored ordering text because that text has already diverged from the actual graph.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep master task order as free-form prose, tables or an externally scripted order section.",
+      "reason": "The packet documents drift between text and graph data and expressly marks a scripted order table as non-conforming.",
+      "reconsider_when": "Only a developer-approved replacement of the task dependency/order source contract that explicitly permits an authored order authority.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "waitsFor edits are checked by the ordinary task_doc writer.",
+    "Derived Order feeds the page and Markdown instead of becoming another stored plan.",
+    "The field informs the page and Manager and introduces no start gate; whether Manager start should consult it remains undecided."
+  ],
+  "context": "Master order has no typed home; individually authored prose and an outside script drift from actual dependency edges and task states.",
+  "decider": "Developer D185 as recorded in architect-approved MIK-R128@v1.",
+  "id": "DEC-DZ9MAF",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-8W6XYQ"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-G5APSX"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-5PPM67"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-WHBGH5"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-3TFHGH"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "id": "MIK-R128",
+        "packet": "requirements/MIK-R128-v1-the-order-of-tasks-is-data-and-what-recurs-has-a-place.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_order.py::test_field_write_refreshes_derived_markdown_and_projected_heads_without_storing_waves"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 2",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

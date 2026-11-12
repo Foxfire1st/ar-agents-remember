@@ -1,0 +1,257 @@
+{
+  "path": "dashboard/src/panels/detail-panel/orderGraph.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:3cb9a1a674c803aaf71a619b8549967574da6536250065de927d8f9580925af1",
+        "locator": {
+          "end": 260,
+          "kind": "line_range",
+          "start": 123
+        }
+      },
+      "id": "RLZ-015DRS",
+      "invariant": "INV-5PPM67",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 3",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "OrderNode/OrderRowsView keep canonical task words/marks while the explicit D305 Order border/ID/meta work accent follows started stage and other accents follow graph readiness; shared relation/rest presentation remains.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
+        "locator": {
+          "end": 312,
+          "kind": "line_range",
+          "start": 276
+        }
+      },
+      "id": "RLZ-28QBJB",
+      "invariant": "INV-XKS34Z",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 recovery absent order",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This Order block extent returns no block without graph data and renders the supplied shared graph for the selected document form.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
+        "locator": {
+          "end": 312,
+          "kind": "line_range",
+          "start": 276
+        }
+      },
+      "id": "RLZ-4ZVZXW",
+      "invariant": "INV-XJ42YM",
+      "origin": {
+        "handoffEntry": "L127-F5 sprint Order block",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the entry-driven Order preview and its whole-graph link without a duplicate done/abandoned graph counter.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:e62d99c56d259261f024f1c8a512fd52370be12d7b458d411086613ec6c61942",
+        "locator": {
+          "end": 119,
+          "kind": "line_range",
+          "start": 114
+        }
+      },
+      "id": "RLZ-8PXSCT",
+      "invariant": "INV-5PPM67",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-5PPM67",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Leaf targets show served major-step progress; master targets show completed/live-child counts from the resolved entry rather than a duplicate graph total.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:a88c4a040fb9f9d56261d8d6c326c55f48831efeb3f90a2a90cd77fe71f2a0bd",
+        "locator": {
+          "end": 79,
+          "kind": "line_range",
+          "start": 51
+        }
+      },
+      "id": "RLZ-DST0RZ",
+      "invariant": "INV-XJ42YM",
+      "origin": {
+        "handoffEntry": "L127-F5 sprint Order block",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Filters terminal entries by native stage, places only works activity in now, and keeps each other unfinished supplied unit in its producer dependency wave; ready ordering remains a graph fact.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:a271bfc4524472210cdc0dd64f0ab8dccb0531466c4b20998152ad037ec8e3d3",
+        "locator": {
+          "end": 269,
+          "kind": "line_range",
+          "start": 217
+        }
+      },
+      "id": "RLZ-EDFDJW",
+      "invariant": "INV-4CTCT1",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 11 / order rows",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Wires pointer and focus of the rows to the shared rest logic and gives every mark its state: none, self, related or other.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
+        "locator": {
+          "end": 312,
+          "kind": "line_range",
+          "start": 276
+        }
+      },
+      "id": "RLZ-VSG7ME",
+      "invariant": "INV-5PPM67",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 3",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "The same preview labels sprint units as masters and ordinary-master units as tasks, keeping the complete graph one action away without separate graph done counts.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+        "content": "sha256:6aeeb75936904e55d854a292ae182d3ea8d0f6af521b948bfe2072306f8eb244",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZSRZ9N",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This graph is one of the named places that show one task's word, so it carries the word's two forms.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Order uses entry stage/activity and the shared status presentation while retaining producer dependency waves/readiness; graph-derived done/abandoned totals are absent, and the own graph view retains the supplied graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:a88c4a040fb9f9d56261d8d6c326c55f48831efeb3f90a2a90cd77fe71f2a0bd",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:b7e0393a3f3cc6341e8d2943eb028092410adcea30e95f22c2eab26320e93f53",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:9aeb62ff9b6010a63e3203e84125c5fe0bcc8c864aae409aa65d4c44408b21fa",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 276
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:83840dfa9d07a36af705e950d0bac49290fafdcc113a57b84e7fa5a92d808a1b",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "OrderRowsView wires pointer rest and immediate focus to shared graph highlighting, with reduced motion disabling fade and relations omitting finished dependencies.\n\nAnchor: relations and rest/focus handling",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:e899c5be54ab133d18790e84b786b1057c80422c6f0631e476e77afec4b82bae",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:a271bfc4524472210cdc0dd64f0ab8dccb0531466c4b20998152ad037ec8e3d3",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The graph restores the work border for started task entries independently of host activity, using readiness only for other targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:37a4753fd4ab7e929cefced990df5173966ca4b079fd1540dd290ab56facdda7",
+            "locator": {
+              "kind": "symbol",
+              "name": "toneOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

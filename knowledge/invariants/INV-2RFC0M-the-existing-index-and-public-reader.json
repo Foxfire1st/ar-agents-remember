@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A rebuild that dropped the new fields would show frozen rows with invented revisions and lose authored effects; the pass-through keeps reads whole."
+  },
+  "applicability": "History index builds, rebuilds and public timeline and record reads",
+  "conditions": [
+    "Rows with recorded effect and own revision",
+    "Frozen rows without either fact"
+  ],
+  "exclusions": [
+    "Unreadable files and incomplete indexes, reported unavailable and never a measured absence"
+  ],
+  "id": "INV-2RFC0M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "public-four-label-results.json: four labels x two real GETs, full row equality, two fresh indexes and reader-cache deletion/rebuild; fixture refs/history unchanged; earlier-attempt byte tests."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "MIK-R48@v2 rule 5",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The existing index and public reader retain the complete history row and its owner, path, row identity, closed flag and authored effect/revision after index rebuilding.",
+  "status": "proposed",
+  "supersedes": []
+}

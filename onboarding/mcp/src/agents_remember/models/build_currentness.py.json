@@ -1,0 +1,107 @@
+{
+  "path": "mcp/src/agents_remember/models/build_currentness.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "215396ca72f75e174a7d10419eff50f6d07b1964",
+        "content": "sha256:d2ffae2c893621229f26e8c292d03e79f57bee1fb0f5e2c7a96cbde57a4b54d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "BuildCurrentnessPayload"
+        }
+      },
+      "id": "RLZ-6C7APS",
+      "invariant": "INV-AN0K8G",
+      "origin": {
+        "handoffEntry": "L84-LC-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The producer's payload model (extra forbidden), emitted with exclude_none, which the parse mirrors.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The strict currentness shape with its closed mode and state vocabularies and optional digests, first-seen time, reason and remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "215396ca72f75e174a7d10419eff50f6d07b1964",
+            "content": "sha256:d2ffae2c893621229f26e8c292d03e79f57bee1fb0f5e2c7a96cbde57a4b54d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "BuildCurrentnessPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Both response envelopes carry the reading as an optional field. Anchor: `buildCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:03bbbb56ffd849e0dfcb39586f29fbb3b0c1988d0baa31728573fe42d49b309c",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:03bbbb56ffd849e0dfcb39586f29fbb3b0c1988d0baa31728573fe42d49b309c",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each running-server row carries its observed reading.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "647d86ffb8367ac98aa0bfa8b2ba96048269cc9f",
+            "content": "sha256:79633aca8a78a7cfc579cab017adf9bf7596cdd14d1bf19f274a05b4c9155148",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentness"
+            },
+            "path": "mcp/src/agents_remember/models/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The serving comparison produces unknown, current or stale readings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+            "content": "sha256:323abf566f9a68ea2510c1b8cc769b3351a96ef9047d91d33088bbe31f84226d",
+            "locator": {
+              "kind": "symbol",
+              "name": "inspect"
+            },
+            "path": "mcp/src/agents_remember/serving/build_currentness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

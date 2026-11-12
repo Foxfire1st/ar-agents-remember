@@ -1,0 +1,168 @@
+{
+  "path": "dashboard/src/panels/changeset/reviewChangeSet.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+        "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
+        "locator": {
+          "kind": "symbol",
+          "name": "filteredChangeSet"
+        }
+      },
+      "id": "RLZ-K0RP08",
+      "invariant": "INV-VFT6GP",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 14",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It joins the held destination paths to the existing changed-file rows in destination order and suppresses the memory list under a filter.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+        "content": "sha256:b37c3f6b7f99e791d9c61e6403c71e36c5e8ac9af05f24b6f64af8a9b6e1b1cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "fileBadge"
+        }
+      },
+      "id": "RLZ-Q2P6B6",
+      "invariant": "INV-CC4HSS",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F10",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Delegates to the shared badge map whose final exact-inventory pass overrides lane labels with non-text for binary, symlink, submodule and mode-only paths, including All-list paths absent from a lane destination.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+        "content": "sha256:3f2564afd871c13f0a9b107cd079dac0e036a9e0624c1feb81843d72374db506",
+        "locator": {
+          "kind": "symbol",
+          "name": "laneFiles"
+        }
+      },
+      "id": "RLZ-VRT71P",
+      "invariant": "INV-K2NVKC",
+      "origin": {
+        "handoffEntry": "RP19_LANECAP",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The full viewer filter selects the same lane destination whose file path the continuation asks for.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Three filters name the two lane destinations plus all",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+            "content": "sha256:542611513065194cbcd0ada275e8aa05a65d8d51d3c1541154aeccbfd0dea445",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewChangeFilter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "FILTER_NOTES supplies explanatory strings for unexplained and unknown. The unknown string contains a second sentence describing attaching lines to an invariant or recording that none applies; it is presentation text, not evidence that attribution has been resolved.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+            "content": "sha256:45f932f3f5f0b9c8b88cc8eb84832dffab084af319b3ce1ee9fdc770ead65d50",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Destination files come from the held lane, never a new read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+            "content": "sha256:3f2564afd871c13f0a9b107cd079dac0e036a9e0624c1feb81843d72374db506",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneFiles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The filter intersects code paths and empties the memory half",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+            "content": "sha256:8bf1d07a52431616198b78b8466407e2048feeda505aafd24f78a466da02568e",
+            "locator": {
+              "kind": "symbol",
+              "name": "filteredChangeSet"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "fileBadge delegates to reviewFileBadges and reads the requested path. reviewFileBadges combines labels from both lane destinations with fileAnswers lookups only for the unexplained page filter, then overrides exact-inventory non-text and mode-change paths with non-text while retaining the lookup. Lane labels use no invariant or N hunks, no invariant for unexplained cases; unknown labels remain unchanged. Calling fileBadge repeatedly rebuilds the map.\n\nAnchor: inclusive source ranges\n\nRetired at the fifth freeze d59c3493: dashboard/src/panels/changeset/reviewChangeSet.ts:59-70 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+            "content": "sha256:b37c3f6b7f99e791d9c61e6403c71e36c5e8ac9af05f24b6f64af8a9b6e1b1cb",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+            "content": "sha256:c08e1283b0f6d6250c4662fcd42100a5eecbed346e885bcf999fe0c2e1cc95c1",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d61ea44cfb7ccfd7ecd616d46c1e88b31a05833c",
+            "content": "sha256:459dd0278077a27773e223742dec92b9831c7340b5c4238f416112d01b0f20c5",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

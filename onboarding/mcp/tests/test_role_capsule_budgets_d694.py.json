@@ -1,0 +1,200 @@
+{
+  "path": "mcp/tests/test_role_capsule_budgets_d694.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current record binds the real compiled population with no finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:71d5595ca0891f99cb6e0083d9c4e699f1a05e4791dcae2b40ea98c40795ee78",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_binds_the_actual_current_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The frozen predecessor record rejects later growth and population drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:06fb34070cd0eb4340d2d75a3d4fc8ba1076c21e8da7037f35bb6621c6488370",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d694_rejects_later_growth_and_population_drift"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The frozen predecessor record keeps a 4177-word Curator ceiling and its own detail population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:f7286b3a320573753b67f45147ca5aa09b89b80228582f34c2d8c4f606f55e94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d694_current_curator_ceiling_and_real_population_guard"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current-layer predicates and fingerprints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:8c2becfadaf1ba12345a93ed610585038b103dbd7f59b6d85aabde9d687a7b9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_budget_findings"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Any changed field of the current record fails as a changed binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:655214aeb093e988021a198714c7717bcdc074c8b11729a41067943264684c87",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_rejects_changed_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Each recorded key rejects unmeasured growth, over-limit size, removal and unregistered keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:4ba7dc2f66e850b12956e4eb15be2dae945f1863dd7643e82278c23821b80ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_rejects_each_unmeasured_growth_and_population_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The declared-detail population equals the manifest's step details, the detail ceiling is 2500, and digest and Curator capsule overages fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:a9d39786c9b6b74a764b5b82991efbe2c5725cab52ca431a4b4908cb2a9c4f07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_authorized_boundaries_and_real_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An ordinary template above 2500 words carries no size limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:f5d9aa3957a0b01473c5836bfd8c10afebc863d4dcc36acc7e2ece7a8a8d3c66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_ordinary_template_above_2500_has_no_size_limit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A declared detail at 2501 words fails its 2500 ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:e3a4186642aa9bbcf3eb13cbe8083c42787a4803c0072494648857315cac80ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_declared_detail_2501_still_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Ordinary-template source drift is still rejected.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:240505d21eb9969b7f3ef9194bc78f0120c131605000abce211a570028be911a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_ordinary_source_drift_is_still_rejected"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Whole-record authentication precedes source checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:0b4a7836205b86d0d437a97f932feee89d69781519a2c86530da8106ff0d9e02",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_whole_path_authentication_precedes_source_checks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A synthetic record admitted by a patched fingerprint still authenticates the frozen owners and rejects a changed ordinary template.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff5a9b92d660ba07998c6a2cdc7de2fb773ff57e",
+            "content": "sha256:69f264acefbeabf0209e23ea5f152e43162d5a2aaaaa5971642c9d4406235736",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_d695_whole_path_authenticates_uncapped_ordinary_template"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

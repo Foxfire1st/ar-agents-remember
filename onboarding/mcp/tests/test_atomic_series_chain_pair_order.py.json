@@ -1,0 +1,86 @@
+{
+  "path": "mcp/tests/test_atomic_series_chain_pair_order.py",
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "Fixture always builds an external-memory contract pair",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4916f04b8b3de1b829daa61ae1fdaebcd4d9266b",
+            "content": "sha256:cc61008f5855a7d8490d9ed8fe245842ec06d5b0cb5e09267ae0b5995a0c0cff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Shared code plus ordered memory is a chain step",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4916f04b8b3de1b829daa61ae1fdaebcd4d9266b",
+            "content": "sha256:dd0e53609352d59d13ed98110d4757a650181e7ceb59c9a7d4a25fe3f8e244ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_shared_code_commit_with_ordered_memory_is_a_chain_step"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Code ancestry still orders when the code position moved",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4916f04b8b3de1b829daa61ae1fdaebcd4d9266b",
+            "content": "sha256:36e06fb30bd621d854fa58cb53ed10f09dd0f2b0d69648870b2c18a79760ddab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_ancestry_still_orders_when_the_code_position_moved"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "An identical pair stays unordered over both fixture memories",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4916f04b8b3de1b829daa61ae1fdaebcd4d9266b",
+            "content": "sha256:e0a272752735430eefe7719a9389533b370228166de8c8049366c60aa6f02cb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_identical_pair_is_still_one_landing_recorded_twice"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Leaf-level sync positions admitted, silent ones refused\n\nAnchor: `AtomicSeriesLeafSyncPositionTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4916f04b8b3de1b829daa61ae1fdaebcd4d9266b",
+            "content": "sha256:0b338c822941b12225cd603622e90638d7dd9692c21eb8e32d41352b71e7b5f1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

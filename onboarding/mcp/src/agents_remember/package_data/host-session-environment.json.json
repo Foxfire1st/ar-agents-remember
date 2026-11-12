@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/host-session-environment.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The packaged list read by the environment filter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb407f537fc9b17727f49c3119b15d231f4ebfbc",
+            "content": "sha256:75dd440ab65676495daeea3e913b4a5e9d91f37541df9acdf13e48eb4ae14a6b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

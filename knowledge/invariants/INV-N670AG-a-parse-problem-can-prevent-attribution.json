@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future lane change must not certify absence or coverage merely because relevant knowledge could not be read."
+  },
+  "applicability": "The four-tree reviewer parse-unknown boundary chosen in MIK-R57@v2 appendix83/151 and rule6.",
+  "conditions": [
+    "A non-text change whose relevant knowledge cannot establish attribution retains the native unknown bucket/reason rather than confirmed absence; unrelated parse problems are not blanket evidence against another path."
+  ],
+  "exclusions": [
+    "Not every parse problem makes every path unknown; the gate and reviewer can differ under their explicit exact-recorded-range versus mapped-range rules."
+  ],
+  "id": "INV-N670AG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-49"
+      ],
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "MIK-R57@v2 by-design parse-unknown",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A parse problem can prevent attribution of a non-text change and Unknown then remains the truthful classification.",
+  "status": "proposed",
+  "supersedes": []
+}

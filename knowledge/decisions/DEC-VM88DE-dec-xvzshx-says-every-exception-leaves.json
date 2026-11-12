@@ -1,0 +1,73 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Direct staging with after-the-fact restore and unvalidated commit were both built, measured and rejected on public state evidence across successive verification rounds; the choice binds every future converted adoption and its staging helpers."
+  },
+  "alternatives": [
+    {
+      "option": "Prepare, stage and validate against a private copy of the worktree index; write the real index only after validation passes, and publish exactly the validated tree.",
+      "reason": "Dry runs, refusals and exceptions in the owned preparation/staging/validation interval leave the real index, concurrent staged edits and unowned files untouched by construction, while each error keeps its name. After validation passes, adoption publishes exactly the validated tree; a failure in that sanctioned publication retains its named error within the real-index state already preserved at validation, and the published bytes cannot drift past validation.",
+      "status": "chosen"
+    },
+    {
+      "option": "Stage the worktree index directly and restore each path afterwards.",
+      "reason": "The restore ran only on the paths the author predicted: a validation exception exited the dry run with the staged index still installed and quiet intent-to-add, symlink and mode-only entries leaked through.",
+      "reconsider_when": "A future staging design proves path-by-path restoration complete over intent-to-add, assume-unchanged, skip-worktree and mode-only entries under concurrent edits.",
+      "status": "rejected"
+    },
+    {
+      "option": "Commit the first baseline without staged-tree validation.",
+      "reason": "An unvalidated commit records whatever the worktree holds, including concurrent edits and hook interference, with attribution attached — the false baseline the packet exists to prevent.",
+      "reconsider_when": "Validation becomes unavailable in a context where an attributed baseline is still required and the developer explicitly accepts unvalidated adoption.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Baseline adoption, the Git staging runner and the cache helper all take an optional private index; the per-path restore machinery and its tests are removed; dry runs validate without changing anything."
+  ],
+  "context": "Validating the first baseline of a converted tree requires staging content and judging the staged tree without letting a refusal, dry run or validation exception leave the staged index installed or swallow a concurrent edit.",
+  "decider": "Architect private-index ruling under developer direction D147, executed through the owner admission cases for the R14 successor.",
+  "id": "DEC-VM88DE",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/memory"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees/modules"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R44",
+        "packet": "requirements/MIK-R44-v2-truthful-converted-onboarding-drift.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/l44-memory-review-M1/frozen/memory/knowledge/decisions/DEC-XVZSHX-private-staging-index-for-converted-adoption.json:12 says \"Dry runs, refusals and every exception leave the real index ... untouched by construction\". The chosen option also covers publishing after validation. Frozen memory/baseline.py:470-477 publishes the validated tree, then performs real-index cache preparation/staging. notes/reports/l44-memory-review-M1/historical-postvalidation-boundary.json binds genuine fe29f13b scenario post-validation-error-real-write-failure-dry-False: named OSError, realIndexUntouchedBeforeValidation=true, publishedTreeExact=true, indexExact=false, refsExact=false."
+      ],
+      "path": "l44-m1-repair.json"
+    },
+    "handoffEntry": "L44-M1-02",
+    "leaf": "260928-MIK-L44",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-XVZSHX"
+  ]
+}

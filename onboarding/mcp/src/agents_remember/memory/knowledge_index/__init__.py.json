@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package map and the rule that no writer writes the index and it is never merged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
+            "content": "sha256:374bb7e0d66d35ebed39fbb232d121de0519c377827d6366bcca5f911d83d100",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The re-exported public surface.\n\nAnchor: `__all__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
+            "content": "sha256:40126f7d99d856728e6ac58dc95361e8077ef10d615cb2d00aa9ce20a84e81c9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public index surface includes prose companions without making prose an indexed model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "182c0249a52e698fae419d0bcb62f5d1aa2f9fb2",
+            "content": "sha256:0893781fbc4b3db3142fee70e226a60ea53a726104107f2348086accf8e25118",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

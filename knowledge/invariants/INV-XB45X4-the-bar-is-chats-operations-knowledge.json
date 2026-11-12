@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A bar that keeps a page nobody can open, or opens on a page the developer did not choose, would keep dead surfaces in the product's way; the four-entry bar and the Chats opening prevent that."
+  },
+  "applicability": "The dashboard's product tab bar and its opening view.",
+  "conditions": [
+    "The bar holds Chats, Operations, Knowledge and File Viewer, in that order, and the dashboard opens on Chats.",
+    "Engine Room, Memory, Topology and Hangar leave the bar; their code and data stay, apart from the page-load mounting change."
+  ],
+  "exclusions": [
+    "Repairing the Engine Room's own truthfulness, which is not part of this packet.",
+    "The reviewer's page (MIK-R86) and the overviews' order (MIK-R80)."
+  ],
+  "id": "INV-XB45X4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 16",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The bar is Chats, Operations, Knowledge and File Viewer, starts on Chats and does not mount pages outside the bar at ordinary page load.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,20 +1,34 @@
 # dashboard/src/panels/engine-room/geometry.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/geometry.ts`              |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+ConduitState/conduitState retain conduit vocabulary narrowing. Provider positions, ENGINE, RuntimeState/runtimeState and chargeMotion are removed. EDGE_GEOM retains intake, sync and integration lanes; conduitPathD returns a straight line for known geometry or null. refusedPolarityOf accepts only failed or stale integration/integration-mem edges.
+
+### Maintenance boundaries
+
+Remove active provider position/wire/gauge render guarantees. Document surviving branch/coupler/landing constants, conduit narrowing and null-path rejection of unknown kinds. Runtime/gauge/charge helpers and seed refusal arms are removed; failed/stale integration refusal is still geometry-backed.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- ConduitState and conduitState retain the conduit vocabulary and normalize unknown values. [4]
+- Branch/coupler coordinates and intake/sync/integration geometry remain; conduitPathD returns a straight known lane or null. [5]
+- Landing flow state remains derived from the observed landing references. [6]
+- Refused polarity is derived only for failed or stale integration/integration-mem lanes. [7]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The pure geometry and derivation layer of the Engine Room scene, extracted from
 `EnclosureCanvas.tsx` by the 260731-EFA-L8 responsibility split. It owns the canvas
@@ -49,33 +63,25 @@ not faulting.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scene-wide coordinate constants and conduit-path builder consumed by the layers. | `COL_MAIN_CX`; `conduitPathD` | dashboard/src/panels/engine-room/geometry.ts:47-50; dashboard/src/panels/engine-room/geometry.ts:97-123 |
-| The runtime/state vocabulary narrowing shared by gauges and conduits. | `runtimeState`; `conduitState` | dashboard/src/panels/engine-room/geometry.ts:16-38 |
-| The materialisation/block derivations this module feeds. | `branchEnter`; `isBlocked` | dashboard/src/panels/engine-room/geometry.ts:141-157; dashboard/src/panels/engine-room/geometry.ts:176-183 |
 
-## Cross-Repo References
+- The scene-wide coordinate constants and conduit-path builder consumed by the layers. [1]
+
+- `runtimeState` and the gauge runtime vocabulary are removed; only the conduit narrowing survives. [2]
+- The materialisation/block derivations this module feeds. [3]
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  geometry module extracted from `EnclosureCanvas.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

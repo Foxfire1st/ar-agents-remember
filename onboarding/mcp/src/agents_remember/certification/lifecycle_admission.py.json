@@ -1,0 +1,193 @@
+{
+  "path": "mcp/src/agents_remember/certification/lifecycle_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Admission composes the exact supplied authorities and freezes one lifecycle manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:7d2f5b314654b615f15809e82086de43335399933c167d1b5b28d703e08d9f1c",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_lifecycle_admission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:b6544ff67497bf9c785ef1a920c80375edefc6929f771955498115ccc0dcff5c",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Currentness re-compiles current inputs and refuses any movement before a gate or write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:03e6960b69913479b2d9a7c8c7f94a337bee3bbb2841d8fb4515b564d5e751c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_lifecycle_admission_currentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:607962f4b03bcb145f7edde62a20937475972ec2cf6472434b7d7bbff9dba03c",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 124
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Candidate authority and worktree shape are mandatory, with typed refusals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:390d78542a12624f36e021be3858bf9a89633f98d32105797ca3ee7913829fff",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_candidate_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:995dd9b9895d290c8935041b120a963e0769ffb387cc9e4a830af64ae6870b66",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The lifecycle candidate and the R11/R22 plan must name identical repository and code-tree authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:2ae9e946e3ddf61cb66e2fdc1765d5fb67fadefa5a0105d6f37a5ea414dbe568",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_candidate_alignment"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:d23d667b14abf10b58c789c2bc48a94446d01aa0e1a9fbb6086b7682066ad45e",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Prior-red disposition binds the exact failed/blocked catalog and exact changed inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:29bb2f875033bc9e46c23d5c2f4cb92a8d8cf6c08088360d862ac78ed9550966",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_prior_red_disposition"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:2bff318cd945378c43deb82e7a64baea0621ff14467fe28051c1d53ef89f9aad",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_prior_catalog_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:730f2c3b32e282ea325a60bed31edf7968634cfc71522038cc2f4a1b247f3861",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_relevant_change"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:ef28b72cd96efee600149de9605e8630b105572efba7e4429e793b416045e170",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:b013aa2a0735300e936ca163bfd5eab452f105f1332dd6c78be67da8f6072071",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc82c4d991b241757083ab5dfaf12470ec56bc94",
+            "content": "sha256:d231698b3463856f21fdce6f8e46bb84902e123035e5ec50dc5616b6a2973a38",
+            "locator": {
+              "end": 405,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

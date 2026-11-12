@@ -1,0 +1,253 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_review.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:26af7a939d7eefb5efb6cafbbc57be43492f53f8da59144bbe1ba88aa533d6c7",
+        "locator": {
+          "end": 415,
+          "kind": "line_range",
+          "start": 399
+        }
+      },
+      "id": "RLZ-314GKJ",
+      "invariant": "INV-MRHE25",
+      "origin": {
+        "handoffEntry": "RP21_REVISION_WRITER",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Adds selected-side writers after selecting the subject revision pair, using baseline/candidate indexes and the explicit legacy detail; this adapter does not reimplement writer selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:c9f60b55137151c68c4b16a7d7a289eac2b9fc71771703b94cbb213d2b9ffb5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_complete_knowledge_review"
+        }
+      },
+      "id": "RLZ-5BFBN1",
+      "invariant": "INV-61Y147",
+      "origin": {
+        "handoffEntry": "L40-one-resolution",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Resolves the candidate once under the request-scoped memoization owners and passes that same resolution to compose_review. The old supporting-record collection call is removed; candidate-identity publication checking remains the composition owner’s operation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:8031c5ed17f3ab243106bb4c84c6a162e538a7d27c5ed0dc06d2caef33cba0ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_review"
+        }
+      },
+      "id": "RLZ-77JFN3",
+      "invariant": "INV-9MF6HZ",
+      "origin": {
+        "handoffEntry": "MIK-R81@v1-rule7-standalone-answer",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The composition emits a standalone answer; a browser-dependent partial response is the rejected alternative.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:a762f70c4ed398f09e1aef2e9b8b387b78813ec302c0a52c9c99bfab84ceb77c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_meaning_subjects"
+        }
+      },
+      "id": "RLZ-EGPA5N",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "L43-C-recorded-effect-consumer-closures",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The subject set covers selected records and exactly the family/member identities returned by this response, including continuation pages.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:8031c5ed17f3ab243106bb4c84c6a162e538a7d27c5ed0dc06d2caef33cba0ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_review"
+        }
+      },
+      "id": "RLZ-HX732X",
+      "invariant": "INV-76C676",
+      "origin": {
+        "handoffEntry": "MIK-R43@v2",
+        "leaf": "260928-MIK-L43"
+      },
+      "rationale": "The existing subject answer attaches the projection from its held comparison without another candidate resolution.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+        "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YRCPJ5",
+      "invariant": "INV-TM170C",
+      "origin": {
+        "handoffEntry": "MIK-R57@v2 by-design paired-review",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Requires the selected paired tree context before composing knowledge judgments rather than synthesizing an unpaired side.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "66": {
+      "note": "Standalone and complete reads resolve canonical task context; the complete route nests existing request-local memo scopes.\n\nAnchor: \"def read_knowledge_review(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:43801d3833ea30d6878997fb1b84f4bd56b5931c646f54adeeaf6e8bf6c4b255",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "Ordinary and numbered catalogue requests share one preflight/enumeration path and label the answered tree number.\n\nAnchor: \"def list_knowledge_review_entries(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:f7e576cf972dfcae44c048110b66f7fe33550a9afc1316334d95470b06a2cd71",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Source inventory precedes selection; the subject comparison recheck precedes the later projections.\n\nAnchor: \"def compose_review(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:6760a824284344f5ee35bdc3323b94b646324817c9067634f4cad524e29618b2",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Selected revisions receive their own side-specific writer projection before relationships/family composition.\n\nAnchor: \"# own union items, and the pane renders it: the adapter resolves, calls and assembles, and\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:e54d08b8bea10ac49dd8fcf1b9206f8277e4e043e4fd602de1edc0a27edf5af1",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Owned family/knowledge pages and after-index meaning effects retain their declared scope.\n\nAnchor: \"# naming that collection without a cursor addressed no single walk -- it is a set of per-family\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:c60e199db981cea239f84e23d1a567a1945f5b6554b25c6e1c7c8d724c9360a6",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 447
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "The payload keeps judgment, owner projections and declared limitations without restoring old record bundles.\n\nAnchor: \"# A requested page the owner could not serve is stated as the refusal it is: a page value\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:fd6910b35ab3b97f9bf902d7e37a230c9b88e3ef49fab7af3365792d57be43cd",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 487
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "The exact sides, namespace, budget and continuation reach the existing comparison operation.\n\nAnchor: \"def _compare_scope(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:9b56bb2c6804135910137df3171e4fe397652f031cbef2e5943693f7a23df13d",
+            "locator": {
+              "end": 759,
+              "kind": "line_range",
+              "start": 705
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "The knowledge pane carries enriched revision_selection and renders unresolved selection without a winner.\n\nAnchor: \"def _knowledge_pane(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:2bf1601e7a0bed7d02d3cd47441a097fc17d71bb6dcc97a08bd3d090cf0e08b4",
+            "locator": {
+              "end": 878,
+              "kind": "line_range",
+              "start": 822
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

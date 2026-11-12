@@ -1,0 +1,351 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/verdict.md",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+        "content": "sha256:d4bea4b0dbcaee213fbc156a9c5c9f32e2cf4c21383ad51f0d45eb9912a2e04f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5VSSX0",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The verdict template carries the Reviewer's own code-round recording, the separate memory lane and sealed findings across rounds, and before a review beyond the settings limit sends the reader to the Manager's recorded extra-round approval procedure; the template grants no round.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+        "content": "sha256:e723ce82b895b1372a026ff77a394eab399373700e675bc530c48b8c3742d07b",
+        "locator": {
+          "end": 114,
+          "kind": "line_range",
+          "start": 114
+        }
+      },
+      "id": "RLZ-6PZ4AB",
+      "invariant": "INV-RS2QK8",
+      "origin": {
+        "handoffEntry": "MIK-R60@v12.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The section, in each of the four verdict variants and kept by the loop adaptation.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+        "content": "sha256:dfff712ff9e62d449c9b6cb28ad7a4b36e61f0b70120c88ffdf444b7ea5b4a1a",
+        "locator": {
+          "end": 123,
+          "kind": "line_range",
+          "start": 123
+        }
+      },
+      "id": "RLZ-A1JGKM",
+      "invariant": "INV-42NQQG",
+      "origin": {
+        "handoffEntry": "MIK-R60@v10.1-4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The CS-7 row in the verdict criteria tables (all four variants).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+        "content": "sha256:d4bea4b0dbcaee213fbc156a9c5c9f32e2cf4c21383ad51f0d45eb9912a2e04f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WG14EH",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Carries the ordinary Reviewer recording packet and separate memory evidence lane.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every verdict variant requires independently authored exact-ID/version, Worker-attempt and candidate adjudication in a separate immutable journal record with evidence-class and refutation rationale; a rejected requirement forbids PASS and PASS-WITH-NOTES.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:b2e61626bb31a8f18e598c6ec372e324fc9577239c45a1f759cb3cc1f1bb981e",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:d18bdb2380981863da13cbae8089abad4ea89455af89fd843acc37b80d31060e",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Organizational leaf and accumulated atomic-master variants account for every major route with its backing report, bound candidate and recordable packet; atomic children receive no separate route-review verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:59504bf3f05646d070e33657503923adf813c96fb731ede95f6c0c2567d3ea82",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:bd293692969e36e2cf439c616ebdada63a4067637511d7a89029648553b52a45",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A delta verification appends a dated section to the same verdict, records the preceding result, exact outstanding IDs and their fixed/unfixed dispositions, and retains earlier accepted adjudications; successor findings enter only through the review operation's two sanctioned routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 367
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:1618eb4898622a22fd01727a5ffa53eaac96796682b735bf5cf864959ff3a3c5",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The verdict template keeps ordinary Reviewer CODE recording, the separate MEMORY lane, the decider's gate acceptance and recorded beyond-settings approval distinct; its artifact is recommendation evidence rather than a gate decision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:1b3a2d2aa792e2d810b3c86716837f5954b077854cfbac5dceedb57325f99353",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reviewer records its ordinary CODE begin/result under the task document; Manager retains gate acceptance and recorded beyond-settings approval. Code PASS first goes to Manager to start Curator; peer artifacts travel directly as files, MEMORY stays separate and ready-for-closeout names both verdicts. Repaired-item verification is an ordinary round within the settings limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:8c342f4bf69d6ec06504119fcaeac6de72e78789cb1d69e7dadda45437ae900e",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6913ea0e53f0eb04fe025c9cfe4c2376b7fa77a5ad52ccdfbe64ef3a5603ca38",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:48b8445332fed459a4e21ba40ee8348dc0597f51af95642ce0308eff17ce44d8",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:6070436c772f16b5d7f61acf0c30abed6bbe3eac5c00d3e4e0a621cb1181c971",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Verdict structure binds exact independent candidate evidence, immutable per-attempt adjudication and monotonic sealed successor scope, and names the bound catalogs in its Catalog Binding section (a verdict without it is incomplete); CODE and MEMORY remain separate and no verdict decides the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:fae0ec9da6bef848c722481d2bdd02e4b2caf5ef5ba2ef9d980744585bf2a4b2",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:714e9a22fd362d57951d79a9c84bd6c1e61e55c906e545914057f6953c225c85",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48b79cbc6545f76d228f4fbb17c000e6aae44c3e",
+            "content": "sha256:60537296c416b9236127764638e080d79056249ce69d710944c79b91a798a6cf",
+            "locator": {
+              "end": 367,
+              "kind": "line_range",
+              "start": 367
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Curator owner requires the complete curation operation; optional full-quality/test requests do not waive it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:155ef4afcf451dd97bb394c8ea88ad2d5490020e566588b721418585927ef86d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:8ff35a30909bc3945180cc36abe71d74b0dc4204910e2a15c66fa52d36a571ff",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

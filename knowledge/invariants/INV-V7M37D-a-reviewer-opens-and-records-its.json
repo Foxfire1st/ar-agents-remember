@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The split is stated in the reviewer role and review operation and exercised by the registered Reviewer-binding round test."
+  },
+  "applicability": "Every independent leaf code review and its separate memory check.",
+  "conditions": [
+    "Code uses reviewState; newly begun memory reviews use reviewKind=memory and memoryReviewState after rollout.",
+    "Each lane preserves its sealed baseline and shrinking IDs, current settings limit and approved extra rounds.",
+    "Record-only unchanged-candidate checks add no try."
+  ],
+  "exclusions": [
+    "The Manager's acceptance of the verdict for the gate, which stays the Manager's."
+  ],
+  "id": "INV-V7M37D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): test_leaf_handover_review_rounds.py passed on final bytes in affected-final-pass.log; verified Reviewer binding, ordinary begin/result, sealed-ID and fourth-round refusals.",
+        "L99-MR-002; mcp/tests/test_leaf_handover_review_rounds.py."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-2a-code-memory-lanes",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "The Reviewer owns ordinary code rounds and newly begun post-landing memory rounds in separate task-document lanes, with independent sealed findings, reports and counts under the same settings limit and recorded approvals. Memory recording never resets passed code.",
+  "status": "proposed",
+  "supersedes": []
+}

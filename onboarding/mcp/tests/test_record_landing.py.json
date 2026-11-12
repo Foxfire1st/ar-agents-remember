@@ -1,0 +1,86 @@
+{
+  "path": "mcp/tests/test_record_landing.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Nowhere-landed commit refused, cell untouched\n\nAnchor: `test_commit_that_landed_nowhere_is_refused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993371cd6de2eee7ee14e16291fee164fd2f1764",
+            "content": "sha256:4e4d866b3428e2209155e6d7906e9642b5a2ed1502e96a5ef83ba58e63cbaab3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Checkpointed series never upgraded into a reclaimable integration",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993371cd6de2eee7ee14e16291fee164fd2f1764",
+            "content": "sha256:daf344a50081beffabf6589adfa9b2f2b9a7a71220cab33d03da4007adbcd809",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_checkpointed_series_is_not_upgraded_into_a_reclaimable_integration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "External-memory series contract over real code and memory repos",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993371cd6de2eee7ee14e16291fee164fd2f1764",
+            "content": "sha256:f97fe83dfb32444de63267b0a1be9bd1ace11e127d81d8d414cff10c70dd5d33",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Approved-call shorthand with typed arguments",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993371cd6de2eee7ee14e16291fee164fd2f1764",
+            "content": "sha256:15f390f86c4ae9671cef50d7c4a0f0ae4b84e6c919de69f99bda15797c84d7ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Landed commit sets the terminal cell with the pr label",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993371cd6de2eee7ee14e16291fee164fd2f1764",
+            "content": "sha256:5054ef7c824978099338d3618bdd5c1614b374c29bc7bd04c04590c99d763251",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_commit_sets_the_terminal_integration_cell"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

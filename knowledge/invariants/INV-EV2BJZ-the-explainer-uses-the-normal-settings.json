@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The settings resolver, warmup exclusion and document-chat listing share one environment-derived identity, preventing a host restart from silently starting an explainer turn or a listing from inventing its role receipt."
+  },
+  "applicability": "Settings review-presenter role resolution, explainer warmup exclusion and selected leaf document chats. Discovery/listing does not start or resume the explainer; showing or writing its own chat owns lazy resume.",
+  "conditions": [
+    "The normal review-presenter settings role and host catalog resolve launch choices.",
+    "An existing explainer environment supplies the derived seat identity.",
+    "Chat listing requires reachable, found and unarchived host state."
+  ],
+  "exclusions": [
+    "Host restart warmup resuming an explainer.",
+    "A settings change, another model catalog, or absent AR_PLAYWRIGHT being replaced by a guessed value."
+  ],
+  "id": "INV-EV2BJZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R105@v4; MIK-R106@v2 rule1; MIK-R186@v2 rule5"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The explainer uses the normal settings role resolver for harness/model/effort/mode/features and creates its own seat without a turn; host-start warmup excludes environment-derived explainer ids, and the selected leaf lists its reachable unarchived explainer chat separately from role receipts even after a live role ends the receipt scan.",
+  "status": "proposed",
+  "supersedes": []
+}

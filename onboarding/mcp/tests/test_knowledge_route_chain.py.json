@@ -1,0 +1,343 @@
+{
+  "path": "mcp/tests/test_knowledge_route_chain.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:98377935a25a221ddd177dc849dc4e2c849b1fb6d5ff0ff68e1d6ec7726c6b79",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The budget, the family-seed resume under any spelling, a lacking revision refused on resume, and the v1 token refused.\n\nAnchor: `test_chain_entries_count_toward_the_threshold_and_resume_like_the_leaf` `test_a_family_seed_walk_resumes_under_any_spelling_of_its_family` `test_a_family_seed_walk_resumed_naming_a_revision_the_tree_lacks_is_refused` `test_a_continuation_minted_under_the_v1_policy_is_refused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:08ce4fb2631bcd2178b09690e6e6bf1e3a802ceb6167b8a841a285351be50a21",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:084a1a6a28a31bf73b4d81d7f67c88e32f0f8a1571740dd4a2c7698cb251107e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chain_entries_count_toward_the_threshold_and_resume_like_the_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:46631dec78011b0f8faab0eb8012c6015d8e74d7e2ea998760728cd83b114f96",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_walk_resumes_under_any_spelling_of_its_family"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:814e4e3fb79c9378a04e9ceb0ed33f83becdca9bb5a55be36bc6c108fe7252c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_walk_resumed_naming_a_revision_the_tree_lacks_is_refused"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:07c4f6a5bd2ba7a331e8d2c9feff7d2e8e5774e4bd1958a3cc4b2bf667d67508",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_continuation_minted_under_the_v1_policy_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The lane row.  Anchor: \"mcp/tests/test_knowledge_route_chain.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:fab46d2a17b3a29cb28a509254c759df122390dcbb1ce6233793dbfcd0452542",
+            "locator": {
+              "end": 268,
+              "kind": "line_range",
+              "start": 268
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Repeated calls name the same files, omit served_earlier and retain governing family/chain IDs without session state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:ba63fb5cef680e041a682d719697406f9fadd336f112a7b4350202e67e92fce3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_read_ar_files_names_the_same_files_on_every_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reused L01 and `read_ar_files` helpers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:3c4fbf4724b649e9a0982cd93fdbfdd9b379bcf0b02ec10d08922de636f43871",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The world: the layout, routed families and the nested fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:1f8500bef6ee6965885edf593f28fd5a168382a907ae59d8c39c10a01bf7c6b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:ba7e10968eab4fd89c42000c400da4e8308eb3649423a6e7872f646e850d434e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:3886f694dd2874956bc448d092ef4fdfc6b9f34e9b91fe948385db848988a112",
+            "locator": {
+              "kind": "symbol",
+              "name": "_nested"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The chain over nested directories, never a child or a sibling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:8340124c6f59763eda86e63ed6b68867f7dd4b953f70403f5d7477b577103fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_chain_is_the_directory_and_its_ancestors_never_a_child_or_a_sibling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The exact compact entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:387bf18319c438bc75814d983e2264004bdfc49a100e93e03235c1264c3ef420",
+            "locator": {
+              "kind": "symbol",
+              "name": "_F4_ENTRY"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Compact entries after the leaf, `memberAtSeed` with live counts, and `no_governing_family`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:b8d09c3ba34cebb8874402cf94c420113c58863ace1c74e54728146610f6ad72",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_chain_entries_are_compact_after_the_leaf_and_name_a_member_at_the_seed"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:b2cd64332264f1298e3fcb586cb04957951153d8bb2aa2f997f34ae58a1b65cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_chain_entry_flags_a_family_expanded_above_and_counts_live_members"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:bd45b67c3a4ee2762148222c79b8a298697f6fd4895bd551b775a50bd1d8ba9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_entries_no_route_covers_state_no_governing_family"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The conforming example.\n\nAnchor: `test_the_conforming_example_returns_the_governing_family_of_an_unattributed_file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:08ce4fb2631bcd2178b09690e6e6bf1e3a802ceb6167b8a841a285351be50a21",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:96d2dbf8de41be2bf5cb1a98351412e40d2aba05e440c237ec3496588ffc260a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_conforming_example_returns_the_governing_family_of_an_unattributed_file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Expansion from a family seed, and its spellings.\n\nAnchor: `test_a_family_seed_returns_the_full_family_content` `test_a_family_seed_is_named_by_id_revision_or_projected_uuid`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:08ce4fb2631bcd2178b09690e6e6bf1e3a802ceb6167b8a841a285351be50a21",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:80a656801e7e69b9313595e865a97ade96f44c58ea577e10b1af0df4f8cf896d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_returns_the_full_family_content"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:0adcf3cbc5031083112bb09f6fa01b0de4c9cf4aebc95ab94b5bea7d7b241eb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_seed_is_named_by_id_revision_or_projected_uuid"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The walk helper and the long fixture.\n\nAnchor: `_walk` `long_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:08ce4fb2631bcd2178b09690e6e6bf1e3a802ceb6167b8a841a285351be50a21",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:ab5f831b8ea995bf97127f59c398b61d78f2198a4ef2a378695018f3f978ab76",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e6bef9a1cb3daa0240d9d7342498513762101c4f",
+            "content": "sha256:a9b1ccce91eb6037f19cc3c00c9fe7c2650fe3f9f1c73981a2b1e196a87fcdbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "long_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

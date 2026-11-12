@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The handoff template specifies authored target values and whole-operation refusal, while the shared parser diagnoses malformed text, roles and lengths before record identities or writes."
+  },
+  "applicability": "Curator hand-off entries admitted through the ordinary curator writer that would write new realization claims.",
+  "conditions": [
+    "A converted file-writer handoff is parsed for realization targets before authoring its record and sidecar edits.",
+    "The converted file writer admits one whole hand-off operation under MIK-R12@v2 rule 4; entry-local diagnostics do not authorize partial file writes.",
+    "Earlier per-entry sibling commits are historical-mode behavior only while that earlier path exists, never a fallback for converted handoffs."
+  ],
+  "exclusions": [
+    "Target shapes that are not JSON objects, which the target-shape check refuses separately.",
+    "Stored historical claims; this parser judges supplied targets rather than re-admitting every stored row."
+  ],
+  "id": "INV-J7179RG5",
+  "origin": {
+    "leaf": "260921-ICR-L45",
+    "legacyId": "f5768b70-4e16-49a2-b60a-58daf0bfa47e",
+    "task": "260921-ICR"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "For an entry that would write new realizations, a non-null non-string rationale or role at either level is reported as realization_value_not_text, an unknown nonblank role (absent included) as realization_role_unknown, and an effective rationale longer than PROSE_MAX_LENGTH as realization_rationale_too_long. Null/missing values are unstated and resolve through target/entry defaults; absent effective rationale separately refuses. Diagnostics name the entry and offending targets before identity minting. A converted violation refuses the whole handoff with no writes; sibling commits are earlier-path provenance only.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "This is not an admission of a choice and no authority is claimed for the departures. The record constrains only in the negative: it stops this leaf from presenting them as settled practice and stops a later seat from repeating them as if a ruling had allowed it. It is to be graded as a factual record, not a disposition."
+  },
+  "alternatives": [
+    {
+      "option": "Record both departures as facts of this leaf, with the absence of authority named in the record itself, so that neither can be read as a settled practice.",
+      "reason": "The acts happened. Removing the record would leave this leaf asserting a clean memory and leave the next seat free to repeat them as though they were allowed.",
+      "status": "chosen"
+    },
+    {
+      "option": "Present the departures as a lawful choice among alternatives that were available.",
+      "reason": "No authority makes them available: rule 4 imposes no candidate-defect precondition and a leaf record cannot set itself above that rule. Writing them as a choice would be the same false claim in better words.",
+      "reconsider_when": "An Architect or developer ruling that makes such a departure available; a later record may then rely on that ruling, never on this one.",
+      "status": "rejected"
+    },
+    {
+      "option": "Drop the record and let the requirement speak alone.",
+      "reason": "The tree would then hold no trace that a reported failure was carried rather than routed, which is exactly the state that lets it happen again.",
+      "reconsider_when": "A ruling that another record carries this fact.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Both departures are facts of this leaf and are not precedents: nothing here authorises another leaf to decline rule 4 routing, or to make a decision overturnable only by a measurement.",
+    "D229 runs against the first departure. The repair route for the cutover failure is the Architect's to name, and this record neither names it nor stands in its way.",
+    "WKN-NGKK2Q carries the measurement as made and claims no cause; its record-only check passed under Architect ruling 78f8f61b, which authorises that check and nothing else.",
+    "The six repairs are the packet's rules applied, not a choice this record makes. The boundary it drew — repair exactly the six, carry the one run-dependent failure as a measured weakness — is recorded here as the boundary that was in fact drawn."
+  ],
+  "context": "This record is an account of what was done in this leaf, not a decision anyone was entitled to make; the file keeps the slug it was first written under (\"a red test is repaired on the wrong side\") and the account below is what a reader should take from it.\n\nTwo things were done and neither has a durable authority. (1) The ordinary lane's cutover failure — test_only_a_definite_non_repository_reads_as_holding_no_converted_memory, red alone on both base and candidate and green inside the parallel whole-lane run — was carried as a measured time weakness (WKN-NGKK2Q) instead of being raised under MIK-R203 rule 4, which says a failure outside this leaf's six comes to the Architect; the record as first written rejected that route on the ground that a candidate defect had not been established, and rule 4 imposes no such precondition. (2) The record's admission said its choice could be overturned only by a later run, which sets a leaf record above a governing rule. MIK-R203 v1 rules 2, 3a, 4, 5 and its Exclusions, D229, D167, D466 and Architect ruling 78f8f61b were searched for authority for either departure and none was found. D229 runs against (1): a failure the tooling reports is repaired, whoever caused it and whenever, and is never passed by, waited out or reasoned away — the ground given for (1) is such a reasoning-away.\n\nWhat happened outside this record is separate from it: the failure was named in the Worker's handoff list and through the Manager, and the Architect answered on the two weakness records. The six repairs themselves are the packet's rules applied.",
+  "decider": "No authority: an observed departure recorded by the Curator, with the absence of authority named above; no ruling authorises it and none is claimed",
+  "id": "DEC-JHMCZ5",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "WKN-NGKK2Q"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l195-curator-handoff-1.json"
+    },
+    "handoffEntry": "repair-side",
+    "leaf": "260928-MIK-L195",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

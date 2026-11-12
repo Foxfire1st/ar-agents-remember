@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/panels/detail-panel/readerTop.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1e7d5f6f8a48aa9708e77d591ae7de97833682d3",
+        "content": "sha256:2bd524db0bebdba85ca53bb4b8f6c7f4c1e5c9237bd9251a733193e7f683ba8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskBodyNotice"
+        }
+      },
+      "id": "RLZ-CE8WSX",
+      "invariant": "INV-S18MK6",
+      "origin": {
+        "handoffEntry": "curator-body-revision-hydration-currentness",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Loading and unavailable body states remain explicit rather than pretending previews are complete.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

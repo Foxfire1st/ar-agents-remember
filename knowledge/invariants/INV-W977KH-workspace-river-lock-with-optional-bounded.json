@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Interposed-cut, burst and lockless-read cases pin the lock contract; without the record a stuck lock could hang a call."
+  },
+  "applicability": "Workspace-river lock holders and EventStore appends.",
+  "conditions": [
+    "Historical blocking callers keep timeout None; the tool-event writer bounds its wait."
+  ],
+  "exclusions": [
+    "Lifecycle logs, which never take the lock."
+  ],
+  "id": "INV-W977KH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_every_append_lands_at_or_under_the_ceiling in mcp/tests/test_tool_event_river.py (admission under the river lock); pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W07",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Workspace-river lock with optional bounded wait; existing blocking behavior unchanged.",
+  "status": "proposed",
+  "supersedes": []
+}

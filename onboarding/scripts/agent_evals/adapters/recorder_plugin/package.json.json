@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/recorder_plugin/package.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d20498c7b8587ee49f93e3590845c8cd8692a512",
+        "content": "sha256:2cb9adc6f781245da09cf4a82cd45943b3fbfb6aa731b4a8e1863f0695640ac4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-QEZ51P",
+      "invariant": "INV-QFMMYM",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-native-launch",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It supplies the recorder package metadata used by the trial plugin loader.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d20498c7b8587ee49f93e3590845c8cd8692a512",
+            "content": "sha256:2cb9adc6f781245da09cf4a82cd45943b3fbfb6aa731b4a8e1863f0695640ac4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

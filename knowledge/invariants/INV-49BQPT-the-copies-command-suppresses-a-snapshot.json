@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three proving tests pin retained, repaired and caught history-write outcomes; without them a silent skip would report success."
+  },
+  "applicability": "Snapshot-owner history-write failures during release.",
+  "conditions": [
+    "Snapshots already removed when the write fails."
+  ],
+  "exclusions": [
+    "Failures before any removal."
+  ],
+  "id": "INV-49BQPT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_copy_cleanup.py::test_a_failed_owner_history_write_is_retained_never_reported_removed; ::test_a_transient_owner_failure_is_repaired_in_the_same_request; ::test_a_silently_skipped_history_write_is_caught_and_repaired; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-04",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The copies command suppresses a snapshot-owner history-write failure when the snapshots have already been removed, reporting an empty failure list although the generation lacks its deletion explanation.",
+  "status": "retired",
+  "supersedes": []
+}

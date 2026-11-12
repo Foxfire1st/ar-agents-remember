@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py
 
-| Field                  | Value                                                                        |
-| ---------------------- | ---------------------------------------------------------------------------- |
-| repository             | agents-remember                                                              |
-| path                   | `mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py` |
-| doc_type               | `file-level-onboarding`                                                      |
-| lastUpdated            | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `../overview.md`                                                             |
-
 ## Governing Overview
 
 [../overview.md](../overview.md)
@@ -34,13 +24,10 @@ classification/fingerprint/problems, and waiting-generation members into observe
 - Missing, invalid, unreadable, stale, or source-mismatched projection bytes surface as invalid-empty.
 - It exposes no claim, blocker, grade mutation, commit, certification, integration, or lifecycle state.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Top-level reader covers every orchestrating sprint. | `read_closeout_queues` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:22-38 |
-| Effective state is joined against the exact current source. | `_project_queue` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:41-69 |
-| Waiting-generation members project classification, priority, order, and reasons. | `_candidate_node` | mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py:72-81 |
+### Repo-Internal References
+
 
 ## 260821-CLIVE Effective Projection Reader
 
@@ -54,21 +41,21 @@ are not projected here.
 
 This section supersedes the earlier authoritative-queue and active-blocker description.
 
-## Update History
+- Top-level reader covers every orchestrating sprint. [1]
+- Effective state is joined against the exact current source. [2]
+- Waiting-generation members project classification, priority, order, and reasons. [3]
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: rewrote the card for the effective disposable projection reader. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+## 260928-MIK-L177 The Live Fingerprint Never Walks A Worktree
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+The old fingerprint walked every worktree with `_snapshot_entries` under a 5,000-entry cap, which is
+the recurring cost the projection paid on every heartbeat. It is gone. `_worktree_live_parts` now
+takes the capture owner's own index scanner and the native working generation:
+`_index_copy_has_trust_flags` must answer `False` (an `assume-unchanged` or `skip-worktree` entry can
+hide an eligible edit, and an index shape the scanner cannot read is a doubt), the index file's
+identity is read before and after the generation, and a moved identity forces recomputation.
+`working_generation` supplies the dirty-file statistics, so an unobserved edit is still seen.
 
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-18T00:00+02:00 — 260815-DAG-L8: created the read-only closeout-queue serving projection.
-  Verification metadata pinned until closeout stamps the L8 commit.
+The watcher deliberately does not cover the worktrees tree, so those inputs are re-observed natively
+on every heartbeat rather than aged. The watched **tasks** tree keeps its incremental samples and gains
+`TASKS_FULL_REFRESH_SECONDS = 300.0`: a heartbeat takes a full refresh of it at least every five
+minutes, and a path-named sample or a full pass takes it at once.

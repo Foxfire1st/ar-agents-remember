@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/providers/watcher_service.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+        "content": "sha256:d2a4b6a649c3ec4a78c2aa966a4f13f98e7832b1fc8745121d0bebf967eff6c9",
+        "locator": {
+          "end": 65,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-HVDK68",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The stop now hands the authority settings path to the watcher lifecycle, which is what makes rule 5's retained safety reach a provider; the generated document is only the no-authority fallback.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Defines the function `run_configured_watchers` — run one watcher action against temporary settings derived from live config.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:63a9108e497ce74b8e28e27c8e411b648af09022b380b97eb70edf26826f74b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_configured_watchers"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:c7a4bbb6d0c16174a01b3f821b1a2b92d62cb5e0de6c4e8ac04bdf0e722575c6",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:f937cc549ec9bc846117a31f38f7ac47c7969be7b762268b49d10cf5adc7ca40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

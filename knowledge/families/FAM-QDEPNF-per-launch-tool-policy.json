@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The members jointly preserve the user-controlled installation boundary across code, state reporting and agent-launch behavior; no individual local guard or notice prevents both wrong-root mutations and a misleading recovery/launch contract."
+  },
+  "guarantee": "A supported host launch suppresses exactly the ambient product tools while retaining the bound task server and existing user deny policy; unsupported pinned-provider cases remain explicit per-agent exceptions with the protective task-server instruction. The supplied-map filter and carried configuration root keep the generated task server on the selected host, without writing user/harness configuration.",
+  "id": "FAM-QDEPNF",
+  "members": [
+    "INV-EMEW6K",
+    "INV-P8F6BT",
+    "INV-GKNF5W",
+    "INV-ZKV9B3",
+    "INV-HFREW1",
+    "INV-ZKEF8F",
+    "INV-XJJ3NX",
+    "INV-C9SY1X"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "per-launch-tool-policy",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/serving/paseo"
+  ],
+  "schema": "ar-family/v1",
+  "status": "accepted",
+  "title": "Truthful per-launch product-tool policy without changing user configuration"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The setting is written in the daemon-settings module and documented in the settings reference, so one statement keeps idle seats from being closed after 60 minutes."
+  },
+  "applicability": "The daemon settings the product writes for the host it provisions.",
+  "conditions": [
+    "The host is Paseo 0.14 or later, which closes idle runtimes by default."
+  ],
+  "exclusions": [
+    "Settings the developer changes by hand after provisioning."
+  ],
+  "id": "INV-MAZGMS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L60-evidence/partB/step-log.md provision row (agents.idleRuntimeCleanup=false live)"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v6.4",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The product writes agents.idleRuntimeCleanup false with its other daemon settings, so Paseo 0.14+ does not close an idle seat after 60 minutes.",
+  "status": "proposed",
+  "supersedes": []
+}

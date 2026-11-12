@@ -1,0 +1,180 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/connection.py",
+  "realizes": [],
+  "references": {
+    "13": {
+      "note": "`open_read_only_database` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`create_or_validate_schema` owns the current boundary described above.\n\nAnchor: `create_or_validate_schema`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`inspect_schema` owns the current boundary described above.\n\nAnchor: `inspect_schema`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "- The bounded lock policy and its no-retry rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:443116d5d7ec42b5e741759b495286c4fe4d15aa5f75ea5038f71c378f3fa3b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUSY_TIMEOUT_MILLISECONDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "- The read-only connection every identity confirmation uses, so a pass cannot repair what it checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:8e0d73a6fc5ba1e336df087f356d6f7090430e241977d7497ad8d06bb9fb7662",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_database"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "- The shared one-row reader every graph read is built on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:ba4a0983cd502c72cf152dbc822d8f22729403c38c03298662136f762fa88241",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_one"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "- Create-on-empty versus validate-on-existing, and the post-commit version marker.\n\nAnchor: `create_or_validate_schema`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "- The existing database is checked for generation, exact table columns and the full trigger set.\n\nAnchor: `inspect_schema`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:6103fb9c356387c002eb386f9eccd45c4d05899ecd91ba0e16bd14038f297f0d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "- The single immediate transaction whose exit rolls back without suppressing the failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:0ade81c5cb9c5790671542b21896edaa0640f14246b71d2e3725870cb85e0926",
+            "locator": {
+              "kind": "symbol",
+              "name": "immediate_transaction"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "- The graph readers that reuse the one-row helper.\n\nAnchor: `get_family_revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fafa18088da97ad02199d8d81db836c10e274a58",
+            "content": "sha256:57f72baf8adc3f53f857c90088fe3142582d1c875cdce06320c91253b8665a11",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/families.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "- The close that no longer calls the peer unlink, and why.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:947779ca6c56d2d2b3f19731a4d47c06e558fe68abe6d4f9e91cdeb7abde9d4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "close"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

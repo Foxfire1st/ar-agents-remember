@@ -1,0 +1,427 @@
+{
+  "path": "mcp/tests/test_review_bounded_pagination.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "21": {
+      "note": "`test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:44f7b79458b2d5ead7159be9cd6e26c2b22cb3070808d3c79369035f504cfb28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The removed records collection is a named refusal on first, unsized, continued and crossed requests. The serialized guard requires the evidence field to be absent, not an empty measured channel.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:28d728a7951709f3a3c32670c35e75b8c4e22e370273157a10f51a8bde7d50dd",
+            "locator": {
+              "end": 578,
+              "kind": "line_range",
+              "start": 540
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "`test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:00a140bbb93f6722a9dcdbffd129c0d7fdb3c6951e56a2f5fcbf8e8cd44ddfd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "`test_the_entry_read_populates_the_button_without_fetching_record_pages` supplies the current fixture or assertion described above.\n\nAnchor: `test_the_entry_read_populates_the_button_without_fetching_record_pages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:b9f1d8275e326f4d61abe0e2728c3672596c11627c32848be92db340e5067638",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_entry_read_populates_the_button_without_fetching_record_pages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Fixture construction imports the shared diff/read-scope test support and rebuilds its candidate text population; this is not production write admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:28068d801b156c919335a111b205722a47afc7570ee49c50770d8c92267bb4ed",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Test-only RowStore mutates a text tree and rebuilds the derived index; it is not a shipped validating write-admission plane.\n\nAnchor: `RowStore`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62e692c8ea18903861ec2efddd03c884ed14f818",
+            "content": "sha256:43a32e8370a3aa07c1e8247bd8b4d445a42caab3b630d2ed5783e663bc3c824e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/knowledge_rows_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "compose_page calls the production review composition and asserts that it answered with a review payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:1d678b1af567cf6d1cafb907d384b714e014d39dfcb6e79e1f7260e3fb7ea5c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_page"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "build_pagination_fixture builds the shared diff fixture, adds extra realization paths and returns its candidate fixture.\n\nAnchor: `build_pagination_fixture`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "PaginationFixture holds shared test-support fixture state and builds its request/resolution; build_pagination_fixture composes that fixture. Neither is shipped public-store write admission.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:9a4d754f4f3cd4f5cb971521baa0bdeb3cfb138652b2e7f7fa8ebdaeca9040ce",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:cea4afa20dc9c9c95054fa397b3963c59501752927c29dfe3ac2ec80c8a7692b",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 206
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The composition, the real route and the query builder every page is read through.\n\nAnchor: `route_client` `compose_page` `route_query` `paged_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:9753689097ee78fa9154406860c4ba76a6de7471718d3ae03369af1fc848045d",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_client"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:1d678b1af567cf6d1cafb907d384b714e014d39dfcb6e79e1f7260e3fb7ea5c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_page"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:6cb99e3febf0cb7e7bdc034510547aff4a9dff216f8f98731a4f25662bb03184",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_query"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:fd03bcbabb65e3a94ebd6758a956c7b500e294b94037e160206c780a9183eaae",
+            "locator": {
+              "kind": "symbol",
+              "name": "paged_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "The walk helper and the two independent answer readers the cases compare the published counts with.\n\nAnchor: `walk_comparison` `_comparison_answer` `_returned_item_ids`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:15af2f837e4063514d3979ddb83b576f34f11e9c79bec996b80871c88aa14163",
+            "locator": {
+              "kind": "symbol",
+              "name": "walk_comparison"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:0c54f6fd3282b81280cd81ba719bbbe553afa9ff6ffcf98177589d1e59f68a6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_answer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:c0502b8d2812e32b8a63a5caa4c4de8140b91ba9fed8002fc18602c264bc2d7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_item_ids"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "**A complete comparison is one page: no remainder and no cursor, so a whole selection is never presentable as a truncated one.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:dbacc818e839da7257a97563d798370885b51dbb167eaf139ef55984d9706766",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_complete_comparison_is_one_page_with_no_remainder_and_no_cursor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The large comparison walk reads every page through HTTP and checks the union, counts, scope and terminal cursor without duplicate or loss.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:44f7b79458b2d5ead7159be9cd6e26c2b22cb3070808d3c79369035f504cfb28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_page_of_a_large_comparison_is_reachable_without_duplicate_or_loss"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "Item windows partition the comparison population exactly and their rendered claim-row union matches the whole comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:754b42886b56a6da5e0ade5a8946c96c61d8698963e1263aafacb7391e5aa3a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_item_windows_partition_exactly_and_paging_loses_no_rendered_row"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "**The packet's failure example: a cursor whose generation moved is refused with the new-generation action, and the response is the first page of the comparison that is there now.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:00a140bbb93f6722a9dcdbffd129c0d7fdb3c6951e56a2f5fcbf8e8cd44ddfd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cursor_from_a_moved_generation_is_refused_with_a_new_generation_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "**The page-size boundary admitted by the route itself: 64 served, 65 and −1 refused by name with no uncaught request-model error.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:d448ff315605e6c483e43a53183f18fbe2bf8720c72e2a4db65227e063ff1ca4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_transport_names_the_input_it_refused_and_bounds_the_page_it_applies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The entry case asserts unpaged subject review reads at both fixture sizes and independently verifies that driving the entry catalogue calls no comparison or view owner.\n\nAnchor: `test_the_entry_read_populates_the_button_without_fetching_record_pages`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:7dbed4734079a92f2edf239277daa7de2887a1168455ddd9c4d8a1777ea04c6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "ReviewCollectionPage validates total arithmetic, continuation availability, reset reason and continued-from identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:d231f5d80a2730aab1061832becb5f2d5f3b3bd9ead09eb7a107fa018380ad30",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCollectionPage"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The transport case checks named input refusals and the page-size bound, including 64 admitted and 65 or negative sizes refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "590cec5f16048fe5583eb197ca96f6ed2e29a709",
+            "content": "sha256:d448ff315605e6c483e43a53183f18fbe2bf8720c72e2a4db65227e063ff1ca4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_transport_names_the_input_it_refused_and_bounds_the_page_it_applies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "One unit-regression membership and seven exact-scope lifecycle artifact records name this module. These source declarations are neither a six-row census nor test execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

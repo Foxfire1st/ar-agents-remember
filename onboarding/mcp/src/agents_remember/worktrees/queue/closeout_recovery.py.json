@@ -1,0 +1,177 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/queue/closeout_recovery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-16560Z",
+      "invariant": "INV-RYF7BJ",
+      "origin": {
+        "handoffEntry": "L26-CX-N03",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The changed recovery docstring is where the provenance spans lived.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-62E5M0",
+      "invariant": "INV-HDV88M",
+      "origin": {
+        "handoffEntry": "R3 Finding 2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Compares the actual branch and parent with the admission before publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-76H41E",
+      "invariant": "INV-KTMBMN",
+      "origin": {
+        "handoffEntry": "R3 finding 2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This check compares the actual branch and parent with the admission.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-EJA9DM",
+      "invariant": "INV-JFGTZT",
+      "origin": {
+        "handoffEntry": "MIK-R26@v1 (documentation correction)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected recovery docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+        "content": "sha256:6863a842e675f2fad75317197d2e0a5f1edb089de347d587a395618298690fca",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_admitted_tip"
+        }
+      },
+      "id": "RLZ-Z8R42E",
+      "invariant": "INV-NJT6A9",
+      "origin": {
+        "handoffEntry": "L26-CX-N03 (post-takeover completion)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected recovery docstring.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`MemoryCloseoutOutcome` contains the memory commit and informational refresh results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:8a32424d760853fa1b67080bf0345a3697e17d8e36a2f566b7c316947f6c30d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCloseoutOutcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`prove_closeout_recovery_commits` proves exact output refs without consulting a cache table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:9aad08be1ba59d94bac34779f4a1dcf871999eb945971a94b30b49b7bbce6c26",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_closeout_recovery_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_prove_memory_output` checks memory source ancestry and substantive cleanliness before best-effort cache refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:4ec7e5239cb2836f0be017bc1d72d991a80014f4b1494dee12da1c692c9a904b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prove_memory_output"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`accepted_code_commit` commits or reuses the exact accepted code tree and records its proof.\n\nAnchor: `accepted_code_commit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:bcba18d10ee8657c7388d046f618a17d2e60dde2fa141df01607d61149bd8bcc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`resume_external_commits` re-proves existing memory output and republishes only the code/memory pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "087633e817b9197311ac844320b1bc70e48c0288",
+            "content": "sha256:9a29e5ed527c5587233cfc90ef255470ccc36cafca5122584a3ffd0709152adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "resume_external_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

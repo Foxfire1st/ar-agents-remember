@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_omission_report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The report lives in the enclosure's scratch, per generation and side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1ede45814e0b0e79369dad066795252f63a7c6",
+            "content": "sha256:0d659992e6c32d2c6c5aa3304a3ab42785cb0a3128107a1f839ff09d0887de3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "report_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Only a missing report means no records; any other read failure refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1ede45814e0b0e79369dad066795252f63a7c6",
+            "content": "sha256:d833535f458ecd0d0ec822971964548590ed8ccbbd3589671e30789b6946ff71",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_reconciliations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal names the file and says it was left untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1ede45814e0b0e79369dad066795252f63a7c6",
+            "content": "sha256:897035e7b1034f88a0746d4ae3d8355d1ddb6817d266c19c7640f8b2d4c39f3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A failed write raises its own error naming the location.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a1ede45814e0b0e79369dad066795252f63a7c6",
+            "content": "sha256:255351d1eff2f6526ef2192d78d3826a8ad645a4c953c98f3aa0670214a26b28",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The continue writes the measured report and answers a report error as an incomplete resolution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:ccb81fe2085f62d8a3adbf98502441323e488945d4d217a4fc56256b6b76b1d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continue_parked_wip_restore"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

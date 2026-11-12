@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+    "content": "sha256:8e4d00c1345bf4d4f6f99ebeb4e17edb29c5ec73c27148ec61a7a7cd30fd04a3",
+    "locator": {
+      "kind": "symbol",
+      "name": "_register_integration_command_tools"
+    },
+    "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+  },
+  "id": "WKN-59A97E",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-21",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The served description of worktree_operation_control offers generations of a closeout and of an integrate, while only a direct landing leaves a generation and both kinds answer lifecycle-operation-missing."
+}

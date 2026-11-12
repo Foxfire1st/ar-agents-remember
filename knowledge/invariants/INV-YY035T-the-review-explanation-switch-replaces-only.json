@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The composition, selector and isolated frame must agree on the retained revision shown so comparison cannot borrow another revision’s identity."
+  },
+  "applicability": "The dashboard Explanation reading view for saved, absent, building, unavailable, retired and compared revision states.",
+  "conditions": [
+    "State/revision routes supply the selected retained revision and its admitted binding.",
+    "The developer presses a write control for any update, regeneration or removal."
+  ],
+  "exclusions": [
+    "No new claim is made that this UI validates readiness or frame bytes; backend frame-store/readiness invariants own publication.",
+    "Frame message prechecks reject supplied mismatches; optional absent identity fields are still forwarded to the host validator."
+  ],
+  "id": "INV-YY035T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/review/explainer/ExplanationView.test.tsx::opens in one isolated frame with no model: a channel for its revision and nothing else; dashboard/src/panels/review/explainer/RevisionSelector.test.tsx::at the task total, names the refusal and offers only unpinned revisions; dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx::mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return; source-location and unchanged-byte audit: helpers/frontend/source-drift-current-W9.json; no fresh test execution.",
+        "MIK-R106 v2 rule 6: compare opens two retained revisions in isolated frames; existing INV-YY035T unchanged statement/scope. Source-only pin/slot branch inspection supplements the named integration assertion; no separate proof is claimed for every malformed pin or slot collision."
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-CUR-FE04-saved-reading",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Review | Explanation switch replaces only the review reading body, and each shown or compared saved revision displays its own binding, time and claim-basis labels while opening a separate isolated host channel without starting a model.",
+  "status": "proposed",
+  "supersedes": []
+}

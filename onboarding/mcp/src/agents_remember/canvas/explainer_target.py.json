@@ -1,0 +1,109 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_target.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A range or whole blob is hashed at its own tree, and a range outside the blob answers nothing rather than a wrong hash\n\nAnchor: `def content_identity(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9996ebf2251f566e80a9785cc7f89bda8e28f6a4",
+            "content": "sha256:e61c58f4fc5646d96a340edf4a892d68fb0e3c2242ebc86e3bb76fae99a5c973",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 194
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A recorded range is mapped into the target's tree through the two blobs' hunks, and an unmappable range answers nothing\n\nAnchor: `def mapped_lines(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9996ebf2251f566e80a9785cc7f89bda8e28f6a4",
+            "content": "sha256:6494e52402f2f3627a39ba3f0f98070762b13cb726ddcc8452cbdee61895f3fe",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A record's revision is read at the side the claim names, and an absent or foreign record answers nothing\n\nAnchor: `def memory_revision(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9996ebf2251f566e80a9785cc7f89bda8e28f6a4",
+            "content": "sha256:b1210bfa3477cbf7a437e510729997e141e52ba25e35a98fca8289e0cea7686c",
+            "locator": {
+              "end": 251,
+              "kind": "line_range",
+              "start": 239
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A proof entry's fingerprint and execution state are answered from its re-resolved anchor, or its fingerprint is withheld\n\nAnchor: `def proof_entry(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9996ebf2251f566e80a9785cc7f89bda8e28f6a4",
+            "content": "sha256:d518c9d897f5147ba6e1c2319a87cef42eed45a4be386185812663fe3ec97859",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Each block kind is fingerprinted by the identity that kind carries\n\nAnchor: `def block_fingerprint(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9996ebf2251f566e80a9785cc7f89bda8e28f6a4",
+            "content": "sha256:fc92964cbf6dbf7397a78eb2e7569bf67e415260e5e42cf8e26c46dcf2ef6b29",
+            "locator": {
+              "end": 589,
+              "kind": "line_range",
+              "start": 573
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Only a strictly later version the requirements manifest registers is reported\n\nAnchor: `def registered_version(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9996ebf2251f566e80a9785cc7f89bda8e28f6a4",
+            "content": "sha256:e9b9969ea663041559f085e7a9494402ba39de963f46476ec7387c4bf1b9cd56",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 327
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

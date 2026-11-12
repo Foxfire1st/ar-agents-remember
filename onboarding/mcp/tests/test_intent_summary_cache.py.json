@@ -1,0 +1,76 @@
+{
+  "path": "mcp/tests/test_intent_summary_cache.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Index/object/address/refusal checks keep native unavailable versus counted facts.\n\nAnchor: \"def test_closed_native_record_and_lost_object_keep_the_owners_refusal(world):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
+            "content": "sha256:9e712d5e7f447afc64291ceb6d4a1fdd91704e8463d7d9e08ea772008d63d091",
+            "locator": {
+              "end": 257,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Unrelated note populations are not walked and restoration during summarize_review cannot settle the prior refusal.\n\nAnchor: \"def test_unchanged_intent_inputs_do_not_walk_unrelated_master_files(world, monkeypatch):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
+            "content": "sha256:e71a2a1f72b088211ca0ecc96ac0b4e461312c48e0218d23771b6cbd76ccf257",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A blocked numbered-shape reader permits unrelated changeset requests.\n\nAnchor: \"def test_slow_intent_does_not_serialize_other_reads(world, route, extra):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
+            "content": "sha256:73c2ed4e8921d02bd8d4d235ea600ba50cb8e5b2a149a6dd8c20c05f44d02b17",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Freshness-only children are excluded; counted/conditional and input-invalidating cases retain native equality.\n\nAnchor: \"def _reads(children):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "097d667e8377daaf7fbc1611c38c2bf3a0cffc6b",
+            "content": "sha256:cc580df8bdbeca93b173840f57054ef61e56e40a328730a9089afcefad1e7ca4",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

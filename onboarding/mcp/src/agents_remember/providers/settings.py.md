@@ -1,14 +1,28 @@
 # mcp/src/agents_remember/providers/settings.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/settings.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-03T01:55+02:00 |
-| lastVerifiedCommitHash | `7bf564a663bb61f12844dee39538dd09a1633cdb` |
-| lastVerifiedCommitDate | 2026-08-10T12:28:42+02:00|
-| governingOverview      | `../../../overview.md`                     |
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- Current generator takes no config and returns enabled=false with providers={}.
+- No detailed Docker settings helper remains: the module is that empty generator
+ and the temporary-file writer.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says generated settings depend on runtime provider/repository maps. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:11-26`.
+- Source comparison: `mcp/src/agents_remember/providers/settings.py:29-38`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -56,45 +70,33 @@ file for lower-level lifecycle functions that already accept `--from-settings`.
 
 - Do not read coordinator `system/settings.json` here.
 - Do not accept provider path overrides from MCP settings; paths are derived by
-  the server.
+ the server.
 - Keep generated settings complete enough for dry-run and real install paths,
-  including backend images and image lock paths.
+ including backend images and image lock paths.
 - `grepai-memory` generated settings must be complete enough for Docker to own
-  the runner, Postgres backend, and Ollama embedder without requiring host
-  GrepAI or Ollama binaries.
+ the runner, Postgres backend, and Ollama embedder without requiring host
+ GrepAI or Ollama binaries.
 - `codegraphcontext-code` generated settings must be complete enough for Docker
-  to own the runner image/container and FalkorDB backend without requiring a
-  host Python virtual environment.
+ to own the runner image/container and FalkorDB backend without requiring a
+ host Python virtual environment.
 - The CGC backend network name in generated settings is part of the Docker-owned
-  runtime contract; runner containers use it to reach FalkorDB by container
-  name instead of host loopback.
+ runtime contract; runner containers use it to reach FalkorDB by container
+ name instead of host loopback.
 - Delete temporary settings files in the caller after lifecycle operations
-  finish.
+ finish.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. | `McpRuntimeConfig`, `allowed_repo_ids`, `allowed_provider_ids` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:122-151 |
-| Provider status writes generated lifecycle settings before calling `watchers_run`. | `watchers_run` | mcp/src/agents_remember/providers/status.py:239-239 |
-| Runtime install uses generated lifecycle settings when installing provider dependencies from the MCP tool. | `install_runtime_from_config`, ["settings=lifecycle_settings_from_config("], ["def lifecycle_settings_from_config(config: McpRuntimeConfig)"] | mcp/src/agents_remember/install/runtime.py:556-615; mcp/src/agents_remember/providers/settings.py:32-32 |
-| GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. | `_grepai_settings`, `_grepai_runtime`, `_grepai_backend`, `_grepai_embedder` | mcp/src/agents_remember/providers/settings.py:94-115; mcp/src/agents_remember/providers/settings.py:118-153; mcp/src/agents_remember/providers/settings.py:156-192; mcp/src/agents_remember/providers/settings.py:195-234 |
-| CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. | `_cgc_settings`, `_cgc_root_settings` | mcp/src/agents_remember/providers/settings.py:237-327; mcp/src/agents_remember/providers/settings.py:330-340 |
+### Repo-Internal References
 
-## Update History
 
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+- MCP config derives allowed repositories/providers and provider runtime roots from trusted settings. [1]
 
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+- Provider status no longer writes generated lifecycle settings: at C `status.py` reports configured/enabled plus `skipped` and calls no `watchers_run`; the writer this entry recorded is gone.
 
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 4 repository-internal configuration and generated-settings references; the existing `watchers_run` row remains exact; final scoped result 0 (checker-clean).
+- Runtime install passes lifecycle_settings_from_config() to the provider watcher rebind; enabled provider keys drive no dependency installation. [3]
 
-- 2026-07-03T01:55+02:00 — L12: _cgc_root_settings generates each CGC root and attaches per-repo cgcignorePatterns from the in-code extras map (agents-remember: exclude the committed package_data bundle).
-- 2026-06-10T05:30+02:00 — CGC runner image comes from the single `cgc_runner_image()` derivation (GitHub #50): the independent repository:version f-string here dropped the image layer revision, so upgrading hosts kept a cached guard-less image under the guard entrypoint.
-- 2026-06-09T22:10+02:00 — CGC backend default settings gained `dataDestination: /var/lib/falkordb/data` (the container path FalkorDB v4 writes to), mirroring the GrepAI/Postgres `dataDestination` pattern; the data volume now binds there instead of `/data`.
-- 2026-05-28T12:32+02:00: Updated after generated provider log roots moved under the central `logs/providers/` tree.
-- 2026-05-26T13:58+02:00: Updated after generated CGC settings gained the shared backend Docker network entry.
-- 2026-05-26T12:51+02:00: Updated after `codegraphcontext-code` lifecycle settings switched from host venv fields to Docker runner image/container settings.
-- 2026-05-25T17:40+02:00: Updated after `grepai-memory` lifecycle settings switched to a complete Docker-owned runner, Postgres, and Ollama embedder stack.
-- 2026-05-24T00:37+02:00: Refreshed verification and clarified the GrepAI fallback root used when no repository memory root is configured.
-- 2026-05-23T04:29+02:00: Created when MCP provider lifecycle settings moved out of coordinator `system/settings.json`.
+- GrepAI lifecycle settings define Docker mode, shared network, runner image/container, Postgres backend, and Ollama embedder backend. [4]
+- CodeGraphContext lifecycle settings define Docker runner image/build/lock/container settings and FalkorDB backend settings. [5]
+
+</details>

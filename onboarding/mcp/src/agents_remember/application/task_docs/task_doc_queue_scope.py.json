@@ -1,0 +1,135 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "R04's semantic invalidation and evidence/audit exclusion are implemented by the schema-owned classifier and deterministic scope union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
+            "content": "sha256:0f7ea434e7a7756fe93ab96b48ddece4cff36790c6bb7b98b2d97397a3195e99",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_projection_scope_union"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public resolver classifies each change and returns a deterministic old/new sprint union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
+            "content": "sha256:e09a4f107944a6676da3ba337c35da10b70b85414c7e3ae947179b1d83a06238",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocScopeChange"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
+            "content": "sha256:0f7ea434e7a7756fe93ab96b48ddece4cff36790c6bb7b98b2d97397a3195e99",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_projection_scope_union"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Leaf scope is derived through the canonical parent master with the full batch override set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3247b8f0dcb6f5deef0832f9821807b1998fee41",
+            "content": "sha256:a35478de48337e253d1e2aa556a3492784f2a1f1945be68f15824d69ac24a202",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_projection_scopes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The schema-owned classifier decides whether a delta invalidates projections.\n\nAnchor: `TaskDocumentMutationClassification.invalidates_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:0a9a7d7f15fab6b072267116ac4c2fe239e2fcc2fba1a53a2b790e41abbf8980",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:a9e52a834bf87343152e69f3d6f87a37555d0af87a0e38d78d08aa7fea410b00",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:e4582d7c637f96de9f7388a11a9005dea66037574e6766d84ed6865cfa04d703",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

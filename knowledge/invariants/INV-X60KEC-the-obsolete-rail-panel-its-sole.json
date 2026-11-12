@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Restoring the obsolete rail, contextual session/highlight/composer plane or a gate instruction would recreate the retired product authority beside host-owned document chat. The current RightRail realization is one file, not cross-location evidence; the preserved dated certificate exclusion and explicit R113 retirement scope keep this cost boundary honest."
+  },
+  "applicability": "The dashboard's older contextual session panel and the modules, styles, tests and highlight branch that existed only for it.",
+  "conditions": [
+    "R113-retired RailChat, HighlightComposer, LeafAttachPicker, SessionComposer, Terminal and old session-cockpit files remain absent; this does not forbid the new reference tray's admitted highlight/dock/send surfaces.",
+    "The surviving RightRail keeps EventRiver and one host-owned DocumentChat; the tray docks beside its frame without rebuilding the retired AR session plane.",
+    "The dated certificate exception is identified by its unchanged line content, not the historical whole-file hash or line146: | No composer paste path | The canonical Chats cockpit, RailChat and HighlightComposer use `SessionComposer`/`submitSessionText`; production call-site search finds no paste/injection caller. Legacy data-layer paste helpers and their historical tests remain defined but unreachable, matching the accepted L5 boundary. Raw xterm keystrokes remain terminal input by design. |"
+  ],
+  "exclusions": [
+    "The old L95 shared-session/highlight preservation conditions describe the earlier scope, not permission to retain or restore the R113-retired plane.",
+    "Rule10 permits the five-line History banner; the dated certificate line is byte-preserved at current line151 and is not reopened or edited.",
+    "The old L95 zero-hit census remains historical; this row does not fabricate a new repository-wide zero-hit proof or independent CODE test."
+  ],
+  "id": "INV-X60KEC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac",
+        "Memory review notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.md SHA256 03da9b2843b4421adf865681a1cbca6b06726e2573496fe4ac0697c88b16d276; producer list notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.curator-handoff.json SHA256 3a511e51a2d242d65a38e5011fb8b137985cae8d23d732ddbec6e36d16ed16c8; exact passed code d5f2207722e71601819dc64bd298a5a073dff41e and memory candidate 6598e6150ae5a7c515fcdc12bce9efa7cc1b9a85"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule8",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "The obsolete RailChat panel and its exclusive old session/composer/highlight modules remain removed. The host-owned document chat and Event River survive, and the new reference tray owns highlight picks, its dock and developer-message sends.",
+  "status": "proposed",
+  "supersedes": []
+}

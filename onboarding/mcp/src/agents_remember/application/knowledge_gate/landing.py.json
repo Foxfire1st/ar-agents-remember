@@ -1,0 +1,267 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/landing.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+        "content": "sha256:f469fd1a4d2de7b0de084ccd3515375140bb98f2af0df91f64bff2de1e4395c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_history_owners"
+        }
+      },
+      "id": "RLZ-E6NG05",
+      "invariant": "INV-3FA4VG",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 5 history-ownership",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The single owner-resolution function rule 5 judgments use.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+        "content": "sha256:207e28b19ba6a7c8dff5d94f9345c3d04b0a0f0c0065d977e404c201c28e0eab",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_staleness"
+        }
+      },
+      "id": "RLZ-MD0K7K",
+      "invariant": "INV-ZHTFZ9",
+      "origin": {
+        "handoffEntry": "L118-W4",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The landing computation lives here: an ordinary landing and a checkpoint read only the dependents a change can move, while a series master's end reads every document; it answers document-level counts and names the inherited ones separately, answers an uncomputable state as state and detail without a count and an unverifiable one as state, detail, the count and the documents, and leaves per-link movement detail — the moving commit, or that it is unknown — to the dependent reader that names each moved link.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module docstring: master routes and record landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:4c04fb8d7e1bc24d098de7700ba8d68c5ef94329753541cb4257faea70e16dab",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The finding codes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:4a8ccfc327da3f26532a17d25e0b54cdb67c9cd9e1d53b3ceee7349947ee71bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "STALE_AT_LANDING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:b57dd55d5452a4434a459b99df1901148bddd984158351062bb8382575365fae",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNVERIFIABLE_AT_LANDING"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:5eea53802cfe69e4e3dbbbe16a6e4c038514502ac2c327e3cc0a7f7c7263d101",
+            "locator": {
+              "kind": "symbol",
+              "name": "HISTORY_NOT_CLOSED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The refusal and the named remedy.\n\nAnchor: `landing_refusal` `_findings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:8697a207141cabd4ea8806b80a6dbfb7dbef2dd856c094a9d9ae86a462f51d6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:25128bd78709617d17498b002d2d25af5fe45da51d94ecb9c420debc6aa07fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "landing_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:6082768edc92293f96257f90e2d05f8ae876c3db9c13c0a7ca5dc3970c4cb3c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The closed history file in the landed commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:29cd148c67eeaf2dd8cf9b53bc1663bd9e9847a1b04c9c9ea748fa77988b5e36",
+            "locator": {
+              "kind": "symbol",
+              "name": "_history_closed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The master's net staleness, refusing anything not current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:266b5b89343ea99300ca6114f5c161b97e406ede5eb7a8dc1a6a2e02ba227fab",
+            "locator": {
+              "kind": "symbol",
+              "name": "net_stale_entries"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:bed3b4f080806b56f0c64f5fa51696bd20dbbc8b868d60b0d7b54b2e0d1006bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_net_diff"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:1b59f767fe6e13e663f4bfe35aeeb047189949a0d3a1a53d9e2b636d91c93c9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_not_current"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The master route test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b576ddb0afc095d5ccff8d0c435a52682f6e126c",
+            "content": "sha256:03a81aabcbdb2a662795b0ea7d5567ac9be13a4bb4ab1fe8f0399c4af86d39e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale"
+            },
+            "path": "mcp/tests/test_knowledge_closeout_gate.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The leaf's latest history file in the landed commit; an unlistable directory is an unreadable input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:830a33d744bd55ed792b7c2c6bb2902b136fa6e39161776bc4ac1bcd44bbb546",
+            "locator": {
+              "kind": "symbol",
+              "name": "_latest_history_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Record landing refuses when the landed history cannot be listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:7c5fd9389c28b73495b562404614d80788b130604525bd0dbf8b085698f5dd12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_when_the_landed_history_cannot_be_listed"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Every newly closed master history file is authenticated against its owner publication.\n\nAnchor: `_master_history_ownership`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:8697a207141cabd4ea8806b80a6dbfb7dbef2dd856c094a9d9ae86a462f51d6e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95eb2af092cad6e8624da3e1b504ce58c42d553c",
+            "content": "sha256:2f51e40a66336e759050f935b44b06cdfea2b7c0403063630d84f84f3411907e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_history_ownership"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

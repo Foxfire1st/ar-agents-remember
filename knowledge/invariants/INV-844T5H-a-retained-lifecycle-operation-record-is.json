@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A record under the wrong name would let a forged or misfiled generation stand in for another generation's terminal evidence when a master is judged ready to retire or an enclosure archived."
+  },
+  "applicability": "A retained lifecycle operation record read as terminal evidence.",
+  "conditions": [
+    "Its content must match the canonical file name it is stored under."
+  ],
+  "exclusions": [
+    "A record that is absent."
+  ],
+  "id": "INV-844T5H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R41-v3-abandoned-leaves-do-not-block-a-master.md; notes/reports/260928-MIK-L41-worker-R3.md; notes/reports/260928-MIK-L41-review-R4.md"
+      ],
+      "path": "notes/reports/260928-MIK-L41-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R41@v3-record-matches-canonical-path",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A retained lifecycle operation record is accepted by the terminal evidence reader only when its content matches the canonical file name it is stored under.",
+  "status": "proposed",
+  "supersedes": []
+}

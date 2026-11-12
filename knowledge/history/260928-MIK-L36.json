@@ -1,0 +1,204 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L36",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-157BYX",
+      "items": [
+        "sha256:0e18e98aaddb5bad45cce0920ffa188f864a826c8064c750cbdf3f00e792db9a"
+      ],
+      "reason": "Only the mcp package version line in the lockfile moved to 3.0.0; the lockfile has no file card and the change carries no invariant.",
+      "sources": [
+        {
+          "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
+          "path": "mcp/uv.lock"
+        }
+      ],
+      "subject": "onboarding:mcp/uv.lock"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-2HP109",
+      "items": [],
+      "reason": "The public Status page's version sentence is a publication claim with no joint guarantee from an existing family, so it stands alone.",
+      "revision": 1,
+      "subject": "membership:INV-MG3HK1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6GHW75",
+      "items": [
+        "sha256:c181bbab84270996cabada896c3a30d7b32625aac7799016dd814961b6ed0659"
+      ],
+      "reason": "The only change in mcp/src/agents_remember/tasks/serving_preflight.py is the module docstring's de-rc'd 3.0.0 failure-class wording; no invariant covers the docstring text, and the card carries the change.",
+      "subject": "hunk:sha256:c181bbab84270996cabada896c3a30d7b32625aac7799016dd814961b6ed0659"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-AB3M6T",
+      "items": [],
+      "reason": "The 3.0.0 package-identity obligation is a release fact carried in three identity files; no existing family states a joint guarantee it belongs to, so it stands alone.",
+      "revision": 1,
+      "subject": "membership:INV-BQFZCR"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E5K45A",
+      "items": [
+        "sha256:a0214459002b806d159c37dfdd675ca74185f94c0a884cd6fa4041ac43002445",
+        "sha256:dc5a4f889069ac82dc18d58f21e97c73e8e5b8bdc60295ae1ef7c44438f2d1eb"
+      ],
+      "reason": "README.md's version sentence and the linked code were rechecked at the freeze tree; the record was confirmed there and every link resolves.",
+      "revision": 2,
+      "subject": "DPD-CZBR1Q"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FHKST5",
+      "items": [
+        "sha256:0bd0e38356a5dfdda3bd3c44b9b793036bdc4edc73291fffd7a44c2aceb74d36",
+        "sha256:780545b5bb02aac68a6c511d1b9812c1a58de3839de19322485c30fa464ef198"
+      ],
+      "reason": "The card's source-checkout fallback literal was 3.0.0rc8 in the parent line and the candidate resolves 3.0.0; the card now states 3.0.0.",
+      "sources": [
+        {
+          "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/version.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FJM9GH",
+      "items": [
+        "sha256:e2fd6554c7848563004e6e367823881ffa129bca98bcb1f793cd69c1fbbfd7a1"
+      ],
+      "reason": "The overview names version identity resolution generically and no literal version; the 3.0.0 bump leaves its statements true.",
+      "sources": [
+        {
+          "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+          "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/primitives/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FN9SET",
+      "items": [
+        "sha256:e69017130b581bae8bab8cffd65d2db2e569c6c0f23976e959ef134cd62b1d23"
+      ],
+      "reason": "The tasks overview names no version literal and its account of the tasks area holds for the de-rc'd serving-preflight docstring; the file card carries the change.",
+      "sources": [
+        {
+          "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+          "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FPFNXV",
+      "items": [
+        "sha256:3314d30462b150f183e983a21d8327e48c25277f4f2285839a05cad1b9c2e6a3"
+      ],
+      "reason": "Only the package version line in mcp/pyproject.toml moved to 3.0.0; no invariant covers the literal version, and the pyproject card states the version tracks the release line.",
+      "subject": "hunk:sha256:3314d30462b150f183e983a21d8327e48c25277f4f2285839a05cad1b9c2e6a3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PGR743",
+      "items": [
+        "sha256:b5ccac2f6298480ad7275bdc419b051a284945ee459a2b42d7fd66b333b7fcd6"
+      ],
+      "reason": "The card named the 3.0.0rc7 failure class and an unchanged editable/release-floor policy; it now states the 3.0.0 release-candidate failure class and records the installed-distribution leg as historical.",
+      "sources": [
+        {
+          "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+          "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/serving_preflight.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R7TD9M",
+      "items": [
+        "sha256:b037e62d4a75ba33350adc80019815c62116948aaccdb5a8a94709273169a4f3"
+      ],
+      "reason": "The card describes the package version as tracking the release line and names no literal; the 3.0.0 bump changes none of its statements.",
+      "sources": [
+        {
+          "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S7FF7J",
+      "items": [
+        "sha256:5e93f461e0ad77686eaabd65cbaa1437dd09355486ef2461d5821b3728f7cefb"
+      ],
+      "reason": "The 3.0.0 version bump in mcp/pyproject.toml and mcp/uv.lock changes no statement of the mcp overview; its account of the package surface holds at the candidate.",
+      "sources": [
+        {
+          "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+          "path": "mcp/pyproject.toml"
+        },
+        {
+          "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
+          "path": "mcp/uv.lock"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-SXY209",
+      "items": [
+        "sha256:d189684a6ad393ad9f06e5dd9cfbf9b93767a59c343aa4da6ad161b6b32a8bb4"
+      ],
+      "reason": "mcp/README.md carries no version number and its statements and linked code were rechecked at the freeze tree; the record was confirmed there and every link resolves.",
+      "revision": 2,
+      "subject": "DPD-Q4APMS"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-X5VB1B",
+      "items": [],
+      "reason": "The guarantee named the retired INV-DKN3CG and the admission counted three member obligations; the family has two members. The guarantee now states the two-member joint obligation (INV-63Z0MN and INV-NNQR91), the admission says two, and every other sentence is unchanged.",
+      "revision": 8,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-XHYTP3",
+      "items": [],
+      "reason": "The serving preflight's module-documentation claim guards one docstring and shares no joint guarantee with an existing family, so it stands alone.",
+      "revision": 1,
+      "subject": "membership:INV-RARXRD"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

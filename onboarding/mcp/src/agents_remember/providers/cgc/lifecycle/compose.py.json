@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/compose.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "90c13afd1b7a276455d2ddb55ae5fa54e31cba9d",
+        "content": "sha256:fe10023ea3f9421d2e29580734e1215a31fbc4cdbbb7cc441a244228d4f790bb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-M7R4ME",
+      "invariant": "INV-M8V5ZA",
+      "origin": {
+        "handoffEntry": "L192-W-R199-07",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The compose renderer the stop path still uses is retained; its removal would have broken the stop.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

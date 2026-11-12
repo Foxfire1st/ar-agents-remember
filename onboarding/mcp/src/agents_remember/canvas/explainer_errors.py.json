@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_errors.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "ExplainerRefused is the named refusal a caller can distinguish from a fault.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "062560a5747dae5bc5f8743904ce5731ee34150e",
+            "content": "sha256:ed00074254e1d8de5203d020f4a1f2eb4929b07c83f48dfd91a4538d027775fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerRefused"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "ExplainerStateError names a durable-state failure separately from a refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "062560a5747dae5bc5f8743904ce5731ee34150e",
+            "content": "sha256:823261979af8ba63f6329673f52c41cd192312b7b369a50bcd517d69f88da7b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExplainerStateError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

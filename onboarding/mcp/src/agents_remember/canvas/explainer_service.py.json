@@ -1,0 +1,113 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_service.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+        "content": "sha256:3aea67a3b0884842414ec1529dd4db4d0595ecdde9706e3bede4ea7d4c9a22df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_initial_or_reconciled_build"
+        }
+      },
+      "id": "RLZ-3RTPNH",
+      "invariant": "INV-0ZE4W6",
+      "origin": {
+        "handoffEntry": "the-explainers-evidence-is-prepared-for-the-bound-comparison",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The first build prepares evidence from the chosen comparison and rechecks that binding after writing the environment before any seat is created.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+        "content": "sha256:250779da2f9b9c091d1862ca2fee038b5965f1b9dcf3adc4eebfbfa41f8ac5b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prepare_seat_under_lock"
+        }
+      },
+      "id": "RLZ-JA424S",
+      "invariant": "INV-M6Q82M",
+      "origin": {
+        "handoffEntry": "L183-A-3",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The request ledger is read under the leaf lock before any seat creation: already delivered/held requests return the recorded seat/message, and failed/pending requests prepare a retry on that same identity.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+        "content": "sha256:3aea67a3b0884842414ec1529dd4db4d0595ecdde9706e3bede4ea7d4c9a22df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_initial_or_reconciled_build"
+        }
+      },
+      "id": "RLZ-V2D48D",
+      "invariant": "INV-YCMZGZ",
+      "origin": {
+        "handoffEntry": "L183-A-4",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The build retains the inflight generation and derives the same agent id for a retry after an uncertain create reply. Lost-reply classification keeps that inflight state; known pre-create refusal clears it and restores the prior generation. This reconciles creation through the same identity rather than blindly minting another seat.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A Send that carries nothing, or names an unknown history mode, is refused before any build\n\nAnchor: `def build_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+            "content": "sha256:efb5385b70ed13b8eeedb8494791e94115a1159d1b30a177c9c1f23c23269b66",
+            "locator": {
+              "end": 867,
+              "kind": "line_range",
+              "start": 801
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The seat and the ledger row are prepared under the leaf lock, and a repeated request answers the existing seat\n\nAnchor: `def _prepare_seat_under_lock(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+            "content": "sha256:250779da2f9b9c091d1862ca2fee038b5965f1b9dcf3adc4eebfbfa41f8ac5b7",
+            "locator": {
+              "end": 948,
+              "kind": "line_range",
+              "start": 870
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A retired or archived master is refused by name, so no environment is rebuilt\n\nAnchor: `def _checked_facts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+            "content": "sha256:750b600db9065c6801206794102558aa7f10cf14fa139f28384bfc2f4b97de6c",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 337
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

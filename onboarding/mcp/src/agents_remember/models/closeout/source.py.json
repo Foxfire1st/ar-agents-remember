@@ -1,0 +1,72 @@
+{
+  "path": "mcp/src/agents_remember/models/closeout/source.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate and scheduling inputs validate readiness and priority explicitly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c333deb0cc55fd540681df7e3101b1fc60a7fea",
+            "content": "sha256:2c48176db1f722706ea4ab483f6236f147b682e7c14bae58084d285d06671dd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "CandidateAdmissionFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c333deb0cc55fd540681df7e3101b1fc60a7fea",
+            "content": "sha256:3c4fe09f8ff377aabf313c9de33a0524b744d3db5e5ca9a5e90f98507b6efd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SchedulingGradeInput"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c333deb0cc55fd540681df7e3101b1fc60a7fea",
+            "content": "sha256:668434be6c03888cd50d8c245499567f561dac46f17a9d56e54b6e59d5aa436d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SchedulingGrade"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Evidence and route-review facts are strict bounded source models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c333deb0cc55fd540681df7e3101b1fc60a7fea",
+            "content": "sha256:017afd58848e8ebd70267da9d92ef3a9e18acab486de404f9349a1518607180e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceFact"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3c333deb0cc55fd540681df7e3101b1fc60a7fea",
+            "content": "sha256:fa0c0e18b836bfed336d5315cd007af7530da9ed076c49c2fa322fb435d024d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteReviewFact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

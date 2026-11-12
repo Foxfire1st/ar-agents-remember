@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three proving tests pin open, unknown and ambiguous legacy rows; without them an in-progress sprint could archive through a seat-document row."
+  },
+  "applicability": "Archive admission over legacy seat-document rows.",
+  "conditions": [
+    "Rows commanding masters through seat documents."
+  ],
+  "exclusions": [
+    "Typed sprint rows under the separate admission."
+  ],
+  "id": "INV-8ACXK0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_sprint_archive_custody.py::test_open_legacy_seat_row_refuses_and_terminal_passes; ::test_unknown_seat_row_refuses; ::test_ambiguous_legacy_rows_refuse; test_sprint_archive.py precondition tests; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-11",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Archive admission skips a valid legacy row that commands a master through its seat document, allowing a sprint with that row still inProgress to be archived.",
+  "status": "retired",
+  "supersedes": []
+}

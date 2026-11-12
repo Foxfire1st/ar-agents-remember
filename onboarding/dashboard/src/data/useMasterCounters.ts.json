@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/data/useMasterCounters.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Totals are committed before attribution, so the page cannot show leaf numbers that disagree with its own totals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc6fc89713dfcb5c29c946423e2db5e39a62d462",
+            "content": "sha256:e5b1b9e851fab71e70740124ea00d4b3f7af21e1a1f604725ad912f3b989affd",
+            "locator": {
+              "kind": "symbol",
+              "name": "useMasterCounters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Attribution that no longer matches its pins is named as a mismatch rather than shown as current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc6fc89713dfcb5c29c946423e2db5e39a62d462",
+            "content": "sha256:a9729dc58183ab22721b843d266f3f0089b7b59875b2bae7634a886812301842",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterCountersMismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

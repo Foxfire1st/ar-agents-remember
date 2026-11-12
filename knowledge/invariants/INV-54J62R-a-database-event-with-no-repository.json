@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unowned database operation escaping the guard would silently reopen the retired canonical store."
+  },
+  "applicability": "The database retirement guard's event attribution.",
+  "conditions": [
+    "The guard observes APSW and file operations during tests."
+  ],
+  "exclusions": [
+    "The standard-library connections coverage itself makes; those are the named exception."
+  ],
+  "id": "INV-54J62R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_database_retired.py::test_an_event_with_no_repository_frame_is_refused_unless_coverage_could_make_it; F07-no-frame.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 7",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A database event with no repository frame is refused under its own name except for the standard-library connections coverage creates.",
+  "status": "proposed",
+  "supersedes": []
+}

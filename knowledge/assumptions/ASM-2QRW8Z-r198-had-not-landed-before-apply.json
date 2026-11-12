@@ -1,0 +1,20 @@
+{
+  "basis": "Measured at APPLY: the source branch carried no L191 commit at code 52829e72b and memory 20509c92e, so the anchor guard was neither landed nor activated; the landing and activation facts are stated separately because a landed guard and an authoritative guard are different facts.",
+  "id": "ASM-2QRW8Z",
+  "links": [],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The order fact is recorded in the requirement's Order section and in 260928-MIK-L192-worker-freeze-r3c-authority-stop.md; this entry claims no whole-pair anchor repair."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-14",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "proposition": "R198/L191 had not landed or been activated at this leaf's APPLY, so R199's ordinary affected-knowledge obligation applied and the whole-pair anchor duty remained a publication condition.",
+  "revision": 1,
+  "schema": "ar-assumption/v1",
+  "status": "proposed"
+}

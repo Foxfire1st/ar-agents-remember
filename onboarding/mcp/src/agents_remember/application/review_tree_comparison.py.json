@@ -1,0 +1,443 @@
+{
+  "path": "mcp/src/agents_remember/application/review_tree_comparison.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+        "content": "sha256:55def5f9b0af84c5aa0e075f6a0b46f40ee3773e0aebc4549784c04270b71687",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pin"
+        }
+      },
+      "id": "RLZ-34NP4B",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Pins each candidate that has a ref and, when one is refused, deletes only the pins this call created and returns a refusal that names the repository and the ref.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+        "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record"
+        }
+      },
+      "id": "RLZ-9ZHMCX",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Serializes recording with one lock per process, so readers of one dashboard that open the same new comparison take turns and the second finds the first's record.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+        "content": "sha256:c016af62caf6f04f18066e62fabd1018fc831aa02e8bb03fa4d3710046da3063",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-A9Z2XZ",
+      "invariant": "INV-YJZKYC",
+      "origin": {
+        "handoffEntry": "R3 Note 15",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The comparison owner states the unavailable retired knowledge.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+        "content": "sha256:833b6c7b9b5ee36958092bf2b6641cbdce36cd96a044cee7a044edbe68fa33df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_converted_base"
+        }
+      },
+      "id": "RLZ-P0RJYP",
+      "invariant": "INV-2172NS",
+      "origin": {
+        "handoffEntry": "L40-held-converted-base",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Uses the confirmed held-tree identity and invokes the existing conversion materialization only when that evidence is unavailable.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+        "content": "sha256:52cbaeb321e77131eed486043cb704cee4ed27fce14ecc6d859a5b6b60d0d988",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_tree"
+        }
+      },
+      "id": "RLZ-PFG9TY",
+      "invariant": "INV-2172NS",
+      "origin": {
+        "handoffEntry": "L40-held-converted-base",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Admits a recorded converted tree only when memory commit, conversion version and code commit match and Git confirms that exact object is a tree.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+        "content": "sha256:b6b57b6a99c9b06eaba58d555a7cfa1f8feb45ed6b601989a1b7bbdd9ec8708a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_create_pin"
+        }
+      },
+      "id": "RLZ-W2H9EX",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Creates one ref without moving anything: a ref that already names the tree is success and is not counted as created, a ref that names another tree is a refusal, and a held lock or a concurrent creation is retried a bounded number of times.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+        "content": "sha256:b3ce7ef4d39ebc9b5e9b7196685ffdfe273801560075609975f116f379c16c9d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded"
+        }
+      },
+      "id": "RLZ-W6SNEZ",
+      "invariant": "INV-Z2HVKA",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-comparison-recorded-once",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Reuses the latest record of the same four trees; otherwise numbers the comparison, pins its candidates and only then writes the record, and returns a record that exists under that number with the same trees instead of writing.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "23": {
+      "note": "A tree comparison applies when the worktree or the official line holds the layout marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:90ffe60e413d850e1491c73698cf8de28fa9b27e15f8015011c042508010037f",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_converted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The task segment of a review ref is the task directory's name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:7913348d998fe98645a4557b35b36af6ba4e4d22d6a6207e93a1c70c971f8829",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_task_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The ref name and the refused segments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:000924f5a661c42063bf03bb7301caf72e3b5dc35a919994c94b6a643a5bf11d",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Committed only when the durable line's tip holds exactly this tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:1d28c04141d14cd344cc3082d0b0a894fa35fdc2bb63db38196a2f9b6062a06b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The held converted tree is used only for the same inputs and while Git holds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:52cbaeb321e77131eed486043cb704cee4ed27fce14ecc6d859a5b6b60d0d988",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Converted files are written as objects only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:580bc63c98a579ae9e83564e932cacabec8095938aceaafb63fae3d8b178869f",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_files_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The recording lock and the pin retry constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:354931b96520160b43de98ac48a1a77ab76b8e95902efaa0905d9df310dfc19a",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Recording takes turns inside one process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:639461df1cf6867c5e472adf9cb432084a999d67bbd9006f9b0505bfc108bf85",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Each candidate with a ref is pinned; a refusal removes only the pins this call created.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:55def5f9b0af84c5aa0e075f6a0b46f40ee3773e0aebc4549784c04270b71687",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "One pin: same tree is success, another tree is refused, a held lock is retried.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:b6b57b6a99c9b06eaba58d555a7cfa1f8feb45ed6b601989a1b7bbdd9ec8708a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_create_pin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Each memory side is opened through its tree's index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:44a77c0fd634280c7d39a7418069a5ae42332b13d6587b639c1075d8b2386239",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Reopening marks every tree Git cannot produce.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:412d2987b27d37e909ae4dd227b75abfc37f1dc616db120aa91005eccf1cde10",
+            "locator": {
+              "kind": "symbol",
+              "name": "reopened_trees"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "A missing converted base is derived again and its ID compared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:81411d92254dc4a4591dd95775d0c4711d9f32317b26c0378298363960fe338d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_before_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "A pin another reader made is kept and not rolled back; a ref naming another tree is refused; a held lock is waited out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:91efded513d9dbb2d190cd297190d20920ca9be02d640d544f25e2714f7e1d9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_pin_another_reader_made_or_is_making_is_the_answer_not_a_refusal"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "Four concurrent first reads of a new comparison give four equal answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e29e1b9902f5b27cd11779b2b92b5e3fb6c28560",
+            "content": "sha256:f18605f796f9104d1a3faa081b329c51a9c5a0fee58216be30142fc9386252a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_four_concurrent_first_reads_answer_alike_from_one_child"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_process.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "42": {
+      "note": "A live review is four trees with its uncommitted candidates pinned and reused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:c59cb8f48298a5ce4959054cf04d268920d70b80e321d7ede13a73351ff0db62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_live_review_is_four_trees_with_its_uncommitted_candidates_pinned_and_reused"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "Committed candidates need no ref, and a failed pin refuses naming repository and ref.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a147aaa605089d27bacf86c342ebf9939d1ff33",
+            "content": "sha256:6d8bfb8d90830fb5c244b1f838a806cfda4712e16d44f0dac95ef0ff2c4a4ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_committed_candidates_need_no_ref_and_a_failed_pin_refuses_naming_repository_and_ref"
+            },
+            "path": "mcp/tests/test_review_git_trees.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "A converted base tree that Git holds is not written again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:d60f5903dad836bed90d610df54f3b1c4e4dc506538f44275f33e9dfc143955e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+            },
+            "path": "mcp/tests/test_review_read_latency.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "The current implementation moves shared payload types and reduces redundant Git observations without changing create-only pins, full operands or named unavailable-history behavior.\n\nAnchor: `_recorded`, `_candidate_side`, `live_review_trees`, `_open_sides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:c016af62caf6f04f18066e62fabd1018fc831aa02e8bb03fa4d3710046da3063",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

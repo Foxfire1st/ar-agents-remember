@@ -1,0 +1,400 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L130",
+  "rows": [
+    {
+      "because": [
+        {
+          "id": "MIK-R130",
+          "packet": "requirements/MIK-R130-v1-the-tool-sweep-judges-an-answer-as-it-is-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2TZQC9"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:6af557a0c09d5f975aa94d95bfd02f9c09e603ca8b8bd8b1d41d71112f4e4932",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3QAT32"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:506006a312cd19ba3a4ee993ab3f35be10ba6578e5457a1897c824139ef0cb91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4B9V28"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:f471158d375413d998bf6a06bae943ebaac8887cc753a654248dd515d3d4d8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DJ43FG"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-N13MBQ"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-P6CT6J"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:1fba3c3c2388fb9fb8875f7fd1b1edc14c1d7b7da61374b0da8fcfefca0cae66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PEMT69"
+        },
+        {
+          "after": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-X1MNME"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:c40a1fda5ad323d0abfb6e2d5bf416ee86b1bdbae52a260cf3402caec4070fed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Z6EA10"
+        },
+        {
+          "after": {
+            "blob": "3b92604bc8c87671a5bbf10bd47f760545a00760",
+            "content": "sha256:5b3a075d836e607c7f44727508e07f16e20695d73b3bde2a7046a07f4c4f81ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZGH1TW"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1FZ3YE",
+      "items": [],
+      "reason": "Restores the full rule statement the disposal attach overwrote at rev1 without a bump; the F01/F02 enforcement detail lives in the attached entries, proofs and evidence, not the statement.",
+      "revision": 1,
+      "subject": "INV-T8FDTX"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R130",
+          "packet": "requirements/MIK-R130-v1-the-tool-sweep-judges-an-answer-as-it-is-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_whole_result"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3ME8JM"
+        },
+        {
+          "after": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FFJB4Q"
+        },
+        {
+          "after": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:712b2e176205abbeafbeedddced8f935df28d46cba3ff22638854e17719a45d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K55Z4E"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-1S6Z7D",
+      "items": [],
+      "reason": "Restores the full rule statement the disposal attach overwrote at rev1 without a bump; the F01/F02 enforcement detail lives in the attached entries, proofs and evidence, not the statement.",
+      "revision": 1,
+      "subject": "INV-22N6MM"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R130",
+          "packet": "requirements/MIK-R130-v1-the-tool-sweep-judges-an-answer-as-it-is-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "83f57d7f2e014d45ee53ca60244709701dcac6de",
+            "content": "sha256:d10a6d165f7c0573569d55c975507ff931b793453121ed096581684301799ca7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public"
+            },
+            "path": "mcp/tests/test_tool_entry_point_valid_progression.py"
+          },
+          "before": "absent",
+          "id": "RLZ-5YB1NE"
+        },
+        {
+          "after": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8E1MYK"
+        },
+        {
+          "after": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweep"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-CN53DJ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-401WYQ",
+      "items": [],
+      "reason": "Restores the full rule statement the disposal attach overwrote at rev1 without a bump; the F01/F02 enforcement detail lives in the attached entries, proofs and evidence, not the statement.",
+      "revision": 1,
+      "subject": "INV-01JP62"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R130",
+          "packet": "requirements/MIK-R130-v1-the-tool-sweep-judges-an-answer-as-it-is-delivered.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": "absent",
+          "id": "RLZ-25RX8K"
+        },
+        {
+          "after": {
+            "blob": "ede6877fe9a17d0b2307140324211fa5edea6695",
+            "content": "sha256:6d313994f88c45a47aa5ed5b3b9ccc270d56d86c9e870b1afbe08f97fc9a57e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNMARKED_NOT_OK"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3XS813"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-4MBJX5",
+      "items": [],
+      "reason": "Restores the full rule statement the disposal attach overwrote at rev1 without a bump; the F01/F02 enforcement detail lives in the attached entries, proofs and evidence, not the statement.",
+      "revision": 1,
+      "subject": "INV-8V5KH0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "72e3b28c42115f858a0c87cc7053a3f795ad058e",
+            "content": "sha256:07e1d25c2fbf733c400603653933ef745bb9da70f780c617599415973015da27",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "72e3b28c42115f858a0c87cc7053a3f795ad058e",
+            "content": "sha256:07e1d25c2fbf733c400603653933ef745bb9da70f780c617599415973015da27",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4WNVN5",
+      "items": [],
+      "reason": "Catalog file untouched by this leaf; the entry went stale again at the L44-moved memory base (8d399bf9). Retired invariant; entry re-anchored only, rationale stands.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E51B6F",
+      "items": [
+        "sha256:b6ffc1d2841d5ba5d104102ec854f05a91810e4989979b15b3823293db8c9ba3"
+      ],
+      "reason": "Named again at W03: one line removed inside the sweep() per-tool deadline restructure attached to the rule-6 entry; no separate obligation.",
+      "subject": "hunk:sha256:b6ffc1d2841d5ba5d104102ec854f05a91810e4989979b15b3823293db8c9ba3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "99b2576c60f8486c3086bb6446973f8299d4a116",
+            "content": "sha256:39996bd6680d3e40684c64d2b2e3714a7b881a2f0ecf0ede828ba2606f9b53ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointProbeTests"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "2b792b244e350d1978f99d3bc3ffaf5426300b8c",
+            "content": "sha256:6f6f1aea6f5d5af44c1ed195cb6f431a468f0f71b31c8ff9c15dc2d0ae6d50aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointProbeTests"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-J40DWT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XNYG9X",
+      "items": [
+        "sha256:8167cdd30b1d0cc3fba4b8d023363283539d9dc9033e143aa2ae0922ebdfe2ac"
+      ],
+      "reason": "Named again at W03: the restructured sweep class still exposes the same four raisers and bare MQC surface. Retired invariant; entry re-anchored only, rationale stands.",
+      "revision": 1,
+      "subject": "INV-MQV6T8"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

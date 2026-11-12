@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_leaf/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package statement: one seed path, the whole family neighbourhood, paged by the shared threshold.\n\nAnchor: \"The family-complete leaf read of a converted memory tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1045a920290aba9733f9dc7bb2df5d36dd002f83",
+            "content": "sha256:b683199d568bac4b81ffc5921d088311e0ee4b6b68a813af04209ae185731a70",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The re-exported surface, with the family seed's selection and the refusal's chain.\n\nAnchor: `prepare_leaf`; `select_leaf`; `select_family`; `absent_chain`; `family_names`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1045a920290aba9733f9dc7bb2df5d36dd002f83",
+            "content": "sha256:32dd65b474a4f4b5fcc2cabc46fdb94d022e66607c1e68f411caf4c99d93dec7",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

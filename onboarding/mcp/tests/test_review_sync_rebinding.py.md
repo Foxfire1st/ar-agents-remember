@@ -1,0 +1,94 @@
+# mcp/tests/test_review_sync_rebinding.py
+
+## Governing Overview
+
+[mcp tests route overview](overview.md)
+
+## Purpose
+
+Managed-sync evidence compares both actual candidate trees with one retained tree comparison.
+
+## Code Commentary
+
+### Logic
+
+Cases measure an exact pair as current, then a memory-only edit as moved while code still matches. Durable read-back must name the reviewed comparison and actual memory capture. [10]
+
+Staged/unstaged edits are captured with both real Git indexes unchanged. States carrying no completed sync or unavailable captures never claim pair coverage. [11] [15]
+
+Historical v1 receipts remain readable but prove no memory-tree coverage. The v2 model rejects changed source/digest/identity fields and retired generation keys. [18] [34]
+
+### Invariants And Boundaries
+
+- Currency requires both exact trees to match.
+- Movement evidence is not successor publication or acceptance.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository — the memory layer's `system/sources.md`
+records no entries at all. The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+### Repo-Internal References
+
+
+- Exact pair and memory-only movement. [10]
+
+
+- Candidate capture preserves real indexes. [11]
+
+
+- Absent measurements claim no coverage. [15]
+
+
+- Historical v1 cannot prove tree pair coverage. [18]
+
+
+- Current exact-pair recorder. [20]
+
+
+- Actual no-measurement reason. [29]
+
+
+- Recorder binds complete tree comparison. [30]
+
+
+- Memory is captured or reported unavailable. [31]
+
+
+- Complete v2 source binding validator. [34]
+
+
+- Statement names trees, not a canonical dataset carrier. [35]
+
+
+- The three carrying states, and the table of every state that carried nothing with the reason no pair was resolved. [36]
+- The never-raising entry point the sync tool calls, with each state it can report instead of raising. [37]
+- The record's own version, selection rule, channel-match vocabulary and three-valued verdict. [38]
+- The one verdict rule, stated once so a writer and the record's validator cannot disagree. [39]
+- The reader's three states, its sentence, and its own statement that a discarded record and one never written read the same. [40]
+
+
+- The shipped capture owner that derives the resolved source side after the sync. [41]
+
+
+- The durable-evidence pair every record is published and read back through.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_sync_rebinding.py:280-285 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 473ad8242bb4c22bdabed5d5253767350381eb3e. Retired means the anchor no longer stands, not that the cited subject was deleted [42]
+
+- **The reopen owner's fifth channel, which is what makes this record a production read rather than a dead one.** [43]
+
+### Cross-Repo References
+
+No cross-repository contract is established by this file.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_sync_rebinding.py:280-285 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 473ad8242bb4c22bdabed5d5253767350381eb3e. Retired means the anchor no longer stands, not that the cited subject was deleted.

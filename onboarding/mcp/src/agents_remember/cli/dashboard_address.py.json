@@ -1,0 +1,101 @@
+{
+  "path": "mcp/src/agents_remember/cli/dashboard_address.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The address is answered only after the origin answers with a page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "content": "sha256:4f07d132857c04fdfd47298f63897424297f5e1e482920bbe9a4efad50d5774b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_address_is_answered_only_after_the_origin_answers"
+            },
+            "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A dashboard that does not answer, and an owner that raises, are reported rather than published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "content": "sha256:b4267ce911a138f03c3f540ee01f084c86dc81aec962340389cdb47e13b16d96",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dashboard_that_does_not_answer_is_reported_not_published"
+            },
+            "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "bd1f706155535694723702370bcbdfb64849c202",
+            "content": "sha256:c9c09f5154f0fdc02aff81c6f35970d2611c6c52099a0cf0dd623c70ca2f00d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dashboard_owner_that_raises_is_reported_the_same_way"
+            },
+            "path": "mcp/tests/test_mik_r196_dashboard_address_truth.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The owner's own report and the origin's own status decide the answer together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "content": "sha256:637fde14e767a78cb86fe2ce679d961415dda1a3f3e3f7fa821f305676d57911",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboard_address_for"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The chat route is built from the configured embed entry and answers a named reason when it cannot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "content": "sha256:d10347e78c6ed9b24d5a5b243a9870849c1acd040f4a1ac8ca16af2a86516731",
+            "locator": {
+              "kind": "symbol",
+              "name": "chat_address"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The origin probe takes a status under 400 as served, not a TCP accept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "content": "sha256:a216c49d03a6672ad57c1db84288cd330c5ad8cd2eba488ce4717e6e526742db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_origin_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

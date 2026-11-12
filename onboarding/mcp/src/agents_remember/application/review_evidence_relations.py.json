@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_relations.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+        "content": "sha256:4999a24ee0d81b0ecbd7ec9e8cf23a90455a7147eb469a344808bcc92e308560",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Relations"
+        }
+      },
+      "id": "RLZ-4SHF4H",
+      "invariant": "INV-FXEPWM",
+      "origin": {
+        "handoffEntry": "L102-F05",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The filename only locates a candidate document. _resolve now requires its native identifier to equal the requested ID before crediting revision/origin. The exact old positive still resolves INV-AAAAAA revision1; substituting native INV-BBBBBB revision77 now gives unreadable with target revision/origin null, never false absence or borrowed revision. A4 typed owners, sidecars/history and same-depth continuation are preserved.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+        "content": "sha256:4999a24ee0d81b0ecbd7ec9e8cf23a90455a7147eb469a344808bcc92e308560",
+        "locator": {
+          "kind": "symbol",
+          "name": "_Relations"
+        }
+      },
+      "id": "RLZ-7C179R",
+      "invariant": "INV-YFTJNQ",
+      "origin": {
+        "handoffEntry": "L102-F04",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Ordinary, resumed and symlink reads are streamed with measured consumption; an offset beyond MAX_SCAN_BYTES now refuses before any blob read (independent actualRead=0). Resumed prefix work is deducted from the finite scan budget. Packet path/collection caps, relationship path/byte/depth/page caps, bounded ls-tree streaming and a per-walk indexed lookup remain enforced; two-size and boundary tests pass. This credits bounded legitimate investigation, not unlimited-store-reader behavior owned by F10.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+        "content": "sha256:32f534b54c5e3103deb3d576b27c24e4b2d0ac59b5a9727c1a3e0f3c53daf106",
+        "locator": {
+          "kind": "symbol",
+          "name": "_parse_memory_file"
+        }
+      },
+      "id": "RLZ-FM05YZ",
+      "invariant": "INV-FXEPWM",
+      "origin": {
+        "handoffEntry": "L102-F05",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The filename only locates a candidate document. _resolve now requires its native identifier to equal the requested ID before crediting revision/origin. The exact old positive still resolves INV-AAAAAA revision1; substituting native INV-BBBBBB revision77 now gives unreadable with target revision/origin null, never false absence or borrowed revision. A4 typed owners, sidecars/history and same-depth continuation are preserved.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "3": {
+      "note": "A memory file this build does not read is invalid rather than absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a2c07ba6cece48743d17acf991ff4010cd79e36",
+            "content": "sha256:32f534b54c5e3103deb3d576b27c24e4b2d0ac59b5a9727c1a3e0f3c53daf106",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parse_memory_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

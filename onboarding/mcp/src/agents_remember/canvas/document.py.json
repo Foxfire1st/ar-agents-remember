@@ -1,0 +1,73 @@
+{
+  "path": "mcp/src/agents_remember/canvas/document.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "394fa0843197b351b30df497c037e39e84f249cf",
+        "content": "sha256:e3fa195d209072f30d66e80794e5481c369ad3bc928742dcf14a01883bab64c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "bound_document"
+        }
+      },
+      "id": "RLZ-5ZMCN3",
+      "invariant": "INV-ESF2CT",
+      "origin": {
+        "handoffEntry": "MIK-R104-r3-document-bound-channel",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The bootstrap injected into the document delivers the binding as a synthetic local `message` event on the document's own window at `DOMContentLoaded`, after the document's listeners exist; the `MessageChannel` is the liveness path — `port2` to the parent, `port1` echoing what it receives — and the panel treats a missing echo or a second entry as a channel it will not use.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The binding is delivered to the admitted document after its listeners exist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "394fa0843197b351b30df497c037e39e84f249cf",
+            "content": "sha256:e3fa195d209072f30d66e80794e5481c369ad3bc928742dcf14a01883bab64c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Leaving the document announces revocation even during parsing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "394fa0843197b351b30df497c037e39e84f249cf",
+            "content": "sha256:1820e9237d1a88a4a53ae3c0ec42c5546746d5bb00fd01774a8660a700660746",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current implementation injects the shared kit protocol helper; the admitted-document, departure and echo-channel statements remain valid.\n\nAnchor: `bound_document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "394fa0843197b351b30df497c037e39e84f249cf",
+            "content": "sha256:1820e9237d1a88a4a53ae3c0ec42c5546746d5bb00fd01774a8660a700660746",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

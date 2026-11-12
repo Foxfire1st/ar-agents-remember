@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/tray/TrayTargets.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "68a0d9515fe05c4753195a72688299a1d0785d95",
+        "content": "sha256:9fe0c95ae6170e2a9dbb88c6f332a848aa8c9d14de04ce740702a842d2bfa123",
+        "locator": {
+          "kind": "symbol",
+          "name": "TrayTargets"
+        }
+      },
+      "id": "RLZ-S8J844",
+      "invariant": "INV-EMBZ17",
+      "origin": {
+        "handoffEntry": "TRAY11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the list again whenever the target menu opens (P-T6).",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Chooses one or several existing AR chat recipients in an unclipped popup.\n\nAnchor: \"export function targetsLabel(targets: readonly string[], name: Names): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68a0d9515fe05c4753195a72688299a1d0785d95",
+            "content": "sha256:ea4fd79862fcefb18f16de7a6fe33b9c3f69858daccc13401c7830ea1d1834ba",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Chooses one or several existing AR chat recipients in an unclipped popup.\n\nAnchor: \"export function targetParts(targets: readonly string[], name: Names): { short: string; tag: string \\| null } {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68a0d9515fe05c4753195a72688299a1d0785d95",
+            "content": "sha256:ee587451ecbc5548d55cc7652a6ecb0e5275d71294a0800d0d5fbe403713d4c4",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Chooses one or several existing AR chat recipients in an unclipped popup.\n\nAnchor: \"export function targetsTitle(targets: readonly string[], name: Names): string \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68a0d9515fe05c4753195a72688299a1d0785d95",
+            "content": "sha256:2b24073aaf665f491a73358e8c980e532d1ef2190356eb5b3043c5455c72cbcd",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

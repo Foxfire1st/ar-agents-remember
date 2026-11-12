@@ -1,0 +1,97 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingColumn"
+        }
+      },
+      "id": "RLZ-1XPBH8",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It owns desktop reading scroll and switches to overflow-visible stacked content.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingColumn"
+        }
+      },
+      "id": "RLZ-84KPQX",
+      "invariant": "INV-FZ473E",
+      "origin": {
+        "handoffEntry": "RP08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It owns the gate per mounted column, opens it when cards settle and engages it on selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:c35375dd33e3168059c40ca83a0daad019b5df17d8de07c905390ca9e03c26d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReadingColumn"
+        }
+      },
+      "id": "RLZ-8SASP9",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Places treeToggle first and chatToggle last in the sticky reading head within the reading column, outside the separately mounted tree column.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+        "content": "sha256:d76266e29eb7a5eb00f3eb3eb9dc97756fe5da4cea6f129db3bc1fa6910f0da1",
+        "locator": {
+          "kind": "symbol",
+          "name": "readingColumn"
+        }
+      },
+      "id": "RLZ-RX8AYB",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Its CSS owns desktop vertical scroll and switches to vertically visible clipped-horizontal content at40rem.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "Render sticky reading head plus permanently mounted notes, active subjects, lane, retained canvas slot and provenance.\n\nAnchor: \"const readingColumn = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:95caa0ed50e4841990b7549da65ed221309bb59ac2f7f55addd90e8cdcc24f54",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

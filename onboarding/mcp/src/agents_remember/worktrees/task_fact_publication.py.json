@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Publication returns the committed value plus per-scope effects; the injected `validate` callable and scope resolution both run before the publication write, and the former `validate_task_fact_mutation` seam no longer exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:bf00bd1f8f1c8bdfc6defc50b75f2c956d80a223207b4d0533e234a5202fb92f",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskFactPublicationResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_fact_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Contract scope and task-fact adapters share the task-first owner; contract scope short-circuits when no override invalidates a projection.\n\nAnchor: `contract_projection_scopes` `publish_contract_task_facts` `preview_contract_task_facts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:01f109ef017b4d93df5f9a496e587aec0a19137d0413abfa231310af55099a44",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:f683765b809d8ed03750b515fa64cfe32532e72dc5f5af77bcdefffa7c5c8e12",
+            "locator": {
+              "kind": "symbol",
+              "name": "contract_projection_scopes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:911681b1ee2bdad037787f258361da75af32146634bec4c58ca8822f3293436b",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_contract_task_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:ae61694687bba7b0681cb42b430d0d9ba7aea680d424d9e5b2531bfdcb09ad36",
+            "locator": {
+              "kind": "symbol",
+              "name": "preview_contract_task_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Invalidation and rebuild failures become bounded per-scope effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:64fc0f062d622e33dcc65a167a75d9cc8652e996029c152db86546cea8a56c55",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invalidate_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:9a8e1cb66ab25b1bc452bd7a5d7e0f588a40879da0d556448c1f3e41f1e46bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invalidation_failure_effect"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:d56c715a4efc3b6706e3bcf56784c3255624b464ca1c1555744b35fb85465a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rebuild_failure_effect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The schema-owned classifier decides whether an override invalidates projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:7797fce17a19d4ce6aa361624920dd63f12724edb7472c68660f80c5564acde2",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_task_document_mutation"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Projection scopes and overrides retain explicit source paths rather than deriving every target under one leaf root.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:f683765b809d8ed03750b515fa64cfe32532e72dc5f5af77bcdefffa7c5c8e12",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:489e171ccfdda0b64d84670fea5130ab277769385fe62fbf47aec61b80a82a73",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,127 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/loop.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+        "content": "sha256:1f3cb72d010a174c059358504b072d04527fb38ae8dc7675f9ab2c59e2e020ad",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8JF3B8",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "The loop doctrine names the settings-derived review limit, the task_doc review-state limit and sealed monotonic fix-verification; approval beyond that limit follows operations/review.md without changing parent routing for developer questions.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owner, builder and reviewer never take each other's acts; verdicts are evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:6a1171e595132de6eb6acd0e83d0d10d7e01fd4b617774966ac61eb0db238ec6",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Review is opt-in on an agreed seam and explicit baseline/fix-verification mode. Baseline covers the complete agreed diff; fix verification retains sealed findings, with rounds governed by the settings limit and recorded extra-round authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:4e5a050aa6929853f98e86c57369eea680911a8051cd2e296baeddd8a4e47a5d",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Requirement compilation into stable ID and version packets precedes task topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:122088f8fa46ecb6165bdb247233fc8320e1ea4b82d4a62bce757d65ef7a5cc2",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Settings-governed rounds, recorded extra-round approval and preserved stage/ownership boundaries.\n\nAnchor: `orchestration.loops.defaults.maxRounds`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:f13377b10b757bd0845d1153c225072128c210699145d5b26d2d3f03d47e46a5",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Organizational leaf review and atomic integration review keep distinct scopes; a changed label or coordinating level creates no new baseline, and no listed change resets the sealed findings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:3fca0b448116f9a70613b35dc72c4a15cbd53dd40b8249071898bfcd39d69fd0",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac8637c1001697c3c4a562c95a3a33ac3fe938ce",
+            "content": "sha256:1f3cb72d010a174c059358504b072d04527fb38ae8dc7675f9ab2c59e2e020ad",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

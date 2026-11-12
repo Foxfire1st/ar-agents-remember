@@ -1,0 +1,33 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The sole current_branch_name helper uses the kernel Git runner and yields unknown-branch for failed or empty branch lookup.\n\nAnchor: `run_git` `current_branch_name`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f9c228579cbe946ea0a84e37a781ed3f9d135d82",
+            "content": "sha256:7b4830e6745f4d61ddc2d5d705f11c05cd7deab8b46f0e434da66cbc5fd217a0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

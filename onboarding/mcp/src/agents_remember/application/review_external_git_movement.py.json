@@ -1,0 +1,195 @@
+{
+  "path": "mcp/src/agents_remember/application/review_external_git_movement.py",
+  "realizes": [],
+  "references": {
+    "51": {
+      "note": "The support-row type retains the complete recovery matrix beyond the report wire union.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:33db2b6c8a6f5d9157f43bfa4ce786a1b40bc30416df5556aaf5e18aa79f70f8",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Recovery sentences, unknown-name refusal, unsupported listings and rendering share the matrix.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:624423ffaa234a172c22e768816b78068fe0e929b51b3954627a82093fdfed67",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "The wire transition union has four ancestry shapes, not cherry-pick or revert.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94c9a6b7b79b416099b0abfbe3817500775957cc",
+            "content": "sha256:0969ec71e243516d3497609256317386d8bf3d863e11ce80e5ea699be9703e5e",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_external_movement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "The live boundary distinguishes no measurement, retained-comparison read failure and source validation.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:476b462394a8d7804305c172649b22f61a8e519e56fee2c47383bcc2ccee60ce",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 299
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Successful result attachment and typed absence do not gate failed transactions.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:57dcfce66865e88e5a15d2c86b2f035870e7144675c56947f2a4ddfb4812f4d5",
+            "locator": {
+              "end": 445,
+              "kind": "line_range",
+              "start": 397
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Unavailable comparison values invent no retained source identity.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:8cf9317e827d05449399d8926b3abba7e60dc60dde789cba8ce87adccfe4f846",
+            "locator": {
+              "end": 466,
+              "kind": "line_range",
+              "start": 448
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "Report shape/state composition follows supplied findings and current shape extraction.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:dab90e8755e4740bb3bcdcdd4732dc480146d99f2bbc9dd74fd40ae37bbb1325",
+            "locator": {
+              "end": 536,
+              "kind": "line_range",
+              "start": 469
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "Declared channel findings distinguish uncommitted tree pins from observable commit ancestry.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:6487ebee1e97ed129ef08b4a187f9f1b4ddd1e6aaef338eb921885901a4ba908",
+            "locator": {
+              "end": 641,
+              "kind": "line_range",
+              "start": 539
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "Ancestry and expected-error fallbacks carry their actual limited behavior.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:a693488057ce82fe5efdd4a281b63c1e4efcbc44f66d73b253498d2934f2df94",
+            "locator": {
+              "end": 760,
+              "kind": "line_range",
+              "start": 644
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "The branch-left subfact and actual observed ancestry determine emitted transitions.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:fe8b9b5720e3292aa596b33ab9a65dc3bff88eaf5b4b5abac00b015f988fcb41",
+            "locator": {
+              "end": 830,
+              "kind": "line_range",
+              "start": 815
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Statements use measured clauses and preserve distinct unchanged, movement and absence explanations.\n\nAnchor: Current source boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2893b2a4053a2e934a6dd262dbd4e9c397a7d1c",
+            "content": "sha256:198663e7216820d59197a8736b286b6e7c72e67db7d56bfbbaf8ddbc39722420",
+            "locator": {
+              "end": 945,
+              "kind": "line_range",
+              "start": 839
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

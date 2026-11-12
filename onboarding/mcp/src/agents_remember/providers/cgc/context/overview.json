@@ -1,0 +1,343 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/context",
+  "references": {
+    "1": {
+      "note": "The context facade re-exports layout, materialization, cleanup, constants, and patch helpers; patch helpers operate on supplied paths rather than discovering upstream modules. [1]\n\nAnchor: module exports; patch application functions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b74830f5b22053b57586fe711ec1ab42c5a95ee9",
+            "content": "sha256:0b755b11eccf5e81e685b7693f9e4812afa3de192cfefbe9d2b5c42f1f295ae6",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d6ccd171274ae0e9a4f78ea67b9a2b68b0b641a",
+            "content": "sha256:a7836a08e49085ac84da42fe92b38428e695f3a0812f8f651e4ed1ef65b0e43b",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/patches.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Four frozen construction bundles feed a resolved `CgcRuntimeLayout`; empty keyword bundles select defaults with distinct instance, shared-resource, and backend placements. [2]\n\nAnchor: CgcRuntimeLayout; CgcRepo; CgcInstance; CgcWatcher; CgcBackend; cgc_runtime_layout; _resolve_optional_path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:4f4438fb0d2e15c00993ed136d480bf9373cd5ddb65535c9fed0b8b11e9b7ad2",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:69ddb69a0d7892e141093bf23e546cc51d4b1d4bcbcc8aa1d07ffb6d81f5e9d3",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Settings construction preserves requirement and patch template spelling in an intermediate bundle, then resolves those paths during final layout construction; it validates repository and image inputs and rejects venvRoot. [3]\n\nAnchor: _unresolved_template_path; _cgc_instance; cgc_runtime_layout_from_provider_settings; _validated_cgc_code_repo_root; _cgc_runner_settings; cgc_runtime_layout",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:2d0e5076d3fb4e3a0a265c6f82d0d1aba1c8fc379eacd99a1281bfee1b1af341",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:4bc518d85564115985994d514f67e244a3559b1984a5e2ef3feb5adcbf50996a",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:f091d2a49a7058a5f5c0c9362d704a21e4e154526abec1ace86404d6ec3988b6",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Materialization writes matching enriched instance and HOME-scoped global ignore files, retains an existing requirements file, and filters persisted environment keys. The retained settings reader accepts explicit provider/root ignore-pattern lists; generated lifecycle settings supply no CGC root block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1af8b047fef038810298719e077535c541235d",
+            "content": "sha256:dde06887bc608bb8082ca4df06596ae48b87903f3fd04c81e46651cc2624c85f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_cgc_runtime_layout"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa1af8b047fef038810298719e077535c541235d",
+            "content": "sha256:bbf335003787133061875e0f172834a3ab94e0db31dfcec846c429d37c9acc41",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cgcignore_text"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aa1af8b047fef038810298719e077535c541235d",
+            "content": "sha256:497fcedaa98caea08afd21d965d221a0729d3147f5560af36c10c2542c388578",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cgc_env_text"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/materialize.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:95c3789e01d55f6433414a45e419e432464740df34e2e83c0f936e78c4f1d6bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cgcignore_patterns_from_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The retained tag helper uses the pinned CGC version and layer revision, currently 0.4.10 and ar2. The lifecycle-settings generator imports no CGC helper and emits no runner setting. The retained image builder skips an existing tag unless no_cache is requested. Runtime installation attempts the old-watcher stop before the runtime asset refresh, records a failed stop and continues, and reports enabled provider keys as unused; they drive no installation. Anchor: `stop_provider_watchers_before_refresh`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:81afeb58c52b611673fb9131e90b6839e61bc2ac1ca519bff375d8a9256bcf14",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:0143a3eef992d82d864668130d284bbc883fe638068a1ca51000d3dd1267386b",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:a00d25d8dcdad08c36d94aed2b5b366bcbd5b029b9a23aa7077863f670c74480",
+            "locator": {
+              "end": 406,
+              "kind": "line_range",
+              "start": 400
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:7f4261766edddd732b442d4a9f61ee8147d962c830365ca195f6d069e1ab3c76",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:68f455c6b4def0cac7d3b9a5eee247a8bf33423e98024030a8a0d40c79404b85",
+            "locator": {
+              "end": 832,
+              "kind": "line_range",
+              "start": 812
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Runtime environments, source-artifact detection, cleanup containment, and expected-snippet patch checks constrain these helpers; timer-pop identity checks preserve replacement timers. [6]\n\nAnchor: CgcRuntimeLayout.env; SOURCE_ARTIFACT_NAMES; source_provider_artifacts; assert_no_source_provider_artifacts; cleanup_cgc_runtime_artifacts; _assert_cgc_child_under_provider_root; _obsolete_cgc_runtime_removals; CGC_TIMER_POP_PATCHED_SNIPPET; apply_cgc_timer_pop_patch; patch application functions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91b69741c5d4a276e499b064ebc31e3b3860833a",
+            "content": "sha256:4cab102c229dc5fd366f9878662837911380dcd5ce10f5ae39ea2c5de2da4031",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:4518fa7ff950537031dfde3eda6ff04334bfca079f5db6b92870e4fd3ca3d78e",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "841160e2fb3eb1e8b4b6b91bf4cd06591d811a3d",
+            "content": "sha256:3789d3825b422cbc8ce59116e144c8ae3ce6c7f7346a27067e4c7082bd3b51a3",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/cleanup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:1928b9d665b5984b7c425c00a8bed392412414acce2a3162e840c86e96e8f7e8",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "642e8832555e39deb833cf66f79ff28bc4ee8d97",
+            "content": "sha256:7b3610e5d1809103d7b472bd77b29d6787bd00b5943f1a5122d8154f9bd7c1af",
+            "locator": {
+              "end": 360,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/constants.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d6ccd171274ae0e9a4f78ea67b9a2b68b0b641a",
+            "content": "sha256:a7836a08e49085ac84da42fe92b38428e695f3a0812f8f651e4ed1ef65b0e43b",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/context/patches.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

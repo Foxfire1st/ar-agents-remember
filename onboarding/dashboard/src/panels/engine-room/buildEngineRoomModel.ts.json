@@ -1,0 +1,74 @@
+{
+  "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `buildEngineRoomModel` projection function is exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:c40edbd4d77e6575d46ba43dc52525b0a11d644650a51697b75ac136c454f89c",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each view assigns `enclosureKey` from `node.worktreeGroup`.\n\nAnchor: `enclosureKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:81e01e1435083a2c1a1c5a6ed80c9025a7fbda19131c779b302def0d11420bea",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`EngineRoomModel` render shape\n\nAnchor: `EngineRoomModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8431ed7429434de9bd19dd2f0b5dc3368e14fdf3",
+            "content": "sha256:1718ff1e49c97a20d1c3ede53674ea8bc82c1b507623b42741b76b3ad08a17a4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`EngineProcessView` render shape\n\nAnchor: `EngineProcessView`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8431ed7429434de9bd19dd2f0b5dc3368e14fdf3",
+            "content": "sha256:1718ff1e49c97a20d1c3ede53674ea8bc82c1b507623b42741b76b3ad08a17a4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/engineRoomTypes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

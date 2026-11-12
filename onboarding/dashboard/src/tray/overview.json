@@ -1,0 +1,236 @@
+{
+  "path": "dashboard/src/tray",
+  "references": {
+    "1": {
+      "note": "Collection admission, first-target choice and snapshot settlement\n\nAnchor: \"export function createTrayStore(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:2f1888275cfc246ea544eb3ec2cb06ea71af261318f3a8d6f06c43a8d8103df3",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact structured reference identity\n\nAnchor: \"export function pickKey(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dba185c8cbf4473f02cc57303c14e00e392e68ca",
+            "content": "sha256:4b0408bf22855e1ad2a49289da015df4fac3569eddfbf2869f5770b1af6fe010",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/tray/pickKey.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Per-target developer send and explicit outcome parsing",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:0554ac70db8bc6a8ef94c826865cc82df17e8f38d0a1c6361686b3be68d6de99",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/tray/traySend.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One dock outside the retained frame, its column placement at the message box's own left and width.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+            "content": "sha256:bf88ea2e326be4e600e9ff3a536261d30915ee9aa9d43b1b77255f7e521b9ff7",
+            "locator": {
+              "kind": "symbol",
+              "name": "dockPlacement"
+            },
+            "path": "dashboard/src/tray/TrayDock.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A hosted idle object control follows its own hover/focus host; the named taken control and repeated click remain explicit. [5]\n\nAnchor: `export const addToTrayHost = css`; `export function AddToTray`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+            "content": "sha256:aeb98d225a692f2719b900cbb006c938be487be5635bbd623a59808afa279653",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/tray/AddToTray.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59585246e91d13f2eb2b68a4f487250b05852e14",
+            "content": "sha256:0aa9312ae95d54d658fc0a283adc69f3f43361c49b2059781d4d3b2afe4575f6",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "dashboard/src/tray/AddToTray.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Chats pane publishes the chat its own frame reports showing, and nothing else: a frame that has not reported a chat yet names none, and while a placeholder stands in for the frame it publishes nothing.\n\nAnchor: `usePublishShownChat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:a1a6160c1ef554d30d5da58c536ce71036be0e3bca1a2aaee67d2d31dafef22f",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:428cce74b5b012d625f318405667e138cbd353f350422cb28aea11617ac82e89",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
+            "content": "sha256:34da2e16be948c504943031daafba241cee6d0be50475122638442192df6f410",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "dashboard/src/cockpit/RoleChatsView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ecb8d4a3c28bb82a4089522ed7ce0707d09e0b2d",
+            "content": "sha256:78881dbedfe548ef712d2d9dd48f7beabf54c1ceb377bece7c440895ce3e9466",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/shownChat.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A review pick stays minimized with the column closed; explicit expansion opens it, while one pending target default ends on user choice, empty automatic collection or leaving review. [7]\n\nAnchor: `function useTrayOpensColumn`; `const undecided = kept.length === 0 && !state.targetsChosen;`; `function targetActions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:a1f01c07a14499804c1f08f4368ffc7749b58d33c651426b87315cad698c225d",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:1e63ad59d68c06b85c3813db52b9781a6fc0ac39e62c01eac0a3958b3e31512e",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:e32ed289baa1a80f63a6cb4220cfe7e4aa4fd38c89115e82ee0a3c036e5e4fa9",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 220
+            },
+            "path": "dashboard/src/tray/trayStore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A Send aimed at an archived or placeholder explainer first asks that leaf’s fixed-target first-request form to open with the current text. If no live target remains, no role-chat post or settlement occurs and the collection stays; a mixed selection continues through ordinary live-target posting and settlement. This handoff is not reported as native delivery. The minimized line’s head also expands on a click, Enter or space outside a nested control; the nested button, link, input, textarea, select and listed ARIA control targets retain their own actions, so Close does not also expand. The existing closed-column minimized-pick rule remains separate from the explicit first-request signal that opens its matching column.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+            "content": "sha256:cbcf519a0e6135b848475968eaa787c925645e0b60f012db8ddf727391f6730d",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/tray/TrayPanel.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/traySend.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

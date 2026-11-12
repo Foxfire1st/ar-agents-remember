@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/judge-claude-grep-real.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "87f75478b52b3356ddb09f9f7ad872c72f5e444d",
+        "content": "sha256:bb348964c1cb6a0eb1bd4d5a27aa45e22430d92aa141bc206b959a38d3d44301",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T6FYRH",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These real tool-use/result pairs distinguish a searched file from an opened file and bind duplicate events by tool_use_id.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f75478b52b3356ddb09f9f7ad872c72f5e444d",
+            "content": "sha256:bb348964c1cb6a0eb1bd4d5a27aa45e22430d92aa141bc206b959a38d3d44301",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

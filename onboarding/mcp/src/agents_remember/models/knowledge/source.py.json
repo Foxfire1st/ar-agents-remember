@@ -1,0 +1,101 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/source.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The three source locator values and their discriminated union.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:cd62c80383c06ea6d0fdf6d3cc765e8810a3cf4e42979c3dc2fa7ebabdf4aedf",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileLocator"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:4b2f431ea69379a415912a641b12cc4e703ee418cda7b983c2be11639ee703a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LineRangeLocator"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:828d9a42d7a261e7c3adfb7cb474a01c9f7af1db127ae1332d03471474f2f958",
+            "locator": {
+              "kind": "symbol",
+              "name": "SymbolLocator"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:c662fc6a00aff8273f3c58deea591eb8f0e1ece21f074fb9476d22cddaf8786c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLocator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The retained decoder uses shared locator values; the canonical anchor-row encoding and decoding APIs are retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:0d0003a9634dab7b1114263aa4687f10c3699db9aa9fada2c2cb95c738278508",
+            "locator": {
+              "kind": "symbol",
+              "name": "decode_typed_column"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:c662fc6a00aff8273f3c58deea591eb8f0e1ece21f074fb9476d22cddaf8786c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLocator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The three locators and the discriminated union over them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c97e0d9b28c13ea873c21c1b90f320505f736621",
+            "content": "sha256:cd62c80383c06ea6d0fdf6d3cc765e8810a3cf4e42979c3dc2fa7ebabdf4aedf",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileLocator"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

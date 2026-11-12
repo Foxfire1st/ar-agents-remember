@@ -1,0 +1,41 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/encountered-records.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Producer weakness and dependent entries become `WKN-` and `DPD-` records through the writer.\n\nAnchor: `WKN-`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e706ec12e8224e270900d3c7af8dd7c9d08e61ec",
+            "content": "sha256:4660f3f6f5d6b450c3cee423d37790307c55c60d7a57453b811c60743ac73737",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Their worklist rows are answered by standing-or-closed and confirmed-dependent decisions, and neither record refuses a task.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e706ec12e8224e270900d3c7af8dd7c9d08e61ec",
+            "content": "sha256:68d6b5ab7d57b64437ce59d5b0cbb6ce574cad75e05ed10b9d35596f6a6698f8",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Deleting a protected companion with its dataset would destroy tracked or symlinked content the reviewed plan keeps."
+  },
+  "applicability": "Cleanup of leftover dataset copies and their companions.",
+  "conditions": [
+    "The reviewed dry run listed which companions are kept."
+  ],
+  "exclusions": [
+    "A companion that became protected after the review; it is a named failure."
+  ],
+  "id": "INV-CKY44N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_copy_cleanup.py::test_apply_deletes_exactly_the_copies_rule_six_names_with_their_companions; N16-kept-companion.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 16",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cleanup treats a companion its reviewed plan keeps as successful preservation rather than a failed deletion.",
+  "status": "proposed",
+  "supersedes": []
+}

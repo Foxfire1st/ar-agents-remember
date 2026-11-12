@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_evidence.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The packet is bound to one existing comparison's full identity, with the stored and compared memory-base trees named separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1f7689bbd3f21fbd5472470387e5a2da7ec990",
+            "content": "sha256:99714e191ab95634b0eb77620dcc5172882cf2a794d8a16cd0fbf5285d9f463e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EvidenceComparisonBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A collection states its producer, population and read state: `present` carries a positive count, `measured-empty` exactly zero, and no other state a positive count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1f7689bbd3f21fbd5472470387e5a2da7ec990",
+            "content": "sha256:99f06d208efcb3ab7673987d02a5b74660d2c4f3d8f52c137767ad554208e57f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_and_count_agree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An intended claim needs an inspected supplemental receipt whose reference and receipt_id agree. Packet validation rejects duplicate receipt ids or canonical sources, unknown receipt citations and basis states that contradict the examined receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c1f7689bbd3f21fbd5472470387e5a2da7ec990",
+            "content": "sha256:7774fa2be80b9af0e7a2bd3e357d092523b15f274ca6eda8ab5e573af8fb2bd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_supplemental_and_claims"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

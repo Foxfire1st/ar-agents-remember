@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_review_source_inventory_boundaries.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f717500d3b859f633528b98e41bca9f020cf3d7",
+            "content": "sha256:13745c201f296bd7f72d0ce527d432e439c01c8405e16e6ba7dbba774756180c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,21 +1,8 @@
 # mcp/tests/test_sync_parked_candidate.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_sync_parked_candidate.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
-
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
-
 ## Governing Overview
 
-[Nearest governing route overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -25,9 +12,19 @@ Exercise the parked worktree candidate inside the existing sync transaction and 
 
 ### Logic
 
-The six cases reuse SyncFixture's real repositories and contracts. Clean code carry restores modified/untracked WIP and advances the recorded base. The external-memory case now includes staged cache data beside a real onboarding draft: only the draft appears in parked WIP, and the draft returns with no remaining stash.
+The transaction witnesses reuse SyncFixture's real repositories and contracts. Clean code carry restores modified/untracked WIP and advances the recorded base. The external-memory case includes staged cache data beside a real onboarding draft: only the draft appears in parked WIP, and the draft returns with no remaining stash.
 
 Other cases preserve a genuine reapply conflict and its wipRestore marker, return the candidate on cancel, resume a crash before restoration, continue a staged source conflict without losing parked content, and refuse a pre-existing genuine unmerged index without creating a stash. The module validates the public resolution projection as well as the dictionary so producer/model drift is visible.
+
+The module protects complete reapply proof, already-held edits, truly missing parked bytes, untracked/deleted entries and memory-side cache separation. Cancellation saves later/index-only/marker/symlink/unproved state before completing. Cases cover renames, observed SIGKILL cuts, save failures and live-lock handling. Full-inventory failure cannot accept the capped journal sample. Paired restoration and cancellation-retry assertions protect already-restored code work across a memory stop. The named retained/terminal phase cuts hold the native child at the legacy-journal unlink audit event after the durable replacement. Partial-restore cuts use serial native Git checkout and a required, identity-preserving filter on the second bulk path, held before it returns bytes; the first path is restored, and the parent kills the actual process group. These specific holds remain open under parent scheduling delay without replacing product functions or Git operations. The memory-park orphan cut uses the `MemoryOrphanCheckpoint` test-support helper: an audit hook holds the child at the first journal publish after memory parking, checks the parked stash, clean tree and still-absent journal, then the parent kills the child's process group and requires recovery to either restore all 500 parked files byte-identically or retain the stash whose untracked tree holds every expected blob; the helper keeps its evidence files in a temporary directory. Other kill cuts still poll and fail or retry on a missed window; this is source structure, not new execution evidence.
+
+`ResumedConvertedMemoryMergeTests` reproduces an interrupted converted-memory merge with real structural crossing. The untouched witness checks cancellation and its asserted memory state; the owner-write control saves patches/path list containing OWNER AFTER INTERRUPT, cancels with unchanged memory HEAD, retires the stash, and journals cancelled. The separately sealed Reviewer paired companion supplies executed both-tree/head/index evidence: the file card does not upgrade the positive test's name into a stronger assertion than its body makes.
+
+The same class's identical-byte carried-line case records a reviewed pair, parks `SAME = 1`, lands exactly those bytes, and invokes the real public sync tool. Its explicit assertion is that the returned `review_rebinding.state` is `current`; it does not assert `covers_resolved_pair` or every successful-response field. The sibling different-byte case retains the original refused-sync `not-measured` and non-covering assertions. These complementary scenarios do not change a production owner or strengthen the historical cancellation proof facets; execution evidence remains separately attributed.
+
+
+- An identical-byte carried line is tested through the public sync tool with an exact current-block assertion. [6]
+
 
 ### Conventions
 
@@ -45,50 +42,29 @@ Intentional fault injection stops restoration once; native Git creates the genui
 
 No new file-local follow-up is identified by this source reconciliation.
 
-## Docs References
+## Evidence
 
-No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
+### Docs References
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
-These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
+- Code and memory WIP return, with cache excluded from the memory candidate. [1]
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Code and memory WIP return, with cache excluded from the memory candidate. | L30-L54; L56-L78 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Genuine reapply conflict and cancellation preserve candidate content. | L80-L115 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Crash recovery and retained-source continuation return parked work. | L117-L144; L146-L171 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Pre-existing genuine conflicts remain a refusal. | L173-L188 | [mcp/tests/test_sync_parked_candidate.py](mcp/tests/test_sync_parked_candidate.py) |
-| Production parked-content boundary and exact restore proof. | L144-L163; L166-L195; L198-L216 | [mcp/src/agents_remember/worktrees/sync_transaction_git.py](mcp/src/agents_remember/worktrees/sync_transaction_git.py) |
+- Genuine reapply conflict and cancellation preserve candidate content. [2]
 
-## Cross-Repo References
+- Crash recovery and retained-source continuation return parked work. [3]
 
-The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
+- Pre-existing genuine conflicts remain a refusal. [4]
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
 
-## Update History
 
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Extended the existing memory-WIP case with staged cache data and an exact real-path assertion; retained the six clean, conflict, cancel, crash/resume, continuation, and pre-existing-conflict scenarios. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
+- Production parked-content boundary and exact restore proof. [5]
 
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the shared sync fixture
-  and park/restore owners are the frozen ones. Re-checked every case and helper range: they hold. No
-  wording changed. Verification metadata remains closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because one or more of its anchors resolved more than
-  once at the verification commit, so no historical location was unique. Repaired the citation, not
-  the claim: each anchor that named a construct by bare name now names its exact declaration text,
-  which resolves once in the code tree, and any range that had drifted off its construct was re-read
-  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
-  the claim is about. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 7 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-10T15:06+02:00 — Created for the parked-candidate change: the six transaction-level cases proving a dirty closeout candidate is parked, carried, and returned (with restore on completion, resume, and cancel, and the kept unmerged-index refusal). The new module has no committed identity yet, so verification remains closeout-owned.
+- Named retained/terminal journal cuts hold the native child after durable journal replacement and before the legacy unlink, then require a stopped child and SIGKILL its actual process group; other polling cuts are not upgraded by this source observation. [7]
+- Partial-restore cuts use serial native Git and a required identity filter on the second bulk path, stopping before returning bytes so the first path is restored while Git waits; recovery passes unchanged bytes via the one-use marker. This is source-only, not a new test pass. [8]
+
+### Cross-Repo References
+
+No additional configured cross-repository contract is asserted.

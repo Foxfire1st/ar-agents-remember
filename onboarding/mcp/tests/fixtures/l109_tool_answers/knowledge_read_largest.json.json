@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/fixtures/l109_tool_answers/knowledge_read_largest.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This static answer records the naming/compact fields and its own epoch qualifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de8c4001fe7faf066e96a84e2ca5083769e9996c",
+            "content": "sha256:45be7cb49e8336e5547385e4ae4356681f69ed5fa78ea550a6ccf58b18b7ec20",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

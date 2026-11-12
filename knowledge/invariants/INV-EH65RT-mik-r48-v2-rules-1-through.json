@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The delivery is realized across the row model, the writer, the gate, the validator and the checklist surfaces together."
+  },
+  "applicability": "The L48 candidate as a whole, all seven rules together",
+  "conditions": [
+    "All seven rules implemented on the final bytes",
+    "Evidence measured on the final candidate"
+  ],
+  "exclusions": [
+    "Code acceptance, which belongs to review",
+    "Installation timing, which requires no leaf in curation"
+  ],
+  "id": "INV-EH65RT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "closure 12 modules 224 passed (-n 3, integration or not integration), raw scratch/l48_closure_tests.out; four-label CLI + index rebuild (module), public GET scratch proof PASS, real-data landing None + census 16/9/5/2, ruff/format clean, pyright 0, catalog loader clean, 27v3 equal"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "MIK-R48@v2 rules 1 through 7 are delivered on the final candidate: changed family rows keep the writer-recorded own revision and the curator-authored effect and are refused otherwise; frozen omissions round-trip unchanged; only route-published files are judged; curator instructions state the rule.",
+  "status": "retired",
+  "supersedes": []
+}

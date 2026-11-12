@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/kernel/harnesses.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ordered built-in role-setting IDs do not establish host availability or restore a probe/adapter registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f783bd16246b9c1d169fd35ee33f0908e937c91",
+            "content": "sha256:01d99c5c6f83c2d31bc26562ee7f00a643410150f865dc13860b0caf638c47ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "HARNESS_IDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

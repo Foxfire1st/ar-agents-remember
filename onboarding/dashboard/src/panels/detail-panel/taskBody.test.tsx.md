@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/taskBody.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/taskBody.test.tsx`       |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -29,37 +19,32 @@ loading/error/settled states and the notice surface.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+Loading/error/settled and TaskBodyNotice ownership remain the contract. The settled body assertions
+now scope requirements to their block and read free-form Evidence through the Further-notes own view
+with Back, rather than assuming all body text is inline. The reports stub is a typed bounded response,
+not backend acceptance or proof that a product test was rerun here.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The on-demand task-body suite. | `describe` | dashboard/src/panels/detail-panel/taskBody.test.tsx:11-253 |
 
-## Cross-Repo References
+- The on-demand task-body suite. [1]
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  task-body suite split from `DetailPanel.test.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

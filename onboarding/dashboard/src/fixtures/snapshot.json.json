@@ -1,0 +1,460 @@
+{
+  "path": "dashboard/src/fixtures/snapshot.json",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Ledger analytics remain a consumer sample after the retired Git-operation phase is removed. Anchor: `observer`; \"ledgers\"\n\nAnchor: `observer`; \"ledgers\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:2e00ca726941656e14bae55188c848c704fabb1beb53c9da3404ef3e655e0fcc",
+            "locator": {
+              "end": 537,
+              "kind": "line_range",
+              "start": 520
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:07b55e809e87eb8af6f34ab374e8ce79039f3091b98e0010251b39a7734a4ae1",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 582
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The three-direction guard: `mirror ⊇ served`, `served ⊇ mirror`, and `fixture ⊇ mirror` — the last of which exists because this payload is the oracle.\n\nAnchor: `served ⊇ mirror`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:a189bbea179fd400c95a2351cdfddc4801b54913b80f50cd74b12923c5eb8219",
+            "locator": {
+              "kind": "symbol",
+              "name": "valuesAt"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:594e69c533b776e116b3392b3bdaf0856b759828f6273b3c2c79280076856d01",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:0ef69c312e60d72ecf86087c2c6baf35042dc0e4d00cec5002a4a203edfa2aab",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 456
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The derived `VOCABULARIES` registry and its non-vacuous sampled-value membership assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:d26ae637afa45924006bf866acfe3280d4982349eeb1b86b2097b5fdcd1183d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "VOCABULARIES"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:9f40ef5c4b3b9762397b7362fd44cecab6a8e1a6673f1ee6a2614327eb092eb5",
+            "locator": {
+              "end": 574,
+              "kind": "line_range",
+              "start": 563
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "INDEX_SIGNATURE_SITES is a closed, exhaustive record naming every current absorbing node with its reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:5f4c30debe3ba7585b95d5bf042cea2c32186e94e03e81eb6ebeb727b01bf45a",
+            "locator": {
+              "kind": "symbol",
+              "name": "INDEX_SIGNATURE_SITES"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "KnownUnsampled names projection.servingBuild and a task's providerLimit; the manual sample carries the other served-tail fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9f5518c01093d319450274b1110efb3863c2d4b",
+            "content": "sha256:d095b290529584141a460e5399674c3c90273d68829c76680c4db755a4299fa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnownUnsampled"
+            },
+            "path": "dashboard/src/test/contract.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The snapshot is manual; the projection command generates and stale-checks the schema and TypeScript mirror. Anchor: `generated`\n\nAnchor: `generated`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:b7406c17cc72921b4db23c556877f4445defbd89af6bd62340ffc15b0d513c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:a807aac5fc6f61ac1d43b129bc0ebf6e7570d1eeb846d6be3022661be4517ba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "demandServed"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:9741921eda39fb5ee6462359d93e7ce7ac93db599bd71107e8ac0ce9a960a6a2",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:ee34f1e362bddc04c7bd39976b7c9e72f4418ca74f4d91cdae8e1c78e3583a08",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The narrowing every reader comes through, and why a second `as unknown as` elsewhere would re-open the hole. Anchor: \"as unknown as\"\n\nAnchor: \"as unknown as\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:12df43ff00e9127957d3b1b6424e4bd3dd39c9d43b08489a2906d08c6dee0cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "asServedProjection"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The store suite consumes the manual fixture and explicitly exercises servingBuild, whose absence in the fixture is separately admitted by KnownUnsampled.\n\nAnchor: `carries the serving-build stamp and keeps its identity across snapshots`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5acd237b74191d658b8951881e101e46601e11cd",
+            "content": "sha256:24ae1acd37d375e799abf94e947c1758293f771e9cfe78f0e13491209924d6de",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 227
+            },
+            "path": "dashboard/src/data/store.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Manual fixture includes native operation/source-lineage wire samples, not live operation evidence.\n\nAnchor: `sourceLineage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:6ab824cbc9eb31cffb6a6336f62e25caa6406ccc7c5b1694d7fe9539c4141c69",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Removed the retired ledger-commit operation sample while preserving downstream ledger analytics and real publication phases. Anchor: `lifecycle`; \"commit-approval-pending\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:c728004edefb88962a4df291ac88371951e96cbfc685428104dbcb65bf89d2f1",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 347
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:a37859861905b6e52ab01f354c49d8afb1bcdc7c8be989fed312d661b5886108",
+            "locator": {
+              "end": 1826,
+              "kind": "line_range",
+              "start": 1203
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The manual master sample carries three disagreement shapes and the unresolvable literal; this is sample coverage, not live membership evidence.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:f1a21c9db71a179f315e271cd83fd0eff6b089e0ff9148b7776236ec0b4829cb",
+            "locator": {
+              "end": 2056,
+              "kind": "line_range",
+              "start": 2020
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:5fbac043c7ac0d13980f9d03e02718018c999f1d8f9665f6c9b8e91207a86a68",
+            "locator": {
+              "end": 2165,
+              "kind": "line_range",
+              "start": 2129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The served tail declares servingBuild, watcherHealth, checkoutBinding, buildCurrentness and servingProcessId.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:6a5949fd85ef75f78bf1d85b77240ece55cca9a3e7665b65a75dd3c0e14d0a9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SERVED_TAIL_FIELDS"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The sample carries a stale installed-mode build currentness and a serving process id.\n\nAnchor: `buildCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:0e1b58225660a36768c79dec4606d947bb6dd53a63181fdf9ed03192687e4707",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`exclude_none=True` omits fields whose value is `None` from the serialized output — the rule that makes an omitted key here indistinguishable from a field the server does not have. Anchor: `None`\n\nAnchor: `write_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The manual payload retains representative enclosure rows and the activeWorktreeGroups join value; the enclosure carries the same sim-group identity.\n\nAnchor: `activeWorktreeGroups`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:f8f905f07141c8e18288d136810b169d10609ca229a5e116b06d07633d028e0c",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:eb7b972ea0f4ffde10f8a9dadf66261afaf142db5eea973d0c0851d8de8c9efe",
+            "locator": {
+              "end": 625,
+              "kind": "line_range",
+              "start": 609
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Manual decision and task-reader values are sample data, not source-derived provenance.\n\nAnchor: `decisions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:d94b8f7e03d6004381449b721ef40af120f53f552bc50991a16612c66ab66f6f",
+            "locator": {
+              "end": 1956,
+              "kind": "line_range",
+              "start": 1949
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The writer of the persisted payload this file is shaped like: `write_projection` dumps with `by_alias=True, exclude_none=True` into `latest-state.json`.\n\nAnchor: `write_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:4e230865600527cbd76449ad81e48c3805d260a223450cbbf622a20ae6f603b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_projection"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The core root plus extracted task DTOs declare strict wire shapes; TaskDependencyNode is display data, distinct from sample values and execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:a162722f49420706e617048c5ad16429d28a39cfdd747addfe717bd960e4daa8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

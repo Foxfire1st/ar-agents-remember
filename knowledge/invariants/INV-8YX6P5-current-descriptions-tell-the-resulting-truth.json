@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in the tool registry description, the two public references that bound cleanup, and the root instruction, which no longer names the removed parameter. A reader who trusts any one of them would otherwise be told about a query path that does not exist."
+  },
+  "applicability": "Every current description an agent or reader consults about the tool surface, the cleanup limits and the root instruction.",
+  "conditions": [
+    "The description is the live text, not a historical section or a dated task record."
+  ],
+  "exclusions": [
+    "Historical quotes and task evidence, which stay as written.",
+    "Adding a provider tool or describing retained cleanup as fresh provider execution."
+  ],
+  "id": "INV-8YX6P5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The two root-advice tests derive admitted parameter names from the request model and the shipped schema and fail against the pre-repair file."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-09",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Current descriptions tell the resulting truth: the tool registry describes no diagnostic provider query, the cleanup limits stay accurate, and the root instruction no longer prescribes the removed context_packet parameter.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/memory_cache.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/memory_cache.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash |  `67b21aeb66df96a971a33ae431a13992f2528b45`|
-| lastVerifiedCommitDate |  2026-09-15T06:37:48+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](../../../overview.md)
@@ -32,16 +22,28 @@ maps it to newest-first rows. The first row supplies the current code/memory pai
 supplies the base pair. A history with no attribution yields empty rows and empty revision fields.
 This read never consults `memory.md`.
 
-`prepare_memory_cache` is an explicit preparation helper for an already authorized memory-content
-workflow. It adds the root cache ignore rule and removes the cache from the current Git index while
-retaining the disk file. That housekeeping belongs to ordinary content staging; the helper does not
-create a commit, select a publication ref, or decide whether a Git transaction may proceed.
+`prepare_memory_cache(repository, *, index_path=None)` is an explicit preparation helper for an
+already authorized memory-content workflow. It adds the root cache ignore rule and removes the cache
+from the Git index while retaining the disk file. With `index_path` the exclusion writes a private
+index file instead of the worktree's own index — this is how the converted baseline adoption stages
+without touching the real index before validation passes; without it the worktree's own index is
+prepared. It returns the prepared `.gitignore` bytes, so a refusing route can tell its own change
+apart from a concurrent external edit without re-reading the file. That housekeeping belongs to
+ordinary content staging; the helper does not create a commit, select a publication ref, or decide
+whether a Git transaction may proceed.
 
 `refresh_memory_cache` derives the representation and compares it with current bytes before writing
 through the shared atomic-text writer. Existing cache read failure is treated as missing prior
 bytes. The result reports `updated` or `current`, the path and row count; derivation/serialization or
 write failures report `unavailable` with a reason. Those cache outcomes do not determine whether an
 already completed Git action succeeded.
+
+`ignore_memory_cache(repository)` records the cache's ignore rule in `.gitignore` and does nothing else. It is
+the one write `prepare_memory_cache` makes to memory content, and `prepare_memory_cache` calls it first. It
+returns the exact bytes written. A route that judges the exact tree it is about to commit calls it before
+it reads that tree, so the judged tree already holds the line, and restores `.gitignore` when it refuses:
+the converted worktree closeout does (INV-49E649), and the converted baseline adoption restores only
+bytes provably still its own, preserving a concurrent external edit.
 
 ### Conventions
 
@@ -61,42 +63,40 @@ memory output. The kernel ledger module owns the representation and root-cache f
 
 No new implementation or live-state operation is authorized by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Terminal removal discards only the root memory cache. | L94-L111 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Derivation reads Git attribution and computes current/base metadata. | L22-L41 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Preparation excludes the cache and refresh reports materialization outcomes. | L44-L62; L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-| Committed attribution and row mapping have one reader. | L143-L174; L208-L227 | [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| The consumer representation supports empty derived history. | L173-L184; L187-L212 | [mcp/src/agents_remember/kernel/memory_ledger.py](mcp/src/agents_remember/kernel/memory_ledger.py) |
-| Cache independence and exact local-ref derivation are exercised by the retained projection tests. | L338-L360 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
+- Terminal removal discards only the root memory cache. [1]
+- Derivation reads Git attribution and computes current/base metadata. [2]
 
-## Cross-Repo References
+
+- Committed attribution and row mapping have one reader. [4]
+- The consumer representation supports empty derived history. [5]
+- Cache independence and exact local-ref derivation are exercised by the retained projection tests. [6]
+
+
+### Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No additional configured cross-repository evidence. | — | — |
+No additional configured cross-repository evidence.
 
-## Update History
+- Preparation writes a private index file when asked, and returns the prepared ignore bytes. [9]
+- The ignore rule is the one content write, and its exact bytes are returned. [10]
 
-- 2026-09-15 — LCA L9 terminal delivery: `discard_memory_cache_changes` is used only before an authorized memory-worktree removal. It restores a tracked root cache from HEAD or removes its staged/untracked representation. Ordinary non-forced Git removal still checks all real content. This function creates no commit and moves no ref.
-
-
-- 2026-09-15T01:02 UTC — Created the paired sidecar for the new computed-cache owner, documenting derivation, explicit staging preparation, best-effort materialization, and the absence of ledger commit/ref authority. Working candidate verified by source inspection; commit metadata records real committed history only.
+- Preparation excludes the cache and refresh reports materialization outcomes. [3]
+- The ignore rule alone: the one write the preparation makes to content. [7]
+- The preparation records the rule first, then removes the cache from the index. [8]

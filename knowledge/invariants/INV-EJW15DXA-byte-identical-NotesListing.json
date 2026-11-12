@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "The notes-listing family needs this boundary to preserve current confinement and missing-folder behavior without falsely promising the removed endpoint's ordering, envelope or whole-tree response bytes."
+  },
+  "applicability": "Historical: the response bytes of GET /api/notes/list (removed). Current: the per-folder properties above for GET /api/notes/folder.",
+  "conditions": [
+    "The notes tree is not mutated between the two listings being compared.",
+    "Depth is counted on the lexical path, so an in-root directory symlink is listed and pruned at its own position."
+  ],
+  "exclusions": [
+    "A directory that is readable but not searchable, reached directly or through an in-root symlink: its children are skipped and the listing answers 200 where the path-based walk answered 500 (Architect rulings 2026-09-28T16:30:31 and 16:55:00).",
+    "A directory renamed out of the notes root while it is being listed: its own entries are still listed through the open descriptor, where the path-based walk lost it.",
+    "Error answers other than the ELOOP/ENOTDIR swap signature and the is_dir errno set, which propagate exactly as before (for example a mode-000 directory still answers 500)."
+  ],
+  "id": "INV-EJW15DXA",
+  "origin": {
+    "leaf": "260921-ICR-L55",
+    "legacyId": "25de0855-0817-4622-b8f2-e7cddff335da",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Dated L55 bound for the superseded endpoint: GET /api/notes/list returned the same bytes as before the bounding change (files before folders by case-folded name with readdir-order ties; in-root symlinks under their own lexical path; escaping/broken symlinks and non-regular files skipped; depth-4 pruning with truncated true; missing folder as empty list). The endpoint is removed by the accepted packet; current per-folder properties (in-root aliases under their own path, escaping/broken skips, missing-folder emptiness) hold in list_folder and are governed by the rule 2 entry — except ordering (directories-first, exact-name ties) and the envelope, which differ.",
+  "status": "proposed",
+  "supersedes": []
+}

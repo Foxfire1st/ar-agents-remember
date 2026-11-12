@@ -1,0 +1,342 @@
+{
+  "path": "dashboard/src/data/store.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+        "content": "sha256:29b3ecae92e30f23935959857d5fb70e628f09d405a6e887e107df252e145f80",
+        "locator": {
+          "kind": "symbol",
+          "name": "DELTA_REDUCERS"
+        }
+      },
+      "id": "RLZ-5H6KYJ",
+      "invariant": "INV-AN0K8G",
+      "origin": {
+        "handoffEntry": "L84-LC-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The buildCurrentness reducer drops a frame that fails the parse and keeps the equal-returns-null and changed-replaces behaviour.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+        "content": "sha256:63131e7c401e305491c686120e8997cbc39005dd32f73c8fab54837a14886e46",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RG81PB",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-W-R167-13-14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "One dashboard store holds the qualified task map consumed by all views.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+        "content": "sha256:3e95f2199d191216a63e27bcda9874e9c33ec94beb0b0da84399870306b2d4f9",
+        "locator": {
+          "kind": "symbol",
+          "name": "markEventsHydrated"
+        }
+      },
+      "id": "RLZ-VMENSJ",
+      "invariant": "INV-TKTBHD",
+      "origin": {
+        "handoffEntry": "L114-W12",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "markEventsHydrated records the ready marker's last feed in the store so the panel can name it when the window holds nothing.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+        "content": "sha256:bdbc03a89802c43a88439fe83ac8cd60eb6bc0972637a2d67fadc7af51fd71a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "readsAsBuildCurrentness"
+        }
+      },
+      "id": "RLZ-XFVCV9",
+      "invariant": "INV-AN0K8G",
+      "origin": {
+        "handoffEntry": "L84-LC-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The checked parse replaces the cast and mirrors the producer's model, which forbids extra keys and omits None.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+        "content": "sha256:63131e7c401e305491c686120e8997cbc39005dd32f73c8fab54837a14886e46",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YZ49MW",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The client store no longer holds provider snapshots or their SSE keys.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The stable-equality + arrival-anchor module the merge is built on (volatile set mirror).\n\nAnchor: \"export const VOLATILE_AGE_FIELDS\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66d20f4008239bf7a9afcd90dfd2fd6ad191d7f4",
+            "content": "sha256:e3e89abebec8e35550e13e3deedb967b532b982aa446df7d7e98f341784997de",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "dashboard/src/data/servedAges.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The mounted queue consumer reads `closeoutQueues` directly, scopes by sprint, and renders nothing when no matching queue remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:4caac3df490d4a28c8dd5a0f548d4a5edd9c7f35a947cd5aed8a6394f22d90df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueImpl"
+            },
+            "path": "dashboard/src/panels/CloseoutQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "A parsed `buildCurrentness` delta is a no-op when it stable-equals the stored value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:29b3ecae92e30f23935959857d5fb70e628f09d405a6e887e107df252e145f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "DELTA_REDUCERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A snapshot reuses an equal currentness and takes the process id as served.\n\nAnchor: `projection.servingProcessId`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:b9a5070c70b178bfe150885444bb94e4f1adcc2ad7855d0b3fc24343d8241ba6",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A `buildCurrentness` frame that does not read as the producer's payload shape (literal `mode` and `state`, optional text fields, no other key) is dropped; no cast to the wire type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:bdbc03a89802c43a88439fe83ac8cd60eb6bc0972637a2d67fadc7af51fd71a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "readsAsBuildCurrentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`servingBuild`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "servingBuild"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:b15319d1168a05c9de103355d5a33dd2a9447e9bb6404ffe235a8c1c9e6191fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "servingBuild"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Observer event type for the Event River tail.\n\nAnchor: \"export interface ObserverEvent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:92025411c28d48e4f249ed8f091eb66e04313a21b50b65eb2448dd8436e0f39e",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Store state initializes every projected collection, including `closeoutQueues`, and the canonical reset restores them together while incrementing `gen` once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:53dd32decd9ed22d1b726bfcccda7d714314cb94874c8fd47c3b9e76c730fd16",
+            "locator": {
+              "end": 338,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`pushEvent` keeps a bounded `EVENT_WINDOW` sliding window (oldest dropped); `reset` clears event/suppression state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:2f18f6e7b4d67baf5a8247a5f1b7ef458b6058c1f0ed8858151d5ad447397bbb",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:e23489ad9d339e2baa2d42dacc9ed8f0f188f181db472faab0a1afe4251bfb34",
+            "locator": {
+              "end": 364,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:ae5ff59699df0618b75b26c987e3744acc4f393fec19459e2afe9c42067e0d2b",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 388
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:9e75a6091a7a3a3ae07b97946eb4c9096dff054d990f7eb7ee663613c694a3d0",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`EventRiver` virtualizes this window, so the store bound is memory-only, not a display cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
+            "content": "sha256:8fa41b882b39f2c01f2b107ba9975c64f63f70d38c2a82599c2186bded150e4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventRiver"
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`ScenarioPlayer` invokes the one store reset when a development scenario changes.\n\nAnchor: `reset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a496ea3787ae9c16702581c81e2793eb459d67e",
+            "content": "sha256:c67b646a46bed2de12342c2fe18e6db41a3d5641dc6c6242b9202e85db1a7e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScenarioPlayer"
+            },
+            "path": "dashboard/src/dev/ScenarioPlayer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

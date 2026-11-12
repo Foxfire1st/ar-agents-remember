@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_result_identity.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1db61b0b2915a477b0207f10201bbf19cb411cc7",
+        "content": "sha256:3424d26f1f5fd0e31386c93a5404ce144a749b0447bb042eef7a76e6a2de4bdb",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AG8R5Q",
+      "invariant": "INV-WXN503",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-grade-identity",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_deterministic_key_changes_with_each_verdict_input, test_source_closure_covers_product_support_and_lock_but_excludes_tests, test_judge_model_and_package_both_change_identity, test_null_and_tampered_components_are_errors.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1db61b0b2915a477b0207f10201bbf19cb411cc7",
+            "content": "sha256:3424d26f1f5fd0e31386c93a5404ce144a749b0447bb042eef7a76e6a2de4bdb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

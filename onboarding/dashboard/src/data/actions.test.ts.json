@@ -1,0 +1,53 @@
+{
+  "path": "dashboard/src/data/actions.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The attention-dismiss client posts only itemId/kind as JSON to /api/actions/dismiss. HTTP 202 maps to dismissed, other statuses and thrown/network failures map to error; the target shape has no lifecycle target and the module exports no gate-decision client. Source tests assert the exact blocked-start and actionable-drift bodies and a non-202 error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c366eb88c8c30aef6662204cdf8ff4a18aaa3648",
+            "content": "sha256:e6b7fc33cf0d4028a444fd6962af3e3272a7d8bb9cd093e41fe708497f1479d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "postAttentionDismiss"
+            },
+            "path": "dashboard/src/data/actions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7032e6b6b7a77e05da8eb6339324557f60c73700",
+            "content": "sha256:added6d48c4e8ae6ce96f988454ce4a18bc076699b0553ea40383a529c7dcd80",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The actionable-drift case asserts itemId/kind without target; the old stale-gate locator is not the current proving body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7032e6b6b7a77e05da8eb6339324557f60c73700",
+            "content": "sha256:a0d38d1b154ed6e3f98ee2b0f972f6ec07f5b35fdd12aceeb217daced2dd95cc",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,205 @@
+{
+  "path": "mcp/tests/test_sync_repository_default.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+        "content": "sha256:03d7d2775f5098a2ee41f883bdd597d9b4f3a4cb3830df57c0d66ab038f99dbd",
+        "locator": {
+          "end": 283,
+          "kind": "line_range",
+          "start": 283
+        }
+      },
+      "id": "RLZ-DRB51K",
+      "invariant": "INV-HN9XYV",
+      "origin": {
+        "handoffEntry": "L60-F2-series-sync-source",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Fails on the freeze 1 module, passes on freeze 2.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+        "content": "sha256:8a1b03fec32a88271b77e6c010b805f992ccf11a93e4645fe9ce3c1f1293fb56",
+        "locator": {
+          "end": 325,
+          "kind": "line_range",
+          "start": 325
+        }
+      },
+      "id": "RLZ-G2TMHQ",
+      "invariant": "INV-J7BZWN",
+      "origin": {
+        "handoffEntry": "L60-F3-retry-hints-carry-sync-source",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Fails on freeze 2 for repository-default, passes on freeze 3.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+        "content": "sha256:ac42ca0f15772ea0bd7ade7f2817a9a5c0a03142a3cd69601072e96b78615cee",
+        "locator": {
+          "end": 347,
+          "kind": "line_range",
+          "start": 347
+        }
+      },
+      "id": "RLZ-TGY272",
+      "invariant": "INV-J7BZWN",
+      "origin": {
+        "handoffEntry": "L60-F3-retry-hints-carry-sync-source",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Fails on freeze 2 for repository-default, passes on freeze 3.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "762b3954afde7808a49bd97f0e2e1a1ea12aecfe",
+        "content": "sha256:d6fe64fa741ecc2ac820cdbafd630ac23a5b61a8d489c30fbef1221c84cc47f1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XHV1H0",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Proves pinning, unchanged base pair, one entry, journal-only resume, moved-default refusal and cancel.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Only the repository default is a selectable sync source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:6cd9008b26d66b9e1836ac79d606bb850592ec777513aa1791a633ca0bf067ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_selector_accepts_only_the_repository_default"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A default sync pulls `main`, keeps the pair, logs the sources and leaves both lines unwritten.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:8451552cfe91b24d6f05fbdff271d93839d5cde853db9c22b28778d783c70428",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_default_sync_pulls_main_keeps_the_pair_and_logs_the_sources"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Resume and cancel read the journal and pins; continue reads the default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:49559eaa89e4450ef22b83a36be212014708a4a2129fce53bc314ff35c01a869",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_resume_and_cancel_read_the_journal_and_continue_reads_the_default"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "An ordinary stopped sync cannot be continued as a default sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:e4e4b98bccb6e28ee6847a6ee95569ea9855fa444059c846f3c7a2f23f75fd14",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_admitted_ordinary_sync_cannot_be_continued_as_a_default_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Ref recovery rebuilds the recorded default branch for cancel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:256f726280f5efb991fd695507d472a0194ca847fb0f94c568ae36ca61a49844",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ref_recovery_rebuilds_the_recorded_default_branch_for_cancel"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The series early check judges the default branch on a default sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:2cfd75f98748c46a3feff874c91cb3fac619ddf2c38c09b84201425e57645a66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_series_early_check_judges_the_default_branch_on_a_default_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A retry hint given before a journal exists, after a changed contract or a series admission refusal, repeats the caller's sync source.\n\nAnchor: `test_a_contract_changed_retry_keeps_the_sync_source` `test_a_series_admission_refusal_retry_keeps_the_sync_source`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:cc4ca8d33845a1eb649dcc5da89b3acec6426a4fc97179e63a5126769c6fded7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_contract_changed_retry_keeps_the_sync_source"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5ab7af8f260b53e59a6067272d0399f53e11d9c1",
+            "content": "sha256:63d0a3f9f4a652f726f89c6b4ebf3ec4d1844852ac1589d90899ce512a2ea989",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_series_admission_refusal_retry_keeps_the_sync_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

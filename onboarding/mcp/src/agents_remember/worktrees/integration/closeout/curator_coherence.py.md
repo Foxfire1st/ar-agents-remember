@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [closeout integration overview](overview.md)
@@ -23,8 +13,12 @@ projection shared by memory readiness, closeout-door evidence, and closeout admi
 
 ### Logic
 
+Live pointer loading delegates generation integrity to `curator_coherence_records`, addressed by the selected content digest. The same reader can open a named historical generation without reclaimed live quality files. `require_current_curator_coherence` remains strict: it observes live quality/dependencies and rechecks the original judgment inputs, so retained custody never grants live readiness. Path and namespace resolution now lives once in `curator_coherence_paths`.
+
 `observe_curator_coherence_source` captures the isolated add-all code tree, external-memory tree,
-candidate-relevant task topology, and exact ready memory-quality attestation. The stable manifest
+candidate-relevant task topology, and exact ready memory-quality attestation. Its throwaway index
+lives in the system temp directory: the capture is unrecorded scratch (rule 6) and must not create
+the enclosure's `reports/` directory. The stable manifest
 selects one generation under the leaf's task-local history. `load_curator_coherence_authority`
 proves manifest identity, content-addressed paths, record/report digests, deterministic projection,
 and judgment-evidence bytes. `require_current_curator_coherence` then compares that record with a
@@ -42,13 +36,25 @@ Under CCR-R03@v1 the observation and currentness seam binds declared dependencie
 reader takes `_QualityAttestationSource` (attestation/report paths, pair identity, and the exact
 code/memory candidate trees) and re-requires the attestation's dependency declaration against those
 trees (`memory-quality-attestation-dependencies-stale` refuses)
-cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:98-104; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:461-518).
+cit:([`_QualityAttestationSource`, `_quality_attestation`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:109-115; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:475-532).
 `require_current_curator_coherence` runs `_require_current_dependencies`, which rebuilds the
 `curator-coherence/v1` declaration from the record's code/memory candidate trees, topology
 fingerprint, digest-bearing task intent, attestation/report digests, every judgment evidence digest,
 and predecessor — refusing `curator-coherence-task-intent-missing`,
 `evidence-dependencies-missing`, or `curator-coherence-dependencies-stale`
-cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:323-383; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:384-465).
+cit:([`require_current_curator_coherence`, `_require_current_dependencies`], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:372-468; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:286-346).
+
+**The mandatory invariant gate (MIK-R09 rule 3, leaf 260928-MIK-L09).** After every other check passes,
+`require_current_curator_coherence` calls `_require_knowledge_gate(contract, observation)`, which asks
+`worktrees.knowledge_gate.leaf_gate_refusal` over the very code and memory candidate trees this authority binds
+(`observation.code_candidate_tree`, `observation.memory_candidate_tree`). On converted memory the gate recomputes the
+worklist, decides every item through its kind's predicate and runs the validator (as a leaf publication, against the
+parent line's memory tip); any open item, incomplete run or violation raises `curator-coherence-knowledge-gate-refused`
+with next action `memory_quality_check`, naming every finding. A converted leaf with no bound gate refuses
+(`GATE_UNBOUND`). An unconverted leaf is refused here with the central `legacy-format` message; a failed marker probe keeps its named error rather than being classified as legacy. The curator-coherence record,
+its identity checks and pair identity are unchanged (MIK-R09 Preservation): the gate is one more refusal after them.
+Because the curator publication computed the same memo key, this read is normally served from the gate's memo.
+cit:([`_require_knowledge_gate`, "_require_knowledge_gate(contract, observation)"], mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:345-369).
 
 ### Conventions
 
@@ -62,7 +68,7 @@ recomputed from the same canonical inputs the validator reads — never from cal
 - Historical generations and attempt snapshots are audit evidence, not competing authority.
 - The machine never parses curator Markdown; it regenerates and byte-compares the projection.
 - Ready quality requires the exact attestation/report pair with all repair counts at zero.
-- Every consumer calls `require_current_curator_coherence` or its evidence adapter.
+- Live readiness consumers use `require_current_curator_coherence`; recorded comparisons use the exact digest-addressed generation reader and do not select the live pointer.
 - No-impact projection is candidate-bound and disposition-exact; downstream gates decide whether
   an accepted identity is actually eligible to clear.
 - Coherence currentness now includes the declared dependency equality: a record whose code/memory
@@ -73,33 +79,40 @@ recomputed from the same canonical inputs the validator reads — never from cal
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external source governs this repository-local lifecycle authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source applies. | — | — |
+No configured Domain Documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Observation freezes code, memory, task, and attestation identities. | `observe_curator_coherence_source` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:128-178 |
-| Loading validates the sole manifest, generation bytes, generated projection, and evidence. | `load_curator_coherence_authority` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:237-322 |
-| All admission paths share one currentness validator. | `require_current_curator_coherence`; `curator_coherence_evidence` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:314-372; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:457-458 |
-| Exact current judgments project into separate content and route no-impact sets. | `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:115-132 |
-| Candidate task context binds the authored graph once and returns the bound sprint generation. | `_task_context` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:521-548 |
-| Explicit evidence namespaces prevent implicit-root fallback. | `resolve_curator_evidence_ref` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:614-645 |
-| R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. | `_require_current_dependencies`; `_quality_attestation` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:375-454; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:461-518 |
+- Observation freezes code, memory, task, and attestation identities. [1]
+- Loading validates the sole manifest, generation bytes, generated projection, and evidence. [2]
+- All admission paths share one currentness validator. [3]
+- Exact current judgments project into separate content and route no-impact sets. [4]
+- Candidate task context binds the authored graph once and returns the bound sprint generation. [5]
+- Explicit evidence namespaces prevent implicit-root fallback. [6]
+- R03 currentness re-requires the record's declared dependencies and the attestation's pair/tree binding. [7]
 
-## Cross-Repo References
+The following declarations carry the changed boundary.
+
+- A named retained generation is read without asserting live readiness. [8]
+
+- The closeout validator's gate over the exact candidate, refusing with every finding (MIK-R09). [9]
+
+
+- The closeout validator refuses until the gate passes and never runs ungated. [10]
+
+- Current readiness still validates live inputs and dependencies. [11]
+
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| External memory is still the exact contract-resolved paired worktree, not an arbitrary repository. | `_require_leaf_external_memory` | mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:559-571 |
+- External memory must remain the exact contract-resolved paired worktree. [12]
 
 ## MCAR-L03 Exact Pair Authority
 
@@ -116,25 +129,43 @@ topology, intent, and evidence digests; the door therefore stales exactly when a
 changes and never when unrelated semantics move (worker handover:
 notes/reports/260902-CCR-L03-worker-delivery.md).
 
-## Update History
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_QualityAttestationSource`, `_quality_attestation`, `_require_current_dependencies`, `curator_coherence_evidence`, `require_current_curator_coherence` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:314-372, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:375-454, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:457-458, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:461-518, mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:98-104. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `CuratorCoherenceNoImpact`; `curator_coherence_no_impact` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:107-112; mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:115-132. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_task_context` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:521-548. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `resolve_curator_evidence_ref` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:614-645. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_require_leaf_external_memory` repointed to mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence.py:559-571. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
+## KS-R15@v1 Assessment Read Projection And The Record's Own Edges
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the dependency-currentness seam (`_QualityAttestationSource`, `_require_current_dependencies`, attestation dependency re-requirement) added by the R03 leaf; prior graph-binding and pair authority prose preserved.
+Two extensions, both on the read side.
 
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: candidate topology observation now binds
-  the already resolved authored graph once and freezes the same immutable graph generation used by
-  queue and door consumers. Verification remains closeout-owned.
+`_require_current_dependencies` now recomputes one edge per stored assessment from **the record the
+edge points at**: the digest in `review-record` is the assessment's own content address, so a reader
+can tell that the stored assessment is the one the record declared rather than a record that was
+edited beside it. The dependency is one-directional — the assessment's binding declares the inputs it
+examined and deliberately does not declare the record it lives in — which keeps the binding out of the
+self-invalidating sequence.
 
-- 2026-08-29T21:46+02:00 — MCAR-L03: made exact pair identity a first-class observation,
-  attestation, record, and currentness fact. Verification remains closeout-owned.
+`curator_coherence_assessments` projects the stored collection through `assessment_state_for` without
+deciding anything about it, and `curator_coherence_subject_assessment_state` reports one subject's
+state; `all_assessment_subject_ids` enumerates the subjects a record holds. `260921-ICR-L15`
+(`ICR-R15@v1`) replaced the caller's bare measurement mapping with the shipped
+`AssessmentCurrentnessMeasurement` and classifies **per record** through
+`supplied_measurement_statuses`, so what the caller supplies is a measurement of the world rather than
+a set of stale ids: a record whose declared identities the measurement covers and agrees with is
+`current`, one it holds a different value for is `stale`, and — the case this leaf fixed — an
+assessment the caller supplied **no measurement for is reported `not-measured`, never `stale` and
+never `current`**. Omitting the measurement therefore reports the collection's own identities and
+dispositions without claiming either currency or movement: "not measured" is neither "still matches"
+nor "has moved", and the old `_stale_assessment_ids` helper that produced the false movement is
+deleted rather than aliased.
 
-- 2026-08-29T18:29+02:00 — Added the disposition-exact no-impact projection consumed by the
-  onboarding body gates; semantic decisions remain curator/developer-owned.
-- 2026-08-29T11:00+02:00 — Re-read the shared admission claim against the current source and
-  widened its citation through `curator_coherence_evidence`; the disposition remains unchanged.
-- 2026-08-29T08:52+02:00 — Created for the single structured coherence authority and shared
-  currentness validator. Verification remains closeout-owned.
+## KS-R23@v1 The Paths Resolve A Durable Attestation Copy
+
+`260915-KS-L23` item 18's second measurement reached this resolver. `CuratorCoherencePaths` gained the
+`attestations` directory (`:85`) and `attestation_copy(digest)` (`:93-103`), and
+`curator_coherence_paths` resolves it at `:169` — inside the same
+`notes/reports/curator-coherence/<leaf>/` history the record itself survives in (`:163-169`).
+
+The copy's name is the attestation's own digest, so one digest names one file and a re-publication over
+unchanged bytes reuses an immutable copy instead of rewriting it. It exists because the record's
+`attestationPath` points inside the leaf's **enclosure**, which `lifecycle_finalize_task`'s automatic
+cleanup reclaims: without a copy in the surviving task tree, an authority's `attestationSha256` commits
+to bytes recoverable nowhere, and a reader cannot tell a candidate-empty publication from one whose
+attestation listed candidates. This resolver only *names* the location — the write, its verification
+against the observed digest, and the refusals that guard it live in the publication module (see that
+card).

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Repeating an interrupted accepted pair must not create another code commit or abandon its memory attribution."
+  },
+  "applicability": "Exact retry or advertised public recovery of an accepted direct-create generation.",
+  "conditions": [
+    "The persisted input fingerprint, code output and memory state are mechanically recoverable."
+  ],
+  "exclusions": [
+    "Ambiguous or replaced code/ref/history states require the retained developer-decision path.",
+    "No new generation or second code commit is inferred from a cut."
+  ],
+  "id": "INV-ZVQ6Z5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_direct_landing.py::DirectLandingTests::test_public_recover_control_completes_cut_generation, test_moved_code_branch_keeps_generation_ambiguous; worker journal R4 section; R5 verdict 88c054160ffdffef415a01cdf0f09161bb59aa68944469379856e72944c46755"
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CODE-F04",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An exact repeat of a mechanically recoverable create call resumes and completes its admitted generation with fingerprint, code commit and memory identity preserved, while a genuinely ambiguous moved-code cut stays in flight under an explicit developer-decision refusal.",
+  "status": "proposed",
+  "supersedes": []
+}

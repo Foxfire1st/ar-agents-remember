@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/application/review_task_context.py",
+  "realizes": [],
+  "references": {
+    "26": {
+      "note": "The entry recheck precedes receipt/attribution and the no-subject response retains required empty/unavailable states.\n\nAnchor: \"def task_context_review(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:8abb654f734d5874cba410862a0e4c89a5ad23abeb73ebe7879f4031a69a333d",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "All changes is named as the inventory destination in the no-family/currentness reasons.\n\nAnchor: \"# present, because a current build's answer without it is invalid (MIK-R43 rule 9).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:fe6f5e7f2dccf3f17f292556986f07cf82e85af76e1b5c8652f9710df442db90",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Unresolved pane reasons preserve unavailable, historical, unreadable, absent and ordinary priority.\n\nAnchor: \"def _task_context_pane(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:e57a3b4c9ea41ee1f482211d08a1b780971d699193a47261b4da0597062ff3a6",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Independent attribution retains partial/unavailable side facts.\n\nAnchor: \"def pair_attribution(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:176094c68466a841640c7e5ff635fb123557b456c318e3a1296a0e1e60d24829",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 250
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Namespace failure and existing identity readers retain actual per-side failure policies.\n\nAnchor: \"def _pair_without_namespace(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5bd81fc6f8ff0b3bd239e3a985472aa9ae3d6d01",
+            "content": "sha256:65c830f037af0af24a8cba17ff0ba8574ccc6d3f66a060e2bd14e72d7b727233",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 337
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

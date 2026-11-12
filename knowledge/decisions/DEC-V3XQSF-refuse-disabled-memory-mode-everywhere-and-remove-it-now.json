@@ -1,0 +1,72 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Compatibility contrast and deferral were both weighed with their grounds for return, and the chosen refusal binds every future start, lifecycle route and vocabulary change."
+  },
+  "alternatives": [
+    {
+      "option": "Refuse the disabled mode at the start on every repository and remove it now, keeping old contracts readable with abandon as the way out.",
+      "reason": "The mode works end to end nowhere, so no working case is preserved by keeping it, and readability plus abandon keeps every existing contract recoverable.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep a compatibility contrast that lets a disabled task close out and integrate without memory, as the withdrawn packet proposed.",
+      "reason": "It lands code with no invariant judgment on converted ground, which the direction forbids.",
+      "reconsider_when": "A future mode gains a working end-to-end lifecycle with its own gate, so opting out stops meaning escaping judgment.",
+      "status": "rejected"
+    },
+    {
+      "option": "Defer the removal to a later leaf and refuse only where knowledge exists.",
+      "reason": "The mode is unusable on unconverted ground too, and a partial refusal preserves the strand-everywhere failure it was meant to fix.",
+      "reconsider_when": "A repository is found where a disabled task completes its whole lifecycle today.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Every start, lifecycle route, CLI surface, skill text and test fixture treats disabled as removed; old contracts are read and abandoned, never converted in place."
+  ],
+  "context": "MIK-R49 proved a task could opt out of memory and land code with no gate on converted ground, contradicting the mandatory-invariant-work direction; the landed code instead stranded every disabled task, which could be started but never closed, synced, integrated, cleaned up or abandoned.",
+  "decider": "Developer direction D5 and D47 with the architect's run-2 rulings of 2026-10-04.",
+  "id": "DEC-V3XQSF",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/kernel"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R50",
+        "packet": "requirements/MIK-R50-v1-a-task-cannot-opt-out-of-memory-where-knowledge-exists.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R50-v1-a-task-cannot-opt-out-of-memory-where-knowledge-exists.md rules 1-2; mcp/tests/test_memory_mode_removal.py (57 converted cases); mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py (unknown-cell reading).",
+        "requirements/MIK-R50-v1-a-task-cannot-opt-out-of-memory-where-knowledge-exists.md rules 1-2; mcp/tests/test_memory_mode_removal.py: 44 function definitions, 59 collected node IDs (42 plain + 13 corrected-surface rows + 4 lookalike rows; collect-identities receipt SHA256:253d4bbdcfdcf65747935785edc2e3eeed2038592bd423c42ec0adc3f50bd91e); mcp/tests/test_wire_vocabulary_exhaustiveness_boundary.py (unknown-cell reading). An earlier '(57 converted cases)' figure in this evidence string matched no receipt and is struck."
+      ],
+      "path": "notes/reports/260928-MIK-L50-curator-handoff-list.json"
+    },
+    "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+    "leaf": "260928-MIK-L50",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

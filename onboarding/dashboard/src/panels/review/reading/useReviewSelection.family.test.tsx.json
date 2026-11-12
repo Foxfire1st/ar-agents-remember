@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/useReviewSelection.family.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selecting a family reads that family itself and keeps its walk context, without selecting a member on the reviewer's behalf",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1d235dd0c869081beb41f3e0a44172457b2b020",
+            "content": "sha256:9bee1cf606f2c7aed056383f0d08e776a4425608ea2fe3ccf73f19e19444577d",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

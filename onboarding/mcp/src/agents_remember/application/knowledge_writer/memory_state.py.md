@@ -1,0 +1,112 @@
+# mcp/src/agents_remember/application/knowledge_writer/memory_state.py
+
+## Governing Overview
+
+[application route overview](../overview.md)
+
+## Purpose
+
+**The memory tree one writer operation reads and edits, and the base it compares against.** The
+candidate K_C is the non-hidden knowledge/onboarding files selected by the shared tree reader, read once as bytes
+(`knowledge_tree_from_directory`). The operation edits parsed copies of the JSON documents it touches;
+nothing reaches disk until `MemoryState.write` is called with the validated result.
+
+## Code Commentary
+
+### Logic
+
+- `Owner(task, kind, id)`: the task and the leaf, wave or crossing that owns the history file. A `crossing` owner
+  is a master line's crossing sync: its rows go into the `<task-id>-crossing-<n>.json` file the sync opened. `origin()` is
+  `{task, leaf|wave}`; `authored(document, handoff_entry)` says whether a record's or entry's origin names
+  this owner and this hand-off entry (entries carry only `leaf`, so a wave's entries carry the wave ID in
+  `leaf`).
+- **The base** is the memory worktree's `HEAD`, or `HEAD`'s conversion when `HEAD` is unconverted and the
+  candidate is converted: `MemoryState.load(root, *, code=None)` takes it from
+  `base_side.writer_bases`, and `code` (a `BaseCode`) names the code the conversion reads, its fallback commit
+  and the shared converted-base cache. A base that cannot be built is kept as `base_problem`, and the writer
+  refuses with it. A root that is not a Git work tree has no base. It answers a record's revision before this
+  leaf (`base_record`) and an entry's anchor before this leaf (`base_entry_anchor`, a history row's `before`),
+  from `HEAD` alone. During a merge `validation_bases` also holds the incoming parent `MERGE_HEAD`'s converted
+  side beside `HEAD`'s, and `write_knowledge` validates the produced tree against those. The exact K_B resolver
+  is the gate's.
+- `known_ids` is every record ID, minted ID, sidecar entry ID and history row ID of every history file, so
+  minting never collides.
+- `record_by_origin` and `entries_by_origin` find what this owner wrote from a hand-off entry, which is how
+  a rerun reuses IDs.
+- `put_record` keeps a record's file name unless a new slug renames it, carrying the paired `.md` along.
+- `remove_record(record_id)` removes a record the tree still holds: its file and its Markdown twin are marked
+  removed and dropped from the parsed documents, and the record leaves `records`. Its ID stays in
+  `removed_ids`, which is what lets the history check and a `record` history row accept a subject this same
+  write removed. The caller decides which kinds may leave; nothing else in the tree is touched.
+- `file_sidecar` creates an empty sidecar for a source file that has none.
+- `write` delegates publication to `file_publication.publish_files`: snapshot original affected bytes, write
+  changed files through temporary siblings and `replace`, then unlink removed files. On `OSError`, rollback
+  restores changed paths in reverse order, verifies the bytes and cleans staging. `PublicationError` names
+  recovery failures; restoration is guaranteed only when its `restored` property is true.
+- **`history_target(owner)`** returns the history file the owner writes and its attempt. A
+  wave or a crossing has one file. A leaf writes its latest attempt, and the next attempt once the latest is closed
+  **in the base**, which is the memory worktree's `HEAD` commit (or its conversion): the leaf closed out and was
+  reopened on a line that holds its frozen file, or it continues after a completed closeout that was not integrated
+  and sits on that closeout's commit. A file closed only
+  in the candidate is still the target, and the write refuses it by name.
+- **`merged_sides_revision(record_id)`** returns the higher of the two sides'
+  revisions of a record a merge left unmerged, else `None`. `_unmerged_stages` reads `git ls-files -u` for the
+  record's path; with stages 2 and 3 present, `_side_revisions` reads both blobs. `MergeStageError` is raised when
+  Git cannot list the stages or a side names no integer revision.
+
+### Conventions
+
+- `deep_copy` and `canonical_equal` (sorted-key JSON equality) are the helpers `authoring.py` uses.
+
+### Invariants And Boundaries
+
+- A refusal before publication leaves knowledge files unchanged: edits remain in memory until `write`.
+  Publication failure attempts and verifies rollback; surviving or unverifiable changes are reported rather
+  than called atomic success. A task-document question already published before the filesystem failure is
+  a separate-store effect and must be reported with retry guidance.
+- The file writer writes only a converted tree: `converted` is the layout-marker test over the candidate
+  files.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the category-authoring requirement with its architect rulings in the task records,
+and the coordination-root note on the text-canonical knowledge layout; they live outside the code and memory
+repositories, so they are not cited as rows.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+The candidate, the owner, the base and the write.
+
+- Who authors the operation, and whether a document names it. [1]
+- The base is the memory worktree's `HEAD`, or its conversion when the candidate is converted and `HEAD` is not; a base that cannot be built is a named problem. [2]
+- Every ID the tree holds, including history row IDs. [3]
+- Rerun ID reuse by origin. [4]
+- A record keeps its file unless a new slug renames it. [5]
+- Entries this owner wrote for an invariant from a hand-off entry. [6]
+- A record as the base holds it. [7]
+- An entry's anchor as the base holds it. [8]
+- Memory publication delegates to the rollback-aware file owner. [9]
+
+- Publication snapshots affected bytes; rollback verifies restoration and reports failures instead of promising unconditional atomicity. [13]
+
+- The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the writer's base, the memory worktree's HEAD. [10]
+- The higher side's revision of a record a merge left unmerged. [11]
+
+- A reopened leaf writes its next attempt, and its history is every file. [12]
+
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
+worktree of one repository.
+
+No cross-repo boundary is crossed by this file.

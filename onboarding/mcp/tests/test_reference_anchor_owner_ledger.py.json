@@ -1,0 +1,106 @@
+{
+  "path": "mcp/tests/test_reference_anchor_owner_ledger.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8ca5afa6862f7f8a2b635ab5e7a2d6dd62c32541",
+        "content": "sha256:0c156088ea9a947972cb3a87712f9c803db76bb8c354ec7037add7d53803c785",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_direct_landing_refuses_the_stale_anchor_and_lands_the_repaired_pair"
+        }
+      },
+      "facet": "A direct landing refuses the stale pair and lands the repaired one.",
+      "id": "PRF-W1W8X4",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A fresh closeout refuses the stale anchor with only that rule named, changes neither worktree nor the contract, and publishes after the repair",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca5afa6862f7f8a2b635ab5e7a2d6dd62c32541",
+            "content": "sha256:05752c9cf06b71c9138db9cad0de6173644d1d0bf9b53113e737d2a75ef0babe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_fresh_closeout_refuses_the_stale_anchor_and_publishes_the_repaired_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A recovered-closeout output is judged, so a stale resumed commit refuses and the repaired one is recorded",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca5afa6862f7f8a2b635ab5e7a2d6dd62c32541",
+            "content": "sha256:112cc9042f2363b09ce171827cdeba7e9b05d72f00938be2cf62e40edefb9510",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_recovered_closeout_output_refuses_the_stale_anchor_and_publishes_repaired"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Direct landing refuses the stale pair, leaves the memory branch, and lands the repaired pair with its closed history",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca5afa6862f7f8a2b635ab5e7a2d6dd62c32541",
+            "content": "sha256:0c156088ea9a947972cb3a87712f9c803db76bb8c354ec7037add7d53803c785",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_direct_landing_refuses_the_stale_anchor_and_lands_the_repaired_pair"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A selected style phase passes over the stale world while the publication still refuses",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca5afa6862f7f8a2b635ab5e7a2d6dd62c32541",
+            "content": "sha256:721bbd0494466c7aab215200c2c88a4ff4305690b7cc45c0e667e82ae73c6885",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selected_style_check_passes_and_the_publication_still_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A closeout with nothing left to commit still refuses the tree it records",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ca5afa6862f7f8a2b635ab5e7a2d6dd62c32541",
+            "content": "sha256:c9a35877bcd6dbe85d932a69bddaba1337922d71e0c2dcbbe466b64b7735d1b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closeout_with_nothing_left_to_commit_still_refuses_the_stale_anchor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,551 @@
+{
+  "path": "mcp/tests/test_pnt_sandbox.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:8e732b27e9b902da21c5825f1f3c0159d483cd34566f9102ce32e01aff01afe9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_sandbox_whose_settings_select_another_host_is_refused"
+        }
+      },
+      "facet": "A sandbox-local settings file naming a foreign home, or the live address with the sandbox's home, refuses and names both.",
+      "id": "PRF-13B7VM",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:96636db2be5105a40156aa3589d6f6f2c4a031b6015e88af6efe672978fa5840",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_directory_that_is_not_a_sandbox_is_neither_used_nor_deleted"
+        }
+      },
+      "facet": "Unmarked populated directories and refused locations survive build/start/reset refusal.",
+      "id": "PRF-1BAH81",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:b0d8a68bbe24dc6a704631219d2c7e9fc47e6fb6a7e05413cd30d8437578c2b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call"
+        }
+      },
+      "facet": "A resolved foreign home and live address are refused before any call, naming both hosts and leaving host null.",
+      "id": "PRF-3K7S72",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:035e2b66db6643045eea0d2a5bcd2d7dd43fe63a6f63e02be36b098ceb457c64",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one"
+        }
+      },
+      "facet": "With no settings file the request is admitted with host {'state': 'no host configured'}; a settings host that the build cannot resolve refuses.",
+      "id": "PRF-5DMPNE",
+      "invariant": "INV-7W2HF6",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2 one admitted case",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:2700d6456c8018530039ec9b02d2694e0ab7dccc05bbddd8df0108f004962075",
+        "locator": {
+          "end": 670,
+          "kind": "line_range",
+          "start": 598
+        }
+      },
+      "facet": "exact selector/session names disappear, credentials remain, the seven sandbox-owned values are installed, and real children receive their own PWD",
+      "id": "PRF-7KDBW4",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "INV-B6R816",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:cad4adea94c879b94dbff0221013264d5138fba94e504d4e786d6d24ce20c042",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_public_host_install_receipts_keep_payloads_and_name_admission_failures"
+        }
+      },
+      "facet": "the public install route keeps payloads and names its admission failures",
+      "id": "PRF-7TN0Y7",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:2ed259ce82a381dc63016c09a2a53be3948c628bc2e730cb4dcc3a7c82640843",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_request_port_that_is_not_a_sandbox_port_is_refused"
+        }
+      },
+      "facet": "A request whose hostPort is the live port 9786 is refused before any call.",
+      "id": "PRF-9KYBR8",
+      "invariant": "INV-RPMFGP",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
+        "locator": {
+          "end": 1085,
+          "kind": "line_range",
+          "start": 1045
+        }
+      },
+      "facet": "each cut, timeout and malformed outcome replaces the old success with a fresh failure naming the underlying error and paths",
+      "id": "PRF-AW7C3V",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:c7c4d88bb9c146c52213803ff56e2e228ee88d77105612e1d20038d147a0b1c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_that_cannot_be_resolved_fails_closed_and_is_named"
+        }
+      },
+      "facet": "Missing or unresolved roots, wrong build identity, absent repositories, wrong values and process disagreement fail by name.",
+      "id": "PRF-C6TQTD",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:b55ffcd1d2c454b16f0eead3ba3a41b1036ddd23dc114bfcfaa207cc870b4747",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_admission_refuses_a_server_with_configured_providers"
+        }
+      },
+      "facet": "A server_info answer carrying unusedProviderKeys refuses after the server_info read and before any other call.",
+      "id": "PRF-HPZBB0",
+      "invariant": "INV-1937B4",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §3",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:4223a1d05066e5e66da422793edd4f06725783a1e61775e1dce292866fc25d0a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_foreign_package_admission_prevents_public_install_calls"
+        }
+      },
+      "facet": "a foreign package identity refuses before any public install call",
+      "id": "PRF-MNSZ23",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:a5b6a3e37de2bcbb6df62241ead9f2edad128d25d9c0235193ee834a5e5cfa6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "SafetyCheckTests.test_product_node_and_cache_roots_are_required_and_cannot_escape"
+        }
+      },
+      "facet": "missing, outside and symlink-resolved product Node and cache roots refuse the start before install or spawn",
+      "id": "PRF-NFEPGR",
+      "invariant": "INV-FJPXYV",
+      "origin": {
+        "handoffEntry": "L96-D-8",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:f7d9d746aa776418e16539079d56ed695184d061d37f7710aab18ccd0a997d66",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_tool_server_receives_the_sandbox_environment"
+        }
+      },
+      "facet": "The started server's environment equals sandbox_environment for a contaminated caller: no PASEO_* selector, the sandbox's XDG_CONFIG_HOME, and the sandbox's host in the report.",
+      "id": "PRF-RAGH48",
+      "invariant": "INV-EZ0ZRG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §1",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:347f754740815636a9c2c441f97112b4bb9ac3b1f6ba561e5309150d9186adcd",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_reset_that_cannot_delete_everything_can_be_repeated"
+        }
+      },
+      "facet": "Undeletable entries, concurrent additions and a mocked failed rmdir retain the resetting marker and inhibit build/start.",
+      "id": "PRF-SGXMY2",
+      "invariant": "INV-EJY6DF",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §5 (reset) / F12 / F21",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:4f9116d2538cac1cb3f07278ab963bc4e031ceeaf11c0dee00acd56d03e7594a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_request_that_names_no_sandbox_is_refused"
+        }
+      },
+      "facet": "A request without a sandbox makes no call and starts no server.",
+      "id": "PRF-T27NM3",
+      "invariant": "INV-EZ0ZRG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §1",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:b323e4cab8872028e222fdad0106ba85a62b1ecc763024515e629b8c81608221",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase"
+        }
+      },
+      "facet": "In the unconfigured phase a resolved foreign host refuses before any call.",
+      "id": "PRF-WYKWR0",
+      "invariant": "INV-7W2HF6",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §2 one admitted case",
+        "leaf": "260928-MIK-L179"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:7c560dfcab6c7e2d9d4c06bbb25e52b074fc45be94c7bbb83f41704a3b87e46d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_the_build_fills_in_by_default_is_caught"
+        }
+      },
+      "facet": "The real build loader exposes defaulted roots and values omitted from settings for outside-root rejection.",
+      "id": "PRF-YGY7TW",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
+        "locator": {
+          "kind": "symbol",
+          "name": "BuildInputTests.test_a_port_is_held_whoever_holds_it_and_on_whichever_address"
+        }
+      },
+      "facet": "IPv6/unknown-holder refusal is exercised with synthetic procfs text, and the later controlled-supervisor/descendant ownership observation is real",
+      "id": "PRF-YYTSXK",
+      "invariant": "INV-G0Z661",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+        "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_root_outside_the_sandbox_fails_and_is_named"
+        }
+      },
+      "facet": "Direct outside roots, symlink escapes, similarly prefixed siblings and additional reported roots fail by key.",
+      "id": "PRF-ZH6MF1",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The sandbox safety check, build inputs, tool-server environment and admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The admission refuses a server with configured providers after the `server_info` read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:b55ffcd1d2c454b16f0eead3ba3a41b1036ddd23dc114bfcfaa207cc870b4747",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_admission_refuses_a_server_with_configured_providers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A sandbox whose own settings select another home or the live port refuses.\n\nAnchor: `test_a_sandbox_whose_settings_select_another_host_is_refused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The unconfigured state refuses a foreign resolved host.\n\nAnchor: `test_a_host_outside_the_sandbox_refuses_in_the_unconfigured_phase`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A request port that is not a sandbox port is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:2ed259ce82a381dc63016c09a2a53be3948c628bc2e730cb4dcc3a7c82640843",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_request_port_that_is_not_a_sandbox_port_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The unconfigured state is admitted and named, and a settings host the build cannot resolve refuses.\n\nAnchor: `test_a_sandbox_that_records_no_host_yet_is_admitted_only_without_one`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The safety case for the product Node and cache roots.\n\nAnchor: `SafetyCheckTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public install receipt cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:98704aaa566498774fd01e768a5074195ab087022195507b18d0dbd1abff499f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_install_retires_success_for_cut_timeout_and_malformed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The foreign-package admission case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:4223a1d05066e5e66da422793edd4f06725783a1e61775e1dce292866fc25d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_package_admission_prevents_public_install_calls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The real resolver command returns empty errors, every expected non-null root and five resolver keys.\n\nAnchor: `test_build_roots_command_resolves_every_expected_root_without_errors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Compact report fallback and inline-host precedence determine started bookkeeping without changing retained receipt bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:03f5a88dcf9e81fbd44f02000018eb08d33f5d033c6b5aaea8c85750a574fd8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_launcher_provisions_from_the_compact_installs_named_report"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The tool server is started with the sandbox's own environment, including its own XDG roots, and no runtime selector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:f7d9d746aa776418e16539079d56ed695184d061d37f7710aab18ccd0a997d66",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_tool_server_receives_the_sandbox_environment"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A resolved host outside the sandbox is refused before any call, naming both hosts.\n\nAnchor: `test_a_resolved_host_outside_the_sandbox_is_refused_before_any_call`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:7c158657e98b3a6cc0754446ad3e1143822e7e51793d157309b1c3112ccd4fa7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "A request that names no sandbox is refused before anything starts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5436de50d469ed4969524c38a6a5e461a23473",
+            "content": "sha256:4f9116d2538cac1cb3f07278ab963bc4e031ceeaf11c0dee00acd56d03e7594a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_request_that_names_no_sandbox_is_refused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

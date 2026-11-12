@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring names shared citation parsing, symbol bindings and terminal cache fencing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79b6d04809a85d1316046171c4b24ec631fcd947",
+            "content": "sha256:3aad4d8fc689bc27566a5b3764ed23dcd040455848c3c583b8eba036cad98aef",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

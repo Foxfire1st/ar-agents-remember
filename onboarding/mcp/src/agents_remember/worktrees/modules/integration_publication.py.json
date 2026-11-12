@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/integration_publication.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Evaluated seam guard and planned quality gate for preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3d94bd333184049c36a3305ca0d41208deebcf",
+            "content": "sha256:c9125f482cbc958b2640757c951dd5a137ea5b2c592e20a038a0621a2d30a4eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegratePreview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every preflight fact the irreversible publication re-verifies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3d94bd333184049c36a3305ca0d41208deebcf",
+            "content": "sha256:04fe4fbed801f14dbb5e9389b272b481d37358646f7e0fb169a1a0d5a3384177",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationPublication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current module exposes two value types at this ownership boundary — `IntegratePreview` and `IntegrationPublication`. The earlier `protected_integration_decision` no longer exists anywhere in the tree, so the reconciliation that named it is superseded; the closeout-door cut (`fad9808e`) also removed `IntegrationPublication`'s `intent` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3d94bd333184049c36a3305ca0d41208deebcf",
+            "content": "sha256:c9125f482cbc958b2640757c951dd5a137ea5b2c592e20a038a0621a2d30a4eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegratePreview"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a3d94bd333184049c36a3305ca0d41208deebcf",
+            "content": "sha256:04fe4fbed801f14dbb5e9389b272b481d37358646f7e0fb169a1a0d5a3384177",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationPublication"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

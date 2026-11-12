@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/certification/final_certification_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The item status vocabulary is pass/fail/blocked/not-applicable; the whole-certification state model was removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c96663e04ddcee72be5044f06826ea443ae57912",
+            "content": "sha256:a90505302ba00da4c0b945c7212283c3134b7b118c894a5a377d43f76b470ff5",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One closed final-catalog member with a canonical key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c96663e04ddcee72be5044f06826ea443ae57912",
+            "content": "sha256:a08b767212ffc5c1389bbf5584c41794ac06ad5deebe4eef4667d440a608a9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One typed Gate-5 result with content-addressed subresult and status shape guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c96663e04ddcee72be5044f06826ea443ae57912",
+            "content": "sha256:eecc7565800b97269830632145c7337ea853dcd37e26dde98a89d88389a1bca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

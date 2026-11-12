@@ -1,0 +1,154 @@
+{
+  "path": "mcp/tests/tool_answer_l111_test_support.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+        "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerRow"
+        }
+      },
+      "id": "RLZ-G2E5V5",
+      "invariant": "INV-180VCA",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §6 table",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "ToolAnswerRow defines the data available to all row validators: fields, non-empty uses, counter-measured case payloads and the owning leaf.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+        "content": "sha256:7a3d885c054dcbba25631d7cf4d9567f09c160685d95d6d1e7f64b2f1ffcbeb0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KCWHVJ",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-5h5vr2",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "This support states the expected answer-row shape a comparison reads, so the complete hand-over's path field appears here as the expectation. The line itself is composed in production: artifact_line writes the whole line and handover_file_line formats the second file's path and digest fragment. Nothing in this module composes either.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shared table rows distinguish authored illustrations and live proof paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "content": "sha256:f9b71afca0e6013d1fafb809f404d8a680817229fc4d8d9b1c937b4329d84550",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolAnswerRow"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Mapping values are split recursively; bare list strings remain content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "content": "sha256:5a239dc42af40bcdbee58742203d70dac2f1db9a7243566b74f6e72fb15712ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "separate_locations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Content target, distinct locations and whole delivered bound are three independent measures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "content": "sha256:8ba499ffc4184b09520db9275a8540d67a7667ce62dd2fcd666b536aec275cd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_location_separated_target"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The spy captures independent validated wholes at the real finalizer seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "content": "sha256:5cd33fcc73bfc937f72af914b9c247f4340b7542163a05797d6371e358d65ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "captured_validated_wholes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Detail identity is complete parsed-mapping equality under the file's byte budget.\n\nAnchor: `assert_detail_holds_whole_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "content": "sha256:7a3d885c054dcbba25631d7cf4d9567f09c160685d95d6d1e7f64b2f1ffcbeb0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Owned tool/operation rows retain fields, uses and product bounds without an L111 interim entry.\n\nAnchor: `_apply_l111_shaped_rows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "content": "sha256:7a3d885c054dcbba25631d7cf4d9567f09c160685d95d6d1e7f64b2f1ffcbeb0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The updated-answer illustration supplies the put_open_question operation text; it is not a live task-document publication result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1003410dbd2dee9bb26ac0963ccc94473cc9d673",
+            "content": "sha256:17459c2fc015adcd234abf2995369e98ee02cebfecaa2b265d561a12c8235813",
+            "locator": {
+              "end": 599,
+              "kind": "line_range",
+              "start": 581
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

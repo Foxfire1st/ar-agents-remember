@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/triage.familyContinued.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29d5697f192be6de745aa5720176b182beb51438",
+            "content": "sha256:095935c19b6abc7bc24da47875285ea500c01999c635c405e08d008c9f088108",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

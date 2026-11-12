@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A cancelled unpublished direct-landing generation left terminal would strand the request; the check keeps the plain retry workable."
+  },
+  "applicability": "Repeated direct-landing publication attempts of one admitted request.",
+  "conditions": [
+    "The refusals happen before ref publication, so no published generation exists."
+  ],
+  "exclusions": [
+    "A publication that reached the ref; that generation stays recoverable instead of being replaced."
+  ],
+  "id": "INV-ZGFZXT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_direct_landing.py::DirectLandingTests::test_a_request_refused_any_number_of_times_lands_on_the_next_plain_retry; F01-repeated-refusal.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 1",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Repeated refused publications of the same direct-landing request cancel unpublished generations and the next plain retry can land.",
+  "status": "proposed",
+  "supersedes": []
+}

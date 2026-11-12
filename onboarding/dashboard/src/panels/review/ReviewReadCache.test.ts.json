@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/panels/review/ReviewReadCache.test.ts",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('treats code trees and compared snapshots as the generation', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c0a8944d11992fa234494fa59ed4f3c1cb9d1cd",
+            "content": "sha256:197c25bbc4838bb1e0840dedf5797af286deae2501a8c39a1c84f7d0ff5f75d9",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps an unshown answer only for the generation on screen and never lets it move that generation', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c0a8944d11992fa234494fa59ed4f3c1cb9d1cd",
+            "content": "sha256:ad85a5f5dcd672f2f9a237e44128e2420eff1df093983f1f3aadd36049459bd1",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each([REVIEW_CACHE_LIMIT + 5, REVIEW_CACHE_LIMIT * 3])(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c0a8944d11992fa234494fa59ed4f3c1cb9d1cd",
+            "content": "sha256:78654a90da6bde3d1b312e3a8499ec8115a6fe000a205b0261d007bccc503f6d",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('empties the store when an answer belongs to another comparison generation', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c0a8944d11992fa234494fa59ed4f3c1cb9d1cd",
+            "content": "sha256:cf420d8c835d553b09728f99305b66c7f6f0e3da85a590c8475358675810abab",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

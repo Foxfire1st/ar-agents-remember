@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+    "content": "sha256:795e0c5fae9855b3f222f6821a504c3d9617f730e6e7b4dbec07e23f4d2d6d75",
+    "locator": {
+      "kind": "symbol",
+      "name": "initialize_memory"
+    },
+    "path": "mcp/src/agents_remember/kernel/memory_init.py"
+  },
+  "id": "WKN-WGPZ6Y",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-05",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The refusal for a missing coordination root, here and in application/knowledge_bootstrap_admission.py, sends the reader to runtime_install with docs/getting-started.md, while that page tells the setup through role_start(role=\"bootstrap\")."
+}

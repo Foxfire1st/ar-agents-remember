@@ -1,0 +1,297 @@
+{
+  "path": "dashboard/src/panels/review/IntentMarkers.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+        "content": "sha256:bd578e836bba33c442aac5cb4630de24c97ee7c1b5688202662191ecc3faf68b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VA0R5H",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The marker suite gives the selected answer, effects and focus hold their controlled opportunity before a no-steal assertion.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"marks each owner hunk on the owner's side lines, a deletion in the before editor\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:ef91d6a43ead9f144b70f27ccc4caa080b0a62e1b98153faf63ad2f1d32f1af0",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 143
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks every hunk on an after line inline, the deletion below its removed lines', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:41f2055d9998885d1f0f9951e3f1571116203ad0cefbccc1355c62859835efad",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists a hunk’s intents with their family occurrences and follows one to its position', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:eb951163c53783fbf0b46ecac6d077c710fa9f1b7042761297030c1214e08f21",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('lists a proof entry as a test with its facet, apart from the intents', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:b03fb28da4372512631f93dc38b3e6344f009f6e82de577106499eeeaf073ee1",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 220
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the readable side's marks and names the unread side's changed lines unknown\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:48098ca419d665901b00be44f738a1361fe48ae557d16a6cfb741b343cb3c200",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('gives a confirmed-unregistered file one file-level unexplained mark', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:27f8f1b5872077ff6bf2c4463955c5dbee69b70330e0560148a9852049a4e9cb",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 257
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"gives a file one attribution-unknown note when neither side's knowledge is readable\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:6ffb08d0a5b48143f59447ecb98eafe4be28292b0cd0952f1e90aa0abf3aa7c9",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 268
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('marks nothing for other content on either side, and says why', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:93fe15229020121976ac3cd30dad7fa17bece1618b4a7a38b1c18e7748674253",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 277
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('says why a changed file a partial inventory does not list carries no marks', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:13a512fcc4943bd4f84f9c69783b2e19061d1bd5af72aa90e31cfa6583f417e8",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 289
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('reopens its list, brings its hunk into view and focuses it', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:f3515568b9d53ebb47adf4290e67c76022ac0abcb115db5242877ecb889410cb",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps the returned mark focused while the pane settles, never against the reader', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:7d8f453defaddd42126ca6ae7c519f23bca4de9e1d8323e513c372ea93a9c0b5",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 327
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('does not reopen a pane the marker was not followed from', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:a99ded80ca200529c6b1a079a893f00fbfdd3213790113fc6a7b304806e226cc",
+            "locator": {
+              "end": 482,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the drawn side's marks when the other memory side cannot be read (review R1 F1)\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:14f60ade850db174fe4d0a5a5cbdf4417e6d914f1f57cd11fe844b9e92bcc32e",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 483
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('places no mark when either drawn side is other content, though the other matches', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:c0d9407216ddce3be3014c01f9f161bcda42d1c83c103ffa2168f8d3c7955c9f",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 495
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"never reads, nor speaks for, an unchanged file's card\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:16237e6cfa6b2b996407489b7d951f7e5db6dd8421e3ed70c0b5c081887434f1",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 509
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('places no mark on a drawn side of other content, and says why', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:5e33f701e62eada22a4a5d67883acea827429385e39bafc344049e020a6f8705",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 526
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

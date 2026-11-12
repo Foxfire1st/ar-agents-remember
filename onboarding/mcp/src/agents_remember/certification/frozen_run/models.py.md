@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/frozen_run/models.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/frozen_run/models.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T14:47:06+00:00 |
-| lastVerifiedCommitHash | c69d5171187fa1957025e393270db9f5a864ab14 |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Frozen certification run overview](overview.md)
@@ -40,29 +30,21 @@ Freeze the admitted lane with its original provenance; keep complete run identit
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-owned contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+No configured domain documentation applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The retained model recompiles exact authority before validating its complete-record digest. | `FrozenCertificationRun`; `_verify_authority` | mcp/src/agents_remember/certification/frozen_run/models.py:25-62 |
-| Freeze retains the lane admission and original provenance. | `freeze_certification_run` | mcp/src/agents_remember/certification/frozen_run/models.py:65-80 |
+- The retained model recompiles exact authority before validating its complete-record digest. [1]
+- Freeze retains the lane admission and original provenance. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository reference is required. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T14:47:06+00:00 — Created from the actual source at c69d5171187fa1957025e393270db9f5a864ab14; documented retained authority and its validation boundaries. This source verification does not assert gate execution or CCR acceptance.
+No cross-repository reference is required.

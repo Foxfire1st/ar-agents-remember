@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/trajectory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "55eedaf17497aa9cc19d69659318875d48b81de9",
+        "content": "sha256:c9d659eb4270690a4561057ad3e2ce128dcab6b5a2c2b97d1c4f971d824adeb8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-N95B18",
+      "invariant": "INV-NMBR0E",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trajectory-route",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It selects GT1/GT4 native evidence for rubric questions without a success-text heuristic.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55eedaf17497aa9cc19d69659318875d48b81de9",
+            "content": "sha256:c9d659eb4270690a4561057ad3e2ce128dcab6b5a2c2b97d1c4f971d824adeb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

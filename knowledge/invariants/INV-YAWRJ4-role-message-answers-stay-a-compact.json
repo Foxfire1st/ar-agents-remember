@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents compact delivery text from misidentifying a recipient or treating a cancelled turn as completed work."
+  },
+  "applicability": "Delivered role_message answer projections for recipient-addressed calls.",
+  "conditions": [
+    "Role-addressed calls carry the resolved recipient ID; direct ID addressing does not repeat it.",
+    "Cancelled turn status remains an honest warning; description ownership retains its ordinary rails."
+  ],
+  "exclusions": [
+    "Delivery is not recipient acceptance, review PASS or proof of host permission."
+  ],
+  "id": "INV-YAWRJ4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "RoleMessageAnswerTests incl. role-addressed id and cancelled-turn warning green: /tmp/mik-run3/L111/a06_fast.txt (65 passed, 78 subtests, exit 0); round-8 verdict notes/reports/reviewer/4889df77-3c01-4cc7-a6ae-344b459490bd/round-8/verdict.md"
+      ],
+      "path": "producer-knowledge-list.json"
+    },
+    "handoffEntry": "L111-CODE-F01.13 / worker-A06",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Role-message answers stay a compact line with the recipient id only on role-addressed calls and an honest cancelled-turn warning, within the diet descriptions.",
+  "status": "proposed",
+  "supersedes": []
+}

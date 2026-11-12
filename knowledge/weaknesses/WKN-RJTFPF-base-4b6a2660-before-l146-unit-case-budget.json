@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+    "content": "sha256:dff6835f963a07cb900b6a9e4528e3b303ebfeeea1d925c306529f07680a4cf5",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "dashboard/src/test/loadIndependence.test.ts"
+  },
+  "id": "WKN-RJTFPF",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-50",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "Base 4b6a2660 (before L146): unit-case budget 4000 exceeded (4323 cases; collection exit 4), and src/test/loadIndependence.test.ts flags vi.setConfig timeout in three ReviewSurface tests from L86 (23cb164f). Found by L127 Worker; not repaired by L127/L120. L146 raises the budget; the L86 flag stays for another date."
+}

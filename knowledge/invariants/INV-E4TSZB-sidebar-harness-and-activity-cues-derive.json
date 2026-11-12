@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The snapshot is the input the unchanged bridge checks a Parent target against and the consumer MIK-R95 plans; if the plugin stopped publishing it while live, or published a different shape, the Parent control would dead-end or mis-navigate and a consumer would build on something no live embed updates."
+  },
+  "applicability": "The hierarchy snapshot the embedded plugin publishes for its consumers: the Parent composer check today, and the document-frame consumer MIK-R95 plans.",
+  "conditions": [
+    "The snapshot is published only while the embed is live; a catalog failure is posted as the snapshot's own unavailable message.",
+    "Subscribed project, agent and workspace updates are folded into the latest usable snapshot."
+  ],
+  "exclusions": [
+    "The dashboard renders no sidebar or activity cues after rules 7 to 10 and no longer parses this snapshot.",
+    "Native idle, reply-ready and Closed are host activity observations, not semantic task/review acceptance.",
+    "Whether the plugin goes on posting the snapshot is settled by MIK-R95, not here."
+  ],
+  "id": "INV-E4TSZB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoHierarchy.test.ts::includes every SDK page, canonical labels and actual host membership, then applies live metadata changes; dashboard/src/cockpit/PaseoChatFrame.test.tsx::accepts only the exact normalized hierarchy and selection-set protocol; dashboard/src/cockpit/PaseoNavigation.test.tsx::keeps actual harness identities and the same selected clickable row through busy, attention and terminal updates",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoHierarchy.test.ts::includes every SDK page, canonical labels and actual host membership, then applies live metadata changes | exact facet: Subscribed native metadata updates and attention clearing propagate provider, status, permission count, attention and availability through the hierarchy message. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 9846d14267b2efcad039016e81e1bf1388b97ed2 | source line: 93 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoChatFrame.test.tsx::accepts only the exact normalized hierarchy and selection-set protocol | exact facet: Malformed native activity fields, impossible status values and duplicate agent IDs are rejected before the sidebar receives them. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: cf6d8c2b5d9dbcf4429f50d2a2ace711a0f8cb72 | source line: 240 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoNavigation.test.tsx::keeps actual harness identities and the same selected clickable row through busy, attention and terminal updates | exact facet: Provider marks remain identifiable; Closed/unavailable/error/input/busy/attention/idle precedence and current-row identity are exercised, with no PASS/accepted/completed verdict rendered. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: c68d0f5f684e69dfd432cbf9f1a820cb14692461 | source line: 34 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R13@v1 / PNT-R14@v1 native sidebar identity and activity",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The plugin projects live native project, workspace and agent fields (provider, status, pending permissions, attention, availability) into one hierarchy snapshot that a live embed publishes, and the snapshot's native activity is an observation rather than a task or review acceptance verdict.",
+  "status": "proposed",
+  "supersedes": []
+}

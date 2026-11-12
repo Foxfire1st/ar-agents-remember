@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/MarkerTargetState.test.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "An unreadable native roster retains the invariant-level state even when synthetic row props match; a healthy native roster with the exact member can suppress the duplicate center state. Assertions compare the supplied target reason instead of inventing a fixed reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "028e2f843e0b54e53bd6daffa0e44531ed024db3",
+            "content": "sha256:6c5306a970f33886ef53e938e045b79d985f29627c4fbb434ba047e6b6d82cec",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

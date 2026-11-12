@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_index.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+        "content": "sha256:84b2d04fbd8aa7173a1d0ba23d4cf985e1bea2fb5b4a52e366129b99665ce893",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-6DB5TV",
+      "invariant": "INV-QQGSAN",
+      "origin": {
+        "handoffEntry": "R73-NO-FALSE-COMPLETE",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The index command is where 'complete' was answered for an unconverted tree; it now names the legacy format and exits 2 instead.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The command line and the exit statuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+            "content": "sha256:93dc888ffd7fe61f1fa2fb0176a9409d4237b3d4c3bf5d309294646ee4e8227a",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Arguments.\n\nAnchor: `add_arguments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+            "content": "sha256:8fa8066f8dd699a35d0ec87335fe4b84391e0176bd5d71accbcd722b2b10701b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The build or reuse, the JSON report and the exit status by state.\n\nAnchor: `run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f8a1b5f2e12e8aabdd86ebd9ce6cd08658bed0d",
+            "content": "sha256:8fa8066f8dd699a35d0ec87335fe4b84391e0176bd5d71accbcd722b2b10701b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Registration in the umbrella.\n\nAnchor: \"knowledge-index\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:118a6e36b786cc331a9e2e711f2ed5f0733731d86a871ac285ba808923c2ab0a",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The command reports the index and exits by state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:10fe873bfec2191113b61650c7095fb6c6ce515a7953b4c5f10346ee4db013e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_command_reports_the_index_and_exits_by_state"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

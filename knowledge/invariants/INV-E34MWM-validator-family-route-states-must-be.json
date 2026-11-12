@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Recomputing family states independently risks inconsistent per-run reasoning and multiplies identical tree work; stale cutover or fresh-index prose can misdirect an author into believing a real guarded writer inert or choosing a false snapshot owner. The shared context and named cleanup preserve one checkable per-run interpretation."
+  },
+  "applicability": "One knowledge-validator invocation over its own parsed candidate and the specifically named obsolete helpers/descriptions of MIK-R54 rule12.",
+  "conditions": [
+    "One ValidationContext is shared by every registered rule of that validation; its cached route_families derives family states once from that parsed tree.",
+    "Route rules consume the shared result rather than each recomputing the same candidate family states.",
+    "The named uncalled decisions.content_problems helper and false pre-cutover/fresh-index current-behavior descriptions are not retained as operative claims."
+  ],
+  "exclusions": [
+    "The cache is per validation context, not a process-global mutable-tree or cross-candidate memo and not a measured runtime bound.",
+    "Cleanup concerns the packet-named leftovers, not a claim that every inherited obsolete statement anywhere has been found; retained explicitly historical evidence is not deleted."
+  ],
+  "id": "INV-E34MWM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-12",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-56/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-55-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 12",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Validator family-route states must be computed once per validation and the named dead code and stale cutover descriptions must not survive as current behavior claims.",
+  "status": "proposed",
+  "supersedes": []
+}

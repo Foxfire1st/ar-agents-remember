@@ -1,0 +1,50 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Comparison-bound selection, family continuation, source navigation and compatible inspection-state retention together keep the displayed intent and evidence coherent while all changed files remain reachable; no member controls the entire review workspace."
+  },
+  "guarantee": "Within a bound comparison, all changed source files remain reachable while the selected intent, the reviewed leaf's owner-recorded judgment rows and the subject's typed proofs, and available family context stay together. Inspection state is retained only within its admitted comparison generation and review-input epoch; refresh and matching memory invalidation retain their separately owned reread/invalidation rules. The removed Reviewer evidence, applicability, assessment and observation collections are not promised or reconstructed by this joint guarantee.",
+  "id": "FAM-R6R095RW",
+  "members": [
+    "INV-21SDZECS",
+    "INV-2E8MG43K",
+    "INV-49H32B3F",
+    "INV-53F058MT",
+    "INV-555EHWM8",
+    "INV-8VQR13WX",
+    "INV-BR5MTSTY",
+    "INV-H8EM1VJR",
+    "INV-KKJYVB40",
+    "INV-MC654E0T",
+    "INV-MCVSM81V",
+    "INV-RT13RESK",
+    "INV-VPX81HXV",
+    "INV-W5CTZJGD",
+    "INV-WQZ2WFCN",
+    "INV-XX178P3W",
+    "INV-YVVW1XCN",
+    "INV-Z385RTQS",
+    "INV-ZS9ZS878",
+    "INV-ZY0YMXMQ",
+    "INV-DYDMDD",
+    "INV-J1DFZS"
+  ],
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "e19e8b3f-aa4c-4c5b-891d-accdd3462cd0",
+    "task": "260921-ICR"
+  },
+  "revision": 8,
+  "routes": [
+    "dashboard/src/data",
+    "dashboard/src/panels/detail-panel",
+    "dashboard/src/panels/review",
+    "mcp/src/agents_remember/application",
+    "dashboard/src/panels/changeset"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Coherent intent and source review"
+}

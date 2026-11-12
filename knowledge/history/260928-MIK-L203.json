@@ -1,0 +1,1834 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L203",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-08GMSP",
+      "items": [
+        "sha256:42dedcb9871070e7f7b1e9a0e78a0f386e7b87c8e248aa5a1d7bcb10a6190345"
+      ],
+      "reason": "A2 adds tests only; the card claims nothing the new tests contradict.",
+      "sources": [
+        {
+          "blob": "c2884a09e64f21ce962270251f5b04b2472711ea",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-SFNK16"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0ACANT",
+      "items": [
+        "sha256:644eb1163cb8c0ca20d4895404a0de74c502d183639152ae83dd7be099f8e4a4"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 1,
+      "subject": "INV-MGQ6ES"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0W14CC",
+      "items": [
+        "sha256:be03f67a8a8bb54f809461b28fadfc45214c897432eb10925e8df64f95a0d0ff"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "34d95d2791bfcf162575ffa572a8ab024f551875",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0YEPE7",
+      "items": [
+        "sha256:89cad4143adab3fce01871778ca32b335efe1d977e02df769f384f9c138d0d76"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "9e67016deb2cc2e53ab1cdf8a4b243275cfc5132",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-119M15",
+      "items": [
+        "sha256:fa21801176d14e3aa9ac1d37c5ade1fc6e9ce239b3dbfcde83405f191c359f18"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:fa21801176d14e3aa9ac1d37c5ade1fc6e9ce239b3dbfcde83405f191c359f18"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-244NB8",
+      "items": [
+        "sha256:3a477f3dadbcf3565cd005872ea8ec73256799fca94c9a4eddb6ea5d4f7af08f"
+      ],
+      "reason": "The card was read, then patched against its own headings to state what the A2 hunk does at the frozen candidate; the counted change is the sentence added.",
+      "sources": [
+        {
+          "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2SQ88Z",
+      "items": [
+        "sha256:015059ec9cc64223a363b670cfe3a28f4cdba499ab1e545da596faa078cc3c3b"
+      ],
+      "reason": "This file is a package test for the new provider verdict: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:015059ec9cc64223a363b670cfe3a28f4cdba499ab1e545da596faa078cc3c3b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-XG75PH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-35330Y",
+      "items": [
+        "sha256:46c9952c97140a5ac6eb53b1425b721314259187531849c3569ad21185775e50"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 1,
+      "subject": "INV-HE16XQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-40ZKTN",
+      "items": [
+        "sha256:607a27f06ea8ce00c7c55722d73a8b0c5ccbbbfce46de36e8fba45491b3c6a91"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "bc5fe60e400e8dd8ada6bb87a2e6a35062630b2f",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/protocol/dist/provider-manifest.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/protocol/dist/provider-manifest.js"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-44A0T1",
+      "items": [
+        "sha256:0d5db2bcdc99dd6fbe52db10daf8a3ec4d9ef6990818511f70a4bdeac8dd7efc"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:0d5db2bcdc99dd6fbe52db10daf8a3ec4d9ef6990818511f70a4bdeac8dd7efc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4HRNAD",
+      "items": [
+        "sha256:f31ce48ec18c34ab04d71e0734ab223d0021322c5e1b0c968d979458b8e6a553"
+      ],
+      "reason": "This card is new to the leaf and states what its file does at the frozen A2 candidate.",
+      "sources": [
+        {
+          "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+    },
+    {
+      "considered": [
+        "FAM-14NZRC"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-4JMGH5",
+      "items": [
+        "sha256:4d1bbb1d8cf2cacb9ee2ac3bad13007314f035d14382b1fd02df5bcfe97bc40a"
+      ],
+      "reason": "The new provision clause sits inside the plugin route but states one feature's guarantee rather than a family guarantee, so no family claims it and none changed.",
+      "revision": 1,
+      "subject": "membership:INV-G841F9"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 3
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 2
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4KFFWN",
+      "items": [
+        "sha256:304122013fca5494492ea5cc42fac82a382a439f3fcfcea46bf74d1aac63dd34"
+      ],
+      "reason": "The launch-side family guarantee did not change: the launch gains one appended instruction before the hand-over artifact is published, and no member's clause is altered.",
+      "revision": 3,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5W1CF8",
+      "items": [],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 35. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "1a3f67ee67cb1020df64027cc09f2106124dc530",
+          "path": "mcp/tests/test_review_family_member_sources.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_family_member_sources.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-61VGQV",
+      "items": [
+        "sha256:4b0354a67dc0fbba39a9334a0d7bde8ba0563034b381dea51b1c040fb4f54de7",
+        "sha256:b3f62e07756cc52d8f9209c26c85451f7cf067458823847612e8ff4f4e89080f"
+      ],
+      "reason": "Restore the required nearest governing overview link on the inherited compact card. Source assertions and declarations remain separate from invocation evidence; no code changed in this repair.",
+      "sources": [
+        {
+          "blob": "9f595ba68b1a849d4f1b5d65aa8077ad38304135",
+          "path": "mcp/tests/test_role_launch_acp_instruction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_launch_acp_instruction.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-63FC2M",
+      "items": [
+        "sha256:6d55ccf3ca2af10a4a17d30a07790c7a575e053b2427357e93d11160c325c95d"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:6d55ccf3ca2af10a4a17d30a07790c7a575e053b2427357e93d11160c325c95d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-673R9B",
+      "items": [
+        "sha256:7af7acacc14de56fa3330f986990c10ea5f5e40b4ba05e47b1231217bc0e1dc5"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:7af7acacc14de56fa3330f986990c10ea5f5e40b4ba05e47b1231217bc0e1dc5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7MC584",
+      "items": [
+        "sha256:18d8a50990eaebe835dffc4e8935bdcc6b1d11267a25c5ee0f5dc4e0c0fe5c33"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:18d8a50990eaebe835dffc4e8935bdcc6b1d11267a25c5ee0f5dc4e0c0fe5c33"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7QVN6J",
+      "items": [
+        "sha256:795fa111567c1544649661b0e09a9c337a4f0e5c16c71384e95d6a833ffd46be"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "5d9ff92ea9b8876ddfef1f7e0f32256c34b5416e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "content": "sha256:7897fb40e5c032a535ff68a71e30a676a37248f2c174ffefd20a7d524cdb39dd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "67c87a3b0e1d5b34eb51f2aba8689fd6a294542a",
+            "content": "sha256:95946683bd00ba577cfa916d17df60e20531fea1510c74fb9910b4ceb7de8325",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8CVMX0",
+      "items": [
+        "sha256:1629815c3996ae803d91358b2c7de5558154fbf58e3136af92701cac22653285"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8DGY61",
+      "items": [
+        "sha256:015059ec9cc64223a363b670cfe3a28f4cdba499ab1e545da596faa078cc3c3b",
+        "sha256:05c2ae804b10abe8ac9790937efc73892bf13b965cdb09ef9f97ddc41c2a5890"
+      ],
+      "reason": "Restore the required nearest governing overview link on the inherited compact card. Source assertions and declarations remain separate from invocation evidence; no code changed in this repair.",
+      "sources": [
+        {
+          "blob": "944ec638d5f3ff5aac979a2181fda12641e04ed2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:be8af700c1038b87da7566a3242db151c36aa3c09d5d89e1400a12c938b18bda",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "content": "sha256:8f04be34eb5799c19c2075a28d8f6662fedade78b336a0046a681edcb2fea8e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-QQR1B1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-8NHSHS",
+      "items": [
+        "sha256:c9ef47f5d88ad469e772247edf4e91b44c79234790e55eeb6d9f7b259ebac6cd"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 3,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-913350",
+      "items": [],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 21. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+          "path": "mcp/tests/test_capsule_launch_wiring.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_capsule_launch_wiring.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9C7CCD",
+      "items": [
+        "sha256:a9700545ccedf3be029dec62c6136399aac493199d08cef0244859fb7893e83c"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:a9700545ccedf3be029dec62c6136399aac493199d08cef0244859fb7893e83c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9R9WF8",
+      "items": [
+        "sha256:591c0028b84cfee27d6f87e234c5517283fc1d557be7f3032d82b8a2b57080d3"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "0ddbd60340bc412ba029712ce05c1f2f73a6a9b1",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9YEXY4",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 847, 849, 857. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-AQ24NZ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 225, 246, 247, 271, 317. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BN2S50",
+      "items": [
+        "sha256:bbd8c9b7e66478e38ee20aee6ac5b803642d3f500e82d2563699860c17761b1b"
+      ],
+      "reason": "This file is a package test for the declared helper wait: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:bbd8c9b7e66478e38ee20aee6ac5b803642d3f500e82d2563699860c17761b1b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C90Z3G",
+      "items": [
+        "sha256:b3f62e07756cc52d8f9209c26c85451f7cf067458823847612e8ff4f4e89080f"
+      ],
+      "reason": "This file is the launch-side test for the appended instruction: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:b3f62e07756cc52d8f9209c26c85451f7cf067458823847612e8ff4f4e89080f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D86ACT",
+      "items": [
+        "sha256:ce06d3d16a39883fea56fd5449a6db55caf6055824161a7f1e4524d29a3af4ec"
+      ],
+      "reason": "Merged A3 retains the appended ACP instruction before first-message publication and the acpInstruction receipt. The lost RLZ-D5Z9J7 record is restored under its original identity; the route card’s numbered source references are re-authored with symbol kinds preserved. The L201 import relocation changes no launch obligation.",
+      "sources": [
+        {
+          "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DQ6KA1",
+      "items": [
+        "sha256:591c0028b84cfee27d6f87e234c5517283fc1d557be7f3032d82b8a2b57080d3"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:591c0028b84cfee27d6f87e234c5517283fc1d557be7f3032d82b8a2b57080d3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F7K7V7",
+      "items": [
+        "sha256:7af7acacc14de56fa3330f986990c10ea5f5e40b4ba05e47b1231217bc0e1dc5"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "c3997a9e8b02b5b3c6e4828d055c04d97064d4c3",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "acdc137a6ab486cb38fbef91f2a4cdd6b83fc247",
+            "content": "sha256:bab14eb5eda4ffe75c9a1454e1a58d1052326d2c1ea66d4ba890fdb8866f2b40",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+          },
+          "before": {
+            "blob": "4973808b24e87c4f48217316928eb053db0fa69b",
+            "content": "sha256:7a20a4770517aeb358d7d1a02f45cbafd50b35b38a7f5b6d5e70e67225d8ce88",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+          },
+          "id": "RLZ-4RGXR2"
+        },
+        {
+          "after": {
+            "blob": "4f087ca2c4a81881c17a0a75921d8858c36f04de",
+            "content": "sha256:7376ad80894ecf5ecaf1ab8895b287b56bc1f3f3ab74d0b0e95fe70fdfc18efc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.ts"
+          },
+          "before": {
+            "blob": "e6b977b32897772eb2c4bb4e5fffc0cc82030316",
+            "content": "sha256:dd931a41ae1f7df5364a3ea153d5fdf6260eb2475579ae027a522af34ea47580",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.ts"
+          },
+          "id": "RLZ-6B0SS8"
+        },
+        {
+          "after": {
+            "blob": "c2884a09e64f21ce962270251f5b04b2472711ea",
+            "content": "sha256:27202f737b84029326aa1db345300963ae6261d7012aec8be1b68a7a66a3fce7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.test.ts"
+          },
+          "before": {
+            "blob": "82f838444cc0ca462757b279341d307f18ba9feb",
+            "content": "sha256:57d219317438b3cac402b65400adc8cd29e47f174516e0583ff30de8a2246ba4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.test.ts"
+          },
+          "id": "RLZ-TTD1YE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FCNE5D",
+      "items": [
+        "sha256:0bbc491175deb637b522c7f865824494fcb0f053f5934d33912eb778e1b7826b"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C.",
+      "revision": 2,
+      "subject": "INV-VDWN33"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FD1ZYJ",
+      "items": [
+        "sha256:a54f5ff84f180891c9e8dcd9ebf9a3a3483558614464ffc0ec6c139e9bb32daa"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "58382c29fa5ecc2be4a32cc1d5ef8789a1ed3522",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 2
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 2
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 2
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 3
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-FRBMCH",
+      "items": [
+        "sha256:0a72f16b5c85285134b879444a2968ab3f4e689fdcc283da501adf7be8c03866"
+      ],
+      "reason": "The plugin route's family guarantee did not change: this leaf adds a declared helper wait and a provider verdict inside one member's decision, and every member's own clause is unchanged.",
+      "revision": 3,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HQ0V1V",
+      "items": [
+        "sha256:8d23bd64b385df4bbdf59434f640b5d3544908b1d5b2170417d807b0e610ae15"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "bc6f76d730a42d00dd009a30ad8921de8a3a341d",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JGQW7B",
+      "items": [
+        "sha256:f6d9f140e6e33df85f6a67c5a5d8c0795625fe9214d9d6d45c5e26860a5a1c47"
+      ],
+      "reason": "This file is a package test for the declared helper wait: it carries no obligation of its own, states no behaviour the product owes, and its content is read only by tests that exercise the plugin's decisions.",
+      "subject": "hunk:sha256:f6d9f140e6e33df85f6a67c5a5d8c0795625fe9214d9d6d45c5e26860a5a1c47"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JH4PX7",
+      "items": [
+        "sha256:f6e5786eef8eed4ec7142071a2a92ab2c63514337409732933cc28b1645aaf13"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:f6e5786eef8eed4ec7142071a2a92ab2c63514337409732933cc28b1645aaf13"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JNDNKM",
+      "items": [
+        "sha256:fa9c1cb481c77fd67ed7e371715a9f56025140c6344b1a643a673c11ac643765",
+        "sha256:fb72a9c38cf682aeff1efa9cfb750a6626522b288b80e5797bb3e593d68d4890"
+      ],
+      "reason": "Restore the required nearest governing overview link on the inherited compact card. Source assertions and declarations remain separate from invocation evidence; no code changed in this repair.",
+      "sources": [
+        {
+          "blob": "7b1a75ddc6b8106f29410327fce1409f0e5d1beb",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/package.json"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/package.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JV849B",
+      "items": [
+        "sha256:a347a95251cced986e2b94a435a7d6423908fcc6aec4427bafac35d1983a46d8"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:a347a95251cced986e2b94a435a7d6423908fcc6aec4427bafac35d1983a46d8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JW2XZJ",
+      "items": [
+        "sha256:03d1f29ab46e64bbf9c85e3f7faefccf33cc9bdb2f232f2a223ff37c2432a69f"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:03d1f29ab46e64bbf9c85e3f7faefccf33cc9bdb2f232f2a223ff37c2432a69f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K8444B",
+      "items": [
+        "sha256:be03f67a8a8bb54f809461b28fadfc45214c897432eb10925e8df64f95a0d0ff"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:be03f67a8a8bb54f809461b28fadfc45214c897432eb10925e8df64f95a0d0ff"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K941CS",
+      "items": [
+        "sha256:795fa111567c1544649661b0e09a9c337a4f0e5c16c71384e95d6a833ffd46be"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:795fa111567c1544649661b0e09a9c337a4f0e5c16c71384e95d6a833ffd46be"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KE3TZS",
+      "items": [
+        "sha256:03d1f29ab46e64bbf9c85e3f7faefccf33cc9bdb2f232f2a223ff37c2432a69f"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "f0efde2c8fdb790cf1551a4096cc25be297a1116",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KGZZ9Y",
+      "items": [
+        "sha256:b496d1862fa774d7e137f8f4c81c1386cff7416c02dd49f44372e3483e871eff",
+        "sha256:bbd8c9b7e66478e38ee20aee6ac5b803642d3f500e82d2563699860c17761b1b"
+      ],
+      "reason": "The eighteen source cases supersede the incomplete nine-test caption and eight-item coverage account. Source assertions and declarations remain separate from invocation evidence; no code changed in this repair.",
+      "sources": [
+        {
+          "blob": "c3354630cf819a2241c813e04c976bb9d28016b4",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagent_wait.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/subagent_wait.test.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KJFH9Z",
+      "items": [
+        "sha256:6737cc3af746e98f2a0a1ab8feb9afa2daec83c8a9bacdcbcce7f262ebd5b3e8"
+      ],
+      "reason": "The card was re-read against the frozen A2 candidate and states the changed behaviour of the file it governs.",
+      "sources": [
+        {
+          "blob": "acdc137a6ab486cb38fbef91f2a4cdd6b83fc247",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+        },
+        {
+          "blob": "944ec638d5f3ff5aac979a2181fda12641e04ed2",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+        },
+        {
+          "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+        },
+        {
+          "blob": "bc5fe60e400e8dd8ada6bb87a2e6a35062630b2f",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/protocol/dist/provider-manifest.js"
+        },
+        {
+          "blob": "9e67016deb2cc2e53ab1cdf8a4b243275cfc5132",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/create-agent-mode.js"
+        },
+        {
+          "blob": "66aa2aec9fe4c78dd553dda3c18ea90980fa7ef7",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+        },
+        {
+          "blob": "58382c29fa5ecc2be4a32cc1d5ef8789a1ed3522",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/acp-agent.js"
+        },
+        {
+          "blob": "34d95d2791bfcf162575ffa572a8ab024f551875",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/claude/agent.js"
+        },
+        {
+          "blob": "c3997a9e8b02b5b3c6e4828d055c04d97064d4c3",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/codex-app-server-agent.js"
+        },
+        {
+          "blob": "11b54d556d7571f31de0d84e04f2fa439c5893e8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+        },
+        {
+          "blob": "495c4ae2654198bc98963e78348073c95dd21201",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+        },
+        {
+          "blob": "f0251a6c53759056acef308d0384e89d8dda33ed",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+        },
+        {
+          "blob": "d2d5c31aaca6e21b04c58e1d9a980afb7b51a251",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+        },
+        {
+          "blob": "0ddbd60340bc412ba029712ce05c1f2f73a6a9b1",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/kiro-acp-agent.js"
+        },
+        {
+          "blob": "5d9ff92ea9b8876ddfef1f7e0f32256c34b5416e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/mock-load-test-agent.js"
+        },
+        {
+          "blob": "51ddd0b04bffd01b829cf921177e90f8d9bb5eb8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+        },
+        {
+          "blob": "7d4452db66d99c2f201429fe379dc7b04c46a472",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+        },
+        {
+          "blob": "f0efde2c8fdb790cf1551a4096cc25be297a1116",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/opencode/runtime-client.js"
+        },
+        {
+          "blob": "bc6f76d730a42d00dd009a30ad8921de8a3a341d",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/pi/agent.js"
+        },
+        {
+          "blob": "9999d49a3264f688b9235d4bd5ebf663cac7a9fe",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+        },
+        {
+          "blob": "9812a01b37afd9c0552864317a840e96e5a9cced",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+        },
+        {
+          "blob": "7b1a75ddc6b8106f29410327fce1409f0e5d1beb",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/package.json"
+        },
+        {
+          "blob": "a3cbd84aad2bafa5d119a54d78c956f9c9c8b8b7",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/README.md"
+        },
+        {
+          "blob": "c3354630cf819a2241c813e04c976bb9d28016b4",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagent_wait.test.ts"
+        },
+        {
+          "blob": "c2884a09e64f21ce962270251f5b04b2472711ea",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.test.ts"
+        },
+        {
+          "blob": "4f087ca2c4a81881c17a0a75921d8858c36f04de",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.ts"
+        },
+        {
+          "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        },
+        {
+          "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KJXWC0",
+      "items": [],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 50. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "61c763ff8430456602202b02310012b4437a4c44",
+          "path": "mcp/tests/test_knowledge_diff_boundaries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_diff_boundaries.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KX9ADD",
+      "items": [
+        "sha256:52220c0db81b04d4c2511a4775d808b0217953002dcb5d02dbfc1c8249c6b89c"
+      ],
+      "reason": "Read the current overview against merged A3. This leaf adds no file at mcp’s own level; its observer reader, plugin and test changes remain within the already described routes. The high-level route account makes no changed count or launch-protocol promise that these child changes contradict.",
+      "sources": [
+        {
+          "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+          "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MGJZ7B",
+      "items": [],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 40. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "e159e3fdc8444fdd57cce28d9f770103e7ac3cb6",
+          "path": "mcp/tests/test_knowledge_worklist_leaf.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_worklist_leaf.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-8H3HVX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N58N5Q",
+      "items": [
+        "sha256:28bb90c1b7265de48e122680bac335a5f90a407a67ce3552b7c6b2c41086826d"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NAJD92",
+      "items": [
+        "sha256:fb72a9c38cf682aeff1efa9cfb750a6626522b288b80e5797bb3e593d68d4890"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:fb72a9c38cf682aeff1efa9cfb750a6626522b288b80e5797bb3e593d68d4890"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NQBAB3",
+      "items": [],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 31. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "08c6a57293dca2a8883c2fc89c3ecdd1acf81782",
+          "path": "mcp/tests/test_knowledge_diff_attribution.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_diff_attribution.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P7AG21",
+      "items": [
+        "sha256:87d97284f7f7c452458fdb4d5bceb0dc428259767a5c4f702427c4dd82a6d63d"
+      ],
+      "reason": "The card was re-read against the frozen A2 candidate and states the changed behaviour of the file it governs.",
+      "sources": [
+        {
+          "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P970QV",
+      "items": [
+        "sha256:816c4f71257e453df864d63d4639805024272da2f769c31801e1106ea1af6403"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:816c4f71257e453df864d63d4639805024272da2f769c31801e1106ea1af6403"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PAVPH0",
+      "items": [
+        "sha256:607a27f06ea8ce00c7c55722d73a8b0c5ccbbbfce46de36e8fba45491b3c6a91"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:607a27f06ea8ce00c7c55722d73a8b0c5ccbbbfce46de36e8fba45491b3c6a91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PK34TX",
+      "items": [
+        "sha256:b7bdd57cbc2ab5382b7d32f3d02d8ac78f2414ec5919b08d75bcefcc12465878"
+      ],
+      "reason": "The card was read, then patched against its own headings to state what the A2 hunk does at the frozen candidate.",
+      "sources": [
+        {
+          "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+          "path": "mcp/src/agents_remember/observer/acp_providers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "356af2fbfc68dbcf1528f5517e095623d30ad5b2",
+            "content": "sha256:98fc21e296318ae86d2b63e98e90f49212cb87fbae8ed4e5e4ac280cfeb1b37d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-3WT1SY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PNXETV",
+      "items": [
+        "sha256:1637a5bbc201dd50e13b87f97d8a3915093bae55a1ae18a864e299bf0b3512e0"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 2,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "content": "sha256:7897fb40e5c032a535ff68a71e30a676a37248f2c174ffefd20a7d524cdb39dd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "67c87a3b0e1d5b34eb51f2aba8689fd6a294542a",
+            "content": "sha256:95946683bd00ba577cfa916d17df60e20531fea1510c74fb9910b4ceb7de8325",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "content": "sha256:171b4c615e079f4e00cffdd1190b5c1f451a8c1c6f8fc5fa079d77f6c42c37fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
+            "content": "sha256:b25f245caf2f2b1371a8ba44c8e826ba3c663bb1d993811f61e7b1f1fcb8b227",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Q5HNRK",
+      "items": [
+        "sha256:29ade70b95204e3326fe2b9120d8d9c7e07f56dd08e4310df62be54aac6cd522"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 2,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q7A4HX",
+      "items": [
+        "sha256:f1bae68e5061a554513dce62d6082957d0c22deaf11ead1f22d4f9fb1a401ac2"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:f1bae68e5061a554513dce62d6082957d0c22deaf11ead1f22d4f9fb1a401ac2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QDM02C",
+      "items": [
+        "sha256:f1bae68e5061a554513dce62d6082957d0c22deaf11ead1f22d4f9fb1a401ac2"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "66aa2aec9fe4c78dd553dda3c18ea90980fa7ef7",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/provider-registry.js"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QMVJXA",
+      "items": [
+        "sha256:ae82b6a2ce3e1caccd119227dcd69ce1a9e95f1272f855931998e5bf1f371c42"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:ae82b6a2ce3e1caccd119227dcd69ce1a9e95f1272f855931998e5bf1f371c42"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QPM8GK",
+      "items": [
+        "sha256:a54f5ff84f180891c9e8dcd9ebf9a3a3483558614464ffc0ec6c139e9bb32daa"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:a54f5ff84f180891c9e8dcd9ebf9a3a3483558614464ffc0ec6c139e9bb32daa"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QQ7SKC",
+      "items": [
+        "sha256:aec5acf716610ccc6c71a9b5924d3763f7489f1c286cc48714937a8a8c7d4897"
+      ],
+      "reason": "The card was read, then patched against its own headings to state what the A2 hunk does at the frozen candidate.",
+      "sources": [
+        {
+          "blob": "4f087ca2c4a81881c17a0a75921d8858c36f04de",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/subagents.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RADB4P",
+      "items": [
+        "sha256:fdb7e5ef9af23ef6a692321374425119042d677189744b075437837b6c703ad9"
+      ],
+      "reason": "The card was read, then patched against its own headings to state what the A2 hunk does: one shared row log and the ACP verdict read at boot.",
+      "sources": [
+        {
+          "blob": "acdc137a6ab486cb38fbef91f2a4cdd6b83fc247",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/index.server.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RE5J00",
+      "items": [
+        "sha256:0d5db2bcdc99dd6fbe52db10daf8a3ec4d9ef6990818511f70a4bdeac8dd7efc"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "d2d5c31aaca6e21b04c58e1d9a980afb7b51a251",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/kimi-acp-agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-REK3G4",
+      "items": [
+        "sha256:6d55ccf3ca2af10a4a17d30a07790c7a575e053b2427357e93d11160c325c95d"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "51ddd0b04bffd01b829cf921177e90f8d9bb5eb8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/mock-slow-provider.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RFE5AF",
+      "items": [
+        "sha256:a9700545ccedf3be029dec62c6136399aac493199d08cef0244859fb7893e83c"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "7d4452db66d99c2f201429fe379dc7b04c46a472",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/omp/agent.js"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SGPF6X",
+      "items": [
+        "sha256:f6e5786eef8eed4ec7142071a2a92ab2c63514337409732933cc28b1645aaf13"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "9999d49a3264f688b9235d4bd5ebf663cac7a9fe",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/trae-acp-agent.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TK04AB",
+      "items": [
+        "sha256:78d440298b22113ae9f72caa5cfd5f5fa2759db8e8c64c6aaecc5cf4160feba9"
+      ],
+      "reason": "This card is new to the leaf and states what its file does at the frozen A2 candidate.",
+      "sources": [
+        {
+          "blob": "bbb12d34a5ef4aaed3993881dd4f8f537cc9c7e8",
+          "path": "mcp/src/agents_remember/observer/acp_providers.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/acp_providers.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TKY7BQ",
+      "items": [
+        "sha256:ae82b6a2ce3e1caccd119227dcd69ce1a9e95f1272f855931998e5bf1f371c42"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "495c4ae2654198bc98963e78348073c95dd21201",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/cursor-acp-agent.js"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V7P9PC",
+      "items": [
+        "sha256:8d23bd64b385df4bbdf59434f640b5d3544908b1d5b2170417d807b0e610ae15"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:8d23bd64b385df4bbdf59434f640b5d3544908b1d5b2170417d807b0e610ae15"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V8YA75",
+      "items": [
+        "sha256:a347a95251cced986e2b94a435a7d6423908fcc6aec4427bafac35d1983a46d8"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "f0251a6c53759056acef308d0384e89d8dda33ed",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/generic-acp-agent.js"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WQT345",
+      "items": [
+        "sha256:89cad4143adab3fce01871778ca32b335efe1d977e02df769f384f9c138d0d76"
+      ],
+      "reason": "This file is synthetic host data for the provider discovery tests: it states no behaviour the product owes, and only tests that exercise the plugin's decisions read it.",
+      "subject": "hunk:sha256:89cad4143adab3fce01871778ca32b335efe1d977e02df769f384f9c138d0d76"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WTXJ4Q",
+      "items": [
+        "sha256:18d8a50990eaebe835dffc4e8935bdcc6b1d11267a25c5ee0f5dc4e0c0fe5c33"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "11b54d556d7571f31de0d84e04f2fa439c5893e8",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/agent/providers/copilot-acp-agent.js"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "content": "sha256:171b4c615e079f4e00cffdd1190b5c1f451a8c1c6f8fc5fa079d77f6c42c37fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
+            "content": "sha256:b25f245caf2f2b1371a8ba44c8e826ba3c663bb1d993811f61e7b1f1fcb8b227",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XEGK09",
+      "items": [
+        "sha256:d10c575cc62c5c41e08b3259fe9fb9aea13493151eeeed700dfe38fab2aba88c"
+      ],
+      "reason": "This leaf re-realized this invariant's anchors after the code moved under it; the clause's meaning is unchanged and every touched entry stays current at C. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:6c2499866f0f29f34d250cc0a2dc2c6725c8617e45e7df401a82f84cd8dbfda2",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:3e0220758c9985485e6a3cd282ab0935eef23515f0ca2e5e8b8eead3f512f20c",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliverSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-0DRPF9"
+        },
+        {
+          "after": {
+            "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
+            "content": "sha256:c1c921b09bbc56936a355f24f7c1cd0714e3969df5fbb59abfdf5207aae8130d",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
+            "content": "sha256:7260a5e019c29e6b21c2b3a53ff8165de8e12aaa708aeb7d4751083c623832ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-1HAN2T"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:88e28f4fc1c38d1bda5169dd97bc0abe0181935a422ee0d407bb491898c6914c",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSeatWakeMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:49bc00fe8506fa8e2b8e51c68baefddaa325cdda81e902c832994992b32be7ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeSeatWakeMessage"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-1K6N1F"
+        },
+        {
+          "after": {
+            "blob": "ff66e28b794c20c503abe40cc212800377e83e12",
+            "content": "sha256:8b7e25a99d324874787dec3345aa36d2c6aefc3eb439ffe6eb6ed50ad7a12c14",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": {
+            "blob": "dc867726c9071a79792d76230a55b4be0f68908c",
+            "content": "sha256:3ba0f0fe2d258d10aa88bcc879a80a673db2297f7c5c8f0e98b3153c53b69398",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "id": "RLZ-55H239"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:7a06f391200c1bb79902b7e2afbf001601f5291b35952c3f781cf626a03f0f39",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:39fa1d8b6ef1110d5c4764b81d67c656db6d427d6ffe22044527908e628ad446",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-78JFRR"
+        },
+        {
+          "after": {
+            "blob": "0446dd3579fe4f1a02575958621c9b3ea7676610",
+            "content": "sha256:d84fef2cbab992c590657650e8f5666964187e8b07e246f5988bdd4d0f7efef5",
+            "locator": {
+              "kind": "symbol",
+              "name": "createAcpProviderSet"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-900CN6"
+        },
+        {
+          "after": {
+            "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+            "content": "sha256:171b4c615e079f4e00cffdd1190b5c1f451a8c1c6f8fc5fa079d77f6c42c37fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "00c924961061dbdffe62be2587500d221bd22c23",
+            "content": "sha256:b25f245caf2f2b1371a8ba44c8e826ba3c663bb1d993811f61e7b1f1fcb8b227",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:ea776985022075902a3e2e5dbea25978d4e4f37cf2ae7875bb4b5871bf405853",
+            "locator": {
+              "kind": "symbol",
+              "name": "seatIsAcp"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-C0NV62"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:407560a892544b91781a105ad60d9f0a59568ce91219f1b4d20ad8b5a51c5435",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedOutcome"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:fbdfa05e5231ce715904bf3d45e7934222a7f027d9161b431256f3482ec35de4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TurnEndedOutcome"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-C1JYFW"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:3fdc70e0c48def5b656861dde40053e0fe4486ce1d6fef5cb7111f77c3561be4",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:01d088329e1810eb1a402b07485acbbd589826a0a8c0ac63eaef733efe735593",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-D5653M"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:44c020b6fda84ecf0f74e16850cd0a0496f58cfd4289707d80c96a805d16200b",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:1da258fa6e91130dec10f48e12c41ecdded6d07ad36e7be943f61a95acc7a34b",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-EC5NRM"
+        },
+        {
+          "after": {
+            "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+            "content": "sha256:7897fb40e5c032a535ff68a71e30a676a37248f2c174ffefd20a7d524cdb39dd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "67c87a3b0e1d5b34eb51f2aba8689fd6a294542a",
+            "content": "sha256:95946683bd00ba577cfa916d17df60e20531fea1510c74fb9910b4ceb7de8325",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:fa6194c4e9c2a5e00e7d7f7df253bee119d7ff7e9581e3c23eeec0e6e7658ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:80993ba415b9156202d0e97760a5e7b41e85fb047e9238a7175df07700a8b2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-H3YF9Z"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:18b37fc22c04500b0dee3ed0ae5500e6ada0d0f08af37faa7296699fe0dc267f",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:777a4aed2c8d70380a2f862dc7ad7434a58376403665f170f4ba755a9b5a85ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "cleanupSeatWaits"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-HTHGJ3"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:967faeb2ccebe59fb4d3f1030eab5f10833628b73b19785637632d049b50e442",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaresSubagentWait"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-KPNG0F"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:38382613e21d2ed816117307d1917f0319e9ff4c4b59c61892734145a861dc92",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:675d54b972bea46da116bc22bd62d6b3bfde57e9fd02f4dccb0db968ec9a6cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleSeatWake"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-PK93PB"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:8472be98ac8c15df832f56457048f6403940129cbe650bf65219e74b0f541563",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:bd2d57ecca6160cf48deb9766e0874515980e9762c84046a7b497b936d8bbe5a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-RDK1XC"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:53026e89f144960f8867bab4ee476ca46ce52868015d8774031c512058cfa922",
+            "locator": {
+              "kind": "symbol",
+              "name": "scheduleSubagentCheck"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-WVVR4F"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:44c020b6fda84ecf0f74e16850cd0a0496f58cfd4289707d80c96a805d16200b",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:1da258fa6e91130dec10f48e12c41ecdded6d07ad36e7be943f61a95acc7a34b",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-ZA95M4"
+        },
+        {
+          "after": {
+            "blob": "997d303b769b5f8f0251f843ad1db2687ad77c5e",
+            "content": "sha256:44c020b6fda84ecf0f74e16850cd0a0496f58cfd4289707d80c96a805d16200b",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "be1ebf147c3b30ea711ce7117a9c6ca9c569e978",
+            "content": "sha256:1da258fa6e91130dec10f48e12c41ecdded6d07ad36e7be943f61a95acc7a34b",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-ZT2RRK"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-XGZ5RG",
+      "items": [
+        "sha256:7a50103621b6b9ecdf59dd46a05d9c295b02a800d718762e7f8e3b256bfd863c"
+      ],
+      "reason": "Successor to ROW-XGZ5RG, which it replaces as the latest row: the clause moves revision 4 -> 5 under MIK-R216@v1 at base d59c3493, its sixteen covered entries unchanged and four realizations added, so this row covers all twenty. Post-D621: same code obligations reverified in merged A3 tree34d74fac; this row rebinds its covered entries to that tree after the source and memory sync.",
+      "revision": 5,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XQDXMP",
+      "items": [
+        "sha256:a9f51484ffcbfa8c20fcae33f52045006427d093f560d3916d264688ca3335af",
+        "sha256:fa21801176d14e3aa9ac1d37c5ade1fc6e9ce239b3dbfcde83405f191c359f18"
+      ],
+      "reason": "Restore the required nearest governing overview link on the inherited compact card. Source assertions and declarations remain separate from invocation evidence; no code changed in this repair.",
+      "sources": [
+        {
+          "blob": "a3cbd84aad2bafa5d119a54d78c956f9c9c8b8b7",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/README.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/README.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XQN0XW",
+      "items": [
+        "sha256:eeb7b93e39be80bb88fe40e3630716c80386da366d9948dbd76d44206526f08d"
+      ],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 1723, 1751, 1753. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "b9e272ef623574e517181e36b3dc949a3ac78e19",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "ac006b11f74a4c64ab964edc3378b4c96f153872",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "9f595ba68b1a849d4f1b5d65aa8077ad38304135",
+          "path": "mcp/tests/test_role_launch_acp_instruction.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:192171bfe316c83330527f17ad244639e941ef0ddf23804a8f2c14c20b419ddc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": "absent",
+          "id": "RLZ-D5Z9J7"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-Y7TMQM",
+      "items": [],
+      "reason": "Recovered the exact lost RLZ-D5Z9J7 authoring from parked3f331287 under Manager restoration authority and rebind it to the merged session builder; the obligation is unchanged and no second realization identity is minted.",
+      "revision": 1,
+      "subject": "INV-G841F9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YACK6G",
+      "items": [
+        "sha256:816c4f71257e453df864d63d4639805024272da2f769c31801e1106ea1af6403"
+      ],
+      "reason": "Vendored upstream fixture dist file added wholesale with the 0.12 fixture; no onboarding card governs it and no claim about this repository changes, so its card still holds as absent-by-design.",
+      "sources": [
+        {
+          "blob": "9812a01b37afd9c0552864317a840e96e5a9cced",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-12/@getpaseo/server/dist/server/server/plugins/plugin-process.js"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z3JEKH",
+      "items": [],
+      "reason": "Correct unsupported retained recovery targets on frozen A3 at numbered references 24. Repoint by exact claim-named artifact/consumer or lane membership, explicitly withdraw source windows that cannot support the claim, and retain all original reference numbers. Remeasure current facts rather than preserve obsolete counts; no code changed.",
+      "sources": [
+        {
+          "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+          "path": "mcp/tests/test_review_final_output_receipt.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_final_output_receipt.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,0 +1,388 @@
+{
+  "path": "mcp/src/agents_remember/providers/degradation.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+        "content": "sha256:40d7816d0c5b9185a064f230407906af290c62cd2792e5c7a5ee80c0234aaf03",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YKQ8M2",
+      "invariant": "INV-XDAGGN",
+      "origin": {
+        "handoffEntry": "L192-W-R199-05",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The degradation detector and its critical failsafe remain the decision point the loop calls.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The provider-only detector/response entry point implemented by this module.\n\nAnchor: \"def evaluate_provider_degradation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:0ec18f520236a5e8dc6b0e59356797713c81bad0face91e6d4f83c0986a37375",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 244
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Failing-first tests pinning hysteresis and the critical transition's event and failsafe-once record, with the stop failure that still records the event and state.  Anchor: `test_hysteresis_requires_sustained_bad_and_sustained_healthy_samples`, `test_critical_transition_records_event_and_failsafe_once`, `test_critical_stop_failure_still_records_event_and_state`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bbd2b44b9ee05cfd3e9a3a27b72e1e617ddbe3e",
+            "content": "sha256:44cd5bf2ce9a70e22e4ca7ab722871393799fd2ce2d05029530fd70f419148cf",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_provider_degradation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "`ar-durable-store/1.0`: `exclusive_access`, `append_line`, `rewrite_lines`, `read_log_text`, `SCHEMA_VERSION`, `schema_version_supported`, and the `StoreOwnership` record `PROVIDER_DEGRADATION_OWNERSHIP` instantiates. Cited by symbol so later additions do not change the claim.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:0ded9b079f84c73f5175084976631a4985862953421df8bf5c3d577c55e6e9a0",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:17f59a1bb0b5ecc96439d18353d2e83dbcede6f21f9c1ff6524a5f4dff55f738",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 287
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:b7d7309e000f090142c57ca555420c44e85aea991764e0d3cf81e11f4874e121",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:f9ff027fc10e363ca8bd88ab12e81b09bf2023b046372290f003fd48b199d8d3",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The sibling provider store put on the same contract in the same change.\n\nAnchor: \"class ProviderMetricsStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
+            "content": "sha256:6069fd688e3dc5d198d0fa38c361eac20d23683287e688cc22036c6a9e919d00",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "mcp/src/agents_remember/providers/metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The provider-store durability suite: `lost == 0`, `torn_lines == 0` and `stragglers == []` over the forced single-record window for both provider stores, asserted rather than restated as a base-commit rate.\n\nAnchor: \"class ProviderStoreDurabilityTests(_TempRootTest):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bdea740125d9d6cd5c3ee480b2578a7fdad599ca",
+            "content": "sha256:a4023570cc0db786fe0eac1b3148469ca46d39644a4c5abca4fce55a6ec06387",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/tests/test_provider_store_durability.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The attention-dismissal control-plane log whose unlocked draft measured 31.45% loss — the precedent that refused \"one writer\" as a reason not to lock.\n\nAnchor: \"class AttentionDismissalStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:4452c3c284f93d76cee4c9a8ad19693bf4b40e91251cf03a9bfed9e833ccd005",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 135
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Store exclusion keeps checkout coordination ahead of the shared kernel primitive.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "This source owns the stated current Investigator scope or canonical vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:40d7816d0c5b9185a064f230407906af290c62cd2792e5c7a5ee80c0234aaf03",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The central provider metrics store this detector reads (`PROVIDER_METRICS_SCHEMA`, `PROVIDER_INDEX_STATE_SCHEMA`, container/index-state row shapes).\n\nAnchor: \"PROVIDER_METRICS_SCHEMA =\"; \"PROVIDER_INDEX_STATE_SCHEMA =\"; \"class ProviderMetricsStore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
+            "content": "sha256:c6792e650f7788825f47b830e6d34b6e1de4f393addc72876f18aee72691a98b",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "mcp/src/agents_remember/providers/metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
+            "content": "sha256:6069fd688e3dc5d198d0fa38c361eac20d23683287e688cc22036c6a9e919d00",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 231
+            },
+            "path": "mcp/src/agents_remember/providers/metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The always-legal provider stop path the critical failsafe calls; never gated by provider launch authority (containment R1).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:63a9108e497ce74b8e28e27c8e411b648af09022b380b97eb70edf26826f74b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_configured_watchers"
+            },
+            "path": "mcp/src/agents_remember/providers/watcher_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:c7a4bbb6d0c16174a01b3f821b1a2b92d62cb5e0de6c4e8ac04bdf0e722575c6",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/providers/watcher_service.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+            "content": "sha256:f937cc549ec9bc846117a31f38f7ac47c7969be7b762268b49d10cf5adc7ca40",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/watcher_service.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The critical-failsafe wiring supplies the stop action directly from the dashboard loop.\n\nAnchor: \"stop_provider_stacks=partial(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:181f293b6dde828b754dd69d0c5207d4b9c9726f04d6c360038e52a7a0a6a3cb",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:854764ab5f4f78c17cdb6147bd8976e36131d6257fd9f098b290f7ce4d1b5c00",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+            "content": "sha256:181f293b6dde828b754dd69d0c5207d4b9c9726f04d6c360038e52a7a0a6a3cb",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 134
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`providerDegradation` settings this module consumes (thresholds, `fail_safe_enabled`, `recent_sample_limit`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f0d06339f4b5b339d0e1d8721c1a92b05571c871",
+            "content": "sha256:ae19850cc8c13885fe7c3551e4cc81bb2c0bd7941ed3cbd9de846437de08f0f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderDegradationSettings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

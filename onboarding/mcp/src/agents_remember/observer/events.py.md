@@ -1,19 +1,12 @@
 # mcp/src/agents_remember/observer/events.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/events.py`     |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060`       |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `overview.md`                                     |
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
-`events.py` defines the `ar-observer-event/v1` envelope (`Event`) — one
-append-only, durable record of something that happened in or to a lifecycle.
+`events.py` defines the strict persisted `ar-observer-event/v1` workspace envelope (`Event`). Optional `scopeKey` carries launch-bound correlation instead of session/lifecycle identity; it does not authorize task execution.
 
 ## Code Commentary
 
@@ -37,22 +30,19 @@ Python attribute name — so records must be dumped with
 
 - This is a persisted-record model, **not** an MCP response: it has no token
   fields and is never returned by a tool, so it is not registered in
-  `PUBLIC_TOOL_RESPONSE_MODELS`.
+  `TOOL_RESPONSE_MODELS`; the older public-registry name was removed, without turning this persisted event into a token-bearing tool response.
 - The format must round-trip: a dumped line re-validates via `model_validate`
   (read side / replay), so aliases and `extra="forbid"` must stay consistent.
 - `data` is the open extension point; the envelope fields are fixed and
   Literal-guarded.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The store serializes and reads these events. | `append`, `read`, `read_log` | mcp/src/agents_remember/observer/store.py:119-132; mcp/src/agents_remember/observer/store.py:134-148; mcp/src/agents_remember/observer/store.py:150-163 |
-| Ids come from the local ULID mint. | `new_ulid` | mcp/src/agents_remember/observer/ulid.py:30-41 |
-| The response-contract convention this envelope mirrors (camelCase fields, strict extras). | `StrictResponseModel` | mcp/src/agents_remember/models/base.py:10-13 |
+### Repo-Internal References
 
-## Update History
 
-- 2026-08-03T04:32:19+02:00 — W3-B08 curator: curated 6 citations (citation_anchor_missing=3, citation_prose_not_in_cit_form=0, citation_source_malformed=3); final scoped citation check clean.
-- 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
-  until closeout stamps the 2a code commit.
+- The store serializes and reads these events. [1]
+
+- Ids come from the local ULID mint. [2]
+
+- Persisted Event uses strict extras and the schema alias, not the tool-response registry or token envelope. [4]

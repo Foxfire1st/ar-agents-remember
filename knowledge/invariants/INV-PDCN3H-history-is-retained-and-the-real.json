@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized in two files that can disagree: the detector holds `FILE_SIZE_HARD_LIMIT` (mcp/test_support/agents_remember_test_support/code_quality/file_size.py:28) while the project arms the step without stating any limit (pyproject.toml:80). The mistake it prevents is the quiet one: a reader treats the declaration as the limit, or a touched file over the limit passes while the rail that would have caught it was widened or bypassed. No check compares the two, which is this record's point."
+  },
+  "applicability": "Any file-size check in this repository, and any historical record or task record a check could tempt someone to edit.",
+  "conditions": [
+    "The detector's band vocabulary and hard limit are the operative ones."
+  ],
+  "exclusions": [
+    "A declared value read as the source of the enforced limit; the two are not kept in step by any check.",
+    "Scrubbing a task record or a historical memory section to satisfy a check."
+  ],
+  "id": "INV-PDCN3H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Measured at the candidate 3f67a31f: FILE_SIZE_HARD_LIMIT is 1200 (code_quality/file_size.py:28); the 94 changed .py/.ts/.tsx files were counted with the detector's own measure and none exceeds it; pyproject.toml:80 arms `file_size_armed = true` and states no number; no task record and no historical memory section was scrubbed in this leaf."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-10",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The operative file-size limit is the detector's constant, not the declaration, and a historical record is never scrubbed to satisfy a check. `pyproject.toml` arms the step (`file_size_armed = true`) without stating the limit; nothing compares a declared limit with the detector's `FILE_SIZE_HARD_LIMIT`, so a reader must not treat the declaration as the source of the limit.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/contract_reader.py
 
-| Field                  | Value                                                         |
-| ---------------------- | ------------------------------------------------------------- |
-| repository             | agents-remember                                               |
-| path                   | `mcp/src/agents_remember/worktrees/modules/contract_reader.py` |
-| doc_type               | `file-level-onboarding`                                       |
-| lastUpdated            | 2026-08-08T14:38+02:00                                        |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`                    |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                                 |
-
 ## Governing Overview
 
 [worktree modules overview](overview.md)
@@ -38,32 +28,27 @@ reader failure so the resolver can report the missing/unreadable contract rather
 
 No known follow-up.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external/domain documentation is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The kernel resolver declares the port this adapter implements. | "class ContractReaderPort" | mcp/src/agents_remember/kernel/coordination_context/models.py:108-108 |
 
-## Cross-Repo References
+
+
+
+- The kernel resolver declares the port this adapter implements. Source caption: "class ContractReaderPort" [1]
+
+
+
+
+### Cross-Repo References
 
 No cross-repository implementation participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
-
-## Update History
-
-- 2026-08-12T01:38+02:00 — 260731-EFA-L22 citation maintenance: refreshed the shifted structural
-  coverage range; contract-reader behavior is unchanged.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: created for the contract-reader adapter added
-  by the layering cleanup. Verification metadata pinned until closeout stamps the L9 code commit.
+No meaningful cross-repo references found.

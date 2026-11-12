@@ -1,0 +1,199 @@
+{
+  "path": "dashboard/src/panels/review/reading/useReviewPage.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+        "content": "sha256:9ffb3d30d51fc04208436f761c726d11eec1568a118c22ce1f09d62735a8bae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "useWalk"
+        }
+      },
+      "id": "RLZ-2NHTJ7",
+      "invariant": "INV-BS5PFE",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-keeping-issues-no-request",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Purely folds an admitted payload into the mounted walk without making a request; explicit selections retain their separately owned read/cache path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+        "content": "sha256:a782d5ed21d85104dbc7a98d285c8424484cd78de0e7ed98643a0b5687105a0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewPage"
+        }
+      },
+      "id": "RLZ-85HWGR",
+      "invariant": "INV-CK3PTB",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Supplies one ordered sequence of shared-model drawn block stops followed by lane hunk stops to traversal.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+        "content": "sha256:a782d5ed21d85104dbc7a98d285c8424484cd78de0e7ed98643a0b5687105a0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewPage"
+        }
+      },
+      "id": "RLZ-BGQZ8S",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Combines the walked families with the current page model and leaves comparison-viewer return outside subject selection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+        "content": "sha256:9ffb3d30d51fc04208436f761c726d11eec1568a118c22ce1f09d62735a8bae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "useWalk"
+        }
+      },
+      "id": "RLZ-CKZQGP",
+      "invariant": "INV-NSG0D4",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-in-tree-selection-adds-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Retained walk advancement moved here.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+        "content": "sha256:a782d5ed21d85104dbc7a98d285c8424484cd78de0e7ed98643a0b5687105a0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewPage"
+        }
+      },
+      "id": "RLZ-RBKYAX",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The page's comparison choice clears the explicit number when it names the resolved comparison, which keeps one meaning of 'shown' for the note, the selector and the subject reads.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+        "content": "sha256:9ffb3d30d51fc04208436f761c726d11eec1568a118c22ce1f09d62735a8bae0",
+        "locator": {
+          "kind": "symbol",
+          "name": "useWalk"
+        }
+      },
+      "id": "RLZ-YBNRZ9",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The new page advances the retained walk through advanceWalk.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Own walk, selection, model, scroll and traversal composition.\n\nAnchor: \"function useWalk(payload: ReviewPayload \\| null, scope: string, intent: TreeIntent): Walk \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:194e15e58192f4ab1cae428ab3d1b191d2e7a84f4c908fa0d4daca0dbc000404",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own walk, selection, model, scroll and traversal composition.\n\nAnchor: \"function useLaneFacts(number: number \\| undefined) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:d40851271be1a946bdf872c9c7a24392c0e43536bdf9aa706eb58b637eb77722",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own walk, selection, model, scroll and traversal composition.\n\nAnchor: \"function lanePaths(lane: LaneRead<ReviewUnexplainedLane> \\| null): string[] \\| undefined {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:461954e288e39104878ba80d8c499fa06a83d5fa45ec31203469c9886988c47d",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Choosing the resolved comparison clears the explicit number, so one meaning of \"shown\" serves the note, the selector and the subject reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:f3a2b0979c3461ee70d75dd286e38daa78463c497061f64fc29a910d2325b813",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The delivered action leaves the recorded frame and clears the chosen number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:6ee2d54092ac4e3156a5eb680b312b75df66c08fdfb6edcb00c0b123f7b4f3ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "chooseDelivered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

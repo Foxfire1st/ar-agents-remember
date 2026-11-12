@@ -1,0 +1,115 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+        "content": "sha256:8676356b172ff4839c83ffa4054bad01da4aa3c4a73fc0f4be280ef7e5bcb950",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens and closes the focused parent with plain arrows and leaves modified arrows alone"
+        }
+      },
+      "facet": "Mounted assertions exercise deliberate plain parent-arrow disclosure, including release of the chosen-document hold, while leaving modifier chords alone.",
+      "id": "PRF-GV7YMY",
+      "invariant": "INV-PH90HV",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-PH90HV",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+        "content": "sha256:b08f6639cb3e9589967c2f34fc31481c442513b471a034bf69362e2f22b3e2c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "uses served hierarchy and remembers closed parents; a chosen descendant holds its ancestors open until a click"
+        }
+      },
+      "facet": "Mounted assertions close over the chosen child and expire releases after A-to-B-to-A, A-to-none-to-A and hidden-list selection changes.",
+      "id": "PRF-QQ6JRK",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The hierarchy/grouping suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:b52ef29168630226661788607929d9bba36bfe24528e8bb57e2cf9a2f4474eae",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Chosen-document holding yields to explicit disclosure for the current selection episode, while plain arrows stay confined to parent rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:57502b089519acebc044dafed2b93779e00d8db992e81ed48db1424dbeab7d32",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:8676356b172ff4839c83ffa4054bad01da4aa3c4a73fc0f4be280ef7e5bcb950",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 187
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The suite reads the row's hover from the title cell, which is where the retained text lives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:36439458e8a8d30bc18b2591c40a325a7c9d47875c4a4dd19e0403d1ec7c69f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "title"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:e24590be205b64abacf4b6a5d8b8fba9cd273b54182361f2a9f111a8611bd940",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 285
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

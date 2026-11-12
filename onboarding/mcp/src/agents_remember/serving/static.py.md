@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/static.py
 
-| Field                  | Value                                        |
-| ---------------------- | -------------------------------------------- |
-| repository             | agents-remember                              |
-| path                   | `mcp/src/agents_remember/serving/static.py`  |
-| doc_type               | `file-level-onboarding`                      |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview      | `overview.md`                                |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -25,6 +15,8 @@ job and shipped inside the wheel and sdist. **It is not committed** (master deci
 legitimately has no bundle, and this module is where that state becomes diagnosable instead of
 mysterious.
 
+Mounts the shipped dashboard bundle or the existing honest missing-bundle notice.
+
 ## Code Commentary
 
 ### Logic
@@ -37,7 +29,9 @@ anything is there. `dashboard_static_dir()` returns the `Path` only when it is a
 directory, and `None` otherwise — `importlib.resources` will happily hand back a path that does not
 exist, so this resolver is what turns that into an answer a caller can act on.
 
-`mount_static(app)` takes one of two branches, both mounted at `/` with equal greed:
+`mount_static(app)` wraps either static branch with `UnknownApiPathsAreNotFound` before mounting at
+`/`. An exact `/api` path or descendant with no non-Mount route match returns 404 for every method
+before either static surface. Paths outside that API rule take one of the two branches:
 
 - **Bundle present** — `DashboardStaticFiles(directory=..., html=True)`, a `StaticFiles` subclass
   that adds `Cache-Control: no-cache` to successful **HTML** responses only. The entry document
@@ -60,7 +54,7 @@ on whether a frontend build happened to be present.
 Response-header policy lives at the one static-serving seam (the `StaticFiles` subclass) rather
 than in a parallel root route. The missing-bundle surface is a plain ASGI app with the same mount
 point and the same greed as the real one, so the set of paths that would have been served is
-exactly the set that now explains itself — a deep-linked cockpit route gets the explanation too,
+exactly the non-API static path set that now explains itself — a deep-linked cockpit route gets the explanation too,
 not a bare 404 from an unrouted path.
 
 ### Invariants And Boundaries
@@ -80,65 +74,49 @@ not a bare 404 from an unrouted path.
 
 No task-independent technical debt is recorded for this module.
 
-## Docs References
+### Role Runtime and Scope
+
+UnknownApiPathsAreNotFound precedes both static surfaces: exact /api or descendants matching no non-Mount route return 404 independently of method. Known routes with wrong methods and non-API/static paths retain their prior behavior. No former native host endpoint receives a static alias.
+
+## Evidence
+
+### Docs References
 
 No relevant documentation was found after checking the configured sources (`system/sources.md` has
 no entries); static-serving behavior is proven by repository source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external or domain documentation was found for this repository-local static mount. | — | — |
+No relevant external or domain documentation was found for this repository-local static mount.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface. | "def dashboard_static_dir" | mcp/src/agents_remember/serving/static.py:104-104 |
-| The absent-bundle surface answers 503 on GET/HEAD and 405 on every other method, mirroring `StaticFiles`. | "def mount_static" | mcp/src/agents_remember/serving/static.py:112-112 |
-| The release build step places the tree this module resolves; it refuses to place a stale one. | "def sync" | scripts/sync-dashboard.py:138-138 |
-| The serving app registers API routes before the static mount. | "mount_static(app)" | mcp/src/agents_remember/serving/app.py:304-304 |
+- `dashboard_static_dir` resolves the packaged bundle to `Path` or `None`; `mount_static` mounts the bundle or the 503 surface. [1]
+- After the unknown-API guard, the absent-bundle static surface answers 503 on GET/HEAD and 405 on other methods, mirroring `StaticFiles`. [2]
+- The release build step places the tree this module resolves; it refuses to place a stale one. [3]
+
+- The serving app registers API routes before the static mount. 
 
 
 
 
-## Cross-Repo References
+
+### Cross-Repo References
 
 No meaningful cross-repository implementation source governs this repository-local static mount.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewed behavior is wholly repository-local. | — | — |
+The reviewed behavior is wholly repository-local.
 
-## Update History
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "mount_static(app)" repointed to mcp/src/agents_remember/serving/app.py:304-304. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+### Runtime Source References
 
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 7 repository-reference citations and normalized 2 historical prose citations (7/7 anchored and sourced; scoped citation check clean).
+- Frozen implementation of UnknownApiPathsAreNotFound supporting the stated file behavior. [5]
+- Frozen implementation of mount_static supporting the stated file behavior. [6]
+- Checks unknown API roots/descendants return 404 for GET/HEAD/POST/PUT/DELETE with and without bundle; known route wrong method stays 405. [7]
+- Composed app former four host paths have no route and answer Not Found for GET/POST/PUT/DELETE. [8]
 
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 2 cross-file citations into the two
-  test modules. The serving tests cover the contiguous bundle-serving and missing-bundle diagnosis
-  pair, both of which patch `dashboard_static_dir` rather than reading the repository bundle. The
-  static tests cover the dashboard-dir suite through the final deep-path assertion.
 
-- 2026-07-31T04:28+02:00 — 260731-EFA-L1: the shipped bundle left version control (master decision
-  OQ6), so "no bundle" became a normal state for a source checkout. Added `MissingDashboardBundle`
-  (503 + expected location + `BUILD_COMMAND`, `no-store`, GET/HEAD-only with 405 elsewhere so the
-  greedy mount cannot change `/api` method semantics), `BUILD_COMMAND`, `_bundle_root()`, and
-  `_bundle_location()`; `mount_static` now always mounts something. Removed this card's obsolete
-  claims that slice 04 ships a committed placeholder there and that a missing bundle simply leaves
-  the mount absent. Verification metadata is pinned to the pre-leaf source authority until closeout
-  stamps the code commit.
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:260-260 - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted. [4]
 
-- 2026-07-18T12:43+02:00 — FEUI-L9R: documented HTML revalidation without weakening hashed-asset
-  caching; verification metadata remains pinned pending candidate closeout.
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:271-271 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- 2026-07-10T15:07+02:00 — No source impact: 260707-HFX2-L17 recorded the unchanged serving
-  boundary for the synchronized pair-role dashboard; generated asset filenames remain opaque.
+- The serving app registers API routes before the static mount.
 
-- 2026-07-10T13:41+02:00 — No source impact: 260707-HFX2-L16 recorded the verified final combined
-  package boundary—landed L15 Python and regenerated L16 dashboard bytes resolve from one worktree
-  `agents_remember` package root, with dist/package byte identity and served-marker proof. Verification
-  metadata remains pinned because `static.py` did not change.
-
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: `dashboard_static_dir` +
-  `mount_static` over `package_data/dashboard/`. Verification metadata pinned until closeout
-  stamps the 4a code commit.
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/app.py:260-260 - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted [4]

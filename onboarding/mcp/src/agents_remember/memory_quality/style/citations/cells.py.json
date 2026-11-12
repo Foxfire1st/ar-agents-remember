@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/style/citations/cells.py",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "parse_row unescapes GFM pipes and parses anchor/source cells for conversion and converted card authoring.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c6014f3a546afa2040c69e91e6541a134fc2212",
+            "content": "sha256:d8ec422536c14895afb176814e4f6a18d8fd6f9d960bc845f6ae3ecccdda6342",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

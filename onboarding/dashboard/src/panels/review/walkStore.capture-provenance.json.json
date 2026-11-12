@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkStore.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "7": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b23650a1b14dbce5ea9eda50491fdb837876eab",
+            "content": "sha256:4def8c241010e10f8ec5ea5ebcb6c3e7e793f415798bf49ea7e1641a0bad185a",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "63ae88194f6139bbf645a8124da15478ae62deb3",
+    "content": "sha256:b7eba9a5a62f32e8f3ebbf067c59dccd87ba3858e7aad7744485128c679f0e30",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "scripts/pnt_sandbox/build_roots.py"
+  },
+  "id": "WKN-20BME0",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-56",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "scripts/pnt_sandbox/build_roots.py still calls the removed resolve_context_tool, so pnt sandbox check/start resolver roots fail on the master line (found by L109 Worker 7820f920 in Evidence 8; journeys do not depend on it). Owner: none yet (a task changing the pnt sandbox tooling or the owner of the resolve_context removal); not a gate finding; to be treated on another date."
+}

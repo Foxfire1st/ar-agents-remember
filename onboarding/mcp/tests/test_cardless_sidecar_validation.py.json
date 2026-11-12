@@ -1,0 +1,107 @@
+{
+  "path": "mcp/tests/test_cardless_sidecar_validation.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6891d3ff1e6519e506c2eca7691672f2625422d7",
+        "content": "sha256:65f5fbb77733afb53eaea6a3a55341f847fc286a96ea50bd93d9b0151bdd2582",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_references_still_require_their_markdown_card"
+        }
+      },
+      "facet": "References without their Markdown card refuse under the marker and sidecar rules.",
+      "id": "PRF-1KZVNP",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6891d3ff1e6519e506c2eca7691672f2625422d7",
+        "content": "sha256:39d74c2ecc9bda071b59c0d56fec21e7fe0b2766d8500c0b72f6f3a86da82cf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_new_entry_sidecar_without_references_needs_no_markdown"
+        }
+      },
+      "facet": "A newly authored entries-only sidecar passes validation without a Markdown card.",
+      "id": "PRF-MKZ4MX",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A new entries-only sidecar passes without a Markdown card.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6891d3ff1e6519e506c2eca7691672f2625422d7",
+            "content": "sha256:39d74c2ecc9bda071b59c0d56fec21e7fe0b2766d8500c0b72f6f3a86da82cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_new_entry_sidecar_without_references_needs_no_markdown"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "References without their card refuse under the marker and sidecar rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6891d3ff1e6519e506c2eca7691672f2625422d7",
+            "content": "sha256:65f5fbb77733afb53eaea6a3a55341f847fc286a96ea50bd93d9b0151bdd2582",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_references_still_require_their_markdown_card"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cardless entries keep identity, link, locator, content and anchor-path checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6891d3ff1e6519e506c2eca7691672f2625422d7",
+            "content": "sha256:fde290b14cea180c64575191249802f4eb6fe7bf7742f3d4cc7b7c207ccbb5e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cardless_entries_keep_identity_link_and_anchor_checks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Closed history freezing and shape checks remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6891d3ff1e6519e506c2eca7691672f2625422d7",
+            "content": "sha256:4187542b34476361aee6d33834e3f04665db628a52de501aa7eceec6d5df5b9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cardless_entries_keep_closed_history_freezing_and_shape_checks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

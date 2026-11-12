@@ -1,0 +1,216 @@
+{
+  "path": "mcp/src/agents_remember/mcp/build_staleness.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+        "content": "sha256:358dd07b38962dc95adfc4fc78cd01fc547a12b1d6a3893d54e8281327b8fbc8",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_stale_build_write"
+        }
+      },
+      "id": "RLZ-EXJRT5",
+      "invariant": "INV-9SKGX1",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule2 as amended v2/v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Classifies the explicitly declared publication operations while excluding dry runs and leaving reads, messages and unknown tool names outside this publication restriction.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+        "content": "sha256:8be226ecb0c5145c171a2bb83df9d9e3e3b9478277662b37a062534bdc6972c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "stale_build_refusal"
+        }
+      },
+      "id": "RLZ-W7MPN4",
+      "invariant": "INV-9SKGX1",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule2 as amended v2/v4",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Reports loaded and installed digests plus the restart/reconnect remedy in the refused tool answer.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The fixed publication-writer set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+            "content": "sha256:b88ae66acb83e5d5789bcd9cb3c1f4530adffb626106ac55cc54dfc78a2234b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_WRITERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The answer boundary keeps the stripped whole result for a stale-build refusal.\n\nAnchor: `server-build-stale`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:b27ca4ab4089993845d5de935955fe5056d01d567d12c9622b45c828bb0655a2",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An explicit dry run is never a stale-build write.\n\nAnchor: `dry_run`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+            "content": "sha256:7d4e66e2a3ee54bf52ad1d80c48eb58e6344850e10da7f848b689e44d66d9a7c",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`knowledge_write` counts only with `commit` set to `True`.\n\nAnchor: `knowledge_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+            "content": "sha256:7c4550a3dc84aa4cfb9c8c53543c3e38b6ff035a7d61d37502b56416bd85d4d5",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`citation_fix` counts unless it polls.\n\nAnchor: `poll`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+            "content": "sha256:fa73c532d16376056360989a1c1db633fc945039fc7207b5cc0f541d35f2f26e",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`curator_coherence` counts only for the publish action.\n\nAnchor: `publish`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+            "content": "sha256:6fe7d5a84e0dc67205399f50250c2920362652434005b6b71b32e47946a261fe",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`task_doc` counts for every valid operation except the linkage report, imported lazily.\n\nAnchor: `linkage_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+            "content": "sha256:cb4ec89a2fdddada4276fc27e12343807d35470cced26241ff2752533b9b3125",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The refusal answer carries code `server-build-stale`, both digests, the remedy and the reading.\n\nAnchor: `server-build-stale`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "adde5b12a26cb698ccc28c146c1e2bbca612f6fd",
+            "content": "sha256:8be226ecb0c5145c171a2bb83df9d9e3e3b9478277662b37a062534bdc6972c0",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Dispatch consults this module only for a stale installed build, after argument validation.\n\nAnchor: `is_stale_build_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:cc4728a41e6f4052321429b9b65a0577f08f5890549c914edd2b55e2d572a7a8",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A `server-build-stale` payload validates against the shared refusal model.\n\nAnchor: `StaleBuildRefusalResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a82c6e7b9b4fa460c90f61260685b7e5d3ec4fa7",
+            "content": "sha256:373eac0b323379f634514d9f3e7f3e17b295c4104956e6e2d4255f773afebb85",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

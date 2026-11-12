@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The stored proof PRF-WZ1FP7 exercises pure cross() planning on three already-converted fixture trees: no conversion, no conflicts, one renumbered reference and the expected merged reference notes. It guards that planning fixture, not a managed worktree_sync transaction or an end-to-end discriminator for a future sync-route split; shared-route behavior is separately supported by the implementation."
+  },
+  "applicability": "Crossing syncs and ordinary syncs of converted lines.",
+  "conditions": [
+    "Both routes reach the shared merge through the same cross function."
+  ],
+  "exclusions": [
+    "Input sides before conversion: cross() converts unconverted sides first and then calls the same merge_trees, so the shared operation governs the merge itself; this exclusion names the input phase, not the operation."
+  ],
+  "id": "INV-B644A4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: both sync routes reach merge_trees through cross(), so the alignment, evidence and report behavior is one implementation, not two. Observed: test_an_ordinary_converted_sync_aligns_through_the_same_merge and the updated both-added integration test through the real worktree_sync transaction."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-08",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 9 every structural merge: crossing syncs and ordinary converted-line syncs share the same merge function",
+  "status": "proposed",
+  "supersedes": []
+}

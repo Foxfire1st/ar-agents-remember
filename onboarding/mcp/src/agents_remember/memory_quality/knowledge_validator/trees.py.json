@@ -1,0 +1,321 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/trees.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:083c47bbcdf32fb13b088c4fa0e6cedeaee1982b7c66ae5b3caf76023e89547f",
+        "locator": {
+          "kind": "symbol",
+          "name": "code_tree_from_git"
+        }
+      },
+      "id": "RLZ-9W8PQW",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "curator-support-6",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The Git-tree constructor retains both each path's object ID and its repository, so later byte reads use the named commit/tree's blobs rather than an ambient working copy.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:9ac3b845fea5ca04fe41a003ac2e460cbe104bdfca98f9602462121f3475b174",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeDirectory"
+        }
+      },
+      "id": "RLZ-9Z7VMJ",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "curator-support-4",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Working-directory tree reads provide the exact regular-file bytes the reference rule judges, returning None for absence and caching per cited path. This is byte supply for the guard, not a second publication authority.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "code_tree_from_working_directory"
+        }
+      },
+      "id": "RLZ-ESQ739",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 11",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This code-tree construction limits existence to Git-visible candidate paths.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "code_tree_from_working_directory"
+        }
+      },
+      "id": "RLZ-MMDERQ",
+      "invariant": "INV-WTF0AW",
+      "origin": {
+        "handoffEntry": "MIK-R212@v3 rules 2 and 4",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The existing Git enumeration owns the tracked and non-ignored untracked path set.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:9226866b0e6aea01313acf27e9f5c63e7af01d3eab698717af76b7b21c91c92a",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodeTree"
+        }
+      },
+      "id": "RLZ-NT6JB6",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "curator-support-5",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "The paired-tree protocol requires read(path) to supply exact bytes, or None where nothing exists, for locator/content/blob judgment against that pair. An existence-only tree cannot satisfy this byte contract.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+        "content": "sha256:f168e7c4ca8e967b8e0ead5a497a30f5ebeb9254fbb9354ea136c6519b5a65cd",
+        "locator": {
+          "kind": "symbol",
+          "name": "CodePathSet"
+        }
+      },
+      "id": "RLZ-X43KNK",
+      "invariant": "INV-033XSD",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Carries the paired tree's bytes, so the guard reads the exact commit's content and one cited file is read once rather than once per anchor.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared exclusion predicate: cache files and hidden directories only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:312f01489db650ccd1a6f99d36ea871efa7ddecdf6df5314c968292a8ec2e31a",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_excluded_from_knowledge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:b415f592f50a05e11543c7caf8ad45a8308c83244ef7bc9eb17ca7abd6b018c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_knowledge_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Only the history files of a commit that is not a comparison base.  Anchor: `history_tree_from_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The working-directory validator input is Git-visible current regular non-symlink files, with named listing failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:1cd7d74b478d57a2640924890747b4be3f1bb90a0ab21907c1077afd37519fe0",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 138
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Git supplies tracked and nonignored untracked paths; links are discarded first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:bc2984a5bce312feb5ea33efa1dbbfacec12c5a19e140135d506bc73322fc8ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_tree_from_working_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A tree is converted exactly when it holds the layout marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:339aef4512e94345d3b3f1783fa1c390ed850f1962a1984f90b0e9652d447946",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeTree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The code-tree protocol and its two implementations, each answering file and directory existence.  Anchor: `CodeTree` `CodePathSet` `CodeDirectory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Both code trees answer directory existence, the root route included.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:14371ecfb22fbafc5a6d7905264c41b0fdf1aa43e9585bb4901a5000f7189b91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_code_trees_answer_directory_existence"
+            },
+            "path": "mcp/tests/test_knowledge_family_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The directory reader prunes dot directories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:cdb1520662f37b5cf55a86f420d51b6e9bf672179b0670971cb603e64fceb945",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_tree_from_directory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The Git readers: regular files only, blobs read in one batch as exact bytes.  Anchor: `_tree_blobs` `knowledge_tree_from_git` `code_tree_from_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "27ee720224f8f02b7476a5457b1b0bf33fbd9baa",
+            "content": "sha256:1d565dc70a6799571f26b7358c170b127906c80d70fa5ec70d0a3feef7bca359",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The formatter shares the predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afce21dceaadba6f8064fc3dec3b80af7bccf765",
+            "content": "sha256:f92bfbf299e6245829812ffb5c6f0e29b453005a56e327d9120172061b11ab4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_json_files"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_format.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A dot-named card and its sidecar are validated.\n\nAnchor: `test_a_dot_named_card_and_its_sidecar_are_validated`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "922080aa70ed74fa611b56de473a1398e4e6ec6d",
+            "content": "sha256:2872079c064fd035ad0a25e8d43839a5893228d43b3b62f0c5e5de769d3b1504",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_validator.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Git reader reads exact bytes, ignores the cache, and matches the directory reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "content": "sha256:fa057418ad5d31763eec79e6c14e24de4b3f34df2c76cb183b4ec5a9c34bc8cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_git_trees_are_read_exactly_and_the_route_index_cache_is_ignored"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

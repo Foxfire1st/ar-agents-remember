@@ -1,0 +1,70 @@
+# mcp/tests/test_review_final_output_receipt.py
+
+## Governing Overview
+
+[tests route overview](overview.md)
+
+## Purpose
+
+Pins final-output receipts bound to retained code and memory tree comparisons.
+
+## Code Commentary
+
+TreeReceiptFixture creates real temporary code/memory Git repositories, captures their two-tree comparison through the existing owners and passes committed results to receipt attachment/read functions. It calls receipt owners directly; it does not perform the former end-to-end canonical dataset freeze, closeout or integration journeys.
+
+Six current test functions assert both delivered-tree matches and result keys, moved/absent memory or code coverage, unavailable/corrupt comparison handling without blocking an already completed result, forged source binding and leaf scoping, immutable previous receipts labelled by a successor, and readable historical v1 receipts with an explicit lack of memory-tree proof. The former eleven-journey/module-node account is removed coverage. No receipt here supplies semantic acceptance.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No Domain Documentation source is configured for this slice.
+
+### Repo-Internal References
+
+- `TreeReceiptFixture` supplies the current fixture or assertion described above. [19]
+- `test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` supplies the current fixture or assertion described above. [20]
+
+- `test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above. [21]
+
+- `test_source_forgery_is_refused_and_receipts_are_leaf_scoped` supplies the current fixture or assertion described above. [22]
+- `test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof` supplies the current fixture or assertion described above. [23]
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+
+
+
+> Retained earlier citation wording: - The lane row and the exact-scope consumer row this module is registered in.
+
+
+
+### Cross-Repo References
+
+No meaningful cross-repo references found.
+
+
+
+
+
+
+
+- The lane row and the exact-scope consumer row this module is registered in.
+
+- The lane row and the exact-scope consumer row this module is registered in.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:2279-2279 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1374-1374 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The lane row and the exact-scope consumer rows (the _user_settings_guard.py and Node package-lock artifacts) this module is registered in. [24]

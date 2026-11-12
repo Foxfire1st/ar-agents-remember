@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/laneReview.summary.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lane's count on the summary.\n\nAnchor: \"\\\"attribution\\\": {\"; \"changed_total\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c472d71fe5716c78d93f2c43680b3ebd2cdac324",
+            "content": "sha256:662ccc612ca45110c5243129fd787fbdfa5cafa0ca0eab1320f268eca7af072c",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body.\n\nAnchor: \"src/panels/review/laneReview.summary.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7310b805a789910931fd5a77e9562cb7cb6a6c8a",
+            "content": "sha256:af3366d6d6eadcba00688c835eefcc585d515843b96dccf603674c8102dd419d",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "dashboard/src/panels/review/laneReview.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,302 @@
+{
+  "path": "mcp/tests/test_instruction_consistency.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+        "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_exactly_one_renewal_sub_record_claims_current"
+        }
+      },
+      "facet": "Fails when no renewal sub-record, more than one, or a history sub-record claims current.",
+      "id": "PRF-5GKFT8",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L84-P5-25",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+        "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_budget_record_names_no_absent_path"
+        }
+      },
+      "facet": "Fails when the current budget record names a path absent on the tree.",
+      "id": "PRF-FVCWH7",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L84-P5-25",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+        "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_current_budget_record_names_no_absent_path"
+        }
+      },
+      "id": "RLZ-X5Y8GV",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L84-P5-25",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This guard fails when the current budget record names a path absent on the tree (with the prefix limit noted as an observation).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+        "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_exactly_one_renewal_sub_record_claims_current"
+        }
+      },
+      "id": "RLZ-YQ8CJ7",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L84-P5-25",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This test fails unless exactly one measuredCurrentRenewal sub-record of capsule-budgets-current.json claims current and no historical sub-record carries a `current` key: it plants `current: true` and then `current: false` on a historical sub-record, expects each to be reported, and expects no problem once the key is removed.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The registry of commands, tools and knowledge names is loaded once.\n\nAnchor: `load_registry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:f641b37518a4427bc28b5300943c0af73d252b3611553b1359bd7aea8d24d9af",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "History-like fields do not hide active missing paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:e7c86b5d54a731dec9047785132726eca17bcdd445f605bc87759b47e2684e4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_history_like_fields_do_not_hide_active_missing_paths"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The current budget record names no absent path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:7d8e035c25a17ef3de875b9a80ff64a2f9e82414b891dc5410b4b00e97b7b918",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_budget_record_names_no_absent_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Exactly one renewal sub-record claims current.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:5b4ff6a994aeb60379876664c318c51cd483d7794df8271de220cf411c221a68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_exactly_one_renewal_sub_record_claims_current"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "A duplicate history key cannot borrow the owner's fingerprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:c0ef6d32704064dd33738977a59f2d990503865fee60511dcb6e757968b3be13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_history_key_in_actual_owner_cannot_borrow_effective_fingerprint"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "A changed frozen owner fails its existing hash authentication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:705e7be1c2b72fa84235c25abedd730a9549801c43f4f9154fe15950d80c69a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_frozen_owner_change_fails_its_existing_sha_authentication"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The clean synthetic corpus mentions every knowledge name outside the set `UNDOCUMENTED_COMMANDS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:6fa416a1cd78cce1f72376a7d58febb5e1e3be64239e4133d2ce33a2ea4e6a9a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The whole shipped corpus and registered descriptions pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:7ebc8f32780cbff9f1bc2c49b15a4a52b435d33acc025092ea328458ad3b4e9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_complete_instruction_documentation_and_registered_descriptions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Each reference-kind mutation fails on each required carrier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:95b1cba13ed3c1a37b9a1dff8edceda12465d40202455495e25093c2622ec347",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_reference_kind_mutation_fails_on_each_required_surface"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Knowledge-name presence is checked both ways and a broken tool name fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:6fa416a1cd78cce1f72376a7d58febb5e1e3be64239e4133d2ce33a2ea4e6a9a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The conversion exemption is explicit and confined to its line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:4a57b57cb7b14c8b4c30e9957402c301701cc134b778d8830e0a23e7c87b6adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conversion_exemption_is_explicit_and_confined_to_its_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Protocol and diagnostic names are not files or commands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:4db86b00336de3159949c44c38d36a5ff1623bde33ed29caa72671c37247a81d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_protocol_and_diagnostic_names_are_distinct_from_files_and_commands"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A migration command of an earlier installation needs no documentation row; the refusal of a row that names one is asserted in test_role_instruction_corpus.py.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:6fa416a1cd78cce1f72376a7d58febb5e1e3be64239e4133d2ce33a2ea4e6a9a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Authenticated historical paths are not current existence claims, and changed or moved history is.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+            "content": "sha256:0bbfe40d6052a9f579f4391b844397b298efa9b26b58a7dec97b638ea12d9841",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_authenticated_historical_paths_are_not_current_existence_claims"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

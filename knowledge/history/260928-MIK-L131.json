@@ -1,0 +1,461 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L131",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:78c1c690590688c72fca7c0405a4dccac2df6b27fbe1a96c59818b363a67c4cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_rewritten_earlier_line"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-0CJK8E"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:90b9acc72cd7ad859a7b9ae161a4cd4310d596d56b1d91dfa2dd5a9f56bba985",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_file_beside_the_line_file"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-2B15HE"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:b6077b2d15d6c04deaf7b966ebff69fa3ab4166b7e27a0dd92fe634ba8f8f45e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_directory_touch_without_entry"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-98J11A"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:3f5b70ea805ee76b57412f00adb4d44ffcbf38f8f1086ca0076791e24122092b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_stale_day_detail_folder"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-GAABYY"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:79fba9a76f372513eb4e950976d84ea8eacfe81e11ae3b51ad8d86e7e093381e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_detail_file_no_line_names"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-GRZNF5"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:19c9b43d358848506314e4f00d175c7d1fdac08792d0bfd27c6a86af586cdcdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observer_event_mode_change_is_rejected"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-MST172"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-QACN4Z"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:e7a4d7f610b39623e8bbff0e6798a9c380238137ac0f82291405a1a4ff7c742a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_stale_day_line_file"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-WE5RQB"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:d17ecd65dd2757031c9aae2a7fd06e29dcd96fb82d860ac02eb0ce02a77e5f5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_admitted_record_rejects_a_rewritten_earlier_event"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "PRF-ZC9KP2"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:f78eccb29e35c8aa73f6612012f0fcc28c01990aab8ec80aae4d4415dec1d400",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreviewFixture"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": "absent",
+          "id": "RLZ-CNGGMS"
+        },
+        {
+          "after": {
+            "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+            "content": "sha256:64d28d5db2468949a9721097cbaaa884c086821e600d20b67ad8ab364ea93f95",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_preview_read_only"
+            },
+            "path": "mcp/tests/preview_read_only_test_support.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WP3KMY"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-4HJ1NR",
+      "items": [],
+      "reason": "These eleven existing accepted fixture/helper and proof entries are additions relative to the landed memory base, not newly minted by this repair. Re-anchor the structurally carried entries to composed R3 bytes while preserving IDs, origins, rationales, facets and complete strict-comparison statement/scope/admission. The history records their base-absent/current-present coverage; no duplicate proof/invariant or changed exclusion is authored. Refused actual requests fail before apply publication and do not establish successful apply.",
+      "revision": 1,
+      "subject": "INV-GAKDNC"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R131",
+          "packet": "requirements/MIK-R131-v1-a-read-only-proof-admits-the-record-of-the-call.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:e9dceee757cfcac7831e050a9891e08a2c25113a34449a9761e670cb13982470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:0119668617f127c0acddfc455175c42d15aad8f918a8bd79438c308d2902f9fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-2W13PT"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:ffdf381b8be83ad6fe8275e4a4c5798d996b6a3c8c749c916a29350feb2d47df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:509f467db5290051ffe52d80caf7441d866091582a94bc401d5f1463d0608144",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-31JXQC"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:3b9d4abdac9864d26ecb08a14bab93d5d3f7f158d884f39cf692dbc80271c991",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:6d69d1d59b0bf7e712b19055bd4ba589ebf939b34b943c9731d7c11cbc12da79",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-5Z9PGW"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:0e6779cb02e2cc2a4043379b8a2fbd09b73886f8e44a1affd4795f0e3a8ac3f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-63NF6V"
+        },
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:f047e65fa75933efb644d29ce6856fff00c6e69f504c86c1d92621f4374766e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-AKPX5R"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-88W86N",
+      "items": [
+        "sha256:d0c90bbea372a2a86c5f06f5bd035b92b7eedf8ac7950c7361e57daa3a8e4c98"
+      ],
+      "reason": "Compose the five existing PRF identities to current CODE R3 bytes after supported landing sync. Preserve the complete same-request authority invariant and its telemetry clarification, all landed realization anchors, and original facets; the inherited memory-disabled/external variant phrase is separately routed in the comparison account, not silently declared current.",
+      "revision": 2,
+      "subject": "INV-EX6T0F"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 2
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 1
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 3
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 2
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 2
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-A887ZW",
+      "items": [
+        "sha256:9b81a7db3188d1458852918916498b626c2bfd5674865b54e3f3d60a5a344453"
+      ],
+      "reason": "Examined every recorded member statement/scope at its baseline revision (gated-family-examination.json). The closeout-preview clarification changes no gate decision, accepted tree, branch, approval or publication guarantee; daily log/river telemetry is not memory publication. Full membership and routes stay unchanged. Re-examined the current landed-base member records after L50 sync; guarantee, membership and routes remain unchanged. Current member history snapshots are updated, not family semantics.",
+      "revision": 3,
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-EX6T0F",
+          "revision": 2
+        },
+        {
+          "id": "INV-THS1XT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-DNPVYZ",
+      "items": [
+        "sha256:ed5495ee3cebc93c3c5f906091005322c59ededb4cd5a3566b12b59db4f91c81"
+      ],
+      "reason": "Examined both complete member statements and scopes plus the unchanged joint guarantee/routes. Call records do not constitute startup publication or reserve apply authority; the same-parent and exact-ref guarantees remain jointly sufficient. The new strict-comparison invariant is orthogonal to this family, not inferred into membership by a shared test route. Re-examined the current landed-base member records after L50 sync; guarantee, membership and routes remain unchanged. Current member history snapshots are updated, not family semantics.",
+      "revision": 1,
+      "subject": "FAM-SZ4B70"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8d86ca26f65f28f7054fb550878c3120abc18eab",
+            "content": "sha256:90d0149fc87b77f37cd34bfd00738d6959638577e1aa591223b2b8f546fc1094",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "08a51034a37a718aa2f0e3f8820c4eea81d8fbe6",
+            "content": "sha256:e2d664ead7347bc85902d16581520ec6335c4aa163a0782d8b12a3f15a0d93e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_partial_bootstrap_preview_is_read_only_then_apply_recovers_same_journal"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-GC3WXC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MQ578E",
+      "items": [
+        "sha256:1eeaaf1141ee2fa3fa9ef416bb373958cc9b120a4b1b54dc62835ba59396f811"
+      ],
+      "reason": "Compose PRF-GC3WXC to the current registered R3 partial-bootstrap proof, retaining its same-journal and exact would-create/existing facet, origin and identity after supported sync.",
+      "revision": 1,
+      "subject": "INV-THS1XT"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R131",
+          "packet": "requirements/MIK-R131-v1-a-read-only-proof-admits-the-record-of-the-call.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-RNKRHE",
+      "items": [
+        "sha256:1fe7b9eea0639d58b892adc21331af7b9bd1566595b3c3c2823206864aae9cac"
+      ],
+      "reason": "Rule8 survey found the explicit universal writes-nothing clause. Preserve gate parity, refusal shape and no closeout publication; distinguish the enclosing daily-call log and completed-answer river producers from this module-level publication contract. Source code and its unchanged proofs were not edited.",
+      "revision": 2,
+      "subject": "INV-WV1YQE"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/__init__.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package's public surface: the owner, the report, the request and the one operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d613d748cfff5dc483056f3aee7708018c7727e5",
+            "content": "sha256:0d488668c813816c20450749d0380f09f73bce5d299cc3d80602b8dd7a7eb813",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one operation it exports.\n\nAnchor: `write_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:169cd09ef917795325317f364b432751267cf3d46f674364b6e170a89b401570",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The module map names the reconsideration rows and the task-document question (MIK-R14).\n\nAnchor: `reconsideration`; `open_questions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d613d748cfff5dc483056f3aee7708018c7727e5",
+            "content": "sha256:7661a91afac87f18847d741a113b8681149ab56095c6d213c0bb1638b3274358",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Requirement-owner observations include writer refusal of new or changed unresolved links with a coordination root; the writer requires converted memory and has no database-ingest fallback.\n\nAnchor: lines 13-24",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d613d748cfff5dc483056f3aee7708018c7727e5",
+            "content": "sha256:ecdc67f750660b0fcfafe978afd60e39637522857be86e30642d9f5c92b6a14c",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

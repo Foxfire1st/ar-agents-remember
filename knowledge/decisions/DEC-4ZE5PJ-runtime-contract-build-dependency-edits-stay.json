@@ -1,0 +1,71 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The Reviewer's reading of the CPython 3.14.8 source and its simulation of the missing module showed the strict-build reduction is not forced by the build either way, and that reading was weighed against keeping the two edits, so the choice is recorded rather than left to be re-litigated from the diff. No actual no-libzstd build was made."
+  },
+  "alternatives": [
+    {
+      "option": "Keep both edits: the current ncurses package name and the added libzstd-dev.",
+      "reason": "The new name is the real package on the quality image's base (the reviewer's 2026-10-06 packages.ubuntu.com reading), the old name resolves only through Provides, and the added dependency gives the quality image the host build's standard-library surface; the reviewer decided both stay.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reduce the list to what a clean 3.14.8 build strictly requires: drop libzstd-dev and keep libncursesw5-dev.",
+      "reason": "The source reading shows the build does not force the choice either way; the rename is still the real package and the removal would only shrink the list.",
+      "reconsider_when": "A clean rebuild proves the packages unnecessary and image size becomes a constraint.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future builder image must provide libncurses-dev and libzstd-dev; the old libncursesw5-dev name is no longer what the contract names."
+  ],
+  "context": "The move edits the runtime contract's apt build-dependency list: libncurses-dev replaces libncursesw5-dev, and libzstd-dev is added. The Reviewer read the CPython 3.14.8 source (the zstd extension is optional and its strict mode is opt-in) and simulated the missing module; no build of 3.14.8 without libzstd was made, and no claim is made that every build succeeds. The Reviewer's 2026-10-06 reading of packages.ubuntu.com established libncurses-dev and libzstd-dev as real packages of the quality image's base (evidence lead/hosted-python-zstd-check.txt and route-A/host-packages.txt). The pyenv recommendation for the build dependencies was read at route-A/net/pyenv-wiki-Home.md, SHA-256 c2618b844dc9acda66679ff265f7385abefa426e89f199a7478b3e8a141f878a, lines 60-66 - not in those two files and not from packages.ubuntu.com. The Curator examined zero external documents directly.",
+  "decider": "reviewer L91-D2 under MIK-R91@v1 rule 5",
+  "id": "DEC-4ZE5PJ",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "026f2e61db2337596e9318ad03571dc2e78aab47",
+        "content": "sha256:3a739db97f744fad75b7fddad8447cbffd8727771dc896d8b385204463530810",
+        "locator": {
+          "end": 13,
+          "kind": "line_range",
+          "start": 13
+        },
+        "path": "scripts/python-runtime-contract.env"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R91",
+        "packet": "requirements/MIK-R91-v1-the-product-runs-on-python-3-14.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer route A, A-2 and A-3: CPython 3.14.8 builds without libzstd and the pinned python-build does not look at it; the old ncurses name still resolves through Provides; packages.ubuntu.com lists libncurses-dev and libzstd-dev as real packages of the quality image's base.",
+        "Reviewer route A read the CPython 3.14.8 source and simulated the missing zstd module; no no-libzstd build was made and no all-builds claim is made. The Reviewer's 2026-10-06 reading of packages.ubuntu.com and pyenv is archived at lead/hosted-python-zstd-check.txt and route-A/host-packages.txt. The Curator examined zero external documents. Correction to the earlier producer wording 'CPython 3.14.8 builds without libzstd': that sentence records a source reading, not an actual build.",
+        "Reviewer route A read the CPython 3.14.8 source and simulated the missing zstd module; no no-libzstd build was made and no all-builds claim is made. The Reviewer's 2026-10-06 reading of packages.ubuntu.com is archived at lead/hosted-python-zstd-check.txt and route-A/host-packages.txt; the pyenv build-dependency recommendation is at route-A/net/pyenv-wiki-Home.md (SHA-256 c2618b84..., lines 60-66), not in those two files. The Curator examined zero external documents. Correction to the earlier producer wording 'CPython 3.14.8 builds without libzstd': that sentence records a source reading, not an actual build."
+      ],
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R91@v1-runtime-build-dependencies",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

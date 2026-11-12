@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/memory_census_scope.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Scope capture is repository-owned and exact-tree based.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632afe9a0342483419e021e47b8029ee8d8fbd2c",
+            "content": "sha256:0758febc9d58f035884807c3d9857e56fa7a82b115b649153ca48713cf8771d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_memory_census_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Code-input modes and pair-owned candidate fields are strict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632afe9a0342483419e021e47b8029ee8d8fbd2c",
+            "content": "sha256:4a102aa128092e4a245d05d36f91e60e4d77257cc1757f06b50ed5d3ffd7d107",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCensusCodeInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Scope identity exposes stable serialized and path-change observations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632afe9a0342483419e021e47b8029ee8d8fbd2c",
+            "content": "sha256:d9bbdef8295dd93edf185a5c9e32bb780ed450498aae1f03c7bb5590bb3495a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCensusScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The route captures exact changes and refuses movement during the observation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632afe9a0342483419e021e47b8029ee8d8fbd2c",
+            "content": "sha256:0758febc9d58f035884807c3d9857e56fa7a82b115b649153ca48713cf8771d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_memory_census_scope"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "632afe9a0342483419e021e47b8029ee8d8fbd2c",
+            "content": "sha256:ab12793b9307e6de8fc93eb52d4dac5a4e8868c574af7c53993901e27bcdac58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_diff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The scope is captured against a comparison tree the caller supplies; the baseline itself by default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632afe9a0342483419e021e47b8029ee8d8fbd2c",
+            "content": "sha256:0758febc9d58f035884807c3d9857e56fa7a82b115b649153ca48713cf8771d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_memory_census_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The scope records what the memory candidate was compared with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "632afe9a0342483419e021e47b8029ee8d8fbd2c",
+            "content": "sha256:d9bbdef8295dd93edf185a5c9e32bb780ed450498aae1f03c7bb5590bb3495a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCensusScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

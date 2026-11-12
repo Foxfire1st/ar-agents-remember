@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_cross_repo.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Markdown parser delegates legacy cross-repo lines to this module through `handle_cross_repo_line`.\n\nAnchor: `handle_cross_repo_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05d78e05a0a305b80f68c57b419a86da92eb74b1",
+            "content": "sha256:0817b51aaad64470aa160a3628e0a2a4e82ecd70583408d950a4e136f035bf78",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Runtime cross-repo resolution consumes parsed entries through `resolve_cross_repo_entry` after settings selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:06f7182d0b0eef985ed6b4d5184c9bb87f4399497531046632851e07c936eefc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_cross_repo_entry"
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+            "content": "sha256:73ea029b9297c491076e63e19f959ed2e35cdaa79b3fa04826e1e02364486155",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

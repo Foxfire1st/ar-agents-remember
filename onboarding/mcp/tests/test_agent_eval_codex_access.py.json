@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_codex_access.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f44ac24bcacfe99c710962df68d19a8f7032be3",
+        "content": "sha256:16882cdb85542ee8897de185ca616f7b158d39c319c55ac38c6b5268c37f7174",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9GV6XB",
+      "invariant": "INV-Z3VS0B",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-access-only",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_native_pool_shape_private_permissions_and_safe_receipt, test_rejects_refresh_recursively_without_disclosing_supplied_values, test_rejects_incomplete_or_ambiguous_expiry_and_exact_input_schema, test_expiry_boundary_and_native_metadata_survive_revalidation and its remaining test cases.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f44ac24bcacfe99c710962df68d19a8f7032be3",
+            "content": "sha256:16882cdb85542ee8897de185ca616f7b158d39c319c55ac38c6b5268c37f7174",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

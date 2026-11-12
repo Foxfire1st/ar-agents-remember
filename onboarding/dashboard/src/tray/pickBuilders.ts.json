@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/tray/pickBuilders.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Constructs structured reference picks from each supported dashboard object.\n\nAnchor: \"export function comparisonRef(repository: string, comparison: ReviewTreeComparison): ComparisonRef {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d5c66802b71fcfc52a0800eda266543ee38dd8c",
+            "content": "sha256:36e76b7ee9889ce4c0d6e1486a90de241c9d2b9648c0eba5582acd2fcdbf92af",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Constructs structured reference picks from each supported dashboard object.\n\nAnchor: \"export function invariantPick(options: {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d5c66802b71fcfc52a0800eda266543ee38dd8c",
+            "content": "sha256:31548c850ac2f21949d335b18d9aeadf0f9d5f00c2a31586ef299e88a547bcf8",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Constructs structured reference picks from each supported dashboard object.\n\nAnchor: \"export function reviewBlockPick(options: {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d5c66802b71fcfc52a0800eda266543ee38dd8c",
+            "content": "sha256:c470b39854f03c4da5e2be162bac10100788534e531d2b5fb8dca0ee2afad780",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

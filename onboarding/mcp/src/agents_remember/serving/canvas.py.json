@@ -1,0 +1,391 @@
+{
+  "path": "mcp/src/agents_remember/serving/canvas.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:7cc799a1e8040a5785934e7022f46bc469e2bee394bee2a85fc83527c0ecf3bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_dispatch_session_message"
+        }
+      },
+      "id": "RLZ-0BJFFC",
+      "invariant": "INV-QXH234",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Dispatches admitted offer-selections and request-explanation messages after the unchanged session prechecks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:22e8a2c202dc95105cc4f38b90f47a5e9b13033db424d106322c976bbe2876d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_open_revision"
+        }
+      },
+      "id": "RLZ-1YBK3T",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Selects only a positive explicitly retained revision or the current saved ready revision; no silent substitution.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:9c850363433018b6fa7b9842bd34ee1f7b416b4cad7ffc5e35c333b16362026f",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_canvas_routes"
+        }
+      },
+      "id": "RLZ-40QBA1",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Adds nested retained-session/message/revoke aliases on the same host registry; the open alias forwards path parameters for scoped revision viewing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:71139e86ade555eab8d4613c2c8a36410d58f77be3c6cacad7fd262d9d49ff48",
+        "locator": {
+          "kind": "symbol",
+          "name": "session_message"
+        }
+      },
+      "id": "RLZ-463XP3",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L104-r1-n7sk8e-proofs",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The route is what charges the session's token before the parser runs, which is where the debit order is actually set.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:de243f53c7b07513b954fab5461046c2d8542075524952bb22a01f8329de54ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "_revoke_matching_sessions"
+        }
+      },
+      "id": "RLZ-49998A",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Pinned opening revokes only a matching revision/slot; unpinned current-page opening retains whole-frame replacement.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:2bb96e9e690ee9822b039bd4d62cea397b842a64db0715db60f2ba0f5bdbd8bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_frame_scope"
+        }
+      },
+      "id": "RLZ-5NMPAC",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-missing-frame-refusal",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Refuses a named missing frame directory before session/state/asset resolution, instead of substituting another frame.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:4db7cdd75b547f3f8743ad8b20f142c91bd42e9a6f495949f5d6a5c490cd6e10",
+        "locator": {
+          "kind": "symbol",
+          "name": "_superseded"
+        }
+      },
+      "id": "RLZ-6S49G3",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "A pinned channel remains usable while its own manifest is retained even when the ready pointer advances; an unpinned channel still follows ready-pointer staleness.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:56fe9f315d4463cfb896ed1430e710219b3d0799389a0f76f3c68f26116df3d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_selections_offered"
+        }
+      },
+      "id": "RLZ-9T1CBG",
+      "invariant": "INV-QXH234",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Builds a revision-scoped selection pick targeted at explainer, retains exact question/choice text and replaces the prior map entry; returns startsModel false without a send.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:17aea5ff747614e2a6b2588edb0ef41af9832efd5a1c67fd56c3b968be501dbc",
+        "locator": {
+          "kind": "symbol",
+          "name": "page_asset"
+        }
+      },
+      "id": "RLZ-J1ENSJ",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The asset route is the other half: it serves one asset of that same revision and nothing else.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:d3c3819011a2e43a99bdbafcefb139400f600f4e0fb407eec4760e9a7ddbcf85",
+        "locator": {
+          "kind": "symbol",
+          "name": "page"
+        }
+      },
+      "id": "RLZ-KF8FZP",
+      "invariant": "INV-K302DH",
+      "origin": {
+        "handoffEntry": "MIK-R104-r2-frame-sandbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The frame route is where a document is actually served, and it serves only the session's own revision.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:45651681d0ddb03eafaefb741e130ae293b5304d9c98d40676b5995ab4acfcaf",
+        "locator": {
+          "kind": "symbol",
+          "name": "_explanation_requested"
+        }
+      },
+      "id": "RLZ-MG4BQW",
+      "invariant": "INV-QXH234",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Builds a removable question pick carrying the exact question targeted at explainer and records only bounded diagnostics/presenter request text; starts no turn.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:73b2f82d4d60ae93a003981d12fcab71843f3224f94828f4456afbdbc85d05ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "revoke_session"
+        }
+      },
+      "id": "RLZ-PM31VE",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Revokes the named channel and removes its pin/slot bookkeeping.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:2e314ee623801dd5be618bb81a7517c5846b8216bf299fe4367e74c77f143644",
+        "locator": {
+          "kind": "symbol",
+          "name": "open_session"
+        }
+      },
+      "id": "RLZ-Q2KTZ5",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Creates a session carrying the selected manifest revision, binding, digest and entrypoint, with separate pinned slot bookkeeping.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:ec32f17f8faa298327137ce46694cf78f7cfb98e8fca8688056348ae7e397a6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "CanvasHosts"
+        }
+      },
+      "id": "RLZ-SKT4VV",
+      "invariant": "INV-QXH234",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Owns the per-host selection map, keyed by repository/master/leaf/frame/revision rather than by a global selection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+        "content": "sha256:22a2728d1635c9d66bebbf435da0f4eaddaed563ab2757d396a9c962048ebb0d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_evidence_requested"
+        }
+      },
+      "id": "RLZ-YCP5TT",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-CANVAS-ATTACH-retained-session-pins",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Pinned evidence lookup resolves the session’s own retained manifest; an unpinned lookup still refuses a moved ready revision.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Evidence lookup reads the pinned revision's manifest or requires the unpinned ready revision to match.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:22a2728d1635c9d66bebbf435da0f4eaddaed563ab2757d396a9c962048ebb0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evidence_requested"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A frame message is bound, bounded and refused by name before it is applied.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:71139e86ade555eab8d4613c2c8a36410d58f77be3c6cacad7fd262d9d49ff48",
+            "locator": {
+              "kind": "symbol",
+              "name": "session_message"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An explicit positive revision opens only its retained manifest; absence opens the saved ready revision.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:22e8a2c202dc95105cc4f38b90f47a5e9b13033db424d106322c976bbe2876d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_open_revision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Pinned replacement matches revision and slot, while an unpinned opening replaces the frame's channels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:de243f53c7b07513b954fab5461046c2d8542075524952bb22a01f8329de54ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "_revoke_matching_sessions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A selection offer preserves its text in one replaceable revision-scoped explainer pick and starts no model.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:56fe9f315d4463cfb896ed1430e710219b3d0799389a0f76f3c68f26116df3d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selections_offered"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An explanation request returns its full question in a removable explainer pick without sending or starting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:45651681d0ddb03eafaefb741e130ae293b5304d9c98d40676b5995ab4acfcaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_explanation_requested"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A missing named frame directory refuses before another frame can supply bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+            "content": "sha256:2bb96e9e690ee9822b039bd4d62cea397b842a64db0715db60f2ba0f5bdbd8bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_frame_scope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

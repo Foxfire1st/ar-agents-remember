@@ -1,0 +1,139 @@
+{
+  "path": "dashboard/src/panels/review/explainer/RevisionFrame.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+        "content": "sha256:0d552c63ec17d08a8be846b97fd8fa5d448dd93fe7401e6064b6142ee5b9dea8",
+        "locator": {
+          "kind": "symbol",
+          "name": "RevisionFrame"
+        }
+      },
+      "id": "RLZ-36D3SB",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Opens the exact retained revision in a host session and separates compared frame lifetimes by slot instead of running a model.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The stale envelope admits only valid part ids, caps what it sends, and reports what it dropped or truncated\n\nAnchor: `export function buildStalePartsEnvelope(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "content": "sha256:4f9561698f61705452d10d0745efc8e6970f89b193aba93fcfd07613f2bc6b56",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A stale part id must be a nonempty bounded lowercase id other than page; membership is checked when a nonempty knownPartIds list is supplied, while an omitted or empty list leaves only the shape checks.\n\nAnchor: `isValidPartId`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "content": "sha256:499ee05eefa470052e1e3be7a394434303a0913800ea85edd2f3e85ce954feca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One channel per revision and slot is opened, closed and reopened by key, and closed on disposal\n\nAnchor: `function useRevisionChannel(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "content": "sha256:184203608cfcb9cd995d884aa454b0c817f0c4f948f9180fe13514e689fe9557",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 327
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The frame listener accepts only its own frame window, bounds forwarding and rejects mismatching supplied protocol/session/revision/comparison fields and repeated string request ids before forwarding; absent optional identity fields remain subject to the host’s validator.\n\nAnchor: `useRevisionFrameProtocol`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "content": "sha256:499ee05eefa470052e1e3be7a394434303a0913800ea85edd2f3e85ce954feca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only a protocol refusal name from the host's own answer reaches the page's refusal line\n\nAnchor: `function protocolRefusalOf(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "content": "sha256:3a6e0d01154eb7282ad7d4e212b6ae1c0e283ee632f2217260a8b7ac5b3b16c1",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 486
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The frame's shell states its revision, slot, dropped and truncated counts and last refusal\n\nAnchor: `export function RevisionFrame(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "content": "sha256:0d552c63ec17d08a8be846b97fd8fa5d448dd93fe7401e6064b6142ee5b9dea8",
+            "locator": {
+              "end": 896,
+              "kind": "line_range",
+              "start": 824
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Binding checks here reject mismatching supplied protocol/session/revision/comparison fields and repeated string request ids; they do not require each optional field to exist. The host protocol remains the final validator of a forwarded envelope. Trusted stale-part envelopes keep the true total while sending at most 32 valid ids and naming dropped/truncated items.\n\nAnchor: `checkIdentityMismatch`, `validateEnvelopeBinding`, `useRevisionFrameProtocol`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce22c3c393a5ee0ba00ef5055a780f850cd5b7d",
+            "content": "sha256:499ee05eefa470052e1e3be7a394434303a0913800ea85edd2f3e85ce954feca",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

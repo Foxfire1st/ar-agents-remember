@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_tool_log_budgets.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ef86757e8d7fad446df84b039451289247461f7d",
+        "content": "sha256:e0e690274a2cfe410d8b49149b2873fdba99bc110307e7d7ed87b6f383eded9a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_pressure_eviction_bounds_its_listings"
+        }
+      },
+      "facet": "Pressure eviction bounds its folder listings.",
+      "id": "PRF-MR09TV",
+      "invariant": "INV-ANKVYJ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 budgets",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ef86757e8d7fad446df84b039451289247461f7d",
+        "content": "sha256:6b5c830e4bdcbcea8f74df8629f8230cfa89b981f02278682c69a1778377e07e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_failed_whole_day_removal_keeps_its_bytes"
+        }
+      },
+      "facet": "A failed whole-day removal keeps its bytes.",
+      "id": "PRF-WBGBVV",
+      "invariant": "INV-ANKVYJ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 budgets",
+        "leaf": "260928-MIK-L108"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pressure eviction bounds its folder listings against one census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef86757e8d7fad446df84b039451289247461f7d",
+            "content": "sha256:9326ed0d8e3eb9219528b586a449fa4ca550d2e997c5d443ff1efb46aa0edaf2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolLogEvictionInventoryTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A 31-day sweep continues on the next same-day call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef86757e8d7fad446df84b039451289247461f7d",
+            "content": "sha256:d5b84188259493d5832c53577c328bf0aa2a3013fc33ae0d4d64b07fb5154b3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolLogSweepContinuationTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,218 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/onboarding-coherency.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Reviewer compares affected onboarding with code using the Curator's handoff and the complete curation-check result from the curation operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "content": "sha256:495af3c3743c458015fd64d25262f892fa3c2d2d2ca3aaf949833f0d5b75c26d",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Reviewer doctrine assigns the normal authoring full-MQC exception to the Curator, not a reviewer subset.\n\nAnchor: `memory_quality_check`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:294a6e24d00c3d09f380c3eea55239063584f63a63651801f9b1d4f2b4b50328",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Reviewer outputs include both durable route-report templates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:c13b623226b4f8a8f27a74e6aca53edf3b89ae42ae31f375dc053db0492e6f59",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Helpers are not AR seats or independent review; Curator authoring retains one writer.\n\nAnchor: `Curator authoring still uses one writer.`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:349e8630cdb780d1cffca9c046cb75c2eaf259d769e87f9fb0814123aa25ecc9",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Changed files report their current trace row and reason, new files their onboarding, and governing overviews reflect the change; the report decides nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "content": "sha256:2cb4c4f56b118588d0bbb54e592f2c52e7edf2affad55ef39649e3c84fd5ff72",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report shape contains analytical author and affected scope, changed-sidecar and new-file inventories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "content": "sha256:8ca1cb157e2a9d650b3580e9bc3149ad8ad0f501ba1bc7ef3088ecb23e72d5c4",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Check statuses, conditional coherence, drift and ledger fields describe what must be reported, not successful execution.\n\nAnchor: `## Checks — curation is complete`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "content": "sha256:f4bf779b9def778a3c3834e57561b748600c16105ad5c821725669be05fa3228",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Overview and handoff fields require explicit gaps and forbid full-green overclaiming.\n\nAnchor: `Failed/not-run checks reported without a full-green claim`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a13975a481ca11def5a559f561a1940e2249700c",
+            "content": "sha256:1cd46742f665d997e396f703af727cbbcbb02f475f676e1a2f30c7d07499f3b5",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Curation reconciles current intent, ruled intent and implemented reality and verifies every card sentence against code; each invariant is ingested within its Curator-authored semantic scope, while grouping and entity edits require their own justification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:5fedb153c332e95b32fefe486d1da529afcc62d409d1791ce0d2a8572f4a8ac8",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The curation owner runs changed sidecar/overview/entity checks, memory-worktree diff check and full memory quality; every actionable finding is repaired or escalated with its returned code, conditional coherence is completed before closeout, and independent fact-checking checks every changed statement and history row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:275b225de5ac6b2d7a15a3ae2a7d46e86a6698ddd550bc41f1687989fd34be94",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Curator reconciliation and memory authoring do not own Git publication or landing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:8f50640da2d94e09cf1dc538da784d7394195b516df1cb2f2856c6e459ef0c6d",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Future hashes/uncommitted fingerprints are forbidden; handoff evidence and required coherence retain their own boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3cd560e0c86d38405ba4fa21adc951af492065d",
+            "content": "sha256:3a60d5fde180318908cece087286d7e497f8758cf61f57d0cc0ee595670a5bf1",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); browser/report.md fresh390px partner proof;106 functional checks"
+  },
+  "applicability": "Main and sidecar diff panes at narrow comparison-page widths.",
+  "conditions": [
+    "Both panes start inline with capped lists and no horizontal overflow."
+  ],
+  "exclusions": [
+    "Cockpit layout changes; geometry measurements (declaration pins only)."
+  ],
+  "id": "INV-9HMJ13",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "browser/report.md fresh390px partner proof;106 functional checks"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F09",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Both main and sidecar diff panes start inline at narrow comparison-page widths.",
+  "status": "proposed",
+  "supersedes": []
+}

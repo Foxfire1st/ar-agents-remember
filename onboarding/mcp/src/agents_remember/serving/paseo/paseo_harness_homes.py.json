@@ -1,0 +1,124 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+        "content": "sha256:94aa425e94a83cb55a7282842a5a5d243c9a5ba7dac3bc12618e1de014f427e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_preserved_harness_homes"
+        }
+      },
+      "id": "RLZ-HTWN6Y",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rules7/8 bridge and homes",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Refuses a restart that would change an observed inherited harness-home value unless the explicit accepted-change route applies, while unknown observations add no refusal.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+        "content": "sha256:60c0c2d18c83341360820e154abc0963ece4aba7ef2a9fbae81795eb707906a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "harness_home_status"
+        }
+      },
+      "id": "RLZ-TKP4J5",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rules7/8 bridge and homes",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Reports observed inherited harness-home names and a settings remedy without exposing their values.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The variable list is loaded from package data.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:7171b2a015be48fd88c786e1840cd0aedf68b1f423033f8ad8626a666598ff72",
+            "locator": {
+              "kind": "symbol",
+              "name": "HOME_CATALOG"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A variable is inherited unless every provider that uses it carries it in its settings `env`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:6807804b759c382e43b38fd1fe75d0761e49dcd6866062434b6470bded5fbb11",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provider_environments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Status reports inherited names and the settings remedy, or `unknown`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:60c0c2d18c83341360820e154abc0963ece4aba7ef2a9fbae81795eb707906a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "harness_home_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusal before a stop, with running and new values and the ways on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:94aa425e94a83cb55a7282842a5a5d243c9a5ba7dac3bc12618e1de014f427e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_preserved_harness_homes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The catalogued harness-home variables with their sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e0857ffef6d6d48aeb8df07e08537a2d5a2ce8",
+            "content": "sha256:ae1658dd1f2d41309141545c30fb63a09e8fcf6759d966d3efe6e4fbaa919b00",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/host-harness-homes.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

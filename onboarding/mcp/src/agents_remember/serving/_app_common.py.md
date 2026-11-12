@@ -1,72 +1,115 @@
 # mcp/src/agents_remember/serving/_app_common.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/serving/_app_common.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-08-24T14:43+02:00 |
-| lastVerifiedCommitHash | `f9f92ca793811b6cb738d7e302dfecdf8636e96e`                                        |
-| lastVerifiedCommitDate | 2026-08-30T14:26:46+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
-[Serving overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Defines shared serving request/composition models and helper seams used by the split FastAPI route
-modules.
+Shared serving collaborators, the runtime bundle, and projection/SSE helpers. This module carries optional review and reader ports across the layering boundary; it owns no terminal route bodies, WebSocket bridge, inbox registrar or capsule-launch resolver.
 
 ## Code Commentary
 
-### Logic
+Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition.
 
-`TerminalAttachTaskRequest` accepts the canonical task-document reference and role used by the
-assignment route. Shared runtime/collaborator records keep topology, catalog, host, projection, and
-cache dependencies explicit for route handlers.
+ServingCollaborators holds the distinct subject-review, entry-list, source-content, intent-summary, tree-view and path-reader ports plus tree-view shutdown and extra-route hooks. It also declares `review_memory_root: ReviewMemoryRootPort | None = None`; `_ServingRuntime` carries the same optional field. The imported alias is a three-string callable returning `Path | None`, not admission logic. An omitted port is a missing capability, not an empty result. The runtime contains configuration, projector, clock, build, interval, the optional memory-root capability and the tree-child shutdown hook; it is not a terminal host. LiveProjectionInputs resolves unset landing/change-watch toggles from the replay seam. The projection dump is memoized by published instance, copied before the serve-time build tail, and reused for SSE snapshots; deltas remain individual nodes. A route-supplied build-currentness reading rides the snapshot tail beside the build. Optional `host_activity_reconcile` supplies the config-bound full-host boot reconciliation port; omission leaves activity unknown rather than proving absence. Each runtime owns its `TaskDocumentBodyCache`. Conditional-read ETag parsing now belongs to `conditional_read`, not this helper module.
 
-### Conventions
+The projection stream route passes the runtime's memory-root capability to `multiplex_review_memory`. With no review identity, that helper streams ordinary events without resolving a root. A supplied identity is checked before root resolution; a missing adapter or unadmitted root produces a review-memory error event while ordinary events continue. The native worker separately checks that the root is an existing canonical non-symlink directory outside provider-runtime.
 
-Wire parsing belongs here; structural qualification and mutation delegate to owned services.
+The shared runtime also carries the optional background ledger. Routes, projection owners and background loops use that same account; the runtime bundle does not restore a terminal host or notifier owner.
 
-### Invariants And Boundaries
 
-- No leaf-key attach request or compatibility parser remains.
-- Request identity is task document plus role.
-- Runtime collaborators are server-resolved, not browser-provided authority.
+A non-JSON value here would break a served response, not the projection tick: these functions prepare HTTP and SSE bodies, and their JSON mode keeps a `JSONResponse` or an SSE frame from failing on a datetime. The tick's persisted write belongs to `projection_store`, and the stable-delta decision has its own dump boundary.
 
-### Todos
+## Evidence boundary
 
-None.
+This is current-source interpretation of the A9 candidate, not a new test result, CODE grade or MEMORY acceptance. The retained supporting references below are reauthored through the ordinary fixer; unsupported removed constructs are withdrawn, not rebound to arbitrary neighboring code.
 
-## Docs References
+## Source-bound reference inputs
 
-No Domain Documentation source is configured.
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Terminal assignment parses canonical document and role. | `TerminalAttachTaskRequest` | mcp/src/agents_remember/serving/_app_common.py:286-291 |
 
-## Cross-Repo References
+- Anchor: Optional review/reader collaborators, distinct missing-port capabilities.
 
-No cross-repository implementation dependency governs this file.
 
-## 260821-CLIVE Execution-Evidence Collaborators
 
-`ServingCollaborators` now exposes explicit terminal-catalog and operator-inbox execution-evidence
-registrars. `_ServingRuntime` retains the inbox registrar for notifier sweeps. These injected seams
-let the serving process register task-bound worker/reviewer/curator first evidence before routine
-retention can erase the only execution row; absence of a registrar is fail-closed for deletion.
 
-## Update History
 
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented the two task-execution registration collaborators. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
+- Anchor: Current tree-child shutdown hook on collaborator and runtime. [13]
 
-- 2026-08-11T19:58+02:00 — Aligned the current serving card for `_app_common.py` with seat ownership, delivery, lifecycle, and terminal boundaries represented by this source.
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+
+
+
+- Anchor: Runtime without a terminal host or inbox registrar. [14]
+
+
+- [15]
+
+
+
+- Anchor: Projection memo keyed by published instance, not content revision. [16]
+
+
+
+
+
+- SSE snapshots copy the memo and inject the serve-time build tail; deltas stay bare. [17]
+
+
+
+
+
+- Anchor: Remaining collaborator fields, not the removed compiler/terminal seams.
+
+
+
+
+
+- Anchor: Distinct optional intent-summary port. [22]
+
+
+
+
+
+
+- Anchor: Distinct tree-view port and its shutdown hook.
+
+
+
+
+
+- Anchor: Path-reader capability separate from task review. [24]
+
+
+
+
+
+
+- Anchor: The retained runtime bundle shared by routes and loops. [27]
+
+
+
+
+
+- Snapshot-only volatile serving build tail. [28]
+
+
+
+
+
+- Anchor: Source-content capability is not an empty-content fallback. [30]
+
+
+
+
+## Evidence
+
+- Serving lifespan teardown invokes a supplied review_trees_shutdown hook through the startup-owned worker helper before canceling and draining background tasks. [20]
+
+- ServingCollaborators and _ServingRuntime newly declare optional review_memory_root defaulting to None. ReviewMemoryRootPort is only a callable type alias. The projection stream route explicitly passes the runtime field to multiplex_review_memory. That helper skips root resolution for absent review identity, validates supplied selectors, resolves the port and reports missing adapter/root errors. The native worker enforces its own root-shape checks. These bodies do not prove the composition root's full leaf-admission policy. [31]
+
+- Composition carries application-tier explainer ports, native host and master-contract resolver without a serving-to-cli/application import; absence is surfaced as a named unavailable route rather than partial composition. [32]
+
+- SSE snapshots carry a supplied build-currentness reading in the served tail; deltas stay bare. [33]

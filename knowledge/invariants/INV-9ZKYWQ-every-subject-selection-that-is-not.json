@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without a rule for what drops kept families the tree grows with every subject the reader ever opened, or it shows rows of a comparison the surface has left beside rows of the new one. Making the outside selection the default means that an entry point written without knowledge of the tree cannot keep rows by accident. The rule is realized in the walk module, the surface, the navigation and the marker moves, and the start-afresh cases guard each entry point."
+  },
+  "applicability": "The family tree of the mounted intent reviewer and every way a subject is selected in it.",
+  "conditions": [
+    "In-page tree, member, group and traversal selections retain the walked tree. The page selection defaults keepTree true; target changes, URL restores, comparison switches, marker entry/return and explicit task-context resets pass false.",
+    "Marker entry/return, the offer to open task context after refusal and initial subject selection follow their actual outside-selection handlers.",
+    "Reset drops retained reads, not the complete comparison index outline. Pending selection retains a frame until its own answer arrives.",
+    "Compatibility uses the read cache's code-tree/knowledge-snapshot generation test; incompatible context is not folded into the same walk.",
+    "All changes now opens the existing comparison viewer without an intent review request; viewer return restores the retained reviewer inspection state."
+  ],
+  "exclusions": [
+    "Filter/order changes, current-subject roster paging, worklist/page controls, file opening and failed/refused reads are not implicit outside subject selections.",
+    "No separate badge-free catalogue of kept families or all-invariants subject list is promised.",
+    "Scroll/focus requests retain their separately documented owners."
+  ],
+  "id": "INV-9ZKYWQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md rules 4, 9 and 10, and Failure And Recovery Behavior; notes/reports/260928-MIK-L39-worker.md; notes/reports/260928-MIK-L39-review-R1.md, -R2.md and -R3.md"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R39@v1-other-selections-start-afresh",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "Explicit in-tree subject selections preserve the retained walk: an explicit selection inside the tree keeps the tree the reader walked, a selection made elsewhere resets it, and a page-evidence destination the generated page asks for also keeps it — the Architect's ruling (d2990c9d, MIK-R39/D36) makes that intended behaviour rather than a deviation, so returning to the page finds the review where it was.",
+  "status": "proposed",
+  "supersedes": []
+}

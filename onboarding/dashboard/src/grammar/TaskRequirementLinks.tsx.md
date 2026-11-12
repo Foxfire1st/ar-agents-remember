@@ -1,15 +1,5 @@
 # dashboard/src/grammar/TaskRequirementLinks.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/grammar/TaskRequirementLinks.tsx` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [grammar/ overview](overview.md)
@@ -48,9 +38,7 @@ keyed to the exact task document, matching the reader-scoped lifecycle.
 
 ### Invariants And Boundaries
 
-- The provider is mounted per task-document reader (taskReader's
-  `TaskRequirementBoundary` wraps `MasterOverview` and `TaskReader`),
-  so the listing is scoped to the document being read.
+- `taskReader.tsx` mounts `TaskRequirementLinksProvider` directly in `TaskPage`, around both the fixed form skeleton and its own-view branch. It receives the selected entry’s repository and path-derived master directory; `document` stays undefined during body loading and otherwise is the exact `entry.reference.path`. The listing is scoped to that document, with no `TaskRequirementBoundary` or separate `MasterOverview` wrapper.
 - No document means no fetch and no `open` (an absent `document` is only
   valid on the notes variant of the artifact target).
 - Opening is delegated to `onOpenArtifact`; the provider itself never navigates
@@ -60,34 +48,29 @@ keyed to the exact task document, matching the reader-scoped lifecycle.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The listing client that feeds the context. | `listRequirements` | dashboard/src/data/requirements.ts:26-32 |
-| The artifact target the `open` callback lifts. | `TaskArtifactReaderTarget` | dashboard/src/data/taskArtifacts.ts:1-14 |
-| The markdown consumer that renders registered addresses as buttons. | `requirementAnchor` | dashboard/src/grammar/Markdown.tsx:116-133 |
-| The reader that mounts the provider around task prose. | `TaskRequirementBoundary` | dashboard/src/panels/detail-panel/taskReader.tsx:86-104 |
+- The listing client that feeds the context. [1]
 
-## Cross-Repo References
+- The artifact target the `open` callback lifts. [2]
+
+
+- The markdown consumer that renders registered addresses as buttons. [3]
+
+
+
+- `TaskPage` mounts the provider around the selected form and own view, deferring its document listing until body loading settles. [4]
+
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the
-  requirement-link provider/context that makes registered task-local requirement
-  packets openable from task prose and reference lists. Verified at code commit
-  1993dd25.
+No applicable cross-repository source was found.

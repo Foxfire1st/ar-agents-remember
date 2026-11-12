@@ -1,0 +1,369 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:9bdf79f0a04fb919cae29d06ddad576b1c37fc0efd8afd1f82c9e25e788a6b22",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recover_from_refs"
+        }
+      },
+      "id": "RLZ-1Y5967",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Ref recovery rebuilds the source strategy from the recorded sync source.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:508ca301ab0193366606183c55a9dc3ecca5ca52fb0b3c65d03d7e2044c5b87d",
+        "locator": {
+          "kind": "symbol",
+          "name": "finalize_sync"
+        }
+      },
+      "id": "RLZ-3X06Z8",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Appends the default-source entry once (idempotent through owns_log_entry) without moving the base pair.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_precheck_cancel_sides"
+        }
+      },
+      "id": "RLZ-8GMPRJ",
+      "invariant": "INV-YVP7RQ",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 5",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Prechecks pinned heads for unchanged sides and collects retained/stash ownership assessments for participating changing sides. Saved-manifest recovery and save/discard ordering belong to later cancel_sync callees, not this precheck alone.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retire_restored_stashes"
+        }
+      },
+      "id": "RLZ-AGZTNF",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Retires kept stashes only at terminal finalization, entry by entry, and only the entry the record names.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:d74213ca3a35f9ea8fedc15c9e4e70fa2bd9985de2a2135a5ef02a4a6501ce15",
+        "locator": {
+          "kind": "symbol",
+          "name": "cancel_sync"
+        }
+      },
+      "id": "RLZ-C49S6G",
+      "invariant": "INV-T46B5W",
+      "origin": {
+        "handoffEntry": "MIK-R153 rule 3",
+        "leaf": "260928-MIK-L153"
+      },
+      "rationale": "Prechecks authority, preserves unattributable state with durable atomic saves, rolls back only the owned generation, restores the complete parked index/worktree and retires only its own recorded stash after terminal recovery. Prior completed manifests are readback-verified; fresh files are not independently reread.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:fd0e23734436b2909e009702074052701c260e24c095433ec2fedd77e52d2859",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recover_complete_sides_around_partial_authority"
+        }
+      },
+      "id": "RLZ-NQNK3S",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Recovery of complete sides deletes the default-source pins with the others.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:623c602c56b0f4916455eebdf721c1054250241c39689bbda00f8b9a709d7352",
+        "locator": {
+          "kind": "symbol",
+          "name": "manual_repair_result"
+        }
+      },
+      "id": "RLZ-P06PXS",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The manual-repair answer carries the omission report block of the stopped sync.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:69212e85879f40faac09a803e1ba0be55d01f8cc96e4c381698319d6abf03e32",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cancelled_summary"
+        }
+      },
+      "id": "RLZ-QTXJXM",
+      "invariant": "INV-CMQTZF",
+      "origin": {
+        "handoffEntry": "MIK-R162 failure clause (no merge of the proof's own)",
+        "leaf": "260928-MIK-L163"
+      },
+      "rationale": "The cancelled result names actual saved files and SHA-256 digests and retains the assessment native fault, without adopting unattributable work or claiming an unchanged refusal.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+        "content": "sha256:4c9f8abe5298d2c423826aa01083af4f953758b9cfcc23f02d5bb45ac231cf79",
+        "locator": {
+          "kind": "symbol",
+          "name": "_cancelled_contract"
+        }
+      },
+      "id": "RLZ-WK1DXZ",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "On cancel removes only the entry this sync wrote.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The stable store archives raw or opaque journal evidence and projects quarantine.\n\nAnchor: `SyncOperationStore`, `_quarantined_sync_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncOperationStore"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:d4bc6b6f0f627f861dfed3e739f5288f508f957eea7a9e550c5b69aa8f3fb5fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_quarantined_sync_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Only terminal transactions retire their exact restored stashes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_restored_stashes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Ref reconstruction and contract/base constraints come from the sync authority module.\n\nAnchor: `side_record`, `require_record_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:d028a8fe2bfab6fd2a9097ac6cfd8f5d7dafa4043a48a071b7c2b2d22ed3da61",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a97e2f2ffff5af2f9a27813fb81ad88400e499fa",
+            "content": "sha256:541ad345ff83c9dacb613b072e0526e18a9d5839a532b0d2b147ee833f4d0eea",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_record_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rollback proof is centralized in the Git module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
+            "locator": {
+              "kind": "symbol",
+              "name": "rollback_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair.\n\nAnchor: `finalize_sync` `cancel_sync`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:49a16a4d82b78900965c3ad0fa38ede749418938846086882583afaceb0e8758",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The completed result gains the recomputed worklist summary; every failure leaves it unchanged.\n\nAnchor: `with_recomputed_worklist`, `recompute_knowledge_worklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_recomputed_worklist"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
+            "locator": {
+              "kind": "symbol",
+              "name": "recompute_knowledge_worklist"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The completed-branch proof addresses only operation-created heads and reads no ledger rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_completed_branches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A completed sync carries the journaled crossing summaries with their alignment counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3944a10acef72f6ac7b30c4c6930bc7b9b80718",
+            "content": "sha256:9c9d7e056784adfff83fdf82fda66eaaa7f05197e219889d6d2e163e2675e83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "successful_crossings"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_completion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "All-side ownership prechecks precede cancelling journal mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_precheck_cancel_sides"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Save-first cancellation names actual saved files and digests; native merge faults explain failed attribution in the cancelled summary rather than forcing a later-work refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:69212e85879f40faac09a803e1ba0be55d01f8cc96e4c381698319d6abf03e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cancelled_summary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

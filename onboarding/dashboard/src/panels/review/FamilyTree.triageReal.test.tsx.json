@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/FamilyTree.triageReal.test.tsx",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('uses walked implementation facts for outline badges with intent and membership precedence', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98e6af42950bccf2eb60cf97211e67df04f3336f",
+            "content": "sha256:0f523b98c102bff3375d39ab331f3dfd46a22c7feedd5d07b7a40c2618b97955",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps every delivered fact and every reason in the main page outside disclosures', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98e6af42950bccf2eb60cf97211e67df04f3336f",
+            "content": "sha256:046b80b040e2511af8bda0edb67d012a4fe7b9f80121332298c0d71f96095072",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('preserves each family guarantee and occurrence membership on the main page', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98e6af42950bccf2eb60cf97211e67df04f3336f",
+            "content": "sha256:96fa99867ff5946144aab4c933f1af2dd37b979324eaed80458faeeb4df9328b",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

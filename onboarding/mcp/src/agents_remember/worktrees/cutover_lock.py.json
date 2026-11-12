@@ -1,0 +1,289 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/cutover_lock.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+        "content": "sha256:3b7aedd195cb2dd0f7f2fc35f3e833f734b827e2fc8fc442a8488cb7028a6b11",
+        "locator": {
+          "kind": "symbol",
+          "name": "first_conversion_procedure"
+        }
+      },
+      "id": "RLZ-0T56V4",
+      "invariant": "INV-KZ2JWB",
+      "origin": {
+        "handoffEntry": "MIK-R97@v9 part F item 8",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It builds the sentence that every refusal for unconverted memory carries: the conversion command, and no guide.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+        "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+        "locator": {
+          "kind": "symbol",
+          "name": "converted_memory_location"
+        }
+      },
+      "id": "RLZ-JPVV25",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "The location probe finds converted sibling/worktree memory only to word recovery; it no longer decides legacy operational admission.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+        "content": "sha256:fe0d438f128714db3b51045189e66d0007833cb7c8f28611ae9c2a6dbf8dae60",
+        "locator": {
+          "kind": "symbol",
+          "name": "legacy_format_refusal"
+        }
+      },
+      "id": "RLZ-JRGRCT",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "This is the single refusal message owner; it names legacy format, operation and crossing or first-conversion recovery.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+        "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+        "locator": {
+          "kind": "symbol",
+          "name": "cutover_lock_refusal"
+        }
+      },
+      "id": "RLZ-MQKF7W",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Once the caller establishes legacy input, the central lock refuses unconditionally, including a repository with no converted line; failed probes keep their named errors.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Unconditional legacy refusal, named probe error, and definite non-repository boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Public routes refuse with or without converted memory elsewhere.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A converting candidate is gated, not legacy-locked.\n\nAnchor: `test_the_converting_candidate_is_gated_never_locked`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:b9b28e1ba2c9584b6d8aee4f9f0d34db43fd363629dd722f344f9041471e447a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Plain directory and unanswered repository probes have distinct outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:299e20bd8b429ee9b9bd297e5e884b38171e7a4d9e485b633f99fbb8d7188da1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Converted locations inform recovery but never unlock an ordinary legacy operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_memory_location"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Local branch marker probe in one batch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:10c3ef6d58151b43b608e4a1d4a81225b1b9718b155bb0e1b6b1a24e74b0923a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_branch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Registered working-tree marker lookup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:4cdc7ab792e9e68c051a98e1793ca5a5e7853e90caf2cfb3f289ea63069af2ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_converted_worktree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The unchanged central text carries the single probe-made case used for conversion guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:299e20bd8b429ee9b9bd297e5e884b38171e7a4d9e485b633f99fbb8d7188da1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Only a definite non-repository reads as absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:bd5135698b454a69d52919911a6118c20e41a9b045047ed85616b3b5f3b7b2f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_repository"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Structural repository evidence prevents false absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:da4a6c9f0b18f55520cd6b1f01b15e9af086b806be202a12aa3b9fb84fc20552",
+            "locator": {
+              "kind": "symbol",
+              "name": "_holds_git_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Failed or timed-out Git probes stay named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:fc1d09d6f9b0a74b508a4eb9a35f5a3c6e21a768d349709e4a1f4ad4d012ab94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Leaf route names its own memory line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_cutover_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,201 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/curator-brief.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+        "content": "sha256:a9cc054045ce2b6e563e5d0cdb0a3b69ad437194db8050b9e64c91f2c203e769",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-M7PQW7",
+      "invariant": "INV-WHEFVS",
+      "origin": {
+        "handoffEntry": "L84-K3E-WHEFVS-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The Curator brief states that it supplies values, not new rules, and that the Curator role, the curation operation and acceptance govern a disagreement with a value.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The worktree section requires the current pre-curator lineage projection and explains its evidence-only role.\n\nAnchor: `Pre-curator lineage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:0fed124787b464b5f4c3984d3b43df8d1d4b967b257b5b6827b4b6d4fc19d426",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact requirement packets and adjudications are mandatory task inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:99e9cbb30a6ebd267b967a1a1397e1d48dbe372c9dbb51c477ae4422f94059fa",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The brief carries the producers' curator hand-off list as data, with the producer fields filled and the curator fields null.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:99efeef097ed851e947c87ad6ebf51165a79502cbb68f4eb871118c9c363d456",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:f13f8d07759693cf66917e3382bb14f17a85c5f00add8496cca225b6d1479cb6",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Manager's compilation checks require `worktree_status` with `sourceLineage.state=current` immediately before the Curator starts; a stale or unavailable lineage is synchronized and reconciled first.\n\nAnchor: `worktree_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:aacf0991998b2c8811344631dc87e6a19ebd1d852b5dac869c78b1a173be89e5",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The brief retains exact paired roots, producer fields and source-lineage requirements. It defers code and memory lanes to the review operation, where MEMORY review is separately sealed/counted and a pass beyond the settings limit needs architect/developer approval recorded by Manager, not a fresh CODE baseline. File-only message material, passed-candidate evidence and independent acceptance are distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:b514bbe54a22731fed54089bd621397ad7a5d6a71149c1f3fec8089a91997a70",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:d5150b772748c929dae29014d3ed846db37d0338f608572e4cb23bbde29a2d62",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 83
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+            "content": "sha256:4e6bf8994a2889ebd2ead57252c36edc23ec9aaf19e314edbdf5f8746ae40f19",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The Manager supplies the Curator's intake values; the Worker sends its frozen change set and handoff list and the Reviewer the passed freeze and code verdict directly. The template supplies values, not rules: the Curator role, curation operation and acceptance govern a disagreement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:1b40c16b07ee55973992efb6de3ca04482528cd312c7d1400902a0f75a0816a1",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:c7e324024b92d3f63c62ea6f0e604002fd8b8ed94d846b04308a43b3b22273c0",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Manager starts the Curator stage through the coordination operation after code PASS; the Worker and Reviewer hand their inputs directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3762d78389c0426b69ec72c44c4fde2a42bf4404",
+            "content": "sha256:c1e43fc786fe813b986f9a51ea043c560dbac30b7ec311daaddb2041258e78f1",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,6 @@
+{
+  "path": "dashboard/src/data/abortableRead.ts",
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future classifier must not promote locator repair alone into meaning change or hide it merely because it fixes evidence already stale at base."
+  },
+  "alternatives": [
+    {
+      "option": "Classify a nonmechanical stale-entry reanchor as implementation evidence, separately from recorded invariant meaning.",
+      "reason": "Appendix151 explicitly separates reanchoring from meaning. _ChangeKinds._entry_changes consults the base class and carried_mechanically before establishing re-anchored implementation; _intent delegates recorded meaning to its independent owner.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat an anchor repair alone as an invariant meaning change, or discard it merely because the old entry was stale.",
+      "reason": "An evidence locator is not the obligation text, and a stale-at-base repair is still deciding implementation work under the admitted classifier.",
+      "reconsider_when": "The invariant meaning actually changes alongside the repair, or an approved requirement changes the explicit implementation-versus-intent classification contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future classifier must not promote locator repair alone into meaning change or hide it merely because it fixes evidence already stale at base.",
+    "A purely mechanical carry can be ignored by carried_mechanically; an unreadable base class remains unknown; a concurrent actual invariant-text change is not declared unchanged."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design reanchor. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-HD6HSB",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "81d2d1ce629a30d3d1ab1b7f31b7a1fa0506b924",
+        "content": "sha256:9fb719a5d80e1ff0cfa7c44775e90b46226fb9734784eb10ee01727ec444a470",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/review_change_kinds.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-reanchor",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

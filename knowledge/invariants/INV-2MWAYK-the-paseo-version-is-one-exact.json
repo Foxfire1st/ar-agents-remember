@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The contract-pinned release is exercised by the install-contract and config proofs, and a settings value that could select another release would run a host the build was not made for."
+  },
+  "applicability": "The host release selection: the provision, Node acquisition, version comparisons, the bridge's reported version and the sandbox layout.",
+  "conditions": [
+    "The build ships the exact host release and the complete host npm lock; the provision installs from that lock.",
+    "A settings block whose version names another version or no exact version loads, and the contract's version is used with one notice naming key, file and both versions."
+  ],
+  "exclusions": [
+    "The settings key is no longer the pin and is not edited by the product.",
+    "The old statement's '--save-exact' install and 'prefix reporting any other version is replaced by the install' do not hold: rule 9 keeps a running host, and the install defers with restartRequired."
+  ],
+  "id": "INV-2MWAYK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_config.py::McpConfigTests::test_optional_paseo_runtime_block_is_exact_and_fail_loud; mcp/tests/test_paseo_runtime.py::PaseoRuntimeTests::test_other_version_is_replaced_and_a_failed_install_changes_nothing; l1-run/evidence/supplementary/s1-boundary-0.10.2-running-to-pinned.json"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R01@v1 §7",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The Paseo host release is one exact version named by the packaged build contract together with the whole npm lock, every reader takes that version from the contract, and the retired settings-selected version never changes it.",
+  "status": "proposed",
+  "supersedes": []
+}

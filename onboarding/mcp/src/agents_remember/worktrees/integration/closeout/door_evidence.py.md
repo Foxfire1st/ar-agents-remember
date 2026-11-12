@@ -2,16 +2,9 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
 
-The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
+The body describes the uncommitted source candidate, including the bounded clean-sync review exception. The retained working-candidate label is not a commit or acceptance claim.
 
 ## Governing Overview
 
@@ -27,7 +20,7 @@ Capture the exact code, memory-content, review, and source-base evidence for a c
 
 `require_source_bases_current` proves transitive source lineage and exact immediate code/memory source heads before candidate capture. The evidence fingerprint includes code and memory candidate trees, recorded bases, and review/memory provenance. The memory tree is built through the shared private-index helper with root `memory.md` excluded. Ledger bytes, mapping rows, ledger provenance, and a ledger commit are absent from the evidence model and stale checks.
 
-Review provenance still consumes the current route-review record when applicable. No-code-change and explicit atomic deferrals produce non-applicable provenance; an applicable review must match the candidate tree and task intent and must not block. Its fingerprint is the review record digest. Task evidence files remain confined to the task root and their bytes are hashed. External-memory curator evidence retains its own existing provenance boundary.
+Review provenance still consumes the current route-review record when applicable. No-code-change and explicit atomic deferrals produce non-applicable provenance; an applicable review must either match the candidate tree or satisfy the bounded clean-sync relation; task intent, passing verdict and evidence currentness are still required. Its fingerprint is the review record digest. Task evidence files remain confined to the task root and their bytes are hashed. External-memory curator evidence retains its own existing provenance boundary.
 
 ### Conventions
 
@@ -44,41 +37,28 @@ One evidence snapshot feeds declaration and comparison. The cache exclusion chan
 
 No new file-local follow-up is identified by this source reconciliation.
 
-## Docs References
+## Bounded clean-sync review provenance
+
+The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.
+
+## Evidence
+
+- The door admits only exact-tree or bounded clean-sync review provenance, with task evidence still independently validated. [3]
+
+
+### Docs References
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The door candidate contains only real candidate/base and review/memory facts. | L38-L54; L110-L142; L145-L165 | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Current source bases and cache-excluding memory tree capture. | L57-L95; L98-L107 | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Review and task evidence remain independently validated. | L168-L247; L250-L266; L269-L280 | [mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py](mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py) |
-| Cache changes leave memory candidate identity stable while real content changes it. | L208-L240 | [mcp/tests/test_worktree_sync.py](mcp/tests/test_worktree_sync.py) |
+- The door candidate contains only real candidate/base and review/memory facts. [1]
+- Current source bases and cache-excluding memory tree capture. [2]
 
-## Cross-Repo References
+- Cache changes leave memory candidate identity stable while real content changes it. [4]
+
+### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-
-## Update History
-
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Removed ledger mapping/provenance fields and cache-byte hashing; memory candidate identity now excludes memory.md while real source, content, review, and curator facts remain. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `capture_door_candidate_evidence`; `DoorCandidateEvidence` repointed to mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:167-203; mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py:39-60. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the route-review currentness re-requirement and the record-digest review provenance fingerprint; prior capture and fail-closed prose preserved.
-
-- 2026-08-26T14:32+02:00 — Corrected stale uniqueness wording to match the source's newest-first
-  `find_mapping` authority; no door behavior changed. Verification remains closeout-owned.
-
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: created from the final evidence owner. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.

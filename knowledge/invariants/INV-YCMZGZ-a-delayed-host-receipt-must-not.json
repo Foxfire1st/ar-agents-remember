@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The delayed-runner test releases a receipt after cancellation; the rule prevents a late host reply from restarting an attempt the developer stopped."
+  },
+  "applicability": "A host receipt that arrives after its attempt settled, and a create reply that arrives after a seat's last answer.",
+  "conditions": [
+    "Only started may move to running.",
+    "A settled attempt keeps its state and takes the receipt's facts and an annotation."
+  ],
+  "exclusions": [
+    "A live attempt, whose detail the receipt may still refine."
+  ],
+  "id": "INV-YCMZGZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_presenter.py::test_a_delayed_receipt_does_not_revive_a_cancelled_attempt"
+      ],
+      "path": "m18-m19-repair.json"
+    },
+    "handoffEntry": "L104-M19-settled-receipt",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A delayed host receipt never changes a settled presenter attempt back to a live state; a delayed create reply for a seat is reconciled onto that seat's derived id instead of reviving it, and a seat whose processes survive is refused explainer-processes-remain.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,24 @@
+{
+  "path": "mcp/tests/test_reviewer_text_shape.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Static case scans .ts/.tsx under dashboard/src and .py under mcp/src/agents_remember case-insensitively for exact two-word forbidden phrase built by string concatenation. It is an executable lexical guard, not semantic proof that all database branches/channels or other suffixes are absent; this curation does not run pytest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "34fc9c4d3e817a23c198c99c794325e01e2c28ab",
+            "content": "sha256:cb5aa6a6d75b539c48d173fa45b8b26bca4c57085b13c5ef37d7c1f27547282a",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

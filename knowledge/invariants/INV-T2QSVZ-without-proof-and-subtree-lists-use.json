@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The one-line lists exist so a reader can scan many rows at once; a wrapped or card layout would hide the population the list is for."
+  },
+  "applicability": "The 'without proof' list and the entry lists under a directory.",
+  "conditions": [
+    "One line per row."
+  ],
+  "exclusions": [
+    "A path view's record sections, which are cards."
+  ],
+  "id": "INV-T2QSVZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0.md; 260928-MIK-L79-worker-88460df7-a6b5-42e9-b947-943345fd39b0-evidence/r1-post-L51-repair-20261006/manifest.json",
+        "L79-MR1-20; PathViews.tsx.md states the one-line list rule; the record's revision is retired rather than admitting an unsupported criterion."
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R79@v1 required behavior 14",
+    "leaf": "260928-MIK-L79",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The compact-list rule (without-proof and subtree lists use one line per row) is true current onboarding behavior, but its proposed invariant admission (prevents_costly_mistake) was unsupported by a plausible costly failure; the record is retired and the rule remains as onboarding prose.",
+  "status": "retired",
+  "supersedes": []
+}

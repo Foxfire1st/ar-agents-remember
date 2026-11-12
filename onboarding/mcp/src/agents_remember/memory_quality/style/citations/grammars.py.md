@@ -1,80 +1,215 @@
 # mcp/src/agents_remember/memory_quality/style/citations/grammars.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/memory_quality/style/citations/grammars.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview | `../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../overview.md)
 
-## Purpose
+## Current source account — Named JavaScript and TypeScript test-case bindings
 
-Parse citation definitions and extents with tree-sitter.
+Binding adds a test_case flag. bindings accepts a Sequence of lines and still emits widened extents and unwidened declaration lines in one deterministic walk. For recognized non-Python test files it also binds statically recognized named test cases; no name is invented when the parser reports none. test_case_refusal supplies a specialized diagnostic only for TypeScript, TSX or JavaScript test files; other files retain ordinary symbol diagnostics.
 
-## Code Commentary
+This source-bound correction covers the described L54 seams only. Unrelated inherited prose and references below are preserved, not recertified; no installed behavior, test execution, permission, landing or MEMORY acceptance is inferred.
 
-### Logic
+## Current evidence
 
-Module-level surface:
+- Bindings add recognized named non-Python test cases while retaining normal declaration semantics.
 
-- `CallLiteral` (class, lines 123-131) — One direct quoted argument, its syntax identity, and its call's line extent.
-- `grammar_of` (function, lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.
-- `parsed` (function, lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.
-- `typescript_anchor_identifier` (function, lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.
-- `call_argument_literals` (function, lines 188-213) — Every direct string argument and the call it belongs to, in document order.
-- `language` (function, lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback.
-- `definitions` (function, lines 231-256) — Every name ``path`` binds, and the line span of the construct that binds it.
-- `_walk` (function, lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER.
-- `_widened` (function, lines 275-279) — ``node`` grown outwards through the syntax that decorates or exports it.
-- `_span` (function, lines 282-286) — The one-based line range ``node`` occupies.
-- `_text` (function, lines 289-290)
-- `_python_names` (function, lines 293-299) — The names one Python construct binds.
-- `_python_targets` (function, lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists.
-- `_script_names` (function, lines 317-323) — The names one JavaScript or TypeScript construct binds.
-- `_script_targets` (function, lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.
 
-### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+- Specialized unresolved-case diagnostics are restricted to script test files. [17]
 
-### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
 
-### Todos
+## Inherited source-epoch account (non-operative)
 
-None.
+The following complete predecessor retains useful explanations, old observations and provenance. Its superseded claims on the updated seams are historical, not a parallel current contract; its numbered groups keep their original meanings.
 
-## Repo-Internal References
+> ## Governing Overview
+>
+> [overview](../../overview.md)
+>
+> ## Purpose
+>
+> Parse citation definitions and extents with tree-sitter.
+>
+> ## Code Commentary
+>
+> ### Logic
+>
+> Module-level surface:
+>
+> - `Binding` (class) — One name a construct binds: its extent, and the line the declaration itself begins on. The two differ for a decorated Python definition, whose extent is widened through `decorated_definition` to cover the decorator while the declaration begins on the `def`/`class` line below it.
+> - `Binding` (class, lines 124-133) — One name a construct binds: its extent and the line its declaration itself begins on, which differ for a decorated definition because the extent grows outward through the decorator while the declaration starts at the def or class line.
+> - `grammar_of` (function, lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.
+> - `parsed` (function, lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.
+> - `typescript_anchor_identifier` (function, lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.
+> - `call_argument_literals` (function, lines 188-213) — Every direct string argument and the call it belongs to, in document order.
+> - `language` (function, lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback.
+> - `definitions` (function, lines 231-256) — Every name ``path`` binds, and the WIDENED line span of the construct that binds it, so a decorated definition's extent covers its decorator. A caller needing the declaration's own first line as well reads `bindings`.
+> - `bindings` (function) — Every name ``path`` binds, with both its widened extent and its declaration line, from ONE walk. The declaration line is the first line of the unwidened construct: the ``def``/``class`` line for a decorated definition, and the extent's start for every other construct — including an exported TypeScript declaration, whose ``export`` keyword shares the declaration's own first line.
+> - `_walk` (function, lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER.
+> - `_widened` (function, lines 275-279) — ``node`` grown outwards through the syntax that decorates or exports it.
+> - `_span` (function, lines 282-286) — The one-based line range ``node`` occupies.
+> - `_text` (function, lines 289-290)
+> - `_python_names` (function, lines 293-299) — The names one Python construct binds.
+> - `_python_targets` (function, lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists.
+> - `_script_names` (function, lines 317-323) — The names one JavaScript or TypeScript construct binds.
+> - `_script_targets` (function, lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.
+>
+> ### Conventions
+>
+> Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+>
+> ### Invariants And Boundaries
+>
+> - The card mirrors the source file one-to-one at `mcp/src/...` path.
+>
+> ### Todos
+>
+> None.
+>
+> ## Evidence
+>
+> ### Repo-Internal References
+>
+> This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+>
+> - Defines the function `grammar_of` (lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.. [2]
+> - Defines the function `parsed` (lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.. [3]
+> - Defines the function `typescript_anchor_identifier` (lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.. [4]
+> - Defines the function `language` (lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback.. [6]
+> - Defines the function `definitions` (lines 231-256) — Every name ``path`` binds, and the line span of the construct that binds it.. [7]
+> - Defines the function `_walk` (lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER.. [8]
+> - Defines the function `_widened` (lines 275-279) — ``node`` grown outwards through the syntax that decorates or exports it.. [9]
+> - Defines the function `_span` (lines 282-286) — The one-based line range ``node`` occupies.. [10]
+> - Defines the function `_text` (lines 289-290). [11]
+> - Defines the function `_python_names` (lines 293-299) — The names one Python construct binds.. [12]
+> - Defines the function `_python_targets` (lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists.. [13]
+> - Defines the function `_script_names` (lines 317-323) — The names one JavaScript or TypeScript construct binds.. [14]
+> - Defines the function `_script_targets` (lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.. [15]
 
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
+## Current account — the case-extent entry
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the class `CallLiteral` (lines 123-131) — One direct quoted argument, its syntax identity, and its call's line extent.. | `CallLiteral` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:123-131 |
-| Defines the function `grammar_of` (lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.. | `grammar_of` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:134-136 |
-| Defines the function `parsed` (lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.. | `parsed` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:139-141 |
-| Defines the function `typescript_anchor_identifier` (lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.. | `typescript_anchor_identifier` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:144-185 |
-| Defines the function `call_argument_literals` (lines 188-213) — Every direct string argument and the call it belongs to, in document order.. | `call_argument_literals` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:188-213 |
-| Defines the function `language` (lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback.. | `language` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:216-228 |
-| Defines the function `definitions` (lines 231-256) — Every name ``path`` binds, and the line span of the construct that binds it.. | `definitions` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:231-256 |
-| Defines the function `_walk` (lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER.. | `_walk` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:259-272 |
-| Defines the function `_widened` (lines 275-279) — ``node`` grown outwards through the syntax that decorates or exports it.. | `_widened` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:275-279 |
-| Defines the function `_span` (lines 282-286) — The one-based line range ``node`` occupies.. | `_span` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:282-286 |
-| Defines the function `_text` (lines 289-290). | `_text` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:289-290 |
-| Defines the function `_python_names` (lines 293-299) — The names one Python construct binds.. | `_python_names` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:293-299 |
-| Defines the function `_python_targets` (lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists.. | `_python_targets` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:302-314 |
-| Defines the function `_script_names` (lines 317-323) — The names one JavaScript or TypeScript construct binds.. | `_script_names` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:317-323 |
-| Defines the function `_script_targets` (lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.. | `_script_targets` | mcp/src/agents_remember/memory_quality/style/citations/grammars.py:326-343 |
+`test_case_range(path, lines, start, end, reaches)` is the grammar's one new entry beside `test_case_refusal`: it parses the candidate bytes and answers the one case a range is, or the refusal naming why the lines are no case. The caller passes its own resolver, so a range is admitted only where no name really reaches the case. `_span` now delegates to `test_cases.span_of`, so every extent in this module is measured by one rule, and `test_case_refusal` passes the path through.
 
-## Update History
+- The one new grammar entry answers the case a range is or why the lines are none, using the caller's name resolver. [18]
+- Every extent in this module is measured by the case module's one rule. [19]
 
-- 2026-08-05T03:49+02:00 — 260731-EFA-L6 C1 closeout pass: aligned the Logic bullets and Finding line numbers with the scoped fixer's generated decorator-inclusive ranges; verification metadata unchanged.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+
+- Defines the function `grammar_of` — The grammar that reads ``path``, or ``None`` when nothing does.. [2]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `grammar_of` (lines 134-136) — The grammar that reads ``path``, or ``None`` when nothing does.. [2]
+
+
+
+- Defines the function `parsed` — Whether a definition in ``path`` is distinguishable from a mention of it.. [3]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `parsed` (lines 139-141) — Whether a definition in ``path`` is distinguishable from a mention of it.. [3]
+
+
+
+
+- Defines the function `typescript_anchor_identifier` — The direct identifier rooted by a complete TS call or generic type spelling..
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory_quality/style/citations/grammars.py:1-357 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060. Retired means the anchor no longer stands, not that the cited subject was deleted [4]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `typescript_anchor_identifier` (lines 144-185) — The direct identifier rooted by a complete TS call or generic type spelling.. [4]
+
+
+
+
+- Defines the function `language` — The loaded grammar, built once. A failure to load is fatal, never a fallback.. [6]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `language` (lines 216-228) — The loaded grammar, built once. A failure to load is fatal, never a fallback.. [6]
+
+
+
+
+
+
+- `definitions` is not defined in this module any more: the walk lives in `memory_quality/style/citations/extents.py`, returning every name a file binds at any depth with the extent of the construct that binds it. Source caption: `definitions`
+
+
+
+
+
+
+
+- Defines the function `_walk` — Every node in the tree, at any depth, in DOCUMENT ORDER.. [8]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_walk` (lines 259-272) — Every node in the tree, at any depth, in DOCUMENT ORDER.. [8]
+
+
+
+- Defines the function `_widened` — ``node`` grown outwards through the syntax that decorates or exports it.. [9]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_widened` (lines 275-279) — ``node`` grown outwards through the syntax that decorates or exports it.. [9]
+
+
+
+
+- Defines the function `_span` — The one-based line range ``node`` occupies..
+
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_span` (lines 282-286) — The one-based line range ``node`` occupies.. [10]
+
+
+
+
+- Defines the function `_text`. [11]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_text` (lines 289-290). [11]
+
+
+
+- Defines the function `_python_names` — The names one Python construct binds.. [12]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_python_names` (lines 293-299) — The names one Python construct binds.. [12]
+
+
+
+- Defines the function `_python_targets` — The plain names an assignment target binds, unpacking nested tuples and lists.. [13]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_python_targets` (lines 302-314) — The plain names an assignment target binds, unpacking nested tuples and lists.. [13]
+
+
+
+- Defines the function `_script_names` — The names one JavaScript or TypeScript construct binds.. [14]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_script_names` (lines 317-323) — The names one JavaScript or TypeScript construct binds.. [14]
+
+
+
+- Defines the function `_script_targets` — The names a declarator binds, unpacking destructuring one alternative at a time.. [15]
+
+
+> Retained earlier card wording; superseded by the current account above:
+> - Defines the function `_script_targets` (lines 326-343) — The names a declarator binds, unpacking destructuring one alternative at a time.. [15]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory_quality/style/citations/grammars.py:209-243 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 0b30d9358b6ef00be9af1bdeb6c22eb802bf8d1e. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/memory_quality/style/citations/grammars.py:1-357 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060. Retired means the anchor no longer stands, not that the cited subject was deleted.

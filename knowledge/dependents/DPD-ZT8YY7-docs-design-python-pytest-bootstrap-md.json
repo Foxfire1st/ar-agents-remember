@@ -1,0 +1,69 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/design/python-pytest-bootstrap.md",
+  "id": "DPD-ZT8YY7",
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-v2.json"
+    },
+    "handoffEntry": "dependent-2",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+      "kind": "file",
+      "path": "pyproject.toml"
+    },
+    {
+      "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+      "kind": "file",
+      "path": "mcp/tests/conftest.py"
+    },
+    {
+      "blob": "5691b694e756469475d783c426d9781ef14c8633",
+      "kind": "file",
+      "path": "mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+    },
+    {
+      "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
+    },
+    {
+      "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py"
+    },
+    {
+      "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
+    },
+    {
+      "blob": "2a959f72561c195e823c95ea9d8b02cc858ae778",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py"
+    },
+    {
+      "blob": "000b92a84b724de062342f3a02303c68beb1dffe",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The sync ownership is stated in the worker role and the implementation and curation operations, and the continuation's staging precondition is in the transaction source."
+  },
+  "applicability": "Every leaf whose master line has moved while the leaf holds a candidate.",
+  "conditions": [
+    "The Worker runs the supported leaf sync and sends a memory-content conflict directly to the Curator.",
+    "The Manager captures, verifies and stages a native resolution before the Worker continues."
+  ],
+  "exclusions": [
+    "The transaction steps and landing authority the sync operation keeps with the Manager."
+  ],
+  "id": "INV-7E3JNX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current successor r2/candidate-freeze.json, repair-report.md, commands.json and compiled capsule/constructor/81 retirement controls; predecessor inventory.md and actual live-witness/witness-supplement.md retained. Historical A1 evidence (not current disposition): Source sync_transaction.py and sync_transaction_git.py: continuation requires no unmerged or unstaged content; no real sync was run by this Worker."
+      ],
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "R99-8-own-sync",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The Worker runs its supported leaf sync and sends memory-content conflicts directly to Curator, with Manager capture, verification and staging of native resolutions before Worker continuation and unchanged transaction authority.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # dashboard/src/panels/file-viewer/langByExtension.ts
 
-| Field | Value |
-| ---------------------- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/file-viewer/langByExtension.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-29T09:06+02:00 |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [file-viewer/ overview](overview.md)
@@ -39,15 +29,11 @@ languages never enter the initial bundle; callers must `await` the promise and g
 resolve after teardown. Returning `null` is the explicit unknown-language path (plain text), never an
 error.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `FilePane` awaits this and pushes the result as an editor extension, guarding a late resolve. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
-| The `language` id is produced by the L1 read client. | `language` | dashboard/src/data/files.ts:54-54 |
+### Repo-Internal References
 
-## Update History
 
-- 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the lazy L1
-  `language`-id → `@codemirror/lang-*` mapping (code-split packs; unknown ids fall back to plain text).
-  Verification metadata pinned to the task base until closeout stamps the L2 code commit.
+- `FilePane` awaits this and pushes the result as an editor extension, guarding a late resolve. [1]
+
+- The `language` id is produced by the L1 read client. [2]

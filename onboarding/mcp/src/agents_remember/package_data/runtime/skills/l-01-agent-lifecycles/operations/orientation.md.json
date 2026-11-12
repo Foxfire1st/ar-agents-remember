@@ -1,0 +1,131 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+        "content": "sha256:3120f8aea8dbc2fafb10fd9722e54e4e58c03f87dbe630a343e44bdb87f5cd30",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-K6HJZY",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/operations/orientation.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Orientation takes an Investigator's concern from its parent's first message or, without a parent, from the developer's request, and invents no task or trust packet; existing work restores its saved assignment first.\n\nAnchor: `## Confirm the assignment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:04763548b781de7a107d41d383bc3afc4b27cee15ac3db2c87751c793d8a31b9",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Developer decisions go to the instructed reporting recipient or the parent; only an agent with neither, or whose recipient cannot be reached, asks in its own chat.\n\nAnchor: `## Ask for a developer decision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:6b1ed0f547f82488c1f0e3f775d0efb6e629e46e6c1cf897119b68168da38906",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The operation block's declared purpose, source path, and applicable roles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:ccd9be17f1ef3c3d6c0b655b6f336cee8d16cef6c9f8ccf10ac253850d9a296b",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The canonical source of this block.\n\nAnchor: `# Operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:2b7260aa7dec000b8500726aef3283b2e3aec4799f1e8d873b58ab31fd07c14c",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The launcher supports these eight role IDs, including the taskless `bootstrap` setup role.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:c19b914b14c301420b2405564d0667f15f985580fc08a14822ed236af95d6848",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Taskless scope, exact task-bound reads, role-admitted task_doc-first edits, paired surfaces, the bound tool server and saved-assignment recovery.\n\nAnchor: `## Confirm the assignment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1745f5c871fefa6b9649161d2c3d7b15b0caf6f7",
+            "content": "sha256:420d2922b101de194336479ab3e05126399d8d06851d0485d77f25f323facad2",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

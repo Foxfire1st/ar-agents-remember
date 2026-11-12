@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_shared_preparation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The review page and the explainer share one native comparison preparation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d522426877c0798ebb49668212923383ac0573e",
+            "content": "sha256:bf6f772b42c874c49371d3b312dd9a1d7544b562e1af66750bdaed774d14285c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_page_and_explainer_share_native_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

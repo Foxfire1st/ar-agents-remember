@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Complete restoration, independent ownership assessment, saved-byte preservation, truthful progress and terminal stash retirement jointly prevent loss of original parked work or later owner bytes; no single member supplies that combined recovery guarantee."
+  },
+  "guarantee": "A managed sync proves complete parked restoration using the actual native reapply. At an admitted stop it returns the original paired heads and exact parked work with the original index partition, preserving later or unproved owner bytes in durably written saved artifacts before discard. It never adopts failed attribution as ownership, retains the recorded stash until terminal recovery, and reports actual paths, saved-file digests or a truthful retained save/discard stop. Foreign history and missing authority remain separate refusals. Fresh saves use durable atomic writes and record SHA-256 of the written payload; recovery of prior completed manifests reopens and verifies their named bytes. Fresh-save durability is not an independent reread of every artifact.",
+  "id": "FAM-1SEJYW",
+  "members": [
+    "INV-70577K",
+    "INV-04KNZY",
+    "INV-T46B5W",
+    "INV-JZRBBJ",
+    "INV-YVP7RQ",
+    "INV-MS6H65"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "parked-work-family",
+    "leaf": "260928-MIK-L153",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "routes": [
+    "mcp/src/agents_remember/worktrees"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Parked work restoration and safe sync cancellation"
+}

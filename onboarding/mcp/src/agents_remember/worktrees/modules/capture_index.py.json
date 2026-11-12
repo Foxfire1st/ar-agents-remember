@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+        "content": "sha256:1d4d8325a09f8511f57fa8d6fe22336b9bb776cc56107c4d20396e4e16a152c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_index_entries"
+        }
+      },
+      "id": "RLZ-7EGW9B",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The census is read here, from the private index the capture wrote; a shape this reader cannot understand answers nothing so the caller re-derives.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+        "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_index_copy"
+        }
+      },
+      "id": "RLZ-BW7QK2",
+      "invariant": "INV-656CYW",
+      "origin": {
+        "handoffEntry": "L40-index-copy-shared-capture",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "The shared candidate capture now copies the real index through copy_git_index before HEAD restoration and working-tree materialization, preserving Git's same-second content recheck.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+        "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_tree_from_index_copy"
+        }
+      },
+      "id": "RLZ-S5VV47",
+      "invariant": "INV-EKE1RV",
+      "origin": {
+        "handoffEntry": "L40-shared-capture-isolation",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "Restores HEAD entries in a copied index, clears assume-unchanged and skip-worktree flags, excludes owned derived paths and adds working files through that private index.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Private capture copies the real index with its time, restores HEAD, clears trust flags only on the copy, applies explicit exclusions and stages working files. Unusable-copy recovery remains with the caller; unchanged stat-matching files are not reconverted merely because conversion rules changed.\n\nAnchor: `_real_index` `_clear_trust_flags` `_tree_from_index_copy` `_add_all_args`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:0a06f9c025ff6aa48b239ca0893bc992df4b397782bb8e5930acf3f69bed7c7b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:87ca5f2656e6de8a5d6bb2840e7cd6ed5a5c2e56b66ce9ab2f1a2101395a0d6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_real_index"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:ea47180569e725ae23c44efa5a74e06605bcc0927ae0a399577b870c77652032",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_trust_flags"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:8699b57a3d2f03599cb0115133681e0e30af288ae093b1ac52d64d5f24cd62f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tree_from_index_copy"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:ba7e3b6f4fa1ec85042fe087ade5f0162d69d3b9bcbc29c6d39e4b1c9671b793",
+            "locator": {
+              "kind": "symbol",
+              "name": "_add_all_args"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

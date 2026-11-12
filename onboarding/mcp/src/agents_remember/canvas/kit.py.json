@@ -1,0 +1,235 @@
+{
+  "path": "mcp/src/agents_remember/canvas/kit.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "kit_assets"
+        }
+      },
+      "id": "RLZ-67AZ49",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-verification-points",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "This is where a named kit file becomes a revision asset, and where its size and digest are compared to the manifest before the bytes are handed out.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:c041438adae169d63deae4ac82f6b0f34d3a7e7d562b276e1658821e7eb72853",
+        "locator": {
+          "kind": "symbol",
+          "name": "kit_protocol_helper_js"
+        }
+      },
+      "id": "RLZ-7VC02R",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:cb1e6be36806efede9f6294c292ff40479b457f4eab0b572b5bb3db7af1f3117",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_verified"
+        }
+      },
+      "id": "RLZ-8J458B",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox-a9",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The compare itself at carry time; no later construct refuses a kit path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:8e67a24b2d96eb5ed1fb54524b1814e76a3d2c5bdcd83763fd28d3107e5f067f",
+        "locator": {
+          "kind": "symbol",
+          "name": "encode_kit_offer"
+        }
+      },
+      "id": "RLZ-DKK7X6",
+      "invariant": "INV-N7SK8E",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-session-protocol",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The added operations retain the closed session/revision/comparison and finite UTF-8/payload bounds; unknown choices/ids or foreign host notices are refused, and offered text confers no send authority.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:cb1e6be36806efede9f6294c292ff40479b457f4eab0b572b5bb3db7af1f3117",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_verified"
+        }
+      },
+      "id": "RLZ-HAW3F2",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The compare itself, which refuses a byte whose size or digest differs from the manifest.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "kit_assets"
+        }
+      },
+      "id": "RLZ-QQ91Y5",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-manifest",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Serving happens here, as revision assets under the contract path the page names.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:e23c0aea0172bd27f4c4a021707556a15305de56c647363f9b2d40862b7ded6b",
+        "locator": {
+          "kind": "symbol",
+          "name": "kit_manifest"
+        }
+      },
+      "id": "RLZ-T8M0NS",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-manifest",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The manifest is the inventory and the verification source: version, licence, size and digest per file.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:cb1e6be36806efede9f6294c292ff40479b457f4eab0b572b5bb3db7af1f3117",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_verified"
+        }
+      },
+      "id": "RLZ-YBFJ13",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-verification-points",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The compare itself: a byte whose size or digest differs from the manifest is refused rather than read.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "kit_assets"
+        }
+      },
+      "id": "RLZ-ZCA4JP",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox-a9",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Where a named kit file becomes a revision asset and where its size and digest are compared with the manifest before the bytes are handed out.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+        "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "kit_assets"
+        }
+      },
+      "id": "RLZ-ZS1JF8",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "Where a named kit file becomes a revision asset; the manifest's size and digest are compared here before the bytes are handed out.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The manifest is the kit's inventory and the verification source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+            "content": "sha256:e23c0aea0172bd27f4c4a021707556a15305de56c647363f9b2d40862b7ded6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "kit_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Kit files are served as revision assets under the manifest's contract path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+            "content": "sha256:4b2ff029dbe84a8127629b3ce18652fb6d526138664af7c0e9232fc8781845dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "kit_assets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current implementation adds protocol helpers to the shipped kit; the existing manifest verification and admitted-asset toolbox account remains valid.\n\nAnchor: `kit_protocol_helper_js`, `encode_kit_offer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+            "content": "sha256:c3c8f710b81e3c2beba24e668f0ca954666d9b1d39b37151d2320888c5698252",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

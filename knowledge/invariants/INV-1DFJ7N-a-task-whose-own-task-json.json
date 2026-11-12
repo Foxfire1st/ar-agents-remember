@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: A task whose own task.json cannot be read is not finalized, and the refusal names the file."
+  },
+  "applicability": "A task whose own task.json cannot be read at finalize time.",
+  "conditions": [
+    "The unreadability is discovered from the task's own document at the finalize attempt."
+  ],
+  "exclusions": [
+    "Another member's unreadability, which is reported as a fact."
+  ],
+  "id": "INV-1DFJ7N",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; probe x8_finalize.out; one killed mutation under sealed id 12"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 note 12",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A task whose own task.json cannot be read is not finalized, and the refusal names the file.",
+  "status": "proposed",
+  "supersedes": []
+}

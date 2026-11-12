@@ -1,0 +1,169 @@
+{
+  "path": "mcp/tests/test_memory_quality_source_files.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+        "content": "sha256:926ea048d078cdf0868a3638e490f777eaa5251c0e759defcfe1bcf41f15884d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_uncited_repository_shapes"
+        }
+      },
+      "facet": "Git listing and uncited repository shapes complete without a whole-run size or count refusal.",
+      "id": "PRF-8Z54JM",
+      "invariant": "INV-WTF0AW",
+      "origin": {
+        "handoffEntry": "MIK-R212@v3 rules 2 and 4",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+        "content": "sha256:fc9b5b9906f40313092dbd45de145bfb2f0b641a6e88438ed090f0a559cf6d2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cited_source_policy"
+        }
+      },
+      "facet": "Directory-link and embedded Git-link citations return named source unavailability rather than aborting sync.",
+      "id": "PRF-A0D7PD",
+      "invariant": "INV-YV9C44",
+      "origin": {
+        "handoffEntry": "L202-R1",
+        "leaf": "260928-MIK-L202"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+        "content": "sha256:fc9b5b9906f40313092dbd45de145bfb2f0b641a6e88438ed090f0a559cf6d2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cited_source_policy"
+        }
+      },
+      "facet": "Readable ignored, binary and excluded citations remain verified before and after content mutation, with only the declared source notes.",
+      "id": "PRF-Y0H2YX",
+      "invariant": "INV-7ACVBS",
+      "origin": {
+        "handoffEntry": "L202-R2",
+        "leaf": "260928-MIK-L202"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+        "content": "sha256:fc9b5b9906f40313092dbd45de145bfb2f0b641a6e88438ed090f0a559cf6d2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cited_source_policy"
+        }
+      },
+      "id": "RLZ-WSEZGA",
+      "invariant": "INV-7ACVBS",
+      "origin": {
+        "handoffEntry": "L202-R2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The cited family verifies current content, mutated content, and the same explicit source reason.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+        "content": "sha256:fc9b5b9906f40313092dbd45de145bfb2f0b641a6e88438ed090f0a559cf6d2d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cited_source_policy"
+        }
+      },
+      "id": "RLZ-X6742C",
+      "invariant": "INV-YV9C44",
+      "origin": {
+        "handoffEntry": "L202-R1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Directory-link and embedded-gitlink fixtures prove that sync returns with the reason.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Fixture checks call the public controller in sync mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "content": "sha256:39a6c651c0d086972248a9e254e44b01095f568520fa91469d97aafe9dcd9ddd",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The uncited family preserves reported shapes, listing reasons and the large file population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "content": "sha256:926ea048d078cdf0868a3638e490f777eaa5251c0e759defcfe1bcf41f15884d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_uncited_repository_shapes"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "content": "sha256:b07c6b09087752137916a814cdbfe8412e1af24168648befc1942c1462c2d2a7",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Readable content changes produce a stale-content observation while retaining source-note policy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "content": "sha256:5dc55e747416d80fbb3736859af605f1dfa63ed3474f44777476ff2bba748e6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_assert_readable_citation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "54b2dac548dd4d349f4588975895c0c1a2e1abd3",
+            "content": "sha256:eaf29af7274613a2087c531c36a6d2d7dc640a86e78693e152c2a64a525b46e6",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 269
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

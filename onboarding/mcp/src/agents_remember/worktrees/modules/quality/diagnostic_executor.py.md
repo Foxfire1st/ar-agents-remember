@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules overview](../overview.md)
@@ -57,48 +47,25 @@ All execution crosses the R12 trusted launcher; no engine selection, private pro
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root. CCR-R13@v2 (frozen digest f0387b1627c5e8f48073b55d40dc362065e46943c5688f0f863fddb480770d3a) requires every Dagger-backed diagnostic route to consume and bind the exact R12v4 host runner/store authority; the R12 authority contract is implemented by dagger_authority.py (CCR-R12@v4). Task artifact paths are not repo-relative citations, so clauses are recorded as prose.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Diagnostics bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure. | "def _admit_authority("; "def admit_dagger_authority(" | mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:271-329; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:948-995 |
+- Diagnostics bind the frozen R12 host authority and never select, copy, replace, or privately provision infrastructure. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. | "def admit_dagger_authority("; "class AuthorityRegistry"; "def release_dagger_authority(" | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:948-995; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-600; mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:1118-1128 |
-| Validate a complete terminal catalog and publish one immutable gate disposition. | "def compile_gate_result_manifest" | mcp/src/agents_remember/certification/results.py:63-111 |
-| The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. | "class GateResultManifest" | mcp/src/agents_remember/certification/models.py:434-456 |
-| The durable diagnostic manifest store owns reservation, running, publish, and abandon. | `DiagnosticManifestStore` | mcp/src/agents_remember/certification/diagnostics/store.py:53-288 |
-| Diagnostic event builders produce started/terminal envelopes; the engine invokes them only for an installed telemetry sink. | "def compile_diagnostic_started("; "def compile_diagnostic_terminal("; "def _emit_started("; "def _emit_terminal(" | mcp/src/agents_remember/certification/telemetry/adapters.py:432-448; mcp/src/agents_remember/certification/telemetry/adapters.py:450-460; mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:535-545; mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:547-563 |
-| The certification facade imports diagnostic contracts and projections; run-control entry points remain in the higher worktree quality module. | "from agents_remember.certification.diagnostics import ("; "class DiagnosticExecutionEngine:" | mcp/src/agents_remember/certification/__init__.py:18-37; mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:176-193 |
+- The R12 authority admits a checked host snapshot, records live consumers in its locked registry, and releases only the exact owner. [2]
+- Validate a complete terminal catalog and publish one immutable gate disposition. [3]
+- The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence. [4]
+- The durable diagnostic manifest store owns reservation, running, publish, and abandon. [5]
+- Diagnostic event builders produce started/terminal envelopes; the engine invokes them only for an installed telemetry sink. [6]
+- The certification facade imports diagnostic contracts and projections; run-control entry points remain in the higher worktree quality module. [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here; the R12 authority is host-level and repository-external but consumed only through the R12 module boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The R12 host declaration/registry lives outside every repository and worktree and is never re-selected here. | "return admit_dagger_authority("; "release_dagger_authority(attempt.admitted" | mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:321-329; mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py:422-430 |
-
-## Update History
-
-- 2026-09-09T02:52:27+02:00 — CCR-L38 bounded inherited claim reconciliation: narrowed the release call anchor to its unique argument-bearing invocation in the cited publish range. Source hash: mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py=5b95739fa2de9d3873b4f08c26daedd85dbecdc651bd01aa3b1c130aa2c1ccfa; verification metadata remains unchanged.
-
-- 2026-09-09T02:51:22+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced generic imported-call anchors with the exact admission and release call expressions in this controller. Source hashes: mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py=5b95739fa2de9d3873b4f08c26daedd85dbecdc651bd01aa3b1c130aa2c1ccfa; verification metadata remains unchanged.
-
-- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced generic event and method-name anchors with exact function and method declarations and split the two adapter ranges. Source hashes: mcp/src/agents_remember/certification/telemetry/adapters.py=18cc9d511188ad2d835419acd6dd1251260c3233d06e1454291aa53a4ecb9ecd, mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py=5b95739fa2de9d3873b4f08c26daedd85dbecdc651bd01aa3b1c130aa2c1ccfa; verification metadata remains unchanged.
-
-- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced generic authority-use anchors with exact admission, registry, and release declarations and corrected their current ranges. Source hashes: mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py=7acb1d1212a8796c06e8cb9c5c8977d1b710aed97368e424de712b2647fd73ab; verification metadata remains unchanged.
-
-- 2026-09-09T02:49:53+02:00 — CCR-L38 bounded inherited claim reconciliation: replaced generic authority-use anchors with exact admission declarations and corrected the moved host-authority range. Source hashes: mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py=5b95739fa2de9d3873b4f08c26daedd85dbecdc651bd01aa3b1c130aa2c1ccfa, mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py=7acb1d1212a8796c06e8cb9c5c8977d1b710aed97368e424de712b2647fd73ab; verification metadata remains unchanged.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card claims against the frozen candidate source and repaired exact citation coordinates (compile_diagnostic_started→432-448). Preserved claim prose; source-sha256=5b95739fa2de9d3873b4f08c26daedd85dbecdc651bd01aa3b1c130aa2c1ccfa; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-05T08:27+02:00 — L31 native curator: Corrected the nonexistent facade re-export claim to the contract/run-controller layer boundary, replaced module-name anchors with exact authority constructs, and clarified that diagnostic telemetry requires an optional sink. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-
-- 2026-09-04T17:50+02:00 - 260831-CCR-L13 Gate-5 memory pass: created this card for the new CCR-R13@v2 diagnostic run controller delivered in code commit 4ba18bb2; anchors and ranges derived from the current worktree source and pinned to that commit (tree 631145bf3e0d5899b1dcbccf8c0d4a8257821f0d).
+- The R12 host declaration/registry lives outside every repository and worktree and is never re-selected here. [8]

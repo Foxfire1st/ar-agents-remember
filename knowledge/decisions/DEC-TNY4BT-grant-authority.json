@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The old forms were weighed and rejected; future grant, reader and publication changes must preserve the chosen product-owned boundary."
+  },
+  "alternatives": [
+    {
+      "option": "External task-local pre-start grant from developer control or bound architect",
+      "reason": "It identifies the authorized giver and takes effect at each call without a harness restart.",
+      "status": "chosen"
+    },
+    {
+      "option": "Harness switch or ordinary task-document flag",
+      "reason": "Harness copies disagree and restart; an ordinary task author could self-grant.",
+      "reconsider_when": "Reconsider only if the developer changes direct-execution authorization ownership.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "It identifies the authorized giver and takes effect at each call without a harness restart."
+  ],
+  "context": "A harness-local switch and an agent-authored task flag cannot provide per-leaf product authority.",
+  "decider": "Developer D63/D74 and canonical Architect MIK-R94 scope/two-check rulings",
+  "id": "DEC-TNY4BT",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-8PJF2P"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R94",
+        "packet": "requirements/MIK-R94-v1-direct-execution-is-a-property-of-the-task.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D63/D74, canonical 2026-10-07 Architect grant/scope rulings and two-check ruling71f673a42c10f96961a71579ff71412ee6df331bc551e432f86b13094618f8f0; alternatives are the actual old settings/task-flag/enclosure/door forms weighed by those authorities."
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L94-CUR-decision-grant-authority",
+    "leaf": "260928-MIK-L94",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

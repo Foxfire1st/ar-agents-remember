@@ -1,0 +1,176 @@
+{
+  "path": "mcp/src/agents_remember/serving/scope.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The L1 files API that now imports + re-exports these helpers.\n\nAnchor: `resolve_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5192905782e8a6dadbc17d46fca11b4ec3254480",
+            "content": "sha256:07529da616c5edb1c5b9aadfda044208b0858941ffe31069f936362a0825c54a",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/serving/files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L3 change-set API imports and reuses FileScope, resolve_scope, run_scoped and language_for.\n\nAnchor: \"from agents_remember.serving.scope import FileScope\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:66b56015678e6a808098b76cdaf13c413267b851d4bf851d8827f7817ce66c47",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:5a806c50edfc5197e173a83194140f5608aa5687bdaf1bc524dc1ac65824d405",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The shared path-confinement helper (`confine_rel`) the scope uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "content": "sha256:e7439e42dfde2e3ca132f294c995f2162845dad8496330e19b214d075be85ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The scope resolver bridge + \"MissingMemoryError,\".\n\nAnchor: \"_resolver.resolve_coordination_context\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f7bfd6b8f0856480bb81f6be86aeebcbf6fd25e",
+            "content": "sha256:65eded254886823405bb56e4121f233239cfafb11d2b9e524acc0e316772932d",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/kernel/coordination_context_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The repo allow-list authority guard (`require_repo`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The catalog uses the notes/archive-excluding iterator and names foreign positional nonmembers before liveness filters.\n\nAnchor: `_iter_active_contracts` `iter_leaf_enclosure_contracts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:3961183c78ea5b46476a9f0f70ff4708efcfe33cf3f23935d58b54f2bde3259c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:3efba6b9c78b72fd1ff131c6f8f274da87a1ece4c8b1ea4715235f9ad48f5162",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:4af7773a9228a97bc4464a1fe1f54a7d4921e2aa987a327515001f4c54399e02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_iter_active_contracts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:2a048328658ef57f37cf7e056285aa7ae07a945735bf69584367506efb2655f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "iter_leaf_enclosure_contracts"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "WorktreeContract retains the code-worktree, group and cleanup fields; its loader and named error own parsing.  Anchor: `WorktreeContract` `load_contract` `ContractError`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:9d7bdb395ee1911989911a31d4f82b84b3fd1ef9fc7505a24f62fe4709a1bcf1",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

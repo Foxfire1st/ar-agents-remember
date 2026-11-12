@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.triage.test.tsx",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "Captured semantic replies, synthetic outline adapter and invariant-granularity order comparison.\n\nAnchor: \"// tree's subjects; that walk is reading/ReviewPage.selection.test.tsx's.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "585f8dc687506ab6ad8898dfbabe4d24ac9612ed",
+            "content": "sha256:b0bb6ef0c5d5cfbc7e7d628b19319303b212ba00efc9530c2f5b0409688a6f50",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

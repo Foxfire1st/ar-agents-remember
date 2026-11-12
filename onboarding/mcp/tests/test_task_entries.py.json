@@ -1,0 +1,251 @@
+{
+  "path": "mcp/tests/test_task_entries.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:46902c6a77c26ab7e215a1dfa22ea6f0dda46f3b130a16a75cc72ec7465898a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_stage_has_priority_over_host_activity"
+        }
+      },
+      "facet": "The parameterized native-status/host-known combinations assert stage precedence, unknown-versus-works, absent non-started activity/eventAt and no serialized ageSeconds.",
+      "id": "PRF-2MEC8T",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "L168-W-R167-03-07",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:9f77aaed92cee2256fa2177958c1a138558b8b0a13b14c2b33ccab9a976c9233",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_conflicting_membership_is_deterministic_reciprocal_and_reachable"
+        }
+      },
+      "facet": "The four relationship cases reverse input order and assert equal membership, exactly-once reachability, reciprocal links and count agreement; two-parent resolution selects the reciprocally declared parent.",
+      "id": "PRF-5VYQ3G",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-W-R167-11",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:7790eb1bf3d61bb572693f096ca46d0a2f8e4bd39fc7f12fa200be0ea0c3294c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable"
+        }
+      },
+      "facet": "The parent-exists parameterization preserves L2/L1 authored order, leaves unlisted and nonreciprocal parent references at roots, and asserts reciprocal complete reachability and matching counts.",
+      "id": "PRF-98REG9",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-W-R167-11",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_work_and_permission_win_and_event_time_comes_from_a_contributor_in_every_order"
+        }
+      },
+      "facet": "Both in-turn and permission dominate idle/ended records in every order; eventAt comes from the working contributor, otherwise the paused contributors, and absent timestamps remain absent.",
+      "id": "PRF-JNM2YQ",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "L168-W-R167-03-07",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:33a79e3a123d8bedddd5e4c5c1eb95028ff21b12dcd4a4dff8e6d4fcbb8b0189",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_record_naming_no_master_belongs_to_the_listing_master_and_disagreements_are_served"
+        }
+      },
+      "facet": "Source assertions distinguish genuinely absent and unresolvable master input, admitted listing fallback, contradictory/listed-twice reporting and complete-content distinctions without duplicate entries.",
+      "id": "PRF-PVMS5F",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-WQ8YGE",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+        "content": "sha256:e8446165df3ff8fd7a9ad9ad1d07047bb19b80c4e552c6583aa805d3c675ac54",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_one_declared_child_without_a_document_gets_one_entry_and_the_same_counts"
+        }
+      },
+      "facet": "The temporary native-document case preserves exactly two entries before/after authoring the child, transfers stage authority to its document/permission activity and excludes duplicate task-owned fields from its summary.",
+      "id": "PRF-Z0Z6XJ",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-W-R167-13-14",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Document stage overrides host activity except for started tasks.\n\nAnchor: parameterized stage/host and serialization assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:46902c6a77c26ab7e215a1dfa22ea6f0dda46f3b130a16a75cc72ec7465898a9",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Activity precedence and contributor event time are order-independent; missing times stay absent and future timestamps remain served.\n\nAnchor: contributor-time and missing/future-time assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:7ecf6390cfea81857ec4dfe1408b0ef03d1efb6c5e07d2c709f7e0a8a4c7ff79",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 51
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A missing declared child has one entry, later authored in place, with shared count semantics.\n\nAnchor: `test_one_declared_child_without_a_document_gets_one_entry_and_the_same_counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only reciprocal declared membership sets parent; all entries remain reachable once.\n\nAnchor: `test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A fileless plan has one opaque child identity without invented document/body.\n\nAnchor: `test_addressless_declared_row_has_one_opaque_identity_and_no_document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Two-parent/cycle/missing-parent conflicts remain deterministic, reciprocal and reachable with consistent counts.\n\nAnchor: `test_conflicting_membership_is_deterministic_reciprocal_and_reachable`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:618bdc6591a3428d16b44c0d4bdec0b055330616eb8c1e08a1ef2be7a40ca2d2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Parameterized fallback/disagreement cases distinguish missing, explicit and unresolvable masters, retain raw literals and suppress duplicate reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c869a71229c24e408ad5fc6faf3b19d2fbbea0fe",
+            "content": "sha256:33a79e3a123d8bedddd5e4c5c1eb95028ff21b12dcd4a4dff8e6d4fcbb8b0189",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_naming_no_master_belongs_to_the_listing_master_and_disagreements_are_served"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_listed_child"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

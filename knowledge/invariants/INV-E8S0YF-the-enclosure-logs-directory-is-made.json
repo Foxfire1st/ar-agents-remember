@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Whole removal with root lines and no recreation is proved by the named passing test plus the sandbox abandon/cleanup checks; single-file member of the family."
+  },
+  "applicability": "Enclosure creation, life and removal.",
+  "conditions": [
+    "logs/ is made with the enclosure, outside both worktrees and outside Git.",
+    "Cleanup and abandon remove it whole; terminating calls log at the root and never recreate it."
+  ],
+  "exclusions": [
+    "Closeout previews, which never list logs/.",
+    "The coordination-root log, which outlives any enclosure."
+  ],
+  "id": "INV-E8S0YF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sandbox witness abandon_checks + cleanup_checks + persisted_proof (all true, SHA 580bf130)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §3 enclosure-lifecycle",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The enclosure logs directory is made with the enclosure, never age-pruned, removed whole with it, and never recreated by terminating operations or outlived servers; successful public abandon and cleanup both remove the group whole with their lines at the coordination root.",
+  "status": "proposed",
+  "supersedes": []
+}

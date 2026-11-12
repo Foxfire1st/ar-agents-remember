@@ -1,0 +1,152 @@
+{
+  "path": "mcp/src/agents_remember/mcp/read_only.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+        "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1G500X",
+      "invariant": "INV-QCMCJX",
+      "origin": {
+        "handoffEntry": "L109-source-read-only-annotations",
+        "leaf": "260928-MIK-L109"
+      },
+      "rationale": "the realization entry the existing row records; unchanged by this landing",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+        "content": "sha256:d8260c994fa518cd0167acf9f5c1a60be55c84f659414bd6bb9116f2d890ef22",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_only_hint"
+        }
+      },
+      "id": "RLZ-XPSPPC",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`read_only_hint` at C still answers true for the 17 explainer reads (16 in EXPLAINER_READ_ONLY_TOOLS plus `knowledge_read` in READ_ONLY_TOOLS) and false for the 5 explainer writes and the mutating `explainer_control`, and still raises `UnknownReadOnlyMark` for anything unlisted (164-174), so the central marks describe capability without granting it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The current partition marks retained capabilities, including mutating retire_child, and omits retired dispatch_agent.\n\nAnchor: `READ_ONLY_TOOLS` `MUTATING_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:43a88c177efadc6cf26038e3781f459f92feb21e390f14cc927f3620fa8bed43",
+            "locator": {
+              "kind": "symbol",
+              "name": "READ_ONLY_TOOLS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MUTATING_TOOLS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unknown registered name fails closed instead of receiving a default mark.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Annotations are applied after registrars from the same partition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The mutating set that now carries the settings initializer.\n\nAnchor: `MUTATING_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:e15bd14d6fae65241195e320f48d6dfb262c43bb63b0d3c73d2e954366a4060a",
+            "locator": {
+              "kind": "symbol",
+              "name": "MUTATING_TOOLS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The central vocabulary adds all 17 explainer reads and 5 writes, plus mutating explainer_control for ordinary surfaces. Unknown marks still raise instead of silently defaulting.\n\nAnchor: `read_only_hint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+            "content": "sha256:0e0d192827b0a21a999d2e40f4e8e0bbacce537cee8d59d0d58eaed270c767b7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Returning or titling an old or misplaced workspace could attach a new task actor to the wrong context or mutate archived history; refusal and preservation cases guard the boundary."
+  },
+  "applicability": "Every descriptor encountered in explicit task workspace preparation.",
+  "conditions": [
+    "ID, project ID and resolved task directory are validated before successor continuation or workspace-title mutation.",
+    "Only a refreshed nonarchiving, nonarchived workspace is returned and titled."
+  ],
+  "exclusions": [
+    "Rollback of the master project add/rename that precedes workspace validation.",
+    "Host-initiated archival and actor lifecycle."
+  ],
+  "id": "INV-S50VDC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "evidence/A02/focused.log; ReopenedWorkspaceTests.test_successor_placement_mismatch_stops_without_renaming_or_further_creation and test_archived_replay_opens_a_successor_without_touching_the_archive; retained evidence/sandbox-A001/host-workspaces-after.json verifies the original archive timestamp and distinct live successor."
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R169@v1-W3-placement-and-preservation",
+    "leaf": "260928-MIK-L169",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Placement is checked before successor traversal or title mutation, and only the final live workspace receives the task title; archived workspaces and their actors are not reused or mutated.",
+  "status": "proposed",
+  "supersedes": []
+}

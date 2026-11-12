@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/context/patches.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The marker-based timer cleanup patch is owned here; no removed patch-helper test coverage is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d6ccd171274ae0e9a4f78ea67b9a2b68b0b641a",
+            "content": "sha256:098ab6de94365665823bbd111bdd1199d9c519224d6d6a7de9ec3a42a62fca3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_cgc_timer_pop_patch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

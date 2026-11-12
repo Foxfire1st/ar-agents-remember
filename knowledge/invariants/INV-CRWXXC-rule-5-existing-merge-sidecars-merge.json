@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Two tests pin the unchanged item rules and the single-item true conflict at the incoming number, so a future merge change that splits a true conflict or reorders precedence fails before it lands."
+  },
+  "applicability": "Sidecar, record and Markdown merges after alignment, in crossing and ordinary converted syncs.",
+  "conditions": [
+    "Authored/mechanical precedence is unchanged.",
+    "A reference both lines changed differently stays one conflict item at the incoming number."
+  ],
+  "exclusions": [
+    "Rule-7-skipped cards, where the legacy numbering-collision reason may still fire."
+  ],
+  "id": "INV-CRWXXC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: after alignment the sidecar merges by number through the unchanged key/item machinery, so a reference both lines changed differently is still one conflict item at the incoming number, and authored/mechanical precedence is untouched. Observed: test_a_true_conflict_stays_one_item_at_the_incoming_number; both-added same-number integration now aligns to a fresh number (test_a_reference_number_both_lines_added_is_aligned_to_a_fresh_number) instead of the pre-R66 collision."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-05",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 5 existing merge: sidecars merge by aligned number and Markdown by line with unchanged authored/mechanical rules; true conflicts stay one item",
+  "status": "proposed",
+  "supersedes": []
+}

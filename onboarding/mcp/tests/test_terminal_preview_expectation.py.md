@@ -1,0 +1,126 @@
+# mcp/tests/test_terminal_preview_expectation.py
+
+## Governing Overview
+
+[mcp/tests route overview](overview.md)
+
+## Purpose
+
+The lane that pins **a cleanup preview and the cleanup it previews agreeing about the same
+collection.** `D-15` measured the failure: `lifecycle_finalize_task` with `dry_run=true` returned
+`state: cleanup-blocked` on a `driftSnapshot` blocker that carried no reason, while the real finalize
+on the same contract completed and reclaimed everything.
+
+The cause was **one missing keyword** in one branch. Every sibling collection in
+`terminal_result_blockers` (`mcp/src/agents_remember/worktrees/modules/terminal_validation.py:246-292`)
+propagates `preview=result.preview` into its `TerminalExpectation`; the `driftSnapshot` branch did
+not (`:280-286`). A preview's drift-snapshot entry answers `would_remove`, so read with the real
+call's pending key it looked like an entry that reclaimed nothing, and `_blocker`
+(`:644-660`) refused to invent the missing reason — correctly, because a blockage an operator cannot
+read is not a blockage. A preview therefore failed on exactly the contracts a real finalize
+completed.
+
+## Code Commentary
+
+### Logic
+
+The module drives the **real validator** over the three shapes the production producer emits —
+`kernel/primitives/drift_snapshot.py::_remove_snapshot_file` (`:38-...`) is what writes them — rather
+than synthesizing an outcome the producer cannot produce. `_result` (`:27-41`) builds a
+`TerminalResult` whose only non-empty collection is `drift_snapshots={"code": snapshot}`, with
+`providers={"state": "torn-down"}` so the provider half contributes no blocker; that isolation is
+what makes the assertion about the `driftSnapshot` branch specifically rather than about the
+validator as a whole. The four snapshot builders are the producer's own three result shapes:
+
+| Builder | Shape | Producer's own fields |
+| --- | --- | --- |
+| `_preview_snapshot` (`:44-51`) | a preview that *would* remove | `removed: False` + `would_remove: True` |
+| `_removed_snapshot` (`:54-60`) | a real removal | `removed: True` |
+| `_absent_snapshot` (`:63-70`) | already gone | `removed: False` + `reason: "already-absent"` |
+| `_failed_snapshot` (`:73-80`) | a real failure | `removed: False` + `reason: "[Errno 13] Permission denied"` |
+
+The three cases:
+
+- **`test_a_preview_over_a_live_drift_snapshot_reports_no_blocker`** (`:83-91`) — the measured L14
+  shape. Before the fix this call raised
+  `RuntimeError: terminal result blocker driftSnapshot=code carries no reason`; the assertion is
+  `terminal_result_blockers(...) == []`.
+- **`test_the_preview_and_the_real_call_agree_over_the_same_collection`** (`:94-104`) — the module's
+  actual subject, asserted from four directions in one case: the preview answers `would_remove`, the
+  real call answers `removed`, and an entry that was already gone is benign in **both** modes. That
+  is what "one keyword apart, not one judgement apart" means.
+- **`test_a_real_drift_snapshot_failure_still_blocks_with_its_reason`** (`:107-116`) — the guard
+  against "fixing" this by making the collection benign. The assertion is the exact blocker dict
+  `[{"driftSnapshot": "code", "reason": "[Errno 13] Permission denied"}]`, so a genuine
+  drift-snapshot failure must still block **and must still name the component and the reason**. This
+  is the case that goes red if the expectation is relaxed instead of corrected.
+
+### Conventions
+
+The module imports exactly two names — `TerminalResult` and `terminal_result_blockers` — from the
+validator it measures, and nothing else from the package: no fixture module, no test-support import,
+so the evidence-lifecycle catalog records no transitive consumer here. The five helpers are
+module-level functions with docstrings that state the role the value plays in the assertion rather
+than restating its type, and every value is a plain `dict[str, object]` literal, which is what the
+validator's own signature accepts.
+
+**The lane registration is the manifest row**: this module carries **no `pytestmark`**, and its
+single lane row was **appended** to the end of `unit-regression` in
+`mcp/tests/test-evidence-lanes.toml:192` — item 16's half (a), because a mid-list insertion shifts
+every row below it.
+
+### Invariants And Boundaries
+
+- **A blockage always names itself and its reason.** `_blocker` raises rather than emit a
+  reason-less entry, and this module asserts the reason's exact text on the one path that must still
+  block — the fix may not be achieved by weakening that rule.
+- **A preview is never read as a result.** `TerminalExpectation.preview` selects the key that proves
+  reclamation; the `would_remove`/`removed` pair is the whole difference.
+- **The `driftSnapshot` branch must stay on the same footing as its siblings.** Every collection
+  built from a `TerminalResult` propagates `preview` — the comment beside the fixed branch records
+  exactly why.
+- **Boundary.** This is a test module. It owns no production contract and adds no support module.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+### Repo-Internal References
+
+- The module's own statement of D-15 and of the three shapes it drives. [1]
+- **The one entry point, with the fixed `driftSnapshot` branch and its comment.** [2]
+- The expectation type whose `preview` flag selects the reclamation key. [3]
+- The result type that bundles the outputs with whether they are a preview. [4]
+- **The producer of the shape this module drives: the real drift-snapshot remover.** [5]
+- One terminal result whose only non-empty collection is the drift snapshot. [6]
+- The preview's own entry shape: `would_remove`, not `removed`. [7]
+- The real removal and the already-absent entries. [8]
+- The genuine failure, which must still block with its reason. [9]
+- **The measured L14 shape: a preview over a live drift snapshot reports no blocker.** [10]
+- **Preview and apply are the same judgement, asserted from four directions in one case.** [11]
+- **The other half of the contract: the fix may not swallow a real failure.** [12]
+
+
+> Retained earlier citation wording: - The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution.
+
+
+### Cross-Repo References
+
+No cross-repository behavior is implemented or measured in this file.
+
+No meaningful cross-repo references found.
+
+
+
+
+
+- The lane manifest registers mcp/tests/test_terminal_preview_expectation.py in unit-regression. Membership selects evidence and does not establish execution. [13]

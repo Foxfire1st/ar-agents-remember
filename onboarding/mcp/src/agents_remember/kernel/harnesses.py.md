@@ -1,51 +1,29 @@
 # mcp/src/agents_remember/kernel/harnesses.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/harnesses.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
-[overview](../../../overview.md)
+[MCP package overview](../../../overview.md)
 
 ## Purpose
 
-The harness vocabulary: what a harness IS, and the curated set of them.
+The built-in agent-ID vocabulary for role settings. `HARNESS_IDS` is the ordered tuple
+`claude`, `codex`, `pi`, `eve`; this module defines no `Harness` object, availability probe,
+PATH detector, adapter registry or launch implementation. A named ID is not evidence that the
+host offers or can run it.
 
 ## Code Commentary
 
-### Logic
-
-Module-level surface:
-
-- `Harness` (class, lines 32-60) — One supported TUI harness: a stable ``id``, a display ``name``, the ``command`` to detect on
-
-### Conventions
-
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+The source docstring states that spawn harness validation combines these IDs with IDs declared
+under orchestration.harnesses. A role with no named agent chooses the first offered ID in this
+order; actual offerings remain the host's answer. Preserve the vocabulary row for `eve` without
+restoring its retired runtime/probe machinery.
 
 ### Invariants And Boundaries
 
-- The card mirrors the source file one-to-one at `mcp/src/...` path.
+Settings vocabulary, host availability and launch capability are different owners. No readiness
+verdict or execution proof is provided by this constant. The prior registry/probe account is
+retired source history, not a compatibility path.
 
-### Todos
+## Evidence
 
-None.
-
-## Repo-Internal References
-
-This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the class `Harness` (lines 32-60) — One supported TUI harness: a stable ``id``, a display ``name``, the ``command`` to detect on. | `Harness` | mcp/src/agents_remember/kernel/harnesses.py:31-60 |
-
-## Update History
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Ordered built-in role-setting IDs do not establish host availability or restore a probe/adapter registry. [1]

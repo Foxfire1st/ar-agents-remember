@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/requirements.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/requirements.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -71,37 +61,27 @@ filesystem root.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Route registration + the two handlers. | `register_requirements_routes` | mcp/src/agents_remember/serving/requirements.py:181-208 |
-| Task-context root selection and the registered-root guard. | `_selected_root`; `_registered_root` | mcp/src/agents_remember/serving/requirements.py:45-72; mcp/src/agents_remember/serving/requirements.py:75-87 |
-| The stricter no-symlink confinement reused by read. | `confine_non_symlink_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:52-92 |
-| The declared models + shared scoped-read refusal table. | `RequirementRow`; `RequirementsListing`; `RequirementContents`; `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:767-798; mcp/src/agents_remember/serving/response_contract.py:1103-1109 |
-| Composition: the app registers this surface. | `register_requirements_routes` | mcp/src/agents_remember/serving/app.py:283-284 |
+- Route registration + the two handlers. [1]
+- Task-context root selection and the registered-root guard. [2]
+- The stricter no-symlink confinement reused by read. [3]
+- The declared models + shared scoped-read refusal table. [4]
+
+- Composition: the app registers this surface. [5]
 
 
-## Cross-Repo References
+
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-05T08:27+02:00 — L31 native curator: Removed the leaked diff-marker bullet after checking root selection; retained the GET-only requirement-packet contract and refreshed the scoped-read refusal-table evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the new
-  task-local requirement-packet serving module (confined GET-only list/read over the
-  `tasks/<repo>/<master>/requirements/` root). Verified at code commit 1993dd25.
+No applicable cross-repository source was found.

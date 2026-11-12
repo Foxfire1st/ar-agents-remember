@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The row-admission suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43ceca142b694494d71b86d1b9dfb66ad8fd4fe0",
+            "content": "sha256:efa14e3149beb27705ab43bcdab87b01c607bf6457e183c937397d32258677fa",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Moving the computation into a child would otherwise trade the blocked subject reads for wrong, refused or leaked work: an answer from another build or from bytes that are gone, a busy refusal for a single user, a refused first read when several arrive together, or a process nobody collects. Each member closes one of these, and only together do they leave the reader with the same view, sooner."
+  },
+  "guarantee": "The leaf-wide view of a live comparison is computed outside the dashboard's interpreter at no cost to the reader. The child gives the answer that the one worklist implementation gives for the comparison's captured trees, or an explicit refusal; a kept view is exactly as current as the reads recorded for it, on both sides of the process boundary; one user's concurrent or repeated reads are answered from shared computations instead of being refused; a comparison that several readers open at once is recorded once; and no child is left behind by a request, a failure or a dead dashboard.",
+  "id": "FAM-TYKA3T",
+  "members": [
+    "INV-19P897",
+    "INV-BBPPS5",
+    "INV-PKBCZ0",
+    "INV-HHZP57",
+    "INV-Z2HVKA"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L42-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L42-leaf-wide-worklist-in-a-child",
+    "leaf": "260928-MIK-L42",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/kernel",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The reviewer's leaf-wide worklist in a child process"
+}

@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the persisted-subject and same-run governing-row checks, a syntactically plausible row could hide a changed record or answer no real item while appearing published. The boundary prevents that costly false completion before output is written, while retaining the explicit non-leaf/raise exemptions."
+  },
+  "applicability": "Ordinary converted-memory leaf Writer runs consuming the persisted leaf worklist before memory-file publication.",
+  "conditions": [
+    "A missing or unreadable consumed worklist shape refuses with the native compute/recompute remedy; wave and crossing owners do not acquire a leaf-worklist prerequisite.",
+    "Non-raise still_rejected, planned and hunk rows must name actual worklist subjects; handle resolution and membership aliases use the native subject population.",
+    "A record first authored by this leaf needs no unnecessary judgment when no item names it; raise rows remain exempt from these subject checks.",
+    "Every matching touched/stale invariant comparison and guarantee-changed family item is tested by the shared governing-row predicates, without allowing an earlier item lacking comparison facts to hide a later violation."
+  ],
+  "exclusions": [
+    "This is the Writer boundary, not a claim that arbitrary caller data is cryptographically unforgeable or that this module recomputes the native worklist.",
+    "Admission still needs genuine owner-selected persisted inputs; semantic truth, task-question publication and the independent commit/gate checks keep their own owners."
+  ],
+  "id": "INV-A6571D",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-1",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-56/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-76/proof-source-review.json"
+      ],
+      "path": "wave-55-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 1",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Leaf Writer rows must agree with the genuine persisted worklist and governing changed-row predicates, while waves and crossing owners have no leaf-worklist prerequisite and raise needs no item.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,25 @@
+{
+  "path": "mcp/tests/test_task_provider_limit_windows.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e67d649aebec2e604e73eec8d196b0ffe2e15d7",
+        "content": "sha256:87d3a01c40eb93b615df1af2268a61deeac9febe36c7c7ffaec0ad5801f686a1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4RE6ZR",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The case file at C derives every window from a `ProviderLimitReport` and computes the task's windows there — max per seat, min between seats — so the earliest-reset rule and the report-only source are both held by it; the whole-file anchor is recorded against C's bytes.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

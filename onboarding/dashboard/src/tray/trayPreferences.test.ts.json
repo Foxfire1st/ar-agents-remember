@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/tray/trayPreferences.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3564db5a717e704321a404ed0ff0713bfee825ec",
+        "content": "sha256:d0aa2c55cce524961c78c211b32976e758f6d6838c2ffa2e616c0a325188acd2",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray bounds preference > takes a positive whole bound, refuses any other, keeps it across a reload and goes back to the defaults"
+        }
+      },
+      "facet": "Positive whole limits persist across a preference-store reload; invalid values refuse and Reset restores defaults.",
+      "id": "PRF-49BH33",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks browser-local positive bound edits, reset and memory-only operation.\n\nAnchor: \"it('takes a positive whole bound, refuses any other, keeps it across a reload and goes back to the defaults', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3564db5a717e704321a404ed0ff0713bfee825ec",
+            "content": "sha256:44cb622784f7e9cf94ce00371457f15dc0d89d2f75e8d90f6b317668ab9cdc03",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks browser-local positive bound edits, reset and memory-only operation.\n\nAnchor: \"it('holds a bound for the page’s lifetime when the storage refuses the write', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3564db5a717e704321a404ed0ff0713bfee825ec",
+            "content": "sha256:d697fc3f4d31b6d0b5b64600e3c94e9f42eb5503d9933d11e8de5565b703a8f6",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 46
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

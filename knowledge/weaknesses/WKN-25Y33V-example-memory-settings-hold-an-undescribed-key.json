@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "a673eeb1120b0dbe4deacde0f0d4a69df363ba32",
+    "content": "sha256:bf702ca9e497514a5ed0a18baa5643e52c3b96e8ff3d849179b52268daaf5b15",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "system/defaults/examples/memory-repo/settings.json"
+  },
+  "id": "WKN-25Y33V",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-12",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The example settings of a memory repository hold \"version\": 2, a key that nothing reads: the settings reference says that the key is accepted and read by nothing and that any value loads."
+}

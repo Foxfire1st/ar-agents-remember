@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`selected_preparation_intents` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "content": "sha256:7ba7c5fca3aecea0293eacd8b8632ff8bf507c93d9a67cf7f4f1e3a9cf5a2947",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_preparation_intents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`selected_prepared_code_history_commits` validates selected code and explicit predecessor history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "content": "sha256:eac209b3805133f5c44832117e8af7f65437b471c1a6d8cdd5ddc312d1fb7b45",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_prepared_code_history_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_require_intent_owner` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "content": "sha256:227d617982c38355938143ebec66ae06f43e55dc1309bf8ec34b71ecde5bc75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_intent_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

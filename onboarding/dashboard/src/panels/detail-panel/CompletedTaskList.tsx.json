@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/detail-panel/CompletedTaskList.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a015120deb8139f953de2d5fe222782cfd35b2b9",
+        "content": "sha256:a2d00afe487b4a33d2b783564fea07ba2e1fb8383c2da78fc97849dd3b70bac4",
+        "locator": {
+          "end": 112,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-513482",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 16",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This standalone completed-list component owns ephemeral sort toggles, the active sort direction and the capped newest-five preview with number, name and completion time.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Mount-local sorting, newest-five preview and optional row navigation share the same completed-row renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a015120deb8139f953de2d5fe222782cfd35b2b9",
+            "content": "sha256:a2d00afe487b4a33d2b783564fea07ba2e1fb8383c2da78fc97849dd3b70bac4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,3199 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L96",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-002G0F",
+      "items": [
+        "sha256:77e2339519b8f053bcad3091888791b328ef37d6f64d2b926dc358ab642d725e"
+      ],
+      "reason": "The resolver's hunk adds the product Node and cache roots; that obligation is carried by the safety-roots obligation.",
+      "subject": "hunk:sha256:77e2339519b8f053bcad3091888791b328ef37d6f64d2b926dc358ab642d725e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-016AHV",
+      "items": [
+        "sha256:7e1e03f95d101603480bfb8cb6e0538f5b86a8496b72f6ce9ff368f3f1aa3e4b"
+      ],
+      "reason": "The remedy text now names the install step and the one start; that text obligation is carried by the host-lifecycle texts.",
+      "subject": "hunk:sha256:7e1e03f95d101603480bfb8cb6e0538f5b86a8496b72f6ce9ff368f3f1aa3e4b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3476324a99bd28dd30bb21f1789de338d66c5aff",
+            "content": "sha256:9f95fd35f24ec058b63858eb5f12bafe6fec2bb7507f4f6e7d66a2c2253005e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_error"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "before": {
+            "blob": "c7f685e2839e5f34024bc5afa15818b35c4553d8",
+            "content": "sha256:9808dbae0e8d5d07678ed9f992ae12a6604bfa1a3a216f523500ff175720d729",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admission_error"
+            },
+            "path": "scripts/pnt_sandbox/build_tool_calls.py"
+          },
+          "id": "RLZ-B8EBRC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0DK4QX",
+      "items": [
+        "sha256:054cf20546278aff5dfc4b3332f24e3427bc9deac864b07ec5c496cb559fba97"
+      ],
+      "reason": "The build tool-call admission error was renamed while the exact-root/repository/provider admission it enforces is unchanged; the realization is re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-5NDKYQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0EPMG7",
+      "items": [
+        "sha256:c87574dcfe43638f1c33cdd0c6cb8bd10b5bc774d854d8a7bc6c08546da41252"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:c87574dcfe43638f1c33cdd0c6cb8bd10b5bc774d854d8a7bc6c08546da41252"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0Z6HRR",
+      "items": [
+        "sha256:82074e03d39b8c4afc8ac794e90d3fdea43bb0aa0ec4b5bd6d02b55a13b00890"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:82074e03d39b8c4afc8ac794e90d3fdea43bb0aa0ec4b5bd6d02b55a13b00890"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-108ZV7",
+      "items": [
+        "sha256:267e8a51a3670daaaace689244ff11e2befb7d72ebf0aecbac2873c0237331e6"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:267e8a51a3670daaaace689244ff11e2befb7d72ebf0aecbac2873c0237331e6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-16F8FF",
+      "items": [
+        "sha256:279901ff3f796c48a3c12676b0d72067f2eb96a2dd5192c5060abac25eeb2fca"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:279901ff3f796c48a3c12676b0d72067f2eb96a2dd5192c5060abac25eeb2fca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1BMSJM",
+      "items": [
+        "sha256:3b0310c5714bac1eab915695406fbe99fd0372119464b09a432009d055d2658b"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:3b0310c5714bac1eab915695406fbe99fd0372119464b09a432009d055d2658b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1CS6MW",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.hermes/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1FPV44",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1P383M",
+      "items": [
+        "sha256:209a18fccf0c78cbfa120e536f57d9e469ea2f353da8dd4262120728d9663f6b"
+      ],
+      "reason": "The admission-error edit only renames the error path the public install route calls; the card's account of the build tool-call list still holds.",
+      "subject": "onboarding:scripts/pnt_sandbox/build_tool_calls.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1Q3D7M",
+      "items": [
+        "sha256:b70a8c50e103c9ffebc1e63d88eafb90ec696714cf754e5423b6c3b5e5228866"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:b70a8c50e103c9ffebc1e63d88eafb90ec696714cf754e5423b6c3b5e5228866"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-22F3VY",
+      "items": [
+        "sha256:503627f7d031fe9899513ea15e24610f4cd48569e5449a2de0c5fd52b6a4a2a4"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:503627f7d031fe9899513ea15e24610f4cd48569e5449a2de0c5fd52b6a4a2a4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2PGKMJ",
+      "items": [],
+      "reason": "The source skill lies outside the onboarding include paths, so no card is gated for it; its rule 1-10 text changes are realized by the host-lifecycle invariants and the package copy's card.",
+      "subject": "onboarding:skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2Z01NJ",
+      "items": [
+        "sha256:397a3325436d1183b606482bb3f0ac772e6f556940afe216cfb466a2ec356440"
+      ],
+      "reason": "The lane rows map the new host test modules to their lane; a catalog row carries no invariant.",
+      "subject": "hunk:sha256:397a3325436d1183b606482bb3f0ac772e6f556940afe216cfb466a2ec356440"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2Z6EXE",
+      "items": [
+        "sha256:57bd7f25ead481df5fac67377baaf41ccaeab2f1a9296e2550a7151e4388748d"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:57bd7f25ead481df5fac67377baaf41ccaeab2f1a9296e2550a7151e4388748d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3XSQMN",
+      "items": [
+        "sha256:dcb69b3f845a1ffd72691753bea1393c6cde0c08c5e60b800f7ec551ab0a0a2c"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:dcb69b3f845a1ffd72691753bea1393c6cde0c08c5e60b800f7ec551ab0a0a2c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3Z06CY",
+      "items": [
+        "sha256:b241deeef4d5cf5ecdf91833018d1f3a0c9cee7149b905a008231ac8323908a3"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:b241deeef4d5cf5ecdf91833018d1f3a0c9cee7149b905a008231ac8323908a3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-40SXAZ",
+      "items": [],
+      "reason": "The document lies under the excluded docs/ tree, so no card is gated; its install/start instructions are realized by the host-lifecycle invariants.",
+      "subject": "onboarding:docs/getting-started.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-45C161",
+      "items": [
+        "sha256:91cf33b84d89c552ff10247400c1376c48644d16a403dd521b3e8d37f6543399"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:91cf33b84d89c552ff10247400c1376c48644d16a403dd521b3e8d37f6543399"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-48XVZZ",
+      "items": [
+        "sha256:cff3c0feb3d12c9b80a8401238a3030427cbb6c48f279328627328c59c6fdcb0"
+      ],
+      "reason": "The safety seam's hunk threads the resolver result through unchanged behavior; the obligation is carried by the safety-root invariants.",
+      "subject": "hunk:sha256:cff3c0feb3d12c9b80a8401238a3030427cbb6c48f279328627328c59c6fdcb0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4ABYSE",
+      "items": [
+        "sha256:0af8bd417cdfccb9fd70c43c7a1157a50a6fabfc14ba2f19a253ddb3494693ba"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:0af8bd417cdfccb9fd70c43c7a1157a50a6fabfc14ba2f19a253ddb3494693ba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4G62MD",
+      "items": [
+        "sha256:f1196ee2f7e6ad507c7770c29b90cb2ef1f3108f963ca83c732a0c988c373041"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:f1196ee2f7e6ad507c7770c29b90cb2ef1f3108f963ca83c732a0c988c373041"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4KPM9F",
+      "items": [
+        "sha256:d4ba0ec9d1d827fd2b16d0fe287a743b159cda4f488777ebaf76182032ff2d28"
+      ],
+      "reason": "The README's host paragraph changes are realized by the host-lifecycle invariants; the remaining edits are wording that carries no invariant of its own.",
+      "subject": "hunk:sha256:d4ba0ec9d1d827fd2b16d0fe287a743b159cda4f488777ebaf76182032ff2d28"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4YB4DT",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.github-vscode/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R96",
+          "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+            "content": "sha256:b29f8b4987d09632cc65b3ae1d5c99bd97fb03721a6f3b3189d3931f2b6c72b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "before": {
+            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+            "content": "sha256:e5a5602aa323691417cda9714d8f76fb8745965808037c45ab1e905831fd81cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "id": "PRF-RS8GEW"
+        },
+        {
+          "after": {
+            "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+            "content": "sha256:b29f8b4987d09632cc65b3ae1d5c99bd97fb03721a6f3b3189d3931f2b6c72b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "before": "absent",
+          "id": "PRF-SBF68B"
+        },
+        {
+          "after": {
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:e335ed108802ff7422da8f112732d81111f2ccf7f98c01bc930b6e90eb1d94b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_paseo_runtime"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "before": {
+            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
+            "content": "sha256:e335ed108802ff7422da8f112732d81111f2ccf7f98c01bc930b6e90eb1d94b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_paseo_runtime"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "id": "RLZ-3MEDMZ"
+        },
+        {
+          "after": {
+            "blob": "e0e3901879af6c975558c5c4eb31d6cdf14c5fb4",
+            "content": "sha256:348bce6b71238622473dc73732ecd4258cb6bf938265b6555fd1cf8d2ed0b1b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "before": {
+            "blob": "74cb448cf86fe0ef7fb7d736bf9a533c4c65e639",
+            "content": "sha256:6ae16823f8b58cfc0d5d544f7d289f940dd1e018e4a6704c4e33f12ae0ad6962",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "id": "RLZ-JKN1AR"
+        },
+        {
+          "after": {
+            "blob": "2a46dbc2164109cbf32259c21cdb2921b5d666ec",
+            "content": "sha256:d67abfd73bb07b51e514f52ebb774d96ed336a9ec757370d0ddbb1be1787b570",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_runtime.py"
+          },
+          "before": {
+            "blob": "1ca8977713752ba75054c3e396fca19269ff3088",
+            "content": "sha256:7ddf3f68cc76ab8262a5adc7d7bffd1f31957f0da599567568b2beb50b190769",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_runtime.py"
+          },
+          "id": "RLZ-S9GB8C"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-55JM16",
+      "items": [
+        "sha256:16a8bdeafb76140deb84ac42b28136af23c689e97addd852f518e44e4716853e"
+      ],
+      "reason": "A present block now requires the five operational facts and permits an optional version that never selects another release, so the parse is weaker than the six-required-facts claim while the named absent state, the empty providers/embed allowance and the three commands' refusal keep their meaning; all realizations are re-anchored at the candidate. Evidence (L96 reconciliation: settings version is not the pin (INV-9XEW06)): Worker entry 'INV-2MWAYK / INV-9XEW06 / INV-X5E9WH' (prospective-producer-list.json 739ff7bd); mcp/tests/test_paseo_runtime.py::PaseoRuntimeTests::test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment",
+      "revision": 2,
+      "subject": "INV-9XEW06"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-573TTR",
+      "items": [
+        "sha256:54d9a80090ed81680d10c38b43fe71935817088c3b5315b9d2598bae0da78485"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:54d9a80090ed81680d10c38b43fe71935817088c3b5315b9d2598bae0da78485"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-589050",
+      "items": [
+        "sha256:72265080a64556c46140862303cb5bbfeac7a6a8932f55e9261e020af14cea8a"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:72265080a64556c46140862303cb5bbfeac7a6a8932f55e9261e020af14cea8a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5A3CKZ",
+      "items": [
+        "sha256:2f3b7efbb05aff3b359d90572cbd8eafc56b97c6ac2f23c0e0acf71174f45634"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:2f3b7efbb05aff3b359d90572cbd8eafc56b97c6ac2f23c0e0acf71174f45634"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5GFD9H",
+      "items": [
+        "sha256:310a80244673af4a3eb74fa879210ca8bf26c4bbb6f1d2ad343368a1b957cf3a"
+      ],
+      "reason": "The parser's changed hunks retire the optional version as a pin and keep the five operational facts; that meaning is carried by the revised settings invariants and the contract invariant.",
+      "subject": "hunk:sha256:310a80244673af4a3eb74fa879210ca8bf26c4bbb6f1d2ad343368a1b957cf3a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5KT3RZ",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.claude/render-starter.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R96",
+          "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
+            "content": "sha256:70576fc9cb8774291354efb6fb80dec0498cb0be5881fc548a85e2f90af551bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+            },
+            "path": "mcp/tests/test_config.py"
+          },
+          "before": {
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "content": "sha256:18dc75842dda7e3bf4632d0fbacf241ea9c4c4c2abf76fc4a6cd84e450f309b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+            },
+            "path": "mcp/tests/test_config.py"
+          },
+          "id": "PRF-H1BJ8A"
+        },
+        {
+          "after": {
+            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+            "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+            },
+            "path": "mcp/tests/test_paseo_install_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-VZSV4G"
+        },
+        {
+          "after": {
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:f40be49911055e5237f437842411700f1943663454b754a712e621c82d9a75f0",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "before": {
+            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
+            "content": "sha256:2dc86c36bc38733f0e2ac8553e5f083054aa2458024906ca11b90629d9e7698e",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "id": "RLZ-D7X8TF"
+        },
+        {
+          "after": {
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_paseo_runtime_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "before": {
+            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
+            "content": "sha256:cf89baecb21e3f8717ff76bae046d125dd107437042c2bd1e5ad106253477d5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_paseo_runtime_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "id": "RLZ-VSGY5S"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-5MZTQ1",
+      "items": [
+        "sha256:d7ef0c854309d513dc3556e9c9285bec1fdfc791fd1ebd0262dc7c679246e600"
+      ],
+      "reason": "The block's exact fact set is restated as the five operational facts plus one optional version key; the parser realization's rationale is corrected against the revised statement and the realizations/proof are re-anchored.",
+      "revision": 2,
+      "subject": "INV-X5E9WH"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5SNB6A",
+      "items": [
+        "sha256:bd20b4822a9a41f3617c67870fbb46e2d35a69bce6546b5e419cf53a0c30eadd"
+      ],
+      "reason": "The README's host paragraph changes are realized by the host-lifecycle invariants; the remaining edits are wording that carries no invariant of its own.",
+      "subject": "hunk:sha256:bd20b4822a9a41f3617c67870fbb46e2d35a69bce6546b5e419cf53a0c30eadd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-646SKJ",
+      "items": [
+        "sha256:8805ad128a00efdd4c44d0854a347f5188c55d5be0b8a14fcfe500696d6c023e"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:8805ad128a00efdd4c44d0854a347f5188c55d5be0b8a14fcfe500696d6c023e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-658N03",
+      "items": [
+        "sha256:c3f72a463ba751a5506a8af25d025de99862f7a577fd1a22c7b380e5eed59d3e"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:c3f72a463ba751a5506a8af25d025de99862f7a577fd1a22c7b380e5eed59d3e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-66T6D0",
+      "items": [
+        "sha256:1e47df855104604ffb203cdd5baef0b61dcced7bdbfcbf1578d93cc6cca22274"
+      ],
+      "reason": "The lane rows map the new host test modules to their lane; a catalog row carries no invariant.",
+      "subject": "hunk:sha256:1e47df855104604ffb203cdd5baef0b61dcced7bdbfcbf1578d93cc6cca22274"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6E2EQJ",
+      "items": [
+        "sha256:dfeb39b2a2a64a6584a30c080e3a23f167898d2480362765095fd4877501cd59"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:dfeb39b2a2a64a6584a30c080e3a23f167898d2480362765095fd4877501cd59"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6FNNRW",
+      "items": [],
+      "reason": "The document lies under the excluded docs/ tree, so no card is gated; the host contract and lock release steps are realized by the contract invariant and the check-host-contract script card.",
+      "subject": "onboarding:docs/release-checklist.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6J6NGG",
+      "items": [
+        "sha256:7ea6bd1e08a4f8877f45e4104b8b337d533eb2d268fb7c1ccc5f51bf11f7d4d2"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:7ea6bd1e08a4f8877f45e4104b8b337d533eb2d268fb7c1ccc5f51bf11f7d4d2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6P4R88",
+      "items": [
+        "sha256:c5f0ad6de671eaecfd8d8f3068cd299966fb90f8bb1d53123e0474900a6f858b"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:c5f0ad6de671eaecfd8d8f3068cd299966fb90f8bb1d53123e0474900a6f858b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6PC8VB",
+      "items": [
+        "sha256:625b80821bced093b55ffddca1b516436a0b8716bdaed4832ba95f82a9cefa28"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:625b80821bced093b55ffddca1b516436a0b8716bdaed4832ba95f82a9cefa28"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6RV7JQ",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.agents/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6X5HF0",
+      "items": [
+        "sha256:6286939968b75891df49ddbb4d349f460e7b2812517f0a0c92d43f8632abc7a3"
+      ],
+      "reason": "The builder's hunks recognize the genuine old layout and rebuild through the public renderer; that obligation is carried by the sandbox-rebuild obligation.",
+      "subject": "hunk:sha256:6286939968b75891df49ddbb4d349f460e7b2812517f0a0c92d43f8632abc7a3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6ZPZZF",
+      "items": [
+        "sha256:87cf0310289e83769f89567056b19bf8f5a12eb61af5358a1845e87b867b13bd"
+      ],
+      "reason": "The parser's changed hunks retire the optional version as a pin and keep the five operational facts; that meaning is carried by the revised settings invariants and the contract invariant.",
+      "subject": "hunk:sha256:87cf0310289e83769f89567056b19bf8f5a12eb61af5358a1845e87b867b13bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-72XP4M",
+      "items": [
+        "sha256:e956ef0e04628411de33193ac3e61b9d9a705e46e0e8c066625d00893e78cd51"
+      ],
+      "reason": "The commands now take the version and Node from the packaged contract and the moved modules; the obligations are carried by the contract, Node and shared-authority invariants.",
+      "subject": "hunk:sha256:e956ef0e04628411de33193ac3e61b9d9a705e46e0e8c066625d00893e78cd51"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7BSG59",
+      "items": [
+        "sha256:9d6718664dbc9995fdba18b5486ca13b77c2578f0b0a8642834c48216740c766"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:9d6718664dbc9995fdba18b5486ca13b77c2578f0b0a8642834c48216740c766"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7CP0JK",
+      "items": [
+        "sha256:6face0c524e75d2b521b8c871aa61aca7abee746338724916f73c42c4301888b"
+      ],
+      "reason": "The retired-host test adapts imports to the moved host modules; the removal it asserts is unchanged.",
+      "subject": "onboarding:mcp/tests/test_previous_host_removed.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7DFRE2",
+      "items": [
+        "sha256:035c3598990492f16181f3f7c4b90c237825c915ddd55bd16d0de25facf0a330"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:035c3598990492f16181f3f7c4b90c237825c915ddd55bd16d0de25facf0a330"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R96",
+          "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:05a70f51be80a19e172a74d0a1147064e6203f4f8fdf64267b4d5508ecf7d3c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refuses_a_reserved_port_held_by_a_foreign_process"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "before": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:f3ba2883a3bb93cf4fcfe6c854f07c9b14012462db3935846046f12eb1954d3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_refuses_a_reserved_port_held_by_a_foreign_process"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "id": "PRF-6002K7"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+            "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_port_is_held_whoever_holds_it_and_on_whichever_address"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "id": "PRF-M2RS7Q"
+        },
+        {
+          "after": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:735915a18141318ff9784dee9761cd3ecf5f0b3f63c1a520e5694be8771f6ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "BuildInputTests.test_a_port_is_held_whoever_holds_it_and_on_whichever_address"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "before": "absent",
+          "id": "PRF-YYTSXK"
+        },
+        {
+          "after": {
+            "blob": "48fc36b080f6dd66abc3762806e767d79351d83e",
+            "content": "sha256:231e5d0a6e052f19f735d2e62888c518d102ce8e9e2b77ebefc8b0d8f0cf3e88",
+            "locator": {
+              "kind": "symbol",
+              "name": "render"
+            },
+            "path": "scripts/pnt_sandbox/render_starter_settings.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4G91WT"
+        },
+        {
+          "after": {
+            "blob": "2a544745d451274f12d870e535cc80ba520d0ef7",
+            "content": "sha256:e259101ca31bef66dc5f43c0c48211b71051dd5a11b84864db81b5aaa11c786e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            },
+            "path": "scripts/pnt_sandbox/cli.py"
+          },
+          "before": "absent",
+          "id": "RLZ-BH60XT"
+        },
+        {
+          "after": {
+            "blob": "4a12e8e7e2a980f1fe3121c42f63a27208bc4971",
+            "content": "sha256:b2fce4bca2ccc431efcc30847dc8e67aabb71b6ce4b4fff42f7cf206cea1046e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DASHBOARD_PORT"
+            },
+            "path": "scripts/pnt_sandbox/layout.py"
+          },
+          "before": {
+            "blob": "1790d5657d342d135b53bde16d3b45a1029cc0eb",
+            "content": "sha256:b2fce4bca2ccc431efcc30847dc8e67aabb71b6ce4b4fff42f7cf206cea1046e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DASHBOARD_PORT"
+            },
+            "path": "scripts/pnt_sandbox/layout.py"
+          },
+          "id": "RLZ-HHBARP"
+        },
+        {
+          "after": {
+            "blob": "4a12e8e7e2a980f1fe3121c42f63a27208bc4971",
+            "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_PORT"
+            },
+            "path": "scripts/pnt_sandbox/layout.py"
+          },
+          "before": {
+            "blob": "1790d5657d342d135b53bde16d3b45a1029cc0eb",
+            "content": "sha256:ff679d4c997c12dfdc59e38238121a4f0101f03179b49a017262b8a62ab294d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PASEO_PORT"
+            },
+            "path": "scripts/pnt_sandbox/layout.py"
+          },
+          "id": "RLZ-JKTW8X"
+        },
+        {
+          "after": {
+            "blob": "2a544745d451274f12d870e535cc80ba520d0ef7",
+            "content": "sha256:a1454f4846cacbfc6c14a73d9ee746a01a74a1bde9e5ae3c0be919ffba9db248",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            },
+            "path": "scripts/pnt_sandbox/cli.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K094SE"
+        },
+        {
+          "after": {
+            "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+            "content": "sha256:efe6ae3a843384f1ed6c5301c04a4580ad58ca67a7ea64578a4978a01bee1058",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_foreign_ports"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "before": {
+            "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+            "content": "sha256:efe6ae3a843384f1ed6c5301c04a4580ad58ca67a7ea64578a4978a01bee1058",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_foreign_ports"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "id": "RLZ-WBQT39"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-7KRB4S",
+      "items": [
+        "sha256:8b9cf60a5363e0ab029ae13c412f6f67dfa2dbdc556a2b46b2757ba1188f597f"
+      ],
+      "reason": "The fixed-only claim is restated as defaults-or-explicitly-chosen ports with no automatic selection; the old proof claiming a real IPv6 listener is retired and replaced by a proof naming the synthetic-procfs plus real controlled-supervisor evidence, and the port realizations are re-anchored. Evidence (MIK-R96@v1 rule8 public port-tooling disposition / INV-G0Z661 effect): /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/port-tooling-successor/cleanup-ports-after.log; /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/port-tooling-successor/l71-qualification/check.stdout.log; /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/port-tooling-successor/named-frozen-tooling-state.json",
+      "revision": 2,
+      "subject": "INV-G0Z661"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7MCSNH",
+      "items": [
+        "sha256:ae80728a4633086563d2f643c84eb71ba4c0d50a46d5e93aeb101cc65271b6b0"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:ae80728a4633086563d2f643c84eb71ba4c0d50a46d5e93aeb101cc65271b6b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7RNN6E",
+      "items": [
+        "sha256:3f2761c33b0ae3b512d413cbfd3f52a3be6c25bb766bb88af60e5c9db1dcfa77"
+      ],
+      "reason": "The parser's changed hunks retire the optional version as a pin and keep the five operational facts; that meaning is carried by the revised settings invariants and the contract invariant.",
+      "subject": "hunk:sha256:3f2761c33b0ae3b512d413cbfd3f52a3be6c25bb766bb88af60e5c9db1dcfa77"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7VHWJR",
+      "items": [
+        "sha256:68845b95da446da4899b3e978fd5d0e64952a64dcc1a145d4d3a16def1110050"
+      ],
+      "reason": "The hunk renames the admission-error helper the public install route uses; the obligation is carried by the public-install-route obligation.",
+      "subject": "hunk:sha256:68845b95da446da4899b3e978fd5d0e64952a64dcc1a145d4d3a16def1110050"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7Y1Q2Y",
+      "items": [
+        "sha256:7c10bf97f714d33a01a00a65b0128093c1fef4423f578b71ac7b8c7ff0127a0f"
+      ],
+      "reason": "The hunk is the R51 catalog owner's derived consumer correction in the lifecycle TOML (the arriving test_request_logical_digests.py consumer added and the list ordered) under its own canonical-form validation; it is derived catalog maintenance under the catalog's existing merge/canonical-form obligation, not a new invariant.",
+      "subject": "hunk:sha256:7c10bf97f714d33a01a00a65b0128093c1fef4423f578b71ac7b8c7ff0127a0f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8009MZ",
+      "items": [
+        "sha256:56e91c522317c5d3871e3bab33d98164cead8b835d9a43a391e1ecece261cc28"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:56e91c522317c5d3871e3bab33d98164cead8b835d9a43a391e1ecece261cc28"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-82H3SD",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.codex/render-starter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8F17QE",
+      "items": [
+        "sha256:9546d56529f54db820b10a801ddb3bea83a5c8e03f7927ca180dcb64f9b2a2ba"
+      ],
+      "reason": "The hunk adapts an import to the moved host modules; it carries no invariant of its own.",
+      "subject": "hunk:sha256:9546d56529f54db820b10a801ddb3bea83a5c8e03f7927ca180dcb64f9b2a2ba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8GX086",
+      "items": [
+        "sha256:ff50a2c7a9f2a0f46f76f49286b7606891ae9eb6114c5e3e2da69186a7b598ad"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:ff50a2c7a9f2a0f46f76f49286b7606891ae9eb6114c5e3e2da69186a7b598ad"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8HXD3D",
+      "items": [
+        "sha256:dbcf4da40e53e3b56bb608cc1b14e591d6c0e722f0610be34a240f36cb80a866"
+      ],
+      "reason": "The frame test adapts imports and the unreachable-detail wording only; the frame behavior it exercises is unchanged.",
+      "subject": "onboarding:mcp/tests/test_paseo_frame.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8KT0F5",
+      "items": [
+        "sha256:c5756ba202b3b9720a5a84db7a331844f646a174b13129d8e66c7da7a1f7b76d"
+      ],
+      "reason": "The operations' hunks implement the public install receipt retirement; that obligation is carried by the receipt obligation.",
+      "subject": "hunk:sha256:c5756ba202b3b9720a5a84db7a331844f646a174b13129d8e66c7da7a1f7b76d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8XJ34X",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.openclaw/render-starter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-94JTB5",
+      "items": [
+        "sha256:37938b7955d4f167835995f5df87db5f326e2da8280fcc4e2e94f21ca9e5f48a"
+      ],
+      "reason": "The lane rows map the new host test modules to their lane; a catalog row carries no invariant.",
+      "subject": "hunk:sha256:37938b7955d4f167835995f5df87db5f326e2da8280fcc4e2e94f21ca9e5f48a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:13ba62ad415a2e708aad399bca76d174670305925865ac355077bf926a2c0ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_directory_is_one_sandbox_however_it_is_spelled"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "before": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:13ba62ad415a2e708aad399bca76d174670305925865ac355077bf926a2c0ba8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_directory_is_one_sandbox_however_it_is_spelled"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "id": "PRF-5PDVZS"
+        },
+        {
+          "after": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:45baf638a5839a7627b5d9a427ae3acac172da229f3540bf3f72351ca1a95a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_starts_at_once_leave_one_sandbox_that_stop_ends"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "before": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:45baf638a5839a7627b5d9a427ae3acac172da229f3540bf3f72351ca1a95a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_starts_at_once_leave_one_sandbox_that_stop_ends"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "id": "PRF-M8QCGX"
+        },
+        {
+          "after": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:3b2dd5453a9d86027f9b70d39f0cc0dbaca66c42d099c24a969437a0ec5b0f42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_lock_covers_a_build_and_a_provision_run_and_is_the_file_that_is_there"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "before": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:a17a87edcc9a6276fd487536b1f28c242d05b0c9fff3b8447f333983dd7d02db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_lock_covers_a_build_and_a_provision_run_and_is_the_file_that_is_there"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "id": "PRF-WX824F"
+        },
+        {
+          "after": {
+            "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+            "content": "sha256:5ea3782c22b4d0afb58a6a728a86a15f38900541bb86e702fd0ae7cdf557f802",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "before": {
+            "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+            "content": "sha256:5ea3782c22b4d0afb58a6a728a86a15f38900541bb86e702fd0ae7cdf557f802",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "id": "RLZ-2EBA71"
+        },
+        {
+          "after": {
+            "blob": "3a8807af7f358f147661611927bfc9e888d47966",
+            "content": "sha256:9b509d05c260fd748de1caa2ce83fbef8fb8d4d9d21011846d739e89d74f798b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            },
+            "path": "scripts/pnt_sandbox/builder.py"
+          },
+          "before": {
+            "blob": "2fdc35f1b4b21e1d1a03f305c07ce0166b482862",
+            "content": "sha256:9b509d05c260fd748de1caa2ce83fbef8fb8d4d9d21011846d739e89d74f798b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            },
+            "path": "scripts/pnt_sandbox/builder.py"
+          },
+          "id": "RLZ-4MZKRY"
+        },
+        {
+          "after": {
+            "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+            "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Operations._run_sharing_lock"
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "before": {
+            "blob": "b7d2015b0414223064462d46def39c075090f96c",
+            "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Operations._run_sharing_lock"
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "id": "RLZ-YDW7SW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9B3YXF",
+      "items": [
+        "sha256:c93833759af6f9087dcf00d5faf52c9a33f192c2dd20859f632b6d75a4f5f813"
+      ],
+      "reason": "The one-lock-per-sandbox rule is unchanged; the new host home lock is a separate product-side lock, and the proofs and realizations are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-V4EC10"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A0HXVY",
+      "items": [
+        "sha256:7e5696a923e7488c648172514ae94e45fec3bb1fe6e3135951b20bf8fc99acc5"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:7e5696a923e7488c648172514ae94e45fec3bb1fe6e3135951b20bf8fc99acc5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A6YZ27",
+      "items": [
+        "sha256:239a64618391d3476bac5182e4c1ba4cca3802963af71838405a0541554b3114"
+      ],
+      "reason": "The README's host paragraph changes are realized by the host-lifecycle invariants; the remaining edits are wording that carries no invariant of its own.",
+      "subject": "hunk:sha256:239a64618391d3476bac5182e4c1ba4cca3802963af71838405a0541554b3114"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ABC950",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.hermes/render-starter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AJF1QB",
+      "items": [
+        "sha256:fddaa4e791877903beb082ac5127cb24d85c1f495ee7bc88bace6512912f7e2c"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:fddaa4e791877903beb082ac5127cb24d85c1f495ee7bc88bace6512912f7e2c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ARBS2G",
+      "items": [
+        "sha256:c8f98c3a08c7192ccb1696beb61856371fd8078bbd0d6db5ebc98384ae4f9d4f"
+      ],
+      "reason": "The catalog test adapts the version source to the packaged contract; the caching and validation behavior it asserts is unchanged.",
+      "subject": "onboarding:mcp/tests/test_paseo_catalog.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AV10A7",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.github-vscode/render-starter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AZGC7S",
+      "items": [
+        "sha256:da13c4a5acef7df6bce223324c4ce64b7d25cb8a86ccd2e666033b551064cd97"
+      ],
+      "reason": "The parser's changed hunks retire the optional version as a pin and keep the five operational facts; that meaning is carried by the revised settings invariants and the contract invariant.",
+      "subject": "hunk:sha256:da13c4a5acef7df6bce223324c4ce64b7d25cb8a86ccd2e666033b551064cd97"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B2NTE9",
+      "items": [
+        "sha256:4b24b42a6ca9cee02404273a5cbb5ea55a5a09833792eae6aa4265313c40a319"
+      ],
+      "reason": "The package readme's host and start paragraphs are realized by the host-lifecycle invariants; the remaining edits are wording.",
+      "subject": "hunk:sha256:4b24b42a6ca9cee02404273a5cbb5ea55a5a09833792eae6aa4265313c40a319"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B76YY2",
+      "items": [
+        "sha256:54413f6fe7ac25730121aa64b621a88711e429e313556b7d2c192a981c6294dd"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:54413f6fe7ac25730121aa64b621a88711e429e313556b7d2c192a981c6294dd"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R96",
+          "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:3f39a81369f2a7568b9f745331fa6648fa10f9d02d2fb69448bce27e51e7932e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BuildInputTests.test_the_environment_loses_what_selects_another_runtime_and_keeps_logins"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "before": "absent",
+          "id": "PRF-7KDBW4"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+            "content": "sha256:bfa7d328770065611847fd1d09e8dea6b08819383adfca5bf59c6d1c41b646bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_environment_loses_what_selects_another_runtime_and_keeps_logins"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "id": "PRF-VVBCPB"
+        },
+        {
+          "after": {
+            "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+            "content": "sha256:4371835f2a56d3027e70b0859c2e13fb9fa12a0425bf5ec13419ab6e01440ad2",
+            "locator": {
+              "kind": "symbol",
+              "name": "child_environment"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "before": {
+            "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+            "content": "sha256:4371835f2a56d3027e70b0859c2e13fb9fa12a0425bf5ec13419ab6e01440ad2",
+            "locator": {
+              "kind": "symbol",
+              "name": "child_environment"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "id": "RLZ-4ZF1FZ"
+        },
+        {
+          "after": {
+            "blob": "7f1a2758d96e3ab64746d28850368f2739af1e7f",
+            "content": "sha256:5dcdaa21b73d05beb883a3063dddf03ef0e31fad094e3141d68276b5f4b7b25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "Operations"
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "before": {
+            "blob": "b7d2015b0414223064462d46def39c075090f96c",
+            "content": "sha256:994a453d1e219b420d149f9162fc7db3c782409ed820d9b79e6e45c0af4cea9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "Operations"
+            },
+            "path": "scripts/pnt_sandbox/operations.py"
+          },
+          "id": "RLZ-9F0JC0"
+        },
+        {
+          "after": {
+            "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+            "content": "sha256:ecfcc17da895ca62aa533d02ddfae6c6e5beb4f5cc987abf5b5c48dc9a6d6dff",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_VARIABLES"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "before": {
+            "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+            "content": "sha256:6fe91641b1114ecd81ca4627669a9d2cd5e0af928cbb2f5c7b183379a9915148",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_VARIABLES"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "id": "RLZ-DTXRVS"
+        },
+        {
+          "after": {
+            "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+            "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sandbox_environment"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "before": {
+            "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+            "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sandbox_environment"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "id": "RLZ-MG0ZK5"
+        },
+        {
+          "after": {
+            "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+            "content": "sha256:ee578807d5a469caddeece9a9abf9e7c5bd2f9e415d317a1ba12a5c27cc75b3e",
+            "locator": {
+              "kind": "symbol",
+              "name": "sandbox_variables"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "before": {
+            "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+            "content": "sha256:b5de59a350db08e48d15df5681c6910e98d2f803dbd2d9a6f81e371d03936c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "sandbox_variables"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "id": "RLZ-Q7Z93Y"
+        },
+        {
+          "after": {
+            "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+            "content": "sha256:4a4effe0303356f5ba0c8b03c665de0f4315381a3ed86ce274b2dc7d2b089860",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_PREFIXES"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "before": {
+            "blob": "49b16859a35bf71aa727c009a25e387a327096b6",
+            "content": "sha256:4a4effe0303356f5ba0c8b03c665de0f4315381a3ed86ce274b2dc7d2b089860",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_PREFIXES"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "id": "RLZ-T7KGEV"
+        },
+        {
+          "after": {
+            "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+            "content": "sha256:b0cd3a73b7d187f86b8c3fdcf79d2bf77d0537f030d03da6852191aad9ff70a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "sandbox_environment"
+            },
+            "path": "scripts/pnt_sandbox/environment.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VHN333"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-B8MW7T",
+      "items": [
+        "sha256:9fe2ccf90e74bdafa26f17b35788735db3bc4880b5aaa0480da02c9b1d73b6bf"
+      ],
+      "reason": "The sandbox child environment sets the seven sandbox-owned values including the XDG roots and reads the product's exact-name session list; the old proof crediting four values is retired and replaced by a proof naming the seven values, with every realization re-anchored. Evidence (INV-B6R816): /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-unit-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json",
+      "revision": 2,
+      "subject": "INV-B6R816"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BG2TYK",
+      "items": [
+        "sha256:3963467b2a91aa4fe6484f7a546c6a435803f05d24c8fd950ba896f593298de1"
+      ],
+      "reason": "The config's changed hunks read the host block per use and expose the shared authority; the obligation is carried by the shared-authority and settings invariants.",
+      "subject": "hunk:sha256:3963467b2a91aa4fe6484f7a546c6a435803f05d24c8fd950ba896f593298de1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BTPM2F",
+      "items": [
+        "sha256:bb4a19865e470ead2e31504f1f47f1207c8c1b777940fabecb76fba2c29669e1"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:bb4a19865e470ead2e31504f1f47f1207c8c1b777940fabecb76fba2c29669e1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BXTK6A",
+      "items": [
+        "sha256:1ec75228c5680db8dd145f6360f75dce75d7dba45d92641f0d533029d434adbd"
+      ],
+      "reason": "The environment's hunks add the sandbox-owned XDG roots and read the product's session list; that obligation is carried by the revised sandbox-environment invariant and the host-environment invariant.",
+      "subject": "hunk:sha256:1ec75228c5680db8dd145f6360f75dce75d7dba45d92641f0d533029d434adbd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BYXMJ9",
+      "items": [
+        "sha256:38230078b212b92d404860a194d9d03f2093007cd7a424dc1b22f37e5462dfbb"
+      ],
+      "reason": "The config's changed hunks read the host block per use and expose the shared authority; the obligation is carried by the shared-authority and settings invariants.",
+      "subject": "hunk:sha256:38230078b212b92d404860a194d9d03f2093007cd7a424dc1b22f37e5462dfbb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C1CC3G",
+      "items": [
+        "sha256:326516d7fa4dcfe0f3119d98c359cc11bd316b96dadfc48bea399b4d9a855131"
+      ],
+      "reason": "The layout's hunks keep the ports as caller-selectable values with defaults and add the product Node folders; the obligations are carried by the revised port invariant and the safety-roots obligation.",
+      "subject": "hunk:sha256:326516d7fa4dcfe0f3119d98c359cc11bd316b96dadfc48bea399b4d9a855131"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C1V85W",
+      "items": [
+        "sha256:6c5d21cb5af22511c411cc9e5004c41d24624e87ff86e76e5bfe1ba750c70715"
+      ],
+      "reason": "The fake Paseo runner gained host states and the shared-authority seam; the card's account of the fake runner still holds and the host test cards carry the new states.",
+      "subject": "onboarding:mcp/tests/paseo_runtime_test_support.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C7EFYW",
+      "items": [
+        "sha256:5ce40c412d614241c4b89564d21d3783e5a6d758d7deef8ff1803a4d98ee391b"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:5ce40c412d614241c4b89564d21d3783e5a6d758d7deef8ff1803a4d98ee391b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CC4QHY",
+      "items": [
+        "sha256:a2f27fe765cb1b008c78a0ec80c31a5534a5f7d58038de7562a0f392c69246f6"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:a2f27fe765cb1b008c78a0ec80c31a5534a5f7d58038de7562a0f392c69246f6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CCMG4C",
+      "items": [
+        "sha256:ff841a50db047b778f8376bdc32c3c4e01df24c1049e6f233b3ed696bed31ddc"
+      ],
+      "reason": "The hunk is the R51 catalog owner's derived consumer correction in the lifecycle TOML (the arriving test_request_logical_digests.py consumer added and the list ordered) under its own canonical-form validation; it is derived catalog maintenance under the catalog's existing merge/canonical-form obligation, not a new invariant.",
+      "subject": "hunk:sha256:ff841a50db047b778f8376bdc32c3c4e01df24c1049e6f233b3ed696bed31ddc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CHT4SB",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.pi/render-starter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CJFH64",
+      "items": [
+        "sha256:1c782d41491cab3718b96e6183d17bdac8419f4c232d86c288e3bf16a8442b44"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:1c782d41491cab3718b96e6183d17bdac8419f4c232d86c288e3bf16a8442b44"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CXHTRW",
+      "items": [
+        "sha256:31f37e0df7f6cb9eb673172196abd4ce05f2d325d846a161917c62d3bd8eec40"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:31f37e0df7f6cb9eb673172196abd4ce05f2d325d846a161917c62d3bd8eec40"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D0A6S8",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.claude/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+            "content": "sha256:61f4197f39df45313cebd1c6873a0c2831dc3ffce4f81cc7450f812ccc86734a",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeScriptTests.test_script_failures_are_named_and_another_daemon_is_refused"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-7PZS43"
+        },
+        {
+          "after": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:e3274b9de9f2e09757fa8f558e3093f05dd9487c5741c5ef830e2931053e5184",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+            "content": "sha256:7d64fbca8bf9bb513e9233411e4cf04112ed51cad1b2f81b2251dd35f9e50b30",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_unconfigured_or_never_started_runtime_refuses_before_any_process"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-G01FCX"
+        },
+        {
+          "after": {
+            "blob": "b0af01fc7a5dd4073694f370cf0ab432e0df1e7f",
+            "content": "sha256:59ec754e59b4faaafa50466b23c4acbaede5df2a01510e3935ca5d9b8deb9b7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "before": {
+            "blob": "acaf5f3e7de3fe29059c03497b8fe50bcf25482e",
+            "content": "sha256:7d799e12e4909fe3c0a0881f77fae7d2aea996677264496266b86285d5a44fa4",
+            "locator": {
+              "kind": "symbol",
+              "name": "BridgeProcessTests.test_the_script_is_pointed_at_the_configured_runtime_and_no_other"
+            },
+            "path": "mcp/tests/test_paseo_bridge.py"
+          },
+          "id": "PRF-MDJK7B"
+        },
+        {
+          "after": {
+            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bridge_environment"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "5710a0ee16642b967975fe6e238946dbd0711185",
+            "content": "sha256:25d2b37a711376827813cbb4f0876fb56601e2f5b736c7aa89fb2f0a87b253eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bridge_environment"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "id": "RLZ-0RVX96"
+        },
+        {
+          "after": {
+            "blob": "b418f48f2f03a847feb9fca2ad9275ca526d3f87",
+            "content": "sha256:f7c6b543d346bbdc187529572259d9fb1aac7eb93ec0ebf3811f5f48c8035747",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_server_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "before": {
+            "blob": "5710a0ee16642b967975fe6e238946dbd0711185",
+            "content": "sha256:6985ce32be39beaf0db4ae7e1792c15d4d554b0e0f3fb7e0d045133e409ef89e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_server_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.py"
+          },
+          "id": "RLZ-Y4KB9F"
+        },
+        {
+          "after": {
+            "blob": "a1a6de3a528984440383f7b64afede6f90ab9032",
+            "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "connect"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "before": {
+            "blob": "cd9e521bca220ddd1f413eca6385dff7c74a5d67",
+            "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "connect"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs"
+          },
+          "id": "RLZ-YH1Y0Z"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DAT5JR",
+      "items": [
+        "sha256:3e0fc2e4f4303a2b6f823eda3f14e3f682b6c8c853990470bb9e8f9141cb0fd5"
+      ],
+      "reason": "The bridge's configured-runtime and no-other-daemon rule is unchanged; the Source95 body moved under the same symbol, so the proof and realization anchors are re-recorded at the finished current bodies.",
+      "revision": 1,
+      "subject": "INV-VV0B2G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DBNMAC",
+      "items": [
+        "sha256:781b84b5fd710e1da03d228b341321832069792bbe17bfbdc1550f15bd0b3ae6"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:781b84b5fd710e1da03d228b341321832069792bbe17bfbdc1550f15bd0b3ae6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DG94YM",
+      "items": [
+        "sha256:b24f2afd4a8699d09a9fc30b8929d0d6c2a6b32d2ae0e8ce5b18f525a36bb4c3"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:b24f2afd4a8699d09a9fc30b8929d0d6c2a6b32d2ae0e8ce5b18f525a36bb4c3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DK5JNY",
+      "items": [
+        "sha256:75c04f815338e2da8a983e8271afc2ed1a386786409cada0aab170e69be1f99a"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:75c04f815338e2da8a983e8271afc2ed1a386786409cada0aab170e69be1f99a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DQ638A",
+      "items": [
+        "sha256:a873c9d676ba0113388ba1f16f9d13bb034c8d0d32b520ddc60bb718f07ea178"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:a873c9d676ba0113388ba1f16f9d13bb034c8d0d32b520ddc60bb718f07ea178"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DT3H88",
+      "items": [
+        "sha256:f823b8ce22423e34574af0368faa2de33360a9955f71aab24b28317ae67ea1d7"
+      ],
+      "reason": "The commands now take the version and Node from the packaged contract and the moved modules; the obligations are carried by the contract, Node and shared-authority invariants.",
+      "subject": "hunk:sha256:f823b8ce22423e34574af0368faa2de33360a9955f71aab24b28317ae67ea1d7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DVK8ZF",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.agents/render-starter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DXM1VZ",
+      "items": [
+        "sha256:32878831b86b8f59d8ffffd106598bc1c1eb8d76bc2de3a01f7899c1305a7eec"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:32878831b86b8f59d8ffffd106598bc1c1eb8d76bc2de3a01f7899c1305a7eec"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E1B1K5",
+      "items": [
+        "sha256:87bdbc69364cc060be43727ed93bd95726d78e477cb1e40e960b3766d39998b8"
+      ],
+      "reason": "The block shapes the card describes are unchanged; the edit routes the shared authority through the existing settings model, which the authority decision records.",
+      "subject": "onboarding:mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ECM3M3",
+      "items": [
+        "sha256:00307f05bf5749679df4c82828019459035b430023ef7d7928b350dc0f4f0bb8"
+      ],
+      "reason": "The config's changed hunks read the host block per use and expose the shared authority; the obligation is carried by the shared-authority and settings invariants.",
+      "subject": "hunk:sha256:00307f05bf5749679df4c82828019459035b430023ef7d7928b350dc0f4f0bb8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EMJ51J",
+      "items": [
+        "sha256:a1d6b1db495547b63b8729d30e06e980cd7ad4a72bb4d6c337ca865cad0a7a66"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:a1d6b1db495547b63b8729d30e06e980cd7ad4a72bb4d6c337ca865cad0a7a66"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ES8RWZ",
+      "items": [
+        "sha256:b80725287396c509ac6cae28d354afda5a704a9a1fbc149700ca273250b76f42"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:b80725287396c509ac6cae28d354afda5a704a9a1fbc149700ca273250b76f42"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ETRFST",
+      "items": [
+        "sha256:c2481d5711779336aaf1ac20bf0bde252c5435ff636fa0756de76b8f1089cc7c"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:c2481d5711779336aaf1ac20bf0bde252c5435ff636fa0756de76b8f1089cc7c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F0ZMRG",
+      "items": [
+        "sha256:60848b892db3583fe888eee759244a961436605f0901bbcad3e71497f15f0c80"
+      ],
+      "reason": "The config's changed hunks read the host block per use and expose the shared authority; the obligation is carried by the shared-authority and settings invariants.",
+      "subject": "hunk:sha256:60848b892db3583fe888eee759244a961436605f0901bbcad3e71497f15f0c80"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FF7GJW",
+      "items": [
+        "sha256:7ee6fc444fa53e33b41da0b91de64b0fc356cbf279baa8b24a8fc7c198a08344"
+      ],
+      "reason": "The parser's changed hunks retire the optional version as a pin and keep the five operational facts; that meaning is carried by the revised settings invariants and the contract invariant.",
+      "subject": "hunk:sha256:7ee6fc444fa53e33b41da0b91de64b0fc356cbf279baa8b24a8fc7c198a08344"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FF8GSZ",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.cursor/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FXX5WY",
+      "items": [
+        "sha256:6fa5b48b06f9e8c4c6e5447dfbc1e2ef6f875828ac32bfe8e4983f3f338859db"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:6fa5b48b06f9e8c4c6e5447dfbc1e2ef6f875828ac32bfe8e4983f3f338859db"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G5M3P9",
+      "items": [
+        "sha256:24c8ded9fe1a9c8b403b1e63f614bb7477a2c6468145f82430319f4c31b30349"
+      ],
+      "reason": "The launch-route test adapts the shared authority path; the routed behavior it asserts is unchanged.",
+      "subject": "onboarding:mcp/tests/test_role_launch_routes.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GB1G1V",
+      "items": [
+        "sha256:2bf5eafb3296fc7f8e3cb82ab62d64fdd3fdaa3845c6b43c660f385f79660717"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:2bf5eafb3296fc7f8e3cb82ab62d64fdd3fdaa3845c6b43c660f385f79660717"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GNAS30",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.codex/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GPQ3YX",
+      "items": [
+        "sha256:600092b30948c2dfea4db28fce392eeb5edc977e14e6c00467dac2f9d1b3c562"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:600092b30948c2dfea4db28fce392eeb5edc977e14e6c00467dac2f9d1b3c562"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GTHGGG",
+      "items": [
+        "sha256:b447eb0f96dafd8beb82dcdc9a95bba6b18b73a85ebeecee3601c9def7a7ffc6"
+      ],
+      "reason": "The hunk is the R51 catalog owner's derived consumer ordering correction plus the one Source95-observed consumer (test_role_document_chats.py for paseo_runtime_test_support.py), applied under the catalog's canonical-form obligation while 19 contracts, 83 authored artifacts and 438 unique lanes were preserved; derived catalog maintenance, not a new invariant.",
+      "subject": "hunk:sha256:b447eb0f96dafd8beb82dcdc9a95bba6b18b73a85ebeecee3601c9def7a7ffc6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GTJZZW",
+      "items": [],
+      "reason": "The document lies under the excluded docs/ tree, so no card is gated; the shared-authority and contract-pin changes are realized by the host-lifecycle invariants and the authority decision.",
+      "subject": "onboarding:docs/reference/settings-json.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GVQ6Y5",
+      "items": [
+        "sha256:dfac7dbdc4bd17f6249af951212972cbe45f654499276a9a2fdf0b8801b71689"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:dfac7dbdc4bd17f6249af951212972cbe45f654499276a9a2fdf0b8801b71689"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GXVXCQ",
+      "items": [
+        "sha256:19434b91ce7ea7cda6ef81fc6462b7b12ed1326dd5a4b2c395c36df7ed7b3ef5"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:19434b91ce7ea7cda6ef81fc6462b7b12ed1326dd5a4b2c395c36df7ed7b3ef5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H2Q39A",
+      "items": [
+        "sha256:846901afdb519198e8f943b726bf9487aac8fafffc0fff092c81457396bad899"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:846901afdb519198e8f943b726bf9487aac8fafffc0fff092c81457396bad899"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H5NY3C",
+      "items": [
+        "sha256:5f229a9dc07e4c8391e1e6a85407193523892a353cac41b09c60ee45cc39528e"
+      ],
+      "reason": "The builder's hunks recognize the genuine old layout and rebuild through the public renderer; that obligation is carried by the sandbox-rebuild obligation.",
+      "subject": "hunk:sha256:5f229a9dc07e4c8391e1e6a85407193523892a353cac41b09c60ee45cc39528e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H6FVKM",
+      "items": [
+        "sha256:175b1a76eefb846b95feb09101babdbd47034123a5152ccbb793e257c67c4560"
+      ],
+      "reason": "The builder's hunks recognize the genuine old layout and rebuild through the public renderer; that obligation is carried by the sandbox-rebuild obligation.",
+      "subject": "hunk:sha256:175b1a76eefb846b95feb09101babdbd47034123a5152ccbb793e257c67c4560"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H71DA7",
+      "items": [
+        "sha256:5a025d2ec43e4e60f40458931cad11733ec28e4b1b7d5ecb1b93f6c69793364a"
+      ],
+      "reason": "The lane rows map the new host test modules to their lane; a catalog row carries no invariant.",
+      "subject": "hunk:sha256:5a025d2ec43e4e60f40458931cad11733ec28e4b1b7d5ecb1b93f6c69793364a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H8JSC7",
+      "items": [
+        "sha256:aa28e7f8d61f53fb26dcf99b2d119b14985dfca480830649502544d8105667f9"
+      ],
+      "reason": "The layout's hunks keep the ports as caller-selectable values with defaults and add the product Node folders; the obligations are carried by the revised port invariant and the safety-roots obligation.",
+      "subject": "hunk:sha256:aa28e7f8d61f53fb26dcf99b2d119b14985dfca480830649502544d8105667f9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HD2ZD5",
+      "items": [
+        "sha256:918ccc4f8176249d2001c08cbaf07082c82ea173e0fad181165ab791dc520f9a"
+      ],
+      "reason": "The bridge-agent test adapts imports to the moved host modules; behavior and assertions are unchanged.",
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_agents.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HMKPJ8",
+      "items": [
+        "sha256:51ff36c96ac63619225370992de72fd88e2aebbf50b2e2db95f925c802b626ef"
+      ],
+      "reason": "The package readme's host and start paragraphs are realized by the host-lifecycle invariants; the remaining edits are wording.",
+      "subject": "hunk:sha256:51ff36c96ac63619225370992de72fd88e2aebbf50b2e2db95f925c802b626ef"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HPJE8V",
+      "items": [
+        "sha256:e433a93201062f60fab0a638102329dc24eb708e2f12b12229991b1e67dabf08"
+      ],
+      "reason": "The package readme's host and start paragraphs are realized by the host-lifecycle invariants; the remaining edits are wording.",
+      "subject": "hunk:sha256:e433a93201062f60fab0a638102329dc24eb708e2f12b12229991b1e67dabf08"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HPQM16",
+      "items": [
+        "sha256:924c3b871fbcb0224d19c5b1dbdfb5c24126d785518834b0a5be9434e3e27135"
+      ],
+      "reason": "The generator's synchronization rules are unchanged; only the generated outputs it writes changed with the renderer arguments, which the renderer card carries.",
+      "subject": "onboarding:scripts/sync-harness.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HY5HPE",
+      "items": [
+        "sha256:9f789f7f30810a5736d6e72d97439366cfd45543c352de6a155a80f663572fea"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:9f789f7f30810a5736d6e72d97439366cfd45543c352de6a155a80f663572fea"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J2R72J",
+      "items": [
+        "sha256:4bfd8d22663bfdf0e5fff738767b6d95731bc688a826ae8f5f326570099bf433"
+      ],
+      "reason": "The support module adapts to the moved host modules and the shared authority; the fixture contract the card describes is unchanged.",
+      "subject": "onboarding:mcp/tests/paseo_launch_test_support.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5YYTC",
+      "items": [
+        "sha256:9a1f99fc4ac56894cd9e78dfea07779929f5a73d9163baed7428e7c926e3caf6"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:9a1f99fc4ac56894cd9e78dfea07779929f5a73d9163baed7428e7c926e3caf6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JFQ82Q",
+      "items": [
+        "sha256:3d074a6756a4216f79da99307e41051cee516756a001c4a667b25c34835cedc7"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:3d074a6756a4216f79da99307e41051cee516756a001c4a667b25c34835cedc7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JG3T7X",
+      "items": [
+        "sha256:a9892594ad65297ebdbd3a5960733ab424fd0e9925db8e8ae5f583b38f01556d"
+      ],
+      "reason": "The fake operations gained the public install route signature; the support contract the card describes still holds and the D-5/D-9 obligations carry the behavior.",
+      "subject": "onboarding:mcp/tests/pnt_sandbox_test_support.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JGR19C",
+      "items": [],
+      "reason": "The document lies under the excluded docs/ tree, so no card is gated; its rule 7 changes are realized by the host-lifecycle invariants and the install procedure card.",
+      "subject": "onboarding:docs/install/README.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JMBC70",
+      "items": [
+        "sha256:f548a8c8ec8eead61a46fe7bf1a457800bae648f86eec379cc9a292de8957a9c"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:f548a8c8ec8eead61a46fe7bf1a457800bae648f86eec379cc9a292de8957a9c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KAH402",
+      "items": [
+        "sha256:9991854c8381eb0d3e66420e49ac22d6d48a56c464f64d7329c7d673780f0c7c"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:9991854c8381eb0d3e66420e49ac22d6d48a56c464f64d7329c7d673780f0c7c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KQ1D30",
+      "items": [
+        "sha256:f42b431903809e11343b8668a0f0dafb9a949af6e6b3206ecc5799538a3b5c53"
+      ],
+      "reason": "The operations' hunks implement the public install receipt retirement; that obligation is carried by the receipt obligation.",
+      "subject": "hunk:sha256:f42b431903809e11343b8668a0f0dafb9a949af6e6b3206ecc5799538a3b5c53"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KTZYNQ",
+      "items": [
+        "sha256:fc4e73a1d9f1dd8a101dc53724f340c57d77e9685f301d60216cc65c9ebf7906"
+      ],
+      "reason": "The environment's hunks add the sandbox-owned XDG roots and read the product's session list; that obligation is carried by the revised sandbox-environment invariant and the host-environment invariant.",
+      "subject": "hunk:sha256:fc4e73a1d9f1dd8a101dc53724f340c57d77e9685f301d60216cc65c9ebf7906"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KX1A1N",
+      "items": [
+        "sha256:897ecf334b44b836fc507500f50e87d374c26041f0c5bb4a7e61c03490d7d980"
+      ],
+      "reason": "The operations' hunks implement the public install receipt retirement; that obligation is carried by the receipt obligation.",
+      "subject": "hunk:sha256:897ecf334b44b836fc507500f50e87d374c26041f0c5bb4a7e61c03490d7d980"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KYMGD0",
+      "items": [
+        "sha256:1f1080ba191af1afc1d1852aa19b0725f135c80f1cc1a7af98306ffd7f20c2f9"
+      ],
+      "reason": "The README's host paragraph changes are realized by the host-lifecycle invariants; the remaining edits are wording that carries no invariant of its own.",
+      "subject": "hunk:sha256:1f1080ba191af1afc1d1852aa19b0725f135c80f1cc1a7af98306ffd7f20c2f9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KZ5EPT",
+      "items": [
+        "sha256:74b6592c0285a866bc4f988f33cc294921f49b75a50d030d6dc8e61fceef7486"
+      ],
+      "reason": "The evaluation seam keeps its contract; the new Node and cache roots are carried by the safety-roots obligations and their card.",
+      "subject": "onboarding:scripts/pnt_sandbox/safety.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KZHNGF",
+      "items": [
+        "sha256:8f9d97e45b2786536c434780ebdc07f5ca2d92313a84bab02c636b5ddf0e7c9f"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:8f9d97e45b2786536c434780ebdc07f5ca2d92313a84bab02c636b5ddf0e7c9f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:0bb58bd0020c02562e0c2a38ad3496cf80739fa7f75a09491769b05120330ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_root_that_cannot_be_resolved_fails_closed_and_is_named"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "before": {
+            "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+            "content": "sha256:0bb58bd0020c02562e0c2a38ad3496cf80739fa7f75a09491769b05120330ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_root_that_cannot_be_resolved_fails_closed_and_is_named"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "id": "PRF-C6TQTD"
+        },
+        {
+          "after": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:3dbc297825fc670afb33ce44e7c4fa64e540b90551b347b22e7183006045f5bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_starts_nothing_when_the_safety_check_fails"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "before": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:f8066da15c52c986a72f957395120e6d57378b8ed9f2ee4b2aa13a33c9b36f4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_start_starts_nothing_when_the_safety_check_fails"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "id": "PRF-HCYHYE"
+        },
+        {
+          "after": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:258649eb95c142370f66d385e6ae5321dc2d75601ddae657bbd35b1de25d4665",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_root_the_build_fills_in_by_default_is_caught"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "before": {
+            "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+            "content": "sha256:1aec020aa2fb63e95e14b6da8ec18bb17e51b214137e2b8aff78f85099fc7aa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_root_the_build_fills_in_by_default_is_caught"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "id": "PRF-YGY7TW"
+        },
+        {
+          "after": {
+            "blob": "7aea6da5956731cd080fc3a9f39ec34a2256e192",
+            "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_root_outside_the_sandbox_fails_and_is_named"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "before": {
+            "blob": "6f76ef471d4275895cac20bea22e9975f9d06065",
+            "content": "sha256:468ee39c8fc698464f45a0cdd950d626041e07632408e7c813ee0562393c0686",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_root_outside_the_sandbox_fails_and_is_named"
+            },
+            "path": "mcp/tests/test_pnt_sandbox.py"
+          },
+          "id": "PRF-ZH6MF1"
+        },
+        {
+          "after": {
+            "blob": "29424e5c4a9c8961b580a005655d0de44e003967",
+            "content": "sha256:bf282cd1512d51ba095947d74e46f7c7b11956a5f833776c8cab410c30b1f82d",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate"
+            },
+            "path": "scripts/pnt_sandbox/safety.py"
+          },
+          "before": {
+            "blob": "2a583f440c0585e193469a574bf6f841450fa40b",
+            "content": "sha256:bf282cd1512d51ba095947d74e46f7c7b11956a5f833776c8cab410c30b1f82d",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate"
+            },
+            "path": "scripts/pnt_sandbox/safety.py"
+          },
+          "id": "RLZ-03H0K0"
+        },
+        {
+          "after": {
+            "blob": "29424e5c4a9c8961b580a005655d0de44e003967",
+            "content": "sha256:895492d5636cf09c5c1c7936759b0103331c9685c1f2ee2e43087f14ab5defcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            },
+            "path": "scripts/pnt_sandbox/safety.py"
+          },
+          "before": {
+            "blob": "2a583f440c0585e193469a574bf6f841450fa40b",
+            "content": "sha256:895492d5636cf09c5c1c7936759b0103331c9685c1f2ee2e43087f14ab5defcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            },
+            "path": "scripts/pnt_sandbox/safety.py"
+          },
+          "id": "RLZ-PR0NX2"
+        },
+        {
+          "after": {
+            "blob": "09a8fb0b4e0361dc294645727f5e806fc5180f53",
+            "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_roots"
+            },
+            "path": "scripts/pnt_sandbox/build_roots.py"
+          },
+          "before": {
+            "blob": "bff81c5c4be709cdc481e57e21e5ae3e3dd811cd",
+            "content": "sha256:a88d27ac281f0e0a5cc1adae4e87de64c27458facd32fec86b43b17fdb2670d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_roots"
+            },
+            "path": "scripts/pnt_sandbox/build_roots.py"
+          },
+          "id": "RLZ-SWJE71"
+        },
+        {
+          "after": {
+            "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+            "content": "sha256:657ca498e75a03c54b7ab9f571f12056c2a1f6ddf5fb265e51f2cf02ed5caa3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "before": {
+            "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+            "content": "sha256:657ca498e75a03c54b7ab9f571f12056c2a1f6ddf5fb265e51f2cf02ed5caa3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "id": "RLZ-T9DAW9"
+        },
+        {
+          "after": {
+            "blob": "09a8fb0b4e0361dc294645727f5e806fc5180f53",
+            "content": "sha256:152e30aa8f0075ed3a4adf3ba3d433b405004ce99756cb1b0a5a5021c725891f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configuration_paths"
+            },
+            "path": "scripts/pnt_sandbox/build_roots.py"
+          },
+          "before": {
+            "blob": "bff81c5c4be709cdc481e57e21e5ae3e3dd811cd",
+            "content": "sha256:152e30aa8f0075ed3a4adf3ba3d433b405004ce99756cb1b0a5a5021c725891f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configuration_paths"
+            },
+            "path": "scripts/pnt_sandbox/build_roots.py"
+          },
+          "id": "RLZ-V5V45M"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M0W612",
+      "items": [
+        "sha256:dc0730a22cfa3acc2381611726738c9a0af4889e47f6c1362bf37effef05b3b0"
+      ],
+      "reason": "The safety check's rule is unchanged and its generic 'every root' statement still covers the added Node and cache roots, which the separate safety-roots obligation names; the proof and realization anchors are re-recorded at the candidate.",
+      "revision": 1,
+      "subject": "INV-85WW94"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M308VN",
+      "items": [
+        "sha256:d7ee580331a71971b697eb081e3b517598a441222d2db28a577c30b5caa60351"
+      ],
+      "reason": "The layout's hunks keep the ports as caller-selectable values with defaults and add the product Node folders; the obligations are carried by the revised port invariant and the safety-roots obligation.",
+      "subject": "hunk:sha256:d7ee580331a71971b697eb081e3b517598a441222d2db28a577c30b5caa60351"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M36RB6",
+      "items": [
+        "sha256:e6c959879e2746a3b5a03c805ae676c0dc3ae9f8b90172feed7536df6dae93bd"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:e6c959879e2746a3b5a03c805ae676c0dc3ae9f8b90172feed7536df6dae93bd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e8ef0d161c182f03370c337337348dcfb1e185b8",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
+            "content": "sha256:2200041761481afb1a77501bfcdb24006626a7641f1a37c9bc4b85a1fc79e8d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepeatAndConflictTests.test_a_repeated_request_converges_on_the_same_agent"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-CZPXMP"
+        },
+        {
+          "after": {
+            "blob": "e8ef0d161c182f03370c337337348dcfb1e185b8",
+            "content": "sha256:6a278dbdc0ec23f4f06603158a453b2a8001bf928ff9ee7654ba1bbe533fae6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "before": {
+            "blob": "2225cf5324eeecfe5a0c3d30b7b47b2a09783c39",
+            "content": "sha256:9b00b7372134dc07e5ae6729937c7e4a9270661e51a1209cf89dad0bbe41fccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleFolderAndIdentityTests.test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels"
+            },
+            "path": "mcp/tests/test_paseo_launch.py"
+          },
+          "id": "PRF-TZXFK2"
+        },
+        {
+          "after": {
+            "blob": "ed59283183fa798faf169ac6e8be476c40512457",
+            "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "mint_agent_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "0a960b330c5d982cb0b9daeb14d6a4dd142dcd71",
+            "content": "sha256:b23b5a34c786635449ee1f046d515494ee161ef24d4367d029d5cf01b1609f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "mint_agent_id"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-MJ7G08"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-M54TZE",
+      "items": [
+        "sha256:91c59f26870ca452a9ecbf651ecb84b943f59439b800b3966ecb8d024b12a2b7"
+      ],
+      "reason": "The launch receipt minting and the per-role folder/identity behavior are unchanged; the Source95 bodies moved under the same symbols, so the proof and realization anchors are re-recorded at the finished current bodies.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MJDZQ0",
+      "items": [
+        "sha256:9b792e96082478aa64268568fea066bbceadefdd73c4213533f0e0de11bad255"
+      ],
+      "reason": "The commands now take the version and Node from the packaged contract and the moved modules; the obligations are carried by the contract, Node and shared-authority invariants.",
+      "subject": "hunk:sha256:9b792e96082478aa64268568fea066bbceadefdd73c4213533f0e0de11bad255"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MK6NXJ",
+      "items": [
+        "sha256:91d5e57677d28cd50acd03e95be81d7c4529b8522088cce70089857f3be0c083"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:91d5e57677d28cd50acd03e95be81d7c4529b8522088cce70089857f3be0c083"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MW790C",
+      "items": [
+        "sha256:3839fe6215769bc6dc79f5c91cf5e0e07a355d7cb11f15a9e003d95eaade7414"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:3839fe6215769bc6dc79f5c91cf5e0e07a355d7cb11f15a9e003d95eaade7414"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MWW6C2",
+      "items": [
+        "sha256:e8127e3ba01fdf0b3ff9a4bfd06146651077d4227fcb70c29460c3e30caaa9e1"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:e8127e3ba01fdf0b3ff9a4bfd06146651077d4227fcb70c29460c3e30caaa9e1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N33VAT",
+      "items": [
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "The launch test adapts to the moved host modules; the receipt and identity assertions are unchanged.",
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NP66JA",
+      "items": [
+        "sha256:7ceb576f86aad5fbda6e06aabcb230b75958c7a38a403480c13a805af0578239"
+      ],
+      "reason": "The role-bridge test adapts imports to the moved host modules; the bridge contract it asserts is unchanged.",
+      "subject": "onboarding:mcp/tests/test_paseo_role_bridge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NTY76S",
+      "items": [
+        "sha256:bf73563c895061bfb6fbcc6504079cb6be7f85c061d52e792c64a7724e422ab8"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:bf73563c895061bfb6fbcc6504079cb6be7f85c061d52e792c64a7724e422ab8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NVFJ5P",
+      "items": [
+        "sha256:7a34fed2693dcbf51f5069d6d118e9d7ebde70d60cd76b198404015e0dd090f8"
+      ],
+      "reason": "The layout's hunks keep the ports as caller-selectable values with defaults and add the product Node folders; the obligations are carried by the revised port invariant and the safety-roots obligation.",
+      "subject": "hunk:sha256:7a34fed2693dcbf51f5069d6d118e9d7ebde70d60cd76b198404015e0dd090f8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NWB8Y4",
+      "items": [
+        "sha256:0bbe056dedb5757d8b294aebd28d84a2973c041aafc15c89277a2a1af9f8afec"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:0bbe056dedb5757d8b294aebd28d84a2973c041aafc15c89277a2a1af9f8afec"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PA87GX",
+      "items": [],
+      "reason": "The file is a generated harness copy of the install skill under a path outside the onboarding include paths, so no card is gated for it; the rule 1-10 text change is carried by the source skill and the package copy's card and the host-lifecycle invariants.",
+      "subject": "onboarding:.pi/skills/c-13-install-and-onboard/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PG7VE4",
+      "items": [
+        "sha256:37297f2fb4880933d784f46cf3d49a3adc637712f7a13bf448921c2f9f7068cf"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:37297f2fb4880933d784f46cf3d49a3adc637712f7a13bf448921c2f9f7068cf"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-03M6ZA",
+          "revision": 1
+        },
+        {
+          "id": "INV-0PAKA9",
+          "revision": 1
+        },
+        {
+          "id": "INV-96C24X",
+          "revision": 1
+        },
+        {
+          "id": "INV-BGV9YT",
+          "revision": 1
+        },
+        {
+          "id": "INV-EQH5X6",
+          "revision": 1
+        },
+        {
+          "id": "INV-FM3V0M",
+          "revision": 1
+        },
+        {
+          "id": "INV-GAZREV",
+          "revision": 1
+        },
+        {
+          "id": "INV-PB8GDK",
+          "revision": 1
+        },
+        {
+          "id": "INV-RW4566",
+          "revision": 1
+        },
+        {
+          "id": "INV-YXP2R0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-PM9Y8P",
+      "items": [],
+      "reason": "The joint guarantee is restated so release changes stay build-owned while an explicit terminal provision may perform a required live-host transition, including same-contract listen/setting/Node/package reasons; all ten members remain.",
+      "subject": "FAM-QDY93G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PQ9XT6",
+      "items": [
+        "sha256:aad9a88c0102618643dab8e5340980e5955e3cb5f521db22c29aa8ccddca18a3"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:aad9a88c0102618643dab8e5340980e5955e3cb5f521db22c29aa8ccddca18a3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PRE8H9",
+      "items": [],
+      "reason": "The document lies under the excluded docs/ tree, so no card is gated; the runtime_install row is realized by the install invariant and the registration card.",
+      "subject": "onboarding:docs/reference/mcp-tools.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PYZMKA",
+      "items": [
+        "sha256:136ca9771f89eb66aaba83e5dab90911753ce3578d6a369061dd012defa57182"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:136ca9771f89eb66aaba83e5dab90911753ce3578d6a369061dd012defa57182"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PZMZJR",
+      "items": [
+        "sha256:12c24a9a91a83c6951673b4ca15e94fdf53231cbb6364a06f4ebb55dc66ffb93"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:12c24a9a91a83c6951673b4ca15e94fdf53231cbb6364a06f4ebb55dc66ffb93"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q3C2RT",
+      "items": [
+        "sha256:849578584dad0df4957cd1f5e62951012037c51f121179a9632579f17a139373"
+      ],
+      "reason": "The config's changed hunks read the host block per use and expose the shared authority; the obligation is carried by the shared-authority and settings invariants.",
+      "subject": "hunk:sha256:849578584dad0df4957cd1f5e62951012037c51f121179a9632579f17a139373"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q8ZNP0",
+      "items": [
+        "sha256:cad5e1a1e8a08a7064a0a3e47fe61594167ef07cc65ddfa4d6f4edef985358e0"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:cad5e1a1e8a08a7064a0a3e47fe61594167ef07cc65ddfa4d6f4edef985358e0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QH1V6W",
+      "items": [
+        "sha256:73013a6e4a7666cca133a25ab212be5d0d3bf836aad35ca0566f9b15295a294f"
+      ],
+      "reason": "The commands now take the version and Node from the packaged contract and the moved modules; the obligations are carried by the contract, Node and shared-authority invariants.",
+      "subject": "hunk:sha256:73013a6e4a7666cca133a25ab212be5d0d3bf836aad35ca0566f9b15295a294f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QX98MX",
+      "items": [
+        "sha256:9e529083685e6a1dda45f597f558e75c73fcc5b617857e6c2ab2ea37cadb6ad6"
+      ],
+      "reason": "The hunk is the incoming Source95 RolePreparationError type added beside the other named errors; it carries the start owner's status/detail/next_action as a typed failure the shared role-preparation fixture and the role-start projection already cover, so no leaf invariant changes.",
+      "subject": "hunk:sha256:9e529083685e6a1dda45f597f558e75c73fcc5b617857e6c2ab2ea37cadb6ad6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R4G17E",
+      "items": [
+        "sha256:54fc71914ec1c6f828195ef54d4aeab1ae1750b0172729111b083bd64f527e02"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:54fc71914ec1c6f828195ef54d4aeab1ae1750b0172729111b083bd64f527e02"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R9XAD2",
+      "items": [
+        "sha256:bdb9f13f46a4212e6dfd6aba49c29ad1389b6a59024fffc2f1f7ffd6e3e4d7e7"
+      ],
+      "reason": "The handover-binding test adapts a host helper import; its binding assertions are unchanged.",
+      "subject": "onboarding:mcp/tests/test_role_handover_binding.py"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R96",
+          "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "4cce64b0da35f1f1f00de3405e9a1f5ffa1761a3",
+            "content": "sha256:18dc75842dda7e3bf4632d0fbacf241ea9c4c4c2abf76fc4a6cd84e450f309b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+            },
+            "path": "mcp/tests/test_config.py"
+          },
+          "id": "PRF-B12XTP"
+        },
+        {
+          "after": {
+            "blob": "95a0431d80346ab6b5f91344a1149d1244620ce3",
+            "content": "sha256:3d1cc56b23b1760e702b773e37136ffe392e0b3f877fa6f85fa42e6eca750ee8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored"
+            },
+            "path": "mcp/tests/test_paseo_install_contract.py"
+          },
+          "before": "absent",
+          "id": "PRF-BPYXW5"
+        },
+        {
+          "after": {
+            "blob": "678e59f79b8f730a0205993cf785a96fdbf441e1",
+            "content": "sha256:70576fc9cb8774291354efb6fb80dec0498cb0be5881fc548a85e2f90af551bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpConfigTests.test_optional_paseo_runtime_block_is_exact_and_fail_loud"
+            },
+            "path": "mcp/tests/test_config.py"
+          },
+          "before": "absent",
+          "id": "PRF-C27FPT"
+        },
+        {
+          "after": {
+            "blob": "68e9def1959971a0f5ceedffc1ec2f01408849e1",
+            "content": "sha256:40a62f1c987b26223a1cbf9bcd1fc4e67b2dfba0f7716dc3c107f6b2a9d2231d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests.test_other_version_is_replaced_and_a_failed_install_changes_nothing"
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "before": {
+            "blob": "d5306ab8d01a98ab7f9e9a792e9522d07889e6f8",
+            "content": "sha256:cdf9fb8b0c8fa0f3747358332a220f1dfe5a2cefcee973bf798d77be93d3229a",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests.test_other_version_is_replaced_and_a_failed_install_changes_nothing"
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "id": "PRF-ZJCHJP"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "b1474319e2120e0913c48143c6052a71278b7924",
+            "content": "sha256:e6811d4c5ca063231ce9652712a4648ca5be415a8fb90e84fd1d6d18095821ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ensure_install"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_provision.py"
+          },
+          "id": "RLZ-GA4ARW"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "b26253c184fa75dd45ade676d08594cf6333f40e",
+            "content": "sha256:2d713e98f8a0b5dc81f1d68798784cda5a5953da19b3d1ca66aa41d7c04b2dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "id": "RLZ-HAFKYT"
+        },
+        {
+          "after": {
+            "blob": "7c4e75b59e2b58b17ad1a2693c3ba3c340e5f590",
+            "content": "sha256:3125f6c5c96edaeb59ff9f4ce68d7c584bcc3714d07dd8ce8d58a73d6c0128cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_paseo_runtime_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+          },
+          "before": "absent",
+          "id": "RLZ-JRYGTQ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-RC67F2",
+      "items": [
+        "sha256:c55cdf4e6fe694fa5074a66d61104d26773b80cabcb2768a0bab065d38c8dfe6"
+      ],
+      "reason": "The stored settings-selected exact-version claim is replaced by the packaged build pin; the obsolete exact-selector test credit (PRF-B12XTP) is retired as historical and replaced by a proof scoped to the current settings case, and the two moved/absent realizations are removed. Evidence (L96 reconciliation: packaged host pin (INV-2MWAYK)): Worker entry 'INV-2MWAYK / INV-9XEW06 / INV-X5E9WH' (prospective-producer-list.json 739ff7bd) plus mcp/tests/test_paseo_install_contract.py::test_build_pin_wins_all_settings_selectors_and_legacy_harness_block_is_ignored",
+      "revision": 2,
+      "subject": "INV-2MWAYK"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RCHXV0",
+      "items": [
+        "sha256:ce2009e377cfa76f0cdc638ca8e9bf90f4579bf4240f80685cb2264a5bf06d79"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:ce2009e377cfa76f0cdc638ca8e9bf90f4579bf4240f80685cb2264a5bf06d79"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RMJJMX",
+      "items": [
+        "sha256:6498d3364bfcb3e2101349ea548acd0578bbd94f19e239fc60e74a67818139c8"
+      ],
+      "reason": "The status-bridge test adapts the version source and module move; the status contract it asserts is unchanged.",
+      "subject": "onboarding:mcp/tests/test_paseo_status_bridge.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RQANVE",
+      "items": [
+        "sha256:df291aafe2a801840fcc6099b670d3a89012e4d2148d2e83862a9713daf8cc09"
+      ],
+      "reason": "The lane rows map the new host test modules to their lane; a catalog row carries no invariant.",
+      "subject": "hunk:sha256:df291aafe2a801840fcc6099b670d3a89012e4d2148d2e83862a9713daf8cc09"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
+            "content": "sha256:dfeffa5143e477f72259341ab94108f5c38fcd3014c49501a5a9321a9da0ac50",
+            "locator": {
+              "kind": "symbol",
+              "name": "LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers"
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "before": {
+            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+            "content": "sha256:0f4ba21a61cf802e6c6f510b5e605fecc7389b684c7708f0c3b9d2d1aa91e056",
+            "locator": {
+              "kind": "symbol",
+              "name": "LauncherOptionsTests.test_catalog_is_cached_per_runtime_and_only_a_refresh_rediscovers"
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "id": "PRF-E268RN"
+        },
+        {
+          "after": {
+            "blob": "74d6da3fea4daae707be4261ebe77b2c66206029",
+            "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created"
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "before": {
+            "blob": "13a429f43e0bf5d2238a11cbb32f724ffa98056f",
+            "content": "sha256:d375ad52fb95f55321174a0c7bcfabc618077684c2fb29ade637d48dc0029286",
+            "locator": {
+              "kind": "symbol",
+              "name": "LaunchValidationTests.test_a_launch_is_validated_against_the_catalog_before_anything_is_created"
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "id": "PRF-Y64YC4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RVTB86",
+      "items": [
+        "sha256:b4b88d3b384b5da9c4f86e04f82907c6de9cb90accd7e6524bc65fcfb6326a7e"
+      ],
+      "reason": "The per-runtime catalog cache and pre-creation validation are unchanged; the two proofs are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-RQ2ZB8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S0FEYY",
+      "items": [
+        "sha256:f604da5b2eb91323287b4654a296fcd0b55bebbaa057c05586ee986b8782b368"
+      ],
+      "reason": "The lane rows map the new host test modules to their lane; a catalog row carries no invariant.",
+      "subject": "hunk:sha256:f604da5b2eb91323287b4654a296fcd0b55bebbaa057c05586ee986b8782b368"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S29D1J",
+      "items": [
+        "sha256:3fa6d6bf3ccab2829bb6d0be9bc6ebbd886501c1cbf253b6455942996b2788fb"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:3fa6d6bf3ccab2829bb6d0be9bc6ebbd886501c1cbf253b6455942996b2788fb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S8DXAQ",
+      "items": [
+        "sha256:bde99bd8169f72e0f4c8cb6804c172ed5bb02342da7d81fb82e205f727ccfd69"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:bde99bd8169f72e0f4c8cb6804c172ed5bb02342da7d81fb82e205f727ccfd69"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SBNJX3",
+      "items": [],
+      "reason": "The document lies under the excluded docs/ tree, so no card is gated; the product Node folder layout it now states is realized by the Node invariant.",
+      "subject": "onboarding:docs/reference/runtime-layout.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SG2TZ5",
+      "items": [
+        "sha256:ecba4a87ee0a54452d9cfd0a3709ccb6f75a2e448e2996f11c4d4eb35dd01061"
+      ],
+      "reason": "The script's change starts the product's Node by its full path; that obligation is carried by the Node invariant.",
+      "subject": "hunk:sha256:ecba4a87ee0a54452d9cfd0a3709ccb6f75a2e448e2996f11c4d4eb35dd01061"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SJJS3D",
+      "items": [
+        "sha256:33250509d61532bccdf269989743294fb1f9adb318fa90409af493e45d29dc69"
+      ],
+      "reason": "The commands now take the version and Node from the packaged contract and the moved modules; the obligations are carried by the contract, Node and shared-authority invariants.",
+      "subject": "hunk:sha256:33250509d61532bccdf269989743294fb1f9adb318fa90409af493e45d29dc69"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T7372E",
+      "items": [
+        "sha256:87fe9bdaee70b1d38bf2008850ac2223da2a706e38a00cbe161f3eefe3ebf6ec"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:87fe9bdaee70b1d38bf2008850ac2223da2a706e38a00cbe161f3eefe3ebf6ec"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T9ZVFB",
+      "items": [
+        "sha256:d2546de7054c4f0fad88dc84ab034c798752bc3d787e2d30f72d39b16322d184"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:d2546de7054c4f0fad88dc84ab034c798752bc3d787e2d30f72d39b16322d184"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TA6Q38",
+      "items": [
+        "sha256:d8eeea3d5aa46f9e1ff58ccfd97437462066f6aef07e9a39b99e940327c953d1"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:d8eeea3d5aa46f9e1ff58ccfd97437462066f6aef07e9a39b99e940327c953d1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TDDF43",
+      "items": [
+        "sha256:673adb6d1676181a4c39eca17e798e88418f4af4f9d87b40f4cbcc745880ee5e"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:673adb6d1676181a4c39eca17e798e88418f4af4f9d87b40f4cbcc745880ee5e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TP5DSK",
+      "items": [
+        "sha256:2e436d0aa766b7f515a53532838c5f2ca97ffba03aaebdea322e7c9537051abb"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:2e436d0aa766b7f515a53532838c5f2ca97ffba03aaebdea322e7c9537051abb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V1KV7D",
+      "items": [
+        "sha256:5ee1740552a7f28c3466b05677c665df99d9761e9bff6141ae8b089c5deca319"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:5ee1740552a7f28c3466b05677c665df99d9761e9bff6141ae8b089c5deca319"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V9ZVTY",
+      "items": [
+        "sha256:43b8a3ed48a87c3dfde65561e7a69fb5605e8f3927c1c7c36da096a8d50efd16"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:43b8a3ed48a87c3dfde65561e7a69fb5605e8f3927c1c7c36da096a8d50efd16"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VCEZ3X",
+      "items": [
+        "sha256:5a82bad496fcf0f35f352855aec4fe9761269c222a73ce76598ad7acf29097e2"
+      ],
+      "reason": "The hunk is the R51 catalog owner's derived consumer correction in the lifecycle TOML (the arriving test_request_logical_digests.py consumer added and the list ordered) under its own canonical-form validation; it is derived catalog maintenance under the catalog's existing merge/canonical-form obligation, not a new invariant.",
+      "subject": "hunk:sha256:5a82bad496fcf0f35f352855aec4fe9761269c222a73ce76598ad7acf29097e2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VDXRDN",
+      "items": [
+        "sha256:045f7fa2b3fa5dc5a1a9607ea5fdc3a9a88da2387eb8d04b5d8d6445e80dcbc2"
+      ],
+      "reason": "The change is the moved provision/version imports only; the launch receipt and identity behavior the card describes is unchanged.",
+      "subject": "onboarding:mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VJHCRM",
+      "items": [
+        "sha256:8d6dfa97275092d9de4fe27ee547e9b7a60765dc562a8336b21d2571298cf0cb"
+      ],
+      "reason": "The config's changed hunks read the host block per use and expose the shared authority; the obligation is carried by the shared-authority and settings invariants.",
+      "subject": "hunk:sha256:8d6dfa97275092d9de4fe27ee547e9b7a60765dc562a8336b21d2571298cf0cb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W5CHCZ",
+      "items": [
+        "sha256:a1164e340c985687129f553f68bbe4b99d4008ae2d3312b73a8e35be552380a6"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:a1164e340c985687129f553f68bbe4b99d4008ae2d3312b73a8e35be552380a6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WEFG7V",
+      "items": [
+        "sha256:3aa2b5e5937458d252c913c5fe2146c1d6224affee3cda709010af9fb098eda6"
+      ],
+      "reason": "The commands now take the version and Node from the packaged contract and the moved modules; the obligations are carried by the contract, Node and shared-authority invariants.",
+      "subject": "hunk:sha256:3aa2b5e5937458d252c913c5fe2146c1d6224affee3cda709010af9fb098eda6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WPD18R",
+      "items": [
+        "sha256:e4cf8fdf0fbc9e69e62fe1365f8a14f544e9b2b82340add8313e1ace96b97452"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:e4cf8fdf0fbc9e69e62fe1365f8a14f544e9b2b82340add8313e1ace96b97452"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WRDSVB",
+      "items": [
+        "sha256:bb0809a4b91d893e7220605a98b668ea9b5e8252dab04004e9499475ed430fc0"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:bb0809a4b91d893e7220605a98b668ea9b5e8252dab04004e9499475ed430fc0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WSYMTR",
+      "items": [
+        "sha256:bcdb6f71af95225623f482a8a44c9f88db4d570933be6ee272183d3fe271da38"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:bcdb6f71af95225623f482a8a44c9f88db4d570933be6ee272183d3fe271da38"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X83VVC",
+      "items": [
+        "sha256:392671dc20295ab4a5a26b6108475a99008c323ab93c56da2323c4aed04d2787"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:392671dc20295ab4a5a26b6108475a99008c323ab93c56da2323c4aed04d2787"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X8R8RZ",
+      "items": [
+        "sha256:696b86662f9e18d53a1ae28762d7d5ea995db68cb68ebba99626a951700e8ef3"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:696b86662f9e18d53a1ae28762d7d5ea995db68cb68ebba99626a951700e8ef3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X9AJ6M",
+      "items": [
+        "sha256:79ec5936140c599310b02ace8632095fae345b61c686b066316234bda8d8108d"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:79ec5936140c599310b02ace8632095fae345b61c686b066316234bda8d8108d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XJJW4G",
+      "items": [
+        "sha256:be4e852e98b77927dbf5257c3cbce2d3dfb2210f017da79d4ae74292e642e0bd"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:be4e852e98b77927dbf5257c3cbce2d3dfb2210f017da79d4ae74292e642e0bd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XW2PAT",
+      "items": [
+        "sha256:6f66457c606cbefbb19fa16bfee25b370fe0b26df42269eb025ab0ff33316a00"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:6f66457c606cbefbb19fa16bfee25b370fe0b26df42269eb025ab0ff33316a00"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y0F2K8",
+      "items": [
+        "sha256:3b6a92df500d56dc69e1f73f33f48eb081e024238067799ce97604bbad46d04b"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:3b6a92df500d56dc69e1f73f33f48eb081e024238067799ce97604bbad46d04b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y1A7GF",
+      "items": [
+        "sha256:1e015c6d1f4f4020ed2e929a0cebc5acf2cbf3b7f323d9e18f3ae3e8d27c84b2"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:1e015c6d1f4f4020ed2e929a0cebc5acf2cbf3b7f323d9e18f3ae3e8d27c84b2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y87NJS",
+      "items": [],
+      "reason": "The file is a generated harness copy of the renderer under a path outside the onboarding include paths, so no card is gated for it; the argument and block change is carried by the source renderer card and the shared-authority invariant.",
+      "subject": "onboarding:.cursor/render-starter.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YFTQ0Q",
+      "items": [
+        "sha256:e0b7bd9cad80dddfaf8fe063af6d70f7b2b3bae131c6c45d11a173006ea16bba"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:e0b7bd9cad80dddfaf8fe063af6d70f7b2b3bae131c6c45d11a173006ea16bba"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YP5DF0",
+      "items": [
+        "sha256:0dc01a2d5b8ae131d7b38062d3f3983ce2dd0aa1e8085dcf174fd4f6a4c589b8"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:0dc01a2d5b8ae131d7b38062d3f3983ce2dd0aa1e8085dcf174fd4f6a4c589b8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YTDQJG",
+      "items": [
+        "sha256:38cd95eb3efe7593b30bb3cea14e5c0489e195262bf42bf622aec74dc8bf5145"
+      ],
+      "reason": "The hunk adapts the dashboard's host dispatch and status output around the new start/status owners; the behavior it changes is carried by the start, status and no-stop invariants.",
+      "subject": "hunk:sha256:38cd95eb3efe7593b30bb3cea14e5c0489e195262bf42bf622aec74dc8bf5145"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YW620J",
+      "items": [
+        "sha256:36cf8f81dc6c810ed2922050487808169c9531c5d6398aa8381ea142c2e066ad"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:36cf8f81dc6c810ed2922050487808169c9531c5d6398aa8381ea142c2e066ad"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:a318c3ce897485dd698530f2d61f77be9d7ed7b9b29442c6112ea1b933119c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_paseo_record_is_deleted_before_any_runtime_command"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "before": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:a318c3ce897485dd698530f2d61f77be9d7ed7b9b29442c6112ea1b933119c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_paseo_record_is_deleted_before_any_runtime_command"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "id": "PRF-QN551K"
+        },
+        {
+          "after": {
+            "blob": "ec1d0ae05b8f205404b23216b55a0567a22e968f",
+            "content": "sha256:da21c95e27fb56ac6d347920c87f07d099446bd78612b943d60c7f6901ce179a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_paseo_home_record_is_trusted_only_for_this_homes_supervisor"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "before": {
+            "blob": "7c5f635724910b3bca1e3b6641abb2b19c320de2",
+            "content": "sha256:4fd7a25c0696e01afc8283ca4fb6dc853aa0718a07812b4fbd2d0a19da4d5fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_paseo_home_record_is_trusted_only_for_this_homes_supervisor"
+            },
+            "path": "mcp/tests/test_pnt_sandbox_processes.py"
+          },
+          "id": "PRF-QVRTQY"
+        },
+        {
+          "after": {
+            "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+            "content": "sha256:0ff36f0263392da3b9016521a6ec3b778f102e2ec8177b7cb060d263c653fb66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stop_paseo"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "before": {
+            "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+            "content": "sha256:0ff36f0263392da3b9016521a6ec3b778f102e2ec8177b7cb060d263c653fb66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stop_paseo"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "id": "RLZ-1FCTEB"
+        },
+        {
+          "after": {
+            "blob": "95a92b9a406eedc5d83a23e47b482b45670b403b",
+            "content": "sha256:866b97c8c2da64aad2ca568bf715ec9fa01dc3e0aa33ddb0dabcfeccdd00dbea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provision"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "before": {
+            "blob": "bde9a598af866dbdbe6fb93a9a3dea28046bdf28",
+            "content": "sha256:8f1b2e75e502ef6b05bc0072657abcd07133b3e22bded661e1763940eb6d971c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_provision"
+            },
+            "path": "scripts/pnt_sandbox/commands.py"
+          },
+          "id": "RLZ-VE7YCN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YWBRSJ",
+      "items": [
+        "sha256:28a7e8129e73e0ec4d68ff9cfb8281c7b7672f7beb8fb8314218753e958d5c6a"
+      ],
+      "reason": "The Paseo home record trust rule is unchanged; the provision seam gained the public install route around it, and the proof and realizations are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-AW711P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YYP44P",
+      "items": [
+        "sha256:5b7bd34a6b31c6a7482df9d6226ff4ee180b0bc863bfe2ce6c463c8a6ccdcb5f"
+      ],
+      "reason": "The hunk is the R51 catalog owner's one-line derived-consumer correction in the lifecycle TOML (the missing package-lock fixture consumer test_leaf_retirement_wording.py added to the merged test catalog), applied under the catalog's own canonical-form validation while 19 contracts, 83 artifact identities and 437 lanes were held; it is derived catalog maintenance under the catalog's existing merge/canonical-form obligation, not a new invariant. Evidence: R51 merged-catalog owner qualification proof 87dd06e6 and the Source99 envelope current-code-input-envelope.md 5f046b1c.",
+      "subject": "hunk:sha256:5b7bd34a6b31c6a7482df9d6226ff4ee180b0bc863bfe2ce6c463c8a6ccdcb5f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z3JQJ4",
+      "items": [
+        "sha256:5e12a90947e9fe9a32d217969a685ad3d1e7712ffde38b46a650b018aec50703"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:5e12a90947e9fe9a32d217969a685ad3d1e7712ffde38b46a650b018aec50703"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z5YT94",
+      "items": [
+        "sha256:a2ec42ecd8c9e119856ae9769523c891e18c996567e99f25f58a3478271b4cf3"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:a2ec42ecd8c9e119856ae9769523c891e18c996567e99f25f58a3478271b4cf3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZE865X",
+      "items": [
+        "sha256:835da8de0c7afe844bdb16cd7af98ad4ea1f49e55bc39087a05b368939ab0073"
+      ],
+      "reason": "The bridge's changed hunks route Node and remedy text through the shared owners; the obligations are carried by the Node invariant and the host-lifecycle texts.",
+      "subject": "hunk:sha256:835da8de0c7afe844bdb16cd7af98ad4ea1f49e55bc39087a05b368939ab0073"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZEB33A",
+      "items": [
+        "sha256:9a5f0371d58b571794456643e20888a3c3047b6425776e198e4aa18126647b74"
+      ],
+      "reason": "The catalog's added and edited rows enumerate the new host test modules and lanes; a test catalog carries no invariant of its own beyond the catalogs' own merge invariant.",
+      "subject": "hunk:sha256:9a5f0371d58b571794456643e20888a3c3047b6425776e198e4aa18126647b74"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZM4FWT",
+      "items": [
+        "sha256:0e141561242d9f15affbc9f41144b7d9fea6f45a4f23463090de3f56bdbe5c2d"
+      ],
+      "reason": "The config's changed hunks read the host block per use and expose the shared authority; the obligation is carried by the shared-authority and settings invariants.",
+      "subject": "hunk:sha256:0e141561242d9f15affbc9f41144b7d9fea6f45a4f23463090de3f56bdbe5c2d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZTV0RV",
+      "items": [
+        "sha256:af5618de6a2ab559dc169fecca62824ac6f6f96d2cfb9169cbbde6e4b4f27b9c"
+      ],
+      "reason": "The one-line fixture-root isolation correction gives the no-Paseo-runtime refusal case its own fake root (self.root/'unconfigured') so the shared fake settings survive for the later table cases; the test's labels, assertions, receipts and runtime no-mutation checks are unchanged, and the card was reviewed against the current candidate and needs no update. The leaf answers with a reviewed no-impact trace; the failed-node proof is the Worker's exit0 one-node result under the Manager's bounded repair.",
+      "subject": "onboarding:mcp/tests/test_paseo_role_tools.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZWXQKZ",
+      "items": [
+        "sha256:0dc3879d535cb1b2843a01c8bf0a321db7b5cc5507589adfb58e24406e37cb47"
+      ],
+      "reason": "The test adapts the runtime_install result to the host part; its assertions and the behavior it protects are unchanged.",
+      "subject": "onboarding:mcp/tests/test_install_runtime.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZX0V6P",
+      "items": [
+        "sha256:189dc6bdcbf1b95fb5f03de83a8ea015fc25fadd33662f806a1e95f434d107ca"
+      ],
+      "reason": "The builder's hunks recognize the genuine old layout and rebuild through the public renderer; that obligation is carried by the sandbox-rebuild obligation.",
+      "subject": "hunk:sha256:189dc6bdcbf1b95fb5f03de83a8ea015fc25fadd33662f806a1e95f434d107ca"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

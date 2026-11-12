@@ -1,0 +1,48 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/providers/patches/codegraphcontext/codegraphcontext-0.4.10-cgcignore-runtime-root.patch",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The patch replaces CGC's direct repo-local `.cgcignore` default with a branch that prefers `explicit_cgcignore_path`.\n\nAnchor: `explicit_cgcignore_path`; \"-    if local_cgcignore_path is None:\"; \"-        local_cgcignore_path = ignore_root /\"; \"Agents Remember patch\"; \"+        local_cgcignore_path = explicit_cgcignore_path\"; \"+        local_cgcignore_path = ignore_root /\"; \"+        ensure_default_cgcignore\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8949b400ec256438e0d55ffaca0840ac924a3e77",
+            "content": "sha256:85d981089094082697870d3896f713a43c902ceff81f87751e203485790dbf36",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 4
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8949b400ec256438e0d55ffaca0840ac924a3e77",
+            "content": "sha256:b040902d8cd76b73c0891d79671485a542a1b53c9f3160be36a157ac094c7366",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8949b400ec256438e0d55ffaca0840ac924a3e77",
+            "content": "sha256:76a736b14b06c576c2bfde54031adfd571d2ce80eb5df61a8d794e5e5fd571f1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

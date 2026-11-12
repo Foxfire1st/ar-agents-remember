@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/projections/landing_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/projections/landing_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-12T17:30+02:00 |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d` |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving projections overview](overview.md)
@@ -17,6 +7,22 @@
 ## Purpose
 
 `LandingStateRefresher` moves remote landing observation out of the recurring projection hot path. It owns one lifecycle-managed loop, refreshes due landing-active contracts with bounded concurrency, and publishes immutable exact-contract facts for projection consumers.
+
+## Truthful terminal history and exact finishing eligibility
+
+A completed arc lacking a valid current-contract final may receive exactly one finishing attempt per process, including at startup, with at most four terminal admissions per sweep. Matching valid finals serve without an attempt. The attempt stays consumed after success, failure or later final loss; only a real reopen re-arms that arc. Abandoned/build-only keys remain probe-free. This deliberately supersedes the earlier startup-zero exclusion, not the exact-key, matching-final or no-recurring-history boundaries.
+
+Missing, corrupt or contract-predating finals stay honest terminal missing facts (`no final observation recorded`), not a promise of recurring repair. Successful complete finishing facts may freeze once. Existing manual exact-current reads remain available. Real reopen invalidates the prior final; build-only phases stay probe-free until closeout or integration activates landing again. The concurrency cap remains four. Serving-bound open probes deliberately replace the former fixed 30-second cadence with actual page interest and unchanged-answer age scheduling; explicit unbound refresh callers retain their prior API.
+
+## Page Interest And Due Scheduling
+
+The app binds actual Projector subscriber membership. Without interest, `refresh_once` returns before contract discovery, rechecks after its awaited discovery, and rechecks again after semaphore admission before each probe. A probe already admitted is not cancelled merely because the last page departs; no new admission proceeds once that boundary observes no interest. Unbound explicit refreshes remain unconditional.
+
+For bound serving refreshes, `LandingProbeSchedule` retains only the currently eligible exact identities. A new or changed contract is due immediately on the next interested pass. A published semantic answer keeps its unchanged-age epoch only while its selected fields and row order match. Due intervals are 30 seconds below 120 seconds of unchanged age, 120 below 600, 600 below 3600, and 3600 thereafter. A changed answer or a clock before the remembered epoch resets the schedule. Observation-age noise is excluded, but the fact's own `at` is semantic. Due timestamps are eligibility for the next ordinary sweep, not an end-to-end freshness guarantee.
+
+The schedule advances only after rows are actually published; a disconnect-skipped probe neither publishes nor consumes the terminal attempt. Existing shared-ref sweep scope, accounted drained offload, immutable observations, exact final validation and one-attempt-per-completed-arc protection remain. Reopen/rewrite/new identities cannot inherit a departed contract's deadline. No subscriber means no new landing discovery or remote work, not zero work for the entire dashboard.
+
+
 
 ## Code Commentary
 
@@ -29,18 +35,16 @@
 - Failures never invent remote or PR state.
 - Lifecycle cancellation is safe and does not create per-tick tasks or unbounded workers.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Projector owns startup and cancellation. | `run` | mcp/src/agents_remember/serving/projector.py:193-236 |
-| Landing facts are merged into projected status. | "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" | mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:302-302; mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py:348-348 |
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repo references.
 
@@ -50,11 +54,25 @@ Completed contracts can freeze one fully observed landing result in `landing-fin
 
 This entry supersedes any earlier description in this sidecar that conflicts with the current source behavior above; verification metadata stays pinned to the pre-commit source history until closeout.
 
-## Update History
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
+Successful atomic replacement of a final file invalidates the writer's parsed-final cache for that exact path, including an equal old/new mtime. The next read serves the new valid facts without an additional observation or historical retry; failed writes keep the existing reported failure path.
 
-- 2026-08-04T11:40:58+02:00 — 260731-EFA-L6 S18-B08 curator: bound startup/cancellation and landing-merge claims to the current projector and snapshot constructs.
 
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: corrected the source-side behavior record for the current backend/shared delta and preserved the pre-commit verification stamp.
+- Projector owns the landing refresher's startup and cancellation. [1]
 
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: created for the bounded, exact-keyed, lifecycle-managed background landing observer.
+- Landing facts are merged into projected status.  Anchor: "def _safe_status_payload(  # pragma: no cover"; "def refresh_engine_process_landing(  # pragma: no cover" [2]
+- Exact completed arcs with no valid final are eligible once, including startup, under bounded admissions. [3]
+
+- A terminal finishing attempt remains consumed after success, failure and subsequent final loss until reopen. [4]
+
+
+- Final facts are served only after complete matching reducer/participant validation, otherwise as honest missing. [5]
+
+
+- Bound interest gates discovery, due selection, publication-driven schedule advance and probe admission; unbound callers retain explicit refresh behavior. [7]
+- Current-identity retention and semantic-answer age determine transient due times. [8]
+
+- Successful final replacement invalidates the old parsed cache before fresh facts are served, including equal filesystem timestamps.  Anchor: `LandingStateRefresher._maybe_freeze` [6]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projector.py:220-323 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 58161c69b8254fe8080805650a2b3984000059d8. Retired means the anchor no longer stands, not that the cited subject was deleted.

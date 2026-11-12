@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module defines `integration_resolution_required` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7258b945df21cc183036dd6a3ad93549d05dde60",
+            "content": "sha256:8ec780646cab569d3e81a8ef4c3c381ac3f5737a5a9d4406ea5c56608178bbd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "integration_resolution_required"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

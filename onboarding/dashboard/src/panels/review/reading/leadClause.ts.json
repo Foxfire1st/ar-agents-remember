@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/leadClause.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Produce short subject heading without altering full statement.\n\nAnchor: \"const BREAK = /\\s[—–]\\s\\|\\s--\\s\\|;\\s\\|:\\s/;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dbe6ec394f728138e4f83cd0866cff6ea785001",
+            "content": "sha256:09283fdad8dd0462455a5f79e98036530f41c658c2af2cedb3ad652fdfa7ade7",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Produce short subject heading without altering full statement.\n\nAnchor: \"const MIN_LEAD = 12;\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dbe6ec394f728138e4f83cd0866cff6ea785001",
+            "content": "sha256:ad274449bed958828dcec2e922ef9fce501bc0b27dd4cf6394c197fc709b7da9",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Produce short subject heading without altering full statement.\n\nAnchor: \"export function leadClause(title: string): string {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dbe6ec394f728138e4f83cd0866cff6ea785001",
+            "content": "sha256:84b54eea2a979ac6b1769b21d994d692b08b1bccd361a98e8bfe0b1ae46ee6de",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

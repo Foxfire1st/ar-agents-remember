@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_record_history.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A page open names the records it read, and those bytes do not grow with the leaf's history",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4be5a0c4bda406afa05cbd548caeeb7f67b3c7e",
+            "content": "sha256:f5230add09267fad652c0b72f02dcc559eca5019a9f53976497942946561f7f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_record_bytes_an_open_reads_do_not_grow_with_the_leafs_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

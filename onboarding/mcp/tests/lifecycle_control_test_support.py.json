@@ -1,0 +1,89 @@
+{
+  "path": "mcp/tests/lifecycle_control_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required for this repository-owned test contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
+            "content": "sha256:c8ec802c2b7ce69ae063ed72f19868152be2bcd161a820ffcf103ab71fb3f0ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIXTURE_GRADE_JUDGMENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixed fixture judgment is used only when no selected door supplies scheduling provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
+            "content": "sha256:c8ec802c2b7ce69ae063ed72f19868152be2bcd161a820ffcf103ab71fb3f0ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIXTURE_GRADE_JUDGMENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Completed-disposition task authority is built through the store and a fixed-now route review.\n\nAnchor: `build_route_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
+            "content": "sha256:a569b375757c44934ed287046a82b1271b635948ac0cdf00929c55b74f54c18b",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Completed task authority derives the typed candidate reference inside the store-backed publication.\n\nAnchor: `ResolvedTaskDocument`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
+            "content": "sha256:19320ec1e76e71be390c06cc4de967233b15db5fff2aa4c802acbcd0ae76606f",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f41f5c0e79e96ddc022876247552209378268c",
+            "content": "sha256:c8ec802c2b7ce69ae063ed72f19868152be2bcd161a820ffcf103ab71fb3f0ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "FIXTURE_GRADE_JUDGMENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

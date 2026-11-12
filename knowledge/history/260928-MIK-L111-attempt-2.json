@@ -1,0 +1,3092 @@
+{
+  "attempt": 2,
+  "closed": true,
+  "leaf": "260928-MIK-L111",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0DBGST",
+      "items": [
+        "sha256:f8264f5d6e98bc49e1525e671f15707616abce9b6cab16b23946b24a0d3bc235"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0PW4PN",
+      "items": [
+        "sha256:4109b0f99e40ad044d8de11845352715c761e2ba83968838a08ccbec20c0c559"
+      ],
+      "reason": "Added the pre-bootstrap parent/source assertion ordering: derive source from a dry-run parent with caller source cleared, refuse mismatches without publication, and retain apply-time current durable revalidation.",
+      "sources": [
+        {
+          "blob": "1d628c838dc068656971378f114183addcef346f",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0Q0EY3",
+      "items": [
+        "sha256:156bf178ac2ccbff09b5ca859f6b7576edf125d2f9c3be008144b29d24774dac"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-24GJYJ",
+      "items": [
+        "sha256:0f1c0a6aa1eec9ad348ae5382a4ab3a098ac9d2e1e8d82f64228df86ad660c24",
+        "sha256:af7aeeb6fec75ca08d4d9df7ab1ca499af90c627de366da429ecbb5aee3037e1"
+      ],
+      "reason": "Only model-visible description text was shortened and relocated to shipped docs/tool-details.md. The complete operational AST with docstrings stripped is identical to the checked predecessor; signatures, dispatch, authorization/guard ownership and the card's already-separated naming/measurement/authority boundaries still hold.",
+      "sources": [
+        {
+          "blob": "b8e58a711cf53344cfd68dc2f3c9567bee366bc0",
+          "path": "mcp/src/agents_remember/mcp/registration/sessions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/sessions.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2MNT3D",
+      "items": [
+        "sha256:c6ab90c4f081e34b484571b105406b05a2259012ab7a449739b517c87d801d53"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8dc438be72fd9c9ea6fc90fb0f624e7ffc576f95",
+            "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "8dc438be72fd9c9ea6fc90fb0f624e7ffc576f95",
+            "content": "sha256:1b654b5e1a131a4ca5470c7ef22680187aac0df72de5c59246e2af26abba6b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_every_role_organises_its_harness_work_with_seat_boundaries"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-BV411J"
+        },
+        {
+          "after": {
+            "blob": "8dc438be72fd9c9ea6fc90fb0f624e7ffc576f95",
+            "content": "sha256:e252a12a157f0d6e266fa5565130b1360ca3f5c49fd9e3218a7d60bd95687224",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_removing_each_affirmative_clause_is_detected_on_its_surface"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "8dc438be72fd9c9ea6fc90fb0f624e7ffc576f95",
+            "content": "sha256:e252a12a157f0d6e266fa5565130b1360ca3f5c49fd9e3218a7d60bd95687224",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_removing_each_affirmative_clause_is_detected_on_its_surface"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-CJT4MT"
+        },
+        {
+          "after": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-KCZHQB"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-R22534"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2X2WGM",
+      "items": [
+        "sha256:0ed376fac802ba00f5cba6cfaa22f422d2dadb871976df6b812192045678b557"
+      ],
+      "reason": "Worker/Reviewer intake clarification changes no affirmative harness-work clause: checked/credited helpers remain within the same assignment and permission boundary, boundary acts remain the seat's, review stays independent and Curator retains one writer. Include both current role carriers and both existing source-only wording proofs.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-30CGT4",
+      "items": [
+        "sha256:df8735aae49aaf450e3bc95658a23728730a97f748c12c91d0ed9529415a5d76"
+      ],
+      "reason": "This local helper/comment branch distinguishes an ordinary answered refusal from the raised-error channel, preserving producer code and summary/detail reason instead of synthesizing error. It is the concrete formatting seam of the existing bounded whole-result/state/next-call obligation, fully described by the corrected landing_answer_shapes card and the renewed project_landing_answer realization; it adds no independent record-worthy invariant or transaction authority. Whole inputs are unmodified and actual raised errors remain distinct.",
+      "subject": "hunk:sha256:df8735aae49aaf450e3bc95658a23728730a97f748c12c91d0ed9529415a5d76"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-403K4D",
+      "items": [
+        "sha256:6846c4e5d66112058d636e9e3d504721d060f6a4cad6547c34ed0c2bfc110923"
+      ],
+      "reason": "Reviewed the covered test/catalog delta: bounded ordinary-refusal vs whole-log assertions, source-only historical baseline aliases, expanded no-write input cases, removal sweeps and counted-change discrepancy regression. The route remains the same unit/integration evidence surface and does not claim a fresh whole-suite or execution grade; concrete changed test contracts are corrected in their own cards. The ruled sync only corrects K_B to the first landing; CODE bytes and the reviewed route meaning are unchanged. Renew against this new-base source population without claiming a new card edit.",
+      "sources": [
+        {
+          "blob": "f51ebc6d57918dd9bf36cc7168f448490be5b4e5",
+          "path": "mcp/tests/test_activation_admission_registered.py"
+        },
+        {
+          "blob": "81a0351b6175b1e5f60ef9ca29a27c91dabc0861",
+          "path": "mcp/tests/test_knowledge_read_boundary.py"
+        },
+        {
+          "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
+          "path": "mcp/tests/test_landing_state_refusals.py"
+        },
+        {
+          "blob": "e8a2a3d385320c87c5cd90c6449ebc0c2687d16e",
+          "path": "mcp/tests/test_no_grant_closeout_parity.py"
+        },
+        {
+          "blob": "7d46a086a6d26cce43f47306887e56f87cbaffbe",
+          "path": "mcp/tests/test_task_document_application_1.py"
+        },
+        {
+          "blob": "5ba297941c50aa39a86f83d5a0242b64565ee77e",
+          "path": "mcp/tests/test_unexplained_change_disposition.py"
+        },
+        {
+          "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
+          "path": "mcp/tests/test_worktree_start_preview.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-DC238B",
+          "revision": 1
+        },
+        {
+          "id": "INV-H8WSA9",
+          "revision": 1
+        },
+        {
+          "id": "INV-VGQTBR",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4QBYPN",
+      "items": [
+        "sha256:5a748af6c65ce41210eac4926c1732ab95abcd8eb6712e0f5c1b17ed0aa6867b"
+      ],
+      "reason": "Examined all three held member records and their same-source recovery/projection carriers. The refusal reason/error-channel cleanup and duplicated-detail trimming preserve actual state, full logged result, exact leaf address and executable separate argument values with quoting of the same argv. Recovery/legacy-format branches and tests are unchanged by this sync; no guarantee, route, membership or execution grade is authored.",
+      "revision": 1,
+      "subject": "FAM-26BYAY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-58QAY8",
+      "items": [
+        "sha256:08371f797ac0f13a20802dfa72521660b169b971572586431285d529af68417b",
+        "sha256:d374d2880f8d3190898cb8d0a521e519a973ba16735c155bfc4be32b9daa4974"
+      ],
+      "reason": "Added finite status-specific public reason sentences and distinguished parser/admission detail from the addressed next operation; source edge checks, no contract repair and activation authority are unchanged.",
+      "sources": [
+        {
+          "blob": "37b4bd7f357724bb1073445157627e8922fac037",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5DFW3C",
+      "items": [
+        "sha256:c8f003797aaf2acabeedd5fc056120b1b33f7799e3a010ad100613eb9fbbc295"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-63MBZV",
+      "items": [
+        "sha256:b4b4f249f4175c527c149b25d8802d30802026d2d5c643cb9a9a89389763b851",
+        "sha256:b4e5f2f33ebdfeeebd69b72a3945cf2bb74285259ebf3672e9484834d357a234",
+        "sha256:f6f0cd253c69f0eb101ddca69e690e5638a71442ac1d0cb4b826ae3d298f41e8"
+      ],
+      "reason": "The previously unadopted canonical documentation carrier now retains nine long tool explanations removed from registration docstrings. Its packaged copy is byte-identical and its existing adopted card has been updated. This is documentation relocation, not a new callable/guard/authority; no duplicate checkout-doc card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1fde4d3f71e970da8998e06312e8a3de73196950",
+          "path": "docs/tool-details.md"
+        }
+      ],
+      "subject": "onboarding:docs/tool-details.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-75QQF8",
+      "items": [
+        "sha256:140e5f7182eabf2ae72f224e4b7ae9d3fdcd603c7f3c9ae75a48bfaf09042456"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions. The ruled sync only corrects K_B to the first landing; CODE bytes and the reviewed route meaning are unchanged. Renew against this new-base source population without claiming a new card edit.",
+      "sources": [
+        {
+          "blob": "ee53a26799c1344843076340785bf5730d0ad6ac",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        },
+        {
+          "blob": "46bc5280766aa6e4da364b0c6c59b0d7d592893a",
+          "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+        },
+        {
+          "blob": "b46242836beae1dc5e215f8de325f7ab21c51733",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        },
+        {
+          "blob": "b8e58a711cf53344cfd68dc2f3c9567bee366bc0",
+          "path": "mcp/src/agents_remember/mcp/registration/sessions.py"
+        },
+        {
+          "blob": "a6c21d36a00325c697b486a47f997702d4973c0d",
+          "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7J4T82",
+      "items": [
+        "sha256:bd6670bd30c9be341deb76672ce3dbd0c397d51a07d9f2c13470eabb47deb497"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
+            "content": "sha256:717ef3f153b6432006eff447860616dc8fc74f32306da0cc89d5fe5bcf37092a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
+            },
+            "path": "mcp/tests/test_leaf_handover_review_rounds.py"
+          },
+          "before": {
+            "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
+            "content": "sha256:717ef3f153b6432006eff447860616dc8fc74f32306da0cc89d5fe5bcf37092a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
+            },
+            "path": "mcp/tests/test_leaf_handover_review_rounds.py"
+          },
+          "id": "PRF-PMEN4W"
+        },
+        {
+          "after": {
+            "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
+            "content": "sha256:486ca433713d952e74945c8aacf5bad076135c784e23ab3c3adf318be27a6bd4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_leaf_handover_review_rounds.py"
+          },
+          "before": {
+            "blob": "e9e3b8a889f277e7a8f5d34c6cb79825dd994d42",
+            "content": "sha256:486ca433713d952e74945c8aacf5bad076135c784e23ab3c3adf318be27a6bd4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_leaf_handover_review_rounds.py"
+          },
+          "id": "RLZ-68PVA6"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-MN85JH"
+        },
+        {
+          "after": {
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
+            "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "before": {
+            "blob": "b0dbbc40ee147ee5010f8fcdcba4f80c51e3ad21",
+            "content": "sha256:5bcd6e2ca335c16ccf9ec8c9e8fb18dd9a1df56054167a193ddb3dab6732493d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/verdict.md"
+          },
+          "id": "RLZ-WG14EH"
+        },
+        {
+          "after": {
+            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "before": {
+            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "id": "RLZ-ZP7MHN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-82J9JP",
+      "items": [
+        "sha256:0b2c9995a7c42b840fd297d7b5a6c39cc3f60e2d3771b3dcb8cf5c4f96f3300a"
+      ],
+      "reason": "Reviewer intake changes only how it observes canonical task/knowledge files. Reviewer-owned ordinary begin/result, settings/approved limit, stable sealed findings, record-only unchanged-candidate correction and distinct MEMORY count/report remain; this curation opens no CODE round.",
+      "revision": 2,
+      "subject": "INV-V7M37D"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-83S73Q",
+      "items": [
+        "sha256:db880f86e466e53c34e1ab2970242b94bc714d4d301db96d884194dc62547618"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8E0YQQ",
+      "items": [
+        "sha256:6fe8085ffdfe25f086082cd3f464c7368331ea2d414901f194a4026b4070baf1"
+      ],
+      "reason": "Only model-visible description text was shortened and relocated to shipped docs/tool-details.md. The complete operational AST with docstrings stripped is identical to the checked predecessor; signatures, dispatch, authorization/guard ownership and the card's already-separated naming/measurement/authority boundaries still hold.",
+      "sources": [
+        {
+          "blob": "b46242836beae1dc5e215f8de325f7ab21c51733",
+          "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/role_agents.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9FEK69",
+      "items": [
+        "sha256:6fa7a8315b139e7a20b3eb8695d614efe50894dbf0b5f6fe54dc1d7530335526"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 2
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-9MHSW8",
+      "items": [
+        "sha256:6446948a335ffa0fb9fe3b082dfd37cbbe3f9373d758e0713822da06de9d3970"
+      ],
+      "reason": "Examined all six member obligations and their current Worker/Reviewer/Curator, implementation/review/transport carriers. Canonical file intake is corrected; direct exact peer handoffs, independent review bookkeeping, pending/retry discipline and Manager's named occasions are retained. The joint division of seats and routes is unchanged.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_binding"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:ff5daff4dd37ba2cddd3058ae438a18152c47935c27eb0a088e81d744b00ff25",
+            "locator": {
+              "kind": "symbol",
+              "name": "agent_binding"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-1881JS"
+        },
+        {
+          "after": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "before": {
+            "blob": "fcf59cc63bd67401f035bd26fe21e6018d385cb5",
+            "content": "sha256:c327cf439bbbe64126236f89ce74fe605de29465d19085f2f677cae5c31e7d5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_launch_call"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+          },
+          "id": "RLZ-DY24T1"
+        },
+        {
+          "after": {
+            "blob": "ee53a26799c1344843076340785bf5730d0ad6ac",
+            "content": "sha256:b1f2ab11513a16fa0ac8f0b13f259308d63d50d268bf31b658fa815167c6062f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "before": {
+            "blob": "df41a546c63eba8fca68cfb360f962c4c354e484",
+            "content": "sha256:e4cb84afc5784e0e9efdf0c25e7247430a1dbb972a599563955d17cf15ec4bc9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/core.py"
+          },
+          "id": "RLZ-GEQTSN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9NVS7A",
+      "items": [
+        "sha256:d978a6e22f5213dbc1e7974f9c6658b297053fdcdfe09414f1302f2c5f97eaea"
+      ],
+      "reason": "The core registration changes only the context_packet description; operational AST and provider-capability launch construction remain unchanged. supportsMcpServers=false still receives no task-server definition or harness fallback, and the narrow server_info preapproval is not a restored assignment_read grant.",
+      "revision": 2,
+      "subject": "INV-N9D91D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-9V811E",
+      "items": [
+        "sha256:05e6b8505e87fbfc1db93c4fecbd09a05de67fe81b01c9be5785ccc3a7f6c455",
+        "sha256:12164ae49ccd67f7b143c38b2d1b2d65aee554d2845ecff939649502e980de76",
+        "sha256:17f0c6a99e9ad1721a35c3014b43becf87b7bedb79e140f0351c26da8a8b2eab",
+        "sha256:1bca9a88c99356fcd9bc81b747852746a3612203c7a766ef35215212f176a47f",
+        "sha256:24a1621181ff7da57e17c79a60793861a1c6f2baa5f0fc78d0b6369dc757c757",
+        "sha256:3ab7c655ba2ee4924186ac9376b52c727edde521ef3196bf9025adb9449c871e",
+        "sha256:4252b7d8b798a133e7585ed9f8518559cefad0ff87bccabb190636696f97a7a9",
+        "sha256:4996731a99fb2844ace09846ed35d6c0e3a585eb5b5e2b0b04a9a566b32809e1",
+        "sha256:4aa23090f01842728203310164182ea8def4b19ecb7e7e721db3d22b49aa512a",
+        "sha256:5c4ef18188673b535950dd2621acd5ef057f1d0afe87df8e329328f4bf7c6e81",
+        "sha256:6249d5c12256e22e860c6d7323b101732753aee72aa86456261d8e5bf8c000e9",
+        "sha256:892a1b3b705ba42fe5dec079d0ae52d5b832592c7540d5b38eff44d1241404d1",
+        "sha256:89ba6af1f2fba155ec7c78d0c6367d60018d17cff2eb76f298f56b12b09f269c",
+        "sha256:98fa5bcc9f3154bde3948856c4ff604548dbe24c404faff499980d2634469db8",
+        "sha256:9fe77021e3b268c4eb3376509b2080f6de82ee52260e680495c42334e91f9eec",
+        "sha256:a7f71428689c583e097052b1dbed2375fbd301df6c20cc9f46996b852af166dd",
+        "sha256:b689274f47ed6269845e3921b30ed27abdf3302b74f6c2c35c0a1638d0480a4e",
+        "sha256:be82f9fe9a94cc948673dc40df818f5530e96e4938d3135a9657be2f51e5c832",
+        "sha256:d83d54025086e9d396dc7c13ff714ac7c4da87dd266d5967b07c8748e2c3e299",
+        "sha256:e1f959df6f8345bf6213c2994bbc8faf84fd8da57b793a087d196ba6d242bc82",
+        "sha256:e81d405300708c8b89f9efc78f1209e12cd197ab441dd88021c253b1c02929d7",
+        "sha256:ed12103edaabbcdc6b3b5670f43aa7373b1451f7d9ebbfa162fd605b95fa8718"
+      ],
+      "reason": "Corrected the obsolete overflow expectation: registered ordinary refusals now must fit the existing bound without overflow/error/admission duplication while whole-log parser, malformed-input, own-contract and next-argument assertions remain.",
+      "sources": [
+        {
+          "blob": "f51ebc6d57918dd9bf36cc7168f448490be5b4e5",
+          "path": "mcp/tests/test_activation_admission_registered.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_activation_admission_registered.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AMX41Y",
+      "items": [
+        "sha256:b1f605bdf74a8932d3f271dbb22aa37bc2d5268d3bcc31da472906243bbe251c"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+            "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+            "content": "sha256:560c310997b2a7ff934065bb8a489b3e1be52e294cb7e8876cc385b280e4eab1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_question_operations_keep_conditional_routing_and_pending_recovery"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "PRF-9P5WRY"
+        },
+        {
+          "after": {
+            "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+            "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "before": {
+            "blob": "387f7657e824f6bdf14d470a49720a49a625a57f",
+            "content": "sha256:f1e0c160a5d37c58d17e9940f3c860554276bd061ffde0c3fcd11fc243c2bb10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_parentable_role_has_question_recovery_and_answer_provenance"
+            },
+            "path": "mcp/tests/test_developer_question_wording.py"
+          },
+          "id": "PRF-Z5CF4R"
+        },
+        {
+          "after": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-4JERMG"
+        },
+        {
+          "after": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-6QVTKY"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-AHY1E5"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-CJF248"
+        },
+        {
+          "after": {
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-E9F3YP"
+        },
+        {
+          "after": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-HSZ8FM"
+        },
+        {
+          "after": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-Q70RTA"
+        },
+        {
+          "after": {
+            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "before": {
+            "blob": "ec9c3e6658331150d5e253965df7876d572ba086",
+            "content": "sha256:b6f88d3195695321b41c9182d1c837378fb680523f732d21c670ba9f10b95594",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/review.md"
+          },
+          "id": "RLZ-QBD8GV"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-WH4X9B"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AWKEG3",
+      "items": [
+        "sha256:6a5f3c0bf8821d2a737364aa3cd9de0ad06d4dc02a66fd2be629c0b7ae3d9fdf"
+      ],
+      "reason": "Changed Worker/Reviewer/curation intake paragraphs concern file observation only. Parent-routed developer questions, pending busy recovery, unreachable-parent own chat, permission waits and quoted-answer receiving-agent provenance remain in the complete canonical bodies and unchanged sibling carriers.",
+      "revision": 2,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C6KXSY",
+      "items": [
+        "sha256:3a64233f7c5015beb2a69ae89629d744abe207d0d9bfefa02e083498bedee2a8"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CC57ST",
+      "items": [
+        "sha256:37080cb211f5363d01aecb9cf97d897cede1d45a0b95798f9bfa925e07dc2df0"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-7ZK6TT"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-JH0BAQ"
+        },
+        {
+          "after": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-MXJ3HX"
+        },
+        {
+          "after": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VESCVY"
+        },
+        {
+          "after": {
+            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+            "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "before": {
+            "blob": "65a10dcac925975e4ae642d264a343857bdae9c4",
+            "content": "sha256:4d0e8fe886c1806091a9355cad05d3d28199bf7b5bd9d1f5d4283c0ee015b2be",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "id": "RLZ-XF8A3Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-CEQH15",
+      "items": [
+        "sha256:a2bf0d913693bc1622e070c4630376115a4cd922c8f1ba46329cd7dc2345499a"
+      ],
+      "reason": "Canonical Worker/Reviewer intake now names exact file locations and reader operands, not a new transport or reporting plane. Exact frozen objects, peer lists/verdicts/knowledge and CODE concerns still travel directly between leaf seats; Manager receives only its named occasions and keeps transactions/landing.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CW0KKN",
+      "items": [
+        "sha256:f43d89781cc68a3faaa0351cf1dfba6640914a6c538aa409a4d1be762bf1459f"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DVSW4D",
+      "items": [
+        "sha256:ac142a537475136fd3501df41a5ecd712e93f52ac4d147e8d00e3206e9811520"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DWR65P",
+      "items": [
+        "sha256:0b92c8454555fb9fae143fd0bcde8a3b9e9883099722e03d5c0de87cb408a482"
+      ],
+      "reason": "Only model-visible description text was shortened and relocated to shipped docs/tool-details.md. The complete operational AST with docstrings stripped is identical to the checked predecessor; signatures, dispatch, authorization/guard ownership and the card's already-separated naming/measurement/authority boundaries still hold.",
+      "sources": [
+        {
+          "blob": "a6c21d36a00325c697b486a47f997702d4973c0d",
+          "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/tasks.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:0996320e34b68a41d7f99f1bf881914fa204fdcf2d0f1458be1329b844bc9c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:0996320e34b68a41d7f99f1bf881914fa204fdcf2d0f1458be1329b844bc9c47",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-B88P86"
+        },
+        {
+          "after": {
+            "blob": "b46242836beae1dc5e215f8de325f7ab21c51733",
+            "content": "sha256:80802c799a1fa45219e6805c273c93d3e45e10591c5cdbe7fa8fc171b91c33eb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "before": {
+            "blob": "9889d6afc13f67330d10fec8940800fbd002f1bb",
+            "content": "sha256:038244bfacd5f84c0ca1689249d36257c5e28cae0af72815ad027ec7bc752acd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "id": "RLZ-C3R4TK"
+        },
+        {
+          "after": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_override"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:504575e3456b64d092dc7207367c47f23f711d6ceebedffe2b0bad7a1419c513",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_override"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-D3P8S7"
+        },
+        {
+          "after": {
+            "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
+            "content": "sha256:b96d720cf0cbb4569e12111eccc6bb1cb94bcfed1ccd741cb3f571b96f895f92",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "f8c5cda3a351c9b5714de0814d7536c13e51a097",
+            "content": "sha256:b96d720cf0cbb4569e12111eccc6bb1cb94bcfed1ccd741cb3f571b96f895f92",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-WSAM04"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E2DN2F",
+      "items": [
+        "sha256:0ab55c24a56a0e7a5744c045cbeb06e517d50f40cdbbb17026f9d52a86115dd9"
+      ],
+      "reason": "The role-start/set registration only shortens explanatory strings; callable choices and mode/permission-bearing inputs are unchanged. Existing _resolve_mode, _agent_override and launch routes still select only host-offered authorized modes and refuse unknown offerings. Refresh the changed presentation carrier without claiming host-actual first consumption.",
+      "revision": 1,
+      "subject": "INV-7DMXZ3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E3SAJE",
+      "items": [
+        "sha256:0f6ca38e921aa679947b16aee935dd744b7a81aacaec671c05ac747120cf8d6c",
+        "sha256:407e42a0e326a70342adbaafa781b6f4c665818e317aededb1aefb1366eeb7d0",
+        "sha256:7b6ffb6e8814b6cb531f72b6fe8e0ce9aab96e5458b952805349bdeca9bd713e",
+        "sha256:91b63172dbf038eb2847ca2597c79e4d5a0788df8412d7dfe047bf9f8ba4f4c3",
+        "sha256:cb8764a82e59295f0f9cba0fbbe2ca3431875dcd9202d5edc9bb416d5c005dfc",
+        "sha256:d5dc37e60b2afe1f4724b597aed2932b93c7eadf30974f52a3fca751f20fcff4",
+        "sha256:e767122ff8043b85bbaeebb9d17e1598de8ef007dd7ca23a00e0686b583f7d52",
+        "sha256:eb09cb51dafd117e707fe7124ee7681ec949c4293c0b51bd15dcc619030bf363"
+      ],
+      "reason": "Corrected the former no-count-key-repair claim. Only the baseline subprocess derives L110 route-index count aliases from its own written/unchanged/staleIndexes facts. No current/grant response is available there; raw grant/current and old/current comparison assertions are retained, with earlier failures labelled historical.",
+      "sources": [
+        {
+          "blob": "e8a2a3d385320c87c5cd90c6449ebc0c2687d16e",
+          "path": "mcp/tests/test_no_grant_closeout_parity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_no_grant_closeout_parity.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F5HVRS",
+      "items": [
+        "sha256:85ec90791e4e5a002f62ca4eae904810b5bc8c2161625b03add55c032ddba902"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+            "content": "sha256:ca91c86191d4109203694cb52e0a200e334b59b9002fc57c978edfc7233d472b",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_landing_answer"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "before": {
+            "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+            "content": "sha256:31590d40eb7608e3c9a1891a727e13695bc47c44fdb59d0a5e8bdf814df1dcf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_landing_answer"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "id": "RLZ-3Q48EF"
+        },
+        {
+          "after": {
+            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+            "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_task_doc_answer"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "before": {
+            "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+            "content": "sha256:646d6e0baa4b046f6d01d45ed389f10d7cc4ee6d336c1701660919c238b09566",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_task_doc_answer"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "id": "RLZ-CTF3D5"
+        },
+        {
+          "after": {
+            "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+            "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_role_message_answer"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "before": {
+            "blob": "c9037c26c6829ee8aeae76679901bde831544ee1",
+            "content": "sha256:b25c16c7bc27c73169c837588029ceb3db014eb77358974ce7fa09959e2b6cf1",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_role_message_answer"
+            },
+            "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+          },
+          "id": "RLZ-DJE35K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F65E5V",
+      "items": [
+        "sha256:ea67a4eeefc0a59b607191ac76f65d4b34c4fde955e5f7a1f7282e947499f60e"
+      ],
+      "reason": "The existing projection obligation still keeps reached state/blockers/executable next call and a complete separately logged owner result. Ordinary refusals now carry summary/detail rather than synthesized error and suppress duplicate investigation tables; raised errors remain distinct. No statement, scope, revision, target budget or whole-log authority changes. Refresh the changed project_landing_answer carrier and preserve both unchanged task/message projection siblings; source-only correspondence is not execution or acceptance.",
+      "revision": 1,
+      "subject": "INV-DC238B"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FDCPS9",
+      "items": [
+        "sha256:2fc06a62e5a85c891f9f3bf278870a7fb3a4f5c70bf2f480273855a2a78e1f00"
+      ],
+      "reason": "Corrected ordinary-refusal commentary to keep producer code and summary/detail reason, remove error except code=raised, and leave duplicate investigation/admission in the whole log with executable next-step input preserved.",
+      "sources": [
+        {
+          "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/landing_answer_shapes.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GA7A3H",
+      "items": [
+        "sha256:41d076e38ac39b2123b05577f4a4d6dc81b199e562773200851e22c8772654c8"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GEQCX7",
+      "items": [
+        "sha256:ff8e546644ddaf9babbbc7b3f5e3fcc5b749c88794af83703f9f8f1f5461a453"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H8KHGX",
+      "items": [
+        "sha256:40ba49fa94950146987f456f025261aa2fcf39207de380fc5bfe57cdddc27960"
+      ],
+      "reason": "This import supplies dataclasses.replace or the existing task-edge refusal helpers to the already-covered start builder. The import has no independent invariant meaning; actual pre-bootstrap source/parent validation is covered by the same-ID current start realization and precise updated source card.",
+      "subject": "hunk:sha256:40ba49fa94950146987f456f025261aa2fcf39207de380fc5bfe57cdddc27960"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 2
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-H9FK37",
+      "items": [
+        "sha256:d674e7a18b966c0f3c301eefc82efa55c3b050f751af5b660473927286a688ec"
+      ],
+      "reason": "L61 owns this exact guarantee and this pass changes none of its words, members, routes or revision. Examined all three member records: dashboard and settings/reference contracts are unaffected, while the changed first-read role/operation sources are propagated as exact canonical copies without assignment_read or retired-role restoration. L111 preserves the held joint promise; correspondence is not a new launcher/generator execution.",
+      "revision": 1,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HF5JQN",
+      "items": [
+        "sha256:6a9e2749b197dd4daf6840eccc890d23f2eefe1f41701d259757b8ecfb556a58"
+      ],
+      "reason": "This import supplies dataclasses.replace or the existing task-edge refusal helpers to the already-covered start builder. The import has no independent invariant meaning; actual pre-bootstrap source/parent validation is covered by the same-ID current start realization and precise updated source card.",
+      "subject": "hunk:sha256:6a9e2749b197dd4daf6840eccc890d23f2eefe1f41701d259757b8ecfb556a58"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J01GEP",
+      "items": [
+        "sha256:e451b35623fdabf820bea06c24e3f5613da5f02b9b32138b918109efb6c97db4"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JQAH4M",
+      "items": [
+        "sha256:b464671bf5626936d36a18eaa0d50bf42a3410c22b40916656df579fb4d4c594"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K4366R",
+      "items": [
+        "sha256:b4f54320fd17dcc923f3854860cb5040422e2ba18238b9a3cd39a63c3ce14baa",
+        "sha256:de5e38e823b17ec4af61276eed4736b74aacd73beeedd72b4b6ab50c33465b21",
+        "sha256:e9f3f5c003089b811bc1662420bae2d150a40e223c4094e9fd1f9a9a931b07f8"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions.",
+      "sources": [
+        {
+          "blob": "81a0351b6175b1e5f60ef9ca29a27c91dabc0861",
+          "path": "mcp/tests/test_knowledge_read_boundary.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_read_boundary.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M1YV98",
+      "items": [
+        "sha256:09e9fb4b757fa29a9632a550ad02449dc79b90f54b6928480e483a393b75d654"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions. The ruled sync only corrects K_B to the first landing; CODE bytes and the reviewed route meaning are unchanged. Renew against this new-base source population without claiming a new card edit.",
+      "sources": [
+        {
+          "blob": "1fde4d3f71e970da8998e06312e8a3de73196950",
+          "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MFY8Q9",
+      "items": [
+        "sha256:5f096ae4f73298f2e66990ed2a3da2a648112e7e83a3839896b12a2f4c8f611b"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions. The ruled sync only corrects K_B to the first landing; CODE bytes and the reviewed route meaning are unchanged. Renew against this new-base source population without claiming a new card edit.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/curation.md"
+        },
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "1fde4d3f71e970da8998e06312e8a3de73196950",
+          "path": "docs/tool-details.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N3R7BR",
+      "items": [
+        "sha256:0a1ca328ce66ec113f907ac1441251769381d9b7697c25cfe163703bbaf349be",
+        "sha256:30f4836e07e48aaa1924d4fc628a0a891b909db2a8d114bb2b510186a150004d",
+        "sha256:343b0ab200c6b3f2eb54aee3cc08d7f7227701a580ca6d7a58d0828721cf9d3d",
+        "sha256:44c5f49b97e82a06be4a2447ae4c71a910bfda125585ed550e9b765d21d0d5d5",
+        "sha256:7902497d0527a3b44ea87b9be75619e68ed64c68faa05a2b7cb0005192bccc8d",
+        "sha256:96c0030d335dbbc5bd11197f938c25ae742cb4f47017d5b530b9849c4808a3bc",
+        "sha256:adc3c97d693dd5fd26b541070d4446dc7c1e81477530f0d612bda1c4b09ef7e2",
+        "sha256:aefe0011eca822793126cf46fcf191b7a4c413e08061552735b064c0ac46d72c",
+        "sha256:b2c36dcd2f624227ed14a0d2cbbf9e4a74588a0bdee62f5173c33c97a96fb683",
+        "sha256:b33f6125d8b5fec907b199258ccea0685f2a01058cee164cee0e4031cf9b1ff2",
+        "sha256:db2ddc4502277040b46b3da38458a8480edf4872adf9741bd213ec87ecda9800",
+        "sha256:e1467809891f50204301e6b24ee9fd56ae99dc31635202b27e5d97d8d76a57a9",
+        "sha256:ea638ef2133ee3f1c2f79fc712defab21c50799795ba2f74b119bd6ab89e1f73",
+        "sha256:f86b4c85943735d20a09c7af6652f22bb4c2f1e52612fcbfe7e5f74d8032fab0"
+      ],
+      "reason": "Documented eight additional shipped skill scan roots and obsolete taskDocReadArgs/get/context instruction patterns; ordinary writes, strict removal refusal and undeclared-key rejection remain unchanged.",
+      "sources": [
+        {
+          "blob": "7d46a086a6d26cce43f47306887e56f87cbaffbe",
+          "path": "mcp/tests/test_task_document_application_1.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_document_application_1.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-N5YNF2",
+      "items": [
+        "sha256:0de4e4f6027016591808f2ebd6ea676b2383628b4429a392811845d80dd12867",
+        "sha256:4572595cb40335e27f76740bd647e3c36ad48f6c820ffa814fb9e3fe43995ff1",
+        "sha256:47c5c4edf1d89e916e35782700d96b7ac41de8e67a486f6f459f691de123adc2",
+        "sha256:4f54b1156f93ccda004ad2738fbd19b17c5a5419f0f515a2e7b83b4b927f842f",
+        "sha256:a41096a6221d87f8fb7a6aa351ad8d30838922bc9e9adf9cc85899a48db9ad84",
+        "sha256:fe905b740d2abc1b2f06e155099ecc444526a9289693760ea10733784b939475"
+      ],
+      "reason": "Corrected attribution of ordinary/pre-baseline admission: the optional signature and application guards are unchanged; the short description gives leaf call cues while the shipped long document retains the complete two-admission doctrine. Typed sync/start/poll, baseline/carryover and exclude dispatch bodies are AST-identical.",
+      "sources": [
+        {
+          "blob": "46bc5280766aa6e4da364b0c6c59b0d7d592893a",
+          "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/memory.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NEK4BA",
+      "items": [
+        "sha256:dd477dd1c41bf5b47e96811d918658493de4b0138063f602ea1e3ff214891fa7"
+      ],
+      "reason": "This local helper/comment branch distinguishes an ordinary answered refusal from the raised-error channel, preserving producer code and summary/detail reason instead of synthesizing error. It is the concrete formatting seam of the existing bounded whole-result/state/next-call obligation, fully described by the corrected landing_answer_shapes card and the renewed project_landing_answer realization; it adds no independent record-worthy invariant or transaction authority. Whole inputs are unmodified and actual raised errors remain distinct.",
+      "subject": "hunk:sha256:dd477dd1c41bf5b47e96811d918658493de4b0138063f602ea1e3ff214891fa7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NFR6Y4",
+      "items": [
+        "sha256:237e46694c2b0b74a9638bec72a3661f90b9b040d4702c2d763fbdce74de4efd"
+      ],
+      "reason": "Replaced operation=get/taskDocReadArgs-as-tool-call advice with exact canonical file locations and actual named-memory reader inputs; Worker CODE-only ownership, read-only MEMORY and direct peer handoff remain.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
+            "content": "sha256:3bf811586700629c2ae24de72b0d3ae46021022e4fae3023c5e48fbabf7a40ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+            "content": "sha256:3bf811586700629c2ae24de72b0d3ae46021022e4fae3023c5e48fbabf7a40ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_apply_re_resolves_source_and_persisted_parent_preview_stays_read_only"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-31JXQC"
+        },
+        {
+          "after": {
+            "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
+            "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+            "content": "sha256:f9b0ff1c796c84cacf9b2008984d93638cac24ca8d520264c2ebd1b1190f35a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_registered_first_leaf_preview_is_repeatable_without_publication"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-3BA4YQ"
+        },
+        {
+          "after": {
+            "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
+            "content": "sha256:f19addd277973e293c9dac65d7f6c767bfe43ee25afa336577edee7220d58d74",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+            "content": "sha256:3b9d4abdac9864d26ecb08a14bab93d5d3f7f158d884f39cf692dbc80271c991",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_invalid_public_leaf_source_base_and_protected_ref_stay_refused_without_writes"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-5Z9PGW"
+        },
+        {
+          "after": {
+            "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
+            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+            "content": "sha256:538104ce3f245bf86b9cb9b29e2760c1a7c7f2424461ff552ae95903b3635c42",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_or_unreadable_persisted_parent_after_preview_is_never_replaced"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-63NF6V"
+        },
+        {
+          "after": {
+            "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
+            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "before": {
+            "blob": "4067f2ff54856ac6eca0519499f5dfa6424b0cac",
+            "content": "sha256:1fed1e0cf07033e9e4a221c18793b98dfd1c994bddc03dfd8c3c3035392fe1d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_preview_handoff_is_failure_sensitive_and_cannot_supply_durable_authority"
+            },
+            "path": "mcp/tests/test_worktree_start_preview.py"
+          },
+          "id": "PRF-AKPX5R"
+        },
+        {
+          "after": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_lineage_start_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:1f55299fdc0743f470ed6fbc002652e45e36d9b364a87b7d20427e97f2d0b558",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parent_lineage_start_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "id": "RLZ-4BP8FB"
+        },
+        {
+          "after": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:dc43c1e231297170abed39368b5dd7e562aa6377ea5ef4b6a2585821b87a2fe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:dc43c1e231297170abed39368b5dd7e562aa6377ea5ef4b6a2585821b87a2fe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_materialize_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "id": "RLZ-5F6FY8"
+        },
+        {
+          "after": {
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
+            "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_parent_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "before": {
+            "blob": "9e3618826393608178a240a2aefc6fe4a3c8a366",
+            "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_parent_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "id": "RLZ-D4SS5P"
+        },
+        {
+          "after": {
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartContractPlan"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_plan.py"
+          },
+          "before": {
+            "blob": "3370d0e27cac3d4a3c5aba90530883235032262d",
+            "content": "sha256:7690f84401be5f748fb2872f5235ca90148077d66730e94f93e3f71932f2768e",
+            "locator": {
+              "kind": "symbol",
+              "name": "StartContractPlan"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_plan.py"
+          },
+          "id": "RLZ-EPYEZA"
+        },
+        {
+          "after": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:b4d904af9292974d1ec56bbae104b4aaf973cfe81c3f06951c6ab4bfd9c9d155",
+            "locator": {
+              "kind": "symbol",
+              "name": "_plan_start_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "id": "RLZ-HS8RJP"
+        },
+        {
+          "after": {
+            "blob": "1d628c838dc068656971378f114183addcef346f",
+            "content": "sha256:31e4b2e4974fde590c271366b702116379d31fcf74f0aef94cd05b76a3c1e689",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_start_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "before": {
+            "blob": "a5a5d52ff4fc8f4f9e0039688dab818a164a7b84",
+            "content": "sha256:9b21cb4c6dcc7ab9142cd40c862fafc4e842d2bb6eedf54c11faf6a9115f2b00",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_start_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+          },
+          "id": "RLZ-S6D64F"
+        },
+        {
+          "after": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:85b06a877328df7797297eb6fe45cd70602017caeca3cab20b6eff82cd70b230",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "before": {
+            "blob": "dfc56ac646754ed443e017689871871e79b81d90",
+            "content": "sha256:85b06a877328df7797297eb6fe45cd70602017caeca3cab20b6eff82cd70b230",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "id": "RLZ-T7WGDA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NR5127",
+      "items": [
+        "sha256:a27f13c62cade849583fe3e00fc1910d77235a7a6d48e92ec25834b60c71f36f"
+      ],
+      "reason": "Current _build_start_contract rejects caller source/parent mismatches before bootstrap and still carries only the same-request owner-validated planned parent in explicit preview; actual apply re-resolves persisted current authority. Original exact-source/refusal/no-publication and call-record proof facets are retained, with the previously retired PRF-2W13PT and existing replacement PRF-3BA4YQ kept distinct; no fresh execution or universal zero-I/O is inferred. In this new attempt the writer's actual HEAD base83dec already holds PRF-3BA4YQ and lacks PRF-2W13PT: no proof addition/removal is performed here. Therefore the new row is no_impact at unchanged revision2, not a replay of the closed attempt's extended/removal row. The immutable old history retains that original before/after disposition.",
+      "revision": 2,
+      "subject": "INV-EX6T0F"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NV2K86",
+      "items": [
+        "sha256:2fdb012fd4ac9ba2b741468e1d68c3790fa97b2ee9892655a6610e983a60075e",
+        "sha256:4785b460aa1a679cf03ce761217d9b68d5da5bea01b9cc288c87ff5f55a27ff9",
+        "sha256:84da418b3cf8b4b43224d0ca3bfcac1ffa9afed12ef71f0dc40d687e17f0e5d7",
+        "sha256:ad53e25da5dee75ae3028a98ac2928614adcccd2a5596337bdc952a0a6e55ea8"
+      ],
+      "reason": "Added the two task-derived parent/source mismatch states and corrected the old three-state census; caller parent is an assertion against canonical topology and the retry carries corrected field plus preserved operation inputs.",
+      "sources": [
+        {
+          "blob": "56033cbab370647c1152aefbc52572442f49be9d",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P77M97",
+      "items": [
+        "sha256:33ab0fbd8b2d7e36563dde163511b7b497cd4969e96230a06b68908d32e712c5"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PAQFAR",
+      "items": [
+        "sha256:39577bb035418e55f16ac96a459a6ea91e6fd180a5424b71203913fdd187d808"
+      ],
+      "reason": "This local helper/comment branch distinguishes an ordinary answered refusal from the raised-error channel, preserving producer code and summary/detail reason instead of synthesizing error. It is the concrete formatting seam of the existing bounded whole-result/state/next-call obligation, fully described by the corrected landing_answer_shapes card and the renewed project_landing_answer realization; it adds no independent record-worthy invariant or transaction authority. Whole inputs are unmodified and actual raised errors remain distinct.",
+      "subject": "hunk:sha256:39577bb035418e55f16ac96a459a6ea91e6fd180a5424b71203913fdd187d808"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-PHSMK9",
+      "items": [
+        "sha256:72f41bcda8c196340439e3469f8927928bbad1201454fefb346421ef7a7a816c"
+      ],
+      "reason": "Examined all five members at their held revisions and the changed canonical intake alongside unchanged parent/question operations. File/reader schema correction leaves actual-parent-ID question routing, own-authority recommendations, permission waits, quoted answer provenance and separately addressed ordinary transport remedies intact; no family/route/member revision is authored.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PT4HWW",
+      "items": [
+        "sha256:b7775b923c8bb2bc5e08fa28f2408abb7a1f1510a3724f4d79bab4ab6d59f1ad"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "content": "sha256:1337d10a96d7bcd9a69ade1adc6f2fe6b3deef2efc090ca5f4185bb8cb78076a",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "content": "sha256:57dc196bf640467200c67ef9fa2912cd3340f4d427f45b9f1af5a643d113a59c",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-X79EQQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PWGK1H",
+      "items": [
+        "sha256:0f7efdf7d8290fcd1fe33bcabe0a3cbddb6d49e334fbc9f05f984f84c4787c69"
+      ],
+      "reason": "The bound-curation intake range now states exact file observation and agents-remember-task reader inputs rather than a removed task_doc read. It retains the fixed task-server namespace and no alternate-server/configuration workaround. The launch binding construction is unchanged; this contextual instruction anchor is not new host execution evidence.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QMGK60",
+      "items": [
+        "sha256:4e821c5b2eb49c2f71ac3e53966287e8eac7b69aa8915f2a9eaf713ede3ad8b6",
+        "sha256:5388f23c3083afd049d43c11ce286a49fc79d273960df79733a7af793f0d7ec1",
+        "sha256:5b107e36f93398ec17d95ba4d49480f66367d6e6e9219c258a6ef370eee786a7",
+        "sha256:7ceb1d00707bee18aeb06b78eaffcb8c17f917701fa6f360f17e5c8730864e0a",
+        "sha256:c030677f586c39b1617c456adbc9a54b270760152d6bf697805221b236a80c04"
+      ],
+      "reason": "Corrected the card's false constant countedChange account: the frozen implementation gives trace facts and row selection the same measured K_B/K_C card change, even without a separate trace item. Coverage split, explicit source blobs, row requirement and stable hunk IDs remain.",
+      "sources": [
+        {
+          "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QQSQEG",
+      "items": [
+        "sha256:60bc58840140f87ed07a1e6ea9cbd3759707888f95205e3e72e732e0191f4ed0"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QV4J2B",
+      "items": [
+        "sha256:0884176d7b4d6adf49a114652417efedae145b54038c2d5470905fec21efe09a"
+      ],
+      "reason": "Added exact canonical file intake and separated knowledge_read memoryRoot from read_ar_files task_context without changing independent review, write-only task_doc, scope refusal or peer transport ownership.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QVW2T6",
+      "items": [
+        "sha256:06cbce46153a6491e80f1945f74062babce5498d84366e41c20edba456e90873",
+        "sha256:285ff7fc2515d76f278ab4b97a52a207ae92e4874a5c329f31871301e2fbd6cc",
+        "sha256:51293ba154fddcf3788254f08ce54c533c2c2612c90b952ade70a03476daf44f",
+        "sha256:554ab9d48412271068cfb9f2d5cc1e846aa5bc852d25216103d5f554b3e684d3"
+      ],
+      "reason": "Added the actual expanded shipped long-description ownership for nine relocated tools. Callable signatures, application guards, existing build/install/gone-path doctrine and copy/install route are unchanged; docs are not execution evidence.",
+      "sources": [
+        {
+          "blob": "1fde4d3f71e970da8998e06312e8a3de73196950",
+          "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RT5QBZ",
+      "items": [
+        "sha256:0ca1f499b4a3ac0ec3ea6835b1f4ad31e12b98ee8df8bed782f29c723163d848"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-3QTBC5"
+        },
+        {
+          "after": {
+            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+            "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+            "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-7KXE63"
+        },
+        {
+          "after": {
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-R4SKXV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RZ43DM",
+      "items": [
+        "sha256:c46061df6dda422f3b19034491c0990f9b625ec3e5363f19c0f0461aecae52e2"
+      ],
+      "reason": "Canonical Worker/Curator intake now opens supplied task files and uses the correct reader schema. Their supported sync/conflict handoff, Manager capture/verification/staging and Worker continuation clauses are preserved verbatim; no transaction authority is moved.",
+      "revision": 1,
+      "subject": "INV-7E3JNX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-D0XTAP"
+        },
+        {
+          "after": {
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-K60P42"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-R5RASM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-S18SE9",
+      "items": [
+        "sha256:42ec9c5cac7e217e92840999f7a437ce30e6befb26cf397ae270cba12f2e23fa"
+      ],
+      "reason": "The corrected file intake does not change the Curator's duty to route evidenced CODE concerns to both Worker and Reviewer even after CODE PASS, to author nothing for absent behavior and to repair no CODE. Review response and Manager disagreement authority remain unchanged.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SDE60M",
+      "items": [
+        "sha256:fdc4e677de9c2cf2ab6fa7746a63257c039ab19bf818f55be7da9f7c544287a0"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T5G0AQ",
+      "items": [
+        "sha256:4bdf3f630a1b3ef69d719c57d7c5ed78b5a99fd7c0e5684c35a605877383145e"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions. The ruled sync only corrects K_B to the first landing; CODE bytes and the reviewed route meaning are unchanged. Renew against this new-base source population without claiming a new card edit.",
+      "sources": [
+        {
+          "blob": "56033cbab370647c1152aefbc52572442f49be9d",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/leaf_ref_start.py"
+        },
+        {
+          "blob": "37b4bd7f357724bb1073445157627e8922fac037",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/master_series_admission.py"
+        },
+        {
+          "blob": "1d628c838dc068656971378f114183addcef346f",
+          "path": "mcp/src/agents_remember/worktrees/modules/startup/start_contract.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V9TW4C",
+      "items": [
+        "sha256:16c223ebb908098830f3fa2f2326bd78cdcd6f4352399136d446d0e757d5f684"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/reviewer.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VBRZ6M",
+      "items": [
+        "sha256:aced075e98ee9606ea5536f7758474be8058f6629af9b5d445ab548016a4d419"
+      ],
+      "reason": "Added preview and real wrong-parent/source cases with exact mismatch codes, no error/overflow, preserved dry_run/skip_provider_setup and corrected nextArgs, checked no-parent-publication and the existing strict state/record oracle after each call.",
+      "sources": [
+        {
+          "blob": "986a28a64629cd9408b8cbc7bb446a27c0917af5",
+          "path": "mcp/tests/test_worktree_start_preview.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_worktree_start_preview.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VR52FY",
+      "items": [
+        "sha256:c7a2b86f293e35bc42509775f6a090631a6a2d207dec8bc1222c5945d3a2ac57"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/roles/worker.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WR92K8",
+      "items": [
+        "sha256:92385f9cabd4104057362750566de69dea77fff3f8f024de8bac7a97f41253fa",
+        "sha256:9ae2015a2f70486fa5c65b81e7e6205f3d39f9773b19584c6570ad06cde5862f"
+      ],
+      "reason": "Added the ordinary refusal no-error/summary contract while preserving exact codes, state/no-write guards, next steps, independent whole-result comparison and existing completed-closeout waits; this is source inspection, not execution.",
+      "sources": [
+        {
+          "blob": "56eddc80b235913edd4ad7b2e50055673f0db23e",
+          "path": "mcp/tests/test_landing_state_refusals.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_landing_state_refusals.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 1
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-X22QZS",
+      "items": [
+        "sha256:2b552c50444d335ea5cda6caed550002c76873d49c5144f75fb1063d595fdb85"
+      ],
+      "reason": "Examined all eight member records, unchanged catalog/settings/mode/instruction/receipt construction, and the docstring-only registration changes. Host-offered accepted fields, least working-mode selection, unauthorized/unknown refusals, requested-versus-observed choices and provider-capability task-server/no-fallback branch retain their separate boundaries. No host-actual ambient exclusion or first-agent consumption is credited.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XK1W54",
+      "items": [
+        "sha256:e7c70a8faff6c56c355729c535f5f76690cc2dba758191bbe0994ee7a8f546ea"
+      ],
+      "reason": "This local helper/comment branch distinguishes an ordinary answered refusal from the raised-error channel, preserving producer code and summary/detail reason instead of synthesizing error. It is the concrete formatting seam of the existing bounded whole-result/state/next-call obligation, fully described by the corrected landing_answer_shapes card and the renewed project_landing_answer realization; it adds no independent record-worthy invariant or transaction authority. Whole inputs are unmodified and actual raised errors remain distinct.",
+      "subject": "hunk:sha256:e7c70a8faff6c56c355729c535f5f76690cc2dba758191bbe0994ee7a8f546ea"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-EX6T0F",
+          "revision": 2
+        },
+        {
+          "id": "INV-THS1XT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-XQDQ95",
+      "items": [
+        "sha256:4aeb1918d1a9d7e9433c0d1297671e1eb63677ff1ec57437eeb8e6aafb17315d"
+      ],
+      "reason": "Examined both member records and the same-request parent/source preview, existing/absent memory-ref facts and apply/recovery code. Parent/source assertion refusal precedes publication, preserves actual retry flags and reserves nothing; original startup-state and call-record boundaries survive. No guarantee/member/route change or fresh proof execution is authored.",
+      "revision": 1,
+      "subject": "FAM-SZ4B70"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y62S7W",
+      "items": [
+        "sha256:06e07ab8ed97e4487ac5f2f3b6c75e69d7f4f6df3c3f8954483f9d419f71db78",
+        "sha256:2477d48f87d3a66b92d77e41fcca6d2a7def7fa8e8de60d2500f8a7b0dedaf94",
+        "sha256:56c279bf8b9b3b6316b3cf2b2d70ace8bf39a06a42055fd66b67ac2272c441a5"
+      ],
+      "reason": "Documented the new actual-updated-card fixture: no separate trace item, ordinary writer row, worklist satisfiedBy, gate predicate and countedChange=True must agree. No bare counted edit or no-impact relabel is credited.",
+      "sources": [
+        {
+          "blob": "5ba297941c50aa39a86f83d5a0242b64565ee77e",
+          "path": "mcp/tests/test_unexplained_change_disposition.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_unexplained_change_disposition.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y8KBZ5",
+      "items": [
+        "sha256:0578cea6a8e236837347b0f9829bfd34efa665ed3f03f20769830ca707b883c6"
+      ],
+      "reason": "This local helper/comment branch distinguishes an ordinary answered refusal from the raised-error channel, preserving producer code and summary/detail reason instead of synthesizing error. It is the concrete formatting seam of the existing bounded whole-result/state/next-call obligation, fully described by the corrected landing_answer_shapes card and the renewed project_landing_answer realization; it adds no independent record-worthy invariant or transaction authority. Whole inputs are unmodified and actual raised errors remain distinct.",
+      "subject": "hunk:sha256:0578cea6a8e236837347b0f9829bfd34efa665ed3f03f20769830ca707b883c6"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YE1DT7",
+      "items": [
+        "sha256:61bb033d1e2d4742a752061fa0fd8199ceca52458b0a8a220dc44129727d138f"
+      ],
+      "reason": "Replaced retired task_doc tool-read instructions with exact supplied rendered_path/json_path file reads, knowledge_read memoryRoot and read_ar_files-only task_context. The one writer, peer handoff and no transaction/alternate-server boundaries remain.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YNCEYK",
+      "items": [
+        "sha256:6a3d8fcbcb8d0b75752b123ff828fa526a7c3decac1a61e3f078c64514ece607"
+      ],
+      "reason": "This unadopted generated carrier matches the complete canonical skills/l-01-agent-lifecycles/operations/curation.md bytes at C. The change replaces the retired task_doc read with supplied canonical file locations and the actual memoryRoot/read_ar_files context split. Existing role duties, peer/parent authority, independent review and transaction limits are preserved; its governing route/packaged contract remains the adopted memory home, so no separate mirror card or invariant is introduced.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:5f419117f328889535fc531f833e60e635b52cd5aa8f0d81abdcfae3c16e56e3",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:079ba5da39c2b61e2df1b27b6f9ef37630306bbb2eef0add47545a2eb5c22aff",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-19NZ18"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:badec93f58c0dd75d46c32666acb9b2e2b63e3ab6a64c53f5367b5c5b8f41092",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:92dcedcd2497d46774810fe5ab551db0448e9b4111eca2c52f1ab3b4edb6e0a1",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-PC6PG7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YR4N3N",
+      "items": [
+        "sha256:5c300281251904b5263d41756eea8ccfddc2b88ab6e9415393f607b652207973"
+      ],
+      "reason": "Worker/Reviewer paragraphs now distinguish knowledge_read(memoryRoot) from read_ar_files(task_context) and canonical own-file reads. This does not change the context_packet/read_ar_files task/contract admission, enclosing versus current readable grant authority, absent-context roots or prohibition on caller-selected roots.",
+      "revision": 2,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YRMN8D",
+      "items": [
+        "sha256:d8430df4e0e06b3d67a51e2daf7dcde6a4c94e3fc5a15849a29f62aa7a441635"
+      ],
+      "reason": "Only the model-visible coherence description is compacted, with all required publication operands and stable-manifest authority retained and long doctrine relocated intact to shipped tool-details; operational AST, signature and dispatch are identical.",
+      "subject": "hunk:sha256:d8430df4e0e06b3d67a51e2daf7dcde6a4c94e3fc5a15849a29f62aa7a441635"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YTF18V",
+      "items": [
+        "sha256:d4d57f1f5834acf3945835d50e27974a4df26b1d48e8001e6ae385965778fc6e"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions. The ruled sync only corrects K_B to the first landing; CODE bytes and the reviewed route meaning are unchanged. Renew against this new-base source population without claiming a new card edit.",
+      "sources": [
+        {
+          "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+          "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZAMRXV",
+      "items": [
+        "sha256:0fe8f90d5b2318aaab669b049803f66b8d38b28dee81449c530a5169e2f7f08b"
+      ],
+      "reason": "Only model-visible description text was shortened and relocated to shipped docs/tool-details.md. The complete operational AST with docstrings stripped is identical to the checked predecessor; signatures, dispatch, authorization/guard ownership and the card's already-separated naming/measurement/authority boundaries still hold.",
+      "sources": [
+        {
+          "blob": "ee53a26799c1344843076340785bf5730d0ad6ac",
+          "path": "mcp/src/agents_remember/mcp/registration/core.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/mcp/registration/core.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-02MMZJ"
+        },
+        {
+          "after": {
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-0GEXHP"
+        },
+        {
+          "after": {
+            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "content": "sha256:70902db67beaf081a0f37395941df2aa610d35d3a4cbcd79ddd2cbbbdd8f10d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "before": {
+            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "content": "sha256:70902db67beaf081a0f37395941df2aa610d35d3a4cbcd79ddd2cbbbdd8f10d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "id": "RLZ-3QBDFJ"
+        },
+        {
+          "after": {
+            "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+            "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+            "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-59K606"
+        },
+        {
+          "after": {
+            "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+            "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "before": {
+            "blob": "713c3575f90a80ca1b29c6084ad37f0024a0c7e5",
+            "content": "sha256:91f9d81abf15c4679a1e37659eac3b95d052b98c807be20f17089129ba0b272f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "id": "RLZ-5WT1RY"
+        },
+        {
+          "after": {
+            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
+            "content": "sha256:e6ed024a90d577fa75d788a06bec64bbcd489f1f1e6555f73ad4a736e46832f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
+            "content": "sha256:e6ed024a90d577fa75d788a06bec64bbcd489f1f1e6555f73ad4a736e46832f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-88JBV4"
+        },
+        {
+          "after": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-ABKXPC"
+        },
+        {
+          "after": {
+            "blob": "92cc9bfa7d050002132d9dcc74ed43980a00d934",
+            "content": "sha256:1ac0c875ac526a0bfc816ba92289fd777f6ef06bd3dd2a7bde5b57794d743105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "before": {
+            "blob": "92cc9bfa7d050002132d9dcc74ed43980a00d934",
+            "content": "sha256:1ac0c875ac526a0bfc816ba92289fd777f6ef06bd3dd2a7bde5b57794d743105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "id": "RLZ-BAA5KM"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "1a3d797d83fc3ba15c7d85511414c1e66d36b141",
+            "content": "sha256:2e87caeced1309c6c026810a69faa77730d702ef425a1cc3dd6ab93264bdcd13",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "a72f6e1f2676244434b6bd97910a9e1c7875aeb1",
+            "content": "sha256:f4dc459fad11a4c3e11fa846ed53ab38fd7f6206b34c49cc1a5a7e8901bbc96d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-CG94JY"
+        },
+        {
+          "after": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-D1DKW9"
+        },
+        {
+          "after": {
+            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+            "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "679a69b6f6ff4ae1a3b8e536d652b10a633a528e",
+            "content": "sha256:031dcb463d498b130a83c3171f643221a0f3bd58715a3d05b421cb0f007c8047",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-DRT32D"
+        },
+        {
+          "after": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "d6fc9c48cab61bddf2118950eb2e1c6de48ff308",
+            "content": "sha256:0048df9616e2543f4e413bee9b4777e503666899a2ad0406f427c443009f61e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "409f4dd5ade11fbbb036c7c6b41ea95d57c6aade",
+            "content": "sha256:e1d5345a4957f6906c35403d7859b6df6796f4322a6d6fb2a5fa29d673ade2c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-GRG1X8"
+        },
+        {
+          "after": {
+            "blob": "a098b80f993eed0489e69950f7b6046a28d943f2",
+            "content": "sha256:76a6880dc009a3e4885af74f6a19d94b58da730f490b33cc474ffd29ff0a2fd4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "3c96ff0efe2d9d51943fda914507093289c92c78",
+            "content": "sha256:a44bedbcf30e2207ceb2a4b7c6e1a9c00da4477d3263764d02b1774e741ffc7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-JSEK7Q"
+        },
+        {
+          "after": {
+            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
+            "content": "sha256:e6ed024a90d577fa75d788a06bec64bbcd489f1f1e6555f73ad4a736e46832f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "before": {
+            "blob": "22886059ca7858736f6ab22b15f5a2a637cba41d",
+            "content": "sha256:e6ed024a90d577fa75d788a06bec64bbcd489f1f1e6555f73ad4a736e46832f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/c-13-install-and-onboard/SKILL.md"
+          },
+          "id": "RLZ-K2M1WN"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-K6HJZY"
+        },
+        {
+          "after": {
+            "blob": "92cc9bfa7d050002132d9dcc74ed43980a00d934",
+            "content": "sha256:1ac0c875ac526a0bfc816ba92289fd777f6ef06bd3dd2a7bde5b57794d743105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "before": {
+            "blob": "92cc9bfa7d050002132d9dcc74ed43980a00d934",
+            "content": "sha256:1ac0c875ac526a0bfc816ba92289fd777f6ef06bd3dd2a7bde5b57794d743105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/strategist.md"
+          },
+          "id": "RLZ-M42H5N"
+        },
+        {
+          "after": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "bab862b563d9cfcd13b59d0aed6d3ae0e6c098c3",
+            "content": "sha256:881d78e98580e78164d74ed75e4d671d645fbc965aad9d32e4cc74cd1ba50278",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-MA5C8F"
+        },
+        {
+          "after": {
+            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "content": "sha256:70902db67beaf081a0f37395941df2aa610d35d3a4cbcd79ddd2cbbbdd8f10d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "before": {
+            "blob": "428df5b061a673946e68d163972197ed00c2ed0b",
+            "content": "sha256:70902db67beaf081a0f37395941df2aa610d35d3a4cbcd79ddd2cbbbdd8f10d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/bootstrap.md"
+          },
+          "id": "RLZ-NVBKRR"
+        },
+        {
+          "after": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "66b580e5158b30270e6f97efbfda840f38d784d7",
+            "content": "sha256:e532ec7587048c7e6b53cf2fe0fa3b78212f5c6fc2431d57e807c1d2296587da",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-Q1RJX3"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-RT5KYP"
+        },
+        {
+          "after": {
+            "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
+            "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "before": {
+            "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
+            "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "id": "RLZ-V9KYKV"
+        },
+        {
+          "after": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "963c16d8a2a10f460dfcbbb2a9400df6e0ab601a",
+            "content": "sha256:5301af37c64eedbbee118128b88f4a080cb9e5c873877b8372c31185038dd7e6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VXHQMN"
+        },
+        {
+          "after": {
+            "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
+            "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "before": {
+            "blob": "c2841e0e443a9ada83e0cf81ae3545f7c9fa4eba",
+            "content": "sha256:a2092b5693e5ce7fc7f69f833b104d9b8b2950c271adf419107236c326d1cfc9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/designer.md"
+          },
+          "id": "RLZ-YPZ7CB"
+        },
+        {
+          "after": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "before": {
+            "blob": "2d58c15304831b65be687127ce05ace5c0f87cec",
+            "content": "sha256:e1a2eef2ab61b6c4b36edb85b55641d0b0460fb89690d702aaf89192901bd682",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md"
+          },
+          "id": "RLZ-YVX677"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZQ97SC",
+      "items": [
+        "sha256:73a8d9370766c0df0d86b27837e51a45f3bd8ce83861a7d4d89171118e914053"
+      ],
+      "reason": "Canonical changed role/operation text matches every changed shipped harness/package carrier at the frozen C. It removes the retired task_doc-read instruction without restoring assignment_read, SystemSpecialist or a new role/source of truth. The existing generator remains the propagation owner; byte correspondence is not a fresh generator/host execution claim.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZZ7SKR",
+      "items": [
+        "sha256:34abd1dd3c2af03da2fa0dcc68dca618b2450e217f7134542df8cbe5df49cf6c"
+      ],
+      "reason": "Reviewed every covered source diff and its card against the frozen successor. The route's separation of compact answer projections from full logging, canonical task/read authority, domain-owned validation and Manager-owned lifecycle/landing remains; concrete changed refusal/intake/counting contracts are corrected in their source cards. No roster, route ownership, requirement revision or fresh acceptance is inferred from the captions. The ruled sync only corrects K_B to the first landing; CODE bytes and the reviewed route meaning are unchanged. Renew against this new-base source population without claiming a new card edit.",
+      "sources": [
+        {
+          "blob": "2fd25829eecb328f37c2a31bfc1352e0eedcf2c8",
+          "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py"
+        },
+        {
+          "blob": "0a96260738b34d2b82e754bf428c3332affc3a9e",
+          "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

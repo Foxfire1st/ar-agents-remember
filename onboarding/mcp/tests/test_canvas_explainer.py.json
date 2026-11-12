@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_canvas_explainer.py",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The case `test_an_unchanged_update_answers_current_and_writes_nothing` protects an unchanged Update answering current without touching the binding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
+            "content": "sha256:0fe0a623b8c246bf7d587d11ceb4fdd8dc2e6fe11828040cbce51023b3647feb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unchanged_update_answers_current_and_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_a_symlink_in_the_workspace_is_held_and_reported` protects a planted workspace symlink being held rather than followed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24140561b934e3ab5c626a50ca1f0ba256dcd0d8",
+            "content": "sha256:e9439d39aa86a0177c773b08a17e606abd4532023a0f30506bd794f6e401333f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_symlink_in_the_workspace_is_held_and_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

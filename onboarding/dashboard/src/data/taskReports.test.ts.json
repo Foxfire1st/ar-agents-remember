@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/data/taskReports.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The reports request names the recorded task reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9513c1f25af1058d95fda7ab5b0a4edb3f88656",
+            "content": "sha256:8b2b1578313577d5e167786c97223359c151ce2e606d68262384482f3ea206a7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The dashboard prefix is stripped to the recorded form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9513c1f25af1058d95fda7ab5b0a4edb3f88656",
+            "content": "sha256:8b2b1578313577d5e167786c97223359c151ce2e606d68262384482f3ea206a7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

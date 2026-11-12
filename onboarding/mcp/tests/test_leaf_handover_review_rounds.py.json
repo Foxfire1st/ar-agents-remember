@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/test_leaf_handover_review_rounds.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
+        "content": "sha256:095da9f2ff142e0464763a8ee03bd05f696f29d852e731612aa46725f9c2e514",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits"
+        }
+      },
+      "facet": "Under one verified Reviewer binding, the test opens and records ordinary CODE rounds, preserves the original sealed finding and remaining IDs, refuses changed/new IDs and refuses beginning beyond the default settings-defined budget without approval. The test exercises CODE begin_review/record_review only; it does not exercise the separate MEMORY count, runtime settings changes, approval attribution, or the record-only unchanged-candidate path.",
+      "id": "PRF-PMEN4W",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "curator-V7-bounded-code-proof",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
+        "content": "sha256:e5082f0657f86656442c332d5002c57184bd035d28b7a08fe95fb80565492cda",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-68PVA6",
+      "invariant": "INV-V7M37D",
+      "origin": {
+        "handoffEntry": "R99-2a-code-memory-lanes",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Exercises registered calls under verified Reviewer binding and proves unchanged sealed IDs and limit refusals.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A bound Reviewer opens and records ordinary CODE BLOCK rounds, retaining the same unresolved sealed ID; changed IDs and the next unapproved begin are refused.\n\nAnchor: `test_reviewer_binding_opens_repairs_and_preserves_sealed_round_limits`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bdc243d3ad1d537675952942d2f2872d9bec368",
+            "content": "sha256:e5082f0657f86656442c332d5002c57184bd035d28b7a08fe95fb80565492cda",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

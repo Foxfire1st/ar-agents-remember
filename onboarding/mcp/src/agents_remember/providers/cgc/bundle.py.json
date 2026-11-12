@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/bundle.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CGC seed orchestration calls this module between export and load.\n\nAnchor: `rewrite_cgc_bundle_paths`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:687c08718526f3bfb7776674c92b015c85cb8a5be7a6d551721d40ec3509cd48",
+            "locator": {
+              "end": 607,
+              "kind": "line_range",
+              "start": 591
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

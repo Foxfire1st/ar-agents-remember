@@ -1,0 +1,93 @@
+# mcp/src/agents_remember/worktrees/modules/future_code_candidate.py
+
+## Governing Overview
+
+[worktrees modules overview](overview.md)
+
+## Purpose
+
+Owns the exact pre-commit route identity for an ordinary future-code candidate. It binds the
+contract-recorded code base and a stable observed HEAD to the canonical isolated-index full
+add-all tree without staging the user's real index.
+
+## Code Commentary
+
+### Logic
+
+`FutureCodeCandidateIdentity` is a frozen strict three-field model: observed HEAD, configured
+base, and candidate tree. `capture_future_code_candidate` refuses non-leaf use, observes HEAD
+around the existing `worktree_candidate_tree` computation, and translates expected
+Git/filesystem/model failures into the central typed future-candidate error.
+`require_current_future_code_candidate` recomputes
+the complete route identity and rejects any bound-field drift.
+
+### Conventions
+
+The model uses the canonical public camel-case field names required by the future-code acceptance
+variant. Every observation receives a distinct temporary directory and index in the system temp
+directory — never the enclosure's `reports/` directory (rule 6: unrecorded scratch must not create
+it); the directory and index are removed when that observation exits.
+
+### Invariants And Boundaries
+
+- This module wraps, but does not duplicate, the canonical add-all tree algorithm.
+- Concurrent observations cannot unlink or reuse each other's temporary index.
+- Callers cannot supply the authoritative tree during capture.
+- Captured identity cells are immutable.
+- Capture explicitly refuses non-leaf contracts, including series. It does not inspect a direct-existing route discriminator: a leaf is admitted by this local check, and any narrower route selection belongs to its caller.
+- The identity is semantic-acceptance input. It does not weaken the lifecycle journal's separate
+  HEAD/mutation reconciliation.
+- Expected derivation failures are typed; no official-checkout or repository-id fallback exists.
+
+### Todos
+
+The issued acceptance schema and its persistence owner consume this model in the later
+memory-candidate acceptance boundary.
+
+## Evidence
+
+### Docs References
+
+No Domain Documentation source is configured for this memory root. The behavior is entirely
+defined by repository-owned Git and worktree contracts.
+
+No external documentation is needed for this repository-local identity owner.
+
+### Repo-Internal References
+
+The strict model, capture sequence, and currentness check are intentionally colocated; the
+low-level Git algorithm remains separately owned.
+
+- Capture and stale-input outcomes use the package's central typed error family. [5]
+
+### Cross-Repo References
+
+No meaningful cross-repository boundary applies.
+
+This owner acts only inside the contract-resolved code worktree.
+
+- The frozen strict route model prohibits mutation and undeclared identity fields. [1]
+
+- Capture observes HEAD around the one canonical isolated-index add-all tree calculation. [2]
+
+- Reuse requires exact equality of the complete bound route identity. [3]
+
+
+- Each capture gives the canonical helper a private index inside `TemporaryDirectory(prefix=".future-code-candidate-")` without an explicit `dir=`. Its root follows the process default temporary-directory selection, rather than being explicitly allocated under enclosure reports. [4]
+
+
+
+
+- The helper first copies/normalizes the real index, clears trust flags, adds all and writes the tree; on _IndexCopyUnusable it instead seeds an empty private index from HEAD. Both scratch indices are cleaned on exit. [6]
+
+
+## 260928-MIK-L177 The Proof Keeps The Capture's Own Census
+
+`capture_future_code_candidate` now keeps the census of the private index it wrote the tree from:
+`observe(index)` records `capture_entries(index)`, and the proof it records carries those entries
+(`note_capture_baseline(..., entries=captured, before=before)`), so the isolated add-all candidate is
+certified against the exact index it came from rather than a later snapshot. HEAD is still read before
+and after the capture inside this function and compared, and `require_current_future_code_candidate`
+still recomputes the identity and requires it to equal the accepted one. The accepted head is bound
+where the candidate identity is required
+(`review_candidate_resolution.require_current_candidate_identity`), not in this module.

@@ -1,14 +1,5 @@
 # sources.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-24T18:10+02:00                     |
-| lastVerifiedCommitHash | `a8ee8440dfa920d1153a4bb4bb43cc77534c3c90` |
-| lastVerifiedCommitDate | 2026-05-25T15:22:52+02:00|
-
 ## Purpose
 
 This example documents the coordinator-level source registry surface.
@@ -35,27 +26,16 @@ None.
 
 No external documentation is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The coordinator sources example distinguishes global source registries from repository-specific domain documentation. | `# Coordinator Sources Example` | mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/sources.md:1-12 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The coordinator sources example distinguishes global source registries from repository-specific domain documentation. [1]
+
+### Cross-Repo References
 
 No sibling repository evidence is needed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-02T21:08+02:00 — 260731-EFA-L6 W2-B09 curator: repaired 1 citation entry (2 findings); no Tier-3 findings.
-
-- 2026-05-24T18:10+02:00: Moved onboarding to mirror the packaged runtime source route under `mcp/src/agents_remember/package_data/runtime/` after F-10 packaged runtime asset discovery.
-- 2026-05-13T13:38: Created onboarding for the coordinator sources example.
+No meaningful cross-repo references found.

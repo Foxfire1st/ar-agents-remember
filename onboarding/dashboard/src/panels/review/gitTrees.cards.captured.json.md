@@ -1,0 +1,62 @@
+# dashboard/src/panels/review/gitTrees.cards.captured.json
+
+## Governing Overview
+
+[dashboard/src/panels route overview](../overview.md)
+
+## Purpose
+
+**A real `GET /api/review/trees?comparison=1&invariants=<7 identities>` body over the MIK-L31 worker's converted
+scratch leaf `260928-MIK-L31`: the focused cards read for the family `FAM-2HBJREC2` (test evidence for
+`ExpressionCards.test.tsx`, `ReviewSurface.gitTrees.test.tsx`, since MIK-L35 `ReviewSurface.wordDiff.test.tsx`, and since
+MIK-L34 `IntentMarkers.test.tsx`, whose card cases take its two `review_source_admission.py` entries RLZ-CXH58B4W and
+RLZ-D43E5CF2, two cards of one path, to check that a return reopens the exact card).** 38,264 bytes; its receipt is in
+`gitTrees.capture-provenance.json` (route, the seven invariant identities, status, sha256 and bytes).
+
+## Code Commentary
+
+### Logic
+
+- `state: "trees"` for comparison `1` of leaf `260928-MIK-L31`, with the knowledge and code sides, and **11
+  entries** (10 realizations, 1 proof): exactly one `changed` entry, `RLZ-CXH58B4W` (`review_source_admission.py`,
+  the scratch edit of `_not_listed`, resolved at `194–213` on both sides), and 10 `unchanged` entries.
+- In `review_source_admission.py` there are exactly four entries, the packet's conforming example: RLZ-CXH58B4W
+  (changed), RLZ-D43E5CF2, RLZ-9EC7B6PN and RLZ-NM6160PK (unchanged), each with its own role and rationale.
+- The proof is `PRF-7Q3M5K` (a scratch-authored proof of INV-2TQGXFAX on
+  `test_knowledge_review_attributed_source_content.py`), added in this leaf (`recorded` false before, true after),
+  carrying its facet and no role or rationale (the boundary example).
+- Every entry is `resolved` on both sides and MIK-R03 `current`. The server orders proofs before realizations
+  within an invariant; the client reorders them (`focusedCards.orderedEntries`).
+
+### Conventions
+
+Keep the captured bytes and their receipt intact; only the tests read this file.
+
+### Invariants And Boundaries
+
+The body describes the scratch copies under `/tmp/mik-l31-real` (code at `8a2d4b47` with the scratch edit), not
+current project knowledge. Its line ranges are the scratch tree's.
+
+### Todos
+
+No additional work is asserted by this card.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured; the requirement packet `MIK-R31@v1` and its rulings live outside the
+code and memory repositories, so they are named here and not cited as rows.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+- The proof entry, added in this leaf, with its facet. [1]
+- The one changed entry. [2]
+- The comparison it was read from. [3]
+- The receipt row for this body, with the invariants it names. [4]
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.

@@ -1,0 +1,59 @@
+{
+  "path": "mcp/tests/test_background_accounting.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0e5ae59cace1440387186d5a5d0e679126b41da5",
+        "content": "sha256:eb6d1fdddd85ef74723c684bcb51ce8f0e1c1123f0f873efbd2df3dfa5e0784b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ExactWindowTests.test_partial_second_units_and_wakes_are_exact_or_honestly_incomplete"
+        }
+      },
+      "facet": "Controlled cutoff/cap cases distinguish exact complete aggregates from honest incomplete oldest-second detail.",
+      "id": "PRF-EKR0DC",
+      "invariant": "INV-RJWTW8",
+      "origin": {
+        "handoffEntry": "L81-R1-F04",
+        "leaf": "260928-MIK-L81"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The always-on background account (MIK-R81 rule 1): per-owner processor time and every wake.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e5ae59cace1440387186d5a5d0e679126b41da5",
+            "content": "sha256:dbbc5cf98361573f3d73bb9cf1b0670c6ab39016409b249656276a48fea36f7b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The accounting-cost case measures calling-thread CPU with `time.thread_time()` for exactly 10,000 recorded units under a 0.5-second bound. It excludes scheduler waiting and does not establish installed processor share or a wall-time ceiling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e5ae59cace1440387186d5a5d0e679126b41da5",
+            "content": "sha256:e6fa433d2be62d39716f75cf565faf33bb3af25df05fc1493ba208b537800a1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AccountingCostTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

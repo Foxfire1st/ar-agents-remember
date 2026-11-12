@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_handover_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+        "content": "sha256:d000e185ce36c7e2711e15ad5e32b2f5241d345ab5b57f0833e5568c62ec16c2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DJ48J8",
+      "invariant": "INV-ZVD184",
+      "origin": {
+        "handoffEntry": "MIK-R193@v1",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "Coordinates immutable sibling artifact publication before message delivery.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+        "content": "sha256:a93d447ec4c0540d99d759fe8b2faeea2508a1a601aba774bb99fb3361c1cdf8",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_handover_files"
+        }
+      },
+      "id": "RLZ-RWK32Q",
+      "invariant": "INV-5H5VR2",
+      "origin": {
+        "handoffEntry": "L185-R193-1-artifact-line",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The pair is preflighted and then written as one act; publication is the only place that must see both targets before the first write.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Both files are published as one act, and every target is preflighted before the first write.\n\nAnchor: `publish_handover_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3b3bcd9898dad62e47fc188cbdd75f18ca1a458",
+            "content": "sha256:d000e185ce36c7e2711e15ad5e32b2f5241d345ab5b57f0833e5568c62ec16c2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

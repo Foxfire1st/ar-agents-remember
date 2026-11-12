@@ -1,0 +1,112 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/refusals.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A storage failure with no contract code is a defect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
+            "content": "sha256:b5b99d723dd9e5dbdb29b03039cd159a5c704387f61a01abc7b9953e52d828e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeStorageError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "An absent or unreadable explicit selection is refused without substituting a current tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
+            "content": "sha256:832d5ea2d80f4a64314e60edcb78668cd6e23763744689f3c0712fe1f79f368f",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_input_unavailable_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The retained refusal value and its declared code vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:c7a3c663a631295cd6520f0f7af9a8b2412d8b133a2d066dffc537a0bfb37cab",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusal"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26599e0fe8b427bc0d290767b7b8e263cde390b6",
+            "content": "sha256:4b1bcca9dc4387cf22200602f0fcc11f1b61e336587bae16344ac2d70dd05b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeRefusalCode"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/result.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "- The facts bundle and the one generic factory every refusal is built through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The identifying facts and generic typed-refusal constructor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
+            "content": "sha256:b83598a7c3d65dacbbc27f3e7e334a28f5be63918e3c741be171f543bc4acafe",
+            "locator": {
+              "kind": "symbol",
+              "name": "RefusalFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b5c3a4d378d345aa0a00aa163d4f8a9d452341",
+            "content": "sha256:8b81b334af5fb9de7934333bc06a8ac55b9085dfbdb203777adb0fc3d783d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

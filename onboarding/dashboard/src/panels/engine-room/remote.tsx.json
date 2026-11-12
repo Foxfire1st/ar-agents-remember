@@ -1,0 +1,45 @@
+{
+  "path": "dashboard/src/panels/engine-room/remote.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strip/band composition and its chip/badge primitives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7d39ffa13cb5db235e87e34e037fc9543fa2b3e",
+            "content": "sha256:cb26f5fff351fc70aad240dd54f153366f3cddfba464600587463d2524be2055",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoteStrip"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7d39ffa13cb5db235e87e34e037fc9543fa2b3e",
+            "content": "sha256:0a88d8064ea46e2eb7e0ec26ca2d46fa6d388db320a7b58282ed22bb0875cd93",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemoteChip"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a7d39ffa13cb5db235e87e34e037fc9543fa2b3e",
+            "content": "sha256:20ae21f0baa1b954f1d666c40435839e16795f84495e7849169806a46dbbe1ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "PrBadge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

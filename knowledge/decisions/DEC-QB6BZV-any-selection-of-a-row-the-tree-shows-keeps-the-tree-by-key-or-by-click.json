@@ -1,0 +1,73 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Keeping only on key steps and never dropping within a comparison were weighed and rejected, and every new way to select a subject has to be placed on one side of the line between a row of the tree and everything else."
+  },
+  "alternatives": [
+    {
+      "option": "Any selection of a row the tree already shows keeps the tree, by key or by click, so a click and `j`/`k` stay the same selection; choosing a subject from outside the tree (catalogue, marker, \"All source changes\"), a refresh or a new comparison starts fresh.",
+      "reason": "The developer chose it (D36: \"Clicks in the tree keep too\") and accepted that a click on a family row no longer narrows the tree to that family.",
+      "status": "chosen"
+    },
+    {
+      "option": "Only key steps keep the tree.",
+      "reason": "It leaves the click case of the acceptance run, and a click and `j`/`k` would no longer be the same selection.",
+      "reconsider_when": "The ruling that `j` and a tap are the same selection is withdrawn, or the developer asks that a click on a family row narrows the tree to that family again.",
+      "status": "rejected"
+    },
+    {
+      "option": "Nothing drops within a comparison.",
+      "reason": "It needs a reset control.",
+      "reconsider_when": "A requirement admits a separate control that resets the tree.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A selection starts the tree afresh unless its caller says it is the selection of a row of the tree, so a new entry point is an outside selection by default.",
+    "While the tree holds a kept family, the catalogue lists a row for every family the tree shows, as the way back to one family.",
+    "A click on a family row keeps the other families in the tree."
+  ],
+  "context": "Once the tree keeps rows of earlier subjects, something has to say which selections keep them and which drop them. An earlier ruling of this master holds that `j` and a tap are the same selection, and the acceptance run that found the problem also showed it for a click on a family row.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D36, 2026-10-01: \"Chosen from three alternatives each (packet draft, Open Truth Gaps G1 to G3): \"Whole, tagged\", \"Stop at its control\", \"Clicks in the tree keep too\"\")",
+  "id": "DEC-QB6BZV",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-NSG0D4"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-9ZKYWQ"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R39",
+        "packet": "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D36 (2026-10-01), point 3; requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md, Open Truth Gaps, MIK-R39 G3, and rules 3, 9 and 10"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-D36-G3",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

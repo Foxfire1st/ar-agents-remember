@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The history reader, wire model/adapter and conditional browser source credit must agree to avoid labelling an introducing leaf as the writer of a later revision or treating unread history as proof that nobody wrote it. Existing server composition tests and plain mounted component tests exercise these distinct failures without requiring a second attribution algorithm."
+  },
+  "applicability": "The primary explicitly selected invariant or family revision pair in the review-intent answer, its per-side writer enrichment, the browser writer mirror, and the conditional source chip in that selected subject's meta line.",
+  "conditions": [
+    "Each selected side is attributed independently from that side's comparison memory index and the revision held by the addressed record. With no explicit selection nothing is enriched; a side with no addressed record has no writer value. Family-context selections that were not separately enriched may omit the value.",
+    "A readable, complete history index names the distinct owners whose rows about the record have disposition changed and exactly that record's numeric revision. A same-revision no_impact, still_rejected or other judging row does not claim writing it.",
+    "Only revision1 with no matching changed row may name the record's introducing origin, taking the first nonempty string among leaf, wave and task. If no changed row and no admitted revision1 introducer names a writer, state is not_recorded with no owners and a reason. Git, dates and the reviewed task never fill the gap.",
+    "Legacy history, a missing/unopened/unreadable index, an incomplete index, an unaddressable record or a missing stored revision is unavailable with no owners and its reason, not not_recorded. The model requires owners exactly for recorded and introduced states and a nonempty detail.",
+    "The browser considers a source chip only when the selected before/after revision ids differ, the reviewed leaf's judgment state is none, and its addressed meaning-effects record is absent or has state none. Equal revisions or any other judgment/effect state show no source chip.",
+    "That conditional chip uses only the after_writer. If any supplied after owner is the reviewed leaf it shows no writer chip. Otherwise it names supplied owner(s), source not recorded, source unavailable, or source not read when the entire writer value is absent; its title keeps the supplied explanatory detail."
+  ],
+  "exclusions": [
+    "Choosing selected revisions and their display labels remains RP15 / INV-P1QKHK. This invariant neither fabricates an ordinal nor selects an alternative revision.",
+    "The record's introducing origin is not a later revision's writer. Introduced-by provenance, ordinary content order, family abnormal-state chips and disclosure placement retain their existing owners, including INV-777108.",
+    "Writer attribution does not add a history judgment, decide the reviewed leaf's intent/effect, infer missing meaning-effects completeness, or establish Git transaction/landing authority.",
+    "No writer is promised for an unenriched family-context member selection, and the browser supplies no substitute attribution algorithm or source inferred from display labels, dates or Git."
+  ],
+  "id": "INV-MRHE25",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable Worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596 ordinal0 246 L89-R1-038, disposition fixed: selected-side with_revision_writers/model/adapter/mirror plus carriedChipOf/carriedText targets and exact producer rationale read without alteration.",
+        "Canonical developer ruling notes/run3/L89-THE-SUBJECT-SHOWS-CONTENT-FIRST-AND-NO-SIGNAL-WHEN-NORMAL-RULING.json: D396 amendment9dde2b09 to MIK-R89@v2 rules1 and6. It requires no normal writer line and one carried-change source chip, and distinguishes introduced by origin from a revision writer.",
+        "A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470 over cd0e68f0410f2de2d1955ecdbee6628630631d9a; captured patch SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0. Complete writer module/model, exact adapter block, browser writer mirrors/helpers/meta, and eligible proof assertion bodies read statically. No tests, serving probes or browser judgment run."
+      ],
+      "path": "authoring-wave7.routes-final-input.json"
+    },
+    "handoffEntry": "RP21_REVISION_WRITER",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each selected subject revision names its writer from that side's exact recorded history, distinguishes an unrecorded writer from unread history, and gives a moved, unjudged change one source chip unless the reviewed leaf wrote it.",
+  "status": "proposed",
+  "supersedes": []
+}

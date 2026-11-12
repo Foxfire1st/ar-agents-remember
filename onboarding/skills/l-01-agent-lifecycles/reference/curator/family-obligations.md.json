@@ -1,0 +1,97 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/family-obligations.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+        "content": "sha256:70c4ebf2443bc4f5a313514bcdb94912843264bf0f98b723d91a11de65dbdba0",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-AHYBRR",
+      "invariant": "INV-VN0A3Q",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 7",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The family-obligations detail requires the Curator to author each family's own guarantee, members, routes and admission. It requires a fresh examination after a member or membership change and a changed history row with an authored effect when the guarantee is restated, the writer filling the family's own revision. It ends with a readback of the written families.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+        "content": "sha256:98fea9e20a213098ee6aa7c79945e20556b546c759e6c34cc2504a1621b310c3",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-PAE912",
+      "invariant": "INV-VN0A3Q",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 7",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The writer detail explicitly requires a restated family guarantee to be named as a changed history row with an authored effect, and leaves the family’s own revision to the writer.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Families are authored from evidence and intent, never from directory, route, label or anchor grouping.\n\nAnchor: `records`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+            "content": "sha256:0823b5eb721623c3673d7182ace6fddb10c628732cde49d66e6b4c832ac471d4",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Membership changes trigger re-examination and a history row; restated guarantees are `changed` rows with an authored effect.\n\nAnchor: `effect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+            "content": "sha256:f32f7a9a81b0b228c150956cc2b633215e459b8d4c39512755aaf917cecd65ef",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Families are read back with `knowledge_read` and every unattributed prepared location is attributed or explained.\n\nAnchor: `view=\"family\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f94d71264796f1e10917ef5762dba709b2bbcd06",
+            "content": "sha256:366abfd364aee6f1170083e556e354d4a0af604d7787fc5020df6795b646c0f0",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

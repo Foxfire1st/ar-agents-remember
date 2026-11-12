@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized across the projection model, the reducers that assemble it, the projection inputs and the dashboard consumers, so removing the key in one place while another still publishes it would be caught. The mistake it prevents is a dashboard that quietly keeps rendering a retired engine because one reducer still fills the field."
+  },
+  "applicability": "The served dashboard projection and every panel that reads it.",
+  "conditions": [
+    "A snapshot persisted before the retirement, or a legacy provider file on disk, may still name providers.",
+    "The served payload is what a panel can read; nothing else is reachable."
+  ],
+  "exclusions": [
+    "React context providers, Paseo's model-provider controls and certification scope-provider identifiers, which are separate operations that keep their names.",
+    "Any statement about whether a provider process is running.",
+    "L184's `providerLimit` on a task entry (`ProviderLimit` / `LimitedSeat` in the generated types) — a model-provider usage limit shown to a person, not a CGC/GrepAI engine. The two are different subjects and must not be read as one."
+  ],
+  "id": "INV-GQ9C07",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_l192_projection_watch_roots.py (watch plan) and mcp/tests/test_serving.py (payload has no provider key); the populated Topology capture stays unproved (E1)."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-02",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No dashboard trace of CGC/GrepAI state survives: provider nodes, satellites, engine conduits, setup analytics and provider snapshots are gone from the projection models, the reducers and the served payload, so no panel can read them.",
+  "status": "proposed",
+  "supersedes": []
+}

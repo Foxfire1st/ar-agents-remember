@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/grammar/Markdown.cache.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Parse identity and transform isolation\n\nAnchor: parses once across navigation and isolates later marker and heading transforms",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "654f7d064beee420b8cdfcf2743407f4cf38da47",
+            "content": "sha256:13919009b8f1476c4c3e875940f4dbe58c0656b50583721d178a65f39cf098ab",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current callback\n\nAnchor: uses the returned page callback after cached navigation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "654f7d064beee420b8cdfcf2743407f4cf38da47",
+            "content": "sha256:60ea3b8fbfd9a01fd35f215cce1252a6612d09e3f0991e2f622be5132f45a11f",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

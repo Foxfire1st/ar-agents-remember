@@ -1,15 +1,5 @@
 # mcp/tests/test_automatic_post_integration_cleanup.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_automatic_post_integration_cleanup.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-13T11:43+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -35,18 +25,18 @@ finalization owns it.
 ### Logic
 
 The fixture chain builds a genuinely landed external-memory leaf:
-`bound_worktree_services` cit:([`bound_worktree_services`], mcp/tests/test_automatic_post_integration_cleanup.py:74-83)
-binds the default service bundle, `_landed_leaf` cit:([`_landed_leaf`], mcp/tests/test_automatic_post_integration_cleanup.py:85-88)
+`bound_worktree_services` cit:([`bound_worktree_services`], mcp/tests/test_automatic_post_integration_cleanup.py:74-82)
+binds the default service bundle, `_landed_leaf` cit:([`_landed_leaf`], mcp/tests/test_automatic_post_integration_cleanup.py:85-87)
 publishes a real closeout through the shared authority fixture, and `_integrate_apply`
-cit:([`_integrate_apply`], mcp/tests/test_automatic_post_integration_cleanup.py:120-127)
+cit:([`_integrate_apply`], mcp/tests/test_automatic_post_integration_cleanup.py:120-126)
 drives the public integrate tool with `auto_land_on_integration=True`. Three small readers keep the
 assertions about the task edge honest:
-`_leaf_document` cit:([`_leaf_document`], mcp/tests/test_automatic_post_integration_cleanup.py:103-109)
+`_leaf_document` cit:([`_leaf_document`], mcp/tests/test_automatic_post_integration_cleanup.py:103-108)
 resolves the contractually bound leaf document through `resolve_terminal_leaf_doc` and reads it,
-`_master_row_status` cit:([`_master_row_status`], mcp/tests/test_automatic_post_integration_cleanup.py:111-118)
+`_master_row_status` cit:([`_master_row_status`], mcp/tests/test_automatic_post_integration_cleanup.py:111-117)
 finds the one master row naming this leaf, and
 `_local_branch_exists` / `_work_branch_sides`
-cit:([`_local_branch_exists`, `_work_branch_sides`], mcp/tests/test_automatic_post_integration_cleanup.py:90-101)
+cit:([`_local_branch_exists`, `_work_branch_sides`], mcp/tests/test_automatic_post_integration_cleanup.py:90-93; mcp/tests/test_automatic_post_integration_cleanup.py:96-100)
 drive real Git.
 
 Four cases:
@@ -87,7 +77,7 @@ application tools over real repositories.
 
 **The file name is historical and deliberately not renamed.** This path is declared by name in three
 manifests and only one of them is fail-closed:
-`mcp/tests/test-evidence-lanes.toml:130` (the lane manifest a consumer refuses to load without),
+`mcp/tests/test-evidence-lanes.toml:131` (the lane manifest a consumer refuses to load without),
 `mcp/tests/evidence-lifecycle.toml` (nine rows), and
 `mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65`. Renaming the
 module would be a cross-manifest change for no behavioural gain, so the docstring records the
@@ -117,48 +107,61 @@ lives.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo, and these assertions
 concern this repository's own application tools over real Git fixtures, so the retained source is the
 direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module docstring that records the ownership story and the historical name. | "Reclamation is automatic and unprompted, and finalization is what runs it." | mcp/tests/test_automatic_post_integration_cleanup.py:1-28 |
-| The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. | `_run_or_verify_cleanup`; "cleanup_report(contract, result.payload)" | mcp/src/agents_remember/worktrees/modules/finalize.py:277-311; mcp/src/agents_remember/worktrees/modules/finalize.py:310-310 |
-| The report shaper whose exact sentence and inventory the first case asserts. | `cleanup_report`; "ALREADY_CLEAN = \"already-clean\"" | mcp/src/agents_remember/worktrees/modules/cleanup_report.py:23-53 |
-| The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. | `_integrated_result` | mcp/src/agents_remember/worktrees/modules/integrate.py:598-633 |
-| The projection that names the finalization move. | `_post_integration_phase` | mcp/src/agents_remember/worktrees/modules/guidance.py:255-331 |
-| The terminal operation the first case calls. | `lifecycle_finalize_task_tool` | mcp/src/agents_remember/application/worktree_tools.py:862-893 |
-| The fail-closed lane this module must be listed in, and the dependency-classification entry that also names it. | "integration = ["; "Path(\"mcp/tests/test_automatic_post_integration_cleanup.py\")" | mcp/tests/test-evidence-lanes.toml:125-130; mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py:65-65 |
+- The module docstring that records the ownership story and the historical name. [1]
 
-## Cross-Repo References
+> Retained earlier citation wording: - The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
+
+> Retained earlier citation wording: - The report shaper whose exact sentence and inventory the first case asserts. [3]
+
+- The landing route whose no-reclamation the cases assert, including the payload's untouched `cleanup` cell. [4]
+
+- The projection that names the finalization move. [5]
+
+- The terminal operation the first case calls. [6]
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH`
+
+
+
+
+
+
+
+
+
+### Cross-Repo References
 
 These are in-process application-tool assertions against real repositories created in a temporary
 directory; no sibling repository or external system participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-09-13T17:20:55+00:00: Generated citation repair: `lifecycle_finalize_task_tool` repointed to mcp/src/agents_remember/application/worktree_tools.py:862-893. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T08:49:05+00:00: Generated citation repair: `_integrated_result` repointed to mcp/src/agents_remember/worktrees/modules/integrate.py:598-633. No content impact: mechanical anchor-range projection bound to citation source snapshot 498749c8248ef2a3c982edf27ca50b4962c9d2c9f9bdc470553967a3be375341; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T19:50+02:00 — Created by the 260831-LOCR-L31 curator pass. This module had no card
-  before, and its change set is exactly where the leaf's central decision lives, so the record belongs
-  beside it: the four cases (landing retires nothing and routes to finalization; finalization reclaims,
-  publishes the shaped report and completes the leaf document and master row; a refused cleanup blocks
-  finalization and leaves the edge open; a dry run is never shaped), the fixture chain that makes the
-  first case a real end-to-end path, and **the historical file name** — this path is declared in three
-  manifests (only `mcp/tests/test-evidence-lanes.toml` is fail-closed) and is deliberately not renamed,
-  with the docstring pointing at `finalize::_run_or_verify_cleanup` and
-  `cleanup_report::cleanup_report` as the real subjects. Verification metadata is pinned to the leaf
-  base commit and remains closeout-owned; source documentation only, no acceptance claim.
+
+
+
+- The reclamation runner and report-shaping gate these cases exercise through `lifecycle_finalize_task`. A completed cleanup cell still archives its recorded terminal agents. [2]
+
+
+- The report shaper whose exact sentence and inventory the first case asserts.  Anchor: "ALREADY_CLEAN = \"already-clean\"" [3]
+
+
+
+- The dependency-classification entry that names this module as a consumer of the certification profile. Source caption: `AMBIENT_ROLE_RUNNER_PATH` [10]

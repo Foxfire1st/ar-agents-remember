@@ -1,0 +1,62 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The retained mechanism and withdrawn measured speed target were both explicit designs; the choice constrains subsequent cache changes and proof."
+  },
+  "alternatives": [
+    {
+      "option": "Keep content-addressed per-file facts and deterministic equality/safety evidence without measuring a speed ceiling.",
+      "reason": "Correct source derivation is needed independently of machine speed and remains useful through later reviewer changes.",
+      "status": "chosen"
+    },
+    {
+      "option": "Measure and tune startup against the earlier speed budget.",
+      "reason": "Timing depends on a changing implementation and the developer set optimisation aside to finish correct features.",
+      "reconsider_when": "The developer explicitly raises optimisation again after the functional work is settled.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The complete derivation identity and fresh cross-file graph remain required.",
+    "No wall-clock benchmark is a cache acceptance or delivery condition."
+  ],
+  "context": "The dependency-facts store was required alongside a startup speed ceiling. Developer D104/D105 withdrew time measurements and optimisation while retaining deterministic cache equivalence and safety.",
+  "decider": "Developer D104/D105, as applied to approved MIK-R87@v1",
+  "id": "DEC-R2ADR0",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-BQD1G8"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R87",
+        "packet": "requirements/MIK-R87-v1-the-test-suites-do-not-depend-on-machine-load.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "packet716131cb Required Behavior2 and D104/D105 owner disposition"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 2",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

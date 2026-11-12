@@ -1,0 +1,52 @@
+{
+  "path": "dashboard/src/panels/detail-panel/test-utils.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The retained shared fixture builders include seedProjection, seedPromotedLeaf and stubCounters; the removed gallery seed helper is not a current owner.\n\nAnchor: `seedProjection` `seedPromotedLeaf` `stubCounters`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "040df12bbc3d5090dd0e924fc3ca0153991225b1",
+            "content": "sha256:0d7c9af1ffa331486b66efaf15733a190bfd873d13789b47d50ce038ca69015e",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedPromotedLeaf"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "040df12bbc3d5090dd0e924fc3ca0153991225b1",
+            "content": "sha256:2f3d93beffcc2c72f1cad3230602f6ea73d9f79ef7aa79f8a422c20480800ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubCounters"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "040df12bbc3d5090dd0e924fc3ca0153991225b1",
+            "content": "sha256:4ca5fcad89cbee99ad5205430acf29da88590b57b167c979c333a7eec50b4fec",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 378
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

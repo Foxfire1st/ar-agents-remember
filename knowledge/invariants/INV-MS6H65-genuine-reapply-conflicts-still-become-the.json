@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "Losing uncommitted parked or owner-written bytes, or retiring their sole restoration authority after a misleading proof, is a plausible costly error; the named transaction witnesses check the obligation before such loss can be accepted."
+  },
+  "applicability": "Ordinary sync conflicts, fresh validator stops, clean syncs, own-commit merges and code/external-memory restoration.",
+  "conditions": [
+    "Genuine reapply conflicts remain retained resolution work.",
+    "Only fresh same-call staged validator output may be fingerprinted without a replay proof.",
+    "Converted memory still validates against the paired code result before its merge commits."
+  ],
+  "exclusions": [
+    "No bypass of validation, cutover lock, admission, or managed landing-chain authority is introduced."
+  ],
+  "id": "INV-MS6H65",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Synced freeze 231622b2c7e272e7ca182ec28d3da61ca1749e0f + tracked diff d4c93e6a94ef056ca4d5eb77d4c05d73eac6062654729e2cb979d0cfd870141f (S2 documentary correction of the S list: stale symbol spellings and the rule-1 inventory rationale corrected, all other producer fields identical); ResumedConvertedMemoryMergeTests (2 tests) in test_sync_parked_candidate.py."
+      ],
+      "path": "curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R153 rule 6",
+    "leaf": "260928-MIK-L153",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Genuine reapply conflicts still become the retained resolution state, staged memory-validator stops persist their operation-created state, and clean syncs, own-commit merges, and the memory cache side behave as before.",
+  "status": "proposed",
+  "supersedes": []
+}

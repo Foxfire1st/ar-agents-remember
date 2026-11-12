@@ -1,135 +1,303 @@
 # dashboard/src/panels/changeset/ChangeSetViewer.tsx
 
-| Field                  | Value                                                  |
-| ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember                                        |
-| path                   | `dashboard/src/panels/changeset/ChangeSetViewer.tsx`   |
-| doc_type               | `file-level-onboarding`                                |
-| lastUpdated            | 2026-07-12T12:55+02:00                                 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`             |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
 [changeset/ overview](overview.md)
 
 ## Purpose
 
-`ChangeSetViewer` is the **Change-Set Viewer screen**: the up-to-3-column takeover that shows what
-a task (`scope` = one active enclosure), a series master (`master` = the NET diff since the series base),
-or — L4a — a single `leaf` (in `committed` or `working` `mode`) changed. It is opened
-by a `DetailPanel` change-set button and hosted by `CockpitShell` as a full-bleed takeover (its `onBack`
-clears it, restoring the rails).
+Read-only change-set takeover for an enclosure, series net, leaf committed/working delta or numbered
+review comparison. Review targets dispatched by Cockpit to ReviewSurface are distinct from a reviewer
+opening this viewer over its retained comparison. Selection/filter state is local; shared resources
+own list/file retention and conditional reads.
 
 ## Code Commentary
 
-### Logic
+The complete list address flows to the shared client URL owner. A comparison wins first; otherwise
+leaf precedes master precedes scope. Series reads ask for leaf breakdown and prefer the listing's
+own generation over entry pins. The selected per-file diff keeps those operands. The main file opener
+has its own request sequence; the separate partner promise is not covered by that sequence guard,
+so this card does not claim universal cancellation/quarantine for every async partner response.
 
-Series loads request the net change-set with `includeLeaves=false`. The
-working leaf view now waits for its initial data, then runs list and active-file
-refreshes together and schedules the next cycle only after both settle. The
-viewer renders a loading placeholder until data arrives and retains the
-explicit error state, while stale refresh results are ignored after teardown.
+The target-load effect resets active diff/partner/error state and ignores replies after cleanup.
+Eligible non-comparison working leaves schedule list/active-file polls; both settle before the next
+2.5-second delay is scheduled. The effect does not explicitly wait for initial data before its first
+timer, and the delay is not a fixed total response/freshness bound. A failed current poll clears its
+own old value. Source inspection is not a new no-flicker/scroll or timing measurement.
 
-Props are `{ repo, scope?, master?, leaf?, mode?, onBack }` (`ChangeSetTarget` + `onBack`). Selection
-precedence is **`leaf > master > scope`**: on mount / target change an effect fetches `leaf ?
-leafChangeset(repo, master, leaf, mode) : master ? masterChangeset(repo, master) : taskChangeset(repo,
-scope)` into `data` (a `live` flag drops a stale resolve; a `FilesApiError` is shown as `code
-(httpStatus)`), and resets the selection/diff/partner state. `isLeaf = Boolean(leaf)`; `isSeries =
-Boolean(master) && !leaf` (a `leaf` carries `master` as its qualifier, so series mode is master-without-leaf).
-A second effect **polls the working view** every 2.5s (gated on `mode === "working"`): it refreshes `data`
-(so a file edited *after* the viewer opened shows up in the list, and the counters track) AND re-fetches the
-currently-open file's diff (`active`) so an edit to the file you are LOOKING AT updates in place. The
-open-diff re-fetch is non-disruptive: the DiffPane only rebuilds when the before/after content actually
-changed, so an unchanged poll is a no-op (no flicker / scroll-reset) — it re-renders only when that file is
-the one edited. Committed and series views are snapshots; the working leaf view polls its working tree,
-while the scope view reflects the selected task/base-worktree state and may change independently.
+ChangeList now builds reviewFileBadges once per rendered list, from existing lane, inventory and
+worklist inputs. ReviewFilters is the shared external owner of labels, admissibility and explanatory
+text; its former local bodies are removed. The view does not issue per-file gate requests or classify
+hunks. Filtered code lists exclude memory entries for non-all filters; header counters still come
+from the unfiltered answer. Missing attribution remains explicit in the filter owner, not new curation.
 
-The header is a back button (`changeset-back`) + a title (`committed · {leaf}` / `working · {leaf} ·
-uncommitted` for a leaf, `series {master} · net since series start` for the series, else the scope) +
-a counters block (`changeset-counters`: `code +ins −del (files)` and the same for memory, from
-`data.counters`). Column 1 (`PanelGroup` left `Panel`) is two scrolling sections — **changed code** and
-**changed onboarding** — each row a button (status chip + ellipsised path + `Counts`); the active/hover
-row now carries the File-Viewer-tree **amber wash** (`background: color-mix(in oklab, var(--amber) 20%,
-transparent)` active, `12%` hover) — the old `background: bg` active state was indistinguishable from
-the panel, so the selected file looked unselected. For a code row
-with `hasSidecar` (or an onboarding row with a derivable partner) a small split affordance opens it
-**with** its partner in column 3. `open(kind, file, withPartner?)` sets `active` and loads the diff via
-`loadDiff` — `leaf ? leafFileDiff(repo, master, leaf, kind, path, mode) : master ? masterFileDiff(repo,
-master, kind, path) : fileDiff(repo, scope, kind, path)` — so **every mode is per-file inspectable**
-(leaf committed/working, master net, and an enclosure scope all open a real diff); `withPartner` also loads
-`partnerOf(...)` into `partner` (column 3). `partnerOf` maps a code
-path to `onboarding/{path}.md` when `hasSidecar`, and a memory path back to its code partner via
-`partnerCodePath` (strip `onboarding/` + `.md`, rejecting `overview`/`entities`/`.index`). Column 2 shows
-the `diff`'s `ChangeSetPane` (`keyPrefix="changeset.main"`) or — until a file is picked — an
-**empty-state backdrop**: an `<EmptyStateBackdrop src="/assets/sc2-siege-tank-boomerang.mp4"
-opacity={0.18}>` (the faint siege-tank boomerang loop the File Viewer / Operations also use; `0.18`
-is brighter than the shared `0.14` default because the clip reads darker) wrapping the "Select a
-changed file" prompt, inside a flex-column `emptyHost` so the backdrop's `flex:1` canvas fills the
-Panel. Column 3 mounts a second `ChangeSetPane`
-(`keyPrefix="changeset.partner"`) when a partner is loaded.
+ChangeSetMainPane handles current error first, then selected diff, zero/filter-zero wording and the
+pick-a-file backdrop. A filter's empty result is not a claim that the whole comparison is empty.
+The comparison layout can stack on narrow viewports, keeps a separate resizer-persistence key, shows
+abbreviated code trees and supports Escape/Back through the caller. Non-comparison paths retain their
+ordinary range and working-poll policy. ReviewFailure/reviewProblemFromCause owns current error
+projection; this module no longer uses the old FilesApiError spelling.
 
-### Conventions
+## Invariants And Boundaries
 
-Panda `css`; `react-resizable-panels` (`PanelGroup`/`Panel`/`PanelResizeHandle`, `autoSaveId="changeset.outer"`).
-Reuses the L3 `data/changeset` client + `FilesApiError`, and the shared `EmptyStateBackdrop` for the
-no-file canvas. `data-testid`s: `changeset-viewer`, `changeset-back`, `changeset-counters`,
-`pane-placeholder` (now the **error** display only — the no-file empty state is the `EmptyStateBackdrop`,
-whose own `empty-backdrop` testid appears only when motion is enabled), `changeset-open-sidecar`.
+Owners supply measured values, pinned ranges, refusal details and file attribution. Presenting them
+is not semantic approval or publication. The stubbed component assertions below are not a fresh
+backend, product-suite, browser, performance or whole-MEMORY grade. Useful predecessor explanations
+and rollout observations are preserved with their source epoch rather than silently overwritten.
 
-### Invariants And Boundaries
+## Historical source-epoch account — preserved, superseded where different
 
-Read-only over the L3/L4a API; owns its own component state (no store mutation). Every target opens real
-per-file diffs: an enclosure `scope` diffs base→worktree, **master mode** the NET series range
-(`master_base → tip`) via `masterFileDiff`, and a **leaf** its `committed` (base→code_commit) or
-`working` (HEAD→worktree uncommitted) range via `leafFileDiff` — a `leaf` always carries its `master`
-qualifier. The back link is the only exit it controls (the Cockpit host also clears the takeover on a
-mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
+The prior load/poll/owner/type claims and rollout observations below are not current where the
+operative account above differs. Their prose markers are inert; no original code expression was
+normalized. Current evidence is in the one section after this historical account.
 
-## Repo-Internal References
+> ## Purpose
+>
+> `ChangeSetViewer` is the **Change-Set Viewer screen**: the up-to-3-column takeover that shows what
+> a task (`scope` = one active enclosure), a series master (`master` = the NET diff between its
+> declared endpoints, bound to the generation the list published), or — L4a — a single `leaf`
+> (in `committed` or `working` `mode`) changed. It is opened
+> by a `DetailPanel` change-set button and hosted by `CockpitShell` as a full-bleed takeover (its `onBack`
+> clears it, restoring the rails).
+>
+> `ChangeSetViewer` is the change-set viewer screen: a takeover that lists changed code and onboarding files and opens per-file diffs. It serves four selectors with one rendering — an enclosure scope, a series-master net, a leaf committed/working delta, and (new in W03) a recorded review comparison — and, when opened from the reviewer, filters that comparison's list by the lane destinations with per-row badges and one explanatory sentence.
+> ## Code Commentary
+>
+> ### Logic
+>
+> Series loads request the net change-set **with** its per-leaf breakdown
+> (`includeLeaves: true`, 260921-ICR-L33 / R33.2). The route already answers one
+> row per leaf and the viewer now renders that answer as a `by leaf (N)` rail, so
+> the net total beside it is attributable to the leaves it sums. The earlier
+> `includeLeaves=false` optimisation — "render only the net", added with the
+> serving escape by `a1521685` — is SUPERSEDED by this leaf rather than deleted:
+> the option is still supported by `data/changeset.ts` and by
+> `serving/changeset.py`, and any caller that genuinely renders nothing but the
+> net may still ask for it. The
+> working leaf view now waits for its initial data, then runs list and active-file
+> refreshes together and schedules the next cycle only after both settle. The
+> viewer renders a loading placeholder until data arrives, and a read that was
+> REFUSED or that measured empty is NAMED rather than left as an empty pane (see
+> the 260921-ICR-L33 section below); stale refresh results are ignored after
+> teardown. A current failed poll clears the prior successful value and shows its refusal; cached success is not displayed as current after failure.
+>
+> Props are `ChangeSetTarget` plus `onBack`, optional `onOpenLeaf` and optional `reviewContext` (`ViewerProps`). `ChangeSetTarget` carries `comparison?: number`, while `reviewContext` is a viewer prop, not a target field. A set comparison is passed to `loadChangeSet`, whose shared URL builder selects the numbered task-endpoint read first; otherwise selection precedence remains leaf > master > scope, with `includeLeaves: true` and generation pins on master reads. The target-change effect uses the shared conditional list/file resources, ignores stale completion and resets selection-local file/diff/partner state. A 304 reuses the retained parsed identity; callbacks remain local. A leaf still qualifies its master; series mode remains master-without-leaf.
+> A second effect **polls the working view** every 2.5s (gated on `mode === "working"`): it refreshes `data`
+> (so a file edited *after* the viewer opened shows up in the list, and the counters track) AND re-fetches the
+> currently-open file's diff (`active`) so an edit to the file you are LOOKING AT updates in place. The
+> open-diff re-fetch is non-disruptive: the DiffPane only rebuilds when the before/after content actually
+> changed, so an unchanged poll is a no-op (no flicker / scroll-reset) — it re-renders only when that file is
+> the one edited. Committed and series views are snapshots; the working leaf view polls its working tree,
+> while the scope view reflects the selected task/base-worktree state and may change independently.
+>
+> The header is a back button (`changeset-back`) + a title (`committed · {leaf}` / `working · {leaf} ·
+> uncommitted` for a leaf, `series {master} · net since series start` for the series, else the scope) +
+> a counters block (`changeset-counters`: `code +ins −del (files)` and the same for memory, from
+> `data.counters`). Column 1 (`PanelGroup` left `Panel`) is two scrolling sections — **changed code** and
+> **changed onboarding** — each row a button (status chip + ellipsised path + `Counts`); the active/hover
+> row now carries the File-Viewer-tree **amber wash** (`background: color-mix(in oklab, var(--amber) 20%,
+> transparent)` active, `12%` hover) — the old `background: bg` active state was indistinguishable from
+> the panel, so the selected file looked unselected. For a code row
+> with `hasSidecar` (or an onboarding row with a derivable partner) a small split affordance opens it
+> **with** its partner in column 3. `open(kind, file, withPartner?)` sets `active` and loads the diff via
+> `loadDiff` — `leaf ? leafFileDiff(repo, master, leaf, kind, path, mode) : master ? masterFileDiff(repo,
+> master, kind, path, generation) : fileDiff(repo, scope, kind, path)` — so **every mode is per-file inspectable**
+> (leaf committed/working, master net, and an enclosure scope all open a real diff); `withPartner` also loads
+> `partnerOf(...)` into `partner` (column 3). `partnerOf` maps a code
+> path to `onboarding/{path}.md` when `hasSidecar`, and a memory path back to its code partner via
+> `partnerCodePath` (strip `onboarding/` + `.md`, rejecting `overview`/`entities`/`.index`). Column 2 shows
+> the `diff`'s `ChangeSetPane` (`keyPrefix="changeset.main"`) or — until a file is picked — an
+> **empty-state backdrop**: an `<EmptyStateBackdrop src="/assets/sc2-siege-tank-boomerang.mp4"
+> opacity={0.18}>` (the faint siege-tank boomerang loop the File Viewer / Operations also use; `0.18`
+> is brighter than the shared `0.14` default because the clip reads darker) wrapping the "Select a
+> changed file" prompt, inside a flex-column `emptyHost` so the backdrop's `flex:1` canvas fills the
+> Panel. **260921-ICR-L33 split that single expression into `ChangeSetMainPane`, which owns three
+> states**, and the third one is the point: the picked file's diff; a NAMED measured-empty statement
+> (`changeset-empty` — "no changed file in either half — this change-set is measured empty (code 0
+> file(s) · memory 0 file(s))", rendered whenever the answer carried zero files in both halves); and
+> only otherwise the backdrop + prompt above. A measured zero is a measurement, not an absence of an
+> answer, and the pick-a-file backdrop no longer stands in for it. Column 3 mounts a second `ChangeSetPane`
+> (`keyPrefix="changeset.partner"`) when a partner is loaded.
+>
+>
+> **`ChangeSetTarget.review` is a cockpit dispatch identity that may carry no subject.** Its optional selector fields (and `historical` flag) are read by the cockpit: presence selects `ReviewSurface`, and an empty object opens the task-context review. This dispatch is distinct from the reviewer's All/Unexplained/Unknown changes actions, which mount `ChangeSetViewer` with a recorded `comparison` and viewer-owned `reviewContext`, issuing comparison list and file-diff reads.
+>
+> **260921-ICR-L13 bound the series view to its listed generation.** `ChangeSetTarget` gained an
+> optional `generation?: MasterNetPins` — the exact recorded endpoints a listing published; empty /
+> absent means the declared integrated result. Three constructs carry it: `seriesListMeta` reads
+> the series list response back out when it names its own `generation` (a task/leaf payload never
+> carries one, so the check is the discriminant, not the entry target);
+> `boundSeriesGeneration` prefers the list response's generation (it is newer than the entry's)
+> and falls back to the entry's pins, and every file expansion below carries the bound
+> generation, so an opened entry stays bound after the branch advances. `SeriesGenerationTag`
+> renders the bound net as a header caption — short digest + currentness + the one scope this
+> view ever serves (`gen {digest8} · {currentness} · integrated`), only when the list response
+> names its generation, so older payloads read unchanged. The viewer implements no catalogue
+> or drill-down: that is R24's obligation on top of what this view exposes.
+>
+> ### Conventions
+>
+> Panda `css`; `react-resizable-panels` (`PanelGroup`/`Panel`/`PanelResizeHandle`, `autoSaveId="changeset.outer"`).
+> Reuses the L3 `data/changeset` client + `FilesApiError`, and the shared `EmptyStateBackdrop` for the
+> no-file canvas. `data-testid`s: `changeset-viewer`, `changeset-back`, `changeset-counters`,
+> `pane-placeholder` (now the **error** display only — the no-file empty state is the `EmptyStateBackdrop`,
+> whose own `empty-backdrop` testid appears only when motion is enabled), `changeset-open-sidecar`.
+>
+> **260915-KS-L22 introduced `ChangeSetTarget.review` as a cockpit dispatch field.** The cockpit's
+> review branch mounts `ReviewSurface`, not this viewer, and the optional selector names a recorded
+> subject rather than a path. That entry dispatch remains separate from the current reviewer's
+> comparison-page destination: `ReviewSurface` can mount `ChangeSetViewer` over the retained review
+> with a `comparison` number and `reviewContext`, so a review can now issue change-set requests.
+> `ReviewSelectorKind` remains a type import for the dispatch field.
+>
+> ### Invariants And Boundaries
+>
+> Read-only over the L3/L4a API; owns selection-local component state while store-owned bounded conditional resources retain list/file results. Every target opens real
+> per-file diffs: an enclosure `scope` diffs base→worktree, **master mode** the NET series range
+> (`master_base → selected result`, pinned to the listed generation when one is bound) via `masterFileDiff`, and a **leaf** its `committed` (base→code_commit) or
+> `working` (HEAD→worktree uncommitted) range via `leafFileDiff` — a `leaf` always carries its `master`
+> qualifier. The back link is the only exit it controls (the Cockpit host also clears the takeover on a
+> mode-bar switch or a node `open`). Placeholders are stable-size (no flip-flop).
+>
+> `ChangeSetTarget` carries `comparison?: number`; `ViewerProps` (and the exported component props) carry `reviewContext?: ReviewChangeContext`. A set comparison is selected first (`changesetListRequest` passes the complete address, including `comparison`, to `loadChangeSet`; `diffRequestFor` delegates to `comparisonFileDiff`); otherwise leaf > master > scope is unchanged. The review filter state (`all` | `unexplained` | `unknown`) starts from the reviewer's page and narrows the list through `filteredChangeSet`; `ReviewFilters` shows destination counts and `FILTER_NOTES` under a non-all filter. The comparison header names `comparison N · leaf`, offers `← Back to intent review`, and displays the two abbreviated code trees through `ComparisonTreesTag`, not all four operands. `useComparisonFirstFile` opens the initial file. Comparisons do not auto-poll; non-comparison targets remain unfiltered and retain their existing behavior.
+> ## Evidence
+>
+> ### Repo-Internal References
+>
+> - The mount/target-change effect selects the leaf, task, or master request (the master branch now threads the entry `generation` as pins), fetches it through `req.then`, and reruns when target inputs change. (historical reference 1)
+> - The series view is bound to its listed generation: the list response's own generation when it names one (else the entry's pins) flows into every file expansion, with a digest/currentness/scope caption. (historical reference 2)
+> - The `open` handler invokes `loadDiff`, whose branch chooses the master (generation-bound), leaf, or scoped file-diff path. (historical reference 3)
+> - Code↔sidecar partner mapping uses the forward and reverse helpers. (historical reference 4)
+> - The viewer invokes the L3 leaf, master, task, and file-diff client calls. (historical reference 5)
+> - The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. (historical reference 6)
+> - The Cockpit takeover that mounts it full-bleed and supplies `onBack`. (historical reference 7)
+> - The middle pane's three states — the picked file's diff, a NAMED measured-empty change-set, and only otherwise the backdrop with the "Select a changed file" prompt. (historical reference 8)
+> - The DetailPanel controls that open it with a change-set target. (historical reference 9)
+> - The loading, back, and master-file NET-diff behavior pinned in the tests, plus the new generation-binding case. (historical reference 10)
+>
+> - A comparison target uses `loadChangeSet` with its numbered comparison address. (historical reference 18)
+> - Per-file diffs on a comparison read the recorded trees (historical reference 19)
+> - The filter row shows each destination with its lane file count (historical reference 20)
+> - The comparison header names its number and offers the way back (historical reference 21)
+> - The filter's first file opens on entry (historical reference 22)
+> ## 260921-ICR-L12 The Review Target Carries Which Record It Is Read From
+>
+> `260921-ICR-L12` (`ICR-R12@v1`) adds one optional field to this module's `ChangeSetTarget`:
+> `review?: { selectorKind?: ReviewSelectorKind; selectorId?: string; historical?: boolean }`. Absent
+> means the live candidate, which is what every ordinary entry asks for, and `true` means the leaf's own
+> recorded comparison — the entry a **closed** leaf offers, where the worktree is gone and the durable
+> generation is the only comparison there is.
+>
+> The field is part of the target's identity rather than a decoration on it, because the takeover that
+> reads the target hands the record to `ReviewSurface` and the surface asks the server for exactly that
+> record. Nothing else in the module changed: the committed and working change-set actions are untouched,
+> and no filesystem path is added to any target.
+>
+> ## 260921-ICR-L33 A Landed Master's Leaves, And What Each One Accounts For
+>
+> This screen was reachable for a master whose leaves had all landed, and it showed a single
+> unattributable number. `260921-ICR-L33` (`ICR-R33@v1`) changes what the series read asks for and what
+> the screen does with the answer.
+>
+> **The read asks for the breakdown.** `changesetListRequest` passes `includeLeaves: true` on the master
+> branch, so `MasterChangeset.leaves` arrives carrying one row per leaf with that leaf's own `state`
+> (`committed` | `working`) and its own `counters` for both halves. A payload that predates the
+> breakdown — or a task/leaf payload, which has no `leaves` field at all — reads as no breakdown rather
+> than an invented one: `seriesLeaves` keys on the field's PRESENCE, which is the discriminant the mixed
+> union already had.
+>
+> **The answer renders as attribution, not a second total.** `LeafBreakdown` draws a `by leaf (N)` rail
+> beneath the changed-file lists (`changeset-leaves`, one `changeset-leaf-row` per leaf, each with a
+> `changeset-leaf-counters` span reading `code F file(s) +I −D · memory F file(s) +I −D`). Each row is a
+> button whose click hands the leaf id and the mode its own `state` implies to `onOpenLeaf`:
+> `committed` for a landed leaf — the historical route (`leafChangeset(..., "committed")`, bound to the
+> leaf's own `code_commit`) that R33.3 needs and that works with **no live worktree**, because closeout
+> removed it — and `working` for a leaf the read still reports in flight, which is the range that
+> actually exists for it. `onOpenLeaf` is optional: with no holder the rows render disabled rather than
+> silently inert.
+>
+> **A leaf opened from here stays in the same takeover.** `Cockpit.tsx`'s `ChangeSetTakeover` now
+> threads its own `openChangeSet` action in as `onOpenLeaf`, and `ChangeSetViewer` composes the new
+> target (`{ repo, master, leaf: id, mode }`) from the row — so the reader re-targets ONE screen instead
+> of having to find the leaf somewhere else. `master` rides along as the leaf's qualifier, exactly as
+> every other leaf target on this route carries it.
+>
+> **What could not be shown is NAMED.** `ChangeSetWorkspace` used to render `error` as a bare status
+> string and nothing else. `ChangeSetRefusal` now renders the route's own refusal as an answer: the
+> owner's code and HTTP status in their own element (`changeset-refusal`), then the reason, the offending
+> input and the next action the body published, under `data-review-state` / `data-review-code` for the
+> shared refusal vocabulary. It reuses `reviewProblemFromCause` (the same `ReviewFailure` decode
+> `detail-panel/changeSetBar.tsx` already used for its counters read) rather than introducing a second
+> decoder; the shared `TOKEN_BY_CODE[code] ?? "domain-refused"` fallback in `data/reviewTransport.ts` is
+> untouched, and an unknown code being carried as `domain-refused` remains its deliberate behaviour.
+>
+> **The pane's third state is a measurement.** `ChangeSetMainPane` names a change-set that measured
+> empty in both halves (`changeset-empty`) instead of showing the pick-a-file backdrop, which would
+> claim there was nothing to pick rather than that nothing was measured. The refusal and the empty
+> statement are different facts and are rendered as different ones.
+>
+> - The master branch of the list request now asks for the per-leaf breakdown; a task/leaf payload has no `leaves` field, so presence is the discriminant. (historical reference 11)
+> - The rail that renders the breakdown: one row per leaf with its own state chip and both halves' counters. (historical reference 12)
+> - A leaf row opens that leaf's own range — `committed` for a landed leaf, `working` for one still in flight — through the hook the cockpit supplies. (historical reference 13)
+> - The refusal is carried as an answer: the owner's code and status, its reason, the offending input and the next action. (historical reference 14)
+> - The measured-empty statement, and the three states of the middle pane. (historical reference 15)
+> - The cockpit re-target that keeps a leaf opened from the net in the same takeover. (historical reference 16)
+> - The delivered cases: per-leaf counters, opening a landed leaf and a working leaf from the rail, the named refusal, and the named measured-empty. (historical reference 17)
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The mount/target-change effect selects the leaf, task, or master request, fetches it through `req.then`, and reruns when target inputs change. | "const req = changesetListRequest(repo"; "void req.then("; "const listRequest = leafChangeset(repo, m, leaf, \"working\");"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-167; dashboard/src/panels/changeset/ChangeSetViewer.tsx:295-296; dashboard/src/panels/changeset/ChangeSetViewer.tsx:322-322 |
-| The `open` handler invokes `loadDiff`, whose branch chooses the master or scoped file-diff path. | "const loadDiff"; "masterFileDiff("; "fileDiff("; "const open"; "void loadDiff(kind" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:182-183; dashboard/src/panels/changeset/ChangeSetViewer.tsx:442-442; dashboard/src/panels/changeset/ChangeSetViewer.tsx:445-445; dashboard/src/panels/changeset/ChangeSetViewer.tsx:450-450 |
-| Code↔sidecar partner mapping uses the forward and reverse helpers. | `partnerCodePath` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:149-155 |
-| The viewer invokes the L3 leaf, master, task, and file-diff client calls. | "leafChangeset(repo, master ?? \"\", leaf, mode ?? \"committed\")"; "masterChangeset(repo"; "taskChangeset(repo, scope ?? \"\")"; "fileDiff(repo, scope ?? \"\", kind, path)" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:164-190 |
-| The viewer mounts a main `ChangeSetPane` and mounts a partner pane only when `partner` exists. | "ChangeSetPane diff={diff}"; "ChangeSetPane diff={partner}"; "partner ?" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:393-393; dashboard/src/panels/changeset/ChangeSetViewer.tsx:404-404; dashboard/src/panels/changeset/ChangeSetViewer.tsx:408-408 |
-| The Cockpit takeover that mounts it full-bleed and supplies `onBack`. | "<ChangeSetViewer" | dashboard/src/cockpit/Cockpit.tsx:570-570 |
-| The viewer renders the `EmptyStateBackdrop` whenever `diff` is absent. | "{diff ? ("; "Select a changed file" | dashboard/src/panels/changeset/ChangeSetViewer.tsx:392-392; dashboard/src/panels/changeset/ChangeSetViewer.tsx:398-399 |
-| The DetailPanel controls that open it with a change-set target. | `ChangeSetButton`; `DocChangeSetBar` | dashboard/src/panels/detail-panel/changeSetBar.tsx:20-62; dashboard/src/panels/detail-panel/changeSetBar.tsx:69-115 |
-| The loading, back, and master-file NET-diff behavior pinned in the tests. | "shows loading until the request resolves instead of rendering a zero-file result"; "calls onBack when the back link is clicked"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:65-86; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
+The changed-file rail uses the shared `useSidebar("changeset", "left")` state. Its header toggle stays outside the rail; hiding applies the shared panel/handle props without unmounting the rail, so the main diff can take the available layout space and the saved rail sizes remain available when shown again. The same open state hides the stacked list on a narrow comparison layout.
 
-## Update History
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "<ChangeSetViewer" repointed to dashboard/src/cockpit/Cockpit.tsx:570-570. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
+## Evidence
 
-- 2026-08-04T14:53+02:00 — 260731-EFA-L6 S18-B13 curator: closed D5 false-branch connector evidence by fixer-generated ternary/backdrop ranges for the same-reviewer closing delta.
+### Docs References
 
-- 2026-07-12T12:55+02:00 — 260712-TRH-L2: added honest loading state, kept explicit errors, opted series loads out of per-leaf summaries, and replaced overlapping working polling with settle-then-schedule refreshes. Verification metadata pinned until closeout stamps the L2 code commit.
+No configured Domain Documentation source was available. Actual repository owners and stored case
+declarations support the scoped account, not fresh execution acceptance.
 
-- 2026-06-30T00:00:00+02:00 — L5 (diff-viewer polish): the no-file column-2 placeholder is replaced by an
-  `EmptyStateBackdrop` (the faint `/assets/sc2-siege-tank-boomerang.mp4` loop at `opacity={0.18}`,
-  in a flex-column `emptyHost`) wrapping the "Select a changed file" prompt — `pane-placeholder` now
-  marks only the error state. The changed-file `row`'s active/hover highlight is fixed to the
-  File-Viewer amber wash (`color-mix(in oklab, var(--amber) 20%/12%, transparent)`); the old
-  `background: bg` was invisible against the panel. New import `EmptyStateBackdrop`; added a reference
-  to its sidecar source. Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-06-29T23:00+02:00 — L4a: `ChangeSetTarget` gains `leaf?` + `mode?` (`"committed" | "working"`);
-  `load`/`loadDiff` route a `leaf` through `leafChangeset`/`leafFileDiff` (precedence `leaf > master >
-  scope`, `isSeries = master && !leaf`), and the header labels the leaf view (`committed · {leaf}` /
-  `working · {leaf} · uncommitted`). A second effect polls the **working** view every 2.5s (working-only)
-  so a file edited after opening appears in the list AND the currently-open file's diff updates in place
-  (the open diff only rebuilds when its content actually changed). The stale "master per-file diffs not
-  available" note was corrected. Verification metadata pinned until closeout stamps the L4a commit.
-- 2026-06-29T17:00+02:00 — L4 follow-up: **master mode is now inspectable** — rows are clickable and
-  `loadDiff` routes the series `master` through `masterFileDiff` (the NET `base → tip` diff) vs a leaf's
-  `scope` through `fileDiff`; the title reads "net since series start" and the master placeholder is the
-  normal "Select a changed file". The per-task (leaf) view is unchanged. Verification metadata pinned until
-  closeout stamps the L4 follow-up commit.
-- 2026-06-29T16:40+02:00 — Created for operations-integration L4 (Change-Set Viewer): the up-to-3-column
-  takeover screen over the L3 `/api/changeset/*` API (column-1 changed code/onboarding rows + counters +
-  back link, column-2 `ChangeSetPane` diff, column-3 code↔sidecar partner), with master mode rendered as
-  an accumulated summary (no per-file diff). Verification metadata pinned to the task base until closeout
-  stamps the L4 code commit.
+### Repo-Internal References
+
+
+- Target changes pass the complete address through the shared list loader, reset selection-local values and ignore completed results after effect cleanup. 
+- Listed generation wins over entry pins and is carried to file reads; the header displays its digest/currentness/scope rather than selecting a new tip. 
+- The main file opener sequences its own responses and delegates comparison-first, then leaf/master/scope diff selection to the real request owner. [3]
+- Forward/reverse partner mapping admits code/ordinary Markdown sidecars and excludes overview/entities/index reverse partners. [4]
+- The list/diff delegates call the shared change-set client; comparison address and generation pins remain explicit rather than another selected range. 
+
+- The current workspace mounts the selected main pane and a second partner pane only when its supplied partner value exists. [6]
+
+
+- The actual cockpit takeover dispatches review targets separately and supplies the ordinary viewer Back and leaf-retarget callbacks. [7]
+
+- After a current error is handled, the nonerror middle-pane branches are a selected diff, an explicitly worded zero/filter-zero result, or the pick-a-file backdrop. [8]
+
+- The current task/detail controls supply change-set targets; their caller, not this viewer, owns entry selection. [9]
+
+- Stored component cases with seeded API results assert loading, Back, a master file read and listed-generation pins; these are source assertions, not a fresh route/test run. [10]
+- The shared list URL requests the master per-leaf breakdown; the viewer reads returned leaves by field presence rather than inventing them. 
+- The leaf rail prints each supplied state and its separate code/memory counters. [12]
+
+- Leaf-row callbacks choose working versus committed from the returned row and compose its repo/master/leaf target through the supplied callback. [13]
+
+- The current refusal renderer exposes the supplied owner code/status/detail and optional offending input/action; it does not invent absent fields. [14]
+- An error precedes selected diff and zero/backdrop branches; filtered-zero wording does not claim the entire comparison was measured empty. [15]
+
+- The cockpit forwards leaf reopening into the existing takeover instead of requiring another document-navigation path. [16]
+
+- Stored seeded component cases assert per-leaf counters, both leaf modes, a named refusal and measured-empty wording; historical captured-body comments are not fresh server execution. [17]
+- A numbered comparison is forwarded intact to the shared list URL owner before other range choices. 
+- Per-file comparison reads take the explicit comparison address before leaf/master/scope fallbacks. [19]
+- Shared ReviewFilters, not removed local functions, owns destination labels/counts, non-all eligibility and by-design explanation text. [20]
+
+- The comparison header names its number, Back destination and abbreviated code trees; it does not display all four full operands. [21]
+
+- The comparison entry/filter effect opens the matching initial file, or clears the selection when there is none. [22]
+- A rendered list builds reviewFileBadges once from already supplied lane/inventory/worklist facts; no per-file gate request or classification is added. 
+- Eligible working leaf polls schedule the next refresh after both list/open-file requests settle; no explicit initial-load dependency or fixed wall-clock cadence is enforced. 
+
+- The shared changed-file rail toggle controls mounted visibility. [25]
+- The header retains the shared sidebar toggle while the changed-file rail is hidden. [26]
+
+- A rendered list builds reviewFileBadges once from already supplied lane/inventory/worklist facts; no per-file gate request or classification is added. [23]
+
+- The list/diff delegates call the shared change-set client; comparison address and generation pins remain explicit rather than another selected range. [5]
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/changeset/ChangeSetViewer.tsx::useChangesetLoad - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::useChangesetState - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::SeriesGenerationTag - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::boundSeriesGeneration - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61; dashboard/src/panels/changeset/ChangeSetViewer.tsx::seriesListMeta - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit f141d164265e926be9249acf6ae680ccf9ffae61; dashboard/src/panels/changeset/ChangeSetViewer.tsx::changesetListRequest - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7c56c11d651972515723b4090b8174087eb5236f; dashboard/src/panels/changeset/ChangeSetViewer.tsx::seriesLeaves - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 2e11db883f77bb1bf2827ae537b5d1d564e020b3; dashboard/src/data/changeset.ts::listUrl - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/reviewChangeSet.ts::reviewFileBadges - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/changeset/ChangeSetViewer.tsx::useWorkingChangesetPoll - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

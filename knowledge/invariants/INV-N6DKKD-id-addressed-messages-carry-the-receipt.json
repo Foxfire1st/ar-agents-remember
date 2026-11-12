@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Receipt-role, missing-lock and last-feed cases pin the repair across its places; without the record the five places could drift apart."
+  },
+  "applicability": "The five repaired places acting together on one call or read.",
+  "conditions": [
+    "Completed answers include refusals, which are recorded with code."
+  ],
+  "exclusions": [
+    "Unresolved recipients, which stay literal without a target role."
+  ],
+  "id": "INV-N6DKKD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_tool_event_river.py: receipt-role, missing-lock, protected-survival cases; EventRiver.test.tsx: newest-head, verbatim-unknown, legacy-outcome cases; discriminator rerun lock_added empty"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W38",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Id-addressed messages carry the receipt role, the stream reads without creating observer files, the head shows the newest timestamp, unknown roles render verbatim, and earlier-kind rows keep their base outcome labels.",
+  "status": "proposed",
+  "supersedes": []
+}

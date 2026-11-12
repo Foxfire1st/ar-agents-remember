@@ -1,20 +1,33 @@
 # dashboard/src/panels/engine-room/scene.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/scene.ts`                 |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace providers/providerPlanBlocked/providerScanAt. resolveBlocks uses contract-not-written missing fact as fleeting; source-only scan pointers and node/edge gate/landing/recovery/memory movement remain.
+
+### Maintenance boundaries
+
+Replace provider runtime/prediction and distinct provider-plan block guarantees with hasMemory/worktree materialization, pre-contract fleeting, and source scans. Document reduced one-argument resolveScene plus unchanged geometry-gated refusal composition; method name resolveEngines remains, not a gauge owner.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof. [3]
+- resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof. [4]
+- resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof. [5]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The pure scene-resolution layer of the Engine Room, extracted from `EnclosureCanvas.tsx`
 by the 260731-EFA-L8 responsibility split. It derives, from one `EngineProcessNode`,
@@ -45,32 +58,26 @@ fields degrade to the honest absent/planned register rather than fabricating sta
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scene packet and its resolving entry point. | `EnclosureScene`; `resolveScene` | dashboard/src/panels/engine-room/scene.ts:22-58; dashboard/src/panels/engine-room/scene.ts:324-369 |
-| The per-aspect resolvers consumed by the layers. | `resolveEngines`; `resolveBlocks`; `resolveRecovery` | dashboard/src/panels/engine-room/scene.ts:74-110; dashboard/src/panels/engine-room/scene.ts:157-195; dashboard/src/panels/engine-room/scene.ts:292-303 |
 
-## Cross-Repo References
+- The scene packet and its resolving entry point. [1]
+
+
+- The per-aspect resolvers consumed by the layers. [2]
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  scene module extracted from `EnclosureCanvas.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+No applicable cross-repository source was found.

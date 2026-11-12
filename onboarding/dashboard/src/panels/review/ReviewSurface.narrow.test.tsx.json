@@ -1,0 +1,114 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.narrow.test.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
+        "content": "sha256:817ca51a2584717c41bfbcf80bbff328da952586677739e71f84fa1d17e43418",
+        "locator": {
+          "kind": "symbol",
+          "name": "lets every column shrink and wrap its long identities"
+        }
+      },
+      "id": "RLZ-HNY7R7",
+      "invariant": "INV-58S9SG",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 pane shrink-wrap",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The mounted layout-B declaration pin checks root inherited anywhere wrapping and zero minimum width of workspace/tree/reading columns; it performs no geometry measurement.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
+        "content": "sha256:811d4d08562a2c796e74dfcf1eebe5278571e0dc6efba7747fb7d28f9630ffe1",
+        "locator": {
+          "end": 270,
+          "kind": "line_range",
+          "start": 219
+        }
+      },
+      "id": "RLZ-SG0RRV",
+      "invariant": "INV-Z938DS",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 grid and header",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The ported grid/header case asserting the narrow track and wrapped header.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"keeps the root still and makes the reading column the page scroller\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
+            "content": "sha256:4c30579907b999c40a4435bc09861b1f2929bc9e778bc7c61929537f316abab8",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 183
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"lets every column shrink and wrap its long identities\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
+            "content": "sha256:6dc99d0b6e284e7df01b2dc42b1e1f144933ed1c6163d24db4f1a4dac5eebaf1",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"stacks the grid at 40rem, wraps the top line there and keeps identities in the disclosure\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
+            "content": "sha256:16997c1a029e3d441ebe63d9fc2441fca0eb150c6eb168f4f5f9148040ab04e4",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 218
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"leaves the tree's controls their own look and the tree no sideways scroll\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f9650e75ff8841b19d2f7bd8c4920f09d738420c",
+            "content": "sha256:92b03f164ce8fb489ab594a423ebf4d8c35edcacefb72def74dce9d42393169d",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

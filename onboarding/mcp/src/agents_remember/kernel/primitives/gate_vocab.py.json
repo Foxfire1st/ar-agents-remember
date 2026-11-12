@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/gate_vocab.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8ec9eae52d111189212dc74616cf6dc886f7799c",
+        "content": "sha256:fefd555f0dd2a46a9bc251dcb31727bc221010c65598d59b70e20a9d3ceba234",
+        "locator": {
+          "kind": "symbol",
+          "name": "STORED_GATE_WAY_OUT"
+        }
+      },
+      "id": "RLZ-QMDHPH",
+      "invariant": "INV-MM4B51",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 7",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one sentence the product gives for a gate that is still stored: no part decides it, and `agents-remember removed-stores` names the gate logs and removes them on the user's word.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Structural gate models import the producer-owned vocabulary from kernel.\n\nAnchor: \"from agents_remember.kernel.primitives.gate_vocab import (\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:36d7702b2074245d813ac292fdddb6016cf6ecd7e92ebb721838ddcd7a8c4dfc",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Gate kind coercion is the production vocabulary boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ec9eae52d111189212dc74616cf6dc886f7799c",
+            "content": "sha256:ccba211f201868aaf84acca7e268aab137d47499306d23512d01f6a65bead559",
+            "locator": {
+              "kind": "symbol",
+              "name": "coerce_gate_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

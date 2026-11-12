@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Preparing against an in-progress failing batch or letting a nested write escape rollback loses or mispublishes another writer's question. Sharing the preparation/publication lock and refusing nested publication prevents that costly transaction error."
+  },
+  "applicability": "Task-document source preparation and central validate/publish/refresh/rollback transactions for the same task repository.",
+  "conditions": [
+    "The call lock is acquired before task-document source preparation and the central transaction uses the same repository lock through validation, publication, refresh and rollback.",
+    "A nested publication in the active call refuses before invoking its publisher, rather than independently committing behind a later outer rollback.",
+    "A competing writer waits outside the failing transaction's source-preparation interval and reads after restoration before publishing its question.",
+    "The publication-active context token is reset in finally and repository roots determine lock identity."
+  ],
+  "exclusions": [
+    "This is not an inter-repository global lock, an independent nested commit, a new task mutation permission or a rollback of an already accepted separate transaction.",
+    "The producer's four focused passes remain historical producer evidence; no Curator thread/concurrency test or independent acceptance is claimed."
+  ],
+  "id": "INV-X485SP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/ee26097f-36d1-4b54-bd58-5fa30c31e589/round3-freeze-971e8a25/final-checks/final-focused.log",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-70/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-68-complete-history.json"
+    },
+    "handoffEntry": "L54-R1-C05 round3 admitted construction",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Task-doc preparation and central publication share one task-repository lock; nested publication refuses before writing, and another writer waits through rollback and then publishes its question.",
+  "status": "proposed",
+  "supersedes": []
+}

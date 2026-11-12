@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/mutation_evidence.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+        "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
+        "locator": {
+          "kind": "symbol",
+          "name": "ephemeral_git_mutation_snapshot"
+        }
+      },
+      "id": "RLZ-WZ3W15",
+      "invariant": "INV-656CYW",
+      "origin": {
+        "handoffEntry": "L37-index-copy-keeps-its-time",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Copies the index the same way for the mutation snapshots of the memory leg, which the closeout's judged-tree check reads.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Only enabled code/memory legs receive mutation cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:47a6be4de4f5791a84043f62cd700a9161f6d397cfa29514657fe093fbe2734e",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial_closeout_mutation_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Intent, expected-output binding, and commit proof retain their order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_git_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Interrupted attempts are reconciled from actual Git evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:c6edea6ac2ee716ea288491f7086dc5e8601b57c81314142e8971cb899b482f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_closeout_mutations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Cache-excluded snapshots retain actual object/ref identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:8e25de5b2bec6a3e47821213ae384a185a78a94bd2c1f7cb3f3dcd9511ee4927",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_is_clean_at_head"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The disposable snapshot copies the index with its time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:6a6bedb9b679f5b7f43d20e2e9b02c80d21dbd03f53131f1d9dbb062deef0e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "ephemeral_git_mutation_snapshot"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The snapshot model declares the separate content comparison tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d503d30b2c978a8642b69d2ab16c63530b330251",
+            "content": "sha256:1d2213697e54872749956c9f46bcec11d94fd8d6c15fb918b47608230c689933",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitMutationSnapshot"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/mutation_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "_contract_repositories keeps the leaf code leg at its owned code_worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:f2f934afb2cc276d244482140eb54e3cc71a0bfb385a1d234c33108cf83a8b4c",
+            "locator": {
+              "end": 486,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`begin_git_mutation` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:112946f07d62c75613cbc8278b9845297104d365edf3b2a89845efd4bef442eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_git_mutation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`prove_git_commit` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:33f63b4466fd7ac6a9166e8bd10ecda64d6130c6d3d1eafaaa7dbea6b075c6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_git_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`reconcile_closeout_mutations` implements the retained boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39ae800760aa4ef057b9404047188f3b8d9f650b",
+            "content": "sha256:c6edea6ac2ee716ea288491f7086dc5e8601b57c81314142e8971cb899b482f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_closeout_mutations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

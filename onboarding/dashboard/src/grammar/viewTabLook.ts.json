@@ -1,0 +1,142 @@
+{
+  "path": "dashboard/src/grammar/viewTabLook.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+        "content": "sha256:8cfa398e66b344e521f4bbbdf604cca52fa3e923a4b238d04c05a99e69c53ad5",
+        "locator": {
+          "end": 73,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-1NYFX2",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "This exact frozen presentation construct supplies the typography/bounds named by the clause; its formerly missing proof is now supplied in the paired mounted evidence.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+        "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "viewTabMetrics"
+        }
+      },
+      "id": "RLZ-5Z18NZ",
+      "invariant": "INV-3DKC7T",
+      "origin": {
+        "handoffEntry": "MIK-R133@v1 / L133-CODE-R3",
+        "leaf": "260928-MIK-L133"
+      },
+      "rationale": "Producer: the one shared definition both tabs and launcher controls take their look from; byte-identical since R1.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shared visual metrics feed both tab and launcher recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewTabMetrics"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tab class and selected launcher action retain the shared selected treatment; the complete small module contains both consumers and their common selected-look definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:605fc078a7ebdf203071ff6345b8e3df803bfbd50760ed1bb3d3ced874e3ef8a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The common launcher selector retains source spelling, arrow and ellipsis.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:040c954b7656cdd59f49156cb9e44c4a7040b204a1465576928e7cb5c658f8ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcherSelect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "ModeBar consumes the shared tab class without changing its single-select behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModeBar"
+            },
+            "path": "dashboard/src/grammar/ModeBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Operations grouping, bell and Clear all retain the shared tab authority with explicit 0.72rem task-page smaller text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:d5bf9dfe06c81a1e35c163131306dd4ac35daf66719f30f42f828f442a4f1ba1",
+            "locator": {
+              "kind": "symbol",
+              "name": "columnTabButton"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Task-page smaller text is 0.72rem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+            "content": "sha256:ea06381b97e9fd9e54571ebe9d6b480074598bb01f3f38921bceb7ef7e03ceec",
+            "locator": {
+              "kind": "symbol",
+              "name": "count"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

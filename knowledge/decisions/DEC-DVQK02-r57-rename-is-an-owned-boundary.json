@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future classifier must not merge two path-keyed obligations into a guessed renamed item and lose deletion/addition attribution."
+  },
+  "alternatives": [
+    {
+      "option": "Represent a source rename as deletion of its old path and addition of its new path in the path-keyed changed-file inventory.",
+      "reason": "Appendix151 states this identity choice explicitly. The lane consumes the shared measurement and projects its concrete path, including the absent side for added/deleted changes, rather than inventing cross-path identity.",
+      "status": "chosen"
+    },
+    {
+      "option": "Collapse the two changed-file items into a rename identity inferred across paths.",
+      "reason": "Every item is keyed by path; collapsing the paths would change item identity and could discard an independently relevant old/new attribution answer.",
+      "reconsider_when": "An approved requirement deliberately changes changed-item identity and specifies how both path obligations and historical linkage survive.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future classifier must not merge two path-keyed obligations into a guessed renamed item and lose deletion/addition attribution.",
+    "No prohibition on Git itself detecting renames for other purposes and no claim that this projection owns the underlying Git measurement."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design rename. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-DVQK02",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "0f038d49f8f1531e4e966dc271dd23033d095a94",
+        "content": "sha256:635dbf01b3bb66c367e06a12ad10157b42b62e52bcf27ef01540edaa53a9ec04",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/review_unexplained_lane.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-rename",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

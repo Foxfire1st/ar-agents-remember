@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Package description\n\nAnchor: \"Benchmark runner helpers for Agents Remember.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e95d34a658393ac0e13815f4a7fa724218bd4595",
+            "content": "sha256:e76e0ee7206feb5af32bc8ce2c1d4f3ed14cda963212b8ab816011189894496d",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

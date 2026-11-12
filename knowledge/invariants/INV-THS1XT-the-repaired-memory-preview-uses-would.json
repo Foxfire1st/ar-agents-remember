@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Reporting would-create for an existing journal-owned ref misstates the actual recovery plan and confuses contract absence with source absence; the two-stage same-journal operation pins their independent facts."
+  },
+  "applicability": "External-memory source-branch facts in first-leaf worktree-start preview carrying the owner-admitted unpublished atomic parent, including partial-bootstrap journal recovery.",
+  "conditions": [
+    "The exact configured/task-derived memory repository, branch and pinned readable base were already validated by parent admission.",
+    "Would-create requires both explicit dry run/unpublished non-symlink parent and actual absence of the exact named memory ref.",
+    "If the journal-owned exact ref exists before parent publication, the original named-ref owner returns existing.",
+    "Actual apply/default use still requires its exact source ref and keeps the original bootstrap/recovery authority."
+  ],
+  "exclusions": [
+    "Creation or advancement of protected refs, which belongs to the existing actual bootstrap/landing owners.",
+    "Invented alternate source branches, replacement journals or manually materialized parent contracts.",
+    "Code-side source-state reporting, which has its own owner."
+  ],
+  "id": "INV-THS1XT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L47-review-R2.md; reviewer F1-public.txt 1 passed in 18.69s, four equal inventories and actual same-journal apply; F1-registered-proof.tar.gz with raw receipts and product bytes."
+      ],
+      "path": "notes/reports/260928-MIK-L47-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L47-R1-F1",
+    "leaf": "260928-MIK-L47",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The repaired memory preview uses would-create only when the exact admitted unpublished parent memory ref is absent and reports existing for the journal-owned ref already created.",
+  "status": "proposed",
+  "supersedes": []
+}

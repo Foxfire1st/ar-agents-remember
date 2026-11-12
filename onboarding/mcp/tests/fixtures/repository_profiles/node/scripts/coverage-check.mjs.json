@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/node/scripts/coverage-check.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture post-suite coverage proof over the suite artifact.\n\nAnchor: `statementCoverage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fa349c07777aafc0ed2e8bc6cbbc3108168bf85",
+            "content": "sha256:59bae75d3f4b01e6861715f5980b34acf3a1e1b0dec8f3ef499cc4378c3016e0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "dd03f264352c8162205220f146185a14d6ee1892",
+            "content": "sha256:31df11eca8b19145520e16009539c1a42079d4337c36ccdc7252ea884c96c6d1",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/node/scripts/run-suite.mjs"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

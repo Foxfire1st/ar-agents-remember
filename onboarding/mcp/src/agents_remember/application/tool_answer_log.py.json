@@ -1,0 +1,248 @@
+{
+  "path": "mcp/src/agents_remember/application/tool_answer_log.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_redact_value"
+        }
+      },
+      "id": "RLZ-1XE4ME",
+      "invariant": "INV-XJ7GV5",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_redact_value with _scrub_substrings decides which argument material reaches the persisted line, so credential values are omitted wherever embedded while ordinary values are written.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:c22dd12cf6c8d6533461cc6a6e5bf97a22f98c2011311e1df231340a41fe53af",
+        "locator": {
+          "kind": "symbol",
+          "name": "append_call_line"
+        }
+      },
+      "id": "RLZ-GJ6RTW",
+      "invariant": "INV-Y3TD13",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 daily-line",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "append_call_line owns the line write and its success/drop accounting under whole-record exclusion, so a whole record is distinguished from a short write in exactly one place.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:8e938807fb5d6538c4803338b19c1800f906615572f3a1c0a91b231a151bf06b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_env_values"
+        }
+      },
+      "id": "RLZ-H7W31G",
+      "invariant": "INV-XJ7GV5",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_env_values holds only credential-named variable values of at least six characters, so the searched set is exactly the amended rule's credential set.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:298df489896a0e1cf655522ee0eaa00cec9114cae3c2f46a1e1ec6eb7d589846",
+        "locator": {
+          "kind": "symbol",
+          "name": "_serialized_budget"
+        }
+      },
+      "id": "RLZ-Q4301Q",
+      "invariant": "INV-T3CE64",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The shared reentrant lock prevents concurrently dispatched calls spending the same remaining log budget.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
+        "locator": {
+          "end": 353,
+          "kind": "line_range",
+          "start": 283
+        }
+      },
+      "id": "RLZ-RRGDHN",
+      "invariant": "INV-E8S0YF",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 enclosure-lifecycle",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "resolve_log_roots routes the named terminating operations to the resolved transcript root independent of any live enclosure, so cleanup, abandon and finalize can never recreate a removed enclosure logs directory.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
+        "locator": {
+          "end": 353,
+          "kind": "line_range",
+          "start": 283
+        }
+      },
+      "id": "RLZ-RRJX13",
+      "invariant": "INV-JRV850",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 destinations",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "resolve_log_roots chooses the physical destination before any line or detail is written, so worker, controller, raised and terminating calls each land where the packet puts them.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+        "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
+        "locator": {
+          "kind": "symbol",
+          "name": "_evict_older_days"
+        }
+      },
+      "id": "RLZ-WHP2Y6",
+      "invariant": "INV-ANKVYJ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 budgets",
+        "leaf": "260928-MIK-L108"
+      },
+      "rationale": "_evict_older_days runs the pressure-write reclamation loop against census-cached day sizes, so finished days are accounted once and successful removal walks nothing again.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Admitted calls append one whole day line and file their whole result beside it; writes that cannot be admitted are dropped and counted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:c22dd12cf6c8d6533461cc6a6e5bf97a22f98c2011311e1df231340a41fe53af",
+            "locator": {
+              "kind": "symbol",
+              "name": "append_call_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A canonical caller-task enclosure binding selects a live enclosure log folder; terminating calls always use the transcript root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:fc6c572468e4c29846b3cc9752c6064780279bf2fd776e72531cf7b8878077a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_log_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Over-budget folders evict whole oldest days against one coherent census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:53a373db7a06d0fbb1b0419108122ca31b58886c642b19298de7e385e5cb4599",
+            "locator": {
+              "kind": "symbol",
+              "name": "_evict_older_days"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Credential keys and credential-variable values are omitted; ordinary values stay whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:03ec733da445aa6b4d8910bc6875e8f971ccfb913c6a482b1fac7f3b3eb0fc1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_redact_value"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A caller diff has its own bounded readable report, or no report when oversize or unwritable; it is independent of detail retention.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:636b1392813c0c5b75390e952df83aaa0eb06c3d123bb77f21f7649c374dd88b",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_diff_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The shared in-process budget state is serialized by one reentrant lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+            "content": "sha256:298df489896a0e1cf655522ee0eaa00cec9114cae3c2f46a1e1ec6eb7d589846",
+            "locator": {
+              "kind": "symbol",
+              "name": "_serialized_budget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Concurrent detail writes cannot both spend the same remaining folder budget.\n\nAnchor: `test_concurrent_details_cannot_both_spend_the_same_log_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02df2b567c68180c22058ef0d58bf27b6ea52756",
+            "content": "sha256:4e501d5e6da0d4fabec24d326e4f71ecc97abfad6fb7b6e5c130c636c22154f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tool_answer_log.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,86 @@
+{
+  "path": "dashboard/src/panels/EngineRoom.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "§4.2 3-zone room (`Panel fill` → `roomShell` → header + `roomGrid` [stack \\| `roomStage` \\| `roomZone`]).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:8f2f25166c9a3108fbdd4dd3614786b86a9f0924c6e2b3c5482efe3c91d9af83",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:772258103515c77131d88eddcb009d0152258a5ca0256f0e5ee02cfa58141460",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`EngineRoomHeader` (health/phase/nextAction + master-caution from `selectQueue`).\n\nAnchor: `EngineRoomHeader`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:5618965181d8da987f106c86d53201f36adbbd5d11be42a1e036a3731a8f2f1d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The bounded-height panel variant the room uses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98d36745c158cda0ea21c018a601df46566c3df4",
+            "content": "sha256:e582c473d3407624b730acb7eeaf7947ba822fba5eebbcd8ceb9f41aa2dcd8d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "fill"
+            },
+            "path": "dashboard/src/grammar/Panel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The per-worktree provider + enclosure-process read (surface 4 / `engineProcesses`).\n\nAnchor: \"def read_engine_process_facts(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:da26bad4ff847151b2478263ffe4450823fa384e4e8b48012cc1209e3cd1bea2",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "A start-time dependency gate was a real alternative and was rejected for a stated cost; the choice constrains how every master of this repository may be worked."
+  },
+  "alternatives": [
+    {
+      "option": "Start a leaf without reading its packet's dependencies; the manager orders the landings",
+      "reason": "Parallel starts are the normal flow and a dependency is a landing-order fact, which only the manager holds.",
+      "status": "chosen"
+    },
+    {
+      "option": "Refuse a start while a named dependency is unlanded",
+      "reason": "It would serialise a whole master behind its first leaf and turn a landing-order rule into a start error.",
+      "reconsider_when": "a leaf is started whose build cannot be verified without the dependency's landed code, and the parallel start costs a review round.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The worktree_start description says in one sentence that dependencies are the manager's, and the decision log of a task, not the tool, carries the order."
+  ],
+  "context": "Leaves of one master are started in parallel and synchronised later. A start-time check of the dependencies a packet names would forbid that normal flow, so the packet had to say where landing order lives.",
+  "decider": "the developer, under D47, as MIK-R83@v1 rule 9 states it",
+  "id": "DEC-6GQ27H",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R83",
+        "packet": "requirements/MIK-R83-v1-task-file-discovery-and-truthful-reads.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "dependencies-not-checked",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

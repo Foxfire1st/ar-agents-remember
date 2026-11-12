@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/kept_capture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "kept_candidate_tree answers a tree from the kept index when nothing moved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6535d737aa32cf82b57102e99a4a1c1ddc96f975",
+            "content": "sha256:b2499e06d3ecb131e6cbccff990dcd82e05067be3f272059779285c2acbc1fad",
+            "locator": {
+              "kind": "symbol",
+              "name": "kept_candidate_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

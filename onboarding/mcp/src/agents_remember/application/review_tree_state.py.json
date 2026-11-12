@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/application/review_tree_state.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
+        "content": "sha256:ea6442c4bc3d22d0bbc2140ec45ef2d14072d7e1f939aefbe22c6a694895be5d",
+        "locator": {
+          "kind": "symbol",
+          "name": "side_currentness"
+        }
+      },
+      "id": "RLZ-NB5AJ1",
+      "invariant": "INV-TY4BR7",
+      "origin": {
+        "handoffEntry": "L81-R1-F21",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The review serialization alone preserves baseline shape while leaving the shared currentness owner and checks complete.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
+        "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_governing"
+        }
+      },
+      "id": "RLZ-S35ND0",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the reviewer's own form of the rule: of each owner's rows about one subject it keeps only those from that owner's latest attempt file that answers the subject, so the worklist view shows the judgment that governs. It reads the index's rows and does not go through merged_leaf_history.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Each side’s full currentness check is retained while current entries are omitted from the response list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
+            "content": "sha256:ea6442c4bc3d22d0bbc2140ec45ef2d14072d7e1f939aefbe22c6a694895be5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "side_currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Item-related after-tree rows are projected from their actual history sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
+            "content": "sha256:e657b430a0f3de6bc3343194e3701f5c0ce40251d0eb4cdc06e80fe6801aa6d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The latest attempt is selected independently per owner, not by row recency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88e30f8e12521e0ac310f5477de7ff9a732cbd02",
+            "content": "sha256:084c889820ac13c41ce829ca9da28cc8fd479201ebea643531cd56cf76ae4d5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_governing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

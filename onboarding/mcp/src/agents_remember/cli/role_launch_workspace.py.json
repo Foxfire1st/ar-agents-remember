@@ -1,0 +1,471 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_workspace.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_start_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-1NPDDX",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "Both entry points prepare through this one checked child while preserving the caller AgentBinding environment; the removed ambient persistent lifecycle is neither a current owner nor a required preparation route.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:ec4b80ce7bcb474c798c09e757a0654f93f8379c7b643fe202a09974d16b101f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_root"
+        }
+      },
+      "id": "RLZ-3S0BZD",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The leaf path that reads the manifest first and recreates only a recorded root.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-87P4BH",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Found/created workspace preparation records referenceRoot and named copy warning without substituting another reference or blocking a start solely because copying failed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:aa421563dc3a37ca0c8ebdcef4d60e6d887996c4c6e621f358e47466ef1a9bf4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_recorded_parent"
+        }
+      },
+      "id": "RLZ-934BED",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This resolver takes the existing master contract parent_task_name as the materializer input; only an absent master contract uses the commanding sprint hint for the first bootstrap. The start owner still validates that edge, so the role path cannot replace its recorded parent with a guessed name.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_move_found_enclosure_to_in_progress"
+        }
+      },
+      "id": "RLZ-AQKTED",
+      "invariant": "INV-9PCXBN",
+      "origin": {
+        "handoffEntry": "L183-found-enclosure-stage",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The found live enclosure path invokes publish_start_task_facts(started=True) only for planning, after all workspace checks; TaskLeafBindingError becomes RolePreparationError with original status/detail and no seat.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-EN3DAR",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The terminal-generation check refuses before runnable-root use or materialization and supplies the reopen remedy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:cb430d253a9c2b63fcc122062f3be8cd0ca6fade4f825ee4dc4c97f3af2b9795",
+        "locator": {
+          "kind": "symbol",
+          "name": "link_leaf_workspace_messages"
+        }
+      },
+      "id": "RLZ-JX5TWD",
+      "invariant": "INV-D22ZTW",
+      "origin": {
+        "handoffEntry": "L117-R05",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The workspace owner attempts the messages link during preparation and records its path. Occupied non-links or divergent links are preserved with a warning and launch continues; successful creation, not every attempted launch, establishes readability. Inbound link establishment is attempted again.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_open_intent_review"
+        }
+      },
+      "id": "RLZ-M4JAWB",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Every leaf role checks the canonical review before direct-grant or enclosure resolution; refusal makes no enclosure or seat and instructs the caller to await the Architect go rather than retry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_workspace"
+        }
+      },
+      "id": "RLZ-MXEMAQ",
+      "invariant": "INV-HM7Z8C",
+      "origin": {
+        "handoffEntry": "L94-CUR-shared-checkout",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Direct role preparation refuses the named open sibling before returning the shared master roots.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:7295634d8aadfadf52f471006886953c6d40e55e2e0075f74e348bf2cb15c64c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-Q81VYV",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-cli-role_launch_workspace",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "the realization entry the existing row records; unchanged by this landing",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-QJK9ME",
+      "invariant": "INV-M3N2Y5",
+      "origin": {
+        "handoffEntry": "C2 reopen without limit",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Treats a reopened generation as the prepared start it is and recreates the enclosure under the recorded worktree name.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ensure_leaf_enclosure"
+        }
+      },
+      "id": "RLZ-VD54R0",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "It refuses a terminal generation before any root use, creates a missing enclosure through the child and reports created versus found.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
+        "locator": {
+          "kind": "symbol",
+          "name": "_preparation_refusal"
+        }
+      },
+      "id": "RLZ-XQ6503",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This translator carries the materializer status and reason into the typed preparation failure and names the appropriate owner recovery action. Native stale recovery fields take precedence over an incomplete generic retry, so the caller is not instructed to inspect a nonexistent enclosure.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_workspace"
+        }
+      },
+      "id": "RLZ-Y79026",
+      "invariant": "INV-5ATS9T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule5",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The common resolver creates or finds the enclosure, validates its roots and returns the group plus the preparation outcome for both entry points.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:59a0ae37fbd1ebbfcf8b0c8c8d764ad69ef34c82485e69b3222444d5b6a13ab8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_workspace"
+        }
+      },
+      "id": "RLZ-YA9KV0",
+      "invariant": "INV-PH30YW",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-workspace-readers",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The live grant selects existing master series checkouts instead of creating a leaf enclosure.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_contract_path"
+        }
+      },
+      "id": "RLZ-ZKGBXA",
+      "invariant": "INV-MFVW1K",
+      "origin": {
+        "handoffEntry": "PNT-R07@v1 §5 (scope) / A3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Validates canonical enclosure from leaf document without creating it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+        "content": "sha256:26cbb4abc68e5d67daed1998e00b4db205be18fc3eefa6d190344b501db21ec8",
+        "locator": {
+          "kind": "symbol",
+          "name": "workspace_folder"
+        }
+      },
+      "id": "RLZ-ZV55NQ",
+      "invariant": "INV-8XCZY1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-09",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The extracted workspace owner supplies the existing enclosure working-folder/report-directory boundary; leaf report directories stay outside code and memory Git trees.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The recorded master contract supplies the parent hint unless it names the master itself, where the commanding sprint supplies it; an absent contract falls back to the sprint to bootstrap.  Anchor: `_recorded_parent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:41be59045eeb838479424985ab4ea8d53378396f8249a02685963a1c7fcd7195",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A refusal keeps the native status and reason and names an owner-derived next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:1d362164da7db151e71462781701fa326cc8dc10a271661bb475223d16689e94",
+            "locator": {
+              "kind": "symbol",
+              "name": "_preparation_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical enclosure path is derived from the leaf document and conflicting bindings are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_contract_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The common resolver creates or finds the enclosure and returns its validated roots and preparation outcome.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:c813bc0f9c0a255097094d1cf57b2b16a0762ea40490fbdd35f35cd3453af780",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Terminal generations refuse before any root use or materialization, and a missing or reopened enclosure is created through the child — a reopened one under the worktree name its contract already owns.  Anchor: `_ensure_leaf_enclosure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:bd6e9e56e6b9708a3185142544b43168686ca030c6c2f7928afb2d0d95d15f81",
+            "locator": {
+              "end": 385,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Both role-start entry points use the existing checked preparation child for this operation, retaining its root, writer-admission and cut-off checks; public worktree_start retains its caller semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:c80dfdf8d84f1ec625798c15cf8ff02716fb4a6dcba5473eb4a59d2274b388c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_leaf_enclosure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Call-time granted leaves reuse master series checkouts and keep role artifacts in the separate group.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:89a718153e30da7fa3470ac7e81627bb7842889c24466829a48fd84bbc17f879",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Every leaf role checks the canonical review before direct-grant or enclosure resolution; refusal makes no enclosure or seat and instructs the caller to await the Architect go rather than retry. The found live enclosure path invokes publish_start_task_facts(started=True) only for planning, after all workspace checks; TaskLeafBindingError becomes RolePreparationError with original status/detail and no seat. Found/created workspace preparation records referenceRoot and named copy warning without substituting another reference or blocking a start solely because copying failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:b33be824ef668ce76c604903f9e01959a1f62d28f83b5409fecff7cfb8d903a1",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 228
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:7d04281a96e03b141611709a8b855a47b2c90cbfd6fd649203388e94022c9ec7",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+            "content": "sha256:559899bfc9a5b3289a35d1b3ea2c61fffe54c733156ff48bcb9bf24f89b2644c",
+            "locator": {
+              "end": 453,
+              "kind": "line_range",
+              "start": 386
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

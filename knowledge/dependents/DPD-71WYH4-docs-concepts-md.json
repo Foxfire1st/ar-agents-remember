@@ -1,0 +1,404 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 7 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/concepts.md",
+  "id": "DPD-71WYH4",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-concepts-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    },
+    {
+      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    },
+    {
+      "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+    },
+    {
+      "blob": "dda14b3df58e377daa2411ff9b168ecb1ad261e1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/user_settings_location.py"
+    },
+    {
+      "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+    },
+    {
+      "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+    },
+    {
+      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/context_packet.py"
+    },
+    {
+      "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/role_launcher.py"
+    },
+    {
+      "blob": "2cfd1fbb4b8d66acb95b9561c8157a660db5e3c5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/task_document.py"
+    },
+    {
+      "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/store.py"
+    },
+    {
+      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/document.py"
+    },
+    {
+      "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+    },
+    {
+      "blob": "cd80a35ddf162f3b0ef4f5521a0771cb5516b674",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/direct_execution_grants.py"
+    },
+    {
+      "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge/review_trees.py"
+    },
+    {
+      "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/Cockpit.tsx"
+    },
+    {
+      "blob": "faf94b394b2407caf83c6a2fe786c7576c4a9df4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge_files/sidecars.py"
+    },
+    {
+      "blob": "1bfaeefbe94488a2653472dbc6aed964092e1f84",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge_files/shapes.py"
+    },
+    {
+      "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+    },
+    {
+      "blob": "a0efdfe20f3f77b6898242e2667f426ccbcef18f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/reference_anchors.py"
+    },
+    {
+      "blob": "16bc720d447857303959d9881c8624f6aab9b7fd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/curator_checklist.py"
+    },
+    {
+      "blob": "69cdf53fcee74f39532de9beb47c69eac568778b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory/knowledge_index/cache.py"
+    },
+    {
+      "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+    },
+    {
+      "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+    },
+    {
+      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+    },
+    {
+      "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+    },
+    {
+      "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
+    },
+    {
+      "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+    },
+    {
+      "blob": "051064215b92685affb72eb32fdd83ad2824db4b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/cross_repo.py"
+    },
+    {
+      "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py"
+    },
+    {
+      "blob": "52f7e65b6acd94ad5885aa51286fef97cef7c4af",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/paths.py"
+    },
+    {
+      "blob": "2f783bd16246b9c1d169fd35ee33f0908e937c91",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/harnesses.py"
+    },
+    {
+      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+    },
+    {
+      "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+    },
+    {
+      "blob": "f6d8ba4a5d9aef47b779c83d06493e8f96e8eabb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/control_vocabulary.py"
+    },
+    {
+      "blob": "2b81ba0f28f7d716c30f1dca2090ea75b350c3cb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/tool_answer_log.py"
+    },
+    {
+      "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/role_reports.py"
+    },
+    {
+      "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/task_paths.py"
+    },
+    {
+      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/route_review.py"
+    },
+    {
+      "blob": "17896bc0471a58bc6acce335012cc3be76d3b77d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/render.py"
+    },
+    {
+      "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_runtime.py"
+    },
+    {
+      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+    },
+    {
+      "blob": "d926d3af762b8b31579204690834fb6f694fae7f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_message_files.py"
+    },
+    {
+      "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+    },
+    {
+      "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_step_up.py"
+    },
+    {
+      "blob": "0a98d07922b6fc1d752ba17136ea7a1634652373",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/build_info.py"
+    },
+    {
+      "blob": "ef1bbd4c6b36c763b8b0a0b5610c848f26f08b88",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/canvas.py"
+    },
+    {
+      "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
+    },
+    {
+      "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
+    },
+    {
+      "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+    },
+    {
+      "blob": "ade405eca8709f4ab2c10d9f047bb9f76e2f44f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/lifecycles/door.py"
+    },
+    {
+      "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+    },
+    {
+      "blob": "c800252e5609ce24629551ce7c0cdc99602f3ed6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/lifecycles/operation_kinds.py"
+    },
+    {
+      "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py"
+    },
+    {
+      "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/kit.py"
+    },
+    {
+      "blob": "5a38a9b7a406790c2cb07311bc13ff61918f935a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_paths.py"
+    },
+    {
+      "blob": "80a4160ab85549d0b9ef773aec16c9609a661974",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/explainer_service.py"
+    },
+    {
+      "blob": "2efc0689986925be972c37f8fff310afce761c25",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/knowledge/review_frame.py"
+    },
+    {
+      "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+    },
+    {
+      "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "blob": "253d497ec656e8545831660fc2a7f893b5a59e89",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/closeout.md"
+    },
+    {
+      "blob": "6f96e333842f0f3629ed91c3060bb116fdb40db2",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+    },
+    {
+      "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+    },
+    {
+      "blob": "82fefcaace2946165b5c0ed8bc77bedecedd8fe9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
+    },
+    {
+      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/tool_response.py"
+    },
+    {
+      "blob": "8e7a9eac75417f2c2bf003612d5c62cfc540661a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/document_refs.py"
+    },
+    {
+      "blob": "92307a15e76cc80cb4f56af2bc448df86c7bceab",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/reference_state.py"
+    },
+    {
+      "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/models.py"
+    },
+    {
+      "blob": "f00422a28439082d2b7c652601a8e24931781fc8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
+    }
+  ]
+}

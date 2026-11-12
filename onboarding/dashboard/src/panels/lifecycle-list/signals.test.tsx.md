@@ -1,67 +1,46 @@
 # dashboard/src/panels/lifecycle-list/signals.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/lifecycle-list/signals.test.tsx`      |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-11T15:20+02:00                                      |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
 
 ## Purpose
 
-The independent Operations-signals suite split from `LifecycleList.test.tsx` by the
-260731-EFA-L8 test split. Pins the independent signal rendering on rows
-(state marks, attention, gate hints) without coupling to the detail panel.
+The Operations row/page coherence suite pins one served task status word and host-event age across native deltas, with no status borrowed from attention severity. Retired independent lifecycle/gate/inbox signal assertions are not current coverage.
 
 ## Code Commentary
 
 ### Logic
 
-Seeds rows with varied lifecycle states and asserts the per-row signal marks
-(including the `awaiting-developer` live-state mark rule).
+Native row/page deltas require shared stage/activity words, unchanged attention severity and distinct paused/aborted marks. The parameterized started/unknown case expects `started`, without repeating the host-unavailability sentence per task; the attention layer still must not borrow task activity wording. Fake host timestamps retain age through later mounts and deltas. Hidden/inactive/nested owners stop aging; visible dependents share one clock and clean it up. Parameterized dependency pages and 30/150-task rails are real source ranges, not named symbols.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite.
+Task status is shared across row, page and dependencies; attention remains a separate severity lane. These mounted/fake-time assertions cover timer ownership and cleanup, not native host-state acquisition, real elapsed-time performance or backend activity derivation.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The Operations-signals suite. | "describe(\"LifecycleList independent Operations signals\", () => {" | dashboard/src/panels/lifecycle-list/signals.test.tsx:23-185 |
 
-## Cross-Repo References
+- The Operations-signals suite. [1]
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
-## Update History
-
-- 2026-08-11T15:20+02:00 — Replaced the generic test-runner anchor with the Operations-signals
-  suite's unique declaration.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  signals suite split from `LifecycleList.test.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+- Parameterized native row/page cases expect the shared started word for unknown activity and keep attention severity separate. [2]

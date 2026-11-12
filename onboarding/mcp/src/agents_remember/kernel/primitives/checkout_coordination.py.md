@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/checkout_coordination.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/primitives/checkout_coordination.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:28+02:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5`|
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -41,10 +31,17 @@ authority state.
 `lifecycle-operation`, or `test`). `declare_lifecycle_operation_process` is the
 narrow declaration for the detached task worker: it admits live coordination authority
 needed to claim its durable operation and finalize the task edge without assigning the
-long-lived `mcp` or `dashboard` daemon writer role. `checkout_cli_location` returns no special context for one of those declared
-modes or for an installed wheel. An undeclared linked checkout receives its leaf
-location; an undeclared primary checkout raises `CheckoutCoordinationError` because it
-has no disposable leaf enclosure.
+long-lived `mcp` or `dashboard` daemon writer role.
+
+`require_linked(location)` is the guard's whole decision, factored out so one rule serves both callers: no
+location returns `None` (the policy does not apply), a `primary` location raises
+`CheckoutCoordinationError` because it has no disposable leaf enclosure, and a `linked` location returns the
+location. `checkout_cli_location` keeps the declared-mode bypass — one of the declared modes, or an installed
+wheel, is outside checkout CLI mode and gets no special context — and then hands `resolve_checkout_location()`
+to `require_linked`. The split moved the refusal text and the kind check unchanged; an undeclared linked
+checkout still receives its leaf location and an undeclared primary checkout is still refused with the same
+sentence. A caller that already holds the location, or a test that builds a real primary or linked layout,
+now runs that same rule instead of a second copy of it.
 
 `require_durable_write_target` resolves the candidate and permits exactly two
 task-local descendants: the disposable coordination root for inbox/gate/lifecycle
@@ -60,7 +57,7 @@ The host Dagger registry is a separate resource owner. Its lock mechanics use `k
 
 ### Conventions
 
-Resolve the imported package location and actual execution declaration; caller cwd and ambient role-like values are not authority.
+Resolve the imported package location and actual execution declaration; caller cwd and ambient role-like values are not authority. A refusal is raised only from `require_linked`, so a new caller cannot decide the guard differently.
 
 ### Invariants And Boundaries
 
@@ -76,6 +73,8 @@ Resolve the imported package location and actual execution declaration; caller c
 - Only the detached plane-owned lifecycle worker declares `lifecycle-operation`.
   The mode does not claim MCP/dashboard daemon ownership and is not a general checkout
   CLI escape hatch.
+- The guard's decision is one rule: the declared-mode bypass selects which callers are outside the guard, and
+  `require_linked` alone decides what a location may do.
 - This protects supported Agents Remember paths from accidental writes. Arbitrary
   hostile Python or shell filesystem access remains outside an in-process policy.
 
@@ -83,45 +82,13 @@ Resolve the imported package location and actual execution declaration; caller c
 
 None identified in this bounded containment review.
 
-## Docs References
+## Evidence Scope
 
-No external Domain Documentation source is configured.
+This is a current source account, not an executed test, CODE/MEMORY grade, live producer grant or landing result. No Domain Documentation source is configured for this slice; no external-system guarantee is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation source. | N/A | N/A |
+## Evidence
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Runtime config asks this checkout policy before selecting the synthetic leaf configuration. | "checkout_coordination.checkout_cli_location()"; `_checkout_runtime_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:748-748; mcp/src/agents_remember/kernel/primitives/runtime_config.py:771-800 |
-| Durable lock admission authorizes the target before entering the kernel; append and rewrite retain the same guard. | `exclusive_access`; `_prepare_append_target`; `_require_rewrite_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:431-433; mcp/src/agents_remember/controlplane/durable_store.py:436-438 |
-| MCP establishes trusted mode before `load_config`; pytest establishes explicit test mode before importing application services. | `main`; `begin_pytest_process` | mcp/src/agents_remember/mcp/server.py:77-99; mcp/test_support/agents_remember_test_support/testing/global_state.py:61-66 |
-
-
-## Cross-Repo References
-
-No separate cross-repository implementation dependency governs this policy.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required. | N/A | N/A |
-
-
-## Update History
-
-- 2026-09-06T00:28+02:00 — Reopened the actual guarded durable-store entry points and recorded host registry ownership as a separate policy composition. No guard change or role declaration was made; preserved the unchanged source stamp.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
-- 2026-08-13T00:00+02:00 — 260731-EFA-L23 post-closeout worker-authority repair: added the explicit `lifecycle-operation` execution mode for the plane-owned detached task worker. It may use live coordination to claim/finalize its durable operation but receives no MCP/dashboard daemon writer role; ordinary checkout CLI isolation is unchanged. The owner reports 46 focused tests across the two affected suites, Ruff clean, and diff-check clean. Verification remains closeout-owned.
-- 2026-08-12T22:24+02:00 — 260731-EFA-L23 async-closeout follow-up: added the exact enclosure `reports/` target for operational artifacts while keeping coordination rows confined to leaf-local `provider-runtime/dev-ar-coordination`; sibling/live escapes remain refused. Verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-12T08:41+02:00 — 260731-EFA-L20 citation maintenance: re-anchored the pytest process-declaration evidence after `conftest.py` line movement; the checkout-coordination claim is unchanged.
-- 2026-08-10T19:57:55+02:00 — Closeout citation review: retained the three policy claims after
-  re-reading the committed candidate and replaced ambiguous identifier anchors with exact,
-  uniquely resolved call/signature anchors. Verification metadata remains pinned until closeout.
-
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: created for checkout-local coordination isolation and central durable-write containment. Verification metadata remains blank until approved closeout commits the code.
+- `require_linked` holds the guard's whole decision: no location is not refused, a primary location raises `CheckoutCoordinationError`, and a linked location is returned. [4]
+- `checkout_cli_location` keeps the declared-mode bypass and then delegates the decision to `require_linked` over the resolved checkout, so behaviour is unchanged. [5]
+- The location still comes from the imported package path: a `.git` file is a linked worktree, a `.git` directory the primary checkout. [6]
+- `require_durable_write_target` permits exactly two durable targets — the disposable coordination root and the enclosure `reports/` root — and the lock paths call it before a parent or lockfile exists. [7]

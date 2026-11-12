@@ -1,0 +1,199 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_results.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained conflict shapes.\n\nAnchor: `resolution_required`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:ebcd26e09a6ec6c799da69a51aa3f236ece645c38f65bf9c947ed8fae1ad6091",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Terminal replay/worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_resolution_replay"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Current file-based resolution model.  Anchor: `SyncResolutionProjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:37d26dc6580a5156f8db068920c6b6bd8bf2336525e967f199ff2b34e0f481b5",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "A nonempty structural memory-merge report adds resolution.crossing and a named report summary, including all-converted diagnostics; converted selects crossing wording. With no report, no report-derived block or sentence is added.\n\nAnchor: `resolution_required`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:ebcd26e09a6ec6c799da69a51aa3f236ece645c38f65bf9c947ed8fae1ad6091",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Structural/crossing report guidance.\n\nAnchor: `resolution_required`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:ebcd26e09a6ec6c799da69a51aa3f236ece645c38f65bf9c947ed8fae1ad6091",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Parked-candidate reapply preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:47b3626ec658f1a140d3d84f54825cea606f9844e1823a285fc99e4abd0c356a",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_validation_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Policy choice and non-mutating initial/active/cancel previews.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:814421fd80b8de327b0538736c165b2fd9bb006ebc83b17f5ccc123b5d70e298",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_choice_required"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Terminal and no-authority replay results remain distinct; the `continue` replay of a completed generation recomputes the worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_resolution_replay"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Content-domain conflict and staged-resolution proof is delegated to the Git owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b661a6c9bf04035c5782cae0bf7d827a96d3456b",
+            "content": "sha256:2c2428c20f8fd2a74d830ef280a4858a3bf5701b7895bc98b9b0127fd445861f",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_conflicts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current continuation guidance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:7d1bdc548db442522a0c6565283b8f46591f17a779f25a89ed58c613d892e3a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolution_guidance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Parked preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:47b3626ec658f1a140d3d84f54825cea606f9844e1823a285fc99e4abd0c356a",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_validation_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Staged preview.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:b0537fc0472a2f83dc6658015d52bee65fb05a06175fee2147d4ea0ad0f85599",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_validation_preview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

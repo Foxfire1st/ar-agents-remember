@@ -1,0 +1,411 @@
+{
+  "path": "mcp/tests/test_observer_projection_attention.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:12f6d3b551fc29bc0b371f60c15065f2c7bd269397d6c73ded14324867d739d3",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
+        }
+      },
+      "facet": "The real ASGI harness for blocked-start failures asserts 503 dismissal-not-held and visible queue on persistence failure, 202 on success, unchanged/restarted suppression, and recovery then later-failure recurrence.",
+      "id": "PRF-5KXTJR",
+      "invariant": "INV-DVQX4T",
+      "origin": {
+        "handoffEntry": "L168-W-R166-02-04",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:d65e8cf29708bccab0e05c14824960249ba8aed64492517583a81be2e9b5095b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_provider_surfaces_publish_no_attention_or_projection_state"
+        }
+      },
+      "facet": "legacy provider files on disk publish no attention item and no provider projection key",
+      "id": "PRF-7E4V56",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:c920c206d335d9c660b1cfe75ba43582505a2fb5fe196673156917569e0f060a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
+        }
+      },
+      "facet": "The parameterized constructed legacy/current history is compacted to its current live rows and a repeated unchanged pass preserves mtime; this is a test definition, not a claim of a Curator load run.",
+      "id": "PRF-9724W9",
+      "invariant": "INV-1ZZNZ6",
+      "origin": {
+        "handoffEntry": "L168-W-R166-07",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:b103b940a906b55eb082a02c9eadee90240521428176337c2f53ec8c407c79d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retired_kind_cannot_be_dismissed_through_the_published_queue"
+        }
+      },
+      "facet": "the published queue refuses to dismiss a retired kind",
+      "id": "PRF-HQ9DXJ",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:e303f140d535ff0fcd185acca8bbc3e4b2805355c1ca430ae4023865e6e24ec1",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_retired_kind_cannot_be_recorded_as_a_current_dismissal"
+        }
+      },
+      "facet": "a retired kind cannot be recorded as a current dismissal",
+      "id": "PRF-HSYCB1",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:d618a162f10665dd44db124901c6e8cb87595c030642111ab5ab3e4256ebb5a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
+        }
+      },
+      "facet": "For blocked-start, unchanged source passes and a new reader retain acknowledgement; an observed healthy state removes it and a later failure returns.",
+      "id": "PRF-K53YSK",
+      "invariant": "INV-TT5CTW",
+      "origin": {
+        "handoffEntry": "L168-W-R166-03",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:d8a62a7df03e1f2614532c2890b9184ae6f4fd9bfd961815e93acd532b421c83",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_legacy_retired_dismissal_row_is_dropped_and_suppresses_nothing"
+        }
+      },
+      "facet": "a legacy row naming a retired kind is dropped and suppresses nothing",
+      "id": "PRF-Q6J18K",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:599e52379074cc76211c7125abcf10f1448dd868143db501ecd4c80300646065",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
+        }
+      },
+      "facet": "A click after observation start survives that older complete observation; a subsequent eligible observation can reclaim it.",
+      "id": "PRF-QDYSSD",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:c727b4cd3795019640f816e8560e254e078c6cb0ac5fa687e4e283fa01e44c64",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
+        }
+      },
+      "facet": "For blocked-start, failed and unrelated partial reads retain acknowledgement; a complete native read after the start-progress file disappears reclaims it.",
+      "id": "PRF-XTZ1D1",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-W-R166-05-06",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+        "content": "sha256:a6afe38838face6b70f8c2cf2519a3cfc6252ccb1d6d53f94d598844d0d214d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_no_change_does_not_write_and_failed_cleanup_retains_the_read_map"
+        }
+      },
+      "facet": "An unchanged pass keeps file mtime, and a cleanup write error preserves both the previously read map and original bytes.",
+      "id": "PRF-YYS80T",
+      "invariant": "INV-1ZZNZ6",
+      "origin": {
+        "handoffEntry": "L168-W-R166-07",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Observation cutoff protects a later click.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:599e52379074cc76211c7125abcf10f1448dd868143db501ecd4c80300646065",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:599e52379074cc76211c7125abcf10f1448dd868143db501ecd4c80300646065",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_does_not_remove_a_click_newer_than_its_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Long histories retain current subjects and compact invalid retired/torn rows without repeat rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c920c206d335d9c660b1cfe75ba43582505a2fb5fe196673156917569e0f060a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c920c206d335d9c660b1cfe75ba43582505a2fb5fe196673156917569e0f060a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_long_history_reclaims_to_the_current_things_and_compacts_bad_rows"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "ASGI persistence failure is 503; accepted dismissals survive refresh and restart.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:12f6d3b551fc29bc0b371f60c15065f2c7bd269397d6c73ded14324867d739d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:12f6d3b551fc29bc0b371f60c15065f2c7bd269397d6c73ded14324867d739d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_actual_asgi_click_refresh_restart_and_write_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Precomputed task-worktree disablement remains authoritative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:cbca3a7a2d6c30cff7bcd1639c15fceb0aa82a8ab13f8285e6ed8bfc08ee5933",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_precomputed_action_remains_available_on_a_task_bound_worktree"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:cbca3a7a2d6c30cff7bcd1639c15fceb0aa82a8ab13f8285e6ed8bfc08ee5933",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_precomputed_action_remains_available_on_a_task_bound_worktree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The retained directory-read-failure case uses blocked-start and keeps its acknowledgement when native source listing fails; no current provider census or provider acknowledgement is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:9316d020885c0b340d81c9c6b19c854090266420987484a5f835dd165f4b24e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_directory_read_failure_keeps_the_kinds_acknowledgements"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:abcf7059dbd2fdd8e1df5126b4dd6ed069c6599a7b9003c63aa7667c785a22b4",
+            "locator": {
+              "end": 437,
+              "kind": "line_range",
+              "start": 390
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Equal findings remain dismissed across clock changes and a changed fingerprint recurs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:36f3eae4a9369f399c7533e29ddb282e9471f07e5c91db4eb965d0a30408c544",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dismiss_suppresses_actionable_drift_until_findings_change"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:36f3eae4a9369f399c7533e29ddb282e9471f07e5c91db4eb965d0a30408c544",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dismiss_suppresses_actionable_drift_until_findings_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Severity leaves the ranking: the queue lists the newest entry first and breaks ties by id, and a drift entry that names no age counts as zero rather than sinking.\n\nAnchor: `test_attention_ranking_keeps_alarm_above_warning_and_then_wait_and_id`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:90c2c7d5c46245a6cd6554805f7dff1e52c75f1aab26a5316df75afb02ce63a2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Explicit recovery ends retained-kind occurrences and later failure returns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:d618a162f10665dd44db124901c6e8cb87595c030642111ab5ab3e4256ebb5a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:d618a162f10665dd44db124901c6e8cb87595c030642111ab5ab3e4256ebb5a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observed_recovery_ends_dismissal_and_only_a_later_failure_returns"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Partial/broken input retains acknowledgement; complete gone facts reclaim.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c727b4cd3795019640f816e8560e254e078c6cb0ac5fa687e4e283fa01e44c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbc25154da8d6df93985d8a14a80f4ff2516dac2",
+            "content": "sha256:c727b4cd3795019640f816e8560e254e078c6cb0ac5fa687e4e283fa01e44c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_partial_or_failed_source_keeps_dismissal_but_a_complete_gone_read_reclaims"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

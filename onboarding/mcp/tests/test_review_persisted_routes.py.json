@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_persisted_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A static main survives a fresh owner with a freshly decorated latest read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d602332fbdc1abbaf465ea96c81f44ab926c851",
+            "content": "sha256:bdfec27960f24b9a13e211cb8ae7966efae9351a4dde49d1d2f7517cb7d23f6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_static_main_survives_fresh_owner_with_fresh_latest_decoration"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

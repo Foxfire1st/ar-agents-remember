@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_evidence_bounded_collections.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Judgments count the changed files' rows whole and carry every one",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf66c7ebf867fb607eab61f6ddcd0268888699a8",
+            "content": "sha256:777d32306d780750f1e310ab6f9b6211b03f2dfa79e2c442f0e26903c7fbaacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_judgments_count_the_changed_files_rows_whole_and_carry_every_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

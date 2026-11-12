@@ -1,0 +1,56 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized by the communication Node selector and by the harness-home status and restart check; tests prove the old Node is used only for talking to a running host and that a home change refuses before any stop. Without it a build change cuts the bridge to the host or a restart loses agent sessions."
+  },
+  "applicability": "Commands that talk to the product's running host, and provisioning that would stop and restart it.",
+  "conditions": [
+    "Communication uses the product Node when it is installed, otherwise the executable of the proven owned running host.",
+    "Before a stop, the harness-home variables the running host holds are compared with what the new host would receive."
+  ],
+  "exclusions": [
+    "Starting or restarting a host, which uses only the product Node.",
+    "An unreadable host environment, which reports unknown and adds no refusal.",
+    "A provisioning run with the explicit accept-change option."
+  ],
+  "id": "INV-E4E4N1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A012 freeze report /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/260928-MIK-L84-worker-88048054-fcd8-4402-831d-ec1434384185.md (sha256 24bae8b521caee9e403ff2b3360e0fb33762507a48a93f7df877a908bcb13215); records /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/L84-A012-records/ (manifest sha256 e2fe9e9d5ccad5ff658be0d30a04f9962d89e5ef843b6af7f46ac104ca8be9ae): checks-bounded.log (test_suite_load_independence.py + test_dashboard_build_currentness.py: 36 passed, 5 subtests, 0 failed), dashboard lint/typecheck/full vitest (289 files, 2,205 tests passed), fast gate PASS, on the clean copy of 40475ce5; mutation pass 4/4 caught; last full suite on A007 8d974809 (L84-A007-records/gate325-8d974809.log); the Architect's landing check of A011 (STOP 20261110T010206Z, c5e4f401...) reran both full lanes there and reruns them on A012; Reviewer P5 round-8 code PASS on A011 (/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round8-fix-verification-verdict.md, sha256 11813eaf6d634dcc2e234789f3a6e672494afed4480d706974fec505c2f4a67d), reopened for L84-LC-01/02 only; round-9 fix-verification pending",
+        "K3 judged this hunk (sha256:fb3d01a5efb14b4e3645e26b9b35f3d974e4130a5b3d0b0caf2fd520299501f4) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:998e286d7e620e96c3b4fcf9849672ecf5e30563b4808e9a56a7252fd461c9f5) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:46c1f5f03f190b9ed9f6c4e4c8d4ffa01820e576aa531a02d7f1c930f7150478) to realize CAND-BRIDGE-NODE, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:cb1f2e849bf677d24b73be10bb8ceb4083c110f6f673420ac97c5070b4b94cce) to realize CAND-BRIDGE-NODE, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:0de2625b3113b123bf7c6018f648a356ec30fc82ace4ca049de3d8f8633979a9) to realize CAND-BRIDGE-NODE, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:e505925aa0908faae234c0eed42937781c9a6001c5e60658211f20975fbd4b8d) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:ad64b5536f77cacd0821beb85ac9d3f9e30c88a6a895b8ac000519c5945e2c21) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:9104365f0bfb0c1cf33bd1fa8e5206f49aa48d0e05b01eed3544d98b64d854c8) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:7655d6a68ce3e50dffd095365ed78f1faa06f60d321f0912b12eba832d691769) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:aba84c897e81e73f1fb5baaacb6ee20e3697f84791dd978d4d39e55265b6cdfb) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:7b9ee4262e3cfb5b10cd344bf2eda5464d890b5ddae4e5acb85e932df82bec54) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:9b6501aa1549e451a9c21f9f1ad7681894def2ca4ed1aff7f37f83711b3e491b) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:7649c90971cdcf44dd974948b084f405d92e924109013a68cc08a880b3bcfe57) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:795481fc7fd4050509b98052ac85bca7d7e03bada3ad59866649df8019caa148) to realize CAND-BRIDGE-NODE, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:a4975b5492564eda423d25ab45f3f8e512a3a5675efc0be363af0d17fbe94c34) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:c2967a0454d512c8676929952b2ef3964bd526560de749b65fa0dd063bc71464) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:70d9acbd870ff6188cc231061ef2a3c488ec1b649ecf00b5af56e8728e9e3be2) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged this hunk (sha256:f78c29f9065b23112c04f49c077c27b94fbdd63afe9014fe79488f39d53a4b88) to realize CAND-HARNESS-HOMES, deduplicated to INV-E4E4N1; lines read at C 40475ce5.",
+        "K3 judged hunk item sha256:0de2625b3113b123bf7c6018f648a356ec30fc82ace4ca049de3d8f8633979a9 (paseo_daemon.py -150,1 +154,1) to realize CAND-HARNESS-HOMES/BRIDGE-NODE, deduplicated to INV-E4E4N1; line read at C 40475ce5. Run C attached its first hunk only."
+      ],
+      "path": "handoff-runA.json"
+    },
+    "handoffEntry": "MIK-R84@v5 retained v1 rules7/8 bridge and homes",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Communication may use the proven running host Node when the new product Node is absent, while a restart refuses before stopping if required harness homes would change without acceptance.",
+  "status": "proposed",
+  "supersedes": []
+}

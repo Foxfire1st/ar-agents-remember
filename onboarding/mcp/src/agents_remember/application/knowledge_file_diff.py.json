@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_file_diff.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61d58c7b555e06ff0fd1da69428d25f585e4e62a",
+        "content": "sha256:83c5ad9485609a7dcb8dbad78e3fd35dd1905aba79fe910fe9e6b8fbe87ce401",
+        "locator": {
+          "kind": "symbol",
+          "name": "bounded_diff"
+        }
+      },
+      "id": "RLZ-S7GGCD",
+      "invariant": "INV-JM868W",
+      "origin": {
+        "handoffEntry": "R3 Note 13",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "Counts the complete response against the shared threshold and names omissions.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

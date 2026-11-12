@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation is realized in the pager, the leaf's collapsed block and the index command, and two registered cases fail without it; an answer that claims completeness it does not have silently truncates a walk, which a caller cannot detect from the payload."
+  },
+  "applicability": "Every page of a walk and every collapsed block an answer returns, and the knowledge-index command's answer for a memory tree.",
+  "conditions": [
+    "The derived index states its own completeness."
+  ],
+  "exclusions": [
+    "A complete index over a converted tree: the page's own cut still decides completeness.",
+    "A duplicate record ID: by design a partial index that names the second file, not a refusal."
+  ],
+  "id": "INV-QQGSAN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R73@v1 rule 6; the two registered cases named here"
+      ],
+      "path": "handoff-draft-3.json"
+    },
+    "handoffEntry": "R73-NO-FALSE-COMPLETE",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "No answer calls an enumeration complete that is not: a page read over a partial derived index reports enumerationComplete false with indexState partial, and a collapsed entry states how many rows remain.",
+  "status": "proposed",
+  "supersedes": []
+}

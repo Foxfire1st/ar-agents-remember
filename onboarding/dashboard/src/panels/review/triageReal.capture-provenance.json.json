@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/triageReal.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command and at which source tree the bodies were captured, and over which scratch leaf.\n\nAnchor: \"captured_at\"; \"source_tree\"; \"SCRATCH-AUTHORED curator edits\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6edbb9020be5a600fe45e26160113132735a1e2d",
+            "content": "sha256:5a17da4b6b8f3fb0ed608ed30e1d70a7a45c474d34ad73eb483ab92c394e1cc1",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One receipt row per body, and the merge-round note.\n\nAnchor: \"\\\"fixtures\\\": [\"; \"merge_round\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6edbb9020be5a600fe45e26160113132735a1e2d",
+            "content": "sha256:49a0ae7ddd3f2035123eb9d18758c3f8c6beabf3f916f9989be31a66c7ea6f08",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

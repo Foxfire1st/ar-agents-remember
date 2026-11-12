@@ -1,0 +1,381 @@
+{
+  "path": "mcp/src/agents_remember/application/review_subject_catalogue.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of the contract: both snapshots, no comparison, no silent drops, zero subjects an empty catalogue.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_subject_catalogue"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:2d37328c7fdc87bb835b61972b226fb5794486c117c6d5f1800376eb323692c9",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: one name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:697f67c4abb2d9e2f54864b072bdc4fe9803e859fbbf8da560f9fe4e150fb1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one entry point: both stores opened under the record-beside-the-bytes namespace, each read and closed, then merged.\n\nAnchor: `read_subject_catalogue` `review_namespace` `open_existing_knowledge_store`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:c12f2d6be24cf899b572b83562f39ddbadfda75b97c536d420b20daa0a109c61",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_namespace"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:6fe2cc957dc11a8690591a9d84bf1ef8b232f5a9772df1f9241a4bc43ae0da28",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_existing_knowledge_store"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:7ba4e31a80a2e5fc789796d6245beb51a74c27db7882696dd7c95c565af107cc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:8de3b4a99e46a7a49e39828cefaeed2dd86dcfc20fc33eb37b8f80a4de26b653",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:06f9fa0b997c9bd42569065fb5f62ea39d370764509c8c2467b0985cdde68958",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:6168faa2e12cf542a3b4aa0969b0743ab76dd7b712aa65cd9aa3ccb0d3ea00bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_subject_catalogue"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:dd0e66aa8d2ad0ecaee759b5ba9c58a4e821867675f6d33bd1cb96c5dad0b3e8",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 351
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The per-side read through the store's own two list operations, with each label travelling beside its side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:3a3813e56013dbb70558be90128c7d1b8763130f1d06265f47a8730b27645bb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_identities"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:00a449d876919d3de040d15c7ea870e221d332a11a45dc654d9be90b89b323ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_invariants"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:3cb70a429652780066956ae4318d55c822d42865aa70e7aa796bf0aba0adb22b",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_families"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The globally kind-grouped union: the outer loop is the subject kind, the after label wins on overlap, and retired rows keep the before snapshot's own wording.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:e8ba7d877a3a7ce700c9f186c045d49e2100950fbeb203819348efd8abb427af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_union"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The candidate's rows of one kind with the presence both snapshots give them, and the baseline's retired rows of one kind in the before snapshot's own order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:5d688d50b7d99a34e6c0f0f010c74f060757dcb1d9d77a14ecb07d55da15f2c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_after_kind_rows"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc8292f7d238206e3095c7fe478ecb42040a8cb9",
+            "content": "sha256:527a883c30d5148aa8c3d9e3038b71af2cbb7287fe1371f48a7e6abff0d207bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_before_only_kind_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The vocabulary the rows fill: presence per entry and the entry list's labelled totals with their agreement validators.\n\nAnchor: `ReviewEntry` `ReviewSubjectPresence` `ReviewEntryListResult`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:e91af29a9528470efca1f803fa9e4626bd205866b022aa34315ef527791b51c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntry"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:df07b1a715e12f7d9672ff5ec334e7b07ed49ffa70a47a69d908e40593f6ce1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSubjectPresence"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:7063c473148af0e99f9397cde86aa4ba5686102da9120acab1e570128c561fbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntryListResult"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:462e335e1cf8490dc2bddf667a9cb9d966e0081e6d76a24e122c94eb2ff4e9e0",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:6e53c0e15ed2d249f2273c0feb0434e3f78779214d155cafaeb6106bf64aff72",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:4d0b65fa6dad1cd50ffccbef6a9438db99bd5d650c265f6820bac0cf5e6bf315",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:edc030e381b7f679d09df02596efcb5cd8d1fc1ddee37b329b702c4b576e8f29",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e298bc656619aa09b3566b8e7baeb7a8453b656f",
+            "content": "sha256:22bd6c2808e2597845d117a073796200fd36e0b031925f6df1f1e4bb68836039",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The adapter that delegates: the entry half resolves, calls this module, fills the totals and assembles — no enumeration logic of its own.\n\nAnchor: `list_knowledge_review_entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:35d06c81299a985db5d355d16662e0b34d9103af2e574e071fd294b03824e4fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_knowledge_review_entries"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The nine cases that measure the catalogue: the union, the kind grouping with retired subjects, the retired and added rows, the family subject's recorded guarantee sides, the whole-row traversal, the totals, the zero-subject boundary, and the no-comparison tripwire.\n\nAnchor: `test_the_catalogue_unions_both_snapshots_with_labels_and_presence` `test_the_catalogue_stays_kind_grouped_when_retired_subjects_exist` `test_a_retired_before_only_subject_stays_listed_and_reviewable` `test_a_newly_added_after_only_subject_is_listed_beside_the_retired_half` `test_a_family_subject_is_listed_without_an_establishable_statement_side` `test_every_catalogue_row_opens_through_the_normal_review` `test_a_recorded_but_unselectable_subject_is_listed_and_its_open_carries_the_reason` `test_the_entry_route_carries_labelled_totals_for_the_whole_catalogue` `test_zero_subjects_is_a_valid_catalogue_beside_the_source_inventory` `test_catalogue_loading_runs_no_comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "023adafd667da9294939e4581328d712be6b7a36",
+            "content": "sha256:eed5bc97f42bd08b1c5a30d67c6b9a801c3426ec0c045c132df1435d04522479",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_review_subject_catalogue.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

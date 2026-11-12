@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in more than one file, including mcp/src/agents_remember/application/task_docs/task_retirement_sprint_edit.py and mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py, so the rule holds only when both places do."
+  },
+  "applicability": "A retirement that replaces a legacy seat row.",
+  "conditions": [
+    "The sprint row correlated with the master is a legacy seat row whose file cell is retained by the retirement row.",
+    "The linkage report lists that seat's documents as the retired master's."
+  ],
+  "exclusions": [
+    "Typed masterRef rows, which are replaced by the plain retirement row."
+  ],
+  "id": "INV-K79KP8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f-evidence/thirteen/out/06-after-the-real-retirements.txt (nine rows kept a file cell, nine facts); probe x35_retired_row_with_file.out; two killed mutations under sealed id 13"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 note 13",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A retirement that replaces a legacy seat row keeps that row's file cell, and the linkage report lists the seat's documents as the retired master's.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/door.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/door.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [governing route overview](overview.md)
@@ -70,32 +60,30 @@ The file exposes typed values or one narrow operation boundary. Callers consume 
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+No configured external domain-documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. | L89-L142; L146-L155; L158-L196 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. | L89-L142; L239-L269 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. | L232-L236; L252-L269 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| The R03 door dependency vocabulary owned by this record type. | L98-L118; L226-L235; L238-L273 | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
+- Door generation and dependency construction bind consumed evidence without a ledger identity or provenance edge. [1]
+- The module defines `CloseoutDoorGeneration`; `DoorPublicationEvidence` as its public seam. [2]
+- The three retired contract-byte digest names and the read-time strip that keeps older persisted operation records loadable while every other unknown key still fails. [3]
 
-## Cross-Repo References
+- The R03 door dependency vocabulary owned by this record type. [4]
+
+
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+No separate external implementation source applies to this file.
 
 ## 260821-CLIVE Canonical Door Contract
 
@@ -112,27 +100,3 @@ provenance update with an exact action-specific payload matrix.
 Generation identity now includes the `dependencies` declaration, and the door source/successor
 owners recompute it from the exact candidate tree, topology, intent, and provenance records at
 currentness time (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
-
-## Update History
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed ledger identities and provenance dependencies from the documented door generation. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/models/lifecycles/door.py` changed since the recorded verification
-  commit. Re-read the card against the frozen on-disk source and re-checked its claims and cited
-  ranges: nothing this card asserts is falsified by the change, so no wording changed. Verification
-  metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (the retired contract-byte digests are stripped on load). Re-read
-  the card: it already records the journal-owned door and the retired-digest strip, and every cited
-  range matches. No wording changed; verification metadata remains closeout-owned.
-- 2026-09-11T14:54:00+02:00 — Retired contract-byte digests stay readable at code commit `76ce662a`: recorded the `model_validator(mode="before")` that strips `expectedBeforeContractSha256` / `expectedPublishedContractSha256` / `observedPublishedContractSha256` from persisted `DoorPublicationEvidence` records, so older operation journals load while every other unknown key remains an `extra_forbidden` failure. Corrected the Purpose to the journal-owned door and repointed the `DoorPublicationEvidence` range (234-253 → 244-274). Verification metadata remains pinned because this is a targeted single-claim repair; source documentation only, no acceptance claim.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed `closeout-door/v1` direct-dependency declaration on the immutable door generation and the new door dependency builders/currentness guards; prior disposition, identity, and provenance prose preserved.
-
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-source model package relocation; immutable door generation and request vocabulary are unchanged.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: reconciled the full door-generation and request vocabulary. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.

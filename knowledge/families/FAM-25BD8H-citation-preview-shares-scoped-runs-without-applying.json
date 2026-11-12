@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Equal scoped results alone do not prevent accidental background application; preview-only admission alone does not preserve the runner's scope and capacity. Both are required."
+  },
+  "guarantee": "Background citation preview reuses the quality runner's bounded identity and scope validation, returns the synchronous preview result apart from run state/identity, and never applies a repair; the existing explicit synchronous write path remains available.",
+  "id": "FAM-25BD8H",
+  "members": [
+    "INV-QSA8WP",
+    "INV-CR4CJ8"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff99.json"
+    },
+    "handoffEntry": "preview-run-guarantee",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application/memory_quality",
+    "mcp/src/agents_remember/mcp/tools",
+    "mcp/src/agents_remember/mcp/registration"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Citation preview shares scoped runs without applying"
+}

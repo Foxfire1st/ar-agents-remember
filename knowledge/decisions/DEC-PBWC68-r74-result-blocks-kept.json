@@ -1,0 +1,65 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds future review rendering to keep both result blocks with their distinct verdicts, as MIK-R74 rule 8 requires."
+  },
+  "alternatives": [
+    {
+      "option": "Keep both delivered-against-reviewed and sync-movement blocks: the first states the delivered review verdict, the second states movement against the reviewed baseline; neither alone blocks a future review, and both compare trees rather than branch history.",
+      "reason": "The two blocks answer different questions (what was delivered, what moved since review); dropping either loses the question it answers.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep only the delivered-against-reviewed block.",
+      "reason": "Loses the movement-against-baseline question the packet's future-work census depends on.",
+      "reconsider_when": "The packet's future-work census stops requiring movement evidence.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future review rendering keeps both blocks and never treats one block's verdict as the other's."
+  ],
+  "context": "MIK-R74 rule 8 requires an authored decision for keeping both result blocks; cards and history rows do not supply the decision-record class. The future MIK-R77 coverage census boundary and moved R63/R60 duties are preserved, not re-decided here.",
+  "decider": "curator (260928-MIK-L74 memory repair)",
+  "id": "DEC-PBWC68",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7da4c42bdbcb4b77509ee90a396b89e64062ab5c",
+        "content": "sha256:6cdc634cb160d52cddf5aa0e5ff12d236cc0b8dd3ae7cefd70d2a39e2b465aff",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_context_review"
+        },
+        "path": "mcp/src/agents_remember/application/review_task_context.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "e82e48a3fe51cf1b33e2db3907db00759c429781",
+        "content": "sha256:ccba7942714b7c22b4bd9425728aba965ef30c3844ec24c65ed1e2af956bbeaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_review"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_review.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-repair-list.json"
+    },
+    "handoffEntry": "L74-MEM-01",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

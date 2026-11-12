@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Publication of a freshly recomputed leaf knowledge worklist. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Publication of a freshly recomputed leaf knowledge worklist.",
+  "conditions": [
+    "Byte-identical existing UTF-8 text is retained.",
+    "Missing, unreadable or different bytes are atomically replaced."
+  ],
+  "exclusions": [
+    "This does not skip evaluation/currentness or turn an old worklist into an accepted verdict."
+  ],
+  "id": "INV-RQNDH6",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_worklist_publication.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "MIK-R81@v1-F13-worklist-publication",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Worklist evaluation still recomputes and verifies currentness, while publication keeps an identical text file and atomically replaces missing, unreadable or different bytes.",
+  "status": "proposed",
+  "supersedes": []
+}

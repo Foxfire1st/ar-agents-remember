@@ -1,15 +1,5 @@
 # mcp/tests/test_pause_is_not_publication.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_pause_is_not_publication.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -97,63 +87,40 @@ None recorded. The depth-1 defect this card originally recorded was repaired ins
 (before its candidate was frozen), so the card documents the repaired walker and the mutation evidence
 that keeps it repaired.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The twelve modules the pause must not reach: ref transactions, landings, integrate, record-landing, landing-record, the closeout family and direct landing. [1]
+- The measurement: module index, dotted-name resolution, `TYPE_CHECKING`-skipping AST dependency walk, and the one-step direct-import reading. [2]
+- The walk itself, whose docstring records that expanding a module is what counts and that discovery must not stop it. [3]
+- The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses. [4]
+- The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide. [5]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The twelve modules the pause must not reach: ref transactions, landings, integrate, record-landing, landing-record, the closeout family and direct landing. | `PUBLICATION_MODULES` | mcp/tests/test_pause_is_not_publication.py:37-52 |
-| The measurement: module index, dotted-name resolution, `TYPE_CHECKING`-skipping AST dependency walk, and the one-step direct-import reading. | `_module_files`; `_resolve`; `_is_type_checking`; `_dependencies`; `_runtime_imports_of` | mcp/tests/test_pause_is_not_publication.py:55-65; mcp/tests/test_pause_is_not_publication.py:68-76; mcp/tests/test_pause_is_not_publication.py:79-85; mcp/tests/test_pause_is_not_publication.py:88-106; mcp/tests/test_pause_is_not_publication.py:109-119 |
-| The walk itself, whose docstring records that expanding a module is what counts and that discovery must not stop it. | `_runtime_import_closure` | mcp/tests/test_pause_is_not_publication.py:122-153 |
-| The case: disjointness from every publication module, then the three non-vacuity checks and the two named witnesses. | `test_the_pause_cannot_reach_any_publication_module`; `_import_path` | mcp/tests/test_pause_is_not_publication.py:156-162; mcp/tests/test_pause_is_not_publication.py:165-202 |
-| The method limits recorded in the module docstring: static AST graph, `TYPE_CHECKING` excluded, no dynamic imports, per-module rather than process-wide. | "What it measures is a STATIC, source-level graph" | mcp/tests/test_pause_is_not_publication.py:8-14 |
-| The route this guard exists to keep the stop away from. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:180-209 |
-| The stop module whose closure is measured, and the release authority the closure is required to reach. | "def pause_result("; "def release_atomic_series_selection(" | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_release.py:23-54 |
-| The lane this module is registered in. | "mcp/tests/test_pause_is_not_publication.py" | mcp/tests/test-evidence-lanes.toml:196-196 |
+- The route this guard exists to keep the stop away from.
 
-## Cross-Repo References
+- The stop module whose closure is measured, and the release authority the closure is required to reach. [7]
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py"
+
+
+
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned structural guard.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
-## Update History
 
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T20:42+02:00 — Citation repair only (uncommitted 260831-LOCR change set on
-  `ar/260831_lifecycle-owned-completion-relay`): `pause.py` grew from 148 to 209 lines when the
-  already-vacant stop was added, so the closure source row was repointed from
-  `modules/pause.py:66-109` to `:80-128`, and the lane row from `test-evidence-lanes.toml:184-190` to
-  `:191-191` after the new integration row shifted the architecture-fitness block. **No content
-  impact**: the pause module's set of imported modules is unchanged — the added
-  `observe_atomic_series` import comes from
-  `agents_remember.worktrees.activation.atomic_series_activation`, which the module already imported
-  for `AtomicSeriesActivationError` — so the measured 60 / 5 / 54 / 0-of-12 closure figures still
-  describe this source. They were not re-measured in this pass, and no verification stamp advanced.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: created the card for the new architecture-fitness
-  guard, against the **final** candidate and therefore against the repaired walker.
-  `_runtime_import_closure` now marks a module expanded only when its own imports are read, so the
-  closure is genuinely transitive: measured on the frozen candidate it holds 60 modules including the
-  root, the pause's direct imports are 5, 54 modules lie beyond them, and 0 of 12 publication modules
-  are reached. Recorded the three non-vacuity checks and the two named witnesses, and the mutation
-  evidence: the former depth-1 walker returns 6 with 0 deeper modules, so it now fails the case instead
-  of passing it. Recorded the method limits the docstring now states — static AST graph,
-  `TYPE_CHECKING` branches excluded, function-local imports counted, dynamic imports not followed,
-  per-module reachability rather than a process-wide `sys.modules` reading, and why a session-wide
-  reading could not be this guard. The "73 modules" figure was retracted at its source (a scratch
-  prototype with a different resolver) and is replaced here with the measured 60 / 5 / 54. An earlier
-  draft of this card recorded the pre-repair depth-1 behaviour as the shipped behaviour; that reading
-  was correct for the candidate it measured and is superseded — this entry is the whole history rather
-  than two, because the card was never published in its pre-repair form. Verification metadata remains
-  closeout-owned; no acceptance claim.
+
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_is_not_publication.py" [8]
+
+- The route this guard exists to keep the stop away from. Anchor: `worktree_checkpoint_landing` [6]

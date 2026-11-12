@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A head set by arrival position moves backwards on replay and hides feeding gaps; the newest-timestamp rule with its cases prevents that misread."
+  },
+  "applicability": "The mounted Event River panel.",
+  "conditions": [],
+  "exclusions": [
+    "Arrival position, which never sets the head."
+  ],
+  "id": "INV-VSRHV3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EventRiver.test.tsx cases on last-feed line, hydration gating, silent river; npx vitest run src/panels/EventRiver.test.tsx src/data/stream.test.ts src/data/store.test.ts (dashboard/) -> EventRiver 17 passed, stream 6 passed, store green; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W11",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule-8 head: last-feed time over the window, silent-river line, list and summary reused.",
+  "status": "proposed",
+  "supersedes": []
+}

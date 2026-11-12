@@ -1,22 +1,12 @@
 # mcp/src/agents_remember/cli/memory_citations.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/cli/memory_citations.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-05T00:00+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [overview](../../../overview.md)
 
 ## Purpose
 
-CLI adapter: check a leaf's memory citations, regenerate their ranges, or migrate them.
+CLI adapter for citation checks and fixes. Fixing uses an ordinary leaf contract or the existing fixer's measured pre-baseline admission; other modes still require a contract.
 
 ## Code Commentary
 
@@ -24,32 +14,58 @@ CLI adapter: check a leaf's memory citations, regenerate their ranges, or migrat
 
 Module-level surface:
 
-- `add_arguments` (function, lines 45-98)
-- `run` (function, lines 101-162)
+- `add_arguments` declares `--repo`, optional `--contract`, optional `--config`, `--fix`, repeatable `--document`, `--census`, `--census-artifact` and `--dry-run`.
+- `run` chooses report, census or fix, constructs document-only `CitationOperationScope`, requires a contract without fix, loads `--config` or else the user's one MCP authority settings file that `discover_config()` selects, prints the whole JSON result and returns 0 only when its `ok` is true. Source-index build, snapshot, exclusion and migration operands are absent.
+
+Citation selection uses onboarding-relative `--document` names. Repeated names form the finite fix list; no caller-glob register or expected snapshot is accepted. Converted authoring and mechanical repair retain their application-owned admissions.
+
+- **Finite selection.** One `--document` preserves the singleton operation; repeated occurrences
+  become the multi-card selection admitted only for `--fix`. Other operations refuse a list.
+  The CLI continues to print the whole result, not the MCP status projection. Each listed card is
+  handled as a singleton and a refused member does not prevent the other members.
+- **Converted memory (L37 fix round P1b, MIK-R46).** On converted memory `--fix`
+  takes `--document` alone and authors card citation rows into sidecar references,
+  then refreshes mechanical anchor moves. The procedure is in the l-01 Curator card procedure,
+  `reference/curator/card-formats-and-citations.md`. The current `--document` help states that fix takes document selection alone; application check/fix refuse unconverted memory, including `--fix --dry-run`, with
+  `legacy-format` and the conversion procedure regardless of converted branches
+  elsewhere. Convert first, then repeat the operation.
 
 ### Conventions
 
-Module-level definitions follow the package conventions; names prefixed with `_` are private to this module.
+Module-level definitions follow the package conventions; names prefixed with `_` are private. Document selection rides on the shared `CitationOperationScope`; no caller-exclude field remains.
 
 ### Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/...` path.
+- Omitting `--contract` is admitted only for `--fix` before the configured converted root's first attributed baseline, with no linked memory worktree. A failed admission or a later contractless fix refuses; report mode still requires `--contract`.
 
 ### Todos
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+
+
+- The CLI declares report/fix and optional contract with repeatable document selection. [6]
+
+
+- Citation scope carries only singleton or finite document-list selection. [7]
+
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the function `add_arguments` (lines 45-98). | `add_arguments` | mcp/src/agents_remember/cli/memory_citations.py:45-98 |
-| Defines the function `run` (lines 101-162). | `run` | mcp/src/agents_remember/cli/memory_citations.py:101-162 |
 
-## Update History
+- CLI declarations make --contract optional at the parser (required except for --fix on the configured memory root before its first attributed baseline) and keep --document as a repeatable per-call selection. [1]
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- Dispatch requires a contract for modes other than fix and forwards the fixer's optional contract to its application owner. [2]
+
+
+- The scope that carries the caller’s named documents and refuses both selectors, an empty list, and a list outside citation_fix. [3]
+
+
+
+- The --document help states the converted form: --document alone. [5]

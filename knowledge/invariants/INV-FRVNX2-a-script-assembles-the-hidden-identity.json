@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A duplicated or malformed marker makes the tool create a second issue for one task, and a body split into comments makes its requirement unreadable as one text; both are expensive to unwind once a run has published them."
+  },
+  "applicability": "Every published body, its hidden markers and its size.",
+  "conditions": [
+    "The agent writes the hidden markers itself, from the template the instruction file shows; nothing else assembles them."
+  ],
+  "exclusions": [
+    "The sprint issue, which has no ar-parent marker.",
+    "A body that cannot fit the budget, which goes to the architect rather than being split."
+  ],
+  "id": "INV-FRVNX2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The wrapper has ar-task, ar-kind, ar-parent and one ar-requirement per current requirement; 89 scanner cases pass; largest body 59,945 B; no continuation comments."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "PUB-04-rules-7-9-identity-checks-budget",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The agent writes each body's hidden identity itself — ar-task and ar-kind, ar-parent except on the sprint, and one ar-requirement per current requirement — as the only hidden content; before a write it reads its own title and body against the omission rules, after it reads the issue back with gh issue view and compares, and every body stays under 65,536 bytes and is never split into comments.",
+  "status": "proposed",
+  "supersedes": []
+}

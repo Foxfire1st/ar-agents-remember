@@ -1,104 +1,52 @@
-# test_read_ar_files.py
-
-| Field                  | Value                                              |
-| ---------------------- | -------------------------------------------------- |
-| repository             | agents-remember                                    |
-| path                   | `mcp/tests/test_read_ar_files.py`                  |
-| doc_type               | `file-level-onboarding`                            |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`         |
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
+# mcp/tests/test_read_ar_files.py
 
 ## Governing Overview
 
-[Tests overview](overview.md)
+[overview](overview.md)
+
+## Current source contract evidence
+
+
+- Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.
+
 
 ## Purpose
 
-Checks paired source reading: exact ranges and full bytes, binary omission, traversal and symlink confinement, first-read overview attachment, unchanged-onboarding deduplication, changed/refresh reservation, compact-marker reset and committed-source payload reading. It does not claim the removed broad served-ledger durability or facts-packet suites remain here.
+Pins read_ar_files naming, path confinement and removed-argument refusals under MIK-R109. Source, cards and overviews are opened by the caller's own file tools, not carried in this answer.
 
-## Code Commentary
+## Current source contract
 
-### Logic
-
-The current evidence boundary is the source-listed behavior below. Earlier coverage claims in
-history describe prior populations and must not be used to recreate removed tests or claim they
-still run. The retained behavior and its fixture limits, described above, govern this card.
-
-### Conventions
-
-The table lists retained test definitions, not collected parametrized or subtest counts.
-Inspect the cited setup and collaborators before treating a focused result as end-to-end evidence.
-
-### Invariants And Boundaries
-
-Preserve exact refusal, identity, and cleanup assertions rather than adding overlapping helper
-cases. Coverage percentages are diagnostic and production CRAP 20 prompts review; neither implies
-an obligation to restore removed cases. Full suites and whole-candidate review remain master-end
-work. This source inspection does not claim a newly executed test or acceptance result.
-
-### Todos
-
-No additional implementation scope is opened by this memory reconciliation.
-
-## Docs References
-
-The repository has no configured Domain Documentation source. These claims concern its own test
-fixtures and assertions, so the exact retained source is the direct evidence.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
-
-## Repo-Internal References
-
-Each current definition below can be inspected in the exact source file. Historical references
-to removed methods are superseded by this current inventory.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Range request returns exact slice | `test_range_request_returns_exact_slice` | mcp/tests/test_read_ar_files.py:176-181 |
-| Full read is not truncated | `test_full_read_is_not_truncated` | mcp/tests/test_read_ar_files.py:183-190 |
-| Binary source is omitted | `test_binary_source_is_omitted` | mcp/tests/test_read_ar_files.py:192-194 |
-| Path confinement rejects escape | `test_path_confinement_rejects_escape` | mcp/tests/test_read_ar_files.py:196-198 |
-| Symlink file escape rejected | `test_symlink_file_escape_rejected` | mcp/tests/test_read_ar_files.py:200-208 |
-| Symlink dir escape rejected | `test_symlink_dir_escape_rejected` | mcp/tests/test_read_ar_files.py:210-219 |
-| First read attaches overview and route chain | `test_first_read_attaches_overview_and_route_chain` | mcp/tests/test_read_ar_files.py:260-266 |
-| Second read dedups unchanged pieces | `test_second_read_dedups_unchanged_pieces` | mcp/tests/test_read_ar_files.py:268-272 |
-| Changed overview is reserved | `test_changed_overview_is_reserved` | mcp/tests/test_read_ar_files.py:274-281 |
-| Refresh forces reserve | `test_refresh_forces_reserve` | mcp/tests/test_read_ar_files.py:283-287 |
-| Compact marker resets served | `test_compact_marker_resets_served` | mcp/tests/test_read_ar_files.py:289-297 |
-| Payload reads committed source | `test_payload_reads_committed_source` | mcp/tests/test_read_ar_files.py:323-325 |
-
-## Cross-Repo References
-
-This card establishes test behavior, not a separate cross-repository protocol or live installation.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: "\"coordinationRoot\": str(coordination_root)" repointed to mcp/tests/test_config.py:31-31. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
+- Direct request-shape cases accept twenty string paths and refuse twenty-one or an empty list; object/range/onboarding entries and refresh are refused with argument-removed. Repeated direct calls compare the whole returned dictionaries. Path/symlink escapes become per-row outside-repository refusals beside valid rows.
+- Direct naming cases check card/overview locations open relative to the stated working folder, no fixture source/card/overview prose is carried, four record-count states, missing-file/card cases, and missing/unconverted memory with no card. A stale card names its invariant ID/kind/state and matched heading; current cards have no action entries. Overviews are unique and nearest first within the batch, not deduplicated per session.
+- RegisteredNamingTests drives EntryPointWorld: omitted refresh names; explicit true/false/null refresh and object/source/onboarding entries refuse; refresh is absent from the schema; twenty shared-chain paths are unique/nearest-first; mixed escaped/good paths and partial/stale-card cases retain qualified sibling rows. RegisteredRepairEvidenceTests distinguishes complete current counts from malformed-record partial-index repair evidence.
+- RegisteredCardLifecycleTests deletes then corrupts one card while checking the valid sibling's exact empty counts/action fields and registration_absent qualification. Distinct-section, fallback and same-blob/different-content cases assert per-record headings or explicit titleFallback, including the registered route. These assertions do not run live agents or certify all possible anchor layouts.
+- PublishedIntentDirectTests still checks the internal rich published-intent helper and its seed/legacy refusals; it is not the name-only read_ar_files wire answer. CarrierParityTests reads the response contract `models/read_files.py` as the carrier: it pins card, recordCounts, actionNeeded, overviews, codeState and memoryState, checks they are fields of `NamedFile` or of the registered read_ar_files response model, proves renaming any documented field or appending a retired name fails, and excludes old carrier names.
 
 
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+## Evidence — current source references to add
 
-- 2026-08-02T21:32+02:00 — W2-B08 curator: anchored 10 citation findings to the application entry point, payload builder, ranged reader, served ledger, and config helper evidence. Verification metadata stays pinned until closeout.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T16:50+02:00 — No content impact: the only non-format edit is the ambient-lifecycle
-  construction in the `FrontDoorDedupTests` and `ServedLedgerAndEventTests` fixtures, which now
-  passes `timing=AmbientTiming(heartbeat_seconds=3600)` instead of the loose `heartbeat_seconds`
-  keyword; the card names neither the keyword nor the heartbeat value, and both fixtures still
-  install a real ambient lifecycle over a temp `EventStore` and reset the singleton around each
-  case. The rest is `ruff format` reflow of `_write_route_index`, the two `_read` helpers, and one
-  trailing comma. Re-checked the five test classes and every enumerated case against the source:
-  none was added, removed, renamed, or re-asserted, so the status-semantics, path-confinement,
-  dedup, served-ledger, facts-only `read.packet`, and five-file-cap claims all still hold.
-- 2026-06-23T01:40+02:00 — Slice 07b v1: the emission test now also asserts the `read.packet`'s `data.repoId == REPO` (the read's repo carried alongside the per-file facts). Body only — verification metadata pinned until closeout stamps the slice-07b code commit.
-- 2026-06-22T22:33+02:00 — Created for slice 07: the `read_ar_files` test suite (ranged read, status semantics, path-confinement, facts-only `read.packet`, served-ledger dedup/reset, five-file cap + payload end-to-end). Verification metadata pinned until closeout stamps the slice-07 code commit.
+- RequestShapeTests.
+- NamingTests, StaleNamingTests, OverviewLocationTests and MemoryStateTests.
+- RegisteredNamingTests and RegisteredRepairEvidenceTests.
+- RegisteredCardLifecycleTests, DistinctSectionHeadingTests, RegisteredDistinctSectionTests and RegisteredSameBlobSectionTests.
+- PublishedIntentDirectTests and CarrierParityTests.
+
+## Evidence
+
+- `test_an_unconverted_root_cannot_open_a_legacy_database` supplies the current fixture or assertion described above. [22]
+
+- `test_the_carrier_uses_the_field_spellings_the_answer_returns` supplies the current fixture or assertion described above. [23]
+
+- `test_unconverted_memory_names_no_card` and `test_named_answer_validates_against_the_registered_model` supply the current fixture or assertion described above. [24]
+
+- Path confinement rejects escape [28]
+
+- Symlink file escape rejected [29]
+
+- Symlink dir escape rejected [30]
+
+- The carrier-parity case reads the response contract, checks each documented spelling against the answer's model fields, and fails a renamed documented field or an appended retired name. [37]
+
+- The mounted route on an unconverted memory answers `memoryState: unconverted` with no card and no card text, and the answer validates against the registered model. [38]
+
+- The published-intent direct fixtures, including the `_selection()` narrowing helper the type-checked call sites need. [39]

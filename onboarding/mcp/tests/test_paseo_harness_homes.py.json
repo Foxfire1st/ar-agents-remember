@@ -1,0 +1,139 @@
+{
+  "path": "mcp/tests/test_paseo_harness_homes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "9f7e06e1987f7e6358658e18c385e67a754b6ab4",
+        "content": "sha256:81c623f5a364308efe17eebdb0df06c344ec8aa8575e901c62929ec2d0a37abb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_home_change_refuses_before_stop_and_all_three_remedies_allow_restart"
+        }
+      },
+      "facet": "A changed harness home refuses before the host is stopped, and each of the three named remedies lets the restart proceed.",
+      "id": "PRF-XQH3YK",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rules7/8 bridge and homes",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Status names inherited variables without values; settings env or same values or acceptance pass; a change refuses with the remedies",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f7e06e1987f7e6358658e18c385e67a754b6ab4",
+            "content": "sha256:abe33806121ba45813374c66bf78223cffa511e2c9c0d76da34bc5c3a2db6b7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_inherited_names_and_settings_override_without_value_leaks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unknown environment is reported and adds no refusal; the home variable catalog",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f7e06e1987f7e6358658e18c385e67a754b6ab4",
+            "content": "sha256:2c1a6ea13e01bf331b8522434abef8b3d6d27d53634dc3f3cb1720cfd40090be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unknown_environment_is_reported_and_adds_no_new_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A home change refuses before any stop, and each of the three remedies allows the restart without leaking the value",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f7e06e1987f7e6358658e18c385e67a754b6ab4",
+            "content": "sha256:81c623f5a364308efe17eebdb0df06c344ec8aa8575e901c62929ec2d0a37abb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_home_change_refuses_before_stop_and_all_three_remedies_allow_restart"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The settings parser does not rewrite provider environments",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f7e06e1987f7e6358658e18c385e67a754b6ab4",
+            "content": "sha256:1a068ea68fd0e9d5aeccbd2b73ce483d6002802f1d708149a11adbdd40177156",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_provider_environment_is_not_rewritten_by_settings_parser"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unreadable environment reports unknown and keeps the process-identity refusal",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f7e06e1987f7e6358658e18c385e67a754b6ab4",
+            "content": "sha256:8e04c15d8dc1ab5fddff41c227efd47b719f946b99562b4df8b69fb1d320d564",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unreadable_environment_reports_unknown_without_weakening_process_identity"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Failed-start cleanup checks homes before its stop",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9f7e06e1987f7e6358658e18c385e67a754b6ab4",
+            "content": "sha256:843cf10433bf7fc3aca74b6c72495116a31cf48cce0515ca94ba76689602efec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_start_cleanup_also_checks_homes_before_its_stop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The guard under test",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+            "content": "sha256:94aa425e94a83cb55a7282842a5a5d243c9a5ba7dac3bc12618e1de014f427e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_preserved_harness_homes"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

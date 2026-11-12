@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/cadence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/serving/cadence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-31 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [serving overview](overview.md)
@@ -19,10 +9,7 @@
 Holds `ProjectionCadence` — the one pacing decision every dashboard process shares — in its own
 stdlib-only module. New at 260731-EFA-L2.
 
-The module exists to be importable by the import-light daemon agent-notifier: `daemon.py` needs to name
-the cadence it hands a spawned child without importing `projector.py` and, through it, the whole
-serving stack. Anything added here must keep that property (stdlib only, no `agents_remember`
-imports).
+The module remains import-light so dashboard processes, including the retained daemon, can name a cadence without importing the projector/serving stack. R113 removed the product-owned agent notifier; this retained pacing type does not imply that notifier or terminal supervisor survives. Anything added here keeps the stdlib-only/no serving-import boundary.
 
 ## Code Commentary
 
@@ -41,27 +28,25 @@ is what `create_app` and `Projector` take when the caller says nothing.
 
 ### Invariants And Boundaries
 
-- Stdlib-only by design. Importing anything from the serving stack here re-couples the daemon
-  supervisor to the projector and defeats the module's reason to exist.
+- Stdlib-only by design. Importing the serving stack here re-couples import-light dashboard/daemon callers to the projector and defeats the module's retained reason to exist.
 - The two bounds move together. A change that exposes `interval` without `heartbeat` (or vice
   versa) at any call site reintroduces the half-configured cadence this type was extracted to stop.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain documentation source is configured for this repository.
 
-## Repo-Internal References
+### Repo-Internal References
+
+- The retained stdlib-only pacing declaration supplies one frozen interval/heartbeat decision and its default, not an agent-notifier capability. [1]
+
 
 - [projector.py](projector.py.md) takes the cadence as `Projector(config, cadence=...)`.
 - [app.py](app.py.md) takes it as `create_app(config, cadence=...)`.
-- [daemon.py](daemon.py.md) names a child's cadence without importing the projector.
+- [daemon.py](daemon.py.md) retains dashboard process startup/adoption cadence without restoring the removed agent notifier.
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references.
-
-## Update History
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: created for the new module. Verification metadata stays
-  pinned to the pre-commit source history until closeout.

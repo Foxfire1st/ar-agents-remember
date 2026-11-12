@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "An unbounded metadata read would exhaust memory on a corrupt store and let modified descriptors authorize over-cap asset reads."
+  },
+  "applicability": "Every publication into one task's frame store.",
+  "conditions": [
+    "The total is measured over every lineage of the task.",
+    "The check runs inside the task lock, before the write."
+  ],
+  "exclusions": [
+    "The per-revision bounds, which are checked on the staged assets before the lock."
+  ],
+  "id": "INV-5VVSTD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A5-verdict.md; A5-fixed-list-verification.md; A5-checks-complete/; prior A4 full-criterion account retained"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F10",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The task's frame-store byte total is checked under the task lock before any mutation, so a write that would pass it is refused by name with the removal control offered and no current page is evicted; the lineage byte ceiling and the revision-count ceiling are gone, and a retained revision is removed only by the developer's removal control, never silently to make room.",
+  "status": "proposed",
+  "supersedes": []
+}

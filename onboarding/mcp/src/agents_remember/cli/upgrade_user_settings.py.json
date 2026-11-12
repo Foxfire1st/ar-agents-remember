@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/cli/upgrade_user_settings.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4527b0697a1654db46e39d35ac63dd4780661ae1",
+        "content": "sha256:26ee63ed8526cb9934218eae3fbaf5b990871435a12053fec188ac3db4b53f88",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-5N7QX2",
+      "invariant": "INV-3HQNH1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-16",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The public CLI exposes the deliberate upgrade operation with the existing owner, rather than a loader side effect.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The explicit upgrade run moves the whole file once with refusal and dry-run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4527b0697a1654db46e39d35ac63dd4780661ae1",
+            "content": "sha256:26ee63ed8526cb9934218eae3fbaf5b990871435a12053fec188ac3db4b53f88",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The command takes coordination-root and dry-run arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4527b0697a1654db46e39d35ac63dd4780661ae1",
+            "content": "sha256:3185ae2fc384083376c7c154ae0357e068dc7ee285a5281b5feb0701fb7fcdab",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

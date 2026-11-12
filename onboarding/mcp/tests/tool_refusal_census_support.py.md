@@ -1,0 +1,159 @@
+# mcp/tests/tool_refusal_census_support.py
+
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- The failure table omits resolve_context, removed lifecycle primitives, providers, benchmarks, old structural calls and capsule/skill tools; lifecycle_finalize_task remains. read_ar_files deliberately receives an object entry to drive argument-removed, not to request source text. The adoption invocation uses `absent_contract(world)`, a nonexistent path inside the coordination root; `expected_worktree_group` is `(world.coord / "tasks" / REPO).as_posix()`, `rationale` is the string "refusal census", and `dry_run=True`. This dictionary is a refusal stimulus, not successful adoption or this Curator's executed probe.
+- drive_census checks the failure table against PUBLIC_TOOLS and calls it without arranging any session lifecycle; returned rows retain delivered payload and log-read whole facts.
+- Returned rows carry both delivered payload and whole result read from log.
+- The failure table includes `user_settings_init` with `target: host-authority`, a refusal setup before any live-host read. It proves no settings write or host acceptance.
+- Failure inputs include role_start_set without a bound caller and native retire_child selected by LEAF_REF task_document_ref plus role=worker, not an unknown native ID. The roster equality remains the population authority; these inputs own no acceptance assertion and restore no old structural plane.
+
+### Source and authority bounds
+
+- Source comparison: `mcp/tests/tool_refusal_census_support.py:57-209`.
+- Source comparison: `mcp/tests/tool_refusal_census_support.py:212-252`.
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Grant failure dispatch
+
+The refusal driver supplies the canonical absent-task grant failure input without arranging an ambient lifecycle. Its `direct_landing` failure request also names the canonical absent leaf explicitly, so the intended refusal is reached through the current input grammar. It creates cases, not assertions or acceptance. Retained historical invocation/retired-lifecycle inventories remain historical rather than current tool counts.
+
+## Current source contract evidence
+
+- The driver checks failure_invocations against PUBLIC_TOOLS for missing and extra names before calling each roster tool, then records kind, delivered payload and logged whole result; it arranges no session lifecycle.
+
+
+
+## Synced current-source qualification
+
+The new-base direct_execution_grant entry is an absent-task action=give stimulus, not successful grant creation or permissions evidence.
+
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
+
+## Governing Overview
+
+[mcp/tests overview](overview.md)
+
+## Purpose
+
+The measured population behind L6's refusal conformance check: **one production failure
+invocation per public tool**, kept in a support module rather than inside the test module so the
+same census is reproducible from a probe as well as from pytest. This is not a test module — it
+is imported by `mcp/tests/test_tool_refusal_conformance.py` and contributes no collected case of
+its own, which is why it carries no lane row.
+
+**The question it answers for every tool.** L5's `test_tool_entry_point_sweep.py` sweeps the
+surface with a *benign* argument set. This table asks the complementary question: driven down a
+path that cannot succeed, does the tool answer with a typed refusal naming what refused, why and
+the next action — or does it lose the envelope to a bare exception, or answer `ok: true` for an
+operation it did not do? `T34` lived in the second answer for nine tools, and `T62`'s preview
+crashed on its own producer's output.
+
+## Current source account
+
+The failure invocation population adds role_start and role_message under a server with no launch binding. Both reach the explicit caller-has-no-binding refusal, including reason and next action, before reading, starting or sending. This support module supplies inputs and owns no acceptance assertion itself.
+
+## Code Commentary
+
+### Logic
+
+**The table is asserted equal to the roster in both directions, before anything is driven.**
+`failure_invocations` (`:54-228`) is keyed by tool name; `drive_census` (`:229-253`) refuses a
+table that is not `PUBLIC_TOOLS` (`missing` or `extra`) rather than driving a partial population
+and reporting a clean census over it. A new tool cannot arrive uncensused and a stale entry cannot
+rot.
+
+**Every entry is the production call a consumer would make** — the same adapter, the same
+argument model — not a private function call, so the census measures the entry point's own
+behaviour. Where a tool offers `dry_run`, the failure path is reached with it set, so the census
+never mutates the world it measures. The addresses it hands out are the fixture's own:
+`TASK_REF` (`:35`), `LEAF_REF` (`:36`) and `ABSENT_REF` (`:37`) are real documents inside
+`EntryPointWorld` where a tool must first resolve an address to reach a *later* refusal, while
+`absent_contract` (`:40-47`) and `outside_contract` (`:48-53`) are the absent and
+out-of-confinement contract paths the contract-address family raises on.
+
+**One ordering fact is arranged rather than assumed.** `EntryPointWorld.build` ends the
+fixture's lifecycle, so `drive_census` starts one before driving the table: that is what makes
+`lifecycle_start`'s own failure path (one is already active) the one measured, and it leaves
+`lifecycle_resume` in the unprepared state the pin already records.
+
+**What the caller does with the result.** Each row is `{"kind": ..., "payload": ...}` where
+`kind` distinguishes a returned envelope from a raise — the distinction the conformance module
+reads as its three-way partition — and `payload` is empty for a raise, because a bare raiser
+has no payload at all.
+
+### Conventions
+
+A support module under `mcp/tests/`, imported by path name from the test module beside it; no
+`test_` prefix, no collected cases, **no lane row** in `mcp/tests/test-evidence-lanes.toml`
+(the manifest registers test modules, and this is not one). The constants at the top
+(`REPO` `:27`, `ADOPT_REPO` `:28`, `MASTER` `:29`, `LEAF_ID` `:30`, `WORKTREE_NAME` `:31`) name
+the fixture's entities once so the roster-derived invocations cannot spell them differently.
+
+### Invariants And Boundaries
+
+- **It owns no assertion about correctness.** The table says which call to make; whether the
+  answer is acceptable is the conformance module's partition, and the pins live there.
+- **It is not execution evidence.** Driving `EntryPointWorld` is a hermetic, disposable-world
+  check; nothing here certifies a tool.
+- **The roster is the only population source.** There is no literal count anywhere in this
+  module: the completeness check is a set comparison against `PUBLIC_TOOLS`, which is what makes
+  the census shrink-proof.
+
+## Evidence
+
+### Docs References
+
+No external Domain Documentation source is configured in this memory root. These are
+repository-owned fixture facts; no external library behaviour is inferred.
+
+No configured domain evidence applies to the file-local claims above.
+
+### Repo-Internal References
+
+The anchors below identify current behaviour of this module; they are not execution evidence and
+they make no acceptance claim.
+
+
+- One production failure invocation per advertised tool, keyed by tool name and asserted equal to the roster in both directions. [1]
+
+- The driver: roster equality first, then one drive per tool, with the lifecycle arranged so `lifecycle_start`'s own failure path is measured. (Historical caption; obsolete.)
+- An absent contract path inside the coordination root, for the contract-address family. [3]
+- A contract-shaped path outside the coordination root, for the confinement refusals. [4]
+
+- The fixture document addresses a tool must resolve to reach a later refusal. [5]
+
+
+- The advertised roster the table is asserted equal to before anything is driven. [6]
+
+
+- The hermetic world every invocation addresses, shared with the benign sweep. [7]
+
+
+- The conformance check that drives the refusal table and asserts every failure path answers in one of the four named shapes: typed refusal, stateful refusal, always-answer or raiser. [8]
+
+
+### Cross-Repo References
+
+No cross-repository implementation evidence is required for this fixture. Every address it hands
+out is inside the disposable world the calling test module builds.
+
+No repository or external-system boundary is proved by this module.
+
+</details>
+
+
+- The direct-landing failure input includes its explicit absent canonical leaf. [9]
+
+
+## Current source evidence
+
+
+- The failure table includes user_settings_init with target host-authority as a refusal input, not successful host or settings execution. [10]

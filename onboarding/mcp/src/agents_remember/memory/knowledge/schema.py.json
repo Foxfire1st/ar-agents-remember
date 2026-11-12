@@ -1,0 +1,52 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/schema.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "The one schema is composed, pinned, and drift fails instead of re-pinning [10]\n\nAnchor: `_compose`; `CURRENT_GENERATION`; `require_pinned_schema_unchanged`; `SCHEMA_FINGERPRINT`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Any other declared version is refused, never migrated [11]\n\nAnchor: `generation_of_database`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The index owns exactly eight logical tables in manifest order [9]\n\nAnchor: `CANONICAL_TABLES`; `CANONICAL_COLUMNS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:9e10ce1d79604d8957a14bb7d9e140464ea4f5b91ed4cd87a5b76d911c6490a5",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

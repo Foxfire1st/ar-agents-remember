@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Inventory probe with cleanup and abandon publishers together persist the terminal reason; three proving tests pin both real runs and the memory-branch boundary."
+  },
+  "applicability": "Locator-less no-remains abandon and cleanup.",
+  "conditions": [
+    "No locator, folder or branches; the contract survives."
+  ],
+  "exclusions": [
+    "Enclosures with remains; adoption-first paths."
+  ],
+  "id": "INV-AXWPVF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "M1 verdict L82-MEM-M1-F01 + R4 evidence: test_enclosure_without_remains.py::test_abandon_real_run_persists_reason_in_contract; ::test_cleanup_real_run_persists_reason_in_contract; ::test_external_memory_branch_stays_outside_exception; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "L82-MEM-M1-S-06",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Locator-less no-remains abandon and cleanup persist their terminal reason in the surviving contract.",
+  "status": "proposed",
+  "supersedes": [
+    "INV-R6DNZB"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "Inferring the wrong owner can close another leaf history or turn unavailable public recovery into a false success claim."
+  },
+  "applicability": "Direct leaf history-owner selection and public recovery of an admitted interrupted canonical-leaf-bound doorless direct generation.",
+  "conditions": [
+    "An explicit valid leaf_id selects and closes that history, including rowless history.",
+    "A proven bound_leaf_id selects the admitted leaf before optional caller leaf_id; only absence of both selectors takes the legacy sole-open-owner inference.",
+    "Public recover pins the expected accepted generation, continues its existing effective input and settles its kept closing receipt on completion."
+  ],
+  "exclusions": [
+    "Public lifecycle-control recovery is refused for legacy direct generations lacking both compatible TaskIntent and an admitted canonical leaf input. Current canonical-leaf-bound generations retain their advertised controls; the retained historical public-refusal proof has legacy scope, not current-bound public-route success.",
+    "Ordinary closeout records without task intent retain their separate refusal treatment.",
+    "Earlier-shape direct records carrying a closeout door publication offer no controls.",
+    "Retirement does not reopen a converted history already closed for the same leaf."
+  ],
+  "id": "INV-6DFQ9P",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152/role-launch/260928-MIK-L52-worker-7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152.md (SHA-256 ef7cff4d9b5140ebecdc1997c2df1fa8dc3ad81222e17dc63b2746cccab1bdf6); mcp/tests/test_direct_landing_leaf_identity.py (public supplied/wrong, refusal, recovery)"
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "MIK-R52@v1 rule 8 direct-leaf-identity",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "direct_landing takes leaf_id (judges/closes the named leaf, refuses another leaf's open file, names leaf_id when none-or-several are open); public recovery continues its accepted interrupted canonical-leaf-bound doorless generation and settles the kept closing receipt in the same call.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,22 @@
+{
+  "path": "scripts/canvas-panel-probe.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "This script is a proof/inspection harness, not product runtime code.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "60094017752243c902b29f5c276a5c8a4d056b66",
+            "content": "sha256:96df2dea07a6674a177bfd1240303f2fa8ce307610cd17e3bb0135f651098148",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

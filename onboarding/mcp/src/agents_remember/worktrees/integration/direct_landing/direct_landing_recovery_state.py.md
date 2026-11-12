@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](../overview.md)
@@ -63,59 +53,33 @@ defines cleanliness; `contentHeadTree` permits cache-excluded comparison while a
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Typed classification checks actual code, memory repository/ref, and candidate evidence. | L30-L53; L77-L134; L137-L162 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
-| Memory receipt inference and output matching are based on actual Git lineage. | L185-L204; L207-L223; L226-L252; L255-L269 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
-| Prepared and committed intent convergence retain exact ref/tree checks. | L300-L319; L322-L333; L336-L355 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
-| Shared snapshots exclude cache data while retaining actual objects. | L42-L57; L410-L473 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| Recovery tests reject code/ref/content drift and accept cache absence or damage. | L274-L314 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
+- Typed classification checks actual code, memory repository/ref, and candidate evidence. [1]
+- Memory receipt inference and output matching are based on actual Git lineage. [2]
+- Prepared and committed intent convergence retain exact ref/tree checks. [3]
+- Shared snapshots exclude cache data while retaining actual objects. [4]
 
-## Cross-Repo References
+- Recovery tests reject code/ref/content drift and accept cache absence or damage. [5]
+
+
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | — | — |
-
-## Update History
-
-- 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
-
-
-- 2026-09-15T00:51 UTC — Replaced ledger mapping/byte-state reconstruction with code and memory Git evidence; documented cache-excluded snapshots, preserved parent/ref/tree checks, and no dummy attribution for clean reuse. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-
-- 2026-08-27T18:33+02:00 — Removed the private clean-snapshot duplicate and consumed the shared
-  mutation-evidence predicate; recovery semantics are unchanged.
-- 2026-08-26T17:49+02:00 — Replaced single-prepend byte equality with the complete newest-first
-  recovery proof: the current operation mapping must be first, accepted history must remain an exact
-  suffix, canonical metadata and rendering must hold, and commit lineage/path evidence remains
-  exact. This admits legitimate intervening history without weakening corruption detection.
-
-- 2026-08-26T14:32+02:00 — Added the explicit `historical` ledger state so valid same-code memory
-  history remains recoverable while unreadable or intent-conflicting evidence still fails closed.
-  Verification remains closeout-owned.
-
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented the exact lineage and byte predicates for direct-landing recovery. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-- 2026-08-24T00:27+02:00 — 260821-CLIVE-L2 committed-route reconciliation: moved this preserved sidecar to mirror `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py`, repointed current source evidence and governing context, and verified the source at code commit `1d446724d099517f6f52d596b47827ae2391a2a4`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+No additional configured cross-repository evidence is claimed.

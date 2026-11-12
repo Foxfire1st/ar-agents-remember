@@ -1,0 +1,125 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/knowledgeReader.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The provenance: the re-capture, the scratch commits, the source and the trims.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c79e2d4145a5b38fcd45d80502c27c2d19d79bf",
+            "content": "sha256:1be9c56a2741fe02a550433faf5c6c93293dfe2faea5ea34286ff8201956923d",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The root summary's body.\n\nAnchor: \"\\\"path-root\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c79e2d4145a5b38fcd45d80502c27c2d19d79bf",
+            "content": "sha256:d9286a8ea087c0fbf733eb4dd1a2beacfd89ef79f4e4b410d6692e01277084d1",
+            "locator": {
+              "end": 1274,
+              "kind": "line_range",
+              "start": 1274
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The superseded decision: stored active, derived superseded.\n\nAnchor: \"\\\"record-decision-superseded\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c79e2d4145a5b38fcd45d80502c27c2d19d79bf",
+            "content": "sha256:4ff3df421311c067323fa92cee7fcdaff8b7b198b94fb78518ac27d678264cd4",
+            "locator": {
+              "end": 4398,
+              "kind": "line_range",
+              "start": 4363
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The invariant's body with its timeline.\n\nAnchor: \"\\\"record-invariant\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c79e2d4145a5b38fcd45d80502c27c2d19d79bf",
+            "content": "sha256:6314670019e8fc6dccc273385382d3d82fb0d9bf1f3d7cece9f94337e315116a",
+            "locator": {
+              "end": 5444,
+              "kind": "line_range",
+              "start": 5444
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The commit list named as listed.\n\nAnchor: \"\\\"commitsState\\\": {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c79e2d4145a5b38fcd45d80502c27c2d19d79bf",
+            "content": "sha256:2353b892109de4a925448624ec1b5e153b62f3ee3f439c9ac735d161390e0c54",
+            "locator": {
+              "end": 7097,
+              "kind": "line_range",
+              "start": 7095
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One subtree page under the reader's policy.\n\nAnchor: \"\\\"subtree-worktrees\\\": {\"; \"\\\"selectionPolicy\\\": \\\"knowledge-reader-subtree\\\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c79e2d4145a5b38fcd45d80502c27c2d19d79bf",
+            "content": "sha256:64aa0fb59074f2a30c81cecce722ca37f08aa667460db3a5f85baa8aef7550f2",
+            "locator": {
+              "end": 7119,
+              "kind": "line_range",
+              "start": 7108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The test that reads it.\n\nAnchor: `captured`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:7e5f5382edf3b6093e6d6a282c15b2858a653702572ed29b7e8f38010b446185",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

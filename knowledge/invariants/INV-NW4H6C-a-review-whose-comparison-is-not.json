@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The notice is produced from the resolver's pair and rendered only by the page's own note and comparison-menu parts, so a reader-facing promise about which comparison is on screen rests on both sides of that boundary and is proven by the resolver test and the mounted-page cases."
+  },
+  "applicability": "The review page and its leaf-wide read for a landed leaf whose enclosure records a delivery.",
+  "conditions": [
+    "The line names the shown number and the delivered code and memory trees, and offers the delivered view only when that pair was established.",
+    "The delivered view is the page's own default, so following the link clears the chosen number and leaves any recorded frame.",
+    "A matching pair states no line, and is not marked as moved merely because it was recorded earlier."
+  ],
+  "exclusions": [
+    "A new comparison namespace, a second review surface or a semantic verdict about the shown or delivered pair.",
+    "A failed notice read rendered as a matching delivery; it is stated unavailable with no delivered control.",
+    "A line that implies a historical record's own count or statement was erroneous."
+  ],
+  "id": "INV-NW4H6C",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_review_delivered_comparison.py::test_the_line_says_which_pair_was_delivered; dashboard/src/panels/review/DeliveredComparison.test.tsx (four cases)"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L187-NOTICE",
+    "leaf": "260928-MIK-L187",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A review whose comparison is not the pair its leaf delivered states that once, naming the delivered code and memory trees and offering the delivered view, while a matching pair states nothing and a delivery that cannot be established is named unavailable.",
+  "status": "proposed",
+  "supersedes": []
+}

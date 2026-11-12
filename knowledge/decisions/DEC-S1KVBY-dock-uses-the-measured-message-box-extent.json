@@ -1,0 +1,90 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "One alternative was seriously considered and rejected on the code it would govern: draft 1's minimum width with right alignment, which CR1 removed for an invented minimum and incompatible containment. The condition under which it would be looked at again is recorded with it, so the next reader does not re-litigate the choice from scratch."
+  },
+  "alternatives": [
+    {
+      "option": "The plug-in reports the message box's left and width in the frame's CSS pixels, and the dock places the tray at exactly frame.left + composer.left - anchor.left with width composer.width, no minimum and no clamp, keeping the frame-wide placement when a message reports no extent.",
+      "reason": "The box's own extent is measured and lies inside the frame, so the dock can use it directly in both views without inventing or enlarging anything.",
+      "status": "chosen"
+    },
+    {
+      "option": "Give the column dock a minimum width and right-align the tray to the box's right edge whenever the box is narrower than that minimum (MIK-R197 draft 1, rule 3).",
+      "reason": "CR1 found the minimum invented: draft 1 cited the tray's corner-dock declaration in TrayDock.tsx, whose max width is 440 px, at what is line 211 at the leaf's base and line 220 at this candidate. No column minimum exists anywhere, and a minimum wider than the frame cannot stay both right-aligned to the box and inside it.",
+      "reconsider_when": "A measured message box can fall outside its frame, for example under a zoom or transform where the reported rectangle and the layout disagree.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The column dock takes the message box's own horizontal extent in both views, and the frame-wide placement survives only as the deliberate fallback for a plug-in that reports no extent.",
+    "In Operations, where the frame is the column, the retained measured case puts the tray at the box's left 16 and width 268 in a 300 px column - 16 px in from each side and 32 px narrower than the column-wide tray it replaces - at both 1920 and 1440.",
+    "A later change that adds a clamp or requires the pair has to answer this record rather than quietly differing from it."
+  ],
+  "context": "In the Chats view the dock took the frame's own left edge and width, so the tray spanned Paseo's sidebar and the terminal split; in Operations the frame is the chat column and the same code looked right. MIK-R197 corrects how the Chats view is built.",
+  "decider": "The developer on D446, with the architect's cold read CR1 and recheck CR2 in notes/planning/20261021-tray-width, recorded as MIK-R197@v1 rules 2 and 3.",
+  "id": "DEC-S1KVBY",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-S3NMAZ"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+        "content": "sha256:bf88ea2e326be4e600e9ff3a536261d30915ee9aa9d43b1b77255f7e521b9ff7",
+        "locator": {
+          "kind": "symbol",
+          "name": "dockPlacement"
+        },
+        "path": "dashboard/src/tray/TrayDock.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "0b222683100abd582daa85755533e41d9728ce83",
+        "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+        "locator": {
+          "kind": "symbol",
+          "name": "composerExtent"
+        },
+        "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/tray"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R197",
+        "packet": "requirements/MIK-R197-v1-the-tray-docks-over-the-chats-own-column-in-every-chat-layout.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoPluginPick.test.ts::\"reports the box's own left and width beside Paseo's sidebar and terminal, and posts again when only they change\"; dashboard/src/cockpit/paseoPluginPick.test.ts::\"reports the box's new position when the layout moves it without resizing it\"; dashboard/src/tray/TrayDock.test.tsx::\"takes the message box’s own left and width, with the frame only as their origin\"; npx vitest run src/tray/TrayDock.test.tsx src/cockpit/frameTrayChannel.test.ts src/cockpit/paseoPluginPick.test.ts -> 35 passed / 35; native Operations pair 0px/300px before against 16px/268px after at 1920 and 1440 (L189-F02-completion.md)"
+      ],
+      "path": "l189-handoff-list-v1.json"
+    },
+    "handoffEntry": "L189-S3NMAZ-EXT",
+    "leaf": "260928-MIK-L189",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,1764 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L170",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0NDWB9",
+      "items": [
+        "sha256:a24123db7e504090b1a3f11f3b81e219b3b2a952808703cb4b4105e568795bef"
+      ],
+      "reason": "Examined all three current members. The 63 changed distribution carriers match their seven canonical sources byte-for-byte; canonical generator ownership and retired-role/reader boundaries stay. The settings-reference and dashboard-launcher obligations have no source delta in this task. Preserve the joint propagation guarantee, member revisions and routes; this is not installed-host or fresh generator-execution evidence.",
+      "revision": 3,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-13ZF64",
+      "items": [
+        "sha256:14909bc0c571af21732e6d5e5087ca32bc0291badad9946ebd87d7f16c572309",
+        "sha256:18e4d43c326d584a2baeb181b03dafedc1909070bc89f535ceb97a039e74dacb",
+        "sha256:4ec88c0f1521529db5991bd914c3a6581084300215ee092fa1d3a578f0943b0c",
+        "sha256:9ff4bc8c62bfefbca64abe676291a0d4cf321610ff6cc6770479b6f4bb20ae4d"
+      ],
+      "reason": "The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.",
+      "sources": [
+        {
+          "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7KDG7C",
+          "revision": 1
+        },
+        {
+          "id": "INV-WR3J18",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-1RDQ7R",
+      "items": [],
+      "reason": "Examined both current members: audience selection still delivers only applicable common/role stage text, while immutable detail delivery retains original per-request bytes. The repaired canonical-folder test restores their existing combined guarantee. Members, guarantee, routes, revision, status and admission are unchanged; new enforcement places remain inside the existing CLI route.",
+      "revision": 1,
+      "subject": "FAM-N36SWD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3QPGQJ",
+      "items": [
+        "sha256:4f7a717d5e64136f75b43702a896f5fde21ca83cdb45119eb288f83546aed526"
+      ],
+      "reason": "This Reviewer-only paragraph adds the clean-sync no-freeze/no-round intake and missing per-finding-entry return within the existing direct leaf loop. Its owning operation card and governing overview retain these concrete procedures. It neither changes the separate recorded-lane invariant nor introduces a second authority; no separate invariant is minted for this local intake literal.",
+      "subject": "hunk:sha256:4f7a717d5e64136f75b43702a896f5fde21ca83cdb45119eb288f83546aed526"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3Y9HMR",
+      "items": [
+        "sha256:169d51fa48ff9ae55f3c9e4597e859b52eed10f67e3e593f00e2d902a57e45e3",
+        "sha256:26c12513a4cafdba2a3a39015647f236d805c326d5c6ee7ce2857ad4799506e2",
+        "sha256:ad0ecf577f5debec8cc5d9d2f8cf26df28985a572f2a8ceccdfe93382d3287bb",
+        "sha256:cd963e4eb06a8fe15bf23c6c5b7e0284193c2ddc21773b1de21c9af15d17d0dc"
+      ],
+      "reason": "The reviewer-addressed paragraph literal now includes clean-sync intake and per-finding repair-entry checks. The exact implementation and review body fingerprints are deliberately repinned to the admitted instruction bytes; the role-audience partition remains the property under test. A matching stored fingerprint is not by itself a semantic or execution verdict.",
+      "sources": [
+        {
+          "blob": "38a29b692c837f2c549937b56d5a44e3e39eaa7a",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_audiences.py"
+    },
+    {
+      "considered": [
+        "FAM-83BTBD",
+        "FAM-PNH1QS",
+        "FAM-4ZNEN9"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-4N6W5S",
+      "items": [],
+      "reason": "The new invariant constrains the closeout door's exact source-evidence relation. FAM-83BTBD binds seat-owned peer workflow; FAM-PNH1QS binds coordination authority and developer conversation; FAM-4ZNEN9 binds live reviewer capture/reuse optimizations. None of those joint guarantees requires this independent door exception. Do not group by shared routes or the word review.",
+      "revision": 1,
+      "subject": "membership:INV-X22A1K"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4WWDYC",
+      "items": [
+        "sha256:d86f916a53f5bc8f194d1c58c1236e2edaf1803dec344ec9b196f78042d5ff2a"
+      ],
+      "reason": "This exact index hunk records the new clean-sync, precedent or visible direct-repair reason at its named role/operation owner. The reference index adds no independent role, procedural authority or executable gate. Keep its local account and cross-owner source evidence; the clean-sync door invariant is authored at the actual enforcement locations.",
+      "subject": "hunk:sha256:d86f916a53f5bc8f194d1c58c1236e2edaf1803dec344ec9b196f78042d5ff2a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-50SPKF",
+      "items": [
+        "sha256:f5ba0a751da18ee43e0e5f19429705571ac9c15964c741124526f7c04a79ec73"
+      ],
+      "reason": "decisions_L170 records ten changed capsule measurements for the conditional sync, precedent, direct-repair and evidence obligations. The registry still uses capped eleven-tenths budgets with the existing capsule and step ceilings. Stored measurements are declarations and retained compiler provenance; reading them is not a fresh compiler run, test execution or native-host grade.",
+      "sources": [
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-53ZRXK",
+      "items": [
+        "sha256:8c25e8cdbdb12442f0c977ba46daf93ef4b1b8811466320f721227a1741337b8"
+      ],
+      "reason": "Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.\n\nBefore escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.\n\nManager receives the clean-sync focused-test result for its own preview; no clean-sync review round is created. Curator still writes memory only after exact passed-source intake. These instruction changes transfer no gate, task-state or publication authority.",
+      "sources": [
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:abe963bcdb890c686ae3c516fe080935ad618fb5e9b023b4c045ed687ec6ade8",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:5725734786b88c3d7ae5d51ec5f3df41850c27066c06e30a0dcc44a646f952df",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-7ZK6TT"
+        },
+        {
+          "after": {
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+            "content": "sha256:8fbff667f9c086632c313deb42e998ff450493ebce1f17288c98626793be1b9d",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "content": "sha256:e00464c5b28be1b6aac093187945eda3d9bf9639c157ac5e832642e1c9222844",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-MXJ3HX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5HQPNC",
+      "items": [
+        "sha256:a66a99688116747ac663190822e7649b99fc32ce3d50fdbdf878f6d729d772ce"
+      ],
+      "reason": "Worker now repairs owned findings without pre-approval, freezes per-finding evidence and sends the same entries/paths to Curator after code PASS; Manager gains same-kind precedent handling and the clean-sync preview occasion. Exact direct sibling handoffs and Manager-only starts, gate, transaction and landing authority remain. Renew changed Worker/Manager carriers; Reviewer, coordination and curation ownership clauses remain unchanged.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "df4fb4b39a29ba111d1819ba69902fd34bab1728",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "a1df77712b1e4a98a3d9a35e391598bcf650b649",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-0DCHVF"
+        },
+        {
+          "after": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:3647b684a59d9600cd02ab256881a639829eb9c6a0569b1ea86eadb0e3337846",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:cea1e7e4808e7089d3cc2b6f8531acd1ec58764d3aa5fdd313e846ce8649ffa9",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-09EQRE"
+        },
+        {
+          "after": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:d44774695ba017e537e1be312da408ff6d6c5b3a6decd3e9b258c4834072ec9c",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-JY5TEM"
+        },
+        {
+          "after": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:ba8abd9f9e0f35351dd58583f8e4ee11986a44b0458ca8427339b40a6cdf3502",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:ba8abd9f9e0f35351dd58583f8e4ee11986a44b0458ca8427339b40a6cdf3502",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-M2NFTB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5ZHCFP",
+      "items": [
+        "sha256:1dddf093b40c4d4b48dc2916c5bc0a27eeb8b7162077504e49745e10ce7502d5"
+      ],
+      "reason": "The Manager must now consult and name settled precedents before escalating uncovered questions. It still decides ordinary matters within the intended promise, retains durable rulings/requirement-change/status records and uses the four developer-needed categories and final report path. New scope, extra-round and developer decisions keep their owners. The existing coordinator-decision obligation is preserved, not weakened; renew its changed/carried carriers and proof.",
+      "revision": 1,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-60C5ET",
+      "items": [
+        "sha256:fd6cc9f8e4a530bc911232bcc79ed1c93281ae0ab21779f80186c35a652f8a46"
+      ],
+      "reason": "When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.\n\nWorker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.\n\nReviewer receives no freeze and opens no round for a clean sync with passing focused tests. For a repair freeze, Reviewer checks every finding against its own report entry and returns missing entries to Worker without counting a round. This intake return does not turn an executed fix-verification into a record-only repair or waive the settings limit. Code and memory lanes remain separate; Manager retains the gate and publication.\n\nBefore escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.\n\nThe registry records the changed compiled-text budgets under the existing ceilings. Canonical sources remain the owners; generated carriers and brief echoes add no permission.",
+      "sources": [
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": "skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-617HR4",
+      "items": [
+        "sha256:3f73ec829582ebae0ddc0885332ef0010bc863126ee55622293e92f4271694e2"
+      ],
+      "reason": "The changed opening boundary removes a pre-repair coordination stop and distinguishes clean-sync preview from a real repair. The existing Manager ownership/direct-loop invariants and updated ordinary role card carry those duties; this local explanatory clause adds no independent start, task-state or publication authority.",
+      "subject": "hunk:sha256:3f73ec829582ebae0ddc0885332ef0010bc863126ee55622293e92f4271694e2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6SAYV7",
+      "items": [
+        "sha256:27e8c6aab76932092556f41f26b178f7720ad6880e9d8ad99448d3ef07b8a333",
+        "sha256:de0c03173b74463013c698606d24f10409f78e4ec7f6392189ef18554f008b04"
+      ],
+      "reason": "This module drives the closeout door's own review-provenance check using real temporary Git repositories, canonical leaf documents and recorded route reviews. It checks the plane stamp, disjoint-sync acceptance with the original digest, overlap refusal, added-path and mode refusal, unrelated-base refusal and missing-stamp refusal. Its CR/LF cases distinguish replacement, false overlap and same-map key collision. These cases guard exact byte path identity, not the complete closeout transaction, integration acceptance or every kernel-runner behavior. Source assertions and retained producer execution evidence are separate; the Curator did not rerun tests.",
+      "sources": [
+        {
+          "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+          "path": "mcp/tests/test_route_review_clean_sync_door.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_route_review_clean_sync_door.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:bb6a610e2f2d2f945db19077e1c88524085bcfe18e33ca6028b69d03e3cb9248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_without_worklist_is_told_to_compute_it"
+            },
+            "path": "mcp/tests/test_writer_corrections.py"
+          },
+          "before": {
+            "blob": "efcb4035a030d70f17dd239206c420e275325530",
+            "content": "sha256:bb6a610e2f2d2f945db19077e1c88524085bcfe18e33ca6028b69d03e3cb9248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_leaf_without_worklist_is_told_to_compute_it"
+            },
+            "path": "mcp/tests/test_writer_corrections.py"
+          },
+          "id": "PRF-G9K136"
+        },
+        {
+          "after": {
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "content": "sha256:526e7d6be9e6313800b3eb37c702ff8e6c0a889245957042e1ec5f58707c264e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_first_authored_in_leaf_needs_no_itemless_row"
+            },
+            "path": "mcp/tests/test_writer_correction_history.py"
+          },
+          "before": "absent",
+          "id": "PRF-H4M940"
+        },
+        {
+          "after": {
+            "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+            "content": "sha256:cb65d06c6c1f1493e68b7579b3c5f9de500c2d5681effd8a55d0e34d88911dce",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_existing_own_leaf_row_renews_after_anchor_moves_without_worklist_item"
+            },
+            "path": "mcp/tests/test_writer_correction_history.py"
+          },
+          "before": "absent",
+          "id": "PRF-MVV3XV"
+        },
+        {
+          "after": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:4380ec2959c2319a0a7fd7e3b0589bf8c8ec9ba8ce640c5f2485ceb10b068710",
+            "locator": {
+              "kind": "symbol",
+              "name": "_subject_problems"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "before": "absent",
+          "id": "RLZ-4N3YR1"
+        },
+        {
+          "after": {
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:0f0344999699a65a079729555bd446bfc6658ca70797e4e4b17a4f90aa42bcc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "before": {
+            "blob": "06964bc2760b01d95702515c2e573072c426b42e",
+            "content": "sha256:0f0344999699a65a079729555bd446bfc6658ca70797e4e4b17a4f90aa42bcc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_knowledge"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "id": "RLZ-EYFZY9"
+        },
+        {
+          "after": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:c785dd5564fac750aaa590aece466d24d216bb4f6f2b5080260317e256d35d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_problems"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "before": {
+            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+            "content": "sha256:c785dd5564fac750aaa590aece466d24d216bb4f6f2b5080260317e256d35d03",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_problems"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "id": "RLZ-F1CZ1X"
+        },
+        {
+          "after": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:1205eb547720474a083ac0d512f5e58c732a504ef49a075749f5872c5f0d26ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_change"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "before": {
+            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+            "content": "sha256:1205eb547720474a083ac0d512f5e58c732a504ef49a075749f5872c5f0d26ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hidden_change"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "id": "RLZ-HJJARM"
+        },
+        {
+          "after": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:fcdc15294058db7a1b5a94bb1707b39d91e6aca239750906067538ecd0a94903",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prior_own_subjects"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NVH84R"
+        },
+        {
+          "after": {
+            "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+            "content": "sha256:ecf4806c9b242eb716bd3ac9b6a7d1bbe4aa9b31d49750914261351b595d8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_shape_problem"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "before": {
+            "blob": "978f59a69f4a2c3ecc3a00de8e0da7e259a9e436",
+            "content": "sha256:ecf4806c9b242eb716bd3ac9b6a7d1bbe4aa9b31d49750914261351b595d8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_shape_problem"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+          },
+          "id": "RLZ-WFXDG1"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-6WJY8Q",
+      "items": [],
+      "reason": "The stored leaf-worklist obligation, conditions and exclusions remain unchanged. The candidate restores renewal of a subject already present in parseable own input history without allowing a fresh itemless own row. Added predicate/collector realizations and two distinct test facets document that enforcement; missing-worklist, changed-row, wave/crossing and raise boundaries remain separate and unchanged. Evidence (L170-curator-writer-enforcement): /home/firefox/projects/ar-coordination/worktrees/agents-remember/170_the-writer-renews-an-existing-row-of-c33d6f0ff6-ar/role-reports/curator/0272d5f6-4a2a-531a-b366-48f4ad0eca94/role-launch/curator-producer-reconciliation.json",
+      "revision": 1,
+      "subject": "INV-A6571D"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+            "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "before": "absent",
+          "id": "PRF-2607SK"
+        },
+        {
+          "after": {
+            "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+            "content": "sha256:8a46591742facec3f20354e1a4addf1e3725784b5b990da40c6ce8c3fd9ee270",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_leaf_preparation_restores_details_beside_local_handover"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "before": "absent",
+          "id": "PRF-PN3CXR"
+        },
+        {
+          "after": {
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": {
+            "blob": "682d4179b094bd4e50d1f67363fe398d5e4e40c9",
+            "content": "sha256:60172f37e29d829d04a0c011bfce73b96756f430b581516ca3dce6f39fbf91d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "id": "RLZ-1PJFH4"
+        },
+        {
+          "after": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "before": {
+            "blob": "85b470bea18f2548365b969746fd9e7ef5ea00cf",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "id": "RLZ-EYJCHF"
+        },
+        {
+          "after": {
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "content": "sha256:636a4d62d5d5bd7dc78e7d0e719348663ab2ea3a6bf9388698ca6bb011d2060c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_detail_target"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K57X9H"
+        },
+        {
+          "after": {
+            "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NN7YJ0"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-757V03",
+      "items": [
+        "sha256:2183d5db8f6a5f65bd64a30398cc3bf86652b24b5faf53f40b21805a5ff8b14f"
+      ],
+      "reason": "The recorded promise already places immutable details beside the handover. The candidate replaces the erroneous future report-collection folder comparison with the saved handover canonical folder while retaining deterministic report siblings, identity, regular/no-follow/nonblocking open and revision checks. Added target/validation realizations and preparation/rebound proofs extend coverage, not the invariant meaning. The successor changes only fixture teardown ownership: local overrides unwind before unittest cleanup, with an entry-identity postcondition; unchanged test bodies retain their original source facets. Renewed proof anchors and narrowed execution wording do not claim a new Reviewer run or a repository cleanup test; the full-lifecycle observer remains task evidence. The full prior cover union and all attachment IDs are retained. Evidence (L170-curator-detail-enforcement): /home/firefox/projects/ar-coordination/worktrees/agents-remember/170_the-writer-renews-an-existing-row-of-c33d6f0ff6-ar/role-reports/curator/0272d5f6-4a2a-531a-b366-48f4ad0eca94/role-launch/A3-producer-reconciliation.json",
+      "revision": 1,
+      "subject": "INV-7KDG7C"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-826AD9",
+      "items": [
+        "sha256:a22e4e7dae666c41c0e7dfea5ce8c1b48266f2a12e1a54d767ff9e21bb803238"
+      ],
+      "reason": "The two additions register one already documented test module in existing unit and affected.closure consumer rosters. They add no independent executable obligation or new catalog owner; the module's tested clean-sync guarantee is recorded separately, and the catalog meaning/selection boundary is kept in its ordinary card.",
+      "subject": "hunk:sha256:a22e4e7dae666c41c0e7dfea5ce8c1b48266f2a12e1a54d767ff9e21bb803238"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-95Z10N",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The derived catalog adds the clean-sync door module to the tests.unit and affected.closure consumers. Existing coverage, ownership and bounded certification rules remain. Catalog membership does not create an Owner closure plan or establish test execution.",
+      "sources": [
+        {
+          "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B2DRFB",
+      "items": [
+        "sha256:875ed1923fec910b5a57b47b31846697eb97f4a80e0f370229701d427fac8dff"
+      ],
+      "reason": "This insertion imports the canonical history parser, owner-attempt selector and parse-error type used by the new prior-own-history collector. The import bindings have no independent invariant; actual admission behavior is attributed to the collector and subject predicate realizations on INV-A6571D.",
+      "subject": "hunk:sha256:875ed1923fec910b5a57b47b31846697eb97f4a80e0f370229701d427fac8dff"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B5RM7C",
+      "items": [
+        "sha256:3d5023f745c3f39b762644d7c6eda4030bb74805fdc2322316fb2fa52b87233f"
+      ],
+      "reason": "Reviewer receives no freeze and opens no round for a clean sync with passing focused tests. For a repair freeze, Reviewer checks every finding against its own report entry and returns missing entries to Worker without counting a round. This intake return does not turn an executed fix-verification into a record-only repair or waive the settings limit. Code and memory lanes remain separate; Manager retains the gate and publication.",
+      "sources": [
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": "skills/l-01-agent-lifecycles/operations/review.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/review.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "df4fb4b39a29ba111d1819ba69902fd34bab1728",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "before": {
+            "blob": "a1df77712b1e4a98a3d9a35e391598bcf650b649",
+            "content": "sha256:387c80e74659af1317de6f1cd8c82f4b2c4c1bb0cb59c37ae633463cceb04222",
+            "locator": {
+              "kind": "symbol",
+              "name": "InstructionFileWordingTests.test_current_coordination_and_curator_rules"
+            },
+            "path": "mcp/tests/test_role_instruction_wording.py"
+          },
+          "id": "PRF-EP4JYF"
+        },
+        {
+          "after": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:23da80ee16775525f92af2523fbcfc26ced0fb17a3b22ff3013df5392a94ed00",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:67d20bb5ae461474f899fe62a5fcc795e358ac90b867fe0f60dea6c44427479c",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-8G32JJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-D2ZG2Y",
+      "items": [
+        "sha256:28583cd258074e4b3b021845415bb89b0162335bbc9657d549a3dfae95cc14d0"
+      ],
+      "reason": "Manager gains same-kind precedent handling. Its self-decision/reporting boundary and four developer-needed categories remain in the current role and unchanged wording test; the new paragraph does not turn a routine occasion into a developer question. Renew the changed role span and carried proof extent without changing the invariant.",
+      "revision": 1,
+      "subject": "INV-NC6F6V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+            "content": "sha256:335a2fc7ef98e2842cb92854fc68ec1060e996230678bb442449e4d2ee22e7c4",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-3QTBC5"
+        },
+        {
+          "after": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:2fbab30e287a3c6ed4fb8b02554db542766e1f54b5912dd8468e316b595f957b",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+            "content": "sha256:335a2fc7ef98e2842cb92854fc68ec1060e996230678bb442449e4d2ee22e7c4",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-7KXE63"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EQ99XM",
+      "items": [
+        "sha256:4565ef62e6d714b1792e7b591b8801cccc5270dd8a8d10362940c0fd7a69fab5"
+      ],
+      "reason": "The implementation boundary replaces unconditional new-freeze sync with a clean-sync no-round path and direct repair, but Worker still runs supported sync, Curator repairs native memory content and Manager captures/verifies/stages before continuation. The recorded sync-ownership promise, scope and transaction exclusion remain; renew the two changed implementation carriers, leaving the curation carrier unchanged.",
+      "revision": 1,
+      "subject": "INV-7E3JNX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+            "content": "sha256:71f74224f3bd0cca5410b6a493f7ee77b7f25b5177904b3a6d53c8a98310a327",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "content": "sha256:e41c02b995b8189dac4d0baf9ca0bce4d464d0a392413a5d7d33bb9367fc4851",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-02MMZJ"
+        },
+        {
+          "after": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+            "content": "sha256:dce12aaba98d34269edbd6cdeee07b7ef354a7ee14cf4fc3798af16d4e3f252a",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-1AP8C0"
+        },
+        {
+          "after": {
+            "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+            "content": "sha256:7bd690349781880ab353668530859c3965c75536e8586dd6cd793256018a3a81",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "before": {
+            "blob": "f4d75547bcd9f677f543629759cd16ae47dfcfaf",
+            "content": "sha256:dce12aaba98d34269edbd6cdeee07b7ef354a7ee14cf4fc3798af16d4e3f252a",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "id": "RLZ-DRT32D"
+        },
+        {
+          "after": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:5bc82009a4f30cd6ce12fb5eddd7f0bc741146e6f582074f6d1fbf5465bb4375",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:8fee1d74b8d06f0fabab2709937faab156cca289dda5276494539a559c1ba4af",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+            "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "b488189ccabecfeddc296a88c877fcda162e7fd9",
+            "content": "sha256:5379650548a22cd2f33240274083f90976d871e2d92d6b6d626137d5127b7fa1",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-GRG1X8"
+        },
+        {
+          "after": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:6868c233cc81075a62d7000c1a3814ed5a7d7a2704d1e7bc3d764ed1b1f80944",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "c806e36dfe030ed31b40bfbe0b067abee3a5124b",
+            "content": "sha256:6868c233cc81075a62d7000c1a3814ed5a7d7a2704d1e7bc3d764ed1b1f80944",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-MA5C8F"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FNBSJ4",
+      "items": [
+        "sha256:2a230a87dffc609ffa9251ff554a2c0441f6dfabf7b9a3e16ae50557f62f519d"
+      ],
+      "reason": "The accumulated source delta changes seven canonical lifecycle files and their 63 generated carriers. Each changed generated copy is byte-identical to its canonical source, independently compared in A5-renewed-source-and-writer-custody.json. The generator ownership, retired-role absence and no assignment_read first-read promise are unchanged; source propagation is not a new role or execution grade. Renew touched/carried entries only.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FWRMVY",
+      "items": [
+        "sha256:16b843e98d833a8cb18bb5073b4c5faf0dcc9d485669579ffcda9c5850b23159"
+      ],
+      "reason": "Before escalating, Manager reads its own rulings and the Architect rulings for this master. Manager settles a same-kind occasion under the earlier ruling and names that ruling in its record. Only an uncovered question goes up through the existing route. Beyond-limit rounds, out-of-requirement scope and developer decisions keep their existing escalation owners; this is not a new scope or approval grant.\n\nWhen the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.\n\nA Worker repairing an owned finding needs no plan, account or go-ahead from Manager. Whole-stage delegation does not transfer gate, sync-transaction or landing authority.",
+      "sources": [
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GKDV06",
+      "items": [
+        "sha256:eac8403e5dd8dd4648f823ced1e09507122467adee075ac014333f3e23f425fc"
+      ],
+      "reason": "Full-BASE reconciliation: retain the earlier Writer admission and separately delivered step-detail account, then add the raw Git adapter, stamped review-base/evidence classification, exact clean-sync door relation and canonical generated-copy boundary. The row binds all currently covered changed MCP sources, not only the final repair path. Route-review construction now stamps the leaf code base. The closeout door can preserve that review after a clean sync only with ancestry, disjoint exact pathname bytes and an unchanged reviewed blob/mode delta. The raw Git adapter keeps pathname bytes separate from the general text runner. Packaged instruction copies remain derived carriers, not a second authority. This does not grant atomic-child route-review recording or replace independent CODE/MEMORY lanes.",
+      "sources": [
+        {
+          "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+          "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+        },
+        {
+          "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-H3PV16",
+      "items": [
+        "sha256:af6af13510bffa045275adf88090eac8b3a78c428a7cd5cb5bfeb7d261c72421"
+      ],
+      "reason": "Generated instruction carriers follow their canonical role/operation owners. Clean sync with passing focused tests keeps the existing review; overlap or failed tests returns an exact repair to the same Reviewer. Manager settles covered precedents and retains gate/publication authority. The closeout door carries a review over a changed tree only through ancestral, byte-path-disjoint, blob/mode-exact sync evidence; task intent and evidence-byte checks remain.",
+      "sources": [
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".agents/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".agents/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".agents/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".claude/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".claude/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".claude/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".codex/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".codex/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".codex/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".cursor/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".cursor/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".cursor/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".hermes/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".hermes/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".hermes/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        },
+        {
+          "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+          "path": ".pi/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/implementation.md"
+        },
+        {
+          "blob": "cc04f76ead30b37896b315dd8532f3bb79e2f6d6",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/review.md"
+        },
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": ".pi/skills/l-01-agent-lifecycles/reference/rulings.md"
+        },
+        {
+          "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": ".pi/skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R170",
+          "packet": "requirements/MIK-R170-v2-the-writer-renews-an-existing-row-and-the-task-loop-loses-its-stops.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "restore",
+      "id": "ROW-H9JBMF",
+      "items": [
+        "sha256:0685cb9de27bbc7b1806361dfb55998a49e8835b2b1772fb5ddecd51f3f849af"
+      ],
+      "reason": "The native reconsideration refresh restores the Manager source link against the new precedent paragraph and advances this decision from base revision 5 to candidate revision 6. The chosen topology, alternatives, reconsideration condition, authority and consequences are unchanged; the source-bound record nevertheless changed, so its governing row must be changed rather than no_impact. This corrects only ROW-H9JBMF after the completed publication; it neither edits the decision again nor replays the reconsideration or new invariant.",
+      "revision": 6,
+      "subject": "DEC-JCDMW3"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HA0P3Q",
+      "items": [
+        "sha256:f70b628b32fbf07b88dcec7a13e88a0fa156db38b0c65190a349481eb7f3d080"
+      ],
+      "reason": "Replaced the unconditional own-origin/no-item rejection with prior-input own-history renewal versus fresh/same-operation/foreign/unreadable-history non-admission; renewed the subject predicate reference and added the collector witness.",
+      "sources": [
+        {
+          "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HBQBSS",
+      "items": [
+        "sha256:2688406ed0e2c417739a879551b54baf6fe182cf684cb9f53b0f01c8e0c133fc"
+      ],
+      "reason": "This addition puts the documented clean-sync door module into the existing unit-regression file population. It is local selection metadata, not a new invariant, test receipt or changed evidence-lane policy; the file card states that exact consequence.",
+      "subject": "hunk:sha256:2688406ed0e2c417739a879551b54baf6fe182cf684cb9f53b0f01c8e0c133fc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HFJGXB",
+      "items": [
+        "sha256:4100f44f22243fd28bb072a68c5ff589221d0eeb13f5611bdcd7b8d9b766a88a"
+      ],
+      "reason": "The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.",
+      "sources": [
+        {
+          "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+          "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/closeout/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HGQ1RB",
+      "items": [
+        "sha256:274b0c5bea6858fbe418a706a13531a807b3a4e46937fe78aa3cba91281b7ff2",
+        "sha256:5b74407de3c33b4257d6df5ec7eef993efb8893d0d251f74a8fcc3512425fc19",
+        "sha256:8f65a98f420942bc3c776266c509d16d76fff4d334392cc144e0bab891b2ccd6",
+        "sha256:a2e8dbc204a2cd0842c202b462086d8b2c3c1e64c313d977c60c7c561b9c363f",
+        "sha256:d1e77bafe44f2471dbd1acc911c1695fe15db7955c48034e225a2708a6e8cedc"
+      ],
+      "reason": "Documented real local preparation and restore for three role cases, synthetic Worker detail, no host launch, legacy-link restoration and stronger malformed identity controls; retained the prior fake-host and non-universal-race boundaries. The successor card also records private override ownership, unwind-before-unittest order, entry-identity assertion and its limit versus both native teardown owners. Existing assertion bodies are unchanged; the row now binds the actual successor source.",
+      "sources": [
+        {
+          "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+          "path": "mcp/tests/test_capsule_replay_integrity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_capsule_replay_integrity.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 3
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-HSW6WP",
+      "items": [
+        "sha256:f18375920ee94e8de5c5e0ce7fa7c60611946cb94d78b3fe727777d550a1ddb2"
+      ],
+      "reason": "Examined every current member and the changed direct-loop/sync carriers. Clean-sync no-round handling and visible direct repairs make the existing peer loop explicit; they do not transfer Manager gate/transaction authority or parent identity, Curator code-concern routing, separate Reviewer lanes or required-notice recovery. The joint guarantee and routes remain; unchanged member source identities are preservation evidence, not new runtime execution.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JC57NV",
+      "items": [
+        "sha256:4bf3f60519ec4b42df11cbb1bfd62a62f21f1466962273468f043dff8e1e428d"
+      ],
+      "reason": "Examined all current coordination/ownership members. The Manager's new precedent clause settles ordinary matters within its authority and leaves developer scope/decision and beyond-limit escalation unchanged. Direct sibling handoffs, one-master delegation choice, Architect execution limits and developer-conversation boundary remain in their current sources. Preserve the family guarantee, members and routes; the added repair instructions do not introduce a coordinator above one master.",
+      "revision": 2,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+            "content": "sha256:87d42e3367901a55a71da7158784fece837af4645112bac65829ebed87e2093a",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
+          },
+          "before": {
+            "blob": "f960269862bf95931fd144e25b408b9bd50852cf",
+            "content": "sha256:d9732d94ee9b01528e5af9fa557e04454aeb6e58b78ce33579e9e9e1f77a8c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
+          },
+          "id": "RLZ-YH9NW2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JT1HP2",
+      "items": [
+        "sha256:fa688de299105f9379fe9e0ac2c7f85b9b547c87e46777e5c9061c4581dee528"
+      ],
+      "reason": "The changed Worker-only sync row echoes the owning implementation boundary and distinguishes clean sync from overlap or failed tests. The template still explicitly feeds leaf values and gives role/operation sources priority. This does not share a new rule across the four brief templates or authorize duplication of another role's procedure; other templates and the existing single-home meaning are unchanged. Renew the broad Worker-brief realization only.",
+      "revision": 2,
+      "subject": "INV-WHEFVS"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-JT9AYC",
+      "items": [
+        "sha256:b0f6cd7ca54b0c50b403d6af785854c8e2d06afa2337a04255a92a6ac67727d8"
+      ],
+      "reason": "When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.\n\nWorker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.",
+      "sources": [
+        {
+          "blob": "df42532960b926133aa1c1f01a73c4ec8c405018",
+          "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KHDS4P",
+      "items": [
+        "sha256:6a4c657901ac9a8c535a374cc9d21aeca5c26771324e471f19a69eb2546919c0"
+      ],
+      "reason": "The index records the conditional clean-sync rule, the Manager's same-kind precedent duty and direct repair with a per-finding freeze trail. It points to the owning role/operation clauses and preserves supersession. The index is reference material, not an extra instruction injected into every capsule.",
+      "sources": [
+        {
+          "blob": "ca1d395cf7e725912554c31768bfaa3f59eca851",
+          "path": "skills/l-01-agent-lifecycles/reference/rulings.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/reference/rulings.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N7BN5D",
+      "items": [
+        "sha256:4adc143e1d509c1e447514465062abcc6c5bf9ce52289b1d5f1b47d7fb940ba1"
+      ],
+      "reason": "Reviewed converted authoring/worklist/gate ownership: the same file writer still validates before publication and leaves record meaning, questions and gate authority separate. The private subject-admission recovery changes no application route responsibility or overview promise.",
+      "sources": [
+        {
+          "blob": "bc2b865ceab0e645f6665f038d5f4dc34413e95a",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/worklist_checks.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NJ94FK",
+      "items": [
+        "sha256:a068cead7f3de322c7a2ac5ece69271352933d013f629ac6ed9db6f9d384031e"
+      ],
+      "reason": "This exact index hunk records the new clean-sync, precedent or visible direct-repair reason at its named role/operation owner. The reference index adds no independent role, procedural authority or executable gate. Keep its local account and cross-owner source evidence; the clean-sync door invariant is authored at the actual enforcement locations.",
+      "subject": "hunk:sha256:a068cead7f3de322c7a2ac5ece69271352933d013f629ac6ed9db6f9d384031e"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NTY8NE",
+      "items": [
+        "sha256:411f0dfea522c41e480bb3799207fa09212a749159b3e266e41d98ac4bc712a1"
+      ],
+      "reason": "The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.\n\nA NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b\"\\0\", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.",
+      "sources": [
+        {
+          "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+          "path": "mcp/src/agents_remember/worktrees/route_review.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PRZH5V",
+      "items": [
+        "sha256:17f0d6c55652eae2a9d82e3f509f6f3e3404e70652d82f48ad313b9b9f5527f7"
+      ],
+      "reason": "A NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b\"\\0\", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.\n\nThe extraction of _git_run shares the former run_git setup; it does not make the general text runner byte-preserving or add a second Git environment policy.",
+      "sources": [
+        {
+          "blob": "cebb73b6be7b8f1829e91c3404632496f92dd7e1",
+          "path": "mcp/src/agents_remember/kernel/git_command.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/git_command.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q0QGWK",
+      "items": [
+        "sha256:fa19e0d3d5c366d18be04fa9df78494917301c242e262c26d716a16e310caade"
+      ],
+      "reason": "Corrected target identity to the saved handover canonical folder while retaining report-derived sibling spelling and all frozen-byte/file checks; refreshed the rebound/legacy-link source account.",
+      "sources": [
+        {
+          "blob": "90b609572aa48fb2a5e13fbf13040c2f337839b0",
+          "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_instruction_details.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QCGYS7",
+      "items": [
+        "sha256:2ae085a0fde3a7e0f7962d3a6e30ad442d1e11ac5a5a005ebe341c228650845b",
+        "sha256:92b312caf63c48ececf8bd60a9be1044571fed98ffca6889960b2ee9820b7a68",
+        "sha256:c7ada6205cef1aa0f7e89319ffbb34c06c77bbc6745a0b3f207c00a8d37ee197",
+        "sha256:eac648d933b095bc589009520b2724da133e94d65e8b575a3e4feef2149b953a",
+        "sha256:f2fd3a866f93870d00771f3ad165ad286fe1ebcd441caa880ea55df87cf00219"
+      ],
+      "reason": "The closeout door first allows the recorded candidate tree itself. For a different tree, it calls clean_sync_keeps_route_review: the plane-stamped baseCommit must be an ancestor of the current base; the reviewed and incoming changed-path sets must be disjoint; and the current-base-to-candidate after-image map must equal the recorded-base-to-reviewed map exactly. Map identity includes each raw pathname byte sequence, blob and mode. An absent stamp supplies no exception. The door preserves the existing review record digest as its fingerprint and still checks task intent, evidence bytes and dependencies. This exception belongs to the door; require_current_route_review keeps its own exact-current-tree contract.\n\nA NUL-delimited Git pathname is an exact byte identity. Ordinary run_git still uses text transport, whose universal-newline handling can collapse CR and LF pathnames. run_git_bytes selects raw output through the same _git_run environment, identity guard, working directory, timeout and session options. _tree_change_after_images splits b\"\\0\", keeps pathname keys as bytes, and decodes only the ASCII mode/blob fields. It raises on failed or malformed raw diff output; it does not normalize, rename-pair or infer path equivalence.",
+      "sources": [
+        {
+          "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+          "path": "mcp/src/agents_remember/worktrees/route_review.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/route_review.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S1D0XN",
+      "items": [
+        "sha256:c82f2b4f060c6b61dcb3842a1242d69141dd9ec8323f6fae168fb52a2a5b5925"
+      ],
+      "reason": "RouteReviewRecord adds optional baseCommit with the same object-ID shape as candidateTree. A missing value leaves a legacy record without a clean-sync stamp; the model alone neither infers ancestry nor admits a changed candidate. Leaf build_route_review stamps the field from its contract and includes it in the record digest. Legacy digest verification excludes None-valued fields. The closeout door, not this model, owns the bounded clean-sync exception.",
+      "sources": [
+        {
+          "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+          "path": "mcp/src/agents_remember/tasks/route_review.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/route_review.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-SS8V1J",
+      "items": [
+        "sha256:8f464f8800f428ddc44548a1c6d3a4fb19261690c3ef5da17a7ee0ffe9de02d6"
+      ],
+      "reason": "This supersedes this leaf's earlier no-route-impact judgment for the one-path A3 fixture. The accumulated full BASE now includes Writer/replay regressions, the new clean-sync door module, rendered wording/audience changes and unit/affected-closure registration, so the governing tests overview is substantively updated. Retained execution qualifications stay in the task report. The clean-sync door module tests real Git path/blob/mode comparison and the original review-digest provenance, including distinct CR/LF pathname identities. Rendered instruction wording and audience tests guard clean-sync no-round behavior, immediate repair, per-finding evidence and Manager precedent handling. Its unit/affected-closure catalog registration is selection metadata, not an executed certificate or an Owner closure plan.",
+      "sources": [
+        {
+          "blob": "f9e4075c0ee36227fc0514262e5ed902f5307703",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "57fb922c51f485ce2ca38020f9bbab5e40a0426f",
+          "path": "mcp/tests/test_capsule_replay_integrity.py"
+        },
+        {
+          "blob": "38a29b692c837f2c549937b56d5a44e3e39eaa7a",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        },
+        {
+          "blob": "df4fb4b39a29ba111d1819ba69902fd34bab1728",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        },
+        {
+          "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+          "path": "mcp/tests/test_route_review_clean_sync_door.py"
+        },
+        {
+          "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+          "path": "mcp/tests/test_writer_correction_history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "still_rejected",
+      "id": "ROW-T1WTMS",
+      "items": [
+        "sha256:2a75423b276873772233fc7d6d361a42c0acf37a23c070c5cc2c91b2336f716e"
+      ],
+      "reason": "The new Manager precedent paragraph and direct-repair boundary do not change the one-master Manager topology or demonstrate the recorded reconsideration condition: repeated inability to keep work moving without an Orchestrator. Ordinary same-kind rulings are settled locally; multi-master and explicit developer-choice exceptions remain. The mandatory-Orchestrator-for-every-master alternative remains rejected. Refresh only the actual changed Manager source link; no new decision or coordination grant is inferred.",
+      "subject": "reconsider:DEC-JCDMW3#1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-T7N5H9",
+      "items": [
+        "sha256:12cb3c5240266e92da1a3816f27989b48caf1178feaf143dbe4161c69242f281"
+      ],
+      "reason": "Worker repairs a sealed finding directly in its own task files. No plan, account, census, approval or Manager go-ahead precedes that repair. The supported whole commit check and the freeze remain required. The freeze gives each repaired finding its own ID, cause, files and line ranges, discriminating failing-before/passing-after test and result; unrelated changes are listed separately. After code PASS, the direct Curator handoff carries those same entries and changed paths.\n\nWhen the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.\n\nThese are instruction obligations, not proof that a particular Worker run complied. Worker still owns no onboarding, acceptance, staging or closeout.",
+      "sources": [
+        {
+          "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TY5P5F",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The new clean-sync door module is added to the unit-regression file population. This is evidence-lane selection metadata, not proof that a named invocation selected or executed the file. Marker filtering and lifecycle consumer membership keep their separate owners.",
+      "sources": [
+        {
+          "blob": "2a1004ad304b86ded09b65d14b24b428072be476",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+            "content": "sha256:0e95431c6f630e5087e444b9a93c5980a35f9b687d6367fa03a0b3cdc4769bc3",
+            "locator": {
+              "end": 596,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "before": {
+            "blob": "fa6015bebb4f7c199a276cad8ca7e37ee11a3854",
+            "content": "sha256:ca145110727b155248065c232598631a1f7a0f9958c8e78852c2b4b5b3707fde",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VBPN0W",
+      "items": [
+        "sha256:1d92050c777bfdd6289f8156699f636117ef0a5ae585c0eab2f9bca57fca8905"
+      ],
+      "reason": "Ten capsule measurements change for the new instruction clauses and decisions_L170 records their reason. The capped eleven-tenths formula, capsule/step ceilings and decision-backed registry policy stay the same. Current declarations and retained producer checks are not fresh Curator compilation. Renew the whole-registry realization without changing the invariant.",
+      "revision": 3,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W2AQE9",
+      "items": [
+        "sha256:0750da48ad7b278d6126a96eb6c97c10c8ff32d39aece8c2b83afc93446f3a9c"
+      ],
+      "reason": "This exact index hunk records the new clean-sync, precedent or visible direct-repair reason at its named role/operation owner. The reference index adds no independent role, procedural authority or executable gate. Keep its local account and cross-owner source evidence; the clean-sync door invariant is authored at the actual enforcement locations.",
+      "subject": "hunk:sha256:0750da48ad7b278d6126a96eb6c97c10c8ff32d39aece8c2b83afc93446f3a9c"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WQG83M",
+      "items": [
+        "sha256:47260184ce3bf689204056dc40dbf323ae669d4dcd3138101ede953b9d11b046",
+        "sha256:d0cf5c4034401eaf321fd7b902604d91846b6f3730b0ee72bab14fe9e9914f3e",
+        "sha256:dcb60f3265e305789b68261a9ed5a2ecf3293d33c966dcc40b9219f27f001347",
+        "sha256:e2b6dfe293132a17437a7685f4eb536ec827a523b11c667c5cb77f938ccbba40"
+      ],
+      "reason": "Added the prior-own-row moved-anchor renewal, stable row identity/current after-anchor/idempotence and foreign/same-operation fresh-row refusal account; retained relocation history and distinguished source assertions from execution.",
+      "sources": [
+        {
+          "blob": "f0f6b560a8bb165ff2303ba062a149f660c8e1cb",
+          "path": "mcp/tests/test_writer_correction_history.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_writer_correction_history.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-X6YJWA",
+      "items": [
+        "sha256:abeb72a283bec8b60628b93a8be0bc68304e9dc7e7ba3d4bd382572abe528273"
+      ],
+      "reason": "RouteReviewRecord.baseCommit is optional persisted review evidence and is classified in the EVIDENCE plane. Leaf construction stamps the base before its record digest; the field alone does not establish ancestry or currentness. Legacy None-valued fields remain omitted from digest verification. Task-intent, review-state and mutation-class owners remain separate.",
+      "sources": [
+        {
+          "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
+          "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+        },
+        {
+          "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+          "path": "mcp/src/agents_remember/tasks/route_review.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XMNYN1",
+      "items": [
+        "sha256:66d99b91618c3bcc117bdb83074f15890d4bef2001a45ac6a113dcbd9d070764",
+        "sha256:6e45221131b15eac18c69b624a4629da33e583e9989d2bb762b12ffd6841ce7a"
+      ],
+      "reason": "RouteReviewRecord.baseCommit is classified EVIDENCE beside candidateTree. The field changes review evidence, not task intent or structural topology. The exhaustive schema check remains fail-closed: registration is necessary for the new field, not evidence of a new lifecycle or projection-invalidation grant.",
+      "sources": [
+        {
+          "blob": "975366e88969eb3dcd065c70a0d8cf83a988a6bc",
+          "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/document_field_effects.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YPZ2VG",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f",
+        "sha256:c01946911652cca5bfd341e7ae8723f0447628ac4111a3c4ed8241d7d30b251c"
+      ],
+      "reason": "The added wording case checks rendered Worker, Manager and Reviewer capsules and the Worker brief. It asserts the clean-sync no-freeze/no-round path, exact repair path, Manager precedent handling, no pre-repair approval, per-finding evidence and no-round return for missing entries. These are source assertions about delivered instruction text, not proof that an agent performed the process.",
+      "sources": [
+        {
+          "blob": "df4fb4b39a29ba111d1819ba69902fd34bab1728",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YW47J9",
+      "items": [
+        "sha256:b46341529ca7d4bec80fa1e491ac193b9afeee692de09650a84f352737fce782"
+      ],
+      "reason": "When the master line moves, Worker runs its supported leaf sync. If no path changed on both sides, Worker reruns focused tests once and tells Manager; Manager uses its closeout preview. No new freeze goes to Reviewer and no round begins. An overlapping path or a failing focused test instead needs the exact repair and one look by the same Reviewer. Native memory conflicts still go to Curator for content and Manager for capture, verification and staging before Worker continues the supported transaction.\n\nThe Worker-only sync row echoes the owning implementation boundary; it does not become a second procedural authority or a shared rule across the four brief templates. The single-home note and the other seats' ownership remain. This is the conditional replacement of the former unconditional new-freeze instruction, not new curation or transaction permission.",
+      "sources": [
+        {
+          "blob": "f8cf53d44e5dbfaf6281429f001c5b99aebae431",
+          "path": "skills/l-01-agent-lifecycles/templates/worker-brief.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/worker-brief.md"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

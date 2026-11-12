@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/providers/recovery.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shared recovery constant names `provider_watchers(action='restart')`, current runner roots, preserved indexes, and follow-up status/diagnostics checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "750cbed65dd0d732b828bd2784dfa8372cbfc438",
+            "content": "sha256:9c29d2417dc6e82b694840abcb637196dbbcb1253307aed44818b28274ddfd91",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROVIDER_WATCHER_RESTART_RECOVERY"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Runtime-install watcher recovery actions use the shared restart/rebind text when provider watchers remain degraded.\n\nAnchor: `add_provider_watcher_recovery_actions`, `complete_provider_watcher_rebind`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+            "content": "sha256:68ed0fa7799bfd3c6345d10d5d048e405cda37dde8889b960fab12660851b847",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_provider_watcher_recovery_actions"
+            },
+            "path": "mcp/src/agents_remember/install/provider_watchers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

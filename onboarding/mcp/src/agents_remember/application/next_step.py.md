@@ -1,14 +1,34 @@
 # mcp/src/agents_remember/application/next_step.py
 
-| Field                  | Value                                                  |
-| ---------------------- | ------------------------------------------------------ |
-| repository             | agents-remember                                        |
-| path                   | `mcp/src/agents_remember/application/next_step.py`     |
-| doc_type               | `file-level-onboarding`                                |
-| lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `5a7bd5779935d1a7e24e978b52638edfd300ac4d` |
-| lastVerifiedCommitDate | 2026-09-12T23:26:17+02:00|
-| governingOverview      | `overview.md`                                          |
+## Current operative account — MIK-R112
+
+The current source facts below replace the former operative inventory. The separately labelled superseded claims describe only the pre-repair card. Original paragraphs, dated closures, evidence and citation identities remain intact in the explicitly historical section; they grant no current call, restored route or fresh execution acceptance.
+
+- R113 removes the former front-half, blocked/awaiting-developer and terminal loop-back hints, not merely their executable tool pointers. compute_next_step takes the resolved contract, not ambient state: no contract yields no hint; otherwise it uses retained landing guidance and contract-substate stop gates.
+- Only the retained closeout-preview, integration and finalize decision overlays are prose-only. Their existing contract-state tests remain exact; an overlay supplies no developer approval or product execution.
+- The contract-path edge returns a NextStep model and leaves serialization to the response boundary. A missing/torn contract yields no hint; a guidance read failure leaves the independent turn-end overlay available.
+
+### Superseded inventory
+
+- Pre-repair card claim: Card says front-half and approval overlays emit lifecycle_turn_end_notification nextTool/nextArgs. This is superseded archival wording, not a current prescription.
+- Pre-repair card claim: Card says blocked hint emits lifecycle_resume. This is superseded archival wording, not a current prescription.
+
+### Source and authority bounds
+
+
+
+- No contract yields no hint; resolved contract and tool select retained landing guidance. [8]
+
+- Three contract-gated stop overlays are prose, not session/gate notification operations or approval. [9]
+
+- Contract-path reads contain their own load/guidance failures; only the two declared argument-bound preview stops are admitted. [10]
+
+Source inspection supplies no new test, native-host, whole-build, landing or memory acceptance. Retained internal services and historical fixtures do not re-advertise deleted MCP tools. Numbered references retain historical custody and may include disclosed inherited stale targets; currentness or proof truth is not inferred from them.
+
+## Historical original card — preserved, not the current operative account
+
+<details>
+<summary>Retained original source accounts and producer history</summary>
 
 ## Governing Overview
 
@@ -32,7 +52,7 @@ while the lifecycle is parked there. The `lifecycle_gate`/blocked path is PARKED
 still valid if a gate is raised, its `_AWAIT_GATE` await-the-developer pointer at
 `lifecycle_resume` stays intact (carrying the chain THROUGH the open gate: raise →
 blocked/await → resume → continue), it is simply no longer the hinted route. The
-structure mirrors the leaf-26 Lifecycle Flow tab (`dashboard/src/panels/FlowTab.tsx`)
+structure mirrors the leaf-26 Lifecycle Flow tab (the earlier removed presentation)
 RUNDOWN/LINEAR spec. The hint engine only *advises*; it never fires
 `lifecycle_turn_end_notification` or `lifecycle_gate` itself — the agent acts on
 the hint.
@@ -194,29 +214,35 @@ producer's narrower typed shape.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation governs this repository-local hint engine. | — | — |
+No configured domain documentation governs this repository-local hint engine.
 
-## Repo-Internal References
+### Repo-Internal References
 
 `compute_next_step` is invoked from the `_tool_payload` choke point and depends on
 the `NextStep` model, the worktree guidance state machine, the contract loader,
 and the ambient lifecycle / phase definitions.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. | `_attach_lifecycle_tail`; `bound_next_step`; `_tool_payload` | mcp/src/agents_remember/application/tool_response.py:30-50; mcp/src/agents_remember/application/tool_response.py:65-81; mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. | `NextStep`, `ResponseModel`, `FlexibleResponseEnvelope` | mcp/src/agents_remember/models/base.py:47-63; mcp/src/agents_remember/models/base.py:66-88; mcp/src/agents_remember/models/base.py:97-114 |
-| `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. | `lifecycle_guidance` | mcp/src/agents_remember/worktrees/modules/guidance.py:225-235 |
-| `load_contract` / `WorktreeContract` (sub-state fields read by `_gate_after`). | `load_contract`, `WorktreeContract` | mcp/src/agents_remember/worktrees/worktree_contract.py:228-283; mcp/src/agents_remember/worktrees/worktree_contract.py:434-464 |
-| `amb.current` — the live `LifecycleState` resolved at the edge. | `AmbientLifecycle` | mcp/src/agents_remember/observer/ambient.py:112-635 |
-| `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). | `LifecycleState`; "LiveState = Literal["; "Phase = Literal[" | mcp/src/agents_remember/models/lifecycles/responses.py:16-16; mcp/src/agents_remember/models/lifecycles/responses.py:20-20; mcp/src/agents_remember/observer/lifecycle_state.py:156-179 |
-| The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage. | `next_step_for` | mcp/src/agents_remember/application/next_step.py:260-281 |
+
+- The response boundary preserves an explicit producer hint or computes one, rejects contradictory task addresses, and enriches the validated model before final serialization. [1]
+
+
+- `NextStep` model + the `nextStep` field on the response envelopes — the declaration that makes setting it at the choke point legal. [2]
+
+- `lifecycle_guidance` state machine delegated to in the linear half; `_guidance_for` widens its payload with `dict(...)`. [3]
+
+> Retained earlier citation wording: - `load_contract` / `WorktreeContract` (sub-state fields read by `_turn_end_after`). [4]
+
+- `amb.current` — the live `LifecycleState` resolved at the edge. (historical source target retired; original citation 5 retained in custody)
+- `LifecycleState` (`enclosure`, `is_terminal`) + `Phase` literals (`decide`, …) and the `awaiting-developer` state the parked branch reads (state/phase vocabulary in `models/lifecycle.py` since L9). (historical source target retired; original citation 6 retained in custody)
+
+- The next-step entry point derives guidance from the current lifecycle and tool; this source citation does not establish response token-count coverage. [7]
+
 
 As of HFX-L6, the FRONT_HALF_RUNDOWN reframe bullet names the architect lifecycle explicitly
 (`l-01-agent-lifecycles` `roles/architect.md`); the rundown's flow semantics are unchanged — the
@@ -227,56 +253,12 @@ As of the 260703-L8 remediation the FRONT_HALF_RUNDOWN speaks the event-loop voc
 
 As of cycle 5 the front-half summary speaks event-routing (the last job-selection remnant is gone).
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reviewed response-hint boundary is internal to this repository. | — | — |
+The reviewed response-hint boundary is internal to this repository.
 
-## Update History
-- 2026-09-12T04:10+02:00 — 260831-LOCR-L30 follow-up: recorded that this file's two
-  integration-status dry-run gates bracket a checkpointed series correctly and are deliberately
-  unchanged — the `worktree_integrate` gate fires for it (`!= "completed"`, so "ready to integrate"
-  is right), and the `lifecycle_finalize_task` gate does not (`== "completed"`, so the reclaim hint
-  is correctly withheld from a non-terminal series). Verification metadata remains closeout-owned; no
-  acceptance claim.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `WorktreeContract`, `_attach_lifecycle_tail`, `_tool_payload`, `bound_next_step`, `load_contract` repointed to mcp/src/agents_remember/application/tool_response.py:30-50, mcp/src/agents_remember/application/tool_response.py:65-81, mcp/src/agents_remember/mcp/tools/base.py:75-77, mcp/src/agents_remember/worktrees/worktree_contract.py:228-283, mcp/src/agents_remember/worktrees/worktree_contract.py:434-464. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+</details>
 
-- 2026-09-05T08:27+02:00 — L31 native curator: Reviewed current response enrichment and documented explicit producer-hint precedence plus exact task-address binding; retained the model-before-serialization contract and refreshed the response-boundary evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: source moved from
-  `mcp/tools/next_step.py` to `application/next_step.py`; this card moved with
-  it, path metadata and the governing-overview link follow. The body already
-  tracked the application-source behavior; no content claim changed.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-08-02T23:59:26+02:00 — L6 Wave 2 duplicate-range correction: removed 2 repeated path:start-end Citation objects from 1 same-claim citation group(s) at card line(s) 202; retained the first occurrence/order, all non-repeated anchor coverage and source ranges; scoped non-fixing result 0.
-- 2026-08-02T21:10:52+02:00 — 260731-EFA-L6 curator W2-B10: repaired 13 citation findings (5 reference rows and 3 prose pointers); scoped recheck clean.
-
-- 2026-08-01T01:15+02:00 — 260731-EFA-L4 curator: the Logic section said the edge returns "JSON dict
-  or `None`" via `step.model_dump(mode="json", exclude_none=True)`. Verified against the diff and
-  the current source: cit:([`next_step_for`], mcp/src/agents_remember/application/next_step.py:260-281) is now typed `-> NextStep | None` and returns
-  `compute_next_step(...)` directly. Corrected the claim and recorded why it matters — the hint is a
-  declared field of the response envelope, so dumping it here is what made it a key written into an
-  already-dumped, already-token-counted dict at the `_tool_payload` choke point; the rendered JSON
-  is unchanged because the envelope is dumped with the same options. Also recorded the second
-  change: cit:([`_guidance_for`], mcp/src/agents_remember/application/next_step.py:284-294) now returns `dict(lifecycle_guidance(contract))`, a
-  deliberate widening for a layer that reads guidance defensively by key and never re-emits its
-  vocabulary. Added an invariant that this edge does not serialize, line ranges for
-  `next_step_for`/`_guidance_for`/`_load_contract`, and citations across the reference table
-  (whose header was two columns and is now three).
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: `compute_next_step`'s inline branches were extracted into
-  `_terminal_step` / `_parked_step` / `_front_half_step` / `_linear_half_step` to bring the function
-  under the now-armed complexity rules. No hint, condition or ordering changed. Verification
-  metadata pinned until closeout stamps the L2 code commit.
-- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: updated the
-  front-half rundown reframe pointer from the orchestrator lifecycle to the architect lifecycle
-  (`roles/architect.md`). Verification metadata pinned until closeout stamps the HFX-L6 commit.
-
-- 2026-07-05T18:20+02:00 - L8 seam channel (cycle 5): front-half summary vocabulary aligned. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T16:30+02:00 - L8 seam-ruling remediation (cycle 4): rundown re-worded to the event-loop + ladder vocabulary (AR-13). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T01:32+02:00 - L9 lifecycle convergence: the FRONT_HALF_RUNDOWN reframe bullet now names the orchestrator lifecycle explicitly (l-01-agent-lifecycles roles/orchestrator.md); flow semantics unchanged. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-06-27T22:00+02:00 — Task 28 (NOTIFY-AND-CONTINUE active turn end): repointed every ACTIVE hint off `lifecycle_gate` onto `lifecycle_turn_end_notification` — the front-half `decide` hint, the generic `_FRONT_HALF_SUMMARY`/`FRONT_HALF_RUNDOWN` closing step, and the three `_gate_after` closeout/integration/cleanup overlays now all carry `nextTool="lifecycle_turn_end_notification"` + a context `summary` (notify and stop, no gate, no wait). Added the `_TURN_HANDED_TO_DEVELOPER` constant and a `state.state == "awaiting-developer"` branch (checked right after `blocked`) returning a `nextTool=None` stop hint. The `_AWAIT_GATE` + `blocked` branch is left intact — the parked gate path stays valid but un-hinted. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-27T20:16+02:00 — Gate-await hint. Added the `_AWAIT_GATE` module constant and a `state.state == "blocked"` branch in `compute_next_step`, checked right after the terminal check and before the front-half/linear branches. A raised `lifecycle_gate` calls `amb.block()` (state → "blocked"), so the hint now points at `lifecycle_resume` (await the developer's decision) instead of the post-gate operational step — carrying the chain through the open gate (raise → blocked → resume → continue), independent of phase/contract.
-- 2026-06-27T18:43+02:00 — Added. New module: the task-27 lifecycle next-step engine — pure `compute_next_step` (front-half rundown pointer / `decide` worktree-intent gate vs linear-half `_gate_after` overlay + `lifecycle_guidance` delegation, plus the terminal `_LOOP_BACK`) and the exception-contained edge `next_step_for` with look-before-leaping `_load_contract`/`_guidance_for`.
+- `load_contract` / `WorktreeContract` (sub-state fields read by `_turn_end_after`).  Anchor: `load_contract` `WorktreeContract` [4]

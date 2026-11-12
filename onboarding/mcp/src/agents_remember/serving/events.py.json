@@ -1,0 +1,280 @@
+{
+  "path": "mcp/src/agents_remember/serving/events.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+        "content": "sha256:25ea22f84b8a64aaca73d60652ba2d7c6f1aea27d774d17236e07fb97faaf836",
+        "locator": {
+          "end": 199,
+          "kind": "line_range",
+          "start": 148
+        }
+      },
+      "id": "RLZ-3NREV8",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The browser read edge now takes the read lock instead of the creating writer lock, preserving cursor mapping without new files.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+        "content": "sha256:f25c0b814c5b1f5d9cd67057b6a56aa86fcebb6b4598c91ce82a46e949702552",
+        "locator": {
+          "kind": "symbol",
+          "name": "stream_raw_events"
+        }
+      },
+      "id": "RLZ-FPZ84M",
+      "invariant": "INV-S11488",
+      "origin": {
+        "handoffEntry": "L114-W08",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "stream_raw_events carries the verbatim river to browsers with byte-offset resume; it must propagate rows while creating, rewriting, and deleting no observer file.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The observer event envelope tailed here.\n\nAnchor: `Event`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:518bd25c4403f72a906def18c2fb03586944d8cf73cc0928f2e644ec98c2be22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:bf1c889ad3d2ed153a0777aff4a42198118bdd11bb158fd8a134d739afae6244",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "EventStore appends and reads a single workspace Event River at <observer_root>/workspace/events.jsonl, using WORKSPACE_SOURCE = \"workspace\". Its log_path takes no lifecycle id; lifecycle-specific event logs are not part of this layout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:2d89a190b22c8d4df755715dd641f8b933003a98d805cca006a2a1db4c529092",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_SOURCE"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b54dd4dde4a0dffb6e89ba453123cfdcd054b3db298b6d656d98936f6c5b2417",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The one read/path abstraction (NS #5).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:e480f569304f8192087d573b7bb07fc208c8a458bbfd6cde0184b341edb758a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_root"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The app that mounts this as `GET /api/events`. Anchor: `\"/api/events\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:0ac36b5a73a6a475c0985d298f1c2d1439e2d5fd1444cf661387a08349c3a653",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 455
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "initial_event_offsets computes fresh-connect offsets for workspace/events.jsonl from the recent replay window plus the persisted virtual base offset. The retained-offset scan keeps events it cannot prove older than the cutoff. Physical reclamation belongs to the workspace River compactor and append-time size-bound admission under the shared lock, not lifecycle-log pruning in a projection pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:9bdda9a938422cc470b8faa1a5b5591d85004d9f7939d74ea271675ca912f058",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_EVENT_TTL_SECONDS"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:d9327569a4d3c7a9879a2b11fb2f2e18543c82a8d32301a50e6b585ea02f24be",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_EVENT_MAX_BYTES"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:ef06d0e6618a40163c7252dc43ae3353a3ea2651e2ef805336d5583fee672cf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_EVENT_TRIM_TO_BYTES"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:effea1d9e0d0bd28c4b04589661ee80fbc462667a111634b0f795bab5d891310",
+            "locator": {
+              "kind": "symbol",
+              "name": "initial_event_offsets"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:0e955a1d8952de1336bb31d23d3c9b72b67a8280f8d6b179b70ca61b04561cd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "compact_workspace_river"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:32c3ff8ecb63687a357edba7ab8d920b8daa7f4a345b19792ad28f92e4c0cd16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_under_lock"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_workspace_river_row"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:1198241f4948f356f4e86b0ae21d5057e0000b93fd0d55a3b32f01ef94e2c94a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_first_retained_offset"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`read_new_events` realigns records, admits top-level objects, and bounds emitted batches.\n\nAnchor: `read_new_events`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:bc69453f0b868100fbea12f5553f5a1ef460d52674d373f5c3bcbc049fe5106a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`stream_raw_events` computes offsets once, drains the backlog in bounded chunks without pruning, and emits `ready` once after it.\n\nAnchor: `stream_raw_events`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:bc69453f0b868100fbea12f5553f5a1ef460d52674d373f5c3bcbc049fe5106a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91d04c0b9f1ef75ed3894240899e238bde789901",
+            "content": "sha256:f25c0b814c5b1f5d9cd67057b6a56aa86fcebb6b4598c91ce82a46e949702552",
+            "locator": {
+              "kind": "symbol",
+              "name": "stream_raw_events"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

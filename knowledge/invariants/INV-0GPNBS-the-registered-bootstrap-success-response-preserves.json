@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The seat identity is produced by the start answer and consumed by the dashboard chat route and its landing shape, so the promise only holds when those three agree."
+  },
+  "applicability": "The success answer of a registered Bootstrap role start, whether the host was already running or was prepared by this call.",
+  "conditions": [
+    "The answer names the started seat's identity and the dashboard and chat addresses of that seat.",
+    "dashboardAddress is published only when the dashboard origin actually answers and the dashboard owner's action is not failed; otherwise the answer reports the owner/origin result.",
+    "chatAddress is honestly derived from the configured embed frame base URL, bridge-reported serverId and receipt agentId; this route is not an HTTP-probed chat-page witness.",
+    "A same-request retry reconciles to the same seat instead of starting a second one."
+  ],
+  "exclusions": [
+    "A rendered-page witness of the dashboard.",
+    "Failure answers, which name their stage instead of a seat."
+  ],
+  "id": "INV-0GPNBS",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N3; final-a3/source-witnesses.md; mcp/tools/base.py and application/tool_response.py production completion path."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B02",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The registered Bootstrap success response preserves its actual seat identity and usable dashboard/chat continuation.",
+  "status": "proposed",
+  "supersedes": []
+}

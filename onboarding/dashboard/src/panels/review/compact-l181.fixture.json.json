@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/compact-l181.fixture.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture records a real compact answer for L181, and its totals are what the rendering tests compare against",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3df272b19f335506d1d46435ed2a29997d2642e3",
+            "content": "sha256:57987fa2229102bc2b2ac149337712f07b1763dc773eab2c3d5d7b6e50a2d358",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

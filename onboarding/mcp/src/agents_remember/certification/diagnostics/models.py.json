@@ -1,0 +1,221 @@
+{
+  "path": "mcp/src/agents_remember/certification/diagnostics/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The lane may run at most one real-Codex replication as non-certifying evidence after R12 Gates 1-3 are green, and no diagnostic evidence can satisfy or promote into R14.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c0ef113924851fc02519ef9969442f530ac710",
+            "content": "sha256:3cc17503910eec4ae3024acb29721bc6c93360a19a9b943bfa291bb981b84f92",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRunResult"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c0ef113924851fc02519ef9969442f530ac710",
+            "content": "sha256:7ee23eb81006230ce0f6375091b27b847256813e7f85af8a27c171592a4cf6bf",
+            "locator": {
+              "end": 344,
+              "kind": "line_range",
+              "start": 295
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Closed immutable base for registry, plan, and result records.\n\nAnchor: \"class FrozenContractModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:f7a5ea8901e77c6b05bef81b105d77eeb31dc6624c20f98ca48378d817c7305f",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Repository-neutral exact identity for the candidate a plan certifies.\n\nAnchor: \"class CandidateIdentity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:b1421f1822bb337644025986fafb3e6bb2354b506496d480a8a5e0041c4746ac",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The immutable result manifest carries exact candidate, registry, gate-plan and terminal rail evidence.\n\nAnchor: \"class GateResultManifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:02bfb2ef935ea082c5bc4d1796e006f9f90b2e67340b81566859b2a496244cc0",
+            "locator": {
+              "end": 456,
+              "kind": "line_range",
+              "start": 434
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Content digests follow the shared certification digest helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The public package facade re-exports every model here.\n\nAnchor: `DiagnosticRunManifest`; `DiagnosticRunResult`; `DiagnosticAttemptRecord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1938e7dc63fbf75c9296e824126f737b6638bc02",
+            "content": "sha256:45a0cc962b4edac5279915835327f781220c7c31b99ba1aa8d0d1100717be351",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The durable store serializes and revalidates these records on every read and write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:73fecf2fcaf885a255c5ab6e1ebdcad92e6ebb0d91d811a54adc62fcb59796c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_manifest"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:b1306db7754608d08bb78f7fffb745b93549b97e8ec4768f2952dc768f35d366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_update"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:e113360aa383773e104c0fd9091ff426ff29e6f141dd2ea2cf97855cee996d57",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_bytes"
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The run controller builds attempt records, drafts, and runtime bindings from these models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:3d2e12e7b138b8fac08c42c152e6769bf679496a0cb3ea7c112ca9743b4c68c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attempt_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "997e36a2cddf02b9054def7c6fce5086409f3f6e",
+            "content": "sha256:b2ccf95e060006fd7d34540883975fb404bd7d78f69e74d78f98bc7be62dfc37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_draft"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/diagnostic_executor.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The R12 runtime-authority snapshot is the only host identity a diagnostic result binds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41c0ef113924851fc02519ef9969442f530ac710",
+            "content": "sha256:8f4bf9d4d61778f347fd2ae1ebdf467b4b394ed628ff63f16a374640bdc3d31f",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiagnosticRuntimeAuthorityBinding"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41c0ef113924851fc02519ef9969442f530ac710",
+            "content": "sha256:0088fe168fc2e1c8926de5f41048b78b9bf5cb9091454090435d97adf3d2668c",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

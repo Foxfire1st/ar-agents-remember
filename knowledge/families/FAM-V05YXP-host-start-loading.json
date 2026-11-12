@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Exact-start identity alone cannot cap parallel servers, a cap alone cannot retire an old pass, and retirement alone cannot make foreign panes truthful; their declared combination owns the feature."
+  },
+  "guarantee": "A real OS host start is taken once under a shared lease, only timeline-loads eligible tree agents through two memory-gated lanes, promotes clicked pending agents, drains older/intake/resume work before a newer pass, and shows the same pending/inflight/failure/skip truth in every product server. The start identity, admission, retirement and shared progress obligations jointly prevent duplicate or invisible loading that none alone prevents.",
+  "id": "FAM-V05YXP",
+  "members": [
+    "INV-7D1DKQ",
+    "INV-YYNNF1",
+    "INV-3NWM5P",
+    "INV-AA2N76"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "host-start-loading",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "One truthful bounded host-start loading pass"
+}

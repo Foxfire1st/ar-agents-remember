@@ -1,18 +1,8 @@
 # mcp/src/agents_remember/tasks/document.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/tasks/document.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `723fd2f1becc130d85d7a6b285b93115be0df852` |
-| lastVerifiedCommitDate | 2026-09-13T02:07:03+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
-[tasks/overview.md](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -22,6 +12,8 @@ parsing markdown back.
 
 ## Code Commentary
 
+IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode.
+
 ### Logic
 
 `TaskDocument` (and the nested `Step`/`SubStep`/`Decision`/`CodeExample`, plus
@@ -29,35 +21,37 @@ parsing markdown back.
 `extra="forbid", populate_by_name=True` — unknown keys are a schema error and field
 name or alias both validate. The `schema_` field defaults to `TASK_DOCUMENT_SCHEMA`
 and serializes under the `schema` alias. `DocKind` is `light`|`subTask`|`master` — `light` is
-retained only so any legacy `light` document still loads; the `task_doc` application entry point no longer authors
-new ones (every task is master/leaf). `DocStatus` stays in the `w-02-light-task-workflow` template vocabulary
-(`planning`|`inProgress`|`Completed`) so the rendered `**Status:**` line is always
-valid; `StepStatus` is a 4-state (`pending`|`inProgress`|`blocked`|`done`) carrying the
+retained only so any legacy `light` document still loads; the `task_doc` application entry point does not author
+new ones (every task is master/leaf). `DocStatus` uses the shared model vocabulary
+(`planning`|`inProgress`|`Completed`|`abandoned`), including the deliberate
+not-taken terminal state, so the rendered `**Status:**` line is always valid; `StepStatus` is a 4-state (`pending`|`inProgress`|`blocked`|`done`) carrying the
 dashboard's granularity. `seriesContractPath` names the root task series contract when one exists, and
 `enclosures[]` names leaf enclosure contracts (`leafId` + `enclosurePath`) that can bind the doc to a
 lifecycle through observer projection. A `master` carries the series index — `subTasks` (`SubTaskRef`:
-number/name/file/status/scope) — and an ordered `sections` render plan (`Section`:
+number/name/file/status/scope, plus the optional `masterRef` of a sprint's typed row and the optional
+`retirement` proof of a retired master) — and an ordered `sections` render plan (`Section`:
 `freeform`|`subTasks`|`sharedDecisions` + heading + body); a `@model_validator(mode="after")`
 keeps the kinds disjoint (master forbids `steps`/`codeExamples`/`codeExamplesNote`/`lifecycleId`;
 `light`/`subTask` forbid `subTasks`, `orchestrates`, and non-freeform `sections` but may carry
 freeform `sections` (R4), and forbid `codeExamplesNote` alongside non-empty `codeExamples`).
 
-A master may also carry `orchestrates: list[str]` (L14, the orchestration-command relation): a
+A master may also carry `orchestrates: list[str]` (the orchestration-command relation): a
 master doc with a non-empty list **is** an orchestration task, and each entry names a master task
 it commands (its task folder, doc id, or title — the dashboard matches forgivingly). Additive by
 design — `default_factory=list`, no new `DocKind`, no migration; docs without the field validate
 and serialize exactly as before, and masters named nowhere stay top-level.
 
-Since 260815-DAG-L14 the sprint document also carries first-class `seats` (`SprintSeat`:
+The sprint document also carries first-class `seats` (`SprintSeat`:
 role/label/identity/state — the manager-seat precedent on master docs, so seat task documents leave
 the sprint task index while existing ones stay on disk as historical records) and a `subTasks` row
 may carry a typed `masterRef` (`TaskDocumentRef` — the exact commanded master document it tracks,
 rendered as a real markdown link). Both are sprint-only by validator
-(`_check_sprint_rows_and_seats`): a `masterRef` row or non-empty `seats` requires `kind == "master"`
-with non-empty `orchestrates`; seat roles are unique among planned/active seats (a retired → active
+(`_check_sprint_rows_and_seats`): a `masterRef` row requires a master with non-empty `orchestrates`.
+Seats and `integrationBranch` use `is_sprint`, which also accepts a master retaining a retirement row;
+seat roles are unique among planned/active seats (a retired → active
 succession of the same role is the only reading consistent with a `state` field). The role
-altitudes are declared here once — `SPRINT_ROLES` (architect/orchestrator/strategist/designer/
-system-specialist), `MASTER_ROLES` (manager), and `LEAF_ROLES` (worker/reviewer/curator) — while
+altitudes are declared here once — `SPRINT_ROLES` (architect/orchestrator/
+investigator), `MASTER_ROLES` (manager), and `LEAF_ROLES` (worker/reviewer/curator) — while
 `REVIEWER_ALTITUDES` explicitly makes reviewer the one polymorphic role across sprint, master, and
 leaf review manifestations. `SprintSeat` consequently permits reviewer alongside the ordinary
 sprint roles. `document_refs` re-exports these definitions (importing from it here would cycle).
@@ -65,24 +59,24 @@ sprint roles. `document_refs` re-exports these definitions (importing from it he
 Execution topology is explicit and separate from containment. A commanded master declares the
 closed `executionNature` value `organizational` or `atomic`; an orchestration sprint instead owns a
 `SprintExecutionGraph` of `SprintExecutionNode` nodes and reasoned predecessor/successor edges.
-Since 260815-DAG-L11 a node is either a `master` lump (the whole master) or a `segment` (one master
+A node is either a `master` lump (the whole master) or a `segment` (one master
 ref plus a non-empty, unique `leafIds` list); a legacy bare `{repository, path}` node lifts to a
 lump on parse and serializes back to the bare shape, so lump-only graphs round-trip
 byte-identically. Python equality and hashing are structural node identity only: kind, ref, and
 leaf list. A caller asking which master owns a node compares `node.ref`; a caller selecting a leaf
 uses endpoint resolution. Edges
 (`SprintExecutionEdge`) gain an optional `judgmentId`, and each endpoint is a bare ref or a
-`SprintExecutionEndpoint` (`ref` + `leafId`) addressing the segment that contains that leaf;
+`SprintExecutionEndpoint` (`ref` + `leafId`); both models are defined in `models/task_execution_edges.py`
+(shared with the master-retirement proof) and imported into this module, addressing the segment that contains that leaf;
 resolution to exactly one node happens in graph validation, never at endpoint parse time. The graph rejects
 duplicate nodes/edges, self edges, undeclared or ambiguous endpoints, blank reasons/judgment ids,
 and cycles; it enforces sprint-wide leaf-ownership uniqueness plus lump/segment mutual exclusion
 per master, then derives deterministic topological waves over nodes without persisting positions.
-Attempt 8 moves that intrinsic algorithm into `execution_graph_validation.py`: one endpoint index
+The intrinsic algorithm lives in `execution_graph_validation.py`: one endpoint index
 and one resolved-edge population serve admission, waves, placement predecessors, and deterministic
 cycle discovery. `SprintExecutionGraph` retains the persisted schema and its `ValueError` surface,
 records exact `execution_graph_validation_work`, and delegates both initial admission and later wave
-reads to the same indexed analysis. Named cycle refusals therefore remain unchanged without the
-former duplicate DFS implementation in this already-large schema module.
+reads to the same indexed analysis. Named cycle refusals come from that one analysis.
 Legacy absence remains parseable only for the finite migration path; no validator infers a default.
 
 `derived_leaf_placement` maps one master's planned leaf ids onto its authored segments and derives
@@ -93,25 +87,19 @@ shapes unknown/unplaced placements as reported facts (never silent, never auto-w
 `numbering_drift_hints` reports leaf-numbering inversions across derived waves as facts that never
 refuse.
 
-`step_total`/`step_done` count the progress-bearing leaves (`_leaf_statuses`: a step's
-substeps when it has any, else the step itself), and `current_step` returns the first
-in-progress/blocked step, else the first unfinished one, else `None`.
+Current presentation owner: [progress](progress.py.md) supplies the re-exported `step_total`, `step_done`, and `current_step`. Counts are major-only (`len(doc.steps)` and major status `done`), not a nested-leaf rollup. Current selection still walks nested units: in declaration order, prefer each major active/blocked step then its active/blocked substeps; if none is active, prefer each unfinished major then its unfinished substeps, else None. Completion readiness remains [readiness](readiness.py.md), which independently checks every major and nested status; a full display count is not proof of completion.
 
-`series_total`/`series_done` (R1) are the master analog: a master's checkboxes are its
-`subTasks` (each subtask is one box), so `series_total` = `len(subTasks)` and `series_done` counts
-subtasks whose **declared** status is `Completed`. The declared subtask status is the lever and is
-authoritative — a slice marked `Completed` in the master counts done even if its own leaf doc still has
-open boxes; series progress is never derived from a slice's internal steps.
+Series progress reads the master's declared rows. `series_total` counts non-abandoned rows,
+`series_done` counts rows declared `Completed`, and `series_abandoned` reports abandoned rows separately.
+Abandonment counts as neither completed nor outstanding work. A completed parent row remains authoritative
+even when the leaf has internal steps still open; these figures never roll up leaf steps.
 
 A `Step` also carries an optional `outcome` (R2): the checkbox-line deliverable, distinct from the heading
 `title`. It is `None`-defaulted so `exclude_none` keeps existing step JSON byte-identical; the renderer puts
 `outcome` on the `- [ ]` line (a bare step with neither `outcome` nor substeps renders as just its heading).
 
-Since 260831-LOCR-L33 a `Step` also carries an optional `note` — the same free prose `SubStep`
-already carried, `None`-defaulted for the same byte-identical `exclude_none` reason. **This field is
-a root-cause fix, not an additive nicety**: before it existed the schema had nowhere to put a
-top-level note, so `task_doc`'s `set_step` accepted a caller's `note` and silently discarded it
-regardless of the update key set. Any future "the caller's field vanished" report on a persisted
+A `Step` also carries an optional `note` — the same free prose `SubStep`
+carries, `None`-defaulted for the same byte-identical `exclude_none` reason. Any future "the caller's field vanished" report on a persisted
 model should first ask whether the field is declared here at all. `Step.note` is classified `AUDIT`
 in `document_field_effects.py`; that taxonomy is exhaustive and fails closed, so an unclassified new
 field refuses validation before write.
@@ -124,24 +112,29 @@ the kind guard forbids it on a master and forbids pairing it with non-empty `cod
 For lossless round-trip of our real hand files (R4), a leaf doc also carries: a descriptive `statusNote`
 (rendered as a suffix beside the strict status enum — the enum stays the dashboard lever), `headerNotes`
 (a `HeaderNote` list → extra `**Key:** value` header lines such as Verified/Source), and freeform
-`sections` (the master-only field, now legal on a leaf, `freeform` kind only — rendered after References as
+`sections` (the master field, also legal on a leaf, `freeform` kind only — rendered after References as
 the escape hatch for bespoke prose; the standard template sections stay the backbone).
 
-Under CCR-R03@v1 the route-review record became self-content-addressing. `RouteReviewUnit` carries
+The route-review record is self-content-addressing. `RouteReviewUnit` carries
 `evidenceSha256` per evidence file, and `RouteReviewRecord` carries `verdictSha256`,
 `dependencies` (the typed `route-review/v1` declaration), and `recordDigest`. The record validator
 requires all content-addressing fields together, validates the declaration against the route-review
 policy, and forces `recordDigest` to equal the canonical SHA-256 of the record's own JSON bytes
-cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/route_review.py:36-42; mcp/src/agents_remember/tasks/route_review.py:140-153).
+cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/route_review.py:36-50; mcp/src/agents_remember/tasks/route_review.py:140-198).
 
 ### Invariants And Boundaries
 
 - Persisted/served contract, **not** an MCP response model (peer of
   `observer.projection`); it round-trips, so changes must stay backward-readable.
+- New optional slots `completedAt: str | None`, `waitsFor: list[str] | None`,
+  `nonGoals: str | None`, and `acceptance: str | None` default to None. The model
+  declares no new timestamp format, dependency-ID/cycle or field-home gates for them;
+  explicit dependency writes and reserved prose homes are checked by task_doc_field_homes.
+  Persisted executionGraph remains sprint-only; ordinary-master Order is derived elsewhere.
 - The markdown checkbox is binary; the richer `StepStatus` lives only in the JSON.
 - `schema_` must serialize as `schema` (alias) — always dump `by_alias=True`.
 - **`light` is load-compatibility only:** the `DocKind` literal keeps `light` so legacy documents still
-  deserialize, but `task_doc` create/replace refuse to author it (`application/task_doc_tools.py`) — new
+  deserialize, but `task_doc` create/replace refuse to author it (`application/task_docs/task_doc_tools.py`) — new
   tasks are `master` or `subTask` (leaf).
 - A master carries **no authored `lifecycleId`** (validator-enforced): it spans the series, not one
   leaf lifecycle. The observer still projects the master as an active task document with
@@ -156,11 +149,11 @@ cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/rou
 - **Leaf escape hatch (R4):** a leaf may carry freeform `sections` + `headerNotes` + a `statusNote`; the
   `subTasks` series index and non-freeform sections stay master-only, and `DocStatus` stays a strict enum
   (the `_MARKER`/observer lever — never loosened to a free string).
-- **`orchestrates` is master-only (L14):** the validator rejects it on `light`/`subTask` docs
+- **`orchestrates` is master-only:** the validator rejects it on `light`/`subTask` docs
   ("a {kind} document has no orchestrates (master-only)") — an orchestration task is a `master`
-  doc carrying the field, never a new kind; insignia/hierarchy consumers (observer projection →
-  dashboard) treat an empty list as "not an orchestration task".
-- **Acyclicity refusals name the cycle (L15):** `derived_waves` raises with the exact cycle members,
+  doc carrying command membership or a retained retirement row, never a new kind. The shared
+  `is_sprint` predicate keeps a retired-only master at sprint altitude despite empty `orchestrates`.
+- **Acyclicity refusals name the cycle:** `derived_waves` raises with the exact cycle members,
   never a bare "must be acyclic" — the delegated member search remains deterministic by declaration
   order and shares the admitted indexed edge population.
 - **One intrinsic graph analysis:** node/leaf/edge validation, wave derivation, placement
@@ -183,127 +176,163 @@ cit:([`RouteReviewUnit`, `RouteReviewRecord`], mcp/src/agents_remember/tasks/rou
 
 None.
 
-## Docs References
+## The `knowledgeMaintenanceScope` Field
+
+`TaskDocument` carries `knowledgeMaintenanceScope: bool | None = None`. A leaf whose document sets it to
+`true` is a knowledge-maintenance leaf: its change-to-knowledge worklist classifies **every** entry of its
+memory base (K_B), not only those its code change reaches. Absent means false; only `true` is ever
+written. The field is optional, so a document without it loads.
+
+- It is classified `LIFECYCLE`, not `NORMATIVE` (architect ruling 4): a normative slot outside the
+  `task-intent/v1` allowlist would be refused, so the field stays out of the intent digest.
+- `set_field` may set it (`application/task_docs/task_doc_phrases.py`'s `_MUTABLE_FIELDS`), and the renderer
+  shows it as a `**Knowledge maintenance scope:** \`true\`` header line.
+- The worklist reads it through `application/knowledge_worklist/leaf.leaf_maintenance_scope`, which uses the strict lookup (`strict_leaf_doc`): a document that exists but cannot be read makes the run `incomplete`, never the default scope.
+
+
+- The worklist reads it, since MIK-R09 through the strict lookup inside the run's fail-closed read (an unreadable document is `incomplete`, never the default scope). [2]
+
+## The `expectedKnowledgeEffects` Declaration
+
+`TaskDocument` carries `expectedKnowledgeEffects: list[ExpectedKnowledgeEffect] | None = None`: the invariant
+and family effects a leaf expects, declared before implementation by the architect (or by the worker with
+the architect's approval) through `task_doc`. Absent means no declaration, and every worklist item is then
+`unplanned`.
+
+- **`ExpectedKnowledgeEffect`** has exactly three fields (`extra=forbid` through `_Doc`): `subject`
+  (`DECLARED_SUBJECT_PATTERN`: `invariant:<INV-ID>`, `family:<FAM-ID>` or `new:<hand-off label>`), `effect`
+  (the shipped `EffectLabel`, so the vocabulary is unchanged) and `requirementRef`
+  (`REQUIREMENT_REF_PATTERN`, `<stable ID>@v<n>`, ruling Q5). The patterns are imported from
+  `models/knowledge_files/planned.py`; the task plane checks shape only and never reads knowledge, so an ID
+  the memory does not hold is the worklist's `subject_unknown` fact.
+- **`_check_expected_knowledge_effects`**, called with the document’s requirements, retains the master/nonempty/duplicate-key checks. When requirements contains typed `ApprovedRequirementPacketRef` entries, each declared `requirementRef` must match a listed `stableId@version`; unknown references refuse. With no typed packets this added membership check does not apply. This schema-only check neither reads packet contents nor approves a requirement. Two declarations with the same subject/effect still collide even under different references.
+- It is classified `NORMATIVE_INTENT`, unlike `knowledgeMaintenanceScope`: it is in the `task-intent/v1`
+  allowlist as an optional slot, so a declaration changes the leaf's intent digest while an absent one leaves
+  every existing digest unchanged (`task_intent.py`).
+- `set_field` may set it (`_MUTABLE_FIELDS`), and the renderer shows it as an `**Expected knowledge
+  effects:**` header block.
+- `TaskDocument` forbids unknown fields, so a build without this field cannot read a document that
+  declares it. The store writes with `exclude_none`, so a write never emits the key as `null`.
+
+- One declaration: subject form, effect label and requirement reference. [3]
+
+- The refusals: a master document, an empty list, a requirementRef naming no packet, and a repeated subject and effect. [4]
+
+
+
+- The shared patterns. [7]
+- The field's tests: optional, normative, settable, rendered and refused when malformed. [8]
+
+## Current Contract
+
+TaskDocument adds optional independent memoryReviewState typed with the memory-only round validator. In ordinary reads all fields still validate strictly. Only within the context-local launch tolerance, validation errors wholly located under reviewState/memoryReviewState may be retried with those broken lanes temporarily None; all other task identity, plan and topology still validate. Exact raw broken lane values and diagnostics are stored privately, review_read_error exposes the diagnostic, and wrapped serialization restores raw evidence unless include/exclude omits that lane. Begin/record reject that recovered document rather than overwriting damaged review evidence. Recovery restores context binding on exit, not task mutations.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict.
+
+## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [23]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [24]
+- Launch scope opts in to review-only tolerance and forwards the same request reason. [25]
+- Child start opts into tolerance after root identity validation; context does not cross exec. [26]
+- Record-only memory identity comes from memory authority, never the sibling code root. [27]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [28]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [29]
+
+- Expected effect requirement references must name a listed stableId/version when typed packet references are present; no packet is resolved by this schema check. [22]
+
+
+### Docs References
 
 No Domain Documentation sources are configured for this repository-internal persisted model.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
+No relevant external documentation was available after checking the configured source registry.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. | `Step` | mcp/src/agents_remember/tasks/document.py:111-129 |
-| Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. | `SprintExecutionNode` | mcp/src/agents_remember/tasks/document.py:229-285 |
-| The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. | `SprintExecutionGraph` | mcp/src/agents_remember/tasks/document.py:344-397 |
-| Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. | `resolve_graph_endpoint` | mcp/src/agents_remember/tasks/document.py:285-306 |
-| The route-review record validates its typed dependency declaration and self-digest. | `RouteReviewRecord` | mcp/src/agents_remember/tasks/route_review.py:140-153 |
-| The R03 route-review dependency vocabulary. | `EvidenceDependencies`; `require_evidence_dependencies`; `canonical_sha256` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:327-334 |
-| Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. | `derived_leaf_placement`; `_latest_unblocked_segment` | mcp/src/agents_remember/tasks/document.py:398-432; mcp/src/agents_remember/tasks/document.py:435-452 |
+- The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored. [9]
+- Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern. [10]
+- The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface. [11]
+- Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans. [12]
 
-## L23 Final Candidate Disposition
+- The route-review record validates its typed dependency declaration and self-digest. [13]
+
+
+- EvidenceDependencies and its required-kind/currentness and canonical-hash helpers own the R03 declaration vocabulary; preserve the unchanged helper targets while relocating the stale model definition extent. [14]
+
+
+- Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment. [15]
+
+- A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain. [16]
+- The edge and endpoint models the graph uses are imported from the shared edge module. [17]
+
+## A Retired Master's Row
+
+`SubTaskRef.retirement` holds a `MasterRetirementProof` (`models/task_retirement.py`) on the plain row that a
+sprint keeps for a master it retired. `SubTaskRef._retired_row_is_plain` accepts a proof only on a row whose
+status is `abandoned` and which carries no live `masterRef`. It may retain a legacy seat row's `file`,
+keeping its historical JSON and Markdown reachable without restoring live master membership. The proof is an audit record: its fields are classified `AUDIT` in
+`document_field_effects.py`, and generic task-document edits cannot add, change or remove it (the application
+layer refuses them). The document model stays strict (`extra="forbid"`), so a build that predates the
+`retirement` key cannot parse a sprint that holds such a row.
+
+## Task Boundary Selection
 
 Task-document readers derive canonical sprint, master, and leaf containment used by source-lineage
 and route-review authority. Those document relationships, not branch names or runtime ids supplied by
 an agent, select the task boundary.
 
-## 260815-DAG-L15 Named Cycle Refusals
+## Named Cycle Refusals
 
-The playthrough F4 finding ("cycle errors never name the cycle members") remains fixed in the graph
-model: `SprintExecutionGraph.derived_waves` raises `execution-graph must be acyclic; cycle members:
-A -> B`. Attempt 8 delegates the Kahn/DFS work to the one indexed intrinsic graph analysis and keeps
+`SprintExecutionGraph.derived_waves` raises `execution-graph must be acyclic; cycle members:
+A -> B`. It delegates the Kahn/DFS work to the one indexed intrinsic graph analysis and keeps
 the thin `_find_cycle_members` compatibility helper on the same algorithm. The refusal dialect stays
 a `ValueError`-family shape that the application boundary translates to the typed `TaskDocError`
 family.
 
-## 260831-CCR-R03 Route-Review Content Addressing
+## Route-Review Content Addressing
 
-The route-review record now binds per-evidence-file SHA-256 digests, the `route-review/v1`
+The route-review record binds per-evidence-file SHA-256 digests, the `route-review/v1`
 dependency declaration, and a canonical self-digest; `build_route_review` stamps all three from the
-exact evidence bytes (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+exact evidence bytes.
+
+- Series progress excludes abandoned rows from the total and reports them separately. [18]
+- Sprint identity includes retired-only masters; seats and integrationBranch use that predicate. [19]
 
 
-## Update History
+## Investigator in the role vocabulary
 
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: `Step` gained the optional `note` field
-  (`None`-defaulted, `exclude_none`-preserving), recorded as the root cause of the observed
-  loss — the schema had no field for a top-level note, so `set_step` accepted it and silently
-  dropped it whatever the update key set did. Also recorded that `Step.note` is classified `AUDIT`
-  in `document_field_effects.py` and that the taxonomy fails closed for an unclassified field.
-  Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-11T23:05:00+00:00: Master abandonment curation: `derived_leaf_placement` and `_latest_unblocked_segment` now take `resolved_refs` (terminal masters — `Completed` or `abandoned`) instead of `completed_refs`, and the invariant plus its source row record that a segment blocked only by an abandoned master schedules instead of blocking forever. Content change, not a range repoint.
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `resolve_graph_endpoint` repointed to mcp/src/agents_remember/tasks/document.py:285-306. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-07T00:42+02:00 — Removed remaining obsolete suite-proof citations; current production invariants and historical records remain preserved.
+The structural role vocabulary uses canonical Investigator. That value keeps task-document ownership, index and seat classification; it does not make a task document or display label into runtime start authority. The launch-selection resolver separately admits Investigator’s non-leaf reference patterns.
 
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the route-review record's content-addressing fields (evidence SHA-256 digests, dependencies, recordDigest) and the all-or-nothing validator binding; prior task-schema and graph-model prose preserved.
+- Canonical role constants include Investigator at sprint altitude and Reviewer at sprint/master/leaf altitudes; this is role vocabulary, not launch authority. [20]
 
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: extracted intrinsic execution-graph
-  validation into one indexed, operation-counted analysis reused by admission, waves, placement,
-  and cycle reporting; preserved the task-document wire and refusal surface. Verification remains
-  closeout-owned.
 
-- 2026-08-31T04:59+02:00 — 260821-ARSPAWN-L5 independent-review repair: recorded reviewer as one
-  explicitly polymorphic role across leaf, master, and sprint task documents, including sprint-seat
-  schema admission. Verification remains closeout-owned.
 
-- 2026-08-24T13:43+02:00 — DAGQC L1: removed `SprintExecutionNode` cross-type equality/hash
-  aliasing with `TaskDocumentRef`; node identity is structural and ownership comparisons are
-  explicit through `node.ref`. Legacy lump parse/serialization remains unchanged. Verification
-  metadata remains pinned until closeout.
 
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: `derived_waves` acyclicity refusals now name the exact
-  cycle members (`_find_cycle_members`/`_residual_adjacency`/`_dfs_cycle_members`/`_CycleSearch`,
-  playthrough F4). Verified at code commit de3a0fd9.
+## Refreshed current evidence
 
-- 2026-08-20T04:14+02:00 — 260815-DAG-L14: `TaskDocument` gained first-class sprint `seats`
-  (`SprintSeat` — role/label/identity/state, sprint-only, unique among non-retired roles) and
-  `SubTaskRef` gained the optional typed `masterRef` (the commanded master document a row tracks).
-  `SPRINT_ROLES`/`MASTER_ROLES`/`LEAF_ROLES` moved here as the canonical altitude declaration.
-  Verified at code commit 2f494982.
+- The optional field and its comment. [1]
+- The optional field and its comment. [5]
 
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: the sprint graph model is now leaf-segmented —
-  `SprintExecutionNode` lumps or per-master segments with legacy bare-ref lifting and byte-identical
-  lump re-serialization, judgment-provenanced edges with segment-sampling endpoints, sprint-wide
-  leaf uniqueness and lump/segment mutual exclusion, node-derived waves, and the pure
-  `derived_leaf_placement` / `leaf_placement_facts` / `numbering_drift_hints` fact helpers.
-  Verification remains closeout-owned.
+- The check runs in the document validator. [6]
 
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the JSON-primary task schema now distinguishes
-  commanded-master execution nature from sprint-only reasoned AON graphs, derives stable waves, and
-  rejects duplicate, unknown, self-referential, blank-reason, cyclic, or wrong-kind shapes.
-- 2026-08-14T06:34+02:00 — L23 final candidate review: task-document parsing derives canonical
-  parent series/master/leaf relationships used by transitive lineage and route-review authority.
-  Verification remains closeout-owned.
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
+## Product-Record Decision Marking
 
-- 2026-08-04T00:28:23+02:00 — 260731-EFA-L6 S18-B06 curator: repaired the scoped task-document citation claims; final exact frozen-snapshot check is clean.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-06T23:57:42+02:00 — 260703-L14 (visual hierarchy + chat grouping): `TaskDocument` gained
-  `orchestrates: list[str]` (default `[]`) — the orchestration-command relation; a master doc with a
-  non-empty list IS an orchestration task naming the masters it commands. The kind validator now
-  rejects the field on non-master docs (master-only, like `subTasks`). Additive: no new kind, no
-  migration, docs without the field are byte-identical.
-  Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-06-29T21:24+02:00 — Post-landing cleanup (master/leaf-only): clarified that `light` survives in
-  `DocKind` for legacy-load compatibility only — the `task_doc` controller refuses to author new `light`
-  documents, so every task is `master` or `subTask` (leaf). Schema unchanged (a code comment documents the
-  retention). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T16:39+02:00 — Task 17 schema-side clarification: master docs still forbid authored
-  `lifecycleId`, but that is no longer treated as a projection exclusion; the observer projects active
-  master docs with optional runtime lifecycle attachment. Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `TaskDocument` replaced `contractPath` with `seriesContractPath` plus `enclosures: list[TaskEnclosureRef]`, allowing one task document to refer to its root series contract and one or more leaf enclosure contracts. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T06:03 — Slice 3c reopened (R4, leaf-doc fidelity): added `HeaderNote` + optional `statusNote`/`headerNotes`, and relaxed the kind-guard so a leaf may carry freeform `sections` (still forbids the `subTasks` series index + non-freeform sections); `DocStatus` stays a strict enum. Verification metadata pinned until closeout stamps the R4 code commit.
-- 2026-06-19T05:15 — Slice 3c reopened (R3, deferred-examples honesty): added optional leaf-only `codeExamplesNote` (`None`-defaulted so `exclude_none` keeps existing JSON byte-identical) and extended the kind-guard `@model_validator` — a master forbids it, and a leaf forbids it alongside non-empty `codeExamples`. Verification metadata pinned until closeout stamps the R3 code commit.
-- 2026-06-19T04:18 — Slice 3c reopened (R2, heading-vs-outcome): `Step` gained an optional `outcome` (the checkbox-line deliverable, distinct from the heading `title`; `None`-defaulted so `exclude_none` keeps existing JSON byte-identical). The renderer puts it on the `- [ ]` line. Verification metadata pinned until closeout stamps the R2 code commit.
-- 2026-06-19T03:17 — Slice 3c reopened (R1, masters observable): added `series_total`/`series_done` — the master analog of `step_total`/`step_done`. A master's checkboxes are its `subTasks` (each one box); `series_done` counts the **declared** `Completed` subtasks, authoritative over a slice's own leaf steps. Verification metadata pinned until closeout stamps the R1 code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: added `kind:"master"` with `SubTaskRef` (series index) + ordered `Section` (`freeform`/`subTasks`/`sharedDecisions`) and a kind-guard `@model_validator` (master ⇒ no steps/codeExamples/lifecycleId; light/subTask ⇒ no subTasks/sections). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1: the `ar-task-document/v1` Pydantic schema + progress helpers. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+`is_product_record_decision` marks a decision-log entry as a product-written record (not an
+authored decision) from the writers' own constants: exact `PRODUCT_RECORD_DECISION_EXACT`
+(retained legacy Finalize lifecycle text) or the `PRODUCT_RECORD_DECISION_PREFIXES` (removed-step
+and skip-step prefixes). The page matches no text and the stored shape is unchanged; the
+projection carries the marking for the newest-five rule.
+
+Current finalization does not append that exact decision; it stamps own `completedAt` on first completion and retains existing decisions. The exact constant is still a legacy-display classifier, not a current writer contract.
+
+
+- Exact legacy Finalize text and removed/skip-step prefixes still classify product records by text; collisions remain possible. Current finalization stamps own completedAt and leaves logs intact, so this constant is not a claim of current Finalize decision writing. [21]
+
+- IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode. [30]

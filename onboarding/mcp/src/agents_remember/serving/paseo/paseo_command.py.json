@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_command.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The command boundary: the product environment for every call, the product Node for a host start or a staged install root, the communication Node for every other call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0b644e38df6cee1c62a56818b779a842b23e62e",
+            "content": "sha256:fe0e82d74cfabb87df06c1d9f3ac12888aed0366ac5c403624ccce4c11df19c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoCli"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The named failure type shared with the host modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:be727b36063ef5c6ae8e727184befe925508ffd4cdb421132c5398415578b630",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A call that does not start a host selects its Node through the running-node selector.\n\nAnchor: `communication_node`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0b644e38df6cee1c62a56818b779a842b23e62e",
+            "content": "sha256:124cefb58d98efeef944dc8398eae136dc4892101ee30172a8303e48eb58150d",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

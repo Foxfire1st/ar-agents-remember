@@ -1,0 +1,72 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Recomputation, a silence-only value and absence were weighed with grounds, and the choice binds every future edit of the archive-ready branch."
+  },
+  "alternatives": [
+    {
+      "option": "Bind kept_line = None on the archive branch: the gate is not judged again; the strict archive declares no kept-line record, so the repeat carries none and its answer may lack landedTips but invents none.",
+      "reason": "Ruling L129-THE-GATE-IS-NOT-JUDGED-AGAIN (a5ad3db2) under unchanged MIK-R129@v1; TerminalEnclosureArchive declares no judgement field and forbids extras; kept_line flows only to the optional landedTips attach; R2 fix-verification PASS with the 28-case suite including branch-gone completion.",
+      "status": "chosen"
+    },
+    {
+      "option": "Recompute _carryover_or_kept_line on the archived contract for the repeat.",
+      "reason": "Re-judges the accepted gate on repeat and demands live refs the accepted first run may already have retired (sealed finding L129-CODE-R1-01, fixed); the R1-stage repair was superseded for exactly this.",
+      "reconsider_when": "The archive gains a kept-line judgement record, so a repeat can carry a recorded value instead of an absence.",
+      "status": "rejected"
+    },
+    {
+      "option": "Bind an arbitrary value only to silence the type check.",
+      "reason": "The packet's nonconforming example: a value with no reason in the record.",
+      "reconsider_when": "Never as conforming evidence.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The cleanup_result archive branch carries kept_line = None under a ruling-cited comment; dry repeats assert landedTips absent; real and branch-gone repeats run to cleanup-completed."
+  ],
+  "context": "cleanup_result passed kept_line to the shared tail on every path but bound it only on the no-archive branch, so an archive-ready repeat — the only supported recovery from an interrupted cleanup — raised UnboundLocalError.",
+  "decider": "Parent ruling L129-THE-GATE-IS-NOT-JUDGED-AGAIN (a5ad3db2) under unchanged MIK-R129@v1; R2 fix-verification PASS (reviewer 7c1f5f1a).",
+  "id": "DEC-GH2RJ8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6c144ebeaa236e2459b5aa2ff32fa15789eb6eb4",
+        "content": "sha256:8b22e4c1d88ed51d3e2763f6a1ec838a77ed6c30b1b6a976235bd6ed9c9686d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_result"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R129",
+        "packet": "requirements/MIK-R129-v1-a-repeated-cleanup-finishes.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L129-curator-12520929-8d36-45c2-a521-13372a4906f0.handoff-list-R2.json"
+    },
+    "handoffEntry": "dec-no-regate",
+    "leaf": "260928-MIK-L129",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

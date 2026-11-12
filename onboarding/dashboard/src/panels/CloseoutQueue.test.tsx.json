@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/CloseoutQueue.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate state, grade, and reasons render.\n\nAnchor: \"renders candidates with state, grade, and reasons\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad52d12634e79945d5c3c01301643df15f1c834c",
+            "content": "sha256:fa11ebe2480436c1eb60812bae090b234de86e3f4dd2812c14c46025813110b0",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Typed non-admitting repair evidence renders.\n\nAnchor: \"renders typed non-admitting repair evidence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad52d12634e79945d5c3c01301643df15f1c834c",
+            "content": "sha256:dd7a355e4b049d1dd677480036a415a6eae8a6f3ce7edbf27fbfba64c36c0336",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Empty projection renders nothing.\n\nAnchor: \"renders nothing when no queue is projected\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad52d12634e79945d5c3c01301643df15f1c834c",
+            "content": "sha256:b05619692523c61a7c911e9ad51a48f4efe405b99fe6f18eca5ce1f92d35753b",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

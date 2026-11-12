@@ -1,15 +1,5 @@
 # scripts/sync-skills.py
 
-| Field                  | Value                         |
-| ---------------------- | ----------------------------- |
-| repository             | agents-remember             |
-| path                   | `scripts/sync-skills.py`       |
-| doc_type               | `file-level-onboarding`        |
-| lastUpdated            | 2026-09-06T22:07:53+00:00 |
-| lastVerifiedCommitHash |                               `a84add4c9422b18a26f1748dedaed16194994ded`|
-| lastVerifiedCommitDate | 2026-08-10T05:11:18+02:00|
-| governingOverview      | `../overview.md`                              |
-
 ## Governing Overview
 
 [overview.md](../overview.md)
@@ -17,34 +7,29 @@
 ## Purpose
 
 `scripts/sync-skills.py` is the repository helper that keeps the root
-canonical `skills/` tree synchronized with every generated skill copy shipped in
-the MCP package data and harness starter packages.
+canonical `skills/` tree synchronized with the sole generated skill copy shipped in
+the MCP package data and served to harnesses as resources.
 
 ## Code Commentary
 
 ### Logic
 
 The script resolves the repository root from its own path, treats root
-`skills/` as canonical, and declares a fixed list of sync targets:
+`skills/` as canonical, and derives sync targets plus ignore names/suffixes from the single skills projection in `generated-copies.json` through the dependency-free parser owner. `skill_targets(root)` joins those declared target paths to its selected root; the parser itself belongs to this checkout. The current declaration covers:
 
 - MCP package data under `mcp/src/agents_remember/package_data/runtime/skills`
-- Claude Code, Codex, Cursor, VS Code/Copilot, Hermes, OpenClaw, Pi, and
-  Antigravity starter package skill folders
 
 It computes SHA-256 digests for every non-ignored file under the canonical tree
 and each target, then reports missing, extra, and changed files. In normal mode
 it copies the complete canonical tree to a sibling staging directory before renaming the live target aside and renaming staging into place,
-then immediately runs the same check mode. With `--check`, it only verifies
-targets and exits non-zero when any target differs. With `--list-targets`, it
+then runs check mode. Before the first target mutation normal sync computes `projected_profile_bytes`: it validates the input certification profile through its canonical owner and derives only the generated-skills row/scopes and new digest. After the target loop it writes that prepared profile. `--check` compares both copy bytes and the profile projection and exits non-zero on drift. This is prevalidation, not an atomic transaction or rollback across all targets/profile. With `--list-targets`, it
 prints the canonical source and all target paths.
 
 ### Conventions
 
 `replace_tree` removes stale staging/retired leftovers, completes the new copy, then renames the old target aside and the staged tree into place before removing the retired tree. A copy failure before the first rename leaves the live target intact. The two renames are separate operations; this description does not claim an atomic directory exchange.
 
-Ignore only local/generated filesystem noise: `.DS_Store`, cache directories,
-`__pycache__`, and `.pyc` files. Keep targets explicit so new harness packages
-must consciously opt into skill synchronization.
+Ignore names/suffixes come from the canonical declaration, currently covering local/generated filesystem noise. The declared destination is the packaged serving tree; do not maintain a second target or ignore tuple here.
 
 ### Invariants And Boundaries
 
@@ -53,43 +38,42 @@ must consciously opt into skill synchronization.
   `skills/` directory.
 - Sync mode replaces target skill directories wholesale; do not point a target
   at user-owned or non-generated content.
-- The helper manages skill copies only. It does not sync hooks, MCP settings,
-  instructions, docs, or provider/runtime assets.
+- The helper manages declared skill copies and their generated-skills certification-profile projection. It does not sync hooks, MCP settings, other instructions/docs or provider/runtime assets. This card is source inspection only: no sync/check invocation or generated/private mirror read/write was performed.
 
 ### Todos
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+- Targets/ignore policy come from the declaration and profile bytes are validated before target replacement, then published and checked beside copy bytes. [5]
+
+
+### Docs References
 
 No external documentation is needed for this repository-local helper.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The script defines `skills/` as canonical and enumerates all MCP package-data and harness starter skill-copy targets. | `CANONICAL_SKILLS`, `TARGETS` | scripts/sync-skills.py:15-15; scripts/sync-skills.py:43-56 |
-| `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. | `check_targets` | scripts/sync-skills.py:179-192 |
-| Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. | `sync_targets`, `sync_target`, `replace_tree` | scripts/sync-skills.py:136-139; scripts/sync-skills.py:142-162; scripts/sync-skills.py:195-203 |
-| The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. | `# Agents Remember Source Checkout Instructions` | AGENTS.md:1-198 |
+- The script defines `skills/` as canonical and derives the sole MCP package-data serving target. [1]
 
-## Cross-Repo References
+- `--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync. [2]
+
+
+- Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check. [3]
+
+
+- The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. Anchor: `scripts/sync-skills.py` [4]
+
+
+### Cross-Repo References
 
 No sibling repository evidence is needed for this helper.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## Update History
+## Current source evidence
 
-- 2026-09-06T22:07:53+00:00 — Reconciled copy-before-rename preservation against current replace_tree and retired sync test knowledge. Historical entries and verification pins remain unchanged.
-
-- 2026-08-03T03:20:00+02:00 — 260731-EFA-L6-W3-B01 curator: curated 4 Repo-Internal table citations with exact canonical-target, check, sync, and root-instruction anchors. Verification metadata remains unchanged for closeout.
-
-- 2026-06-10T00:40+02:00 — `sync_target` now uses crash-safe `replace_tree` (copy to `<target>.ar-sync-new`, rename live target aside, swap in, then remove the old tree; stale staging/retired leftovers are cleaned on re-run), and `extended_length()` applies the Windows `\\?\` prefix so syncs and `--check` walks work past 260-char paths even with `LongPathsEnabled=0`. Replaces the delete-then-copy that gutted `package_data` when a long-path crash hit mid-delete (2026-06-09 incident).
-- 2026-06-03T18:58+02:00: Created onboarding for the new skill synchronization helper. Verification metadata is pending until the code commit exists.
+- The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection. [6]

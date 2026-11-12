@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_overview_precompute.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A turn end hands its capture to the leaf-wide build and a page open does not build it again",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "984d0fd4dbfbafb4d9a3d9fb94ae6bf03725eba0",
+            "content": "sha256:9c666ab7515f5b49cd80b24b9147b534ba534e93deb258d5a5101ec2c45ca96b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_turn_end_hands_its_capture_on_and_a_page_open_does_not"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

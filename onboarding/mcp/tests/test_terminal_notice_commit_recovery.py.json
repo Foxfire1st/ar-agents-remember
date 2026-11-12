@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_terminal_notice_commit_recovery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "72bf51ce2d8221d8ddd7267c356b2062eb59b99d",
+        "content": "sha256:175eb7351919fca4c2834955c8d1ceb6202517351daa6543027c749bd586e59f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-2FH85X",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Controlled real-guard and confirmation cuts pin commit survival and exact recovery; a selective current-journal read fault retains the original pending occurrence beside a readable predecessor and later settlement publishes it once.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The controlled current-journal read fault leaves both root-bearing and legacy resolution undecided, retains the stored occurrence, then publishes that original occurrence once after readable restoration.\n\nAnchor: `TerminalCommitCutTests.test_unreadable_current_generation_keeps_its_pending_notice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "72bf51ce2d8221d8ddd7267c356b2062eb59b99d",
+            "content": "sha256:c12c2c73b8b52a146a2830426fc3db33cf373f0f756ee89f302ea0639e591409",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 282
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/models/structural/gates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only gate-vocabulary re-exports remain; no delegated-gate request/response classes or recording owner.\n\nAnchor: retained re-exports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:52753d92bdd833e2f16198e51ca0ceacd058630f4022c9640d5d7d93f26790b8",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The former public gate-summary DTO is no longer owned here; the current carrier only exports primitive vocabulary.\n\nAnchor: vocabulary exports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:84842b5b0f38f95f4d8a10dcd5cfa2f1755daa262d3f7a5a6edeab0245b627c2",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

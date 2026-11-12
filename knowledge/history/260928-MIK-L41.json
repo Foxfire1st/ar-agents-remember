@@ -1,0 +1,1224 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L41",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0JD9GV",
+      "items": [
+        "sha256:f0c51d90f2b6290ff55b245593d183414d6ee21a0dc15bb236cdc77cb63a5955"
+      ],
+      "reason": "The change adds the missing-commanded-master text builder and its field-length policy; the card's account of the error texts still holds because the texts remain bounded.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0PQ14R",
+      "items": [
+        "sha256:78bfcb91a355202eb0613511bc393fa568f8a0affe2f5841e8215ccd88743ab8"
+      ],
+      "reason": "The change excludes abandoned rows from the candidate population and uses the shared queue failure text; the card's account of the graph candidates still holds because an abandoned row never closes out.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-11WBR0",
+      "items": [
+        "sha256:624cc8a1661c44de34c2ba3aa0f66af5ae0e06ae569b775f3c13799815e3126e"
+      ],
+      "reason": "The changed lines add the abandonedCount field to the case fixture; the card's account of the case still holds because the progress rule is stated where it is implemented.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "87e29a137a6d97def9e7d9bc007fe02618f70abc",
+            "content": "sha256:c304c51112992e812625bb5aab27400835e75211dafa7de664274f669840165a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_archived_state"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_retirement_answers.py"
+          },
+          "before": "absent",
+          "id": "RLZ-32XX53"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-1CC89G",
+      "items": [],
+      "reason": "The archived-state classifier is a dry-run owner; actual cleanup state comes from _clean_up.",
+      "revision": 1,
+      "subject": "INV-GCEAJJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable_other_members"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-C0XWKE"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-1TPMYG",
+      "items": [],
+      "reason": "Canonical identity is an admission prerequisite, and missing or unbound identities retain named refusal.",
+      "revision": 1,
+      "subject": "INV-FQWZBE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-25AWS2",
+      "items": [],
+      "reason": ".pi/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.pi/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "retired",
+      "examined": [
+        {
+          "id": "INV-1B87DB",
+          "revision": 1
+        },
+        {
+          "id": "INV-1DFJ7N",
+          "revision": 1
+        },
+        {
+          "id": "INV-3YSSTZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-4GQZ9S",
+          "revision": 1
+        },
+        {
+          "id": "INV-5ZMMN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-6AM3V9",
+          "revision": 1
+        },
+        {
+          "id": "INV-6Q7947",
+          "revision": 1
+        },
+        {
+          "id": "INV-6S505X",
+          "revision": 1
+        },
+        {
+          "id": "INV-8AJVN0",
+          "revision": 1
+        },
+        {
+          "id": "INV-8MKBTB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8NHCRK",
+          "revision": 1
+        },
+        {
+          "id": "INV-9YJV7Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-AK4QYH",
+          "revision": 1
+        },
+        {
+          "id": "INV-C4PDDP",
+          "revision": 1
+        },
+        {
+          "id": "INV-CC0VTQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CD2A7H",
+          "revision": 1
+        },
+        {
+          "id": "INV-DJ27N9",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-FQWZBE",
+          "revision": 1
+        },
+        {
+          "id": "INV-GCEAJJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-GYCF1R",
+          "revision": 1
+        },
+        {
+          "id": "INV-HKTN7W",
+          "revision": 1
+        },
+        {
+          "id": "INV-JQFXCQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-K79KP8",
+          "revision": 1
+        },
+        {
+          "id": "INV-M0ZQNJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MVYAQ0",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRMSPM",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q157G2",
+          "revision": 1
+        },
+        {
+          "id": "INV-T1ZJXG",
+          "revision": 1
+        },
+        {
+          "id": "INV-T7VC8G",
+          "revision": 1
+        },
+        {
+          "id": "INV-WQ6Z6P",
+          "revision": 1
+        },
+        {
+          "id": "INV-X1AH5G",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y0S1BZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-YQY9PX",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZJTNZY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-2DFMHB",
+      "items": [],
+      "reason": "The original mixed roster does not establish one necessary joint guarantee: completion predicates are not retirement predicates, and repaired negative/empirical observations cannot be members of a current guarantee. Preserve its exact historical roster and guarantee, retiring its live projection; coherent completion and recovery composition is authored separately.",
+      "subject": "FAM-A43781"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2RZ3W1",
+      "items": [
+        "sha256:06ba297e830eb92de30987c53af41cb0d8bfa16d9613515a8c601998da6dc1c6"
+      ],
+      "reason": "The change carries the product's missing-commanded-master wording into the refusal; the card's account of the candidate scope still holds because the refusal stays bounded to its type otherwise.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/incremental_scope/candidate.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2SZM1Q",
+      "items": [
+        "sha256:fc8fe591aa7bc7e5e73a2dca7209c23fe63ec0ebdf9e44b12f9bb6cbf0134fca"
+      ],
+      "reason": "The change reads sprint.document.is_sprint; the card's account of the scheduling mode still holds because the sprint rule is shared.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/scheduling_mode.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2X0FP7",
+      "items": [
+        "sha256:63a4bd82f52ba21861757389562bb02ef587f75e2a89d351ff6889b4851285e9"
+      ],
+      "reason": "The change adds the abandonedCount field to the series node type; the card's account of the type still holds because the field carries the count the progress rule names.",
+      "subject": "onboarding:dashboard/src/types/projection.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2XPQNH",
+      "items": [
+        "sha256:7ecad33202e847db9dcee56a7204b838f782172de71b181edae3b36917d83186"
+      ],
+      "reason": "A docstring reword that states the same figure rule for the rows that will run; it introduces no new guarantee.",
+      "subject": "hunk:sha256:7ecad33202e847db9dcee56a7204b838f782172de71b181edae3b36917d83186"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3DETM9",
+      "items": [
+        "sha256:b9227477b22bc884671cc6f62ef651dc1ebb93c4e9e1d2143377f3ac32f46d98"
+      ],
+      "reason": "Wiring the computed abandoned count into the projected series figure; the count and the rule that names abandoned rows beside the figure are stated on the series projection entry.",
+      "subject": "hunk:sha256:b9227477b22bc884671cc6f62ef651dc1ebb93c4e9e1d2143377f3ac32f46d98"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3FR5PH",
+      "items": [
+        "sha256:3f1332e5e19227860fa875d10327e34c046b189f35356b68016ae1906dca38c5"
+      ],
+      "reason": "The change exports series_abandoned; the card's account of the package exports still holds because the helper is documented on its owner.",
+      "subject": "onboarding:mcp/src/agents_remember/tasks/__init__.py"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-3HRX5C",
+      "items": [],
+      "reason": "These realizations (RLZ-BPMMTC, RLZ-X79EQQ) are inherited L90/L70 historical dispositions, not L41-origin, and no typed retirement of them ever occurred. During this leaf's orphan-sidecar cleanup the six sidecars holding them were removed by mistake; they were then restored byte-for-byte from memory base 41e4af2b, so the realization set and the invariant record are exactly as they were before this leaf and nothing about the record changed.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-446RQM",
+      "items": [
+        "sha256:33980d6e88cb1c118a8080fa1f82d7502024a12b16d1327fe28276efed60c21a"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:33980d6e88cb1c118a8080fa1f82d7502024a12b16d1327fe28276efed60c21a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-46TPF6",
+      "items": [
+        "sha256:f4622b1afad0ecebb2d11ee70b8965c91c1c1c8cd7d74263f843aca4f800e546"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:f4622b1afad0ecebb2d11ee70b8965c91c1c1c8cd7d74263f843aca4f800e546"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-47JNM5",
+      "items": [],
+      "reason": "These realizations (RLZ-EEEG4W) are inherited L90/L70 historical dispositions, not L41-origin, and no typed retirement of them ever occurred. During this leaf's orphan-sidecar cleanup the six sidecars holding them were removed by mistake; they were then restored byte-for-byte from memory base 41e4af2b, so the realization set and the invariant record are exactly as they were before this leaf and nothing about the record changed.",
+      "revision": 1,
+      "subject": "INV-5TKYXM"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-5HPQ3B",
+      "items": [],
+      "reason": "These realizations (RLZ-PFED6V) are inherited L90/L70 historical dispositions, not L41-origin, and no typed retirement of them ever occurred. During this leaf's orphan-sidecar cleanup the six sidecars holding them were removed by mistake; they were then restored byte-for-byte from memory base 41e4af2b, so the realization set and the invariant record are exactly as they were before this leaf and nothing about the record changed.",
+      "revision": 1,
+      "subject": "INV-CHNC1N"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5NBGD4",
+      "items": [
+        "sha256:3bda314c82165d871a031fca0e696ce26947828cc3bd27e2ec0949f8d80a8e1b"
+      ],
+      "reason": "The change reads doc.is_sprint and keeps a sprint that lost its last master; the card's account of the branch authority still holds because the sprint rule is the shared one.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-68XXBG",
+      "items": [],
+      "reason": ".cursor/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.cursor/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-692PVS",
+      "items": [
+        "sha256:05ad09979751459e8f2a9fba9a318a6d6a6d0c8ecdea564d0a539a3fb259b930"
+      ],
+      "reason": "The mechanical expression of the sprint rule: a sprint that lost its last master and declares no branch has no line to keep, so it is skipped. The guarantee is the sprint rule over the commanding relation.",
+      "subject": "hunk:sha256:05ad09979751459e8f2a9fba9a318a6d6a6d0c8ecdea564d0a539a3fb259b930"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-776YMY",
+      "items": [
+        "sha256:3c7444bae028f1e1a15fad814f656b81b1a46c463d502d92427f72d6df5d5145"
+      ],
+      "reason": "The changed line adds the abandonedCount field to the test helper's series fixture; the card's account of the helper still holds.",
+      "subject": "onboarding:dashboard/src/panels/detail-panel/test-utils.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7RD002",
+      "items": [],
+      "reason": ".codex/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.codex/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7V9XQ3",
+      "items": [
+        "sha256:e2539337dfeb2ec8c104462f259a8230d6f081018379a8f585fd77d7e584f42e"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:e2539337dfeb2ec8c104462f259a8230d6f081018379a8f585fd77d7e584f42e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8P60Q9",
+      "items": [
+        "sha256:9c3a399ddefb508f337cdfceae93e8bd3ff24ef2261ef38aabe94dfcac6e7a20"
+      ],
+      "reason": "The changed line adds the abandonedCount field to the fixture; the card's account of the fixture still holds because the field is the projection's own count, stated in the types route.",
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-95K3NZ",
+      "items": [
+        "sha256:a9364fc11acf64cb2a2f78220ef3fa83deb64016035567d496507fb87e41f6f7"
+      ],
+      "reason": "The change reads master.document.is_sprint; the card's account of the collision check still holds because the sprint rule is the shared one.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/integration/integration_topology_collisions.py"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-96E45W",
+      "items": [],
+      "reason": "These realizations (RLZ-YH1Y0Z) are inherited L90/L70 historical dispositions, not L41-origin, and no typed retirement of them ever occurred. During this leaf's orphan-sidecar cleanup the six sidecars holding them were removed by mistake; they were then restored byte-for-byte from memory base 41e4af2b, so the realization set and the invariant record are exactly as they were before this leaf and nothing about the record changed.",
+      "revision": 1,
+      "subject": "INV-VV0B2G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9A2WRJ",
+      "items": [
+        "sha256:0368118c7474a39edc0ab5f4e50cb3f5bab9ee913b33cd0e8b7f55b09093906c"
+      ],
+      "reason": "The change routes the master test through document.is_sprint; the card's account of the scope still holds because the rule is the same sprint rule the tasks route owns.",
+      "subject": "onboarding:mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9T89RP",
+      "items": [
+        "sha256:52f2086441e136790bfd075e845980205afd061bcda8b4408e94fcf98773991c"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:52f2086441e136790bfd075e845980205afd061bcda8b4408e94fcf98773991c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9ZT8DZ",
+      "items": [
+        "sha256:80fc5257e9dda7a2c1b71d38fbdfdfa6d2a54608b68ec435b0656d4b33fb906c"
+      ],
+      "reason": "The changed line adds the abandonedCount field to the fixture; the card's account of the fixture still holds because the field is the projection's own count, stated in the types route.",
+      "subject": "onboarding:dashboard/src/data/taskHierarchy.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9ZWADS",
+      "items": [
+        "sha256:1cde61c46c2ee1b61b0afe67bf54632a0c038f333e884f6ea6cd5a78d555e21c"
+      ],
+      "reason": "The change carries the product's missing-commanded-master wording into the queue's bounded problem text and skips abandoned rows; the card's account of the projection still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/queue/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A3SS05",
+      "items": [
+        "sha256:84f0a94ae1723f09eb4408e20f8bf049db67e939100153077211b9d7c23efc91"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:84f0a94ae1723f09eb4408e20f8bf049db67e939100153077211b9d7c23efc91"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fa3691dd3588831bdaff2f5d1d38b4c3403a6a82",
+            "content": "sha256:db84df575e13e738f19b254414263a83ad4663984aeb056baedf37f84e280e9a",
+            "locator": {
+              "kind": "symbol",
+              "name": "membership_removal_action"
+            },
+            "path": "mcp/src/agents_remember/tasks/sprint_rows.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZRCP4Q"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-ANYM57",
+      "items": [],
+      "reason": "Qualify operator guidance to the actual typed, untyped and sole-master/no-removal shapes.",
+      "revision": 1,
+      "subject": "INV-T7VC8G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable_other_members"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VHD81R"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-AT1TKA",
+      "items": [],
+      "reason": "Correct the scope from admission by title to admission of a canonical path and separate named unresolved identity.",
+      "revision": 1,
+      "subject": "INV-Q157G2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BCMHFX",
+      "items": [
+        "sha256:785a2f1fd3d430ccaf62f3c1d85a01dede2f9e26a326c99e2ad7954c0376fd6a"
+      ],
+      "reason": "The change adds the series-progress projection cases and the read_series_documents import; the card's account of the file still holds because the added cases protect the figure the projection route states.",
+      "subject": "onboarding:mcp/tests/test_task_documents_graph_projection.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CA1V3C",
+      "items": [
+        "sha256:c485d62a1b729f2ecb53c395a630d42edb5f90cf2ecf6f60bcb7361ab25afc34"
+      ],
+      "reason": "The change extracts progress into progress.ts and excludes abandoned rows from the denominator while rendering their count separately. The existing list card covers row admission, hierarchy and discarded-count wiring; the progress card owns the changed figure. Anchor refreshes did not add that semantic account to the list card.",
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CNMHF3",
+      "items": [],
+      "reason": ".github-vscode/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.github-vscode/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EJVAXK",
+      "items": [],
+      "reason": ".agents/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.agents/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7eea5b35719f0efe9d0e7d6302f94df9a6ad4b36",
+            "content": "sha256:892fa278ed99c7b1c6dc823969da808b27293fe385b65ffa49fd83ef0f306e7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_real_paired_enclosures_named_tool_is_carried_out_then_retirement_is_repeated"
+            },
+            "path": "mcp/tests/test_master_retirement_readiness.py"
+          },
+          "before": "absent",
+          "id": "PRF-6CH7FB"
+        },
+        {
+          "after": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:8b942d37948d9ea6ee056b247a1ed2487ebaa8d4801c9a75ab91b8b76ff5fd5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_survey_leaf_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "before": "absent",
+          "id": "RLZ-STHN7P"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-EVESP0",
+      "items": [],
+      "reason": "The proof facet describes the exact named-remedy control instead of a generic current-candidate assurance.",
+      "revision": 1,
+      "subject": "INV-X1AH5G"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-EVYZ2K",
+      "items": [],
+      "reason": "The sealed MR1-K01/T02 source-backed review shows this is a repaired negative or historical measurement, not a continuing obligation. Preserve its record and original producer evidence; remove current realizations/proofs. No current full-suite outcome or resolution of the historical process-order interaction is inferred.",
+      "revision": 1,
+      "subject": "INV-4FMP77"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F40NC2",
+      "items": [
+        "sha256:ee533be12e699f111a9288fc2259419d42ae7a1743a2ae5f41f2bda018903682"
+      ],
+      "reason": "The change words the worktree-group mismatch refusal with the master and the two recorded locations; the card's account of the validation still holds because the refusal still fails closed.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F636N5",
+      "items": [
+        "sha256:f9372188370fec9d9714fe77e744b32ae028ad635800d87bafa22415d0f30a03"
+      ],
+      "reason": "The changed line adds the abandonedCount field to the helper's fixture; the card's account of the helper still holds.",
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/test-utils.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FKZM91",
+      "items": [
+        "sha256:c61d8bb86901f06d9d5c9d9d4a1194aedee773cae73671e1284af2395c2e40d5"
+      ],
+      "reason": "The change carries the product's missing-commanded-master wording into the refusal; the card's account of the candidate scope still holds because the refusal stays bounded to its type otherwise.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FXVS7Z",
+      "items": [
+        "sha256:dd8a6e032982953b566227d57c9c9b0f682cd05fe42e66842db68dab39cd0ba7"
+      ],
+      "reason": "The changed lines add the abandonedCount field to the case fixture; the card's account of the case still holds because the progress rule is stated where it is implemented.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9ce7740f85e7f3960b8ffa126ace2ca2c770e244",
+            "content": "sha256:d730f90ae40fc73eb78b6d52e5b6c1bc275f198d10ba113f68558f0cfdd7800d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remove_abandoned_temps"
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YW24RV"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-G6W7EW",
+      "items": [],
+      "reason": "Scope and realization explicitly preserve deliberate Windows omission and uncertain process probes.",
+      "revision": 1,
+      "subject": "INV-9YJV7Z"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GGD43P",
+      "items": [
+        "sha256:bd758e25a35ec2fb1157e65be0e2ca01f5894d22838a7312078e474edd2d32c6"
+      ],
+      "reason": "The change adds the abandonedCount to the projected series figure and rewords the figure's docstring; the card's account of the projection still holds because the count and the reworded sentence state the same rule.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GQWFA6",
+      "items": [
+        "sha256:7ece27db7debe9d678b3fa7c0505449e4281d08f1e750af00ad9532886d68db5"
+      ],
+      "reason": "The change routes the payload test through payload_is_sprint; the card's account of the queue snapshot still holds because the sprint rule is shared.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GQYGJK",
+      "items": [
+        "sha256:437da6521e8f8bf28b4fea75b175e4ab646d6655d1f345401bd5adbba412f9ca"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:437da6521e8f8bf28b4fea75b175e4ab646d6655d1f345401bd5adbba412f9ca"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GYCWQ1",
+      "items": [
+        "sha256:662584bc41d38a42127cbd79d8eb656fec365d915c8c996746d6693315927b48"
+      ],
+      "reason": "The generated schema adds abandonedCount and its description. Its companion covers generated projection ownership, not abandoned-count rendering; the progress card owns that behavior.",
+      "subject": "onboarding:dashboard/src/types/projection.schema.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H2YZ5W",
+      "items": [
+        "sha256:16db9e9eb3e19c278086b3035106d4bdea287a4c37b80e3e760a47642bf1bb36"
+      ],
+      "reason": "An import line that brings the computed series_abandoned helper into the projection; the figure rule is stated on the series projection entry.",
+      "subject": "hunk:sha256:16db9e9eb3e19c278086b3035106d4bdea287a4c37b80e3e760a47642bf1bb36"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HVHZR1",
+      "items": [
+        "sha256:327bb75a50595941c065e713a7df6140b699b4d0cf448aa97a6c1410502967a3"
+      ],
+      "reason": "The change carries the product's missing-commanded-master wording into the queue's bounded problem text and skips abandoned rows; the card's account of the projection still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HWABQN",
+      "items": [
+        "sha256:036578394713d6bee9868618e34180320ae20c0a621419a86cdcc9eebe0f1803"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:036578394713d6bee9868618e34180320ae20c0a621419a86cdcc9eebe0f1803"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JG1PG3",
+      "items": [
+        "sha256:98c7834f43bd216b7039907d982e0eab63d5c8ddcce04a3070f5152e433a3211"
+      ],
+      "reason": "The change delegates the reopen row guard to reopen_row_guard.require_reopenable_row; the card's account of the reopen flow still holds because the guard is stated on its owner.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/reopen.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JPH4VP",
+      "items": [
+        "sha256:68ea4ffe41f0e10de31ad91acac5251fc3f96912c6e49194e381840dc6fca60d"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:68ea4ffe41f0e10de31ad91acac5251fc3f96912c6e49194e381840dc6fca60d"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-JQ9WDN",
+      "items": [],
+      "reason": "The sealed MR1-K01/T02 source-backed review shows this is a repaired negative or historical measurement, not a continuing obligation. Preserve its record and original producer evidence; remove current realizations/proofs. No current full-suite outcome or resolution of the historical process-order interaction is inferred.",
+      "revision": 1,
+      "subject": "INV-DJ27N9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KD4YVV",
+      "items": [
+        "sha256:34ca9c3c6cfa1770b924c42e92f21da616dcd82001d987a412a0c0c61ee095b8"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:34ca9c3c6cfa1770b924c42e92f21da616dcd82001d987a412a0c0c61ee095b8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KZR1CZ",
+      "items": [
+        "sha256:8f9894e41f5286757936680357644626bdd243d133ae14b89be5f23c6def5481"
+      ],
+      "reason": "A test renamed to the shared is_sprint predicate; the sprint rule is the guarantee and this line only reads it.",
+      "subject": "hunk:sha256:8f9894e41f5286757936680357644626bdd243d133ae14b89be5f23c6def5481"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:f437d15386e07f6e47e75ea3c2afdb9dc63ee0fbb0110e24a10a9d071bca5977",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "before": "absent",
+          "id": "PRF-RJEMEH"
+        },
+        {
+          "after": {
+            "blob": "2a6ff701f935e41e2e3ada07519a187dff1790d7",
+            "content": "sha256:f818235e44ba7642bb9563e33df1cb10010c190f7c45d0345a1fdb8e73fb3086",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_landed_abandoned_row_refuses_with_named_remedy"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "before": "absent",
+          "id": "PRF-W9J82X"
+        },
+        {
+          "after": {
+            "blob": "28474542e94120c54ab0f1ca2ebddee5c0027eab",
+            "content": "sha256:f36593638f68ebeaccf4eabbbc0a528fd178c561c8cef4faa97ed13672d8614a",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_leaf_documents"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NQE97Y"
+        },
+        {
+          "after": {
+            "blob": "28474542e94120c54ab0f1ca2ebddee5c0027eab",
+            "content": "sha256:0c062bcc31684874c616a517341608c857c5546e4bcb330098b7b205114394d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "exact_atomic_leaf_contracts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "before": "absent",
+          "id": "RLZ-WCN6PR"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-MQMG82",
+      "items": [],
+      "reason": "Non-abandoned document/enclosure population and exact static proof facets are reconciled; original producer data is unchanged.",
+      "revision": 1,
+      "subject": "INV-B9EZM6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N2V0BQ",
+      "items": [
+        "sha256:be1d1e098b7c11a753bca40e61c12d4925d354be992b8feebcb0ce5f4caa4851"
+      ],
+      "reason": "The changed line adds the abandonedCount field to the test helper's series fixture; the card's account of the helper still holds.",
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N63F6Y",
+      "items": [
+        "sha256:d5a27c2b84ee1a26917e4b192da1e8d0b01269a85cb528f6752c9625416b585d"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:d5a27c2b84ee1a26917e4b192da1e8d0b01269a85cb528f6752c9625416b585d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N80Q6K",
+      "items": [
+        "sha256:1ed824c13a45181bbda3a477c24940c8b97c03aa4449063a38731bba6edbfd57"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:1ed824c13a45181bbda3a477c24940c8b97c03aa4449063a38731bba6edbfd57"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N8XQNC",
+      "items": [],
+      "reason": ".claude/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.claude/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NE30CS",
+      "items": [
+        "sha256:baf3cc54bddaa294c90a670f9b3686c3329904ae28f47a772cfa1ed39baf6355"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:baf3cc54bddaa294c90a670f9b3686c3329904ae28f47a772cfa1ed39baf6355"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P53F8G",
+      "items": [
+        "sha256:64aa8f45cdb9a7834f0da165a06900e1c888e980f25bc4cad861c64113680e9d"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:64aa8f45cdb9a7834f0da165a06900e1c888e980f25bc4cad861c64113680e9d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PC0QMG",
+      "items": [
+        "sha256:eab2c68a72bad2aae80a57dc92cbd48d204a1d1f0768b0d6a971c8402939aefc"
+      ],
+      "reason": "A test renamed to the shared is_sprint predicate; the sprint rule is the guarantee and this line only reads it.",
+      "subject": "hunk:sha256:eab2c68a72bad2aae80a57dc92cbd48d204a1d1f0768b0d6a971c8402939aefc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PF6XTZ",
+      "items": [
+        "sha256:68762c05bcb19b046f9e7c404c800cd7e7b1e70901fa1e50cba335439149feb2"
+      ],
+      "reason": "The change adds the abandonedCount field to the projected series figure; the card's account of the projector still holds because the count is derived from the same rows.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-Q1XHEE",
+      "items": [],
+      "reason": "These realizations (RLZ-6CFA2A) are inherited L90/L70 historical dispositions, not L41-origin, and no typed retirement of them ever occurred. During this leaf's orphan-sidecar cleanup the six sidecars holding them were removed by mistake; they were then restored byte-for-byte from memory base 41e4af2b, so the realization set and the invariant record are exactly as they were before this leaf and nothing about the record changed.",
+      "revision": 1,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QCZ3BP",
+      "items": [
+        "sha256:345f4094b9a0ad59e64349c640537052c2e9c61463764a420b0fc0d2b8967f30"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:345f4094b9a0ad59e64349c640537052c2e9c61463764a420b0fc0d2b8967f30"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QJW6MF",
+      "items": [
+        "sha256:f28593ef0f2f5f51ccb3ec05d4a67f1a70e39161cc19f3a621e909cce7e8c6eb"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:f28593ef0f2f5f51ccb3ec05d4a67f1a70e39161cc19f3a621e909cce7e8c6eb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RQYS79",
+      "items": [
+        "sha256:5d90b5c3644e3f67147f96b79130fa996de6dd62ffba759df8fab42e223c309e"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:5d90b5c3644e3f67147f96b79130fa996de6dd62ffba759df8fab42e223c309e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SATWZD",
+      "items": [
+        "sha256:d2ee876a37019fa2672996b6497b907f342f5ea526bda0575409004871e94d03"
+      ],
+      "reason": "The change routes the payload test through payload_is_sprint; the card's account of the scaffolding still holds because the sprint rule is the shared one.",
+      "subject": "onboarding:mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-SCDGMK",
+      "items": [],
+      "reason": "This leaf makes no change to current baseline revision2: launch flags and the prepared-start closing-mark/startRefused exception retain the incoming meaning, and a finished turn still establishes no AR or Git acceptance. Earlier sidecar deletion/restoration and revision1 clarification are dated history, not an L41-origin retirement or change to this inherited invariant. Refresh only this leaf owned row to the stored revision2.",
+      "revision": 2,
+      "subject": "INV-4E130M"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SETGF5",
+      "items": [
+        "sha256:3075a8b37044c964811599b1b9ff95a08843b93c3735772887108779d1678727"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:3075a8b37044c964811599b1b9ff95a08843b93c3735772887108779d1678727"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SYBE3K",
+      "items": [],
+      "reason": ".openclaw/workspace/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T82D26",
+      "items": [
+        "sha256:0e9e6c7e4819c2d994e0400a5063ef7a2612739978f2516bf04475c22641748b"
+      ],
+      "reason": "The change routes the payload test through payload_is_sprint; the card's account of the queue snapshot still holds because the sprint rule is shared.",
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-H88VNZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-SS31ZW",
+          "revision": 1
+        },
+        {
+          "id": "INV-T4G7VY",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-TE4FP0",
+      "items": [],
+      "reason": "Re-examined the exact three publication/protection/recovery members against current admission and publication states. Correct the former no-second-sprint-edit promise to distinguish interrupted sprint-pair repair from post-archive cleanup, retain all three exact member identities, and keep the existing application/task_docs route.",
+      "subject": "FAM-HBNM5A"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TF3EA4",
+      "items": [
+        "sha256:2da4a2bb5e95305b53008b4a23783575b412863f116f787e30d4cf4a987b66c8"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:2da4a2bb5e95305b53008b4a23783575b412863f116f787e30d4cf4a987b66c8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TR67ME",
+      "items": [
+        "sha256:5a0a01d875bd0391856d93193837da066a44112c6a86f4c18a2091ba86ab6734"
+      ],
+      "reason": "The changed line adds the abandonedCount field to the sample payload; the card's account of the fixture still holds because the sample mirrors the projection schema.",
+      "subject": "onboarding:dashboard/src/fixtures/snapshot.json"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-VFR6SN",
+      "items": [],
+      "reason": "The sealed MR1-K01/T02 source-backed review shows this is a repaired negative or historical measurement, not a continuing obligation. Preserve its record and original producer evidence; remove current realizations/proofs. No current full-suite outcome or resolution of the historical process-order interaction is inferred.",
+      "revision": 1,
+      "subject": "INV-61C8NM"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-B9EZM6",
+          "revision": 1
+        },
+        {
+          "id": "INV-E20AY2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YZVCB8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-VFVPC7",
+      "items": [],
+      "reason": "Examine each of the exact atomic-closeout, organizational-transition and finalization members; these distinct completion owners support one joint guarantee, unlike the retired mixed retirement roster.",
+      "subject": "FAM-E5BHSB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VJ0VFD",
+      "items": [],
+      "reason": "skills/c-12-closeout/SKILL.md is the canonical skill source and lies outside the onboarding path rules, so it has no card. Its byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text it carries.",
+      "subject": "onboarding:skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-VN6PEB",
+      "items": [],
+      "reason": "The sealed MR1-K01/T02 source-backed review shows this is a repaired negative or historical measurement, not a continuing obligation. Preserve its record and original producer evidence; remove current realizations/proofs. No current full-suite outcome or resolution of the historical process-order interaction is inferred.",
+      "revision": 1,
+      "subject": "INV-3YSSTZ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "49a8f5adf35a4de7ffcb5d682e53bdfb77081c1e",
+            "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unreadable_other_members"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "before": "absent",
+          "id": "RLZ-BKPGCV"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-WH6V5P",
+      "items": [],
+      "reason": "Canonical identity is an admission prerequisite; only the temporary validation view omits proven unreadable siblings.",
+      "revision": 1,
+      "subject": "INV-T1ZJXG"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-XE9DC5",
+      "items": [],
+      "reason": "The sealed MR1-K01/T02 source-backed review shows this is a repaired negative or historical measurement, not a continuing obligation. Preserve its record and original producer evidence; remove current realizations/proofs. No current full-suite outcome or resolution of the historical process-order interaction is inferred.",
+      "revision": 1,
+      "subject": "INV-4GQZ9S"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XSEAEY",
+      "items": [
+        "sha256:60d6bb423b63ec12bdcaf83a5869755c6f81bd5db88ad4bb0b55618181249363"
+      ],
+      "reason": "The new case checks abandoned-row exclusion and separate rendering; the existing companion covers hierarchy, grouping and collapse, not this added progress case.",
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YEA1W2",
+      "items": [
+        "sha256:c82f2b4f060c6b61dcb3842a1242d69141dd9ec8323f6fae168fb52a2a5b5925"
+      ],
+      "reason": "The change makes childIntents accept an empty list for a master whose rows are all abandoned without documents; the card's account of the review scope still holds because the route review scope answer names the empty child case.",
+      "subject": "onboarding:mcp/src/agents_remember/tasks/route_review.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YWCRCT",
+      "items": [
+        "sha256:700f57c930ecae368bb45639dc35847fc4075677aac06a193f940f3be37414c6"
+      ],
+      "reason": "The change adds the abandonedCount field to the projected series figure; the card's account of the projector still holds because the count is derived from the same rows.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/projection.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:46db94ef547308854b03877697574e2f157a31789076ae35e22903608f8117e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_interrupted_request_resumes_from_typed_row_and_rejects_changed_request"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": "absent",
+          "id": "PRF-48V22G"
+        },
+        {
+          "after": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:fa8ceca456839eb5f72b79f02ab411a8f6d914e0382c59da4ca6e5525a029cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_with_a_mismatched_namespace_is_refused_without_changes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": "absent",
+          "id": "PRF-5CQGMS"
+        },
+        {
+          "after": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:526e0be026f6749188ddaca59187f01e036dbceaa13806b71514b401223d4f18",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_lone_master_partial_hook_failure_keeps_the_retirement_and_retries_cleanup_only"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": "absent",
+          "id": "PRF-CNHZ7D"
+        },
+        {
+          "after": {
+            "blob": "13e509a1530bb1f7c9c14f0e91422e22439a33ae",
+            "content": "sha256:4fa48af8807cc70e8001bb0e8e2b75fe159494d05fe0ae3ef81c2d969bbfe535",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_archive_hook_failure_is_truthful_and_same_request_can_retry"
+            },
+            "path": "mcp/tests/test_master_retirement.py"
+          },
+          "before": "absent",
+          "id": "PRF-N1EWSM"
+        },
+        {
+          "after": {
+            "blob": "696c860736facea9bd3f17d67d95f3a2608465c1",
+            "content": "sha256:158038ed5cc76dee476012345c47d8811f6867ba5169ea322b694cd802ca7f47",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retry_with_other_edge_arguments_is_refused_without_changes"
+            },
+            "path": "mcp/tests/test_standalone_master_retirement.py"
+          },
+          "before": "absent",
+          "id": "PRF-YWVZ7Q"
+        },
+        {
+          "after": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:feb831cade98c724ded5fa5ef7e62f6c0c1fb801d7f3de4f6e527c0058f053b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clean_up"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "before": "absent",
+          "id": "RLZ-16EEHX"
+        },
+        {
+          "after": {
+            "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+            "content": "sha256:6da45b3e93df2ddd7452fdd635f89268ca6dbdc10e9905ef8576848c2ac3653c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admit_recorded_on_sprint"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+          },
+          "before": "absent",
+          "id": "RLZ-HR1NA3"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-Z14HBC",
+      "items": [],
+      "reason": "Replace removed helper bindings with actual recorded-state admission and cleanup ownership, retaining original evidence and exact proof identities.",
+      "revision": 1,
+      "subject": "INV-SS31ZW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Z857DH",
+      "items": [
+        "sha256:0e8ac942aeb6fa4d6df9fd2da7b5b5d0e6f1e13b970a7b3a132e8472daff9459"
+      ],
+      "reason": "This bounded catalog hunk registers the leaf test module or consumer/lane membership. Catalog rows and counts remain source-computed; the registration changes no product obligation or new constant policy.",
+      "subject": "hunk:sha256:0e8ac942aeb6fa4d6df9fd2da7b5b5d0e6f1e13b970a7b3a132e8472daff9459"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZSGNG6",
+      "items": [],
+      "reason": ".hermes/skills/c-12-closeout/SKILL.md is a generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py) and is byte-identical to it; it lies outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and its card describes the abandoned-row, finalization and retire_master text this copy carries.",
+      "subject": "onboarding:.hermes/skills/c-12-closeout/SKILL.md"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

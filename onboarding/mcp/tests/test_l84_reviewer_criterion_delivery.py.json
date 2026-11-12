@@ -1,0 +1,88 @@
+{
+  "path": "mcp/tests/test_l84_reviewer_criterion_delivery.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module states its fixture doubles and its delivery-only limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66b9214feb7f4c3af19805e13edeb0f5c702ac80",
+            "content": "sha256:1d3a8596f407875eda4c2b9055f9e5e779bf2e5a30e3f1d92b60489cb2b2d920",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The filed intake is reached by pointer, digest-checked and carries copied attachments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66b9214feb7f4c3af19805e13edeb0f5c702ac80",
+            "content": "sha256:c2b5bad4f649c59c5f96eb3ed278b1ff47bcb3740ead15ae3e51583bd850b0c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_filed_intake"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Manager is started publicly and its binding matches its receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66b9214feb7f4c3af19805e13edeb0f5c702ac80",
+            "content": "sha256:d46f5c15a43d4a2e3b9878ff96ab9d1ccb3e15985453a8461012181f91b695d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_manager"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The public set starter runs the Worker and holds the Reviewer and Curator seats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66b9214feb7f4c3af19805e13edeb0f5c702ac80",
+            "content": "sha256:3a0fd4d43487e1a7524ebede4e548c1df39147aad92cb444f62f99c473a59896",
+            "locator": {
+              "kind": "symbol",
+              "name": "_held_leaf_set"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The criterion-bound intake opens the held Reviewer seat before first inspection and mutants fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66b9214feb7f4c3af19805e13edeb0f5c702ac80",
+            "content": "sha256:db9a5f162854f92aacfbc829824b8efab806882b3a2b64dc1e32c8ccd1013dac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_public_set_delivers_caller_bound_criterion_intake_before_first_inspection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

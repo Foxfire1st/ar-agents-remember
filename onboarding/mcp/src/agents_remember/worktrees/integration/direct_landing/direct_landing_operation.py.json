@@ -1,0 +1,194 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_operation.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+        "content": "sha256:0ba071bb133b1efea24e7aa7e020f44ec4784642f1c05f8f726e3914d3bb630e",
+        "locator": {
+          "kind": "symbol",
+          "name": "direct_landing_record"
+        }
+      },
+      "id": "RLZ-CZKMQX",
+      "invariant": "INV-NQKEQS",
+      "origin": {
+        "handoffEntry": "L94-CODE-F01",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Builds the journal snapshot for one exact direct-landing request: it carries the bound leaf, the code input/message/tree/ref with the pre-publication snapshot, and the memory intent, and it carries no door publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+        "content": "sha256:c347fd9b4616a265d5d711201c5b4bee47f034b085f8f857d6625d927df14451",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FH0PER",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Completed direct-landing generations produce identity-bound landed intents through the native operation journal.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The runtime validates and publishes progress, completion, and input-required evidence.\n\nAnchor: `progress` `DirectLandingRuntime`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:c347fd9b4616a265d5d711201c5b4bee47f034b085f8f857d6625d927df14451",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:956488f8dc63013823cc382f29e99620faf2aeb13ad40f37f0039b57afe4ad76",
+            "locator": {
+              "kind": "symbol",
+              "name": "progress"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:2f5b59f578f9fd465eee0ec4876aec975a0a1ca0cbb9400680e31e03fd2c85ce",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectLandingRuntime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Request-owned generation construction and memory-only output reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:0ba071bb133b1efea24e7aa7e020f44ec4784642f1c05f8f726e3914d3bb630e",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:f853db81e8449f4307df7499541fea82652e43cf55f293e1bdb70ca48a5805fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_direct_landing"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recovery cells are derived from authoritative mutation evidence.\n\nAnchor: \"from authoritative mutation evidence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:602aeaa5d20414a00d2d167049760ac518e399be2ca98da9a4ddabb9b179b63c",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_closeout_recovery_commits"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:7d1b568f8be2e9af2d8ef01d6596321e598fcace30947a0ee1a5dc40fda49b9d",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The classifier supplies exact memory output evidence.\n\nAnchor: `classify_direct_landing_recovery` `_memory_output_matches_evidence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:9b1be711413856f669c5da9654de698b337c63658bef588db1649feb0d3f1f0f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:ca537360d3319f5eecbae48a65fee2fe084e7f90085a43db8f171eb14755fa99",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_direct_landing_recovery"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:b3369a5356fa614b8514eef70e1f7d87b2a347d2827253682b1461312c573c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_output_matches_evidence"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The accepted create record stores input/policy and initial mutation evidence before branch publication, after provisional object creation; no full pre-code verdict fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f6614bd7c75fe2f4092edca1b8645a6631e496e",
+            "content": "sha256:0ba071bb133b1efea24e7aa7e020f44ec4784642f1c05f8f726e3914d3bb630e",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_landing_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

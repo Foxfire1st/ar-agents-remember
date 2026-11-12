@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "An inherited polling override or automatic WSL selection would silently restore recursive scans of the task tree and reintroduce measured background load; the native owner test pins the explicit backend and real event delivery."
+  },
+  "applicability": "The live dashboard input watcher on the supported local native POSIX/ext4 coordination roots.",
+  "conditions": [
+    "After registration it performs no periodic recursive directory polling.",
+    "Existing domain filters, nested atomic-write delivery, root-set refresh, stop/drain and reported retry behavior remain."
+  ],
+  "exclusions": [
+    "Watcherless replay remains time-driven.",
+    "Unsupported mount/backend compatibility and new polling fallbacks are outside this obligation."
+  ],
+  "id": "INV-AD1MRN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R40-v2-reviewer-read-latency-on-git-trees.md rule 8 native watcher; background worker exact owner; exact post-B1 source notes/reports/260928-MIK-L40-worker-R2-evidence/final-2026-10-03/candidate-reader-post-b1.json sha256:ff7a5201d4ed37a6d2e109d9a8d3b9374adbd5f44009b7e7f686274ed218b6b2; independent R1/R2 plus notes/reports/260928-MIK-L40-review-R3.md (SHA-256 c9a9ea931c18de68182a0f1f12d57cc7e72d29358ed463328ce3d11ca3c988fd); phase-specific performance evidence remains pending"
+      ],
+      "path": "notes/reports/260928-MIK-L40-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L40-native-watcher",
+    "leaf": "260928-MIK-L40",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "On the supported local native POSIX/ext4 roots, use native events explicitly.",
+  "status": "proposed",
+  "supersedes": []
+}

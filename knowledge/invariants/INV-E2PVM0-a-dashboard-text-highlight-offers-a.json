@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The collection obligation spans the selection reader and offer control, with a mounted test proving highlight alone adds nothing."
+  },
+  "applicability": "Noncollapsed, nonblank text selected in a dashboard panel outside editable fields, the tray, its offer and iframes.",
+  "conditions": [
+    "Mouseup reads the finished selection and presents the non-modal add control.",
+    "Selection alone adds nothing; the click calls take with the selected text and panel provenance."
+  ],
+  "exclusions": [
+    "Editable selections, tray text and iframe chat text are handled outside this panel offer.",
+    "No automatic collection on highlight."
+  ],
+  "id": "INV-E2PVM0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Curator synthesis at A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, change sha256:936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; MIK-R188 v1 packet; source producer rows: MIK-R188@v1 rule 3 · panel highlight. Original producer inputs: role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596; role-reports/reviewer/ba078073-6b85-5233-8d65-cb6fbc7a2d44/round3/curator-handoff-list.json SHA-256 3d6fdce6235b4e08486515f77329985fe62b4397b644d60f325f706eb1ca9028. Tests named only as proof anchors; this helper ran no tests.",
+        "Curator-owned attachment projection only, separate from unchanged Worker280 and Reviewer54 producer data. A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, Cockpit.tsx blob e6f341599ab594a4a3b9a451a9ccdfec9b2ab411; full current invariant statement, applicability, conditions and exclusions read and retained verbatim. Reconciled against worklist-after-wave5.json and current sidecars; no tests, CLI, AR operation or memory write performed by this helper. MIK-R188 v1 rule3 panel highlight. Existing PRF-PWX176 proves click-only collection with panel provenance; it is preserved and not duplicated or claimed to test Cockpit shownPage branches."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "TRAY02",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A dashboard text highlight offers a passage pick after the drag ends; only the explicit add click collects it with its panel provenance.",
+  "status": "proposed",
+  "supersedes": []
+}

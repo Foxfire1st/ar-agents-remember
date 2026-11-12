@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/host_activity.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Boot and permission/terminal transitions.\n\nAnchor: host transitions preserve permission waits through turn end and individual resolutions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "content": "sha256:3cc180fc6d601a23745ec6933ad7c7daafd338e962722c609ec59a0881766bad",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pagination, failed listing, population bounds and hook names.\n\nAnchor: events during the full listing win; all pages are read and event time survives reconnect",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "content": "sha256:3bee247a91f3456105c48efa8b19546bef06c50bdb0e17fbab91a0f7758eef03",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 85
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "One file and turn-start age through permission/reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "content": "sha256:1929d95f87eacc442cd697d919909602fd7f1069ca8e9165993de2954a671882",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Controlled publisher assertions pin exact sibling IDs before archive and cap-induced incompleteness, followed by complete reconciliation and native removal; this file does not exercise Python retained inputs or a live host population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "content": "sha256:1a8ccf4efd29b28c827d08fb455aee830d6b0e99a82997e971c2ae64556f323b",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "25207ba888fc5c73284a02e966d71607802dfaf0",
+            "content": "sha256:59d639de4ee98b0d8b96f238144bdf551faade15dff76024c52d885452365294",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 223
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

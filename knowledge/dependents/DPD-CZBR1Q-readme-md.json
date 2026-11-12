@@ -1,0 +1,74 @@
+{
+  "confirmed": {
+    "codeTree": "dbdeb04197e5773b81709fd4a31a61049f93384e",
+    "commit": "a7c6d8996797c2378e658ee459f9b95f7c77c0fc",
+    "role": "curator",
+    "statement": "I confirmed the record's content against the changed README.md and the code it stands on at the L36 freeze tree in this session; the page's version sentence and every linked file were checked, and every link resolves at that tree.",
+    "task": "260928-MIK-L36",
+    "uncommitted": true
+  },
+  "document": "README.md",
+  "id": "DPD-CZBR1Q",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-README-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    },
+    {
+      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+    },
+    {
+      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+    },
+    {
+      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "blob": "181c81f78275cfbda8aad2b96e8db82ddfacf341",
+      "kind": "file",
+      "path": "scripts/python-runtime-contract.env"
+    },
+    {
+      "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+    },
+    {
+      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    },
+    {
+      "blob": "026b25cfc0f0c7c01ed4aeebd60f00747b7b7c52",
+      "kind": "file",
+      "path": "docs/tool-details.md"
+    },
+    {
+      "blob": "0d22e8881af6762091dbd844fb1d2b99a6a80685",
+      "kind": "file",
+      "path": "docs/install/cursor.md"
+    }
+  ]
+}

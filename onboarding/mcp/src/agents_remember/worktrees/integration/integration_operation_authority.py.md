@@ -2,14 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
 
 The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
@@ -41,37 +34,21 @@ The retained WorktreeArgs parameter is not an alternate authority source. This m
 
 No new file-local follow-up is identified by this source reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Final output authority is the contract's exact accepted pair. | L9-L30 | [mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py](mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py) |
-| Source and ref proof remain at the prepared movement boundary. | L103-L160; L253-L283 | [mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py](mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py) |
+- Final output authority is the contract's exact accepted pair. [1]
 
-## Cross-Repo References
+- Source and ref proof remain at the prepared movement boundary. [2]
+
+
+### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-
-## Update History
-
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Reduced exact candidate comparison to code and actual memory output; removed the retired ledger-commit member while preserving mismatch refusal. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
-- 2026-09-11T23:05:00+00:00: Repaired three claims against the current source. The card claimed a journaled operation admission (`require_plane_integration_operation`) binding the requested key to one durable authority record and a stored source-tip revalidation (`require_current_integration_sources`); both functions are deleted, the module is now the 31-line `require_authorized_integration_commits` that compares the landing output with the contract's recorded closeout commits, and the moved-source refusal lives in the pure-Git replay requirements of `prepare_integration_ref_move`.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/worktrees/integration/integration_operation_authority.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: created durable integration-operation proof onboarding from the frozen integration-authority candidate. Verification remains closeout-owned.

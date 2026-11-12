@@ -1,18 +1,12 @@
 # mcp/src/agents_remember/providers/cgc/setup.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/cgc/setup.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                              |
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
-`setup.py` owns provider-level CodeGraphContext setup orchestration and isolated worktree settings generation.
+`setup.py` retains CodeGraphContext setup helpers and isolated worktree settings generation. Ordinary provider install and preparation are disabled by the shared retired-provider gate.
 
 ## Code Commentary
 
@@ -21,27 +15,31 @@
 Every `run_lifecycle(...)` call now passes a `setup_common.LifecycleCommand(provider=…, action=…,
 extra_args=…)` in place of the positional `provider`/`action` plus the `extra_args=` keyword;
 `timeout` and `dry_run` stay keywords. `extra_args` is a tuple (`tuple(cgc_extra_args(args))`)
-because the command object is frozen. The argv the lifecycle CLI receives is unchanged.
+because the command object is frozen. The argv is still built the same way (setup_common.py:186-229). Its former receiver, the provider lifecycle CLI, no longer exists: providers/lifecycle/ has no __main__.py and binds no main, which the non-dry branch still requests (setup_common.py:218). With both providers retired, that branch is not reached.
 
 ### Logic
 
 It defines `IsolatedCgcOptions`, builds isolated CGC settings for worktree
-provider runtimes, writes those settings when requested, runs `cgc install-all`,
-and runs CGC prepare by attempting seed first and then refresh fallback when
-allowed. Isolated CGC watcher logs are written under the workflow-local central
+provider runtimes, and writes those settings when requested.
+`install_enabled_provider` and `prepare_enabled_provider` first call
+`selected_provider_enabled`, which always returns false for
+`codegraphcontext-code`; both return an empty result before installation, seed
+or progress announcement. The retained code behind that gate describes the
+former install-all and seed/fallback request flow, not an enabled product setup.
+Isolated CGC watcher logs are written under the workflow-local central
 `logs/providers/codegraphcontext/<instance>/<repoId>/watch.log` tree. Isolated
 settings do not emit `venvRoot`; worktree CGC execution stays Docker-runner
 owned. The provider sub-settings lookup uses the shared
 `provider_settings(settings, CGC_PROVIDER_ID)` helper from `setup_common`; the
 former local `_cgc_provider`/`context_providers` wrapper was removed.
 
-Setup phases announce through `setup_progress_from(args)` (GitHub #53):
-`install-all`, `seed`, and — the headline — `_refresh_after_seed(args, seed,
-progress)` announces `refresh-all` with `seed_fallback={active, reason}`
-BEFORE the reindex runs, because a refused seed changes the expected duration
-from ~1 minute to N minutes and the reindex emits nothing observable.
-`_seed_failure_reason` derives the reason from the seed result (`reason`,
-else `stage`).
+The retained request branches use `setup_progress_from(args)` for
+`install-all` and `seed`. If `_refresh_after_seed` is called directly with a
+failed seed and explicit `cgc_refresh_fallback`, it announces `refresh-all` with
+`seed_fallback={active, reason}` before constructing the lifecycle request.
+`_seed_failure_reason` derives the reason from the seed result (`reason`, else
+`stage`). Neither these announcements nor the request object establish an
+available refresh operation or bypass the ordinary enablement gate.
 
 ### Invariants And Boundaries
 
@@ -51,27 +49,13 @@ else `stage`).
 - Isolated CGC settings must not introduce host venv or executable install
   fields into the main coordination root.
 - Seed orchestration and bundle rewriting live in `seed.py` and `bundle.py`; this file keeps provider-level setup flow only.
-- A successful seed skips refresh with an explicit skipped result; a failed seed falls back to refresh only when `cgc_refresh_fallback` is enabled.
+- The retained `_refresh_after_seed` helper returns a skipped result for successful seed, constructs a `refresh-all` request only for explicit `cgc_refresh_fallback`, and otherwise reports a disabled fallback. This request construction does not restore the removed refresh operation.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The provider setup facade dispatches CGC install and preparation through this module. | "def install_enabled_providers" | mcp/src/agents_remember/providers/provider_setup.py:210-210 |
-| CGC seed orchestration lives in the seed module. | "def cgc_seed_bundle" | mcp/src/agents_remember/providers/cgc/seed.py:211-211 |
-| CGC lifecycle install and refresh commands are dispatched through the lifecycle facade. | `__getattr__` | mcp/src/agents_remember/providers/cgc/lifecycle/__init__.py:20-27 |
+### Repo-Internal References
 
-## Update History
+- The setup entry points return no CGC install or preparation work because their first selection check excludes the retired provider. [1]
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T20:42:26+02:00 — W2-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: call-site update for `run_lifecycle`'s new
-  `LifecycleCommand` signature. Same argv, same results. Verification metadata pinned until
-  closeout stamps the L2 commit.
-- 2026-06-10T07:30+02:00 — Install/seed/refresh phases announce through `setup_progress_from(args)` (GitHub #53). `_refresh_after_seed(args, seed, progress)` announces the fallback BEFORE the reindex runs, carrying `seed_fallback={active, reason}` — the single most important transition to surface, since a refused seed changes expected duration from ~1 minute to N minutes and the reindex emits nothing the orchestrator can see. `_seed_failure_reason` derives the reason from the seed result (`reason`, else `stage`).
-- 2026-05-31T12:50+02:00 — Removed local `_cgc_provider` helper; provider sub-settings now read via shared `provider_settings(settings, CGC_PROVIDER_ID)` from `setup_common` (import swapped from `context_providers`), behaviour-preserving; noted the helper source in Logic (1.0.0 review remediation).
-- 2026-05-28T13:40+02:00: Updated after isolated CGC settings stopped emitting `venvRoot`.
-- 2026-05-28T12:32+02:00: Updated after isolated CGC settings moved watcher logs under `logs/providers/`.
-- 2026-05-25T19:50+02:00: Created when CGC provider-level setup behavior was extracted out of `provider_setup.py`.
+- CGC seed orchestration lives in the seed module. [2]
+- The retained helper constructs a refresh request only behind its explicit fallback switch; that construction is separate from current provider availability. [3]

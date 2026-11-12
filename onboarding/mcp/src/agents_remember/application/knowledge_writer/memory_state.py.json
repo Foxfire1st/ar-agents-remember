@@ -1,0 +1,295 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+        "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
+        "locator": {
+          "kind": "symbol",
+          "name": "load"
+        }
+      },
+      "id": "RLZ-37C6YX",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Loads writer_bases' validation_bases (HEAD, and MERGE_HEAD during a merge) into the state the writer validates with.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+        "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
+        "locator": {
+          "kind": "symbol",
+          "name": "history_target"
+        }
+      },
+      "id": "RLZ-T44AEA",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Chooses the file a leaf's rows go to: its latest attempt, and the next attempt once the latest is closed in the writer's base. A file closed only in the candidate stays the target, and the write refuses it by name.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+        "content": "sha256:a2395b54511ebd6053dc5994c21946a4ade91a4bbc946fb789c18acb68ad4fb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "MemoryState"
+        }
+      },
+      "id": "RLZ-WNE09J",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The writer's state carries the converted bases the produced tree is validated against, HEAD and during a merge MERGE_HEAD.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Who authors the operation, and whether a document names it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:4dfaad9e45c6ff3c960d14ed11483937b3c05b37f90e892b282d288b47de68b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "Owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The history file an owner writes: a leaf's latest attempt, or the next once the latest is closed in the writer's base, the memory worktree's HEAD.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:236642db2982595241c732e3f784105e83f865c26b7c32d6078107786a77f4d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The higher side's revision of a record a merge left unmerged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:2188eb4a780fe71e67a6752b27128cbb721c36bf77b223e652c8907f8e3a9efe",
+            "locator": {
+              "kind": "symbol",
+              "name": "merged_sides_revision"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:98908690330e3a35692f9c0bb713bdd9467044654aa4a3eeccbde1dd813475c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unmerged_stages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "A reopened leaf writes its next attempt, and its history is every file.\n\nAnchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Publication snapshots affected bytes; rollback verifies restoration and reports failures instead of promising unconditional atomicity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b529adeef96a62d38971e720e9f4169fc6929b31",
+            "content": "sha256:562aee8411aab85775a9d11047a275533203823f526520b026782d62b04557be",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_files"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/file_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b529adeef96a62d38971e720e9f4169fc6929b31",
+            "content": "sha256:e1bbe9e1a68eb294cb07129bdc59dc5ed22b871c2f2dc7299f91176792b80e1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_rollback"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/file_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The base is the memory worktree's `HEAD`, or its conversion when the candidate is converted and `HEAD` is not; a base that cannot be built is a named problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Every ID the tree holds, including history row IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:ce1e7420efa6a3c7891ef51c2457127074312dff5d3c3c4b0dd3ad2d5d797e71",
+            "locator": {
+              "kind": "symbol",
+              "name": "known_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Rerun ID reuse by origin.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:28b3fc95cdbb893b59686a47f7bf48c0425cf1d6242140502f451e7ac0f7c27d",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_by_origin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A record keeps its file unless a new slug renames it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:1f669d7feea5dbeb3cff2e275d1f04e2f5af342b826f6404dfe6235355c1f647",
+            "locator": {
+              "kind": "symbol",
+              "name": "put_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Entries this owner wrote for an invariant from a hand-off entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:b1f16b93b6865cb61f7e3871b7df161583dc3e5fe0a0c2c54b7a1616e86a738d",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_by_origin"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A record as the base holds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:45cc2b94b6500faf4a316a268483a4f4e8d320e33d6cfc827dafcf0149286758",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "An entry's anchor as the base holds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:07e9259706dd6623930d89b396120f99cbd927582e66a30b3ae4f01f1762f6cc",
+            "locator": {
+              "kind": "symbol",
+              "name": "base_entry_anchor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Memory publication delegates to the rollback-aware file owner.\n\nAnchor: `MemoryState.write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:c10d0bf5da41c75ed112aa9769e3ecbfc7a133641b6d3770609c22f4fd002ae5",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 476
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

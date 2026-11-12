@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Trusting an old completed descriptor as live could reuse an archived workspace, while discarding its identity would strand a reopened task; the hidden-replay regression guards both mistakes."
+  },
+  "applicability": "A completed task workspace creation replay absent from the host live refresh listing.",
+  "conditions": [
+    "The replay is captured before refresh clears the handle.",
+    "Only a found completed replay can supply a descriptor when refresh is null.",
+    "Its placement is validated before it supplies successor identity."
+  ],
+  "exclusions": [
+    "Treating the replay as a live workspace.",
+    "Using a missing fresh creation as successor authority.",
+    "Claims about other host disappearance causes."
+  ],
+  "id": "INV-DHYX3Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "evidence/sandbox-A001/hidden-replay-red.log; evidence/A02/focused.log; retained prelude-wrong-placement/archived-replay.json shows the old descriptor beside refreshed:null, and host-native behavior is explained in L169-freeze-A02.md."
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R169@v1-W4-hidden-replay",
+    "leaf": "260928-MIK-L169",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A completed creation replay hidden by the host's live-only refresh listing supplies only a successor identity, never evidence that the old workspace is live.",
+  "status": "proposed",
+  "supersedes": []
+}

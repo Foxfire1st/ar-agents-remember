@@ -1,0 +1,428 @@
+{
+  "path": "dashboard/src/test/wireFixtureGuard.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The header: seven one-token opt-outs, why three of them carry no assertion at all, what makes the sweep fail-closed, and the rule scopes.\n\nAnchor: \"as unknown as LifecycleProjection\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:03b8725b27766b3eae262bd6a4689ffc0d729cd27acab3227429afc701906257",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "`isCandidateForExcessCheck` — the four node kinds, which is the exact shape of gap 1.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:5210bf1bdd33d1f76b8a152b5bd3872e28e4c5bce9bb003e32ae412a9d8c16a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "isCandidateForExcessCheck"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "`directiveLines` + `DIRECTIVE` — suppressions read as comment trivia, not raw lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:d7e3b7204d6484b019cc3d4a09b7b33de0c06a3f8fde61ebf9a35ad2eb8780d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "directiveLines"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:09904e2ab0d73b87558887f82fa551c6bf2bf1983c00400470a0c2f9e3c6f0af",
+            "locator": {
+              "kind": "symbol",
+              "name": "DIRECTIVE"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "`excessPropertyVerdict` — undeclared properties, and the union blend no single member declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:57da3a1738c634d53cf373179ecbfff8539d70624a6078fddd5484f77b373172",
+            "locator": {
+              "kind": "symbol",
+              "name": "excessPropertyVerdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "`reconcileWithRegistry` — unregistered / spent / miscounted / unreasoned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:114909792405f49dde0a20cc2b4415fccc5827255d838fba729a6757cc78efd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcileWithRegistry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The registry, planted bypasses and vacuity checks this module deliberately does not own.\n\nAnchor: `SANCTIONED_WIRE_SITES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:8c574945484876085ce2c0a763e3e28e1c157d90bddede766c1192d225eb6e6d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a638463e5b64ab2206752784eae0cb1426ad8637",
+            "content": "sha256:5402c58fb9157f5c0f6f1cfe48c98da4fe05f9996a471b5d6577f8457181aae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "SANCTIONED_WIRE_SITES"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The current TaskEntry/TaskSummary pair illustrates why every union member is checked independently.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:2676eab498252894c4dd259864476e85018ca8cc75e55f1504a3856583ff3abd",
+            "locator": {
+              "end": 513,
+              "kind": "line_range",
+              "start": 494
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:b8e8aeb19a9db1aaff3be58de7dcb40ab4c0d47dcc5746109c9e140764475ea2",
+            "locator": {
+              "end": 680,
+              "kind": "line_range",
+              "start": 641
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:d8528ab7118305d925e7480c2b19902f8e8f39947002c7a357640fb406b14cff",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 361
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Gap 3, live: the first line is a \"Same-origin client for …\" header, not a `mirror of` marker, so nothing this module declares enters the vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:cb802f4cfac5fa4f802acc3d2f5821a61ce766c281c56aaf813ca34831835357",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangedFile"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Same, for the read-only files API client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:2e0a62fadcd51c893c2d319e5299680f2f937dd141a922df3b45a91a618870e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepoCatalogEntry"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Same, for the coordination-notes API client: the types it declares are `FolderEntry`, `NotesFolder` and `NoteContent`, under the same \"Same-origin client for …\" header.\n\nAnchor: `NoteEntry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "content": "sha256:1c5fce9a739883de864d730bfb7adbc295e64e474fba2f6be2c7719707abb03f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`WHAT THIS DOES NOT COVER`, items 1-5.\n\nAnchor: \"WHAT THIS DOES NOT COVER\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:af994e03936b14b21ced4609ea8f1d7b5177460e2a2b5c2d7632bd27104efcae",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Gap 5's answer: the call-site constraint the builders carry instead of the project-wide flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The scanned roots are all inside `dashboard/`; nothing outside this repository is read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:3d749a3bd1af25ed418d7774a2209c8c2c6cf0a8136d2bf4d524fc62aad15ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCANNED_ROOTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`MIRROR_MARKER`, `declaresItselfAMirror`, `isWireModule` — the discovered vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:49bbbd80a469a0bf47f5f425475e27526e64730af5ccb37716d6c2017becbee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MIRROR_MARKER"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:9cbd02f35fb2a2c735934928b210e031c756503bddb582931a0e73e3093e472d",
+            "locator": {
+              "kind": "symbol",
+              "name": "declaresItselfAMirror"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:c21aa521feee485646d51650a9982f1c6b7faf97f295b6a5c62994958d640868",
+            "locator": {
+              "kind": "symbol",
+              "name": "isWireModule"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`isFixtureSurface` — the surface rules 2-5 are strict on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:bfd215215fadf859c32fbce793a6edf12e0b518a69b7c139241025a43677cff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "isFixtureSurface"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`GUARD_COMPILER_OPTIONS` (strict, bundler, `resolveJsonModule`, and no `exactOptionalPropertyTypes`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:0c1963e5cd5a238d452bac7b1ed7c6deadd83bafbf1164e771793307a2c6165b",
+            "locator": {
+              "kind": "symbol",
+              "name": "GUARD_COMPILER_OPTIONS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`buildProgramWithVirtualFiles`, including the `directoryExists` override without which a two-module planted case silently degrades to `any`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:8ecca33cdfb7e0b823d4923484faf52c8b455c7c8c5b93334df94dc82f59e9c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildProgramWithVirtualFiles"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`mentionedByTypeNode` / `mentionedByType`, and `UNRESOLVED` as a finding rather than a skip.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:aec706fd6941ffaefb8a1e7b84ca98e2e7ddfd9e77cc966d31a94bd59bceea53",
+            "locator": {
+              "kind": "symbol",
+              "name": "mentionedByTypeNode"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:17e06b69bf1a2f85fa0f7f3daa6edb67d6d805b795012a31b445ff6d29982d30",
+            "locator": {
+              "kind": "symbol",
+              "name": "mentionedByType"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:e02877d7b4b156ca1cb5d048ee126e86bc1eb1a67fc2d56d322a67c650a7d248",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNRESOLVED"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "`wireSlotTarget` answering a union with every member, with the current `TaskEntry | TaskSummary` worked example.\n\nAnchor: current union-slot example and implementation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:e78676eabc731a146b0ae29909de21362e8527f6e0785fbf6c72ab758eba2b1f",
+            "locator": {
+              "end": 394,
+              "kind": "line_range",
+              "start": 355
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`collectWireFixtureFindings` — the five rules, and the fresh-literal exception that keeps rule 4 from second-guessing `tsc`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:18bc516d082e4191214ef67a5850700280733efa468b9781879757ed5dfe0270",
+            "locator": {
+              "kind": "symbol",
+              "name": "collectWireFixtureFindings"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

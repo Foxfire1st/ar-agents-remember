@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2680883fd95c1837bd963491dd5d403fb3d0a345",
+        "content": "sha256:09faebd052447eb518b0a7bbaccf6a843306822f4faffe3baaa7ca231e2c86d7",
+        "locator": {
+          "kind": "symbol",
+          "name": "never prints a zero for a series the server named no generation for (S8)"
+        }
+      },
+      "facet": "A degraded master answer (generation null, currentness unmeasured, zero counters) renders the unmeasured state with no numeric total and a disclosure that no base and no selected result resolved.",
+      "id": "PRF-SX2M2T",
+      "invariant": "INV-JH8ZHH",
+      "origin": {
+        "handoffEntry": "S8",
+        "leaf": "260928-MIK-L174"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The change-set bar suite retains the exact generation-bound master series entry and compact Intent review controls: a closed leaf's control supplies review: {} — the page's own default, which for a landed leaf is the delivered pair — and explicitly has no review-subject picker, even when knowledge is unavailable; a live leaf supplies the same review: {} and the closed one alone is labelled (recorded), leaving subject selection to the reviewer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2680883fd95c1837bd963491dd5d403fb3d0a345",
+            "content": "sha256:b65edf356648a3b01d323b907afbc7cfa0dd9679b31996739bf214add5cc2548",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2680883fd95c1837bd963491dd5d403fb3d0a345",
+            "content": "sha256:2e9cc8ff936192a98c7a33b611b1de7b9357f79c2d06b6a8fa3e9fe80be910a0",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 414
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

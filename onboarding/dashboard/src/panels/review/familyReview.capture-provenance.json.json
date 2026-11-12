@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/familyReview.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "8": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aea6487df46d25fceb274a98168910b707ad46ba",
+            "content": "sha256:1300cba0ab6439a4b5dca4604994ac5a0d613c31d7f96fcbbae6301c0074f0d8",
+            "locator": {
+              "end": 1558,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

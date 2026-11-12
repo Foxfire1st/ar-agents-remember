@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/gate_five_rails.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Catalog-to-rail projection and deterministic order",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26719c5d7e9c988756b79b55e18927f26b99b5f3",
+            "content": "sha256:1b5e7022478bfff5aae2d76959a79b90f7660353b9b6d7d05928354f14aac909",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_five_memory_rails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Configuration digest binds catalog and registry",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26719c5d7e9c988756b79b55e18927f26b99b5f3",
+            "content": "sha256:72724bbe1f308bb3070031eeb8136116747191b6b0f2246259fd383ac9768b2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_catalog_configuration_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

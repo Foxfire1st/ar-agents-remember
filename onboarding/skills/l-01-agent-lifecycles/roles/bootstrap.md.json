@@ -1,0 +1,146 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-1QG7S9",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "bootstrap receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3QBDFJ",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/bootstrap.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9KEEX4",
+      "invariant": "INV-CZV6J3",
+      "origin": {
+        "handoffEntry": "L188-B10",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The governing role bounds Bootstrap to setup and a user-started Architect handover.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+        "content": "sha256:11994559aec49ff91c037d4b276c7870c355754696cf062692a875802ca61d3f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DR3798",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Always-on role text whose tool-involving pointers now name their tool.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Bootstrap sends no role messages: it writes a developer question in its own reply and ends the turn. Its one report states its exact path on the first line, and it reads and reports the foundation state without authoring knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:7b8d340a98eb0b9052c3424ad3724e50c6a2ffb13b4c652870ab7352a5a30fd2",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:6ecfc010da88268e8f8db34b32a17fd822a5ce6a658660a9e60655d9c4d275b5",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:dd2ab5407d960755a08062f3d9701c82f06386bbc098fee4fd1b596ea1a42244",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:269e6e485ca98e685afebb7785a4d1c8e6d3e39361f5bac9e8ba1c9d2976f358",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Bootstrap reads through `context_packet`, `server_info` and `read_ar_files`, and is forbidden `retire_child` and the other lifecycle tools beyond its setup surfaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+            "content": "sha256:6209a4125f593ecbfc2b6178c68fd02f9fdebbdc4b37708dc9cff2d1657f0233",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

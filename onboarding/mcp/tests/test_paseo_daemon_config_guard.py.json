@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_paseo_daemon_config_guard.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aaaa54e3b2cefb49ad185963035715e8f5d21734",
+        "content": "sha256:8f14e4138387551d569fb5119c9135c670f3273328e93403ce9ab08aa71ce6a2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NNDW1G",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The guard case holds the refusal path of the injected read, so the boundary's behaviour is asserted where the port is exercised.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "aaaa54e3b2cefb49ad185963035715e8f5d21734",
+        "content": "sha256:8f14e4138387551d569fb5119c9135c670f3273328e93403ce9ab08aa71ce6a2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-S01H09",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "INV-0TCWT9",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The guard's two routes are asserted in this case.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

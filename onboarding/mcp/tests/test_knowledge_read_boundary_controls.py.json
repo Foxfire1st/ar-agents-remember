@@ -1,0 +1,83 @@
+{
+  "path": "mcp/tests/test_knowledge_read_boundary_controls.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A real unauthorized object write fails the oracle\n\nAnchor: `test_a_real_unauthorized_object_write_fails_the_oracle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Borrowed alternates answer to the same attribution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:1c7f9fce1147dea0e587a51f6fbaec0a1e391797d6a56e1b81b63b88323b26e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_borrowed_alternate_objects_answer_to_the_same_attribution"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Inside-root chain to outside lender is inventoried\n\nAnchor: `test_inside_root_chain_to_outside_lender_is_inventoried`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Refs are keyed by name, never collapsed\n\nAnchor: `test_refs_are_keyed_by_name_so_a_shared_object_never_collapses_two_refs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A moved pin fails, an attested pin passes\n\nAnchor: `test_a_moved_pin_is_a_finding_but_an_attested_pin_is_allowed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b018487eeba72cd5c2c9862327212c26d295d8fe",
+            "content": "sha256:4ae8e3e029ca21c2ec5e51ce35da971329c4f9821f0074d39544bd3b972c2cf7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

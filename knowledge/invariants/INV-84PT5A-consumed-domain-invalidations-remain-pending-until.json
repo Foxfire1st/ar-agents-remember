@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Invalidations passed by the pacer to the live projection worker. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Invalidations passed by the pacer to the live projection worker.",
+  "conditions": [
+    "Only a successful required refresh and publication acknowledges work.",
+    "Concurrent arrivals and drained cancellation remain pending."
+  ],
+  "exclusions": [
+    "Watcherless replay retains its own cadence."
+  ],
+  "id": "INV-84PT5A",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_projection_failure_retry.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F06",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Consumed domain invalidations remain pending until required refresh and publication succeed, and merge with arrivals during work or rest.",
+  "status": "proposed",
+  "supersedes": []
+}

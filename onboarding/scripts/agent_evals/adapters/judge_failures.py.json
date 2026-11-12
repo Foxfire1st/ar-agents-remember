@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/adapters/judge_failures.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c481a4b65d0b0271f9f1110f928f72289959e5e6",
+        "content": "sha256:70888b19754961ad8f04b88098c84ccf726b2206fe84a9b0c544be3b9b45a6ef",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZGZV7K",
+      "invariant": "INV-JCSQVZ",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-execution",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It distinguishes native reader/context limits from a valid failed rubric verdict.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c481a4b65d0b0271f9f1110f928f72289959e5e6",
+            "content": "sha256:70888b19754961ad8f04b88098c84ccf726b2206fe84a9b0c544be3b9b45a6ef",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

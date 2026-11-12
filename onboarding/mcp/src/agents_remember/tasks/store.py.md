@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/store.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/tasks/store.py`   |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
@@ -17,6 +7,13 @@
 ## Purpose
 
 Read and write one or more task documents: the JSON is the source, the markdown a render.
+
+## Canonical task bytes in actual-read evidence
+
+`read_task_doc` reads JSON bytes once, records their digest/path through the generic source-read observer, including explicit absence and unreadable failure identities, and parses those same bytes after strict UTF-8 decode and the prior universal-newline normalization. There is one task reader and no opt-in observer or compatibility loader. Both maintenance-scope and declared-effects reads therefore contribute their consumed data to leaf-view identity validation, including conflicting repeated reads. JSON remains authoritative; writers, rollback and publishability behavior stay with their existing owners.
+
+
+- The canonical task parser records the original bytes it consumes. [7]
 
 ## Code Commentary
 
@@ -35,12 +32,17 @@ exception-failure rollback across roots, not a claim of multi-file crash atomici
 for a `light` **or `master`** document and `<slug>` for a `subTask`; `json_path_for` /
 `markdown_path_for` derive the sibling `.json` / `.md` paths in the task folder.
 
-Since 260831-CCR (commit `99dc249b`) the batch writer refuses to publish a document whose route
-review carries a missing or stale task intent: `_require_publishable_task_document` (line 221)
-runs on every document before the batch prepares target paths and calls
-`require_task_intent_identity(review.taskIntent, owner="route-review",
-next_action="record_route_review")` (line 225-227). A legacy review with no canonical identity can
-therefore no longer be written back to disk as current task truth.
+Before rendering, `write_task_doc_batch` builds an exact candidate JSON-path override map for the whole prepared batch. For an ordinary master (`kind == master` and not `is_sprint`) it calls `load_master_children` on explicit nonempty listed files, prefers matching prepared overrides, skips OSError/ValueError/ValidationError child failures, accepts only subTask children keyed by their id, and supplies `derive_master_order` to the renderer. Sprint/non-master documents receive no master Order. The derivation returns None unless a same-number listed subTask has a nonempty waitsFor; row status remains the authoritative Order status. This introduces named-child read cost, not a corpus census or waitsFor permission check. Prepared parent/child writes see candidate dependency bytes rather than stale disk data.
+
+> **Retained historical source account — superseded by the current contract:**
+> Since 260831-CCR (commit `99dc249b`) the batch writer refuses to publish a document whose route
+> review carries a missing or stale task intent: `_require_publishable_task_document` (line 221)
+> runs on every document before the batch prepares target paths and calls
+> `require_task_intent_identity(review.taskIntent, owner="route-review",
+> next_action="record_route_review")` (line 225-227). A legacy review with no canonical identity can
+> therefore no longer be written back to disk as current task truth.
+
+Current store gate: for a route-review-bearing document, `_require_publishable_task_document` calls `require_task_intent_identity` with owner `route-review` and next action `record_route_review`. This checks canonical identity presence/shape; it does not recompute current normative intent or compare against it. Missing canonical identity still blocks publication. Fresh-currentness belongs to the owners that compute/compare intent, not this store gate.
 
 ### Invariants And Boundaries
 
@@ -52,15 +54,36 @@ therefore no longer be written back to disk as current task truth.
 - A document carrying a route review without canonical task intent is not publishable; the store
   refuses before any file is touched.
 
-## Repo-Internal References
+## Publication rollback helper
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The model written/read. | `TaskDocument` | mcp/src/agents_remember/tasks/document.py:642-816 |
-| The renderer invoked on every write. | `render_markdown` | mcp/src/agents_remember/tasks/render.py:39-60 |
-| The application entry point uses batch writes when a leaf mutation also changes its parent master row. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:198-301 |
-| Publishability gate refusing legacy review intent. | `_require_publishable_task_document` | mcp/src/agents_remember/tasks/store.py:221-228 |
-| The shared identity rejection seam it calls. | `require_task_intent_identity` | mcp/src/agents_remember/models/task_intent/__init__.py:81-95 |
+`restore_task_doc_sources` restores an accepted JSON/Markdown source set when its derived-file publication fails, so a failed task-document copy refresh leaves canonical sources as they were.
+
+## Publication-time grant snapshot
+
+Markdown publication reads the external grant census once per batch and coordination-root/repository/task key, then reuses that batch-local value; the next batch reads again. Absent/unreadable display evidence does not block authoring. Grants are never serialized into canonical task JSON, and rendered Markdown is only a publication-time annotation snapshot, not direct permission. Exact JSON actual-read evidence, task-intent publishability and exception rollback stay intact; rollback is not crash atomicity.
+
+## Evidence
+
+### Repo-Internal References
+
+
+
+- The TaskDocument class is the JSON-primary schema the store serializes with aliases/exclude_none and reads through model_validate_json. [1]
+
+
+
+
+- Every prepared write renders Markdown from the candidate and supplied contexts; ordinary masters receive derived Order from explicit listed children and batch overrides. [2]
+
+
+
+
+- Application publication batches the leaf and resolved parent when sync changed or waitsFor was explicitly supplied by create/replace/set_field; parent accepted source bytes are required. [3]
+
+
+
+- Publishability gate refusing legacy review intent. [4]
+- The shared identity rejection seam it calls. [5]
 
 
 ## 260815-DAG-L12 Title Threading
@@ -78,9 +101,7 @@ canonical task publication.
 
 ### Reconciled Source Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The current module exposes `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem` at this ownership boundary. | `TaskDocSourceSnapshot`; `TaskDocSourceReadError`; `doc_stem` | mcp/src/agents_remember/tasks/store.py:22-35; mcp/src/agents_remember/tasks/store.py:38-52; mcp/src/agents_remember/tasks/store.py:55-57 |
+- The current module exposes `TaskDocSourceSnapshot`, `TaskDocSourceReadError`, `doc_stem` at this ownership boundary. [6]
 
 ## 260821-CLIVE Atomic Parent-Write And Child-Removal
 
@@ -96,37 +117,5 @@ Per `requirements/CCR-R02-v2-normative-task-intent-identity.md`, newly published
 carry the exact canonical intent identity and writers may not emit the sentinel. The batch writer
 enforces this for route-review-bearing documents, so a legacy review cannot be persisted as current.
 
-## Update History
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `TaskDocument` repointed to mcp/src/agents_remember/tasks/document.py:642-816. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the task-document store now refuses to publish a document whose route review has missing or stale
-  task intent (`_require_publishable_task_document`); documented the publishability gate. Verified
-  at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: re-anchored the unchanged task-document
-  store model dependency. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: documented rollback-safe task-document publication plus exact source removal. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   `write_task_docs`/`write_task_doc_batch` thread the optional `graph_titles` join into the renderer (L12-R1/R4). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:52+02:00 — 260815-DAG-L14 curator: re-read the `TaskDocument` claim — the persisted
-  model gained sprint `seats` and typed `masterRef` rows; wording retained, citation regenerated to
-  the current class lines, stamp advanced to code commit 2f494982.
-
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: `write_task_doc_batch` generalizes the existing
-  rollback-safe prepared write to documents across multiple task roots, enabling one atomic sprint migration.
-- 2026-08-02T21:40:21+02:00 — 260731-EFA-L6 curator W2-B10: repaired 6 citation findings (3 reference rows); scoped recheck clean.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-06-26T20:18+02:00 — Task 21 task-doc master sync: added `write_task_docs`, a prepare-all-then-write
-  batch path used for coupled leaf/master persistence, with a duplicate output-target guard. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-14T00:16 — Slice 3c commit 3: `doc_stem` maps a `master` to `task` (so a master series wrapper is `task.json`/`task.md`, beside the slice `<slug>` docs). Verification metadata pinned until closeout stamps the 3c commit-3 code commit.
-- 2026-06-13T22:34 — Created for slice 3c commit 1: the atomic JSON+markdown task-document store. Verification metadata pinned until closeout stamps the 3c commit-1 code commit.
+- Markdown grant lookup caches one census per batch task key and reads anew for the next batch; prepared candidate overrides and explicit child Order reads are separate inputs/costs. [8]

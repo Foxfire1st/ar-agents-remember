@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_abandon.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9a20c2d840a674e9af23f219556692a7667e192e",
+        "content": "sha256:923545409bdbfc7b53afaefe2a1bc90af36b0dbef12227ee7d8fa1f1d8c0513d",
+        "locator": {
+          "end": 99,
+          "kind": "line_range",
+          "start": 27
+        }
+      },
+      "id": "RLZ-5DE9GE",
+      "invariant": "INV-F1TY2E",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 1",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This admitted abandon transaction invokes the same leaf archive port before destructive retirement outputs.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Archival runs inside the admitted publish step before destructive outputs.\n\nAnchor: `_abandon_with_guard`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a20c2d840a674e9af23f219556692a7667e192e",
+            "content": "sha256:d7a26b4d3935deb36e439715b3ab89596278fe380dd694a2cda1ea18149b9ec9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task-stage binding is checked before terminal work and again before archival/destructive outputs under current authority.\n\nAnchor: abandon preflight order",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a20c2d840a674e9af23f219556692a7667e192e",
+            "content": "sha256:923545409bdbfc7b53afaefe2a1bc90af36b0dbef12227ee7d8fa1f1d8c0513d",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

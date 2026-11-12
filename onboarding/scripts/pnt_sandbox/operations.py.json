@@ -1,0 +1,204 @@
+{
+  "path": "scripts/pnt_sandbox/operations.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+        "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations._run_sharing_lock"
+        }
+      },
+      "id": "RLZ-0RR5B8",
+      "invariant": "INV-VCAREW",
+      "origin": {
+        "handoffEntry": "L96-D-5",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Passes the held-lock descriptor to the controlled child so the install-child lock survives the call boundary.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+        "content": "sha256:9455f23c617c68aea5bf0de4459004f48e5bc9ac72b0f9f4d6d2e9fe15654dc3",
+        "locator": {
+          "end": 321,
+          "kind": "line_range",
+          "start": 305
+        }
+      },
+      "id": "RLZ-99CM4D",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Retires prior current receipts into history before a public install child runs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+        "content": "sha256:263e5f6cdc6fe3e44b530b10bc99e6ebdf9a4db707490726bb87443635e74ce9",
+        "locator": {
+          "end": 441,
+          "kind": "line_range",
+          "start": 72
+        }
+      },
+      "id": "RLZ-9F0JC0",
+      "invariant": "INV-B6R816",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Applies the scrubbed environment to run, detached dashboard spawn and provision child creation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+        "content": "sha256:e73390b2840d235942f59f5ed3fc9efa91378b41fc3e7da567bf07c452b0f968",
+        "locator": {
+          "end": 261,
+          "kind": "line_range",
+          "start": 202
+        }
+      },
+      "id": "RLZ-AWECY6",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This construct owns the verified unchanged sealed obligation: Each public install retires the prior current receipt into history before its child runs and records fresh cut/timeout/malformed failures with underlying error and real receipt/server-log paths instead of exposing old success.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+        "content": "sha256:615f9e8acf38cfaf7a602bd2794c3e7d6e58f089723b8632db324b563dd35693",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations.runtime_install"
+        }
+      },
+      "id": "RLZ-TQX7CJ",
+      "invariant": "INV-YN12TG",
+      "origin": {
+        "handoffEntry": "MIK-R181@v2 §5",
+        "leaf": "260928-MIK-L179"
+      },
+      "rationale": "The host install's request is written in the same shape from the same layout, which is what keeps the sandbox's own install admitted after the refusal was added.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+        "content": "sha256:b146b6a0195a5a81dc7df59ea1124ce6acd998d21dbf799b852331262bc58789",
+        "locator": {
+          "end": 295,
+          "kind": "line_range",
+          "start": 281
+        }
+      },
+      "id": "RLZ-W99KFF",
+      "invariant": "INV-MF5V3J",
+      "origin": {
+        "handoffEntry": "L96-D-9",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "Records the current refusal/failure outcome with its receipt and log evidence instead of exposing an old success.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+        "content": "sha256:ebfc822a554c149abe5852fee01d68f04212a0e011c245452f17ae0688d1c75c",
+        "locator": {
+          "kind": "symbol",
+          "name": "Operations._run_sharing_lock"
+        }
+      },
+      "id": "RLZ-YDW7SW",
+      "invariant": "INV-V4EC10",
+      "origin": {
+        "handoffEntry": "F1 / F23 (one lock per sandbox)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Passes the locked descriptor into provision so abrupt parent death does not admit another command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+            "content": "sha256:f03f50955f0cd0ca38ffa7ea676739b10723e5b746802e5e539fb3a31121ddf0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public install receipt owner.\n\nAnchor: `Operations.runtime_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+            "content": "sha256:e73390b2840d235942f59f5ed3fc9efa91378b41fc3e7da567bf07c452b0f968",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A compact install response reads its confined whole report without overwriting the response outcome.\n\nAnchor: host report adapter",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+            "content": "sha256:e5133e1427a059326756bbd86a2f52bf244bc2204f39c7ce750407e6ac524dce",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 265
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The runtime-install request names the sandbox and its Paseo port beside its settings file and roots.\n\nAnchor: `Operations.runtime_install`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+            "content": "sha256:e73390b2840d235942f59f5ed3fc9efa91378b41fc3e7da567bf07c452b0f968",
+            "locator": {
+              "end": 261,
+              "kind": "line_range",
+              "start": 202
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

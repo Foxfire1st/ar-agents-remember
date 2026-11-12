@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/sprint-graph/sprint-graph-highlight.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5496947829d95950300a7ec5769cc939656166ed",
+            "content": "sha256:2620d45aa7bed74bc027c4e7ffed198d6b7b948796aee5f9020ebfb44e67c9b6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

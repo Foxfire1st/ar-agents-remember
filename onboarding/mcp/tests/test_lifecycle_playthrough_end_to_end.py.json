@@ -1,0 +1,512 @@
+{
+  "path": "mcp/tests/test_lifecycle_playthrough_end_to_end.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The ref snapshot the \"publishes nothing\" beat is measured with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:d2b67a59a18e4ad0f45d4b19f8a81fdc82611288df884ec24c0a32e5a87ff53d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_snapshot"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The integration lane row the fail-closed manifest requires. Source caption: \"mcp/tests/test_lifecycle_playthrough_end_to_end.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 701
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:78ac6b541627510e77069ecad30b3e04b06d47ffee54cd49d93f4e602f6dc780",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The integration lane row the fail-closed manifest requires. Source caption: \"mcp/tests/test_lifecycle_playthrough_end_to_end.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:3f17c68b87da9a54236a67e164417ad77654c0d41cf5971ab5a019216a302e49",
+            "locator": {
+              "end": 701,
+              "kind": "line_range",
+              "start": 701
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:78ac6b541627510e77069ecad30b3e04b06d47ffee54cd49d93f4e602f6dc780",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The fixture split and public-start coverage limit remain; current application identity and provider-skip behavior refute the inherited provider-scaffolding necessity rationale.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:011aab9af5e506b8f63849410c47022d140b55f37accaead1db3490572a2fdf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_settings_from_config"
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:44435c7691ac61a8330bd6183744c49519d1b4d716fe52e6600eb03d0aa6cc79",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_enabled"
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:7c519b4c31fa2923c8116ef64412413a9e642fae9535df356fe307003b135bdf",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one-class, one-case fixture: one real temporary Git world per case, master-b's canonical series contract, external memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:e9bf871923d31b0b9b16c428cdee4dd477f9d41602726a75d4d059ee4e27e1f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecyclePlaythroughTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The six public drivers the run is expressed in, each a registered tool call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:095ecc2b72c1819f81a9e99b320f3128bbacec62385200b5e43d7c5160283716",
+            "locator": {
+              "kind": "symbol",
+              "name": "_status"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:5a9fa6d1a01801c61df1ecc5838529f85a002e2657493d2979f29d19b3c9994c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrate"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:db9148c76f6af6e98922b27b23d2505892ade3d7540f24f857e40b23612a170a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_checkpoint"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:dce86db6cce086c71e56768b29afeaa038509be92e900af7481557cd51130e79",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pause"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:bf10d5d474f1496a8a9932cf2566f9a8d2fcb839ec347a3b1d983e04e9cb44c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:92a9a1b2772ec0e90059aeb9abc50a706f098547907bf871b38dd6d2cec24a95",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The ordered run and the eight beats, including step 8 — a leaf commanded after the checkpoint landing still starts on a new base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2752814792df538b1f2af5dc080ab27db3712ade",
+            "content": "sha256:011aab9af5e506b8f63849410c47022d140b55f37accaead1db3490572a2fdf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master.\n\nAnchor: `pause_result` `_already_stopped_result` `require_parent_series`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "content": "sha256:adb98b4ad2b137027edeb544d7102ea297d86c01140eeb6d0b93872a03d22800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:5eb081b2a6b4f19a91c06da0b3f76d64df22d06de7ff5f1b3a5b50a9181f684a",
+            "locator": {
+              "kind": "symbol",
+              "name": "pause_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:d4cdf1af96e72e5393d1de752b059d54cc3c9ece7beec88523fc43db26e49a08",
+            "locator": {
+              "kind": "symbol",
+              "name": "_already_stopped_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "content": "sha256:1fb83d46e72586f1b54476a1d68c3866972fc7ece9171f599f0e71cd85424edc",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_parent_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The public tools the master-level beats drive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:980429e4753b3c8bd7ecfdfe4ffadb167777df946b14c5ecfd9baab41af036ab",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 291
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:58f4385dd8a54f1066b3f4c7c57e4760a04bccd63b0e08f67e823fca5a6697cc",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:f524fb0a4af91d49a9f2a190ba0fbc7cbcf3c6240692cc4ebcf270a8453e274e",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 488
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:5caa2fd4b80b799d259e220611950e40350c6c539473cca268e8ff9aa6bebc89",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 458
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing.\n\nAnchor: `checkpoint_landing_eligibility`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "content": "sha256:2c69b6bf4581ce6c8ec6582f505f09bf2096ad16dba0a9edb9002bb063828879",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:27fad559a8b42dd8535ce73c5eba0d269dafc45e5e0cc300ab1fbd175477a587",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:a16db128d5ec8a1080ac425941d434c99b1d2fb4f6963d523dcdd258ba616aa0",
+            "locator": {
+              "kind": "symbol",
+              "name": "checkpoint_landing_eligibility"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shared world fixture and Git helper this module composes instead of re-implementing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:53756c310b0aee9df4aee40e78be86bc72c40b60ed4c04a4a9fd28de9c6580e7",
+            "locator": {
+              "end": 830,
+              "kind": "line_range",
+              "start": 289
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f27f3f9481bcec71a96b43b685f239067d8f56a6",
+            "content": "sha256:910790e222ac3e8bfc7ada5a2211c67caf04d4ace58f37d95f461738f55c3c3c",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/tests/test_closeout_queue.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "18fe6f617413cf0af2643fdf3a5cf1aa3b699523",
+            "content": "sha256:1ed969015bd506110327582dfc0076628d6aac8490f66e46ad668cebd92b28fe",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/tests/test_worktree_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The leaf closeout recording it imports rather than duplicating.\n\nAnchor: `close_out_leaf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e41e14314f1af335ec6e7a3268339c14397a24",
+            "content": "sha256:7d08bce7560beb418ee19749e464da34d61af1d4e766b7d67ba9fa32a13c4578",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/checkpoint_landing_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "48e41e14314f1af335ec6e7a3268339c14397a24",
+            "content": "sha256:766e00568dd1f9d9a6a56a4e0fd5fe381d8359a9330495875392bd11bbadbbde",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_out_leaf"
+            },
+            "path": "mcp/tests/checkpoint_landing_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

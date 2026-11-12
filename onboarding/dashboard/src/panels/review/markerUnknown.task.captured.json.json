@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.task.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac9f749c8a5e3ab0d46bce8921961fdce50fe55b",
+            "content": "sha256:4e512a8c78532ae2dc4650d8e06ef9c2ac4ad16225e341c5e0e797a1ede9e76b",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

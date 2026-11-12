@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "3bb09b53aebe54085b08d6bb7aef53938f740dc4",
+    "content": "sha256:1b5cd04aafffc95bbf2206bc82fb00f8c2402a1a6e2a391e35b463200a36e38d",
+    "locator": {
+      "kind": "symbol",
+      "name": "settle_retire"
+    },
+    "path": "mcp/src/agents_remember/canvas/explainer_workspace.py"
+  },
+  "id": "WKN-AJV5GY",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-30",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Retire archives the chat in the host first and then counts the processes that are left, so its line can read 0 processes ended although processes of the explainer ran until the press."
+}

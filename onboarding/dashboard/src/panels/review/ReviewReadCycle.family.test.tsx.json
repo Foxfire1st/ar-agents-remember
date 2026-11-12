@@ -1,0 +1,203 @@
+{
+  "path": "dashboard/src/panels/review/ReviewReadCycle.family.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+        "content": "sha256:e03c66d79e8430ca6aef9d0c1614909a16ea0273b3c54b709a8c55dfe8f23ca0",
+        "locator": {
+          "end": 498,
+          "kind": "line_range",
+          "start": 410
+        }
+      },
+      "id": "RLZ-B07ZXV",
+      "invariant": "INV-EF52CQ",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 page refusal",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The current mounted continuation case preserves selected rendered knowledge and recorded judgment, with its retained context/failure/layout assertions; the old supporting evidence collection and fresh runtime acceptance are not claimed.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+        "content": "sha256:a0997f148080b1c9ab1fe2e676aa06a49f30cc7f394d970a334f367e16570cce",
+        "locator": {
+          "end": 729,
+          "kind": "line_range",
+          "start": 631
+        }
+      },
+      "id": "RLZ-BJ6TQM",
+      "invariant": "INV-79SPV4",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 late expression",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The captured continuation witness preserves statement/judgment/sibling/focus and reaches late realization addresses in MemberDetails; removed Full file/layout controls are intentionally absent.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+        "content": "sha256:e03c66d79e8430ca6aef9d0c1614909a16ea0273b3c54b709a8c55dfe8f23ca0",
+        "locator": {
+          "end": 498,
+          "kind": "line_range",
+          "start": 410
+        }
+      },
+      "id": "RLZ-HWXRDM",
+      "invariant": "INV-KBXRZC",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 wrong subject",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The current mounted continuation case preserves selected rendered knowledge and recorded judgment, with its retained context/failure/layout assertions; the old supporting evidence collection and fresh runtime acceptance are not claimed.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+        "content": "sha256:e03c66d79e8430ca6aef9d0c1614909a16ea0273b3c54b709a8c55dfe8f23ca0",
+        "locator": {
+          "end": 498,
+          "kind": "line_range",
+          "start": 410
+        }
+      },
+      "id": "RLZ-VZXBHS",
+      "invariant": "INV-HC2KB7",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 preservation W03 conflicting content",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The current mounted continuation case preserves the selected rendered knowledge and the recorded judgment: it checks the failure, the selected text, the judgment text, the member rows and the absence of rejected content through an inventory helper. It sets and asserts no layout or focus behaviour, and neither the old supporting evidence collection nor a fresh runtime acceptance is claimed.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains exact content and claim identities while before and after walks advance independently', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:072b4af86e8a0398e5ea1578ff1e734c77a5cfdcc37db8ff730154bc76567049",
+            "locator": {
+              "end": 304,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('retains the coherent display and fails a rejected continuation, including a structured page refusal', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:88a5131486e31577734e4d8810fd2c9bc2c724fcc238743995df1003e2aa897d",
+            "locator": {
+              "end": 374,
+              "kind": "line_range",
+              "start": 305
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('fails an unadvertised request cursor while preserving whole-review refusal semantics', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:db3fe31130976acf2daf5f4c5ddc2d46c406deba3668240a4c173c56b12542f3",
+            "locator": {
+              "end": 409,
+              "kind": "line_range",
+              "start": 375
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(['wrong subject', 'conflicting content', 'page refusal'])(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:37b67f2c7812b3be4a6eb2cd58c0331a0bc0485c0f2348852a3dc90cfc5363ce",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 410
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('states loaded claim scope in family details for a content-only page, completed walk and unavailable side', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:8ca603063b614878b6964a46f2382b2139a4a31c3c6f6313c129c86f5c932d18",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 516
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('resets accumulated context on refresh, subject and history changes and drops late continuations', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:bb443b8d71a1f821b84cfcb2bcd7bfea46999c51e5f750e57eec0d12a1c4e7c4",
+            "locator": {
+              "end": 632,
+              "kind": "line_range",
+              "start": 576
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('keeps selected intent, judgment, siblings and focus while later roster claims become reachable', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82858aec1833a8863eae834a2a5fa65d0585dd3f",
+            "content": "sha256:11a1513c705f0323de5ac0b97e1cd081c5c005ffdab1eb4e972d234c2aedc64a",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 633
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

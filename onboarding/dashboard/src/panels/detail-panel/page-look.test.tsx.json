@@ -1,0 +1,48 @@
+{
+  "path": "dashboard/src/panels/detail-panel/page-look.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Seeded head/table/review/navigation assertions; the Steps case preserves nested rows but requires a 1-of-4 major heading and four marks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2e8a975d1ad525054ccba0ef8ae1a934ed34aa7",
+            "content": "sha256:12708b8c0eafa4839040ad6b01f7a5a70e512e57f810281c646ccfe0d520a123",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 64
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a2e8a975d1ad525054ccba0ef8ae1a934ed34aa7",
+            "content": "sha256:32e0766a9118da6ee62dfadb54c4dcf01133bb0f7e4fafbb0d4f6a3ae0b800ed",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a2e8a975d1ad525054ccba0ef8ae1a934ed34aa7",
+            "content": "sha256:372e167d8ba2eaf55b9aa6077a3ac2e90ef7b7113e789384dc1e09e9bf1f71ca",
+            "locator": {
+              "end": 569,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

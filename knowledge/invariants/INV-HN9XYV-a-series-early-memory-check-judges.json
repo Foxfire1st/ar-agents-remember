@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Judging the contract's parent line on a repository-default sync would refuse an unconverted-memory pair that the sync never reads, or admit one it would refuse, which is the crossing case a default-source sync exists for."
+  },
+  "applicability": "The series path of worktree_sync: the memory check that runs before the reconciling selection is published for a fresh sync.",
+  "conditions": [
+    "The sync reads its source through the sync source strategy chosen from the request: the contract's parent line, or each repository's default branch with sync_source=\"repository-default\"."
+  ],
+  "exclusions": [
+    "Continue and cancel, which resume from the journal alone.",
+    "A sync that skips memory, which makes no memory check."
+  ],
+  "id": "INV-HN9XYV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/260928-MIK-L60-evidence/freeze2/series-fail-before.txt"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "L60-F2-series-sync-source",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A series' early memory check judges the branch the sync really reads: on a repository-default sync that is the repository's default branch, through the source strategy, not the contract's parent line.",
+  "status": "proposed",
+  "supersedes": []
+}

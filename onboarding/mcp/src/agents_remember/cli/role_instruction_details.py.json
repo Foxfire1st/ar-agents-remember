@@ -1,0 +1,231 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_instruction_details.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_launch_instructions"
+        }
+      },
+      "id": "RLZ-1PJFH4",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "MIK-R125@v1/details",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "Composes launch instructions against the adjacent frozen detail targets.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:afa85dd99b0baaa9a1eea7771536e23bb5dbf22967538f0831c5708086aeed70",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bound_details"
+        }
+      },
+      "id": "RLZ-6FPCG9",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "K3-7KDG7C-bound-details",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Before the launch freezes step details, this binds each relative Markdown link inside each detail from that detail's own corpus source: a link whose target is another step detail is bound to that detail's per-request frozen path beside the report, and any other link to its absolute corpus source path. It then recomputes the detail's revision from the bound bytes, so the recorded revision is the digest of the exact content the agent is given.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+        "locator": {
+          "kind": "symbol",
+          "name": "compose_launch_instructions"
+        }
+      },
+      "id": "RLZ-8SGCGM",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 instruction provenance",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function writes and binds emitted detail artifacts; replay validates their recorded emitted identity rather than assuming original source-byte identity.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:bcaf61b6df284746b209e3fc41f0178674b74047e1bb309fb11abc84ae696623",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bound_baseline"
+        }
+      },
+      "id": "RLZ-F3VP22",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "K3-7KDG7C-bound-details",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Binds the links in the role and operation baseline to the frozen detail paths (or their original non-detail sources) segment by segment and refuses when the recorded instruction origins do not cover the whole trusted stream, so the first message never points at live, changeable detail sources.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:0b1e541356504b07899550c887ded86c43f93b01b01a0812db842171ebd7d0e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_detail_target"
+        }
+      },
+      "id": "RLZ-K57X9H",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This target boundary requires the report-adjacent handover identity and deterministic detail name in the saved handover's canonical folder, supporting real local report directories without borrowing the report's collection destination.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+        "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+        "locator": {
+          "kind": "symbol",
+          "name": "validate_instruction_detail_artifacts"
+        }
+      },
+      "id": "RLZ-NN7YJ0",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      },
+      "rationale": "This saved-detail boundary combines reference/target identity with a no-follow, nonblocking regular-file open and exact frozen revision before replay or held opening.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Freeze and substitute pointers before existing user-note composition.\n\nAnchor: `write_detail_artifacts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:139b0e0c2bf07ff0a4e05c7c4f3a62dc34b68b68f00fa332dc3540979dcb6830",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Every saved detail is shape/identity/type/revision checked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The detail keeps its deterministic report sibling name and resolves beside the saved handover's canonical path, not the report's collection destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:0b1e541356504b07899550c887ded86c43f93b01b01a0812db842171ebd7d0e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_detail_target"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Receipt restoration invokes the detail validator.\n\nAnchor: `_restore_launch_handover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:c829806d1d238b76f9b34c98b359333571d0f634e4b063272d32fdaff384ca5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The replay regression refuses a rebound canonical folder despite equal detail bytes and restores a missing valid legacy access link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
+            },
+            "path": "mcp/tests/test_capsule_replay_integrity.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Detail content is link-bound against the shipped corpus and re-digested before it is frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:afa85dd99b0baaa9a1eea7771536e23bb5dbf22967538f0831c5708086aeed70",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_details"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The baseline is bound along its instruction origins, and incomplete origins or unbound relative links refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:bcaf61b6df284746b209e3fc41f0178674b74047e1bb309fb11abc84ae696623",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_baseline"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

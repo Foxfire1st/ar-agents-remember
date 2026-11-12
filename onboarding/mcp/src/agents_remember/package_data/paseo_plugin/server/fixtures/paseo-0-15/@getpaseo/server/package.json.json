@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/server/package.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The synthetic server package publishes version 0.15.4 and calls itself a stand-in.\n\nAnchor: `version`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "021800b3f4fb60610bcf65a00cd90c82cc87a84a",
+            "content": "sha256:ceba55045ca4b1ffffb9feca5d62e2d16565da636b8a42456455c4b75db7472a",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The provider test expects the written file to name 0.15.4.\n\nAnchor: `paseoVersion`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3c3a735392f121963850274cfb0d15f5e885850",
+            "content": "sha256:ee75dbac154a480435f157f4d0735153149dc68484d07c4a642d584810f40354",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 184
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

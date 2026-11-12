@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/explainer_control.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+        "content": "sha256:e512c1becdf7b555ef6e8566cafc2e61c130bb4057e015262e3bb77fd1e321d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_seat_action"
+        }
+      },
+      "id": "RLZ-32G84A",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Checks record/caller identity before leaf update or retire.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+        "content": "sha256:2e409a94a05fd17e25096ec85d594f54d276e97f1756740baddd7916f77e1417",
+        "locator": {
+          "kind": "symbol",
+          "name": "_claim"
+        }
+      },
+      "id": "RLZ-86V8Y5",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Checks canonical architect binding and writes record before moving custody.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "An unknown action is refused before any lookup or mutation\n\nAnchor: `def _require_action(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:61b43250af83907ebd646bb36ac4d74c4a9c7ef5ef02edcaa631dd07e645105d",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Update and Retire are accepted only from the seat the record names, and a missing record accepts none\n\nAnchor: `def _seat_action(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:e512c1becdf7b555ef6e8566cafc2e61c130bb4057e015262e3bb77fd1e321d4",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A claim writes the record first and then moves the master's held reports\n\nAnchor: `def _claim(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:2e409a94a05fd17e25096ec85d594f54d276e97f1756740baddd7916f77e1417",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A withdrawn report follows delivery, held, unknown or fallback handling; if no backing file exists, fallback attempts to restore the previous held custody\n\nAnchor: `_transfer_withdrawn_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:6c4eecb9294b78e5affc2d3f43c141fae575549d8de58bf629f75c230a48d8a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Provider-limit, unopened, unfinished, permission, waiting-message and active-turn conditions are checked before a send attempt\n\nAnchor: `_pre_send_hold`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+            "content": "sha256:6c4eecb9294b78e5affc2d3f43c141fae575549d8de58bf629f75c230a48d8a9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

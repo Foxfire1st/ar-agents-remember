@@ -1,0 +1,65 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/context/layout.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Workspace YAML rendering consumes `GrepaiRuntimeLayout` and its normalized roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7047609c6f2a875745f757330ac44ba79ece5b04",
+            "content": "sha256:fc9d5da877639599884f143f62a1b0c3150c93883e33be94832be35696cbab6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_workspace_config_text"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/workspace.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7047609c6f2a875745f757330ac44ba79ece5b04",
+            "content": "sha256:f237fdf8bc101e1ebea5b1a3bf7b1d7205bf11bdc87efcf48596c3cb5a65e8c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_grepai_workspace_config"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Lifecycle GrepAI backend and runner code use this layout through the public context facade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:992d834f8ed6c2b7a048bb080d72cbdb308c8b38b26ea6d2f97a6d8b2bda3c74",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_state"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:6710fc6dda0fab78db0a019dd60c0a215315f817d4449cf35671bf18a5ab8c6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_watcher_workspace_status"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

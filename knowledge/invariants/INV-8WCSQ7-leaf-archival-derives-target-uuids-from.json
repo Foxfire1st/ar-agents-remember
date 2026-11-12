@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Receipt selection and its refusals are proved by the focused suite."
+  },
+  "applicability": "Every launch receipt under a leaf's task-bound execution directory, current and historical.",
+  "conditions": [
+    "A receipt is admitted only when its role is a leaf role and its canonical task reference matches the closing leaf.",
+    "Its minted own ID and one predecessor ID are the only admissible targets."
+  ],
+  "exclusions": [
+    "Agents of other leaves and higher roles are not selected.",
+    "No agent is found by title, folder, parent ID or guess."
+  ],
+  "id": "INV-8WCSQ7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_empty_unreadable_and_conflicting_records_are_named_without_host_calls; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 2",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Leaf archival derives target UUIDs from exact canonical leaf launch selections and leaves unreadable or conflicting records untouched with a named reason.",
+  "status": "proposed",
+  "supersedes": []
+}

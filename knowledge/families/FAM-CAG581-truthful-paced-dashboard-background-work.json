@@ -1,0 +1,48 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Paced non-host projection/healing, bounded interested landing probes and independent provider safety jointly reduce unnecessary work without concealing failed pending invalidations, completed facts or leftover fleets. Host activity is separately publication/boot driven and is not polled or healed by periodic full/degraded reconciliation; that exception is not an assurance that missed host invalidations are recovered. No one member guarantees the remaining combination."
+  },
+  "guarantee": "Native-watch completion pacing, path-directed refresh, transaction-bound own-write suppression and honest owner accounting together avoid self-echo work while retaining failed invalidations and healing missed inputs in the non-host healing domains. A due full reconciliation of those domains is independent of partial traffic, and the noncooperating store-append race is explicitly bounded by that healing path. HOST_ACTIVITY is deliberately excluded from periodic full-heal and degraded rereads: admitted host input is retained; initial dashboard intake and host-publication invalidation use the separately qualified host reader and boot reconciliation. A missed host-activity invalidation is not promised recovery by the periodic healing deadline. Terminal arcs with no valid final receive only their exact one permitted finishing attempt, including startup, while abandoned/build-only history remains probe-free. Diagnostic windows state incompleteness; no measured processor share, latency or installation acceptance follows from this guarantee. Serving-bound landing discovery and new probe admission require actual state-stream interest and use bounded current-identity semantic-answer due state; explicit unbound reads remain explicit. Provider safety remains periodic independently of page interest or launch-authority absence so labelled leftovers are not hidden.",
+  "id": "FAM-CAG581",
+  "members": [
+    "INV-AD1MRN",
+    "INV-GP90VQ",
+    "INV-D0551J",
+    "INV-0NSFFW",
+    "INV-RGGEX3",
+    "INV-RJWTW8",
+    "INV-1F0XGE",
+    "INV-84PT5A",
+    "INV-H9TEKD",
+    "INV-S8GHB9",
+    "INV-FKE909",
+    "INV-3XG15P",
+    "INV-TMY6DW",
+    "INV-RQNDH6",
+    "INV-GDTTHF",
+    "INV-BMZ47D",
+    "INV-BY8XBH",
+    "INV-5C5086"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L40-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L40-truthful-background-work",
+    "leaf": "260928-MIK-L40",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "routes": [
+    "mcp/src/agents_remember/serving",
+    "mcp/src/agents_remember/controlplane",
+    "mcp/src/agents_remember/application/knowledge_worklist",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Truthful paced dashboard background work"
+}

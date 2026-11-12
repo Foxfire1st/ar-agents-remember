@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_tree_overview.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "ReviewOverview is the compact fact set the opening page carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ecf38b34f28864f10999ed77898cd1578b65c8bf",
+            "content": "sha256:e5b4ca6858160b19cf39a80b8d9e457f956ea5f1ec8b19c17d6ce940f3f16d8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOverview"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

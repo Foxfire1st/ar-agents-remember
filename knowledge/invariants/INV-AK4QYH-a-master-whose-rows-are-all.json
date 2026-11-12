@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: A master whose rows are all abandoned and of which none has a document has a review scope with no child, and a master without any row has none."
+  },
+  "applicability": "Review scope computation for a master whose rows are all abandoned and of which none has a document.",
+  "conditions": [
+    "The master is atomic or organizational; a master without any row has no child either."
+  ],
+  "exclusions": [
+    "Masters with at least one row that has a document."
+  ],
+  "id": "INV-AK4QYH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L41-reviewer-acd0dccb-066d-41e9-ab45-b3d7e19e742f.md; probe x16_all_abandoned_no_docs.out; one killed mutation under sealed id 5"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-R7 finding 5",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A master whose rows are all abandoned and of which none has a document has a review scope with no child, and a master without any row has none.",
+  "status": "proposed",
+  "supersedes": []
+}

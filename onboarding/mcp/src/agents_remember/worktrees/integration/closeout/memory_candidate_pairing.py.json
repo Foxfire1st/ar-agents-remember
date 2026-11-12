@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/memory_candidate_pairing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Accepted coherence and exact pair facts are returned together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b618b6d5c9460fee517673b509a51bbdd196bc",
+            "content": "sha256:44326faa023b24713a716ca8e08bd2f87d3881f3086662d7d95e4aba3a0c0bb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "accepted_closeout_memory_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Apply/recovery re-prove the exact contract pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b618b6d5c9460fee517673b509a51bbdd196bc",
+            "content": "sha256:31c4fa55f526dbdced9d4007305b41643404f543802131aa24f0394892c8a7e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_closeout_memory_pair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public closeout projection uses one pair payload writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b618b6d5c9460fee517673b509a51bbdd196bc",
+            "content": "sha256:a61033d0883fbb4a9eaa665a221d480d8399aa121697415b044c56a9a6e47491",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_candidate_pair_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

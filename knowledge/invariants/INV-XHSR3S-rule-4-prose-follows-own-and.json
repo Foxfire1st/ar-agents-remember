@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "One test pins that prose markers move with the map while code and escaped brackets do not, so a future remap that touches code spans fails before it lands."
+  },
+  "applicability": "Own and base Markdown of every aligned card.",
+  "conditions": [
+    "The remap reuses the shared marker grammar, so code spans, fences, multiline spans and escaped brackets keep their bytes."
+  ],
+  "exclusions": [
+    "Sides with no renumbering, whose markers are carried over unverified: the identity-map branch continues before any marker read or check, so no verification occurs there."
+  ],
+  "id": "INV-XHSR3S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: remap_markers renumbers exactly the markers find_markers reports, reusing its paragraph walk, so code spans, fences, multiline spans and escaped brackets keep their bytes; find_marker_positions exposes the same grammar with in-line positions so callers can judge one exact bracket. No existing grammar function changed. Observed: marker-grammar tests (CRLF, fences, multiline spans, odd/even escapes, width changes)."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-04",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 4 prose follows: own and base Markdown markers are rewritten with the same number map under the shared marker grammar",
+  "status": "proposed",
+  "supersedes": []
+}

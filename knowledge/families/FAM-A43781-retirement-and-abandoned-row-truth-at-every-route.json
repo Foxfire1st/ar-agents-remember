@@ -1,0 +1,68 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "With any one of these obligations missing, an interrupted or refused retirement can leave a sprint naming a master it cannot resolve or a record another writer can change, and repeating the request no longer completes the operation."
+  },
+  "guarantee": "Every route that completes or retires a master decides the abandoned-row contradiction again from the records on disk, and a master's retirement is one operation whose records no other writer may change: an interrupted retirement is completed by repeating the identical request, and every refusal names the file, the row and the action that clears it.",
+  "id": "FAM-A43781",
+  "members": [
+    "INV-6AM3V9",
+    "INV-C4PDDP",
+    "INV-Y0S1BZ",
+    "INV-X1AH5G",
+    "INV-E20AY2",
+    "INV-8AJVN0",
+    "INV-8MKBTB",
+    "INV-CD2A7H",
+    "INV-YQY9PX",
+    "INV-T7VC8G",
+    "INV-JQFXCQ",
+    "INV-AK4QYH",
+    "INV-CC0VTQ",
+    "INV-M0ZQNJ",
+    "INV-GCEAJJ",
+    "INV-1B87DB",
+    "INV-T1ZJXG",
+    "INV-1DFJ7N",
+    "INV-K79KP8",
+    "INV-9YJV7Z",
+    "INV-DJ27N9",
+    "INV-4GQZ9S",
+    "INV-MVYAQ0",
+    "INV-3YSSTZ",
+    "INV-5ZMMN3",
+    "INV-ZJTNZY",
+    "INV-8NHCRK",
+    "INV-FQWZBE",
+    "INV-GYCF1R",
+    "INV-6S505X",
+    "INV-HKTN7W",
+    "INV-6Q7947",
+    "INV-Q157G2",
+    "INV-WQ6Z6P",
+    "INV-PRMSPM"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "family-list.json"
+    },
+    "handoffEntry": "L41-continuation-O2",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application/task_docs",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/src/agents_remember/tasks",
+    "mcp/src/agents_remember/kernel",
+    "mcp/src/agents_remember/application",
+    "skills/c-12-closeout",
+    "mcp/src/agents_remember/mcp/registration"
+  ],
+  "schema": "ar-family/v1",
+  "status": "retired",
+  "title": "Retirement and abandoned-row truth at every route"
+}

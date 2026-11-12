@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Guards the costly error this statement names: Finalization refuses existing unreadable own task.json directories and dangling links by the owning path, preserves their objects and task state, and retains ordinary finalization "
+  },
+  "applicability": "Finalization reading the task's own task.json directory or link.",
+  "conditions": [
+    "An existing unreadable own document is refused by the owning path, with its object and task state preserved."
+  ],
+  "exclusions": [
+    "A genuinely absent own document, which is reported as absent."
+  ],
+  "id": "INV-6Q7947",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Independent directory/dangling controls, absent-document control and regular damaged-document control all pass; Worker negative-CW01 restores the old is_file branch and fails both object cases with successful payloads."
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "260928-MIK-L41-CW01",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Finalization refuses existing unreadable own task.json directories and dangling links by the owning path, preserves their objects and task state, and retains ordinary finalization when that path is genuinely absent.",
+  "status": "proposed",
+  "supersedes": []
+}

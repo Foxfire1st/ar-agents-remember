@@ -1,0 +1,967 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:eec23d0a589b6e08051d8a5982c568e5dc3410d87da42d6acb66aa6e6716f015",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_memory_refresh_refusal"
+        }
+      },
+      "id": "RLZ-0YH9FE",
+      "invariant": "INV-PRT9AA",
+      "origin": {
+        "handoffEntry": "L176-7-record",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It puts the route-index leg beside the entity leg in the one verdict both the preview and the preflight read, which is what removes the code-only publication.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "external_closeout_commits"
+        }
+      },
+      "id": "RLZ-1GS7KY",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Sends a resumed closeout that carries a recovered memory commit through the recovery gate before it resumes, and a fresh closeout through the history closing into the gated memory commit.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-4VQ93G",
+      "invariant": "INV-NJT6A9",
+      "origin": {
+        "handoffEntry": "L26-CX-N03 (post-takeover completion)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected external docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "external_closeout_commits"
+        }
+      },
+      "id": "RLZ-7ENMV3",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Asks the lock before any stamping or commit of an unconverted leaf's memory at the worktree closeout.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:fa255cd6387c747835427a38e516275a8ec6e507086fbbbf5e19bf83ebc72987",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_pair_refusal"
+        }
+      },
+      "id": "RLZ-7TKTT1",
+      "invariant": "INV-M0J963",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 1 one-pair-judgment",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The single pair judge all leaf routes call; unreadable bases/sides refuse by name.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-8QCF0T",
+      "invariant": "INV-KTMBMN",
+      "origin": {
+        "handoffEntry": "R3 finding 2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "This owner observes the memory tip before capturing the judged tree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-AS19NV",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Calls the validator and the gate on the exact tree before the memory commit's Git mutation begins, also when nothing is left to commit, and restores the history closing and .gitignore on any failure before that commit begins. The closeout has committed the code by then, and a refusal here leaves that commit in place.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_ungated_candidate"
+        }
+      },
+      "id": "RLZ-AVX93M",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the preflight: it asks the gate over the accepted code candidate tree and the memory worktree's current tree before the approval is claimed or the code is committed. It can only deny; what it permits is judged again at the memory commit.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-B150AP",
+      "invariant": "INV-765TQN",
+      "origin": {
+        "handoffEntry": "R3 Finding 3",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block surrounds preparation, journal intent and publication.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-DTBEY7",
+      "invariant": "INV-JFGTZT",
+      "origin": {
+        "handoffEntry": "MIK-R26@v1 (documentation correction)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected external docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_exact_memory_tree"
+        }
+      },
+      "id": "RLZ-FJ0671",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Captures the exact tree the commit records: the working tree with the commit's exclusions, through a fresh index, so every file is hashed.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_gate_verdict"
+        }
+      },
+      "id": "RLZ-GHCQ9T",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It is the one candidate verdict the preview and the apply's preflight both read, and this change makes it ask the memory refresh's refusals as well as the invariant gate, which is what puts the refusal before the approval claim and the code commit.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-K4M788",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Writes the cache's ignore rule before it reads the exact tree, hands the judged tree to the mutation's proof as the expected output tree, and stages the commit from that tree object instead of from the working tree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_judged_tree"
+        }
+      },
+      "id": "RLZ-M2XFSX",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Reads the tree the commit would stage through the repository's own index, before the memory commit's Git mutation begins, and refuses when it is not the judged tree, naming both trees.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-MPKFXQ",
+      "invariant": "INV-FQ2447",
+      "origin": {
+        "handoffEntry": "L26-R1-F04",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block covers every failure before publication.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-PFSP3Y",
+      "invariant": "INV-JZD1F5",
+      "origin": {
+        "handoffEntry": "R4-O2 (post-takeover documentation)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected publication-boundary docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "external_closeout_commits"
+        }
+      },
+      "id": "RLZ-PKGD7T",
+      "invariant": "INV-8RRWT2",
+      "origin": {
+        "handoffEntry": "L176-5-record",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "The code-then-memory order it publishes is untouched by this leaf; the new refusal only runs before that publication, never instead of it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-Q6CJEZ",
+      "invariant": "INV-FYZQK0",
+      "origin": {
+        "handoffEntry": "R4-O2",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block's boundary with the ref move.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_gate_verdict"
+        }
+      },
+      "id": "RLZ-SR7CGW",
+      "invariant": "INV-WV1YQE",
+      "origin": {
+        "handoffEntry": "L37-preview-is-the-apply",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "The pure shared verdict evaluates converted leaf gates and the external-series format boundary without publishing code, memory or contract state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-TQ016P",
+      "invariant": "INV-N5RBFK",
+      "origin": {
+        "handoffEntry": "R3 finding 3",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The restoring block surrounds preparation, journal intent and publication.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_ungated_memory"
+        }
+      },
+      "id": "RLZ-VRHJYJ",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Runs the knowledge validator as a leaf publication and then the mandatory gate over the closeout's code commit tree and the exact memory tree, with the parent line's memory tip as the base and the leaf's recorded closeout commit frozen; a refusal from either is raised with its findings, and no argument skips it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_judged_tree"
+        }
+      },
+      "id": "RLZ-WJY6N2",
+      "invariant": "INV-NJT6A9",
+      "origin": {
+        "handoffEntry": "L26-CX-N03 (post-takeover completion)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The corrected judged-tree docstring.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
+        "locator": {
+          "kind": "symbol",
+          "name": "closeout_changed_paths"
+        }
+      },
+      "id": "RLZ-Y8WVW1",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It is the worklist the verdict must judge; the reader moved beside the verdict so the two cannot drift apart.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:eec23d0a589b6e08051d8a5982c568e5dc3410d87da42d6acb66aa6e6716f015",
+        "locator": {
+          "kind": "symbol",
+          "name": "candidate_memory_refresh_refusal"
+        }
+      },
+      "id": "RLZ-YWJVBC",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      },
+      "rationale": "It composes the memory refresh's refusals the two trees decide: the entity check reads the candidate by tree id, while the route-index planner takes the resolved context roots and the source snapshot it reads, so the composed answer follows those trees' contents rather than anything the closeout writes later.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+        "locator": {
+          "kind": "symbol",
+          "name": "_commit_memory_content"
+        }
+      },
+      "id": "RLZ-ZC5A4Z",
+      "invariant": "INV-RYF7BJ",
+      "origin": {
+        "handoffEntry": "L26-CX-N03",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The changed docstring is where the provenance spans lived.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+        "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_gated_recovery"
+        }
+      },
+      "id": "RLZ-ZTW3GN",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Judges the tree of a memory commit that a resumed closeout recovered, exactly as a fresh closeout's tree is judged, before that commit is recorded; a commit made without the gate is refused by name.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "23": {
+      "note": "`external_closeout_commits` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "`_commit_memory_content` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "`_restore_preparations` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_preparations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "`_require_judged_tree` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "`_refuse_ungated_memory` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "`require_gated_recovery` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gated_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "`candidate_gate_verdict` supplies the exact current transaction boundary above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The converted leaf's history file is closed before the memory commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The owner of the history file the closeout closes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:cca6c023e9edb39ea6c2f2c46f00c83c67ed8c2c81bc0f273185f18259a6064b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Before publication, owned history closing restores only unchanged prepared bytes and preserves concurrent edits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_preparations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "`external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first; since L37 after asking the cutover lock for unconverted memory, and judging a recovered memory commit before it resumes), then refreshes its informational cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Closeout reuses clean memory or publishes the judged tree with root memory.md excluded; unpublished refusal restores only unchanged owned preparations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:d74fc2b14e7948998b1aaaea59cb7cb4c2d67731eee72bafdab33e7f9381ff29",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "External refresh updates only entity fingerprints and generated indexes; card/overview refreshed lists are empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_external_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "`_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:aacbed3245544671ec9cdbebb43e65a9a21ee5fe355233a9cd58e98b7552b899",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_memory_commit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "The lock is asked before any stamping or commit of unconverted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The validator and the mandatory gate over the leaf's exact memory output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:6733de358d09058db7ab9672204df11f721366208bfd9ed54924fe325d71e265",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_ungated_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The exact tree the memory commit records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:8b005244c058f89a5173a0a1d8c6a01fcba28076d5dd37dc456d66ade779e9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_memory_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The one verdict the preview and the apply's preflight read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:5294aa5786f684669c8cd1b735ec12b7a227be127bf85ee98de9ba85c2adfce2",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_gate_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The preflight before the approval is claimed or anything is committed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:2e6b71f194f95ae3a119d49987ce890f73f507d3bc12bc37744e49d9eef068f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_ungated_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "A recovered closeout is judged like a fresh one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:182a12a341a97c4b5960eff651b8e356bdecaad0f4fa29123c64b60c55d961ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_gated_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "A commit whose tree is not the judged tree is refused before the memory commit's Git mutation begins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:de0378335937c87f8c461adc352207ef562d860dc1e63f6cbafa60e6f76dcaf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_judged_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Refusal preserves and names edited ignore bytes instead of overwriting them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:d6b2cc5edcc679b09f7bea7166af1fe1f654aeacc7d82c0ac11fc86295067b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_preparations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Cache rendering returns informational state and creates no Git commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "refresh_memory_cache"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The public closeout refuses an open item and commits once it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "47": {
+      "note": "A file rewritten while the gate runs is never committed unjudged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            },
+            "path": "mcp/tests/test_knowledge_reopen.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "48": {
+      "note": "Card and route-overview refreshed lists are empty; actual derived work is entity fingerprints and generated indexes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:10ce5b547e465ec1531e4b6cd70f0cd3cfa872e71008466f7b03f79cd2bde23d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_external_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The one verdict the preview and the apply's preflight read also asks the memory refresh's own refusals over the code candidate tree and the memory worktree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:eec23d0a589b6e08051d8a5982c568e5dc3410d87da42d6acb66aa6e6716f015",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_memory_refresh_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Every catalog row is evidence-checked against the candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing value are diagnosed from the plan's rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:0ba8a940af2b66a26839e4a480e36683435f58ddfe6710f1fe4e75dc45830551",
+            "locator": {
+              "kind": "symbol",
+              "name": "entity_fingerprint_plan_problems"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "The route-index refresh's deterministic input refusals are asked through the refresh's own planner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:a07a4a5d51ddf06b80eb0517d52d7b1806ab802b9d0de471afa421c3e3423698",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_index_refresh_problems"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "The closeout worklist reader the verdict and the refresh both judge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:114c7734fd039866458154c2993f9471f0cde61c7e1beff80d8e65761105932b",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_changed_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

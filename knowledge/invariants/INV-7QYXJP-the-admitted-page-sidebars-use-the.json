@@ -1,0 +1,50 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "One normative Rule8 visibility-to-space obligation connects the shared widget, hidden resizable panels, shell track calculation and page-edge control placement. Frame continuity or tree navigation alone cannot prevent a hidden panel retaining width or stranding its toggle. The review chat track/overlay branch is its Rule11 specialization, not a separate chat-lifecycle assertion."
+  },
+  "applicability": "The dashboard-owned Operations left/right rails; Knowledge tree and outline/citation aside where its responsive layout shows them; File Viewer explorer; change-set changed-file rail; Notes/requirements rail where present; and review tree/chat sidebars.",
+  "conditions": [
+    "The native SidebarToggle is named for its sidebar, exposes aria-expanded and stays outside the sidebar being hidden; a notes view without a rail draws no rail toggle.",
+    "Operations puts its left/right controls at the main-column edges and removes each hidden rail track from the grid. With no rail tracks the main uses minmax(0,1fr); otherwise it keeps its existing380px minimum. At40rem and narrower the shell is one column without overwriting the stored rail widths.",
+    "Notes/Knowledge hide their mounted resizable panel and its handle together; the panel leaves the row, becomes aria-hidden/inert, and the handle is disabled, so the main content takes the released width.",
+    "Knowledge hides its toggle line at40rem and narrower and its right toggle at70rem and narrower, preserving its existing responsive Browse/citation-page policy rather than showing a control for an absent beside-text pane. Opening a citation first opens a user-hidden aside.",
+    "The review chat takes its current width only when open with grid placement; closed and overlay placement keep a zero chat track and the current14px/12px gutter. Below1440px the open column overlays the reader; at40rem and narrower the shell is one column and the chat is viewport-capped.",
+    "An overlying review chat exposes its own shared close control at its edge because it may cover the reading column's toggle.",
+    "File Viewer puts its Explorer sidebar toggle in the external toolbar; the same state hides its outer mounted explorer panel and resize handle together, leaving the DualPane as the outer group main panel.",
+    "The change-set page puts its Changed files sidebar toggle in the external header; the same state hides the mounted file-list panel and handle in its current panel group. A horizontal group releases file-list width to the remaining diff/partner content; the narrow vertical group removes that stacked list without removing the main or optional partner panes.",
+    "The review tree toggle is first in the reading head, outside the tree. Closing sets the tree grid track to0px, marks the retained tree aria-hidden and invisible, removes its handle, and at40rem and narrower removes its stacked display. Showing restores that retained tree rather than remounting its contents.",
+    "Page/side open-state keys and the review chat closed-first exception remain the separate visibility-state policy; numerical tree/chat class defaults, resize bounds and saved values remain the separate numeric-width policy. The separate shared-control policy owns only the shared control and visibility-to-layout behavior."
+  ],
+  "exclusions": [
+    "The all-page storage/persistence policy and review-chat open-lifetime exception; those are not broadened or certified by this bounded visibility/width record.",
+    "Frame retention, generation/task binding and agent creation, which remain INV-VMREN3 and its neighboring existing obligations.",
+    "Review tree navigation/pinned content (INV-WR2WAJ), marker return (INV-DFS1CC), and reading/tree scroll owners (INV-811GC5).",
+    "General Notes rendering, citation target/address semantics, Browse policy changes or a new citation UI.",
+    "Fresh computed browser-width, wheel/touch, horizontal-overflow or page-jump acceptance measurements."
+  ],
+  "id": "INV-7QYXJP",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable Worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json, SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596; ordinal0 25 (MIK-R89@v2 rule8 · one shared toggle),28(hidden sidebar),108(W27). Each original disposition is preserved separately in the helper review; this supplemental entry is Curator-authored, not a producer rewrite.",
+        "MIK-R89@v2 rule8 requires the one control, hidden width returning to main content and reachable edge control; rule11 defines the review chat grid/overlay/narrow specialization. Original shared control and width mechanisms were read completely at the named function bodies.",
+        "Frozen A4-F5 code tree25756231aa86f63ba59f91bec01146d27461e470; captured patch SHA-256936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0. Static source and complete named assertion-case reads only; no tests/browser acceptance run.",
+        "Curator source examination extended to the remaining File Viewer, change-set and review-tree control/layout owners on the same A4-F5 tree. The existing seven-page sidebarToggle.pages.test.tsx parameterized fixture includes File Viewer and change-set page and asserts hidden display/aria-hidden, external focusable toggle and one remaining outer panel, but no computed .each case or unsupported line_range proof is authored. ReviewPage.selection has the added actual plain-string control-binding proof."
+      ],
+      "path": "authoring-wave6.final-input.json"
+    },
+    "handoffEntry": "RP16",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The admitted page sidebars use the shared toggle outside the panel they hide and release their sidebar track to the main content; the review chat occupies a track only when its open placement is in the grid.",
+  "status": "proposed",
+  "supersedes": []
+}

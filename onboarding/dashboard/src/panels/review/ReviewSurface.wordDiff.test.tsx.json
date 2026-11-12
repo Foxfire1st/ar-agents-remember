@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx",
+  "realizes": [],
+  "references": {
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('never calls one guarantee revision unchanged when its texts differ, anywhere on a tree review', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "901e645fee179a71db6f4cfe5f6bbeadc302fd64",
+            "content": "sha256:3b31e0b26af02df1e3d5bb21cb24275b4ea98ccfd4dcbc552c26e4c7a5e2a004",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

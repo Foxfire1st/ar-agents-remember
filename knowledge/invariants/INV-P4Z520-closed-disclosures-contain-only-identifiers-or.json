@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: ReviewSurface.navigationTree.test.tsx disclosureContract; l86-browser/browser-results.json"
+  },
+  "applicability": "Disclosure discipline in the detail view.",
+  "conditions": [
+    "Identifiers and provenance may remain closed. Each subject may also keep its unchanged and not-comparable locations in two counted groups whose headings state why; opening lists locations without cards.",
+    "Inside a card only unchanged code stretches fold to their line count and expand in place; changed code lines do not fold.",
+    "Required statement, effect, changed diff, rationale, reason and abnormal-state roots stay marked for the disclosure checks."
+  ],
+  "exclusions": [
+    "Closed disclosures for merely-long content."
+  ],
+  "id": "INV-P4Z520",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.navigationTree.test.tsx disclosureContract; l86-browser/browser-results.json"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 19",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Closed disclosures contain identifiers or normal provenance, the counted unchanged/not-comparable location groups, or unchanged code stretches. Required changed review content and abnormal states remain outside them.",
+  "status": "proposed",
+  "supersedes": []
+}

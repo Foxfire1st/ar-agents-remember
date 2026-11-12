@@ -1,0 +1,185 @@
+{
+  "path": "skills/l-01-agent-lifecycles/operations/planning.md",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+        "content": "sha256:c7a3a5d1cdb7556efb1507e4ceaaad362561cc3df7e2725ce4111ba549031d19",
+        "locator": {
+          "end": 57,
+          "kind": "line_range",
+          "start": 57
+        }
+      },
+      "id": "RLZ-FF4WCC",
+      "invariant": "INV-BTXVZP",
+      "origin": {
+        "handoffEntry": "MIK-R60@v11.5",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The Architect's direct-coordination marker without catalogs.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One master takes one Manager, two or more take one Orchestrator; direct coordination is the developer-chosen exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:ae35cfb6ea74638ad05e1c03c8d37abb1426a57a76c9bfc3be365c230ba112be",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:76e00e7ce3e49a4e30717d84e1d6dabc3f9a2342ab3b8b983f30065fe9216131",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Each independently falsifiable obligation gets a stable ID, version and canonical packet before topology.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:7b0dca449eaf84798877714054e05a0e9eb5771b396bc655f4876023cca50d9f",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A packet-named recorded invariant/family effect is declared by the Architect before implementation; no named effect means no declaration.\n\nAnchor: `expectedKnowledgeEffects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:a6a4c2898ff549afbd9bfb1d70e57fdc253d9cf5e908cf2125dcc77084c713ef",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:44ad84e9bca975aef237b6215e8a53f8cb279aee861e73f76cbe5d1b864d330b",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Planning marks the Architect-only alignment sweep, knowledge-effect declaration, intent-review and cold-read Prepared-context work explicitly, with all-role requirement, ownership, Prepared-context and plan-boundary text outside that audience slice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:ec1a6f2e1c54a419f51cbef9684dd484aed7a8a8ec281d245b1f0a400ff1a0be",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:f5f51420d0e8e84d593ce7dc84afccc84c084a1aac8255e3288c7d5c06cac6cf",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Before a new leaf starts, the Architect asks once for go or review first, discloses the planned comparison and first-Explain workspace, and records the choice; intent-review-open holds until go.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:10550187e9fe19bfe335b30824eefb735f35a8f835520452d23a5deeaad738af",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Before release, a reader other than the drafter compares a new or revised packet in both directions against every open leaf packet of its master, before the intent-review choice and again before go after review changes. Changed promises go to the developer; stale facts are fixed through registered revisions, and an issue stays in its original leaf unless another charter already covers it. Before any seat starts, Prepared context names record IDs/state, code/files/lines, unattributed callers and traps, including complete paged knowledge and the code it leaves unattributed. A packet adding a row, disposition, writer field or gate states how its own curation completes on the installed build; new behavior is proven on fixtures and scratch copies. Reported checks name what ran and what was left out, and pre-existing failures need same-cause base evidence. Under developer-chosen direct coordination, the Reviewer receives its exact bound intake first; plan/super-exit reviews have no startable seat and go through the Architect. The Architect reports an hour-long small item or a second repair round/freeze that day with a proposal to bound it. A UI fix is called working only after observation on the developer installation; otherwise it is landed and not verified there. At a full-store refusal, the named message-handover section owns the pending handover, single retry and second-refusal report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14f77d0521220a97197f1eadbcdab1daa4b08dd3",
+            "content": "sha256:d59a10e3bb41dae735e7c94c470eb439f15ecc9f727468615f5f0f90e035edbc",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "content": "sha256:77bcb1fd1a01f8b2eb55c578c107afd966902163264b8a90e2606b1aeda26023",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds the v2 receipt verdict to two values: unmeasured never appears in a v2 receipt on any product path."
+  },
+  "alternatives": [
+    {
+      "option": "FinalOutputReceipt carries bound/moved only; delivered_memory_content_commit and delivered_memory_tree_id are required; code_match/memory_match are measured against the reviewed input.",
+      "reason": "unmeasured belongs to the v1 generation record; writing it into v2 would claim a comparison that was never measured.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep writing unmeasured into v2 receipts.",
+      "reason": "unmeasured belongs to the v1 generation record; a v2 unmeasured claims a comparison never measured.",
+      "reconsider_when": "A third verdict state is governed with its own measurement rule.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Receipt rendering keeps the two-valued verdict and the required delivery identities; legacy shapes stay in LegacyFinalOutputReceipt."
+  ],
+  "context": "Ruling 814778 rebinding with receipt narrowing: the receipt is data about exact compared outputs, never leaf or Git acceptance.",
+  "decider": "curator (260928-MIK-L74 memory curation)",
+  "id": "DEC-MVDG79",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "28af7054d13320531c1f10ba385735948e1da3ab",
+        "content": "sha256:b03cddd604d7c03d329421f9b36ae0009131fdfa1f2d5b75197571c25cbccbfc",
+        "locator": {
+          "kind": "symbol",
+          "name": "FinalOutputReceipt"
+        },
+        "path": "mcp/src/agents_remember/models/knowledge/review_final_output_receipt.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l74-ingest-list.json"
+    },
+    "handoffEntry": "L74-P7",
+    "leaf": "260928-MIK-L74",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An exact host uv pin rejects newer self-updating installations and invites orchestration-only workarounds; numeric floor selection must stay distinct from the certified container pin."
+  },
+  "applicability": "Host task-worktree environment bootstrap using the canonical runtime contract and uv found on PATH.",
+  "conditions": [
+    "Both versions are dotted nonnegative decimal parts; omitted trailing parts compare as zero.",
+    "AR_UV_VERSION remains the sole version assignment."
+  ],
+  "exclusions": [
+    "The certified container installs exactly the contract version.",
+    "This policy does not relax the exact Python runtime checks or guarantee every future uv can successfully sync."
+  ],
+  "id": "INV-NQZ17H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_version_comparison_is_numeric (10 cases incl. 0.12.21/0.9.30/1.0.0); test_gate_uses_a_newer_uv_as_it_is; test_gate_uses_the_contract_version_itself; real builds evidence3/build1-0.12.21.log and build2-0.12.6.log"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "MIK-R139@v1 rule 1",
+    "leaf": "260928-MIK-L139",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "AR_UV_VERSION names the lowest uv the environment script builds with; that version or any newer one on the PATH is used as it is, compared numerically part by part.",
+  "status": "proposed",
+  "supersedes": []
+}

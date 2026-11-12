@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/mcp/tools/worktree.py
 
-| Field                  | Value                                           |
-| ---------------------- | ----------------------------------------------- |
-| repository             | agents-remember                              |
-| path                   | `mcp/src/agents_remember/mcp/tools/worktree.py` |
-| doc_type               | `file-level-onboarding`                         |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview      | `overview.md`                                   |
-
 ## Governing Overview
 
 [MCP tools overview](overview.md)
@@ -63,7 +53,7 @@ would otherwise make the response too large to render.
 `worktree_abandon_payload` is newly added; it forwards `contract_path`,
 `dry_run`, and `force` to `worktree_abandon_tool`.
 
-`worktree_start_payload` forwards `retry_provider_setup` to the application entry point — the relaunch path for a failed or stale background provider setup (GitHub #53). It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). `worktree_sync_payload` forwards the canonical `contract_path`, typed `MemorySyncChoice`, typed `SyncResolutionAction`, and `dry_run` unchanged to `worktree_sync_tool`; it owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
+`worktree_start_payload` preserves `StartExecution`, including `retry_provider_setup`; the application forwards that flag into the worktree arguments. Legacy running/retry bookkeeping remains. With readable settings both retired provider IDs stay disabled, so retry planning does not reach an enabled plan or launch CGC/GrepAI. It also forwards `stale_base_choice` — the stale-base preflight recovery selector (GitHub #54). **`worktree_sync_payload` now forwards one paired `resolution: SyncResolutionInput | None`** where it used to forward a bare `resolution_action`: the action and the authored decision it may carry travel as one value through this layer — including the registration's `resolution_action` + `knowledge_resolution` arguments, which it pairs before forwarding — because `application.worktree_tools.worktree_sync_tool` is at the `PLR0913` ceiling and because the two are refused as a pair. Beyond the pairing this adapter owns no journal or selector behavior. `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (slice 2c — the save-gate decision when attaching over an unsaved fleeting lifecycle); plumbing only.
 
 ### Parameter Objects (260731-EFA-L2)
 
@@ -110,30 +100,31 @@ Each payload builder forwards the application contract and wraps its result thro
 
 No additional file-local TODO is established by this candidate review.
 
-## Docs References
+## Evidence
+
+- Retry input transport and legacy bookkeeping survive; the enablement and launch gates prevent that transport from relaunching either retired provider. [7]
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 The source itself and its governing route are sufficient for this thin payload adapter.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Integration payloads forward contract, strategy, and preview choice without ledger intent. | L141-L156; L159-L174 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| Start, sync, attach, pause, and status payload builders preserve typed application inputs. | L43-L53; L56-L73; L76-L85; L88-L95; L98-L107 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. | L159-L174 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
-| The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. | L88-L95 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+- Integration payloads forward contract, strategy, and preview choice without ledger intent. [1]
 
-## Cross-Repo References
+- Start, sync, attach, pause, and status payload builders preserve typed application inputs, and the sync builder now takes one paired resolution value instead of a bare action. [2]
+
+- The checkpoint-landing payload builder forwards the contract and typed integration arguments without owning a completion decision. [3]
+- The pause payload builder forwards one contract path to the stop tool and owns no decision; it is the transport edge of the route that publishes nothing. [4]
+
+> Retained earlier citation wording: - **The paired resolution value this builder forwards, and the application entry point that unpacks it into the driver's two arguments.** [5]
+
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned transport adapter.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
 
 ## Series-Contract Notes
 
@@ -150,9 +141,7 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. | L43-L53; L56-L73; L76-L85 | [mcp/src/agents_remember/mcp/tools/worktree.py](mcp/src/agents_remember/mcp/tools/worktree.py) |
+- The current module exposes `worktree_start_payload`, `worktree_sync_payload`, `worktree_attach_payload` at this ownership boundary. [6]
 
 ## 260831-CCR-L15 Status-Wait Payload Export
 
@@ -160,74 +149,4 @@ The current source seams include `worktree_start_payload`, `worktree_sync_payloa
 served were removed; this module exports no wait payload today and the name appears nowhere in the
 worktree payload surface. Recorded so the L15 paragraph above is not read as current.
 
-## Update History
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Removed the ledger-message parameter from the documented integration payload forwarding. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: recorded `worktree_pause_payload` — one `contract_path`
-  forwarded to `worktree_pause_tool` under the `worktree_pause` operation name, owning no decision,
-  and explicitly not the publication that `worktree_checkpoint_landing_payload` performs. Re-derived
-  the shifted payload-builder ranges (`worktree_start_payload` 43-55, `worktree_sync_payload` 56-75,
-  `worktree_attach_payload` 76-87, `worktree_pause_payload` 88-95, `worktree_status_payload` 98-109,
-  `worktree_checkpoint_landing_payload` 161-179). Reference health: the
-  `260831-CCR-L15 Status-Wait Payload Export` section is marked superseded — the builder and its tool
-  are gone. Verification metadata remains closeout-owned; no acceptance claim.
-
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing_payload` to
-  the builder inventory and its reference row, and re-derived the payload-builder ranges shifted by
-  it. Transport plumbing only; the entry point that owns the checkpoint decision is
-  `application/worktree_tools.py::worktree_checkpoint_landing_tool`. Verification metadata remains
-  closeout-owned; no acceptance claim.
-
-- 2026-09-12T00:52:39+02:00 — 260831-LOCR-L29 curator: repointed the payload-builder reference rows to the extents those builders occupy now (`worktree_start_payload` 41-51, `worktree_sync_payload` 54-71, `worktree_attach_payload` 74-83, `worktree_status_payload` 86-95) after `worktree_record_landing_payload` was added to the module by this leaf; prose unchanged. Verification metadata remains closeout-owned.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=b2a91233ad8b0711876374fe62d6dd92c829fffa1b0e268c60fd8e35fb43199c; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the `worktree_status_wait_payload` export for the new public wait tool.
-- 2026-08-26T08:45+02:00 — Restored canonical Docs/Repo/Cross-Repo reference sections for the
-  changed worktree payload adapter.
-
-- 2026-08-26T03:37+02:00 — Added typed `resolution_action` forwarding beside
-  `memory_sync_choice`; payload transport remains contract-addressed and journal-free. Verification
-  remains post-Dagger/closeout-owned.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-
-- 2026-08-13T09:05+02:00 — L23 curator: recorded the integration-strategy import move and confirmed
-  the public tool contract is unchanged; final provenance remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the builders here took parameter objects.
-  `worktree_start_payload` now takes `TaskIdentity` + `bases: TaskBases` + `execution:
-  StartExecution`; attach/status take one `TaskRef`; the closeout pair take
-  `CloseoutCommitMessages`, with apply keeping a separate `CloseoutApproval`. The published MCP
-  signatures are unchanged — packing moved to `mcp/registration/`. Verification metadata pinned
-  until closeout stamps the L2 code commit.
-
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: worktree payload builders now include `parent_task` and `leaf_id` for start/attach/status, matching the new resolver contract while closeout/integration continue taking explicit enclosure paths. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-13T18:45+02:00 — Slice 2c: `worktree_attach_payload` forwards a new `on_unsaved` argument to `worktree_attach_tool` (the save-gate decision); plumbing only. Verification metadata pinned until closeout stamps the 2c code commit.
-- 2026-06-11T06:47+02:00 — Removed `direct_closeout_preview_payload` / `direct_closeout_apply_payload` and their controller imports (issue #62 worktree-only closeout); module docstring no longer mentions direct closeout.
-- 2026-06-10T09:56+02:00 — Added `worktree_sync_payload` (GitHub #54 sub-task D); plumbing only.
-- 2026-06-10T09:30+02:00 — `worktree_start_payload` forwards `stale_base_choice` (GitHub #54 stale-base preflight recovery); plumbing only.
-- 2026-06-10T07:30+02:00 — `worktree_start_payload` forwards the new `retry_provider_setup` flag to the controller (GitHub #53 async setup recovery path).
-- 2026-06-01T00:00+02:00 — `worktree_start_payload` now applies `summarize_command_logs`; `worktree_cleanup_payload` gained `teardown_providers`; `worktree_abandon_payload` newly added.
-- 2026-05-29T20:20+02:00: Recorded the act-by-default `dry_run` default on the worktree payload builders.
-- 2026-05-29T18:35+02:00: Created from the `mcp/tools.py` domain split (commit `01f503d`).
+- **The current resolution value this builder forwards, and the application entry point that reads its action for the driver's resolution_action argument. The memory_sync_choice argument is passed independently.**  Anchor: `SyncResolutionInput` `worktree_sync_tool` [5]

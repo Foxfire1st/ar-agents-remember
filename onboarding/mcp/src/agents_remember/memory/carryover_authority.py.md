@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/memory/carryover_authority.py
 
-| Field                  | Value                                                            |
-| ---------------------- | ---------------------------------------------------------------- |
-| repository             | agents-remember                                                  |
-| path                   | `mcp/src/agents_remember/memory/carryover_authority.py`           |
-| doc_type               | `file-level-onboarding`                                          |
-| lastUpdated            | 2026-07-31T00:00+02:00                                           |
-| lastVerifiedCommitHash |                                                                  `8bf6edad7e7e65e27cf735be0822f604531d0c8a`|
-| lastVerifiedCommitDate |                                                                  2026-08-16T10:54:02+02:00|
-| governingOverview      | `../../../overview.md`                                           |
-
 ## Governing Overview
 
 [MCP overview](../../../overview.md)
@@ -61,43 +51,29 @@ tests are historical evidence rather than current coverage.
 
 None known for the MX-FIX-4 official-settings authority boundary.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. Current authority semantics are
 grounded in the package settings parser, this raw preflight, and its current apply consumer.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The internal apply owner obtains target storage authority and passes it to route-index refresh only after configured contract and protected-checkout authority. | `_apply_carryover_for_request`, `_refresh_target_route_indexes` | mcp/src/agents_remember/memory/carryover.py:636-670; mcp/src/agents_remember/memory/carryover.py:759-852 |
-| The raw preflight exposes the required target storage authority. | `required_target_storage` | mcp/src/agents_remember/memory/carryover_authority.py:32-66 |
 
-## Cross-Repo References
+- The internal carryover apply owner checks configured and protected-checkout authority before obtaining target storage, then passes that storage to apply_converted, whose route-index refresh uses it for target onboarding. [1]
+
+- The raw preflight exposes the required target storage authority. [2]
+
+### Cross-Repo References
 
 The module reads target recovery-leaf external-memory settings while running from the code package, but no
 sibling repository provides implementation authority.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
 
 ## 260815-DAG-L4 Authority Boundary
 
 L4 routes this file's existing application, configuration, task, model, registration, or memory responsibility through the shared task-derived integration authority. The change preserves the file's owning altitude while ensuring protected code and external-memory refs cannot be mutated through an ordinary workbench or unjournaled helper.
-
-## Update History
-
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
-
-- 2026-08-04T14:17+02:00 — 260731-EFA-L6 S18-B13 curator: closed D10 caller/call/storage dataflow evidence for the same-reviewer residual delta.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0911` armed with no exemptions):
-  extracted `_json_path_rule_list_state` from `_json_path_rule_state`'s list branch. No verdict
-  changed. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: created the one-to-one sidecar for fail-closed official
-  JSON/Markdown carryover authority, typed-parser equivalence, and pre-mutation refusal semantics.

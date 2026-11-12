@@ -1,15 +1,5 @@
 # mcp/tests/test_semantic_topology_refusals.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_semantic_topology_refusals.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash |  `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate |  2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -42,40 +32,25 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Semantic topology refuses exact missing ambiguous and malformed facts | `test_semantic_topology_refuses_exact_missing_ambiguous_and_malformed_facts` | mcp/tests/test_semantic_topology_refusals.py:91-149 |
-| Semantic topology refuses duplicate node during whole graph admission | `test_semantic_topology_refuses_duplicate_node_during_whole_graph_admission` | mcp/tests/test_semantic_topology_refusals.py:152-162 |
+- Semantic topology refuses exact missing ambiguous and malformed facts [1]
+- Semantic topology refuses duplicate node during whole graph admission [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-09-01T03:58+02:00 — Checklist follow-up: re-read both new refusal cohorts against their
-  exact working-tree ranges; commit verification remains closeout-owned.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: created the semantic-topology refusal card.
-  Verification remains closeout-owned.
+No external evidence is needed for these assertions.

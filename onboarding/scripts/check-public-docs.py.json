@@ -1,0 +1,437 @@
+{
+  "path": "scripts/check-public-docs.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:b91662a14291c27402e25045c96b983727a5cc3e1a732e88e57da0edb5a331b5",
+        "locator": {
+          "kind": "symbol",
+          "name": "identifier_findings"
+        }
+      },
+      "id": "RLZ-0AA419",
+      "invariant": "INV-BNDZWK",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 6 (identifiers)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It names every identifier on every line of every public document; no page is exempt.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:2ceb0336efbfec8551519864c40769587ef35a83d0a50949e857c2f18c1a95fa",
+        "locator": {
+          "kind": "symbol",
+          "name": "_one_link"
+        }
+      },
+      "id": "RLZ-1MX32Y",
+      "invariant": "INV-XANH4K",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (links)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It judges one link: the path must be in the tree and the anchor must be a heading of the target; it also names a relative link that leaves docs/.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:8ac9162d107cd7e14e112a21611896cb61d384b574f8c7d48bd34757b1931777",
+        "locator": {
+          "kind": "symbol",
+          "name": "apply_markers"
+        }
+      },
+      "id": "RLZ-34FV0A",
+      "invariant": "INV-2A1WKN",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (markers)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It drops a finding only where a marker of the same kind covers its line, and reports every marker that is wrong or allows nothing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:2578eb4cd7a24fcc17a8446043bbcd58c15f991711d3862d2e3f444c177293ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "_compare_steps"
+        }
+      },
+      "id": "RLZ-4A4RQ9",
+      "invariant": "INV-XHXZSA",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (entry points)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It compares the steps of one entry point with those of docs/getting-started.md: number, order, titles and command lines.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:d08fbd433f5fd775497b4cd225e7287aa96936a3ce201537b7001c810b23c5a3",
+        "locator": {
+          "kind": "symbol",
+          "name": "named_path"
+        }
+      },
+      "id": "RLZ-5GWND4",
+      "invariant": "INV-FK565S",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (named paths)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It decides which words name a repository path, cuts a path before its first placeholder, and leaves the paths under mcp/src/agents_remember/ and skills/ to the instruction consistency test.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:ec4df98b742b939c9cb74f1c6ef506e5e6fb8a48f4638b9a434ec0d088248482",
+        "locator": {
+          "kind": "symbol",
+          "name": "step_findings"
+        }
+      },
+      "id": "RLZ-7GWSKJ",
+      "invariant": "INV-XHXZSA",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (entry points)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It reads the section Install steps of every entry point and of every harness page and names a page that has none.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:90589d4cf81cfbe25d5212e2b20ef0e5144a440403c7e0407672a0adbcd5fe0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "MARKER_KINDS"
+        }
+      },
+      "id": "RLZ-ANQSJM",
+      "invariant": "INV-2A1WKN",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (markers)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It holds the two kinds of marker and the kind of finding each allows.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:01f457efa624cc06ef99d35e42864ab9071d320aa23a6399e4304ac9d20881e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "reach_findings"
+        }
+      },
+      "id": "RLZ-B7HCHY",
+      "invariant": "INV-6TJFDH",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (reach)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It walks the relative links from the index and names each file under docs/ that no link reaches, and each page that lies behind more than one index page.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:de33cfef3e5d00f1a4987b063117d5d4c5aaaa66653639a32d0098d9b1c9936c",
+        "locator": {
+          "kind": "symbol",
+          "name": "entry_link_findings"
+        }
+      },
+      "id": "RLZ-DX824C",
+      "invariant": "INV-XHXZSA",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (entry points)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It holds which links each entry point owes and names each one that is missing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:76d2d5cc480c327417c40f4625b1267322d93ab2eb00a54c914e794b69833e27",
+        "locator": {
+          "kind": "symbol",
+          "name": "load_tree"
+        }
+      },
+      "id": "RLZ-FAEN4G",
+      "invariant": "INV-QHYG86",
+      "origin": {
+        "handoffEntry": "MIK-R97@v13 ruling 8 (tracked files)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It lists the tracked files of the tree with Git and reads only those that the checkout still holds.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:4c1b1680b227a40b08488e38faf56925aac47ee27bb4a290223d40a7ed508956",
+        "locator": {
+          "kind": "symbol",
+          "name": "anchors_of"
+        }
+      },
+      "id": "RLZ-KYEG6B",
+      "invariant": "INV-XANH4K",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (links)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It computes the anchors that the headings of a page offer, in the form the renderer gives them, so that a link is judged against what a reader can reach.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:759e297869c9e26d4ba9099ea64125e3e1cfccee80edc0b956c2cf56b3eefb90",
+        "locator": {
+          "kind": "symbol",
+          "name": "PRODUCT_NAMES"
+        }
+      },
+      "id": "RLZ-R0XRBT",
+      "invariant": "INV-BNDZWK",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 6 (identifiers)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It holds the forms of the names that the product itself shows and that have the shape of an identifier: a rule code and the sandbox script's name.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:194a0c470baf26603fa29575690d73efd50f9c90324b7389fff666f85d9f3940",
+        "locator": {
+          "kind": "symbol",
+          "name": "IDENTIFIERS"
+        }
+      },
+      "id": "RLZ-SDR6XK",
+      "invariant": "INV-BNDZWK",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 6 (identifiers)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It holds the forms that count as an identifier of a task, a leaf, a packet or a decision.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:d0163cb31922731836e8238628c1f031966a06527bac3e75a3a48fb531ff9bcd",
+        "locator": {
+          "kind": "symbol",
+          "name": "harness_pages"
+        }
+      },
+      "id": "RLZ-VKBT3R",
+      "invariant": "INV-XHXZSA",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (entry points)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It takes every document directly under docs/install/ except the index as a harness page, so a new harness page is held to the rule without a list.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:71dc19c736ceed15c4df162b1fdd7861fd2edf8c8a1c8e0850a53f8fb211bb8c",
+        "locator": {
+          "kind": "symbol",
+          "name": "path_findings"
+        }
+      },
+      "id": "RLZ-WNZAN8",
+      "invariant": "INV-FK565S",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (named paths)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It names every path-shaped word of a document that starts at a root folder of the tree and is not there, and leaves out what Git ignores.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+        "content": "sha256:ea736372d47ce8afe47f00a1507be453fa2ddc95aab0982f39b029ac7a9eeee3",
+        "locator": {
+          "kind": "symbol",
+          "name": "markers_of"
+        }
+      },
+      "id": "RLZ-Y1S3AN",
+      "invariant": "INV-2A1WKN",
+      "origin": {
+        "handoffEntry": "MIK-R97@v1 rule 7 (markers)",
+        "leaf": "260928-MIK-L97"
+      },
+      "rationale": "It reads the markers of a page and the lines each covers: its own line, the next line, or the fenced block that the next line opens.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module docstring names the public documents, the nine finding kinds and the marker form.\n\nAnchor: \"Check the public documents against the repository tree, offline\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:cd05472174c94063e391218c0fd8318f04240fe897f316c3f19e5e4dcfef1c53",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tree comes from Git and holds only the files Git tracks; an untracked file is not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:cd05472174c94063e391218c0fd8318f04240fe897f316c3f19e5e4dcfef1c53",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Link findings name a broken path or a missing anchor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:2ceb0336efbfec8551519864c40769587ef35a83d0a50949e857c2f18c1a95fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_one_link"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Path findings skip ignored paths and the instruction consistency test's paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:71dc19c736ceed15c4df162b1fdd7861fd2edf8c8a1c8e0850a53f8fb211bb8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "path_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reach findings require a link from the docs index through one index page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:01f457efa624cc06ef99d35e42864ab9071d320aa23a6399e4304ac9d20881e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "reach_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Install-step findings compare the install steps of each entry point with the getting-started page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:ec4df98b742b939c9cb74f1c6ef506e5e6fb8a48f4638b9a434ec0d088248482",
+            "locator": {
+              "kind": "symbol",
+              "name": "step_findings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Identifiers of tasks, leaves, packets and directions are findings on every page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:cd05472174c94063e391218c0fd8318f04240fe897f316c3f19e5e4dcfef1c53",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Markers allow their next line or fenced block and are themselves findings when malformed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:8ac9162d107cd7e14e112a21611896cb61d384b574f8c7d48bd34757b1931777",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_markers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The check returns the findings and the command prints them and fails.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+            "content": "sha256:8e28fab7c81a9fab4edd9bb682b5237c195e7973fc4b955168c68f44c828eb2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

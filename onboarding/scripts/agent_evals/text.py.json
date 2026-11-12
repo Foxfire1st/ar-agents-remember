@@ -1,0 +1,57 @@
+{
+  "path": "scripts/agent_evals/text.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61f54b8a307b3bf2f2dc2cd47db9a95fd5b59474",
+        "content": "sha256:839f171018f053983e6349038b256a6fb6174c84e54459dbdf0d3bde826caae8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-67RXCS",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It captures the compiled role instructions and directly delivered detail identities from the composition manifest.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Curator-applicable operations are compiled with the fixed synthetic task binding. Each captured instruction string prepends any shared role block to the rendered capsule, and detail references retain their content and revisions; the entries receive a digest. Captured text does not establish actual case authority or a trial result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61f54b8a307b3bf2f2dc2cd47db9a95fd5b59474",
+            "content": "sha256:1d1a13ce42da9b9f39633f72d3d4d198c8f05bfa8948d1a3f1b9cbcc73020556",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_curator_text"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Captured instruction origins attribute the shared block to the one `core:every-role` source and offset the capsule's own origins past it; ambiguous provenance raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61f54b8a307b3bf2f2dc2cd47db9a95fd5b59474",
+            "content": "sha256:7e5323c59268da536c3ca18c6b93f9a4182066b4f3d54a4c17342d2c40245838",
+            "locator": {
+              "kind": "symbol",
+              "name": "_captured_origins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

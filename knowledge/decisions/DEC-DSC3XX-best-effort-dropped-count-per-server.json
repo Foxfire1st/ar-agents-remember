@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The durable ledger was weighed and rejected as self-defeating, and the choice binds the writer contract against future ledgers."
+  },
+  "alternatives": [
+    {
+      "option": "Count unwritten events per tool server in memory, carried by the next written event and cleared only after that write succeeds.",
+      "reason": "It counts as well as one process can without promising across a crash.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep a durable file ledger of failed writes.",
+      "reason": "The ledger write fails exactly when it is needed.",
+      "reconsider_when": "A failure-proof side channel for counts ever exists.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Counts are lost with the server; nothing is promised across a crash or while storage cannot be written."
+  ],
+  "context": "Architect F02 ruling: a durable ledger of failed writes would have to be written to the storage that just failed.",
+  "decider": "Architect, F02 ruling on MIK-R114@v1, adopted by the leaf.",
+  "id": "DEC-DSC3XX",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/observer"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R114",
+        "packet": "requirements/MIK-R114-v1-the-event-river-shows-what-the-hosts-agents-do.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_bound_first_call_writes_one_workspace_event_with_caller_and_facts in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W01",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

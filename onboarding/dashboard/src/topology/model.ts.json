@@ -1,0 +1,124 @@
+{
+  "path": "dashboard/src/topology/model.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "046383e5c526185a26684c0f11200956456de65e",
+        "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5N5W3S",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The topology model builds nodes of three kinds only and keeps L184's `worktreeFields` limit detail (words, exact end, per-seat lines) while the provider-satellite parent helper is gone with the type it consumed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "046383e5c526185a26684c0f11200956456de65e",
+        "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZNBVX1",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This model chooses the label's text, so the no-clock departure from a countdown is realized here.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "5": {
+      "note": "The backend exposes `activeWorktreeGroups` from the structural `active_worktree_groups` set via `project_workspace`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:b67c1f6e987ed016e6495d3760b30de7f0db389af5d6bb403fa7366f01b23a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_workspace"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The projection store passes that structural set through to the served projection.\n\nAnchor: `active_worktree_groups`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:05897ce97fc64aa562c243a90491e9cc4a5521e0816ec7e13aadab384ba22795",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:05897ce97fc64aa562c243a90491e9cc4a5521e0816ec7e13aadab384ba22795",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 160
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`constelColors` keys the canvas palette by `ConstelStatus` declared here, and `col` indexes it with no `??` — the downstream half of the same grammar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "constelColors"
+            },
+            "path": "dashboard/src/topology/constel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`Topology.tsx` is the only caller: it runs `activeTopologyInputs` then `buildTopology` before handing the model to `mountConstel`.\n\nAnchor: `Topology`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df6406b5558760d99e709731298749fbf82c081d",
+            "content": "sha256:5071a8ac1ab49420778bd00f5977347b64f4717b2896905b84a6a4acf290ea7f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/Topology.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

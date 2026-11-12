@@ -1,0 +1,172 @@
+{
+  "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`buildEngineRoomModel` under test\n\nAnchor: `buildEngineRoomModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:b884491ea99fde955e270362b4da38e29eb25aa8cc0eec3e93bfdd65c6d19e5c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildEngineRoomModel"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`node`/`lifecycle`/`worktreeEngine` fixture factories",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:32f8c35d0b02baf4be1237c65742d97eb874af4ab7d5f68d4b500ab96a52406c",
+            "locator": {
+              "kind": "symbol",
+              "name": "node"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Lifecycle join + workspace lift + fallback cases\n\nAnchor: `fallbackStacks`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:bcda3aa2cce27047c0cb5733f48b675cf7fe6f3c7d6f70c8d4a4fce04ced66a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "buildEngineRoomModel"
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`enclosureKey` = worktreeGroup stable-across-id-swap case\n\nAnchor: `enclosureKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:a955a6cf64d82e6c8e2a766ba1370728b40dc46d689a4d6a75834b1306859981",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "EngineProcessNode is the generated projection contract consumed by this surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`buildEngineRoomModel` takes one `EngineProcessNode[]` argument; the surface consumes no separate lifecycle projection type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab7f380552d2c5c141cd55b980ed509244b01f6e",
+            "content": "sha256:4790a1fc8280785656b495a24bbd1981e77e612a7ea4a0016c05f37047defa44",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "dashboard/src/panels/engine-room/buildEngineRoomModel.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:1d03280a36d4ca44b376796d7f3cf4a6c79f75b8e0e3fff72470dd82cacfc69c",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The tests call buildEngineRoomModel with one process-list argument: a published process is retained by reference with only enclosureKey/node in its view, and empty input produces no provider fallback. Further pure assertions keep worktreeGroup as a stable enclosure key across an id change and order an active leaf before its cleanup-pending sibling. These are source assertions, not a fresh test or visual run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:78abe4611fbe03273bfc63d8b0ed3f63907a3899683fa8dc6c7f900b53dc5703",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:8f8f07ddcd8b9a25053fe1675da249c54aec31efdfe44b82582baf81bcbfa16d",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "96aec8b27873ce7787e5ed066e0b68e34d739955",
+            "content": "sha256:cdd3a9ec0d30c444685c45bc5c14b5ea1afd897aef8101dae83415e2e0449c43",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

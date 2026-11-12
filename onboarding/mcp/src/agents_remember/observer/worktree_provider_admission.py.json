@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The earlier current-callable provider-admission account is withdrawn: the complete current module has no admitted_worktree_groups function. Its only membership helper is active_enclosure_worktree_groups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:af035e04c0160d3425dc7d72a875b07ab431f536fc1448ddc519c52fe5c3e081",
+            "locator": {
+              "kind": "symbol",
+              "name": "INACTIVE_CLEANUP_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:f11ce536d5075ddd41d142138de2bf385d002f75126d27f30cc5e5400570ed28",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_enclosure_worktree_groups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Active-enclosure membership returns nonempty worktreeGroup basenames from enclosures whose cleanup is not completed, abandoned or reopened. It adds no closeout/integration filter and reads no lifecycle log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:af035e04c0160d3425dc7d72a875b07ab431f536fc1448ddc519c52fe5c3e081",
+            "locator": {
+              "kind": "symbol",
+              "name": "INACTIVE_CLEANUP_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:f11ce536d5075ddd41d142138de2bf385d002f75126d27f30cc5e5400570ed28",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_enclosure_worktree_groups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The complete current module only imports Path and EnclosureNode, declares the inactive-cleanup set and computes active-enclosure membership from supplied facts. It performs no I/O, session fold, retention-clock computation or provider-paging action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:af035e04c0160d3425dc7d72a875b07ab431f536fc1448ddc519c52fe5c3e081",
+            "locator": {
+              "kind": "symbol",
+              "name": "INACTIVE_CLEANUP_STATES"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:f11ce536d5075ddd41d142138de2bf385d002f75126d27f30cc5e5400570ed28",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_enclosure_worktree_groups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

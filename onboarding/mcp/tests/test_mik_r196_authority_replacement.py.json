@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/test_mik_r196_authority_replacement.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An absent authority is created, an existing block answers present with nothing changed, and sibling bytes and modes survive publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8277d89394fc1dd15dce14ee9a83e896451d4b6",
+            "content": "sha256:6ff983c1ac591c753d46a97e1cff1db39b79f2bdbf5a5d7afccf65807055fcf2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A symlinked authority or temporary candidate is refused with its target untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8277d89394fc1dd15dce14ee9a83e896451d4b6",
+            "content": "sha256:6ff983c1ac591c753d46a97e1cff1db39b79f2bdbf5a5d7afccf65807055fcf2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A publication failure at fsync, replace or cleanup names the target and temporary states in its detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8277d89394fc1dd15dce14ee9a83e896451d4b6",
+            "content": "sha256:6ff983c1ac591c753d46a97e1cff1db39b79f2bdbf5a5d7afccf65807055fcf2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

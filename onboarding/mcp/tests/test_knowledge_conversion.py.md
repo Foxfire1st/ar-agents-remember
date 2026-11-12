@@ -1,0 +1,102 @@
+# mcp/tests/test_knowledge_conversion.py
+
+## Governing Overview
+
+[tests route overview](overview.md)
+
+## Purpose
+
+**MIK-R24 rules 1–4 and 6: the conversion command over fixture cards and a legacy database.** Its original six-case population is historical, not a current collected total; the module remains
+in the `unit-regression` lane. It also carries the evidence-only back-to-prose renderer (`render_legacy`),
+which lives here, beside its only consumer, rather than in the product (review R1 finding 7).
+
+## Code Commentary
+
+### Logic
+
+- `test_a_card_becomes_prose_one_evidence_section_and_numbered_references` checks:
+  - metadata, Update History and tables are gone, and `signals` is escaped;
+  - there is one `## Evidence` section, and placeholder sentences stay as prose;
+  - symbol targets with covered ranges, a quoted anchor's range, the unresolved removed path and the range
+    past the end;
+  - the test, file and external targets;
+  - notes that keep unbound anchor text byte for byte;
+  - the route sidecar;
+  - the report's counts, fallback card, governing mismatch, abbreviated commit and stray row
+    (`_assert_listed`).
+- `test_the_database_exports_head_records_and_entries_in_their_recorded_blobs` checks:
+  - head revision depth, statement, conditions without hand-off lines, and origin (including a leaf
+    learned from a document path);
+  - `legacy-unassessed`, family members and `routes: []`;
+  - entries in their recorded blobs, and `incidental` written as `support`;
+  - a Markdown-less sidecar for the deleted file, and realization states.
+- `test_conversion_is_deterministic_version_pinned_and_a_no_op_once_converted` exercises the CLI in
+  its source assertions: `--version 2` refuses without writes, two clones convert byte-identically,
+  and a rerun is a no-op. After committing those bytes, `knowledge-validate --base HEAD` expects
+  exit 1, `[R22.6-carried-stale]` and `is refused: 1 violation(s)` for the exported anchor at a
+  deleted path. Successful deterministic conversion is not publication-validation success; the
+  carried-stale refusal leaves a maintenance obligation. No conversion or tests were run here.
+- `test_a_refused_conversion_writes_nothing_and_names_what_failed` checks three refusals:
+  - a colliding entry ID refuses through the CLI (exit 1, both legacy claims named), and the tree is
+    unchanged;
+  - an ambiguous abbreviated anchor commit refuses naming the card (`failing == (other card,)`);
+  - a validation refusal names the failing sidecar.
+- `test_a_converted_card_renders_back_to_its_content_without_history`: the back-to-prose render restores
+  the prose and the anchor text kept in notes.
+- `test_conversion_format_version_1_reproduces_its_pinned_bytes`: the SHA-256 over every converted path
+  and byte (`conversion_digest`) equals `VERSION_1_FIXTURE_DIGEST`.
+
+### Conventions
+
+- The fixture comes from `knowledge_conversion_test_support`, and each case converts in `tmp_path`.
+
+### Invariants And Boundaries
+
+- **The golden digest pins conversion-format version 1 for the exact fixture inputs.** The comment beside the constant forbids changing the conversion's output behavior under version `1`; product conversion changes require a new format version. The current overview-order change instead changes the input fixture cards to include their purpose sections, and updates `VERSION_1_FIXTURE_DIGEST` for those new inputs while leaving the conversion implementation unchanged. The test still hashes every converted path and byte, so the new literal is not permission to re-pin changed product behavior.
+
+### Todos
+
+None recorded.
+
+Two additional definitions exercise filename eligibility in both cache-priming orders. Equal ordinary/test-file blobs resolve the common helper symbol but expose the plain-string case title only for the test filename. After an unrelated helper change, the proof observation is `current` only on the eligible test path and `stale` on the ordinary path, with no read failure. This checks source assertions against the actual conversion/currentness owners; it does not alter the pinned conversion output format or attest execution.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the requirement packet `MIK-R24@v1` of task
+`260928_maintained-invariant-knowledge` (with the architect rulings in the task's leaf document
+`24_conversion-and-boundary-crossing.json`) and the coordination-root note Doc14
+(`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
+code and memory repositories, so they are named here and not cited as rows.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+The cases and the renderer.
+
+- Rule 1 and 2 over every row case. [1]
+- Rule 4, the export. [2]
+- A refused conversion writes nothing. [4]
+- Back to prose. [5]
+
+- The version 1 golden digest. [6]
+
+
+
+### Cross-Repo References
+
+No meaningful cross-repo references found: the fixtures are `tmp_path` Git repositories built by the tests themselves.
+
+No cross-repo boundary is crossed by this file.
+
+- Rule 6 source assertions: deterministic conversion, version refusal and no-op, followed by based validation refusing the carried anchor at a deleted path (`R22.6-carried-stale`, exit 1). [3]
+- Current source delta inspected statically: Replace final converted-validation PASS with based carried-stale refusal; retain determinism, version, no-op and golden-input boundaries. [8]
+
+- Equal-blob definition and changed-blob proof observations retain filename eligibility in either priming order. [9]
+
+
+
+- Its lane row.  Anchor: "mcp/tests/test_knowledge_conversion.py" [7]

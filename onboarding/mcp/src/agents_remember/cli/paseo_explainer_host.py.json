@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+        "content": "sha256:733986ba28b858e9075b59196dfee7fdc6bcd309a718d555767580717234fbf1",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoExplainerHost.cancel"
+        }
+      },
+      "id": "RLZ-A5RXB0",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The host adapter sends the exact agent/request pair through agent-cancel, reports a missing agent view as requestUncertain with turnStopped false, and otherwise derives permissionClosed and turnStopped from the host after-state without changing settings or seat identity.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+        "content": "sha256:c7a6dde00df7e3e295aa2c9cb7679c67d075358b17f44fee6333c2cc42969260",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch_env"
+        }
+      },
+      "id": "RLZ-R7S86E",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Produces both launch identity words and refuses empty supplied words.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Launch identity values must be nonempty; the browser module is supplied only when available\n\nAnchor: `_launch_env`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:fa9c45e249cef9bb55a8f4c1eaa37c57eb7d4302034c40a3aa4659345047f0a7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A seat the host launched on other values than the settings chose is refused\n\nAnchor: `def _require_applied(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:1b2e75b4208ae2aec1fe7b2e695c7112cfd69cca4aa9709fdba45281c4f0d195",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A seat is created with the capsule as its instructions and the surface's tools preapproved\n\nAnchor: `def create_seat(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:72e305c8b05854306c1afb29ea540812f6643b4e429e0281593383f9d65bd6a0",
+            "locator": {
+              "end": 432,
+              "kind": "line_range",
+              "start": 337
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A send whose outcome was unknown is reconciled by message id before any resend\n\nAnchor: `def send(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:69b0d54a0b21f3527606b2b74e5d6ef3dea2989ff437457ae789416e23ef3a57",
+            "locator": {
+              "end": 568,
+              "kind": "line_range",
+              "start": 516
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cancellation names the exact request and never archives or replaces the seat\n\nAnchor: `def cancel(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+            "content": "sha256:72064b7ca27f4e529838e3517499155069ca4734113076324f99efab9dc20207",
+            "locator": {
+              "end": 707,
+              "kind": "line_range",
+              "start": 664
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

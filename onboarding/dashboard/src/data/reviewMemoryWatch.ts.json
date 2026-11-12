@@ -1,0 +1,162 @@
+{
+  "path": "dashboard/src/data/reviewMemoryWatch.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+        "content": "sha256:d312cdec8a773d448a6daa6e01df52ed4b9c0e44f2f9995580d5dda9fdeb315f",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewMemoryWatch"
+        }
+      },
+      "id": "RLZ-75BC0K",
+      "invariant": "INV-EZ8QKFX6",
+      "origin": {
+        "handoffEntry": "CUR-L57-memory-watch-INV-EZ8QKFX6",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "For a mounted active live comparison only, register the exact target on the existing state-stream owner; a matching baseline/reconnect/change invalidation calls cycle.memoryChanged and the shared entry revalidate callback. This hook owns no second connection and does not directly read or manufacture a count.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+        "content": "sha256:c5f24a7167e8c1dfb9c78465f7ba31cfff0eafbdcc0e320a9e55ed5ba60bc905",
+        "locator": {
+          "kind": "symbol",
+          "name": "subscribeReviewExplainerMoved"
+        }
+      },
+      "id": "RLZ-8SSXDJ",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Each listener retains its exact leaf scope and disposal removes that same registration, so the publisher can deliver only the intended leaf’s move/clear notice.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+        "content": "sha256:d312cdec8a773d448a6daa6e01df52ed4b9c0e44f2f9995580d5dda9fdeb315f",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewMemoryWatch"
+        }
+      },
+      "id": "RLZ-K4W086",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "CUR-L57-memory-watch-INV-74578B97",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "For a mounted active live comparison only, register the exact target on the existing state-stream owner; a matching baseline/reconnect/change invalidation calls cycle.memoryChanged and the shared entry revalidate callback. This hook owns no second connection and does not directly read or manufacture a count.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+        "content": "sha256:dcbbf852d2ac88f528c0dfb0225d2e22a1262eab4c1c661d46babb0f75349beb",
+        "locator": {
+          "kind": "symbol",
+          "name": "publishReviewExplainerMoved"
+        }
+      },
+      "id": "RLZ-WX2SRW",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Validates the full leaf address and delivers moved/cleared notices only to subscribers with that exact key.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "First effective registration owns the scope and scope changes reset the baseline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:b7e4d8f3bffb83c23c83b1a678572cd5349d84796034b187c9a8287d01d716e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewMemoryScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Errors are matched to the effective scope and forwarded as named failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:1d11c144cafa8f7a39f87af2cd7d1e94fab807e31b73c8e2c9bee4d2e684929c",
+            "locator": {
+              "kind": "symbol",
+              "name": "publishReviewMemoryError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only live non-recorded reviews register; matching changes retain selection then refresh cycle/entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:d312cdec8a773d448a6daa6e01df52ed4b9c0e44f2f9995580d5dda9fdeb315f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewMemoryWatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "ReviewSurface supplies the watch its scope and cycle only: `useReviewMemoryWatch({ repo, master, leaf, history }, cycle)`; no retain-selection callback travels with it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:45739110f03a94e625ba9331da1fa946f408304f6402c099b30b20924756ca44",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 607
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same module also has a separate moved-notice subscriber set keyed by exact repository/master/leaf. publishReviewExplainerMoved accepts the host's repo/repository, master/task and leaf/leaf_id spellings, rejects an unaddressed payload and notifies only matching subscriptions. It carries comparison/master moves and cleared notices without opening an EventSource, re-reading state or waking an agent itself.\n\nAnchor: `ReviewExplainerMovedEvent`, `subscribeReviewExplainerMoved`, `publishReviewExplainerMoved`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:a73bf6c6219abab8134fa362baffae4257741e3a61a1255dd3d2c832032b6118",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

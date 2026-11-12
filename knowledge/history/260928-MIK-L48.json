@@ -1,0 +1,1280 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L48",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0DDT4G",
+      "items": [
+        "sha256:3b088bce1096c3b1f6f688111286884671d360d0631d1b4bda9b2325e2b57b92"
+      ],
+      "reason": "The roles route is unchanged; the curator wording delta is recorded in the role card and records.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0HPNGM",
+      "items": [
+        "sha256:91b3750d820a721f925fda09f7b11effdda54afd5540dcf3f851d0593ad5019f"
+      ],
+      "reason": "The validation route is unchanged in purpose; the publication-population rule is a file-card and record matter.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0VN196",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-110QP7",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-1991H8",
+      "items": [],
+      "reason": "Retired per L48-M1-03: the merge-repair account stays in the task-local repair report; the reusable consumer-lines obligation lives as prose in the tests overview catalog section.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1KPG70",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-25M2JG",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2TJH4G",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-50YKGP",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-515NME",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+            "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+            "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-K569QYAK"
+        },
+        {
+          "after": {
+            "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
+            "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "02704bd317e1a69583fdd60f9cd4e78fca165e9c",
+            "content": "sha256:1bb36c7c58ff05bae0dfba72c46d36cc52eed1bf8beaa6e0111edff128d20713",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-RSTSK683"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-54FZ3N",
+      "items": [
+        "sha256:35f7fa3f0b595f49c5a525bc37b6cf87191b31dae6d5bfed2d9b0353312ebe11"
+      ],
+      "reason": "The target shape is unchanged; the L48 template and role edits add the family-effect input beside it and re-anchor both realizations.",
+      "revision": 1,
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "because": [
+        "DEC-W3Z5N7"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:54f1221aaeac48d535c485776a34c07b590983d7a2493dd9f25508317af30ee6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nonmeaning_family_rows_record_own_revision_without_authoring_an_effect"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-D1XX0V"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:b773d7d18cc18cda15f39fb7fd23b25c144618b06946672a20f78ed28dd71651",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_actual_unchanged_base_merge_or_closed_frozen_rows_keep_historical_omissions"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-PXW1WX"
+        },
+        {
+          "after": {
+            "blob": "8eddf9a60675e813e76cdffb4719bc8f0f565b78",
+            "content": "sha256:53a37b161c45a8072839fc6cdbb1d0a3e43384579ace13eadfa2cc5c41fe0075",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyRow"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "before": "absent",
+          "id": "RLZ-A2Z506"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-6E9N56",
+      "items": [],
+      "reason": "Conditions amendment per L48-M1-07 residual: historical preservation now requires both facts missing and expressly excludes the half-recorded changed shape the model refuses; the disposition-specific exclusions are unchanged.",
+      "revision": 1,
+      "subject": "INV-BHFQRK"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6NTYVG",
+      "items": [
+        "sha256:d6773a499595534903ffad1a196780e5b4600a250660a6bacde46b1bf1654760"
+      ],
+      "reason": "Repository intent is unchanged by one rule's mechanics; see the touched file cards and the L48 records.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0T84PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-0XMNQZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-2Q8RPR",
+          "revision": 1
+        },
+        {
+          "id": "INV-49E649",
+          "revision": 2
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 2
+        },
+        {
+          "id": "INV-89A5AN",
+          "revision": 1
+        },
+        {
+          "id": "INV-9ZBTVA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ANKPPE",
+          "revision": 1
+        },
+        {
+          "id": "INV-BEYEV2",
+          "revision": 1
+        },
+        {
+          "id": "INV-D2HZQ8",
+          "revision": 1
+        },
+        {
+          "id": "INV-FYZQK0",
+          "revision": 1
+        },
+        {
+          "id": "INV-G0Y4VR",
+          "revision": 1
+        },
+        {
+          "id": "INV-GSEMMW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 2
+        },
+        {
+          "id": "INV-KTMBMN",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 3
+        },
+        {
+          "id": "INV-N5RBFK",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 2
+        },
+        {
+          "id": "INV-YZ45D7",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZGFZXT",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-84C708",
+      "items": [],
+      "reason": "The closeout and landing publication guarantee is unchanged: L48's rule judges only route-published rows, and member INV-XN0FG8's realization moved with the gate edit. All 21 members were examined at their current revisions.",
+      "subject": "FAM-61DY2V"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9R1NYZ",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A1PS4B",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0FBA8M52",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKHJ0M7J",
+          "revision": 2
+        },
+        {
+          "id": "INV-E8655Z54",
+          "revision": 2
+        },
+        {
+          "id": "INV-H6A6JS63",
+          "revision": 2
+        },
+        {
+          "id": "INV-J7179RG5",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-AHMB09",
+      "items": [],
+      "reason": "The rationale-carrying guarantee is unchanged: every admitted target still carries its author's explanation, and the template and role edits re-anchor three members' realizations. All 5 members were examined at their current revisions.",
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AYHMRS",
+      "items": [
+        "sha256:7197d4e90febcc21c3ac5a1c376819dd4af070bb7d52e397b957802583f0e7e9"
+      ],
+      "reason": "The lifecycle skill route is unchanged in purpose; the family-input wording is a template, role and operation card matter.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "because": [
+        "DEC-51NNK6"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_writer_refuses_own_revision_drift_until_the_current_row_is_authored_again"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-FVZEH8"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:37b17ab87042ac080e02bd5a6a750d774609b40abe5167bb489dac99d1f016ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_later_attempt_keeps_closed_facts_and_currentness_checks_only_its_governing_revision"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-Q6A47C"
+        },
+        {
+          "after": {
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+            "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_row_open"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "before": "absent",
+          "id": "RLZ-GYT7S8"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-AZWRW4",
+      "items": [],
+      "reason": "The gate and writer compare the row's recorded own revision with the candidate family revision and refuse drift with the name-the-row-again remedy; member coverage and latest-governing-row semantics are unchanged. Evidence: predicates.py::family_row_open; the revision 6 against 7 drift tests.",
+      "revision": 1,
+      "subject": "INV-2TZ2E3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 1
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-BF1VBH",
+      "items": [],
+      "reason": "Three-seat leaf work is unchanged; members INV-7E3JNX, INV-RKGNF8 and INV-ZNJ14G moved realization anchors with the skill edits. All 6 members were examined at their current revisions.",
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-C546EB",
+      "items": [],
+      "reason": "Retired per L48-M1-03: the assertion adaptation stays in the task-local repair report; the reusable two-case remedy is expressed by INV-V9A68X and as prose in the worklist-leaf card.",
+      "revision": 1,
+      "subject": "INV-ZAFMH5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DXE401",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+            "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+            "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-JFZ5WP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-F55KQY",
+      "items": [
+        "sha256:dd23c07085016a58e665e2273c6836a7c921db13fa5192f87854f2e2d3b67616"
+      ],
+      "reason": "Seat-owned work organization is unchanged; the curator-role edit re-anchors one realization, and this seat keeps exactly one Curator writer through the admitted writer.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G39M2H",
+      "items": [
+        "sha256:d2c1b993340270ab1cc871e91657ef52426f9d974bad45e2f5749c4892fa699f"
+      ],
+      "reason": "Adapted message expectation from Extra inputs to its no_impact row; the refusal behavior is unchanged and the card still holds.",
+      "subject": "onboarding:mcp/tests/test_knowledge_history_files.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G5PVXN",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HA2MH3",
+      "items": [
+        "sha256:61ef3fa1d08f2ddb2cf04ec6336aa45ffaea6cc6954a0b8995f3d03903b72778"
+      ],
+      "reason": "The test route is unchanged; the new module and adapted expectations are proved through entry proofs.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+            "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+            "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-R4SKXV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HR53M9",
+      "items": [
+        "sha256:1ed0a488cfe5091a6c59791a92edb1dec2c59b6df65d657b9233b40147ec9c8b"
+      ],
+      "reason": "The supported-sync and conflict discipline is unchanged; the curation-operation edit re-anchors one realization.",
+      "revision": 1,
+      "subject": "INV-7E3JNX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K12DHY",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KED2SF",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "because": [
+        "DEC-KJRDCW"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:6f73c210af11cb55848c4bcc3fcc635e26006711875fc59d8ff62b19195f371f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_hand_closed_unfrozen_file_has_a_way_out_through_the_public_calls"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-140PQF"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:63501063105b3b174e0540637a880140f9c308bb048711eee19c3a3d4e954c0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_half_recorded_or_misplaced_family_judgment_names_the_family_and_the_fix"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-EBV09S"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:705ea780d6daabca17fc8b60e66f92a4cebfe7f688702119ae9fa7be3ad60953",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stale_non_changed_row_is_told_to_name_a_row_of_its_own_disposition"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-FKT4P7"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:1ca96a00ca51abf963a1d412020a0f029ae38c6a90623371e1ccb34bb985760b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_publication_refuses_incomplete_or_wrong_new_family_judgments_even_if_closed"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-RKVRK1"
+        },
+        {
+          "after": {
+            "blob": "e653d144087d2870170ba2bb24f20b6514eb46ac",
+            "content": "sha256:ff72ddefd2aa6f5a09b880445b5007ea83b951c0ed16d885a579ee75430a88e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "owner_history_problems"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/history_check.py"
+          },
+          "before": "absent",
+          "id": "RLZ-C29640"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-M1Z45F",
+      "items": [],
+      "reason": "Every added refusal names the row, the family and the curator action, including the hand-closed reopen way out and disposition-specific drift text. Evidence: history_check.py::owner_history_problems with family_effect_refusal; the hand-closed writer, publication and reopen loop; the documented R1 hand-closed loop note.",
+      "revision": 1,
+      "subject": "INV-V9A68X"
+    },
+    {
+      "because": [
+        "DEC-51NNK6"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:ce74eb31525d3010c5f500e170ccd45166c3e34b38b61a5167b3227a4729df37",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_publication_refuses_its_own_unlabelled_changed_family_row"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-0H4W3H"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:480db71795a8361ce643cb3b8bdb019ab1b1d6c6508a015bc7d45522f718d560",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_landing_still_judges_an_open_history_file_it_publishes"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-MGA1NM"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:0570ef337e7f5306313a7534193844b93d31db726619bc9a07e76d043f18779b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_landing_does_not_judge_closed_legacy_rows_its_base_lacks"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-QAHJGG"
+        },
+        {
+          "after": {
+            "blob": "3274f2b5b02128a98741ec4f1ebe84bd8285eb04",
+            "content": "sha256:c2f8e85a76746c05fbabcc6b2888b462de8d083de39f167c1a37c5be4512be48",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_family_judgments"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_history.py"
+          },
+          "before": "absent",
+          "id": "RLZ-CNGN82"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-M5YYXC",
+      "items": [],
+      "reason": "check_family_judgments iterates the shared checked_history_files population: open files always judged; at leaf publication files not closed in a base judged whatever the flag says; closed files never judged at master or checkpoint landing or baseless validation; rows unchanged at the same path in a base or frozen file exempt. Evidence: rules_history.py::check_family_judgments; the landing-shape tests; the real-data probe PASS on memory 40ae8395 against base 243e7ef3.",
+      "revision": 1,
+      "subject": "INV-D4C9B3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
+            "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "02704bd317e1a69583fdd60f9cd4e78fca165e9c",
+            "content": "sha256:1bb36c7c58ff05bae0dfba72c46d36cc52eed1bf8beaa6e0111edff128d20713",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-7VHY091X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-MC115Y",
+      "items": [
+        "sha256:46685a96adc3c8625b4b466e0224d02c33b796d2cd5d5a584b2654598791fc05"
+      ],
+      "reason": "The absent-literal route refusal is unchanged; the template edit re-anchors one realization.",
+      "revision": 2,
+      "subject": "INV-E8655Z54"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MZDJ3Q",
+      "items": [
+        "sha256:280e8766873d6b18949d32fd0419324f0eee162bbcf05b0c8a26cb7b5bc2fb2e"
+      ],
+      "reason": "The mcp route still publishes the same surfaces; R48 adds a validator rule and writer fields inside existing files, recorded in their cards and the new records.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+            "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+            "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-D0XTAP"
+        },
+        {
+          "after": {
+            "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+            "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+            "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-K60P42"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P0C4DB",
+      "items": [
+        "sha256:d2b894a8561e40b1b3c05bce65e2aa43dbe58f42418175747c3fd8c421ab4903"
+      ],
+      "reason": "Direct evidenced code-concern handover is unchanged; the role and operation edits re-anchor two realizations. No code finding is raised by this intake.",
+      "revision": 1,
+      "subject": "INV-RKGNF8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+            "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+            "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-VESCVY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-P9THY3",
+      "items": [
+        "sha256:7901a84e107ca638bc5590768f9a5f3053c557aaa347324dc4362b80fc74bcec"
+      ],
+      "reason": "Direct seat handover is unchanged; the curator-role edit re-anchors one realization.",
+      "revision": 1,
+      "subject": "INV-ZNJ14G"
+    },
+    {
+      "because": [
+        "DEC-KJRDCW"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cli_retains_each_authored_family_effect_and_own_revision_after_index_rebuild"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-82FJXD"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:65c510f207bfd0257b2adacada81362a997a79457a69f8adcca3f8fb1661bea2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bad_authored_family_inputs_refuse_without_changing_files_refs_or_index"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-8MDBYK"
+        },
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:1819b28d6dbce520a26a8c9d87d0cd37365eea7b4672bcd1407a8ce765dee2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_writer_refuses_own_revision_drift_until_the_current_row_is_authored_again"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-CMK9B9"
+        },
+        {
+          "after": {
+            "blob": "8b7ed253727ce74d1ce40cdfbb311227075afeed",
+            "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2TSM0M"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-PD7ZMS",
+      "items": [],
+      "reason": "The writer takes the revision from the candidate family record, stores exactly the curator's label from the existing vocabulary, and refuses missing and invalid effects, curator revisions, member-derived revisions and effects on other dispositions with files, refs and index unchanged. Evidence: HistoryRowAuthoring._family_row with family_effect_refusal; the 224-test closure; the four-label CLI proof.",
+      "revision": 1,
+      "subject": "INV-FT42W0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PM8Z05",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PPECAD",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PYT5MT",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QF8YK8",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/roles/curator.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QHEDT6",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QNKS69",
+      "items": [
+        "sha256:382621b34a0345b10c7330e8f5aa526dada34af7e9dd4d3942be5c360b6f4bb4"
+      ],
+      "reason": "The application route purpose is unchanged; own-revision fill and drift checks live in the touched files' cards and records.",
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-R244NH",
+      "items": [],
+      "reason": "Retired per L48-M1-03: the seven-rule delivery composition is this leaf's acceptance account, kept in the task-local repair report; it states no standing product obligation beyond the seven rule records.",
+      "revision": 1,
+      "subject": "INV-EH65RT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R44JZ9",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "because": [
+        "DEC-KJRDCW"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+            "content": "sha256:7b4318dfc78f87e7f0e1659161df556af1d576dfe49c3dca2c6680868d074ffb",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": "absent",
+          "id": "RLZ-AHYBRR"
+        },
+        {
+          "after": {
+            "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
+            "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": "absent",
+          "id": "RLZ-BPN91E"
+        },
+        {
+          "after": {
+            "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+            "content": "sha256:d6d49af062890c27a501699f6c12c29d977eabf623df0857b62c8f5388480d88",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": "absent",
+          "id": "RLZ-PAE912"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-RSP0VR",
+      "items": [],
+      "reason": "The canonical template, curator role and curation operation state the family input: changed rows need an authored effect from the existing vocabulary, other dispositions take none, the revision is the writer's; 27 generated copies equal the three canonical surfaces. Evidence: the canonical diff at template lines 512-518 and 588-599; the 27 byte-equal mirrors.",
+      "revision": 1,
+      "subject": "INV-VN0A3Q"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dfff2166cfd50ada8f20c83d1a2a030379df4511",
+            "content": "sha256:9b63c5af00fe1421a0afa693f110467c40afc4a195137c32fdbafef1e999098b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "before": {
+            "blob": "fb658851e57cca377651a1f40263f8f4d54b86b6",
+            "content": "sha256:88c46da785d0cedd77c8f4179789345ae56e6e832289b429cb4630db1dbaf382",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "id": "RLZ-E9F3YP"
+        },
+        {
+          "after": {
+            "blob": "e5cae0a0b2c4de28fc27e640bfe785ddda22832a",
+            "content": "sha256:870266234ae73477d8ca1eea59448a4048e9082222e3b0199e366f30d3773d64",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "7fe080db1e9e99b1f5eb2ffeea96fff983d9e801",
+            "content": "sha256:a591435ed3562cb56d271ae2cd800aadb1e95df74ce384b68e2839a7e19a7e6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-Q70RTA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TKE76F",
+      "items": [
+        "sha256:ae0c3589758859bb5730b1fad3b228452a900e6d65a86c46aa0310500c9bef87"
+      ],
+      "reason": "Parent-directed developer questions are unchanged; the operation and role edits re-anchor two realizations.",
+      "revision": 1,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TNCNPC",
+      "items": [
+        "sha256:c9cd6c95dcef9d53fa47a02d2aee509418bca3c0a20d685b61f619f5d59b4e4a"
+      ],
+      "reason": "The row-model route is unchanged; FamilyRow gains optional facts while frozen omissions stay missing.",
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8b7ed253727ce74d1ce40cdfbb311227075afeed",
+            "content": "sha256:c409e0ca8078ec19064718f5c4cc4796e7f23656632e4d51f55cb5cf955c5972",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryRowAuthoring._family_row"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/authoring_rows.py"
+          },
+          "before": "absent",
+          "id": "RLZ-XJ80YW"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-TNSK2Q",
+      "items": [],
+      "reason": "After the L26 split the R48 row delta lives in HistoryRowAuthoring._family_row while authoring.py keeps the revision bullet; no behavior was invented in the move. Evidence: the authoring_rows.py hunks with module-green reverification.",
+      "revision": 1,
+      "subject": "INV-QY70J3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VMVHAX",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Alphabetical reorder of one catalog entry in test-evidence-lanes.toml; the consumer set is unchanged, the card still holds, and the change carries no invariant.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WK99B4",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "covers": [],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-WVM2QW",
+      "items": [],
+      "reason": "Retired per L48-M1-03: the sixteen call-site hunks move with their symbol anchors as ordinary co-change; the coverage account stays in the task-local repair report, not as a standing guarantee.",
+      "revision": 1,
+      "subject": "INV-MKZ0EA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WXD1Q4",
+      "items": [
+        "sha256:4bd19114008540e58cec3a500ce28e9282a3ce72cff040a38997c1d553137629"
+      ],
+      "reason": "Adapted frozen-text assertion wording for the writer frozen-file checks; byte and refusal coverage is unchanged and the card still holds.",
+      "subject": "onboarding:mcp/tests/test_knowledge_reopen_governing_rows.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X3B1MF",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 1
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 1
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-X7C3CT",
+      "items": [],
+      "reason": "The developer-question chain is unchanged; member INV-9S49CW's realizations moved with the role and operation edits. All 5 members were examined at their current revisions.",
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XD6R2K",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "87e65981d3c9e3fa40442939f69b0a774bd7da1b",
+            "content": "sha256:9c43a62058ddf233c84254b1e183fb0db7d7db90a092f2ad9555b05d1505a9c1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "02704bd317e1a69583fdd60f9cd4e78fca165e9c",
+            "content": "sha256:1bb36c7c58ff05bae0dfba72c46d36cc52eed1bf8beaa6e0111edff128d20713",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-A2D6Y9T1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XJQ1BM",
+      "items": [
+        "sha256:9d36e3358bdaee681fb574b2f0e74728399dc950719148ce1e96032632424123"
+      ],
+      "reason": "Rationale and role value refusals are unchanged; the template edit re-anchors one realization.",
+      "revision": 2,
+      "subject": "INV-J7179RG5"
+    },
+    {
+      "because": [
+        "DEC-W3Z5N7"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "52165b6cf514347f2fb793f14505d01532f63359",
+            "content": "sha256:9ec3f266e8f9d840aef29f2340b1a9c744021bb642731d3edcbd9e1bfad0cda9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cli_retains_each_authored_family_effect_and_own_revision_after_index_rebuild"
+            },
+            "path": "mcp/tests/test_family_history_judgments.py"
+          },
+          "before": "absent",
+          "id": "PRF-0Z72AG"
+        },
+        {
+          "after": {
+            "blob": "90164ac5c837db1bc5ba4c61b26854c87a098eb1",
+            "content": "sha256:ffc0ac85ff4e0e275fdd095f58ded3790b2de4fd523b3de064787a5579d9bb34",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_history"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge_index/build.py"
+          },
+          "before": "absent",
+          "id": "RLZ-NJK730"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-XNY2MP",
+      "items": [],
+      "reason": "The index stores the complete validated row with effect and own revision where recorded and returns them with owner, path, row id, disposition and closed state; rebuilds keep the fields and missing fields stay missing. Evidence: knowledge_index/build.py::_write_history; the four-label GET proof; the index deletion and rebuild equality.",
+      "revision": 1,
+      "subject": "INV-2RFC0M"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y1PSZX",
+      "items": [
+        "sha256:3c2b427ca033a642bb0ecb8384d9e10723df5c4d7d7deac48169244c16017c11"
+      ],
+      "reason": "Alphabetical reorder of one catalog entry; the consumer set is unchanged and the change carries no invariant.",
+      "subject": "hunk:sha256:3c2b427ca033a642bb0ecb8384d9e10723df5c4d7d7deac48169244c16017c11"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YN8Y99",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZDT1Q2",
+      "items": [],
+      "reason": "Generated copy of skills/l-01-agent-lifecycles/operations/curation.md: scripts/sync-skills.py regenerates it from the canonical source, which with its card and the L48 history rows carries the contract; the copy holds no contract of its own.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/operations/curation.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "4e30c21d7d4d45c8dc277c76b63ad78a79157eda",
+            "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_row_open"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "before": {
+            "blob": "12cb0674e94ed1242b5e8c322efc6dbe8a973523",
+            "content": "sha256:6c8ba940c4e72e649c55c1f55f7694696b67d675afc9d4436ddcccd0c750b90d",
+            "locator": {
+              "kind": "symbol",
+              "name": "family_row_open"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "id": "RLZ-HK1WEC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZYZSCT",
+      "items": [
+        "sha256:25a7db19ba45055828a8cfb997f2dd0a569938e6e38c36875ef360cc66d68286"
+      ],
+      "reason": "Governing-row semantics are unchanged; the gate predicate edit re-anchors one realization.",
+      "revision": 2,
+      "subject": "INV-XN0FG8"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,0 +1,132 @@
+{
+  "path": "mcp/src/agents_remember/application/review_evidence_adapter.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:496619ed4a55bdd20562dd1a90adb7fca905af72232593fa44c4f5b4fbfbbb98",
+        "locator": {
+          "kind": "symbol",
+          "name": "_carried"
+        }
+      },
+      "id": "RLZ-0GZNS6",
+      "invariant": "INV-R298WE",
+      "origin": {
+        "handoffEntry": "L102-F08",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The real bound-tree schema adapter prepares consumable historical row/proof addresses without role/UI launch. _carried now checks owner path, side, revision, row/attempt/proof/record together; the independent invariant-path substitution is unresolved while the valid row consumer and foreign-comparison refusal pass. Bounds and collection missing/omission states are retained. This is not evidence that the separate partial-index/cache scenario required by F16 was supplied.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:bc0fb29ec4a7ed306ddfbbeb6bb8d42bdd9fe321b9883ff56e23794bb8e6e4af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_memory_state"
+        }
+      },
+      "id": "RLZ-28WP56",
+      "invariant": "INV-VASQQX",
+      "origin": {
+        "handoffEntry": "L102-F16",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The previously missing owner evidence is now supplied: real bound Git tree with malformed omitted record creates partial SQLite index; valid records/proofs remain usable; emitted packet carries measured partial state and absence-unknown limitation. Deleting the exact-tree cache and changing checkout contents rebuilds identical historical wire/packet. Lost history and explicitly injected cache-build failure preserve owner reason without inventing complete/empty data; independent code-side reading still works. prepare_evidence consumes real opened ReviewTrees measured states, not caller-invented complete flags. Prior maximum/two-size/restart/cancellation/race evidence remains credited; no early installed/UI requirement added.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:66ba2fd9d1e2081d6a3157cd56f0952ac486f940c7a133c06f85a76169d6476b",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_evidence"
+        }
+      },
+      "id": "RLZ-5YE1CA",
+      "invariant": "INV-VASQQX",
+      "origin": {
+        "handoffEntry": "L102-F16",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The previously missing owner evidence is now supplied: real bound Git tree with malformed omitted record creates partial SQLite index; valid records/proofs remain usable; emitted packet carries measured partial state and absence-unknown limitation. Deleting the exact-tree cache and changing checkout contents rebuilds identical historical wire/packet. Lost history and explicitly injected cache-build failure preserve owner reason without inventing complete/empty data; independent code-side reading still works. prepare_evidence consumes real opened ReviewTrees measured states, not caller-invented complete flags. Prior maximum/two-size/restart/cancellation/race evidence remains credited; no early installed/UI requirement added.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:cf47f9ed51e2f447ed5a90fc253901353b039c8f6d03427f4a88df5749c566bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "consume_address"
+        }
+      },
+      "id": "RLZ-942QMZ",
+      "invariant": "INV-R298WE",
+      "origin": {
+        "handoffEntry": "L102-F08",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The real bound-tree schema adapter prepares consumable historical row/proof addresses without role/UI launch. _carried now checks owner path, side, revision, row/attempt/proof/record together; the independent invariant-path substitution is unresolved while the valid row consumer and foreign-comparison refusal pass. Bounds and collection missing/omission states are retained. This is not evidence that the separate partial-index/cache scenario required by F16 was supplied.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:66ba2fd9d1e2081d6a3157cd56f0952ac486f940c7a133c06f85a76169d6476b",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_evidence"
+        }
+      },
+      "id": "RLZ-D5F7E9",
+      "invariant": "INV-R298WE",
+      "origin": {
+        "handoffEntry": "L102-F08",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "prepare_evidence consumes the comparison owner’s measured code-side and memory-index states; truly absent code-side inputs raise named EvidencePrecondition while measured unavailable sides remain loss states.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+        "content": "sha256:5e6521107981dd609eef4680148291b94524b757f4f89623df7ae56fae1f85e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_intended_authority"
+        }
+      },
+      "id": "RLZ-JZ2JY1",
+      "invariant": "INV-TE5W2D",
+      "origin": {
+        "handoffEntry": "L183-A-9",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "This function examines the planned binding and each present basis and refuses receipt-only intent claims misclassified as recorded-fact or mechanical-signal; intended claims and mixed actual code/memory bases remain admissible.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "4": {
+      "note": "The current implementation adds the binding-aware intended-claim rule and typed preparation preconditions; the existing comparison-address and measured-state account remains valid.\n\nAnchor: `require_intended_authority`, `prepare_evidence`, `EvidencePrecondition`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8b49bc4d24d8ecc98d8792388d329b1c8e2a688",
+            "content": "sha256:651c95f276f26ea421d28e023c04e188e5b875eea76f4cd9332b99674b368f45",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/panels/detail-panel/indexRows.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Row selection uses the opaque canonical entry key only when a document reference exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "027ddd65987f25c0c7526306a2fe9d29c2f62dc8",
+            "content": "sha256:765209de8c89dcc359b64317a02f808fc47527e4591ba1dcbef8c7fbc08fa0f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveRowTarget"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Child progress reads served counts and omits a zero-total figure, without a slice/document matcher.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "027ddd65987f25c0c7526306a2fe9d29c2f62dc8",
+            "content": "sha256:1b17fafc05c0dedcb5ef71970faf564094ee0c38212c631075ea2e1b450c99f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChildProgress"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

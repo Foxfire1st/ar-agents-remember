@@ -1,0 +1,67 @@
+{
+  "path": "dashboard/src/panels/review/tree/SortMenu.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "SortItem renders one supplied deterministic or judgment option with its chosen mark and its hint or explicit unavailable reason.\n\nAnchor: `SortItem`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "memoryHint reports the first unavailable memory-sort reason or says values come from the after-side index; it does not describe judgment-category availability.\n\nAnchor: `memoryHint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "SortMenu renders Always available and Memory facts groups plus a conditional Explainer’s judgment group, disables supplied unavailable options and keeps the requested preference distinct from the applied sort.\n\nAnchor: `SortMenu`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Render the persisted sort menu with separate Always available, Memory and conditional Explainer’s judgment sections. Judgment sorts are filtered out of the deterministic section and drawn in their own group only when supplied. The four memory sorts retain their existing missing-value reason and Priority fallback; the requested preference is not discarded. This menu only presents supplied SortOption values and changes the existing preference owner; it does not calculate grades or start an explainer.\n\nAnchor: `SortMenu`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

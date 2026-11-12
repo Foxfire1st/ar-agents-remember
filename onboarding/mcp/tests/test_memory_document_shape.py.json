@@ -1,0 +1,56 @@
+{
+  "path": "mcp/tests/test_memory_document_shape.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The same Windows citation cell keeps three columns through live cell spans and a clean full-document check.\n\nAnchor: `PrecisionFixtures.test_the_same_windows_cell_in_a_three_column_table_keeps_its_columns`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d81a29a64792e90a150b59bf634fb9798a81bd",
+            "content": "sha256:a5a8afe81fd1e9500c5583ca6362d56f001647f9de3f681c7a94a851abf2dde6",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A diff quoted in a fenced block is the document working.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d81a29a64792e90a150b59bf634fb9798a81bd",
+            "content": "sha256:8d50583ed58d54f0374e2314f448665714cad26fbac52f75ec3762abe49efaff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_diff_quoted_in_a_fenced_block_is_the_document_working"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A missing cell is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13d81a29a64792e90a150b59bf634fb9798a81bd",
+            "content": "sha256:24a046dd01852c1a77ccce597f8e4392cbbe1b1c426cff79d49485e2fa8bb569",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_cell_is_reported"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,52 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "D124 accepted the harness 10k output limit and chose rendered Markdown with native file paging for harness-output delivery, removing the assignment_read grant with its parts/size fixtures; D125 narrowed the copied baggage to the own leaf. Own-leaf-file reading through harness file tools is the chosen alternative; it constrains every future leaf role's file access to its own enclosure files."
+  },
+  "alternatives": [
+    {
+      "option": "A leaf role reads only its own rendered leaf document as a real enclosure/task-documents file; controllers read canonical rendered files through harness file tools; taskless roles have no own task file.",
+      "reason": "Chosen by developer rulings D124/D125: harness output is delivered as rendered Markdown with native file paging within the accepted 10k limit, and copied baggage is narrowed to the own leaf.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the assignment_read grant with parts/size fixtures as a general task reader.",
+      "reason": "Rejected and removed by D124, which chose rendered Markdown with native file paging for harness-output delivery instead of the assignment_read grant with parts/size fixtures.",
+      "reconsider_when": "D124/D125 name no standing reconsideration trigger; the assignment_read grant stays removed unless a new developer ruling admits a replacement.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No assignment_read, parts or size fixture remains in the product.",
+    "Handovers name an outside-working-folder state where one applies.",
+    "Hermes first installed-agent file-read evidence stays Manager-owned."
+  ],
+  "context": "Developer rulings D124/D125 on leaf 260928-MIK-L71, replacing all earlier IR03 tool/size/parts rulings.",
+  "decider": "developer (D124/D125, carried by Owner semantic case 4ef8129e)",
+  "id": "DEC-YSKDC6",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-J3PYB0"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-QZP9PM"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "l71-own-leaf-task-doc-reading",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

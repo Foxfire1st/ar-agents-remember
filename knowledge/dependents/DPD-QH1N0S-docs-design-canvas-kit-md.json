@@ -1,0 +1,64 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/design/canvas-kit.md",
+  "id": "DPD-QH1N0S",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-design-canvas-kit-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "9d217a80cb64f25685e38564cd70599ff51b003f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/canvas/kit/manifest.json"
+    },
+    {
+      "blob": "a9cc8c3ab3b6876b11c29e76c95d88f208033efa",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/kit.py"
+    },
+    {
+      "blob": "d4e183afce9e090f773a85ec0093b6a8d77241b5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/readiness.py"
+    },
+    {
+      "blob": "e32e639236d1c2f829c00d1c4bfa1bbc356d16ea",
+      "kind": "file",
+      "path": "mcp/tests/test_canvas_kit.py"
+    },
+    {
+      "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/canvas/prospective.py"
+    },
+    {
+      "blob": "c717372f3833fb2744245c2c4c197c9bd3e78944",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/canvas/kit/ar-video/23fd71bf/VOCABULARY.md"
+    },
+    {
+      "blob": "894fad2afd10077595515b1846db99ef6ae8b0aa",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/canvas/kit/open-generative-ui/0.1.0-8391a94/PROVENANCE.md"
+    },
+    {
+      "blob": "dd77a14ff24efdfd41d847945f317121fe8ab116",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/canvas/kit/open-generative-ui/0.1.0-8391a94/open-generative-ui-kit.js"
+    }
+  ]
+}

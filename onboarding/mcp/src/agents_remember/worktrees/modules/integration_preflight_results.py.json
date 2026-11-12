@@ -1,0 +1,50 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/integration_preflight_results.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Atomic landing blockers are projected with exact contract and blocker evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75b0095dca6ffdaf3847aafd1210fe4bbbc58a6c",
+            "content": "sha256:93a8584f81908f8d7f3a603d8c5758f18d0fb6d3e2c90c8b459d71d3f2adee0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_landing_blocked_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Prepared integration recovery is gone: the `prepared_integration_recovery` helper (which rebuilt the prepared commit pair from `args.recovery_commits`) was deleted with the closeout-door cut, and this module now exports `atomic_landing_blocked_result` alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75b0095dca6ffdaf3847aafd1210fe4bbbc58a6c",
+            "content": "sha256:93a8584f81908f8d7f3a603d8c5758f18d0fb6d3e2c90c8b459d71d3f2adee0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_landing_blocked_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "75b0095dca6ffdaf3847aafd1210fe4bbbc58a6c",
+            "content": "sha256:a6f8a8e448f71a75a05758fd883a46b7cd0b5a3d3d7c3d9786ad37e173ff34fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

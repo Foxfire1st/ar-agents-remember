@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkStore.shared.captured.json",
+  "realizes": [],
+  "references": {
+    "5": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dabb86009d0314a5f679f59588b3532eb473ad4a",
+            "content": "sha256:d921e16829c6b5b34eb4a543234e8a244cc8221d2fe5563fe8cd8ad93ce51201",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

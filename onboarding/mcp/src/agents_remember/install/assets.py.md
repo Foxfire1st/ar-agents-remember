@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/install/assets.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/install/assets.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `d9a1eb82849baea6c0b86735e772a932f4bbdc7c`                      |
-| lastVerifiedCommitDate | 2026-08-12T00:45:15+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
 [overview.md](../../../overview.md)
@@ -47,21 +37,10 @@ a relative path against the current working directory before applying the prefix
 - `long_path()` is a concrete Windows path handling helper, not a fallback
   discovery route.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Runtime install uses packaged assets unless tests pass an explicit source root. | "def install_runtime_from_config("; "if request.source_root is not None:"; "with packaged_source_root() as packaged_root:" | mcp/src/agents_remember/install/runtime.py:556-589 |
-| Skill installation reads package-owned runtime skills through the shared asset root. | `install_skills`; `packaged_source_root`; `skills_root` | mcp/src/agents_remember/install/skills.py:58-106; mcp/src/agents_remember/install/skills.py:72-73 |
-| Benchmark tooling resolves packaged benchmark cases through the same package-data root. | `benchmark_root_context`; `packaged_source_root` | mcp/src/agents_remember/benchmarks/runner_modules/roots.py:10-17 |
+### Repo-Internal References
 
-## Update History
+- Runtime install uses packaged assets unless a caller supplies an explicit source root. [1]
 
-- 2026-09-06T22:15:27+00:00 — Preserved actual asset/context semantics from retired test onboarding; verification pins unchanged.
-
-- 2026-08-11T15:20+02:00 — Re-anchored runtime asset selection to the exact application entry
-  point, explicit-source branch, and packaged-source branch.
-- 2026-08-03T10:10+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 6 assigned citation findings (3 missing anchors and 3 malformed sources), including a source-duplication normalization; final scoped check is clean.
-
-- 2026-05-31T12:30+02:00 — Documented new `long_path()` `resolve=False` mode that absolutizes relative paths against cwd without resolving symlinks (1.0.0 review remediation).
-- 2026-05-24T18:10+02:00: Created for F-10 package-data asset discovery; verification metadata must be refreshed after the code closeout commit exists.
+- Benchmark tooling resolves packaged benchmark cases through the same package-data root. [3]

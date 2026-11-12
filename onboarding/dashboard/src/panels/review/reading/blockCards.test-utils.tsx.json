@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reading/blockCards.test-utils.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "The helper creates its synthetic outline and flattens all three location classes.\n\nAnchor: \"function locationsOf(entries: readonly ReviewTreeEntry[], comparison: ReviewTreeComparison): LocationNode[] {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb6912dab87944a5c934c75fa88879e842330089",
+            "content": "sha256:c9b6ab8eb6b7c3991b6f5771144d7702b119f9b3764e365a0bee6d8e5f35c26e",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "BlockCards supplies fixed/default test context to the production card component.\n\nAnchor: \"export function BlockCards({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bb6912dab87944a5c934c75fa88879e842330089",
+            "content": "sha256:2c6177b936796aa1c9ad8e715d3059cf5ebc6d90db4b2011ee5361fae22d24eb",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/final_certification/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The facade re-exports the catalog version, complete population and non-certifying readiness function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
+            "content": "sha256:c4f8c30e438f5e7dc4bc1769e90deda83e9d6a142beee2464fa13f0771b133d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FINAL_FULL_CATALOG_VERSION"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
+            "content": "sha256:c52189592c367935d50eaa3ec6c898f27fcc2f6c8869b86a2019c3e89ae22a88",
+            "locator": {
+              "kind": "symbol",
+              "name": "complete_final_catalog"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
+            "content": "sha256:31e357a1dd646a4879fe63763c35759d8c94bbc311706dc052537ef8bc938c93",
+            "locator": {
+              "kind": "symbol",
+              "name": "final_catalog_readiness"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58febc5c623004ee40e9db732dc529e040f71589",
+            "content": "sha256:91e6d53658a003a05e3e99646daed560a3402081a7dd7280ddfa3153cb23af12",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/catalog.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6b3583faa1c4f99e451e008340a2a6fea724ccf",
+            "content": "sha256:d67963918965121a64c4ccfb9b762d7bf3a8eb8387f667bfce98ffa98ab23f64",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Only FinalCatalogItemIdentity and FinalCatalogItemResult remain re-exported typed item models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c96663e04ddcee72be5044f06826ea443ae57912",
+            "content": "sha256:a08b767212ffc5c1389bbf5584c41794ac06ad5deebe4eef4667d440a608a9e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c96663e04ddcee72be5044f06826ea443ae57912",
+            "content": "sha256:eecc7565800b97269830632145c7337ea853dcd37e26dde98a89d88389a1bca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "FinalCatalogItemResult"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c96663e04ddcee72be5044f06826ea443ae57912",
+            "content": "sha256:c726b4df924466026275bdbc09662304a0164cf92b09fffcd3f370798b193405",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/final_certification_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6b3583faa1c4f99e451e008340a2a6fea724ccf",
+            "content": "sha256:d67963918965121a64c4ccfb9b762d7bf3a8eb8387f667bfce98ffa98ab23f64",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

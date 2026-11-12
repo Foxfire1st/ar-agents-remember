@@ -1,0 +1,20 @@
+# mcp/tests/knowledge_rows_test_support.py
+
+## Governing Overview
+
+[mcp/tests/overview.md](overview.md)
+
+## Purpose
+
+Knowledge-row test support.
+
+## Code Commentary
+
+Test helpers that build valid and deliberately invalid row documents across the row kinds —
+as text trees (invariant/family records and file sidecars with entries), never by inserting rows.
+Caller-side identities are projected to the tree's own; provenance is carried, not projected.
+
+## Evidence
+
+
+- The file realizes its current contract at the corrected candidate. [1]

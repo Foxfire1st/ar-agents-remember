@@ -1,1613 +1,489 @@
-# mcp/src/agents_remember/serving/ — Dashboard Serving Layer Overview
-
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| sourceRoute            | `mcp/src/agents_remember/serving/`               |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-10T11:42+02:00 |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
-| governingOverview      | `../../../overview.md`                         |
+# Serving — Dashboard, Hosted Sessions, And Review Boundaries
 
 ## Governing Overview
-
-[mcp/overview.md](../../../overview.md)
-
-## ARSPAWN-L5 A005 Shared Task-Binding Admission
-
-`task_binding.py` is the one preflight for canonical document resolution, role altitude, current
-source lineage, and generation-bound reviewer parent. The plane-private spawn application invokes
-it before settings resolution; `terminal_opener.py` invokes the same API at the final pre-host seam.
-This ordering keeps stale-lineage recovery actionable and prevents a launch-selection refusal from
-hiding a malformed structural claim. There is no filename, settings, or compatibility fallback.
-
-## ARSPAWN-L5 Real Role Startup And Headless Delivery
-
-Codex role seats now remain in startup until the native app-server reports one connected configured
-MCP server advertising exact `dispatch_agent`. The shared readiness parser owns pagination, status,
-tool shape, settled absence, and timeout; the adapter has no alternate tool-name or discovery
-fallback. Dispatch briefs allow one bounded spawn-to-bridge convergence window without creating a
-second caller attempt. Agent-notifier sweeps refresh canonical terminal liveness themselves, so
-queued brief/message progress does not accidentally depend on dashboard browser polling. Control
-socket diagnostics distinguish absent, refused, and timed-out endpoints without claiming process
-death from socket state alone.
-
-## ARSPAWN-L4 Shared Candidate Identity
-
-`build_info.process_serving_build()` now owns one cached identity for the Python process and feeds
-both dashboard serving composition and MCP `server_info`. In addition to version/boot/checkout
-facts, the stamp content-addresses sorted importable Python source and names the exact interpreter
-and package root. This distinguishes equal-version or dirty candidates without making paths part of
-the content digest. `models/core.py` is the one strict wire authority; served state only
-composes it and MCP only projects it.
-
-This identity is diagnostic and acceptance evidence, not package-update policy. Production starter
-registrations continue to launch `uvx --refresh-package agents-remember-mcp
-agents-remember-mcp@latest`; the disposable ARSPAWN acceptance runner launches exact local source
-only so it cannot accidentally certify a stale published artifact.
+[overview](../../../overview.md)
 
 ## Purpose
 
-### 260731-EFA-L23 Route Delta
+The serving package composes the local dashboard, projection/event streams and retained file, note, task, requirement, change-set, Knowledge and review readers over configured application ports. Native Paseo integration remains a separate retained subtree; the removed hosted terminal catalogue, harness adapter/control, conversation, notifier and supervisor plane is not this package's current responsibility. The package also owns the dashboard daemon's start, identity and restart, and the build-currentness reading by which a running dashboard or MCP server knows whether the Python build it loaded still matches the files at its package root.
 
-L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary.
-
-### Current Runtime-Truth Repair
-
-The serving boundary exposes a packaged dashboard fingerprint without fabricating one when the
-artifact is absent. Since 260731-EFA-L1 that absence is **routine rather than exceptional**: the
-cockpit bundle and its `dashboard.fingerprint` sidecar are generated at release time and are not in
-version control, so a source checkout serves no cockpit and reports no `dashboardBuild`. Both
-absences are answered honestly — a 503 naming the build command at `/`, and an omitted key on the
-wire — never with a placeholder page or a fabricated identity. The boundary also sends revalidation
-policy only on successful HTML, and keeps pre-session harness
-discovery to `id`/`name`/`detected`. Raw event cursors realign to server-owned record boundaries and
-advance past malformed, undecodable, blank, heartbeat, and non-object records; accepted top-level
-objects are parsed once and reused by SSE. Dashboard-owned tmux clients strip inherited tmux
-identity and force the browser PTY grammar while preserving unrelated environment settings.
-
-### Current Folded-State Stream Repair
-
-The state SSE channel now has one projector-owned activation and publication contract.
-`Projector.subscribe()` registers a queue before capturing current authority, so a concurrent
-projection is either in that snapshot or in the registered queue. `_publish_projection()` computes
-the event batch, commits stable/current state, then notifies subscribers; the first successful tick
-after failed `prime()` emits one full snapshot, an identical recovered state emits nothing, and
-later changes use ordinary named deltas. `app.stream_events()` only decorates/serializes that stream
-and explicitly closes the subscription on disconnect or cancellation.
-
-### Current Structured-Conversation Contract
-
-The original `serving/conversation/` contract-only leaf established the protocol-neutral roof for the
-Chats interface. Its initial state is recorded in this paragraph; the production children below supersede the empty-router state. Strict Pydantic wire models normalize harness identity, active transcript/event
-pages, independent active/library cursor scopes, evidence-backed status and capabilities,
-operation queue/withdrawal recovery, attachments, and telemetry without claiming that native
-history/control implementations or a renderer already exist. Exactly two read ports define the
-active and library seams. Three behavior-empty owned child routers (`active`, `library`, `control`)
-compose under one root router, registered exactly once by `harness_control_api.py`, so later leaves
-can add behavior without restructuring the serving route.
-
-The missing production composition boundary under that roof is repaired: the same
-single registration now constructs and installs one immutable app-scoped `ConversationRuntime`
-(scope, terminal catalog/host, effective harness registry, liveness clock/config, capability
-evidence, and a server-resolved local-operator authorization resolver) on `app.state` exactly
-once. Child leaves consume it through two narrow request dependencies and never edit
-`conversation/router.py`, `harness_control_api.py`, or `app.py` again. Authorization is the
-server-resolved local single-user ruling: loopback-only at request time, no browser-supplied
-principal/tenant channel, fail closed otherwise.
-
-The active child is implemented inside its owned seam as
-`serving/conversation/active/` plus the per-harness mapper grammars in
-`serving/conversation/projectors/`: three registered production wires (authorized native-hydrated
-page, selected-child history, and resumable SSE events) behind the shared composition,
-HMAC-signed purpose-branded
-page/event cursors re-bound against the authorized identity on every wire, a per-app service
-holding a bounded reconstructable-projector LRU, per-session engines that hydrate from native
-authority (codex persisted-thread pages, pi durable entries, the bounded live evidence window —
-never the flattened transcript deque) and mint totally ordered envelopes with one typed gap per
-established-stream failure class, an idempotent projection store whose tool-call upserts union
-blocks by `block_id`, the canonical `ConversationStatusService` whose one evidence
-classification both Chats and orchestration consume (`hosted_control_projection.snapshot_turn_state`
-now delegates to it), and fixture-gated per-session capabilities (claude honestly `unverified`
-for a never-probed contract reason — THE CONTRACT IS THE ONLY GATE and
-no version-string comparison demotes any capability, so the prior "installed 2.1.214 vs locked
-2.1.211" version demotion is removed; codex historical tool loss visible). The shared
-composition, router, wire grammar, and library/control shells are untouched; the slices are
-governed by `conversation/active/overview.md` and `conversation/projectors/overview.md`.
-
-The library child is implemented inside its owned seam as
-`serving/conversation/library/`: authorized dormant native list/read routes over each normalized
-harness's catalog/history (Codex direct app-server, Claude/Pi through the repository-locked Node
-helpers), live production-path capability gates cached per installed-executable fingerprint, a
-per-app HMAC-signed cursor/key authority with content-derived catalog generations, narrow-only
-canonical project scope, and an idempotent exact open/status/reconcile service that launches a
-NEW tracked session through the existing opener (codex through the additive
-`resume_thread_id` channel), proves exact catalog identity, and retires record-spawned failures
-honestly. The shared composition, router, and wire grammar are untouched; the slice is governed
-by `conversation/library/overview.md`.
-
-The control child is implemented inside its owned seam as
-`serving/conversation/control/`, filling the last behavior-empty conversation router: seventeen
-registered routes for exact-turn interrupt (idempotent request/status/reconcile, acknowledgement
-never equal to settlement), the complete source-aware never-bodies operation queue with cockpit-only
-withdrawal and a bounded authorization-bound 900 s recovery lease, typed attachment stage/rebind/
-submit through the control-plane asset channel into a confined 0700/0600 spool, read-only effective policy with
-no mutation surface, and evidence-bound telemetry (codex cumulative token usage). Opaque control
-references are HMAC-signed, purpose-branded, and re-bound per wire; a per-app control service holds
-bounded per-(session, epoch) ledgers with per-session serialization above the control-plane replay cache; the
-pi settlement reads the clip-preserved evidence terminal identity. It consumes the closed
-control-plane substrate (native interrupt write, paged never-bodies operation timeline, asset
-channel, pre-tombstone recovery payload) read-only and touches neither the shared composition, the
-router, nor the wire grammar; the slice is governed by `conversation/control/overview.md`.
-
-### Current Hosted-Session Contract
-
-The current hosted-session serving contract is protocol-backed: exact adapter snapshots govern
-readiness, liveness/activity, delivery evidence, interactions, and terminal projection. Durable
-operator-inbox rows are the only inter-agent message roots; the adapter is only their delivery wire,
-and correlated adapter acceptance at a turn boundary is acknowledgement/landing authority. Model
-`consume` is optional attribution with no mechanical effect. Pane text, terminal logs, copy mode,
-paste echoes, and timing windows are diagnostic-only and cannot authorize readiness, delivery,
-completion, or supervisor action. Older pane/log/paste descriptions retained below are semantic
-history, not current authority.
-
-### Current Structural Seat And Routing Contract
-
-Hosted-seat identity is the real task document plus role: sprint roles bind the sprint document,
-manager binds the master, and worker/reviewer/curator bind leaves. `ambient_seat.py` proves callers
-from plane-seeded hosted context and — since 260821-ARSPAWN-L1 — resolves the ambient launcher (a
-process with no `AR_HOSTED_SESSION_ID`) as a typed `AmbientCaller` for `dispatch_agent`;
-`structural_seats.py` qualifies parent/child relations and singular current occupants. Spawn
-provenance now includes caller kind (`spawned_by_kind`, written when set), mapped write-once onto
-the catalog row by `terminal_opener._opened_catalog_entry` via `_preserved` and surfaced on the
-spawn wire as `spawnedByKind`. `terminal_task_assignment.py` is the one level-neutral binding primitive. Ordinary
-inbox traffic is persisted, then re-resolved at post and delivery time so replacement is transparent;
-the initial dispatch brief alone stays exact-pinned internally. One-way startup migrations run before
-strict catalog/control-plane readers; no dual-schema compatibility reader remains. Agent-notifier
-predicate helpers consume the existing `TaskHierarchy` protocol, while production constructs the
-filesystem-backed `TaskDocumentTopology`; this preserves one hierarchy authority without forcing
-callers to depend on its concrete implementation.
-
-State-signal actions revalidate the subject's current task-document binding and derive the structural
-owner immediately before posting. A role/document address without a current occupant is left
-eligible for a later sweep and cannot create a durable row or emitted marker; a typed task-document
-refusal fences only that subject so unrelated findings continue. The canonical structural owner and
-shared delivery path remain the authorities for replacement, ambiguity, and boundary handling.
-
-Boundary handling is now explicit at the drain gate: `state_signals.evaluate_boundary_drain_findings`
-admits a pending row at its target's turn boundary only when `_boundary_follows_last_attempt` says
-that boundary follows the row's last recorded attempt, and a row carrying *no* attempt clock is
-admitted only for a `state-signal` row. That is exactly the state a replacement occupant creates,
-because rebinding a held signal restarts its attempt clock while the generic redelivery path keeps
-suppressing it as a held signal; without the state-signal-scoped admission such a row had no
-delivery path at all. Every other row kind keeps the ordinary redelivery path, and an unparseable
-attempt clock is still refused.
-
-**`HarnessSubmissionAuthority` is the sole epoch-bound prompt/setter
-timeline.** It owns prompt FIFO, immutable id/source/payload admission, atomic queued-withdraw versus
-dispatch claim, exact full-operation-ref completion, early-terminal dominance, response bypass,
-raw-free cockpit status, and bounded privacy-aware retention. `HarnessControlQueue` no longer exists:
-260731-EFA-L6 deleted the compatibility facade outright, so the authority is reached directly.
-Codex, Claude, and Pi are dispatch-now adapters with guarded first-byte seams;
-none may create a native/adapter queue or release work by FIFO/id alone.
-
-**The additive, read-only native evidence and resume substrate.** Mappers
-place full native frames under the single reserved `arEvidence` raw key on events they already emit;
-the bridge diverts each payload at its one `_run_events` consumption point into a bounded
-per-session evidence deque (2,000 frames, 32 KiB clip with a visible marker, monotonic adapter-event
-sequence, honest eviction floor) and reduces/publishes the redacted event, so `snapshot.raw`,
-catalog `control_raw`, SSE projections, and every existing consumer stay byte-identical. Three
-additive IPC reads cross only the user-private socket: `evidence` (deque-domain page),
-`evidence-native-page` (native-domain page with typed identity and an opaque `nextCursor`, codex
-`thread/read` and pi `get_entries(since)`; claude fails closed typed), and `submission-provenance`
-(epoch-checked batch over all three sources through the sole bridge → queue → authority delegation).
-Every evidence response carries `bridgeEpoch`, the two coordinate domains are disjoint and rejected
-cross-typed, and the validated client enforces monotonicity, continuation coherence, and exact
-counts. The codex-only `resume_thread_id` channel rides opener → `RunnerConfig` payload → factory
-kwarg → the sole `CodexAppServerSettings` site, refusing non-codex or malformed values before any
-spawn. No existing action, DTO, consumer, deque, or snapshot reduction changed shape; unknown
-native shapes cross as unknown-vendor evidence with raw preserved and semantics never guessed.
-
-**The additive native control-plane substrate lands inside the same family.** A
-native interrupt write rides a runtime-checkable structural `InterruptCapableAdapter` sub-protocol
-(base protocol byte-compatible): the bridge dispatch is epoch-guarded and bridge-stamped
-(adapter-mint epochs refused), codex writes `turn/interrupt` against the exact active turn with
-its native `turnId` guard, pi writes RPC `abort` guarded pre-write by the caller's expected
-active-operation identity, both replay the first acknowledgement once per (expected, active) pair,
-claude/unsupported fail closed typed naming the adapter, and settlement stays with the landed
-completion path (a pi aborted turn's content-less `message_end` now crosses evidence-only instead
-of killing the bridge). The operation timeline is a paged never-bodies enumeration of the
-authority's retained ledger — all three prompt sources plus set-model/set-effort identity under a
-page count cap and the shared 48 KiB-class budget, every page carrying `latestSequence`,
-`evictedBeforeSequence` (tracked at the sole pop site), `truncated`, and `bridgeEpoch`, with
-completeness as the union of pages and an epoch flip failing typed at the validated client; the
-delegation runs authority → queue → bridge → IPC → validated client exactly like the evidence provenance reads.
-The asset channel rides submit with references only: schema validation, resolve-and-verify
-confinement under the request-independent `<endpoint-root>/assets` anchor (lexical
-separator/dot-segment ban, ≤255-byte components, NUL translated to a typed refusal), size/sha256
-verification at admission and re-verification at native construction (codex `localImage{path}`,
-pi base64 `images[]`), an asset-conditional idempotence digest extension (asset-free digests
-byte-identical), an `unsupported` terminal receipt on non-capable adapters, and additive receipt
-`assetIds`. Withdrawal recovery captures the exact pre-tombstone body once inside the already
-`cockpit_only` response at the true transition; replays carry none and the tombstone timing/class
-is byte-preserved. Two additive IPC actions (`interrupt`, `operation-timeline`) keep the protocol
-at `ar-harness-control/v1` (now 20 actions); daemon-side bounded recovery retention stays the control
-child's obligation.
-
-### Historical Slice-04 Through HFX Serving Account
-
-The following migration account predates the current protocol-owned hosted and conversation paths above. Its pane/log delivery and transport-only framing are history, not current authority.
-
-`serving/` is the **local dashboard serving layer** (slice 04 of the 3.0
-browser-dashboard series): a FastAPI app over the observer projection read side. It
-is **transport only** — it adds no interpretation (the reducer owns that) and reads
-coordination state exclusively through `McpRuntimeConfig` + `observer.paths`
-(North-Star #5), never raw host paths. It serves `project_and_write`'s
-`WorkspaceProjection` live over SSE, tails the raw observer event log, ships the static
-cockpit bundle, opens the POST action return-channel (targeted gate decisions are
-developer-attributed and binding), and hosts the Mode B2 terminal backend
-(`terminal.py` — tmux-wrapped PTY sessions, slice 6d-1) bridged to the browser over the
-`@app.websocket("/api/terminal/{session}")` WebSocket (slice 6d-2); a `POST /api/terminal/{session}`
-opener + `GET /api/harnesses` let the dashboard spawn + own a shell or a detected harness (slices
-6e-2a/6e-2b, the `harnesses.py` registry). `POST /api/operator-inbox` is the trusted
-developer/dashboard write side for durable inbox messages; a queued row can be pushed immediately into a
-matching hosted session through the shared terminal paster while keeping the row pollable.
-`POST /api/operator-inbox/{entry_id}/dismiss` is the delete path
-for stale task-row pickup warnings. `terminal_catalog.py` provides the durable terminal-session
-surface: opener rows persist under `logs/dashboard/terminal-sessions.json`, `/api/terminal/sessions`
-hydrates the UI after refresh, the opener creates detached tmux sessions, each WebSocket gets its own
-tmux client only after a tmux probe, and explicit terminate kills tmux and hides the row from normal
-lists. `terminal_task_assignment.py` is the shared level-neutral binding primitive used by operator
-APIs and internal structural dispatch. `TaskDocumentTopology` validates real sprint/master/leaf
-documents; no leaf-normalization adapter or role-anchor leaf remains. `terminal_opener.py` is the
-shared hosted-occupant opener that both the operator route and structural dispatch compose over, so
-there is no parallel spawn path — and `terminal_paste.py`, the server-side capture-verified stdin
-paste (success only after the pane provably shows the paste; one origin baseline per
-delivery makes duplicate stacking impossible; failures ship the pane capture) that backs the
-`POST /api/terminal/{session}/paste` endpoint and the tool's context delivery. `terminal.py`
-gains an `env` knob-injection seam (`tmux new-session -e KEY=VALUE`) and `terminal_catalog.py` gains
-spawned-by provenance columns for the orchestration tree (`spawn_role` beside them —
-written only when AR_SPAWN_ROLE is set, preserved on re-open, riding the sessions wire for the
-chats command tree). Run via
-`agents-remember dashboard` (the `cli/` umbrella); `--sim` replays a recorded fixture
-through the byte-identical path. The seat-lifecycle surface (issues #12/#4):
-`POST /api/terminal/{session}/retire` and `POST /api/terminal/{session}/rename` — server-authoritative
-retirement (kill tmux + a retirement-provenance mark layered on the existing `terminated` status,
-authority enforced via `retire_policy.check_retire_authority`: owner-never-self-retires, a manager
-retires only worker/reviewer seats of its own master, the orchestrator retires anything) and
-post-spawn identity rename (`spawned_label` freezes the original label on first rename, identity
-text only, `spawn_role` never changes). Live turn-state (`working`/`turn-ended`/`awaiting-input`/
-`stale`) rides the EXISTING `terminal_liveness.py` alive-probe sweep — no new hot loop — classifying
-harness rows from the same `terminal_paste.capture_pane` history-inclusive pane view paste
-verification already uses, and firing `seat_events.py` observer events (`seat.retired`/
-`seat.renamed`/`seat.turn-state-changed`) only on an actual transition. Landed/archive classification
-replaces normal completion cleanup: successful integrate/finalize marks
-matching seats `status:"landed"` via `landing.py` + `seat.landed`, keeps them visible/inspectable in
-the dashboard, and leaves manual retire as the explicit terminating path for stuck/abandoned/duplicate
-or harmful seats; `POST /api/terminal/landed-cleanup` closes only rows still marked landed and reports
-closed/skipped counts. The
-**deterministic supervisor sweep** (P-15 tiers 1+2, "the model is never the polling layer"): a
-third decoupled-cadence lifespan task (`supervisor.py::run_agent_notifier_sweep`, default ~10s,
-settings-controlled) that reads `TerminalCatalog`/`OperatorInboxStore`/`ExpectationRowStore`/the
-nudge store DIRECTLY (never the projection), evaluates five mechanical predicates — pane-state
-(new `pane_signals.py`), expectation-deadline expiry, turn-report staleness (`missing_artifact()`
-gets its first caller), unacked-row redelivery, and seat-liveness (the liveness/turn-state join with graceful
-degradation) — and acts: redeliver via the shared injector, auto-nudge, owner-addressed signal-emit, or
-hand off to the escalation ladder's reserved stub, logging every action as an
-`orchestration.supervisor.*` observer event. New `supervisor_heartbeat.py` gives the sweep its own
-self-liveness tick row (issue #15, "the watcher must be code AND watched"), surfaced as a fail-loud
-MCP-tool banner (`mcp/tools/base.py`) and a dashboard header badge (`/api/state`/SSE).
-The escalation ladder fills that reserved stub: `supervisor.py` gains two more predicates
-(`evaluate_escalation_findings`/`evaluate_dead_upstream_findings`) and two more actions
-(`_escalate_rung`/`_signal_dead_upstream`), calling through the new
-`controlplane/escalation_ladder.py` walker (governed by the `controlplane/` overview) for rung
-decisions and `controlplane/signal_routing.py`'s new two-hop `derive_skip_level_owner`/`is_seat_dead`
-for skip-level/grandparent addressing. Past the respawn threshold, `_escalate_rung` calls new
-`_respawn_suspect`: retires the suspect seat's husk via `serving/retire.py::retire_entry`,
-re-delivers its pending inbox queue to the successor via the signal payload, and — when the retired
-seat was a manager — surfaces its still-running workers (new `controlplane/orphan_policy.py::
-find_orphaned_workers`) as orphans in the same respawn event, never auto re-parenting them or
-absorbing the dead manager's role. No new hot loop, no new `InboxMessageKind` values — rung 1 reuses
-`nudge`, rung 2/3/respawn/dead-upstream reuse `escalation`, distinguishable via the dedicated
-`orchestration.escalation.rung`/`.respawn`/`.dead-upstream` events.
-The supervisor keeps its observation cadence independent from its delivery/escalation
-cadence: `supervisor.py` passes the redelivery floor into hosted delivery, checks the new
-`controlplane/supervisor_signals.py` cooldown store before repeated pane/seat-liveness owner signals,
-and skips `pane-signal: mid-turn` as busy-state noise. `app.py` wires the new store plus
-`settings.supervisor.signal_cooldown_seconds` into `AgentNotifierContext`; `inbox_delivery.py` threads
-the redelivery floor into every stored delivery snapshot.
-The supervisor is chain-aware and manager-first: stale expectation/report/
-seat/inbox/escalation predicates defer when the same leaf chain has progressed; nudge, signal, and
-dead-upstream actions resolve the current responsible manager; one row can transition at most once per
-sweep; and completion/artifact posts are readdressed and hosted-delivered to the current manager.
-Unbound reviewer/curator progress is credited in the subject worktree; unbound worker active-phase
-credit remains an accepted follow-up.
-
-Release-tail hardening covers the same supervisor path: delivery-failure inbox rows whose
-delivery state is `"no-hosted-session"` or `"unconfirmed"` stay in the redelivery domain until
-`PERSISTENT_FAILURE_ATTEMPTS` or `escalatedAt`; the generic unacked escalation ladder skips them
-until then, so hosted-delivery failures do not escalate before the persistent redelivery threshold.
+Role launch instructions are generic capsule-or-refused values; compilation and admission remain application-owned. The current ordinary source literal `PUBLIC_TOOLS` has 44 names, including `knowledge_write`, `user_settings_init` and `explainer_control`; a valid launch-bound explainer selects its separate 22-tool surface. Declaration, installation content, native receipt identity and observed host execution are separate facts; this overview creates no new CODE grade.
 
 ## Hot Path Summary
 
-Serving composes the dashboard application, hosted-session control, projections and notifier. Start at `app.py` for route/lifespan composition, `projector.py` for atomic snapshots and cancellation draining, and `change_watcher.py` for change-or-heartbeat pacing. Watcher lockfile exclusion derives from `kernel.file_lock.lock_path_for` and filters every watched directory; moving this import does not alter suffix, debounce or wake behavior. The host registry and coordinator retain separate policies above that shared kernel mechanism.
-
-## Serving Operating Context
-
-For the active conversation serving, start at
-`conversation/active/api.py` (page/events plus selected-child history and the O4 error ladder), then
-`conversation/active/service.py` (epoch/cursor checks, atomic page+cursor),
-`conversation/active/projector.py` (hydration, polls, echo zipper, gap mechanics),
-`conversation/active/store.py` (idempotence, tool block union),
-`conversation/active/cursor.py` (signed cursor authority), and
-`conversation/active/status.py` (the canonical classification orchestration shares). The
-per-harness grammars live in `conversation/projectors/{codex,claude,pi}.py`; the four focused
-suites pin the slice, the API suite over a real socket.
-
-For the native conversation library, start at
-`conversation/library/api.py` (five routes plus the O4 error-status ladder), then
-`conversation/library/service.py` (per-call re-authorization),
-`conversation/library/open_service.py` (idempotent exact open and bounded ledger),
-`conversation/library/cursor.py` (signed token authority), `conversation/library/gates.py`
-(live capability gates), and the three dormant ports `conversation/library/codex.py`,
-`claude.py`, `pi.py` with `helper_host.py` for the locked Node helpers. The six focused suites
-plus the installed-runtime suite pin the slice.
-
-For the native evidence and resume substrate, start at
-`harness_control_bridge.py::_run_events` (the single diversion point) and
-`harness_control_models.py` (evidence DTOs, reserved key, clip/window helpers), then the three IPC
-actions in `harness_control_ipc.py` and the validated reads in `harness_control_client.py`.
-Per-harness forwarding lives in `codex_app_server_adapter.py`, `claude_stream_state.py`, and
-`pi_rpc_events.py`; native pages in the codex/pi adapters; provenance in
-`harness_submission_authority.py`; the resume channel runs `terminal_opener.py` →
-`harness_control_runner.py` → `harness_control_factories.py`. `test_harness_control_evidence.py`
-pins the whole seam.
-
-The catalog terminal-evidence lift is a consumer of that bounded substrate:
-`terminal_evidence.py::_validated_evidence_cursor` validates the deque envelope before
-`latest_terminal_evidence` maps frames, rejects unsupported projectors before reading, and
-advances truncated pages only through the last returned sequence. Its Pi path remains bounded
-at 200 entries per page and eight pages per sweep; `test_terminal_evidence_cursors.py` retains
-the focused cursor, refusal, continuation, and liveness-containment checks. This lift does not
-add a history fallback or alter the canonical projector owners.
-
-For the native control-plane substrate, start at
-`harness_control_bridge.py::interrupt` (epoch guard, structural dispatch, bridge-stamped epoch),
-then the adapter writes `codex_app_server_adapter.py::interrupt` (exact active turn) and
-`pi_rpc_adapter.py::interrupt` (expected-operation guard), the authority read
-`harness_submission_authority.py::operation_timeline` (paged never-bodies, eviction floor), the
-IPC admission `harness_control_ipc.py::_submit_assets`/`_confined_asset_path` (schema +
-resolve-and-verify), the native asset constructors `_turn_input`/`_image_content`, the recovery
-capture in `harness_submission_authority.py::withdraw`, and the validated reads
-`harness_control_client.py::interrupt_control`/`read_operation_timeline`.
-`test_harness_control_plane.py` pins the whole seam; `test_harness_control_plane_installed.py`
-captures it live.
-
-For folded-state stream convergence, start at `projector.py::_publish_projection` and
-`Projector.subscribe`, then follow `app.py::stream_events` into
-`test_serving.py::StreamEventsTests`. Publication commits before notification, subscription
-registers before snapshot capture, failed-prime recovery emits one full snapshot, and iterator
-closure owns subscriber cleanup.
-
-The original contract-only leaf established structure before live endpoints: consumers validate hostile
-normalized products through `conversation/models.py`; the now-implemented active and library services
-satisfy their separate read ports and cursor purposes; mutations stay on the control
-router. The root composition is mounted once beside existing harness-control routes. The locked
-repository helper and redacted installed-runtime fixtures are compatibility evidence only and may
-not promote a capability by being present.
-
-Reliable submission enters one bridge-generation authority. Async native preflight is
-followed by a lifecycle-lock claim and final adapter write guard; a queued withdrawal and dispatch
-compete at that exact point. Each prompt/model/effort operation is identified by epoch + monotonic
-sequence + id + kind. Direct adapter completion reaches authority before coalesced publication and
-can dominate a later unknown receipt when the ref is exact. Cockpit status/withdraw are raw-free,
-epoch-gated, and batched to 64 ids. Timeline/duplicate retention is bounded (64/256 defaults) without
-evicting live, active, or unknown rows; terminal prompt text is discarded while digest/correlation
-remain. Only a certified pre-dispatch busy failure is retry-safe. Codex uses fresh-turn guarded
-writes and bounded turn correlation, Claude accepts one guarded operation under the shared transport
-lock, and Pi requires fresh state plus generation/activity/event tokens and settled+fresh-idle
-completion. The older setter/daemon queue descriptions below are historical provenance superseded by this
-authority model.
-
-The live native-capability gate is closed and Claude catalog discovery hardened. Only
-the ephemeral discovery launch removes every Claude 2.1.210-supported pre-`--` MCP selector
-(`--mcp-config` separate/variadic/repeated or equals-attached, plus the exact strict flag), preserves
-unrelated argv and the complete positional suffix, and inserts one strict empty MCP set. Normal
-session startup remains byte-for-byte caller-owned and continues to load the installed MCP
-configuration. This prevents a token-free catalog refresh from launching unrelated configured MCP
-children while preserving the same dynamic model/model-local-effort rows. The final live matrix
-keeps Claude Fable switching native-result-driven, Codex selection queued until an accepted fresh
-turn on the same thread, and Pi requested/effective thinking readback distinct. Captured catalog
-counts and resource measurements are installation evidence, never maintained enums or capacity
-policy. A startup-failed bridge may still surface `control command queue is stopped` during graceful
-stop; terminate/retire retain that detail, reap the host, and reach terminal catalog state.
-
-The normalized port is exposed through the daemon without introducing ACP transport.
-`HarnessCapabilityCatalog` performs token-free native discovery, caches one successful snapshot per
-built-in harness under an executable/argv fingerprint, single-flights concurrent misses, and treats
-explicit refresh as the auth/account boundary: failure conditionally quarantines only the entry it
-observed. `harness_control_api` accepts an optional complete native launch pair and addresses exact
-live sessions for advertise, honest set, whole-message submit, and same-id reconcile. Public
-serializers omit private raw adapter evidence. The IPC client distinguishes pre-write failure from
-first-byte ambiguity, never blindly resends, and the queue makes duplicate request ids idempotent and
-reconciles retained known outcomes locally. The shared opener fences one read/probe/ensure/upsert
-transaction, so live reopens return immutable process truth or conflict and dead replacement starts
-a clean generation. Liveness precedes 404/409 support classification. Role spawn and the durable
-inbox/brief bus remain on their existing paths; no UI, settings authoring, paste fallback, Toad, or
-ACP transport rides this boundary.
-
-`set_model` and `set_effort` are first-class operations on the normalized
-own-adapter port, serialized with prompt submission through `HarnessSubmissionAuthority`
-(until 260731-EFA-L6 this was reached through the `HarnessControlQueue` facade, now deleted).
-`SetResult` accepts exactly `echo-verified`, `immediate`, `queued`, `unknown`, or `unsupported`,
-with requested and effective values kept separate and contradictory combinations rejected. Claude
-sends ordinary structured `/model` and `/effort` user frames, then requires the same vendor
-session, retained UUID, canonical replay body, and native terminal result; the exact dynamic
-`claude-fable-5[1m]` row is a current successful path, while any real
-`noninteractive_set_blocked` result remains an honest generic refusal rather than an AR model
-policy. Codex keeps desired, pending, captured-prompt, and effective selections distinct, forces a
-fresh `turn/start` for pending settings on the same thread, and promotes only a successful turn.
-Pi serializes mutation response, bounded `get_state`, and refreshed catalog validation before one
-atomic model/thinking snapshot commit, preserving model-error versus thinking-clamp asymmetry.
-Cancelled and late responses are reclaimed without reader or queue failure. None of these setter
-delegates reaches composer paste, tmux input, session commands, terminal surfaces, or injectors;
-role-based spawn and the durable inbox/brief bus retain their separate ownership.
-
-One settings-resolved `ResolvedLaunch{harness, model, effort, workspace}`
-is carried through the shared opener into the exact-session runner. Before a configured vendor session starts,
-the runner applies adapter-owned selector conflict preflight, performs token-free dynamic discovery,
-validates model plus model-local launch effort, then starts Claude with native `--model/--effort`,
-Codex with `thread/start` model/config effort, or Pi with provider-qualified
-`--model/--thinking`. Effective startup evidence is honest: Pi echoes both, Codex echoes thread
-model/effort, and Claude echoes model while its effort remains catalog-validated native-flag
-evidence because stream-json has no effort echo. Failures remain addressable as
-failed/rejected/exact `bridgeError`; normalized native model/effort is never composer-pasted.
-
-A normalized, own-adapter capability layer sits beneath the port without ACP transport. Claude
-`list_models`, Codex paginated `model/list`, and Pi `get_available_models` dynamically advertise
-the installed/authenticated model catalog without submitting a model turn. Effort is nested under
-each model; running adapters serve their retained startup catalog while transient discovery starts
-only the native protocol handshake/catalog path. The ACP Sense 1 projection uses the `model` and
-`thought_level` category shape; unknown current values are omitted rather than fabricated.
-
-Claude, Codex, and Pi built-ins negotiate the structured fields their adapters
-consume; exact package versions are fixture/smoke evidence only. Rolling inbox compatibility is
-limited to optional `adapterDeliveryState` and `adapterDeliveryDetail`, and cutover reloads the
-daemon, every MCP-owning client, per-session runners/adapters, and browser tabs. Resource
-performance work remains queued.
-
-Codex parent terminal completion carries the durable operation id as protocol `requestId` and the
-native turn id as vendor correlation. The direct id lets an initially queued receipt converge onto
-its exact inbox row when the turn completes. A terminal record that legitimately has a null
-`requestId` is resolved only through its text vendor correlation on exactly one accepted inbox row
-for the same hosted session; missing, non-text, unmatched, or ambiguous correlation fails loudly.
-Completion projects onto that same row as adapter delivery metadata while explicit inbox state
-remains `pending` and unconsumed. With no actual queued replacement the adapter reports `idle` /
-`immediate`; `settling` / `queued` means a replacement is actually queued. This is protocol-owned
-structured behavior, not fixture-version, parser, pane, or resource-performance behavior.
-
-The exact-session Unix IPC response lifecycle contains peer-loss `BrokenPipeError` and
-`ConnectionResetError` only after accepted dispatch, across response write/drain and close/
-`wait_closed`. Request dispatch, identity/protocol validation, malformed input, serialization,
-cancellation, and unrelated failures remain loud. A delayed-reply disconnect leaves the accepted
-submission ambiguous but bridge-reconcilable, with no retry or fallback; bridge reconciliation
-returns the preserved vendor correlation.
-
-The projector's waking is change-driven: `change_watcher.py` derives watch
-roots from the projection's actual input surfaces (watchfiles/inotify, nothing under `worktrees/`
-— container data is unreadable + high-churn, 30s watch-set re-derivation), filters non-input churn, and paces wakes through `ChangePacer`
-(debounce 0.1s, max-delay = `--interval` so a busy world keeps the former 1s cadence, idle
-heartbeat default 15s via the new `--heartbeat` flag). The tick body is untouched; `/api/state`
-staleness and time-derived fields (ages, stale/overdue flips) are bounded by the heartbeat;
-watcher absence/failure degrades LOUDLY to legacy fixed-interval ticking; `--sim` stays
-time-driven; a running daemon picks the new pacing up only via explicit stop + spawn (ensure
-adopts healthy daemons).
-
-Confirmed-gone inbox reconciliation runs at the front of the deterministic
-supervisor sweep. The bounded policy resolves only eligible supervisor nudge/escalation rows:
-catalog termination is direct proof, compacted tombstones require one successful exact-name tmux
-snapshot, and command failure fails closed. Resolve-plus-compact runs under the inbox lock before
-redelivery; the body-free aggregate event is silent on no-op sweeps. The existing TTL/cap fallback
-and active/landed/exited retention remain unchanged.
-
-Seat normalization is centralized in `seat_binding.py`: `spawnRole` is immutable
-provenance, `seatRole` is current binding, and uniqueness is one live owner per canonical
-leaf-role pair. `terminal_catalog.py` migrates old rows; opener/assignment liveness-check the
-same-role holder; attach requires identity for an untyped hand-opened harness; retire/supervisor/
-landing paths consume binding identity. The supervisor also preserves role in findings, rows,
-cooldowns, coalescing, and events, and uses one injected sweep timestamp for delivery writes.
-
-The superseded pre-protocol delivery implementation used harness JSONL as submitted-delivery authority across spawn, inbox,
-supervisor redelivery, and REST paste. `harness_logs.py` discovers/binds a recent cwd-matching
-Claude/Codex log; `injector.py` separates message and command evidence with calibrated 40.3 s/29.0
-s windows; `terminal_paste.py` owns one Enter re-press and one verified-absence clear/replace
-re-paste, with pane capture restricted to duplicate prevention and failure diagnostics. The catalog
-persists resolved knobs, log id/path, and `replacementForLeaf`; safe binding re-reads the latest row.
-Codex knobs ride explicit argv, and the supervisor's synchronous redelivery budget defaults to one.
-
-A live sixty-second workspace-river compactor runs over virtual locked cursors, full task bodies are
-served only through `GET /api/task-document`, and the supervisor is current-manager-first,
-chain-progress-aware, and one-rung-per-row-per-sweep. The always-on state/SSE projection remains
-body-free for task documents.
-
-Task-document snapshot serving now carries the compact execution-topology facts needed by the
-dashboard: a commanded master's optional nature, a sprint's canonical graph, and deterministic
-derived waves. The serving route copies validated task authority; it does not choose priorities or
-invent graph positions.
-
-`agents-remember dashboard --config <settings.json>` → `cli/dashboard.py` →
-`serving.app.create_app(config)`. The app's lifespan starts one `Projector` that ticks
-`project_and_write` — on change-or-heartbeat wakes when the live change
-watcher is healthy (`--interval` is the fast-path cadence floor a busy world still ticks at;
-`--heartbeat`, default 15s, is the quiet-world refresh) and on the legacy fixed `--interval`
-under `--sim` or a degraded watcher — refreshing provider current-state first in live mode, then
-hands each successful projection to one publication boundary. That boundary derives either a
-first-recovery snapshot or `serving.delta.diff_projection` events, commits stable/current
-authority, and only then fans events out to every registered SSE client. Beside the projector task,
-the same lifespan runs the **provider containment
-metrics sampler**: every 30s
-(`DEFAULT_SAMPLE_INTERVAL_SECONDS`, deliberately decoupled from the projection tick)
-it snapshots labeled provider containers read-only
-(`providers/metrics.sample_provider_containers`) into the `ProviderMetricsStore` under
-`logs/observer/providers/` — exception-tolerant (a failed docker probe logs and retries
-next interval), dockerless-safe, cancelled at shutdown; `provider_status` and the
-degradation protocol read that store. The same sampling-loop
-iteration, in the same exception-tolerant `try` block, also calls
-`await asyncio.to_thread(evaluate_provider_degradation, config)` immediately after the metrics
-record — no separate task, no separate cadence; the degradation detector's durable
-events/state/inbox-alerts/critical-failsafe live entirely in `providers/degradation.py` (governed
-by the `mcp/` package overview), this route's `app.py` only wires the one extra call into the
-loop it already owns. **Since 260731-EFA-L5 that one loop is also the declared compaction owner of
-both provider stores** (`PROVIDER_METRICS_OWNERSHIP`, `PROVIDER_DEGRADATION_OWNERSHIP`, both
-`compaction_owner="dashboard"`): `_metrics_loop` calls `metrics_store.record`,
-`evaluate_provider_degradation` and `metrics_store.compact` on one tick, and the ownership is
-enforced *structurally* — each reclaim has exactly one caller and it is inside this loop. Neither
-store earned the operator-inbox's `compaction_owner=None` exception, because nothing in the MCP
-process removes a provider row, so a single owner was available and the contract requires one where
-it is. The route consequence to remember: the reclaim of both provider logs now follows this loop's
-30s cadence and nothing else, and every write on this path holds its log's lock. `GET /api/stream` consumes one atomic projector subscription: it emits the
-captured current `event:snapshot`, or waits for one full first-recovery snapshot when prime failed,
-then per-entity `lifecycle`/`enclosure`/`provider`/`metrics`/`analytics` (and `*.removed`) events;
-`GET /api/state` returns the
-projection once; `GET /api/events` tails the raw `ar-observer-event/v1` log with physical byte-offset
-resume for lifecycle sources and lock-consistent virtual byte offsets for the live-compacted workspace
-source (`serving.events`), doing one retained-backlog scan per connect,
-streaming that bounded backlog in chunks (no whole-history materialization), filtering
-`lifecycle.heartbeat` out of the river, and pruning expired logs on a slow cadence; `POST /api/actions/{action}`
-validates lifecycle transitions against `ActionAvailability` (no mutation) and records
-targeted gate-decision verbs as developer-attributed gate decisions, including `gateId` staleness
-checks and rejection notes (`serving.actions` + `gate_decide_for_lifecycle`). `POST /api/operator-inbox` writes developer/dashboard-attributed
-external-chat responses through `mcp/tools/operator_inbox.py` so non-hosted agents can poll/consume
-them; `/api/actions/dismiss` also persists targetless actionable-drift acknowledgements
-and the raw `/api/events` stream sends a one-shot `ready` marker after retained backlog replay, so the
-frontend can avoid painting an empty feed before history has arrived. `POST /api/operator-inbox/{entry_id}/dismiss` deletes stale pending entries after the pickup TTL
-warning is shown. `--sim` swaps a replay clock + fixture feeder onto the projector's
-`now`/`before_tick` seams (`serving.sim`). `GET /api/task-document?path=...` is the separate
-task-reader body edge: it requires a ready projection and delegates path confinement/schema
-validation to `observer.snapshots`; `/api/state` and `/api/stream` carry summaries only. Gate-id-only
-`cancel` requests are the explicit legacy
-cleanup path for workspace-shaped stale gates; approve/reject/revision stay lifecycle-targeted. The static bundle (`package_data/dashboard/`)
-mounts at `/` when one was built, and a 503 diagnostic mounts there when one was not. The Mode B2 terminal bridge `@app.websocket("/api/terminal/{session}")` (6d-2)
-attaches one concrete `TerminalHost.attach` tmux client per browser WebSocket — binary PTY bytes out,
-JSON `stdin`/`resize` in (the `websockets` dep is uvicorn's WS impl). The bridge can rehydrate catalog
-rows after a dashboard restart, but only after `TerminalHost.has_session` proves the tmux name still
-exists; normal browser disconnect closes only that websocket's PTY client while leaving the tmux/catalog
-row running so refreshes and second browser tabs get fresh independent attaches; stale running rows
-become `exited` only through the **catalog liveness hysteresis** path
-(`terminal_liveness.py`: evidence-scaled thresholds, ≤1 probe sweep per 10s regardless of the
-dashboard's 1s polling, self-healing false exits), and `POST /api/terminal/{session}/terminate` is
-the only destructive terminal action.
-
-### Projection/Observation Split
-
-The serving layer starts one lifecycle-managed landing refresher for live projection, passes its latest immutable snapshot into the network-free projector tick, and cancels it during shutdown. Simulation disables remote observation; interactive status remains the fresh-probe path. A failed refresher is logged without preventing host shutdown.
-
-## Route Model
-
-- `harness_submission_authority.py` — the sole prompt/setter timeline: epoch/idempotency
-  admission, lock-linearized dispatch/withdraw, full operation refs, response bypass, early exact
-  completion, raw-free status/withdraw projection, and bounded live-safe retention.
-- `harness_submission_ledger.py` — `OperationRecord` and `SubmissionLedger`: enrolment, retention,
-  eviction (`make_room`) and the paged never-bodies `operation_timeline`, split out of the authority
-  in 260731-EFA-L6.
-
-- `harness_capabilities.py` and `harness_control_adapter.py` — the normalized capability contract:
-  `CapabilitySnapshot` contains dynamic `ModelCapability` rows with model-local `EffortOption`
-  menus; ACP Sense 1 projects category-keyed select options; `LaunchKnobs` includes adapter-owned
-  selectors and `SetResult` establishes the setter evidence boundary. The combined launchable adapter
-  seam joins synchronous cached advertise, transient native discovery, and native launch knobs. No
-  ACP transport, global effort enum, or composer-paste fallback belongs in this port.
-
-- `harness_capability_catalog.py` — the pre-session discovery authority. It resolves only the
-  built-in native registry rows, fingerprints effective argv plus the canonical executable/stat
-  identity, passes the current environment into the own-adapter `discover()` port, and retains at
-  most one successful entry and lock per built-in harness. Ordinary misses are single-flight;
-  explicit refresh re-enumerates auth/account state, and a failed refresh conditionally evicts only
-  the exact observed entry so stale data cannot reappear as a healthy hit or erase a later success.
-
-- `harness_control_client.py`, `harness_control_api.py`, and `harness_control_models.py` — the
-  exact-session serving boundary. The client strictly parses normalized advertise/set results and
-  records whether a Unix-socket failure happened before or after the first accepted byte; only the
-  latter becomes honest unknown evidence under the same request id/value. The API exposes
-  pre-session/live capabilities, setter results, whole-message submit, and reconcile after
-  liveness-first session resolution. Public receipt/reconciliation serializers preserve normalized
-  acceptance, timestamps, detail, and correlation while omitting adapter-private `raw`.
-
-- `harness_launch.py`, `harness_control_factories.py`, and `harness_control_runner.py` — carry the
-  complete typed settings selection across tmux, reject adapter-owned selector conflicts before
-  discovery, validate against the live model/model-local effort catalog, construct a fresh
-  configured adapter, and preserve exact failure evidence over IPC. The daemon request can now
-  supply an optional complete pair through this same launch path; a selectionless request still
-  lets the native authenticated catalog choose its default without creating a second authority.
-
-- `claude_stream_capabilities.py`, `claude_stream_protocol.py`, `claude_stream_startup.py`, and
-  `harness_control_claude.py` — correlate `control_request/list_models` before the steady-state
-  stdout reader starts, validate the live catalog/current-model relationship, map only each model's
-  advertised effort tokens, and retain the normalized catalog for running advertise. Cold discovery
-  performs initialization plus catalog enumeration and sends no bootstrap prompt. Initial model and
-  effort use native `--model`/`--effort`; model echo is verified, while absent effort echo is
-  recorded honestly rather than fabricated.
-
-- `codex_app_server_state.py`, `codex_app_server_session.py`, and
-  `codex_app_server_adapter.py` — preserve descriptions and model-local reasoning efforts from every
-  `model/list` page (including hidden rows), retain the catalog at connect, and expose a cold
-  initialize/list-only discovery path that starts neither a thread nor a turn. Initial model and
-  model-local effort travel through `thread/start`/`thread/resume` config and are echoed before
-  readiness; later turns reuse the resolved effort. Initialize identity accepts a product-agnostic
-  server-product/version followed by optional diagnostics ending in the exact clientInfo name/version suffix, while the
-  primary product version must still agree with thread evidence.
-
-- `pi_rpc_protocol.py`, `pi_rpc_process.py`, `pi_rpc_events.py`, and
-  `pi_rpc_adapter.py` — the Pi protocol/process/event/adapter chain: strict LF JSONL, bounded child
-  transport, normalized retry/compaction/settlement and extension UI events, `get_state` readiness,
-  exact-session reconnect, and post-cursor reconciliation without resend. The Pi adapter also consumes
-  `get_available_models`, preserves provider-qualified model identity, derives model-gated thinking
-  menus using Pi's own map rules, strips provider headers from retained state, and makes transient
-  discovery fail-clean and prompt-free. Configured startup uses exact provider-qualified
-  `--model` plus native `--thinking` and requires both effective values to echo, exposing Pi's
-  silent-clamp asymmetry rather than trusting it.
-
-- `cadence.py` — `ProjectionCadence(interval, heartbeat)` + `DEFAULT_PROJECTION_CADENCE`. The one
-  pacing decision every dashboard process shares, kept **stdlib-only** so the import-light daemon
-  supervisor can name a spawned child's cadence without importing the projector (and, through it,
-  the serving stack).
-
-- `hosted_session_runtime.py` — `HostedSessionRuntime(catalog, host)`. The pair of authorities that
-  jointly decide which hosted sessions exist: a durable catalog row and a live tmux process. Neither
-  answers "does this session exist" alone, and a row read against the wrong host is
-  a silent correctness bug, so the opener takes them bound together.
-
-- `app.py` — `create_app(config, *, cadence, replay, live_inputs, collaborators)` builds
-  the FastAPI app
-  (`ProjectionCadence` paces it; `ProjectionReplay` is the sim seam; `LiveProjectionInputs` resolves
-  the three live world-input toggles together against that seam — each `None` = infer, so live
-  serving injects a `ProjectionInputWatcher` for change-driven pacing while `--sim` stays
-  time-driven, and `cadence.heartbeat` bounds quiet-world staleness; `ServingCollaborators` are the
-  four injectable long-lived objects). Since 260731-EFA-L2 the handlers, background loops and route
-  registrars are module-level functions taking one frozen `_ServingRuntime` rather than nested
-  closures. It wires: a
-  lifespan that primes + runs one shared `Projector` plus the 30s provider containment
-  metrics loop (`sample_provider_containers` → `ProviderMetricsStore.record`
-  via `asyncio.to_thread`, exception-tolerant, both tasks cancelled + awaited at shutdown),
-  `GET /api/state` (one-shot; **change-gated**
-  — weak `ETag: W/"<projector.revision(seq)>"` + `Cache-Control: no-cache`,
-  `If-None-Match` weak-matches → `304` empty-body via `_if_none_match_matches`, and the body
-  carries the boot-time `servingBuild` stamp),
-  `GET /api/stream` (the `state` SSE endpoint, delegating to the testable
-  `stream_events(projector, build=…)` — it consumes one atomic projector subscription, decorates
-  both initial and first-recovery snapshots with `servingBuild`/supervisor identity, preserves
-  delta framing, and explicitly closes the iterator on disconnect/cancellation),
-  `GET /api/events` (the raw channel, delegating to `stream_raw_events`; fresh
-  connections start from lifecycle-aware retained offsets while valid
-  `Last-Event-ID` cursors still resume exactly and emit a backend `ready` event after retained replay),
-  `POST /api/actions/{action}` (delegating to `evaluate_action`; gate verbs carry targeted
-  `gateId`/`note`, require a reason for reject, and distinguish stale gates from no-open-gate), the
-  `@app.websocket("/api/terminal/{session}")` Mode B2 terminal bridge (6d-2 — catalog-backed
-  per-websocket `TerminalHost.attach`, binary PTY bytes out / JSON `stdin`+`resize` in, via the
-  module-level `_bridge_terminal`/`_apply_terminal_session_input` helpers), `POST /api/operator-inbox` (call
-  `operator_inbox_post_payload` with developer/dashboard attribution for durable inbox messages,
-  accepting lifecycle/agent/recipient role plus role/message/artifact metadata and passing catalog/host/paster
-  seams for optional hosted push; bad lifecycle/agent/role addressing returns `400 bad-address`),
-  `POST /api/operator-inbox/{entry_id}/dismiss` (physically delete a pending inbox entry
-  for dismissible `check chat` warnings), the
-  `POST /api/terminal/{session}` **opener**
-  (the task-binding + `host.ensure` + catalog-upsert composition delegates to the
-  shared `terminal_opener.open_terminal_session` — `resolve_terminal_launch` / `_terminal_label` / the
-  role-scoped conflict check all left `app.py` for that module — so operator opening and structural
-  dispatch use one opener; it accepts optional `model`/`effort`, requires a complete pair for
-  built-in native harnesses, and maps `bad-kind`→400 / `seat-taken`→409 /
-  `launch-conflict`→409 / `opened`→200. Successful and conflicting responses report the actual
-  retained row's launch/control facts rather than echoing the attempted request. Server-resolved
-  harness id, never argv on the wire; the opener passes `suspend_unsafe=(kind=="harness")` so
-  later host writes strip Ctrl-Z for bare-pane harnesses and persists a `TerminalCatalogEntry`
-  carrying occupant/launch facts plus `taskDocumentRef`, `seatRole`, replacement declaration, and
-  spawn provenance without opening a starter PTY client; uniqueness is per task-document-and-role
-  seat, with topology/altitude validation before persistence),
-  `POST /api/terminal/{session}/paste` (server-side capture-verified
-  context-packet delivery to a hosted session with no attached browser client, over
-  `terminal_paste.TerminalPaster`; delivery is confirmed against the pre-delivery origin capture —
-  a new chip in either harness vocabulary or the payload head, not mere pane output; 404 on
-  unknown/gone session, else `{delivered, submitted}` plus the pane `capture` on an unconfirmed
-  outcome),
-  `POST /api/terminal/{session}/attach-task` (validate the canonical task document and role, then
-  claim or move the structural binding for an existing session without respawn; delegates to
-  `terminal_task_assignment.assign_terminal_session_to_task`, returning typed invalid/taken/unknown
-  refusals without mutation or the accepted binding), `GET
-  /api/terminal/sessions` (return non-terminated sessions via
-  `terminal_liveness.TerminalCatalogLivenessSweeper.refresh()`: ≤1 probe sweep per 10s,
-  non-overlapping; a rate-limited caller still runs the bounded one-second starting-row fast path,
-  and a caller that loses the non-blocking sweep lock returns the last ATOMICALLY REPLACED catalog
-  file (`TerminalCatalog.list_committed()`) rather than a snapshot read that would wait on the
-  active sweep's batch lock; each admitted path observes its selection inside exactly one
-  dirty-gated catalog batch, so a clean sweep performs zero file replacements and a dirty one
-  performs exactly one; WebSocket attach + the paste
-  endpoint run direct `observe_terminal_liveness` observations on the app's ONE injected clock,
-  replacing the deleted `_refresh_catalog_entries` immediate exit-marks),
-  `POST /api/terminal/{session}/terminate` (kill tmux and mark the catalog row terminated),
-  `GET /api/harnesses` (6e-2b — `detect_harnesses()` per `shutil.which`), the native control
-  routes (`GET /api/harnesses/{harness}/capabilities`, live `GET .../capabilities`, `POST
-  .../set-model`, `POST .../set-effort`, `POST .../submit`, `POST .../reconcile`,
-  authority/status, and authoritative withdraw) registered
-  before the static mount, `POST /api/terminal/{session}/image`
-  (6f — save a validated screenshot under `<cwd>/.dashboard-pastes/<uuid>.<ext>` using either a live host
-  session cwd or a catalog-restored cwd so the composer can inject its path; the terminal channel is
-  text-only), `POST /api/terminal/{session}/retire` (issue #12 — the
-  server-authoritative retire surface: 404 unknown-session/unknown-actor, 200 `already-retired`
-  idempotent fast-path on an already-terminated target BEFORE any authority check, 403
-  `retire-refused` naming the exact policy clause via `retire_policy.check_retire_authority`, else
-  `retire.retire_entry` kills tmux + marks the catalog row + `seat_events.log_retire_event`),
-  `POST /api/terminal/{session}/rename` (issue #4 — 404 unknown-session on a
-  missing/terminated target, else `catalog.set_label` + `seat_events.log_rename_event`; identity
-  text only, never `spawn_role`), and the static mount.
-  SSE uses built-in `fastapi.sse` (`EventSourceResponse`/`ServerSentEvent`).
-- `daemon.py` — the dashboard daemon supervisor: `ensure()` adopts a healthy detached
-  daemon, spawns a missing one, and restarts on version/host/port mismatch, behind one
-  non-blocking flock (`ensure.lock`) so concurrent MCP boots never double-spawn. State lives under
-  `<coordinationRoot>/logs/dashboard/` — an atomic `daemon.json` (pid/host/port/version/paths,
-  written immediately after spawn) and a per-spawn-rotated `dashboard.log` (the child serves with
-  `--no-access-log` so the log stays bounded). Liveness is kill-probe **plus** `/proc/<pid>/cmdline`
-  identity (pid reuse and zombies read as stale); stop is TERM → bounded wait → KILL.
-  `ensure`/`spawn` plumb an optional `heartbeat` onto the child argv
-  (`--heartbeat`, spawn/restart only — ensure ADOPTS a healthy daemon without cadence comparison,
-  so adaptive pacing reaches a live daemon only via explicit stop + spawn). The child is
-  the plain foreground CLI addressed by module string — the module stays import-light (stdlib +
-  config types, never uvicorn/FastAPI), so `mcp/server.py`'s boot hook
-  (`maybe_autostart_dashboard`, threaded/total/stderr-only, gated by the `dashboard.autoStart`
-  settings key) never pulls the serving stack into MCP startup.
-- `projector.py` — `Projector`: owns the atomically-published `(seq, projection)` tuple, the
-  previous tick's stable form, a boot nonce, and the subscriber fan-out. `prime()`, `run()`
-  (tick: re-project → compute snapshot/delta batch → commit stable/current authority → notify),
-  `_publish_projection()`, `current()`,
-  `revision(seq)` (the `"{boot}-{seq}"` content fingerprint behind the `/api/state` ETag — seq
-  only advances on stable-content change), `subscribe()` (register queue and capture the
-  current snapshot without an await, then drain that queue with `finally` cleanup). A failed
-  `prime()` recovers by sending one full snapshot to already-connected subscribers; identical
-  recovery does not duplicate and later changes return to ordinary deltas. The `now`/`before_tick`
-  seams + `_tick_sync(moment)` keep one loop generic across live and sim. Live projectors can
-  pass a provider refresher into the observer store; sim projectors keep fixture state
-  deterministic by omitting it. One re-projection per tick regardless of client count.
-  With an injected `change_watcher` the pacemaker is `ChangePacer.wait()`
-  (change-or-heartbeat waking) instead of the unconditional `sleep(interval)`; the watch task's
-  lifecycle mirrors the landing refresher's, a dead watcher degrades loudly to fixed-interval
-  ticking (`_on_watch_task_done`), and `projection_count`/`last_wake_reason` instrument the loop.
-  Without a watcher (sim, injected-`now()` tests) the legacy pacing is byte-identical.
-- `change_watcher.py` — the **change-driven pacing module**:
-  `projection_input_roots` (watch roots derived reader-by-reader from `project_and_write`'s input
-  surfaces — tasks/, observer lifecycles/workspace/drift, provider status/setup, temp
-  worktree-start/tool-reports; nothing under `worktrees/` — container data is unreadable to the
-  daemon user and high-churn; the derivation
-  table lives in its docstring), `is_projection_input_event` (drops `*.tmp`, dotfiles, the
-  projection's own outputs, workspace non-input churn, and — since 260731-EFA-L5 — **every
-  control-plane lockfile by suffix in every watched directory**, through
-  `_DURABLE_LOG_LOCK_SUFFIX`, which is *derived* from `kernel.file_lock.lock_path_for`
-  rather than spelled out: the old literal `operator-inbox.lock` had stopped matching once the
-  lock naming moved to `operator-inbox.jsonl.lock`, and a workspace-scoped basename list could
-  never have covered the per-lifecycle `gates.jsonl.lock` at all. These are the busiest writes in
-  the watched tree — every durable-store append and rewrite opens one `a+b` — and none is a
-  projection input),
-  `ChangePacer` (debounce 0.1s, max-delay = interval — a busy world keeps the former cadence —
-  heartbeat default 15s, degraded ⇒ fixed interval, starts degraded at boot), and
-  `ProjectionInputWatcher` on `watchfiles` (30s watch-set re-derivation; ANY failure — missing
-  wheel, derivation error, crashed watch — degrades LOUDLY to fixed-interval ticking and retries
-  every 30s). Heartbeat = the staleness bound for `/api/state` and time-derived fields
-  (volatile ages already advance client-side via `servedAges.ts`).
-- `delta.py` — the **pure** `diff_projection(previous, current, *, previous_state=None,
-  current_state=None) -> list[DeltaEvent]`: the per-entity diff over the flat id-keyed
-  collections (upserts in projection order, removals sorted for determinism). A transport concern
-  kept out of the reducer. It also emits an `activeWorktreeGroups` whole-value delta
-  (a bare list wrapped as `{"activeWorktreeGroups": [...]}`) when that set changes, alongside the
-  `metrics`/`analytics` whole-block events. **The change gate:** comparison runs
-  over *stable forms* — `VOLATILE_AGE_FIELDS` (`staleSeconds`/`snapshotStaleSeconds`/`ageSeconds`/
-  `waitSeconds`/`heartbeatAgeSeconds`, mirrored client-side in `dashboard/src/data/servedAges.ts`)
-  stripped recursively — so a tick where only ages advanced emits NOTHING (live measurement:
-  ~780 KB/tick → 0; the dashboard-tab OOM driver). `StableProjectionState` +
-  `stable_projection_state` are the projector's per-tick cache.
-- `response_contract.py` — the **declared HTTP wire** (260731-EFA-L4): `WireResponse`
-  (strict/frozen/camel-aliased, `populate_by_name`) and the declared model classes covering every route's
-  success and refusal shapes, plus three shared `responses=` tables — `SCOPED_READ_RESPONSES`
-  (the files/notes/change-set family), `SESSION_CONTROL_RESPONSES` (every `harness_control_api`
-  route) and `ACTION_RESPONSES`. Declared here; the former response-conformance suite was retired. FastAPI validates only the two routes
-  that return a bare `dict`; see the 260731-EFA-L4 route impact for the exact boundary. Deliberately
-  free of any `serving.conversation` import so the response-contract module can load independently of conversation composition. The requirement additions declare packet/list/content responses; returning a Response object bypasses automatic response-model serialization; the declaration alone does not prove conformance.
-
-## L23 Structural Host Boundary
-
-Serving resolves lineage after task-role validation and before host creation or
-catalog mutation. Open/attach HTTP routes publish stale/unavailable refusals as
-409 with strict evidence, while projector shutdown now drains any in-flight
-filesystem tick before temporary worktree cleanup.
-
-## R44 Metrics Shutdown Drain
-
-The metrics background loop now shields and drains each blocking worker-thread operation before
-propagating lifespan cancellation. Shutdown therefore cannot finish while sampling, record,
-degradation evaluation, or compaction can still mutate provider metrics state.
-
-## 260815-DAG-L14 Serving Route
-
-The served task-document projection carries sprint `seats` and typed `masterRef` rows; the body
-revision covers `subTasks` + `seats` so an open sprint reader refetches on linkage/seat edits.
-
-
-## 260815-DAG-L12 Route Impact
-
-The task-documents projection readers now wire the render-ready sprint graph view (L12-R4): `_task_documents.py` builds the `executionGraphView` through the `_execution_graph_view` serving seam (tasks-domain walk feeding the primitives-only builder) with the `_master_docs_by_ref` join table, and splits `_task_doc_node` into `_reader_fields` + `_execution_graph_fields`. The dashboard renders projected facts verbatim.
-
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-Serving projection/snapshot modules updated their imports to the moved `worktrees/queue/*` and `models/queue/*` locations.
-
-## 260821-CLIVE Serving Route Impact
-
-Serving now preserves leaf execution evidence before bounded retention can reclaim its source row.
-The app composes explicit terminal-catalog and operator-inbox registrars. Terminal liveness releases
-its catalog batch before registering terminated worker/reviewer/curator rows in task truth, then
-compacts only ids the registrar confirms. The notifier likewise registers its inbox snapshot before
-reconcile-and-compact. Missing registrars authorize no task-bound deletion; they do not activate a
-secondary evidence reader or compatibility route.
-
-The serving projection is also aligned with final scheduling ownership. `_closeout_queue.py` reads
-the source-fingerprinted disposable projection and exposes invalid-empty/valid-built condition,
-bounded source problems, and waiting-generation members—never claims, blockers, commits, or
-certification. `_task_documents.py` projects audited discarded-unstarted subtasks as persistent task
-history and includes them in body revision identity.
-
-## 2026-08-26 Projection Retry Reconciliation
-
-The serving projection input state now publishes task-domain snapshots atomically. A failed task
-refresh retains the last good contracts, enclosures, task documents, and series, marks the task
-refresh pending, and forces a later heartbeat to retry even when no new task-domain change signal
-arrives. This keeps transient read failures from poisoning the live dashboard projection or
-requiring an unrelated filesystem event to recover.
-
-## 260821-ARSPAWN-L2 Replacement-Safe Dispatch
-
-`structural_dispatch.py` owns the bounded 4,096-stripe seat serializer and the durable
-pinned-brief queries. Setup or `flock` failure is typed and fail-closed; there is no local-only
-fallback, repository-global lock, or unlink race. Brief viability distinguishes a live or
-retryable generation from superseded, unresolved, or expired evidence.
-
-`DispatchBriefReceiptStore` owns dispatch-specific receipt mutation over the existing catalog
-lock/read/write unit. This keeps commit-point evidence out of the general `TerminalCatalog` lifecycle
-surface without adding a second persistence path or compatibility reader.
-
-`structural_seats.py` resolves a canonical address independently of current occupancy and delegates
-generation selection to `current_seat_occupant`. Inbox delivery resolves the occupant at delivery
-time, while exact dispatch briefs remain pinned to the private spawned generation. This lets
-ordinary messages survive vacancy and incumbent-to-heir replacement without exposing a session id.
-
-## 260831-CCR-L23 Task-Local Requirements Routes
-
-L23 registered the read-only task-local requirement surface: `serving/requirements.py`
-walks one canonical `tasks/<repo>/<master>/requirements/` root selected by repository +
-single-segment master + canonical task-document reference and serves the confined GET endpoints
-`/api/requirements/{list,read}` with declared models (`RequirementsListing` /
-`RequirementContents`) under the shared scoped-read refusal table. The route family grew
-from 61 to 63 HTTP routes; composition adds one `register_requirements_routes(app, config)`
-call in `create_app` after the notes routes and before the static mount.
-
-
-## Shared Lock Owner References
-
-The watcher keeps one naming dependency on the actual lock owner; it does not acquire coordinator authority or change projection input scope.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared naming primitive appends the same physical lock suffix. | `lock_path_for` | mcp/src/agents_remember/kernel/file_lock.py:36-38 |
-| Every-directory filtering retains lock suffix exclusion. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
-
-## Update History
-
-- 2026-09-11T23:05:00+00:00: Reviewed this route against the current candidate's changed sources. No route impact: none of the changed sources in this candidate falls under `mcp/src/agents_remember/serving/`, and this overview's body is otherwise unchanged by that candidate. It is in the refresh set only because a prior curator pass in this same memory worktree reordered two pre-existing Update History entries (a history-only edit), so its inclusion is a consequence of that edit, not of a serving-source change. Route ownership, the served surfaces and the hot path stand as written.
-- 2026-09-10T11:42+02:00 — 260831-LOCR-L09 curator: extended the current structural seat and routing contract with the boundary-drain gate: a pending row with no attempt clock is admitted only for a `state-signal` row, which is the state rebinding a held signal to a replacement occupant creates. Canonical seat selection and the shared delivery path remain unchanged. Verification metadata remains closeout-owned.
-
-- 2026-09-10T09:30+02:00 — 260831-LOCR-L22 curator: extended the `GET /api/terminal/sessions` route account with the current sweeper boundary — bounded starting-row fast path while rate-limited, committed-atomic-snapshot return on sweep-lock contention (instead of a snapshot read that waits on the active batch), and one dirty-gated catalog batch per admitted path. Cadence, hysteresis, registration/compaction order, and cross-store post-commit ownership are unchanged and remain with their leaves.
-
-- 2026-09-08T14:39+02:00 — 260831-LOCR-L20 curator reconciliation: added the current
-  terminal-evidence cursor consumer and its no-loss envelope boundary to the serving hot path.
-  The candidate preserves the existing bounded Pi route and canonical projector ownership;
-  verification metadata remains pinned until governed closeout stamps the code commit.
-
-
-- 2026-09-08T14:22:32+02:00 — 260831-LOCR-L08 curator: extended the current structural seat and routing contract with action-time state-signal derivation, no-current-occupant retry eligibility, and per-subject task-document refusal fencing. Existing structural ownership and shared delivery authorities remain unchanged.
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Updated watcher naming ownership to kernel.file_lock, retained filtering and pacing behavior, restored the nearest MCP overview backlink, and made hot-path routing concise without dropping the retained operating account.
-
-
-
-
-- 2026-09-05T07:27+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Reviewed the requirement routes, corrected current conversation/initialize ownership and repaired a literal truncated paragraph while retaining recoverable historical provenance. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the task-local requirement routes (`/api/requirements/{list,read}`), the 61-to-63 route growth, and the `requirements.py` module in this route. File-level detail lives in the serving sidecars and the new requirement cards.
-
-
-- 2026-08-31T10:13+02:00 — 260821-ARSPAWN-L5 closeout repair: recorded exact operation/request-id
-  projection on parent Codex completion and deterministic queued-row convergence. Verification
-  remains closeout-owned.
-
-- 2026-08-30T21:25+02:00 — 260821-ARSPAWN-L5 recorded connected-`dispatch_agent` role startup, bounded one-call brief convergence, headless liveness refresh, and honest socket-state diagnostics. Verification remains closeout-owned.
-
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: recorded `models/core.py` as the shared
-  serving-build wire authority. Verification remains closeout-owned.
-
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: recorded the one process-scoped,
-  content-addressed build identity shared by dashboard and MCP surfaces, plus the production
-  self-update versus disposable exact-candidate acceptance boundary. Verification remains
-  closeout-owned.
-
-- 2026-08-28T14:15+02:00 — No parent-route content impact: the landed candidate changes only the
-  Claude mapper inside the governed conversation/projectors child route, whose own overview carries
-  the interaction/mutation-diff semantics. Stamped the serving route to committed provenance.
-
-- 2026-08-26T16:03+02:00 — Recorded dispatch receipt ownership in its dedicated collaborator and removed a pre-existing
-  tool-output truncation banner. The atomic catalog persistence boundary remains singular;
-  verification remains closeout-owned.
-
-
-- 2026-08-26T12:30+02:00 — Reconciled ARSPAWN-L2 bounded seat serialization, durable brief evidence, and
-  delivery-time replacement semantics onto the IAS serving overview. Verification remains
-  closeout-owned.
-
-- 2026-08-26T10:44:52+02:00 — Documented atomic task-projection refresh and heartbeat retry after transient failure; runtime lifecycle-projection import relocation has no additional route impact.
-- 2026-08-24T14:43+02:00 — 260821-CLIVE cumulative curation: documented task-first execution registration, projection-only closeout serving, and discarded-subtask history. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `serving/ambient_seat.py` now owns BOTH dispatch caller resolutions (plane seat + ambient launcher resolved from the process environment); spawn provenance gains caller kind (`spawned_by_kind` write-once via `_preserved`, wire `spawnedByKind`). Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: projection/snapshot import paths updated to the moved queue packages. Verified at code commit e5cb139f.
-
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 render-ready graph view wiring in the task-documents readers. Verified at code commit b7f2c8e2.
-
-- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: served task docs project sprint
-  `seats` + `masterRef` rows. Verified at code commit 8071a644.
-
-
-- 2026-08-18T09:10+02:00 — No route impact: renamed the atomic 'barrier' concept to 'blocker' throughout; route purpose unchanged.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task snapshot serving now exposes the
-  execution-topology facts carried by TaskDocNode; HTTP/catalog authority remains otherwise unchanged.
-
-- 2026-08-14T12:31:43+02:00 — R44 curator: recorded the metrics worker drain that closes the
-  lifespan-shutdown write race. Verification remains closeout-owned.
-- 2026-08-14T06:25+02:00 — No route impact: L23's serving-side delta is confined to the projection
-  child route attaching the latest task-addressed durable operation; serving ownership and public
-  transport composition remain unchanged. Verification stays closeout-owned.
-- 2026-08-12T20:20+02:00 — L23 curator: documented serving-side pre-host lineage admission and safe projector cancellation; verification remains closeout-owned.
-
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 adds batched notifier expiry writes, product-agnostic Codex initialize diagnostics, lifecycle-operation projection on enclosures, and volatile elapsed-time stripping. Durable task state remains the authority; no private operation identity crosses the serving boundary. Verification provenance remains closeout-owned.
-
-- 2026-08-12T04:15+02:00 — 260731-EFA-L22 Codex Desktop repair: recorded the clean-cut current
-  Desktop initialize grammar, exact Agents Remember client identity, and unchanged primary
-  host-version/thread agreement.
-
-- 2026-08-11T20:28+02:00 — 260731-EFA-L19 closeout-gate repair: recorded the notifier's
-  protocol-typed hierarchy seam; structural routing behavior and production topology authority are
-  unchanged.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled serving with plane-owned occupant
-  launch/delivery and structural task-document projections; conversation and projection child
-  overviews own the route-specific details.
-
-- 2026-08-10T19:57:55+02:00 — No route impact: 260731-EFA-L21 repairs
-  `terminal_liveness.py`'s type-only `HarnessId` import to the canonical
-  `models.conversations.identity` owner exposed by L9. Serving behavior, liveness authority, and
-  route responsibilities are unchanged. Verification metadata remains pinned until closeout
-  stamps the L21 code commit.
-
-- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: refreshed the serving/ route body for the current
-  staged delivery, terminal-catalog, notifier, projection, and conversation seams; the four
-  renamed/repaired sidecar paths are included in this review. Verification metadata remains pinned
-  until closeout.
-
-- 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "THE LIMIT OF THE
-  GUARANTEE" said *"The dashboard's own tests enforce `fixture ⊆ mirror`; `mirror ⊆ server` is
-  enforced by nothing"*, which keeps only the outer two nodes of a four-node chain and so reads as
-  though **nothing** measures the mirror against the snapshot. It does: `test/contract.test.ts`
-  measures `types/projection.ts` against `dashboard/src/fixtures/snapshot.json` in three TYPE-level
-  directions (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror` — L29-L53 of that file) plus
-  runtime `VOCABULARIES` assertions (L269, L348, L368) for the string unions `resolveJsonModule`
-  widens to `string`. The section now names all three links, attributes the fixture→mirror link to
-  `tsc -b` + `Overrides<O, Node>` + `test/wireFixtureGuard.test.ts`, and states the unheld one as
-  **`snapshot.json` ↔ `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one
-  letter from "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the
-  strength the evidence carries: no in-repo generator **and no in-repo mechanism keeping the two
-  sides in step**, with the caveat that no search of this tree can exclude a generator kept outside
-  it. Same correction applied to the 09:10 entry's restatement below. No route-model claim,
-  citation, or verification field changed.
-
-- 2026-08-01T09:10+02:00 — 260731-EFA-L4 curator: added the wire-contract route impact for the two
-  new modules (`response_contract.py`, `served_state.py`) and the seven changed files they touch,
-  written as the mechanism rather than the intent. The load-bearing corrections: **the declaration
-  is not the gate.** 61 of 62 route decorators carry `response_model=` (the 62nd is the websocket,
-  an `APIWebSocketRoute` with no such parameter, exempted BY ROUTE CLASS), but FastAPI validates
-  only the two handlers returning a bare `dict` — 57 return a `Response` and 2 are SSE generators,
-  so on 59 the decorator is schema only. The enforcement is
-  `test_serving_response_conformance.py`, whose score is pinned at 286 declared pairs / 133 driven /
-  153 undriven-with-a-reason, with every route driven on at least one status. Recorded the real
-  behaviour change on `/api/terminal/sessions` and `/api/harnesses` (a drifted payload is now a 500,
-  not a passthrough) and the AST key-set equality test that fires first, and the `202` now declared
-  on `POST /api/actions/{action}` where the implicit 200 was a pair no request could produce.
-  Stated the limit explicitly: `dashboard/src/types/projection.ts` and
-  `dashboard/src/test/fixtures/wire.ts` are hand-maintained, **no generator exists** anywhere in
-  this repository, and the `snapshot.json` ↔ `observer/projection.py` crossing is held by nothing —
-  this leaf pinned the server half only. (This bullet originally said "`mirror ⊆ server` is enforced
-  by nothing", which dropped the middle link; corrected in the 14:05 entry.) Also recorded the served-state assembly (why the two-key tail is deliberately not a
-  projection field, and the opposite null rules per half). Added a `Current Wire Contract` reference
-  subsection (8 rows, all ranges read back). Repaired 6 stale line citations: `models.py`
-  L1-L1282 → L1-L1302 (file grew to 1302); `harness_control_api.py` L166-L201 → L182-L217
-  (`register_harness_control_routes`, whose L195 is the single `register_conversation_routes` call);
-  `app.py` L181-L203 → L300-L330 (`stream_events` — the old range was an import block, stale before
-  this leaf); `projector.py` L207-L269 → L268-L295; L314-L330 (`_publish_projection` and
-  `subscribe`, the latter entirely outside the old range — also pre-existing);
-  `test_serving.py` L416-L492 → L419-L503 (`StreamEventsTests`, whose
-  `test_cancelled_waiting_stream_releases_its_subscription` at L493 was outside the old end);
-  `harness_submission_authority.py` L452-L489 → L528-L565 (`provenance` — the old range held an
-  unrelated operator-resolution branch, pre-existing). Verification metadata pinned until closeout
-  stamps the L4 commit.
-- 2026-07-31T21:02+02:00 — 260731-EFA-L3 curator: corrected the `build_info.py` Route Model bullet,
-  which described the build stamp's honesty rules without saying which repository the stamp reads.
-  `_git_short_head` and `_git_worktree_dirty` no longer own local `subprocess.run` calls; both now
-  call `run_git` (`kernel/git_command.py`), whose `GIT_DIR`-family scrub is what guarantees the
-  stamp identifies the checkout the server booted from rather than an inherited one — the property
-  the whole ghost-process surface depends on. The 2s bound is now the named `_PROBE_TIMEOUT_SECONDS`
-  passed explicitly against the runner's `GIT_LOCAL_TIMEOUT_SECONDS = 300`. `ServingBuild`'s fields,
-  the tri-state `dirty` fail-open rule and the version-only fallback are unchanged, as is every
-  other serving surface. Verification metadata pinned until closeout stamps the L3 commit.
-- 2026-07-31T17:20+02:00 — 260731-EFA-L2 curator: repaired 4 cross-file line citations. The codex
-  adapter row now cites each thing it names: `_ThreadState` L99-L135 (per-thread demux), `interrupt`
-  L375-L422 (exact-active-turn `turn/interrupt` with the `_last_interrupt` replay-once pair),
-  `_handle_server_request` → `_sync_pending_snapshot` L950-L1071 (per-thread pending-interaction
-  maps, the `PENDING_INTERACTIONS_PER_THREAD` cap, unknown-method declines), `_enqueue` →
-  `_verified_asset_path` L1160-L1247 (load-shed queue and verified `localImage` construction),
-  `_thread_for` L1309-L1346 (registry with `THREAD_REGISTRY_LIMIT` eviction) and
-  `_learn_collab_identity` → `_publish_agent_registry` L1385-L1469. `models.py` is 1282 lines, so
-  the whole-module row is L1-L1282. The harness-control factory row is
-  `register_harness_control_routes` L166-L201, whose L179 is the single
-  `register_conversation_routes(app, runtime)` call. The regression row is `StreamEventsTests`
-  L416-L492 — later delta, interleaved-projection handoff, failed-prime recovery (whose L473-L478
-  is the identical-state silence), and cancellation cleanup. All ranges read back; no claim text
-  changed.
-
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 curator: added the route-impact section naming every parameter object introduced in this route, the three new modules (`cadence.py`, `hosted_session_runtime.py`, `conversation/active/projector/wiring.py`), the six deletions made at the cause, and the liveness-config relocation; corrected the `create_app` signature in the Route Model. Verification metadata stays pinned until closeout.
-- 2026-07-31T04:28+02:00 — 260731-EFA-L1 curator: the cockpit bundle and its fingerprint sidecar
-  left version control and are now built at release, so a source checkout legitimately serves no
-  cockpit. Recorded `static.py`'s new missing-bundle surface (503 with expected location and build
-  command under `no-store`, GET/HEAD only with 405 elsewhere so the greedy `/` mount cannot change
-  `/api` method semantics, no placeholder or fallback UI) and the shift in `dashboardBuild` from
-  "absent means legacy bundle" to "absent means no build happened here". Verification metadata
-  remains pre-commit.
-
-- 2026-07-30T15:05+02:00 — 260727-CHATS-IM-L4: gave the Claude subprocess transport's restart contract
-  a route-level home — a completed stop releases process and stderr-task ownership so the floor-gated
-  re-launch can reuse the object, while a live start still refuses — and named the control-readiness
-  and model/effort loss that a retained process caused.
-- 2026-07-27T14:20+02:00 — 260727-CHATS-IM-L2 curator: recorded the transport/source/cache/output
-  boundary split, runtime-probed history reader, typed IPC, selected-child active route, necessary
-  capacity bounds, parent/sibling continuity, and dormant library follow-up. Refreshed the active
-  hot-path route count. Verification metadata remains pinned while uncommitted.
-
-- 2026-07-26T21:59+02:00 — 260718-CHATS-L7R curator: recorded the multiplexing remediation in the
-  route-impact section — per-thread pending-interaction maps (concurrency is normal traffic; the
-  multi-request raise deleted), the method-first degrade split (unknown/experimental request
-  METHODS decline + degrade on any thread; known-method malformed shapes keep the old split), the
-  entry-thread parent guard in the authority's `respond`, the projector's all-pendings projection
-  with singular rotation, and the load-shed adapter event queue (256→1024, shed-oldest-deltas,
-  counted, one `ar/load-shed` notice on catch-up). Re-anchored the authority (L276-L334;
-  L502-L542; L549-L601; L1141-L1162) and codex-adapter (L356-L403; L681-L847; L1056-L1122)
-  reference rows against the post-remediation source. Aggregate route-index generation remains
-  manager-owned; verification metadata stays pinned (remediation uncommitted).
-- 2026-07-26T15:52 — 260718-CHATS-L7 curator: recorded the sub-agent control-substrate changes
-  (evidence `thread_id` demux, plural pendings end-to-end, parent-only authority respond guard,
-  codex per-thread registry, claude floor-gated sub-agent text flag) and re-anchored the L0E/L2E
-  substrate citation ranges the L7 insertions shifted (verified against the current worktree
-  source). Aggregate route-index generation remains manager-owned; verification metadata stays
-  pinned (L7 uncommitted).
-- 2026-07-24T13:18:47Z — 260718-CHATS-L5I curator: updated the route body for the current backend/shared behavior; aggregate route-index generation remains manager-owned.
-
-- 2026-07-21T11:30+02:00 — 260718-CHATS-L5F curator: recorded the half-time functional fixes across
-  the conversation slice (detail in the `conversation/` sub-overviews). R4 version-gate REMOVAL
-  (developer ruling 2026-07-21): THE CONTRACT IS THE ONLY GATE — no version-string comparison gates or
-  demotes any capability at any of the seven former sites (grep-proven); observed runtime/helper
-  versions are informational metadata only; corrected the L1 capability line's now-false "installed
-  2.1.214 vs locked 2.1.211" version-demotion wording to the never-probed contract reason. Also landed
-  in this leaf: R1 codex notification identity (`EvidenceFrame.native_method` carried; the codex
-  projector drops the known 0.144.5 startup burst by method, names truly-unknown methods), R2 claude
-  acceptance (requested-alias-wins-on-resolved-model), R3 claude 2.1.216 frame contracts
-  (`command_lifecycle`/`rate_limit_event`), R5 per-session bounds/release (`_locks`/`queue_rows`
-  bounded; dormant projector idle-release; `release_session` unwired — F1 accepted-bounding), R6 the
-  honest control-socket exit note + the bounded `providers/metrics.py` docker-ps timeout, and the
-  durable `dashboard/e2e-chats/` opt-in suite (R7). Verification stays pinned until L5F closeout.
-- 2026-07-21T11:00+02:00 — 260718-CHATS-L5 curator: extended the `terminal_liveness.py` bullet with
-  the H1/F2 hosted-interaction synchronizer quarantine — `_observe_control_snapshot` contains a
-  poisoned `on_control_snapshot` failure fail-loud on its own row instead of aborting the whole
-  catalog sweep + 500-ing `/api/terminal/sessions`, with the load-bearing fact that an orphan
-  `vendorCorrelationId` is the normal steady state of cockpit-driven hosted chats (so this path is
-  hot) and F2's log-on-state-change bound; the completion-correlation contract is unchanged (F3
-  master-exit, F8 residual). The twin-projection + input-authority-pin fixes land inside the active
-  conversation slice, whose detail is routed to `conversation/overview.md` and its child governors,
-  leaving this route's conversation paragraph accurate. Verification metadata stays pinned until L5
-  closeout stamps the candidate commit.
-- 2026-07-20T15:45+02:00 — 260718-CHATS-L3 curator: added the "260718-CHATS-L3 implements the control
-  child" paragraph to the structured-conversation contract section — the seventeen control routes
-  (interrupt, source-aware queue with cockpit-only withdrawal recovery, typed attachments, read-only
-  policy, evidence-bound telemetry) over the closed L2E/L3E substrate, routed to
-  `conversation/control/overview.md` — and corrected the L5-authority-boundary invariant from "three
-  behavior-empty child routers" to the now-implemented reality (active L1, library L2, control L3).
-  The substrate contracts, hot paths, and route model are unchanged. Verification metadata stays
-  pinned until L3 closeout stamps the candidate commit.
-- 2026-07-20T15:10+02:00 — 260718-CHATS-L3E curator: No route impact: the L3E clip-envelope
-  terminal-identity preservation is a file-level additive refinement of `clip_evidence_payload`
-  (documented in the `harness_control_models.py` sidecar); the route overview's L0E "32 KiB clip
-  with a visible marker" description and the L2E content-less `message_end` note both remain
-  accurate and complete for the clip semantics this route describes. Verification metadata remains
-  pinned until closeout stamps the candidate commit.
-- 2026-07-20T00:08+02:00 — 260718-CHATS-L2E curator: documented the additive native control-plane
-  substrate — the structural-sub-protocol interrupt write (bridge epoch guard, codex exact-turn,
-  pi expected-operation guard, replay-once, claude fail-closed, settlement untouched), the paged
-  never-bodies operation-timeline enumeration with eviction-floor honesty, the digest-verified
-  asset channel with resolve-and-verify spool confinement and native codex/pi construction, and
-  the once-only withdrawal-recovery payload — plus a hot-path entry and a Current-L2E reference
-  section. Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-19T18:25+02:00 — 260718-CHATS-L1 curator (memory rebase): union-merged the landed L2
-  library paragraph/hot-path/history with the L1 active-serving content after the master memory
-  branch advanced; both implemented slices are documented under the L9/L0 contract section with
-  detail routed to `conversation/overview.md` and the `conversation/active/`,
-  `conversation/projectors/`, `conversation/library/` governors. Verification metadata remains
-  pinned until L1 closeout stamps the candidate commit.
-- 2026-07-19T17:35+02:00 — 260718-CHATS-L1 curator: documented the implemented active
-  conversation serving under `serving/conversation/active/` and the per-harness mappers under
-  `serving/conversation/projectors/` — the two authorized production routes, signed cursor
-  authority, the bounded per-app service and projector engines, the idempotent store with the
-  review-F1 tool block union, the canonical status service now also backing orchestration's
-  seat projection, and fixture-gated capabilities — consumed from the untouched L0 composition
-  and L9 contract; detail routed to `conversation/overview.md` and the new
-  `conversation/active/overview.md` + `conversation/projectors/overview.md`. Verification
-  metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-19T16:04+02:00 — 260718-CHATS-L2 curator: documented the implemented native
-  conversation library under `serving/conversation/library/` — authorized list/read routes,
-  live capability gates, the per-app signed cursor/key authority, narrow-only scope, the
-  locked-helper and direct app-server ports, and the idempotent exact open/status/reconcile
-  service with honest retirement — consumed from the untouched L0 composition and L9 contract;
-  detail routed to `conversation/overview.md` and the new `conversation/library/overview.md`.
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-19T09:15+02:00 — 260718-CHATS-L0E curator: documented the additive native evidence and
-  resume substrate — reserved-key diversion into the bounded bridge evidence deque with byte-
-  identical projections, the three epoch-scoped additive IPC reads across two disjoint coordinate
-  domains, per-harness stop-dropping forwarding and codex/pi native pages (claude honestly
-  fail-closed), the sole-path submission-provenance batch, and the codex-only resume launch
-  channel. Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-19T00:06+02:00 — 260718-CHATS-L0 curator: documented the conversation runtime
-  composition repair — one immutable app-scoped `ConversationRuntime` installed once through the
-  existing harness-control registration, the server-resolved local-operator authorization ruling,
-  and the two request dependencies that keep child leaves out of the shared composition files.
-  Verification metadata remains pinned until closeout stamps the candidate commit.
-- 2026-07-18T14:16+02:00 — 260715-FEUI-MX-FIX-1: refreshed the serving route for one atomic
-  projector subscription/publication owner, publish-before-notify ordering, one full failed-prime
-  recovery snapshot with identical-state silence, ordinary later deltas, and explicit iterator/
-  subscriber cleanup. Root and `mcp/` ancestors were inspected and remain accurate at their
-  public-surface granularity. Verification metadata remains pinned until closeout stamps the
-  candidate commit.
-- 2026-07-18T12:43+02:00 — FEUI-L9R: added packaged-client identity, HTML revalidation, narrow
-  pre-session discovery, record-safe raw cursor semantics, and owned tmux-client environment.
-  Verification metadata remains pinned pending candidate closeout.
-
-- 2026-07-18T10:55+02:00 — 260715-FEUI-L9 curator: documented the strict normalized
-  structured-conversation roof, separate active/library read ports and cursor purposes, three
-  behavior-empty owned child routers, single harness-control registration seam, and the rule that
-  helper/fixture observations cannot promote capabilities. Verification remains pinned to the
-  last committed source until closeout stamps the candidate.
-- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: established the sole
-  `HarnessSubmissionAuthority` current contract; documented epoch/full-ref identity, atomic
-  withdrawal-vs-dispatch, event-before-publication completion, early-terminal dominance, response
-  bypass, safe-retry certificate, raw-free status, bounded retention, and dispatch-now native
-  adapters. Marked the former queue facade and ACPUI queue semantics historical.
-- 2026-07-16T07:27+02:00 — 260714-ACPUI-L5 curator: recorded discovery-only Claude MCP-selector
-  replacement across the accepted argv grammar, byte-preserved normal startup, the live three-harness
-  acceptance asymmetries, dynamic evidence boundary, and the visible non-leaking startup-failed stop
-  residual. Verification metadata remains pinned until closeout stamps the L5 code commit.
-- 2026-07-16T06:26+02:00 — 260714-ACPUI-L4 curator: documented the daemon advertise/launch/set/
-  submit/reconcile boundary, bounded install/auth cache and failed-refresh quarantine, exact-session
-  first-byte ambiguity and request-id idempotency, raw-free public serialization, liveness-first
-  status ordering, and cross-process live-reopen truth with fresh dead replacement. Preserved
-  settings-owned role spawn and the durable inbox/brief bus. Verification metadata remains pinned
-  until closeout stamps the L4 code commit.
-- 2026-07-16T01:34+02:00 — 260714-ACPUI-L3 curator: documented the normalized same-session set
-  graph, exact `SetResult` truth table, shared queue ordering and cancellation reclamation, Claude
-  exact correlated replay-plus-terminal evidence with the live Fable correction, Codex ordered
-  desired/pending/effective fresh-turn behavior, Pi bounded coherent error/clamp readback, and the
-  transitive no-paste boundary. Preserved role-based spawn and durable-bus ownership. Verification
-  metadata remains pinned until closeout stamps the L3 code commit.
-- 2026-07-15T23:16+02:00 — 260714-ACPUI-L2 curator: documented the typed settings-resolved launch
-  path, pre-discovery owned-selector refusal, token-free dynamic validation, Claude/Codex/Pi native
-  launch channels and asymmetric acceptance evidence, persistent exact launch failures, roleless
-  Codex temporal default, and retirement of static/paste native knob mapping. Final audit removed
-  a duplicate capability/adapter route inventory so the current contract has one governing home.
-- 2026-07-15T20:04+02:00 — 260714-ACPUI-L1 curator: documented the normalized own-adapter
-  capability port, dynamic token-free Claude/Codex/Pi catalog paths, model-gated effort, cached
-  running advertise, and transient prompt-free discovery. Verification metadata remains pinned
-  until closeout stamps the L1 code commit.
-- 2026-07-14T17:52:13+02:00 — 260713-PHA-L6 curator: documented the narrow IPC peer-disconnect reply/close
-  boundary and delayed-reply bridge reconciliation result.
-- 2026-07-14T17:18:47+02:00 — 260713-PHA-L6 curator: documented protocol-owned Codex null-requestId
-  correlation, same-row pending completion, loud failures, and replacement-only queued state.
-- 2026-07-14T17:00:00+02:00 — 260713-PHA-L6 master-exit correction: historicized obsolete exact-version
-  language in the serving route model and made structured consumed capabilities normative.
-- 2026-07-14T16:30:00+02:00 — 260713-PHA-L6 curator: refreshed the serving route for structured capability
-  negotiation and the complete reload boundary; recorded R10 as deferred.
-- 2026-07-14T15:00:00+02:00 — PHA-ME-FL2: reconciled the serving route's normative hosted authority to protocol
-  snapshots, inbox-rooted delivery, explicit consume acknowledgement, and diagnostic-only panes/logs.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: refreshed hosted cutover, bridge semantics, legacy unsupported,
-  dashboard/package parity, R13 inbox-rooting, R14 explicit consume, and diagnostic-only pane signals.
-- 2026-07-14T12:30+02:00 — 260713-PHA-L2 curator: documented the unregistered, exact Claude Code
-  2.1.207 stream-json adapter. Readiness is structured initialize/system-init only; replay acceptance
-  is distinct from terminal completion; and disconnect reconciliation never resends. The pinned live
-  smoke uses the local `/cost` command. API-429 terminal frames remain failed and retain only safe
-  status metadata, never result text or credentials. Verification remains pinned until closeout.
-- 2026-07-14T12:30+02:00 — 260713-PHA-L3 curator: added the stable Codex app-server route model,
-  exact `0.144.3` protocol pin, protocol-only reasoning effort, structured interaction and
-  reconnect boundaries, and explicit no-registration/no-cutover scope. Verification remains pinned
-  until closeout stamps the leaf commit.
-- 2026-07-14T12:17+02:00 — 260713-PHA-L4 curator: documented the unregistered pinned Pi RPC
-  protocol/process/event/adapter chain, strict framing, settlement, UI, and cursor-reconciliation
-  boundaries. Verification metadata remains pinned until closeout stamps the L4 code commit.
-- 2026-07-14T12:00+02:00 — 260713-PHA-L1 curator refresh: added the normalized control contract,
-  one-adapter bridge, bounded shared queue, private IPC, transcript/draft surface, unsupported
-  adapter boundary, and deliberate no-production-cutover scope to the serving route.
-- 2026-07-12T20:24+02:00 — 260712-PTS-L3 route impact (change-driven projection pacing): route
-  gains `change_watcher.py` (derived watch roots + input-event filter + `ChangePacer` +
-  `ProjectionInputWatcher` on the new `watchfiles>=1.1,<2` core dep); `projector.py`'s
-  unconditional `sleep(interval)` became change-or-heartbeat waking when a watcher is injected
-  (tick body untouched; loud fixed-interval fallback; `projection_count`/`last_wake_reason`);
-  `app.py` gained `heartbeat=`/`watch_changes=` (watcher iff `before_tick is None`);
-  `cli/dashboard.py` + `daemon.py` gained `--heartbeat` (default 15s) with `--interval`
-  re-documented as the fast-path cadence floor. Why: the projector re-projected the whole world
-  every 1s regardless of change — py-spy 2026-07-12 showed `_tick_sync` at 11.1s of a 15s sample.
-  Change-driven delta latency ≈ debounce + projection time (measured ~0.2s); adaptive pacing
-  reaches a live daemon only via explicit stop + spawn. Adversarial review INTEGRATE with two
-  adopted hardenings (inbox-lock filter, retryable root derivation). Updated the Hot Path Summary,
-  the `app.py`/`daemon.py`/`projector.py` Route Model bullets, and added the `change_watcher.py`
-  bullet + pacing invariant. Verification metadata pinned until closeout stamps the PTS-L3 commit.
-- 2026-07-12T17:40+02:00 — 260712-TRH-L5 curator: refreshed the serving route for the new
-  inbox-reclamation policy, one-catalog-read/one-snapshot boundedness, same-sweep compaction before
-  redelivery, body-free aggregate telemetry, no-op silence, 5-second lock-hold characteristics,
-  and F3-F6 non-blocking reviewer residuals. Verification metadata remains pinned until closeout.
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: serving lifecycle wiring starts and cancels the landing refresher outside the projection tick and preserves host shutdown after refresher failure.
-- 2026-07-12T14:20:00+02:00 — 260712-TRH-L4 curator refresh: final candidate onboarding; exact-session dispatch and serialized-writer/lock-free-reader concurrency recorded.
-
-- 2026-07-12T12:55+02:00 — 260712-TRH-L2 route impact: `changeset.py` now scopes contract discovery to the requested master enclosure, canonicalizes persisted/requested leaf ids, and exposes an opt-out for expensive master leaf summaries while retaining the net range semantics. Verification metadata pinned until closeout stamps the L2 code commit.
-
-- 2026-07-10T18:30+02:00 — No route impact: 260707-HFX2-L18 replaced repeated terminal-catalog
-  optional-field parsing/projection branches with typed helpers and added a complete round-trip
-  regression. Required/optional/legacy JSON semantics and the serving route's ownership are
-  unchanged; the work is a strict-CRAP quality decomposition within the existing catalog module.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 serving route impact: added the seat-binding module,
-  pair catalog/open/attach/retire semantics, binding-first supervisor/landing behavior, explicit
-  role-required attach, and sweep-clock delivery persistence. Verification metadata remains pinned
-  until closeout stamps L17.
-
-- 2026-07-10T13:03+02:00 — 260707-HFX2-L15 serving route impact: replaced pane-rendering acceptance
-  with bound harness-log evidence, added calibrated duplicate-safe recovery and catalog provenance,
-  explicit Codex argv, replacement-leaf support, and one-row supervisor redelivery. Verification
-  metadata remains pinned until closeout stamps the eventual L15 code commit.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 route impact: added live virtual-cursor river
-  compaction, the on-demand task-body endpoint, chain-aware/current-manager supervisor behavior, and
-  one-rung-per-row-per-sweep enforcement; recorded the unbound-worker S1 follow-up. Verification
-  metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-- 2026-07-09T19:31+02:00 — 260707-HFX2-L12: reviewed route impact for the CS-6 store/projection/process scaling sweep and updated the route summary for changed files. Verification metadata pinned until closeout stamps the HFX2-L12 commit.
-- 2026-07-09T13:07+02:00 — 260707-HFX2-L11 (landed chat archive): route gained `landing.py`,
-  `TerminalCatalog.status == "landed"` + landing provenance, `seat_events.log_landed_event`, and
-  `POST /api/terminal/landed-cleanup`. Successful integrate/finalize paths now auto-land seats for
-  archive inspection instead of auto-retiring/killing them; manual retire remains the terminating path.
-  Verification metadata remains pinned until closeout stamps the HFX2-L11 commit; route index was not
-  refreshed in this worker seat because the brief forbids route-index tools.
-
-- 2026-07-09T11:19+02:00 — 260707-HFX2-L9 route impact: supervisor redelivery now passes the
-  configured/shared 900-second floor through delivery snapshots; pane/seat-liveness signal emission
-  checks persisted cooldown state before posting repeated owner inbox rows; `pane-signal: mid-turn`
-  is skipped as busy-state noise; and `app.py` wires the new cooldown store/settings into
-  `AgentNotifierContext`. Verification metadata pinned until closeout stamps the 260707-HFX2-L9
-  commit.
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 route impact (dead-seat storm, R1-R6): `supervisor.py`
-  now builds one in-sweep inbox snapshot/index, resolves terminal-rung dead/no-hosted-session rows
-  to durable `ladder-resolved`, limits redelivery actions by `redeliver_budget`, and ticks heartbeat
-  metrics with pending/redeliverable backlog counts and last sweep duration. `supervisor_heartbeat.py`
-  carries the new volatile fields; `app.py` forwards the budget from settings and surfaces the
-  metrics on `/api/state`/SSE; `inbox_delivery.py` accepts the shared current snapshot. Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L8 commit.
-- 2026-07-08T23:15+02:00 — 260707-HFX2-L4 route impact (P-15 tier 3 escalation ladder + dead-man
-  respawn, R1-R6): `supervisor.py` gains two predicates (`evaluate_escalation_findings`/
-  `evaluate_dead_upstream_findings`) and two actions (`_escalate_rung`/`_signal_dead_upstream`),
-  calling through NEW `controlplane/escalation_ladder.py` (the pure rung walker) and
-  `controlplane/signal_routing.py`'s NEW two-hop `derive_skip_level_owner`/`is_seat_dead` (a
-  SEPARATE function from L1's one-hop `derive_signal_owner`, which is unchanged). Past the respawn
-  threshold, `_escalate_rung` calls new `_respawn_suspect`: retires the suspect seat via
-  `retire.py::retire_entry`, re-delivers its pending queue to the successor, and — via NEW
-  `controlplane/orphan_policy.py::find_orphaned_workers` — surfaces (never auto-reparents) a retired
-  manager's still-running workers in the same respawn event. `AgentNotifierContext` gains
-  `escalation_sla_seconds`/`escalation_rung_seconds`/`respawn_after_rung`; `OperatorInboxEntry`
-  gains `rung`; `OperatorInboxStore` gains `advance_rung`. No new lifespan task, no new
-  `InboxMessageKind` values. Verification metadata pinned until closeout stamps the
-  260707-HFX2-L4 commit.
-- 2026-07-08T22:30+02:00 — 260707-HFX2-L3 route impact (paste injector hardening, R1-R5): route
-  gains `harness_adapters.py` (the one per-harness delivery adapter interface — claude-code, codex,
-  generic fallback) and `injector.py` (the ONE delivery path, `deliver(row) -> {acked, landed-
-  unacked, blocked(reason), failed(reason)}`). `inbox_delivery.py::deliver_inbox_entry` and
-  `mcp/tools/terminal.py::_deliver_spawn_pastes` (the spawn-brief path) both now route through
-  `injector.deliver` instead of calling `terminal_paste.TerminalPaster.paste` directly — the
-  raw-spawn seam's separate delivery loop is retired into the same path the inbox/supervisor side
-  already used. `pane_signals.py` gained `_HARNESS_BLOCKED_PATTERNS["codex"]` (issue #20 quota/
-  rate-limit modal markers), `blocked_reason_label`, and `composer_state`; `turn_state.py` gained
-  `boot_ready`. `TerminalPaster`/`terminal_paste.py` and `InboxDeliveryState`'s four existing values
-  are UNCHANGED (a `blocked` outcome rides as a `NEEDS-ATTENTION:`-prefixed `deliveryDetail` string,
-  a deliberate scoping decision to keep this leaf off the dashboard type and `inbox_backoff.py`).
-  Every pre-existing test in `test_terminal_paste.py`, `test_pane_signals.py`, `test_supervisor.py`,
-  `test_terminal.py`, `test_spawn_agent_session.py`, and `test_operator_inbox.py` passes UNCHANGED.
-  Covered by two new suites: `test_harness_adapters.py` (per-harness fixtures: boot/ready/mid-turn/
-  chip-stacked/quota-modal for both harnesses) and `test_injector.py` (every `DeliveryOutcome`
-  branch + an end-to-end injection test against a scripted in-memory tmux pane). Verification
-  metadata pinned until closeout stamps the 260707-HFX2-L3 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 route impact (supervisor sweep + predicates, R1-R6):
-  route gains `supervisor.py` (the deterministic sweep — five R2 predicate families, R4 action
-  dispatcher, `run_agent_notifier_sweep`), `pane_signals.py` (the R2a pane-state classifier), and
-  `supervisor_heartbeat.py` (the R5 self-liveness store). `app.py` gains a third lifespan task
-  (`supervisor_loop`, following the `metrics_loop` template) and `supervisorHeartbeat` on
-  `/api/state`/the SSE snapshot. Gives `missing_artifact()` its first caller and reserves the
-  `mark_missed`/`mark_escalated` transitions for HFX2-L4's ladder. Covered by
-  `test_pane_signals.py` (8 tests) and `test_supervisor.py` (16 tests, including one seeded-drift
-  sweep integration test). Verification metadata pinned until closeout stamps the 260707-HFX2-L2
-  commit.
-- 2026-07-08T15:45+02:00 — 260707-HFX2-L7 route impact (release-tail supervisor fix): the route's
-  existing `supervisor.py` path now defers generic unacked escalation for `"no-hosted-session"` and
-  `"unconfirmed"` delivery-failure rows until `PERSISTENT_FAILURE_ATTEMPTS` or an explicit
-  `escalatedAt` handoff. No new predicate family, lifespan task, setting, or inbox kind; this is a
-  liveness-contract fix inside `evaluate_escalation_findings`, covered by the existing HFX2-L5
-  liveness simulations.
-- 2026-07-08T02:55+02:00 — 260707-HFX-L8 route impact (seat lifecycle: retirement + live identity +
-  turn-state, issues #12/#4): route gains `retire_policy.py` (server-side retire authority policy),
-  `retire.py` (shared retire mechanics), `turn_state.py` (marker-based live turn-state classifier),
-  and `seat_events.py` (observer event emitters); `app.py` gains `POST /api/terminal/{session}/retire`
-  and `POST /api/terminal/{session}/rename`; `terminal_catalog.py` gains retirement provenance +
-  `spawned_label` + `turn_state`/`turn_state_changed_at` columns and their copiers/write-points;
-  `terminal_liveness.py` folds turn-state classification into the existing alive-probe sweep (no new
-  hot loop) and gains an `on_turn_state_change` callback; `terminal_paste.py` gains the public
-  `capture_pane` wrapper reused by the classifier. Covered by `test_seat_lifecycle.py` (45 tests / 5
-  subtests). R2 fix round (F1, `controllers/worktree_tools.py`) widened the auto-retire completion-edge
-  guard to the whole retire body so a catalog I/O fault can never fail an already-succeeded
-  integrate/finalize — see that file's own sidecar for detail (out of this route's file list).
-  Verification metadata pinned until closeout stamps the HFX-L8 commit.
-- 2026-07-08T01:00+02:00 — 260707-HFX-L7 route impact (small): `app.py`'s metrics sampling loop
-  now also calls `await asyncio.to_thread(evaluate_provider_degradation, config)` right after
-  recording the metrics snapshot, sharing the loop's existing exception-tolerant handling and 30s
-  cadence — no new task, no new endpoint. The detector's own behavior (state machine, durable
-  events, inbox alerts, critical failsafe) is owned by `providers/degradation.py` under the `mcp/`
-  package overview, not this route. Verification metadata pinned until closeout stamps the
-  HFX-L7 commit.
-- 2026-07-07T23:45+02:00 — 260707-HFX-L5 route impact (catalog liveness hysteresis): the route
-  gains `terminal_liveness.py` — `TerminalCatalogLivenessSweeper` (rate-limited 10s, non-overlapping;
-  rate-limited/concurrent callers get the persisted catalog without probing) +
-  `observe_terminal_liveness`, the shared observation path behind `GET /api/terminal/sessions`,
-  WebSocket attach, and `/paste` (all on the app's ONE injected clock). `terminal.py`'s probe is now
-  evidence-bearing and stderr-aware (`TmuxProbeResult`; only explicit missing-session stderr ⇒
-  definitive `pane-gone`, everything else ⇒ transient `tmux-command-failed`), and
-  `terminal_catalog.py` persists the hysteresis state (`livenessFailures`/timestamps/evidence +
-  `exitEvidence`) with `record_liveness_probe` + the success/failure transition copiers — a tmux
-  command-failure storm can no longer mass-exit the fleet, false exits self-heal within one sweep,
-  and `app.py`'s `_refresh_catalog_entries` is deleted. Covered by `test_terminal_liveness.py`.
-  Verification metadata pinned until closeout stamps the HFX-L5 commit.
-- 2026-07-07T23:30+02:00 — 260707-HFX-L4 route impact: terminal opener and attach-leaf routes now
-  normalize accepted leaf refs to canonical qualified task-doc ids before catalog mutation and return
-  `400 leaf-ref-not-found` / `400 leaf-ref-ambiguous` before any mutation on invalid refs; added
-  `leaf_ref_validation.py` as the serving adapter. Verification metadata pinned until closeout stamps the
-  260707-HFX-L4 commit.
-- 2026-07-07T22:15+02:00 — 260707-HFX-L3 route impact (capture-verified delivery):
-  `terminal_paste.py` reports delivery only after pane capture-verification against ONE
-  pre-delivery origin baseline (both harness chip vocabularies; re-capture before any re-paste, so
-  duplicate stacking is impossible; payload via stdin `load-buffer`; Escape refused, only Enter);
-  failures are loud — `PasteResult.capture` rides the spawn tool's `deliveryCapture`, the `/paste`
-  endpoint's unconfirmed `capture`, and the inbox push's bounded capture-tail `deliveryDetail`
-  (`inbox_delivery.py`); `app.py`'s paste route is the same paster mechanic, no separate path.
-  Verification metadata pinned until closeout stamps the HFX-L3 commit.
-- 2026-07-07T18:40+02:00 — No route impact: 260703-L18 finding 5 adds the shared
-  `scope.decode_capped` codepoint-boundary read cap and wires it through `notes.read_note` /
-  `files.read_file` + `_onboarding_doc_body` — an oversize file whose multi-byte char straddles the
-  2-MiB cap now returns its first ~2 MiB with `truncated:true` instead of empty `binary`; the serving
-  route model this overview describes is unchanged (detail in the file sidecars).
-  (Stamp is part of the known pre-L2 timestamp-rot corpus condition — the entry predates the
-  16:50 one below despite its stamp; MHR-L2 owns the forensic restamp.)
-- 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (containment R4): `app.py`'s lifespan now
-  runs the provider metrics sampling task beside the projector — `sample_provider_containers` →
-  `ProviderMetricsStore.record` every 30s (decoupled from the projection tick),
-  exception-tolerant, cancelled at shutdown — making the serving daemon the central containment
-  sampler feeding `provider_status`, the statistics board, and the HFX-L7 degradation protocol.
-  Verification metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-07-07T09:45+02:00 — 260703-L16 (spawn knob application): `harnesses.py` grew the per-harness
-  knob→flag mapping (two-vehicle claude effort vocabulary incl. session-level `ultracode`),
-  effective-registry lookups, and the dispatch refusal helpers; `terminal_opener.py` applies the
-  env-riding knobs onto the harness argv at launch resolution (validating effort/model, appending
-  verbatim `launch_args`) and records the free-form + level spawn provenance on the catalog row;
-  `terminal_catalog.py` carries the five new optional provenance columns; `app.py`'s
-  `GET /api/harnesses` + open route resolve against the effective GLOBAL registry. Route relations
-  unchanged (one opener, no parallel spawn path). Verification metadata pinned until closeout
-  stamps the L16 commit.
-- 2026-07-07T05:36+02:00 — 260703-L15 route impact (the change gate + the build stamp): `delta.py`
-  compares stable forms (`VOLATILE_AGE_FIELDS` stripped; volatile-only ticks emit nothing —
-  measured ~780 KB/tick → 0), `projector.py` caches the stable form per tick, publishes
-  `(seq, projection)` atomically and exposes `revision(seq)` (boot nonce + content seq),
-  `app.py`'s `/api/state` honors `If-None-Match` → 304 under a weak ETag and carries
-  `servingBuild`, and NEW `build_info.py` resolves the boot-time serving stamp (version +
-  best-effort short-hash + boot time) the SSE snapshot also carries. Updated the
-  `app.py`/`projector.py`/`delta.py` Route Model bullets and added the `build_info.py` bullet.
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-07-06T23:59:54+02:00 — L14 review follow-up (L14R-3): the catalog column census now names `spawn_role`/`spawnRole` in both places (columns sentence + sessions-wire sentence) — a body edit, superseding the attestation-only entry. Verification metadata pinned until closeout stamps the L14 commit.
-
-- 2026-07-06T23:59:24+02:00 — 260703-L14 (visual hierarchy + chat grouping) route impact: `terminal_catalog.py` gained the migration-safe `spawn_role` column (JSON `spawnRole`) and `terminal_opener.py` records `env["AR_SPAWN_ROLE"]` onto the row at first spawn (write-once, preserved across a role-less re-open) — the Chats command-tree grouping key; the sessions listing exposes it automatically via `entry.to_json()`. Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up (L9R-1): both the notes and files status mappers now map ValueError (null-byte paths) to 400 bad-path; regression tests in both suites. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-06T03:30+02:00 — No route impact: 260703-L11's additive `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags pass through the serving layer unchanged (booleans are never `exclude_none`-dropped); `test_serving.py` re-run green with no serving-code change.
-- 2026-07-06T01:40+02:00 — agent-orchestration L9 route impact: the route gains `notes.py`, the
-  read-only coordination-notes API (`GET /api/notes/{list,read}` confined to
-  `tasks/<repo>/<master>/notes/` via allow-list + single-segment master + `confine_rel`; missing
-  folder → empty list; depth-capped honest listing; binary-tolerant size-capped reads), registered
-  in `app.py` between the change-set routes and the static mount. Closes friction F-M (the notes
-  tree had no dashboard surface). Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-04T23:43+02:00 — L8 route impact: `changeset.py`'s master net routes now resolve the series tip as the contract work branch while it exists, falling back to the source branch after landing/deletion; `/api/changeset/master` counters and `/api/changeset/file-diff?master=...` content share that resolver for code and memory. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T12:31+02:00 - L3 route impact: `/api/operator-inbox` now accepts
-  agent-role/message/artifact metadata, attempts hosted push through
-  `inbox_delivery.py`, and `terminal_paste.py` confirms delivery only on a real
-  pasted draft/chip echo across the boot window. Verification metadata pinned
-  until closeout stamps the L3 commit.
-- 2026-07-04T11:10+02:00 — agent-orchestration L2 route impact: the route gains `terminal_opener.py`
-  (the shared hosted-session opener extracted from `app.py`'s inline opener handler — leaf claim +
-  env-seeded tmux ensure + catalog upsert; `resolve_terminal_launch`/`_terminal_label`/the role-scoped
-  conflict check moved here) and `terminal_paste.py` (the server-side echo-confirmed stdin paste mirror
-  of the frontend). `app.py`'s `POST /api/terminal/{session}` opener now delegates to the shared opener
-  (so it and the `spawn_agent_session` MCP tool share ONE spawn path) and gains `POST
-  /api/terminal/{session}/paste` + a `terminal_paster` `create_app` param; `terminal.py` gains the `env`
-  knob-injection seam (`tmux new-session -e`); `terminal_catalog.py` gains spawned-by provenance columns
-  (via `dataclasses.replace` copiers). Covered by `test_terminal_opener.py`, `test_terminal_paste.py`,
-  `test_spawn_agent_session.py`. Verification metadata pinned until closeout stamps the L2 commit.
-  (Distinct from the 260703-L2 daemon-supervision entry below.)
-- 2026-07-03T12:57+02:00 — 260703 L2 route impact: the route gains `daemon.py` — the dashboard
-  daemon supervisor (flock-guarded ensure: adopt/spawn/restart-on-mismatch; atomic `daemon.json`;
-  identity-checked liveness; TERM→KILL stop; the threaded `maybe_autostart_dashboard` MCP boot
-  hook). Covered by `mcp/tests/test_dashboard_daemon.py`. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-07-03T12:50+02:00 — No route impact: L15 changed only pyright-visible narrowing inside changeset.py; the serving surface and behavior are unchanged.
-- 2026-07-02T17:25+02:00 — Reopened L6 copy-mode escape route impact: `terminal.py`'s `write_session`
-  now cancels tmux copy-mode (new injectable `TmuxModeCanceller`, `tmux send-keys -X cancel` default)
-  on the first typed input after mouse-report traffic, because copy-mode captures the keyboard and
-  scrolled-up non-mouse panes swallowed typing until scrolled back to the bottom. At most one cancel
-  per scroll-then-type cycle; mouse-aware panes never trigger it. Verification metadata pinned until
-  closeout stamps the follow-up commit.
-- 2026-07-02T17:04+02:00 — L9 route impact: added `terminal_leaf_assignment.py` and made
-  `app.py`'s existing `attach-leaf` route a move/reassign route over the shared helper. The route now
-  shares server-authoritative catalog conflict handling with the agent-facing MCP tool and preserves
-  `leaf-taken` no-mutation semantics. Verification metadata pinned until closeout stamps the L9 commit.
-- 2026-07-02T16:35+02:00 — Reopened L6 wheel fix route impact: `terminal.py` gained the injectable
-  `TmuxConfigurer` seam (default `_tmux_enable_mouse`: per-session `tmux set-option mouse on`, failures
-  suppressed, DEVNULL hygiene), asserted by `ensure` after create/probe and by every `attach`. Browser
-  wheel input now reaches tmux as mouse reports, scrolling pane history for normal-buffer TUIs and
-  passing through to mouse-aware TUIs; pane text selection becomes Shift+drag. Verification metadata
-  pinned until closeout stamps the follow-up commit.
-- 2026-06-30T00:00:00+02:00 — L5 follow-up route impact: leaf uniqueness is now per **(leaf, role)**. `terminal_catalog.py`
-  gained `TerminalSessionRole` / `role_for_kind` / `entry.role` and a role kwarg on `active_for_leaf`; in
-  `app.py` `_claim_leaf_or_409` is role-aware — the opener passes `role_for_kind(kind)` and `attach-leaf`
-  passes `entry.role`, so a terminal can sit beside the leaf's agent chat (no 409) while a second chat or
-  terminal still 409s. Updated the `app.py` opener/attach-leaf + `terminal_catalog.py` Route Model bullets.
-  Verification metadata pinned until closeout stamps the L5 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat) route impact: `app.py` gained the leaf→chat registry routes — the
-  opener now takes a `leafKey`, claims the leaf via `_claim_leaf_or_409` (`409 leaf-taken`, running-only),
-  persists + echoes it, and a new `POST /api/terminal/{session}/attach-leaf` claims a leaf for an existing
-  session (`404` unknown/terminated). `terminal_catalog.py` gained `TerminalCatalogEntry.leaf_key`
-  (migration-safe `to_json`), `with_leaf_key`, and `active_for_leaf` (running-only single-owner lookup).
-  Updated the `app.py` + `terminal_catalog.py` Route Model bullets. Verification metadata pinned until
-  closeout stamps the L5 commit.
-- 2026-06-29T23:00+02:00 — operations-integration L4a route impact: `changeset.py`'s `task` + `file-diff`
-  routes gained a `leaf` + `mode` selector (precedence `leaf > master > scope`) for the doc-reader leaf
-  views — `committed` (`base → code_commit`) / `working` (`HEAD → worktree`), resolved by leaf-id off the
-  persisted enclosure contract (works with no live worktree), with selector validation (400/404). Updated
-  the `changeset.py` Route Model bullet. Verification metadata pinned until closeout stamps the L4a commit.
-- 2026-06-29T17:00+02:00 — operations-integration L4 follow-up route impact: `changeset.py`'s `master`
-  endpoint is now the **NET** series diff (`git diff <master-base> <series-tip>` for code + memory, per-file
-  inspectable) rather than the sum-of-leaves, and `/api/changeset/file-diff` gained an optional `master`
-  param (the series net file-diff). Updated the `changeset.py` Route Model bullet. Verification metadata
-  pinned until closeout stamps the L4 follow-up commit.
-- 2026-06-29T15:30+02:00 — operations-integration L3 route impact: added `scope.py` (the shared browse-scope layer extracted from `files.py` — `FileScope`/`resolve_scope`/`run_scoped`/`language_for`/active-enclosure enumeration) and `changeset.py` (the read-only `GET /api/changeset/{task,file-diff,master}` change-set API: per-task `base → current` code+memory counts + status + `hasSidecar`, BEFORE/AFTER file content for the L4 MergeView, and master accumulation) to the Route Model, both registered before the static mount; `files.py` now shares `scope.py`. Verification metadata pinned to the task base until closeout stamps the L3 code commit.
-- 2026-06-28T22:41+02:00 — operations-integration L1 route impact: added `files.py` (the read-only `GET /api/files/{repos,list,read,onboarding}` files API) to the Route Model — the first serving module to bridge to the kernel `CoordinationContext`, registered before the static mount. Verification metadata pinned until closeout stamps the L1 code commit.
-- 2026-06-28T13:54+02:00 — Task 34 route impact: the raw `/api/events` channel (`events.py`) now does
-  **one** retained-backlog scan per connect, streams that bounded backlog in **chunks** instead of
-  materializing the whole history, **filters `lifecycle.heartbeat`** out of the river, and prunes expired
-  logs on a slow cadence. Updated the `events.py` Route Model bullet, the Hot Path Summary, and the
-  two-resume-models invariant. Verification metadata pinned until closeout stamps the task-34 code commit.
-- 2026-06-28T07:45+02:00 — Task 33 route impact: `delta.py` now emits an `activeWorktreeGroups` whole-value
-  delta (wrapped `{"activeWorktreeGroups": [...]}`) when the set changes. Verification metadata pinned
-  until closeout stamps the code commit.
-- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: raw `/api/events` now emits a one-shot `ready`
-  event after retained backlog replay, and `/api/actions/dismiss` accepts targetless actionable-drift
-  acknowledgements while keeping provider/gate dismissals scoped. Verification metadata pinned until
-  closeout stamps the task-29 code commit.
-- 2026-06-28T06:08+02:00 — Task 29 route impact: the raw `GET /api/events` channel now applies
-  lifecycle-aware backend retention on fresh connections through `observer.event_retention`.
-  Terminal lifecycle logs are pruned after the grace window, workspace/lifecycle-less rows are
-  age-bounded, active lifecycle histories remain uncapped, and valid `Last-Event-ID` cursors retain
-  exact byte-offset resume. Verification metadata pinned until closeout stamps the task-29 code
-  commit.
-- 2026-06-28T03:21+02:00 — Task 31 route impact: live `create_app` installs a `ProviderStateRefresher`
-  into `Projector` so each projection tick can refresh provider current-state before diffing and serving
-  the snapshot; sim mode disables that refresher and continues to replay fixture provider state. Detail
-  lives in the `app.py`, `projector.py`, and serving-test sidecars. Verification metadata pinned until
-  closeout stamps the task-31 code commit.
-- 2026-06-27T18:43+02:00 — No route impact: terminal.py added stdin=subprocess.DEVNULL on its 3 tmux subprocess.run sites (#49 stdio-pipe guard) — behavior-preserving hygiene; no change to serving architecture or surfaces.
-- 2026-06-27T02:28+02:00 — Task 22 follow-up: the terminal opener now uses
-  `TerminalHost.ensure` to create a detached tmux session instead of opening and closing a starter PTY
-  client. This fixes new chats immediately becoming `exited` while preserving per-tab attach.
-- 2026-06-27T01:25+02:00 — Task 22 follow-up: terminal WebSockets now attach independent
-  `TerminalHost.attach` clients to the same durable tmux session, and the opener detaches its starter
-  client after catalog persistence. This fixes multi-tab sharing without competing reads on one PTY fd.
-- 2026-06-27T00:45+02:00 — Task 22 follow-up: WebSocket disconnect now detaches the local PTY client
-  without ending the durable tmux/catalog row, fixing blank terminal rehydrate after browser refresh.
-- 2026-06-27T00:25+02:00 — Task 22 follow-up: terminal catalog termination is now sticky against later
-  WebSocket/PTY exit bookkeeping, so the `End` button cannot leave a row visible after refresh.
-- 2026-06-26T23:05+02:00 — Task 22: added `terminal_catalog.py` and documented the durable terminal
-  session flow across serving: opener persistence, `/api/terminal/sessions`, WebSocket rehydrate with
-  tmux probe, explicit terminate, and catalog-backed image upload after restart. Verification metadata
-  pinned until closeout stamps the task-22 code commit.
-- 2026-06-25T14:02+02:00 — Task 24 reopened: serving actions now support gate-id-only cancel for stale workspace gates while keeping approve/reject/revision lifecycle-targeted.
-- 2026-06-25T13:20+02:00 — Task 23/24: serving route now includes the operator-inbox dismiss endpoint used to delete stale pickup warnings.
-- 2026-06-25T07:26+02:00 — Task 19: `/api/actions/{approve,reject}` now accepts targeted `gateId` and
-  optional `note`, rejects blank No/reject reasons, maps stale targeted gate ids to `409 stale-gate`,
-  and leaves `/api/operator-inbox` as the message-only Chat path. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: documented `POST /api/operator-inbox` as the serving-layer write side for external-chat responses, routing to `operator_inbox_post_payload` with developer/dashboard attribution when the frontend has no hosted session to inject into. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-19T20:30 — Task 6 slice 6f: `app.py` gained `POST /api/terminal/{session}/image` (save a validated screenshot under `<cwd>/.dashboard-pastes/` for path-injection) and now opens harnesses `suspend_unsafe`; `terminal.py`'s `write` strips Ctrl-Z (`0x1a`) for suspend-unsafe (bare-pane harness) sessions only — a shell keeps job control. Updated the `app.py`/`terminal.py` Route Model bullets. Verification metadata pinned until closeout stamps the 6f code commit.
-- 2026-06-19T14:05+02:00 — Task 6 slice 6e-4: `terminal.py`'s `_spawn_pty` now gives the child a controlling terminal via `os.login_tty` (`preexec_fn`, setsid + `TIOCSCTTY`) + a seeded default winsize, so tmux honors browser resizes instead of staying at 80×24; the explicit `stdin/stdout/stderr=slave` keeps the child off the MCP stdio pipe (GitHub #49). Updated the `terminal.py` Route Model bullet. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-18T21:27+02:00 — Task 6 slice 6e-2b: added `harnesses.py` (the curated harness launch registry — Claude Code/Codex/Pi.dev + `shutil.which` detection) to the Route Model; `app.py` gained `GET /api/harnesses` (`detect_harnesses()`) and a `kind="harness"` opener branch (`resolve_terminal_launch` resolves the registry argv; absent/unknown/not-installed ⇒ 400). Updated Purpose + the `app.py` Route Model bullet. Verification metadata pinned until closeout stamps the 6e-2b code commit.
-- 2026-06-18T17:40+02:00 — Task 6 slice 6e-2a: `app.py` gained the `POST /api/terminal/{session}` **opener** — the dashboard spawns + owns a session (`TerminalOpenRequest` `kind` → the pure `resolve_terminal_launch` → `host.open(cwd=config.workspace_root, command=[$SHELL])`; server-resolved command, unknown kind ⇒ 400), so the WebSocket has a real session to attach to. Updated the `app.py` Route Model bullet. Verification metadata pinned until closeout stamps the 6e-2a code commit.
-- 2026-06-18T16:10+02:00 — Task 6 slice 6d-2: `app.py` gained the `@app.websocket("/api/terminal/{session}")` Mode B2 bridge (attach to the `TerminalHost` or `close(4404)`; PTY output via `loop.add_reader` → binary frames; JSON `stdin`/`resize` in via the pure `_apply_terminal_input`; `{type:exit}` on child exit; tmux-persistent on disconnect) + the module-level bridge helpers + the `terminal_host` `create_app` param; `pyproject.toml` added the `websockets` core dep. Updated the `app.py`/`terminal.py` Route Model bullets + Hot Path + Purpose. Verification metadata pinned until closeout stamps the 6d-2 code commit.
-- 2026-06-18T15:40+02:00 — Task 6 slice 6d-1: added `terminal.py` (the Mode B2 terminal host — `TerminalHost` over tmux-wrapped stdlib-`pty` sessions, injectable spawn, fixed-argv/localhost posture) to the Route Model + Invariants; the WebSocket bridge + `websockets` dep are 6d-2, the xterm.js viewport 6e. Also corrected the stale "(inert) POST action return-channel" wording in Purpose (6b made gate decisions binding). Verification metadata pinned until closeout stamps the 6d-1 code commit.
-- 2026-06-18T12:10+02:00 — Task 6 slice 6b: the POST action plane became enforcing-adjacent — `actions.py`'s `evaluate_action` emits a `GateDecisionIntent` for gate-decision verbs and `app.py` records it as a developer/dashboard-attributed decision (`gate_decide_for_lifecycle`); lifecycle transitions stay the 4b no-mutation skeleton. Verification metadata pinned until closeout stamps the 6b code commit.
-- 2026-06-14T23:30+02:00 — Slice 05 (5c): `sim.py`'s `build_sim` materializes the fixture's structural surfaces into the sim root (`_materialize_surfaces`); `events.py` single-encodes the raw channel (`stream_raw_events` emits `json.loads(line)`, matching `/api/stream`; was double-encoded). Verification metadata pinned until closeout stamps the 5c code commit.
-- 2026-06-14T11:30+02:00 — Updated for slice 04 commit 4b: added `events.py` (raw `event`
-  channel + byte-offset resume), `sim.py` (replay clock + feeder over the projector seams), and
-  `actions.py` (the POST action skeleton) to the Route Model; `app.py` now carries
-  `GET /api/events` + `POST /api/actions/{action}` and `projector.py` the `now`/`before_tick`
-  seams. Verification metadata pinned until closeout stamps the 4b code commit.
-- 2026-06-14T11:30+02:00 — Created for slice 04 commit 4a: the dashboard serving spine
-  (`app.py`, `projector.py`, `delta.py`, `static.py`) over the observer read side — one
-  shared projector, snapshot + per-entity SSE deltas, the static mount, localhost posture.
-  The raw `event` channel, sim mode, and the POST action skeleton land in 4b. Verification
-  metadata pinned until closeout stamps the 4a code commit.
-### 260713-PHA-L6 Reload Boundary
-
-The serving cutover is shared by the dashboard daemon, MCP-owning clients, bridge-backed session
-runners/adapters, and browser tabs; reloading only the dashboard can leave in-memory inbox/catalog
-schemas incompatible with durable rows. This is an operational contract, not a resource-polling
-change.
+`app.create_app` builds app-scoped collaborators and registers retained reader/action/grant routes before the static mount. Projection version 2 serves reference-keyed `tasks` (TaskEntry), `taskCounts`, unbound enclosures and retained analytics; state SSE uses task/task.removed/taskCounts rather than lifecycle rows. `/api/task-document` returns separately requested TaskSummary content, not another status authority. The retained action path acknowledges/dismisses attention and the developer grant route calls shared grant authority; gate-decision and operator-inbox routes are absent.
+
+`create_app` registers typed `canvas-authoring-replaced` 409 responses before the old canvas Generate, regenerate, publish, cancel, replace and attempt-operation POSTs can match. Those retired POSTs start no process or session and write nothing; retained frame/session/revision reads keep their owners. The review page's explicit Build/Send/Update/Retire/cancel and state/revision/planned routes instead use `register_explainer_routes` over injected host and application ports. Missing composition refuses `explainer-unavailable` rather than pretending a seat exists. Recorded and planned comparisons stay distinct; preparation is bound to the comparison owner, and a planning leaf binds its master line's tips. `RefuseCrossOriginWrites` refuses a state-changing browser request that is not from this dashboard's own page — `Sec-Fetch-Site` other than `same-origin`, or, when that header is absent, a foreign or `null` `Origin` — with a named 403 before any route, while a request carrying neither header comes from no browser page and passes; `RefuseForeignHosts` refuses every request, reads included, whose `Host` names another host or port. A frame that navigates itself keeps its sandbox flags and its writes still fail the origin guard.
+
+_app_lifespan compacts the workspace river, primes the projector and starts projection, provider-metrics, leaf-archive recovery, held native-role message delivery and river-compaction tasks, plus the moved watcher only when its application port is supplied. Optional heap/allocator tasks remain opt-in. It does not prime or poll a terminal catalogue or run a hosted-seat notifier. The archive worker drains cancellation before close; held-message sweep failures are contained. Shutdown invokes the injected review-tree owner, cancels and awaits owned background tasks; there is no removed terminal-host shutdown.
+
+The projector retains change-driven invalidation, stable/current publication, subscription delivery and task-input retry ownership. Canonical task status maps to planned/started/aborted/completed; only started tasks receive bound host-agent works/paused/unknown activity and contributing eventAt. Declared lists, documented-subTask master precedence and unambiguous commanded-master relations determine membership independently of worktree bindings. Only an absent subTask master uses list fallback; its present contrary or unresolvable master remains explicit and unbound. Other listed document kinds retain list placement under identity/cycle guards without own-master validation by that path. The same producer reports distinct list/record disagreements once per master rather than dropping contrary facts. Host reads occur at startup and host invalidation, with boot reconciliation and a proved supervisor-exit subscription; ordinary heartbeat/full healing is not host polling. File readers retain their own absence and last-good-data policies. Review/read shims do not turn an unwired adapter into an empty catalogue, body or comparison.
+
+The read-only catalogue and changed-intent summary routes accept an optional recorded comparison number and forward it through their typed ports. Catalogue negative numbers receive 400; summary negative numbers produce the typed unavailable result without inventing counts. The summary cache includes that number in its question key, so different numbered comparisons cannot reuse each other's answer. `RecordedAnswerReuse.answer` also accepts an explicit keep predicate: a freshly produced value rejected by it is returned but never retained, while ordinary input-observation and age/capacity bounds remain with that cache owner. These transport additions select no arbitrary tree and confer no review or acceptance authority.
+
+The process-shared moved watcher compares on review-page opening and relevant leaf turn ends, with planning bindings checked only on page opening and a short binding-keyed cooldown for repeated opens. It captures through the existing comparison owner and publishes exact-leaf notices in process, without messaging a seat or writing a held store. An open stream without an explainer can still carry a moved notice without an Update offer; an unavailable precise block count there remains a provisional notification value. The existing state SSE connection multiplexes projection/memory events with notices: notice exhaustion cannot close that page stream, ordinary stream exhaustion does, and close cancels/gathers pending reads and releases subscriptions. The lifespan cancels and drains the watcher with its other background tasks.
+
+## Construction And Ownership
+
+Configured McpRuntimeConfig and admitted roots feed the dashboard; untrusted request values do not install arbitrary host roots. Compilation, task authority, canonical knowledge comparison, native role launch and independent acceptance remain with their actual owners. Serving capsule_delivery is an immutable copied value, not a harness-specific carrier/protocol planner.
+
+## Running Processes And Build Currentness
+
+`build_currentness` compares the Python digest a process loaded with the digest of the `*.py` files now at its package root (`build_info.runtime_source_digest`); the installed digest is computed only when a reading is asked for and cached for 30 s per root, and a digest that cannot be computed reads `unknown`. A process whose package root is a source checkout's `mcp/src/agents_remember` is compared only when a status request asks. A stale reading names both digests, the time the difference was first seen and the remedy (restart the dashboard, or restart or reconnect the MCP server). Markdown and other package data never make a process stale. The MCP server reads it before every tool call and, for an installed stale build, refuses the declared publication writes with `server-build-stale` (`mcp/build_staleness.py`); reads, dry runs and checkout processes are not refused.
+
+`server_registry` keeps one record per running dashboard or MCP server at `<coordination root>/runtime/servers/<pid>.json`, removed at exit; a reader removes the records of dead processes, and `server_inventory` reports each live server with its reading to `server_info` and `runtime_install`. The served state tail carries `buildCurrentness` and `servingProcessId`, the state ETag includes the reading, and the stream sends a `buildCurrentness` event when it changes.
+
+`daemon` records the dashboard's source digest in `daemon.json`. `ensure` adopts a running dashboard only when version, host, port and the installed Python digest agree, restarts it otherwise, and answers `unknown` without restarting when the installed digest cannot be computed. `daemon_identity` proves which dashboard answers a port from the process that owns the listening socket (`daemon_processes`, a native read per platform) and that dashboard's own `servingProcessId`, not from the saved PID; a dashboard whose identity cannot be proved, or that serves another coordination root, gets no signal. `plan_running_dashboard` and `ensure_running_dashboard` give `runtime_install` its read-only preview and its restart of a running dashboard on a build change; a dashboard that is not running stays stopped.
+
+In the Paseo subtree, a call that only talks to a running host runs on `communication_node`: the product Node when it is installed, otherwise the Node of the owned running host; starting a host uses the product Node only. A provisioning that would stop its own host refuses first with `harness-home-would-change` when a harness-home variable (package data `host-harness-homes.json`) of the running host would not reach the new host with the same value, unless the change is accepted with `--accept-harness-home-change`; the status and the provisioning report name the inherited harness homes. The install preview's `changes` come from the same plan descriptions as the real pass.
+
+## Invariants And Boundaries
+
+Snapshots/deltas, raw observer events and separately requested bodies are different transports. Refusal/unavailable and absent/empty are not interchangeable. Retained internal compilation and old stored data do not restore public compile, gate or structural-session operations.
+
+## Historical And Verification Limits
+
+Old terminal/session launch-site, provider-specific carrier and first-prompt acceptance claims are withdrawn as current facts. Retained source declarations and static tests are not fresh runtime/test acceptance; the existing bounded producer seals remain literal and separately graded.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:220-225 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/src/agents_remember/serving/app.py:185-185 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/_app_common.py:221-226 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:627-709 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; mcp/src/agents_remember/serving/app.py:218-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:644-655 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:215-216 - the bytes it recorded now occur 42 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| sourceRoute            | `mcp/src/agents_remember/serving/`               |
+
+### Native-source claim qualifications
+
+- A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands. A comparison combined with mode is refused by _comparison_mode_refusal, with explicit query-presence checks in register_changeset_routes.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/changeset_comparison.py:16-27`; `mcp/src/agents_remember/serving/changeset.py:636-642`.
+
+- **The comparison route's handler over its injected port.**  Anchor: "def api_review_intent("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:661-709`.
+
+- **The entry route's handler: the task context alone, and an unwired process answered with a named refusal rather than an empty list.**  Anchor: "def api_review_intent_entries("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:644-655`.
+
+- **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**  Anchor: "def api_review_intent_source_content("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:657-659`.
+
+- The query parser that admits only those two.  Anchor: "def review_request_from_query("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:294-327`.
+
+- The refusal code a process with no adapter produces.  Anchor: `review_adapter_unavailable`
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:607-624`.
+
+- The 404 for a candidate that does not resolve.  Anchor: `status_code`
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:607-624`.
+
+- **The registration that must precede the static mount and that takes all three ports.**  Anchor: "def register_review_routes("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:627-709`.
+
+- The review registrar is mounted before static routing and accepts three review transport ports; the summary route is mounted separately.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:627-709`.
+
+- The GET-only route handler over the injected port.  Anchor: "def api_review_intent("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:661-709`.
+
+- **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.**  Anchor: "def _status_for("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:607-624`.
+
+- **The 400 a selector kind outside the admitted set gets, inside the comparison handler.**  Anchor: "def api_review_intent("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:661-709`.
+
+- Retained transport mapping includes the legacy candidate_dataset_absent code as404; this does not establish a live dataset candidate path.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:607-624`.
+
+- **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: "def api_review_intent_entries("
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:644-655`.
+
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:627-709`.
+
+- The shared status mapping accepts three typed transport result classes and treats refusal is None as success.
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:607-624`.
+
+- **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.**  Anchor: `source_content_unresolved`
+
+Source account retained from the parked claim (anchor currency not renewed here): `mcp/src/agents_remember/serving/review.py:607-624`; `mcp/src/agents_remember/models/knowledge/review_refusal.py:15-30`.
+
+- A numbered recorded comparison is looked up exactly; code/memory ranges use its recorded sides (converted memory base when present), and the list returns those four tree operands.
+
+The retained app shares one always-on background ledger across actual worker units, synchronous publication, event tails and startup. Diagnostics expose owner/wake facts with explicit incomplete windows rather than acceptance. Transaction-bound own-write suppression and pending invalidations retain healing for their admitted domains; native host activity is excluded from periodic healing. Raw event SSE reads only the workspace River, with writer/compactor-owned retention and virtual offsets; it is neither a lifecycle catalogue nor task/activity truth. Server-side host-start loading keeps its shared OS lease/progress and cancellation-drained driver without restoring the removed terminal catalogue or notifier plane.
+
+## Landing Interest And Periodic Safety
+
+Landing discovery and new remote-probe admission are conditional on the Projector's actual shared state-stream subscribers, bound by app composition before startup. Per current exact contract identity, semantic-answer age increases the due interval from 30 seconds to 120, 600 and 3600; changed answers/contracts reset it. One-shot state reads and frontend signals create no landing interest. Existing accounting, drained cancellation, sweep-local remote sharing and exact terminal-final/reopen boundaries remain.
+
+This is not a dashboard-wide stop switch. Projection/watch/healing and other owned loops retain obligations within their domains; native host activity has no periodic healing poll. In particular, provider sample/record/degradation/compact remains periodic and independent of page interest or launch-authority absence: leftover labelled stacks must stay observable after revocation/restart or malformed authority. No fleet-retirement witness is inferred from permission to launch. Runtime measurements and installation acceptance remain separate from these source contracts.
+
+## Native Read Reuse And Content Boundaries
+
+`register_changeset_routes` creates one bounded ChangesetCache, shared with the intent-summary route through its typed inputs/read port. Native Git remains the selector/diff owner. Reuse observes repository/configuration/reference/object and, when needed, working-tree generations plus dependencies discovered before consumption. Pending results enter retention only after matching fresh post-read observations; incomplete/changing dependencies and failed native reads do not become reusable successes. Object-absence proofs also invalidate on additions. This is not TTL-based permission to serve stale inputs or a new comparison generation. Successful change-set/summary responses derive weak ETags from their returned bytes and honor If-None-Match; an unwired summary keeps its named 503.
+
+Full task bodies have a separate app-scoped LRU of at most 1,024 entries/16 MiB, distinct from the background task-payload parse cache and native change-set/summary reuse. Captured filesystem inputs revalidate before body reuse; serialized TaskSummary bytes define its content revision. Unreadable/changing generations are served uncached and cannot justify a 304. State GET/SSE retain their separate projection-instance dump memo and served tail (`servingBuild`, `buildCurrentness`, `servingProcessId`). None of these caches changes task stage, host activity, recorded operands, permission or acceptance.
+
+## Open Review Memory Invalidations
+
+The existing state SSE route accepts optional reviewRepo/reviewMaster/reviewLeaf. No selector keeps
+ordinary stream behavior; any supplied selector forms the complete identity tuple for canonical
+single-segment/root admission through the injected port. Collaborators and app runtime carry that
+port. Request strings do not select arbitrary memory roots or alter the projector state schema.
+
+The connection owns native nonrecursive directory handles, excluding symlink directories and named
+generated/temporary subtrees. Startup and relevant directory events reconcile registrations; this is
+not idle timer filesystem polling. A separate ready future precedes the size-one coalescing change
+queue, and nonce/counter revisions are invalidations, not Git trees or acceptance observations.
+Handled admission/watch errors publish review.memory.error with recovery; ordinary event delivery
+retains its own stream path. Closing the connection drains queued async reads and joins the native
+worker rather than abandoning its handles. No measured total shutdown bound is claimed.
+
+A missing comparison number is not a dataset-mode discriminator: enabled live leaf-wide tree reads
+can start without one, while focused card-entry reads require one. The transport retains some legacy
+refusal spellings for status mapping; that does not reinstate removed candidate producers.
+
+
+## Current Behavior
+
+the change-set routes now run on a dedicated `_BoundedReads` scheduler: eight workers plus eight pending jobs, an explicit 503 over the cap, a queued job withdrawn on disconnect and a running job releasing its slot only at its physical end; the route returns 499 and the runner's one `_wait_process` kills the Git child and its group. Freshness is Git's own: id-keyed commit pairs are served with no observation, working views run `git status --porcelain=v2 -z` and have no cache where a plain read costs no more, and the object store is a `count-objects -v` census; the object/worktree walks are removed. The cache's result/repository/per-read maps are capacity-bounded, an abandoned read admits nothing, and the id-keyed accepted gap is named in the cache module. The intent-summary route keeps its 200/503/304 idiom and shares the same cache.
+
+The serving tick reads usage reports at a new stamped end, writes the one limit file whole under an exclusive lock, pauses a limited recipient's drain before any host read, and reaches the bridge through the port the composition root binds.
+
+
+- The collaborator port and the registration before the static mount.
+
+- The 404 for a candidate that does not resolve.
+
+- **The registration that must precede the static mount and that takes all three ports.**  Anchor: "def register_review_routes("
+
+- Review route registration precedes the static mount and accepts knowledge-review, entry-list and source-content ports. 
+
+- **The 200/refusal split the entry handler makes: `entries` serves `200`, anything else goes through `_status_for`.**  Anchor: "def api_review_intent_entries("
+
+- The registration that must precede the static mount.  Anchor: "def register_review_routes("
+
+- **The route's optional query parameters and the `400` body that now names the "omit both" option and reports whichever parameter was supplied.** 
+
+- The collaborator that stops the route's child computations.
+
+- The composition root composes one worklist process owner.
+
+- The tree port passes the process owner to the application.
+
+- A live read reuses the record of the same trees, and pins before it writes a new record. 
+
+- The value handed to the port, and whether it asks a focused question. 
+
+- The one selection value and its refusals. 
+
+- The port runs on the route's executor with cancellation and arrival bound; a disconnect and a cancellation set the event. 
+
+- The route: its own executor, the unwired 503, the selection's 400 and the typed 200. 
+
+- Tick cancellation drains filesystem work; state commits before subscriber notification.
+
+- Shared app composition binds real landing interest before startup. 
+
+- Pending cache results are retained only when fresh post-read input observations match their captured generation. 
+
+- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. 
+
+- The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. 
+
+- The summary reader keys retention by the numbered question and current age window. 
+
+- The native recorded-answer cache returns predicate-rejected values without retaining them. 
+
+- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate. 
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/changeset_comparison.py:18-29 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 23cb164fa24dcbc4a98a56fa1324e1fb42c1bf41; mcp/src/agents_remember/serving/projector.py:348-434 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a66314c555d873dd01b4dbefbe18fb3f2ee44d4b; mcp/src/agents_remember/serving/review.py:667-715 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; mcp/src/agents_remember/serving/review.py:715-715 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a8d2431926d6b130012ca81ed2e85b14721c0615; mcp/src/agents_remember/cli/dashboard.py:71-96 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/src/agents_remember/cli/dashboard.py:149-168 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 3104b78bb309a8e1a912503557adb08599b52ef0; mcp/src/agents_remember/cli/dashboard.py:75-100 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 842b487b854503d95c9c2d9dce1841198ba93c7d; mcp/src/agents_remember/cli/dashboard.py:153-172 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/cli/dashboard.py:139-142 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/cli/dashboard.py:143-146 - the region it cited is not in the file at the candidate and no re-point was possible; mcp/src/agents_remember/serving/review.py::register_review_routes - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review.py::api_review_intent - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/application/review_tree_comparison.py::_recorded - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesQuery - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::ReviewTreesSelection - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_trees.py::_request_result - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c702e1c2e111ec6e07c6b68a78a5d05add8aceab; mcp/src/agents_remember/serving/review_trees.py::register_review_trees_route - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/app.py::_build_serving_runtime - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/changeset_cache.py::finish - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_memory_watch.py::_memory_events - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_memory_watch.py::_native_worker - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; mcp/src/agents_remember/serving/review_memory_watch.py::_admitted - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/intent_summary_cache.py::_response - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/review_answer_reuse.py::answer - the bytes it recorded now occur 60 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer_watcher.py::unexplained_turn_notice - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/change_watcher.py::MoveNoticeWatch - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 5f8398b32760677c370e3145add73cfa8388357b; mcp/src/agents_remember/serving/explainer.py::_comparison - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/explainer.py::explainer_composition - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/app.py::create_app - the bytes it recorded now occur 4 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Evidence
+
+- The query, the port and the GET handler with its three answer classes. [3]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/_app_common.py:220-225 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417; mcp/src/agents_remember/serving/app.py:185-185 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/src/agents_remember/serving/_app_common.py:221-226 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted [4]
+
+- LaunchCapsuleMode has only capsule/refused and no resolver or legacy carrier policy. [9]
+
+- Internal compile_launch_capsule admits task/free-agent seats through retained compiler ownership and returns a generic delivery/refusal. [13]
+
+- The shared naming primitive appends the same physical lock suffix. [21]
+
+- Every-directory filtering retains lock suffix exclusion. [22]
+
+- The catalogue handler forwards task context and its optional recorded comparison number; an unwired process still returns a named refusal rather than an empty list. [30]
+
+- **The expansion route's handler and the module-level transport behind it (`260921-ICR-L3`).**  Anchor: "def api_review_intent_source_content(" [31]
+
+- **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action — and, since `260921-ICR-L3`, its sibling for the expansion route.** [32]
+
+- **The entry route constant, and the comment recording why it is a second path rather than a second adapter.** [33]
+
+- The two admitted selector kinds, refused rather than mapped. [34] [46]
+
+- The query parser that admits only those two.  Anchor: "def review_request_from_query(" [35]
+
+- **The status mapping the routes inherit from the change-set routes: success is `refusal is None`, and the four candidate codes — including `subject_unresolved` — answer `404`.** [36]
+
+- The refusal code a process with no adapter produces. [37] [49]
+
+- The 400 a selector kind outside the admitted set gets. [38]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:627-709 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c5a74a85af20a8fb48cc44f59de7e926d589d3fc; mcp/src/agents_remember/serving/app.py:218-231 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted [40]
+
+- **The entry port type: the task context in, one typed entry result out — and, since `260921-ICR-L3`, the expansion port beside it.** [41]
+
+- **The unwired-entry body: `unavailable` with the "not served rather than served empty" reason and next action.** [42]
+
+- **The entry port type: the task context in, one typed entry result out.** [44]
+
+- The query parser that admits only those two.  Anchor: "def review_request_from_query(" [47]
+
+- **The status mapping the routes inherit from the change-set routes; the signature accepts all three typed results and reads success as `refusal is None`.**  Anchor: "def _status_for(" [48]
+
+- The transport still maps the literal legacy candidate_dataset_absent refusal code to404; a status mapping does not establish a currently produced dataset candidate path. [51]
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/review.py:644-655 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 4a0442d62eb842661a3dd04686c376d0f0dbc61f. Retired means the anchor no longer stands, not that the cited subject was deleted [52]
+
+- The registration that must precede the static mount.  Anchor: "def register_review_routes(" [53]
+
+- The status mapper accepts the three review result types; success is refusal absence, with distinct unavailable and missing-subject/candidate refusals. [54]
+
+- **The new owner: which exact Git objects a committed range binds, the three absence kinds, and the one absence that may degrade to empty.** [55]
+
+- **The caller resolves the two sides independently: an unselected repository returns an empty range before endpoint admission; caught `not-recorded` supplies a code detail and no memory detail, while other endpoint errors propagate.** [56]
+
+- **The doc-reader entry point that publishes the unrecorded state in the body.** [57]
+
+- **The cases that measure this route's half of the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read with the route's own `200`, and the one-half degradation.** [58]
+
+- **The new owner: which exact commits a master net binds, the deterministic digest, same-call currentness, and the named refusal for a missing endpoint.** [59]
+
+- **The thin delegating entry and the pinned file view, with the shared master 400/404 mapping.** [60]
+
+- **The served vocabulary: the generation identity, the net's `generation` + `currentness` + `scope`, and the `committed`/`working` leaf-row state.** [61]
+
+- **The nine cases that measure this route's half of the change, through real contracts, repos and routes.** [62]
+
+- **The parser's two admitted shapes, and the refusals it keeps: a half-named selector and an unadmitted kind still return `None`.** [63]
+
+- The status mapping and the serializer, unchanged by that leaf (the mapping serves a third result type since `260921-ICR-L3`). [65]
+
+- **The composition the task-context answer reaches, which is where the complete inventory is measured.** [66]
+
+- **The case that admits exactly the two reviewable selector kinds and refuses every other spelling, and the case that drives the same route with no selector parameters at all.** [67]
+
+- **The third route constant, GET-only, with the comment recording why it is a third path rather than a payload field: the inventory is the whole task's change set and a payload carrying every file's text would be a document dump.** [68]
+
+- **The expansion's whole selector as one value: the task context, the entry path, and both camel-case tree ids, which travel together because any one alone selects nothing.** [69]
+
+- **The parse that refuses a blank component rather than defaulting it — a defaulted tree id would make the server choose a generation.** [70]
+
+- **The one-line route registration, and the module-level transport behind it: the unwired `503`, the incomplete-generation `400`, and the same two exception shapes the comparison handler uses.** [71]
+
+- **The expansion route's own unwired answer: "not served rather than served as an empty file".** [72]
+
+- **The third port type and the third collaborator field, with the reason it is a port rather than a payload field.** [73]
+
+- **The status mapping widened to the third result type, where the expansion's refusal code reaches `400` through the same fall-through as `comparison_refused`.** [74]
+
+- The `400` body for a query that did not name the generation whole, and the exact expected set it names. [75]
+
+- The registration call in the app factory, which passes all three collaborator ports and still precedes the greedy static mount.  Anchor: `register_review_routes` [76]
+
+- **The composition root's third review port, whose docstring names the two facts the route rests on: the caller's generation rather than the server's choice, and no working tree or `HEAD` as a source of bytes.**  Anchor: `read_review_source_content` [77]
+
+- **The application owner behind the port: the admitted paths (a changed path of a measured change set, or unchanged context a recorded realization of the same comparison links — decided by the admission owner), both bound trees read by object id, and the per-side states.** [78]
+
+- **The cases that drive the new route through the real composition: an incomplete query refused by the transport, an unwired process refused by name, and an unmeasured generation that still confines the path to a measured change set.** [79]
+
+- **The one mapping and the one body builder: the `400`/`404` idiom cannot differ between the two adapters.** [80]
+
+- **The two actions the bodies gained, and where they are named.** [81]
+
+- The expansion read's whole transport, whose docstring now states the shared mapping. [82]
+
+- The published surface, unchanged: the three route constants, the three ports and the two parsers. [83]
+
+- The dashboard composition root registers the native role-launch routes, then the developer chat/tray routes, as the app's extra API routes beside the retained review/read ports. [84]
+
+- The collaborator that stops the route's child computations. [89]
+
+- The runtime receives the shutdown callable from the collaborators. [90]
+
+- Serving shutdown calls it on a worker thread before the background tasks are cancelled. [91]
+
+- It supplies that owner's shutdown to the app. [93]
+
+- An enabled live leaf-wide tree read may start without a comparison number; focused card-entry reads require one. Absence of a number does not imply a dataset review. [96]
+
+- A busy default executor cannot delay a tree read. [97]
+
+- A disconnect, the deadline, shutdown and a queued request each end with the children reaped. [98]
+
+- The bounds of a selection and the size of the route's thread pool. [100]
+
+- The start-only supervision the dashboard composes. [105]
+
+- The install host part. [106]
+
+- The host acquisition. [107]
+
+- App registers three intent handlers plus separate summary, tree and reader ports before static delivery.  Anchor: create_app [110]
+
+- Startup ordering, native held-message sweep registration, worklist-first shutdown, and awaited background teardown are explicit. [111]
+
+- Leaf-archive recovery is the one loop under the terminal-observation owner: it sleeps after each attempt returns, and no terminal-observation prime or poll remains. [112]
+
+- Live pacing adds post-completion rest, so interval/heartbeat alone is not a total freshness bound.  Anchor: projection_completed; _next_deadline [113]
+
+- Missing wheel exits degraded; watch establishment, retry and native-watch options are explicit.  Anchor: run; _watch_once [114]
+
+- Source content admits attributed unchanged context only with measured requested inventory. [120]
+
+- Leaf range returns empty for missing repository before endpoint-owner admission. [121]
+
+- Host ensure is start-only, with observation, lock, and outcome receipt. [128]
+
+- Landing interest gates actual discovery and probe admission, while due policy retains exact identities. [130]
+
+- Provider safety remains an independent periodic sequence. [131]
+
+- Complete reconciled host input joins role-agent task identities only while its supervisor observation is armed. [132]
+
+- Native cache values reuse only complete matching input generations; additional consumed inputs must have pre-read observations. [133]
+
+- Full TaskSummary preparation has separate bounded retention and generation checks, not a second task-status producer. [135]
+
+- Task-body 304 requires a still-current captured generation and matching content revision. [136]
+
+- Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule. [137]
+
+- The injected canonical memory-root port is carried from collaborators into the shared serving runtime, not resolved from arbitrary client roots. [138]
+
+- The existing state stream opts into review-memory invalidations only through supplied review identity; no-selector streams retain their ordinary event path. [139]
+
+- The connection-owned watcher filters generated/temporary paths, separates ready from coalesced changes, emits invalidation revisions rather than tree identities and drains its worker/merge ownership on closure. [140]
+
+- The catalogue handler admits optional comparison, refuses negative values and forwards all four port arguments. [141]
+
+- The summary handler forwards optional comparison and names a negative number as unavailable. [142]
+
+- Summary ports and cache keys include exact optional comparison identity. [143]
+
+- Serving composition refuses retired canvas authoring before registration, composes explicit explainer ports and comparison-bound routes, and owns moved-notice stream/watch lifetime. Ordinary roster has 44 names while explainer surface selection is separate. [146]

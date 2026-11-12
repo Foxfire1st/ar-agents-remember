@@ -1,0 +1,293 @@
+{
+  "path": "mcp/src/agents_remember/cli/discovery.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+        "content": "sha256:6cce3706bc600ca881c10abcf52c0b91f22bcf766ae2010d32e6561302e90511",
+        "locator": {
+          "kind": "symbol",
+          "name": "discover_config"
+        }
+      },
+      "id": "RLZ-GXB0WN",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "discover_config() reads only mcp_settings_path(), independently of the caller's directory; this is the behaviour every help must state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+        "content": "sha256:ba0a3e84051dc456cbd19c97b36af5a0fb39b645f0174ecf5741c952ec23249e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PE1TNS",
+      "invariant": "INV-S18ZC5",
+      "origin": {
+        "handoffEntry": "MIK-R84@v10 part4 / discovery authority and explicit settings",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Current settings discovery owns selection and refuses a missing default without workspace fallback.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting.\n\nAnchor: \"config_path = args.config or discover_config()\"; \"except (ConfigDiscoveryError, ConfigError) as error:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:f899e19342a74c29894d5e2b562951e12fd3657fcb740e82ace7889114949d60",
+            "locator": {
+              "end": 785,
+              "kind": "line_range",
+              "start": 785
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:c673c1416a0b294a253f82f9f483c7fdde9ddfd450221a059affb95a5c13228a",
+            "locator": {
+              "end": 787,
+              "kind": "line_range",
+              "start": 787
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:0165886a086fec60887fd91b9e41063515a8e8276f8177c375838ff6ef7d75c5",
+            "locator": {
+              "end": 823,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:326045f4b0ee397b3109f6a3a49f8437abf10ef7b9b32518bbe3c5af96869d8e",
+            "locator": {
+              "end": 825,
+              "kind": "line_range",
+              "start": 825
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:f4de6c20cdbc5c6a8aaace6a233b480238209652b239c4be2cd4fbbfb6c6bf31",
+            "locator": {
+              "end": 717,
+              "kind": "line_range",
+              "start": 717
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:f4beb8095b06c924b51db159a24269aef9e59883add8486123cbe8f8b1d5850f",
+            "locator": {
+              "end": 827,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The CLI consumer: `--config` optional, discovery fallback + `ConfigDiscoveryError` reporting.\n\nAnchor: \"config_path = args.config or discover_config()\"; \"except (ConfigDiscoveryError, ConfigError) as error:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:f899e19342a74c29894d5e2b562951e12fd3657fcb740e82ace7889114949d60",
+            "locator": {
+              "end": 785,
+              "kind": "line_range",
+              "start": 785
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:c673c1416a0b294a253f82f9f483c7fdde9ddfd450221a059affb95a5c13228a",
+            "locator": {
+              "end": 787,
+              "kind": "line_range",
+              "start": 787
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:0165886a086fec60887fd91b9e41063515a8e8276f8177c375838ff6ef7d75c5",
+            "locator": {
+              "end": 823,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:326045f4b0ee397b3109f6a3a49f8437abf10ef7b9b32518bbe3c5af96869d8e",
+            "locator": {
+              "end": 825,
+              "kind": "line_range",
+              "start": 825
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:f4de6c20cdbc5c6a8aaace6a233b480238209652b239c4be2cd4fbbfb6c6bf31",
+            "locator": {
+              "end": 717,
+              "kind": "line_range",
+              "start": 717
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:f4beb8095b06c924b51db159a24269aef9e59883add8486123cbe8f8b1d5850f",
+            "locator": {
+              "end": 827,
+              "kind": "line_range",
+              "start": 823
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The settings loader the discovered path feeds (`load_config`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:57afd11ee4cb0155d38f7174417397460259c8c9897017ca76417f0749efaa0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_config"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Unit tests: the user config wins over workspace registrations, the current directory is never inspected, malformed and foreign registrations have no effect, and a miss names the user config and the `--config` remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "12a47430dbdd08e71e08d907a6418223d15c70e0",
+            "content": "sha256:e1a6222c5c6153e4d9f698f99f2f321c3d8662c5e2690e1b9da168f58e8e19d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiscoverConfigTests"
+            },
+            "path": "mcp/tests/test_cli_discovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Discovery selects the user's settings file, refuses an unusable one with the remedy, and prints the provenance line to stderr.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+            "content": "sha256:6cce3706bc600ca881c10abcf52c0b91f22bcf766ae2010d32e6561302e90511",
+            "locator": {
+              "kind": "symbol",
+              "name": "discover_config"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The probe accepts only a JSON object naming an existing absolute coordination directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+            "content": "sha256:3115ed9bbb909ea4ce379edad6cfa8b643b98b8d1a1363705ca984d08276829f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings_coordination_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The authority file sits beside the user's role settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+            "content": "sha256:3fba13967434e16d35b880bf5eca5e052cd063ebdf1e1f7911c2ea1abfbad85a",
+            "locator": {
+              "kind": "symbol",
+              "name": "mcp_settings_path"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,161 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/review_trees.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+        "content": "sha256:3e1662116c0686f6083f18088abee713c4fd4ed07609f945aa985131f55a9769",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewTreesResult"
+        }
+      },
+      "id": "RLZ-6Q7GD9",
+      "invariant": "INV-2K9NMR",
+      "origin": {
+        "handoffEntry": "CUR-2K9NMR-models-route",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "ReviewTreesResult retains code/knowledge sides, currentness and worklist but has no leaf-wide knowledge_diff field. The module still exports and declares the shared ReviewKnowledgeFileChange/RecordGroup/SourceGroup/TreeDiff carriers for surviving standalone consumers; only the route-answer field is removed.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+        "content": "sha256:a3b3d00a11bafeaee340b1e8c0feb41a41144d9351d24487e35d54f116c36fcc",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZHZJNK",
+      "invariant": "INV-YJZKYC",
+      "origin": {
+        "handoffEntry": "R3 Note 15",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The model describes the source-only review identity.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "18": {
+      "note": "Schema, review-pin namespace and side/conversion addresses remain distinct.\n\nAnchor: \"# and ``refs/remotes``, so nothing fetches, pushes or merges it, and the task's archive hook finds\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:06c7d109aaa47a1083ad40fcf47176f144572afbbda323c050043d37549339d1",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Comparison identity excludes number, timestamp and pin spelling.\n\nAnchor: \"class ReviewTreeComparisonRecord(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:176fd9907300fceef534d12d92cfc1a32b184c1008a020c70503eeb014a142cd",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Knowledge and code sides retain explicit availability and partial-index evidence.\n\nAnchor: \"class ReviewKnowledgeSide(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:f3359c91b81f415315f67ff238aee9fad9a56d1da031e51ee25bc9ca09035736",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 157
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The internal worklist code facts are excluded while the public response keeps its own payloads.\n\nAnchor: \"class ReviewWorklistView(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:2349c5564a4ce3caaca5ab7515c9e54bf127c705b8cb39e404ab8d4117402aff",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "A card memory read names its after tree, completeness or unavailable reason.\n\nAnchor: \"class ReviewEntryMemoryState(KnowledgeModel):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:b42a3f7aea2b0db7845817dbec4eb2851c0cbf61c21de9f27de53e98bb5a3f5e",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 252
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "The delivered value names the pair, its four trees and the notice state, without becoming a review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:a98a0c19a485b04ecc5a2f51fdc9f384962b0b5037e03682f4602e2d699225c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewDeliveredComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The frozen TreeKnowledge and ReviewTrees carriers hold wire/index and comparison-side facts, return before then after, and perform no tree capture, ref pinning or candidate validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17e7ecdee54cf62a53e910f58877fc330d9aab33",
+            "content": "sha256:3e81a6d220d71abaf1eec9b1c8b62084967a2c3cfd40ddab7c166cc73196eb71",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeKnowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

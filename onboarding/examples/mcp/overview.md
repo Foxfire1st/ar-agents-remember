@@ -1,113 +1,55 @@
 # examples/mcp Overview
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| doc_type               | `route-local-overview`                     |
-| sourceRoute            | `examples/mcp`                             |
-| lastUpdated            | 2026-09-05T07:05+00:00 |
-| lastVerifiedCommitHash | `ea35964985f30080488270e71ac81657ac40682b` |
-| lastVerifiedCommitDate | 2026-09-05T06:48:29+02:00 |
+| Field | Value |
+| --- | --- |
+| sourceRoute | `examples/mcp` |
+
+## Governing Overview
+
+[overview](../../overview.md)
 
 ## Purpose
 
-`examples/mcp/` holds the public MCP example/template files: the authority
-settings template (`settings.example.json`) and an example memory-layer
-coding-guidelines file (`coding-guidelines.example.md`). The settings template
-replaces the removed coordinator `system/settings.json` provider example.
+`examples/mcp/` holds the public MCP authority-settings template, `settings.example.json`, the one common tool-server registration example, `server.example.json`, and a coding-guidelines example that teams can adapt for a memory repository. The authority template is separate from a memory layer's `system/settings.json`; the guidelines are documentation-shaped example content, not an automatically selected runtime input.
 
-## Current Model
+## Hot Path Summary
 
-`settings.example.json` names one coordination root, one workspace root, allowed
-repository ids, allowed provider ids, transcript log root, timeout caps, a
-top-level `benchmarksEnabled` flag (defaulting to `false`), and (260703 L2) the
-`dashboard` object shipped at its defaults (`autoStart: false`, `port: 8765`) so
-dashboard daemon supervision stays opt-in. Since 260703-L13 the template
-carries NO `orchestration` block and no `memorySettingsIncludes` key: the
-agentic family (including gateDelegation) lives in the global agentic settings
-file (`docs/reference/settings-json.md`, Agentic Settings), and the dead
-includes plumbing was removed.
-The `agents-remember` repository entry now explicitly selects
-`certificationProfile: "mcp/certification-profile-v1.json"` beside `contractPath: null`.
-This is an authority-settings reference to the checked-in profile, not an alternate executor.
-Repository source roots are derived from `workspaceRoot/<repo-id>`, and external
-memory roots are derived from `coordinationRoot/memory-repos/ar-<repo-id>`.
-Provider entries stay empty because the MCP server derives provider runtime
-roots, data roots, central logs, Docker backends, and watch settings internally.
-The `timeoutCaps` block uses `toolSeconds` and `providerSetupSeconds` (the
-renamed `providerSeconds`); `providerSetupSeconds` caps only provider image
-build / dependency install, never indexing.
-Since 260707-HFX-L7 the template also carries a `providerDegradation` object
-(`enabled: true`, `failSafeEnabled: true`, `memoryDegradedRatio: 0.8`,
-`memoryCriticalRatio: 0.92`) — a conservative-default illustration of the
-degradation-detector thresholds parsed by `mcp/provider_degradation_settings.py`
-(the healthy/degraded/critical state machine over the L1/L2 provider metrics
-store). Shipping it enabled-by-default in the example (unlike `dashboard`,
-which ships opt-in) matches the requirement that the critical-threshold
-failsafe defaults ON at a conservative bound.
+Start with `settings.example.json` for the repository/profile and runtime settings shape and `server.example.json` for the server command each harness registers; read the guideline example for source/application ownership. The configured runtime owns parsing and admission, so these illustrative files do not themselves confer execution or lifecycle authority.
 
-The template's `retirement` object now carries `autoLandOnIntegration: true`,
-`autoLandOnFinalize: true`, and `autoCloseCompletedSeats: true`. The first two are completion-edge
-gates; the third selects default report-gated retirement for exact-leaf worker/reviewer/curator
-seats. Setting it false restores landed/archive behavior. Manager/orchestrator owners are never
-automatic targets. The parser still accepts the older `autoRetire*` edge names as compatibility
-aliases, while the example uses only the current keys.
+## How It Is Built
 
-`coding-guidelines.example.md` is an example `system/coding-guidelines.md` body
-that teams can adapt for a memory repo. It is documentation-shaped example
-content, not a runtime input.
+### Authority settings
 
-The historical L9 edit renamed its layer heading from `### Controller` to
-`### Application entry point` (and anti-pattern 7's wording with it), mirroring the
-`controllers/` → `application/` package move in the repo; the file remains
-documentation-shaped example content, not a runtime input.
-That historical heading-only scope does not describe later changes: CCR subsequently added
-the repository certification-profile reference described above.
+The JSON template names one coordination root, one workspace root and the transcript-log root, then declares repository and provider IDs. The `agents-remember` repository entry selects `mcp/certification-profile-v1.json` beside a null `contractPath`; it is a reference to the checked-in profile, not another executor. Configured repository roots derive from `workspaceRoot/<repo-id>`, and external memory derives from `coordinationRoot/memory-repos/ar-<repo-id>`.
 
-## Update History
+The provider entries are empty per-provider settings objects, not an empty providers map. The parser derives the supported providers' runtime and log locations and instance identity; callers do not insert container/data-root/watch configuration into those objects. The retained template and parser vocabulary do not by themselves promise that any provider setup, watcher or backend tool is an available active operation.
 
-- 2026-09-05T07:05+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Added current certification-profile reference and made old L9 unchanged-settings statement explicitly historical. Current route claims were checked against the frozen candidate; this stamp records source verification, not execution or certification.
+`benchmarksEnabled` is false. Dashboard supervision is opt-in in the template (`autoStart: false`, `port: 8765`). Timeout caps use `toolSeconds` and `providerSetupSeconds`; the old `providerSeconds` spelling is refused. The setup cap is distinct from indexing or seed duration, which the parser's refusal explicitly identifies as uncapped.
 
-- 2026-08-10T13:00+02:00 — 260731-EFA-L9 curator: route impact: re-read the examples/mcp body
-  against the staged example change; the route body records the rename and confirms the settings
-  template is unchanged. Verification metadata remains pinned until closeout.
+The retained `providerDegradation` illustration enables the detector and failsafe and sets the memory ratios to 0.8 and 0.92. These conservative settings are parsed by the focused `kernel/primitives/provider_degradation_settings.py` owner; their presence is configuration vocabulary, not a report of live provider health or measurement.
 
-- 2026-08-10T07:30+02:00 — 260805-ARG-L1: the authority example now ships
-  `autoCloseCompletedSeats:true` with both existing edge gates.
+The retirement illustration enables `autoLandOnIntegration`, `autoLandOnFinalize` and `autoCloseCompletedSeats`. The parser accepts the older `autoRetireOnIntegration` and `autoRetireOnFinalize` aliases, while current keys take precedence. Tool-log retention is also illustrated separately by `keepDays`, `maxBytes` and `enclosureMaxBytes`.
 
-- 2026-08-05T03:47+02:00 — 260731-EFA-L6 route impact: the coding-guidelines example renamed its
-  `Controller` layer heading (and anti-pattern 7) to `Application entry point` to mirror the
-  `controllers/` → `application/` move; `settings.example.json` is unchanged. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact: the settings template's `retirement`
-  example now shows `autoLandOnIntegration`/`autoLandOnFinalize`, matching landed archive behavior;
-  old `autoRetire*` names remain parser aliases only. Verification metadata pinned until closeout
-  stamps the HFX2-L11 commit.
+### Server registration
 
-- 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
-  2): the settings template gains the `retirement` block
-  (`autoRetireOnIntegration`/`autoRetireOnFinalize`, both `true`), closing the parity gap between
-  HFX-L8 (which parsed the setting) and its docs (which never shipped it, unlike L7's
-  `providerDegradation`). Verification metadata pinned until closeout stamps the HFX-L12 commit.
+`server.example.json` is the single command/arguments declaration that each harness adapts inside its own configuration envelope, as the install guides describe: `uvx --refresh-package agents-remember-mcp agents-remember-mcp@latest` (the refresh option takes the package name, then the `@latest` command follows) with `--config` passed to that command, naming the authority settings file at `<ABSOLUTE_USER_CONFIG_FOLDER>/agents-remember/agents-remember-settings.json`. The placeholder must become an absolute path, because a JSON argument array does not expand `~`. The example carries no harness-specific keys and installs nothing.
 
-- 2026-07-08T01:35+02:00 — 260707-HFX-L7 route impact: the settings template gains the
-  `providerDegradation` block (enabled/failSafeEnabled/memoryDegradedRatio/memoryCriticalRatio)
-  illustrating the new provider degradation detector's settings surface, shipped enabled-by-default
-  matching the conservative-default critical failsafe requirement. Verification metadata pinned
-  until closeout stamps the HFX-L7 commit.
+### Coding guidelines
 
-- 2026-07-06T23:06+02:00 — 260703-L13 route impact: the settings template drops the L4
-  `orchestration.gateDelegation` block (moved to the global agentic settings file; the
-  authority-file value is only a warned one-cycle legacy fallback) and the removed
-  `memorySettingsIncludes` key. Verification metadata pinned until closeout stamps the L13
-  commit.
+`coding-guidelines.example.md` explains source ownership, file/function-size pressure, responsibility separation and refactor discipline. The current layer heading is Application entry point, with the matching anti-pattern wording; the earlier Controller terminology is not a separate live layer. Teams can adapt the document as their memory layer's coding-guidelines body.
 
-- 2026-07-06T12:10+02:00 — No route impact: reviewed during the 260703-L10 one-vocabulary sweep — the settings/guideline examples carry no lifecycle vocabulary at all, so nothing changed on this route.
-- 2026-07-04T12:32+02:00 — 260703-L4 route impact: the settings template gains
-  the opt-in `orchestration.gateDelegation` shape, shipped as all-human by
-  default. Verification metadata pinned until closeout stamps the L4 commit.
-- 2026-07-03T11:50+02:00 — 260703 L2 route impact: the settings template gains the `dashboard`
-  object (autoStart/port, shipped at defaults-off). Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-11T14:12+02:00: No route impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in files on this route; route structure and overview content are unchanged.
-- 2026-05-31T12:30+02:00 — Noted new top-level `benchmarksEnabled` flag (default `false`) in `settings.example.json` (1.0.0 review remediation, F2).
+## Invariants And Boundaries
+
+- Canonical lifecycle finalization records its actual completion edge/contract facts; the retired automatic Worker/Reviewer/Curator closeout cleanup and auto-close/landed opt-out are not current settings or effects. Explicit receipt-tracked native retirement remains a separately authorized operation, not an automatic template consequence.
+
+## Evidence
+
+- The public JSON example contains the repository/profile reference, empty per-provider objects and the named default illustrations. [1]
+- The guideline example separates source responsibilities and uses Application entry point terminology. [2]
+- External memory roots derive from the coordination root and reject the removed repository-local layout. [3]
+- Supported provider entries derive runtime/log roots and reject unsupported per-provider fields. [4]
+- Gate delegation's standard settings home outranks the warning-bearing authority fallback. [6]
+- The old provider timeout spelling refuses and explains the separate uncapped indexing/seed boundary. [7]
+- Degradation settings retain explicit enable/failsafe switches and parsed threshold vocabulary. [8]
+
+- The common registration example runs `uvx` with the published package and an absolute user-config settings path. [9]

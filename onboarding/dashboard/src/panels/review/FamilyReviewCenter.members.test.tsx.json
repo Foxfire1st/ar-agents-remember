@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/FamilyReviewCenter.members.test.tsx",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('word-diffs a family member statement once while keeping both revision links', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d8922911176936248706d44d79a0d433f022764",
+            "content": "sha256:f17a613f1a972b9d20376a50d0d571d7fc8717a7be512cedcd6a4699a79fcae5",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,43 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Server selection, optional wire mirror and the two presentation paths must keep one exact version-to-revision association; silently using a roster ordinal or hiding all revision numbers for a no-family subject mislabels reviewed intent. The named assertions guard projection, no-family presentation and omission without versions."
+  },
+  "applicability": "The selected invariant or family's revision-selection display-version projection and the review's selected-subject meta/statement labels.",
+  "conditions": [
+    "Each selected side copies display_version from that side's selected KnowledgeDiffItem; an absent selected side contributes neither a revision id nor a display version.",
+    "The dashboard mirrors optional version fields without defaulting them. A family meta line uses that family's own guarantees; an invariant uses the member row matching the exact selected revision id, or that side's revision-selection version when no matching row is carried.",
+    "A numeric meta label uses only a carried r<n> or numeric display version: differing known numbers show n → m, equal known numbers show one number, and an unavailable side is never assigned a number.",
+    "Statement labels use each exact selected revision's actual member/selection display version. Distinct revisions without two distinct carried versions get no revision-number pair; one selected revision may use its actual one version on both sides."
+  ],
+  "exclusions": [
+    "Deriving display versions from revision UUIDs, collection positions, chronology or family membership order.",
+    "Inventing a display version for a side whose revision/version is absent.",
+    "Revision writer attribution and carried-change chips, which have a separate owner.",
+    "Selecting revision operands or defining the same-revision text-difference warning, which remain existing independent obligations."
+  ],
+  "id": "INV-P1QKHK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable Worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json; SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596; ordinal0 244; exact id A3 · a subject's revision numbers. Original fields remain unchanged.",
+        "D396 / amendment 9dde2b09: notes/run3/L89-THE-SUBJECT-SHOWS-CONTENT-FIRST-AND-NO-SIGNAL-WHEN-NORMAL-RULING.json, ruling paragraph5 requires one meta line with revision n → m as numbers; paragraph4 puts revision ids in Technical details; MIK-R89@v2 rules1/6 remain the packet authority.",
+        "Frozen source tree25756231aa86f63ba59f91bec01146d27461e470 over cd0e68f0410f2de2d1955ecdbee6628630631d9a; captured patch SHA-256936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0. Static source and complete named test-case reading only; no new execution.",
+        "A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470; no new execution or code acceptance claim."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP15",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A selected subject carries each side's own recorded revision display version, and visible revision numbers and statement labels use only those versions, including when an invariant has no family rows.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,176 @@
+{
+  "path": "dashboard/src/panels/eventSummary.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+        "content": "sha256:49cadaa4f09826356b9fe14069c6fb81d7f021e189d07b81b02b105a0127c010",
+        "locator": {
+          "kind": "symbol",
+          "name": "summarizeToolCompleted"
+        }
+      },
+      "id": "RLZ-5XKEGZ",
+      "invariant": "INV-NVWE26",
+      "origin": {
+        "handoffEntry": "L114-W10",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "Delegates caller, legacy-aware outcome and target-role rendering to helpers.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+        "content": "sha256:49cadaa4f09826356b9fe14069c6fb81d7f021e189d07b81b02b105a0127c010",
+        "locator": {
+          "end": 115,
+          "kind": "line_range",
+          "start": 94
+        }
+      },
+      "id": "RLZ-J3YW3P",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The row summary branches on caller facts: host-path rows use the new outcome with verbatim unknowns, earlier-kind rows keep ok/failed.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The raw observer event envelope rendered by this formatter.\n\nAnchor: `ObserverEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The current friendly-tool label map omits removed tool IDs; retained event history is not removed.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:65c598ad9648887943367cb17a88d640c69cf2027cfaa4d14addbbb53980e087",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "An unlisted tool ID uses mechanical humanization rather than reinstating removed tool exposure.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:200d467064e33fb529d53dca9780fbe8a9d6f9df6b50d2b32e2035c81cec97b4",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 211
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Only read.packet and tool.completed have specialized summary handlers; other kinds use the honest unknown-kind fallback.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:a53e71cda57d0e11c1c99c30ee69127e0c21eeaeaedef1e2c8a00d2dd063ef91",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The tool.completed formatter preserves explicit failure, caller, target and outcome facts without a task-state projection join.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:49cadaa4f09826356b9fe14069c6fb81d7f021e189d07b81b02b105a0127c010",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Unknown-event context prefers the explicit enclosure and otherwise the repository; the existing assertion checks enclosure presence and repository absence.\n\nAnchor: existing unknown-event case",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:bf0c32db45e3df966658e090820fc117bc270597cfd431c0d9062a6e3efc446f",
+            "locator": {
+              "kind": "symbol",
+              "name": "summarizeUnknown"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "content": "sha256:063112214dbdd88f3fcf236503a696b28a6b41064b159b2452c88fdfc2d35f28",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "dashboard/src/panels/EventRiver.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Event River component consumes these summaries for rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
+            "content": "sha256:f113e4907c036782bfc6b693b6725621c909ac9cde93e174ec7ecd428ee2d242",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

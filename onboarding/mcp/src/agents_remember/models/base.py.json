@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/models/base.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "The flexible envelope declares the same reading.\n\nAnchor: `buildCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:03bbbb56ffd849e0dfcb39586f29fbb3b0c1988d0baa31728573fe42d49b309c",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The stale-build refusal envelope carries only `code` and `error` beside the shared fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:f3a913850738329909f19d4cf8b320178c85246011e9379462dc3ca5ffe77fa7",
+            "locator": {
+              "kind": "symbol",
+              "name": "StaleBuildRefusalResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Strict/flexible bases and recursive reserved-key refusal.\n\nAnchor: source extent 13-44",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:4bb01111c3731e7a503fbc0c22b8b8c8b3005ff7f5eacacac6aa8b4d905fd3e6",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Typed optional guidance and both current response-envelope families.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:2c57a64f3a4a031abefc2a1577bad8f22e6d426126d82dee22a564cf35075ddd",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The strict envelope declares the optional build-currentness reading.\n\nAnchor: `buildCurrentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:03bbbb56ffd849e0dfcb39586f29fbb3b0c1988d0baa31728573fe42d49b309c",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Custody, preview bounds and legacy admission together promise one exact archive no single check promises alone."
+  },
+  "guarantee": "A sprint archive attempt is admitted only against terminal rows and ready masters, refuses a same-request retry with missing custody or changed archived bytes, stays bounded and exact in preview at any master count, and restores every moved folder before reporting when a resumed move fails; no phase reports completion it did not earn.",
+  "id": "FAM-KVC8JB",
+  "members": [
+    "INV-G4ED1Q",
+    "INV-A704ST",
+    "INV-10GFBN"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "fam-archive",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application/task_docs"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "A sprint archive is admitted, bounded and custodial as one operation"
+}

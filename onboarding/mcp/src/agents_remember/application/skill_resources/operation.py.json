@@ -1,0 +1,118 @@
+{
+  "path": "mcp/src/agents_remember/application/skill_resources/operation.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "`skill_catalog_registry` builds one catalog from `SkillCatalogRequest`: the shipped corpus by default, and a caller-supplied origin and root when a test drives a different tree.\n\nAnchor: `skill_catalog_list_tool` `skill_catalog_read_tool` `skill_catalog_registry` `_catalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
+            "content": "sha256:a996823b0716179e8c5dcb1004f3567552d6257040ef2fa23f68d1390b6e6037",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Delivery refuses while any discovered skill is unreadable, checked before the read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ee8cf510bc65204f28fb79ea1696f671365169c",
+            "content": "sha256:9f89ad4312b4a20e24167f49024286ffc951eb819c027f75a1feb332e2667fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_servable"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/catalog.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The request records both entry-point families take.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
+            "content": "sha256:1e36c5813ca53a4e09475dc30ebc654babc6111b66340d6d502f7557d7727970",
+            "locator": {
+              "kind": "symbol",
+              "name": "SkillCatalogRequest"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b3c7c37d578fe58dac28e34d6eeafca3333eea84",
+            "content": "sha256:7ccd69fabb4452b501bcdfe4ff63951869ba9660a72d3a8ba7a9a0a1f3f178dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleOperationRequest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The frozen operation vocabulary the capsule request carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "270a88e12632238bb65b8077d7b7dcfbae2e589d",
+            "content": "sha256:635d6f43e11c20c185494fde019595d0988f977d19d5804a267a56e1a43a727c",
+            "locator": {
+              "kind": "symbol",
+              "name": "CAPSULE_OPERATIONS"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/vocabulary.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The consumer obligations recorded for a non-MCP caller of these entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6a03cb33adb566e7cf8b84f07ab8c3061e46a19",
+            "content": "sha256:e3bc789bb66a1a3037cba8acfa21524e65966e045a47f3451ae9898f39ddf2c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSourceSelectionRequest"
+            },
+            "path": "mcp/src/agents_remember/application/skill_resources/capsule.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The case that executes the discovery-registry-versus-body separation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f19d88280cca899c0a34b54b0faae2717a4fdaf",
+            "content": "sha256:3457497d1f83653411517625d1ef81417210b9171d8c2fb902e8e7475cd7d598",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_discovery_registry_is_not_the_model_visible_catalog"
+            },
+            "path": "mcp/tests/test_capsule_serving.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

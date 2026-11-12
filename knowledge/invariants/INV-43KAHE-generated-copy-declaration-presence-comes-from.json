@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A recursive listing can erase an empty directory entry and turn malformed declared input into silent absence. Exact raw entry-mode custody preserves the refusal rather than certifying a candidate the parser never received."
+  },
+  "applicability": "Candidate-tree observation of generated-copies.json before regular-file blob lookup and projection parsing.",
+  "conditions": [
+    "Presence is determined by a bounded exact nonrecursive tree-entry observation, not by recursive leaf inventory alone.",
+    "An existing empty tree, including a tree containing only empty subtrees, remains a present nonregular declaration and refuses by its declaration path.",
+    "Only regular-file entry modes proceed to the existing declaration blob lookup/parser; a truly absent entry retains absence semantics.",
+    "A tree-entry read failure is a named code-read failure, not a fabricated absent declaration."
+  ],
+  "exclusions": [
+    "No empty-tree declaration is accepted or recursively read to invent a regular payload.",
+    "The historical two native-Git regression passes remain producer evidence; this publication runs neither Git fixture tests nor generated-copy synchronization."
+  ],
+  "id": "INV-43KAHE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/ee26097f-36d1-4b54-bd58-5fa30c31e589/round3-freeze-971e8a25/final-checks/final-focused.log",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-68-complete-history.json"
+    },
+    "handoffEntry": "L54-R1-C12 round3 raw declaration entry",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Generated-copy declaration presence comes from the raw candidate entry, so a present empty tree or tree of empty subtrees is named incomplete rather than absent.",
+  "status": "proposed",
+  "supersedes": []
+}

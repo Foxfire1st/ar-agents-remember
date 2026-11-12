@@ -1,0 +1,162 @@
+{
+  "path": "mcp/src/agents_remember/serving/knowledge_reader.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module's own statement: 200 for typed answers, 400 for invalid requests, 503 unwired.\n\nAnchor: \"Every typed answer is a 200\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:be1000edc7c0ea9e0fe9286f9c3dab70045a34f4360e476990d0eb55b8edfd26",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The route path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:ce06d9d3e52fa054b3494138df624e73337eadbf67120958531936365a78affa",
+            "locator": {
+              "kind": "symbol",
+              "name": "KNOWLEDGE_READER_ROUTE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One reader question, and the port type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:1060c2684ed8d6af4340e10468d8e34975d66f607c18b71f6f51b4f25db1ceeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReaderQuery"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:e7c3790ee7f2fa0315149c423aec271e2ab38ff8ac0ebd8d4d2bd731cf49329f",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReaderPort"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The GET handler: 503 unwired, 400 for `invalid-request`, 200 otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f60b20373629b56db05b6b2cd9dc184622380b3",
+            "content": "sha256:5781c8215b5a6f6de9beb976f79d707fcd24810e3bf4859034a1508daa19895d",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_reader_route"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The collaborator field that carries the port. Anchor: \"knowledge_reader: KnowledgeReaderPort\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:965bfa6060b8167ce989db7d431a3b2b9ba136b474976e62d3ef8ea6696619a9",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The registration in `create_app`.\n\nAnchor: \"register_knowledge_reader_route(app, collaborators.knowledge_reader)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:12fb0a4620ed8c4684fef5acac66645bf959928ec37e03767772e8b033eff0f6",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:9f9aa33d54ef0b0e89d87e0f1358270f73c8eea4a796023b80278d4d40bcd026",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 245
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The route cases: every view served, 503 unwired, nothing written; bad requests 400.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:113eedcddca789aecec61858881ddfcf7f25b94b2cebf5495bd52b5a8c16b9c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_serves_every_view_and_the_reader_writes_nothing"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:e8ea9332fe0e0c03897947e1c5c9208971ac1a1602879d89777d1536932d0709",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bad_requests_are_400_and_large_or_binary_code_is_a_bounded_notice"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

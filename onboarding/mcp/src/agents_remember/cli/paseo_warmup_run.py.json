@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_warmup_run.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "628f9ccefcae5c8694a56e78f006ac5002dcda9c",
+        "content": "sha256:0e44ab5d9f589bfed43032deb04150406cb0b4b6893be3ce6081993d197b9d6d",
+        "locator": {
+          "end": 212,
+          "kind": "line_range",
+          "start": 176
+        }
+      },
+      "id": "RLZ-2E9HNP",
+      "invariant": "INV-AA2N76",
+      "origin": {
+        "handoffEntry": "MIK-R145@v1-bounded-resume-admission",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "This pass alone admits resume tasks and applies priority and memory checks before each admission.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Run one memory-gated, two-lane loading pass in tree order, promoting clicked pending agents without displacing already-running work. Unknown or below6GiB available memory waits and may give up with a truthful click-load reason. Individual failures do not stop the remaining list, and cancelled resumes drain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "628f9ccefcae5c8694a56e78f006ac5002dcda9c",
+            "content": "sha256:1428aab55ff98f92a80312a499ebb06da544d5c64009c19992af4693474a9d37",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

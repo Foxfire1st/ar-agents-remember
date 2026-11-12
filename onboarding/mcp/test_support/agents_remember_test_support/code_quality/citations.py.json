@@ -1,0 +1,167 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/citations.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the class `Citation` (lines 80-95) — One prose reference to a path, with the line anchor it carried..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:6cde829ddb35482e55f69dc078d69993af284813b9ad0dc6d43a0641c3779e16",
+            "locator": {
+              "kind": "symbol",
+              "name": "Citation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Defines the function `all_citations` (lines 226-234) — Every in-grammar citation in the package -- what the check is actually watching..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:192b964c8edf64aaeedb3142b101a52dfdc21b80640d00fffbfd6e7a173debd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "all_citations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Defines the function `anchors` (lines 98-108) — Directory names a citation may start with, derived from the tree..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:edbc2122b9a3909e1a8508f706511aa38ecda5783f94991f424aacd065d3a740",
+            "locator": {
+              "kind": "symbol",
+              "name": "anchors"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Defines the function `prose_spans` (lines 111-125) — ``(line, text)`` for every comment and docstring -- prose, never a string operand..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:db478937757dba14490c2279879d5036d44b9af4dedadac8bc98869833c1efb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "prose_spans"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Defines the function `_docstrings` (lines 128-139).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:1858a90cb9d774f130cb82210572e42523babb9ba262efe7271b0b2023ebab86",
+            "locator": {
+              "kind": "symbol",
+              "name": "_docstrings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Defines the function `citations_in_source` (lines 142-162) — Every in-grammar citation in one module's prose..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:6024190ab09e378686b46cd1c2beb7130cae7a89753b03a9b358eaea7ad32894",
+            "locator": {
+              "kind": "symbol",
+              "name": "citations_in_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Defines the function `resolve` (lines 165-171) — The file a citation names, or ``None`` when no declared root holds it..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:db20b198a81eba44193a8f83a629d47293f0f7bc2553eb696da0f68a569ece0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Defines the function `_anchor_offender` (lines 174-187) — A citation whose line anchor points past the end of the file it resolved to..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:3d5d033f6c75052185a92d490cbd01233c3dc16bc5d5e1fdbe01a79738cd5c20",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_offender"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Defines the function `module_citation_offenders` (lines 190-210) — Every citation in one module that does not resolve, or overruns its target..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:be6d1d14934e291765d7156ee9ec35186fcbc8e28cc0dc90480c08f4db58953b",
+            "locator": {
+              "kind": "symbol",
+              "name": "module_citation_offenders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Defines the function `unresolved_citations` (lines 213-223) — Every prose citation in the package that names a path this repository lacks..",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "69c6a6ce3d513461280b529dc9ae34af81d4a779",
+            "content": "sha256:21bf0c1a3708addc859af639ec8c7914ecb55740dd7409961450020313e92e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "unresolved_citations"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

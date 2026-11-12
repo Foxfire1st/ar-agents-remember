@@ -1,0 +1,25 @@
+{
+  "path": "mcp/src/agents_remember/observer/native_attention.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bfd1d73438ae05c1a74dcbc30c790ff903c343fb",
+        "content": "sha256:e4156ba39fda96625a09e3151a9bf7ce5a1e985a12b9b173ccde628e422ad9ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "NativeAttentionFacts"
+        }
+      },
+      "id": "RLZ-479QYN",
+      "invariant": "INV-QYB9GY",
+      "origin": {
+        "handoffEntry": "C1 occurrence identity",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Carries the turn-end stamps a restarted reader derives the interval start from.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

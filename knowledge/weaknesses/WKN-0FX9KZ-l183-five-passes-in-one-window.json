@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "47c71360442fea62f8e6f6d24aac1759509c72a4",
+    "content": "sha256:874be24e58d3a8695d8dd185899fa99422a3112bcb6386b3c0e8ae772d7c533e",
+    "locator": {
+      "kind": "symbol",
+      "name": "DEFAULT_TIMEOUT_SECONDS"
+    },
+    "path": "mcp/src/agents_remember/canvas/prospective.py"
+  },
+  "id": "WKN-0FX9KZ",
+  "kind": "time",
+  "origin": {
+    "handoff": {
+      "path": "l201-records-history.json"
+    },
+    "handoffEntry": "w2",
+    "leaf": "260928-MIK-L201",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L201"
+  },
+  "state": "open",
+  "statement": "L183's five interaction passes take about 120 s of the load process's 180 s window, so a larger page splits across renders and each successor publishes its own stated coverage."
+}

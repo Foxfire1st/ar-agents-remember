@@ -1,0 +1,111 @@
+{
+  "path": "mcp/tests/test_role_message_files.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Boundary settings and reload assertions separate the bounded wake text from the file payload.\n\nAnchor: `MessageLimitTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Message fixtures inspect stored payloads, pointers, reply files and workspace links.\n\nAnchor: `MessageFileTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Faults and collisions exercise rollback and retained concurrent payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:caae0475b3c9189baf871c50e95d79bd9b5ba544e6269a198933f2190cc25b93",
+            "locator": {
+              "kind": "symbol",
+              "name": "TransactionTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:303f44eb9c69744a4356a19a5d646a5b93def7afb102d5247a4d0fe584472977",
+            "locator": {
+              "kind": "symbol",
+              "name": "CollisionCostTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Successor guidance and strict refusal fields stay separate from automatic retargeting.\n\nAnchor: `SuccessorAndReturnTests` `RegisteredRefusalTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The composed fixtures pin retained refusal files on a non-holdable unresumable session and archive the old holder before successor fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The former fifty-character wait-reply truncation control is retired with that subject. Reply-file content and bound/refusal assertions remain; current source retains the full reply instead of claiming the old lower cut is still enforced — mcp/tests/test_role_message_files.py.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35eee9358ff5b6e22cf0bf1fc65e91e7bb8ebdd7",
+            "content": "sha256:ecaedac99e048db46db6fb6642ff948784d1c41e74010f0fe053e70db989216a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

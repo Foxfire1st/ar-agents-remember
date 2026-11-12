@@ -1,0 +1,2210 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L150",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewTabMetrics"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "before": {
+            "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "viewTabMetrics"
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "id": "RLZ-5Z18NZ"
+        },
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-RKR5QW"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-07FE7F",
+      "items": [
+        "sha256:c0e6483f65e2a2e7b5b8464dbb15da75a1929f5b3d479fe3566e48247176c67b"
+      ],
+      "reason": "RoleLauncher retains the shared tab-derived controls and whole-control wrapping; extraction changes assembly boundaries, not the ruled wide-composition or offerings contract. No new pixel measurement is claimed.",
+      "revision": 1,
+      "subject": "INV-3DKC7T"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "f7adcd3d4100107000cadb44c7b96e4f0c29f9cf",
+            "content": "sha256:f7454094b7a01fb3368c54aa7400d3a07ed564c000b0c648e6c994c95e34f906",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObjectiveLead"
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "before": {
+            "blob": "59a43eb5eddce8d6e505952636f750e54b7d6c87",
+            "content": "sha256:1ec5a815bf7fa2da75cef49002d09e9efbb173924c0087ef4ef70687d19cf10a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ObjectiveLead"
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "id": "RLZ-W8JDSE"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-0HH9BQ",
+      "items": [
+        "sha256:d3e7bd2d544169970a58d4bf0428a4c7f73d4f5999daa81c419b12adeb5ce4bf"
+      ],
+      "reason": "ObjectiveLead moves outside DocHead and is drawn once by each skeleton. Its bounded component is retained; the relocation does not duplicate objective/primary text or references/reports.",
+      "revision": 1,
+      "subject": "INV-ANN2YJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0HN61V",
+      "items": [
+        "sha256:9b40c6d1d0cfc1bf1840dd06f7cdf9de89b49d14012c3bdfe2d3373d960ebfe0"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:9b40c6d1d0cfc1bf1840dd06f7cdf9de89b49d14012c3bdfe2d3373d960ebfe0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0WRVBX",
+      "items": [
+        "sha256:912072743beae8c3ee6545195c3f5120c17e078801bb8adb17380812bb370f89"
+      ],
+      "reason": "D230 removes the LeafExtra type, parameters and calls from all ordinary/grouped leaf row shapes. Rows retain their existing navigation/ordering and no longer receive grant control or mark. The native D230 decision and task-only presentation entry govern that deletion; no retired adapter is promoted into another invariant.",
+      "subject": "hunk:sha256:912072743beae8c3ee6545195c3f5120c17e078801bb8adb17380812bb370f89"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-179Z4P",
+      "items": [
+        "sha256:e014649adadd3fc876a672ad793fc8f1a22d3090c16aefe256848a0db4809511"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:e014649adadd3fc876a672ad793fc8f1a22d3090c16aefe256848a0db4809511"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1N8PH3",
+      "items": [
+        "sha256:584546f8a9dbc208cc728d2d56e70c07cde8973fb1f8e11196e9bfbd95a7f85b"
+      ],
+      "reason": "D237 updates objective composition imports/comments to the complete-head boundary. INV-PHG1PR and the replacing objective decision govern it; other fixed blocks and omission rules stay unchanged, so the import/comment is not another invariant.",
+      "subject": "hunk:sha256:584546f8a9dbc208cc728d2d56e70c07cde8973fb1f8e11196e9bfbd95a7f85b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1PX5SX",
+      "items": [
+        "sha256:148b6666d7613f59171b6d1fbd6f9e4de3d890c36ff74aaa91420680e3f3a4da"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:148b6666d7613f59171b6d1fbd6f9e4de3d890c36ff74aaa91420680e3f3a4da"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1YP0FM",
+      "items": [
+        "sha256:d0c18ed219252965284ef9ec45d232b5eb32b6fa3bb7a96cf95840568fa777fb"
+      ],
+      "reason": "Feature-value updates and mode/default chip rendering move into named helpers while preserving featureValues, agent/model/effort and provenance. The removed nested choose implementation and new ModeChip/withFeatureValue call are decomposition under INV-63Z0MN, INV-MXTMP8 and the unchanged host-bearing boundary, not a second launch contract.",
+      "subject": "hunk:sha256:d0c18ed219252965284ef9ec45d232b5eb32b6fa3bb7a96cf95840568fa777fb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3JJYKV",
+      "items": [
+        "sha256:89efd24f27e4f6adcd1a71b9c3e245eafe4d8f50c5aa71119ad42e09187addee"
+      ],
+      "reason": "The launcher imports extracted display/readiness/selection-repair owners and drops its old direct effect/dependent helper imports. Existing choice, hover, readiness and request identity rows govern the delegated behavior; imports themselves add no enduring independent obligation.",
+      "subject": "hunk:sha256:89efd24f27e4f6adcd1a71b9c3e245eafe4d8f50c5aa71119ad42e09187addee"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+            "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "before": {
+            "blob": "d773173a9bc086e4d0244d727c4ba8eea967be53",
+            "content": "sha256:c209c96391c58d7bf0dd7a77db0a2facf067b43429683348fa3763ed4cae322e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvestigatorTests.test_message_new_turn_obeys_capacity_before_delivery_and_resume"
+            },
+            "path": "mcp/tests/test_investigator.py"
+          },
+          "id": "PRF-8ZMK4K"
+        },
+        {
+          "after": {
+            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-6WEANN"
+        },
+        {
+          "after": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "430837a4d6a35ed1a7c36e6a4e5a874d2e66e1cc",
+            "content": "sha256:be483005f08cd68788ef4e585defc960e7a279129a0122fa2689400717fb478f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-7MG9HB"
+        },
+        {
+          "after": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+            "locator": {
+              "kind": "symbol",
+              "name": "usesRequestReceipts"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+            "locator": {
+              "kind": "symbol",
+              "name": "usesRequestReceipts"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-9CP18T"
+        },
+        {
+          "after": {
+            "blob": "9a0e7177407b47714061babfdec51e0f514c21fc",
+            "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "before": {
+            "blob": "9a0e7177407b47714061babfdec51e0f514c21fc",
+            "content": "sha256:6bc070f01f5f9c0d0fa085b70cb6a43b44a052736efdf3ab5818ededb926a46d",
+            "locator": {
+              "kind": "symbol",
+              "name": "investigator_start_capacity"
+            },
+            "path": "mcp/src/agents_remember/cli/investigator_receipts.py"
+          },
+          "id": "RLZ-MGRZPQ"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-3K7NWZ",
+      "items": [
+        "sha256:14883766412eb2927824fa508bdf0ebc36397a0894bafa588147dbdcf38139ec"
+      ],
+      "reason": "Selected-request UI wiring remains exact through extracted state/transport, while backend completed-turn slot admission is untouched. CODE qualification is historical until the admitted moved-pair check. The supported L149 source-base advance renews the already-carried backend witness; this row keeps its original stable subject/ID and records the actual current anchors. No new invariant, proof or execution is asserted.",
+      "revision": 1,
+      "subject": "INV-BS7TH8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3N1Y58",
+      "items": [
+        "sha256:b8615d46a3bcdc36ae6e48d954b21f987332a2f620f662b4ad8129ad6d452315"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:b8615d46a3bcdc36ae6e48d954b21f987332a2f620f662b4ad8129ad6d452315"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4PX5FB",
+      "items": [
+        "sha256:62304b0e6142222da0381212e1f1d991a8a77e7b441deae84f0b5151454db02f"
+      ],
+      "reason": "Switch token styling replaces the retired grantButton/row type imports. D230 task-only controls and words govern presentation, while the row helper is retired; no separate import or styling authority is introduced.",
+      "subject": "hunk:sha256:62304b0e6142222da0381212e1f1d991a8a77e7b441deae84f0b5151454db02f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5JH3SV",
+      "items": [
+        "sha256:de0d962fe95e60f20e0baab87fceb41bdf696799cfc177c77a7b8e0052b9c8b0"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:de0d962fe95e60f20e0baab87fceb41bdf696799cfc177c77a7b8e0052b9c8b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5QCWQW",
+      "items": [
+        "sha256:1706104bbe838deaafcdf1b06fb2dad7c272d4d0816f44171b06807c9f07bb89"
+      ],
+      "reason": "D237 updates objective composition imports/comments to the complete-head boundary. INV-PHG1PR and the replacing objective decision govern it; other fixed blocks and omission rules stay unchanged, so the import/comment is not another invariant.",
+      "subject": "hunk:sha256:1706104bbe838deaafcdf1b06fb2dad7c272d4d0816f44171b06807c9f07bb89"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6KZCBY",
+      "items": [
+        "sha256:5ac475d3b56a475754730aa00d2dc5651c194ab1f3fe3f00ad697b3b308f3caa"
+      ],
+      "reason": "Folder list/cache state, synthetic more rows and ancestry helpers move to useNotesFolderCache; the viewer imports their current owner and drops its old listFolder/FolderEntry and callback/ref imports. INV-Q021G3 preserves shared-tree paging, reason and protected LRU; these wiring/deletion hunks do not create a new reader or cache authority.",
+      "subject": "hunk:sha256:5ac475d3b56a475754730aa00d2dc5651c194ab1f3fe3f00ad697b3b308f3caa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7AC45R",
+      "items": [
+        "sha256:41a072c1030758eba12bbea86d9072d21a47e20a48be5fcec601e38ad437f697"
+      ],
+      "reason": "D230 removes the LeafExtra type, parameters and calls from all ordinary/grouped leaf row shapes. Rows retain their existing navigation/ordering and no longer receive grant control or mark. The native D230 decision and task-only presentation entry govern that deletion; no retired adapter is promoted into another invariant.",
+      "subject": "hunk:sha256:41a072c1030758eba12bbea86d9072d21a47e20a48be5fcec601e38ad437f697"
+    },
+    {
+      "because": [
+        "DEC-NW7G0Y"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:b144b27f78f15e30a54d930b72464b0182d8d57a8feef01e808a214c0e8a9f0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReaderPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:0b7cc0e464272b00c46f4dc596a25d451e4bd73822052d26d80d096df2ba45e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReaderPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-87SCAF"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:69facaaa12b4f8484816152076427a756302d4bcc5786190ed134135af848181",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverviewPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:69facaaa12b4f8484816152076427a756302d4bcc5786190ed134135af848181",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterOverviewPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-CH8ER2"
+        },
+        {
+          "after": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:559d90cd9c4941878dd24d916e1f233c5b38c1721bc2c2040f34b40a29f97ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "docForm"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:559d90cd9c4941878dd24d916e1f233c5b38c1721bc2c2040f34b40a29f97ee0",
+            "locator": {
+              "kind": "symbol",
+              "name": "docForm"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "id": "RLZ-G6JP82"
+        },
+        {
+          "after": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesAsMasterDoc"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": {
+            "blob": "c4e00cbb4f6be81d5574f9cc52c2222df8d6ec2a",
+            "content": "sha256:1d071d65839be808fa1a1f35184ebc7895e1ba360bfa26d66ae0d57d2b2f7297",
+            "locator": {
+              "kind": "symbol",
+              "name": "seriesAsMasterDoc"
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "id": "RLZ-MZ21TT"
+        },
+        {
+          "after": {
+            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
+            "content": "sha256:46c2a777ab95f81e8dd34fa27c663d4b4c9f31dde348ba1840804c99cf9c52a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterBranch"
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "before": {
+            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
+            "content": "sha256:46c2a777ab95f81e8dd34fa27c663d4b4c9f31dde348ba1840804c99cf9c52a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterBranch"
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "id": "RLZ-QN19T1"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:b88a1deda62ce6974c048b066e27c40b145ba69573b8a5dbe862f46481a78c06",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintOverviewPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:b88a1deda62ce6974c048b066e27c40b145ba69573b8a5dbe862f46481a78c06",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintOverviewPage"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-RX5RNR"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:ded4da04e5c9ff3f119ac089ee3e8e9c0137a0ac5bbd9712a41be66114625ba3",
+            "locator": {
+              "kind": "symbol",
+              "name": "OverviewTop"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:b28c2ac52b3b78bc707a258d29bdb31a1ac93a83735e4e052aa0f3cf0581ee67",
+            "locator": {
+              "kind": "symbol",
+              "name": "OverviewTop"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-SKSCWV"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:bab9d24dbb09fd1f7e58d99d88700fe58d012d0e27b186b25650a9dfc69fcef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterPageBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:91aac48b29d99c74636870bd6952532ff4843407c8bf7ab6763f671b55a1c8fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterPageBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-Y0W92H"
+        },
+        {
+          "after": {
+            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
+            "content": "sha256:0672ae353f7bd0b1d003acd48c6def37c68ab93f7b229c601a1a6200775f5d92",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesBranch"
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "before": {
+            "blob": "98b3a5ce52dcbefe1a88012783d0118d8842fca1",
+            "content": "sha256:0672ae353f7bd0b1d003acd48c6def37c68ab93f7b229c601a1a6200775f5d92",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesBranch"
+            },
+            "path": "dashboard/src/panels/detail-panel/lifecycleBody.tsx"
+          },
+          "id": "RLZ-ZVGY6H"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-8A2CYS",
+      "items": [
+        "sha256:2e134a3d6dc6d975cad7accf18980a3f81bc322ef8f0c23c7aa79cf66c589219"
+      ],
+      "reason": "D237 clarifies the formerly head-governing objective interpretation: the complete head now precedes the objective as the first block before Now/Steps on each form. Fixed form selection, empty-block omission and all other order stay intact.",
+      "revision": 2,
+      "subject": "INV-PHG1PR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8C5V6Q",
+      "items": [
+        "sha256:edb870be50ee6f18414db028c40c2358c7fd6e0aaa3b10922962027796319b43"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:edb870be50ee6f18414db028c40c2358c7fd6e0aaa3b10922962027796319b43"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-94CK8Y",
+      "items": [
+        "sha256:acfcf955dbe4e3431c1ae3be1bb3532f783c5bdb22db3a0bc57441a324123dc7"
+      ],
+      "reason": "D230 removes the LeafExtra type, parameters and calls from all ordinary/grouped leaf row shapes. Rows retain their existing navigation/ordering and no longer receive grant control or mark. The native D230 decision and task-only presentation entry govern that deletion; no retired adapter is promoted into another invariant.",
+      "subject": "hunk:sha256:acfcf955dbe4e3431c1ae3be1bb3532f783c5bdb22db3a0bc57441a324123dc7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9KH8FJ",
+      "items": [
+        "sha256:5767322009fca493fb5c750bc1c2ce15936589b2bb6f532cb383e7bf7b6eb728"
+      ],
+      "reason": "Feature-value updates and mode/default chip rendering move into named helpers while preserving featureValues, agent/model/effort and provenance. The removed nested choose implementation and new ModeChip/withFeatureValue call are decomposition under INV-63Z0MN, INV-MXTMP8 and the unchanged host-bearing boundary, not a second launch contract.",
+      "subject": "hunk:sha256:5767322009fca493fb5c750bc1c2ce15936589b2bb6f532cb383e7bf7b6eb728"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-2RCSQR"
+        },
+        {
+          "after": {
+            "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
+            "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleExecutionStatus"
+            },
+            "path": "dashboard/src/cockpit/RoleExecutionStatus.tsx"
+          },
+          "before": {
+            "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
+            "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleExecutionStatus"
+            },
+            "path": "dashboard/src/cockpit/RoleExecutionStatus.tsx"
+          },
+          "id": "RLZ-FDMVYM"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-BT19MC",
+      "items": [
+        "sha256:fc0789a92bfb570329acaaa6d9a661f06a601f30eac25ec4e33cb76fc1c0dee2"
+      ],
+      "reason": "The launcher remains controls-only with its one failure line; helpers relocate readiness/display logic and do not reintroduce reply or execution prose.",
+      "revision": 1,
+      "subject": "INV-6SGHBB"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BXDFNA",
+      "items": [
+        "sha256:54c59849e86c71d19dcf4688567b9182609fb15abce17f39fea4af131b96f056"
+      ],
+      "reason": "D237 updates objective composition imports/comments to the complete-head boundary. INV-PHG1PR and the replacing objective decision govern it; other fixed blocks and omission rules stay unchanged, so the import/comment is not another invariant.",
+      "subject": "hunk:sha256:54c59849e86c71d19dcf4688567b9182609fb15abce17f39fea4af131b96f056"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 3
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CKHJM9",
+      "items": [
+        "sha256:32d4c380319b4fa0e729431ea738381f2c03dfe5fd6b9d7ce37c29c736c5407b"
+      ],
+      "reason": "All nine members still combine controls-only preparation, one failure channel and exact Result/report identity. Extracted UI transport remains under the same admission and shared-reader authority; no producer output is a task acceptance.",
+      "revision": 4,
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-5P93PT"
+        },
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundCanStart"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:ae01e6a809cd47819b696aee450d63c9dec59f9e0be5b9c54b718c11e5fdabdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundCanStart"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-CSKAPQ"
+        },
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-MKJATY"
+        },
+        {
+          "after": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:7f62c23932dcef110a895a78ecede6df036c913dfef4a6472172da5be7553f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundTasklessRequest"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:7f62c23932dcef110a895a78ecede6df036c913dfef4a6472172da5be7553f6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "boundTasklessRequest"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-PWESKX"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CN5VRE",
+      "items": [
+        "sha256:19adcf3a0161044b418ef0c248d68a84e494917ce1aa4a9ed423086c7de8b5b5"
+      ],
+      "reason": "Pane composition delegates scoped storage and actions to useRoleChatControls and options restoration; exact UUID, held/uncertain status and ordinary singleton versus per-request admission remain distinct.",
+      "revision": 3,
+      "subject": "INV-5MP23G"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-W3VMNM"
+        },
+        {
+          "after": {
+            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "before": {
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "id": "RLZ-YFEGZV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-CN8V4G",
+      "items": [
+        "sha256:7d03f854bbf8208de25da5c9023f4d2a6d62967355ff2d156f76f0bfc725e2b8"
+      ],
+      "reason": "Hover helpers preserve full choice labels/default provenance and matched-document identity; unmatched document options remain purpose-only. No scope or payload reinterpretation is admitted.",
+      "revision": 2,
+      "subject": "INV-MXTMP8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D3PK66",
+      "items": [
+        "sha256:999a76ca285036d826b848f2c761f3b44e4554f0b5b06618eba88134ac12eb5e"
+      ],
+      "reason": "D230 removes the LeafExtra type, parameters and calls from all ordinary/grouped leaf row shapes. Rows retain their existing navigation/ordering and no longer receive grant control or mark. The native D230 decision and task-only presentation entry govern that deletion; no retired adapter is promoted into another invariant.",
+      "subject": "hunk:sha256:999a76ca285036d826b848f2c761f3b44e4554f0b5b06618eba88134ac12eb5e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DFVWGP",
+      "items": [
+        "sha256:a4b5f6c4d5345946018682320af3ce313e17006530c495e64369dd4d661abad7"
+      ],
+      "reason": "D237 updates objective composition imports/comments to the complete-head boundary. INV-PHG1PR and the replacing objective decision govern it; other fixed blocks and omission rules stay unchanged, so the import/comment is not another invariant.",
+      "subject": "hunk:sha256:a4b5f6c4d5345946018682320af3ce313e17006530c495e64369dd4d661abad7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E020T7",
+      "items": [
+        "sha256:8540aa93fa65aa937d8bb9f1af77236ef22c8986ded802fa83252088a93f8752"
+      ],
+      "reason": "The monolithic pane imports become composition imports for scope/control/options/view owners. Removed CSS/effect/memo/transport imports follow those extracted owners; persistent frame and exact-request obligations are reconciled on their existing invariant rows, not duplicated as import obligations.",
+      "subject": "hunk:sha256:8540aa93fa65aa937d8bb9f1af77236ef22c8986ded802fa83252088a93f8752"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E8JW50",
+      "items": [
+        "sha256:9e001b0a27b7aab4a66b33a81b332b5de27a49777b0f4c6f2b00230617ca955d"
+      ],
+      "reason": "Re-exporting ObjectiveLead exposes the existing docHead-owned primitive to form composition. It creates no new objective state or visual authority; D237 composition and preserved bound/own-view semantics are recorded separately.",
+      "subject": "hunk:sha256:9e001b0a27b7aab4a66b33a81b332b5de27a49777b0f4c6f2b00230617ca955d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EDVKQG",
+      "items": [
+        "sha256:0a4dc109ee9e33800b424c21b8482344fa62c032e5578177c6bbe3b34584cd11"
+      ],
+      "reason": "D237 removes the objective render from the head and corrects its placement comment; the same ObjectiveLead is now composed by each form after the complete head. The clarified INV-PHG1PR and D237 decision capture that ruled change; this head/comment hunk adds no separate invariant.",
+      "subject": "hunk:sha256:0a4dc109ee9e33800b424c21b8482344fa62c032e5578177c6bbe3b34584cd11"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EWEMZF",
+      "items": [
+        "sha256:41e8b6003dc3ce92babb85c8f653ddfcc8a5515aee91234f7c091da4ded767d5"
+      ],
+      "reason": "Switch token styling replaces the retired grantButton/row type imports. D230 task-only controls and words govern presentation, while the row helper is retired; no separate import or styling authority is introduced.",
+      "subject": "hunk:sha256:41e8b6003dc3ce92babb85c8f653ddfcc8a5515aee91234f7c091da4ded767d5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F705YW",
+      "items": [
+        "sha256:72048d1e09f35db965d8d7cff1c49eb735b8640dbdca0eb39b07093ad3346a53"
+      ],
+      "reason": "Switch token styling replaces the retired grantButton/row type imports. D230 task-only controls and words govern presentation, while the row helper is retired; no separate import or styling authority is introduced.",
+      "subject": "hunk:sha256:72048d1e09f35db965d8d7cff1c49eb735b8640dbdca0eb39b07093ad3346a53"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FKTF50",
+      "items": [
+        "sha256:8e4297ae6dbe64bde3fa9610317cccdce309904f8e7bf7468d6566a5045b1e61"
+      ],
+      "reason": "The launcher imports extracted display/readiness/selection-repair owners and drops its old direct effect/dependent helper imports. Existing choice, hover, readiness and request identity rows govern the delegated behavior; imports themselves add no enduring independent obligation.",
+      "subject": "hunk:sha256:8e4297ae6dbe64bde3fa9610317cccdce309904f8e7bf7468d6566a5045b1e61"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FPENVD",
+      "items": [
+        "sha256:8eca88304804187c6b442e97e5d3fed8296f5fbb6f8518693b1646d2aba4746e"
+      ],
+      "reason": "D230 removes the LeafExtra type, parameters and calls from all ordinary/grouped leaf row shapes. Rows retain their existing navigation/ordering and no longer receive grant control or mark. The native D230 decision and task-only presentation entry govern that deletion; no retired adapter is promoted into another invariant.",
+      "subject": "hunk:sha256:8eca88304804187c6b442e97e5d3fed8296f5fbb6f8518693b1646d2aba4746e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "content": "sha256:9e0f636b76e7e7b2a67e44bdc6c06650891e19b0a19a8dd085fdacaf7d401ae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "before": {
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:1f8d2c4ea0a5be7358fb903fa0a8c20521940ae022ff62492f83fcb8afe00010",
+            "locator": {
+              "kind": "symbol",
+              "name": "FeatureControl"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "id": "RLZ-000KJN"
+        },
+        {
+          "after": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:2cf3fcde8291915ff8d76b0e40714e14b41ec5759a7a2bba3a71234a22e7aab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:2cf3fcde8291915ff8d76b0e40714e14b41ec5759a7a2bba3a71234a22e7aab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-1A9CAN"
+        },
+        {
+          "after": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_features"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "before": {
+            "blob": "c16647f099e69e6a494446ba0dafce47196c6300",
+            "content": "sha256:6e58dfe9f55b655992db0380942f2820cd9d7ffe9dadd142a288ab55ee10963c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_features"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+          },
+          "id": "RLZ-Q50PP6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-GD3SXH",
+      "items": [
+        "sha256:c09531106761bbfc208c89ce227270b7b47e644369e74c005d67505103b8d527"
+      ],
+      "reason": "FeatureControl delegates choice display while host feature bearing remains catalog/enforcer-owned; extracted toggles and hover rendering do not make speed values permission policy.",
+      "revision": 1,
+      "subject": "INV-002A1G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GK28N1",
+      "items": [
+        "sha256:43c0d4c24eb907762b87620cde75d347dd741f5d9cfa6405a157652db812c86d"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:43c0d4c24eb907762b87620cde75d347dd741f5d9cfa6405a157652db812c86d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+            "locator": {
+              "kind": "symbol",
+              "name": "usesRequestReceipts"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:a19b29c99601e546f591336eed4b4788b60b15d8ca7535811b35aeefac124015",
+            "locator": {
+              "kind": "symbol",
+              "name": "usesRequestReceipts"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-44423S"
+        },
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-6DAG9Q"
+        },
+        {
+          "after": {
+            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-A0WKTC"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-H687AJ",
+      "items": [
+        "sha256:4c8ddb776892b5950867f499758cee8ef4b736fe2fac1210eed27c3c1f9a3284"
+      ],
+      "reason": "The pane delegates selected-request persistence, Result/recovery and remount restoration to extracted state/actions without replacing the selected panel primary chat.",
+      "revision": 1,
+      "subject": "INV-A0240E"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H93A9A",
+      "items": [
+        "sha256:db55fe234be8ac55c5998a706a6eff5d166fe100c86a7d1b533065754aa7095c"
+      ],
+      "reason": "D230 replaces the text/row control with DirectExecutionSwitch, bare words and useDirectGrant decomposition. The authored task-only, pending/refusal and status-scoped entries capture the UI obligations; backend grant and permission authority remain unchanged. This wrapper extraction is not an additional invariant.",
+      "subject": "hunk:sha256:db55fe234be8ac55c5998a706a6eff5d166fe100c86a7d1b533065754aa7095c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-MKCYCH"
+        },
+        {
+          "after": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "e56f69d4c04fe4fd3fa4c346a4cb2b61d15aaeb7",
+            "content": "sha256:28565c89d5d15d948b9da7a2b44836a5e8a58a5395bb9de2c89e2f10a62a9636",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-Y4PJ59"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JKG2MW",
+      "items": [
+        "sha256:3e13d6e29ec48e9deece9506ab971a248f21811736292be72178ff25615b670f"
+      ],
+      "reason": "Launcher extraction retains the absence of dashboard chat-navigation/sidebar toggles; no new navigation is introduced by its section assembly.",
+      "revision": 1,
+      "subject": "INV-WEZ24E"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K1ZCM4",
+      "items": [
+        "sha256:e34255b20408eec5be67376154f7d733ebddbdd943e9adba906e88b251b44103"
+      ],
+      "reason": "D237 updates objective composition imports/comments to the complete-head boundary. INV-PHG1PR and the replacing objective decision govern it; other fixed blocks and omission rules stay unchanged, so the import/comment is not another invariant.",
+      "subject": "hunk:sha256:e34255b20408eec5be67376154f7d733ebddbdd943e9adba906e88b251b44103"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 1
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-KG43AK",
+      "items": [
+        "sha256:5642ae61bfc67e4ae08a7c054e97498207ea1bdb3388b2e20c02ab25fe0ea855"
+      ],
+      "reason": "All ten members still keep host-owned navigation/storage separate from panel steering and plugin isolation. The touched launcher still draws no sidebar/toggle; plugin and record-read contracts are unchanged.",
+      "revision": 2,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "because": [
+        "DEC-M8R3PE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+            "content": "sha256:71de536c39397dd3789c578358c46b82e0f3d34de25cc494734560b9ed0dd72e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GroupViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-0Q2WJ2"
+        },
+        {
+          "after": {
+            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+            "content": "sha256:5a2a68d432af3d32b485d8b269ffdac3a1f9b4dd5662ffb6cf9b7873a7e2967c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNowBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-G8WYZY"
+        },
+        {
+          "after": {
+            "blob": "1f9dad72cdf0c77c398edacdc6921195efd2025f",
+            "content": "sha256:41dd8d53d78ca2a43e6a684beddc2ad275564334a16c123caafa9750610066eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterTasksBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-WKA99C"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-KND6F3",
+      "items": [],
+      "reason": "D230 / MIK-R150 rules9–12 introduce this bounded UI obligation while preserving the existing external-store and start-evidence authority.",
+      "revision": 1,
+      "subject": "INV-07RDCZ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MBN09Z",
+      "items": [
+        "sha256:44cca0670e91a967bb93bc1a211cc455d4ee96ccd00a0fd27224fbdf39d781fe"
+      ],
+      "reason": "D230 removes the LeafExtra type, parameters and calls from all ordinary/grouped leaf row shapes. Rows retain their existing navigation/ordering and no longer receive grant control or mark. The native D230 decision and task-only presentation entry govern that deletion; no retired adapter is promoted into another invariant.",
+      "subject": "hunk:sha256:44cca0670e91a967bb93bc1a211cc455d4ee96ccd00a0fd27224fbdf39d781fe"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
+            "content": "sha256:55375a6da57c97936ec4121b4c9bfc395b354f9a775f90439fad6450907bedd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_doc_node"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "before": {
+            "blob": "afdcb36128545477785fb11dbc359f26dac60cba",
+            "content": "sha256:55375a6da57c97936ec4121b4c9bfc395b354f9a775f90439fad6450907bedd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_doc_node"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "id": "RLZ-1VMSKE"
+        },
+        {
+          "after": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:268aaa77dc1b552dbc9360dcac3865c38fef9366f2213c2e986ff926600f5d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReportRows"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "before": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:268aaa77dc1b552dbc9360dcac3865c38fef9366f2213c2e986ff926600f5d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReportRows"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "id": "RLZ-26N9GM"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:0642d50a5e7087af2ed9352804e45e7affdb528096f490e56011897b57f00a49",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:a236a9c44c8cc669018409ff80d94d7993b7aea741e91be64e0e4eb9627ad142",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-2W1DRN"
+        },
+        {
+          "after": {
+            "blob": "2cfe44885acf4c60972ed065009b87a482d3b20f",
+            "content": "sha256:bd72c230a30dbb171c7c159f8d36587cba70d520af38c7d86673db4e858bad6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementsBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "before": {
+            "blob": "fff532d24f22e0482cef85179d0fefcd6a6a6cbb",
+            "content": "sha256:bd72c230a30dbb171c7c159f8d36587cba70d520af38c7d86673db4e858bad6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RequirementsBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "id": "RLZ-DTXWD7"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:eaa0661f64f2bfbdeec8501ec93dba750d999e371c26def7c96eb254828efdc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "e72ca56ab09dabd435ea4fd6192f947450d63549",
+            "content": "sha256:eaa0661f64f2bfbdeec8501ec93dba750d999e371c26def7c96eb254828efdc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-QPFF2D"
+        },
+        {
+          "after": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:44092296cea2440c514fed6c75569bba587801576fb40501b033b7203993778d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferenceRows"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "before": {
+            "blob": "1d06daecf8740ea6de32c4565dc4d24506617c0d",
+            "content": "sha256:44092296cea2440c514fed6c75569bba587801576fb40501b033b7203993778d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReferenceRows"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "id": "RLZ-VTYFGA"
+        },
+        {
+          "after": {
+            "blob": "2cfe44885acf4c60972ed065009b87a482d3b20f",
+            "content": "sha256:85936f75108d3c88072f7f2090da2664b559c59df4b6e128100360aa43bc2fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocView"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "before": {
+            "blob": "fff532d24f22e0482cef85179d0fefcd6a6a6cbb",
+            "content": "sha256:85936f75108d3c88072f7f2090da2664b559c59df4b6e128100360aa43bc2fc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocView"
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "id": "RLZ-WVCTJ6"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-MC4WK0",
+      "items": [
+        "sha256:70f747cb1187f559733b726c5f6cdf79afe0068e39b9044b694eaf8862e5eb65"
+      ],
+      "reason": "Own-view dispatch and scroll-owner capture persist across the decision-preview extraction; bounded collection counts and whole-content access remain separate from the objective relocation. The supported L149 source-base advance renews the already-carried backend witness; this row keeps its original stable subject/ID and records the actual current anchors. No new invariant, proof or execution is asserted.",
+      "revision": 1,
+      "subject": "INV-7JFCAF"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 2
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NSBJB9",
+      "items": [
+        "sha256:d674e7a18b966c0f3c301eefc82efa55c3b050f751af5b660473927286a688ec"
+      ],
+      "reason": "The three members still separate feature-preserving launcher behavior, honest settings reference and public-generator derivation. Only the launcher member relocates code; no accepted setting, mirror authority or retired first-read is revived.",
+      "revision": 1,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-XXYE2Y"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-NSH92G",
+      "items": [
+        "sha256:b85d7521d178e047f49508e921b65fce409490405573b8c184967cb55082a1db"
+      ],
+      "reason": "RoleChatsPane delegates presentation to RoleChatsView and controls to hooks; the persistent native frame remains the same rendering owner, not a recreated result-specific frame.",
+      "revision": 2,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-002A1G",
+          "revision": 1
+        },
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-7DMXZ3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AFTG56",
+          "revision": 1
+        },
+        {
+          "id": "INV-N9D91D",
+          "revision": 2
+        },
+        {
+          "id": "INV-VKTCC4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WT3VCM",
+          "revision": 1
+        },
+        {
+          "id": "INV-YDDMGJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NTV1G7",
+      "items": [
+        "sha256:2b552c50444d335ea5cda6caed550002c76873d49c5144f75fb1063d595fdb85"
+      ],
+      "reason": "All eight members still combine catalog offerings, layer/mode/feature filtering, notes and provider-dependent task-server injection. The UI FeatureControl extraction changes no permission acceptance or host-actual evidence boundary.",
+      "revision": 2,
+      "subject": "FAM-N17BB4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PAXPG0",
+      "items": [
+        "sha256:592e1624329a077ceaab1c4092acfab65152b662385778c8f1037ab4e0838e01"
+      ],
+      "reason": "Folder list/cache state, synthetic more rows and ancestry helpers move to useNotesFolderCache; the viewer imports their current owner and drops its old listFolder/FolderEntry and callback/ref imports. INV-Q021G3 preserves shared-tree paging, reason and protected LRU; these wiring/deletion hunks do not create a new reader or cache authority.",
+      "subject": "hunk:sha256:592e1624329a077ceaab1c4092acfab65152b662385778c8f1037ab4e0838e01"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PG843X",
+      "items": [
+        "sha256:71a750055bdb95902063c2a490e8001ded72a9a465b6c6f5cade57105ac9a1a9"
+      ],
+      "reason": "Folder list/cache state, synthetic more rows and ancestry helpers move to useNotesFolderCache; the viewer imports their current owner and drops its old listFolder/FolderEntry and callback/ref imports. INV-Q021G3 preserves shared-tree paging, reason and protected LRU; these wiring/deletion hunks do not create a new reader or cache authority.",
+      "subject": "hunk:sha256:71a750055bdb95902063c2a490e8001ded72a9a465b6c6f5cade57105ac9a1a9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QA55J7",
+      "items": [
+        "sha256:a676b30f281d652e9f163995c30da266e8230bb689c7d64aa8db1c3a4824f1d2"
+      ],
+      "reason": "D230 removes the LeafExtra type, parameters and calls from all ordinary/grouped leaf row shapes. Rows retain their existing navigation/ordering and no longer receive grant control or mark. The native D230 decision and task-only presentation entry govern that deletion; no retired adapter is promoted into another invariant.",
+      "subject": "hunk:sha256:a676b30f281d652e9f163995c30da266e8230bb689c7d64aa8db1c3a4824f1d2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
+            "content": "sha256:edc0b31f84ac5f8e9968dbf4e02defcd1c72c42d93226cb32708ce7b90f75a11",
+            "locator": {
+              "kind": "symbol",
+              "name": "readRoleReport"
+            },
+            "path": "dashboard/src/data/roleReport.ts"
+          },
+          "before": {
+            "blob": "50c5ae0d1497d4d86ff4ec2419d46e1010688c3e",
+            "content": "sha256:edc0b31f84ac5f8e9968dbf4e02defcd1c72c42d93226cb32708ce7b90f75a11",
+            "locator": {
+              "kind": "symbol",
+              "name": "readRoleReport"
+            },
+            "path": "dashboard/src/data/roleReport.ts"
+          },
+          "id": "RLZ-6H1GF1"
+        },
+        {
+          "after": {
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshRoleResult"
+            },
+            "path": "dashboard/src/cockpit/roleChatControls.ts"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:b3dfaa087f9fd80334be92f3aaf57e0b409eab94c4b62db1544f6fff727c4915",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshResult"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-DAE56R"
+        },
+        {
+          "after": {
+            "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+            "content": "sha256:d70f16cf0ab9ebe62c8e94f36a07b69f498940c7544d0c3964961ce47225fca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "openRoleExecutionReport"
+            },
+            "path": "dashboard/src/cockpit/roleChatResult.ts"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
+            "locator": {
+              "kind": "symbol",
+              "name": "openExecutionReport"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-N2R22B"
+        },
+        {
+          "after": {
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
+            "content": "sha256:74ea34aa3ba59fb78acb97e8224a41a84d724ce2d48515df021e374affbbee95",
+            "locator": {
+              "kind": "symbol",
+              "name": "Reader"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "before": {
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "content": "sha256:74ea34aa3ba59fb78acb97e8224a41a84d724ce2d48515df021e374affbbee95",
+            "locator": {
+              "kind": "symbol",
+              "name": "Reader"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "id": "RLZ-W3MQ5B"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QBBSM1",
+      "items": [
+        "sha256:58b99bca763f2687ad79fb5f29f96944c8bc26deac1253d0e398d13c68e928f6"
+      ],
+      "reason": "Result coordination and report transport relocate separately; exact selected-request rereading still opens the existing notes reader or names absence.",
+      "revision": 1,
+      "subject": "INV-DH5NRM"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7JFCAF",
+          "revision": 1
+        },
+        {
+          "id": "INV-PHG1PR",
+          "revision": 2
+        },
+        {
+          "id": "INV-S18MK6",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QJM9J0",
+      "items": [
+        "sha256:2245aeb5042600207d557d8d61c8a46b878148cc4766f62d74555c770876ee8b"
+      ],
+      "reason": "All three members still jointly preserve form/content continuity, bounds/counts and hydration. D237 clarifies the objective/header boundary within fixed composition; the joint continuity guarantee and routes remain unchanged.",
+      "revision": 1,
+      "subject": "FAM-HJDGAQ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-YGH2ER"
+        },
+        {
+          "after": {
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:547acaa6f09ff92fa5f50facd5b1896ed8206ba6544ab05e65c5bac5bc555016",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshRoleResult"
+            },
+            "path": "dashboard/src/cockpit/roleChatControls.ts"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:b3dfaa087f9fd80334be92f3aaf57e0b409eab94c4b62db1544f6fff727c4915",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshResult"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-YZHZKV"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QRNYZZ",
+      "items": [
+        "sha256:3ddcde0ffb2aa8b6720ffe1e15b69db79eb37e237036b4e3bf24b21627537073"
+      ],
+      "reason": "Result rereading moves into controls/transport and retains shared frame steering; capability/options refresh remains a distinct options owner rather than report-content authority.",
+      "revision": 1,
+      "subject": "INV-EFDE52"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+            "content": "sha256:d70f16cf0ab9ebe62c8e94f36a07b69f498940c7544d0c3964961ce47225fca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "openRoleExecutionReport"
+            },
+            "path": "dashboard/src/cockpit/roleChatResult.ts"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:698b6dcfa7330f3c02e215fba1896d7085219b2be1cba03d76901f7910b1a938",
+            "locator": {
+              "kind": "symbol",
+              "name": "openExecutionReport"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-6P22KG"
+        },
+        {
+          "after": {
+            "blob": "b548cff646dad2bc49995692b60f69ef2f1d973a",
+            "content": "sha256:a9bab9994c9d7548b83fab792d82d5eb91269c24cac8aa81439422ac2a994dda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:6b77cffa3074f79a5df1439e15e64dd7f1991e310f79bbbea82000716bd7159f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-A0VKEA"
+        },
+        {
+          "after": {
+            "blob": "618beab737aee6fbc84933d0215734cd0bdc8e51",
+            "content": "sha256:b2d309b8b84b2ab06888c308e3bd17aa7839935db0be43653307300687aba9d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatchRoleAction"
+            },
+            "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:125cf9e3004c8df5bfb6e6af352ee6cb01b2fd50ffb8c08211d481184cfe83bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-GMD7W4"
+        },
+        {
+          "after": {
+            "blob": "d0611d0924e7d61a66a9ca305f6d78157b849c52",
+            "content": "sha256:0a960d32267e0a88f38178b5cf3ad435c647ee963a20e551feb9328fc0cbc574",
+            "locator": {
+              "kind": "symbol",
+              "name": "runOptionsLoad"
+            },
+            "path": "dashboard/src/cockpit/roleChatOptionsLoader.ts"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:9efe1a22068647d8cc9c4db6fa9076ff5720c3efadb37ad3fecccbec069f5a72",
+            "locator": {
+              "kind": "symbol",
+              "name": "refreshOptions"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-N8EDE3"
+        },
+        {
+          "after": {
+            "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
+            "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleExecutionStatus"
+            },
+            "path": "dashboard/src/cockpit/RoleExecutionStatus.tsx"
+          },
+          "before": {
+            "blob": "9dbf10e96bbc9385b16d5d5f9eaf97a582c5b9e9",
+            "content": "sha256:7cc1e0a4e26d81dabac0ac87dba3478528608c588c18fd1b3605493bf29e5a20",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleExecutionStatus"
+            },
+            "path": "dashboard/src/cockpit/RoleExecutionStatus.tsx"
+          },
+          "id": "RLZ-PVSA13"
+        },
+        {
+          "after": {
+            "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+            "content": "sha256:70b82d2926585a217e44d2cc9952dc3ba3544815f909edfe4edbfe61ad9d715f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchRoleExecutionResult"
+            },
+            "path": "dashboard/src/cockpit/roleChatResult.ts"
+          },
+          "before": {
+            "blob": "8dee58022ce2193b105b962037942a63b007a3b7",
+            "content": "sha256:d7de425802b0d7d1d3d543882ce93da62fba1641d55bf19c966c38646dd2e642",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchExecutionResult"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-Y3GC40"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QT7JK3",
+      "items": [
+        "sha256:34dcc14b93ac2c5d577065261d0567aa9f85ec8ab4530bda02bd087b563f29f2"
+      ],
+      "reason": "The old nested transport anchors relocate to their actual extracted owners; one scoped sticky failure channel and explicit-success clearing are preserved, including the repaired delayed-options precedence.",
+      "revision": 1,
+      "subject": "INV-C7AT8R"
+    },
+    {
+      "because": [
+        "DEC-M8R3PE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:b2a7b47c52be123373f4ba9eb98b13a7f65b42f79dce535803073d749137d7d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDirectGrant"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-08QD2C"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-RWDFD9",
+      "items": [],
+      "reason": "D230 / MIK-R150 rules9–12 introduce this bounded UI obligation while preserving the existing external-store and start-evidence authority.",
+      "revision": 1,
+      "subject": "INV-JNYJAG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S12QV5",
+      "items": [
+        "sha256:4bf5a2b5db7c517244db85583fa38b8e97840826c1d1510dc8c7b14a1e9d0acd"
+      ],
+      "reason": "The launcher imports extracted display/readiness/selection-repair owners and drops its old direct effect/dependent helper imports. Existing choice, hover, readiness and request identity rows govern the delegated behavior; imports themselves add no enduring independent obligation.",
+      "subject": "hunk:sha256:4bf5a2b5db7c517244db85583fa38b8e97840826c1d1510dc8c7b14a1e9d0acd"
+    },
+    {
+      "because": [
+        "DEC-M8R3PE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a111e133b0966f3fee0ac50fdf4ca7ffc181ac16",
+            "content": "sha256:ede743eb1404b73d5b1c55162a6fff8c24be84f0dec4232a6c9d9c394acb3c5a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/styles.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-09G1VF"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:09b11c5fdd27f27353fab155f48d03bab6985b755e9acfc0d67edf7596de915e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectExecutionSwitch"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-13GQSZ"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-S2SACP",
+      "items": [],
+      "reason": "D230 / MIK-R150 rules9–12 introduce this bounded UI obligation while preserving the existing external-store and start-evidence authority.",
+      "revision": 1,
+      "subject": "INV-XPCFCB"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "39c771ce25e4839e8a75adb7e81a8f43e4466435",
+            "content": "sha256:016ca306847ee42c005234e3ce8edab2b4d2d087da80acf92c20b936452d31c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotesTree"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "before": {
+            "blob": "fa64ce4c3d5c456ef60740f445a0424150da823e",
+            "content": "sha256:429ae93b8db07ee6b37c85237690ac590c9690fa55e8d1b94497373bcd849b0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "NotesTree"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "id": "RLZ-VB7HWH"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-STR9X1",
+      "items": [
+        "sha256:25f5ee3c0cbeb47bb3c7ec0a84084be189428b54c90816a26b40ad9d82d37f4c"
+      ],
+      "reason": "NotesTree delegates folder accumulation/paging/LRU to useNotesFolderCache; shared ExplorerTree, open-note ancestor protection and server reason remain the same reader contract. Manager1110e042 explicitly admits clarification of the same invariant:32 is the eviction bound except that insertion/open-note chain protection takes precedence, so the cache may stand above32 when all victims are protected. This exception is present on the immutable base and unchanged by L150; origin, stable ID and previous preservation provenance are retained.",
+      "revision": 2,
+      "subject": "INV-Q021G3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0EASG7",
+          "revision": 1
+        },
+        {
+          "id": "INV-68QN0P",
+          "revision": 1
+        },
+        {
+          "id": "INV-A0240E",
+          "revision": 1
+        },
+        {
+          "id": "INV-BS7TH8",
+          "revision": 1
+        },
+        {
+          "id": "INV-VZJRTM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-SVAYYG",
+      "items": [
+        "sha256:47e2ec6193fcc972ec891b5ff194bc696dee85a0acf8a247e95711819415a873"
+      ],
+      "reason": "The five-member union still combines backend containment/capacity and UI exact-request restoration; extraction updates UI anchors, not eight-slot admission or primary-chat ownership.",
+      "revision": 1,
+      "subject": "FAM-3NG1K9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T59H6S",
+      "items": [
+        "sha256:6cb8edfca3186e633fc77e132f771d9d115a83ef0b02e3f26aceaa2847384aca"
+      ],
+      "reason": "The monolithic pane imports become composition imports for scope/control/options/view owners. Removed CSS/effect/memo/transport imports follow those extracted owners; persistent frame and exact-request obligations are reconciled on their existing invariant rows, not duplicated as import obligations.",
+      "subject": "hunk:sha256:6cb8edfca3186e633fc77e132f771d9d115a83ef0b02e3f26aceaa2847384aca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V1TPHP",
+      "items": [
+        "sha256:90afeb21700b84abf6df7a5b34578562f905966e55039f9c7d9f63ef5f6e65b4"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:90afeb21700b84abf6df7a5b34578562f905966e55039f9c7d9f63ef5f6e65b4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VH1MHA",
+      "items": [
+        "sha256:eaadee8f553cfa237212f8e651f87d72f3d34e01a04238928d56c72be6fb3a80"
+      ],
+      "reason": "D237 updates objective composition imports/comments to the complete-head boundary. INV-PHG1PR and the replacing objective decision govern it; other fixed blocks and omission rules stay unchanged, so the import/comment is not another invariant.",
+      "subject": "hunk:sha256:eaadee8f553cfa237212f8e651f87d72f3d34e01a04238928d56c72be6fb3a80"
+    },
+    {
+      "because": [
+        "DEC-M8R3PE"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:f2c021e8f2b02c9377f08cea5db588e0297f34094d730d93b901f251c8b22e77",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDirectGrant"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-F5RFVV"
+        },
+        {
+          "after": {
+            "blob": "8c0c60f178cd321b806867dd165f1fc4638a7290",
+            "content": "sha256:b2cbfa30b47b310d2ca5bad90a32d28abf69a916ae96969b11069b584c11fb4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "DirectExecutionWords"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-R84WB0"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-W7NJWF",
+      "items": [],
+      "reason": "D230 / MIK-R150 rules9–12 introduce this bounded UI obligation while preserving the existing external-store and start-evidence authority.",
+      "revision": 1,
+      "subject": "INV-8JGKW8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "56a5e9b48bf9e18011e81aa65a63ebd6901df81d",
+            "content": "sha256:f8a49c6ede8f29c34cf61d340a04d0c7f5b2d76a42e535ba47ed4b3977aed1db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/fixtures/documentChat.ts"
+          },
+          "before": {
+            "blob": "56a5e9b48bf9e18011e81aa65a63ebd6901df81d",
+            "content": "sha256:f8a49c6ede8f29c34cf61d340a04d0c7f5b2d76a42e535ba47ed4b3977aed1db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/fixtures/documentChat.ts"
+          },
+          "id": "RLZ-D175WQ"
+        },
+        {
+          "after": {
+            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
+            "content": "sha256:29b7ea1b69957a636ed44c6ef636b993dbb8520b7ae53ed2f46e6b7f87813bad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "before": {
+            "blob": "c7db7d4dfd7a54b42ffc35bee11fd41e26b4e4a8",
+            "content": "sha256:29b7ea1b69957a636ed44c6ef636b993dbb8520b7ae53ed2f46e6b7f87813bad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+          },
+          "id": "RLZ-DKX1HV"
+        },
+        {
+          "after": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:e4f06fa372a3c98459ffab2a10f1312239b803a3dbc38d0ee55bc890a9d77544",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleAgentOverrideFor"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "e41ef14d80219aa96e8d7fb9408f48a5ed7df37a",
+            "content": "sha256:e4f06fa372a3c98459ffab2a10f1312239b803a3dbc38d0ee55bc890a9d77544",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleAgentOverrideFor"
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-EPB617"
+        },
+        {
+          "after": {
+            "blob": "564085c743dd7291495142a4e226e92d5ebfcc0a",
+            "content": "sha256:4c6f20a32357e0827749ee248a06240d94a2c9155362d6d432017729c28414c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "before": {
+            "blob": "d74019caf561c06c30e27402f947b5d2f992abef",
+            "content": "sha256:446bf54bd2236b60e09efd083497f0c6204a2ca94a1e8f5322e0930ae6113d2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLaunchDefaults"
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "id": "RLZ-G82K8R"
+        },
+        {
+          "after": {
+            "blob": "01dce06e4fa9d67a182271cf2b78c81f0124ff12",
+            "content": "sha256:a5ec52f9863b0e14fd179dd2c894e727f1033ebf1f0784d2da202ecfdda1571f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "1360a3804f28249d3ead083e7e944a0c6be81abf",
+            "content": "sha256:082a5aa5715064fe9daae2aceb2a5dbcc1f40650ce873bf9b84a141ea835e581",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-N85X2R"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-Y8PB9Q",
+      "items": [
+        "sha256:fe87099877a200b784d5e53fa6d207b790a3b1bade5b25020e5ab808196b4919"
+      ],
+      "reason": "Model and effort controls still carry featureValues through the current launcher composition and defaults renderer; provenance is delegated, not replaced by another launch authority.",
+      "revision": 2,
+      "subject": "INV-63Z0MN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZAY8XH",
+      "items": [
+        "sha256:3adc43cd8afd5865f6ad3f4d624fec346810e8ce6153922f90743fefd8158098"
+      ],
+      "reason": "Switch token styling replaces the retired grantButton/row type imports. D230 task-only controls and words govern presentation, while the row helper is retired; no separate import or styling authority is introduced.",
+      "subject": "hunk:sha256:3adc43cd8afd5865f6ad3f4d624fec346810e8ce6153922f90743fefd8158098"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZQJA5E",
+      "items": [
+        "sha256:c7585625c9e1a2789630cf1a03b6335192e506cb892e1b05ddc3a6216f602da3"
+      ],
+      "reason": "useDirectGrant replaces repeated issuer/time checks with sameServedGrant and a content mark/ref mirror, guards absent docRef inside the action, and retains served-state reset and late-answer suppression. The existing route authority and authored pending/refusal UI entry govern this extraction; no optimistic grant or new mutation route is admitted.",
+      "subject": "hunk:sha256:c7585625c9e1a2789630cf1a03b6335192e506cb892e1b05ddc3a6216f602da3"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3DKC7T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MXTMP8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-ZWHGM9",
+      "items": [
+        "sha256:58ef6853c11f6124a98014392ba6ec204739017a87da125f83545d7efeb2ed99"
+      ],
+      "reason": "Both members retain compact shared styling and complete hover/default information. Helper decomposition moves responsibility without changing the joint choice-information guarantee; source reasoning is not fresh pixel proof.",
+      "revision": 1,
+      "subject": "FAM-AW30YS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZYC726",
+      "items": [
+        "sha256:7144d3cf572bfe0238b0cc006968c4ec3838130e842505eae63b009d3918e6cb"
+      ],
+      "reason": "D237 removes the objective render from the head and corrects its placement comment; the same ObjectiveLead is now composed by each form after the complete head. The clarified INV-PHG1PR and D237 decision capture that ruled change; this head/comment hunk adds no separate invariant.",
+      "subject": "hunk:sha256:7144d3cf572bfe0238b0cc006968c4ec3838130e842505eae63b009d3918e6cb"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

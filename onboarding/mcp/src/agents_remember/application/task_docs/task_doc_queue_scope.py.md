@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application/overview.md](overview.md)
@@ -60,7 +50,9 @@ never maintains a private classification table.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies; this is repository-internal task authority.
 The governing CCR-R04@v1 packet is the task authority for the invalidation-classification
@@ -69,19 +61,15 @@ semantics here:
 It is an authority link, not a resolved dependency-version source; current behavior is
 evidenced by the repository-owned references below.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| R04's semantic invalidation and evidence/audit exclusion are implemented by the schema-owned classifier and deterministic scope union. | "def classify_task_document_mutation("; `resolve_projection_scope_union` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
+- R04's semantic invalidation and evidence/audit exclusion are implemented by the schema-owned classifier and deterministic scope union. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public resolver classifies each change and returns a deterministic old/new sprint union. | `TaskDocScopeChange`; `resolve_projection_scope_union` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:21-35; mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:38-86 |
-| Leaf scope is derived through the canonical parent master with the full batch override set. | `_leaf_projection_scopes` | mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py:93-121 |
-| The schema-owned classifier decides whether a delta invalidates projections. | `classify_task_document_mutation`; `TaskDocumentMutationClassification.invalidates_projection` | mcp/src/agents_remember/tasks/document_field_effects.py:345-358; mcp/src/agents_remember/tasks/document_field_effects.py:86-95 |
+- The public resolver classifies each change and returns a deterministic old/new sprint union. [2]
+- Leaf scope is derived through the canonical parent master with the full batch override set. [3]
+- The schema-owned classifier decides whether a delta invalidates projections. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
@@ -108,22 +96,3 @@ This section supersedes the earlier accepted-generation queue-lock preparation d
 Only a change whose classified delta invalidates projections (topology, intent, or
 completion-readiness) enters the union. Acceptance-evidence and operational-audit edits publish
 task truth with no task-driven queue refresh, matching CCR-R04@v1.
-
-## Update History
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  3e276f2b2052b641afbee180a472259f21b500df (CCR-R04@v1/L04): recorded the L04 classifier gate —
-  `TaskDocScopeChange` now carries a derived `TaskDocumentMutationClassification` and
-  `resolve_projection_scope_union` skips changes that do not invalidate projections.
-  Verification is pinned to the owning commit.
-
-- 2026-08-24T15:04+02:00 — Cumulative CLIVE curation: replaced pre-publication queue scope with the final post-publication before/after projection union. Timestamp is the curator host's Europe/Berlin system time; verification remains closeout-owned.
-
-- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: reconciled accepted-source-generation queue-scope preparation and the current-L2 versus L3 boundary. Verified at code commit `1d446724`.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/application/task_docs/task_doc_queue_scope.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-- 2026-08-15T11:25+02:00 — Created for the L3 static-gate repair that extracted queue-scope
-  resolution from the task-doc dispatcher without duplicating or changing its policy.

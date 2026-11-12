@@ -1,0 +1,188 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/source_files.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+        "content": "sha256:3ae46f3a3087c5868423b16921a302eb96d31af9f5a92ac237b9955d5a8883c0",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualitySourceFiles._check_path"
+        }
+      },
+      "id": "RLZ-D3RWPJ",
+      "invariant": "INV-YV9C44",
+      "origin": {
+        "handoffEntry": "L202-R1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Parent-first link checks reject linked paths before Git classification.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+        "content": "sha256:e091c766db892b65b41ef69c988032d694090d06e396b199a24d9489ff55fd2c",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualitySourceFiles.report"
+        }
+      },
+      "id": "RLZ-K3HY8C",
+      "invariant": "INV-WTF0AW",
+      "origin": {
+        "handoffEntry": "MIK-R212@v3 rules 2 and 4",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The root-only reader follows the Git view and cannot consult onboarding storage policy.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+        "content": "sha256:f811964a0731ba3a701c2723e444885c90121275aebb4c860cab5a66e5b8bb16",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualitySourceFiles._read_source"
+        }
+      },
+      "id": "RLZ-NCYTSB",
+      "invariant": "INV-7ACVBS",
+      "origin": {
+        "handoffEntry": "L202-R2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The bounded reader retains readable bytes and records a policy note without refusing them.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+        "content": "sha256:4c99d801f71c730d8c41bfd56862666e7b4c7ae43da533fe055b7c3fd9da3c9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "QualitySourceFiles._ignored"
+        }
+      },
+      "id": "RLZ-YYZ9AF",
+      "invariant": "INV-YV9C44",
+      "origin": {
+        "handoffEntry": "L202-R1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Git classification failures become typed source unavailability.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The read bound is 4 MiB.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:1961c02795cfeee1f56a87e6f4d4d900ecf316b5292b79cc0df55eb78ecc9fad",
+            "locator": {
+              "kind": "symbol",
+              "name": "MAX_SOURCE_BYTES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reader's Git file set and bounded cited-byte cache are local to one instance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:41323e4abe140a22bd55baf7103000883c590d109759a71b5fc9dca64854cec8",
+            "locator": {
+              "kind": "symbol",
+              "name": "QualitySourceFiles"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report names skipped files without retaining uncited bodies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:e091c766db892b65b41ef69c988032d694090d06e396b199a24d9489ff55fd2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Readable ignored and binary files retain their bytes with separate notes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:f811964a0731ba3a701c2723e444885c90121275aebb4c860cab5a66e5b8bb16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Path validation rejects links before Git classification, and descriptor opens refuse following links.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:3ae46f3a3087c5868423b16921a302eb96d31af9f5a92ac237b9955d5a8883c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Git classification failures become named unavailability.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:4c99d801f71c730d8c41bfd56862666e7b4c7ae43da533fe055b7c3fd9da3c9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ignored"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ae1b5a6ed0cae313b1f5ce14e2f26dc25dcaf5f4",
+            "content": "sha256:4563ac65a27dcf32e0f93b5d9198571a0fc9ef0bb889b8222e31d187fe110746",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 158
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

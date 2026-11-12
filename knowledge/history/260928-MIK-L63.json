@@ -1,0 +1,40 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L63",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b20f555dd03b92dcc6704a9fb8c94ceb1e389cd1",
+            "content": "sha256:352aeecbb61b1546e1c531078d752b12ab659017adad5b11888bfa7f3a6ffadb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_name_replacement"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "before": {
+            "blob": "e22f88a6b43be1a03bfc13f0c2efaa5d2000fdd8",
+            "content": "sha256:2748e96573b8db7ab3f139d703fb24b5924a666ca84f1cb08997a49270255978",
+            "locator": {
+              "kind": "symbol",
+              "name": "_name_replacement"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+          },
+          "id": "RLZ-173APY"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-VFFRJN",
+      "items": [
+        "sha256:2d6ba745a008a6302b44c67e9a0a47fcec9df45dab0defcae888b0526e72b438"
+      ],
+      "reason": "The recorded realization pinned a review-time blob of mcp/src/agents_remember/cli/paseo_role_tools.py that no commit of this line holds. L171's landing (84f9e1389) changed one line of _name_replacement: the answer now says the replaced turn did not continue because it was cancelled. The duty the invariant states is unchanged and stated more precisely there, so the realization is re-anchored at its own symbol locator rather than retired; no statement, scope, rationale or revision of INV-5EY4EN changes.",
+      "revision": 1,
+      "subject": "INV-5EY4EN"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

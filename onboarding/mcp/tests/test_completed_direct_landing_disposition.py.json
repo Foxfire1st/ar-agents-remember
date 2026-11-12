@@ -1,0 +1,157 @@
+{
+  "path": "mcp/tests/test_completed_direct_landing_disposition.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+        "content": "sha256:568fa6580fdb93da62d933c0a6b91929fd5dcfb034bec0f1b3be01048250008c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_owner_retire_proof_through_public_tool"
+        }
+      },
+      "facet": "Public owner retire is idempotent; a different caller is refused, direct supersede names the no-door/new-request refusal, and a second landing of the same converted leaf is refused while the record remains completed, generation 1, retired.",
+      "id": "PRF-8949A2",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "L46-owned-retire-proof-correction-and-converted-successor",
+        "leaf": "260928-MIK-L46"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+        "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+        }
+      },
+      "facet": "With accepted code at the work branch and memory at its before head, public recover completes the same generation/key, settles the receipt, closes the named history, and refuses a completed retry and a wrong expected generation.",
+      "id": "PRF-FWX9TV",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "MIK-R143@v1",
+        "leaf": "260928-MIK-L143"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+        "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+        }
+      },
+      "facet": "The explicit code-at-accepted-head/memory-before-head fixture completes the same public direct generation/key, settles its receipt and closes its selected history; terminal and wrong-generation recovery are refused.",
+      "id": "PRF-J2EHTZ",
+      "invariant": "INV-6DFQ9P",
+      "origin": {
+        "handoffEntry": "L143-curator-recovery-revision",
+        "leaf": "260928-MIK-L143"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+        "content": "sha256:f006de1405ea5569837c9acc73827be7ea9cc31ce3612c307d95f99264516a7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_owner_retire_converted_successor_names_another_leaf"
+        }
+      },
+      "facet": "After the owner retires the completed first converted landing, a changed-code request explicitly naming a different granted leaf is accepted as completed generation 2; it closes that successor leaf history while the first leaf history remains closed, with a clean memory worktree.",
+      "id": "PRF-QZ8KGE",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "L46-owned-retire-proof-correction-and-converted-successor",
+        "leaf": "260928-MIK-L46"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public owner retire is idempotent, strangers refuse, supersede names a new direct call, and advanced same-leaf code is refused while completed generation 1 remains retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+            "content": "sha256:568fa6580fdb93da62d933c0a6b91929fd5dcfb034bec0f1b3be01048250008c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_retire_proof_through_public_tool"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "First-leg-only public recovery preserves generation/key, settles the receipt and refuses repeated/wrong-generation requests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+            "content": "sha256:d9e079b5db269c3e96bec091ac6231ba600cd2eaa7c47f5cce4e26c50a075bb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_control_recovers_first_leg_direct_landing_through_public_tool"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Converted successor names another leaf and closes the proper history without reopening the prior leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+            "content": "sha256:f006de1405ea5569837c9acc73827be7ea9cc31ce3612c307d95f99264516a7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owner_retire_converted_successor_names_another_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Integrated-contract refusal agrees with its empty control offer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+            "content": "sha256:13adcbf1faebef444c8cf1b8ccce376da1306bd5b154b5ca48ec5a5e1cbbe867",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_integrated_contract_offers_nothing_and_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An omitted stored generation becomes 1 and is judged normally without an exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7f18526ea7716041bdae1416b2931345ee53cfbb",
+            "content": "sha256:aa682a78672c7cb39975025e8a430cfc86e799e918503240905543c3082de41f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_missing_generation_normalizes_without_exception"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Overwriting a user's hand-made role choices is a costly, silent loss; the cases keep an existing file byte for byte and refuse to complete missing choices."
+  },
+  "applicability": "Initializing the single user settings file when its destination already exists.",
+  "conditions": [
+    "The existing file is read and reported, and its bytes and permissions stay as they were.",
+    "Roles absent from the existing file are not filled in silently."
+  ],
+  "exclusions": [
+    "An absent destination, which the initializer creates.",
+    "The whole-file migration that upgrades an older settings shape."
+  ],
+  "id": "INV-JRXN00",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N4; final-a3/source-witnesses.md; new tests explicitly expect host-only completion."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B03",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Settings initialization reads every pre-existing destination without overwriting, merging, changing permissions or silently completing choices.",
+  "status": "proposed",
+  "supersedes": []
+}

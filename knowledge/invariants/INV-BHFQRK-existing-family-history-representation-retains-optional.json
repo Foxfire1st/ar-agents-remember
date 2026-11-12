@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without admitted omission the master landing refuses nine violations on landed frozen rows, as the first candidate did; the model keeps old history committable."
+  },
+  "applicability": "Family history rows wherever the knowledge files travel, parsed or written",
+  "conditions": [
+    "The row is already recorded, in a frozen file or an earlier attempt",
+    "Effect and own revision are both missing on the recorded row; a half-recorded changed row with exactly one of the two present is not a supported historical shape"
+  ],
+  "exclusions": [
+    "New or edited changed family rows, which must carry the writer's own revision and the authored effect",
+    "New or edited nonchanged family rows, which carry the writer's own revision and no effect",
+    "Invariant rows, which keep their own shape"
+  ],
+  "id": "INV-BHFQRK",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Model/frozen-row tests in test_family_history_judgments.py; parsed row and complete document in public-four-label-results.json."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "MIK-R48@v2 rule 1",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Existing family history representation retains optional own revision and authored effect; historical omission of both remains omission.",
+  "status": "proposed",
+  "supersedes": []
+}

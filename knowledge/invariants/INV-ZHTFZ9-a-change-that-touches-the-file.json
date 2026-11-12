@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the split a recorded weakness would read as a blocking finding and stop a leaf for something the packet says must never stop it, and without the document row a stale document would pass a landing that owes its confirmation."
+  },
+  "applicability": "Every leaf, checkpoint and master landing whose code delta touches a recorded weakness anchor or a document that has a dependent record, and every read of that landing's answer.",
+  "conditions": [
+    "The base memory holds the weakness or the dependent; a record this task itself authors is new and raises nothing.",
+    "A staleness answer exists only when the landing names a code base."
+  ],
+  "exclusions": [
+    "A closed weakness, whose cause is gone and whose file no longer raises a fresh obligation.",
+    "A document without a record, which keeps the row and the obligation it had before.",
+    "The advisory weakness row itself, which refuses nothing at any route."
+  ],
+  "id": "INV-ZHTFZ9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "R4-verdict.md F03/F10/F11/F13 closures; the worklist and landing cases in mcp/tests/test_mik_r118_r124_marks.py"
+      ],
+      "path": "batch5-invariants.json"
+    },
+    "handoffEntry": "L118-W4",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A change that touches the file of an open weakness raises one advisory row asking whether it still stands, a change to a document that has a record owes its confirmation and only the confirmed record answers it, and a landing's answer names the documents it made stale: an ordinary landing and a checkpoint refuse nothing for them, while a final master's end refuses for the documents this master made stale and for a state it could not compute or observe.",
+  "status": "proposed",
+  "supersedes": []
+}

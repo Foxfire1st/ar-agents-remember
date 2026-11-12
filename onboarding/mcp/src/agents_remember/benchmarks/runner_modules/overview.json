@@ -1,0 +1,362 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules",
+  "references": {
+    "1": {
+      "note": "The facade re-exports runner modules and retains its repository-preparation wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:e6a0a4a13f9cd61476b684ccf622d3fe6f8cd086a9fd2ac786877e4666bd660d",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:66e2a4f2b556f2fc13fffb860e1efade622bd584b93c57686f2689daa5080232",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:3d62e46f544b23376c4b332d4e33e3ae50b5c66fbdcef0c9ba675d46f6fe1773",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retained seed options and resolver predicates preserve the benchmark-scoped no-seeding boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:6e83aecc3be7e3696d7956b643007efb5a01a74b19fa3916886440a8dfc32188",
+            "locator": {
+              "kind": "symbol",
+              "name": "GrepaiSeedOptions"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:b1a6eaa353ece8693475eaf95822598206512168634957c495ce0f6b3ab98cea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clone_inputs"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:638d0cc97555ac694d3d234585a4976420133739f21aeecfefc4644e5011c269",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seed_precondition_skip"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Case models, manifest validation, selection, shared preparation and workspace construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
+            "content": "sha256:462f61ccf09d6693f1908402287e7a566a946c5c9b425ba9e0e89325bf8aa5ed",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "68fa770e00e655744392f47267813de7377753af",
+            "content": "sha256:9000011a19f052249d5ba5eb1d1a059f587f8589f274c52099f0fdbaa49f02b3",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2319954c2e7ead87a2723ad8b2bcb8e11e122df2",
+            "content": "sha256:e311b4f2d61fbcaf8d68fcf805f7f6134a11c68137afcbd515341218e29aee59",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/manifest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+            "content": "sha256:514fc3f33cedefe8ef0d7f6d51a4fa117947e2fb16a7e73293d377b56dc805bb",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Benchmark registration, registration sweep and disabled lifecycle-settings construction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8c27827281330947162cad1977cf99d8bc9bca6",
+            "content": "sha256:1bad678499d9a26a8aff8d482cdefff41bd0ec4490a91a9d2509c8872eee8282",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+            "content": "sha256:ed908d4b26865a91717a59fb120b1ce44121b9f55e8aa502f7a3623e5584ba55",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/providers/settings.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:719e17538e15a1da27718713d4b7d7cb90f7294f6d8a2c79dad73495c3ae6895",
+            "locator": {
+              "end": 121,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:97ddf8e0a7c59c75c51eb3779065165b04962b4db278d220312f8ce4ef763da1",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Git preparation delegates to the shared environment, argv and subprocess owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c25d943da7c247fca1ded3e09331f76d86d8e2e1",
+            "content": "sha256:340f109a7ab03fdac8009bc2034943f6f6832e0e43986e40cbff8f26666f11a4",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/commands.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:5df6318d8b33ff813384e623005bd166f51fb107212a9a80e371c49f8f7e2d95",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:5fdc4cb503119f9cb640bf48eb08badf7d269f43314ab7bb0676a3fcb1876154",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 157
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:5dc0da47e49028ab3563b9a60a51d61474dbc03e5f6d758e279573082864b1c9",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 341
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+            "content": "sha256:b8358bf9bc8da311e37ff10edaef3b14729645b88f3c246ec9844af0899df787",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Codex execution, analysis, service payloads and direct CLI callers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2319cd59f5fe4cb132f6cf2dc90b3c4a2a718e60",
+            "content": "sha256:fe214f765869b8a3469032147d32cd8fd9d90bb5296a3c020b7838afa4bdd4e5",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/execution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "116438c260885ed8f6a908cf588f6c2a1675eca7",
+            "content": "sha256:b2975834155db7a3796ebc36e2ee314184c0b217b34fa7ea41db73936d796347",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/analysis.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "058b38584bb8c501173d9793dbaeba6a983041e5",
+            "content": "sha256:0b1d16bd033d97dca1890b1d54715d9ed1ccf7c9cd090e0fa521c01d61f1fdd9",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac70f6a036cf924f45dc6928b64e4b359768008e",
+            "content": "sha256:949bd45b95f744a5706a1a6f43402629e963f1189a9aa60bf9307b6ad562e686",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65949714952ae6e1d1063da49cc2055cda8bba99",
+            "content": "sha256:2c2dd5852b85b4252459e28d915ab105362b5e2e60720edb2595ddc23fdb3418",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/roots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The runtime-asset sync that writes no skill tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
+            "content": "sha256:5ece4ee308c57cc5e3c0077bbc0629492c3395f44281c9f4b42727fa2a4693b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_runtime_assets"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

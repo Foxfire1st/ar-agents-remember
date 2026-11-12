@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Mounted entry tests pin revalidation to the addressed leaf’s lifecycle and reject late previous-leaf answers, preventing stale or unrelated workspace activity from relabelling changed-intent counts."
+  },
+  "applicability": "When the task entry's changed-intent summary is re-read in the dashboard.",
+  "conditions": [
+    "The entry is mounted for its repository, master and leaf; re-show, return and explicit refresh keep their existing local-context revalidation path.",
+    "A mounted active-worktree review with history other than recorded registers its exact repo/master/leaf scope on the existing state stream. Its first baseline, reconnect baseline or changed revision invokes the registered memoryChanged and shared-entry revalidation callbacks.",
+    "The summary hook keys its read/display by the addressed target and facts, including the caller's entry generation, and admits only its current mounted sequence."
+  ],
+  "exclusions": [
+    "A standalone entry installs no review-memory watch; closed/recorded review scopes do not register through this hook.",
+    "A revision notification invalidates supplied inputs; it is not a knowledge body, a measured zero or semantic acceptance.",
+    "No global analytics-triggered reread or fresh latency/installed-delivery certification is inferred."
+  ],
+  "id": "INV-74578B97",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "32372b52-1a1a-4302-8207-1fc88298f61b",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "The entry summary is revalidated under the addressed leaf's lifecycle/worktree facts and shared entry generation. Navigation, explicit reviewer refresh and the matching mounted live review's memory invalidation advance that generation; an unrelated workspace analytics publication does not. A late answer for a previous leaf is dropped.",
+  "status": "proposed",
+  "supersedes": []
+}

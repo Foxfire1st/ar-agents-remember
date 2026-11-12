@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+        "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure_node"
+        }
+      },
+      "id": "RLZ-0HKKTZ",
+      "invariant": "INV-BGV9YT",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §3",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This acquisition owner validates existing and downloaded product Node, owns exclusion and reclamation, and refuses unsupported/foreign inputs before provisioning can run npm.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+        "content": "sha256:f48f4945a3e2b3d4e1f2275c8fbca5d2e148c6cf571195facba9614ff3cb2579",
+        "locator": {
+          "kind": "symbol",
+          "name": "node_status"
+        }
+      },
+      "id": "RLZ-H3MX7P",
+      "invariant": "INV-7HC1QH",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 status current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "This pure observation compares the owned executable with the selected product Node and supplies the shared restart-required result.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The acquisition entry point with exclusion and reclamation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:655cc4ba48eb5762242aa346d6db16f09c04d4322e1ed58238fb02b68c04669c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_node"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The verified whole placement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:98fc0f63acc8d0573a3fa0fa93afd658bb43c3445441814bad97d2b504ef75aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The bounded download.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:4e63b4cb67fa9cfcd3b4bbe61142ccc9ca4fef25161cd196e95ebb50a143c843",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_archive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared read-only Node mismatch comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+            "content": "sha256:f48f4945a3e2b3d4e1f2275c8fbca5d2e148c6cf571195facba9614ff3cb2579",
+            "locator": {
+              "kind": "symbol",
+              "name": "node_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

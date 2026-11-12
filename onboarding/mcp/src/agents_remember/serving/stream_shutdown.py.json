@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/stream_shutdown.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "StreamShutdown ends open streams at the start of shutdown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0647d18642fd8903ed456b419d9af1f2c1a86a17",
+            "content": "sha256:ccaea291328aa1f82eed11ba6a282c8cdd09e3625e3bdea42d0f3c6b6f3453e4",
+            "locator": {
+              "kind": "symbol",
+              "name": "StreamShutdown"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

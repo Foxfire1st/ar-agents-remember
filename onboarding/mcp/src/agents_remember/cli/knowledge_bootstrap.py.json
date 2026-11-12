@@ -1,0 +1,243 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+        "content": "sha256:943895d38c4b4ba0f584b93123c810f3490322b6a74c5255c33fb3c5364b3595",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-NV4NKB",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Taskless knowledge bootstrap refuses an unconverted root before the converted file writer; it does not reach database ingest.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+        "content": "sha256:cb151299f6cfdf0a5d6a74675feb85f39ccdee329da2230fa14d73d06049af40",
+        "locator": {
+          "end": 89,
+          "kind": "line_range",
+          "start": 87
+        }
+      },
+      "id": "RLZ-PA3QZT",
+      "invariant": "INV-B3FPFJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This --config help now says that an omitted --config reads the user settings file under XDG_CONFIG_HOME or ~/.config, whatever the current directory, as discover_config() does; at A010 it claimed working- or current-directory discovery.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+        "content": "sha256:943895d38c4b4ba0f584b93123c810f3490322b6a74c5255c33fb3c5364b3595",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-SKYTG8",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "handoffEntry": "co:INV-1XKX9ERN",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The taskless entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+        "content": "sha256:943895d38c4b4ba0f584b93123c810f3490322b6a74c5255c33fb3c5364b3595",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run"
+        }
+      },
+      "id": "RLZ-Y766ENWA",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "27": {
+      "note": "`add_arguments` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:3e22da3fd1c76452760158bb87fa99e4ded55faf9b611eb4eae745bac5e85b82",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "`run` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:aee2dab902982ce95c53b26a6f541659f0293cf290e1b12d3dbb694453d699b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "`_run` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:943895d38c4b4ba0f584b93123c810f3490322b6a74c5255c33fb3c5364b3595",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "**Settings resolution through the umbrella CLI's own discovery, with no second convention.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:42f8e80cf60d4d4f44cba84b6c667f645359e6aa3a35f475dc09df437c1e01d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "The one admission this invocation runs under, or the refusal that stopped it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:14d04c9638aaa7d67ddc98afd49fe873a55eac07cc8c41e7ed9e7960e8488ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admitted"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "The typed refusal payload a refusal is rendered from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:a82f1eaefe4044507a5d3f0d818542fb15fb79188eea3a7edaca49fb0f11474d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refusal_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The `--wave` argument, required only for converted memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:91116ce269d05ca135b6e3bdd44c04b5d3b7df13f3bfd1420a24954d3097df79",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "**The admission resolver this entry point is the public face of.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbd9ce3d1bcc4f2805f2ccf47e3b8a14119ec63",
+            "content": "sha256:5cdaf2e9510dbdc04146abcef8ff00e91a0b4d27dce7faac33bd6a7da5e9d974",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_bootstrap_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The wave passes the admitted authority's coordination root, so requirement endpoints resolve (MIK-R13, review F4).\n\nAnchor: `run_wave_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb667a8cecdabf75c6f4b8a2d9ba854a3622e86d",
+            "content": "sha256:0f1689796b528bd52a39b4d08f1e96180f9b3d8aa3e9da5d28bd8129f2cefe03",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "knowledge-bootstrap refuses unconverted memory whether or not the repository holds converted memory elsewhere, naming crossing sync or the first-conversion procedure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e02efe56a42a670bb818ea1f56af7d09c48e5f3",
+            "content": "sha256:4a88ef3aa4169e90919b9dead800543a77c077fc861739a96454dc6d60102d51",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_bootstrap_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
+            },
+            "path": "mcp/tests/test_knowledge_writer.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

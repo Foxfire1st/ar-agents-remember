@@ -1,0 +1,58 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The journal-conditional alternative was explicitly considered and rejected; future leaf integration cannot replace fresh exact-pair judgment with that stored trust."
+  },
+  "alternatives": [
+    {
+      "option": "Judge every actual leaf pair again at integration.",
+      "reason": "It needs no trust in a stored record and catches an edited cell or older-build closeout.",
+      "status": "chosen"
+    },
+    {
+      "option": "Compare the closeout cell to the operation journal and judge only when it mismatches.",
+      "reason": "The approved settled G1 chooses one fresh gate evaluation instead of making a journal match admission authority.",
+      "reconsider_when": "An approved design proves journal-bound trust without losing exact-pair, current-input judgment.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "One more invariant-gate evaluation per leaf integration; this is not a broad quality, MQC or review operation."
+  ],
+  "context": "Leaf integration previously trusted the closeout cell and its earlier judgment, including when a hand edit or older server supplied it.",
+  "decider": "MIK-R52@v1 Settled G1, architect under D47",
+  "id": "DEC-1FJD33",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-5JEN5D"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R52",
+        "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "always-rejudge-leaf",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

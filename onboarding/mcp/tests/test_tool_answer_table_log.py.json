@@ -1,0 +1,139 @@
+{
+  "path": "mcp/tests/test_tool_answer_table_log.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "content": "sha256:a07eada2d258de6cc2eb124d5f88cc1398717749b125be3c85e5442ac87c6fea",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerLogTests.test_short_credential_variable_value_is_omitted"
+        }
+      },
+      "facet": "A short credential-variable value inside a longer argument is omitted.",
+      "id": "PRF-35PF9V",
+      "invariant": "INV-XJ7GV5",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "content": "sha256:ae3f1469afca4550277210d34ce8f350db43eb4ba84e1eb5b3cff994fe90ce38",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolLogStatsCommandTests.test_collect_rows"
+        }
+      },
+      "facet": "Rows are collected from log lines with the separated framing tolerated.",
+      "id": "PRF-5E66XS",
+      "invariant": "INV-KJFNBQ",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §8 stats",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "content": "sha256:c7a49870176b53b87dec5206c0180d2c3b8a0767cf16786d75aed0a33f0e2a59",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolTerminatingRouteTests.test_terminating_operations_log_to_the_root"
+        }
+      },
+      "facet": "Terminating operations log to the root.",
+      "id": "PRF-9478HH",
+      "invariant": "INV-JRV850",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 §3 destinations",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "content": "sha256:661dadff1f5d0d3e2c8d5c3c945bb30ff9bc616f9fa0e13bdac528573d551730",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerLogTests.test_ordinary_env_value_is_written"
+        }
+      },
+      "facet": "An ordinary environment value is written.",
+      "id": "PRF-VZ86GQ",
+      "invariant": "INV-XJ7GV5",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
+        "leaf": "260928-MIK-L108"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+        "content": "sha256:81f7b274b42c68fd4f4891e990b0e838479c65bc6a272851c7fa7e295b1b3e81",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolAnswerLogTests.test_home_folder_path_stays_whole"
+        }
+      },
+      "facet": "A home-folder path stays whole.",
+      "id": "PRF-ZDX94J",
+      "invariant": "INV-XJ7GV5",
+      "origin": {
+        "handoffEntry": "MIK-R108@v1 worker-deliberate-1",
+        "leaf": "260928-MIK-L108"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Refused and raised calls are logged, and a long argument becomes its length and digest rather than its text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "No credential or environment value reaches a line, while ordinary environment values and home paths are kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Cleanup, abandon and finalize log to the coordination root and never into an enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb5cbdcaaae87b4d86d3d6b9b73f95f87560a77c",
+            "content": "sha256:633a869a19074b5f2a185ff507f5b7551674c8fd63d98c694d5ac92825fbceb9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

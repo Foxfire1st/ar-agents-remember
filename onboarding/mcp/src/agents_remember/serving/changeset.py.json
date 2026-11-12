@@ -1,0 +1,612 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+        "content": "sha256:4b0783f21cb2390cb0a2e594cd30278e213bd7f6f981b8ebe1e6489c9f5dd860",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_onboarding_root"
+        }
+      },
+      "id": "RLZ-3SX1AX",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      },
+      "rationale": "Each changeset mode names its declared memory source without an existence-based fallback.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+        "content": "sha256:08c8222529bbf7e612a06a6ae0d8b88fce6f251abf74f8b623a75ffd1f87dd31",
+        "locator": {
+          "kind": "symbol",
+          "name": "_master_onboarding_root"
+        }
+      },
+      "id": "RLZ-FMFAT4",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L174-A12-master-net-attribution",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "Names the one working-tree path whose identity can change a net answer while every endpoint stays still; it is part of the key and the origin of the observed sidecar inputs.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+        "content": "sha256:bfeef34bf103e598392abb42a00b1671b0247033a6e700ec60a64826e186e239",
+        "locator": {
+          "kind": "symbol",
+          "name": "_master_net"
+        }
+      },
+      "id": "RLZ-Z3F5FE",
+      "invariant": "INV-ZNXX7H",
+      "origin": {
+        "handoffEntry": "L174-A12-master-net-attribution",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The master net's two sides, their counters and the code side's hasSidecar flags are one cached_read under ('master-net', repo_id, master, selection.digest, onboarding root), and selection.digest is the sha256 over the four endpoint commits. A hit returns a deep copy of the stored net with no observation and no native diff, so the served net is byte-identical to the native read for those endpoints; every route index and fallback mirror path the sidecar decision consults is observed before it is read, so a moved onboarding input re-keys instead of leaving a stale flag. The per-leaf rows and the endpoint selection stay outside the retained value.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared scope resolution + error map (`FileScope`, `run_scoped`, `language_for`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:fef8f2af3e315d8a0fd2d87ea235168a3acc314d639fb9c4d6f4249e54930ca5",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileScope"
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:cf18e1b4612890662ae0cedcde62fdb7fd5948c9539a62b2526c69a1ea1f46c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_scoped"
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:3d9f1313f449a2b6ae1e0661fadc8f18ed03ec27e3bd2a1384f38e61e922ac2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "language_for"
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The new collaborator: which exact Git objects a committed range binds, the three absence kinds, and the named absence an unrecorded endpoint reports.**\n\nAnchor: `recorded_committed_range` `RecordedEndpointAbsent` `NOT_RECORDED`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:e6cfb6af663bf6854da778c6d63017f1afe3d4ebf18fb08c3a549078db35c8b9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The cases that measure the change: the recorded range bound and unmoved by a later commit, the state answered instead of a `HEAD` read, the route's own `200`, and the one-half degradation.**\n\nAnchor: `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "**The thin delegating entry: pins in, selection resolved, endpoint-to-endpoint diffs per side, `generation` + `currentness` + `scope` published; unknown master degrades, missing code endpoints refuse.**\n\nAnchor: `master_changeset`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:c0ad04ef56c199e4145dee058c921ac7700e48c5b6c2392b857c0c04641fe5b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_changeset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "**The pinned AFTER side: live integrated result unpinned, exact recorded tip pinned; unresolvable pins refused, never re-resolved.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:f8d63841e83c4a19b3d6d39a43ff101d86b79d47da1c8fa753c95ebc2d580751",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_file_diff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "**Whether a breakdown row shows live work or its landed delta.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:278c6b382a241c023e00f1048f97e88529563eebdea8b10f41b25215b52c8c58",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_state"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "**The two bundled master selectors and their pin extractors, plus the one shared master 400/404 mapping.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:2e59c2805808c6519866f4c08175844469d0e22daa527515fea84882a57df373",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterFileRef"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:5b775aaacb3c2fb69a7b4dd3f205b05d51e77efd905cec73c088c6dfe65052c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pins_from_ref"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:b590a72879d2e392799021146479a74c061263778255a3892990a907ae3a139e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_json"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "**The new collaborator that owns the selection this entry delegates to.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:7a575351d35d49184626d8535b1e76e3c313d05810ad25cf7446591727a247a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "select_master_net"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:3463a844551a4ce8827a365719af639e0d01800f94e12a11981fd2d9aa4a6328",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterNetPins"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:a5988124fd3546125bd509ee4ee7a2ceac7949ef752d2c51ffaaec03f3bb07e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterEndpointAbsent"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "**The F1 refusal case: a post-validation diff failure is refused, never an empty net.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:398c37fd83c45f70e118cb5189cab9138f7430313e39f00de2a13865ea403c7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_diff_failure_after_validation_is_refused_never_reported_as_zero"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "36ceb1d30a00e7763b864061d9798f98f1f499ff",
+            "content": "sha256:df6f8ae54b9c0a1f292866dca32419eb98028d74863ea4a3bad62b53d4b9e735",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 494
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "**The caller that now carries the code half's named absence instead of raising it, and the memory half that still degrades to empty.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "**The doc-reader entry point that publishes the absence as the body's `state`/`stateDetail`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_changeset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "**The served vocabulary of the two states.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "content": "sha256:463b38acb2a449e68d35e60f53e3a39a6d156550a23302eeffa713b2fd585458",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafChangeSet"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "**The cases that measure this change: the state discriminator with the head absent from the detail, the route-level status, and the one-half degradation.**\n\nAnchor: `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The client that carries the state and withholds the total it would misprint.**\n\nAnchor: `TaskChangeset` `ChangeSetButton`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89adae5ac3dac2355f244579c0521e08cfb7cd9",
+            "content": "sha256:208751f674d4ff70e2972a0ee37017c54eec078d8b360d528a42a7ad0ec813c3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/changeset.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:d972a17fb5c09baa79f099400d5b3d3f563db77b321edafc37f58e3f94645bff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Comparison and mode cannot be combined on either route",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:ae8d7d25de15fcbc92fc7ca95d1759cd952a733ad7c61de2c6e063b395f8a3c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_mode_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Both selectors carry the optional comparison number",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:b3780f421b8f45bf0fdb7463f7aa13e84e884685954f385045f4a39d7c2d3c58",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangesetTaskRef"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "A set comparison diverts to the recorded-trees producer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:55aa0b4cd09d17a2a64c5f38eb6fa2e4cf087c48b39741e7896135ad46427606",
+            "locator": {
+              "kind": "symbol",
+              "name": "_comparison_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "List reads divert; leaf and scope paths run as before",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:ca1db91a82d45f1573b07634ad045f8a3f970591d7f629392387daca7af711bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "All three change-set routes share and return one app-owned conditional-read cache.\n\nAnchor: `register_changeset_routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:e0aedd2d62348a755e33172ab6336af4d8e7ab42c9a9c7a7df1f252f97047f19",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_changeset_routes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Sidecar presence is derived from governing route indexes or a mirrored sidecar-file probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "content": "sha256:f3c4c2fe555780f35d009de02d4a5e1c8c8a69741d9cfa2ba6be182f874ac384",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The serving entry caches and reuses the worktree mutator's own NUL-delimited count/status read rather than implementing a second one.\n\nAnchor: `changed_files_with_counts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared path confinement resolves the requested path and refuses repository escape.\n\nAnchor: \"def confine_rel(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "content": "sha256:e7439e42dfde2e3ca132f294c995f2162845dad8496330e19b214d075be85ceb",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The persisted WorktreeContract model and load_contract loader support master/leaf accumulation. normalize_contract_leaf_id resolves legacy leaf IDs through the canonical task-document reference; worktree_folder_name separately applies \"slug = slugify(worktree_name)\" to folder names. `slugify` is defined in `tasks/task_paths.py` and re-exported by `worktrees/task_resolver.py`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:9792f685f08793a87aa8c143a837175994a984bbfa1e16d878aa5195cfd1daed",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 253
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:131c16d8720c6debc21b56f5a3d457c47a16272b8f9a7a21669733c8599f39c6",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The app factory that calls `register_changeset_routes` before `mount_static`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:0e09af216c69205e57b3057e4d913dcd44dae092f1cf922bd1c69102ce0bd20e",
+            "locator": {
+              "end": 629,
+              "kind": "line_range",
+              "start": 629
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The caller resolves each side independently. An unselected repository returns an empty range before endpoint admission. Among entered endpoint errors, only not-recorded is caught: code carries a detail and memory carries none; other endpoint errors propagate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The committed branch of the file diff, now reading both sides from the recorded range's own repository.\n\nAnchor: `leaf_file_diff`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:7ea5a0c462acdae6785d07dfc32269df86c64c5edaad40f655ecfb5f2a020f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_file_diff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The doc-reader entry point that publishes the `committed` view's `state`/`stateDetail` and states the live-worktree requirement for `working`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_changeset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

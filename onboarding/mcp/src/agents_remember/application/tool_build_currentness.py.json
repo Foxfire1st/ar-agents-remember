@@ -1,0 +1,75 @@
+{
+  "path": "mcp/src/agents_remember/application/tool_build_currentness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only an installed, stale reading is returned to annotate ordinary answers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efd4cbbb9b138bd88f885f3817b4423694f8d74",
+            "content": "sha256:ead688c54e97929129b4315d54dedccec97f0cda4b8fa63aa7641e375c3a06bf",
+            "locator": {
+              "kind": "symbol",
+              "name": "current_tool_build_currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reading is set for one call and always reset on exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6efd4cbbb9b138bd88f885f3817b4423694f8d74",
+            "content": "sha256:318a119adacce4fa41c355f9cd1a97abda0ef4faf7f4e5d6f79e4d860c17d58c",
+            "locator": {
+              "kind": "symbol",
+              "name": "tool_build_currentness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The MCP dispatch takes the reading and runs the call inside the context manager.\n\nAnchor: `tool_build_currentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:ba7c670e6cfa40ea5c24b6e6b71b20224d43e4fcc7c6528e934ec9d5259781ed",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Response enrichment attaches the filtered reading as `buildCurrentness`.\n\nAnchor: `current_tool_build_currentness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71a471351333016c0e4fe272680ece4cd590c64",
+            "content": "sha256:31d7d911b48f84f5f7e06c94f42e1c39f9b55cf8565323fb4fac3725db07ec7e",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/application/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

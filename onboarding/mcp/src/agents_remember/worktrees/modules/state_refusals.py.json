@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/state_refusals.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+        "content": "sha256:fe24acdcbc3d7b6f961e61e838b9d326e7f823d43c049d5cb28395e8397a9e38",
+        "locator": {
+          "kind": "symbol",
+          "name": "state_refusal_result"
+        }
+      },
+      "id": "RLZ-70PW6T",
+      "invariant": "INV-H8WSA9",
+      "origin": {
+        "handoffEntry": "MIK-R111@v1",
+        "leaf": "260928-MIK-L111"
+      },
+      "rationale": "Non-tool argv becomes nextArgs list and command from shlex.join; ordinary tool payload assembly is preserved.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The constructor preserves the producer sentence and carries tool arguments or separate CLI values with a correctly quoted display.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:fe24acdcbc3d7b6f961e61e838b9d326e7f823d43c049d5cb28395e8397a9e38",
+            "locator": {
+              "kind": "symbol",
+              "name": "state_refusal_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Terminal conversion is a recognized-message mapping with an unrecognized fallback.\n\nAnchor: `terminal_state_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:d07cb3bdcaa085204e1820a1176287d2ad0fff7d3bf0ededbeac809782eacee0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Shared blocker sentences preserve producer fields and add the dirty/unmerged force wording without changing a caller.\n\nAnchor: `_shaped_terminal_blocker`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:d07cb3bdcaa085204e1820a1176287d2ad0fff7d3bf0ededbeac809782eacee0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cleanup calls terminal preflight with force false; formatter prose supplies no override to that route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:cf75c6c9fccb9f5fbc2a6bf0d98bbd15c8ea2c77d9db344908c5496152382fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_settled"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "handover_gate_blocked preserves the existing master-handover refusal code, gate ID, reason and coded blocker, while stripping inherited nextTool, nextArgs and nextRequiredArgs. Its blocker names STORED_GATE_WAY_OUT: no product tool decides a stored gate; agents-remember removed-stores names the log and removes it only on the user’s word. Dry/real refusals retain their distinction from success and no approval is fabricated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:ed3f2cfef354c09e5aee7cb887f1761d3c183a1cfb1a65edf1c18e8da7aa7e85",
+            "locator": {
+              "kind": "symbol",
+              "name": "handover_gate_blocked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Invalid task/parent stage binding returns a blocked named refusal without a fabricated mutating recovery tool.\n\nAnchor: source responsibility",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a08b14c6340768201af155b6a9d5003c0f28b5",
+            "content": "sha256:eb1aa9739995533c5dce23d7d617fdafa517dfff63a7c97339d1b35d7391394c",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

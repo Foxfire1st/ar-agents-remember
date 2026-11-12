@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A repair can close while the tests matching its own touched names never run, and an unbounded hunt for unrelated defects would widen a sealed review past the finding it answers."
+  },
+  "applicability": "A repair round that answers a sealed finding, on the Worker's and the Reviewer's side of the lane.",
+  "conditions": [
+    "The repair's own touched names are searched, including names the repair introduces.",
+    "In fix-verification the repaired finding stays open until the tests matching those names have run."
+  ],
+  "exclusions": [
+    "An unrun test that the search does not find among the repair's touched names.",
+    "A fresh sweep of the codebase for unrelated defects, which the sealed-review limits already exclude."
+  ],
+  "id": "INV-YGXGEC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Delivered sentences cover the repair case on both sides with no new-finding language; existing fix-verification limits in roles/reviewer.md and operations/review.md untouched; reader C answer in worker evidence/reader-grades.md"
+      ],
+      "path": "l205-producer-list"
+    },
+    "handoffEntry": "MIK-R218.3@v1",
+    "leaf": "260928-MIK-L205",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Worker applies the same focused-test search to a repair's own touched names, and in fix-verification an unrun matching test keeps the repaired finding open without becoming a new finding.",
+  "status": "proposed",
+  "supersedes": []
+}

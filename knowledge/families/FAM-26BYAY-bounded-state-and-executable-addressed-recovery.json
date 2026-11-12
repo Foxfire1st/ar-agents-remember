@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "State/action projection alone can preserve an unusable or wrongly addressed suggestion; exact leaf binding alone does not preserve argument boundaries; correct argv alone does not preserve the actual operation outcome. Together these three obligations make the following call actionable without granting transaction or acceptance authority."
+  },
+  "guarantee": "An admitted task or landing answer carries the actual state and blockers with the usable following call; recovery names the exact leaf rather than its master and carries separate real argument values whose printable command quotes the same argv. A bounded answer cannot substitute a guessed address or a merely illustrative shell string for that call.",
+  "id": "FAM-26BYAY",
+  "members": [
+    "INV-DC238B",
+    "INV-VGQTBR",
+    "INV-H8WSA9"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "new-family-history-list.json"
+    },
+    "handoffEntry": "L111-bounded-executable-recovery",
+    "leaf": "260928-MIK-L111",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/application",
+    "mcp/src/agents_remember/worktrees",
+    "mcp/tests"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded state and executable addressed recovery"
+}

@@ -1,0 +1,203 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+        "content": "sha256:549c7f66a3de6bdbf26c4b84688f20287c704eacf10f9b6e841296feca020315",
+        "locator": {
+          "kind": "symbol",
+          "name": "build_coordination_context"
+        }
+      },
+      "id": "RLZ-FQ7BCC",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      },
+      "rationale": "Leaf resolution keeps the contract-owned onboarding path before any card exists.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The coordination root of a selected contract, with the path probe and resolution recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:e71fc697cdd06b7fd9098300a4a9f188b88bd10532b3030a3b27cfa1a40e95af",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_coordination_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The context is filled from roots, settings and the optional contract.\n\nAnchor: `build_coordination_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:549c7f66a3de6bdbf26c4b84688f20287c704eacf10f9b6e841296feca020315",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_coordination_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Root absence, appearance, retargeting and removal each recompute a kept view; a present removed root is refused by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:5d5279ced163a25302240b8fd1de7e6e59fe3f10cde77dc404ca43505d463bcb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_root_selections"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The fallback context reads the contract and records the bytes consumed.\n\nAnchor: `_fallback_reads`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open.\n\nAnchor: `test_every_file_read_is_in_the_read_set_and_a_conflicting_read_is_never_kept`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb21438758c57cf647872e223994856f0ee5bd5d",
+            "content": "sha256:1bcf74a1372072144d39d4252082585bbcc86540d62cc4aa888664961a69d8f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_gate_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The selection order: request, explicit settings, removed layout, external root, missing memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:d1402594faf11a8a67261bc434c0c1dafe213d59a6f19ecb0b4552c1ea3316c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "detect_coordination_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An existing repository-sidecar root is refused by its path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:771f59366c7551772aeb1e73865929e124bc1c1b4ea65aa5a86aab84a11ed0fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refuse_legacy_repository_memory_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The four roots a selection starts from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:b32c60af0859592dfe4425df0f7ba7bbb048901372b075788f02de7b284ca549",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_roots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Explicit settings must imply an existing memory root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:41c28d25069604480dea511b8d54fa04434bde78a3a2a769590e0eb118c2e96b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_selection_from_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The public entry requires a contract reader and branches on the onboarding-root hint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:8870c09e8bed95ded0d857d9f6194cfec03b84f590d4bb2065205ae282024c46",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_coordination_context"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The selection path of the context.\n\nAnchor: `_context_from_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+            "content": "sha256:8bd3b372b5e0645ab9bba2c5ec87f4c8b77a70352527c34d20e3bf9bead003b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_context_from_selection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

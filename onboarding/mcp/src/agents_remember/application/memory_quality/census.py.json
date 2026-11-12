@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/census.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Contract-scoped census preparation and selected-tree provenance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:57a52337512b3854c7bc561febcfc2b792457032f38c8a5acf06f87c99216548",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_census"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:b8dece0ba7df310dd1abf79a972d06887895ca2cf7b1fb4a4b933997849276d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prepared_code_input"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact report publication and non-certifying diagnostics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:a825c0224d0253bca6011eec1ef10d0575e8f36b91be7c9c5f12b60359d8b6b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_memory_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One-to-one curator candidate mapping and canonical identity refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:db56babcdfb4743619aa324100f263ba00cb02ec5ebeb7f07049f12f2622ccb3",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_curator_candidates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:70d4122358d15cf2e4ed83385ca87539f78cc8e4c3a5f25cbd759f79f606b366",
+            "locator": {
+              "kind": "symbol",
+              "name": "_curator_source"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Census publication is diagnostic and non-certifying.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:a825c0224d0253bca6011eec1ef10d0575e8f36b91be7c9c5f12b60359d8b6b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_memory_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The governed card's kind and source, read in its own format from the tree that holds it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:68e21fe675d4a45ce4e24e5541b7af56542455269aad192e7a4f39c76d97ca9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_governed_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The census scope is captured with the converted-base comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "944c5398c671d9e36ddd09db0b79da7b2b0534ea",
+            "content": "sha256:57a52337512b3854c7bc561febcfc2b792457032f38c8a5acf06f87c99216548",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_census"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

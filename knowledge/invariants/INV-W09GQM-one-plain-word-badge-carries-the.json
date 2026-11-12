@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: FamilyTree.triage.test.tsx and FamilyTree.triageReal.test.tsx"
+  },
+  "applicability": "Primary change-kind classification of family/invariant outline rows, distinct from the active sort's displayed reason and from location/group rows.",
+  "conditions": [
+    "One primary change-kind classification is retained per family/invariant row. Unknown intent remains unknown instead of borrowing an established implementation or membership label; otherwise real intent wins, then established implementation, joined/left membership, unknown implementation and unchanged. Recorded effect labels remain a separate fact. The active sort may display another admitted reason instead of that primary badge.",
+    "Family N-changed badge only when the family record is unchanged and N members carry real change.",
+    "Meaning rides the word + one-sentence tooltip, never color alone.",
+    "The new location and group rows use the active sort's one reason; that reason and any grade are not a new primary change-kind judgment."
+  ],
+  "exclusions": [
+    "Complete record reasons, rationales and other authored texts belong in the reading column; the tree carries the active sort's one reason. Recorded effects and currentness do not become new primary change-kind facts.",
+    "Code-changed without an admitted implementation fact for the displayed comparison. Leaf-wide measured code facts no longer require first walking the family; an unavailable/unknown intent is not overridden by that narrower fact."
+  ],
+  "id": "INV-W09GQM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "FamilyTree.triage.test.tsx and FamilyTree.triageReal.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 3",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "Established intent, code and membership facts retain their primary change-kind precedence. The active sort determines the tree row's one plain-word reason without replacing that classification.",
+  "status": "proposed",
+  "supersedes": []
+}

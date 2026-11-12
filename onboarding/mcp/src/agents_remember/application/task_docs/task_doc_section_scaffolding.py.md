@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-24T13:43+02:00 |
-| lastVerifiedCommitHash |  `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`|
-| lastVerifiedCommitDate |  2026-08-26T08:10:26+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [task-doc application overview](overview.md)
@@ -49,34 +39,28 @@ members and order, and appends each missing canonical register once.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation sources are configured for this repository-internal input boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
+No relevant external documentation was available after checking the configured source registry.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source and focused application tests prove the raw-shape and no-write boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The helper validates the entire raw list before copying and scaffolding only missing registers. | `scaffold_register_sections`; `_validated_section_list`; `_requires_register_scaffolding` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:40-51; mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:54-55 |
-| `_build_doc` routes create and replace candidates through this helper before canonical model validation. | `_build_doc` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:554-584 |
-| Register section scaffolding has one production entry point and validates the supplied section collection. | `scaffold_register_sections` | mcp/src/agents_remember/application/task_docs/task_doc_section_scaffolding.py:17-37 |
+- The helper validates the entire raw list before copying and scaffolding only missing registers. [1]
 
-## Cross-Repo References
+- `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation.
+
+- Register section scaffolding has one production entry point and validates the supplied section collection. [3]
+
+### Cross-Repo References
 
 No cross-repository boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository references were found. | n/a | n/a |
+No meaningful cross-repository references were found.
 
-## Update History
-
-- 2026-08-24T13:43+02:00 — Created for DAGQC L1: raw section list/member validation now
-  precedes register scaffolding without duplicating the canonical section schema. Verification
-  remains closeout-owned because the source is uncommitted.
+- `_build_doc` routes create and replace candidates through this helper (after the `kind` default) and only then through `_validate`, the canonical model validation. Anchor: `_build_doc` [2]

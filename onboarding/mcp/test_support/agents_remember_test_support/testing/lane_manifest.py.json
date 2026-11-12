@@ -1,0 +1,248 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+        "content": "sha256:296be70cd52e07d86935560c0258e08c15e31b958f5fb258b579d5ff9e31adc6",
+        "locator": {
+          "end": 120,
+          "kind": "line_range",
+          "start": 120
+        }
+      },
+      "id": "RLZ-4602Y1",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The lane loader refuses a manifest that it cannot read or parse with the text of unreadable_catalog, so a parse error carries the sentence about interleaved rows.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+        "content": "sha256:12c1afcf96e473d723ec3baf7a0a69b306f46ead3b468858bb706170b4108fc1",
+        "locator": {
+          "end": 229,
+          "kind": "line_range",
+          "start": 224
+        }
+      },
+      "id": "RLZ-CAM6RD",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The lane loader reports a lane member whose file does not exist and names the write command, so a lane line that a union brought back for a deleted test file is refused.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+        "content": "sha256:15503a9b1c3f9c346a4f81c38009adb200dc0f5c6a5a91e21a2eccb53ac0239e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_load_file_category"
+        }
+      },
+      "id": "RLZ-EFEH7V",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Adds the canonical-form finding of each lane list before the lane's members are loaded, so the lane loader refuses an unordered or duplicated lane list and names the lane.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+        "content": "sha256:48f38fec23a8eb55ee8f82077f0ade26edd34a0981b5c319a870a344c3c6fbd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_load_file_lane"
+        }
+      },
+      "id": "RLZ-FSCJD9",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "Returns without a finding when a path is listed a second time in the same lane, so the duplicate is reported once, by the lane list's own finding, and not as conflicting file lanes.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+        "content": "sha256:b7d7135ee75338b873d9b1847aab87b152c784b54b8226652662e75b46fd16a4",
+        "locator": {
+          "end": 122,
+          "kind": "line_range",
+          "start": 122
+        }
+      },
+      "id": "RLZ-T8MT97",
+      "invariant": "INV-RDQYV3",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-canonical-form-refused",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The lane loader starts its findings with the layout findings of the manifest, so a lane list that is not written with one path per line, or a table header the line scan does not read, refuses the manifest.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The layout check both loaders call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:f4b2cd7651cbd8abe33773ab2dcc4853308de2e6f6e55f4df77503a655581b6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "layout_findings"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The loader refuses an unreadable manifest and a manifest without a `[files]` table, starts with the layout findings, checks schema and top-level names, and compares the declared files with the test modules of the source tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Every accepting category must be present in `[files]`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:fd2533adca17e57e1727606b8bea6d7c54c738e2917d52b6312a7df419945e45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The path constant comes from the canonical-form module; diagnostic is not an accepting category.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:c07085c3aca223c873dac38cd872faf70e32827c22ec6a29e758bcc8597a6a27",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A lane list that is out of order or holds a duplicate is one finding that names the lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:15503a9b1c3f9c346a4f81c38009adb200dc0f5c6a5a91e21a2eccb53ac0239e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_file_category"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A path twice in one lane is left to the lane list's finding; a path in two lanes is a conflict; a path whose file is gone names the command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:48f38fec23a8eb55ee8f82077f0ade26edd34a0981b5c319a870a344c3c6fbd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_file_lane"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An override names an existing class or test node of a file that has a base lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9597f4d6cc690b1328670a33d53bd7fc449667cc2abdeea4493401a33319040a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_override"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A node's category is its file's lane unless the most specific override says otherwise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:ff1a20376789692ffe308a7fea6feb2d14e28cd4bdf09c9bfb8e5e21e816c6f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "category_for_node"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The collection hook turns a refusal of the loader into a usage error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+            "content": "sha256:3f51591bfdc5301926b452b47db4e3b8f0f4eb2a1aa42af08dad1992348c2c1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_modifyitems"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/rust/tests/unit.rs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture unit test target driven by the suite script.\n\nAnchor: `adds_two_values`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "577dbfe63e3f6fd70a193e1ef7dcc1f6c0c45dc8",
+            "content": "sha256:61c83fa7ec2855315b8695488021bb1e3b676f1b2eb6c97ea755391af980d021",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2283cd63b1a900b2661fae76a1a065dd4d016eea",
+            "content": "sha256:92df49754630acc34090ebbd6d882112d3cd0b499c5245daed9066b78bd84128",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/rust/scripts/run-suite.sh"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across 4 files that together perform the obligation."
+  },
+  "applicability": "Unconverted review descriptions.",
+  "conditions": [
+    "The requested input is positively identified as unconverted; lack of a readable Git answer is not that identification."
+  ],
+  "exclusions": [
+    "Converted reviews, which use tree comparisons and their own validator."
+  ],
+  "id": "INV-YJZKYC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/diff-census.json"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Note 15",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "A positively identified unconverted review is described as source-only legacy-unavailable; an unreadable native probe remains a named probe refusal rather than evidence that the input is legacy.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/serialize.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The CLI delegates JSON/text output to this module.\n\nAnchor: \"context_to_dict(\"; \"print_text(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14d473f12d1a8648d55e61e409ef9c491fdddded",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "mcp/src/agents_remember/cli/coordination_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14d473f12d1a8648d55e61e409ef9c491fdddded",
+            "content": "sha256:74d76eb1123be2aedfbc5cb06808edf93113b4cbe661ea4a1df3ad0a6e17a27e",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": "mcp/src/agents_remember/cli/coordination_resolver.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "14d473f12d1a8648d55e61e409ef9c491fdddded",
+            "content": "sha256:3d5eece3e31811fc3e082b49888af545075bb84d056c7a0a22c1bce1a25df8aa",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "mcp/src/agents_remember/cli/coordination_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The application context packet builds the packet with `context_to_dict()`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:f693daf76a853a8dd3717df397402b659122d0092f9d56512ec1cbb23653a985",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_context_packet"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:a74cfa6b84ea15d212447d2d0a679c2955630af5c6678e9ce334b7b5f09c73ce",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:b555aa17fe4af5d16d43fbd5b8426035a27e8b75737f9931a7e7582236902440",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

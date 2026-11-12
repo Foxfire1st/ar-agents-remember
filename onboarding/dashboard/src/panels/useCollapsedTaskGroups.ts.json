@@ -1,0 +1,100 @@
+{
+  "path": "dashboard/src/panels/useCollapsedTaskGroups.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate.\n\nAnchor: `LifecycleListImpl`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Focused tests pin the stable `operations.tasks.collapsed.v1` keys, independent sprint and master disclosures that stay collapsed across a remount, and BY PHASE grouping that stays flat and never changes selection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:648d3641cadb9afc8afaddac6940016d27c0ba30a09753d59372d058ed087123",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:6198e7d7d209fd8f98d52de7e1f0b1c85e6a8dd8f2742785ddf335c6546114b8",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:cbd0c9f6d01c7469fac5c917796c998fb9fdbbd793bde6564b4bb34d70f2fd4e",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The existing persisted-flag pattern was the worker's local implementation reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7b1d2d480c871325b9ea74ec9e5e598ff63c3f12",
+            "content": "sha256:ad936f43dfcb7947dbbfe837a85a3767febc155c73fa2c41c9365d5d8d26522d",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePersistedFlag"
+            },
+            "path": "dashboard/src/panels/file-viewer/usePersistedFlag.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One immutable persisted set supports both ordinary toggle and unconditional collapse, without a second opened-state store.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9a764615275cf934b43c9b1a0a07a0675e00d4c",
+            "content": "sha256:f26e36b6d41dffb2ee22b2bf9e94253efe07efa2e33719fb8885d323a3cf0749",
+            "locator": {
+              "kind": "symbol",
+              "name": "useCollapsedTaskGroups"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

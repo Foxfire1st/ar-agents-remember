@@ -1,18 +1,8 @@
 # dashboard/src/test/contract.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/test/contract.test.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T01:01+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`      |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
-[dashboard/src overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
@@ -20,23 +10,13 @@ The fixture-coverage guard for the generated TypeScript mirror. `types/projectio
 and stale-checked from the Pydantic projection schema; this file instead measures the hand-maintained
 `dashboard/src/fixtures/snapshot.json` sample against that generated contract in three directions.
 
-L23 registers the lifecycle operation result's open value map as an index-signature site and adds
+The guard registers the lifecycle operation result's open value map as an index-signature site and adds
 the operation kind, status, and phase paths to the closed-vocabulary registry. The registry is
 exhaustive over paths; the representative sample must reach each path and carry only legal values.
 The generated schema and stale-output check, not fixture row count, own exhaustive enum membership.
 
-**This file is also the file that failed.** It was supposed to prevent this leaf's defect and could
-not: it consumed the fixture as `snapshot as unknown as WorkspaceProjection`, a double cast that turns
-off assignability, excess-property checking and everything else at once. So a served field the mirror
-had never heard of typechecked and passed. That is how `State` stayed five members long while the
-server declared six, and how `Metrics` bucketed three states out of six — an `awaiting-developer`
-lifecycle rendered as healthy and was counted in no bucket at all. The rewrite replaces the double cast
-with `asServedProjection` and adds the two directions that were missing.
-
-Under CCR-R03@v1 the R03 leaf reformatted this file (double quotes → single quotes and collapsed
-multi-line literals) and re-synchronized the dashboard contract fixtures with the newly reserialized
-snapshot; no assertion, registry entry, or pinned expectation changed
-cit:(["the mirror declares everything the server sends"], dashboard/src/test/contract.test.ts:452-466).
+It consumes the fixture through `asServedProjection` rather than a `snapshot as unknown as WorkspaceProjection`
+double cast, which would turn off assignability and excess-property checking for the whole file.
 
 ## Code Commentary
 
@@ -44,210 +24,111 @@ cit:(["the mirror declares everything the server sends"], dashboard/src/test/con
 
 The lifecycle-operation phase registry contains no `ledger-commit` or `direct-ledger-commit`.
 It follows the two-output Python/generated contract, while the same sampled-value membership
-and non-vacuity assertions still cover the registered phase path. This retires obsolete values,
-without requiring a fictitious ledger publication sample.
+and non-vacuity assertions still cover the registered phase path.
 
 **Three seams, named in the header.**
 cit:(["the server grows a field", "the mirror declares something the server never sends", "THE ORACLE ITSELF"], dashboard/src/test/contract.test.ts:32-32; dashboard/src/test/contract.test.ts:40-40; dashboard/src/test/contract.test.ts:45-45)
 
-1. **`mirror ⊇ sampled payload`** — the sample carries a field the generated mirror does not.
-   `ServedOnlyPaths<Served, Mirror, Path>` names the assertion; a non-`never` union fails `tsc -b`.
-2. **`served ⊇ mirror`** — held by passing the fixture through `asServedProjection` plus the
-   `@ts-expect-error` pins at the bottom.
-3. **`fixture ⊇ mirror`** — **sample coverage** through `MirrorOnlyPaths` and `fixtureMustSample`;
-   the residue (exactly `projection.servingBuild` and `projection.agentNotifierHeartbeat`) is named
-   in `KnownUnsampled` and `allowlistMustStayEarned`.
+ServedOnlyPaths, asServedProjection and MirrorOnlyPaths guard the three sample/mirror directions. fixtureMustSample and allowlistMustStayEarned keep `KnownUnsampled` to the paths this guard genuinely cannot sample: `projection.servingBuild` and `projection.tasks[].providerLimit`. Exhaustive producer/client schema parity is the generator's and the stale-output check's, so this file is sample reach, assignability and sampled-vocabulary coverage, not schema equality.
 
-**The walls of the walk, derived rather than described.**
-`AbsorbingPaths`/`INDEX_SIGNATURE_SITES` (seven absorbing nodes) and
-`ClosedUnionPaths`/`VOCABULARIES` (every literal-union path registered and sampled) are `Record`s
-over derived path unions, replacing prose lists cit:([`INDEX_SIGNATURE_SITES`, `VOCABULARIES`], dashboard/src/test/contract.test.ts:225-249; dashboard/src/test/contract.test.ts:289-430).
-`valuesAt` reads every value at a dotted path, fanning out over arrays
-cit:([`valuesAt`], dashboard/src/test/contract.test.ts:435-450).
+Derived open-map/closed-union Record registries walk native entry stage/activity (`works`, `waiting`, `paused`, `unknown`), waiting-seat `waitsFor`, list-disagreement kind, summary, bound operations, the attention row's `itemClass`, and the served build currentness `mode` and `state`. The disagreement registry names `names-another-master`, `not-listed`, `listed-twice` and `unresolvable-master`; sampled-path nonvacuity and legal values remain distinct from exhaustive producer enum membership. valuesAt fans arrays; historical registry key counts are not a current quota.
 
-**The runtime suites** (`the mirror declares everything the server sends`; `the fixture
-samples everything the mirror declares`; `every closed vocabulary in the mirror is checked
-against the payload`; `projection contract fixture`; `metrics bucket every live
-lifecycle state`; `mirror does not invent fields the server cannot send`) carry
-the runtime membership, non-vacuity, bucket-uniqueness, spelling-parity, and inverted-pin checks
-cit:(["the served payload carries a bucket per live state"], dashboard/src/test/contract.test.ts:535-540).
+Nonvacuous runtime checks retain sample paths/vocabularies. Native task assertions require qualified identity and forbid duplicate identity/status/children/progress in summary. The only inverted pin is edge.refusedPolarity.
+
+`projection.analytics.driftSnapshots[].counts` is a registered absorbing site; the registry's size is not a quota.
 
 ### Conventions
 
-- All three structural directions are TYPE-level: free at runtime, enforced by `npm run typecheck`
-  (`tsc -b`). The runtime vocabulary assertions cover the sample facts JSON-module widening hides.
-- Every assertion reads a vocabulary or a derived registry rather than a hand-written list; the
-  three `@ts-expect-error` directives are registered as one sanctioned site in
-  `wireFixtureGuard.test.ts` (count 3).
+Structural guards are type-level; sample vocabulary assertions are runtime. The fixture guard sanctions one retained @ts-expect-error. Source inspection runs neither gate.
 
 ### Invariants And Boundaries
 
-- The fixture enters through `asServedProjection` and nowhere else.
-- `INDEX_SIGNATURE_SITES` and `VOCABULARIES` are `Record`s over derived path unions; never convert
-  their keys to an untyped list.
-- `KnownUnsampled` is meant to stay two entries long.
-- A vacuous check must read as a failure; both the per-path vocabulary loop and the absorbing-node
-  loop assert a non-zero sample count first.
+Keep asServedProjection, derived Record registries, the two earned unsampled residues (`projection.servingBuild` and `projection.tasks[].providerLimit`) and nonzero sample reach.
+A vacuous check remains a failure: absorbing-node reach and each vocabulary loop require nonzero samples before membership/reason checks. Registry keys stay typed as derived Records rather than untyped lists.
 
 ### Todos
 
 **What schema codegen closes — and what this sample guard still cannot prove.**
 
-1. Omitted nullable fields and complete producer vocabularies are covered by schema generation.
-2. Two field-identical models (`SeriesSectionNode`/`TaskSectionNode`) remain structurally
-   interchangeable in TypeScript.
-3. The snapshot remains a manual sample; these assertions are coverage, not provenance.
+Schema/stale-output checks own nullable-field and exhaustive vocabulary parity. A manual sample proves neither producer provenance nor nominal distinction between structurally equal models.
 
-## Docs References
+
+This contract case is sample reach, assignability and sampled-vocabulary coverage over the hand-maintained fixture; exhaustive producer/client schema parity belongs to the code generator and its stale-output check, and `projection.tasks[].providerLimit` is one of the paths this sample guard genuinely cannot reach.
+
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured in the resolved memory repository. The local
 serialization and typecheck contracts are supported by the source references below; this pass
 makes no separately verified external-library documentation claim.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external documentation source applies. | N/A | N/A |
+No configured external documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Two external behaviours are load-bearing: pydantic's `exclude_none` serialization and TypeScript's
 rule that an unused `@ts-expect-error` is itself an error. Both rows anchor on the in-repo fact that
 makes the behaviour load-bearing HERE.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain. | L289-L430 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| Persisted projection state is written by `write_projection` with omitted `None` values. | L158-L164 | [mcp/src/agents_remember/serving/projections/projection_store.py](mcp/src/agents_remember/serving/projections/projection_store.py) |
-| The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance. | L183-L187 | [dashboard/src/test/wireFixtureGuard.test.ts](dashboard/src/test/wireFixtureGuard.test.ts) |
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. | L30-L30; L34-L34; L62-L62 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. | L94-L103; L127-L129 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. | L147-L161; L187-L190; L193-L195; L198-L200 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `AbsorbingPaths` + `INDEX_SIGNATURE_SITES` — the seven absorbing nodes, derived and closed. | L210-L223; L225-L249 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. | L271-L287; L289-L430 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. | L493-L502 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| Bucket suites: a bucket per live state, per-state counting, non-injectivity, and spelling parity with the server. | L535-L540; L542-L563; L565-L573; L575-L593 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| The three inverted pins for `createdAt`, `linkedLifecycleId` and `refusedPolarity`. | L626-L626; L627-L627; L628-L628; L629-L629; L647-L647; L648-L648 | [dashboard/src/test/contract.test.ts](dashboard/src/test/contract.test.ts) |
-| The generated mirror's metric and analytics declarations. | L460-L464; L92-L106 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated mirror's gate and lifecycle projection declarations. | L289-L299; L365-L383 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The sanctioned narrowing the fixture enters through. | L41-L43 | [dashboard/src/test/servedProjection.ts](dashboard/src/test/servedProjection.ts) |
-| The independent fixture supplies the lifecycle rows sampled by the contract. | L1791-L1928 | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
-| The independent fixture supplies the metrics rollup checked against generated count fields. | L1929-L1940 | [dashboard/src/fixtures/snapshot.json](dashboard/src/fixtures/snapshot.json) |
-| The server's own bucket-name rule and its refusal of a non-injective mapping, which the spelling and uniqueness assertions mirror. | L249-L264; L267-L289 | [mcp/src/agents_remember/observer/projection.py](mcp/src/agents_remember/observer/projection.py) |
-| The producer's typed lifecycle vocabularies. | L19-L19; L20-L20 | [mcp/src/agents_remember/models/lifecycles/responses.py](mcp/src/agents_remember/models/lifecycles/responses.py) |
-| The registry entry sanctioning exactly three `@ts-expect-error` directives in this file, with its reason. | L183-L187 | [dashboard/src/test/wireFixtureGuard.test.ts](dashboard/src/test/wireFixtureGuard.test.ts) |
-| The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. | L20-L20; L21-L21 | [dashboard/src/test/wireFixtureGuard.test.ts](dashboard/src/test/wireFixtureGuard.test.ts) |
+- The lifecycle-operation phase registry lists no ledger publication phase; sample membership and coverage checks apply to it. [1]
 
-## Cross-Repo References
+- Persisted projection state is written by `write_projection` with omitted `None` values. [2]
+- The contract test's inverted TypeScript pins are registered as an explicit fixture-guard allowance. [3]
+
+- The header: three fixture-coverage seams, the double cast that disabled checking, and the boundary now closed by schema codegen. [4]
+
+- `ServedOnlyPaths` + `mirrorMustDeclare` — the `mirror ⊇ served` direction, naming the path. [5]
+
+- `MirrorOnlyPaths` + `KnownUnsampled` + `fixtureMustSample` + `allowlistMustStayEarned` — the oracle guarded, including why an empty array is worse than a missing field. [6]
+
+- AbsorbingPaths derives every string-index-signature boundary and INDEX_SIGNATURE_SITES is an exhaustive, closed Record of that derived path set, with reasons for opaque nodes in the current native-entry shape. The current literal registry has 10 keys; this is an observed census, not a fixed schema-count contract. The source test requires at least one sampled value and a nonempty reason at every registered site. Verification-age histogram and gate/ask sites are absent; drift counts are present. [7]
+
+- `ClosedUnionPaths` + `VOCABULARIES` — every registered path bound to its value set, replacing hand-written checks. [8]
+
+
+- Sample vocabulary assertion: every registered path is reached and every carried value is declared by its vocabulary. [9]
+
+- The vocabulary registry binds the build currentness mode and state paths to their value sets. [23]
+
+- The retained inverted field pin is the single EngineProcessEdge.refusedPolarity case: an @ts-expect-error access must remain invalid while the example edge keeps state stale. The suite does not retain the former createdAt/linkedLifecycleId master/series pins; this is source-defined typecheck evidence, not a fresh typecheck or test run. [11]
+
+- The generated mirror's metric and analytics declarations. [12]
+
+- The sanctioned narrowing the fixture enters through. [14]
+
+
+
+
+
+- The other half of the claim: this file makes the MIRROR honest; the guard makes the FIXTURES honest. [20]
+
+### Cross-Repo References
 
 No cross-repository boundary. The contract's producer (`observer/projection.py`) and its consumer (the
 dashboard mirror) both live in `agents-remember`; the seam this file guards is a language boundary
 inside one repository, not a repository boundary.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer. | L11-L11 | [mcp/src/agents_remember/observer/projection.py](mcp/src/agents_remember/observer/projection.py) |
+- The Python source of truth is in-repo, and its docstring states the served contract is client-agnostic rather than owned by any external consumer. [21]
 
-## L23 Lineage Contract Coverage
+## Lineage Contract Coverage
 
-Contract parity now registers recovery `args` as the lineage projection's one
+Contract parity registers recovery `args` as the lineage projection's one
 open index-signature site and checks every aggregate, edge, relation, side, and
 recovery-tool vocabulary against fixture samples and the server schema.
 
-## 260815-DAG-L4 Projection Contract
+## Projection Contract Boundary
 
-The L4 delta keeps the generated dashboard contract aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
-
-
-## 260815-DAG-L12 Vocabulary Additions
-
-The closed-vocabulary registry includes the two `executionGraphView` node-union paths (L12-R4): `projection.analytics.taskDocuments[].executionGraphView.nodes[].kind` and `...nodes[].frontierState`. The fixture must reach both paths and carry only declared values; schema generation owns their complete member sets.
-
-## CCR-R18@v1 Envelope Contract Vocabulary
-
-260831-CCR-L18 extended the fixture-coverage guard: `INDEX_SIGNATURE_SITES` now registers `projection.enclosures[].lifecycleOperation.recommendedAction.arguments` as an index-signature site, and the closed-vocabulary registry adds `schemaVersion` / `stateMatrixVersion` (single-member v1 literals), the `incoherent` status member, `identity.operationKind`, `worker.state` (live/termination-requested/termination-required/exited), and `approval.state` (claimed/unclaimed). The exhaustive path registry still requires the representative fixture sample to reach every newly registered path with only legal values.
-
-## Update History
-
-- 2026-09-15T01:01+00:00 — LCA-L9 R7 current candidate: Reconciled the phase registry with retired ledger publication phases; sample membership and coverage checks remain. Reviewed the uncommitted source; existing verification commit/date and all prior history are retained. This documentation pass adds no test-execution claim.
+The generated dashboard contract stays aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
 
 
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 7 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+## Execution-Graph Vocabulary
 
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the new envelope signature site and closed-vocabulary registrations (recommendedAction.arguments, version literals, incoherent status, worker/approval states). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
+Execution-graph kind/frontierState paths live under projection.tasks[].summary.executionGraphView.nodes[]. Derived sample reach/value checks remain; schema generation owns complete vocabulary membership.
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the R03 quote-reformat and dashboard fixture synchronization of this guard and refreshed the main seam anchor ranges; assertion semantics and registry entries are unchanged.
+## Envelope Contract Vocabulary
 
-- 2026-08-25T16:21:43+02:00 — 260824-PDLS-L12 curator: removed the redundant pooled
-  full-vocabulary fixture assertion and its stale rationale. The guard still proves exhaustive path
-  registration, non-vacuity, and legality of sampled values; generated schema/codegen owns exhaustive
-  producer enum membership. Also removed obsolete `not-created` from the invalidation vocabulary.
-  Verification awaits the candidate code commit.
+In the fixture-coverage guard, `INDEX_SIGNATURE_SITES` registers `projection.enclosures[].lifecycleOperation.recommendedAction.arguments` as an index-signature site, and the closed-vocabulary registry includes `schemaVersion` / `stateMatrixVersion` (single-member v1 literals), the `incoherent` status member, `identity.operationKind`, `worker.state` (live/termination-requested/termination-required/exited), and `approval.state` (claimed/unclaimed). The exhaustive path registry still requires the representative fixture sample to reach every registered path with only legal values.
 
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   closed-vocabulary registry adds the `executionGraphView` node kind and frontier state unions (L12-R4). Verified at code commit b7f2c8e2.
-
-- 2026-08-15T23:38+02:00 — Reconciled projection parity for organizational direct-super lineage and lifecycle guidance. Verification metadata remains closeout-owned.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the generated-contract registry now forces the exact
-  `organizational|atomic` execution-nature vocabulary exported by the server schema.
-- 2026-08-12T20:10+02:00 — L23 curator: documented complete server/dashboard lineage contract coverage; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: added the lifecycle result index-signature wall and exhaustive operation kind/status/phase vocabulary coverage; verification provenance remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-10T10:35+02:00 — 260731-EFA-L9 curator repair: refreshed this staged card from the current onboarding body and re-resolved moved/deleted citations; verification metadata remains pinned until L9 closeout.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-04T13:49:32+02:00 — 260731-EFA-L6 S18-B02 curator: split the Todos claims across their complete codegen, structural-typing, and manual-sample/oracle spans; extended vocabulary coverage through path/value population and comparison loops while preserving the passing inverted-pin evidence; regenerated the final ranges with the scoped fixer.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: re-scoped this file to its current job:
-  coverage of a manual sample against the generated mirror. Schema codegen now closes nullable-field
-  and producer-vocabulary drift; structural identity and sample completeness remain separate limits.
-  The two existing header anchors/ranges in row 212 were preserved, and only the obsolete codegen
-  anchor is handed off through the scoped citation fixer.
-
-- 2026-08-02T07:20+02:00 — 260731-EFA-L6 curator (citation migration): moved all 37 citations in this
-  card onto the anchored format. Nineteen prose ranges became `cit:([<anchor>], <path>:<start>-<end>)`
-  and eighteen table rows gained an Anchor and a `path:start-end` Source. Three kinds of anchor were
-  needed and the mix is the TypeScript story: type aliases, functions and `const` registries resolve as
-  DEFINITIONS (`ServedOnlyPaths`, `MirrorOnlyPaths`, `AbsorbingPaths`, `ClosedUnionPaths`,
-  `INDEX_SIGNATURE_SITES`, `VOCABULARIES`, `valuesAt`, `sampledByVocabulary`); every `describe` / `it`
-  name is a STRING LITERAL, not a binding, so the six runtime-suite bullets and the bucket/pin rows are
-  anchored on double-quoted literals; and the file header — three seams, the double cast, the
-  `LEFT FOR CODEGEN (R3)` limits — is a comment, so it is anchored on quoted lines of its own prose.
-  `asServedProjection` was the one citation that had silently meant another file: its old `L75` pointed
-  inside this card's own file, and the definition is in `servedProjection.ts`, which the row and the
-  prose now name. The three inverted pins are anchored on the `@ts-expect-error` reason strings rather
-  than on `createdAt` / `linkedLifecycleId` / `refusedPolarity`, because those are field MENTIONS here
-  (declared in `types/projection.ts`) and each occurs at several unrelated lines. The two Docs
-  References rows named URLs, which `path:start-end` cannot express: the vendor page moved into the
-  Finding and each row is now anchored on the in-repo fact that makes the behaviour load-bearing — the
-  `write_projection` dump for `exclude_none`, and the `typescript` pin in `dashboard/package.json` for
-  `@ts-expect-error`. No claim was re-pointed and no claim text was changed; ranges were regenerated
-  from the anchors by the fixer rather than typed.
-- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the two ranged
-  `projection.py` citations after a worker inserted ten lines above them, and widened both ends that
-  were already stopping short of a named symbol. The bucket-rule row L220-L263 → L230-L273
-  (`state_count_field` L230-L245, `state_count_fields` L248-L270 with the non-injective `raise` at
-  L264-L267, `STATE_COUNT_FIELDS` L273). The split-pairs row L542-L568; L624-L645 → L552-L582;
-  L634-L659: the old ends landed inside `TaskSectionNode` and `SeriesSectionNode` rather than past
-  them, so the two section models the claim names were only half covered — the ranges now run
-  `TaskSubTaskRefNode` L552-L569 + `TaskSectionNode` L572-L582 and `SeriesSubTaskNode` L634-L649 +
-  `SeriesSectionNode` L652-L659. The `L1-L14` docstring citation sits above the insertion point and
-  still reads back ("client-agnostic" at L11), so it was left alone. No body text changed.
-- 2026-08-01T09:40+02:00 — 260731-EFA-L4 curator: created. Records the three seams and, plainly, that
-  this file is the guard that failed — the `as unknown as WorkspaceProjection` double cast is what let
-  the five-member `State` union and the three-bucket `Metrics` pass. Documents `ServedOnlyPaths` /
-  `MirrorOnlyPaths` (including why an empty array is worse than a missing field), the derived and closed
-  `INDEX_SIGNATURE_SITES` (seven nodes, replacing a prose list of four that missed three) and
-  `VOCABULARIES` (11 paths, 6 vocabularies, replacing two hand-written checks), the full-coverage
-  assertion, the bucket suites and the three inverted `@ts-expect-error` pins. Carries the file's own
-  three `LEFT FOR CODEGEN` limits unflattened, plus the oracle's limit — the fixture is hand-maintained,
-  so the mirror↔server link is held by no test. Verification metadata pinned to the leaf base
-  `abc7cbcc74921cdcb57a61529445f61641e919e7` until closeout stamps the L4 code commit.
+- The closed-vocabulary registry includes all four task-list disagreement kind values; its existing sample guard is not live record reconciliation. [22]

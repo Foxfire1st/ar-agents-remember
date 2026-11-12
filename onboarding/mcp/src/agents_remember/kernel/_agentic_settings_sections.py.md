@@ -1,29 +1,22 @@
 # mcp/src/agents_remember/kernel/_agentic_settings_sections.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-06T21:59:04+00:00 |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview      | `../../../overview.md`                                          |
-
 ## Governing Overview
 
-[MCP package overview](../../../overview.md)
+[overview](../../../overview.md)
 
 ## Purpose
 
-``orchestration`` section parsers: loops, roles, concurrency, expectations, supervisor,
-escalation, spawn, and the quality gate (260731-EFA-L17).
+``orchestration`` section parsers for loops, roles, concurrency, harness IDs, spawn and the quality gate. Expectations, supervisor and agent-notifier sections have no parser or typed execution consumer in this module.
+
+Also parses landing: default 900; positive integers only and unknown keys refuse.
+
+Parses role/default and other agentic settings sections.
 
 ## Code Commentary
 
-`_parse_expectations` preserves omitted SLA defaults and overrides only explicitly named kinds. Unknown block fields/kinds, booleans, nonnumbers and nonpositive seconds refuse. This preserves configuration meaning documented by the retired expectation test card without claiming that test remains active. Source: mcp/src/agents_remember/kernel/_agentic_settings_sections.py:260-285.
+`_parse_harnesses` returns two parts: the effective harness IDs (the built-in ID prefix followed by settings-added IDs) and each harness's `extraArgs` entries, which are handed on beside the IDs rather than folded into them. Entries must remain objects with known legacy execution keys, but those fields are not read or validated as execution choices. `_parse_roles` likewise admits unused legacy launch/session keys without placing them in `RoleKnobs`, and it admits a role's `extraArgs` only where `_require_extra_args_place` allows it: never for a confined capability, and never for a named harness that takes no extra arguments in this build. The host catalog validates actual launch choices later; neither retained vocabulary nor ignored input is a native adapter fallback.
 
-L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any other value. CCR-R22@v1 (L22, commit `685f83c44055`) removed the executor key from the quality gate parser entirely: `_parse_quality_gate` now rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
+`_parse_quality_gate` rejects any `executor` key as an unknown key (fail loud via the shared machinery) and returns `QualityGateSettings(memory_cap_bytes=...)` only -- executor identity belongs to the repository certification profile.
 
 - `_parse_loops`
 - `_parse_loop_defaults`
@@ -31,78 +24,100 @@ L23 parsed `qualityGate.executor` as exactly `local` or `dagger` and refused any
 - `_parse_loop_levels`
 - `_parse_roles`
 - `_parse_roles_per_level`
+- `_parse_feature_values`
+- `_optional_role_text`
 - `_parse_concurrency`
-- `_parse_expectations`
-- `_parse_supervisor`
-- `_require_supervisor_floor_seconds`
-- `_parse_escalation`
-- `_parse_escalation_sla_seconds`
-- `_parse_escalation_rung_seconds`
-- `_parse_respawn_after_rung`
+- `_parse_harnesses`
+- `_parse_service_tier`
+- `_resolve_role_keys`
 - `_parse_spawn`
-- `_parse_quality_gate` (260731-EFA-L17/L24: `orchestration.qualityGate`,
+- `_parse_quality_gate` (`orchestration.qualityGate`,
   absent/empty means adapter-runtime-managed, fail-loud unknown keys, positive-int
-  `memoryCapBytes` when present; CCR-R22 removed the `executor` key)
+  `memoryCapBytes` when present; no `executor` key)
 
-## 260731-EFA-L17/L24 Quality-Gate Parser
+### Role Runtime and Scope
+
+_parse_service_tier accepts only a nonempty string when serviceTier is present; Boolean fast flags or blank/wrong-shaped values refuse. _parse_roles places it in RoleKnobs for normal and per-altitude settings. Actual provider feature capability is validated at native launch, not guessed during config parsing. `_parse_roles` now also reads optional `mode`/`notes` text and a `featureValues` map of booleans or nonempty option ids into RoleKnobs, and harness ids are shape-checked free strings while catalog validation stays at launch; `_parse_roles`/`_parse_roles_per_level` take no `harness_ids` parameter.
+
+
+## Quality-Gate Parser
 
 `_parse_quality_gate` parses `orchestration.qualityGate` into
 `QualityGateSettings`: an absent family/key keeps `memory_cap_bytes=None`, unknown keys
 fail loud via `_refuse_unknown(block, KNOWN_QUALITY_GATE_FIELDS, ...)`, and
-`memoryCapBytes` must be a positive integer (`_require_positive_int`). Since CCR-R22 the
-former `executor` key is no longer a known field: any value under it is rejected as an
-unknown key (the old permissive `dagger`-only acceptance branch was deleted). A `null` at the
+`memoryCapBytes` must be a positive integer (`_require_positive_int`). `executor` is not a
+known field: any value under it is rejected as an unknown key. A `null` at the
 family key is refused by `_refuse_null_families` before this parser runs.
 
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/kernel/_agentic_settings_sections.py`.
 
-## Repo-Internal References
+## Current Contract — Scoped Launch And Settings Changes
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
+_parse_roles delegates ordinary choice parsing to _role_choices and attaches optional _parse_step_up through dataclasses.replace. Existing flat/per-altitude parsing and per-file role-alias conflict checks remain unchanged.
 
-## L23 Final Candidate Disposition
+_parse_step_up admits only ordinary KNOWN_ROLE_LAUNCH_FIELDS plus afterTries. afterTries must be a positive whole integer and is allowed only for Worker/Curator, defaulting to three there and None elsewhere. Unknown keys, nested stepUp, null/wrong shapes and conflicting normalized tier aliases refuse with exact owner/source.
 
-The orchestration quality section projects Dagger-only executor policy through strict settings
-models. Unknown or legacy executor values fail validation instead of activating compatibility code.
+Choice shape remains nonempty harness/model/effort strings, optional mode/notes text and boolean/nonempty-option feature values. Host capability validation and effective no-op checks remain later boundaries; repository stepUp authority is refused by the loader, not silently honored by this parser.
 
-## R39 Dagger-Only Settings Refusal
+Loop budgets, quality memoryCapBytes-only parser, landing timeout and accepted-unused legacy execution keys retain their existing distinct contracts.
 
-The parser accepts only the Dagger executor and describes every other value as forbidden host test
-execution, not a lower-authority diagnostic option. The optional cap is a container resource
-policy.
+`_parse_roles` skips a row keyed by a removed role name (`UNUSED_ROLES`: `designer`, `strategist`) without checking its shape, so it never becomes `RoleKnobs`; `_parse_loop_levels` drops a `portfolio` posture of `strategist` and keeps every other nonempty posture string.
 
-## CCR-L42 current candidate
+- A portfolio strategist posture is dropped; other postures stay open strings [10]
+- Removed role rows are skipped before shape checks [11]
 
-Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
-
-## Update History
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Loop-default parsing now rejects `maxRounds` above `MAX_REVIEW_ROUNDS` with a typed settings error; positive values at or below the hard review limit retain the existing parsing contract.
-
-- 2026-09-06T21:59:04+00:00 — Preserved source-verified expectation semantics from retired test onboarding; verification pins unchanged.
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the executor-key removal from the quality-gate section parser -- the old dagger-only acceptance branch was deleted and `executor` now fails loud as an unknown key; memoryCapBytes-only parsing remains.
+## Evidence
 
 
-- 2026-08-14T11:25+02:00 — R39 curator: recorded the host-test refusal and container-owned cap
-  semantics. Verification remains closeout-owned.
-- 2026-08-14T06:32+02:00 — L23 final candidate review: orchestration quality settings project the
-  Dagger-only execution contract and exact policy fields without adding fallback selection.
-  Verification remains closeout-owned.
+- Existing role parsing attaches one typed alternative. [4]
 
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator body review: reconciled this card with the exact current source delta described above; verification provenance remains closeout-owned.
 
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24 curator: recorded that absent or
-  empty quality-gate settings select host-managed memory and only an explicit
-  positive integer enables the cap. Verification metadata remains pinned until
-  closeout stamps the L24 code commit.
+- Ordinary shape parsing is shared without adding a new execution adapter. [5]
 
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 curator: recorded `_parse_quality_gate`
-  and the family's default/fail-loud/positive-int contract. Verification metadata
-  stays pinned until closeout stamps the 260731-EFA-L17 commit.
+- Counted-role-only threshold defaults to three and refuses nested/unknown fields. [6]
 
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+- Test source names exact author file/key for invalid alternatives. [7]
+
+- Boolean, zero and fractional thresholds refuse through the shared validator. [8]
+
+
+### Repo-Internal References
+
+The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module.
+
+### Runtime Source References
+
+- Frozen implementation of _parse_service_tier supporting the stated file behavior. [1]
+
+## Quality Executor Ownership
+
+The quality section parses only optional `memoryCapBytes`; every `executor` key is refused as unknown. Executor identity is profile-owned, not a parser-selected adapter.
+
+## Dagger-Only Settings Refusal
+
+The parser accepts no executor key, including a Dagger-valued key. The optional positive cap is resource-policy data; adapter execution policy is owned outside this parser.
+
+## Review Round Budget
+
+`_parse_loop_defaults` accepts every positive whole-number `maxRounds` and uses `DEFAULT_LOOP_MAX_ROUNDS` when absent, with no upper ceiling. Zero, negative numbers, fractions and booleans still fail through `_require_positive_int` with the settings field; reviewer reuse and complexity parsing are unchanged.
+
+## Investigator scope and request identity
+
+The one earlier role key and canonical Investigator key are compared within each settings file before layering. Equal effective values normalize once; conflicting values refuse with the shared role-alias notice rather than choosing a winner. Stored settings files are not rewritten and no additional aliases are admitted.
+
+
+- The earlier `system-specialist` key and the canonical Investigator key are compared within one settings file: equal content normalizes once and different content refuses. [3]
+
+
+## Refreshed current evidence
+
+
+- `_parse_roles` resolves the role keys, skips removed role rows and builds one `RoleKnobs` per role. [2]
+
+
+- `_resolve_role_keys` admits `CAPABILITY_IDS` keys beside the role keys, which is how a capability's launch block passes the unknown-key refusal without becoming a dispatchable seat. [9]
+
+- `_resolve_role_keys` also admits the removed role names in `UNUSED_ROLES`, so an old `designer` or `strategist` row passes the unknown-key refusal as an inert key [12]

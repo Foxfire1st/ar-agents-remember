@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/settings.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8f7aede928787476f95e2a0294befd268bcfbbcd",
+        "content": "sha256:3455b719a99151fb60517eea48697ca02d6d3583ada15cbad636dcf9f38bc8ae",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3F7134",
+      "invariant": "INV-B7D1WM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-15",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Coordination context reads retain their authority/config boundaries while routing the user layer through the migrated path.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "4": {
+      "note": "The JSON sibling first, then the default, then the fenced Markdown blocks, all through the recorder. Source caption: `parse_coordination_settings`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8f7aede928787476f95e2a0294befd268bcfbbcd",
+            "content": "sha256:c7ced00e2f88651401c0f3a38fc3add0dbc0b25152dd8057562b12ffbd7c29f5",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The absent JSON sibling and the consumed Markdown bytes are recorded; a JSON file that appears is a change.\n\nAnchor: `_settings_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

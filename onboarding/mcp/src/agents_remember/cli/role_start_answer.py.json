@@ -1,0 +1,328 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_start_answer.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:7a3de4ee03db69a68bb7bed2d91817592aca3d20f0cb22440f1a885e41f46635",
+        "locator": {
+          "kind": "symbol",
+          "name": "_launch_refused"
+        }
+      },
+      "id": "RLZ-0AF81G",
+      "invariant": "INV-ZD9BK1",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-receipt-4",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Formats a launch-refused result with the supplied detail and a remedy restricting same-request repeats to the same selection and override; this helper does not inspect host agent state.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:5b3730cf58e1473a47c87533c76e443d291cf1b1603775ac37bd189520cc6443",
+        "locator": {
+          "kind": "symbol",
+          "name": "_started_agent_id"
+        }
+      },
+      "id": "RLZ-BN5QYK",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-receipt-1",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Reads the exact started agent identity from its recorded execution or receipt without creating another seat.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:ce7afe7a2c98da194eacfd8b0c70bcd1cc86e033855db28325a12cfa834e484e",
+        "locator": {
+          "kind": "symbol",
+          "name": "second_copy_loaded"
+        }
+      },
+      "id": "RLZ-D5PVDQ",
+      "invariant": "INV-HFREW1",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 5",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Reads the launch receipt: a second copy is loaded where the agent carries the task server and no record of the host's mode keeps the other out.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:903ae84db41653736a96175d0e1388126f3aed6b946bc1c90e719a11511db73e",
+        "locator": {
+          "kind": "symbol",
+          "name": "started_answer"
+        }
+      },
+      "id": "RLZ-FYTPV0",
+      "invariant": "INV-0GPNBS",
+      "origin": {
+        "handoffEntry": "L188-B02",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The successful launch producer binds the real seat and its continuation addresses.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:7781bfcbcbdf5f6706a7e352e24f8ab303f89836ba57b562ec6410dc1480f2bc",
+        "locator": {
+          "kind": "symbol",
+          "name": "_projects_preparation_note"
+        }
+      },
+      "id": "RLZ-STRQRP",
+      "invariant": "INV-ZVQ7E3",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule6",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "This projection explains the Projects host capability limit in the role_start answer. It derives the note from the returned preparation value and does not perform a list read, timing inference or another opening operation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+        "content": "sha256:fcb9199bf1b2a0c593c157799034494f393d5dac61995270667e5c72fd5bd361",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_agent_that_is_gone"
+        }
+      },
+      "id": "RLZ-V8MQXT",
+      "invariant": "INV-ZD9BK1",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-receipt-4",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Reads the host state for the recorded agent, reports an unreachable read, and refuses an archived or missing agent without creating a replacement for that request.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Receipt identity, status, disclosure and conditional remedy all derive from saved state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:903ae84db41653736a96175d0e1388126f3aed6b946bc1c90e719a11511db73e",
+            "locator": {
+              "kind": "symbol",
+              "name": "started_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public facade delegates to this extracted owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:482394491c5ccfc71c75ec8a1d8cf243273b23a4cb06930b267e4f0a43d713b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_started"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Registered tool test source requires same-request recovery text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:08b0253c5c205f75dcfe81f7f0eebee5baed056d371b558eaa52e7703aa6e34e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retryable_empty_seat_tool_answer_preserves_same_request"
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Ordinary rejection retains new-request advice.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:9ced9aed8c51779af29b6e64f032eaff532eb8f55f27832cec4fc17d4d915041",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_nonretryable_tool_rejection_keeps_new_request_guidance"
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence.\n\nAnchor: Current receipt publication versus answer projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
+            "content": "sha256:2d9fcd4224b3aa8a1056860ebc8387fe9f8f371fd84a9ab8c81eaac043799bf1",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/cli/role_activity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:7444244c4bf0aafe48c70951dd2b4d08494b80c9612b41cb44b3b397151ca660",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:335301dc67e6a6ce25d1e76d95073f50c01b78998c766e879349f05afade47e3",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:fb204c62fce606ae6c928d09415ba9506ab2110ae7f1e06b0bfb1351365f5a62",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:e0599bedbc353596bd239ec382536966f335442da377d98f4bbad012c85c2ba8",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The receipt-derived answer that adds the continuation for the free agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:903ae84db41653736a96175d0e1388126f3aed6b946bc1c90e719a11511db73e",
+            "locator": {
+              "kind": "symbol",
+              "name": "started_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A bootstrap start answers with its seat and the place it is continued, and a dashboard that does not answer is reported instead of published.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
+            "content": "sha256:f74296314bb403b371679681d3bca7c7ec9aa06fdb271bd688a6b753fab04114",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bootstrap_start_answers_with_its_seat_and_the_place_it_is_continued"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "7e159b5edd1a237f0d4ad5b8153b6542d6affa4e",
+            "content": "sha256:c7da8e8fa7cc958ef689e00a5ffbe736605b98329d7f1acf81a66b0be5e714fc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_dashboard_that_does_not_answer_is_reported_instead_of_published"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_delivery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Dashboard publication requires the owner/origin result; host chat independently derives its route from embed, reported server id and receipt agent id without an HTTP chat-page probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:ad95058fbcf856b0e4b52dafe052aa9d252ef588543e0131c13ff6e5fa16751c",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c0abcb3674155b26a1d2bf83643c47d454800979",
+            "content": "sha256:0504c52d1d1df5ff4c37535158f0c2e2c92d7609e5bcd261e56e3b474b0f80c0",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard_address.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

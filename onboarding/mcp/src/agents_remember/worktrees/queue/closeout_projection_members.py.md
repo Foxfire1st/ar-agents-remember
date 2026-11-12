@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Closeout queue overview](overview.md)
@@ -63,33 +53,29 @@ the public function or model instead of re-deriving its lower-level state machin
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-253 |
+- No external domain source is required to establish this repository-owned implementation. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Member construction consumes an exact precomputed topology fingerprint and the typed bound graph context. | `projection_member` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:35-72 |
-| Candidate-local activation waits are combined with door admission before optional DAG waits. | `projection_member`; `_admission_waiting_reasons` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:48-72; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:99-107 |
-| Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals. | `candidate_task_topology_fingerprint`; `semantic_topology_projection` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:184-226 |
-| Door intent absence/staleness become explicit member blockers. | `ProjectionMemberContext.task_intent`; `_projection_blockers` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:45-45; mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:76-102 |
+- Member construction consumes an exact precomputed topology fingerprint and the typed bound graph context. [2]
+- Candidate-local activation waits are combined with door admission before optional DAG waits. [3]
+- Queue adapters delegate v2 projection/fingerprinting and preserve typed domain refusals. [4]
+- Door intent absence/staleness become explicit member blockers. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference applies. | `ProjectionMemberContext` | mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py:1-253 |
+- No meaningful cross-repository reference applies. [6]
 
 ## CCR-R02@v2 Door-Intent Member Readiness
 
@@ -98,29 +84,3 @@ meaning changes. `_projection_blockers` surfaces that rule as `door-task-intent-
 and `door-task-intent-stale`, so a door bound to missing or different intent blocks scheduling
 readiness exactly, without the queue becoming an intent authority. Part of the landed L25 candidate
 `99dc249b`.
-
-## Update History
-- 2026-09-13T14:36+02:00 — Corrected the member-waiting prose to contract-scoped activation: the addressed contract's own record reports vacant/reconciling/active and no foreign master's state contributes a waiting reason. Content change after the activation re-keying; `lastVerifiedCommitHash` remains closeout-owned.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  the member readiness projection now binds the leaf's canonical task-intent identity and reports
-  `door-task-intent-unavailable`/`door-task-intent-stale` member blockers. Verified at code
-  commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-09-01T03:58+02:00 — Checklist follow-up: re-read the structurally changed member context,
-  retained its exact claim/range, and anchored the row on the stable construction function while
-  leaving commit verification to closeout.
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: replaced the queue-private whole-document
-  topology digest with the task-domain `semantic-topology/v2` owner, bound graph index, and exact
-  typed error translation. Verification remains closeout-owned.
-
-- 2026-08-26T08:25+02:00 — Rebound the three full-module citations to the frozen 234-line source;
-  no semantic claim changed.
-
-- 2026-08-26T03:37+02:00 — Replaced sequential contract-census owner fields with explicit
-  candidate-local activation waits and removed graph-less synthetic lane ordering. Verification
-  remains post-Dagger/closeout-owned.
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.

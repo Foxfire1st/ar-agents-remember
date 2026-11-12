@@ -1,104 +1,63 @@
 # dashboard/src/panels/changeset/ChangeSetViewer.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/changeset/ChangeSetViewer.test.tsx`   |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-07-12T12:55+02:00                                      |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [changeset/ overview](overview.md)
 
 ## Purpose
 
-Vitest/jsdom test for the Change-Set Viewer screen + its Cockpit/DetailPanel wiring. It stubs the global
-`fetch` with a URL-aware change-set fixture (CodeMirror is kept out of jsdom — the live `MergeView` render
-is covered by build + typecheck, matching the L2 `FileViewer.test.tsx` approach), and asserts the screen,
-master-mode row inspection, the DetailPanel button → target, and the Cockpit takeover's initial state.
+`ChangeSetViewer.test.tsx` proves the cockpit change-set takeover wiring at its boundary: its only
+cockpit case mounts the shell on an injected Operations view with a projection already applied and
+asserts the takeover is absent initially with the Operations rails present. Direct `ChangeSetViewer`
+and `DetailPanel` cases elsewhere cover the viewer and its open callback; no cockpit case asserts a
+rendered positive takeover.
 
+The viewer's screen tests render `ChangeSetViewer` (with the diff column mocked) over stubbed fetch answers. They cover loading, error retention, scope/leaf/master listings, working-view polling discipline, generation-pinned expansions, per-leaf net attribution, refusals and measured-empty states — and, new in W03, the comparison selector with a review context, including the empty-filter boundary.
 ## Code Commentary
 
 ### Logic
 
-The viewer tests cover loading-before-data, explicit request errors, the
-master `includeLeaves=false` request, and a fake-timer working refresh that
-proves no next cycle begins while the prior list/file requests remain pending.
+The takeover-wiring case applies a projection before mounting `CockpitShell` on an injected
+`initialView="operations"` and asserts the viewer is **absent** with the Operations rails present; it
+does not assert the viewer becoming present. Direct `ChangeSetViewer`/`DetailPanel` cases elsewhere
+cover the positive rendering and its open callback.
 
-`stubChangeset()` installs a `vi.fn` `fetch` that returns `MASTER_CHANGESET` for `/api/changeset/master`,
-`TASK_CHANGESET` for `/api/changeset/task`, and `{}` otherwise. Cases:
+### Conventions
 
-- **task scope** — renders `<ChangeSetViewer repo scope onBack/>`, awaits `changeset-counters`, and
-  asserts the changed code + onboarding rows render, the counters contain `+3`, and the no-file empty
-  state prompts "Select a changed file" — now asserted via `container.textContent` (the prompt comes
-  from the siege-tank `EmptyStateBackdrop`, not a bare `pane-placeholder`). cit:(["renders the changed-file rows + counters for a task scope"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:107-120)
-- **back link** — clicking `changeset-back` calls `onBack` once. cit:(["calls onBack when the back link is clicked"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:122-130)
-- **master mode** — `<ChangeSetViewer repo master onBack/>` now renders **clickable** rows; before a
-  pick it shows the same empty-state prompt (asserted via `container.textContent`), and clicking a row
-  opens a diff (`ChangeSetPane` is mocked so CodeMirror stays out of jsdom). cit:(["opens a per-file NET diff from a clickable row in master mode"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278)
-- **leaf mode** (L4a) — `<ChangeSetViewer repo master leaf mode="committed"/>` loads via the `task` route
-  (the stub returns `TASK_CHANGESET`), labels the header `committed · <leaf>`, and is per-file inspectable
-  (a row click opens the diff pane); a `mode="working"` case asserts the `working · <leaf> · uncommitted`
-  label.
-- **working auto-poll** (L4a) — with `vi.useFakeTimers`, a `mode="working"` viewer (after opening a file)
-  re-fetches BOTH `/api/changeset/task` (the list) and `/api/changeset/file-diff` (the open diff) after the
-  interval advances (≥2 calls each = load/open + a poll), while a `mode="committed"` viewer stays at exactly
-  1 each (the interval is gated off).
-- **DetailPanel entry** — over the `full` gallery projection, a lifecycle selection renders an
-  `open-changeset` button whose click calls `onOpenChangeSet` with the series target `{ repo, master }`
-  (the fixture has no `activeWorktreeGroups`, so only the series button shows). cit:(["renders a series change-set button for an enclosure-backed lifecycle and opens the target"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:282-293)
-- **Cockpit takeover** — `<CockpitShell/>` shows no `changeset-viewer` initially and keeps the
-  `rail--left` + `data-fullbleed="false"`. cit:(["does not show the takeover initially and keeps the Operations rails"], dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:297-304)
+Vitest + Testing Library; the dashboard store is seeded through the fixture gallery.
 
 ### Invariants And Boundaries
 
-Pure unit test: `fetch` is stubbed, globals are unstubbed after each case. It pins the screen's row /
-counters / empty-state (the "Select a changed file" prompt, now matched on `container.textContent`
-since the siege-tank `EmptyStateBackdrop` provides it) behaviour, the DetailPanel → target contract, and
-the Cockpit takeover's not-shown-initially state — not the live CodeMirror diff (kept out of jsdom by
-design).
+The test binds the takeover visibility contract on the Operations view and does not assert the
+Knowledge reader or the product tab list.
 
-## Repo-Internal References
+### Todos
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| URL-aware `fetch` stub for the change-set endpoints. | `fetch` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:24-42 |
-| Screen rows + counters + empty-state prompt (matched on `container.textContent`); master-mode clickable row opens a diff. | "renders the changed-file rows + counters for a task scope"; "opens a per-file NET diff from a clickable row in master mode" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:107-120; dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:262-278 |
-| DetailPanel button calls `onOpenChangeSet` with the series target. | `onOpenChangeSet` | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:285-285 |
-| Cockpit shows no takeover initially and keeps the rails. | "does not show the takeover initially and keeps the Operations rails" | dashboard/src/panels/changeset/ChangeSetViewer.test.tsx:297-304 |
-| Subject under test: the screen. | `ChangeSetViewer` | dashboard/src/panels/changeset/ChangeSetViewer.tsx:416-478 |
+No additional work is asserted by this card.
 
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
+The W03 coverage mounts the viewer with `comparison={5}` and a full `reviewContext` (lane destinations plus inventory) so the filter buttons and the filtered list run as the reviewer opens them. The boundary test switches to `Unknown attribution (0)` on an empty destination and asserts the list reads `No changed file in this filter` with the diff pane cleared, proving a filter that matches nothing is an explicit empty state rather than a stale diff. Existing scope/leaf/master cases are unchanged and still pin master expansions to the listed generation.
+## Evidence
 
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 11 citation finding(s); scoped recheck clean.
+### Docs References
 
-- 2026-07-31T17:48+02:00 — 260731-EFA-L2 curator: re-derived 3 stale self-citations after the
-  loading/error and non-overlapping-refresh cases were inserted ahead of them. The back-link case
-  moved L62-L70 → L122-L130, the master-mode clickable-row case L72-L81 → L262-L278, and the
-  DetailPanel entry case L84-L97 → L282-L293. No described behaviour changed.
+No domain documentation source is configured for this repository. The requirement packet
+`MIK-R79@v1` (rule 16) fixes the opening view; it lives outside the code and memory repositories, so
+it is named here and not cited as a row.
 
-- 2026-07-12T12:55+02:00 — 260712-TRH-L2: added loading/error, master query-shape, and non-overlapping working-refresh regressions while retaining task, master, leaf, and DetailPanel entry coverage. Verification metadata pinned until closeout stamps the L2 code commit.
+No configured live documentation source was available for this pass.
 
-- 2026-06-30T00:00:00+02:00 — L5 (diff-viewer polish): the empty-state assertions in the **task-scope** and
-  **master-mode** cases now match `container.textContent` for "Select a changed file" instead of
-  querying the `pane-placeholder` testid — the prompt is now provided by the siege-tank
-  `EmptyStateBackdrop` rather than a bare placeholder. Verification metadata pinned until closeout
-  stamps the L5 commit.
-- 2026-06-29T23:00+02:00 — L4a: added **leaf-mode** cases — a committed leaf loads via the `task` route,
-  labels the header `committed · <leaf>`, and is per-file inspectable; a working leaf shows the
-  `working · <leaf> · uncommitted` label — plus a **working auto-poll** case (fake timers: working
-  re-fetches both the list and the open diff after the interval, committed does neither). Verification
-  metadata pinned until closeout stamps the L4a commit.
-- 2026-06-29T17:00+02:00 — L4 follow-up: the **master-mode** case now renders clickable rows and asserts a
-  click opens a diff (`ChangeSetPane` mocked), replacing the old accumulated-placeholder assertion.
-  Verification metadata pinned until closeout stamps the L4 follow-up commit.
-- 2026-06-29T16:40+02:00 — Created for operations-integration L4 (Change-Set Viewer): vitest/jsdom test
-  stubbing the change-set `fetch` and pinning the screen rows/counters/placeholders, the master
-  accumulated placeholder, the DetailPanel button → target, and the Cockpit takeover initial state
-  (CodeMirror kept out of jsdom). Verification metadata pinned to the task base until closeout stamps the
-  L4 code commit.
+### Repo-Internal References
+
+
+- The case mounts the shell explicitly on Operations. [7]
+
+
+- The viewer the case asserts absent while the shell is mounted on an injected Operations view; direct viewer and DetailPanel cases elsewhere cover its positive rendering and open callback. [8]
+
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.
+- The comparison case mounts with number and review context [9]
+- The lane destinations and inventory travel in the context [10]
+- An empty filter clears the diff instead of keeping a stale one [11]

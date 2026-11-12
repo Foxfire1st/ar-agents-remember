@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The rule spans the admitted cleanup and abandon transactions and the archive service, which together archive before removal."
+  },
+  "applicability": "Every admitted finalize and abandon of a leaf that has recorded role agents.",
+  "conditions": [
+    "The leaf's recorded agents are found from its own launch receipts.",
+    "The archive attempt runs after terminal admission and before the worktrees are removed."
+  ],
+  "exclusions": [
+    "Master and sprint finalization do not archive agents.",
+    "A dry run archives nobody."
+  ],
+  "id": "INV-F1TY2E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_admitted_cleanup_and_abandon_archive_before_destructive_outputs, test_current_history_retry_and_other_selections_preserve_every_artifact; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection.",
+        "notes/run3/L76-post79-supported-sync-20261007/qualified-continuation/ACTUAL-COMPLETED-SYNC-HANDOFF-20261007.json"
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 1",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Admitted leaf finalize and abandon invoke host archival for the exact recorded leaf role agents before removing the leaf worktrees.",
+  "status": "proposed",
+  "supersedes": []
+}

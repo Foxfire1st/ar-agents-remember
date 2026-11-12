@@ -1,0 +1,325 @@
+{
+  "path": "mcp/tests/test_agentic_settings.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+        "content": "sha256:ae234319694472d18f50dd4299b55f88f835a90a1dc53f5f0320ae8a87a4bfa4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_review_round_limit_takes_any_positive_setting_and_refuses_non_positive"
+        }
+      },
+      "facet": "Exercises positive maxRounds including values beyond the old hard cap and refuses non-positive/non-integer inputs; this is the settings parser, not live-review execution.",
+      "id": "PRF-CZCQV2",
+      "invariant": "INV-K76Z77",
+      "origin": {
+        "handoffEntry": "L116-W3-settings-default",
+        "leaf": "260928-MIK-L116"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Anchor: ID vocabulary has no native runtime detector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f783bd16246b9c1d169fd35ee33f0908e937c91",
+            "content": "sha256:01d99c5c6f83c2d31bc26562ee7f00a643410150f865dc13860b0caf638c47ba",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/src/agents_remember/kernel/harnesses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Anchor: New ID appended, command named unused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:20d5e254f84863b16e99af8659c97768a7e279297ae7a13abcc3497658c51697",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 376
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Anchor: Merged ID references and unused keys are source-owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:c776e8852aa20556ca3eed6cd63f874ad271b70a50b0233a863fdbc2802ddb5a",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Anchor: Unknown ID refusal names actual field and admitted IDs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:6159c6a8700bce9aa8a6bbf43dde963d67758eba67e58c4ff389d022700dec2f",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 415
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Anchor: Executor authority stays outside agentic settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:cee1cd7598e85607c010fb7a2edb2fb05a779b432e43e5e5101d7659c053da09",
+            "locator": {
+              "end": 634,
+              "kind": "line_range",
+              "start": 626
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Anchor: Actual wake-text limit assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:60b7af198934555e49556b0808055b489112e7a06f6f0e6c1cfbc31e10b5c164",
+            "locator": {
+              "end": 611,
+              "kind": "line_range",
+              "start": 578
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Anchor: Positive review-limit settings assertions, not live review execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:ae234319694472d18f50dd4299b55f88f835a90a1dc53f5f0320ae8a87a4bfa4",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Landing settings cases assert a default 900-second commit-check timeout, a positive integer override of 60, and refusal of skipCheck and non-positive timeout values. These are settings parsing/merge witnesses, not actual hook execution or a fresh review-round authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:71732b001f52ac2d8218dac6080bdc0024007daa160c842f8b7a2bb8784aaba9",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingSettingsTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Removed planning-role settings load inert and are reported unused without rewriting files, while active unknown-role, permission, null-loops and unknown-field guards still refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:e58b39b24055cfdb2210f996fe6e6020daec1860cd1be698999517d300b98502",
+            "locator": {
+              "kind": "symbol",
+              "name": "RemovedPlanningRoleSettingsTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Anchor: Current new/builtin ID cases name ignored execution keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:20d5e254f84863b16e99af8659c97768a7e279297ae7a13abcc3497658c51697",
+            "locator": {
+              "end": 381,
+              "kind": "line_range",
+              "start": 376
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:7190642719b34b8ed93c1db3265002a1e8b7cf1e25bb2ba5f52f5268642ccff5",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 383
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Anchor: Leaf override and sibling retention assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:5d5f2eb4ebb9ecc0e0c963c19a96b57db1c25e1b4a0516a8478e99d9a8c13172",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchor: Arrays replace rather than concatenate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:024f21c3058af680dae2e6b93d44f0ef306d6a7a7c75dcaa26927f38c85046e8",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 96
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "With no settings files, loading yields the documented defaults: five review rounds, leaf `scored` and master `seam-required` loops, no roles and a 900-second commit-check timeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:a420ed75e668eaf7bb12b482053d71535f3302cb8f98640a7137ba9ee7c2e3c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_absent_files_mean_documented_defaults"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Anchor: Global-only gate policy boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:f45fe864f6ad3dace4527ed04464f861de03e76876026d702dbb291e9fd988a0",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor: Malformed JSON refusal names the source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:ba7b0a495b0d576cdb2e68f420e73992e97bf351b74d32a6a6e990058179947e",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Anchor: Human-pinned gate policy remains nondelegable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:13a25c42267cce5feceb8403717f608809634a7d879ac82d2f1546bbfe9e35be",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 221
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Anchor: Per-level knobs merge by field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce66653701aa397c2dc6a442660c4c4e4d6817c4",
+            "content": "sha256:7c8394fea600480afddd9ca7203c793b1988a71cf9cd0dc19e8c25e8379a201b",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 333
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

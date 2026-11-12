@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/walkReal.INV-VPX81HXV.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79d6bb7e011b6bdade34789b8d1e197f0ecddda7",
+            "content": "sha256:26e6aff81f90dcf9a2f3a054c8b638191e9366a0a0696123d5b0a3672aa0ea1a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

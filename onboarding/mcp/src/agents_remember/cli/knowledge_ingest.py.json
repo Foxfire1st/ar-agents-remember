@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/cli/knowledge_ingest.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+        "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-3VSZ64",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "handoffEntry": "co:INV-1XKX9ERN",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The leaf entry refuses a tree without the conversion marker and writes the converted tree through the file writer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+        "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
+        "locator": {
+          "kind": "symbol",
+          "name": "add_arguments"
+        }
+      },
+      "id": "RLZ-3Y7B39",
+      "invariant": "INV-S5VHSM",
+      "origin": {
+        "handoffEntry": "the-commands-raise-refusal-names-the-mounted-write",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The removed option is removed here, so a curator cannot be sent to a flag that no longer parses.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+        "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-6HAWT71R",
+      "invariant": "INV-1XKX9ERN",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The successor keeps the batch-writer realization and adds the loading condition's own owner, because the refined obligation is precisely that reachability is a property of the process rather than of the argument list.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Current file-writer arguments.\n\nAnchor: `add_arguments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:11cc051886f07abab366b3c18cfbf5f009536cb2e7c4328260f8ff83732b5397",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "File-only dispatch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The admitted CLI dispatches crossing and refuses unconverted memory by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:2e6d62d0e4049d61bf1de35ae1926de164c87e91ca3637a7fa0377c193d089cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "The command's parser declares no settings option, so a curator cannot be sent to a flag no route reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17a7fa6f65e138b2e9443d952932013a30658963",
+            "content": "sha256:8f70903f732859313070f6cf1eee4f88dec77f529f2c81e923771510bf4f213c",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

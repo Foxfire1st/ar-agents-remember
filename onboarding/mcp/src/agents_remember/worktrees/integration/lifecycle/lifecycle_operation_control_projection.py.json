@@ -1,0 +1,214 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+        "content": "sha256:cadf3b92b7d49152696d69d21238fd85898b5caa826eceae3786c70bcc965510",
+        "locator": {
+          "kind": "symbol",
+          "name": "_completed_direct_controls"
+        }
+      },
+      "id": "RLZ-5HMHRZ",
+      "invariant": "INV-3N9432",
+      "origin": {
+        "handoffEntry": "MIK-R143@v1",
+        "leaf": "260928-MIK-L143"
+      },
+      "rationale": "I wired the offer to the shared predicate plus disposition eligibility, so nothing is offered that the check would refuse.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+        "content": "sha256:57c32a416ee982d4ef32c218a5e4c36fb9c2d34f89193a06760cf10637896ff8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_direct_generation_bound"
+        }
+      },
+      "id": "RLZ-8MJABX",
+      "invariant": "INV-ZVQ6Z5",
+      "origin": {
+        "handoffEntry": "L94-CODE-F04",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The leaf-binding predicate the exemption reads: a direct-landing generation bound to its leaf on its own input reuses nothing unsafely.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+        "content": "sha256:28ce14e95d693ca6f1455cb97298e719c61cc59da89b3d2901893c9199e5e19f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_without_legacy_generation_reuse"
+        }
+      },
+      "id": "RLZ-H09C2P",
+      "invariant": "INV-ZVQ6Z5",
+      "origin": {
+        "handoffEntry": "L94-CODE-F04",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "Exempts a bound direct-landing generation from the legacy recover/retry strip, so the public worktree_operation_control recover call executes its advertised action on a mechanically recoverable cut instead of refusing it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`_recovery_evidence_controls` uses initial-door and direct-landing evidence without a ledger-recovery classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:d8c4211602b3526af93b586a8d536d0af5c9c8ad02ad3812b6bdbe14aa1c1a3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recovery_evidence_controls"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_resume_control` requests fresh messages for enabled code and memory legs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:54a9129eada47ca06e11fc8b7a1a4807771735e884dc778d287f2656064072bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resume_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_integration_control` constructs integration arguments with no ledger commit subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:fe850989cc7d8c401c086c7c8cf938437cb30e2d623a2ce698bdcbfe45423957",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integration_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_direct_successor_control` constructs a direct successor from code identity and the memory-content message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:f06fa090af964a9f8936477b92737cf271cc62746d9ff581aa8cc78a1364f9a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_successor_control"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Missing compatible taskIntent withholds legacy reuse only when admitted direct leaf input is also absent; direct canonical-leaf binding preserves controls.\n\nAnchor: `_without_legacy_generation_reuse` `_direct_generation_bound`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:55f534cea5d95b295b098c2bba487721a8c4db77d8e06f18acd465332d328667",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Direct-landing recoverability is classified from the persisted generation's typed accepted input, exact code commit/tree, memory repository/ref and accepted or intended live memory evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:d8c4211602b3526af93b586a8d536d0af5c9c8ad02ad3812b6bdbe14aa1c1a3d",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:57199e9248e66a069a4c92ed5f42d21f2c439cc0534277bc86d0bd7304ee71a1",
+            "locator": {
+              "end": 184,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7cf5d8bc1072379437f9008a7e43f97c869764b",
+            "content": "sha256:98cf2c0859b5c7a1f7d6b47137f1bed015b5a84cddf7745200bcc29be8ed5c9d",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Exact completed direct owners are offered retire subject to disposition eligibility; direct supersede is unavailable.\n\nAnchor: `_completed_direct_controls`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:55f534cea5d95b295b098c2bba487721a8c4db77d8e06f18acd465332d328667",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Earlier door-bearing direct records remain readable but offer no controls.\n\nAnchor: `legal_operation_controls`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:55f534cea5d95b295b098c2bba487721a8c4db77d8e06f18acd465332d328667",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

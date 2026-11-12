@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/direct_landing/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring assigns direct-landing execution and recovery ownership.\n\nAnchor: \"Direct-landing execution and recovery ownership.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e89fa5c4b6e0fef8281a6b215c036f1cd110c796",
+            "content": "sha256:00eff0317323ce9559582b695fb583c599677da20915ad3be8a41506bfeb8caf",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

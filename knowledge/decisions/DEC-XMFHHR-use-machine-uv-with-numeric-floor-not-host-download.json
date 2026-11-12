@@ -1,0 +1,62 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Pinned download and newer machine uv were explicitly weighed; the choice continues to forbid host uv procurement and keeps host minimum policy separate from container certification."
+  },
+  "alternatives": [
+    {
+      "option": "Use the PATH uv at the contract version or newer without installing uv.",
+      "reason": "The developer chose the machine-provided newer uv, preserving operator-owned tools and avoiding an extra installed copy.",
+      "status": "chosen"
+    },
+    {
+      "option": "Download the contract-pinned uv into the product data folder for host setup.",
+      "reason": "It contradicts the chosen no-uv-download boundary and is unnecessary when the operator supplies a compatible newer version.",
+      "reconsider_when": "The developer explicitly revisits host tool ownership after evidence that supported machine uv versions cannot build the frozen environment.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Host setup compares decimal version parts and refuses older/missing/unreadable uv before environment mutation.",
+    "The certified container continues installing the exact contract uv; Python runtime and rollback checks stay unchanged."
+  ],
+  "context": "An exact host uv pin refused a self-updating machine installation; a product-managed pinned download and using the newer machine uv were explicitly offered as alternatives.",
+  "decider": "Developer D218, quoted in DEVELOPER-DIRECTION.md; approved minimum policy in MIK-R139@v1.",
+  "id": "DEC-XMFHHR",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-NQZ17H"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-F4X256"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-DYK0F8"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:scripts"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D218; requirements/MIK-R139-v1-the-worktree-environment-builds-with-any-uv-on-the-path.md:22-33"
+      ],
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "curator:D218-host-uv-choice",
+    "leaf": "260928-MIK-L139",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

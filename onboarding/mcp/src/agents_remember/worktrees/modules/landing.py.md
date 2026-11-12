@@ -1,14 +1,8 @@
 # mcp/src/agents_remember/worktrees/modules/landing.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/worktrees/modules/landing.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-14T17:20+02:00|
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                              |
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
@@ -19,14 +13,17 @@ returns a list it becomes the status payload's `landing` block, and `reducer._en
 composes that onto `EngineProcessNode.landing`.
 
 Two callers reach the probe, and neither is the projection tick: the interactive `status_payload`
-cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:503-503; mcp/src/agents_remember/worktrees/modules/guidance.py:505-505), and `observer/landing_state.LandingStateRefresher`, which holds it as
+cit:(["def status_payload", "landing_refs(contract)"], mcp/src/agents_remember/worktrees/modules/guidance.py:571-571; mcp/src/agents_remember/worktrees/modules/guidance.py:573-573), and `serving/projections/landing_state.LandingStateRefresher`, which holds it as
 `observe: LandingObserver = landing_refs` and sweeps landing-active contracts on its own
 `LANDING_REFRESH_INTERVAL_SECONDS = 30.0` cadence with `LANDING_REFRESH_CONCURRENCY = 4`. The
-recurring projection never spawns anything: it renders `unobserved_landing_refs` until the
-refresher's latest observation replaces it. So the arc still follows a **real remote landing** live
+recurring projection reads retained landing observations or renders `unobserved_landing_refs`;
+it does not call these remote/PR probes inline. So the arc still follows a **real remote landing** live
 (push → PR open → PR merge) without a milestone hook, but off the tick and bounded.
 
 ## Code Commentary
+
+Within one landing sweep, identical repository/ref ls-remote observations share their answers, including expected probe failures. Unexpected computation exceptions escape to the observation boundary, and a waiter has its own bounded timeout. The next sweep probes afresh because a remote is mutable. This bounds duplicate work without making the remote an immutable object or changing exact participant/PR/ref semantics.
+
 
 `landing_refs(contract)` returns `None` until the worktree reaches the **landing window**
 (`landing_active`, L34-L44 — closeout-completed, or integration started, or cleanup begun; the name
@@ -55,13 +52,9 @@ repository's pull requests under this worktree's branch name, and the landing ar
 belonging to a repository the worktree never touched. `cwd=repo` does not outrank the selectors for
 `gh` any more than it does for git. `"gh"` is the package's **only** non-git spawn that reads a
 repository (the single occurrence in `src/`, L110), which is why it takes the same scrubbed
-environment by hand. Note that the package-wide AST guard in `mcp/tests/test_git_command.py`
-**cannot** see this: `_spawns_git` matches `PurePosixPath(head).name == "git"`, and
-`test_a_program_that_merely_starts_with_git_is_not_git` pins `/usr/bin/gh` as a deliberate
-non-offender. The property is therefore asserted directly, by
-`test_landing.py::test_the_gh_probe_does_not_inherit_the_repository_selectors`, which sets all eight
-selectors and requires the captured `gh` call's `env` to be disjoint from them while still carrying
-`PATH`.
+environment by hand. The current `_pr_for` source explicitly passes `env=git_environment()`; the two Git probes
+use `run_git` with the same selector scrub. The former package-wide Git-spawn AST guard and
+named `test_landing.py` case are retired references and establish no current direct-test coverage.
 
 - `_remote_branch(repo, branch)` runs `git ls-remote --heads origin <branch>` (reliable). It returns
   `("observed", sha)` when the branch is on origin, `("observed", None)` when origin was reachable
@@ -88,7 +81,7 @@ inside `_pr_ref` (which now emits only the `pr` ref).
 
 `_pr_ref(pr)` renders the PR participant and (slice 5l P2) adds an `at` field = gh's own milestone
 time — `mergedAt` once merged, else `createdAt` — so the open→merged transition carries its timing;
-`at` is `None` for the gh-absent / no-PR placeholders.
+`at` is omitted for the gh-absent / no-PR placeholders; populated PR rows carry the milestone time or explicit None.
 
 `landing_refs` hoists the single `_pr_for` lookup (the PR drives both its own ref and the origin-main
 merged state) and then appends `_main_ref(...)` followed by `_pr_ref(...)`.
@@ -104,7 +97,7 @@ The existing landing probe remains the bounded remote observation primitive, but
 
 ## Invariants And Boundaries
 
-- **Best-effort + honest:** every probe failure degrades to `factState: "missing"` / `"planned"`;
+- **Best-effort + honest:** branch/PR facts distinguish missing/unknown from observed/planned; planned is a participant state for an observed not-yet outcome, not a factState value. This is not a blanket description of all probe fallbacks: default-branch discovery falls back to main;
   nothing is faked. `status_payload`'s `_safe_status_payload` wrapper returns `None` on any crash, so
   a probe error never blanks the rest of the status.
 - **Network-gated:** `landing_refs` returns `None` outside the landing window, so the build-phase
@@ -120,91 +113,27 @@ The existing landing probe remains the bounded remote observation primitive, but
 - **Every spawn here is repository-scoped by argument, never by environment:** all three probes run
   with the `GIT_DIR` family stripped — the git two via `run_git`, the `gh` one via an explicit
   `env=git_environment()`. A future probe added to this module inherits nothing: it must either go
-  through `run_git` or pass `env=git_environment()` itself. Only the git spawns are covered by the
-  package-wide AST sweep, so any non-git addition owes a direct test the way the `gh` probe has one.
+  through `run_git` or pass `env=git_environment()` itself. The former package-wide AST sweep and named `test_landing.py` case are retired
+  references, so they establish no current probe test coverage.
 - **Additive contract:** the emitted `landing` list maps 1:1 onto `LandingRefNode`; absent ⇒
   `EngineProcessNode.landing` defaults to `[]`.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `status_payload` calls `landing_refs` and emits its result as the `landing` block. | `status_payload`; `_status_payload_with_landing` | mcp/src/agents_remember/worktrees/modules/guidance.py:441-493; mcp/src/agents_remember/worktrees/modules/guidance.py:503-505 |
-| The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. | `LandingRefNode` | mcp/src/agents_remember/observer/projection.py:956-978 |
-| The reducer composer that reads `status["landing"]` into the node. | "landing=[LandingRefNode" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:304-304 |
-| The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`. | `GIT_REPOSITORY_SELECTOR_ENV`; `GIT_LOCAL_TIMEOUT_SECONDS`; `git_environment`; `run_git` | mcp/src/agents_remember/kernel/git_command.py:55-64; mcp/src/agents_remember/kernel/git_command.py:92-92; mcp/src/agents_remember/kernel/git_command.py:140-146; mcp/src/agents_remember/kernel/git_command.py:149-213 |
-| The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead. | `LandingStateRefresher`; "observe: LandingObserver = landing_refs" | mcp/src/agents_remember/serving/projections/landing_state.py:148-352 |
 
-## Update History
+- `status_payload` calls `landing_refs` and emits its result as the `landing` block. [1]
 
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (residue citation pass): re-derived the source
-  range of 4 claim(s) whose anchor no longer sat in its cited range and normalised 3 further
-  range(s) from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`). No claim wording was changed to fit an anchor; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T17:20+02:00 — 260913-LCA-L3 (uncommitted change set on `ar/260913-lca-l3-ar`, base `7317108b`): `_remote_branch` and `_default_branch` now pass their probe bound as `GitRunnerOptions(timeout=_PROBE_TIMEOUT_SECONDS)`, the timeout keyword having become a field of the runner's one options object; the 8-second class each probe names is unchanged and still overrides the runner's 300s local default. Re-derived the anchors the migration shifted (`_remote_branch` 47-66 → 47-68, `_default_branch` 69-90 → 71-94, `_pr_for` 93-150 → 97-154, the `gh` occurrence L106 → L110, the `landing_active` caller lines L237/L268 → L241/L272, and the runner row `33-42; 70-70; 76-82; 85-151` → `55-64; 92-92; 140-146; 149-213`).
-- 2026-09-13T14:32+02:00 — Curator citation repoint after the contract-scoped atomic-series activation re-keying shifted `modules/guidance.py`: `def status_payload` now resolves at `guidance.py:502-502`, the `landing_refs(contract)` call at `guidance.py:504-504`, and `_status_payload_with_landing` at `guidance.py:440-441`, so both affected rows were rebound. Claim wording unchanged.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: "def status_payload", "landing_refs(contract)", `_status_payload_with_landing`, `status_payload` repointed to mcp/src/agents_remember/worktrees/modules/guidance.py:410-462, mcp/src/agents_remember/worktrees/modules/guidance.py:472-472, mcp/src/agents_remember/worktrees/modules/guidance.py:472-474, mcp/src/agents_remember/worktrees/modules/guidance.py:474-474. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+- The `LandingRefNode` schema the emitted dicts map onto + the `EngineProcessNode.landing` field. [2]
+- The reducer composer that reads `status["landing"]` into the node. [3]
 
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
 
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
+- The shared `run_git` runner supplies the `safe.directory` override, DEVNULL stdin, the `GIT_DIR`-family scrub, and its local timeout default; both probes here override that default through `GitRunnerOptions(timeout=...)`. [4]
 
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-04T14:41:21+02:00 — 260731-EFA-L6 S18-B01 closing same-reviewer correction: added exact call and gh-argv anchors and rebound the gh subprocess behavior to its complete call-and-arguments source extent under the adversarial verdict, then the exact scoped fixer/check passed.
-- 2026-08-02T16:44:12+02:00 — 260731-EFA-L6 W1-B05 curator: anchored 8 citation items; scoped citation check now passes.
-- 2026-07-31T21:34+02:00 — 260731-EFA-L3 curator: the earlier L3 entry below described the
-  `GIT_DIR`-family scrub as something only the two git probes gained, and said the `gh` probe merely
-  "still inlines its own `subprocess.run` … with the same 8-second bound and DEVNULL stdin". `_pr_for`
-  now also passes `env=git_environment()` cit:(["env=git_environment()"], mcp/src/agents_remember/worktrees/modules/landing.py:128-128), so all three probes run scrubbed. Rewrote that
-  paragraph to say so and to give the reason from the code's own comment — `gh` resolves the
-  repository *through* git, so an inherited `GIT_DIR` would have it list another repository's PRs
-  under this branch's name — plus the fact that the package-wide AST sweep cannot cover it
-  (`_spawns_git` matches `PurePosixPath(head).name == "git"`, and
-  `test_a_program_that_merely_starts_with_git_is_not_git` pins `/usr/bin/gh` as a non-offender), so
-  `test_landing.py::test_the_gh_probe_does_not_inherit_the_repository_selectors` asserts it directly.
-  Added the matching invariant. Two further claims were false against current code and were fixed:
-  the gate was named `_landing_active` but the function is `landing_active` (L34-L44, no underscore,
-  callers L237/L268), and Purpose still said the probe "re-fires every projector tick (~1s)" — it
-  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:503-503) and by `LandingStateRefresher(observe=landing_refs)` at
-  `LANDING_REFRESH_INTERVAL_SECONDS = 30.0`, while the recurring projection renders
-  `unobserved_landing_refs`. Corrected "the package's **first** `gh` use" to "only" (one occurrence
-  in `src/`, L106). Verified `_PROBE_TIMEOUT_SECONDS = 8` and the DEVNULL/timeout claims still hold
-  on all three probes; verified `run_git`'s default is still `GIT_LOCAL_TIMEOUT_SECONDS = 300`.
-- 2026-07-31T21:34+02:00 — 260731-EFA-L3 curator: the earlier L3 entry below described the
-  `GIT_DIR`-family scrub as something only the two git probes gained, and said the `gh` probe merely
-  "still inlines its own `subprocess.run` … with the same 8-second bound and DEVNULL stdin". `_pr_for`
-  now also passes `env=git_environment()` cit:(["env=git_environment()"], mcp/src/agents_remember/worktrees/modules/landing.py:128-128), so all three probes run scrubbed. Rewrote that
-  paragraph to say so and to give the reason from the code's own comment — `gh` resolves the
-  repository *through* git, so an inherited `GIT_DIR` would have it list another repository's PRs
-  under this branch's name — plus the fact that the package-wide AST sweep cannot cover it
-  (`_spawns_git` matches `PurePosixPath(head).name == "git"`, and
-  `test_a_program_that_merely_starts_with_git_is_not_git` pins `/usr/bin/gh` as a non-offender), so
-  `test_landing.py::test_the_gh_probe_does_not_inherit_the_repository_selectors` asserts it directly.
-  Added the matching invariant. Two further claims were false against current code and were fixed:
-  the gate was named `_landing_active` but the function is `landing_active` (L34-L44, no underscore,
-  callers L237/L268), and Purpose still said the probe "re-fires every projector tick (~1s)" — it
-  does not, `landing_refs` is reached only by the interactive `status_payload` cit:(["def status_payload"], mcp/src/agents_remember/worktrees/modules/guidance.py:503-503) and by `LandingStateRefresher(observe=landing_refs)` at
-  `LANDING_REFRESH_INTERVAL_SECONDS = 30.0`, while the recurring projection renders
-  `unobserved_landing_refs`. Corrected "the package's **first** `gh` use" to "only" (one occurrence
-  in `src/`, L106). Verified `_PROBE_TIMEOUT_SECONDS = 8` and the DEVNULL/timeout claims still hold
-  on all three probes; verified `run_git`'s default is still `GIT_LOCAL_TIMEOUT_SECONDS = 300`.
-- 2026-07-31T20:52+02:00 — 260731-EFA-L3 curator: `_remote_branch` and `_default_branch` no longer
-  inline `subprocess.run([...])`; both call `kernel.git_command.run_git(repo, [...],
-  timeout=_PROBE_TIMEOUT_SECONDS)`. The old commentary ("Three git/gh probes ... run with
-  `stdin=subprocess.DEVNULL`") described a subprocess call this file no longer makes, so it now
-  names the shared runner, the `GIT_DIR`-family scrub the probes gained, and why the explicit
-  `timeout=` matters (`run_git` defaults to `GIT_LOCAL_TIMEOUT_SECONDS = 300`; this probe needs 8).
-  The Bounded invariant now records that `subprocess.TimeoutExpired` is a `SubprocessError` and so
-  is already absorbed by both probes' `except (OSError, subprocess.SubprocessError)` into
-  `missing`/`"main"`. Re-pointed the runner reference row from `modules/git.py` (which no longer
-  defines a runner to mirror) to `kernel/git_command.py`. Verification metadata pinned until
-  closeout stamps the L3 commit.
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: retained landing probe semantics for bounded background observation and repaired the landing-ref commentary; unavailable facts remain planned/missing rather than invented.
 
-- 2026-06-21T05:30+02:00 — Slice 5l P2 (landing-arc probe hardening, so the dashboard follows a REAL remote landing): added `_default_branch` (origin default via `git ls-remote --symref origin HEAD`, fallback `"main"`) and `_main_ref` — the protected target `origin/<base>` is now probed **directly** via `_remote_branch` (base = PR `baseRefName` or `_default_branch`), visible across the whole landing window before any PR and even when `gh` is absent, its `state` tracking whether THIS work landed (`merged`/`planned`/`unknown`, tip in `detail`). This replaces the PR-base-derived origin-main that used to live in `_pr_ref` (now `pr`-only). `_pr_for` requests + returns `createdAt`/`mergedAt`, and `_pr_ref` adds an `at` = gh's milestone time (mergedAt once merged, else createdAt). `landing_refs` hoists the single `_pr_for` lookup then appends `_main_ref` + `_pr_ref`. Module docstring notes the per-tick (~1s) re-probe needs no milestone hook. Verification metadata pinned until closeout stamps the 05l-P2 code commit.
-- 2026-06-18T08:51+02:00 — Created for slice 5h H1: best-effort successful-landing arc observation (`git ls-remote` branch tips + best-effort `gh` PR state, timeout-bounded, `stdin=DEVNULL`, gated to the landing window, honest `factState`). Verification metadata pinned until closeout stamps the 5h code commit.
+- The bounded off-tick caller: `LandingStateRefresher(observe=landing_refs)`, and the `unobserved_landing_refs` shape the recurring projection renders instead.  Anchor: "observe: LandingObserver = landing_refs" [5]

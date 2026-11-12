@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Rule 7 removes navigation code; without rule 10 a later change could rebuild a parallel route to a chat 'for convenience' and recreate the duplication the developer rejected. The rule is a member of the host-list navigation family."
+  },
+  "applicability": "Every dashboard surface that could link to a certain agent's chat or build navigation of its own.",
+  "conditions": [
+    "The launcher's execution steering (show the displayed execution's agent) keeps working.",
+    "The retained PaseoFrameControl steers the displayed execution through its current trusted message/URL owner; no new sidebar, list or navigation command is added."
+  ],
+  "exclusions": [
+    "The old L75 highlight-composer preservation exception is superseded by the explicit R113 removal, not permission to restore a dormant composer.",
+    "No claim that a deleted AR selection/highlight submit path survives; host chat content remains host-owned."
+  ],
+  "id": "INV-QS9SRX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-task-notes.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/route-D-current.md"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 10",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "No new dashboard chat navigation is added; existing host execution steering remains, while R113 removes the AR highlight composer and its old switch-to-Chats transition rather than creating a replacement route.",
+  "status": "proposed",
+  "supersedes": []
+}

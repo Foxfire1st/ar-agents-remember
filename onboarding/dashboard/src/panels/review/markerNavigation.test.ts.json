@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/markerNavigation.test.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "13": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it(\"selects the invariant's own review at its member row of the named family\", () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9bfd72b1f784dae1f49f8f6036e0b9ed786e213",
+            "content": "sha256:66750c5f20a939b758e9882c4fe39cd491fccdad0208b954771b18b5f7c839ec",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('selects the invariant alone when no family records it', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9bfd72b1f784dae1f49f8f6036e0b9ed786e213",
+            "content": "sha256:cc64a6d67136b2af356e2151bfcccd55c1680cf5df6d6280ac3678cf9d96aeeb",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('restores the subject, then the worklist view', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9bfd72b1f784dae1f49f8f6036e0b9ed786e213",
+            "content": "sha256:cece3952bb4f21aad1fbbc247a2ee371a006f0bccbdc9ab1d635f7f28d54516d",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,343 @@
+{
+  "path": "dashboard/src/panels/review/laneFocus.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+        "content": "sha256:bfe7a5696957a5c56ca6e5b3d91b51e9d76d24a741bb2a66978088aa7507290a",
+        "locator": {
+          "kind": "symbol",
+          "name": "laneAttributionFacts"
+        }
+      },
+      "id": "RLZ-5EMQKC",
+      "invariant": "INV-75Y48P",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F05",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It reads the two lane destination file counts rather than incomplete bucket-only counts.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "These presentation helpers do not classify; supplied server hunks own the marks' positions.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:7ab70af8b8b083602b4e6f9b964514194ed4b1e1b893964ebe46b7786c1878a5",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "IntentMarkers imports and actually calls spanLabel for hunk names/attributes and sideLines for full-side/excerpt extent measurement.\n\nAnchor: `sideWindow`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:4df93eb7e9ed11d8b9ff859a015a4efdda2e8ea936813d57e4ac0aec9055343d",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:17a8c8e6d92ee0fb5fabd37d7a30be6857ad399d1a0dcbe1a7c958fce9816bc5",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:5e43298fc0a708bcca6ccca5b9430c1fa1e39eccb2503fb4beab348fee845c30",
+            "locator": {
+              "end": 384,
+              "kind": "line_range",
+              "start": 382
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:e7e364e5cf8ccb3da6543fb31e688181e11ebd6c50ae38107cba5763f0d20cbd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:e8200964a978635522b2ab090c65065d8ef8e85c4730bb2eb0460d34c677ddbb",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:a89a642d481153ab5818140b6a3607e95c588e087377768c9b6a2f5adf3385eb",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:bd6f3d761ee3a68336722a9e696b4717a7596476181ffddf0a3c2528570ae6cf",
+            "locator": {
+              "end": 462,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The current ReviewMainFacts—not the closed technical details—uses held lane facts for openly marked remaining counts and preserves fallback for unowned names.\n\nAnchor: `ReviewMainFacts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:293d6027f0781d8a974b7456c9c890c384a984e0e96c589b1fea64664d82fe7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:6bc18cc2b58532671b3002c46206e70f3fb4c93f59af848d4862c09aceea4ee4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewMainFacts"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Explorer label vocabulary remains the mapped/unmapped/unknown constants.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:1209b12ed7a54371f4584c241222599dfc491e639b7dd5c5e2bd4f9fd9b264f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLORER_LABELS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Pending vocabulary remains Attribution pending.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:d015b11871787e4f7e9da7372c9fa6bf99a6c153eda308c260749f91300e37ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLORER_PENDING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "laneAttributionFacts derives paths from the two held destination file lists and keeps loading/unavailable/missing-list states explicit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:bfe7a5696957a5c56ca6e5b3d91b51e9d76d24a741bb2a66978088aa7507290a",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneAttributionFacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "laneCountText replaces raw field prefixes with changed-files-without-an-invariant or unknown-attribution labels, preserves pending/unmeasured wording and partial list lengths, and returns undefined for unowned names.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:f0d635170cced7c4a3162da7524d58613cc54c3f1638ddc0da37b640fc85cd44",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneCountText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Server hunk spans retain single-line/range/zero-line-gap naming.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:2d05d52e992eee94275e2cb28e6439eeaf6cd14d1129622c3bf26fea523d180f",
+            "locator": {
+              "kind": "symbol",
+              "name": "spanLabel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Side text splits on newline and removes one final empty split item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:f6ef9fd042f71d80868d38f5070a8ee7291e7777213bd90f668b050cc045bb3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "spanLabel and sideLines retain range/gap naming and side-text line splitting; no focused-window API is restored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:2d05d52e992eee94275e2cb28e6439eeaf6cd14d1129622c3bf26fea523d180f",
+            "locator": {
+              "kind": "symbol",
+              "name": "spanLabel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:f6ef9fd042f71d80868d38f5070a8ee7291e7777213bd90f668b050cc045bb3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "sideLines"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Explorer-named constants preserve vocabulary only, not a current explorer implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:1209b12ed7a54371f4584c241222599dfc491e639b7dd5c5e2bd4f9fd9b264f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLORER_LABELS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:d015b11871787e4f7e9da7372c9fa6bf99a6c153eda308c260749f91300e37ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPLORER_PENDING"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Held lane reads preserve pending/unknown/read states; destination file lists, partialness and owned count formatting remain distinct responsibilities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:bfe7a5696957a5c56ca6e5b3d91b51e9d76d24a741bb2a66978088aa7507290a",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneAttributionFacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:f0d635170cced7c4a3162da7524d58613cc54c3f1638ddc0da37b640fc85cd44",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneCountText"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

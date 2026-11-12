@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Loading at the first deadline turns slow host drawing into a destructive retry loop."
+  },
+  "applicability": "Recovery and URL steering of an existing frame.",
+  "conditions": [
+    "A missing ready or open answer is followed by ping with its own deadline.",
+    "Explicit unsupported open-agent capability is handled separately."
+  ],
+  "exclusions": [
+    "Initial mount and unrelated native application reconnects are not selection reloads."
+  ],
+  "id": "INV-ZJ2JX8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"loads the frame once when the application answers nothing at all, and switches by message again\", \"asks by a ping at the deadline and loads nothing: the application answers with its late ready report\" / \"… its pong\", \"counts the channel as unavailable only when that ping stays unanswered too, and then loads nothing more\"; dashboard/src/cockpit/PaseoChatFrame.test.tsx › \"keeps the frame, shows the banner after an unanswered ping, and shows executions by URL\""
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "MIK-R140@v1 rule 3",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The frame's document loads again only when a ping stayed unanswered for the deadline (after a load's missing ready report, or after a request's missing answer), on Retry, and when a host that was gone is back; a plug-in that says it cannot show an agent on request has every agent loaded by its URL; after such a load the next change is a switch again.",
+  "status": "proposed",
+  "supersedes": []
+}

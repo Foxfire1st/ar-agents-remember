@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/file_lock.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/file_lock.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T00:23:26+00:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](../../../overview.md)
@@ -19,6 +9,9 @@
 Own the shared, policy-free POSIX exclusion primitive for one local file resource. Control-plane logs and the host Dagger registry share the same physical lock protocol while retaining their separate authorization policies.
 
 ## Code Commentary
+
+The warmup claim may retain an OS descriptor lease across thread boundaries. Closing releases exactly that hold; ownership is independent of the acquiring thread and a process death releases the OS lock rather than requiring a foreign process to delete its file.
+
 
 ### Logic
 
@@ -42,36 +35,41 @@ Callers authorize the resource before entering. The kernel primitive neither dec
 
 None identified in this bounded source review.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. The claims below describe the repository's own implementation; no external platform verification is claimed.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation source. | N/A | N/A |
+No configured domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These source owners establish the mechanics, caller policy, and regression boundaries described above.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One physical suffix, one mutex per resource, and thread-local nesting. | `lock_path_for`; `thread_mutex_for`; `_LockDepth` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:41-55; mcp/src/agents_remember/kernel/file_lock.py:19-27 |
-| Capability probing, complete transaction exclusion, and current-thread hold inspection. | `_verify_lock_capability`; `exclusive_file_lock`; `lock_held` | mcp/src/agents_remember/kernel/file_lock.py:58-84; mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:117-119 |
-| Control-plane target authorization precedes primitive entry; capability errors are translated. | `exclusive_access`; `require_lock_held` | mcp/src/agents_remember/controlplane/durable_store.py:319-360; mcp/src/agents_remember/controlplane/durable_store.py:363-381 |
-| The host registry supplies its own policy and domain refusal. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
+- The host registry supplies its own policy and domain refusal. [4]
 
 
-## Cross-Repo References
+### Cross-Repo References
 
 No separate cross-repository implementation dependency is used by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No cross-repository evidence is required for these claims. | N/A | N/A |
+No cross-repository evidence is required for these claims.
 
-## Update History
+## 260928-MIK-L96 The product-side exclusive lock
 
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
+`lock_path_for` and `exclusive_file_lock` now back the public Node acquisition: the lock file sits beside the locked resource, waits are bounded by the caller's deadline, and a timeout is the named `LockAcquisitionTimeout`. The Node invariant owns the specific use; the primitive itself keeps its log-lock contract.
 
-- 2026-09-06T00:28+02:00 — Created the shared lock-owner card against prepared code commit 6e4ab81f6ae52bce35003377bb3aec7877554ed7; preserved the physical lock protocol and separate caller authorization boundaries.
+- One physical suffix, one mutex per resource, and thread-local nesting. [1]
+
+- Capability probing, complete transaction exclusion, and current-thread hold inspection. [2]
+
+
+- Control-plane target authorization precedes primitive entry; capability errors are translated. [3]
+
+- The resource lock path. [5]
+
+- The bounded exclusive lock. [6]
+
+
+- `_lock_handle` opens the caller's held physical target when `io_path` names the same resource through a directory descriptor, while the mutex, capability cache and nesting keep the canonical lock identity — so two descriptor numbers cannot split one lock. [7]

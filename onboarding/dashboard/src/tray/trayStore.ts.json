@@ -1,0 +1,186 @@
+{
+  "path": "dashboard/src/tray/trayStore.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+        "content": "sha256:db6f613eb52c6c0773968a2f396f97cfa2867b5fc2c5a46dd61501270830b0ca",
+        "locator": {
+          "kind": "symbol",
+          "name": "keepTray"
+        }
+      },
+      "id": "RLZ-1DAEDQ",
+      "invariant": "INV-A595E3",
+      "origin": {
+        "handoffEntry": "TRAY06",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Writes the kept part on every change of it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+        "content": "sha256:122834caaef6b51c64f3f6c9409be9bd2a31266b9800d95b4f6276f371502a31",
+        "locator": {
+          "kind": "symbol",
+          "name": "pickActions"
+        }
+      },
+      "id": "RLZ-29FVPQ",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Sets the default once, on the first pick, unless he already chose a target.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+        "content": "sha256:122834caaef6b51c64f3f6c9409be9bd2a31266b9800d95b4f6276f371502a31",
+        "locator": {
+          "kind": "symbol",
+          "name": "pickActions"
+        }
+      },
+      "id": "RLZ-70Z5MK",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Checks the computed pick key before adding, so a duplicate admitted object cannot create another pick even if a second offer reaches the store.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+        "content": "sha256:3476854790fb99566f10fbcf227422d8604033b671f5f46c579b1f4d7da90ebc",
+        "locator": {
+          "kind": "symbol",
+          "name": "imageAction"
+        }
+      },
+      "id": "RLZ-APVHK7",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Refuses an image type the server does not take by name before it enters (P-T7).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+        "content": "sha256:8418aad469b3b587007d0d4b2447f03cdfa2ab74c2ca3bfa7a31db9f76ce4255",
+        "locator": {
+          "end": 217,
+          "kind": "line_range",
+          "start": 195
+        }
+      },
+      "id": "RLZ-HAH44C",
+      "invariant": "INV-P7QEA9",
+      "origin": {
+        "handoffEntry": "TRAY10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Empties the tray of the sent picks and text when no target refused, and keeps them with the refused targets as targets otherwise.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+        "content": "sha256:122834caaef6b51c64f3f6c9409be9bd2a31266b9800d95b4f6276f371502a31",
+        "locator": {
+          "kind": "symbol",
+          "name": "pickActions"
+        }
+      },
+      "id": "RLZ-QYFEJR",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Uses the recomputed pick key to refuse a second collection of the same object without changing its snapshot identity.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+        "content": "sha256:23b218cf2b2cb66d75e111032b42d94a772739749b34f17374d91188b343ff72",
+        "locator": {
+          "kind": "symbol",
+          "name": "targetActions"
+        }
+      },
+      "id": "RLZ-YMNAMJ",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Resolves or cancels the deferred review default and makes every explicit target choice end the wait.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns collection admission, first-target decision and send settlement.\n\nAnchor: \"export function createTrayStore(deps: TrayDeps): StoreApi<TrayState> {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:7b1c11a945d32ba41dc21d30581e57639f4394b79ee3aedf83f4ea631776c3a8",
+            "locator": {
+              "end": 305,
+              "kind": "line_range",
+              "start": 293
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Owns collection admission, first-target decision and send settlement.\n\nAnchor: \"function pickActions(set: SetTray, get: GetTray, deps: TrayDeps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:006627c912f470a902b8319289c9b529c8ba5392ff480f31063c8fbafdd4be0b",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Owns collection admission, first-target decision and send settlement.\n\nAnchor: \"function imageAction(set: SetTray, get: GetTray, deps: TrayDeps, unsaved: Map<string, string>, refresh: () => void) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7082e1dd104ce22def00308dae2977b249c4c7a0",
+            "content": "sha256:6c2b75de948e4f25ecc7fcc5cb68ba875be919de44e466a1f514df169c58bea3",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

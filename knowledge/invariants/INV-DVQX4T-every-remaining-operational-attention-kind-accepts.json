@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "Dismissal persistence and UI feedback are a maintained cross-boundary obligation: treating optimistic removal as successful durable acknowledgement silently loses failed clicks. Native action/queue targets and separate bulk/failure/source-defined ASGI assertions establish the bounded contract, not a Curator runtime grade."
+  },
+  "applicability": "Individual and Clear-all acknowledgement for every published attention kind.",
+  "conditions": [
+    "Requests use the current item id and a kind this build publishes.",
+    "An item the projection does not publish is refused as unknown, and a kind that disagrees with the published item is refused; no cause is refused for being live.",
+    "Clear all composes per-item requests for every current entry.",
+    "An unsuccessful reply restores the entry and reports that the acknowledgement did not hold.",
+    "Dismissing leaves the prompt unanswered, the held message held and the task's stage and seats unchanged."
+  ],
+  "exclusions": [
+    "Dismissal of future occurrences of any kind.",
+    "Hiding an unacknowledged entry in client state."
+  ],
+  "id": "INV-DVQX4T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; sync-L81-dashboard.txt"
+      ],
+      "path": "A011-R166-operational-acknowledgement-curator-input-26-corrected-proofs.json"
+    },
+    "handoffEntry": "L168-W-R166-02-04",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Every published attention entry - the three live native causes, the two terminal notice kinds and the surviving operational kinds - accepts one acknowledgement for its exact occurrence, while a failed write leaves the entry visible and an acknowledgement changes nothing at the cause.",
+  "status": "proposed",
+  "supersedes": []
+}

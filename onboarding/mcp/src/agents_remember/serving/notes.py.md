@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/serving/notes.py
 
-| Field                  | Value                                          |
-| ---------------------- | ---------------------------------------------- |
-| repository             | agents-remember                                |
-| path                   | `mcp/src/agents_remember/serving/notes.py`     |
-| doc_type               | `file-level-onboarding`                        |
-| lastUpdated            | 2026-09-06T21:54:05+00:00 |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`     |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
-| governingOverview      | `overview.md`                                  |
-
 ## Governing Overview
 
 [overview.md](overview.md)
@@ -17,21 +7,58 @@
 ## Purpose
 
 `notes.py` is the read-only **coordination-notes API** (agent-orchestration L9, closing
-friction F-M): two GET endpoints that surface the coordination `notes/` tree — design
+friction F-M): three endpoints that surface the coordination `notes/` tree — design
 records, the friction ledger, worker turn reports, adversarial verdicts — for one series
-master, `tasks/<repo>/<master>/notes/` under the coordination root. Before it, the files
+master, `tasks/<repo>/<master>/notes/` under the coordination root. Since 260928-MIK-L126
+the server answers **one folder per request**: the whole-tree `GET /api/notes/list` walk is
+removed with no caller remaining. Before it, the files
 API served only repo roots + worktree enclosures and the task reader rendered only
 `task.json` content, so a task doc's references to notes files were inert strings. It
-feeds the task reader's notes view (`dashboard/src/panels/TaskNotes.tsx` via
-`dashboard/src/data/notes.ts`).
+feeds the task reader's notes line (`dashboard/src/panels/TaskNotes.tsx` via
+`dashboard/src/data/notes.ts` and `dashboard/src/data/taskReports.ts`).
 
 ## Code Commentary
 
-### 260731-EFA-L4 Current Delta — Both Routes Now Declare What They Answer With
+### 260928-MIK-L126 Current Delta — The Server Answers One Folder Per Request
 
-`GET /api/notes/list` declares `response_model=NotesListing` and `GET /api/notes/read` declares
-`response_model=NoteContents`, both under the shared `responses=SCOPED_READ_RESPONSES` table.
-All three come from `serving/response_contract.py`, which is where this module's
+The task reader fetched `GET /api/notes/list` every time a task opened, and the walk of the
+whole tree grew with the notes folder: 72,875 rows in 15 MB on the measured master. `MIK-R126@v1`
+(rule 2) replaces it with **one folder per request**. `list_folder` reads only the requested
+folder — never its subfolders, so the work does not grow with the number of files under the
+notes root — and answers entries in a stable total order (directories first, case-folded name,
+exact name breaking ties) in parts of `_FOLDER_PAGE` (200), with `remaining` for the next part.
+A missing folder answers empty with the server's reason, never an error. The whole-tree answer
+is removed and no caller of it remains.
+
+Confinement is preserved in the one-folder shape:
+
+- The requested folder is opened through held descriptors without following symlinks
+  (`_open_confined_dir`): a directory swapped for an escaping link after confinement reads as
+  gone instead of listing outside entries (review finding L126-CODE-01). A vanished folder, a
+  file path, or an unreadable folder answers empty with its reason (L126-CODE-04); every other
+  error propagates, including EACCES from opening or listing the folder itself — a
+  searchable-but-unreadable folder and a neither-read-nor-search folder keep the baseline
+  500. The one exception is a readable-but-unsearchable folder: listing succeeds and each
+  entry's stat failure is skipped, never listed (`_folder_row`), so it answers present
+  with no children — zero rows with exists true (INV-413DC8XE).
+- Each row is examined without following symlinks (`_folder_row`): only a symlink can escape,
+  and an escaping link is never listed while an in-root alias still lists under its own name.
+  Non-regular entries are skipped.
+- Bare-name resolution never returns an escaping link (`_confined_is_file`, L126-CODE-01).
+- Reference resolution is per-token and bounded by reference count (`resolve_notes_references`):
+  a token naming an existing note by path (with or without the `notes/` prefix) wins; a bare
+  filename resolves only at the notes root, never by a tree walk (Parent ruling L126-REFERENCE-FORMAT-RULING:
+  nested-only bare names stay text, L126-CODE-05). Anything else stays plain text.
+
+This entry supersedes the L55 descriptor-walk description on this card: the walk, its sort key,
+its per-entry stat economy and its residuals describe a removed endpoint.
+
+### 260731-EFA-L4 Current Delta — Both Routes Now Declare What They Answer With (L126: three routes)
+
+`GET /api/notes/folder` declares `response_model=NotesFolder`, `POST /api/notes/resolve`
+declares `response_model=NotesResolutions`, and `GET /api/notes/read` declares
+`response_model=NoteContents`, all under the shared `responses=SCOPED_READ_RESPONSES` table.
+All come from `serving/response_contract.py`, which is where this module's
 one new import lives.
 
 `SCOPED_READ_RESPONSES` is exactly the two statuses `_notes_json` can produce — 400
@@ -53,24 +80,24 @@ closeout.
 
 L9 review follow-up (L9R-1): the shared status mapper now also catches `ValueError` from `Path.resolve()` (e.g. an embedded null byte in `path`) and answers `400 bad-path` instead of an uncaught 500 — malformed input gets the same wire answer as a confinement breach.
 
-`register_notes_routes(app, config)` registers two GET routes and **must** be called
+`register_notes_routes(app, config)` registers three routes and **must** be called
 before the greedy static `/` mount (it is, after `register_changeset_routes` in
-`serving/app.py`): `GET /api/notes/list?repo&master` and `GET
-/api/notes/read?repo&master&path`. Both go through `_notes_json` — it validates the
+`serving/app.py`): `GET /api/notes/folder?repo&master&path&offset`,
+`POST /api/notes/resolve` (a `references` list with `repo`/`master`), and `GET
+/api/notes/read?repo&master&path`. All go through `_notes_json` — it validates the
 `{repo, master}` selector (unknown repo → `404 unknown-repo` via `require_repo`; a
 non-single-segment `master` → `400 bad-request` via `_is_single_segment`, the change-set
 `master`-key confinement idiom) and maps domain errors to the shared wire idiom
 (`AuthorityError` → `400 bad-path`, `FileNotFoundError` → `404 not-found`) so
-`data/files.ts`'s error mapping applies unchanged.
+`data/files.ts`'s error mapping applies unchanged. A negative folder offset is a
+`ValueError` → `400 bad-path`: it names no path at all.
 
-`list_notes(config, repo_id, master)` walks the series' notes root recursively via
-`_walk_notes` — per directory files-before-subfolders, each entry
-`{name, path (notes-root-relative posix), size, language}` — and returns
-`{repo, master, notes, truncated}`. A **missing notes folder is an empty list, never an
-error** (a young series without notes is normal). Every walked child is
-realpath-checked against the resolved root (`path_is_relative_to`): a symlink escaping
-the notes tree is silently skipped, and directories deeper than `_MAX_LIST_DEPTH` (4)
-are pruned with `truncated: true` so the listing never lies about completeness.
+`list_folder(config, repo_id, master, rel, offset)` confines `rel` (empty at the root),
+answers one part of that folder's entries with `total`/`offset`/`limit`/`remaining`, and
+a missing notes folder or gone folder as empty with `exists: false` and the reason —
+never an error. Each entry is `{name, path (notes-root-relative posix), kind, size,
+language}`; row `path`s are prefixed after the stable sort so independently fetched
+offset parts never depend on readdir order (L126-CODE-02).
 
 `read_note(config, repo_id, master, rel)` confines `rel` with `confine_rel` (the realpath
 idiom: `..` traversal, absolute paths, and symlink escapes all raise `AuthorityError`),
@@ -91,73 +118,85 @@ confined to one honest path segment.
 
 ### Invariants And Boundaries
 
-- No mutation surface of any kind: both routes are GET, nothing writes.
-- Every served path stays inside the series' notes root (`confine_rel` on reads, the
-  per-child realpath check on listing) — the rest of the coordination tree (task docs,
-  contracts, enclosures) is NOT reachable through this API.
-- A missing notes folder degrades to `[]`; a missing note file is `404 not-found`; the
+- No mutation surface of any kind: folder and read are GET, resolve is POST with a
+  references body, nothing writes.
+- Every served path stays inside the series' notes root: `confine_rel` on reads and
+  reference paths, held-descriptor opens on folders. The rest of the
+  coordination tree (task docs, contracts, enclosures) is NOT reachable through this API.
+- A folder answer never grows with the tree: one folder read, at most 200 rows per part,
+  reference work bounded by reference count. The folder answer keeps no
+  state between requests. Keep both: `mcp/tests/test_notes_folder.py` proves the parts,
+  the stable order and the tree-size-independent work, and
+  `mcp/tests/test_generated_master_selection_cost.py` proves the bounded selection set
+  on the generated master.
+- Every directory is entered through `_open_confined_dir`. Descending any other way reopens symlink
+  escape. Only swapped-away/vanished/file-path failures answer empty-with-reason; every other
+  error propagates.
+- A missing notes folder or gone folder answers empty with `exists: false` and the reason;
+  a missing note file is `404 not-found`; the
   status idiom matches the files/change-set APIs — and since **260731-EFA-L4** that shared idiom
   is declared once as `SCOPED_READ_RESPONSES`, so a new status here means adding it to the shared
   table, not widening a per-route one.
 - The declared models are the contract, not the runtime guard: these handlers return `Response`
-  objects, so a key added to `list_notes` or `read_note` must land in `NotesListing` /
-  `NoteContents` in the same change to keep the declared contract accurate.
+  objects, so a key added to `list_folder`, `resolve_notes_references` or `read_note` must land in
+  `NotesFolder` / `NotesResolutions` / `NoteContents` in the same change to keep the declared contract accurate.
 
-## Cross-Repo References
+## Evidence
+
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The app factory registers notes routes during app assembly and mounts static assets later; those calls are not an immediately adjacent pair. | "def register_notes_routes(app: FastAPI", `mount_static` | mcp/src/agents_remember/serving/notes.py:171-171; mcp/src/agents_remember/serving/static.py:112-129 |
-| The `confine_rel` realpath confinement this module reuses for reads. | `confine_rel` | mcp/src/agents_remember/kernel/sidecar_pairing.py:35-47 |
-| The repo allow-list authority guard (`require_repo`). | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
-| `McpRuntimeConfig` (`coordination_root`, `allowed_repo_ids`) and `path_is_relative_to` provide configuration and path confinement. | `McpRuntimeConfig`; `path_is_relative_to` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:124-154; mcp/src/agents_remember/kernel/primitives/runtime_config.py:738-743 |
-| `language_for` supplies the listing and read `language` field. | `language_for` | mcp/src/agents_remember/serving/scope.py:71-73 |
-| The changeset route's single-segment master confinement helper. | `_master_task_root` | mcp/src/agents_remember/serving/changeset.py:145-149 |
-| The browser client for these endpoints. | `notes` | dashboard/src/data/notes.ts:19-19 |
-| The `list_notes` and `read_note` helper bodies. | `list_notes`, `read_note` | mcp/src/agents_remember/serving/notes.py:101-109; mcp/src/agents_remember/serving/notes.py:112-136 |
-| The shared `SCOPED_READ_RESPONSES` refusal-table declaration. | `SCOPED_READ_RESPONSES` | mcp/src/agents_remember/serving/response_contract.py:1103-1109 |
+### Repo-Internal References
 
 
-## Update History
 
-- 2026-09-06T21:54:05+00:00 — Preserved response-shape and validation boundaries while removing active enforcement claims for the retired conformance suite. Source declarations were inspected; no replacement coverage is asserted.
+- The app factory registers notes routes during app assembly. [1]
 
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `SCOPED_READ_RESPONSES` repointed to mcp/src/agents_remember/serving/response_contract.py:1103-1109. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): widened the `McpRuntimeConfig` range to include its dataclass decorator so the cited range holds the current construct; wording verified current. Verification metadata remains pinned until closeout stamps the L9 code commit.
 
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+- The `confine_rel` realpath confinement this module reuses for reads. [2]
 
-- 2026-08-04T11:42:15+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer residual correction: narrowed rows 127-128 to the `list_notes`/
-  `read_note` helper bodies and the shared refusal-table declaration.
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T08:40+02:00 — 260731-EFA-L4 curator: recorded the two `response_model`
-  declarations and the shared `SCOPED_READ_RESPONSES` table, mapping its 400/404
-  entries onto the exact refusals `_notes_json` already produced (`bad-request`, `bad-path`,
-  `unknown-repo`, `not-found`). Noted that FastAPI validates neither handler — both return a
-  `JSONResponse` directly — so the gate is `test_serving_response_conformance.py`; added that to
-  the boundaries and two reference rows. No wire change. Verification metadata pinned until
-  closeout stamps the L4 commit.
 
-- 2026-07-07T18:40+02:00 — 260703-L18 (review fix batch, finding 5): `read_note` now caps through the
-  shared `scope.decode_capped`, cutting at a UTF-8 codepoint boundary so an oversize markdown note whose
-  multi-byte char straddles the 2-MiB cap returns text + `truncated: true` instead of empty `binary`.
-  Boundary test added to the notes suite. Verification metadata pinned until closeout stamps the L18 commit.
+- `McpRuntimeConfig` and `path_is_relative_to` provide configuration and path confinement. [4]
 
-- 2026-07-06T09:30+02:00 — L9 adversarial-review follow-up (L9R-1): ValueError from Path.resolve() (null-byte input) now maps to 400 bad-path in the status mapper; regression test added. Verification metadata pinned until closeout stamps the L9 commit.
 
-- 2026-07-06T01:10+02:00 — Created for agent-orchestration L9 (friction F-M): the read-only
-  coordination-notes API (`/api/notes/list` + `/api/notes/read`) confined to
-  `tasks/<repo>/<master>/notes/` via `require_repo` + single-segment `master` +
-  `confine_rel`, with the missing-folder empty list, the honest depth-capped subfolder
-  walk, and the size-capped binary-tolerant read. Registered in `create_app` before the
-  static mount. Verification metadata pinned until closeout stamps the L9 commit.
+
+- The browser client for these endpoints. [7]
+
+- The repo allow-list authority guard (`require_repo`). [3]
+- `language_for` supplies the listing and read `language` field. [5]
+- The changeset route's single-segment master confinement helper (moved to the new selection module by 260921-ICR-L13; `changeset.py` imports it). [6]
+
+
+- One folder answers in parts with total, offset, limit and remaining. [8]
+
+
+- Folders open through held descriptors without following symlinks. [9]
+
+
+- Rows sort directories first, case-folded, exact name breaking ties. [10]
+
+
+- Each row is examined without following symlinks. [11]
+
+
+- Bare names never resolve an escaping link. [12]
+
+
+- Each reference resolves to a notes path or null in one request. [13]
+
+
+- Bare filenames resolve only at the notes root. [14]
+
+
+- The part ceiling bounds every folder answer. [15]
+
+
+- The module's folder tests prove parts, order, confinement and bounds. [16]
+
+
+- A readable-but-unsearchable folder answers present with no children since failed entry stats are skipped; EACCES from the folder open or listing itself propagates (searchable-unreadable and neither keep baseline 500). [18]
+
+- The shared `SCOPED_READ_RESPONSES` refusal-table declaration. [17]

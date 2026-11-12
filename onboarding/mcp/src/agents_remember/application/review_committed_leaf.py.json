@@ -1,0 +1,226 @@
+{
+  "path": "mcp/src/agents_remember/application/review_committed_leaf.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+        "content": "sha256:356f37c15bc41b561ecc863a38aa1c8e2cf9fa725c4d701c680dfc38c4fe4c90",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_recorded_leaf_review"
+        }
+      },
+      "id": "RLZ-2DJ2Q8",
+      "invariant": "INV-9NCBGQSY",
+      "origin": {
+        "handoffEntry": "L187-9NC",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The recorded read is chosen by the caller's own statement of which record it reads, so an explicitly historical request addresses the leaf's published comparison instead of the delivered pair.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+        "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_committed_leaf_review"
+        }
+      },
+      "id": "RLZ-72VV42",
+      "invariant": "INV-8Q6DZTDB",
+      "origin": {
+        "handoffEntry": "co:INV-8Q6DZTDB",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The surviving resolver compares the recorded source and memory endpoints and keeps missing operands explicit.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+        "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_review_comparison"
+        }
+      },
+      "id": "RLZ-7JS6XC",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It resolves a provided number through the exact recorded leaf contract on both live and landed leaves.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+        "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_committed_leaf_review"
+        }
+      },
+      "id": "RLZ-8S8VDEJ3",
+      "invariant": "INV-9NCBGQSY",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Resolves a closed leaf from durable records, never from a worktree. It reads the leaf's recorded enclosure contract first. It then tries the recorded tree comparison: a leaf that recorded one reopens from its tree ids, and a leaf that recorded none proceeds to comparison-generation reopening with no converted/unconverted guard, then to the bare source range when no generation was published; an ambiguous or unreadable generation is refused rather than replaced. On a converted official line a leaf that recorded only a dataset comparison keeps its code sides and reports its knowledge sides legacy-unavailable, with no database read; legacy resolution uses the retained manifest's source sides.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+        "content": "sha256:1a6aa93005f736924a0d4dbd662010f73819233113f34181862e6732d0a10986",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_review_comparison"
+        }
+      },
+      "id": "RLZ-AV8VJT",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-HAJ9SH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "An explicit number reopens that comparison from the recorded leaf contract even for a live leaf; no current-worktree capture or legacy-generation substitution occurs on this path. None retains ordinary resolution. Invalid context, absent enclosure and absent recorded number return named refusals.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "36": {
+      "note": "A supplied number reopens only its tree record and refuses a missing enclosure/number.\n\nAnchor: \"def resolve_review_comparison(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:630794be4e63a8e89fa46725a1ae3590bf6886c6e41893112ad90d00cafd66d6",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 61
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Committed/default versus explicit legacy-generation reopening keeps retained identities.\n\nAnchor: \"def resolve_committed_leaf_review(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Historical limitations and dataset refusal preserve missing canonical sides.\n\nAnchor: \"def closed_leaf_limitations(resolved: ReviewCandidateResolution) -> tuple[str, ...]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:e49dedefaa5093abefceb3b791bed84b18eec155b0bec9cef3d4bbdc28ae744e",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The closed-leaf holder exposes the actual reopened generation and state.\n\nAnchor: \"class ClosedLeafReview:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:c3824a2a639e614e4efc6428d9f941e4d910132be8e607bab8f6b7570cc84a1c",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "A closed leaf's default read asks the delivered resolution first, and a leaf with no delivery keeps its recorded default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The recorded read addresses the leaf's published comparison with the delivered default switched off.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:356f37c15bc41b561ecc863a38aa1c8e2cf9fa725c4d701c680dfc38c4fe4c90",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_recorded_leaf_review"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The shared read keeps the enclosure refusal and the generation branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:944fd188f4a97594241fa90eb1de48b7ee2d626719b620c2f58a590549ab8d62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_committed_read"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:462cb509419c50ec6a582f9056d32071654f0d2434583f994e886e01442d4399",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

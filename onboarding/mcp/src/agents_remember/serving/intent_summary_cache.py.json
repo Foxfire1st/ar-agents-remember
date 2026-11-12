@@ -1,0 +1,114 @@
+{
+  "path": "mcp/src/agents_remember/serving/intent_summary_cache.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fa967a110b417a273179def211beadcbffa21efe",
+        "content": "sha256:64f2db09bbc5c883ad0c6556fae4be637cff7ec73a4d4f7d5f43c8a558939f0b",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewIntentSummaryPort"
+        }
+      },
+      "id": "RLZ-3Z9TNH",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-HAJ9SH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Both the native-input callable and native-summary callable receive the comparison number, with the observer after that key. The serving cache forwards that same key to both. This carries explicit numbered-comparison selection through dependency observation and computation instead of dropping the number at the port boundary.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fa967a110b417a273179def211beadcbffa21efe",
+        "content": "sha256:871f7f3a7d09f2445d28c504d508fcd471bd3da0f3a449489b1d748d9b4b7e3d",
+        "locator": {
+          "end": 26,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-SSTYDB",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W6-MCP-INV-HAJ9SH",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names the summary question as repository, master, leaf and comparison number (None means ordinary leaf resolution). IntentSummaryCache._response actually constructs and uses this four-part key for native inputs, read and retained-answer identity, so two numbered comparisons cannot share one question key. Root must verify locator admission for this Python type alias before writing an entry.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "fa967a110b417a273179def211beadcbffa21efe",
+        "content": "sha256:c3d0b9cbf7f44af94348e5cb0eca0ac0fc6bf054b3d1128b1f65e99eb5347194",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentSummaryCache"
+        }
+      },
+      "id": "RLZ-T8RYYH",
+      "invariant": "INV-WC3BS4",
+      "origin": {
+        "handoffEntry": "L177-INV-SUMMARY-WINDOW",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The cache owns the window, puts it in the key and mints a new one as time passes, so no admission record can reproduce an old key.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "4": {
+      "note": "The port and key include optional recorded comparison identity.\n\nAnchor: \"# One summary question: repository, master, leaf, and the recorded comparison number it names, or\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa967a110b417a273179def211beadcbffa21efe",
+            "content": "sha256:871f7f3a7d09f2445d28c504d508fcd471bd3da0f3a449489b1d748d9b4b7e3d",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The clock independently controls age windows and the admission table stays bounded.\n\nAnchor: \"class IntentSummaryCache:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa967a110b417a273179def211beadcbffa21efe",
+            "content": "sha256:c3d0b9cbf7f44af94348e5cb0eca0ac0fc6bf054b3d1128b1f65e99eb5347194",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Production and reuse preserve the exact question, additional dependencies and refusal-only unknown-status retention.\n\nAnchor: \"def response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa967a110b417a273179def211beadcbffa21efe",
+            "content": "sha256:9a1b8f9f6dab4c95df6be93fffae1c7104a265703c747be79386ac6b63c202a8",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

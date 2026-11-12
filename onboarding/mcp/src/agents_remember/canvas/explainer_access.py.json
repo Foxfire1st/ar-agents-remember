@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_access.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One comparison identity token names the owner, the number and all four trees, and a planned binding names its two tips instead\n\nAnchor: `def binding_claim(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17c29d737a408027f41db631d9d7a21e155e4841",
+            "content": "sha256:cb456bb286c4d945fd333356e3189cff33e7ca3fa8d1986f6e70956dd0482efc",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 52
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Traversal, an absolute path, an empty segment and a drive letter are refused as `path-refused`\n\nAnchor: `def relative_parts(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "17c29d737a408027f41db631d9d7a21e155e4841",
+            "content": "sha256:e850f4288825eafc415a23c183060e53c5c9755e31ffdd2abbd99dbcbf34a2de",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 256
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

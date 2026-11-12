@@ -1,0 +1,516 @@
+{
+  "path": "mcp/src/agents_remember/observer",
+  "references": {
+    "2": {
+      "note": "`Event` is the observer event model.\n\nAnchor: `Event`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:bf1c889ad3d2ed153a0777aff4a42198118bdd11bb158fd8a134d739afae6244",
+            "locator": {
+              "kind": "symbol",
+              "name": "Event"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Graph titles are master-qualified and resolved/abandoned/landed are distinct display predicates.\n\nAnchor: graph protocol, frontier and title lookup",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
+            "content": "sha256:8db791857e68ea8e5e249a7216002cd2c72483920aab6fc40f7b0a2d596babab",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
+            "content": "sha256:55a6e185ab3481a0318b3151f7b3be39395f136fa533ca22ee621e56509f7261",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Completed history without trusted finals receives bounded once-per-key finishing probes, including at startup; freeze requires observed rows and trusted reads additionally validate exact contract participants, labels and reducer shape. Anchor: `_needs_live_probe`, `_maybe_freeze`; `LandingStateRefresher._needs_live_probe`; `LandingStateRefresher._maybe_freeze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:b7acb5c9e29678903fd8aa3465439733a65b3dc299929f00382f206c28744686",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The native workspace fold consumes supplied structural, task and host facts and publishes one TaskEntry collection with counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:b67c1f6e987ed016e6495d3760b30de7f0db389af5d6bb403fa7366f01b23a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_workspace"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Native state separates canonical stage, optional host activity and contributing eventAt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:fe9ca863cfcf6e071b01eec7e19ab0cc07db6748f5a092ed6d0343dcfd714514",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskState"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Terminal/planned stage wins; an unknown host cannot establish paused or waiting, and timestamp selection uses the working agents, else the earliest waiting seat's declared-wait start, else the observed agents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_state"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The one task join creates native identity/membership and binds contracts by exact task identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Published host states admit only the declared vocabulary and timezone-aware event timestamps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "content": "sha256:e9491d4291d3092cc13624c060fde336375bc9669ad67b7b731ef73a933a68a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "PublishedAgentActivity"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The host publication separately carries boot identity, completeness, agent facts and ignoredEvents.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+            "content": "sha256:52aeb74957de86c9196f6f2ed21f0b958f7adaba398fc727905cbe2f5773717b",
+            "locator": {
+              "kind": "symbol",
+              "name": "HostActivityPublication"
+            },
+            "path": "mcp/src/agents_remember/observer/host_activity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The completed-call writer is bounded and failure-counting; it is not the removed ambient/read.packet emitter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:2ad0c4b014e0ab79c3ed2458a859b378be9ed027f119369f088492819a6fcf2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventWriter"
+            },
+            "path": "mcp/src/agents_remember/observer/tool_events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Current EventStore only appends and reads the workspace river.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b54dd4dde4a0dffb6e89ba453123cfdcd054b3db298b6d656d98936f6c5b2417",
+            "locator": {
+              "kind": "symbol",
+              "name": "EventStore"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The noncreating reader helper reports whether it obtained the shared river lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d27a65dd2c90b37ee5338cafbd1564796e6c80",
+            "content": "sha256:b21739c63223a27b2a7cb70528aa785ecec37fe55ce96834808eaa463a5d4ca0",
+            "locator": {
+              "kind": "symbol",
+              "name": "workspace_river_read"
+            },
+            "path": "mcp/src/agents_remember/observer/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Every workspace append uses the shared byte-bound admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:5f06c9b71ce4cefe9c5c8b466e082a205be69656de4c6a5c2912935517fcd74b",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_workspace_river_row"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Compaction replaces the river and then writes its virtual base offset separately; N2 remains a crash-window limit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09233476d16c71cbf49d5a0cd2ff8ac5ec38c348",
+            "content": "sha256:32c3ff8ecb63687a357edba7ab8d920b8daa7f4a345b19792ad28f92e4c0cd16",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compact_under_lock"
+            },
+            "path": "mcp/src/agents_remember/observer/event_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "The attention queue composes actionable-drift and blocked-start with native_attention_items for permission-wait, held-message, task-stalled, task-landed and task-abandoned. It suppresses matching per-occurrence acknowledgements for every kind and sorts ascending by (waitSeconds or 0.0, id), with no severity key. Native builders retain canonical task/agent targets and their own bounded fact/occurrence semantics; acknowledging a live cause does not resolve it. Drift fingerprints and complete source-owned recovery/removal remain distinct from missing data or elapsed age.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:df422e63673c2c2e4d72bcde4ca6020c81448e3c13cdce3f37d7be4ed8236171",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:a42ab4dd3c0acbce74126258fef02da9750eb01d6a77ae906347127486ba1b66",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:459380fdfa212473a9cb39c48e4c495a35891a0c56bcd61cd8f895fcaee09825",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:3260adcda0e83ab1119dfc4c81b77b78acfe48639b88a86cd524d2d21d2bab3c",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+            "content": "sha256:ccde3b25061b069a2429e931455f47c710766f7f0556b30f25fc45813e490b6b",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+            "content": "sha256:5520816210b8fd9bc65b0d783cca25f07e69099338650af3d77d15fde2e9ed86",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+            "content": "sha256:39c0c8e0f58f3cfa9952c8e6a96ec63f4b70aae8465b3571f6be0c8e57b3dfdb",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+            "content": "sha256:c1a9551b221755e5a2db952274f50b8e1957db718c24a3c2c07f93bf14e57ea4",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 159
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+            "content": "sha256:85bf25e1031e124f92f64dee5408743cbb073a1f155d8548b0c7552ecd8ffbaa",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfd1d73438ae05c1a74dcbc30c790ff903c343fb",
+            "content": "sha256:e4156ba39fda96625a09e3151a9bf7ce5a1e985a12b9b173ccde628e422ad9ca",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 72
+            },
+            "path": "mcp/src/agents_remember/observer/native_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+            "content": "sha256:b4956c91f6beffbc24d4d3a9fd94f1cf90c8f16cd109f97788e754a106a7cd49",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "edb4ac727ca2888b5c529ec054650c50cb51ef52",
+            "content": "sha256:f202f72139c1f9912aacb540fd739ebae675b929d9608fce1d6faecadab82462",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 439
+            },
+            "path": "mcp/src/agents_remember/serving/projections/native_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Dismissal matching distinguishes drift fingerprints from other source-owned recovery/removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "076d83315223337d2ae1069118fadbb14829c501",
+            "content": "sha256:a42ab4dd3c0acbce74126258fef02da9750eb01d6a77ae906347127486ba1b66",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_dismissed"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_attention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_listed_child"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Repository analytical caching returns route coverage and ledger only; workspace metrics and analytics no longer carry verification-age sidecar rollups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:01bfd1bc7e1a03e7d34c3f0aa1be1c39c8ea8b6bea239152adf690019ccdb2fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces_cached"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc7a6d1a7b42e9f22d3b82ddcee7e044cd9d7cb5",
+            "content": "sha256:bde726e93efe7ef8244710df716b85856e4098d733522c36dcd6c57f033a528e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer_impl/_metrics.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

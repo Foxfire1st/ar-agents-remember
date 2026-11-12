@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_review_artifact_cleanup_caches.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Archived-task cache deletion with sizes, and the hook trust statements, are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0383e1125ebfbee6b8e01178801b25ae9775fa67",
+            "content": "sha256:ae6c98448058d3c721ae6be124bf60b013093e95afdaddc42de6db8005eaa33f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

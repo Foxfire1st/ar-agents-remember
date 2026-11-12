@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: test_comparison_changeset.py; l86-parity/changeset-comparison.json"
+  },
+  "applicability": "The change-set routes' comparison selector.",
+  "conditions": [
+    "GET changeset task/file-diff accept comparison=N with repo/master/leaf: range is the recorded comparison (code base-to-candidate trees; memory limited to knowledge/ + onboarding/).",
+    "Answer has the leaf-view shape with mode comparison + number + four tree identities; code list equals the review inventory (rename = removed+added).",
+    "Unknown number/unreadable tree refused by name (404); comparison+mode together refused (400); no substituted range; one diff per half + two blob reads per opened file."
+  ],
+  "exclusions": [
+    "Other ranges, captured/indexed/classified content, changed bytes for other selectors."
+  ],
+  "id": "INV-31006K",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_comparison_changeset.py; l86-parity/changeset-comparison.json"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 12",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A comparison selector reads only its recorded code and memory trees, scopes memory to knowledge and onboarding, and refuses conflicts or missing objects by name.",
+  "status": "proposed",
+  "supersedes": []
+}

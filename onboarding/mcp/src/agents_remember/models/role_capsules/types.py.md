@@ -1,0 +1,143 @@
+# mcp/src/agents_remember/models/role_capsules/types.py
+
+## Governing Overview
+
+[models overview](../overview.md)
+
+## Purpose
+
+The frozen input/output contract for the deterministic role-capsule compiler: the value
+types an admitted AR binding, a compiled capsule, and the diagnostic manifest are made of.
+Every later consumer (task projection, MCP delivery, a harness adapter) reads these shapes
+and does not redefine them — a consumer that believes one is wrong reports that to the owner
+rather than forking a second shape.
+
+## Code Commentary
+
+### Logic
+
+Three planes are kept structurally apart, because collapsing any two of them is the failure
+this contract exists to prevent:
+
+- **admitted input** — cit:([`CapsuleAdmittedFacts`, `CapsuleBinding`], mcp/src/agents_remember/models/role_capsules/types.py:198-227; mcp/src/agents_remember/models/role_capsules/types.py:299-318).
+  Every field is decided by an existing AR owner: the seat, the task reference and its
+  document digest, the requirements, the work branch, and the `CapsuleToolPolicy` snapshot
+  that cit:(["def permits"], mcp/src/agents_remember/models/role_capsules/types.py:193-194) answers subset questions from. The compiler never infers a role from prose
+  and never grants a capability.
+- **content output** — cit:([`CapsuleCapsule`], mcp/src/agents_remember/models/role_capsules/types.py:450-463) carries ordered cit:([`CapsuleInstructionUnit`], mcp/src/agents_remember/models/role_capsules/types.py:378-395) values, the optional task context, skill references, requested tools,
+  and the `semantic_digest` that names the compilation.
+- **diagnostic output** — the manifests live in the sibling `diagnostics` module and never
+  feed that digest.
+
+The seat is a two-shaped union rather than one widened type: cit:([`CapsuleRoleSeat`], mcp/src/agents_remember/models/role_capsules/types.py:130-150) carries a role and an altitude, while cit:([`CapsuleLauncherSeat`], mcp/src/agents_remember/models/role_capsules/types.py:153-179) carries a
+routing condition and deliberately returns `None` for both `role` and `block_identity`. That
+is the type-level form of "the ambient launcher is a routing condition, not a tenth role" —
+a launcher cannot silently acquire a role by defaulting a field.
+
+Two digests are computed here and nowhere else: cit:([`compute_content_digest`], mcp/src/agents_remember/models/role_capsules/types.py:81-86) over raw bytes and
+cit:([`compute_semantic_digest`], mcp/src/agents_remember/models/role_capsules/types.py:87-92) over a canonical document string. Both are `sha256`-prefixed and validated by
+cit:([`_require_digest`], mcp/src/agents_remember/models/role_capsules/types.py:99-113), so a caller cannot hand a shape a digest-shaped string that is not one.
+
+The selection and conflict vocabularies are declared as module constants
+cit:([`SELECTION_SHARED_CORE`, `SUPERSEDE_EXPLICIT`, `CONFLICT_EQUAL_AUTHORITY`], mcp/src/agents_remember/models/role_capsules/types.py:68-78) so that a selection reason or a
+conflict kind has exactly one spelling across the compiler, the resolution module, and the
+diagnostic manifest.
+
+### Conventions
+
+Value types use `@dataclass(frozen=True, slots=True)`; types with a `__post_init__` refuse the blank or malformed fields they validate rather than normalizing them. The new CapsuleDetailReference is a frozen carrier without its own post-init validation; admitted-source construction supplies its provenance. Immutability is not decorative:
+these objects travel into the diagnostic manifest, and the digest is computed over their
+fields, so an in-place edit would silently desynchronize identity from content.
+
+### Invariants And Boundaries
+
+- **Layer placement is load-bearing.** This package holds only dependency-free value types,
+  canonical source parsing, and selection logic, so it sits in `models`. The module opens no
+  file, reaches no network, and calls no model; reading a source file from disk, resolving an
+  admitted coordination root, and encoding bytes belong to
+  `mcp/src/agents_remember/application/role_capsules`.
+- The admitted input is **not** derived from the manifest or from prose. `CapsuleBinding.operation`
+  is an explicit value; a caller-controlled string can never become a role.
+- `CapsuleToolPolicy.granted` is what an existing AR owner already permits. A capsule *requests*
+  capabilities; nothing here can add a tool the policy did not already permit.
+- Existing validating digest/identity/authority types require their declared nonblank or `sha256:` forms at construction. CapsuleDetailReference adds no independent post-init validation; its revision/content are copied from admitted source values.
+- `CapsuleLauncherSeat.role` and `.block_identity` return `None` permanently. Do not "fix" them
+  into returning a launcher-named role — the launcher has its own core block and no role block.
+- These shapes are frozen for the master's consumers. Extending them is an owner decision;
+  a consumer must not fork a local variant.
+
+### Todos
+
+None recorded.
+
+## Current Contract
+
+CapsuleDetailReference is a frozen slotted value holding source_path, revision, raw content bytes and the named step. CapsuleCapsule adds a default-empty tuple of these values. Instruction rendering remains a concatenation of selected instruction blocks, not injected detail bodies. The new carrier has no __post_init__ validator of its own: construction provenance comes from admitted sources and the detail compiler, while existing validating digest/binding types keep their own checks. Immutability of the tuple/value does not itself prove immutable on-disk launch artifacts.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
+## Current source contract
+
+CapsuleCapsule additionally carries a default-empty tuple of CapsuleContractMarker values. These source-addressed endpoints are separate from rendered instruction blocks and detail bodies; the contract parser validates them during compilation. This field alone grants no delivery or write authority.
+
+- Adds default-empty contract_markers tuple on capsule result. [11]
+
+## Evidence
+
+
+- Launch copies detail files, substitutes paths, and records frozen revisions. [7]
+
+- Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources. [8]
+
+- Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication. [9]
+Retained authoring-row wording:
+
+Finding: File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/role_capsules/types.py:452-504
+
+### Docs References
+
+No external or domain documentation is configured for this memory root
+(`system/sources.md` has no entries), so no external documentation claim is made.
+
+No relevant documentation found after checking live sources.
+
+### Repo-Internal References
+
+
+- The frozen role and operation vocabulary these types are declared against. [1]
+
+- The stable refusal codes a binding or selection defect resolves to. [2]
+
+Retained authoring-row wording:
+
+Finding: The pure compiler that consumes these shapes and produces the sealed result.
+
+Anchor:
+
+Source: mcp/src/agents_remember/models/role_capsules/compiler.py:99-189; mcp/src/agents_remember/models/role_capsules/compiler.py:92-156; mcp/src/agents_remember/models/role_capsules/compiler.py
+
+- The diagnostic half of the contract, kept structurally out of the digest. [4]
+Retained authoring-row wording:
+
+Finding: The application boundary that does the I/O this module refuses to do.
+
+Anchor:
+
+Source: mcp/src/agents_remember/application/role_capsules/compilation.py:93-134; mcp/src/agents_remember/application/role_capsules/sources.py:78-92; mcp/src/agents_remember/application/role_capsules/sources.py:68-89
+- Compound identity, digest and order properties are pinned by executable cases. [6]
+
+### Cross-Repo References
+
+No sibling-repository contract defines these value types. The reference implementation this
+master studied is eve's dynamic resolver, which is a design input to CAPS-R02 rather than a
+runtime boundary of this module; no eve code is imported here.
+
+No meaningful cross-repo references found.
+
+- The pure compiler that consumes these shapes and produces the sealed result. [3]
+- The application boundary that does the I/O this module refuses to do. [5]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [10]

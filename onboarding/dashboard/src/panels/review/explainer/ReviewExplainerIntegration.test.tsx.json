@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ReviewExplainerIntegration.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+        }
+      },
+      "facet": "Pins a claim’s return to its selected Review block inside the mounted surface while the tree remains outside the explanation replacement.",
+      "id": "PRF-2CTVHM",
+      "invariant": "INV-9ZKYWQ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-retained-evidence-walk",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:b2f7d37fc7da43b9b6ad9f64a45c09fceb72ae394f308732bfb8a92901305e21",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounts PlannedReview when the leaf is in planning mode (/planned)"
+        }
+      },
+      "facet": "Pins intended wording, inert packets, resolved/unresolved paths and synchronized deterministic order with no starts.",
+      "id": "PRF-7M7N1M",
+      "invariant": "INV-JFJ3Y3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE06-planned-intent",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:73e1032dfd4af170e6ccfb2d4bfcbed9b30196d588fd4346b6b8d605b355f380",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return"
+        }
+      },
+      "facet": "Pins revision-specific placement, isolation and controls over the mounted stubbed transport.",
+      "id": "PRF-85ZY7X",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+        "content": "sha256:0fe795319efc1d8c6be7f1f561ebfdc24f3b945b75a08b696d085920d363baa5",
+        "locator": {
+          "kind": "symbol",
+          "name": "orders blocks by judgment scale with Priority tie-break, groups ungraded last under Ungraded (n), preserves stale marks, and renders active-first hover reasons including carried merged grades"
+        }
+      },
+      "facet": "Pins scale order, Priority ties, Ungraded grouping and carried/stale inference reasons.",
+      "id": "PRF-B6QWG1",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The switch sits in the top line, the explanation page keeps the tree and chat outside it, and a claim link selects its exact block on return\n\nAnchor: `mounts ExplanationSwitch in the top line, renders ExplanationView with tree and chat outside, and selects the exact claim block on return`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+            "content": "sha256:3c25f8e3579a0a3fbfa45d3d2abfa6eca8bc93400754f042d5c74435506fde24",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 95
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A planning-mode leaf mounts the planned page\n\nAnchor: `mounts PlannedReview when the leaf is in planning mode (/planned)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a41b22ca4a770d8b1e31a2bf52fbf0f5e83a4a7",
+            "content": "sha256:64b92cbe73e88d19ef68e94298ad74fee4d0a3d6b9b9c78cd39e1b9d9eff1a98",
+            "locator": {
+              "end": 912,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

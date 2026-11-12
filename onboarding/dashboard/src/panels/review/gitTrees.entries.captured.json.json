@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/review/gitTrees.entries.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The subject total: 94 invariants and 14 families.\n\nAnchor: \"total_subjects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4855a817594db57c60fcb9655fb19f7e41a9b62",
+            "content": "sha256:529b856b38d4840f1897913b6009a4c6521b5daa85de0307bb769b7e20e22a8e",
+            "locator": {
+              "end": 659,
+              "kind": "line_range",
+              "start": 659
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The receipt row for this body, now with its request parameters.\n\nAnchor: \"gitTrees.entries.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:fdddb023c1635de2760966c44a96280ac6914223facffec8be5b434addcebd74",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "dashboard/src/panels/review/gitTrees.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

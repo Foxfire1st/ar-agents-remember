@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Spans the old/new settings homes and their CLI/install/documentation owners: exclusive whole-file transfer and collision refusal preserve the family single-location guarantee, with R137 mandatory post-transfer permission closure/reporting explicitly qualified."
+  },
+  "applicability": "The explicit one-time upgrade move of the user settings file.",
+  "conditions": [
+    "The whole JSON bytes and available metadata copy before the old file is removed; destination creation is exclusive.",
+    "An existing destination or a nonregular source refuses the move.",
+    "After transfer the owner attempts file0444/folder0555 closure; unsupported-mode OSError is reported in permissionsNote while the moved file remains.",
+    "Dry-run transfers no file and changes no permissions; every normal response carries the protection report."
+  ],
+  "exclusions": [
+    "A role-key-only fallback or parsing/copying only role settings.",
+    "An unchanged permission-bit preservation promise after the R137 closure.",
+    "An all-I/O-failure rollback guarantee or fresh proof that this Curator executed the upgrade; historical L71 no-real-file-moved evidence remains origin provenance."
+  ],
+  "id": "INV-3HQNH1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/role-launch/260928-MIK-L71-worker-d508f3cc-d109-host-readers/source-current-a1b7/source26-public-sync/generation15-five-pin-successor/expanded-evidence.md"
+      ],
+      "path": "l71-handoff-list.json"
+    },
+    "handoffEntry": "L71-CURRENT242-W-16",
+    "leaf": "260928-MIK-L71",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The explicit upgrade command transfers the complete user JSON file once to an exclusively created destination, copies metadata before removing the old file, refuses an existing destination and adds no role-key-only fallback; R137 then normalizes file/folder write permissions and reports a closure failure without undoing the completed move.",
+  "status": "proposed",
+  "supersedes": []
+}

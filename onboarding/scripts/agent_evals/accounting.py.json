@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/accounting.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3d9dac5508226545350568731334244889727d36",
+        "content": "sha256:c898a0cf2c0a95586154664c0d4dbc2faa54e3fac40fd6bdf4d5391428e4488c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-PXHHAZ",
+      "invariant": "INV-EC2JFV",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-accounting",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It validates chronological attempts, classifies semantic and capture unknowns and reports case/theme results without accepting the measurement itself.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d9dac5508226545350568731334244889727d36",
+            "content": "sha256:c898a0cf2c0a95586154664c0d4dbc2faa54e3fac40fd6bdf4d5391428e4488c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

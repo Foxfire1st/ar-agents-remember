@@ -1,0 +1,37 @@
+{
+  "path": "dashboard/src/dev/DocumentChatHarness.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The harness renders the real right rail for the switched Projects/Master/Task/ghost document with river/chat toggle buttons.\n\nAnchor: `DocumentChatHarness`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ab6fb18150e9ffcdc0c08e1792fc57d7506d65d",
+            "content": "sha256:54ff1769bc90836cf236e7044ccafb5c08b6c6b75197c6d7b5ebab7ceddec514",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fetch stub answers frame and document-chats calls with the fixed agent table.\n\nAnchor: `installFetchStub`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ab6fb18150e9ffcdc0c08e1792fc57d7506d65d",
+            "content": "sha256:54ff1769bc90836cf236e7044ccafb5c08b6c6b75197c6d7b5ebab7ceddec514",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,75 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The packet explicitly rejects pytest-only detection and save/restore; refusing before mutation continues to bind new shared-support callers."
+  },
+  "alternatives": [
+    {
+      "option": "One protected-path guard used before settings-parent creation and mutation, with a recursive syntactic regression test.",
+      "reason": "The boundary works for reusable support independently of whether pytest is running.",
+      "status": "chosen"
+    },
+    {
+      "option": "Rely only on pytest detection or conftest moving configuration.",
+      "reason": "A standalone support caller can reach the live account settings without pytest isolation.",
+      "reconsider_when": "Support ceases to be reusable outside an enforceably isolated runner, with a new governing ruling.",
+      "status": "rejected"
+    },
+    {
+      "option": "Save the live settings file, mutate it, then restore it.",
+      "reason": "It still writes the live file and can interrupt role transport or lose state before restoration.",
+      "reconsider_when": "The governing requirement is explicitly changed to permit live-file mutation.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future shared-support settings mutations must obtain the guard path; product settings ownership stays unchanged."
+  ],
+  "context": "A test-world call outside pytest overwrote the user settings file; pytest-only isolation did not protect reusable support.",
+  "decider": "Architect-approved MIK-R135@v1 under developer D47",
+  "id": "DEC-PG9KCZ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-GT2391"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-P3ZYFW"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-W6WXHZ"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R135",
+        "packet": "requirements/MIK-R135-v1-test-support-never-writes-the-users-settings-file.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R135@v1 Required Behavior 1-4 and nonconforming examples; CODE R4 verdict; originals and projection identities in producer-resolutions.json."
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L135-D-SAFETY",
+    "leaf": "260928-MIK-L135",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

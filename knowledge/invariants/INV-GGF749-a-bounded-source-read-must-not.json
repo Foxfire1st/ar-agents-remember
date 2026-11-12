@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "An empty file or a range past the decoded prefix would otherwise be published as measured absence, hiding that the source was never read."
+  },
+  "applicability": "Bounded source reads of an existing file at a bound comparison side.",
+  "conditions": [
+    "The requested range or page lies at or beyond the admitted window."
+  ],
+  "exclusions": [
+    "A missing path, which is measured absence, and an unreadable tree, which is unavailable."
+  ],
+  "id": "INV-GGF749",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A4-checks/finish-controls.json: literal-separator-and-long-line-continuation; probes.json: long-line-control; focused F03"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F03",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A bounded source read must not turn an existing empty file or an unread range beyond a decoded prefix into measured absence, and its continuation must reach the remaining requested source.",
+  "status": "proposed",
+  "supersedes": []
+}

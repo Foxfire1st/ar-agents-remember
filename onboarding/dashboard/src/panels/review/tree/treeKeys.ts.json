@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/tree/treeKeys.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "ArrowUp/Down wrap focus across shown tree rows including pinned rows, prevent page focus scroll and reveal row in tree.\n\nAnchor: \"export const TREE_ROOT_SELECTOR = '[data-testid=\"review-tree\"]';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "069315e1e371af0666fe6d09c0869b3309a423b3",
+            "content": "sha256:d7daf62259291ac22e7d70e924ee4c2943a8d2bb724599eb8351b09b2ea1cd92",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "ArrowUp/Down wrap focus across shown tree rows including pinned rows, prevent page focus scroll and reveal row in tree.\n\nAnchor: \"export function treeArrow(event: KeyboardEvent<HTMLButtonElement>): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "069315e1e371af0666fe6d09c0869b3309a423b3",
+            "content": "sha256:5db6da218cd743c1f76cdd6a913a09fe3c9f19cf780fefbb81309ae9fff99e1b",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/tests/test_quality_diagnostics.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_quality_diagnostics.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:35:26+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -31,7 +21,7 @@ boundary when changing policy rather than adding duplicate metric or collection 
 
 ### Invariants And Boundaries
 
-Default budgets are 1000 unit and150 integration collected cases. Coverage is diagnostic; production
+There is **no per-declaration default budget**: `mcp/tests/conftest.py` registers the two ini names with `addini` and carries no `default=`, and the enforced pair lives once, in the repository-root `pyproject.toml` under `[tool.pytest.ini_options]` — **2300 unit / 400 integration** when this was written; read it there, it moves. Coverage is diagnostic; production
 CRAP 20 triggers review without failing delivery. Full suites and whole-candidate review occur at
 master completion. A green unit result is not a certification certificate.
 
@@ -39,31 +29,23 @@ master completion. A green unit result is not a certification certificate.
 
 Verification metadata remains closeout-owned; this card records source inspection only.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured; this behavior is repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is needed. | N/A | N/A |
+No external domain claim is needed.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The exact functions below establish the tested boundary and its test doubles.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Proves that diagnostic metric findings remain visible without blocking delivery. | `test_low_coverage_is_reported_without_failing_delivery` | mcp/tests/test_quality_diagnostics.py:20-49 |
-| Proves that diagnostic metric findings remain visible without blocking delivery. | `test_high_crap_requests_review_without_failing_delivery` | mcp/tests/test_quality_diagnostics.py:52-75 |
+- Proves that diagnostic metric findings remain visible without blocking delivery. [1]
+- Proves that diagnostic metric findings remain visible without blocking delivery. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository protocol is exercised by these unit cases.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external boundary is claimed. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:35:26+00:00 — Documented the actual d3610903 unit behavior and test-double limits without claiming an unrun verification pass.
+No external boundary is claimed.

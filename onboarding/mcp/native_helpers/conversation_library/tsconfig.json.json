@@ -1,0 +1,43 @@
+{
+  "path": "mcp/native_helpers/conversation_library/tsconfig.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package's `typecheck` script invokes this no-emit configuration.\n\nAnchor: `typecheck`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "279753d178eb10cbc4d3a55fd3b69f2240df7e31",
+            "content": "sha256:65b3a139612b0a10f4e8567e71f8d1f4a1a5b2f3a5693fa650244d83dce96b84",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/native_helpers/conversation_library/package.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Protocol code and tests are the complete included TypeScript source set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10a7a9f179e8dff2b50d1779e43c2a52b4b6a562",
+            "content": "sha256:19299769ec918cbf22e87632ef5acbf56c9e92f42c296cb36800e1ad7a362fb5",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/native_helpers/conversation_library/src/protocol.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

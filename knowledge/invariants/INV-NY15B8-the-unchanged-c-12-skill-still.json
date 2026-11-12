@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Canonical skills and the MCP reference together state the archive and no-remains doctrine; seven parity tests pin every row across all copies."
+  },
+  "applicability": "Scoped doctrine for the archive and no-remains routes.",
+  "conditions": [
+    "Canonical skills, generated copies and the MCP reference."
+  ],
+  "exclusions": [
+    "Product behavior itself, owned by the code entries."
+  ],
+  "id": "INV-NY15B8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_enclosure_doctrine_parity.py (seven tests); notes/reports/l82-code-review-R2/doctrine-parity.json (20/20 match); notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-08",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The unchanged c-12 skill still says only retire_master archives a master, while scoped c-09 and MCP reference text omit the newly admitted no-remains terminal exception.",
+  "status": "retired",
+  "supersedes": []
+}

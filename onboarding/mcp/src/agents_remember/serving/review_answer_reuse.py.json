@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/serving/review_answer_reuse.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+        "content": "sha256:be5e918b7e5825f69452b7cce5bfcadc636a21070b3e62e8ebf7c208b9b01e32",
+        "locator": {
+          "kind": "symbol",
+          "name": "RecordedAnswerReuse"
+        }
+      },
+      "id": "RLZ-V4HXV2",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The bounded store that serves an answer only while every observed input still carries its stamp, and never after its size or age bound.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "5": {
+      "note": "Stable hits are copied; fresh values also pass the optional keep predicate and matching before/after observations.\n\nAnchor: \"def answer[T](\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "content": "sha256:6d158815c345713a8442e4ffa576f6d7e66ba4e5199907ee0730915ca4a0214f",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 218
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "LRU capacity and finite age bound stored answers.\n\nAnchor: \"def _keep(self, key: tuple[object, ...], kept: _Kept) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "141dbff7ec35bacf0f84ee6a6b2ae8eb24559931",
+            "content": "sha256:98f0791be324596a1e687017b65f8c801610f88fa3bd7cbca8eb121467df2175",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 405
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

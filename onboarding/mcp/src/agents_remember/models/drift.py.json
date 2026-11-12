@@ -1,0 +1,170 @@
+{
+  "path": "mcp/src/agents_remember/models/drift.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The strict `DriftSummary` model exposes status and the optional diagnostic error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9114e155d9f2a5e4be13847dfae76a7674a446b",
+            "content": "sha256:f3cb1ef5e115b82b7f9c5c8a5ca59df05b7879630ac7e8f310db29ddfdb16318",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Context packet construction validates `_drift_packet` output with `DriftSummary.model_validate`; `_drift_packet` is typed as `DriftSummaryPacket`.\n\nAnchor: \"drift=DriftSummary.model_validate\"; \"def _drift_packet\"; \"-> DriftSummaryPacket\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:30c1f188f142ed7a824680b207172c5519bc614a48fda7cf167edb8ddf79956c",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:42dc01e6a5b3c6e6acd56fd8b693dc265774948e58ae547146c624a40b1ee2e3",
+            "locator": {
+              "end": 423,
+              "kind": "line_range",
+              "start": 423
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:31c600d2f9b2d4d43d26092a825f042c693d4f34efaf34aff27818aceecf2333",
+            "locator": {
+              "end": 427,
+              "kind": "line_range",
+              "start": 427
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:076b41541537dfb038105a4df9772b7ff18fc9576011fe16b792812be8beab0a",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:738ccd6022d5a7b9d08c84d6909d5f341bcbe79b1cf3b738d11b083e9268a564",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:035ddf3cc6c2c36dffc84abaf1a424d593d1d21d5daea44b5e022152c80ea836",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The onboarding drift model imports canonical `DriftStatus` and defines the `DriftSummaryPacket` wire shape.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d617ae8333cdb55f3cf9bdac4802153afe86655d",
+            "content": "sha256:2c37f03052e83372cccb360bdefa6ee9f68c2a6e4a72b6a96404fa76d0c78b52",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummaryPacket"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Both wire models expose the shared `DriftStatus` and optional error diagnostic.  Anchor: \"class DriftSummary\"; \"class DriftCheckResponse(ToolResponse):\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9114e155d9f2a5e4be13847dfae76a7674a446b",
+            "content": "sha256:3c2e03e160a2b1b355b128517aabec642e133b1930f6797c20a7a311b715aa24",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd7ec716feacd1db6d5df3f9f31d400bf26d49e",
+            "content": "sha256:9006b7b69dc5a39ca0854598cd817087bc4cd69dadbaeac832c91843fde0f9e7",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The summary carries the converted measurement fields beside the legacy ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9114e155d9f2a5e4be13847dfae76a7674a446b",
+            "content": "sha256:f3cb1ef5e115b82b7f9c5c8a5ca59df05b7879630ac7e8f310db29ddfdb16318",
+            "locator": {
+              "kind": "symbol",
+              "name": "DriftSummary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

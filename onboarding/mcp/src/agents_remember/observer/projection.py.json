@@ -1,0 +1,251 @@
+{
+  "path": "mcp/src/agents_remember/observer/projection.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+        "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6RPNQ9",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-W-R167-13-14",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The wire schema defines the sole task entry/count surface and omits retired duplicate collections.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+        "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HSNJ5Q",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The served projection at C declares no search-provider node, boot record, setup summary or progress entry; the lone providerLimit field on a task entry is the excluded usage limit.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+        "content": "sha256:bb72b8be4d60d3da890342fc50a7c9a2e583efe4bef923bfe01a05c24f9b0539",
+        "locator": {
+          "kind": "symbol",
+          "name": "AttentionItem"
+        }
+      },
+      "id": "RLZ-PWEYXF",
+      "invariant": "INV-R8BBQC",
+      "origin": {
+        "handoffEntry": "curator:MIK-R200@v1 rules 1, 7 and 8 — one queue, five native kinds, an actionable row",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The served row shape carries the class, the dismissibility and the task and agent identities a row opens.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+        "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-SYM996",
+      "invariant": "INV-VDWN33",
+      "origin": {
+        "handoffEntry": "INV-VDWN33",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The observer's projection is what the dashboard receives, so the fact's presence is decided here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Retained task-document projection models carry canonical task references; pickup and expectation analytics DTOs are removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Task documents remain the projected hierarchy; the actual TaskDocNode/dependency definitions live in projection_task_documents, while projection re-exports them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:1b2121050ac859fba069b8a31c406503ca1fe317d23d7d606e7fff640743eda4",
+            "locator": {
+              "end": 404,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:a25989e6aa4539760acc3b11e8950c2fe1a7353d777744e746512b11d49d9990",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Lump/segment nodes and sampling endpoints retain strict served shapes and bare-ref lifting in the extracted DTO owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:9e5fbef4b35c61eae4c730c9a1058e310652578ac1b75fd0d827e3eb33b59e6a",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Workspace projection is the schema authority consumed by generation.\n\nAnchor: `WorkspaceProjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Extracted CloseoutQueueNode has unbounded members; sourceProblems and candidate reasons retain their 256-item ceilings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:5feea319a1076436bf2e752353cc8e7de062d74fb6849d1db0a27a0427cc7e4e",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "TaskSummary and its TaskDocNode extension carry optional directGrant display evidence. TaskDocNode.subTasks holds TaskSubTaskRefNode drill-in references, which do not carry that grant. These are read models, not authorization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:bade654c06cba6272f637eba5c83d7f7f746e7724575d9699804297a70093770",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4edaf532df1504b4615adce69ce3442646938c12",
+            "content": "sha256:8281c5b75aa57eac8047b55c99d4c476ba857aeeb65d629813c2c68aff46c56e",
+            "locator": {
+              "end": 413,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "mcp/src/agents_remember/observer/projection_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "TaskState carries stage, activity and eventAt, without a served task-event age; the browser derives display age.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:b6d9c2a233ab692cd21be5f04d61ee7138d343e9c2d0eacf74a3bf70cb26ab16",
+            "locator": {
+              "kind": "symbol",
+              "name": "eventAge"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:74b6d2bc32f7c5defcf55e18c1c7e18630664a09e53a4c268f3af883041c8114",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 435
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Native TaskEntry declares optional structured disagreements; each retains required kind/record and optional row, recordMaster, masterLiteral and parent facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:2764a95cb17241c31d76be029b1693d4c7b55233a550d07f9241889f4c326a55",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 488
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

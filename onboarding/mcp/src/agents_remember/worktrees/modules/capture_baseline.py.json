@@ -1,0 +1,167 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/capture_baseline.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+        "content": "sha256:aed36cdf3c2d6d52236858202dd3a99a1da836eba3014dbe9eec7a76e1014b6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_baseline_unchanged"
+        }
+      },
+      "id": "RLZ-11X3BB",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "This is the proof itself: it compares the remembered census and index stamp against the native status, and answers that the worktree still captures to the recorded tree only when every one of them agrees.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+        "content": "sha256:d62a59ae127ecd8fc7a616c49dc7036921f3a0cbde31dbbdb9d49259d12cc005",
+        "locator": {
+          "end": 71,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-3JP7V8",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N18",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The read-local on_capture observer is inherited or overridden through nested scopes and restored on every exit; the baseline scope stays request-local. It reports native capture dependencies to the content-generation owner without extending memo lifetime.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+        "content": "sha256:aed36cdf3c2d6d52236858202dd3a99a1da836eba3014dbe9eec7a76e1014b6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_baseline_unchanged"
+        }
+      },
+      "id": "RLZ-BKXN1R",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L81-R1-F17",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing request-scoped capture baseline includes the memory HEAD observed around capture and checks it natively before reuse; HEAD-only movement with identical files/index refuses a stale review. It makes no claim about a subject-read count: no such budget is carried by the capture proof or by the cases that guard it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+        "content": "sha256:02b767f1f46bf741ace21a6f9ce36c232a357d8ce04664488c4102720ee804bc",
+        "locator": {
+          "end": 148,
+          "kind": "line_range",
+          "start": 111
+        }
+      },
+      "id": "RLZ-HMXXXB",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N19",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "note_capture_baseline notifies the current observer only after before/after native snapshots compare equal and the baseline is retained. This is an observation seam, not authority to reuse a changed or unproved capture.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+        "content": "sha256:4a4aa4ff79482426d0c023334dcb766f34f2214e8f4e03729e7b0472186720b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "_still_captures"
+        }
+      },
+      "id": "RLZ-WFHVZ4",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L177-INV-N3M9G4",
+        "leaf": "260928-MIK-L177"
+      },
+      "rationale": "The one native observation the proof allows: Git's status supplies HEAD and the eligible untracked names without enumerating an ignored directory.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Hold a request-local proof of equal physical snapshots spanning a private-index capture. Reuse requires the same tree and current index/file snapshot, plus current HEAD when the caller supplied a head binding. Memory review supplies the bracketed memory HEAD; the future-code helper omits this optional binding and checks its route identity separately. Unreadable or changed bound operands force re-derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:fa41376d20bebde74e198a4628e7be49cea729c672da48d5d08947c10df93847",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:c016af62caf6f04f18066e62fabd1018fc831aa02e8bb03fa4d3710046da3063",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
+            "content": "sha256:777220ef238380cec7dc741f8164393c60d3a2b29c88373ffdd887fc0ad282bc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capture dependency observation is request-local and restored on every scope exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:6c8902c2a035ed84ea69922a645285c3a4be490b7f607dd66b6ded01a60d1719",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "52a6db529897bcb149711a83297dd6eb55672c3f",
+            "content": "sha256:975f27257b471924152a2d6b051720002d75b2b3cbfdaf29b7e9dccc8a90c693",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

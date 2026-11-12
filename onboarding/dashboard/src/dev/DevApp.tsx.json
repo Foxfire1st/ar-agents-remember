@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/dev/DevApp.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The DEV-only route gate that drops this chunk in prod.\n\nAnchor: \"const DevApp = import.meta.env.DEV\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:e03551219394142a83baf1ffb5374192bfc37ca8e632d064d7f2fceca84d7037",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "dashboard/src/App.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The co-located dev-gallery styles it imports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fef46d2a2bd69da100ec62b64aa4237c6ead793",
+            "content": "sha256:01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The current DEV router retains the six listed prefixes and index, without pty-bench or flows branches. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1fef46d2a2bd69da100ec62b64aa4237c6ead793",
+            "content": "sha256:e4227fa03a7aa9b3acec21774a08c1b118b164947b0977c6b1ffe7e514e34a45",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The App source keeps the dev router behind import.meta.env.DEV, a lazy import and the /dev/ pathname gate. [6]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:af5e1bfe5b6dbc691b67f13030f7ac0bb9ef71bda5f802fed7436e6acb5f1038",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/App.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

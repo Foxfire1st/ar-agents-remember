@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/models/certification/references.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Object family membership is closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03b041ad380285cdff15423a063404779bef23cf",
+            "content": "sha256:d788a58b30a916cb05486c72791f9842d21e2e3f74775dbb2b846c0eba1bb647",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificateObjectKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reference binds address identity separately from exact bytes and size.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03b041ad380285cdff15423a063404779bef23cf",
+            "content": "sha256:a6e3cc4384ad9232ac7a0e37a6bda365bb58a2d051607fe373b847c64eabc13f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificateObjectReference"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03b041ad380285cdff15423a063404779bef23cf",
+            "content": "sha256:dcd6ac49dfddf740b16950664aa28d4e0d35f8d0717350deb6676854ad915a7f",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CertificateObjectReference` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03b041ad380285cdff15423a063404779bef23cf",
+            "content": "sha256:a6e3cc4384ad9232ac7a0e37a6bda365bb58a2d051607fe373b847c64eabc13f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificateObjectReference"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

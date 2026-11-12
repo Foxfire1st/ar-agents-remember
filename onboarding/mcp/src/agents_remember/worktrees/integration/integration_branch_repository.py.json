@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_repository.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical local-branch identity rejects ambiguous symbolic authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:6d0cca04cf285604795f1c46d76db4d852e7fc7b9186b4d949bb64b07463333c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_local_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:c4cfbf55b5b156bf8d445eb3533b0c895e9e60f4e47cd3ca82879ac4d095a75c",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Code and external-memory default resolvers keep their authority sources distinct.\n\nAnchor: `repository_default_branch`, `memory_repository_default_branch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:fc6706644841d61075fa1a886ab9bb1682d18b19d6c7e029cac9083868791e72",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_default_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:3c39132c4dd5431a58bfe3c8ee9f44cee937a8e04817b5104d6b5061a05b542c",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_repository_default_branch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Linked-worktree enumeration reports exact canonical branch owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:4f2bfdaef57cb9706f24b1049c89dda37b051e86eade2e821bcd413f24dc60ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "branch_worktree_owners"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:3fe42fdeb7228a21ab0e3d8aa93b34b877badcad3d7dfeb6d90b56a30337a6ca",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Symbolic branch resolution translates Git failure to a bounded authority message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:6d0cca04cf285604795f1c46d76db4d852e7fc7b9186b4d949bb64b07463333c",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_local_branch"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:2ff3021724f59e4a878a85e0a7275db4a07f68856a88f10774c4c13f70b9b386",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 10
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Linked-worktree enumeration applies the same bounded failure posture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:4f2bfdaef57cb9706f24b1049c89dda37b051e86eade2e821bcd413f24dc60ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "branch_worktree_owners"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dff719af46f81e8d6c866e301615a06883df7d90",
+            "content": "sha256:3fe42fdeb7228a21ab0e3d8aa93b34b877badcad3d7dfeb6d90b56a30337a6ca",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

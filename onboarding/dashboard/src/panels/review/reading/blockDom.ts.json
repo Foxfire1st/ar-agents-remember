@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/reading/blockDom.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Map identity keys to DOM and locate subject/group/lane sections.\n\nAnchor: \"export const blockDomKey = (key: string): string => key.split(NUL).join('\\|');\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13bd964a442c74abc67144f89145b539d08e40e1",
+            "content": "sha256:78d7284c96c7e5ebc65f4c9c694aa640da6c1292677ac467923f814f703c4fd5",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Map identity keys to DOM and locate subject/group/lane sections.\n\nAnchor: \"export function blockElement(scroller: HTMLElement \\| null, key: string): HTMLElement \\| null {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13bd964a442c74abc67144f89145b539d08e40e1",
+            "content": "sha256:c4c0b1118e23ec6c3702809ce4363840cbe571272eb416d54738044f94fe938f",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Map identity keys to DOM and locate subject/group/lane sections.\n\nAnchor: \"export function columnScrolls(): boolean {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "13bd964a442c74abc67144f89145b539d08e40e1",
+            "content": "sha256:b8f61cb0967351504ef00a171313baeaa6fffb788584a02188aefee6f96dce19",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

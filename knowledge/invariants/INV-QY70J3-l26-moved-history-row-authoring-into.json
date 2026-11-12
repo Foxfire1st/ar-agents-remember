@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "After the split, editing authoring.py for row deltas misses the live constructor; the residence record keeps edits in HistoryRowAuthoring."
+  },
+  "applicability": "R48 row-construction code after the L26 split",
+  "conditions": [
+    "HistoryRowAuthoring owns the row deltas"
+  ],
+  "exclusions": [
+    "Behavior changes, of which the move invents none"
+  ],
+  "id": "INV-QY70J3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "imports resolve; family_history_judgments (16), governing_rows, writer, proofs modules green in closure 224"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "L48-W-F1-relocation-after-L26-split",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "L26 moved history-row authoring into HistoryRowAuthoring, so the R48 row delta lives in authoring_rows.py while authoring.py keeps the revision bullet.",
+  "status": "proposed",
+  "supersedes": []
+}

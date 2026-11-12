@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/reading/SelectedWorklist.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A path the conversion has not reached is still listed and still opens, rather than vanishing from the worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6beee808cabc9e60efef43c3d2e643e53ff2f41",
+            "content": "sha256:95adbbffdf2bf2f092804af7c1aed119a402f863b512ec03359c0ee5a1db742b",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

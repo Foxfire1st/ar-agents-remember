@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The named deadline turns a missing protocol answer into an ordinary failure the run continues past, instead of the asyncio wait that never returned in the combined run; the late-response case proves the failure fires."
+  },
+  "applicability": "The reader protocol exercise and its Git status observations, and the late-response regression beside them.",
+  "conditions": [
+    "The exercise runs through `_run_protocol` / `_await_protocol`.",
+    "A passed limit is an ordinary assertion failure naming the responses that did not arrive."
+  ],
+  "exclusions": [
+    "The limit's length is not part of the obligation; the late-response case deliberately shortens only its own response wait after session initialization."
+  ],
+  "id": "INV-2S0FEY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L70-reviewer-6e032287-e04b-460f-82cf-fb4f25d0808a-fixverify-evidence/logs/V3-focused-touched-modules.txt (the late-response case passes); W-F2c-reader-deadline-removed.txt (with the limit removed the case does not pass)"
+      ],
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R70@v1 rule 2",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The reader protocol exercise runs under one 60-second limit and its Git status observations under a subprocess limit, and a passed limit is an ordinary assertion failure saying that the reader protocol responses did not arrive, after which the same process goes on to its next test.",
+  "status": "proposed",
+  "supersedes": []
+}

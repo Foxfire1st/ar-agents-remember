@@ -1,0 +1,1179 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L153",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-04EV1H",
+      "items": [
+        "sha256:548e680053471a53c46575c48c2e3cca4e3039cd178470b6247e4fdefbeff820"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:548e680053471a53c46575c48c2e3cca4e3039cd178470b6247e4fdefbeff820"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_needs_crossing_report"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": {
+            "blob": "d792ca35666e800c2743156397e04ac2c2b46306",
+            "content": "sha256:8372e777ec28dd482b47b6bd8351a3cfeaf105e17ddafaf0cedaca391d37a3e8",
+            "locator": {
+              "end": 516,
+              "kind": "line_range",
+              "start": 465
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "id": "RLZ-BM4C7Y"
+        },
+        {
+          "after": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:240c55de9a37e148eb19c7dde3e3957920456dc91e5892d294c8541ee50b6200",
+            "locator": {
+              "kind": "symbol",
+              "name": "successful_crossings"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "before": {
+            "blob": "64fdd7117fe49540f412b6c871be515d8f20e49c",
+            "content": "sha256:5c18c16620ec34c7d404d568453053b4f51579ee908ce8786bb2554821ef1ed4",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "id": "RLZ-GP3TR9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0EX2DJ",
+      "items": [],
+      "reason": "Structural crossing report emission and success projection keep their same nonzero diagnostic populations. Restore/cancel additions only shift these two unchanged owners; their exact named constructs are renewed.",
+      "revision": 1,
+      "subject": "INV-0J9FS1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-04KNZY",
+          "revision": 1
+        },
+        {
+          "id": "INV-70577K",
+          "revision": 1
+        },
+        {
+          "id": "INV-JZRBBJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS6H65",
+          "revision": 1
+        },
+        {
+          "id": "INV-T46B5W",
+          "revision": 1
+        },
+        {
+          "id": "INV-YVP7RQ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-39DTHD",
+      "items": [],
+      "reason": "Examined the six new obligations jointly: restoration, diagnosis, cancellation, byte ownership, truthful state and ordinary retained routes must all hold for safe completion or refusal.",
+      "revision": 1,
+      "subject": "FAM-1SEJYW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3B54CP",
+      "items": [
+        "sha256:dea90be1a8ec8653265d8bc55b993300e458920278cacb5953132345ee767ae5"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:dea90be1a8ec8653265d8bc55b993300e458920278cacb5953132345ee767ae5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-408261",
+      "items": [
+        "sha256:9bf93da370454a19c293bcf04b18a578a0113026871a1faa7c30b73cafb699b6"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:9bf93da370454a19c293bcf04b18a578a0113026871a1faa7c30b73cafb699b6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4Z47C8",
+      "items": [
+        "sha256:07a2c384c1ce0ed4d97ae7b63e9d13bd03f956a42c6e5ecceaaf82fcabda80a9"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:07a2c384c1ce0ed4d97ae7b63e9d13bd03f956a42c6e5ecceaaf82fcabda80a9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5PB521",
+      "items": [
+        "sha256:fa95675d491ca4631838883fe36999692be5e155b8fd519bb83ada4bec1ae9d3"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:fa95675d491ca4631838883fe36999692be5e155b8fd519bb83ada4bec1ae9d3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-632BRP",
+      "items": [
+        "sha256:ac222402640dd13c9a672ff861fba8adeb5fc87de83ca6e422e41c0de8ccc35a"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:ac222402640dd13c9a672ff861fba8adeb5fc87de83ca6e422e41c0de8ccc35a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6D1B9W",
+      "items": [
+        "sha256:859d57e2b0a03e024a79606883d345cfbfce0911d8e0516a75792d31c43f16e1"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:859d57e2b0a03e024a79606883d345cfbfce0911d8e0516a75792d31c43f16e1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6FNWZM",
+      "items": [
+        "sha256:143f9d0f4f04271aa036e8b61b883e68d7a2c627d75650d58b8451e01257d7af"
+      ],
+      "reason": "This test/support hunk supplies fixtures or assertions for the authored proof facets. Test construction is not another product invariant; durable guarantees and precise proving units are recorded independently.",
+      "subject": "hunk:sha256:143f9d0f4f04271aa036e8b61b883e68d7a2c627d75650d58b8451e01257d7af"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6M21SH",
+      "items": [
+        "sha256:a9929620b918f2aad26769e73d50c0a220fbc06310363e2b8bb4b946fc218e56"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:a9929620b918f2aad26769e73d50c0a220fbc06310363e2b8bb4b946fc218e56"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6MEB9Z",
+      "items": [
+        "sha256:ea7720a4d69da73003051c44a6c272162127efd84e94704cce1bb1913038284c"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:ea7720a4d69da73003051c44a6c272162127efd84e94704cce1bb1913038284c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7N6M7X",
+      "items": [
+        "sha256:989f184eaa3d4ab8b504305048e6b3845737f88c47fa2f68fe515a9277a3f03a"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:989f184eaa3d4ab8b504305048e6b3845737f88c47fa2f68fe515a9277a3f03a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7WZDHM",
+      "items": [
+        "sha256:00ac078d097f9af1d2d34be80045ce66c4b609b66767108b414d5f7459577d4c"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:00ac078d097f9af1d2d34be80045ce66c4b609b66767108b414d5f7459577d4c"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0J9FS1",
+          "revision": 1
+        },
+        {
+          "id": "INV-ADT7XM",
+          "revision": 1
+        },
+        {
+          "id": "INV-B644A4",
+          "revision": 1
+        },
+        {
+          "id": "INV-CRWXXC",
+          "revision": 1
+        },
+        {
+          "id": "INV-F8QQYN",
+          "revision": 1
+        },
+        {
+          "id": "INV-FRG5GT",
+          "revision": 1
+        },
+        {
+          "id": "INV-MXFA2F",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q0NS0N",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6QBYB",
+          "revision": 1
+        },
+        {
+          "id": "INV-XHSR3S",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-8RKD14",
+      "items": [],
+      "reason": "Examined all ten structural-reference-alignment members and their merge/allocation/prose/diagnostic guarantees. Sync recovery reproduces that same structural merge and leaves numbering, authored/mechanical precedence, single-item conflicts and nonzero report populations unchanged; routes and membership need no revision.",
+      "revision": 1,
+      "subject": "FAM-Q0MQAE"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8RW4QR",
+      "items": [
+        "sha256:7390cccf8bb5a478066441412dbf1dc1bb2d456bf722d7847d5abf28e03b0dcf"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:7390cccf8bb5a478066441412dbf1dc1bb2d456bf722d7847d5abf28e03b0dcf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-98CMZ5",
+      "items": [
+        "sha256:bd55a04ef86c4558030fadf75f8c21de53e22c395a3fb62a9f38f53188e40b95"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:bd55a04ef86c4558030fadf75f8c21de53e22c395a3fb62a9f38f53188e40b95"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9YSH2X",
+      "items": [
+        "sha256:3e4eafbbffcd7ad7d40698fe77e6d89df150db39c3baeb54f99785a6656a4592"
+      ],
+      "reason": "This test/support hunk supplies fixtures or assertions for the authored proof facets. Test construction is not another product invariant; durable guarantees and precise proving units are recorded independently.",
+      "subject": "hunk:sha256:3e4eafbbffcd7ad7d40698fe77e6d89df150db39c3baeb54f99785a6656a4592"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AC72EE",
+      "items": [
+        "sha256:2e8b15359e5dfee9baae2e470ef34dcab2d6103c6796a14ca007ac3fbc45871e"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:2e8b15359e5dfee9baae2e470ef34dcab2d6103c6796a14ca007ac3fbc45871e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AKQYE9",
+      "items": [
+        "sha256:e827f4048f16dc4ad6756585df163def503b57b4c572f04645c30de9545db02e"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:e827f4048f16dc4ad6756585df163def503b57b4c572f04645c30de9545db02e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BHM7TJ",
+      "items": [
+        "sha256:d13813e1193444adecfc03b3ffea537331a9b15447e60fddc5b596174c523cdb"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:d13813e1193444adecfc03b3ffea537331a9b15447e60fddc5b596174c523cdb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BP8WMY",
+      "items": [
+        "sha256:f57df26cf0cce2b12cd53d6d43fc4fe933d887d1c4910dbb68ff2a39291f3608"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:f57df26cf0cce2b12cd53d6d43fc4fe933d887d1c4910dbb68ff2a39291f3608"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BV5X15",
+      "items": [
+        "sha256:0a268ec63239e8ddba7564b3b042da54afb005fb0846ba977f884208e196943e"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:0a268ec63239e8ddba7564b3b042da54afb005fb0846ba977f884208e196943e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C0MAW1",
+      "items": [
+        "sha256:453e3fe4c284894de9b223517368c4cc6cda07154a17f85142a91b1d373cd81b"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:453e3fe4c284894de9b223517368c4cc6cda07154a17f85142a91b1d373cd81b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CKNVH2",
+      "items": [
+        "sha256:152b1cc83f697ebd69946245ca8541b92cb2993b8a449580007e15aff5180a06"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:152b1cc83f697ebd69946245ca8541b92cb2993b8a449580007e15aff5180a06"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CPR0AE",
+      "items": [
+        "sha256:152528850219dcd074e88f2e7092ba784ffc31b6a91e827f4d87ae3160cb74f4"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:152528850219dcd074e88f2e7092ba784ffc31b6a91e827f4d87ae3160cb74f4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CQ0AXB",
+      "items": [
+        "sha256:445f65cde79c37eb71c9f3435f48f6d0c9bbe29fdfd8a532c79bbf427d7ae321"
+      ],
+      "reason": "The retainedTreeDigests field maps paths to worktree-plus-index fingerprint values (SHA-256 digests or explicit absent/unreadable sentinels); the model declares no dictionary-cardinality or total-journal-byte cap. This local recovery representation supports the recorded ownership rule, not a separate policy.",
+      "subject": "hunk:sha256:445f65cde79c37eb71c9f3435f48f6d0c9bbe29fdfd8a532c79bbf427d7ae321"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CZ1HMS",
+      "items": [
+        "sha256:c1129a50141b725da5a608541d8c6a2ef3fa889b758cd4166bd6932dd01f0a7e"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:c1129a50141b725da5a608541d8c6a2ef3fa889b758cd4166bd6932dd01f0a7e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:755b4a53687117e45aaa5b19bcc2022df52be8e9a52a7129eefcc10c8a64f104",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_03a_missing_path_beyond_sample_fails_proof"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-26BB6X"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:27cbf2aafd51683a2bf78ad560c1997773877b208a8cb94f9a27b1bfcf950267",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_already_held_edit_finishes_the_sync"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-3M8WCC"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:e15009e15951dfb2ca0546f02de78e361c51b7ed17cbc95d2b541b7dfbaa0a67",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_03b_failed_full_inventory_never_accepts_the_sample"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-ENFG5M"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-MM2DYD"
+        },
+        {
+          "after": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:d20106ab6c61baf552493518cc93c8be40549309c9a3cd476fe40249cbf10dc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_failures"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-72V1QQ"
+        },
+        {
+          "after": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "stashed_parked_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-YGPCHM"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-D3EGQ3",
+      "items": [],
+      "reason": "The existing sync safety intent is made explicit by this requirement-backed obligation and its source/test anchors; the new entries cover restoration, recovery or refusal without weakening ordinary managed-sync boundaries.",
+      "revision": 1,
+      "subject": "INV-70577K"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DW4YFY",
+      "items": [
+        "sha256:20b970ec1961fcfe029be9546125119a480861cb754b9b5f697719b2916f3d44"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:20b970ec1961fcfe029be9546125119a480861cb754b9b5f697719b2916f3d44"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ENDZ6H",
+      "items": [
+        "sha256:c8c970fd55244db3a89b7a8eb83892924e16b076b95694a8c512dba1c3db491a"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:c8c970fd55244db3a89b7a8eb83892924e16b076b95694a8c512dba1c3db491a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:0f793c55956056efbea16c03ea82387bd30e6e367c04d427909ebd4d80ae1941",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResumedConvertedMemoryMergeTests.test_07a_untouched_resume_cancels_both_trees"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-2R150F"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:c5f0f478e8d2a0ed81768ac706c29fc9363675629d9e782e473416b6cc5066fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_05_ordinary_merge_output_cancels"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-77D446"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:5bd0fbeb16b5de26dd8c46e22f2c4e5868ee4dc5940de55f93f77aac48f4ee7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ParkedCandidateTests.test_parked_candidate_reapply_conflict_is_retained_and_cancel_returns_it"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-XYQWF9"
+        },
+        {
+          "after": {
+            "blob": "19a9717f0813cbe1190345be140dd5f29802a3c1",
+            "content": "sha256:6964c31aea8dcd1eaf734faa0adbd3b10dbef51ef2017c86083c46ae0dbb7f9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_persist_fresh_validator_stop"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Q68ZTZ"
+        },
+        {
+          "after": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:e47cadf755d462cd525b383d9702a3f905592d6e3aa2e4070147ca2144468a8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retain_parked_conflict"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SWEAYE"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-EZ714V",
+      "items": [],
+      "reason": "The existing sync safety intent is made explicit by this requirement-backed obligation and its source/test anchors; the new entries cover restoration, recovery or refusal without weakening ordinary managed-sync boundaries.",
+      "revision": 1,
+      "subject": "INV-MS6H65"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FA8ASP",
+      "items": [
+        "sha256:7aa3a30f87941f5961675517b29d8a2c8aade5d1982c027946e2e6093a6d48d1"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:7aa3a30f87941f5961675517b29d8a2c8aade5d1982c027946e2e6093a6d48d1"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FGJ534",
+      "items": [
+        "sha256:357b0accb0039e8accea3edc9f37ebb2accda7bf0e4059bf6cb040727fd35457"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:357b0accb0039e8accea3edc9f37ebb2accda7bf0e4059bf6cb040727fd35457"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FZR3W3",
+      "items": [
+        "sha256:974bdb0e3041e5eb749c173b5d46397fe559e56d249033d4f80f192af99af272"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:974bdb0e3041e5eb749c173b5d46397fe559e56d249033d4f80f192af99af272"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:a1f52c39deefcea6f56ad37339e1f48ac8f10936ffcade17b6ad7f17fe9ea6f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_truly_missing_parked_byte_fails_the_proof_and_names_its_path"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-RHSGR7"
+        },
+        {
+          "after": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:462fd37a15ca7e74bf8a0fa127528fe25d2005f2cbb83db70351feb64e1d6a65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unproven_restore_error"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": "absent",
+          "id": "RLZ-T7MCMT"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-GTHXTS",
+      "items": [],
+      "reason": "The existing sync safety intent is made explicit by this requirement-backed obligation and its source/test anchors; the new entries cover restoration, recovery or refusal without weakening ordinary managed-sync boundaries.",
+      "revision": 1,
+      "subject": "INV-04KNZY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HYPH0Z",
+      "items": [
+        "sha256:7b78c1c6a2ac134d5fdc2c54fd0844114182c107e5e9cf326fe69ae202f5fc5d"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:7b78c1c6a2ac134d5fdc2c54fd0844114182c107e5e9cf326fe69ae202f5fc5d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J05Y5V",
+      "items": [
+        "sha256:f51a3295ffdd09fee3aca3aa24560ce70daacf0ae3f79a0a47c122688bd6a7b0"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:f51a3295ffdd09fee3aca3aa24560ce70daacf0ae3f79a0a47c122688bd6a7b0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J20AAG",
+      "items": [
+        "sha256:8326465b4af7e222877b9d985492ed197e9ff75b5368dc334c0ce7fe4bdf4064"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:8326465b4af7e222877b9d985492ed197e9ff75b5368dc334c0ce7fe4bdf4064"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J4AMDN",
+      "items": [
+        "sha256:af12843c2d2fa9ad58109e5957db424fb6aeb75eded43edc3be8d30968a297df"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:af12843c2d2fa9ad58109e5957db424fb6aeb75eded43edc3be8d30968a297df"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K63JP4",
+      "items": [
+        "sha256:1725715599bc45dde35c23cfde392a1929453d8a9cc32f732c9d0f99642dd5cb"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:1725715599bc45dde35c23cfde392a1929453d8a9cc32f732c9d0f99642dd5cb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KAQAWF",
+      "items": [
+        "sha256:35466fc44137e461610b8b22b95d5823f4dba92c77657d5a9f78b90167f975c9"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:35466fc44137e461610b8b22b95d5823f4dba92c77657d5a9f78b90167f975c9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KMTD1M",
+      "items": [
+        "sha256:e69d079a06f232dca45bf83d356b5434710131583eeb0fc2f50a436849110bd6"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:e69d079a06f232dca45bf83d356b5434710131583eeb0fc2f50a436849110bd6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KP2C71",
+      "items": [
+        "sha256:c1811c577241b84100311b875d0efe32175365676638426c6c7fd73ac2f8003f"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:c1811c577241b84100311b875d0efe32175365676638426c6c7fd73ac2f8003f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KWXAYN",
+      "items": [
+        "sha256:814972c6535f5a1b75b3df9fcb59f76c15286dfd3a383003351103805c79da62"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:814972c6535f5a1b75b3df9fcb59f76c15286dfd3a383003351103805c79da62"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MSNXCM",
+      "items": [
+        "sha256:e43cacd85a3f8826374fda375b68cee9459b78e1b94666cbf863aa6a67d9cf84"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:e43cacd85a3f8826374fda375b68cee9459b78e1b94666cbf863aa6a67d9cf84"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N1XP7F",
+      "items": [
+        "sha256:ebe5a479fb2338d0ac93d50211ab9aa63a7c6c9853fd578a605595ef0ab562a8"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:ebe5a479fb2338d0ac93d50211ab9aa63a7c6c9853fd578a605595ef0ab562a8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NCWC1A",
+      "items": [
+        "sha256:dc4607750bcdffdc170b582830388221d564cca0ed7ef91dd91a4212528a16f6"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:dc4607750bcdffdc170b582830388221d564cca0ed7ef91dd91a4212528a16f6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_02b_cancel_crash_after_first_side_restore_finishes_on_retry"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-1BC0JZ"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:1f792785830124a732e645f0a94d0dbc8b02f4561b6b0ace0921f04dd641848c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_02_restored_code_wip_returns_on_memory_stop_cancel"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-40GF9R"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:cb93871841beb51a9aa02808dac44ce1bf78575dbe00789e77fccae4cd2741cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_06a_uncomputable_symlink_cancel_leads_back"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-AG20V7"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:c3cf99553bbf87a081177b6967d01eefaa4240a0e2daa937fb78d322180ebc16",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_cancel_after_a_failed_proof_restores_heads_and_parked_work"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-ASNHQJ"
+        },
+        {
+          "after": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:9a3a1bdcf5c7a7fae0702925a9bc0ca32d70df6f0ee3a3a986ccc4856994057b",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_cancelled_wip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": "absent",
+          "id": "RLZ-0TVE2Z"
+        },
+        {
+          "after": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:04826373a8d9ddf73380e7b2ba50c211c807877982552b8f87fb4bb713946f82",
+            "locator": {
+              "kind": "symbol",
+              "name": "_retire_restored_stashes"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AGZTNF"
+        },
+        {
+          "after": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:98591220a756c2b7782927f39a31103529311ae02bbfc7defcc386628892dae0",
+            "locator": {
+              "kind": "symbol",
+              "name": "cancel_sync"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "before": "absent",
+          "id": "RLZ-C49S6G"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-NEEEKW",
+      "items": [],
+      "reason": "Preserve the cancellation obligation and all seven existing same-origin source/proof witnesses; narrow PRF-ASNHQJ to the code-side HEAD/tree/stash assertions its actual proving unit contains, without importing separate paired witnesses or claiming new execution.",
+      "revision": 1,
+      "subject": "INV-T46B5W"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NQP2GC",
+      "items": [
+        "sha256:62a94f641ffc2fda7dabbf4c29f361045d5200e4199d1cad42481bf4e8a4797a"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:62a94f641ffc2fda7dabbf4c29f361045d5200e4199d1cad42481bf4e8a4797a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NWP0ZN",
+      "items": [
+        "sha256:a0b684e33a389d49378c815525318ce096f6332b9350941cc3aa39234964a399"
+      ],
+      "reason": "This test/support hunk supplies fixtures or assertions for the authored proof facets. Test construction is not another product invariant; durable guarantees and precise proving units are recorded independently.",
+      "subject": "hunk:sha256:a0b684e33a389d49378c815525318ce096f6332b9350941cc3aa39234964a399"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P03DS4",
+      "items": [
+        "sha256:9f44c36dafaaddbd419ebc1105d7ee24ef567e5815995560530e20b0b0cd1a79"
+      ],
+      "reason": "This test/support hunk supplies fixtures or assertions for the authored proof facets. Test construction is not another product invariant; durable guarantees and precise proving units are recorded independently.",
+      "subject": "hunk:sha256:9f44c36dafaaddbd419ebc1105d7ee24ef567e5815995560530e20b0b0cd1a79"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-159F3M"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:3ebd1486d654fd5160280274faa3a3c071b64d62d3ef9d2f6c5e6288f3b093a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_02b_cancel_crash_after_first_side_restore_finishes_on_retry"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-AFZBNW"
+        },
+        {
+          "after": {
+            "blob": "7545791df797c873830da51bc7e20d191ceaef7e",
+            "content": "sha256:02d57382c57ea567e0fcccfaba7683fa79d0fb6c3e188093380aa2dcf1e1a1b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_precheck_cancel_sides"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8GMPRJ"
+        },
+        {
+          "after": {
+            "blob": "6c76c97c8cd52e17ceb77b6e75edf7fc3a2a5fb7",
+            "content": "sha256:24779f813bd8290b1748e51b97be0fca07d3572973add82c75462be577077837",
+            "locator": {
+              "kind": "symbol",
+              "name": "restore_parked_wip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_authority.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RFN5TT"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-P08AQC",
+      "items": [],
+      "reason": "The existing sync safety intent is made explicit by this requirement-backed obligation and its source/test anchors; the new entries cover restoration, recovery or refusal without weakening ordinary managed-sync boundaries.",
+      "revision": 1,
+      "subject": "INV-YVP7RQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PNCAEX",
+      "items": [
+        "sha256:1a465fa0ea1b86cf2f85c22dacdfbe9df2af77e8d9ed355f1e5fa7c1bf89c8c7"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:1a465fa0ea1b86cf2f85c22dacdfbe9df2af77e8d9ed355f1e5fa7c1bf89c8c7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QF4Z0Q",
+      "items": [
+        "sha256:8ae713d90c0184e9f6cfb807befb868e4aac52e56c3750b7cbb7d653492f7428"
+      ],
+      "reason": "The existing parked-candidate module adds an identical-byte current-block case and the sibling real-tool refusal case now uses differing bytes with unchanged assertions. Three existing evidence-support consumer lists register that actual use; no artifact/contract identity, lane, fixture ownership, suite budget or certifying-execution policy changes. Exact scenario and consumer semantics belong to their updated file cards; the tests route's governing meaning is preserved.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:1566a816320b1c48355cf1fd94b5e3820f8400328ca59c4efe1dd9f36bc66b84",
+            "locator": {
+              "kind": "symbol",
+              "name": "AlreadyHeldParkedEditTests.test_cancel_with_later_work_is_refused_and_changes_nothing"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-GR9EZZ"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:c3ffdc3ddbc4c4a0e6efa19c8b9b842b44189c3ec64a53ab58719954b873b5ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "SealedFindingRepairTests.test_04_index_only_later_bytes_refuse_cancel"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-H3CHMZ"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:604723ca57804f0ac5525bf01938cb629d78f18efd0da92236c8ccbda9dbeeef",
+            "locator": {
+              "kind": "symbol",
+              "name": "ResumedConvertedMemoryMergeTests.test_07b_owner_write_after_interrupt_refuses_without_later_work_claim"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-MWDSXT"
+        },
+        {
+          "after": {
+            "blob": "fac092cb6e4ddb1c7600181176b8a7a984fcc173",
+            "content": "sha256:bc22966de69ef598327fa1e5434384e6aac548e562153e51f6b06bc51c42f6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoundTwoVariantTests.test_01b_crash_window_owner_bytes_are_never_blessed"
+            },
+            "path": "mcp/tests/test_sync_parked_candidate.py"
+          },
+          "before": "absent",
+          "id": "PRF-PTQC32"
+        },
+        {
+          "after": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:7de5eaf60d73a9683037ada96501fd9e1795c4bf0ff8f14b5b7e1b103c207c05",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_retained_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-360CMM"
+        },
+        {
+          "after": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:f125d362214571ca05d521f50535ebb50e3510e4adb00387061468c1912f6f2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "assess_stash_tree"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-RW20FG"
+        },
+        {
+          "after": {
+            "blob": "52a91dc2ea6250979a77148a8bed9206568dc168",
+            "content": "sha256:9c67602676520e098b77030f0664b872540e16e96c7ee763d86d210136d00bdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_retained_digests"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git.py"
+          },
+          "before": "absent",
+          "id": "RLZ-S4K3W3"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-RNT8YA",
+      "items": [],
+      "reason": "Preserve the owner-byte safety obligation and every existing cover; distinguish retained fingerprint attribution from the no-active-merge live-stash fallback, and fresh or exact scratch-verified crash reapply capture from unverified crash output.",
+      "revision": 1,
+      "subject": "INV-JZRBBJ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SGV63Q",
+      "items": [
+        "sha256:4e5e1f77d24798819a46c32524233bc116fad8e6fea0eeaad802738a1a29f267"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:4e5e1f77d24798819a46c32524233bc116fad8e6fea0eeaad802738a1a29f267"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SMHKTW",
+      "items": [
+        "sha256:0ca2d4c73510814059e3316cc7925cde22f10543a842045b32f9967fc96db838"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:0ca2d4c73510814059e3316cc7925cde22f10543a842045b32f9967fc96db838"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SYYGKV",
+      "items": [
+        "sha256:77fb65149e2959d2fb9853942988ad17e0d53f1ef66408f2667b7070e949929c"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:77fb65149e2959d2fb9853942988ad17e0d53f1ef66408f2667b7070e949929c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ee713b09761e2222afa968fa2c6aed70297243a4",
+            "content": "sha256:4f2ee6fa1c91dcfa4e717367d7cc9621002ff8c75600ad4c25b3e17ae37c116c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "5031130f3332ae49dac1bcc63b5397e37c58cb46",
+            "content": "sha256:9d511da76253003c89d7752f4a63350e02b69e6fcccdd7e41bfa0977ebabd774",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-TNQACP",
+      "items": [
+        "sha256:344164e69a704385c2a302548316801d369b1b4eab768668702e30605818c8bf"
+      ],
+      "reason": "Keep the retired historical union-merge witness and its same-ID entry set. The current catalog adds only the parked-candidate module to three existing support consumer lists; this live reachability maintenance changes neither retired meaning nor artifact/contract identities and does not revive an exact-two-lines obligation. Renew the whole-file cover to the current catalog; all existing sibling registrations keep their authored meaning and identity.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V0F6FW",
+      "items": [
+        "sha256:5b05ff36ec0b4f7b94915ccdaf995c4f6cc5a5ec28efb641424a40714ce66fa0"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:5b05ff36ec0b4f7b94915ccdaf995c4f6cc5a5ec28efb641424a40714ce66fa0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V7XASV",
+      "items": [
+        "sha256:4fce245d2aa12ca3fee478027e7cd745340671c2a001f086f68257d92296a904"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:4fce245d2aa12ca3fee478027e7cd745340671c2a001f086f68257d92296a904"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VDDNCP",
+      "items": [
+        "sha256:61d9055bab749fdeb9c547900d7260633dee3bff1ae275bf0f79a0f9cd3d594c"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:61d9055bab749fdeb9c547900d7260633dee3bff1ae275bf0f79a0f9cd3d594c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VXTW8E",
+      "items": [
+        "sha256:6efa1ac254d40846307ec1cb9963ac6a93e379a49ae5687025ec328d2ee9bc63"
+      ],
+      "reason": "This test/support hunk supplies fixtures or assertions for the authored proof facets. Test construction is not another product invariant; durable guarantees and precise proving units are recorded independently.",
+      "subject": "hunk:sha256:6efa1ac254d40846307ec1cb9963ac6a93e379a49ae5687025ec328d2ee9bc63"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-W8P9FK",
+      "items": [
+        "sha256:f2e5850247e1f6e2fe5b349b204547765d93cd24d6a020673235a66e46c3bd5f"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:f2e5850247e1f6e2fe5b349b204547765d93cd24d6a020673235a66e46c3bd5f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WYA8VT",
+      "items": [
+        "sha256:54b72247b8116f82a8ed163481ef6f67f5aa69bb8d93b8309cf2ddc8b46a4e9c"
+      ],
+      "reason": "This restoration hunk implements complete proof, truthful retained state or terminal stash custody; the adopted restoration/recovery obligations carry that meaning. The local helper decomposition or removal itself adds no separate invariant.",
+      "subject": "hunk:sha256:54b72247b8116f82a8ed163481ef6f67f5aa69bb8d93b8309cf2ddc8b46a4e9c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XNJ1XX",
+      "items": [
+        "sha256:c27d9caaa7e515d25910cef9fd7f6317428ac2a2048a9018a7be95cbbc7bbccf"
+      ],
+      "reason": "This driver hunk is local plumbing for paired-code/owner replay context or fresh validator-output custody; the durable ownership and ordinary-route obligations are recorded separately, not an independent rule for the import or helper placement.",
+      "subject": "hunk:sha256:c27d9caaa7e515d25910cef9fd7f6317428ac2a2048a9018a7be95cbbc7bbccf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XYRAQQ",
+      "items": [
+        "sha256:d387187cab2ceaa4ad13946ddcaa720342b2eade2064e91f8c6113d71110ce9d"
+      ],
+      "reason": "This recovery hunk orders precheck, rollback, paired restoration and terminal stash retirement or formats the truthful refusal. The adopted cancellation and truthful-state obligations carry the semantic rule; the local helper placement adds no separate invariant.",
+      "subject": "hunk:sha256:d387187cab2ceaa4ad13946ddcaa720342b2eade2064e91f8c6113d71110ce9d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YW85QG",
+      "items": [
+        "sha256:225513e089a6c902c597ac27c9f0dc7d7db4dea8789d5e1c8760e688b79a78fa"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:225513e089a6c902c597ac27c9f0dc7d7db4dea8789d5e1c8760e688b79a78fa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YWCJKC",
+      "items": [
+        "sha256:912d1d821d032273a06a381b805cb081740cdb88c1edd235f7f7ea1abe8f77d8"
+      ],
+      "reason": "This Git helper hunk implements reapply comparison, complete stash enumeration or ownership attribution. Those guarantees are authored as the restoration and byte-preservation obligations; this local type/helper/import does not introduce another independent intent.",
+      "subject": "hunk:sha256:912d1d821d032273a06a381b805cb081740cdb88c1edd235f7f7ea1abe8f77d8"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

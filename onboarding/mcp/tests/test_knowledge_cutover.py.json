@@ -1,0 +1,275 @@
+{
+  "path": "mcp/tests/test_knowledge_cutover.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+        }
+      },
+      "facet": "A registered working marker is reported in recovery wording; timed-out or failing Git probes return their named refusal rather than an unlocked fact.",
+      "id": "PRF-4K78SB",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "content": "sha256:8cb5b5604875ead81e39e6654863893d7554ab6a3fc5ebfa4821b18bf68a1b7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_converting_candidate_is_gated_never_locked"
+        }
+      },
+      "facet": "A candidate that holds the marker is judged by the gate and never asked the lock: the closeout validator, a crossing sync, a code-only sync, the leaf's own integration and record landing, and a repository-level run on a converted checkout.",
+      "id": "PRF-595PRD",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+        }
+      },
+      "facet": "The location probe returns no location for a definite plain directory but names pruned-worktree, ownership and permission failures; no ordinary legacy admission is inferred.",
+      "id": "PRF-NKEYBD",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
+        }
+      },
+      "facet": "Every selected route refuses legacy input before and after deletion of the converted sibling, with the central code and conversion guidance.",
+      "id": "PRF-SB58VA",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+        }
+      },
+      "id": "RLZ-5SQ5SP",
+      "invariant": "INV-0RQS65",
+      "origin": {
+        "handoffEntry": "L26-CX-N02",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The test's premise fails under the real ancestor marker in both states.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+        "content": "sha256:d2c324cfe8da1e7acd1a3399410b9a42df71458f93e702e616f056ba63f9cfb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_blocked"
+        }
+      },
+      "id": "RLZ-JDVNG9",
+      "invariant": "INV-95NQR7",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F02",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The cutover probe helper takes its operation explicitly with no default; it proves explicit-operation calling, not non-external refusal.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "11": {
+      "note": "`test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere` asserts the unconditional `legacy-format` refusal and conversion step, including after the only converted branch is removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:88d6191f23445b6998e138f83454d2651ca9f6d6f696a46675fd5ff4fa286291",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_route_refuses_unconverted_memory_with_or_without_converted_memory_elsewhere"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "`test_no_read_selects_the_database_of_a_converted_tree` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "`test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Converted memory elsewhere words the already-required legacy refusal; unreadable probes retain their named error",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:c2b341a1b32b233ee06f2d9e5e1ca6f432e3512a98b01ca63e8e0989ab775859",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_worktree_locks_too_and_an_unanswered_probe_refuses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Only a definite non-repository is unlocked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:09bc52594a04902e96d6482a082ca175014285361638bf4a4c5fd7fdd1557248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_a_definite_non_repository_reads_as_holding_no_converted_memory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "A bare repository Git cannot open refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:2bc2b425f0f364554aef6962bd40ccd62d750fab9c4f61ca5b294ab8a4369bea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bare_repository_git_cannot_open_refuses_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The converting candidate is gated, never locked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:8cb5b5604875ead81e39e6654863893d7554ab6a3fc5ebfa4821b18bf68a1b7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_converting_candidate_is_gated_never_locked"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "No read selects the database of a converted tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:e9ba6eff80a4b51f831b83c7de639bb2c014cd4d57ae0af15f1ceb9f74b93e9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The lock under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "One unconverted commit under both branches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab773cc128b3a745bc051c3f3b5bfa7c7b5e65c8",
+            "content": "sha256:44fc3d4b551bc1610ec66f0b9dd8ca390d33832ead0f8e6fd17cd58dc0490c37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unconverted"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "A typed proof guards exact captured ordering and storage meanings; independent tree/column sort implementations would misalign the item the developer is following."
+  },
+  "applicability": "Subject and location ordering in the intent-review change-set model for the active Changed or All view.",
+  "conditions": [
+    "Priority orders highest recorded meaning effect in tiers (retire/weaken/replace, then strengthen/restore/introduce/split/merge, then clarify, then none), change kind (removed, changed, added, code changed, joined/left, unknown, unchanged), descending changed-entry count, descending summed changed-entry spans, then text id.",
+    "Authored keeps outline order, families first; other sorts use their own declared primary key and Priority ties.",
+    "A family takes its first-ranked member place, except the model also admits its own changed record key; repeated family membership draws a subject once in the reading column, at its first occurrence.",
+    "Changed locations precede folded locations; within each collection role order is primary-authority, enforcement, propagation-persistence, support, presentation, unclassified, proof, then descending span, path and entry id.",
+    "The Sort preference keeps review.tree-order.v1; stored triage means Priority, authored means Authored, unknown or unreadable storage means Priority."
+  ],
+  "exclusions": [
+    "L183 judgment sorts and judgment grading.",
+    "Treating family headings as subjects with their own location entries.",
+    "Changing the reading column when the tree filter narrows rows."
+  ],
+  "id": "INV-ZEB6H9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 7, exact id MIK-R89@v2 rule 3 · one Sort control; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 9, exact id MIK-R89@v2 rule 3 · Priority; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 10, exact id MIK-R89@v2 rule 3 · Authored; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 14, exact id MIK-R89@v2 rule 3 · one order for both; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 15, exact id MIK-R89@v2 rule 3 · inside a subject; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 19, exact id MIK-R89@v2 Failure and Recovery · unknown sort; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 91, exact id W2; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 93, exact id W7; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 95, exact id W9; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 191, exact id W35; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 252, exact id L89-R1-045; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "Frozen A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470; original captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0.",
+        "Exact source item judgments and original producer data remain separate in review-page-analysis/hunk-judgments.batch3.json; no execution or acceptance claim.",
+        "Covered persisted worklist items: sha256:bef40bd16e37e2212370caa703459c3f130fec725b387901a499d54c47a8e23e"
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP01",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The review tree and reading column use one deterministic subject order, while each subject keeps its changed locations in role and span order.",
+  "status": "proposed",
+  "supersedes": []
+}

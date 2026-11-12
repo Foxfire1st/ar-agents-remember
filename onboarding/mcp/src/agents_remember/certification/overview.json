@@ -1,0 +1,738 @@
+{
+  "path": "mcp/src/agents_remember/certification",
+  "references": {
+    "1": {
+      "note": "`certification` is a present rank-3 package between `models` and `controlplane`; its charter excludes concrete profiles, executors, lifecycle terminalization, and memory gates.\n\nAnchor: \"order = [\"; \"[package.certification]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:7fbfe65d4b92b95c168281da361e235a8930ebaecf12fdba62b16ec555b83037",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:1d7d7942545bec7048e03ae455cfc1ed1c60f100ba241e475e70d6929ac4840b",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Typed R05 finalization and leg authorization exist as library functions; existence is not caller proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:2726096dad4a4af117f75a696bfb8a20f9d7dece05ab7a7613022d96be8144b7",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:ab99e7a4ecf14852c33e9d96e03344d5cfb153b84ffa876364e06a8643c6e119",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:863e3fa80f46131f63aa4eaea210d82e6e7935a580dbfd7dba86e3721a508292",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:cadeccfeb38a3b45039baaa3e1952cbbc0fea5ec3467903638bcd4ff22e3c509",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2d97cd9da17a7376baf4adb0d188ee15d8cffb59",
+            "content": "sha256:622251c205a94ad2dde686e79b9debad36b03ecf303fe0d721990083f75b39f7",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Certification is a rank-3 generic contract below its lifecycle consumers; architecture is a declared direction, not an execution report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:ea4c583ca1572b666e228c4fbd43237996b4b2b7ecaf78b63574336fafa1c993",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:b35aac839e0f72e0abbda765a747cd634564302d12129ddacc80cc4062bccf9e",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Explicit not-applicable repository gates contribute bounded applicability authority; applicable rail contracts are preserved.\n\nAnchor: `compile_certification_lane`, registry projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:e4db6759dcdeb458471be87fda9fa24b99c520e1cff31aaa0683314572caeffe",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_certification_lane"
+            },
+            "path": "mcp/src/agents_remember/certification/certification_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:db807da71090f940fd6b49d9d7de793f45546867d9b28d8b99e0d0b829bc4207",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "mcp/src/agents_remember/certification/certification_lane.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "R11/R22 admission compares repository, candidate, selection, and applicable rail contracts, with separate not-applicable alignment.\n\nAnchor: Admission alignment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bcac68ee270f5113794ec962fe533907660e6c8",
+            "content": "sha256:d25ef6945fd4ee8f3f5d596b3e8b057bc7aa4fb0bfd684cd290e9b12ff324e2f",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Original authority and provenance are retained and digest-verified together.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "466536c3090c7f103403b2b484e2af5c1d6a32c9",
+            "content": "sha256:fe9bc53b2a7b6d4169ba19e8d26b1fcd8841e7d9056a0d6cafcc348d39815ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrozenCertificationRun"
+            },
+            "path": "mcp/src/agents_remember/certification/frozen_run/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Memory rails remain a required catalog-derived port; default composition retains knowledge services without prepared-memory or continuation bindings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:f65f6f79eb612270016b133d1fba681ab7891f9c37f7e36b4def3c3cbf559ba8",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 192
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:fdc2716c3dd976a91febbe9e61bd0e3925316d6c333373693b23c400f5d16ad1",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 475
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:edd0f3f43a88fe9d9559a8861bff3eadfb36c57f02840246dc9487001a8ad7d7",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26719c5d7e9c988756b79b55e18927f26b99b5f3",
+            "content": "sha256:1b5e7022478bfff5aae2d76959a79b90f7660353b9b6d7d05928354f14aac909",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/memory_quality/gate_five_rails.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A published terminal generation is processed before nonzero run refusal; supplied catalogs remain distinct from missing publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:493fe0902f44a26b753fa39f9396255078fce9110847930da533e74c7ed9e0b0",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "77ca963453d2f023457ee4aba37dd515f5c942fc",
+            "content": "sha256:2398e36dd19ebf7cd555078fcb0df08e2a2e6146ff204647a0efd1169a4e47ad",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_run.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Complete supplied red/interrupted results retain publication; only eligible green results issue certificates.\n\nAnchor: Terminal publication",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:61d185559a7c017e4ed05837d1cce8b58f2f2269d5b5aa3e86f866b1cc791f01",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:58febc099ca943c9887cc111d876d7443ae8086e414bb835453a63089cedab75",
+            "locator": {
+              "end": 472,
+              "kind": "line_range",
+              "start": 346
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Every nested evidence/artifact binding is checked against the accepted publication; selected certificate generations are protected.\n\nAnchor: Evidence binding and retention",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:f051918714e726ee36693ad606061659e07ba09fb1bc60d47966a497c996f482",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "47ff4bd2b865a7e5cbd07ed0e305a035ccb20e0b",
+            "content": "sha256:b3cfd735e0ae879ec412f28dd9f25af2c20ca82b3d7ae53780886ad5b3f48e56",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 281
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Finalization declares three ordered legs but the journal field requires four entries.\n\nAnchor: Leg vocabulary and journal validators",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8760f7afe3957c8bd4874b9556c9f7ec573ffe05",
+            "content": "sha256:6d1f6d7607a1d9023467fe05f59a87265b15cea7973337ed7e7534b3347ac3f3",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8760f7afe3957c8bd4874b9556c9f7ec573ffe05",
+            "content": "sha256:14e5e77bcd3e68ecf6447fdcae597a61d367d69480eac63e0d245046a7523f98",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/certification/lifecycle_models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The adjacent control-plane charter remains the lowest stateful interaction service, so the lower generic contract does not absorb its record or policy ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:48a6fe4315a114455364609ee650ff807fb63d712f92dba50d27faacf4dbc6e2",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Store overlap refusal uses caller-supplied forbidden roots, whose policy defaults are empty.\n\nAnchor: Namespace policy and overlap predicates",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:5eb38e833a84d84810afbbbc62cb40ecc74b0eca92b798f2a9eb03d91221d55b",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "987d7daec9dcb26cdaa3e8f7e78952b07e750bbf",
+            "content": "sha256:587a16b97af08864de49e8abc27e1637485da4eb9c0d57f715a19c3085cb36cf",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/certification/diagnostics/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:5eb38e833a84d84810afbbbc62cb40ecc74b0eca92b798f2a9eb03d91221d55b",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "293e00ed1c9a16127b380fffa5c77cfa97c322a8",
+            "content": "sha256:eddfc6505f577a0b4a1f9293b7ae9746a9dec7c17f9ed25ab2f09a49ee8b055b",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 259
+            },
+            "path": "mcp/src/agents_remember/certification/final_codex/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Curator preparation uses source-bound converted onboarding traces; a memory side that cannot be established is incomplete and is reported as a finding, never a pass, and the onboarding refresh refuses an incomplete side instead of falling back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:de3fc038b33181c2e6fe5f7edeac472f1f53f70e6374ec7dd198410fc5cec6cd",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 125
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:1c70f68f02f9b5ddf76a35c67f3b48b2ec65f02ff5347ae5e65b4ff6848d89b9",
+            "locator": {
+              "end": 628,
+              "kind": "line_range",
+              "start": 605
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:71d35c0442bd7a7eaf11c57a918c1953129445bcdaa4c6cab9cbe700e9624a4e",
+            "locator": {
+              "end": 754,
+              "kind": "line_range",
+              "start": 735
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:bd89a9e178c1778b73741a5cf6e26333f4eec24343652d03001c7576c40a55f7",
+            "locator": {
+              "end": 885,
+              "kind": "line_range",
+              "start": 834
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Applicable Gate 3 requires exact Gate-2 artifacts; diagnostic altitude cannot issue a green certificate.\n\nAnchor: Certificate issuance predicates",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:ac954a739f16650f73d24dc5c6463d651775aeacc75fcd2c9f2ca5053dab0dfc",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Replay denominator includes original and tail generations, excluding dated supplements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9b2a684167e7146188ab141517bd754337d5c1",
+            "content": "sha256:83d873e2ad9de6ccbbed2f1c5acc4a3e3a11a500c1ef7a8ecb6f5f227d1608b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "population_denominator"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict checker derives direction from the declared order and refuses undeclared packages rather than using a baseline or fallback.\n\nAnchor: `undeclared_dirs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:c2135577af56fef6259bdd88624b15a56d7ebd55ca82f9dcd856f6753d7ff747",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:ea8d0f1565d524f10c464d3d70e7de9d4ddf38430528956ceb125b376a64a0ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_edge"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:1b576d7fbc2a1006492580fa975dff2209c7a2cbcc12f93fbda48a9d1df3835f",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_report"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:72c0dbbaa5093da287f81d2be594b275f869c56063f7683f16fe71671d3f9ac8",
+            "locator": {
+              "end": 141,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Preparation selection is limited to code and memory-content outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f80165f2fce348dd60607343404287bd534b8d7f",
+            "content": "sha256:bf395b2ffb81e1aa503770acb4d38997b5aa971cc2cc4028af99bd0392fd685d",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationPreparationState"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/preparation_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The bridge compiles one aligned R11/R22/R21 lane and preserves admitted rail contracts.\n\nAnchor: \"def compile_certification_lane(\"; \"def _project_repository_rail(rail: CompiledRail) -> RailDefinition:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:e4db6759dcdeb458471be87fda9fa24b99c520e1cff31aaa0683314572caeffe",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/certification/certification_lane.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "591ddd696815e8b24c66f36dd9bfe60171ba8f34",
+            "content": "sha256:5772297b0aafc6ff262fb8b038dcbf8056dfe2d2d977a9b1090bac55bb337f8d",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/certification/certification_lane.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The production seam resolves the exact profile, binds memory rails and persists admission.\n\nAnchor: \"def prepare_certification_records(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:cb859fd48864280c74223e23ac394d39c57da76c89bcc26ea0a77b7d41508c95",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 165
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ordinary quality gate runs the admitted candidate through its certification executor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:ae8bad3301bb799b5e21dfce4791e72aab81744957e079921db5887e9d34463f",
+            "locator": {
+              "end": 359,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The quality gate freezes certification records before execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+            "content": "sha256:69cc801ae9ae8c43f553a1bdce7b7cb9735d411145de126503e25825deb46166",
+            "locator": {
+              "end": 474,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Persist complete actual terminal catalogs, including red and interrupted gates.\n\nAnchor: \"def record_published_generation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:f0485507e7ffac0b9d7e71d65bcd924b5e276c5ded10b2f0e6eca04267785e52",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 232
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

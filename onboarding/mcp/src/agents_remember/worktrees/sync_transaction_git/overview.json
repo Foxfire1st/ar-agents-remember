@@ -1,0 +1,118 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/sync_transaction_git",
+  "references": {
+    "1": {
+      "note": "Compatibility exports preserve qualified implementation boundaries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1062725d27dbcdf1ebcf6efb1b6d1eb255655174",
+            "content": "sha256:d5812b623ffca1d5e58405196495f79c40ffc512d7e973791186a195c40fa843",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Complete stash inventory is distinct from its display sample.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b661a6c9bf04035c5782cae0bf7d827a96d3456b",
+            "content": "sha256:694fd038d560342382cc7d66b9678fd8e4e0e1b5c6bdfc5da66417dc165dcb02",
+            "locator": {
+              "kind": "symbol",
+              "name": "stashed_parked_paths"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native expected reapply has one configured merge owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Saved unproved state is written before destructive cancellation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:b7b96ba6ade3da19bcde3e0e460e5be1ac77d8dabda1ba183cdfc2cd4b21fc4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "save_unproven_state"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_cancel.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Incoming memory fast-forwards validate before moving refs.\n\nAnchor: `validate_memory_fast_forward`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:0b4bb60005807ea000e1df8845b0ef48d8052337664eb956852106008263c3fe",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Successful absence from both Git holders selects mirroring; native binary patches preserve staged and unstaged state before rollback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b661a6c9bf04035c5782cae0bf7d827a96d3456b",
+            "content": "sha256:53c8825ec52b6721136ea620732cb9a7bc3de365dd59dbd6771bb02db4a80842",
+            "locator": {
+              "kind": "symbol",
+              "name": "_is_untracked"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:5bb0ed5b3d496d15c7b339d0f8388f0571883d6b2c43997235225bd28ae25502",
+            "locator": {
+              "kind": "symbol",
+              "name": "_save_unproven_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_cancel.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

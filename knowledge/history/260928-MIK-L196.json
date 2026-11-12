@@ -1,0 +1,173 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L196",
+  "rows": [
+    {
+      "disposition": "updated",
+      "id": "ROW-51VBMG",
+      "items": [
+        "sha256:fd47c4b43c5e99f7aca2692ec5c7bf372dfd1380c057c7dd5b85554a4bbab06f"
+      ],
+      "reason": "The card now describes trace-subject priority and sorted member-path union from matching uncovered unexplained items, with candidate blob resolution; supporting references were refreshed and inherited rendering-order prose corrected.",
+      "sources": [
+        {
+          "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/knowledge_writer/writer.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0APWSR",
+          "revision": 2
+        },
+        {
+          "id": "INV-2FA2B5",
+          "revision": 2
+        },
+        {
+          "id": "INV-7V4K9G",
+          "revision": 3
+        },
+        {
+          "id": "INV-HGJNDG",
+          "revision": 2
+        },
+        {
+          "id": "INV-HYZSDK",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-6B48R9",
+      "items": [],
+      "reason": "Examined all five member revisions. The source selector restores complete path binding for an uncarded subject; group construction, singleton identity and malformed-group refusal retain their obligations. The family still joins source binding to matching item judgment; no membership or route changes are required. Its inherited closeout-validator wording remains a baseline historical divergence, not fresh execution evidence.",
+      "revision": 2,
+      "subject": "FAM-DGPZ0R"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R205",
+          "packet": "requirements/MIK-R205-v1-the-memory-writer-binds-the-whole-copy-group.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "content": "sha256:027e83b8893b2708ce3b4b2976192058a9e14b4bbb8b5147dca464c70669504b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_trace_item_keeps_priority_over_unexplained_source_groups"
+            },
+            "path": "mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-450WJT"
+        },
+        {
+          "after": {
+            "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+            "content": "sha256:aa55f2ede535c00b7c7865d703364d786b2b37814387e85af911077867b53708",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cardless_group_row_binds_every_source_the_unexplained_gate_compares"
+            },
+            "path": "mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+          },
+          "before": "absent",
+          "id": "PRF-AFQ8B0"
+        },
+        {
+          "after": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:95db1d32261a937c22e831b13a18e1f70edaa118479dc989b34aac10655cc425",
+            "locator": {
+              "kind": "symbol",
+              "name": "_onboarding_sources"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2WC1ME"
+        },
+        {
+          "after": {
+            "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+            "content": "sha256:8d70d4b2cb827ddc9a7a9542c3a852effc9a78dcd6a4b0c7e521dc4a6bfc3852",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unexplained_onboarding_sources"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "before": "absent",
+          "id": "RLZ-30D86H"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-74ZTWV",
+      "items": [],
+      "reason": "Matching uncovered unexplained groups now supply every member path when no trace item exists. Existing trace subjects retain priority, and row authoring resolves actual candidate blobs or absent. The gate and other row kinds remain unchanged. Evidence (L196-source-binding-reconciliation): MIK-R205@v1 required behavior 1-3; passed A1 tree 729f2f3594fce9feadeb38a4a3e8096702f5c633; mcp/tests/test_mik_r177_gate_groups_identical_copies.py::test_an_existing_trace_item_keeps_priority_over_unexplained_source_groups; mcp/tests/test_mik_r177_gate_groups_identical_copies.py::test_a_cardless_group_row_binds_every_source_the_unexplained_gate_compares",
+      "revision": 3,
+      "subject": "INV-7V4K9G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7AZ1V7",
+      "items": [
+        "sha256:f66c8680068ec212996bee66fbc6e3876ac09ef1876a3409ac32c33d1e24fe22"
+      ],
+      "reason": "Examined the current writer and converted-authoring account. It already delegates source-set selection to the writer and separates file writing from Git acceptance; the local selector change adds no application route, composition owner or transport authority.",
+      "sources": [
+        {
+          "blob": "1a2649c3264339377226860bbd12a87c8b3f2f65",
+          "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B0FS39",
+      "items": [
+        "sha256:6d2768fe1af7ae624f6c1bae9558d38524377f18a6c75e30049c047766ee7a0d",
+        "sha256:7188ce4cc90101b41bb39ee5e35df1395fd889fa3471f7d207e04d55d7222976",
+        "sha256:8dd19fcbeb7c1df8876f677e5ab945e14a709a2683b630298e5fcc452eef5fae"
+      ],
+      "reason": "The card now describes conflicting-group precedence and the cardless deleted-group, deleted/live and single-path regressions, including the explicitly supplied mixed-shape fixture boundary.",
+      "sources": [
+        {
+          "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+          "path": "mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RB5WRV",
+      "items": [
+        "sha256:5c3310e9b96a451fca7d7c0624350fc969d81870464aa43583fabdde6b650bb2"
+      ],
+      "reason": "Examined the route purpose, test composition and ownership account. The added cases stay in the same existing module and catalog population, with no route ownership or test-selection contract change.",
+      "sources": [
+        {
+          "blob": "28f07ab9d2b2e389de0a552375d6e973edbc143c",
+          "path": "mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

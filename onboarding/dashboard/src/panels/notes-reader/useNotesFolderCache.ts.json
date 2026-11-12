@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/panels/notes-reader/useNotesFolderCache.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "useNotesFolderCache is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8dc7ac203076e8432baff9849c2b047c62f3cc3",
+            "content": "sha256:834ee443b8385f5b234a51fdf20227cd61341e9d93226e6b0de0f5f393010216",
+            "locator": {
+              "kind": "symbol",
+              "name": "useNotesFolderCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "useFolderPaging is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8dc7ac203076e8432baff9849c2b047c62f3cc3",
+            "content": "sha256:269a1be76ec08c8624aad248124561338f84220420e7841bd871a3f6332e0755",
+            "locator": {
+              "kind": "symbol",
+              "name": "useFolderPaging"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "evictFolders is a current owner of the behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8dc7ac203076e8432baff9849c2b047c62f3cc3",
+            "content": "sha256:96bb3dd5b2af41d6ce8843c134107a0caff9f635c0a804c6df5831326478bad6",
+            "locator": {
+              "kind": "symbol",
+              "name": "evictFolders"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,42 @@
+{
+  "path": "dashboard/src/panels/detail-panel/older-server.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f76448eca21376a4a2c5f163cc761546f92b9200",
+        "content": "sha256:3414bda6d4cf7446494ea71daf1a9cd574739cee56fedf0213e46d580317e575",
+        "locator": {
+          "end": 176,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-4BA1K8",
+      "invariant": "INV-9PWR57",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 failure and recovery",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The mounted current-native optionalAbsent fixture reaches the actual reader and omits absent Review/count/note blocks without error; old-build recordings are provenance, not current wire-compatibility execution.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f76448eca21376a4a2c5f163cc761546f92b9200",
+            "content": "sha256:3414bda6d4cf7446494ea71daf1a9cd574739cee56fedf0213e46d580317e575",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

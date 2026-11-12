@@ -1,0 +1,74 @@
+{
+  "path": "dashboard/src/data/inflight.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The map shares a pending promise and releases it by identity on settle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40e6cb6099b76a7389dfcea16cfc7c0f82a4e92d",
+            "content": "sha256:a474625df3d164e3b0fb0413f4d63eab79fe8ac96d18da4808748f21e63be9b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "shareInflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The live repository catalog fetchRepos uses shareInflight for its request; no removed terminal catalog is a current consumer.\n\nAnchor: lines 113-116",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "This is repository-local browser state coordination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "40e6cb6099b76a7389dfcea16cfc7c0f82a4e92d",
+            "content": "sha256:a474625df3d164e3b0fb0413f4d63eab79fe8ac96d18da4808748f21e63be9b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "shareInflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The retained File Viewer repository-catalog read shares its in-flight callback and bounds its fetch; removed terminal/catalog-poll callers are not current consumers. [4]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5114f5644a55359a177e60b5dbfa197f8a1f271a",
+            "content": "sha256:a879d0bcbaa95db21c2edddeca08097f838923b4b3e3511cb142f3e8ba739967",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetchRepos"
+            },
+            "path": "dashboard/src/data/files.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

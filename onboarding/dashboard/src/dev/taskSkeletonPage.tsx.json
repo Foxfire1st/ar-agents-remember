@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/dev/taskSkeletonPage.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The selected projection precedes reader mount, the rich fetch override is restored, and local artifact state switches between DetailPanel and NotesReaderViewer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f41ed282e06e0f6ade8cf3ecd7a132ea07f7fcfa",
+            "content": "sha256:5fd6d389debebe9aec63b3a3ad2b846ea5c06462b12e8191fa0f2e7dddc43c73",
+            "locator": {
+              "end": 104,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

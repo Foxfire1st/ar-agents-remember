@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walkPartial.test.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0ddb78b6a8bc356da46bca2686b147b7a5e6e08d",
+        "content": "sha256:de7270cc5496b27fa0fd9fb6c6aaef2b270ec0545615e511536a4b42674e1df8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-6E2ZTY",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Historical attachment of the already-retired L86/R87 carriage record; source callback adaptation is not a new execution or current native acceptance claim.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "14": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it('shows complete outline rows for a partial read and keeps continuation in the main page', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ddb78b6a8bc356da46bca2686b147b7a5e6e08d",
+            "content": "sha256:2a97accc24311d272079cf5ed4e89e0ec380f06ab1d39d783487c6247ca93232",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

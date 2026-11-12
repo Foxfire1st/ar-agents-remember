@@ -1,0 +1,226 @@
+{
+  "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`EnclosureProcessMap` + `EnclosureCanvas` under test (fleeting + scene + decals).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "36b5e603bb19a454ad4bb9b945985124b4ec175b",
+            "content": "sha256:5e3aa61932c0212fd7f1f8a184fb97138ee3d95aff696fe35de5ae67322e273e",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The provider-retirement render census enables effects, renders the first process of every Engine Room fixture, and rejects provider gauges, blocks, dropout, fault/reindex markers, seed/clone lanes and provider text.\n\nAnchor: `renders no gauge, provider block, dropout halo, fault/reindex marker, seed/clone lane or provider text`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:492682f0f74c47d510c046020b89b22f0a0c736afc9482914658aec6fe430ff0",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 506
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Integration-conflict cases retain terminal STOP with no recovery chips and a positive red refused-conduit flash on integration/integration-mem before the STOP.\n\nAnchor: `EnclosureCanvas — integration conflict`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:033b79f770aaf44ad11b1d79051f6aa0f3ad03d4402b14357561649ab321e73c",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 550
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The paired block resolver retains the single fleeting pre-contract shape and derives stale-base only when that blocked enclosure is behind its source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:4a7780a80d83c45d8dc75431893db3ab479330bef0168c71f78b2bec41c2b3a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveBlocks"
+            },
+            "path": "dashboard/src/panels/engine-room/scene.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The replacement fixture census rejects eight retired provider/setup fields on every process node and admits only worktree-add, ledger-map, sync and the two integration edge kinds.\n\nAnchor: `carries no provider state on any fixture node`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:c0c543844b2e465fe6c0a6d6fe363f582e637c049ed9ff96f2920b7742e70881",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 477
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scenario fixtures it renders; `engine-cgc-seed-refused` now seeds `edges({ cgc: \"stale\", … })`.\n\nAnchor: `ENGINE_ROOM_SCENARIOS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/fixtures.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The T9B/T9C refused-conduit describe block, including the `data-state=stale` / `data-refused-polarity` null pair.\n\nAnchor: \"renders the big red fleeting-enclosure box (BLOCKED title + reason + recovery) for a pre-contract block\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:775cc049096f9cac7be03c885a072d957cb6621a4d5ac0a538c670741bbd91b4",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`refusedPolarityOf` — the derivation the test's amber expectation depends on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:7a4dda1e37c1500d1e8f572c5fd5f02aac6a8037f6a885e76727b27bb8690d53",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusedPolarityOf"
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The `EngineProcessNode` shape `nodeFrom` returns from the scenario fixtures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:0500997e002c3994a5fad6d4b0a9336d993300f57a5ecaddab3325d0a3b5daeb",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The jsdom stubs + determinism freeze.\n\nAnchor: \"window.matchMedia = ((query\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "163922424968f5d43b9ad0e126417ba995aa56c1",
+            "content": "sha256:66c7fb03929afbc3109a4bbb8849510372641018233a2ef434e767ff5a69d39a",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "dashboard/src/test/setup.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The effects-isolation case keeps repeating surge transforms out of the structural SVG and asserts no reindex marker in either the structural canvas or effects overlay.\n\nAnchor: `isolates repeating transforms from the text-heavy structural SVG`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:962f98c38d35a7fcd34b2b22b061b237b729a5c56742ea0dfd91178e85f3516f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The static-scene cases assert no provider gauges or official engine wires, retain external-memory couplers and branch nodes, and the wiring cases reject seed/clone conduits while retaining enclosure lanes.\n\nAnchor: static bird’s-eye and conduit-wiring cases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:39e726d0dd58dc55330b671d1e7363cb789f9004e807bf5cdab55c20fa28f949",
+            "locator": {
+              "end": 269,
+              "kind": "line_range",
+              "start": 181
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

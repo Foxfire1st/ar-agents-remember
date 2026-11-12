@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/explainer_comparison.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "PreparedComparisonResult is what a build is handed, with its witnesses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4d6770dfca5207d73045e3880c0eaea6e24425e",
+            "content": "sha256:88a4c2990a265efe0e0816871151489737c0f5b59e7a382527305618377c87cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparedComparisonResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

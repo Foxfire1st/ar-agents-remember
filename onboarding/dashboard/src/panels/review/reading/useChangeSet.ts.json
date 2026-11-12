@@ -1,0 +1,250 @@
+{
+  "path": "dashboard/src/panels/review/reading/useChangeSet.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+        "content": "sha256:b26f02835df050a178d5bf9ad7dce8af3efbce788ec229886aac10e9d9f19fe2",
+        "locator": {
+          "kind": "symbol",
+          "name": "useLeafJudgments"
+        }
+      },
+      "id": "RLZ-3FXSHE",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The shared model subscribes to the category/grade snapshot at the exact repository/master/leaf key, so tree and reading receive the same published judgment input.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+        "content": "sha256:103a95ca4ad2d5620990805d3addadb6e303c0aa46c199d9a70fb25fee28c576",
+        "locator": {
+          "kind": "symbol",
+          "name": "useChangeSet"
+        }
+      },
+      "id": "RLZ-51X57X",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It passes the shown number to summary, leaf trees, lane and card-set reads.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+        "content": "sha256:375f47ca086e7b86715c3489849ac7c9b57efd2f66f454cc992a9ab43beb474c",
+        "locator": {
+          "kind": "symbol",
+          "name": "useComparisonNumbers"
+        }
+      },
+      "id": "RLZ-8JH0EX",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Separates the comparison the page resolved from any number the reader chose, which is what makes the older-comparison state mean 'not the default' rather than 'not the highest record'.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+        "content": "sha256:103a95ca4ad2d5620990805d3addadb6e303c0aa46c199d9a70fb25fee28c576",
+        "locator": {
+          "kind": "symbol",
+          "name": "useChangeSet"
+        }
+      },
+      "id": "RLZ-FVRT7W",
+      "invariant": "INV-KEJ5TN",
+      "origin": {
+        "handoffEntry": "RP07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It computes asked without selection, schedules cards after read-4 settlement and shares the result with the page model.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+        "content": "sha256:090f52a05604cd8f94a1739a0ac83de9f2e2b1e8ae79ec2c4618c1387c93de83",
+        "locator": {
+          "kind": "symbol",
+          "name": "publishLeafJudgments"
+        }
+      },
+      "id": "RLZ-Q9JPTH",
+      "invariant": "INV-NF89MD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE05-judgment-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Stores category/grade inputs under the exact leaf key and notifies the shared model only when content changes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+        "content": "sha256:b9c4d1bdb323d46f24dfec6acc137dca323f2dad9a69db30c261c6615e85a77f",
+        "locator": {
+          "kind": "symbol",
+          "name": "bumpLeafMoveGeneration"
+        }
+      },
+      "id": "RLZ-R13FZY",
+      "invariant": "INV-V0PX2F",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE07-moved-notice",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "A no-work move increments the addressed leaf’s generation and notifies the model listeners; the effect that consumes it re-reads that leaf’s deterministic facts rather than waking an explainer.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+        "content": "sha256:ffef9ee42525ce27ac5822a9d87d0234905fe76c51e482bd19bd705a6d081f7c",
+        "locator": {
+          "kind": "symbol",
+          "name": "deliveredOf"
+        }
+      },
+      "id": "RLZ-ZA9C7B",
+      "invariant": "INV-NW4H6C",
+      "origin": {
+        "handoffEntry": "L187-NOTICE",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Keeps a refused or failed notice-bearing read an explicit unavailable state with no delivered control, instead of collapsing it to the silence a matching pair shows.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Own the page's numbered reads and sole model.\n\nAnchor: \"function useComparisonNumbers(frame: ReviewPayload \\| null, chosen: number \\| null) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:375f47ca086e7b86715c3489849ac7c9b57efd2f66f454cc992a9ab43beb474c",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Own the page's numbered reads and sole model.\n\nAnchor: \"function modelCards(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:24b6d051a77c314141071047e4c498e1cd655080b9779c1bf26fd298553a6219",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 161
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Own the page's numbered reads and sole model.\n\nAnchor: \"export function useChangeSet(input: ChangeSetInput): ChangeSetReads {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:103a95ca4ad2d5620990805d3addadb6e303c0aa46c199d9a70fb25fee28c576",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The resolved comparison, the shown number and the older-comparison state are three separate facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:375f47ca086e7b86715c3489849ac7c9b57efd2f66f454cc992a9ab43beb474c",
+            "locator": {
+              "kind": "symbol",
+              "name": "useComparisonNumbers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unreadable delivery is stated explicitly with no delivered control instead of collapsing to silence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:ffef9ee42525ce27ac5822a9d87d0234905fe76c51e482bd19bd705a6d081f7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "deliveredOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The menu's number list comes from the highest recorded number, kept apart from the resolved comparison.\n\nAnchor: `latest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:0cda67ebac2ed524dc87079addde773c7414b63a861457bdf91f202ba4c72f51",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Per-leaf judgment state is now published separately from comparison facts and consumed by the sole change-set model. It stores categories/grades under repository/master/leaf, emits only when their serialized content changes and deletes empty judgment payloads. A live no-work move increments a leaf generation and re-reads the numbered leaf facts and currently asked invariant cards, while retaining the opening-set card-read owner. This publication carries inference data; it does not author knowledge or convert a grade into a recorded fact.\n\nAnchor: `publishLeafJudgments`, `usePublishLeafJudgments`, `useLeafJudgments`, `useChangeSet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:86ca92331f993d0161f6e546622512ab3117b459a2032af6b50fab92772174ba",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

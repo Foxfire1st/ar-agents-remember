@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskDocument.recorded.base-3c2285d1.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2e7d9f29a4a11de4b19b75c43d31e38ab40b115c",
+        "content": "sha256:b21846410aba540920d8d53453d3b62d47c47fb1bbab544a2605726e4ec85b6d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-B1YJHK",
+      "invariant": "INV-9PWR57",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 failure and recovery",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Preserved base-build recording and build/command/source provenance only; this historical envelope is not passed off as the current TaskEntry wire compatibility witness.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Stored inputs, producer outputs and historical provenance define the archived payload; the current suite uses the old recordings only for provenance and renders the native L168 recording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f76448eca21376a4a2c5f163cc761546f92b9200",
+            "content": "sha256:285d9914c0d1e216a5caefe835127134c502ac5f11ce757caad70c5af60e6a94",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 109
+            },
+            "path": "dashboard/src/panels/detail-panel/older-server.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

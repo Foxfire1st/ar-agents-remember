@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/fixtures/l109_tool_answers/PROVENANCE.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture account distinguishes recorded samples, named operation producers and regeneration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99d615614c71db2ef816d3861cf84ffc5d2a90a4",
+            "content": "sha256:a2d3df1b118e7ac79d8235647f5d91ef05311b96e3ecda560ce76082b0e7a297",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

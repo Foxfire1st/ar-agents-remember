@@ -1,0 +1,182 @@
+{
+  "path": "mcp/tests/test_task_documents_graph_projection.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Segmented master scenario projects titles and predecessors\n\nAnchor: `_segmented_scenario` `test_segmented_master_scenario_projects_titles_and_predecessors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:4ec369040c46575201637cbfdc7308f0df7627fa6f3cb58076d76f50402acdea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_segmented_scenario"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:2e84d2c8a3133211cf7f72791ddeab10713a5d5e9ba866eeb1a248b3706a4672",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_segmented_master_scenario_projects_titles_and_predecessors"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An abandoned master reads `abandoned` and no longer gates its successor, whose frontier becomes ready\n\nAnchor: `test_abandoned_master_reads_abandoned_and_stops_gating_its_successor`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:55c36fa3c5988a77b858d63ccd9cfdf8c587a78ca3cfb14ce5a9d6081066812b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_master_reads_abandoned_and_stops_gating_its_successor"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Duplicate local leaf numbers keep master qualified titles\n\nAnchor: `test_duplicate_local_leaf_numbers_keep_master_qualified_titles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:c52440770e7bfe7d6072af20110a237567c0f5582493946f777e8ee87d611782",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_duplicate_local_leaf_numbers_keep_master_qualified_titles"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The dashboard's own index rule, reproduced: a row drills in only when the pool holds a document in the master's own directory whose file stem is the row's `file`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:962a4d4459b521a48802a072556f03624ebf30e8d5995f31f6d9369077d0a73d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_doc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The reachability contract: a completed leaf written by a newer build stays reachable, an unstarted one stays reachable, and a broken document is still withheld.\n\nAnchor: `SubTaskIndexReachabilityTests` `test_completed_leaf_written_by_another_build_stays_reachable_from_the_index`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:6a3b48bc9ef52f06442aef7657efb1ad51a1dd39f97da1c614ea36a860220190",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:79ab0c15a7b0321e37e4b5091e969558e391f83f0c84b62e35832ca09338fdbe",
+            "locator": {
+              "kind": "symbol",
+              "name": "SubTaskIndexReachabilityTests"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:d4af8ed530adc9e8d644950d569160a0cc9bec6bf9dc6ed1328164d545ece8e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_completed_leaf_written_by_another_build_stays_reachable_from_the_index"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Child document stage owns both master and sprint frontier, with body/summary graph equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:70e960d7545ac902d287b6eac1ea48ea17ada857f9775e34169725041b86d749",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_document_stage_decides_master_and_sprint_frontiers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Shared TaskEntry counts distinguish completed, planned/started and aborted rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "530630f996ef1314283d863c5361689f84cbeeb4",
+            "content": "sha256:7de2b6db3549abe5bb215ffecbf297efc1e9d23c4c412886743a223804262820",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_abandoned_and_retired_rows_are_left_out_of_the_figure_and_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

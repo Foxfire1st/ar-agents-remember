@@ -1,0 +1,527 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/query.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The proofs of a set of invariants.\n\nAnchor: `proofs_of`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The sibling-prefix, own-level, retired-count and route-link cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:ca786e08e8f89f95c23884338c758424ddb831e9b0dad129ae7fc9f663173cc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directorys_subtree_pages_through_the_shared_continuation"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:3f762896f00475c395ab162843bff4dd6ee398be97f22a28d1a104d260c1ffaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_view_is_bounded_to_its_own_level_children_and_route"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52c612f24f8a11ebd50a596cfdad580c051603b7",
+            "content": "sha256:025e876db38634c33926f6390b633cae583bbae913329c60c05f23f3bb5d2a62",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_explorer_lists_code_and_onboarding_children_with_entry_counts"
+            },
+            "path": "mcp/tests/test_knowledge_reader.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Structured Answer results carry IndexState; location and reverse helpers return scalar or map values inside the selected index, not a universal Answer wrapper.\n\nAnchor: `IndexState`, `Answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:92ebdb7f941f59be61d4d88cd0fc097d2fc2357dba22d605ccdfc181760df6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IndexState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:2bf296bb3638d471e9fce0efdd5a29b014ca78aec55b10b2db32ba34791fe962",
+            "locator": {
+              "kind": "symbol",
+              "name": "Answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Every record ID of one kind, sorted: the reviewer's per-side currentness (MIK-R25) and, since MIK-R29, the reader's `records_of_kind`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:2b2a8e6ba33037590165eb786328c443ad7445808de1c575c162fdf710339c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_ids"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "IndexState and Answer wrap structured lookup results, not scalar location or reverse maps.\n\nAnchor: `IndexState`, `Answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:92ebdb7f941f59be61d4d88cd0fc097d2fc2357dba22d605ccdfc181760df6b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "IndexState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:2bf296bb3638d471e9fce0efdd5a29b014ca78aec55b10b2db32ba34791fe962",
+            "locator": {
+              "kind": "symbol",
+              "name": "Answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Opening refuses another format or another tree's key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:2360a41a71db0058321562ebcc349077fc2848dfbf71ef2d0b10c7fd03d213e6",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:cc6629c461d8d8e5d115468c7ed840401dcd75e53aeb78d06a1ebb3f589aa2e6",
+            "locator": {
+              "end": 180,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The reused read code opens the index file under the index namespace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:b4c706c194f724d2f01217a6ff5a32e94af1a7069c994c91bd421279ac2d9a63",
+            "locator": {
+              "kind": "symbol",
+              "name": "database_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:4240807607856aa93725970fa8eee0f1f4ebdc24cdc4b6a1164317e9c460ce60",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The rule-3 lookups.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:636d5e54b3808baa065a5e9a7aab44cf656e9e7230461d3e5befcfc327e5f818",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_at_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:14420852b04e01ed8d93f86e3dc41dcd993e16a02863e437c1f5ac17d31268ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "families_governing"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:41f1b4d3724e352e0603ec806f17517ffdfdff379e3affc8c171996ec2be9be8",
+            "locator": {
+              "kind": "symbol",
+              "name": "incoming_links"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:1dc1ee781774b33c39205f0cc309a6cf1e702204c1c17be18a63236c2179b7f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_rows_of"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:56c019d2256241a2c8a0e7cc9b5d4a55a96b408bdab9b8976acafea427e0eb0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "history_rows_about"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The reverse lookup from a projected UUID to the text ID it stands for (rule 6's reverse map).\n\nAnchor: `text_id` `_self_and_ancestors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A family routed at the root governs a root-level file and a deep file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:5a39fd607817730e30faae344dce300b1a30944d19b87bb94c19998ed23d4f67",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_routed_at_the_root_governs_every_path"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The answer cases: path lookups, invariant, family and route, incoming links, and history rows by subject and by leaf (the index query moved here from MIK-R07).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:da42d085fa5e1e12724658de1ce80ae6ad4b2ece707ca40d2b6c3e1d829acf35",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_path_lookups_return_realizations_and_proofs"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:6b37ff3a2cc48abe10e8e7bf95aee9933a81b8433cb1f4379d290f1f916fc86b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_invariant_answers_its_code_tests_families_links_and_history"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:4a0ab33a2d4d35ebaf40c8146290a4faa33251c2a58d01d72ee45f2db17709b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_answers_members_and_routes_and_routes_answer_their_families"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:02d331d1e78edf162689dcc770ef24813de9592c1256a55b1d9ce9293f8aaeb2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_incoming_links_reach_any_record"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:63c390b9ca2c5765de721e4bd7996590f81219bade3420eb6491fe2fdc73a17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_history_rows_are_found_by_subject_and_by_leaf"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The live invariants no proof names; information, not a gate.\n\nAnchor: \"status != 'retired'\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:3221a86238001c33500bbad81bf286b5bab780327c041996360bcfce6afdbc36",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariants_without_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "One history row by its ID.\n\nAnchor: `history_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "SELECT-only declaration and reverse maps support naming without Answer wrappers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:1c0f33c19ef5230e51c6d49106b129023ff5755feb280fb6c9682193a442219f",
+            "locator": {
+              "end": 457,
+              "kind": "line_range",
+              "start": 422
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A retired invariant is excluded from the list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0256098f652dc34be5986d7dcab77243a655f959",
+            "content": "sha256:4e8f0ee59e4dac2a9e38a8452d74ed20d42dacb261a6b17b7b83ef550ba19e86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_lists_live_invariants_without_proof"
+            },
+            "path": "mcp/tests/test_knowledge_proofs.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Entries at or under a directory; a sibling sharing the prefix is never matched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:5dc8ec52cf7693ff4fa4fbd834fc135364d2e31d6e7ed3fd73e0dd275cb41cc4",
+            "locator": {
+              "kind": "symbol",
+              "name": "entries_under"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Entries of the files directly in a directory (F2).\n\nAnchor: `entries_in_directory`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Live entry paths under a directory, for the reader's counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:ff22ce74d89455c338683a9ecf27c766db0138afb981d78e1c606023bb4142d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "live_entry_paths_under"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Links to a path's anchors or route; every record of one kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:9a02dd06cf30365264fcb0945d256140ec0dd3f493802e14137551f87a5376fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "links_to_path"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:b83fdf3507fb1e00e319968ae8d043309d5e1f97dfa77ecff7ef9266225f9917",
+            "locator": {
+              "kind": "symbol",
+              "name": "records_of_kind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`_incoming` delegating to the shared link query, same SQL and order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:200d2ce90e39e630f935473bf969a03448c05bf8105005ebfed7b6c8362e8dbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_incoming"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:d1baf68323ea7e84c98308667a6543746d29ee2008cc29f63f681307017fb8f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_links"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The directory condition and the prefix it is built from.\n\nAnchor: `_prefix` `_under` `_split`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f96d18c15313b3678be4b1ab3097dd93a32de955",
+            "content": "sha256:c31c1c5d3eac9b8386f76b007c96642f04f5440aa47d89ab4328bc1b8b9f3512",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

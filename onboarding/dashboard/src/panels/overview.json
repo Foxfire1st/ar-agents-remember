@@ -1,0 +1,3897 @@
+{
+  "path": "dashboard/src/panels/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "The explorer's and the details' labels from the lane.\n\nAnchor: `explorerAttribution` `laneAttributionFacts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:0a28a40d0eb1dcef426f7dde99c2c1f94274c63ad9eb91581e91ec4f859131c9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/laneFocus.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6292a60675728a255f6bf91dabd84e851c1446db",
+            "content": "sha256:bfe7a5696957a5c56ca6e5b3d91b51e9d76d24a741bb2a66978088aa7507290a",
+            "locator": {
+              "kind": "symbol",
+              "name": "laneAttributionFacts"
+            },
+            "path": "dashboard/src/panels/review/laneFocus.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "109": {
+      "note": "Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
+            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+            "content": "sha256:88df129c5fdbbeec63ba5963a4e83a46b0a8bb1775fcc2db9479c708282c349a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "110": {
+      "note": "Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:919512bce016d5724a47041414039b47ebb45d0570677917e9c7a9e234ee5b21",
+            "locator": {
+              "kind": "symbol",
+              "name": "familyExpressionExcerpts"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:c8c06c4f84ccd5a750fec7a568c7c674fd046d60d098ddfd28d116f9e57419ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "excerptKey"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:66cdccf8e9f8aad7eb4a87642a7d506ab7fe433cc80f4c0334f2b1db1cd90ee9",
+            "locator": {
+              "kind": "symbol",
+              "name": "claimClass"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "Per-side resolution and observed identities attach to the same recorded-address key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:6eb2e9f702a7d3495c581f4eb4e1f55e84b31d16b6d6025e5aa42b8949c8d689",
+            "locator": {
+              "kind": "symbol",
+              "name": "recordSideReadings"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:9f7d74252b9ad592d45a11a8b642914edaa2db921941286635a5250c95d5a3c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyExcerptSideReading"
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "112": {
+      "note": "**The two readers share one hoisted helper — `unlistedPathNote` (`FamilyReviewCenter.tsx:87`), called by the member attribution at `:139` and by the family expression row at `:275` — while each renders a listed path separately: the attribution inlines its own branch and the family side uses `listedOrPlainPath` (`:286`), so no two-shared-owner guarantee holds.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:0630fafb57fc6fe33a5e90dd0b661d3007d27148a673975c0c30f78c2c912f4f",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:05cb40c48b5f19ebb952580eccc58e766449bbd338175675c5dd0c5ec46b33c0",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 285
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "114": {
+      "note": "**The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).**\n\nAnchor: \"WHY THIS FILE ASSEMBLES ITS OWN PAYLOAD\"; \"keeps two excerpts apart when one address carries two different recorded blobs\"; \"treats two different observed blobs at one address as one excerpt, read once per side\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:8a4807af8728e01f63ee3e79da36594d416d30e601cdaf849bac354f71b7c433",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:32156c691fe4b909fbb2b82eef61ad2f5ce756fddfd8e99313b16724fcfe0bca",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5a2add9e00a2a2e627986ab1d4505ce78b23f176",
+            "content": "sha256:309bde3e0506e12f2091cb001f429660f310f20b829991751a57a68ae72dbbf7",
+            "locator": {
+              "end": 258,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "115": {
+      "note": "The compact control, its brief states and its disclosure (since MIK-L32 with the lane's count beside `+N −N`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:2a69f4b2e98a93983689c7d9b1fc907d8b6ea0544564795a5c6a252296a91090",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:aabce542c93fd51e13a1e6fca4a574d05acf43da8c2207da5f969a376252c909",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:6ebaef16adb123fdbc9dfce0ae41188fc9e522428ad43e1ff2348ab0fcfdd31e",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "116": {
+      "note": "The entry mounted in place of a change-set button.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "117": {
+      "note": "The leaf-scoped facts and re-validation generation.\n\nAnchor: `DocChangeSetBar` `leafFacts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:d972a17fb5c09baa79f099400d5b3d3f563db77b321edafc37f58e3f94645bff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:329ae5e2eb0c7afebb27a424cd37bf6edd3267537d770c7b4db095db5997e88e",
+            "locator": {
+              "kind": "symbol",
+              "name": "leafFacts"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "120": {
+      "note": "A history row's line: its effect, and its because targets as links.\n\nAnchor: `HistoryLine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:0299fdde7192815aa80ae6022b3c0a8e1d41987124e92d5bf4d20a74c9f66839",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:8f0364a1d9e46c87d82a0783b085ea47734e60ed52d76929dc4a3e0c4860c292",
+            "locator": {
+              "kind": "symbol",
+              "name": "HistoryLine"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "An incoming link from a history row names the record the row is about.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "993ed3d3c3d6ae3c92dc97591be76c1d9dce3467",
+            "content": "sha256:c26126084494697f388bf8f331bad688049ed66e0c86ea9423ed7aa3dfcb1933",
+            "locator": {
+              "kind": "symbol",
+              "name": "IncomingSource"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/TruthView.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "122": {
+      "note": "Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
+            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+            "content": "sha256:88df129c5fdbbeec63ba5963a4e83a46b0a8bb1775fcc2db9479c708282c349a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "123": {
+      "note": "ReadingContext passes only the matching leaf-wide worklist to page cards and selected semantic content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "124": {
+      "note": "PageReading places WorklistView in the reading-column replacement slot; selected semantic details retain their own subject worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "125": {
+      "note": "The worklist panel: status line, degraded knowledge sides, currentness, worklist groups and gate linkage, with changed knowledge files opened in the change-set viewer.\n\nAnchor: `LeafKnowledgeChanges`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:a457c15f0fd46a72dcd8c6e05cd1a1e0afcb97fd1ae9ea96d2b4e3c93e967af3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "126": {
+      "note": "The read notice states the loading read, the unavailable read's failure and next action, the not-converted explanation, and a fallback that the leaf's worklist is unavailable.\n\nAnchor: `LeafKnowledgeNotice`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+            "content": "sha256:a457c15f0fd46a72dcd8c6e05cd1a1e0afcb97fd1ae9ea96d2b4e3c93e967af3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "127": {
+      "note": "useChangeSet owns leaf-wide trees, shown-invariant cards, summary and lane; one model feeds both columns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:86ca92331f993d0161f6e546622512ab3117b459a2032af6b50fab92772174ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bdbedad45f630b1680d1cfbe1ff737929679ef46",
+            "content": "sha256:f58330148cc9b6178dab939977136fefe9912eb36d1df7e87f8a16300f96e978",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "128": {
+      "note": "The notice says that it is computing, as a status region.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:2ac24aeabf0e5114538cf4387b27267d9d974030f9edf0fd8864cbb275a23f0a",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "129": {
+      "note": "The notice names the failure and its action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a7a2dc69a4a6d5be62212e183d2e3cc81126a0db",
+            "content": "sha256:3620312307af2595afb1ee00495bc332de187cd2d81d5459b6899c271c3c3eaf",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeNotice.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "useChangeSet supplies one comparison-scoped lane read to page content and held comparison-page facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:86ca92331f993d0161f6e546622512ab3117b459a2032af6b50fab92772174ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bdbedad45f630b1680d1cfbe1ff737929679ef46",
+            "content": "sha256:f58330148cc9b6178dab939977136fefe9912eb36d1df7e87f8a16300f96e978",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "Operations’ ReviewMain mounts the optional-subject/history reviewer beside the stable shared task chat.\n\nAnchor: `ReviewMain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:fdcdb9033e970815e15397034c79750afd89d5897393474c5cf7ab584ee74728",
+            "locator": {
+              "end": 800,
+              "kind": "line_range",
+              "start": 776
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "The surface's hook composes navigation, read cycle, cache, selection, refresh and retry, and the reading status.\n\nAnchor: `useSurface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "132": {
+      "note": "Page structure persists over an admitted frame; TechnicalDetails labels subject records from shown answers only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "133": {
+      "note": "The read cycle: the read state bound to its question, and the task-context frame.\n\nAnchor: `useReviewReadCycle`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0366167bda00c0062a05f383aec92f821ffea4c0",
+            "content": "sha256:c0724c069fc17549ced45f45704c06567e7bf27103e7635d91df0ba2382105e7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0366167bda00c0062a05f383aec92f821ffea4c0",
+            "content": "sha256:5a57ce20365b0169f56246a6636b2080a64f959a840c0549f2c64ffefe74a67a",
+            "locator": {
+              "end": 520,
+              "kind": "line_range",
+              "start": 407
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "134": {
+      "note": "The bounded cache of one mounted surface and its generation test.\n\nAnchor: `ReviewReadCache` `sameGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:e4f17ea6c1b0ddd03a06af59f71ec8ae7e0d0c04bc605c9e079911862d5fb773",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:a8c0cd0f7b0a85125d6714aaea5f772ce29c9d4a30b12232bbb5c1dd43df4a49",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewReadCache"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:3698bfaf7a0f06e787c9dca3ee519a8df0814bac97a28142d55c2bb348bc9d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "sameGeneration"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "135": {
+      "note": "The one failure and refusal block, with the retry control of a network failure.\n\nAnchor: `ReviewProblemBlock`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:640ebe01c24104c561f4b394efb8ce1124b7113cad8614ebd4a746652b38c400",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "136": {
+      "note": "Technical details projects the current payload without restoring retired assessment/evidence envelopes; open main facts remain a separate owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:293d6027f0781d8a974b7456c9c890c384a984e0e96c589b1fea64664d82fe7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "137": {
+      "note": "ReadingColumn is the persistent reading scrollport with page-level notes, summary, subject sections, lane, canvas and details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "138": {
+      "note": "changeSetModel applies the shared sort to subjects/locations without inventing semantic or source facts.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "One Sort uses review.tree-order.v1; Priority defaults and legacy triage maps to Priority.\n\nAnchor: `sortOf`; `SortMenu`; `changeSetModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63ec06b7c44eeefd8d5747741f27d2952a8d7d7c",
+            "content": "sha256:63cfc9bfeba823a3a5591e85e816bf0d8e5a67b6a94a422bf63805a0f637b93d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/triageOrderPreference.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/SortMenu.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The entry's count as its own element.\n\nAnchor: `AttributionCount`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:2d7f4935f88d2401d98cb7d831ecccab0c534bc6477233cd179cbd540e8fbb0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:74b86a2d5cf6499dc5873623d25167273233ce65b9e3dd4b84cfbceeb88aac6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionCount"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "140": {
+      "note": "Traversal follows displayed changed blocks then loaded lane hunks and excludes continuation controls.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "141": {
+      "note": "useBlockTraversal selects through the page owner and binds the reviewer-zone commands only while the overlay is closed.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "142": {
+      "note": "Traversal end status is scoped to the committed stop identities.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "143": {
+      "note": "ReviewTree renders the shared model, tree-only filter, Changed/All view and one Sort.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "144": {
+      "note": "One step of the walk: an in-tree selection keeps, any other selection and another comparison replace.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:d052946373f3d7e50d396fb830b8c7186d6338b94575abd280b2c91a87365ac2",
+            "locator": {
+              "kind": "symbol",
+              "name": "advanceWalk"
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "145": {
+      "note": "useReviewPage advances the walk and supplies one selection/model to the tree and reading column.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "146": {
+      "note": "Every page selection advances tree intent; ordinary in-page selections keep the walk while explicit outside callers reset it.\n\nAnchor: `useReviewSelection`; `readSubjectOf`; `restoreSelection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4758f75763c0c52a61f41df5ec508257a8961518",
+            "content": "sha256:5abad082e5f7da69cccdd304f2dd94d62fc3256c2ad769767050e6d133cd2924",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f08ecb5932f96691082d3c9120d30a6cbff7521f",
+            "content": "sha256:2db1560e07d8a9f3010dcc925a088602718308826f6dcd535ee0c9411d3e3d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/selectionRestore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "147": {
+      "note": "A refresh starts the tree afresh and asks only for a scroll; the retry of a failed refresh is the refresh again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:2bea560c5f336151a88c4c7f72860d44ec8070841375b4f546fdeee71624801b",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRefreshReview"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "148": {
+      "note": "Kept families feed the shared change-set model; ReviewNavigation no longer mounts a separate family catalogue control.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "149": {
+      "note": "Previously read kept families retain admitted semantic context under the shared page model.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The decision, the ratio and rule 1a.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b1446f1913be8c289a58d8098020ffd7fabc8e4",
+            "content": "sha256:2572fee4a7012bc8be4179e88e889526e0c953ef7d2071de754728ba2c19e0e1",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/review/wordDiff.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b1446f1913be8c289a58d8098020ffd7fabc8e4",
+            "content": "sha256:4cc2ba215df17a6156c0f720352f3fbba8eaab1989c4f305a4d3d8ff4f93ae88",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 180
+            },
+            "path": "dashboard/src/panels/review/wordDiff.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b1446f1913be8c289a58d8098020ffd7fabc8e4",
+            "content": "sha256:e0c1d7cce9ccfb3cead7a903d58bc96c89986acf07dc118c68b295dd0afb5aa9",
+            "locator": {
+              "end": 280,
+              "kind": "line_range",
+              "start": 258
+            },
+            "path": "dashboard/src/panels/review/wordDiff.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "150": {
+      "note": "Selection focus lands locally on the tree after the relevant answer, preserves moved focus and keeps failed/refused requests for retry.\n\nAnchor: `useSelectionFocus`; `landFocus`; `landFailureFocus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
+            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "153": {
+      "note": "The mounted cases of the reviewer between a selection and its answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a511bb0cad6456926311f87ffffd5359a8a0557",
+            "content": "sha256:e9d4ec3b610a9a8665c774aeb341c85051aa3cbdb2063c0d80a79561431ad718",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.navigation.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "159": {
+      "note": "Current ownership/control, without execution or runtime tool exposure inferred.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+            "content": "sha256:5343816681490d792f1c4967f78c6dc843bbcba8360a77e48683cc8f0d446822",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/panels/eventSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The tree-comparison scope, the statement area and the changed guarantee.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:643ed2a287df06a3ba45376e20d8f1e58b959f502a6dd9b6f3045249707876fc",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:d707e3dfbe28d7d744b8d64a1ccf3ed4755fa5cba0fc3ae470fd2d5343367d37",
+            "locator": {
+              "end": 637,
+              "kind": "line_range",
+              "start": 581
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44feb721874f617dff2c7f015005def20ce3d63c",
+            "content": "sha256:6ccddff8a0b1e85bf09094a9705187e7b23f6fe425eb3d913f2c4261557dc69a",
+            "locator": {
+              "end": 928,
+              "kind": "line_range",
+              "start": 918
+            },
+            "path": "dashboard/src/panels/review/IntentWordDiff.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "160": {
+      "note": "The page’s subject content renders recorded effect facts while compact tree rows keep their own single-line presentation.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "161": {
+      "note": "ReviewTree’s compact rows are navigation over the shared model; semantic records remain in reading subject slots.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "162": {
+      "note": "Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "163": {
+      "note": "The recorded-history block owns full step fields, strict states and native keyboard explanations, not a computed verdict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63f485ddfc5fd3933c60ba9520d4b3562330e3cb",
+            "content": "sha256:4a5ce57294f9102dceb29c9639586d4569e746d9e71a6be35e67e67581db7450",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/MeaningEffects.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "164": {
+      "note": "Four product destinations, Chats default and retained Operations/File/Knowledge composition Family-center order shares the outline ranking while retaining the semantic revision roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:632d8c0504d1039767c5561c2363427d4dd772f6e9f76a40df99bbd0aecd8f45",
+            "locator": {
+              "end": 834,
+              "kind": "line_range",
+              "start": 834
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:1c33cac434aa55f75aea8509f3c0eb861bc9293dfcb368897af8f700018f9c66",
+            "locator": {
+              "end": 719,
+              "kind": "line_range",
+              "start": 692
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "165": {
+      "note": "Exact currentness mark words coexist with an open supplied-reason sibling.  Artifact reader includes task reports and whole decision logs",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:be61958be267fb70d427a19057ca7719b5197ad1f150c3eaa7af66bf22b91117",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 229
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f433d3c79bfc376fb5c5b05f30f881a81adced4d",
+            "content": "sha256:4d11b60e1e6de76747f98193a4ee65f90bc79d5b23c2020c9e201a292217a258",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "dashboard/src/data/taskArtifacts.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "166": {
+      "note": "Non-authored field rows distinguish an absent value from a recorded empty string. The decision list and its preview number authored decisions from the oldest, draw the five newest, exclude product records, and keep the whole log one link away. Source caption: `fieldValue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+            "content": "sha256:58c254fa6dd2b4c4c5c5d39aa93703c18269adeff681b693b7669979bbe82b46",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 278
+            },
+            "path": "dashboard/src/panels/detail-panel/skeletons.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:51eecc70578382d24b4c27937e3986af452000194c582935994931cda77e752e",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "167": {
+      "note": "Superseded successful whole-task reads have a guarded unshown-cache exception",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:f0bd145da5137bd215d786fabac7d43141f44e81ab86dc4f04b4d67efa8600e7",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "168": {
+      "note": "Reading page context remains mounted while selected answer status changes; the comparison overlay retains the hidden inert page underneath.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "169": {
+      "note": "ReviewSurface owns the keyboard zone; ReadingColumn or stacked ReviewMain owns vertical scrolling.\n\nAnchor: `reviewRoot`; `ReviewGrid`; `readingColumn`; `stackedPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a39d2696fb623960725d081d87a81d303feb34",
+            "content": "sha256:bd87300f145db9978548756295b019a5e012f775c32f9ad670009e988bddf66f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReviewLayout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Each side's text from its own row, the filtered field rows, and the text-first decision.\n\nAnchor: `MemberSides` `authoredSides` `textFirstComparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:b9c5a10b14f877688caa72fb3a2ee6248b43005dc3fcd20eac47e4496bc67037",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:c697f7e758aa79147adffbe7d9e6b704bee7cc1b0727162e0d6bd3f284e10976",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/statementWording.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:d3c490352e9734ae3f080556180deffac25a61d7b32beea705546c4cb827ca07",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberSides"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:edbbdc924ddd4e4af670009835869aa645976bb41e13bb2c8aeb05c64b5a8356",
+            "locator": {
+              "kind": "symbol",
+              "name": "authoredSides"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5cd12446c050c2fd85b296b8458d55e4a6c77e2f",
+            "content": "sha256:fb4d1500ba9f16dd57e88f69b5bbf9ddb839c30e62fc1bf00c05320cd2d55a01",
+            "locator": {
+              "kind": "symbol",
+              "name": "textFirstComparison"
+            },
+            "path": "dashboard/src/panels/review/statementWording.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "170": {
+      "note": "Continuation admission checks identity and cursor; sparse claims preserve earlier content",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99e2e121ccfc989c53a4a2fe27313c0316c2009f",
+            "content": "sha256:e8b8c247691b3e3096aa5718b3897f75e275e9dcbb4ae7f1e5126e98d471044e",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/src/panels/review/familyWalkMerge.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "171": {
+      "note": "Walked families preserve prior reads but reset across incompatible comparison/selection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74f29568a6476be3bfdd727c3d8db942bc0cc105",
+            "content": "sha256:8e0eb77e5ff706a2ab8400c42073d736d7412988d68dd3155b09968ba37e630f",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "dashboard/src/panels/review/walkedTree.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "172": {
+      "note": "Semantic triage counts returned facts, states unknown totals and keeps scoped weight at least unknown",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7942d716bf5726b8bef30b314b8f10af229b3a21",
+            "content": "sha256:b5f1738f8359738959e02f09313ea92396b9c0c9e3e234851423d161e0577938",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "173": {
+      "note": "Block traversal excludes unknown/unchanged blocks and admits loaded lane hunks in file order.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "174": {
+      "note": "Classification cache shares successful acquisition but releases non-ready attempts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "605d887c62f5bfc95cefbf1ab2b8fb104586d1cb",
+            "content": "sha256:bb363c45b81f4853f805e6feb89da48e7dcc7cec6b957a10f4e1226133c6daa3",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "dashboard/src/panels/review/intentMarkerScope.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "175": {
+      "note": "Unlisted reads render the partial-inventory explanation. Excerpt marker loading renders its own status paragraph: `data-marks-state=\"loading\"` with `intent marks loading…` for an excerpt and `reading this file's intent marks…` otherwise. Unavailable reads render the owner's problem code and detail, and content mismatches render the not-placed explanation. When none of those states applies, it returns no paragraph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:fe4aa3a4ca2e940799a825c4cb7d906f2f518c4a80f45cc096809d348ee0cadb",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 497
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "176": {
+      "note": "Marker Back restores subject, family selection and worklist, then returns focus to the origin marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:0f4327962f0a6e019c1660c2830894aa78927c0b016638372d2affeac9a5753f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "177": {
+      "note": "Whitespace-only classification preserves ordered non-whitespace tokens; rewrite ratio is strict, and bounded list alignment is a separate no-guessed-pairs mechanism.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b1446f1913be8c289a58d8098020ffd7fabc8e4",
+            "content": "sha256:7aeb9cb99c58cf4173c81888604fe372df27a32498f60d4610d67df1acaba8b8",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "dashboard/src/panels/review/wordDiff.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b1446f1913be8c289a58d8098020ffd7fabc8e4",
+            "content": "sha256:9bb03736f2cf878273d1dbe0166291c2de69f3c2f84f504fedd7846dbce959e2",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 260
+            },
+            "path": "dashboard/src/panels/review/wordDiff.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9b1446f1913be8c289a58d8098020ffd7fabc8e4",
+            "content": "sha256:0ce8279f15a1aec98fb49b52f1c7b2f93d90d6a3568024b8ee3601f753e4ae78",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 313
+            },
+            "path": "dashboard/src/panels/review/wordDiff.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "178": {
+      "note": "Family expression keys use recorded identity; observed readings stay per side",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:1639af08d4f93a99911f40f3ba937f58cca658fa277b883fbd3732cd1cbbc9c6",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a116aca0ee2d9e8ded885f76559c33d658107eab",
+            "content": "sha256:941e5fb405543016d838cc81851fc5516351fb83625c4f5e177df5e5bcb0ce44",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "dashboard/src/panels/review/familyExpressions.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "179": {
+      "note": "Page cards and selected subject worklist content require the same comparison’s matching leaf-wide worklist.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Compact tree row labels and reasons come from the shared model, preserving one line and complete accessible names.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "180": {
+      "note": "Semantic statement states and selected-revision operands govern rendering; missing/unresolved is not known absence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe55994283f7075d41a5b4845f429dd0d76df6b5",
+            "content": "sha256:f7ee053e85c0e265023f7d0d267a21981d0df64f2a3f58e175ad3fad515ffa87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/KnowledgeStatements.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "181": {
+      "note": "Network-only retry and intent-only source alternative remain explicit",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "182": {
+      "note": "The comparison page's All code list identifies byte-form inventory paths as explicitly nonopenable",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:9d00b42ff03814a0265506ada9cd649221a6bd56f766a599092320594c47d59f",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 286
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "183": {
+      "note": "Current intent entry uses liveness for the `(recorded)` label rather than to hide the entry or to choose a different record\n\nAnchor: `IntentReviewEntry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:2d7f4935f88d2401d98cb7d831ecccab0c534bc6477233cd179cbd540e8fbb0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "185": {
+      "note": "Collapse hook has one stored key set and toggle API",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9a764615275cf934b43c9b1a0a07a0675e00d4c",
+            "content": "sha256:395acc600cd7427c247fbe457e04057c4bdde34e795b947fd35795daa52158f3",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/useCollapsedTaskGroups.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "186": {
+      "note": "Knowledge reads bind to address; reader shares records and responsive citation navigation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:5a5e0e903072994f510b114c542da97ffafb8c2e6d05b94737fc43189d883a1d",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:d36d8d7e23873bec770345a588bcf9514b192f509a2763bddb4f559068bb6775",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 234
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:6ca6b4911b0746e998f9fd54cc5a69ce200b8f2031fc9a6e601105f332eba506",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "190": {
+      "note": "The task list head owns the attention bell and the actual row renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "191": {
+      "note": "The bounded Popover/Dialog retains source-scoped queue actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+            "content": "sha256:fc4f4acc142ba429f3537d355197205d37fde3c67a2e9b62cbb0c1419490af9d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "192": {
+      "note": "The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+            "content": "sha256:eb7364d6f97d5a86d22ccd68c558c53a29de0284605e5dadc640f07faf707333",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+            "content": "sha256:2846b6d2c185ae2a48641c2a406f97cacb445daf1b5162897e4d7316ef72f49c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "193": {
+      "note": "The task-page grant switch keys on native planned stage and the document subTask kind; other granted states show bare words. This does not move grant authority into the browser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8727e6986904131489c13104c706b28a118acb8a",
+            "content": "sha256:04eb9177a3fc0fbb280e198071fcdb0abe455a18b12e3746d98fe6b3822a23da",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDirectGrant"
+            },
+            "path": "dashboard/src/panels/detail-panel/directGrant.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "194": {
+      "note": "The list combines selection-episode releases with parent-only unmodified arrows and observes hidden selectedId changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:008405cd80acbe73ee37a16c867a2678d9dba5263997961af4df2ca3a6c94e40",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:7e2587c5e54f3d912c72949970d049517445cbed2c87453589dfbff7050150f7",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 186
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:d1a6bf379243a82a145a201827e7974a42706b6c3255998b457657246ec0e6c6",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "195": {
+      "note": "The shared master-page disagreement renderer draws served rows and offers jumps only to records in the task map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+            "content": "sha256:f0ed83a15510d20fcbd23e95c91789481ae0e65bfa7dfb299076cf4b963acced",
+            "locator": {
+              "kind": "symbol",
+              "name": "ListDisagreements"
+            },
+            "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "196": {
+      "note": "useChangeSet shares one leaf-wide comparison with model/cards/worklist; useSurface wires active live memory invalidation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:01a9b8ebb4b50327aaef0d57d6c56a1519028d48a7ac4a265a20ab33b1317826",
+            "locator": {
+              "end": 659,
+              "kind": "line_range",
+              "start": 636
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:86ca92331f993d0161f6e546622512ab3117b459a2032af6b50fab92772174ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bdbedad45f630b1680d1cfbe1ff737929679ef46",
+            "content": "sha256:f58330148cc9b6178dab939977136fefe9912eb36d1df7e87f8a16300f96e978",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "197": {
+      "note": "The started band orders host-timed rows newest first and leaves untimed rows in the server's order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+            "content": "sha256:1c747c07ebc5e837acdc43734ef2463946c45d7eea5d1225abebf7e0c2129a57",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowOrder"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "198": {
+      "note": "The row's native title is gone from every ancestor of a step mark while its own cells keep the hover text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:1e8ebd806e26a9f3025336bdd95c7291f2bcab5175e78e58b22d78c3ad386546",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRowLine"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "199": {
+      "note": "Current composition owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "200": {
+      "note": "Current shell owners for the review page account.\n\nAnchor: `ReviewMain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:1eff69e5c56a21b35d68e856cfc14df01eb74c55b851910912f9e64261692075",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 776
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "201": {
+      "note": "Current navigation owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:444a1a2b6f518385b374f4c9f6bb0df8a6cc2a8e1735572a370ae58e2d24d2f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:ac724c1d81d5fc08fd044f8b4a3e853ab9847b9f2cb6f76f7071dcf318ec232c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "202": {
+      "note": "Current reads owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:86ca92331f993d0161f6e546622512ab3117b459a2032af6b50fab92772174ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bdbedad45f630b1680d1cfbe1ff737929679ef46",
+            "content": "sha256:f58330148cc9b6178dab939977136fefe9912eb36d1df7e87f8a16300f96e978",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "203": {
+      "note": "Current selection owners for the review page account.\n\nAnchor: `useReviewSelection`; `readSubjectOf`; `restoreSelection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4758f75763c0c52a61f41df5ec508257a8961518",
+            "content": "sha256:5abad082e5f7da69cccdd304f2dd94d62fc3256c2ad769767050e6d133cd2924",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f08ecb5932f96691082d3c9120d30a6cbff7521f",
+            "content": "sha256:2db1560e07d8a9f3010dcc925a088602718308826f6dcd535ee0c9411d3e3d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/selectionRestore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "204": {
+      "note": "Current chat owners for the review page account.\n\nAnchor: `DocumentChat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:9e29a6f39a93a440da8f1d2d92bd0a81f51c92296063aab804777b188d187de0",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 551
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:8e5f2fcedb05bf6c185589dc69d141ea796fba1166b00c429e7aa6e3df6bd921",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "205": {
+      "note": "Current tray owners for the review page account.\n\nAnchor: `TrayLayer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:43a1c97bd022af137cd909968fba7bff200f95c7b44ae4c9dffd2703f21f5a5c",
+            "locator": {
+              "end": 882,
+              "kind": "line_range",
+              "start": 876
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7047c1f17a0ed1811467a411bfed806cdf8e657c",
+            "content": "sha256:306a113f5872d414179c145f75244ab78209007275b7e8214433f76a304962f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/TrayLayer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a59b3a84a8572b11b1a88ae4df41f6ba7d0477a",
+            "content": "sha256:7dd2f5f5ffe124ac6f7017abdcb7732fd48aad7492fb7e94b0da99d0511865d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/TrayButton.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:8e5f2fcedb05bf6c185589dc69d141ea796fba1166b00c429e7aa6e3df6bd921",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "206": {
+      "note": "Current watch owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:a73bf6c6219abab8134fa362baffae4257741e3a61a1255dd3d2c832032b6118",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "207": {
+      "note": "Current cache owners for the review page account.\n\nAnchor: `ReviewReadCache`; `sameGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:e4f17ea6c1b0ddd03a06af59f71ec8ae7e0d0c04bc605c9e079911862d5fb773",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "208": {
+      "note": "Current model owners for the review page account.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "209": {
+      "note": "Current markers owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:0f4327962f0a6e019c1660c2830894aa78927c0b016638372d2affeac9a5753f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "210": {
+      "note": "Current tree owners for the review page account.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "211": {
+      "note": "Current family owners for the review page account.\n\nAnchor: `FamilyContent`; `MemberContent`; `SelectedSlot`; `SubjectGroupSection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37ab580eba70b23a3dc4f9db4357667028194c78",
+            "content": "sha256:26128e8f78d8e54037c2be706d4b233113047f5091f0e4a12eb5d54544cf4de2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
+            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "223fdc99b9ff6ebdff6821a97b0c2247738cb0a1",
+            "content": "sha256:88df129c5fdbbeec63ba5963a4e83a46b0a8bb1775fcc2db9479c708282c349a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/SubjectSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "212": {
+      "note": "Current source owners for the review page account.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:94416125afb074fccd35d47727eeb9c9ee3d8ac8925931d11a44462e673250f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReadingLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "213": {
+      "note": "Current lane owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "214": {
+      "note": "Current details owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e188023aa8b8b2abaabc34f5e65182b20af69d",
+            "content": "sha256:76f740f159009ad15f621415a67d4890e7bf083018f11fe3ec7d9f159a23a046",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:293d6027f0781d8a974b7456c9c890c384a984e0e96c589b1fea64664d82fe7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "215": {
+      "note": "Current sort owners for the review page account.\n\nAnchor: `sortOf`; `SortMenu`; `changeSetModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63ec06b7c44eeefd8d5747741f27d2952a8d7d7c",
+            "content": "sha256:63cfc9bfeba823a3a5591e85e816bf0d8e5a67b6a94a422bf63805a0f637b93d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/triageOrderPreference.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9359520be3c86d227edf47ab4ec8a98fbb8b1652",
+            "content": "sha256:13c3b1ce7f91dec4368af173be7d682a3d9f8d816a55c3c278e827e5dd19c9ce",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/SortMenu.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "216": {
+      "note": "Current traversal owners for the review page account.\n\nAnchor: `blockStops`; `laneStops`; `useBlockTraversal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "217": {
+      "note": "Current worklist owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bce135c0162daeefcec8350c30bc6c36d8aab7c",
+            "content": "sha256:322a3c2819571a4ac452b1c85c4e89d60c208714432aa3387a567af45c159fd9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "218": {
+      "note": "Current layout owners for the review page account.\n\nAnchor: `reviewRoot`; `ReviewGrid`; `readingColumn`; `stackedPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a39d2696fb623960725d081d87a81d303feb34",
+            "content": "sha256:bd87300f145db9978548756295b019a5e012f775c32f9ad670009e988bddf66f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReviewLayout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "219": {
+      "note": "Current focus owners for the review page account.\n\nAnchor: `useSelectionFocus`; `landFocus`; `landFailureFocus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c954ca8abccc60fe09f526a635ba090b3535e564",
+            "content": "sha256:798250604add5c7ab15e7fc7f6bafea7b9852ba22847205f49750e1d9a75a913",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "220": {
+      "note": "The task document head offers one canonical-reference task pick only when that reference exists.\n\nAnchor: `taskPick`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+            "content": "sha256:413dfe0e714ca7066d3c86bfb97c69365ac356e8a42038ee706b013436348e70",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "221": {
+      "note": "A locally opened citation shows the Knowledge aside before selecting its citation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:8c5a8b8358d36b143cfdc6bd660a11c69dfbd914437d4ce02b5cb4416504bcd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReaderSidebars"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "222": {
+      "note": "The Knowledge document column provides shared tree and outline toggles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:501a689b00155ee81f79e3329cc3f85e8383092c650e910f01e3bd13e2fd5be3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReaderSidebarToggles"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "223": {
+      "note": "Knowledge sidebar toggles follow the responsive tree and aside layouts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:416ed283ec762019ac71404ff63e72642cbcafda009bfb2b712b9930eede9615",
+            "locator": {
+              "kind": "symbol",
+              "name": "toggleLine"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:f07ba411128550531d953d5945a702e3ef1151efa896e1558cd8f5bcee7ed84f",
+            "locator": {
+              "kind": "symbol",
+              "name": "asideToggle"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "224": {
+      "note": "The Knowledge toggles stay in the document column while the aside and its resize handle are hidden in place.\n\nAnchor: `sidebarHandleProps`; `sidebarPanelProps`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:501a689b00155ee81f79e3329cc3f85e8383092c650e910f01e3bd13e2fd5be3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReaderSidebarToggles"
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:24ed24874e2e2f89d0127e11f7702aac6768fd60095bff0682493b2055dbb1ab",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 480
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "225": {
+      "note": "The mounted citation case checks recovery from a hidden aside while retaining the same prose node, scroll position and path address.\n\nAnchor: \"opens wide citations beside unchanged prose, and phone citations as a page with Browse navigation\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15e507a03300de2994d51d3c9ef5f0c0f92757e2",
+            "content": "sha256:6b6df921134cf9a495857cd2e79a5c282fae89e53ce6d87e898c4325ae79e819",
+            "locator": {
+              "end": 596,
+              "kind": "line_range",
+              "start": 556
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "226": {
+      "note": "The mounted current capture renders four distinct family-expression rows for five recorded membership occurrences. The collapse counts sum to five, the largest is two, the verdict names both counts and distinguishes them from the comparison's measured change set, and five membership openers remain. This current case does not assert every row's data-sides or per-side readings. The former every-row side-check claim is superseded historical evidence, not current execution. Historical former note (superseded): **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.**  Anchor: \"renders the family's changed expression excerpts, deduplicated, over the captured family\"; `dataset.sides`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c474deeb563c6bb8476bc0e970449ef467955187",
+            "content": "sha256:d6cdab96a6d379026500b28a5e7f3868f2f636dc9b3e6001bc2cc3a8c27d40cf",
+            "locator": {
+              "end": 743,
+              "kind": "line_range",
+              "start": 730
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.family.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "ReviewBlockCard renders a shared region with entry-specific rationale and tray actions.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:94416125afb074fccd35d47727eeb9c9ee3d8ac8925931d11a44462e673250f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReadingLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "changeSetModel groups shared regions and gives one order to tree and reading content.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Page card reads are tree-comparison-bound; worklist marks use the matching leaf-wide comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29cde7405eb5235371c31b2abbbea4acaf06ac22",
+            "content": "sha256:86ca92331f993d0161f6e546622512ab3117b459a2032af6b50fab92772174ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useChangeSet.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bdbedad45f630b1680d1cfbe1ff737929679ef46",
+            "content": "sha256:f58330148cc9b6178dab939977136fefe9912eb36d1df7e87f8a16300f96e978",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/readGate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The receipt of the captured bodies (five since L31).\n\nAnchor: \"fixtures\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:39cc2399b220fdba027f055c95da187fc57971e07038dd05874d1455d044d1af",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/src/panels/review/gitTrees.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "The header count itself: the h2 is a bare `Tasks · {count}` with no tooltip saying what the count counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The bar's request for the net's per-leaf attribution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:2e245f3b2c29ddb7c471b150d609b853a7ebead30500750aced94ac5152d4405",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The `Cockpit` view map contains the declared view map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "The Chats cockpit keeps RoleChatsPane mounted while hidden; no SessionsView is mounted.\n\nAnchor: `RoleChatsPane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 720
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The persistent Chats layer mounts one RoleChatsPane; no SessionsView selected-context wiring is mounted. Anchor: `RoleChatsPane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 720
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:c6f3f2966177305411eeff99d537a7f97c18ad607a2d33dc6ad239fc4d4ce1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "DashboardState"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:7d848921fbedbcb47a35a4619f64fd504a105dcf4386c364e35bccd9755eefb5",
+            "locator": {
+              "kind": "symbol",
+              "name": "dashboardStore"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:c0420b2dd5bea4a4f594d8ed95ced8b024a0ed142835e84b314d6e1d298ec012",
+            "locator": {
+              "kind": "symbol",
+              "name": "applySnapshot"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:fdbcca409a845b5ec0a408ab1849630b644e54948c9faeb6905fb090804f5d3d",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The production application route is owned by `App`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:1df6ef9d9818a1d3b9b7d60b6aa1e935324c2ba03bb3feaa69c6ddc2272423a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "App"
+            },
+            "path": "dashboard/src/App.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "28b5d529d145096de8b20ff331cf361f8bb37d4b",
+            "content": "sha256:c98ef0ea505db8728f31937d48b4178fb8e3e4376f547ca702eff9e985fcfc69",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "dashboard/src/App.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:ab381fa39ef1b0eafc49c03f625ed3e711249682ff8ff69844f17ca13021aa90",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "`CockpitShell` defaults `initialView=\"chats\"`; `VIEWS` is the four-entry product bar.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Marks only from the owner's response, placed on its side lines.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e591fedeacaa570334e4560fc5278ac91343add4",
+            "content": "sha256:6631beca27475d00c2de617584c9d10c8fde865ef86233e58b6fff24b8e69d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "fileMarks"
+            },
+            "path": "dashboard/src/panels/review/hunkMarkers.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e591fedeacaa570334e4560fc5278ac91343add4",
+            "content": "sha256:1bddce5f9c00710167d40a899ef5b18e07bfb16629f8b3fd893ff778b1e449f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "markAnchor"
+            },
+            "path": "dashboard/src/panels/review/hunkMarkers.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "LifecycleList consumes native entry rows and preserves grouping, selection and one-shot reveal without the removed lifecycle hierarchy adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:bbc7b0fe58999dbd030c5abe46a562e305e99b89851efa272158979e7916b9d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleListImpl"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "DetailPanel resolves the selected native entry through its state owner and renders TaskDocumentPanel, rather than separate lifecycle/series reader targets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "502be409c27eb74c17f996f378046fc8adcb252e",
+            "content": "sha256:9dbbcbe36a3cda1c7585567e7f9a54a76b077037089a898bdf60f33498a3d764",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetailPanelImpl"
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:fe9ca863cfcf6e071b01eec7e19ab0cc07db6748f5a092ed6d0343dcfd714514",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskState"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Native entry fixture defaults copy specific sampled identities while explicitly declaring planned/count/collection defaults; there is no current lifecycle factory or claim that every value is server-derived.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:7849f98e85f0c21dc59a2f2e13cf3c526ee19b8f6e2d0cf725fb28f0272c51cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_ENTRY"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "56": {
+      "note": "The typed native projection factory supplies tasks/taskCounts and analytics defaults. Mirror-conforming sampled shape is not producer completeness or fresh test/runtime acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:93447b3d1b8e0b58434d69e28b4087f511555c78974168c8582a07db3485d3fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "projection"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:ca949a7feaa7e40320e660e3b58629780946c36e8dab87a8d4b3ba5d0dc952ab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "57": {
+      "note": "The hand-kept snapshot payload provides the generated timestamp.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:3ddc7ae1afef1eb6f21798e7acd08bee784418f7b945a9919e371660d0891edd",
+            "locator": {
+              "end": 1954,
+              "kind": "line_range",
+              "start": 1801
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "`Dot` renders its state glyph inside `aria-hidden=\"true\"`.\n\nAnchor: `Dot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:3bf23101250eb6f1cc151d92ae358f52e91a507bb65e47c844bcae9683e979db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:b8a37226bd4b146df3a298d21e7c56120f0a21fa1b87699dd5c6edcba4b2b870",
+            "locator": {
+              "kind": "symbol",
+              "name": "Dot"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "The intent entry always opens task-context review, supplying `review: {}` for a live and a closed leaf alike; liveness reaches only the `(recorded)` label, while summary state labels rather than gates the button.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:78a2511b6bd78a873823e850522c8de72b55eb97adc68077bed4883b68d1ea72",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:ce3b000d26bd4be73eb864376b3fca819fd12f789a501d754072678d4a1af0bc",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Every owner hunk a pane draws is placed; the list and the reveal of a return.\n\nAnchor: `usePaneMarking`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:e7e364e5cf8ccb3da6543fb31e688181e11ebd6c50ae38107cba5763f0d20cbd",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:9ad34111b8325c1a8eaa2b3dc61b0dc1f29a9a3cae7fc87646992978391db8ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "usePaneMarking"
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "The subject-catalogue hook serves reviewer navigation, not task-entry admission; the task entry reads a summary and no catalogue.\n\nAnchor: `useReviewCatalogue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:bade70637a901da6626b5e6987e58d6665b89ed1b4d6d9edd47c6d5a9e3ba416",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:e68471e45b38ab0bcd2d32e4febcb835f2df898946e129a8a40ee19c522d1afc",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "`DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness labels the entry context recorded rather than selecting it, and is not catalogue-subject admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:0a87fba4ecb4544157cf70cbcc24d00ad21e1dbf75db9704e93ef8d81673ddcc",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate.\n\nAnchor: `intentReviewEntries` `ReviewEntry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:bade70637a901da6626b5e6987e58d6665b89ed1b4d6d9edd47c6d5a9e3ba416",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewEntries"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:cfc7befc6219e0e7c595423f21071ccb794f0c8622a50e6090535c95f0a6dcc7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewEntry"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "ReviewSurface owns page markers around ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "81012f34ce12ad47493542269b02b29a622150ee",
+            "content": "sha256:0f4327962f0a6e019c1660c2830894aa78927c0b016638372d2affeac9a5753f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/markerNavigation.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The unknown-membership state in the rail.\n\nAnchor: `InvariantTargetState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e6aa7bbb6660e3daeacc073f496e6e0f62946dd",
+            "content": "sha256:b3496f19bac0d58271c14414384b338052c25860326ee1c98ba4531c0831c13c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e6aa7bbb6660e3daeacc073f496e6e0f62946dd",
+            "content": "sha256:7e05aad51c60fb7de1f9c52babf2df480393c6b49146a7dda7392a2361de7e4e",
+            "locator": {
+              "kind": "symbol",
+              "name": "InvariantTargetState"
+            },
+            "path": "dashboard/src/panels/review/MarkerTargetState.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

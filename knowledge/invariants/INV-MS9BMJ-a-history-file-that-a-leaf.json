@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without attempt files a leaf that continues after its closeout cannot record an answer at all, because its closed file is frozen; and without the freeze it could rewrite judgments a closeout already published."
+  },
+  "applicability": "The history files of a leaf on converted memory that writes rows after a closeout closed its latest file: a leaf reopened after its integration, and a leaf that continues after a completed closeout that was not integrated.",
+  "conditions": [
+    "The leaf's latest attempt file is closed in the writer's base, the leaf's memory HEAD commit.",
+    "For the validator and the gate, a comparison base holds the file closed, or the contract records the closeout that closed it as completed.",
+    "For recorded landing and integration, the recorded closeout parents remain frozen when the judged memory commit equals or descends from that closeout; other ancestry freezes nothing."
+  ],
+  "exclusions": [
+    "A wave or a crossing owner, which has one history file.",
+    "A file closed only in the uncommitted candidate: it is still the write target and is refused by name.",
+    "The retired database-era realization site; the obligation is recorded on converted memory only.",
+    "The retired dataset-era realization sites; the obligation is recorded on converted memory only."
+  ],
+  "id": "INV-MS9BMJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_reopen.py::test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt; mcp/tests/test_knowledge_reopen.py::test_a_history_file_closed_by_a_hand_commit_is_not_frozen; mcp/tests/test_knowledge_reopen.py::test_the_latest_row_about_a_subject_governs_across_attempts; mcp/tests/test_knowledge_reopen.py::test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file; MIK-R07 rule 7",
+        "mcp/tests/test_knowledge_reopen.py::test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt; mcp/tests/test_knowledge_reopen.py::test_a_history_file_closed_by_a_hand_commit_is_not_frozen; mcp/tests/test_knowledge_reopen.py::test_the_latest_row_about_a_subject_governs_across_attempts; mcp/tests/test_knowledge_reopen.py::test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file; mcp/tests/test_review_git_trees.py::test_history_rows_are_found_by_the_row_subject_an_item_names; MIK-R07 rule 7"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "L37-frozen-attempts",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "A history file that a leaf's recorded closeout closed is frozen, also while the parent line does not hold it yet: the leaf's later rows go to its next attempt file.",
+  "status": "proposed",
+  "supersedes": []
+}

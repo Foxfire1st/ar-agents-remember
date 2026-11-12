@@ -2,38 +2,27 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
 | sourceRoute | `mcp/src/agents_remember/worktrees/integration/lifecycle/generation/` |
-| doc_type | `route-local-overview` |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| governingOverview | `../overview.md` |
 
 ## Governing Overview
 
 [Parent overview](../overview.md)
 
-## What This Area Is
+## Purpose
 
-The constructors and retained-generation transition used by lifecycle coordination. It separates creating an in-memory queued candidate from requeuing accepted intent, while the existing store and coordinator retain durable publication and worker authority.
+This package constructs in-memory queued lifecycle candidates and resumes the exact retained generation. It separates fresh record construction from retrying accepted intent; the lifecycle store and coordinator own durable publication, generation selection and worker execution.
 
 ## Hot Path Summary
 
-`creation.py` snapshots integration authority from code and memory-content output refs only. Generation identity, task intent and retained same-generation evidence remain mandatory; no ledger commit is selected into a new generation.
+Use `creation.py` to build a queued record or snapshot integration authority from the closed-out code commit and, for external memory, the memory-content commit. Use `resume.py` to advance a retained generation's attempt while preserving its accepted input and mutation evidence.
 
-Use `creation.py` to build queued records or snapshot integration refs. Use `resume.py` when retrying the exact retained generation: termination proof and mutation history determine what can be reset.
+## How It Is Built
 
-## Local Invariants And Traps
+`queued_operation_record` combines the worktree contract, operation input and candidate into a queued record. It carries candidate state, tree, task intent and fingerprint, derives the operation key and report path, and records the queue timestamp. Closeout records receive initial mutation evidence; integration records receive derived lifecycle dependencies. Construction itself does not persist or select the record.
 
-- A constructor result is not a persisted or selected generation. Store/CAS, initial certification selection, claims and detached launch remain outside this package.
-- Resume increments the attempt, preserves immutable accepted input and generation, and archives exited worker evidence.
-- Only reconciled-unchanged mutation legs return to pre-mutation; proven output remains retained.
-- Retained closeout claims resume at recovering-after-claim; direct landing resumes running at direct-preflight.
-- Atomic series cannot recover source drift by opening a leaf replay-conflict worktree.
+`snapshot_integration_authority` requires a completed closeout with a code commit. It resolves integration targets, reads their current branch commits and compares those commits with the closed-out output commits. External memory additionally requires its repository and memory-content commit. The snapshot records the exact source refs and commits alongside the candidate output commits; it does not select a ledger commit into the generation. A replay request with source drift creates a conflict transaction for a leaf, but refuses that transaction for an atomic series.
 
-## File-Level Onboarding Map
+`requeued_same_generation` returns a modified copy of the retained record. It increments the attempt, clears completion, failure, guidance and cancellation fields, and updates termination and mutation histories. Direct landing returns to running at `direct-preflight`. Other operations return to queued status, with the closeout recovery projection determining the phase when applicable.
 
 | Source File | Onboarding | Role |
 | --- | --- | --- |
@@ -41,27 +30,17 @@ Use `creation.py` to build queued records or snapshot integration refs. Use `res
 | `creation.py` | [creation.py.md](creation.py.md) | Queued candidate and integration authority construction |
 | `resume.py` | [resume.py.md](resume.py.md) | Pure retained-generation resume transition |
 
-## Repo-Internal References
+## Invariants And Boundaries
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Queued construction and exact integration snapshots retain separate responsibilities. | `queued_operation_record`; `snapshot_integration_authority` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:33-71; mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py:74-143 |
-| Resume fences termination and preserves the accepted generation and mutation histories. | `requeued_same_generation` | mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py:14-58 |
+- Constructor results are neither persisted nor selected generations. Store/CAS, initial certification selection, claims and detached launch remain outside this package.
+- Resume preserves generation identity, task intent, immutable accepted input and retained same-generation evidence. When worker termination evidence is present, it must prove exit before resume; exited evidence is appended to the termination history.
+- Only mutation legs in `reconciled-unchanged` state are archived into mutation history and reset to `pre-mutation`, clearing their before, observed and expected-output-tree fields. Proven output remains retained.
+- A retained closeout with private preparation and no consumed claim resumes at `recovering-private-preparation`. A retained closeout with claim or recovery ownership resumes at `recovering-after-claim`; otherwise its phase is `queued`.
+- Atomic series cannot recover source drift by opening a leaf replay-conflict worktree. The refusal directs recovery to orchestrator-owned block recovery or graph reshape.
+- The configured source registry has no entries. The constructors and resume transition define source-owned records and transitions, without introducing a cross-repository protocol.
 
-Current working-candidate evidence for this route:
+## Evidence
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Integration generation authority follows the actual publication pair. | L74-L137 | [mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py](mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py) |
-
-## Docs And Cross-Repo References
-
-The configured Domain Documentation registry has no entries. These source-owned models and transitions introduce no cross-repository protocol.
-
-## Update History
-
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Documented integration generation construction without a ledger authority cell. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `requeued_same_generation` repointed to mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py:14-58. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T14:48:58+00:00 — Created this nearest route from source at `c69d5171187fa1957025e393270db9f5a864ab14`. Preserved domain/store authority outside the wire/transition package; source review is not gate or acceptance evidence.
+- Queued construction and exact integration snapshots retain separate responsibilities. [1]
+- Resume preserves the accepted generation and mutation histories, requires exit when termination evidence is present, and delegates closeout phase selection to the recovery projection. [2]
+- Integration generation authority follows the actual publication pair: the closed-out code commit and external memory-content commit, without selecting a ledger commit. [3]

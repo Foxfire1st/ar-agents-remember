@@ -1,0 +1,115 @@
+{
+  "path": "scripts/pnt_sandbox/build_roots.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+        "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_roots"
+        }
+      },
+      "id": "RLZ-M56SX3",
+      "invariant": "INV-FJPXYV",
+      "origin": {
+        "handoffEntry": "L96-D-8",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This root projection reports the product Node/cache and other resolved paths used by sandbox safety admission. It supplies the paths to be judged; safety.evaluate and the normal start path own refusal before installation or dashboard spawn.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+        "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_roots"
+        }
+      },
+      "id": "RLZ-SWJE71",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Loads the selected build settings and collects configured and derived roots.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+        "content": "sha256:152e30aa8f0075ed3a4adf3ba3d433b405004ce99756cb1b0a5a5021c725891f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_configuration_paths"
+        }
+      },
+      "id": "RLZ-V5V45M",
+      "invariant": "INV-85WW94",
+      "origin": {
+        "handoffEntry": "PNT-R11@v1 §4 (safety check) / F5",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Walks every absolute Path held in the loaded configuration, including unknown field positions.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+            "content": "sha256:206071c42de1aff30b9b7232be7a57b08118e5fa08026e6382edc496f618aca4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The resolver with the product Node and cache roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+            "content": "sha256:9266318db49abbd67118464d0eeac7a6de98e45e86fdbe921961cfb2bf78f07b",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_roots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+            "content": "sha256:de18813da8bbf766a554038ff506ac49a9de9c969ca3fd0aae352bac83392f81",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d761896c386f18cb351957b2b8eb97f0a29e53e2",
+            "content": "sha256:206071c42de1aff30b9b7232be7a57b08118e5fa08026e6382edc496f618aca4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

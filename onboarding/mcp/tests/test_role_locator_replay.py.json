@@ -1,0 +1,140 @@
+{
+  "path": "mcp/tests/test_role_locator_replay.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+        "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_detailed_receipt_rebuilds_only_its_lost_locator_before_host_replay"
+        }
+      },
+      "facet": "A persisted detailed receipt rebuilds only its lost locator before the host sees the saved call, then reuses it; a foreign locator refuses with no host call.",
+      "id": "PRF-CP2GWP",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+        "content": "sha256:0b9ad793835fc73ea359add4213f9333197eea67b79a6becb240849277c5e60a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_terminal_group_reclaims_each_alias_once_and_keeps_every_report"
+        }
+      },
+      "facet": "At two and eight requests, terminal cleanup reclaims each alias exactly once and keeps every collected report byte.",
+      "id": "PRF-J2KP1W",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+        "content": "sha256:6408998ff87b13b0cf599cf103c3dd4f9f4993098ea9d561f5d8b2a1887f7c64",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
+        }
+      },
+      "facet": "A real preparation refuses a colliding locator before any frozen detail, hand-over text or hand-over object is written.",
+      "id": "PRF-RK3Q1K",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A persisted detailed receipt rebuilds only its lost locator before host replay, and the next replay reuses the same link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detailed_receipt_rebuilds_only_its_lost_locator_before_host_replay"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The rebuilt locator opens the artifact's exact bytes, the saved opening reaches the host unchanged, and every frozen detail keeps its mode and identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detailed_receipt_rebuilds_only_its_lost_locator_before_host_replay"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A locator that leads elsewhere refuses replay with a 409 before any host call, and an altered instruction detail is refused as not frozen.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:b21bde3e5a89536a62cee51c71950fb731db6c32734da4bcdc90f5c66ae6c952",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_detailed_receipt_rebuilds_only_its_lost_locator_before_host_replay"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A real detailed preparation refuses a locator collision before any artifact write and leaves the foreign folder and its contents as they stood.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:6408998ff87b13b0cf599cf103c3dd4f9f4993098ea9d561f5d8b2a1887f7c64",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_detailed_preparation_refuses_a_collision_before_artifact_writes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A terminal group reclaims each alias exactly once and keeps every collected report byte at two and eight requests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d11749b7b22942cfc84701692c7957ae7b504a7",
+            "content": "sha256:0b9ad793835fc73ea359add4213f9333197eea67b79a6becb240849277c5e60a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_terminal_group_reclaims_each_alias_once_and_keeps_every_report"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

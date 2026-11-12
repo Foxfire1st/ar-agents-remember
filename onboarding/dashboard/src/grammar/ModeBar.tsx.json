@@ -1,0 +1,155 @@
+{
+  "path": "dashboard/src/grammar/ModeBar.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The mode bar renders the caller's single-select item list using the imported shared tab class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:d9b40b9f1755c22b5b14b21e3a04540df2b3534594cb64506e9c69909dabcd38",
+            "locator": {
+              "kind": "symbol",
+              "name": "ModeBar"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The local style preserves flex display, flexShrink zero, base gap, top border and padding. Its max-width 40rem rule newly sets flexWrap wrap and minWidth zero while retaining gap 0.2rem, button paddingInline 0.35rem and zero letterSpacing. No visual-fit result follows from these declarations.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+            "content": "sha256:1c5a341d47f8deedd3b4885fa7f7d2530f0cd25187a85416797d9684d7552b5d",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cockpit's VIEWS contains Chats, Operations, Knowledge and File Viewer in that order, and its ModeBar invocation passes that array. ModeBar itself maps caller-provided items and does not define the product list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:8e43ed64b0593e9d3181c691ce914ff3e16355a7ffac7db2fcd318f28e841070",
+            "locator": {
+              "end": 879,
+              "kind": "line_range",
+              "start": 879
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:eac72c611c469363040eb0c5a0e2f85820513286db45f3fecfd4c1153937f315",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 60
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "viewTabMetrics declares shared font, spacing, case, padding, border width and radius. viewTabButton, launcherButton, launcherSelect and launcherChip spread those metrics; the selector overrides textTransform. viewTabButton also declares the selected and focus-visible looks. This establishes shared style definitions, not identical rendered dimensions.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:b1d0e19bc125990750eafd5acd9c418ece8d992f00d081f42332e08d488b96dd",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:923d7aee5f847a99a623fafc13b869cd11d1fc84687db071be6722313e115f26",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:040c954b7656cdd59f49156cb9e44c4a7040b204a1465576928e7cb5c658f8ac",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 108
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "606cd459608eefcdc3a1c7e164d9e2f497cfcd1c",
+            "content": "sha256:dcb1ae31e331d7d8cc18fbb748a1b78928edfae568145cc3e16168833af97a65",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "dashboard/src/grammar/viewTabLook.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

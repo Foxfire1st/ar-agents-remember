@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future reader must not infer task-specific reconsideration candidates from stored status alone."
+  },
+  "applicability": "The recorded reviewer/reader 8 choice of MIK-R67@v2 rule18, or the explicit F07 resource ruling for one-spilled-history.",
+  "conditions": [
+    "Show stored under_reconsideration in the reader and keep leaf-specific candidates in that leaf’s worklist/review.",
+    "A candidate belongs to the comparison and worklist of one leaf, not to the stored reconsideration state alone."
+  ],
+  "exclusions": [
+    "Stored status is not a live leaf candidate enumeration or semantic approval.",
+    "This is a source-bound future boundary, not a fresh runtime, visual, suite or independent MEMORY verdict."
+  ],
+  "id": "INV-3TJKFH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-60"
+      ],
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "MIK-R67@v2 by-design 8",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`under_reconsideration` is shown as stored; candidates are not listed. A reconsideration candidate is a worklist item of one leaf and is shown in that leaf's review.",
+  "status": "proposed",
+  "supersedes": []
+}

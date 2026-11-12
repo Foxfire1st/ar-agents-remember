@@ -1,0 +1,143 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/coordinator/tools.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The coordinator tools example places repository-specific checks, commands, branch workflow and code quality tools in the selected memory layer's system/tools.md, not here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:954abb35786ed7b02d9abd5f95b9f251688ba50f2a9abc5507a9e7b6b9d622ed",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The provider command block shows only the `runtime_install` and `context_packet(repo_id=\"<repoId>\")` MCP call shapes; the CGC `run -- ...` and `visualize --port <port>` shapes appear in the lifecycle notes.\n\nAnchor: `context_packet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:4795d064fec1daa20cf6b93d21a1522ad14573698d5eba011d7adb8885a789a8",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The provider notes say GrepAI lifecycle commands expand `grepai-memory` workspace roots, ensure Docker network/PostgreSQL/Ollama health, bind-mount and index the live memory roots in place, write provider-owned workspace config/state, and use the Docker runner container instead of host binaries; CGC lifecycle commands expand the configured `roots` array, ensure FalkorDB Docker, start/stop every configured root unless `--repo-id` narrows it, pass post-`--` arguments to native CGC for bounded queries, and expose the visualizer as a separate long-running lifecycle command.\n\nAnchor: \"The GrepAI lifecycle command reads\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:39cec743efc6c8438ab6d6f37e984b9d28839514ebc48ece8655a45ca61472da",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The process namespace note says long-running daemon actions such as watcher start/stop/shutdown, CGC start/stop/visualize, and GrepAI watcher start/stop/refresh must run from a durable host namespace; lifecycle status reports `processNamespace` diagnostics, and daemon actions refuse to run from `--die-with-parent` sandboxes.\n\nAnchor: `processNamespace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:3b88064d5d0d90075521e5fb4c5d6545224ffd833eb7166ae21400c0d807e5ab",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The containment notes say a CGC provider should not be used in managed mode if indexing writes `.cgcignore`, `.codegraphcontext`, reports, databases, or logs into the indexed source repository, and a GrepAI provider should not be used if indexing creates `.grepai/` inside source repositories or durable memory roots.\n\nAnchor: \"A CGC provider should not be used\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:f544f3f8e9bd70c0dcdf1fffe98147f47cebde772669bd1c5d95ae595327bff7",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The coordinator-level tools example: global commands, the runtime_install and context_packet MCP entry points, the managed provider lifecycle, and the containment checks that keep provider output as discovery evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:784920d1cd5fd71ac1809fcbe8ceca788c1009f872434e392e1f2f6187579cbf",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:817d042409667cad9389777745d9a3aaea32a200b1f7db39dfc0ef35e9bcebb8",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The notes tell agents to resolve the target repository through `context_packet` before choosing task, worktree, memory or validation paths.\n\nAnchor: `context_packet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb38fa31b7e8d4a453b84c6c2ab553cedd3514ab",
+            "content": "sha256:2e9f98011a2cbfec1b22d5d7d613ea68563ec14b84b3b7807569feabf84ee5b2",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 84
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

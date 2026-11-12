@@ -1,0 +1,41 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/cli.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.\n\nAnchor: \"from agents_remember.benchmarks.runner_modules.cli import *\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:f765bf28172ad1a8d7ac291aa183cff6985d49abfbd23a9823bcf7dad1c11b24",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parser both commands are built from, without the exposure switch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac70f6a036cf924f45dc6928b64e4b359768008e",
+            "content": "sha256:6e0150716b5a5fd52a70a1c4832fcb53dfdf3bfe6a68aa60cca9ad2e774e4b59",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_parser"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

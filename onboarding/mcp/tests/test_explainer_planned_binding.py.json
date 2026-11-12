@@ -1,0 +1,72 @@
+{
+  "path": "mcp/tests/test_explainer_planned_binding.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_master_line_change_between_comparison_and_prepare_refuses_the_build_before_effects` protects a moved master line refusing the build before any effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "content": "sha256:603a8c2a62d6d575f6bb7188945f34dfe4549abc79e4b480391e73d68e30ae0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_line_change_between_comparison_and_prepare_refuses_the_build_before_effects"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_the_moved_watcher_follows_the_master_line_not_the_source` protects the watcher measuring the master line's own move.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "content": "sha256:0839d498e5c8bbcdab24cb1fc67ee0f8f5c9cc008111e982a357c030db7ea2e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_moved_watcher_follows_the_master_line_not_the_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_an_organizational_master_binds_its_sprint_integration_line` protects an organizational master binding its sprint integration branch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "content": "sha256:0a906a72d029934f61bbe5d06c3db76d980b1ba5ffdd1846875c90583cf99d3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_organizational_master_binds_its_sprint_integration_line"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_an_update_with_an_unreadable_grade_store_marks_its_counts_unavailable` protects an unreadable count being reported unavailable rather than zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68aa84a49458805257b83b478739a57f54fee955",
+            "content": "sha256:00ac79b0463b3f1cf1988665d668494c6492036c2f326779a098639356ec842d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_update_with_an_unreadable_grade_store_marks_its_counts_unavailable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,185 @@
+{
+  "path": "mcp/tests/test_review_external_git_movement_read.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "Model rejects state contradictions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:1aa9d53b40b0806184268468f6014e8d45dbee0277515aaec290e591dfb56528",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_boundary_report_refuses_a_state_its_own_fields_contradict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current shared enclosure fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:3ad7e4b59069321bbb7137bd8380813a68e60273f8605b040319ac41066be6fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeReceiptFixture"
+            },
+            "path": "mcp/tests/test_review_final_output_receipt.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:ad730869b4cbec807e6d8d68179d6e88f399d8edaec19af5fc8a4e2d6a4436d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_fixture"
+            },
+            "path": "mcp/tests/test_review_final_output_receipt.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Current managed-sync sibling cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c92a9621f5a0f54288f3d50ab9ff24dfe15ca1ac",
+            "content": "sha256:34e16d5d7e7f61d9cbbb8ae7bb545c3329d8a3fe0790cbf1be30cb7e645273be",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_review_labels_the_exact_memory_input_a_sync_moved"
+            },
+            "path": "mcp/tests/test_review_sync_movement_read.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The sibling fixture this module shares rather than rebuilds.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:ad730869b4cbec807e6d8d68179d6e88f399d8edaec19af5fc8a4e2d6a4436d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_fixture"
+            },
+            "path": "mcp/tests/test_review_final_output_receipt.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "**The lane registration that makes these cases part of the governed `integration` population.** Source caption: `test_review_external_git_movement_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
+            "locator": {
+              "end": 725,
+              "kind": "line_range",
+              "start": 725
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "**The documented section the matrix case asserts against, generated from the production table.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c6c20e9222ec9800d48e087ab0aa6a3032fc0ed",
+            "content": "sha256:1aa33777ae7a33dfc51223b8fcff85df6157f2666df3ee3e15896a582e545153",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/worktrees-c09.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Uncommitted tree supplies no observed work-head proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:a8d3e92e00823fdad936f1ca5f1b85ccda91343f051aefeff7bdb2939a3d3275",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_uncommitted_tree_record_never_invents_an_observed_work_branch_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source replacement without fabricated UUID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:fe9251e5cc207a7f279937cf641dc32c4531c5dd7b3938a4f771fc6f7699af39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_raw_history_replacement_reports_retained_source_without_fabricated_uuid"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Leaving the declared branch is a switch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:ad43c36815e8e012cda03b03a548b14175640381aaf1f4ac2d0801a80456d016",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_checkout_that_left_its_declared_branch_is_a_switch_and_never_a_movement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Commit-bound ancestry states remain distinct.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c5a8d9415a05ab1d21c8d793896c230cccdba55",
+            "content": "sha256:b72e121ba42d3ca5a67aa14e1e2dc4a4aa1a1db888873b30106a4a39ce51d152",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_work_branch_ancestry_tells_an_untouched_branch_from_an_advance_and_a_rewrite"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

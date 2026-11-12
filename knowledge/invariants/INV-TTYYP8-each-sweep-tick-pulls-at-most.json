@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The recorded behavioral fixture assertions guard this obligation; the proof facets distinguish their limited fixture behavior from real-host or full-final acceptance."
+  },
+  "applicability": "Every serving sweep tick over a recipient's held store, and the turn-end drain that runs beside it.",
+  "conditions": [
+    "The tick runs under the serving loop's ledger accounting; the queue holds the receipts that carry waiting messages.",
+    "The sweep's own per-tick read and drain budgets stay at thirty-two.",
+    "The turn-end drain is driven by the host's activity record for the agents whose turn just ended and is not part of that thirty-two-read sweep budget."
+  ],
+  "exclusions": [
+    "The queue is not a census of all receipt paths; a directory listing is materialised once per pass.",
+    "History and message-binding subtrees are never descended into."
+  ],
+  "id": "INV-TTYYP8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::HeldSweepBoundsTests::test_idle_fleet_reads_stay_bounded_at_two_sizes passes with zero rglob yields; scratch/worker/5e0b3a10-7a35-4c5e-9f11-100000000001/xdg/r6-probe-after.txt sha 628ed08eb73c: 0 enumerated paths all six cycles at 64/256, reads<=32 (rglob API; per-directory scandir listings materialize once per pass, disclosed residual for Architect inspection)"
+      ],
+      "path": "l100-knowledge-handoff.json"
+    },
+    "handoffEntry": "L100-R100-4a-bounded-census",
+    "leaf": "260928-MIK-L100",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Each sweep tick drains the receipts whose turn just ended, then the queued held receipts through a rotating slice, and only then walks at most thirty-two candidate receipt paths and reads at most thirty-two receipts; no recursive glob runs in the tick, history and bindings are never descended into, and the rotation reaches every queued receipt within a bounded number of ticks.",
+  "status": "proposed",
+  "supersedes": []
+}

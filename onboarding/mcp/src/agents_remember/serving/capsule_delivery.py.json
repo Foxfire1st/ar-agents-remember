@@ -1,0 +1,223 @@
+{
+  "path": "mcp/src/agents_remember/serving/capsule_delivery.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+        "content": "sha256:a61a438b53699258d513dc466880fbaf414e6a3689ca47f1431d5aadb699eb8d",
+        "locator": {
+          "kind": "symbol",
+          "name": "capsule_delivery_from"
+        }
+      },
+      "id": "RLZ-S33R38",
+      "invariant": "INV-ZA67WW",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 part1 / L62 instruction provenance",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This mapping carries the compiler-rendered instruction stream and source origins without rerendering instructions.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:148293d8dcf3bca961ba84d9205bc7d4f817c6bf84a791263b2d4b38c4d60a8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleDelivery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:a61a438b53699258d513dc466880fbaf414e6a3689ca47f1431d5aadb699eb8d",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Instruction origins are copied from the compiled capsule's instruction units as consecutive character spans; a capsule without units is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:7d4eba003339c990c40db01caf8635c79e71c8e59d9d5f6d856608d03717380e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_instruction_origins"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The delivery value declares the origin tuple beside the detail references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:02835f132ea142cbacdbb73c03676b7159bb01942bb8b779eca16c4cdb766222",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Generic delivery requires instruction text and a compiler sha256: digest.\n\nAnchor: `__post_init__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:eb3425c2ea7eff72d1bb9f1f9ecf64f7eb6eff2b76748121c00a66d58f1966c0",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchor: Admitted binding fields are nonblank and trimmed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:162072c8e24a492c1751469f6bd3266136f9af6e0d3fa4a93a3891f151cfdfde",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Structural compiler-result conversion copies render output and maps seat kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:5f363bc51396ac80e64a72ca1f5f14e45063f31f0c9ea98a21bbe7945a58c185",
+            "locator": {
+              "kind": "symbol",
+              "name": "_seat_role"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:e8e7ba2c5f04cdeabbed8ca453f5a9f7898f909ab876bd066d13484f0e66d819",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 166
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L19–L22",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef47b6c1e066fffcca824ae61e155cb383c7bd17",
+            "content": "sha256:23442b0a8284ae859c9a411d8c3c08eeb0110c69129fd46eead87b84551766f4",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

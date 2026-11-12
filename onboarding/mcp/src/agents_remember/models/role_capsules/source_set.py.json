@@ -1,0 +1,336 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/source_set.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The locked plan and admitted-source shapes this module compares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f6f6f803b52d4e84d61fdb6ccbca4b243307ecaa0b9e1d01fb3e64e122ee1f26",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleDeclaredInstruction"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:f5f3ac449878a4e5e5a4fedea401c505803868766c9be6b437e5f68ac6755006",
+            "locator": {
+              "kind": "symbol",
+              "name": "CapsuleSource"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "11345e10ceb2c3818e6f7ad4790607a78658f59b",
+            "content": "sha256:757d3bdc99b4005af08a23b3e26ffbae98e03233e187efdd00b2e895859cc398",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L65–L108",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:94986e05f42eaff67da6553897adcebf34498a3b4fdd600121816a4ddec5b235",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L140–L173",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:aec18be32dd1e0817de98c50124b1bccd634e4155dfa718d203cae2b07f702b1",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L197–L228",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 197
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The refusals this module raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:ef565956d864f44e5bb125a03a2c1dbf981d94f6a29e5d6e26a891aa55ba9b59",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_MISSING_REQUIRED_INSTRUCTION"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:a7ad5f4dc0ef532876f8ab9d0f9e8fdfc932952f4b5737efc4531fe058e71b5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_SOURCE_NOT_DECLARED"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:ffca9fde847ecd7505b493996e1dc6bc6ca0daaa3553c84f1c7a1a7b64471005",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_SOURCE_ROOT_MISMATCH"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4e74de6d641b1a3997bee7dcafc5b4da6821b2c8",
+            "content": "sha256:367c8d75a9b1b56833701ed8f07751336b88636bd9fd519bda741166487cece0",
+            "locator": {
+              "kind": "symbol",
+              "name": "STATUS_SPECIALIZATION_NOT_ADMITTED"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/statuses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The compiler step that runs this validation before resolution. Anchor: `compile_role_capsule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:13434aabd680330e1ebe5e763eb65226c1c4e8ccf6e6fda0178dc94410915c2f",
+            "locator": {
+              "end": 590,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The YAML-free source of the declared plan: the parsed canonical manifest.\n\nAnchor: `parse_composition_manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8a486213211e6be0e506486402269997de9b68",
+            "content": "sha256:9e72f69c7d30b140570b8095c2756eefda32d61086f0928b95fbd99ff46d676f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Missing mandatory material and wrongly-rooted/undeclared sources are refused rather than omitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "content": "sha256:64e809fffb0527ac7e4c8304e937d0940334e4c021ef632167579b87fad81e5f",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 633
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "content": "sha256:ad6b03053ce452ebd58b3cd633bb69971cbcec1bbde9bf66dd036d42e85647d6",
+            "locator": {
+              "end": 677,
+              "kind": "line_range",
+              "start": 673
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "content": "sha256:b166927f64c89e1e382ddc3c321ce6a5d57c6adfb278d5db5c022de2abba0940",
+            "locator": {
+              "end": 687,
+              "kind": "line_range",
+              "start": 680
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b8bc5d1c3383f3f822d3274d9a8ce6be8b86c5ba",
+            "content": "sha256:bf86bb84f3b36ab21196af36571956d25d87f5f2d5cf787c6a28987f79849578",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 690
+            },
+            "path": "mcp/tests/test_role_capsule_compiler.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The declared-skill gate** and its two directions: an incomplete admitted set refuses, and a referenced-but-missing skill refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2ac87a3213c5859af2fc85728ebd0d3c7cf6d57",
+            "content": "sha256:4ef35ad244d8331b5e5329ca4e43ac3969dee3fc505426a2d2a9e87df459dd8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_declared_skills_present"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:4dc1ee0cc5c50876754bd141161d54fbd568ed3980f2068c571474c66ace4ded",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_skill_reference_whose_root_file_is_not_admitted_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f79613843e1dcaa558f0dc6741884f96154e0be3",
+            "content": "sha256:f1fd300c429f32339032ca6f709d70611c47aeb765cfd715ba209c21edb03567",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_source_set_with_no_admitted_bytes_is_refused"
+            },
+            "path": "mcp/tests/test_role_capsule_admission.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Launch copies detail files, substitutes paths, and records frozen revisions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:95473e1da9c3027a19991c55617d9011c5c561e7d847352b7f7a018f5f21ea66",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_launch_instructions"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Replay validates regular opened files and frozen revisions at deterministic detail names beside the saved handover in its recorded canonical folder, not mutable corpus sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+            "content": "sha256:013fd35cb59b3e2dfca99d5eed0a2db2ae42048952a03b6a87761f58fbdd9087",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_instruction_detail_artifacts"
+            },
+            "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Per-request detail artifacts use exact admitted bytes beside the handover and write-once publication.\n\nAnchor: L59–L74",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

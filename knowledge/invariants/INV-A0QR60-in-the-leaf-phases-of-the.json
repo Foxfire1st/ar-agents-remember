@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "Named presence and raw equality prevent a parity normalizer from hiding producer regressions while comparing the pre-count baseline."
+  },
+  "applicability": "The source-bound closeout parity fixture compares the preserved before world with the two current worlds in leaf_preview and leaf_apply.",
+  "conditions": [
+    "Before removing any named counts, both current answers are asserted to contain refreshedCount, unchangedCount and staleCount.",
+    "Raw grant/current equality after the preexisting volatility scrub is asserted before take-out.",
+    "Only those three route_index_refresh keys are removed, only in the named leaf phases and only from current worlds; the before world and series phases are untouched by this repair."
+  ],
+  "exclusions": [
+    "No product response alteration or generic metadata/answer-key suppression.",
+    "Prior L46 conversion and L113 seat-field normalization remain separately attributed, not new rule12 changes."
+  ],
+  "id": "INV-A0QR60",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/reviewer/4b8d2f6e-9a31-4c07-b5e2-113d0e6a7f07/a6/verdict.md; notes/reports/reviewer/4b8d2f6e-9a31-4c07-b5e2-113d0e6a7f07/a6/journal-adjudication.md; parity-source-audit.json; parity-execution-summary.json; composition.json"
+      ],
+      "path": "A6-accepted-rule12-writer.json"
+    },
+    "handoffEntry": "MIK-R113@v1 rule 12",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "In the leaf phases of the closeout parity test (`leaf_preview`, `leaf_apply`) the comparison of the world of before with the current worlds takes the three counts of `route_index_refresh` (`refreshedCount`, `unchangedCount`, `staleCount`, demanded by MIK-R110 rule 5) out of the current answers by their names, and only after both current answers are shown to hold all three; the world of before stays as it is, and the equality of the grant world and the current world is asserted before any take-out. The product's answer is not changed.",
+  "status": "retired",
+  "supersedes": []
+}

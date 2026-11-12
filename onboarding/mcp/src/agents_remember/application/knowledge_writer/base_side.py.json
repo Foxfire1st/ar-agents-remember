@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/base_side.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+        "content": "sha256:d1f3ddb98fb4902f4eda549b67c107eeaa920b63d559a647e4dfbc6f3a7c0239",
+        "locator": {
+          "kind": "symbol",
+          "name": "_with_incoming"
+        }
+      },
+      "id": "RLZ-0KHDGQ",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Adds the MERGE_HEAD side as the incoming base when a merge is in progress.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+        "content": "sha256:102c95c7aff0814095c3666debacae754b4df8a8bde7f3d898140bbf0db0433a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_merge_head"
+        }
+      },
+      "id": "RLZ-1NP8RW",
+      "invariant": "INV-EZEJQD",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.3",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Reads MERGE_HEAD; absence means no merge in progress.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module docstring: one base for every reader, and a named problem when it cannot be built.\n\nAnchor: \"so one base is\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:acc8d8a85fbad896cd9cb5f3d398efefa0426fe4b858b477c800d4786d667ecc",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer's bases for a memory worktree, HEAD and during a merge MERGE_HEAD, or the named problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:bdbd0752c7d85bf21305120e423b87300488f37f90c3e523e091899d5ea650fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "writer_bases"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A side's tree, HEAD's or MERGE_HEAD's, or its conversion when that side is unconverted and the candidate is converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:b3bf5b0752cb28a39d930b6747c2c5cf95ad3be3c8cde7b90d86bdf0f2a20042",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "What converting an unconverted base reads, and where it is cached.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "01e231d954c40c1c8f4da5d7f3c392f4f84af748",
+            "content": "sha256:83d6754f0fe43591c89b710ad6a6b6c474c54b6a9ad86621f3b86c060bf7d51c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BaseCode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The state loads its base through this module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41538a107a19d27b7cbcf45b10e419e61e2b30e2",
+            "content": "sha256:f216c1e5ab8e725242ca791fa8d1076802b01890395eafcca883da4b26928e1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/memory_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "An unconverted HEAD is compared through its converted base: the next revision, the base's before anchor, one cache file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:2d725e4fb04dce11fb1a3ea1efbdbf994c3716be4bfcb804a064de312f082d5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_writer_compares_an_unconverted_head_through_its_converted_base"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A trailerless HEAD converts at the gate's code base, and an unreadable one refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab936dda80543f94c1a840030ce192da6fa5616",
+            "content": "sha256:00d180445cc0a5711a39f10c4368491be8f1d35a6ce11cc0b640ab1d09885520",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_trailerless_head_converts_at_the_gates_code_base_and_an_unreadable_one_refuses"
+            },
+            "path": "mcp/tests/test_knowledge_crossing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

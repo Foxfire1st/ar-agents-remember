@@ -1,0 +1,62 @@
+{
+  "path": "dashboard/src/data/buildIdentity.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The server projection still declares an optional dashboard fingerprint; the added process/source identity fields do not change the comparator's input.\n\nAnchor: \"export interface ServingBuild {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:7ff733fb2911efbb7db59e34e56fe0d5d371080014662aee3951df3a6b764c24",
+            "locator": {
+              "end": 403,
+              "kind": "line_range",
+              "start": 403
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Renders the comparison as a data attribute and adds a reload instruction to the mismatch tooltip. Anchor: `data-client-build-current`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:f1809958f64ef893eba89b4d49ec111ea032dc053eb5e89e379d3b2d4c8f22fd",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Embeds the fingerprint into the compiled client.\n\nAnchor: `__AR_DASHBOARD_BUILD__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f869fa55173e9ff48cd9c5499a042c30ee385b72",
+            "content": "sha256:0c8fce771c825e03611f52bf97aa084a608af92e6861dd334e75029f033e25f0",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "dashboard/vite.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

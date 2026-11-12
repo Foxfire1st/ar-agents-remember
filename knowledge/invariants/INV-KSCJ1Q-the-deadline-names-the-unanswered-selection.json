@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized in dashboard/src/cockpit/paseoFrameControl.ts, where arm posts the agent-naming problem for the unanswered target with one fallback load, and in dashboard/src/cockpit/paseoFrameModel.ts, where agentTimeoutText states whether the fallback loads the agent page or the frame already names it."
+  },
+  "applicability": "A wanted but unsettled selection whose ready-after-load or request answer is overdue, on document and Chats pages.",
+  "conditions": [
+    "A first deadline probes the application; only an unanswered ping deadline declares silence and permits fallback.",
+    "The fallback sentence reflects whether the loaded identity already names the selected agent.",
+    "A pong preserves/reestablishes readiness and a responsive late answer remains waiting."
+  ],
+  "exclusions": [
+    "Unselected panes, which name nothing by construction."
+  ],
+  "id": "INV-KSCJ1Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "PaseoChatFrame.test.tsx document page: no-ready naming, no-target silence, chats-page single fallback load with truthful sentence"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R121-R2-P3",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Ready-after-load or agent-answer timeout sends ping. Only its unanswered deadline names the unsettled agent and states whether the URL fallback loaded its page or already named it. A pong preserves/reestablishes readiness; a slow answer remains a named waiting state with explicit Retry and no automatic load.",
+  "status": "proposed",
+  "supersedes": []
+}

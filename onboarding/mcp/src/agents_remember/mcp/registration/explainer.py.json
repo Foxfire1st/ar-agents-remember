@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/explainer.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+        "content": "sha256:861415ff9d8813e18df0a85054354b330841e1070ffbcd41f30c2170a71d9783",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_explainer_tools"
+        }
+      },
+      "id": "RLZ-FER4NZ",
+      "invariant": "INV-E2XQHS",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET02-master-architect-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Exposes selection/action/receipt values and no caller agent identity argument.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One tool declares exactly the selection arguments and no agent identity\n\nAnchor: `def register_explainer_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+            "content": "sha256:861415ff9d8813e18df0a85054354b330841e1070ffbcd41f30c2170a71d9783",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declaration carries no behaviour: the payload builder is reached through the lazy view\n\nAnchor: `tools.explainer_control_payload(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+            "content": "sha256:c73667ea2c8ca2050eaafcf3dd4d1899595cecb9c9a1cb1351cbc3d1a0be444c",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The leaf is named by id for the two leaf actions\n\nAnchor: `leaf_id: str | None = None`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+            "content": "sha256:f89a92641186e1617d16bfb1ac7db42e12c1be32e84bfa3aae4a7094675244f9",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

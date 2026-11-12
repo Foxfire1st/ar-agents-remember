@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The numeric floor, no-uv-procurement boundary and pre-mutation refusal jointly protect machine-tool ownership and usable environments; none alone supplies the whole setup boundary."
+  },
+  "guarantee": "Host worktree setup uses a readable machine PATH uv meeting the contract numeric floor without procuring uv; unsupported uv is refused before runtime or environment mutation. Numeric admission alone, no procurement alone, and early refusal alone do not establish this whole boundary.",
+  "id": "FAM-E740SD",
+  "members": [
+    "INV-NQZ17H",
+    "INV-F4X256",
+    "INV-DYK0F8"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "writer-projection-final.json"
+    },
+    "handoffEntry": "host-uv-preflight-family",
+    "leaf": "260928-MIK-L139",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "scripts"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Machine uv admission before environment mutation"
+}

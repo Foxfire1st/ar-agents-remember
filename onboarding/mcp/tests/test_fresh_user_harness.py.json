@@ -1,0 +1,245 @@
+{
+  "path": "mcp/tests/test_fresh_user_harness.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Oversized generated-file bytes equal the fixture-owned OVERSIZED_BYTES; vendored tree, ignore file and distinct main/spear/sprint branch facts are asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:5b171cd9b3d429d8ddbc768fdf5e59bfaa1d8e3958ff5a981a998f968c986ed2",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The report path the entry point owns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:0ebd69c7f2f756c10cc61570742ea9630c3128a285fb0ed31d57ce800d4796e8",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The entry point that drives the acceptance, removes its temporary root and exits on a failed invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:440f3fd8fe4d19a66afa3ecddf13c0f91c9fb2f4726ac8c020ede725dd828257",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The unchanged GOVERNED_HARNESS_MODULES tuple names fixture, scenario, reporting and runner; the current package-qualified loader/root account shares cached module identity, and the existence assertion checks each declared path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:45e9fde04dd3507db32729bf74a83ad27f94aab7b7b7581077ce9cbe833cc19a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Plain fixture omits vendor/lib.py and uses main as its spear branch; it no longer asserts retired per-file or aggregate caps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:a6895ccdbf4a698b6160ff1f54ba89ca00e2e77e22f75efad61ff3601d864f90",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixture owns everything under its own run root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:5460b292f9a65abbdad07620944308e167dff75f844da8a0d372aead0ca07c5e",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A step that cannot run is blocked by name and never reported as completed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:8594016a671f475c4cc186876c41467e8f3781c6bcb9ae9838a31a38725bd30a",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every governed harness module this suite answers for exists. Anchor: `test_every_governed_harness_module_this_suite_answers_for_exists` `GOVERNED_HARNESS_MODULES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:10f6dc6b8b0356fe26c4e37fdabeff4b41709ffc309afd81b0be89850e8d81c1",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:7e195c87e6a36e46ccedc444705cf265d35cce4d41df94a93fd32863638b8dd7",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:bb855847aae5de0d2d11982a02647fd6c86c592820983fcc06b17a44cc790bbf",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The entry point requires `--reports` and defaults the run root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:fe0eba03697351152f8bd778b6f74cfb28519f87192e72c6146156535b3de661",
+            "locator": {
+              "end": 206,
+              "kind": "line_range",
+              "start": 199
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A non-`str` `sys.path` entry would be silently ignored, so both roots are inserted as strings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:b819394819d0d4498569e4c85154805aed0cea14a1f45e22941b2f0c18f89d61",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:633f6b7913af21ade96398db2c1254693d73113e438b5482e98e78669538bd4b",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The loader uses importlib.import_module with the e2e_harness-qualified module name. The test and scenario share cached module objects and fixture-class identity; a missing module raises rather than yielding an empty fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:9e1a700fa51818581b7a371934fe95fc0f94cdbcc0c74c8f1ab3804084b98e1e",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

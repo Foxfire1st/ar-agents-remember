@@ -1,0 +1,1316 @@
+{
+  "path": "mcp/src/agents_remember/models/worktree.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+        "content": "sha256:46969bc2831fbb0519244db2dd7ea9384f7feba61b5199755193204bd543cc75",
+        "locator": {
+          "kind": "symbol",
+          "name": "SyncSource"
+        }
+      },
+      "id": "RLZ-4KZZ0N",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The one selectable sync source besides the contract's own line.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+        "content": "sha256:064de2066a21fad3b47a2b87feb92c7bdde181b76e59e1172c17e449b1c73655",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorktreeCommandResponse"
+        }
+      },
+      "id": "RLZ-AVSFRK",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The command response every cleanup and abandon answer is shaped by.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+        "content": "sha256:4f2475b65b2a9470e35d676b1721991f967f5828bdd6299c7cefd71c19724142",
+        "locator": {
+          "kind": "symbol",
+          "name": "SyncResolutionInput"
+        }
+      },
+      "id": "RLZ-CFK5V2",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Carries sync_source through the tool layer as SyncResolutionInput.source.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+        "content": "sha256:16450677770a7a3d7e7d75c5a932f1784e6f1631002ffe52d31a4811f8a9acd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "SyncOmissionsProjection"
+        }
+      },
+      "id": "RLZ-TJS5A9",
+      "invariant": "INV-RNX24H",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Types the omissions block of the worktree_sync answer: the side, the report path, the omission counts, and on a resumed resolution only what the journal kept.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+        "content": "sha256:4594702cc5d1b634e2fd2e2d8e58ae827a90359226ee68c9b4b5fe3f4954cff0",
+        "locator": {
+          "kind": "symbol",
+          "name": "WorktreeSyncResponse"
+        }
+      },
+      "id": "RLZ-ZDPTPB",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Declares the sync answer's syncSource, sources and the sync_source invalid field.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "113": {
+      "note": "Readable mode imported from the kernel\n\nAnchor: `source range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:0a037e0cf7b0ccc2fc9deac106b627b65d267663a63891182a0842eb313b6bb2",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:0a037e0cf7b0ccc2fc9deac106b627b65d267663a63891182a0842eb313b6bb2",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "114": {
+      "note": "Strict context-packet shape incl. readable `memoryMode`  Anchor: `WorktreeSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "115": {
+      "note": "State alias stays local on purpose",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:a47c00cea5853784f166d563a3d6bdf45f283ddade8c0d85712a924d92c066ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:a47c00cea5853784f166d563a3d6bdf45f283ddade8c0d85712a924d92c066ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "116": {
+      "note": "Checkpoint response names the two real outputs",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCheckpointLandingResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCheckpointLandingResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "117": {
+      "note": "Pause envelope claims only the stop",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:54927d929d9e790dd40c3cbfe13fe2e312b1a917e8b8eca11c05b4bb094066b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreePauseResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:54927d929d9e790dd40c3cbfe13fe2e312b1a917e8b8eca11c05b4bb094066b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreePauseResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "118": {
+      "note": "SourceLineageProjection carries state, summary, edges and recoveries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "119": {
+      "note": "**Retained historical source account — superseded by the current contract:** SyncOperationProjection carries journal state, phase, conflicts, summary and next/cancel arguments.  Anchor: `SyncOperationProjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:da6442ddbc9ab51798a8763b482d86031483726576330312b47e718f9d890ae8",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 145
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "120": {
+      "note": "**Retained historical source account — superseded by the current contract:** SyncResolutionProjection describes agent-owned side/worktree/files and wipRestore without deciding conflict content.  Anchor: `SyncResolutionProjection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:37d26dc6580a5156f8db068920c6b6bd8bf2336525e967f199ff2b34e0f481b5",
+            "locator": {
+              "end": 195,
+              "kind": "line_range",
+              "start": 175
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "SyncResolutionInput admits only its declared optional action and source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:4f2475b65b2a9470e35d676b1721991f967f5828bdd6299c7cefd71c19724142",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncResolutionInput"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "122": {
+      "note": "WorkflowKind is the shared chat-task/light-task wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:aa6bd76fde7d46f8d8c8160809ca60e8a4308f054eca39dc682e0fdb24fbfd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:aa6bd76fde7d46f8d8c8160809ca60e8a4308f054eca39dc682e0fdb24fbfd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "123": {
+      "note": "The guidance module imports NextOperation, NextTool and WorktreePhase from the model and obtains guidance by calling lifecycle_guidance(contract). Recovery aliases remain separate.\n\nAnchor: `source range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:ea3e2a4130eb4039ac289d9472a1a4ded5214f10cd463859d0f003be5834dd7b",
+            "locator": {
+              "kind": "symbol",
+              "name": "guidance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:0d6fa275f1382d8bee165ec35f677b118a387c442aa516d3fb6e4915304b88e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryOperation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:89712cc3131e102fe7887d38d583a9957a3f97397b4e13fc906df2c9c31b0202",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryTool"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:c64f57395d1828f7f8384621ea303b6872410158fdffd50e7913ab06aa8737fd",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "124": {
+      "note": "**Retained historical source account — superseded by the current contract:** TaskDocResponse is a ToolResponse rather than a WorktreeCommandResponse and declares nextTool as str or None; the worktree roster validator does not govern this class. Anchor: `TaskDocResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cd8894a7e858b103972f9a0c9ec3a13e5fc41f48",
+            "content": "sha256:667882012ebd38bb51518f072cfa2239734d4aa86714747c7082f0e34bec837b",
+            "locator": {
+              "end": 293,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/task_doc.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "125": {
+      "note": "worktree_sync_tool admits its configured contract, delegates to the worktree manager and forwards resolution.action as resolution_action and resolution.source as sync_source.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "126": {
+      "note": "SourceLineageEdge, SourceLineageRecovery and SourceLineageProjection expose the typed source-lineage boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:f618c0739bc4f7ba1467523bfb10b53f864664298a5509ccc130c90b27fe6451",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageEdge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:0a0bf5a1061cb229b0f71dccbfcf35974c07782402caff8ac3e61f7631682bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageRecovery"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageProjection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:f618c0739bc4f7ba1467523bfb10b53f864664298a5509ccc130c90b27fe6451",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageEdge"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:0a0bf5a1061cb229b0f71dccbfcf35974c07782402caff8ac3e61f7631682bca",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageRecovery"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:b927163c3ce97dd8d1500ec96675fb500941af9185636a45d3bd1682e5603adf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SourceLineageProjection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "127": {
+      "note": "**Retained historical source account — superseded by the current contract:** WorktreeSummary is the strict context-packet shape with typed lifecycle and worktree vocabulary fields.  Anchor: `WorktreeSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "128": {
+      "note": "WorktreeState is locally declared as inactive, active, missingContract or invalidContract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:a47c00cea5853784f166d563a3d6bdf45f283ddade8c0d85712a924d92c066ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:a47c00cea5853784f166d563a3d6bdf45f283ddade8c0d85712a924d92c066ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "129": {
+      "note": "**Retained historical source account — superseded by the current contract:** WorktreeSummary uses the declared wire vocabulary fields, including ReadableMemoryMode for persisted memory-mode reads.  Anchor: `WorktreeSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "**Retained historical source account — superseded by the current contract:** The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains.\n\nAnchor: `_project_terminal_contract_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "TerminalCleanupOperation is the two-member terminal-cleanup vocabulary (worktree_cleanup, worktree_abandon).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a2665963db2fdfc70275576a2b0fa2340ac94655",
+            "content": "sha256:54f82209fc9ecb4764bdbd052cd4789e3bb8cf87e6d62426e7a4d050eff8e4d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalCleanupOperation"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/enclosure.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "132": {
+      "note": "finalize_tool_response validates one declared response, applies optional caller enrichment, and counts tokens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a82c6e7b9b4fa460c90f61260685b7e5d3ec4fa7",
+            "content": "sha256:8614b4bd9643c8f33dfb3dbf05d3a66fce56cb3539fc9d636fe3b2d6d4e19164",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_response.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "133": {
+      "note": "**Retained historical source account — superseded by the current contract:** TOOL_RESPONSE_MODELS maps each tool name to its declared response model.\n\nAnchor: `TOOL_RESPONSE_MODELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:10aa450f5caa463f1fe75eabf3cdf642c485bc41fe35884de37c4765dece2359",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "134": {
+      "note": "WorktreeStatusResponse carries the status operation literal with lifecycle and sync projections.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:dbcdf96d5e59acec35c358c0fbda9fcb76304718e912fd7deb5fb07e86cc94bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeStatusResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:dbcdf96d5e59acec35c358c0fbda9fcb76304718e912fd7deb5fb07e86cc94bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeStatusResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "135": {
+      "note": "FlexibleResponseModel is the extra-allowing base class for provider-native diagnostic payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:3a9b622246cce227e7c85ad545afea5310ba47ae0d819591b04eb16e8e48ae1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "FlexibleResponseModel"
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "136": {
+      "note": "The membership validator refuses a next move outside the advertised roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "137": {
+      "note": "**Retained historical source account — superseded by the current contract:** PUBLIC_TOOLS lives in models as a zero-import leaf tuple the validator reads.\n\nAnchor: `PUBLIC_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "138": {
+      "note": "**Retained historical source account — superseded by the current contract:** WorktreeSummary.nextAction is the optional single-value developer-decision literal.  Anchor: `WorktreeSummary`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "Cleanup completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns blocked evidence.  Anchor: `guarded cleanup publication and rollback`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:3dc75e6a086bac5c74ae79fc1e3d77487cde15f62c2a22b47cb9d83f863bb191",
+            "locator": {
+              "end": 1153,
+              "kind": "line_range",
+              "start": 1088
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "140": {
+      "note": "**Retained historical source account — superseded by the current contract:** Abandon completes the terminal guard with updated-contract publication and old-contract rollback; failed publication returns abandon-blocked evidence.  Anchor: `_publish_abandon`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 463
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/abandon.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "141": {
+      "note": "**Retained historical source account — superseded by the current contract:** The terminal-status projector distinguishes terminal-cleanup-completed from terminal-archive-ready and emits the archive cleanup operation as the next tool only when cleanup remains.\n\nAnchor: `_project_terminal_contract_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16d78e38cc8ac2f8fe9aeec56ac35b664c5e8988",
+            "content": "sha256:64d0dd420ddf1cd31688503c0aa87276f277333a216618859b016a1b2775fe54",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "142": {
+      "note": "The wire-vocabulary module retains its R10 doctrine docstring; this range is doctrine text, not proof that any executor ran.\n\nAnchor: `source range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15c68f6a8e19769232a26cff91782bfb3ac84c78",
+            "content": "sha256:2f13579b34140256663a2880060eb60f856ef02e03a1199d0846414eeefbec90",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_wire_vocabulary_exhaustiveness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "143": {
+      "note": "RecoveryOperation is a separate guidance recovery vocabulary, not the context-facing NextOperation alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:0d6fa275f1382d8bee165ec35f677b118a387c442aa516d3fb6e4915304b88e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryOperation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "144": {
+      "note": "RecoveryTool is a separate guidance recovery vocabulary, not the context-facing NextTool alias.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:89712cc3131e102fe7887d38d583a9957a3f97397b4e13fc906df2c9c31b0202",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecoveryTool"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "145": {
+      "note": "WorktreeSummary.nextRequiredArgs is an optional list of strings, defaulting to None.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:66bc5c8f67ae02c70ed7e6faf1e639b8b56895993669751bc7b2854fd52537c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextRequiredArgs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:66bc5c8f67ae02c70ed7e6faf1e639b8b56895993669751bc7b2854fd52537c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "nextRequiredArgs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "146": {
+      "note": "unknownContractCells (`list[str] \\\\| None`, default None) is present only when the contract file carried a cell outside its declared vocabulary, as notice that values were substituted.\n\nAnchor: `unknown-cell notice commentary and field`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:557c21b02a53f09b111cac96bb00f04acc29f3198af8467935280d60656dbf0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unknownContractCells"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:557c21b02a53f09b111cac96bb00f04acc29f3198af8467935280d60656dbf0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "unknownContractCells"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "147": {
+      "note": "**Retained historical source account — superseded by the current contract:** WorktreeCommandResponse declares the next-move triple: nextAction, nextTool and nextArgs.  Anchor: `WorktreeCommandResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:064de2066a21fad3b47a2b87feb92c7bdde181b76e59e1172c17e449b1c73655",
+            "locator": {
+              "end": 440,
+              "kind": "line_range",
+              "start": 369
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "148": {
+      "note": "The membership validator refuses a next move outside the advertised roster.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:2b53233df4625503e4879e38c3fc0c5019bd748a0acc0843a62721ded74b16ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_registered_public_next_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "149": {
+      "note": "**Retained historical source account — superseded by the current contract:** PUBLIC_TOOLS lives in models as a zero-import leaf tuple the validator reads.\n\nAnchor: `PUBLIC_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "150": {
+      "note": "`IntegrationStatus` gained a fourth member, `checkpointed` .",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:12c8e442606e9c6902b8054db0d5aeafcce4b244f990de25ec9823cd0c0a1833",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:12c8e442606e9c6902b8054db0d5aeafcce4b244f990de25ec9823cd0c0a1833",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "151": {
+      "note": "**Retained historical source account — superseded by the current contract:** record_landed_integration publishes that a contract’s code landed and returns the updated contract.\n\nAnchor: `record_landed_integration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebbbfe201ea75726d7329b0f6630e0492b26acfe",
+            "content": "sha256:e5008e969eaed1fd2ba9adec9aead3037c5aa22d02b71cddd993131f9f1d04a9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/landing_record.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "152": {
+      "note": "The post-integration phase routes the outcome after integration was attempted (blocked, or landed with carryover/cleanup).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97d891cffc76560263390fb8f9b22f38c8260a8b",
+            "content": "sha256:ee4961644f5f75ee7af81745e3554bbfbc0eeb8e1029eadaf6de37787a13299f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_post_integration_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/guidance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "153": {
+      "note": "WorktreePhase declares the eight closed lifecycle-phase values; the checkpoint does not add a ninth phase.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:911168139d7452484b07e35ceadebd7ca5cecf3af33115464330a2f435a2a7e2",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "154": {
+      "note": "WorkflowKind is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:aa6bd76fde7d46f8d8c8160809ca60e8a4308f054eca39dc682e0fdb24fbfd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:aa6bd76fde7d46f8d8c8160809ca60e8a4308f054eca39dc682e0fdb24fbfd65",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkflowKind"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "155": {
+      "note": "HumanReviewStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:d6eebab69c6cbf24d0841200438efa24d938b5d7239c3088274d3de975483c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HumanReviewStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:d6eebab69c6cbf24d0841200438efa24d938b5d7239c3088274d3de975483c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "HumanReviewStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "156": {
+      "note": "CloseoutStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:ead89766766b124a140db0ae77ae47ae439c30773b7d567677f7f714f4269635",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:ead89766766b124a140db0ae77ae47ae439c30773b7d567677f7f714f4269635",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "157": {
+      "note": "IntegrationStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:12c8e442606e9c6902b8054db0d5aeafcce4b244f990de25ec9823cd0c0a1833",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:12c8e442606e9c6902b8054db0d5aeafcce4b244f990de25ec9823cd0c0a1833",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "158": {
+      "note": "CleanupStatus is declared once in models.worktree as the shared wire vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CleanupStatus"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
+            "locator": {
+              "kind": "symbol",
+              "name": "CleanupStatus"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "159": {
+      "note": "**Retained historical source account — superseded by the current contract:** worktree_contract imports lifecycle vocabularies from models.worktree, imports memory vocabularies from the kernel and derives VALID_* sets with get_args.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:a8c59dd9cd49221e6fcb1c78bb77c70a87f29c79ec148a35487848dbfbe550f5",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "160": {
+      "note": "Checkpoint responses record only the real integrated code and memory-content commits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCheckpointLandingResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:c0aad6aae43ea09f1d18794980092208e2434a7217f6ba5e63490f9566a7d895",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeCheckpointLandingResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "161": {
+      "note": "The pause envelope declares the stop's one own field, paused, and inherits the ordinary command envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:54927d929d9e790dd40c3cbfe13fe2e312b1a917e8b8eca11c05b4bb094066b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreePauseResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:54927d929d9e790dd40c3cbfe13fe2e312b1a917e8b8eca11c05b4bb094066b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreePauseResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "162": {
+      "note": "NextTool includes worktree_checkpoint_landing while NextOperation remains its seven-member intent vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextTool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:e81ad413706118d9812ccbb48039cd61a58b25ddbadefe20a520cb1c7924bb37",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextOperation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:552b61eb9a0a2ae154ada3a2559836a5a86a23ef82ab6ffe58489ada743df63a",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextTool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:e81ad413706118d9812ccbb48039cd61a58b25ddbadefe20a520cb1c7924bb37",
+            "locator": {
+              "kind": "symbol",
+              "name": "NextOperation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "163": {
+      "note": "WorktreeCommandResponse declares the next-move triple, while WorktreeSyncResponse and WorktreeOperationControlResponse narrow nextTool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:4594702cc5d1b634e2fd2e2d8e58ae827a90359226ee68c9b4b5fe3f4954cff0",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeSyncResponse"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:3f65fc5bdc5dd28976465e41c0c83f7e4a4b8cf27a296379d80eb2d178142aa8",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeOperationControlResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "164": {
+      "note": "WorktreeSummary is the strict context summary, distinct from flexible command envelopes. Its optional taskDocumentCopies string carries a notice only when the copy checker emits one. Absence means no notice, not exhaustive byte equality or acceptance of every copy. Existing state and source-lineage fields retain their own domain meanings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:30279b1752e0553b54475d9df98e562424f5f4fbde36428d0533666e1482106d",
+            "locator": {
+              "end": 366,
+              "kind": "line_range",
+              "start": 307
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,211 @@
+{
+  "path": "mcp/tests/test_knowledge_bootstrap_procedure.py",
+  "realizes": [],
+  "references": {
+    "10": {
+      "note": "Anchor: Served catalog procedure bytes are compared.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every printed invocation is placeholder-filled and run through the shipped parser for subcommand and option arity; bootstrap is not executed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The compiled-Curator-shape test checks the actual delivered foundation pointer and procedure text. Its docstring explicitly limits this to compiler shape and admits no taskless Curator; foundation authoring requires real task admission. These are source assertions, not a workflow run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Anchor: Current setup/onboarding prose reaches the same procedure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Anchor: Real fixture compiler world and canonical leaf reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:1252bab1408b2a37a7275ac506129fa40715bf13e2d03746d0586bd5dcfd7f07",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:a32b0c5dfe1797a9b3c36c5a456629151f39422b4a637fcf37d2114f65d22180",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "`delivered_foundation` binds source, role, delivery step, action pointer, delivered bytes and heading to the compiled manifest and the current capsule-budget view; the emitted copy equals the source except that each relative link is rewritten to the same shipped file and anchor. Its controls mutate the budget, heading, required sentence and declared pointer, and move the pointer to an unrelated action, independently. A synthetic Curator capsule proves this delivered procedure, while the procedure still requires real foundation task admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:6762a2008226fd2fb9ac39550c94069e0492a0a84940179a680c87f36ebc8d8b",
+            "locator": {
+              "kind": "symbol",
+              "name": "foundation_delivery_controls"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Printed invocations from both launchers keep their arguments and parser failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:33f2dd3141c1f8bbdf8e649bb737608004dfd09c8dbd33f1f86c31f07e73a0ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_printed_invocations_preserve_arguments_and_parser_failures"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The Bootstrap capsule's state-reporting action points to the emitted foundation-state detail, which reaches the procedure and the start-the-Architect next step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Anchor: Served body retrieval for byte comparison.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:29c5174c2e6838b8b91e37b4ba94b8e74fd7339bcbe4475b73e664b242d50892",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 360
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Anchor: Compiler-only role instruction reader, not a seat opener.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:5d5f8c4ec2d7d614a4b4728c30b580eaf9fb9af1a10674e47872bc20414a452c",
+            "locator": {
+              "end": 419,
+              "kind": "line_range",
+              "start": 393
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The bootstrap free-agent capsule compiles with no task document, and its emitted foundation-state detail reaches the foundation procedure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:ab6acee286a19b0777fd8e895cfcd25c4c371598eb8f25ffdba24f95d3fa5328",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Anchor: Separate document-bound and instructed-session Curator compilation identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e180bfa5cfc88866e2c03d9430e3e95c1bacfe",
+            "content": "sha256:52de85908d4bbbcb1ce740f567c0f5c2c09c25763f8264b9423ae938d780ea37",
+            "locator": {
+              "end": 446,
+              "kind": "line_range",
+              "start": 422
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

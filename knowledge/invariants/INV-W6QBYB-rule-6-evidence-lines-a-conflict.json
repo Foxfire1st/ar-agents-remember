@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Five tests pin the incoming-first ordering and each grammar exclusion, so a future region change that keeps a fenced or escaped line as evidence fails before it lands."
+  },
+  "applicability": "Conflict regions with an empty base part whose differing lines are all real trailing-marker evidence lines.",
+  "conditions": [
+    "Each differing line is judged in its own side's full-document grammar.",
+    "Lines identical on both sides are kept once as shared context."
+  ],
+  "exclusions": [
+    "Regions with a non-empty base part.",
+    "Lines inside fences, multiline code spans or escapes.",
+    "Regions with any non-evidence differing line."
+  ],
+  "id": "INV-W6QBYB",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Rationale: each differing line is judged in its own side's full-document grammar (fences, multiline code spans, escapes) via the evidence table, with the trailing bracket required to be a real marker at its exact position; lines identical on both sides stay once as shared context; the plain/diff3 presentations must agree up to ordered subsequence so the diff3 base part belongs to the conflict. Unknown line texts never qualify, so automatic resolution cannot broaden past evidence. Observed: test_real_trailing_markers_still_resolve_with_shared_context (incoming-then-own, kept 2), test_fenced_code_lines_never_resolve_evidence_conflicts, test_escaped_trailing_brackets_never_resolve_evidence_conflicts, test_multiline_code_spans_never_resolve_evidence_conflicts, empty-base order in the F01 test."
+      ],
+      "path": "notes/reports/l66-curation/curator-handoff-list.json"
+    },
+    "handoffEntry": "L66-W4-06",
+    "leaf": "260928-MIK-L66",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule 6 evidence lines: a conflict region with an empty base part whose differing lines are all real trailing-marker evidence lines resolves incoming-then-own; fenced, code-span and escaped brackets never qualify",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/test_evidence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/test_evidence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Models overview](overview.md)
@@ -47,37 +37,23 @@ the public function or model instead of re-deriving its lower-level state machin
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty. No external documentation claim is made.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required to establish this repository-owned implementation. | `EVIDENCE_SCHEMA_VERSION` | mcp/src/agents_remember/models/test_evidence.py:1-123 |
+- No external domain source is required to establish this repository-owned implementation. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file is the direct evidence for this unit; its governing overview records adjacent owners.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The private authority, non-constructible capability, accepting-consumer guard, and certifying serializer are implemented here. | `_DAGGER_AUTHORITY`; `CertifyingTestEvidence`; `require_certifying_evidence`; `evidence_payload` | mcp/src/agents_remember/models/test_evidence.py:33-123 |
+- The private authority, non-constructible capability, accepting-consumer guard, and certifying serializer are implemented here. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository source is allowed by the resolved settings, and this unit owns no external
 protocol claim.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repository reference applies. | `EVIDENCE_SCHEMA_VERSION` | mcp/src/agents_remember/models/test_evidence.py:1-123 |
-
-## Update History
-
-- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: removed the stale diagnostic-model and
-  caller-loadable payload claims. Product code now owns only opaque verified-Dagger certification;
-  every diagnostic and non-accepting artifact remains test-support evidence with no compatibility
-  reader.
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
+- No meaningful cross-repository reference applies. [3]

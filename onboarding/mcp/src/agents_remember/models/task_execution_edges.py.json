@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/models/task_execution_edges.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An endpoint is a reference with an optional non-blank leaf id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a34d2a801e7b63315e46af96838110416ffb7c",
+            "content": "sha256:a7fe8a473dfb0769178e115730e4d06c095ec209c1db1af20bc1c2bcbe06fa9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionEndpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An edge has a non-blank reason, an optional non-blank judgment id and distinct endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a34d2a801e7b63315e46af96838110416ffb7c",
+            "content": "sha256:6f06028742acf5b96973b635a569a3d0e3d02df6dc6e8c95d82c9971be99e29a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionEdge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,497 @@
+{
+  "path": "dashboard/src/panels/review/ReviewOutcome.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+        "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewOutcomeRegion"
+        }
+      },
+      "id": "RLZ-1V1G6WZE",
+      "invariant": "INV-WQZ2WFCN",
+      "origin": {
+        "leaf": "260921-ICR-L48"
+      },
+      "rationale": "Suppresses the surface-level loading line and problem block when the workspace states them for the requested subject, so the problem is stated once.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+        "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewProblemBlock"
+        }
+      },
+      "id": "RLZ-DT74AZ",
+      "invariant": "INV-P4Z520",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 19",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It draws the owners refusal reason and next action as visible review content rather than a closed disclosure.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The header describes pending, empty, refusal and failure vocabulary; current empty-state inputs are judgment rows/proofs, not retired evidence channels.\n\nAnchor: exact source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:950451268179b9ddd22eb4e1bf8b497f2913d1a5fca422aa8715c2cc464ebef6",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The note that keeps a refusal visible beside the inventory the reader asked for instead.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:7d06caead19f67b4c5d600047cc2acd8eab4cb8b70f7061210de4c965e4a84a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskContextInsteadNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "**The retained-generation label whose closing sentence is chosen by what the retained payload actually is.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:916fd039f071b6feee0dbdcb157074632aba2d86a1da3e1d2713543395c25e48",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedGenerationNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The outcome region evaluates shown-empty and retained-nonempty notes from supplied props and suppresses outer pending/problem lines when the workspace owns them; normal caller coherence is not arbitrary-prop validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:26df749ad58f08cbb5c800532eb169e97483a5459ff07bdc842cf864f7245c1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "loadingLine"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:1c66d2017a5e0e3c9b491d2f013662909886cc49ec9e9fe4e642b1b4f129fdce",
+            "locator": {
+              "kind": "symbol",
+              "name": "problemLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The surface wires the outcome region to the target-bound read and appropriate retry/source actions.\n\nAnchor: `useSurface` `ReviewSurface` `readingStatusOf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:f67515e95319c7f49f57b718d00865aab325c83a6dfd4fc21799b4efb04d439a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:a4bfba333df278c94115c450a4e5f448cd733666f83696b2e21e3f11659b69dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "readingStatusOf"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Current lane file-diff failures consume the shared ReviewProblemBlock with the failed file named as subject; the removed SourceContent consumer belongs to the prior source epoch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:5552923981e8a6240989f377c96e073124102188a82cac2962928eb3227dc970",
+            "locator": {
+              "kind": "symbol",
+              "name": "FileBody"
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Stored mounted/coherent-region cases assert phase distinctions and retained-empty/real labels; seeded capture responses and their case results are not fresh execution.\n\nAnchor: `shows the read as in flight before any answer arrives`; `shows a never-initialized refusal with its reason, offending input and next action`; `says known empty for a measured empty answer and never for a failure`; `keeps the unavailable-adapter, validation and authority states apart`; `states a retained known-empty once, as the measured result it is, and never denies it`; `labels a retained real comparison and denies no emptiness for it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:6715d7c3a94bcc93f13446cbd6abe910499fb2f8dd1d939df0db609958381afe",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 255
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:1ef729ae671eee804c3eef29e61851c2605c891b1316998da1c87d877e16bdd6",
+            "locator": {
+              "end": 285,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:025380c51b7ceda9d452fa208cefc2a50ef86505fcb0d5d36dc913432d920373",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:81cef175e3084cef503aca5ed647d7da7f2ae080b8984b73f479f69ce0310d23",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:dce4d2c191c71c2c1d9916d19c67c39ff94582ec3982f91f00f086a5a198c7ea",
+            "locator": {
+              "end": 515,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:fc90bf0e45bcb5a1157e5538bc3cf4c1aa1df71f6ad5ae0a03dee6d6b694c803",
+            "locator": {
+              "end": 525,
+              "kind": "line_range",
+              "start": 517
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Surviving mounted-surface cases stub fetch and assert unavailable/validation/authority fields and explicit network retry; the removed expansion cases remain historical evidence, not current execution.\n\nAnchor: `keeps the unavailable-adapter, validation and authority states apart`; `offers an explicit retry for a network failure, and the retry renders the answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:81cef175e3084cef503aca5ed647d7da7f2ae080b8984b73f479f69ce0310d23",
+            "locator": {
+              "end": 357,
+              "kind": "line_range",
+              "start": 328
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e0628b844fe9391b3f3e0ed8e0ce439c1b526e90",
+            "content": "sha256:cc5495254eaafaa7efb306e540b0c86b45d0bb4e1e36e308b715c9b962a0a4e3",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 359
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.outcomes.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "The problem block exposes owner fields and explicit missing-field sentences as open review content, with eligibility-bound retry/source actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The component imports transport projections from the public review entry.\n\nAnchor: exact source span",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:ec999cf865f14b0d764df3627d0dc7f3d60b6d9adc74b574a13a024ef4410866",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The retained-generation renderer words the actual supplied old payload; the region chooses whether to show it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:916fd039f071b6feee0dbdcb157074632aba2d86a1da3e1d2713543395c25e48",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedGenerationNote"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The read's four phases as one value, so a refusal and a payload can never both be the read.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:e39082ca176553e73744f3790cc07267e555fa0c9c8f780a9881093040e382bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "readFrom rejects a review payload lacking judgment with review_judgment_missing; other unadmitted/payload-less states also fail instead of becoming an empty review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:2ca3bcdc9b7367a37f177783c435d11e39330f2388630f6b10c3389437ae7bd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "readFrom"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**What the panes render: the answer, or — for a read that never answered — the last comparison the surface really read, while a typed refusal replaces the panes rather than sitting beside a comparison the server declined to stand behind.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:ab37f08206cb5ee172bbb0ed87c04ec48903c65f201e826908524033e1c24d23",
+            "locator": {
+              "kind": "symbol",
+              "name": "shownPayload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one accessor for the failure a phase carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:7388c3ffb5a1e41b07499dce95e997090a81f23ba50ee78befea4ed307da7b44",
+            "locator": {
+              "kind": "symbol",
+              "name": "problemOf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The in-flight state as its own rendering, so \"nothing has answered yet\" is distinguishable from \"the answer was empty\" and from every refusal.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:4089237ff12a58409bd160158813b5f10902250c0af4ef4acff03b5aab63884c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewLoading"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Known-empty inspects supplied measured-zero inventory, absent comparison, judgment none and empty judgment rows/proofs; it does not make a new measurement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:d4a4f704e8dfe45512e0d71eb6d590fb3b5ab6ff30862d6d85873a2895d86b49",
+            "locator": {
+              "kind": "symbol",
+              "name": "knownEmpty"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:7da235c185ccbeab480d1d91e463cab82ec2528ee225aa3ff4f2c76c6417cd51",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnownEmptyNote"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "**The one renderer for a `ReviewFailure`: every published field printed, an explicit sentence where the server published none, two test ids for the two refusal shapes, and the two conditional controls.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

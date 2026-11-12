@@ -1,0 +1,68 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_candidate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate identity has explicit state/tree/fingerprint/intent fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c7b58b5f29173ebc042697deb6b6aeb04aa2ee",
+            "content": "sha256:63d818f08df0c1c11c061013d754c54ef078ad06f98f9f870d5d3d1679d2d7f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationCandidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Canonical JSON binds normalized input, Git provenance, and task intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c7b58b5f29173ebc042697deb6b6aeb04aa2ee",
+            "content": "sha256:1dc31b2ac99b24455d02cbc95400125907243c2ed299183f4637464b6c177e77",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_operation_candidate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "25c7b58b5f29173ebc042697deb6b6aeb04aa2ee",
+            "content": "sha256:1f34ee0489880c7f8755a198d6f0ae39ae97875d7ba6522026cde393027e4120",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The binding carrier for the exact intent.\n\nAnchor: `task_intent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25c7b58b5f29173ebc042697deb6b6aeb04aa2ee",
+            "content": "sha256:42ee5cb7f668c16071037b2c84b143f0bcd3f1c75583ca7c3ba8e7c46b710f55",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

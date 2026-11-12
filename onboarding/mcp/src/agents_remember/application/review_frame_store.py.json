@@ -1,0 +1,824 @@
+{
+  "path": "mcp/src/agents_remember/application/review_frame_store.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameScope"
+        }
+      },
+      "id": "RLZ-00DVT2",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "FrameScope verifies the durable task/frame destinations and guards each exact IO target, keeping durable scope distinct from the explicitly admitted authoring directory; lease/state ownership remains with the draft lifecycle.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameScope"
+        }
+      },
+      "id": "RLZ-05E8JP",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Canonical task/frame scope and exact intermediate revision/manifest/asset/draft/pointer/receipt/lock destinations are guarded before IO. The same foreign-manifest spy now records zero reads and a physical-containment refusal. Normal read/write/usage/cleanup/archive and dry-run controls pass, with source guards across siblings and shared product exclusion. No stronger protection against an attacker replacing both admitted files is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:b96195cc0f29ec341caa3c02c6b3d831094e04808471afd6daf02fc3a3a1c9af",
+        "locator": {
+          "kind": "symbol",
+          "name": "_lineage_need"
+        }
+      },
+      "id": "RLZ-0Z3T3X",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Removal resolves only a digest-verified own-leaf agreement, refuses unreadable pins/retained ancestry and reads task metadata under a finite sentinel; this is preservation policy, not a mere type.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:679b96e3a8b126d3027f38f85af347c322e1d6d99e1500158a7892abe1bf9b8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_pinned_revision"
+        }
+      },
+      "id": "RLZ-1XG8HN",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Removal resolves only a digest-verified own-leaf agreement, refuses unreadable pins/retained ancestry and reads task metadata under a finite sentinel; this is preservation policy, not a mere type.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:2b863c02c8e2d96ed5825c75ff70dddad5f592a1340af8039cbfcb68cca0a8ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "regeneration_request"
+        }
+      },
+      "id": "RLZ-3PGX5D",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L102-F09",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. The manifest now requires and stores the complete structured EvidencePacket including claims and receipts; publication derives the binding from that packet and enforces manifest_bytes. The focused test removes drafts, then reopens the stored packet and obtains the stale revision/asset list/evidence digest/ancestry through explicit regeneration. The original no-retrievable-evidence defect is closed: the digest now resolves through that retained revision manifest, and old claims remain old-bound rather than promoted. This is not a claim that F07 authority resolution or F13 snapshot interleaving passes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:23e60ae9743bdae836280d06984bf5dc0a56f1f6a2084366c1e1f5a96040faaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_locked"
+        }
+      },
+      "id": "RLZ-3XEX4A",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-A-8",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`_publish_locked` runs with the task lock held and removes nothing on its own: a superseded revision stays and only the developer's removal control deletes one.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:18291bde19a7cb7e5e21438e692013e1977b44bab3ad0923673ff7b7337aed94",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_capacity"
+        }
+      },
+      "id": "RLZ-5SH14N",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "`_check_capacity` at C still performs the task-total check and leaves the per-revision bounds to the staged-asset stage, which is exactly the exclusion the statement keeps.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_bytes"
+        }
+      },
+      "id": "RLZ-5V8AB6",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Canonical task/frame scope and exact intermediate revision/manifest/asset/draft/pointer/receipt/lock destinations are guarded before IO. The same foreign-manifest spy now records zero reads and a physical-containment refusal. Normal read/write/usage/cleanup/archive and dry-run controls pass, with source guards across siblings and shared product exclusion. No stronger protection against an attacker replacing both admitted files is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:459f24fd0942d86106754b499d64596a2f0b411de485692d4ee95e8418de812a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_record_reclamation"
+        }
+      },
+      "id": "RLZ-6000XB",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:758b0d42516c5fb7e1daabdbc767665fcb5d1da28b24dcf9e6ac6b1c29ae58b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_snapshot"
+        }
+      },
+      "id": "RLZ-62A0BZ",
+      "invariant": "INV-6VNAR5",
+      "origin": {
+        "handoffEntry": "L102-F11",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Canonical task/frame scope and exact intermediate revision/manifest/asset/draft/pointer/receipt/lock destinations are guarded before IO. The same foreign-manifest spy now records zero reads and a physical-containment refusal. Normal read/write/usage/cleanup/archive and dry-run controls pass, with source guards across siblings and shared product exclusion. No stronger protection against an attacker replacing both admitted files is claimed.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:b4480b7b128779bfe4ba76a50add6e4b9d9f51de2c464cb884f1f3e81138da72",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_document_stem"
+        }
+      },
+      "id": "RLZ-6CW7JW",
+      "invariant": "INV-TE5W2D",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-packet-source-authority",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Publication recognizes exactly this leaf’s own document receipt for intended-claim authority instead of treating another task-root document as intended evidence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:2de48b977d06bb3fee0c1f379a392b062074334fc74231ca0d7f163c60a6469e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_reclamation"
+        }
+      },
+      "id": "RLZ-710790",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:e43ae0b869a4e75641d4fc54eb15305496d5c917b8803d5b9bebd5c7a7fe556d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_archive_receipt"
+        }
+      },
+      "id": "RLZ-8JAKBC",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:0267fb2a4c854381f2295242f36497007f730368ea749eb9dd99ed17ccb1cf2f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_leaf_document"
+        }
+      },
+      "id": "RLZ-9VCSEH",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Removal resolves only a digest-verified own-leaf agreement, refuses unreadable pins/retained ancestry and reads task metadata under a finite sentinel; this is preservation policy, not a mere type.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:5199393da77298440d3c476d8d2449a748da20cca25f4425fcc1f507e5a6e5f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_delete_revisions"
+        }
+      },
+      "id": "RLZ-9W4JVD",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:a26d9a243a323dd9aaab0181df63515c8d5f951f16a1cd44e8884bbbfa3bbae8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FrameRefused"
+        }
+      },
+      "id": "RLZ-A5VCZH",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`FrameRefused` still carries the named reason in public refusal data (`frame-store-full` for the total), so no publication failure collapses into a generic error.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_bytes"
+        }
+      },
+      "id": "RLZ-AKM01Z",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "`_manifest_bytes` still reads a manifest under the finite manifest bound, so the metadata side of the total cannot be inflated by a corrupt file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:520dedf8e9c3fa6e809b4ed7a1a97852a2dd047de59eb840d9c4fa935858987e",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_revisions"
+        }
+      },
+      "id": "RLZ-CENNYZ",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-A-5",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The one removal route, which never reissues a removed number and refuses the pinned revision.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:84a2719a811c16ccccd719f534361d362dbf3bce4e3696614720b7971309f8df",
+        "locator": {
+          "kind": "symbol",
+          "name": "_highest_removed"
+        }
+      },
+      "id": "RLZ-DABYWY",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:9e1d125632093e4be3659b73213f11eb9ce51531bd23f01ee7ed71b79dedf6c8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_changed_sides"
+        }
+      },
+      "id": "RLZ-F4HDQ4",
+      "invariant": "INV-S75HA1",
+      "origin": {
+        "handoffEntry": "L183-curator-test-facet-18",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Whole-page staleness must distinguish comparison owner as well as leaf/number/operands, especially planned versus closed-leaf number zero.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:758b0d42516c5fb7e1daabdbc767665fcb5d1da28b24dcf9e6ac6b1c29ae58b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_snapshot"
+        }
+      },
+      "id": "RLZ-F92HXG",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every immutable revision now stores manifest.sha256 and all historical/current reads validate the exact manifest bytes before using the same snapshot and size/digest-checked assets. The independent historical-focus corruption refuses while current ready output survives; current pointer corruption, asset corruption and single-snapshot regeneration tests pass. Staleness/regeneration share the selected snapshot and start nothing automatically. The adjacent digest is corruption detection, not a signature against replacing both files; F10 separately retains the read-volume defect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:70e3472144d61daf42454550a59b81d2e3c9f5a18773719b2b4df33d38f7caa4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_repoint"
+        }
+      },
+      "id": "RLZ-K3CNG2",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:dd365d8397396148a22b1d01fd1d6bf510807dff57bf0e4bb5a8b6c84d68277d",
+        "locator": {
+          "kind": "symbol",
+          "name": "begin_draft"
+        }
+      },
+      "id": "RLZ-K83MYJ",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:c88850fed11e62f4f1522083f741a9001b045cde8bb1b5bdaa30cd12667aae02",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest"
+        }
+      },
+      "id": "RLZ-KS5YZ9",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L102-F09",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Prior closure preserved; no reopening/new lens. Retained prior closure on preserved bytes/properties; no new adjudication lens. The manifest now requires and stores the complete structured EvidencePacket including claims and receipts; publication derives the binding from that packet and enforces manifest_bytes. The focused test removes drafts, then reopens the stored packet and obtains the stale revision/asset list/evidence digest/ancestry through explicit regeneration. The original no-retrievable-evidence defect is closed: the digest now resolves through that retained revision manifest, and old claims remain old-bound rather than promoted. This is not a claim that F07 authority resolution or F13 snapshot interleaving passes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:99f5d29de212a5b73fd44da2aa7d804d9bd4766e0058ab61ea651392f9d821fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_revision"
+        }
+      },
+      "id": "RLZ-NKC5RV",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "MIK-R103@v1",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Composed CODE acceptance: original full packet/earlier closures retained from A4, and final F05/F10/F16 residuals closed on exact A5. No memory verdict or installed/UI claim.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:2b863c02c8e2d96ed5825c75ff70dddad5f592a1340af8039cbfcb68cca0a8ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "regeneration_request"
+        }
+      },
+      "id": "RLZ-P4A479",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every immutable revision now stores manifest.sha256 and all historical/current reads validate the exact manifest bytes before using the same snapshot and size/digest-checked assets. The independent historical-focus corruption refuses while current ready output survives; current pointer corruption, asset corruption and single-snapshot regeneration tests pass. Staleness/regeneration share the selected snapshot and start nothing automatically. The adjacent digest is corruption detection, not a signature against replacing both files; F10 separately retains the read-volume defect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:90c93b9a678cb569b6f425a1f381a4130ca93e504adf8f59e728dbbc03291056",
+        "locator": {
+          "kind": "symbol",
+          "name": "_remove_locked"
+        }
+      },
+      "id": "RLZ-PBPS94",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_bytes"
+        }
+      },
+      "id": "RLZ-QF2MB3",
+      "invariant": "INV-T4EVM5",
+      "origin": {
+        "handoffEntry": "L102-F13",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Every immutable revision now stores manifest.sha256 and all historical/current reads validate the exact manifest bytes before using the same snapshot and size/digest-checked assets. The independent historical-focus corruption refuses while current ready output survives; current pointer corruption, asset corruption and single-snapshot regeneration tests pass. Staleness/regeneration share the selected snapshot and start nothing automatically. The adjacent digest is corruption detection, not a signature against replacing both files; F10 separately retains the read-volume defect.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:38181369e5bd4950719a89cf765d56fc52c3b514ea9189b052baa8d08a4cdebb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_assets"
+        }
+      },
+      "id": "RLZ-QPPRWZ",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-explicit-revision-removal",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`_check_assets` still checks the per-revision asset bytes on the staged assets before the lock, which is the bound the statement leaves outside the task total.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:927418e42ca55878093d3c5324b429bb82bfa0b8b15dfccc1cf3d09f5682c27c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_working_directory"
+        }
+      },
+      "id": "RLZ-QW1RP2",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:b8a2bd07e18099f0a5d8025878d23c08221606fc5bb825a54f1b18ac51006100",
+        "locator": {
+          "kind": "symbol",
+          "name": "reclaim_task_frames"
+        }
+      },
+      "id": "RLZ-RE8EP1",
+      "invariant": "INV-8FY445",
+      "origin": {
+        "handoffEntry": "L102-F15",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Actual archive enumeration now occurs after acquisition of shared publication exclusion. The independent staging schedule publishes revision 2 before archive proceeds, and the resulting real receipt names revisions [1,2] and ready_revision=2. Prior intent/outcome, merged failures/identities, prune-before-final-receipt and task-receipt reopening consumers are retained; quota/abandoned-draft/partial-archive/retry/reopen controls pass without launches or confinement loss.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:477a400b41a7eebc7933aed58ffade939f3e2956c3630b3d1720386a5f89c8b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_wanted_revisions"
+        }
+      },
+      "id": "RLZ-SJQKDW",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:758b0d42516c5fb7e1daabdbc767665fcb5d1da28b24dcf9e6ac6b1c29ae58b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_snapshot"
+        }
+      },
+      "id": "RLZ-V478TP",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L102-F10",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "`_snapshot` still reads stored metadata through the finite sentinel read, so the usage the total is measured from is bounded.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:504e6f0d82151eb0f28fb6b84e27c9cc8a210a10973771c55edd13d9c3057fc1",
+        "locator": {
+          "end": 1574,
+          "kind": "line_range",
+          "start": 1567
+        }
+      },
+      "id": "RLZ-VE5YVF",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The explicit developer-removal operation states its durable removal reason and named bounded lock wait here. The removal implementation consumes these constants, refuses if its task lock cannot be held and deletes no revision before acquiring it; this belongs to the retained-revision removal guarantee.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:4ab024397e0a9adca149f2ff90652df0bd6606089123d5ee3856bc9c5cccad30",
+        "locator": {
+          "kind": "symbol",
+          "name": "_draft_path"
+        }
+      },
+      "id": "RLZ-X5MPBS",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "EXPLICIT twelfth-ID adjudication: the missing working-folder input is now required working_directory on begin_draft, not an inferred durable FrameScope path. FrameScope remains the durable task target; FrameDraft persists the separate authoring folder and exact asset reservations. _working_directory rejects task-owned/symlinked folders; unready assets are written only to the explicit working folder while _draft_path holds bounded attempt metadata. _draft_assets imports only the recorded named assets under the task lock after exact size/digest checks. Independent omission of working_directory raises TypeError before any frame creation; explicit admission produces zero durable HTML assets, publication imports the page, and removing the working folder leaves ready output byte-identical. Leased/failed/cancelled/abandoned states, explicit recovery and previously repaired active-publication exclusion remain passing. No loss or silent F12 omission is accepted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:23e60ae9743bdae836280d06984bf5dc0a56f1f6a2084366c1e1f5a96040faaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_locked"
+        }
+      },
+      "id": "RLZ-X7YYP5",
+      "invariant": "INV-K2YX74",
+      "origin": {
+        "handoffEntry": "L102-F14",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "Publication checks current environment binding under the task lock, active/published draft state, admitted revision bytes, manifest/ancestry, ready-pointer identity and task capacity before writing a revision or replacing the pointer. L183 removes publication-triggered revision reclamation entirely; rejected publication still leaves prior durable output unchanged and creates no first-publication store state.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:1469c0c6beaca17e6bb6446f71ec1257a0b7b53b73b6f04635de3cde98690e94",
+        "locator": {
+          "kind": "symbol",
+          "name": "cleanup_frames"
+        }
+      },
+      "id": "RLZ-XPRST6",
+      "invariant": "INV-ZAW3HJ",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE-ATTACH-trusted-staleness",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit removal validates the whole request before deletion, protects readable retained lineage, receipts each removed identity, repairs ready pointer and never reissues removed numbers; automatic revision cleanup is gone.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:053f80e7b2ba78651dcb6eda2d28c0a6ed54a4ec0c1fd541e9edd86c1e63732d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_draft_assets"
+        }
+      },
+      "id": "RLZ-XVEQP4",
+      "invariant": "INV-03QFAC",
+      "origin": {
+        "handoffEntry": "L102-F12",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "The draft asset reader uses the persisted explicit authoring directory, validates bounded asset declarations and exact bytes/digests, and imports only those named assets. L183 adds the revision-too-large reason for an oversized declaration without changing active/failed/cancelled/abandoned draft handling or ready-output preservation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:99f5d29de212a5b73fd44da2aa7d804d9bd4766e0058ab61ea651392f9d821fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_revision"
+        }
+      },
+      "id": "RLZ-YHQQ3J",
+      "invariant": "INV-ZPHKZB",
+      "origin": {
+        "handoffEntry": "L183-A-6",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Publication takes the part map beside the evidence packet and stores it in the manifest.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+        "content": "sha256:18291bde19a7cb7e5e21438e692013e1977b44bab3ad0923673ff7b7337aed94",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_capacity"
+        }
+      },
+      "id": "RLZ-ZZRGDC",
+      "invariant": "INV-5VVSTD",
+      "origin": {
+        "handoffEntry": "L183-A-8",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`_check_capacity` is the one remaining total check: the task's bytes refused by name with nothing reclaimed, exactly as the entry and the statement say.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Every store act is verified against the admitted task and frame before it touches the filesystem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+            "content": "sha256:6264e6bf189d55ed05e4ef509602c7b7ede450993c0c78ed31828c54954d8030",
+            "locator": {
+              "kind": "symbol",
+              "name": "FrameScope"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A draft is leased in its caller's working folder and imported only under the task lock after digest checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+            "content": "sha256:dd365d8397396148a22b1d01fd1d6bf510807dff57bf0e4bb5a8b6c84d68277d",
+            "locator": {
+              "kind": "symbol",
+              "name": "begin_draft"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A stored metadata read is bounded by the admitted byte sentinel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+            "content": "sha256:074d3ce90068921619f0255cb89a897d86c8e315801eac841f06a13a6e8765de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_manifest_bytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Staleness names the comparison sides that moved and starts no regeneration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+            "content": "sha256:24cf80675059061cce923abc828df867da2abbe775d49503a8fb066f21ca8f8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "frame_staleness"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`_media_type` names the same plain-text type for an extensionless `LICENSE`, which is what lets a frame serve a pinned kit licence at all. [8]\n\nAnchor: `_media_type`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+            "content": "sha256:fdfe57b2f6767ff418f762b386ff5ea5f591072aa7fe126b9c2a8f6c7792c052",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current implementation adds binding recheck, intended-authority validation and part-map persistence, while replacing lineage/count eviction with byte-only admission.\n\nAnchor: `publish_revision`, `_publish_locked`, `_check_capacity`, `remove_revisions`, `_remove_locked`, `_repoint`, `_highest_removed`, `cleanup_frames`, `reclaim_task_frames`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "835b56f21f78cf29b44aeb4a089c5a54dddcfaa9",
+            "content": "sha256:fdfe57b2f6767ff418f762b386ff5ea5f591072aa7fe126b9c2a8f6c7792c052",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

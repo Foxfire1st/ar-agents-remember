@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The obligation spans the capture decision, the observed-tree value, the selection that holds it, the resumed page, the token, the page's answer, the Git environment and the capture mechanism; two registered cases assert the held store and the clean-checkout path, and without it a caller who edits a function is told its invariant is current."
+  },
+  "applicability": "Every read and every page of a walk that answers over a code checkout, and the answer that states which tree it observed.",
+  "conditions": [
+    "The checkout is a Git working tree that can be read."
+  ],
+  "exclusions": [
+    "A clean checkout: the commit's own tree, and nothing is captured.",
+    "A root that is not a readable checkout: the read states unmeasured rather than a tree.",
+    "A walk whose tree changed between pages: refused, never served from the old tree."
+  ],
+  "id": "INV-09H4VC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R73@v1 rule 7 and MIK-R108 rule 6's codeState/tree sentence; the two registered cases named here"
+      ],
+      "path": "handoff-draft-4.json"
+    },
+    "handoffEntry": "R73-R7",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A read observes the code the caller is working with: it captures an uncommitted working tree into a held scratch store, states whether it observed the commit or the working tree, and re-captures on every page of a walk so a changed tree refuses the continuation.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,39 @@
+{
+  "path": "dashboard/src/cockpit/launcherDefaultsMemory.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Reopening the launcher offers the choices last settled for that role and scope, not empty ones.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "459d2751b9fcc8169bd51daf15eabcb82f67e99c",
+            "content": "sha256:ec9e0cf4138e70c32ee2021e0902885c5c38379d585dc7f32074528a3faebf18",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberedRoleDefaults"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One scope's remembered choices cannot be read as another's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "459d2751b9fcc8169bd51daf15eabcb82f67e99c",
+            "content": "sha256:e280690ead8b0f42f9963b1391845ba79e763ad06652cc36759e0ebf2d1a5416",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberRoleDefaults"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

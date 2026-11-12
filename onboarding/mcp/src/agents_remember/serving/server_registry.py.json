@@ -1,0 +1,160 @@
+{
+  "path": "mcp/src/agents_remember/serving/server_registry.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+        "content": "sha256:653a573e6125c60c1beebc19c549ecfe7c2f31954017ba279d4ebfe9f1db0df9",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_server"
+        }
+      },
+      "id": "RLZ-7W4TJK",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule3 server inventory",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function records loaded build, process start and settings identity for a running server and registers idempotent cleanup.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+        "content": "sha256:76b8e9b47aa82d778579d1975fcbe137a95cae5644399b581f05ff70e72496c2",
+        "locator": {
+          "kind": "symbol",
+          "name": "server_inventory"
+        }
+      },
+      "id": "RLZ-FG24R2",
+      "invariant": "INV-PVW2XJ",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule3 server inventory",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function traverses all record paths without a result cap and computes currentness for each valid live record.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The record fields and the records directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+            "content": "sha256:83750ac7d5e6692aa07d0283ca5c640119fe0bde9e1c46f9dfc4f53f6c13b891",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ServerRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Liveness by signal probe plus the process start time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+            "content": "sha256:f7015c786a26c5f5874bed527491c32e13caeb411d1dde874439c49bb559b919",
+            "locator": {
+              "kind": "symbol",
+              "name": "_alive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The boot record, its one-time write warning and its exit cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+            "content": "sha256:653a573e6125c60c1beebc19c549ecfe7c2f31954017ba279d4ebfe9f1db0df9",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_server"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dead records are removed by the reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+            "content": "sha256:d304fa76d81b13aaff8dccb5fe2a11fb1f718dd3760535387ebbbb1977759f62",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The inventory compares each live record's build and reclaims comparison state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+            "content": "sha256:76b8e9b47aa82d778579d1975fcbe137a95cae5644399b581f05ff70e72496c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "server_inventory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The MCP server registers itself for the life of `run_server`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:dddcc4e6d80d9521a9a274fd9fdd0b9ac6d21651000e906e9f9702aa2482fc3c",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 327
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`server_info` and `runtime_install` list the running servers.\n\nAnchor: `server_inventory(config)`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3708c33b80551e129acbc4da11a4f728c1efb009",
+            "content": "sha256:4bfb63c16a6e2f2d53d21dc5811497856cfdf2b5b158f55e08b3b5ea7d1b34ad",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/application/runtime/install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

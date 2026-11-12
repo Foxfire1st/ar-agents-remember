@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts supplies visible DOM candidates, client/bridge.ts intersects them with current SDK IDs, and dashboard/src/cockpit/paseoFrameControl.ts resets the frame lifetime, preventing hidden cached tabs or removed actors from appearing as the selected chat."
+  },
+  "applicability": "Native selected-chat sets in a listed embedded web page and their dashboard presentation.",
+  "conditions": [
+    "The pinned native workspace-tab-agent_<id> identity, aria-selected, positive bounds and checkVisibility behavior hold.",
+    "Plugin catalog IDs come from the current SDK directory lifetime."
+  ],
+  "exclusions": [
+    "Launcher intent, navigation acknowledgements, URL, color, focus and mount state do not establish native selection.",
+    "Hidden cached tabs and DOM candidates absent from the current SDK catalog are excluded."
+  ],
+  "id": "INV-C71CTF",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "F2 unknown-ID/late-catalog/removal/reconnect cases; actual native same-URL tab click and two-live-pane native/AR set equality.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoHierarchy.test.ts::validates visible selections against current SDK IDs, recovering after catalog load and clearing removed or reconnected IDs | exact facet: Unloaded, unknown and hidden DOM IDs are not published; plural visible IDs are intersected after load and recomputed on SDK removals, reconnect snapshots and teardown. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 9846d14267b2efcad039016e81e1bf1388b97ed2 | source line: 244 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoChatFrame.test.tsx::navigates explicit sidebar clicks without iframe reload or changing launcher intent, and highlights only native selection sets | exact facet: A shown acknowledgement does not change aria-current; only native plural selection messages do, and hiding/showing navigation keeps the frame and selected set. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: cf6d8c2b5d9dbcf4429f50d2a2ace711a0f8cb72 | source line: 125 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R05@v3 §6 / trusted visible selection",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Visible native selected tabs form a plural candidate set; the bridge intersects it with current SDK IDs before publishing, and the dashboard resets/uses that trusted set rather than launcher intent or navigation acknowledgement.",
+  "status": "proposed",
+  "supersedes": []
+}

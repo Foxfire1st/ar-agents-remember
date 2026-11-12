@@ -1,0 +1,275 @@
+{
+  "path": "mcp/src/agents_remember/serving/_app_routes.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
+        "locator": {
+          "kind": "symbol",
+          "name": "_review_stream"
+        }
+      },
+      "id": "RLZ-7AHN90",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:6d0fdca01212f78b30288fe53a94abcc20e9ab3a9798b7c9b1f7d68fa08463b5",
+        "locator": {
+          "end": 137,
+          "kind": "line_range",
+          "start": 137
+        }
+      },
+      "id": "RLZ-7E4V9B",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-04",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:3906a46d742fa21e581aa436122da39db34575f53e0aa52f7479d72c7b8cdb07",
+        "locator": {
+          "kind": "symbol",
+          "name": "_moved_events"
+        }
+      },
+      "id": "RLZ-826KXV",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Page opening starts comparison off the event loop, notices merge with the ordinary review stream, ordinary-stream completion owns connection lifetime and cancellation drains outstanding reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:cb9dc4dc04403646f7c02a1e6b72b270a29e51547c805260483fc86e7a50e6f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_projection_routes"
+        }
+      },
+      "id": "RLZ-8W58G3",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Page opening starts comparison off the event loop, notices merge with the ordinary review stream, ordinary-stream completion owns connection lifetime and cancellation drains outstanding reads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:597585975412f75c5d3607bc7cb8397f32edb75ceee78bf9297204e297892425",
+        "locator": {
+          "end": 152,
+          "kind": "line_range",
+          "start": 143
+        }
+      },
+      "id": "RLZ-B648F0",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-02",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:546be3a4fa330bcef0772d042413451e13fc9df6a985a429a86c4daf58ee1d1d",
+        "locator": {
+          "end": 121,
+          "kind": "line_range",
+          "start": 116
+        }
+      },
+      "id": "RLZ-GS7PT2",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:f2e04708bedd8d14619cfc871e53648ebe7dd53daaa9fe753516abb2c3e4faf6",
+        "locator": {
+          "kind": "symbol",
+          "name": "api_stream"
+        }
+      },
+      "id": "RLZ-V6QAN5",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "CUR-L57-review-state-route-invalidation-transport",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "The state-stream route binds optional addressed review identity to the actual native-watch multiplexer and runtime root-admission callback while retaining the ordinary projection stream on the same connection. The helper supplies scoped invalidation/error notices; the existing client watch owns matching and shared-entry generation. This route does not compute summary counts or imply that argument normalization authenticates a task.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:e4178b7ceb63f539ffb08005bbae6c31f5006b9fd78da33f285d940265e08517",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checkout_binding"
+        }
+      },
+      "id": "RLZ-X817FF",
+      "invariant": "INV-0AWC7Q",
+      "origin": {
+        "handoffEntry": "F10",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The route is the join between the served configuration and the dashboard document; without it the field would exist in the type and never reach the projection.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:63b1e8c20c4c10bab6334deac876f1037db5c3de92039e78ac2d776c09a54953",
+        "locator": {
+          "end": 249,
+          "kind": "line_range",
+          "start": 234
+        }
+      },
+      "id": "RLZ-XYGMMF",
+      "invariant": "INV-B6D2SA",
+      "origin": {
+        "handoffEntry": "L84-K3C-B6D2SA-03",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The dashboard state and status stream carry the serving build's currentness as an observation separate from its identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+        "content": "sha256:baffae246adc8ca34e1a4978e4f637a5d07bf112180da7c81905697ed5c5cf10",
+        "locator": {
+          "kind": "symbol",
+          "name": "_merged_stream"
+        }
+      },
+      "id": "RLZ-Y5QNJ9",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Page opening starts comparison off the event loop, notices merge with the ordinary review stream, ordinary-stream completion owns connection lifetime and cancellation drains outstanding reads.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The state response uses weak ETags from the projector revision (with the build-currentness stamp appended when a reading exists), refuses an absent snapshot, returns bodyless 304 on a match, otherwise copies the memoized projection and adds the served-state tail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:d044a3c36d7c0fd08ba3ec1b759fa3ab9b25a250a0f010ad3d1b04fdb725dba6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The review stream multiplexes projection/memory invalidation with moved notices. _merged_stream lets notice exhaustion leave the page stream alive and ordinary stream exhaustion close it; finally cancels/gathers pending next-event tasks and aclosing releases subscriptions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:13aaf574b6e483c1bdeef8d9fb3c6bf67b347e7cae4a9a58c663863b63eec274",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_stream"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The build-currentness reading stamps the state ETag and rides the served tail.\n\nAnchor: `hashlib.sha256`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:d044a3c36d7c0fd08ba3ec1b759fa3ab9b25a250a0f010ad3d1b04fdb725dba6",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`status=true` inspects a checkout build too and answers without the conditional-read short cut.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:add543a7143cb72fbd6d6350d1f74cd5aecc9ff738e6177831e6150ab835f8d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_state_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The liveness beat publishes build-currentness transitions to open pages.\n\nAnchor: `event=\"buildCurrentness\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:4d4abea7386b608e7aab85683003428d6d4fdf8a57115c34508fed5ce1a8085a",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 234
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_answers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A refused call is answered as `state: refused` carrying the reason and the detail\n\nAnchor: `def refusal(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ec49cb85cebcc8b8bb192d19bb4f0f94163d4cf",
+            "content": "sha256:627566c9bc10056bcff77e158edeca49df5582e83fb6ff1e200718afba255dd2",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One tool body's typed refusals, a named `ValueError` and an `OSError` all become the same data shape\n\nAnchor: `def answered(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ec49cb85cebcc8b8bb192d19bb4f0f94163d4cf",
+            "content": "sha256:5149509f23e8707f3061f84e18f784f9e73868c6e979f02e441c02858f9d1421",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A path the confinement holds is answered as `path-held` with the guard's own text\n\nAnchor: `PathRefused as held`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ec49cb85cebcc8b8bb192d19bb4f0f94163d4cf",
+            "content": "sha256:5149509f23e8707f3061f84e18f784f9e73868c6e979f02e441c02858f9d1421",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

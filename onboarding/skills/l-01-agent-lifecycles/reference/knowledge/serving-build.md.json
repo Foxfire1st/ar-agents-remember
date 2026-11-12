@@ -1,0 +1,151 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/knowledge/serving-build.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+        "content": "sha256:61c0fddb361669efa4ef28a937bbebfb680fe790be1db78db6968ddbb96b9fc7",
+        "locator": {
+          "end": 25,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-72RX6B",
+      "invariant": "INV-BCEZZM",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-BCEZZM",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The deciding CLI is compared with the starting server stamp, unavailable/mismatched binding is reported, and an unreported commit stays unknown.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+        "content": "sha256:04b0b4714ec6d02e5e1b679a17c9a8abe9708ef9a8479b575fbf73afd1f0e378",
+        "locator": {
+          "end": 35,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-7DW125",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The serving-build detail fills the interpreter and package from the launch and server_info, prints the CLI identity, compares version, digest, package root, interpreter and commit before deciding or writing, and gives the public worklist and ingest commands. The report-state reading is in the publication-report detail.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+        "content": "sha256:80480cf3f823c28466d6128eef7b0cd9bbc7b7014b92c14a1a4643e62d60f4c8",
+        "locator": {
+          "end": 11,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-KCSKJN",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-945YZ4",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The command procedure prefers the mounted writer, preserves the admitted launch interpreter spelling and explicit serving package, compares identity, and distinguishes plan/write/empty-written outcomes.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The mounted tool is preferred, and CLI work binds to the starting server's serving build; orientation owns the authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+            "content": "sha256:01c3770da7efedda5fcca5c10ea9b90e932d0f5696d918a9d4e143aa54875b99",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The admitted interpreter comes from the launch receipt or server definition, and an unavailable command is reported, not inferred.\n\nAnchor: `toolServer.command[0]`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+            "content": "sha256:856d7a11550faddae5175d0d427be51773efe11cc1e0c38790907d3475ba67dc",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The identity is printed and compared with the starting stamp; a mismatch is reported and does not establish the serving build.\n\nAnchor: `sourceDigest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+            "content": "sha256:72aa50e303c1e6b23e4a83ecff86e25c03244dee1da0f26cd50dc376e231c2e3",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Public CLI commands run with the same interpreter and package path.\n\nAnchor: `knowledge-worklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de70b768c3bed726da2c150d484c96d50649b388",
+            "content": "sha256:64724f40de0472cf340fd34e7cb08ec3ff4ba04e224d96390cec3dbc95a2687b",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The Curator role points here before a command-line run that decides or writes.\n\nAnchor: `serving-build.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:b7a346481f83bb85d519f30a2438ca52add1f7ffcce33f80b418300bb3c4dad0",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

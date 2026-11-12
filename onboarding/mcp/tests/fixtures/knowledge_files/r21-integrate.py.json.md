@@ -1,0 +1,59 @@
+# mcp/tests/fixtures/knowledge_files/r21-integrate.py.json
+
+## Governing Overview
+
+[mcp/tests overview](../../overview.md)
+
+## Purpose
+
+**MIK-R21's own file-sidecar example, encoded in MIK-R21's normative shape.** The file holds a file sidecar for `worktrees/modules/integrate.py` with one `primary-authority` realization (`RLZ-4E1C9A`). It is
+read by `test_doc14_worked_examples_validate_and_round_trip_byte_for_byte`, which requires it to
+parse as `FileSidecar` and to re-serialize to exactly these bytes.
+
+## Code Commentary
+
+### Logic
+
+A canonical JSON document (`schema: ar-onboarding-file/v1`): sorted keys, two-space indentation, one trailing
+newline — the output of `agents-remember knowledge-format` on itself.
+
+### Conventions
+
+Test data only; never imported by production code. Recorded `blob` values are the real blobs at base
+`b7ef73f8`; `content` hashes are illustrative.
+
+### Invariants And Boundaries
+
+- The file must stay canonical: any hand edit must be followed by `agents-remember knowledge-format`
+  or the round-trip case fails.
+- The fixture set is closed: the test asserts the directory holds exactly the nine names it lists.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The format's design authority is the coordination-root note
+Doc14 (`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`) and the
+requirement packet `MIK-R21@v1` of task `260928_maintained-invariant-knowledge`; both live outside
+the code and memory repositories, so they are named here and not cited as rows.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+The fixture is consumed by one test case.
+
+- The fixture names its schema. [1]
+- Its distinguishing identity. [2]
+- The test maps this file to its model. [3]
+
+### Cross-Repo References
+
+No meaningful cross-repo references found: the fixture names paths of this repository only.
+
+No cross-repo boundary is represented.

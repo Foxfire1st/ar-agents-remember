@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "No member alone delivers the promise: agent-alone navigation without the display gate can acknowledge a missing screen, the gate without truthful deadline naming can wait silently, and naming without navigation reaches nothing. Together they promise the selected chat appears or its problem is named."
+  },
+  "guarantee": "For an open-capable channel, the selected document agent is opened by native agent-only navigation with no extra frame or unsupported workspace hop. shown requires exact host-workspace route, stored focused pane, no contradicting visible tab and mounted nonloading chat. Negotiated on-chat releases input after identity holds while waiting for drawing; negotiated native load-failed ends the dashboard wait and leaves only the application's own failure/Retry. A responsive late answer stays a named wait, not a failure or automatic load. Missing ready/open answer is probed; only ping silence names the unsettled agent and permits one fallback if its URL is not already loaded, then the load's ready wait holds newer selections. Explicit unsupported-open capability uses each agent URL with its notice. The pane shows the application's actual screen, not an indefinitely preserved earlier picture.",
+  "id": "FAM-JY9AN3",
+  "members": [
+    "INV-72Y8R3",
+    "INV-BTK24H",
+    "INV-KSCJ1Q"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "fam-selected-chat",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "routes": [
+    "dashboard/src/cockpit",
+    "mcp/src/agents_remember/package_data/paseo_plugin"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "The selected document's agent chat appears, or the pane names its problem"
+}

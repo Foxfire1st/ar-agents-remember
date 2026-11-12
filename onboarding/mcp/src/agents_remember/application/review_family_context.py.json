@@ -1,0 +1,283 @@
+{
+  "path": "mcp/src/agents_remember/application/review_family_context.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:311333c49177973c55eaed86de40a816b2b438d3dd5765b6a9d091d2abdf714a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_entry"
+        }
+      },
+      "id": "RLZ-26ASPC",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "handoffEntry": "L74-E2",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "Heads and entry composition are the two touched owners whose retained-revision rule the decision records.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:62a46c8729b2d8dc2fb0db1d4d4bd75e2134f73e58820049f40503c09059a21a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_heads"
+        }
+      },
+      "id": "RLZ-2AJPB3",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "handoffEntry": "L74-E2",
+        "leaf": "260928-MIK-L74"
+      },
+      "rationale": "Heads and entry composition are the two touched owners whose retained-revision rule the decision records.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:8f61b92d4359bbb562ae3b2fa0a3e62a3ada4d372f37730d20bfb75c016fa337",
+        "locator": {
+          "kind": "symbol",
+          "name": "_applicable_family"
+        }
+      },
+      "id": "RLZ-B4X9W39B",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Gives one side's population for a family selection from the family owner (list_family_revision_ids and get_family): all recorded revisions for an identity seed, or only the named revision for a revision seed. A snapshot recording neither the family nor any revision answers absent as a measured fact.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:62a46c8729b2d8dc2fb0db1d4d4bd75e2134f73e58820049f40503c09059a21a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_heads"
+        }
+      },
+      "id": "RLZ-S3T5A3E8",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Selects each side's family heads through the shared revision_heads rule over the selected revisions: every retained revision is a head, so a head is never an authored successor.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+        "content": "sha256:311333c49177973c55eaed86de40a816b2b438d3dd5765b6a9d091d2abdf714a",
+        "locator": {
+          "kind": "symbol",
+          "name": "_entry"
+        }
+      },
+      "id": "RLZ-SKYRM0CA",
+      "invariant": "INV-RT13RESK",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "When the review was seeded from an invariant, re-selects each discovered family by its family identity rather than by the invariant's memberships. It then computes each side's population and heads separately and reads both rosters through read_family_roster for the selected revisions. A family the selected invariant no longer belongs to keeps its counterpart, and its head is not pinned to the predecessor that still cites the member.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "11": {
+      "note": "Missing/unsupported selectors and opened-side closure use the actual entry path.\n\nAnchor: entry guards",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:c3a1c68003c00535b8f19dc02b4f5d41b5949bd9c0ff5d05a3a5ed710299d8f8",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Only the union of directly discovered family identities is composed.\n\nAnchor: composition loop",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:c8234964ac91da50fbb3f70efa6b1c13325c1a37484866c7e21ca8c6d55c062e",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Outcome totals, continuation/refusal and delivered-member uniqueness are distinct calculations.\n\nAnchor: outcome and page union",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:59c3cb4db2f7ed2e2c5e3cda0c2933138cabc48bbb4003e90125015087390b1d",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Exact-revision absence and identity absence are explained separately.\n\nAnchor: selection axis",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:370bc96f33d751788b216a719480d6fd0260d7e87187848ba14aebaa755cdd9c",
+            "locator": {
+              "end": 442,
+              "kind": "line_range",
+              "start": 416
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Unread scope never becomes a measured no-family zero.\n\nAnchor: absence boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:baec927a6c21c0ce98d6efecad93a622da21ec524e1b59f81b6f7b944f718cfa",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 445
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Family/invariant discovery records indexed family failures and independent populations.\n\nAnchor: discovery and indexed failures",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:3c873ac8d11017370c132ea055aac3aaa482d08ddd02d8b3aa144f9d48d63b87",
+            "locator": {
+              "end": 592,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Independent family selection, explicit unread-side override and owner-bound rosters are composed together.\n\nAnchor: entry and roster ownership",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:311333c49177973c55eaed86de40a816b2b438d3dd5765b6a9d091d2abdf714a",
+            "locator": {
+              "end": 678,
+              "kind": "line_range",
+              "start": 599
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The retained head helper and current four-state family selection choose no arbitrary winner.\n\nAnchor: head and selection states",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:17cf21b61a745fb06a25700732849afd04bf40aceb1f7c3bfd1f1d91b9ffb6dd",
+            "locator": {
+              "end": 765,
+              "kind": "line_range",
+              "start": 697
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The shared helper sorts supplied revisions without reading predecessor edges.\n\nAnchor: actual shared rule",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50e72f0f05fdeecfd3211de1ac01c7f4098230e9",
+            "content": "sha256:f670f2826238b1feb8b93959f5960ec0709c1aae4a68d731b78bbe111da287c9",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/application/review_revision_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Unresolved candidates retain readable guarantees and each unread side’s reason.\n\nAnchor: unresolved context",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:2270b04fc8dfef98687d3bfac07734323c4628af332059bf409e8dd5ef471fe0",
+            "locator": {
+              "end": 876,
+              "kind": "line_range",
+              "start": 825
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Labels and recorded/partial/unavailable entry states use the actual side/page content.\n\nAnchor: label and entry state",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93fc180a93009cdcbc3a47e37c64fbedecc99396",
+            "content": "sha256:c013ca21d4174c929948d74ceebdd59571ee73a01c497c75c7298c0edb91a65e",
+            "locator": {
+              "end": 922,
+              "kind": "line_range",
+              "start": 879
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_writer_correction_links.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7e674edcc87fe2a79e0b09f020a73092cbe53263",
+        "content": "sha256:4488f33e8314989c03db928a8a04ce0b077fe5b59b7fe6a07581640b65fa5de2",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_new_unresolved_requirement_link_refuses_with_coordination_root"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A newly authored unresolved requirement refuses through the configured coordination owner.",
+      "id": "PRF-4PGYJW",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-10-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e674edcc87fe2a79e0b09f020a73092cbe53263",
+        "content": "sha256:e70034544460d27dbcdedc897c3f80a75fbb66d67eccc670cc141e56d73c44c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_deferred_requirement_refuses_when_owner_cannot_resolve"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A deferred requirement cannot be credited while its owner cannot resolve it.",
+      "id": "PRF-D9EA7A",
+      "invariant": "INV-DP689F",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-10-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "7e674edcc87fe2a79e0b09f020a73092cbe53263",
+        "content": "sha256:1ff4da1ac18b70db5a3774f7b03f0acdceebe99079d7d05e7646fe6d19c16696",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_reconsider_link_follows_exact_option_when_alternatives_swap"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Reordered alternatives retain the exact linked option rather than following its old index.",
+      "id": "PRF-FFXBT9",
+      "invariant": "INV-E6KFRX",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-7-wave-75",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes writer link-remapping and requirement-reference refusal/reporting boundaries. The CLI comparisons protect noninterference, not a claim that unresolved references never refuse at authoring. These source-defined fixtures are not live task, packet or memory publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e674edcc87fe2a79e0b09f020a73092cbe53263",
+            "content": "sha256:b107bf2ca414de0982396cdd8e6d94b5ba9c192055cb8ed270ebf9d8cfd4dbe2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

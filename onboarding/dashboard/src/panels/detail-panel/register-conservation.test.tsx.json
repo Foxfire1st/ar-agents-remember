@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/detail-panel/register-conservation.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module owns the regression assertions and fixture boundaries described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90a19c74d132e33f0b5e49267c4bc5adeebdfed5",
+            "content": "sha256:cfe41e853b6754b9140815a806ba90e7422c7adc4fd720ea933a5103fb3ade69",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

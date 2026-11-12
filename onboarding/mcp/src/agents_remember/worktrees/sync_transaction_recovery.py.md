@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/sync_transaction_recovery.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [worktrees overview](overview.md)
@@ -25,109 +15,96 @@ heads were restored when deterministic authority is absent or incomplete.
 ### Logic
 
 `finalize_sync` re-reads and validates the contract and completed work branches, writes the new base
-pair plus sync log, publishes the terminal journal first, then removes temporary worktrees and refs.
+pair plus sync log including actual `codeHeadTo`/`memoryHeadTo` produced heads for landing-chain merge admission, publishes the terminal journal first, then removes temporary worktrees and refs, and
+finally returns the completed result through `with_recomputed_worklist`. What it writes comes from the source strategy (`sync_source_strategy`): a repository-default sync keeps the base pair and writes only its sync-log entry, which also names the source branches and incoming tips; the entry is appended once, because an entry a dead finalization already wrote is recognised as this generation's own (`finalized`, through `owns_log_entry`).
 `_require_completed_branches` proves each final branch head is the exact operation-created head, and
 performs no ledger re-judgement: a completed memory side is proved as Git history, and the derived
 `memory.md` it carries is left to the projection that rebuilds it.
-`completed_sync_result` reconstructs success and distinguishes a current pair from moved-again or
-explicit memory-skipped outcomes. `cancel_sync` publishes cancelling, rolls back only participating
-operation-owned sides, returns every parked candidate, proves contract bases stayed original,
-publishes cancelled, then deletes
-authority.
+The completed answer comes from `completed_sync_result` in `sync_transaction_completion`, which reconstructs success and distinguishes a current pair from moved-again or
+explicit memory-skipped outcomes; "moved again" is read against the source branches the sync recorded, and a repository-default pass says the worktree carries that line with the pair unchanged and answers `syncSource`. `cancel_sync` first proves all-side ownership, then publishes cancelling, rolls back operation-owned output, returns every parked candidate, proves original contract bases, publishes cancelled and retires its stashes and authority. For a repository-default generation `_cancelled_contract` removes only the sync-log entry that generation wrote and never changes the pair.
+
+**A completed sync recomputes the leaf's worklist.** A sync on the contract's own line moved
+the base pair, so B and K_B moved with it (a repository-default sync keeps the pair). `with_recomputed_worklist(result, contract)` calls
+`recompute_knowledge_worklist(contract)` and, when it returns a summary, sets
+`result.payload["knowledgeWorklist"]`; otherwise the result is untouched. `recompute_knowledge_worklist`
+looks up the bound `WorktreeServices.knowledge_worklist` port, reloads the contract (which now holds the new
+base pair) and calls `port.recompute`. The port lookup, the reload and the recompute sit inside one guard:
+an unbound bundle or port, or **any** exception, returns `None`. Both `finalize_sync` and the `continue`
+replay of a completed generation (`sync_transaction_results.terminal_resolution_replay`) use it, so both
+report the worklist of the base pair the sync wrote. The completed result also carries the
+journaled crossing summaries (`successful_crossings` in `sync_transaction_completion`): the same `crossing_summary` view the resolution
+response carries, so a successful sync reports its report identity and alignment counts too.
 
 Unreadable or identity-invalid journals fail closed until explicit cancel. Cancellation first
 archives exact raw bytes or an opaque nonregular entry. With no refs it writes terminal quarantine
 and explicitly makes no heads-restored claim. With refs it reconstructs complete sides, proves
-rollback, and cancels; partial authority restores only complete provable sides and returns bounded
+rollback, and cancels; a default-source ref marks the rebuilt record as a repository-default generation, so that cancel deletes that ref too, and the partial-authority path deletes it as well; partial authority restores only complete provable sides and returns bounded
 manual-repair evidence for what remains. Missing journals follow the same ref-proof path. Terminal
 cleanup is idempotent and republishes strict bytes after residue removal.
+
+Cancellation prechecks every participating side before journal mutation, including pinned heads, live stash ownership and retained worktree/index fingerprints. Both assessment paths use the Git owner's one native reapply expectation; recovery adds no alternate merge result. Later and unproved work is saved in verified binary patches, paths and untracked mirrors before discard and cancelling. Successful cancellation names saved files/digests and deduplicates the assessments' native merge faults in its cancelled summary; unknown attribution is not adopted as transaction output. A save/readback failure returns sync-cancel-save-failed with the unchanged phase and cancel retry. A failure after saving but during discard returns sync-cancel-saved-discard-failed, retains the saved artifacts and directs cancel retry; it is not a promise that no earlier discard occurred. Neither later work nor a native merge fault alone imposes the retired refusal/resolve-and-continue route.
+
+After all sides are proven, cancellation publishes cancelling, discards only attributable output, rolls heads back and restores every parked candidate, including already-restored sides. Terminal cancelled publication precedes `_retire_restored_stashes` and authority deletion. Completed-sync finalization has the same terminal-before-retirement boundary; terminal residue cleanup retries only exact owned resources. An interrupted cancellation keeps its stash authority for the next same action.
 
 ### Conventions
 
 Archive evidence is preserved before repair. Manual repair payloads expose contract bases, observed
 worktree/branch/MERGE_HEAD/ref facts, required proof checks, and the exact retry call, but no private
-ambient inference.
+ambient inference. `manual_repair_result` answers the phase and the cancel arguments, and an `omissions` block when its caller passes one.
 
 ### Invariants And Boundaries
 
 - Terminal journal publication precedes deletion of recovery authority.
 - The completed-branch proof is a Git proof: it never re-reads, or requires rows from, the ledger a
   completed memory side carries.
-- Cancellation restores only the exact pinned pre-sync state and refuses changed contract bases.
+- Cancellation restores pinned pre-sync state; it may undo only the unfinished generation's proven finalized pair and exact trailing sync-log heads. Unrelated contract changes still refuse. A repository-default generation never moved the pair, so cancel removes only its own trailing sync-log entry.
 - Corrupt evidence is archived before quarantine or ref-based rollback.
 - No-refs quarantine means usable terminal sync state, not a false rollback-success claim.
 - Partial authority is preserved for manual repair; incomplete refs are not deleted wholesale.
+- **The worklist recompute never fails a completed sync.** It runs after the terminal journal is
+  published; nothing it does may change the completed result except adding the optional summary. With no
+  port bound, or no worklist applicable (every unconverted leaf), the result is byte-for-byte unchanged.
 
 ## Parked-Candidate Recovery Ownership
 
-`finalize_sync` calls `require_parked_wip_settled(record)` after the completed-branch proof: it
-refuses to finalize while any participating side still parks the candidate it carries, so a carry
-cannot terminate with the WIP stranded in the stash. `cancel_sync` gains the mirror duty. For a side
-in `restore-conflict` it first calls `discard_conflicted_wip_reapply` to clear the conflicted
-reapply (the candidate itself is still safe in its stash), then runs the existing pinned-ref
-rollback, then `restore_cancelled_wip` reapplies the candidate onto the restored pre-sync head and
-drops the stash. If that reapply cannot be proven, cancellation returns
-`sync-cancel-wip-restore-failed` as a manual repair with the stash kept and the pinned refs not
-deleted.
+`finalize_sync` refuses while parked work is unsettled. Cancel assesses both sides before touching either, then discards only operation-owned reapply output while its candidate remains in the kept stash. After rollback, every participating parked candidate is returned, including one already restored before the stop. A failed cancellation reapply reports `sync-cancel-wip-restore-failed` with stash and authority retained for recovery. No ordinary restore drops the stash before terminal publication.
 
 ### Todos
 
 Nonregular-entry, cancellation, and recovery claims are reconciled to the frozen source;
 commit-derived verification remains closeout-owned.
 
-## Docs References
+## Evidence
 
-No Domain Documentation source is configured for this memory root.
+### Docs References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+No external Domain Documentation entries are configured. Source and test assertions are distinguished from execution and acceptance evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The stable store archives raw or opaque journal evidence and projects quarantine. | `SyncOperationStore`; `_quarantined_sync_projection` | mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366; mcp/src/agents_remember/worktrees/sync_transaction_state.py:410-430 |
-| Ref reconstruction and contract/base constraints come from the sync authority module. | `side_record`; `require_record_contract` | mcp/src/agents_remember/worktrees/sync_transaction_authority.py:44-79; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:246-260 |
-| Exact merge attribution and rollback proof are centralized in the Git module. | `exact_created_head`; `rollback_side` | mcp/src/agents_remember/worktrees/sync_transaction_git.py:406-414; mcp/src/agents_remember/worktrees/sync_transaction_git.py:375-403 |
-| Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. | `finalize_sync`; `cancel_sync`; "require_parked_wip_settled(record)"; "restore_cancelled_wip(store, record)" | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:56-92; mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:159-190; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:443-450; mcp/src/agents_remember/worktrees/sync_transaction_authority.py:398-417 |
-| The completed-branch proof addresses only operation-created heads and reads no ledger rows. | `_require_completed_branches` | mcp/src/agents_remember/worktrees/sync_transaction_recovery.py:516-536 |
+- The stable store archives raw or opaque journal evidence and projects quarantine. [1]
 
-## Cross-Repo References
+- Only terminal transactions retire their exact restored stashes. [10]
 
-No cross-repository source is configured for this memory root.
+- Ref reconstruction and contract/base constraints come from the sync authority module. [2]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
-## Update History
+- Rollback proof is centralized in the Git module. [3]
 
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the removed
-  `validate_completed_side` call is the frozen change and the earlier entries record it. Re-checked
-  `_require_completed_branches` `:516-536`: it holds. No wording changed. Verification metadata
-  remains closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/worktrees/sync_transaction_recovery.py` changed since the recorded
-  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
-  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
-  Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (the `validate_completed_side` call and import were removed).
-  Re-read the card against the current source: the card already records that removal, and the cited
-  `_require_completed_branches` range (516-536) still holds. No wording changed; verification
-  metadata remains closeout-owned.
-- 2026-09-14T13:20+02:00 — The ledger ruling reaches the completed-branch proof:
-  `_require_completed_branches` no longer calls `validate_completed_side`, so finalization proves each
-  final head is the exact operation-created head and reads no ledger rows from the memory side it
-  completes. Recorded that in Logic and as a local invariant, added its reference row, and re-derived
-  the `finalize_sync`/`cancel_sync` and Git-module anchors against the current source. Verification
-  remains closeout-owned.
-- 2026-09-11T23:05:00+00:00: The recovery row anchored `require_parked_wip_settled` and `restore_cancelled_wip` as bare symbols; each now resolves three times across the cited files (import and call in `sync_transaction_recovery.py`, definition in `sync_transaction_authority.py`), so the claim could not be compared with its provenance. Those two anchors are now the exact call texts `require_parked_wip_settled(record)` and `restore_cancelled_wip(store, record)`, each occurring once in the cited recovery extents; `finalize_sync`, `cancel_sync`, both cited extents, and the claim's wording are unchanged.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `SyncOperationStore`, `_quarantined_sync_projection` repointed to mcp/src/agents_remember/worktrees/sync_transaction_state.py:172-366, mcp/src/agents_remember/worktrees/sync_transaction_state.py:410-430. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
 
-- 2026-09-10T15:06+02:00 — Parked-candidate recovery ownership: recorded `require_parked_wip_settled` in `finalize_sync` and the cancel path that clears a conflicted reapply, rolls back, and returns the parked candidate (or reports `sync-cancel-wip-restore-failed`). Re-derived the store/authority/Git anchors against the current working tree. Verification remains closeout-owned.
+- Finalization refuses while a side still parks its candidate, and cancellation clears a conflicted reapply, rolls back, and returns the parked candidate or reports a typed manual repair. [4]
 
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of cancellation, finalization,
-  malformed/nonregular journal recovery, and partial-authority manual repair.
 
-- 2026-08-26T02:55+02:00 — Drafted finalization, cancellation, quarantine, and manual-repair
-  onboarding; post-Dagger reconciliation and verification remain open.
+- The completed result gains the recomputed worklist summary; every failure leaves it unchanged. [5]
+
+- The completed-branch proof addresses only operation-created heads and reads no ledger rows. [6]
+
+- A completed sync carries the journaled crossing summaries with their alignment counts. [7]
+
+- All-side ownership prechecks precede cancelling journal mutation. [8]
+
+- Save-first cancellation names actual saved files and digests; native merge faults explain failed attribution in the cancelled summary rather than forcing a later-work refusal. [9]
+
+### Cross-Repo References
+
+No additional configured cross-repository contract is asserted.

@@ -1,0 +1,530 @@
+{
+  "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+        "content": "sha256:46d27c48d9db485a5e7223f8108af0df48d2f3e41fd3342b90dacc12124c69b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_stray_task_file_facts"
+        }
+      },
+      "id": "RLZ-0FXT53",
+      "invariant": "INV-P2NJA4",
+      "origin": {
+        "handoffEntry": "R83-DISCOVERY",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is the only code that reads the copies: the linkage report names each stray and each folder the scan could not read, which is how a person learns the tree holds one.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+        "content": "sha256:cf2561610b0a9af1ebd594476fdbeced7893162885ca3139fb0679c2de945e08",
+        "locator": {
+          "kind": "symbol",
+          "name": "_retired_seat_fact"
+        }
+      },
+      "id": "RLZ-68K2BR",
+      "invariant": "INV-K79KP8",
+      "origin": {
+        "handoffEntry": "L41-R7 note 13",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function writes the linkage fact that says whose seat documents a retired row's file cell names and which of them are there.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The typed masterRef row, SprintSeat and TaskDocument models supply the linkage schema this module writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintSeat"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The operation tuple lists the five linkage operations and the dispatcher sends `retire_master` to the retirement module.\n\nAnchor: `sprint_linkage_operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:19f9f54154deb69ffcb7a3037341c5b442103c17feeb857d7197dd9fc83f76d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "sprint_linkage_operation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Attach validates its full candidate before preview or apply and calls the shared graph-title cardinality owner before publication.\n\nAnchor: `attach_master`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:393877c0e1e64555cf962130e7e0fb578829342498f1400a58e16c45c3739b0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_master"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Detach builds its candidate from the shared pure `_detach_candidate`, validates it, and publishes through `_publish`.\n\nAnchor: `detach_master`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:11f4304273aa5fe945df91e055c91fdd2cc2c7b9d77262802d2b9ff81bf05b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "detach_master"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Apply uses the central title owner and the exact task-document transaction publisher; it does not select a first graph locally.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:df5f1a4ebe8dcb4e12dd1cfe9ecae6b85084ca7b3b60a390f3106c618997d5b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The shared publication helper refuses more than one graph-bearing document and builds the sole qualified title context.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba61924c0c6d86077e472fcbb1704b53f58dbd8c",
+            "content": "sha256:029e36395687bcb19a3110d10d1a8633c0c6a2756ff73e891f0cc6a72c9f3967",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_single_graph_document"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_graph_titles.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The detach candidate removes the typed row, the membership aliases and the graph node, and refuses to empty the graph or to leave an edge touching the node.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "content": "sha256:0826e274eebc2a479127eb632e954f795115e62dcbef168541e48ae02741f1dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_detach_candidate"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_candidates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "content": "sha256:287659b2d7482e5941614c4aea41bfa38d185e3995846373377e5cb8a0005dc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_detached_data"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_candidates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The typed masterRef row, SprintSeat and TaskDocument models supply the linkage schema this module writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:f0c965110373c06c1ab75ce04c6788a02eb667d521394916c104f7bcf4989001",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintSeat"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The typed-linkage cross-check: `masterRef` rows and seats belong only to an orchestration sprint.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:51db4fb96a750b7ef0a6b4b5f44417371715dc65e06acd36e453a30c40981765",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_sprint_rows_and_seats"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "linkage_report is the surviving observation surface; it does not mirror task_doc.get. Non-dry reporting writes JSON and answers factKinds/reportPath under enclosure reports or the UTC-day detail folder; an unwritable destination is a named failure. Dry run computes facts without that per-call report. Best-effort reclamation keeps the bounded 50-member report group. Fact collection remains tolerant, but the whole reporting operation is not guaranteed never to raise. Attach/detach preserve their per-document previews internally; bounded task delivery uses aggregate diff/wouldLose, not rendered document dumps.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The altitude role sets this module relies on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:660d9b2fdc52c99c60da36695056ca5b89069b0cc3154b926ec36483f860c2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SPRINT_ROLES"
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public tool-layer operation routing. Anchor: `task_doc_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:36946f9f594b3e343adf324da581e0d104f623f686bd83a9d2844ab5533ac0ba",
+            "locator": {
+              "end": 1186,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:da66207966111f9ba7d9196396a13f7c5325ea40eed2fe489f1170ec78500d91",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 363
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The shared judgment verifier and completion gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "content": "sha256:e7d7d7f5222fba7c3e9868cdf89c95ccccc5994dd595fb93ad432fe783b0eb11",
+            "locator": {
+              "kind": "symbol",
+              "name": "verify_sprint_judgment_ids"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6f4b96d14134c7f273b63b9edbcd7fd526cb4edc",
+            "content": "sha256:2b210e22397bcbb2de02727b1307d66e3d68968cae6faa1de711857b129e60ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_commanded_masters_completed"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_execution_topology.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rollback-safe batch writer and exact task publication transaction.\n\nAnchor: `write_task_doc_batch` `publish_task_doc_set`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:b6d738f15bd22b7c1c14f2817770b650fdf53fe135338353fc70773d689f5e00",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:6543e82cfa71a38f1f0ddb4c92ba517cdd337bf181e07c119bc10b368774263e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2a64cde126895735be83f19ed1521595ea1c7a01",
+            "content": "sha256:eeeebbb8b4116d017d45350c275b791151d4e162e8d14a9f65126227730694ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_task_doc_batch"
+            },
+            "path": "mcp/src/agents_remember/tasks/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3cdbb47739fd9663671343886ca7985545584789",
+            "content": "sha256:4d206d0dab49978f058b58afa65ebd16a43e03dd1ee6e725c91c5083efa842b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_task_doc_set"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The single-owner authority gate admitting this module as a task-document writer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76f77fef2d9c678794a0d3a11fea9134b912a4a3",
+            "content": "sha256:92d37e2b193db41a7182745fcea6a0f41943d7264ec07cb516453c69824be448",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASK_DOCUMENT_WRITER_AUTHORITIES"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/single_owner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The linkage preflight wraps the served-build check in the linkage error family (L15-R4).\n\nAnchor: `_require_serving_topology_schema` `attach_master` `detach_master`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:0ef2f37134fef4448284a56592d961fa3b0a41359bce4c67f64d14ed1f0aafc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_serving_topology_schema"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:393877c0e1e64555cf962130e7e0fb578829342498f1400a58e16c45c3739b0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "attach_master"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:11f4304273aa5fe945df91e055c91fdd2cc2c7b9d77262802d2b9ff81bf05b56",
+            "locator": {
+              "kind": "symbol",
+              "name": "detach_master"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The F8 fact kinds: sprints excluded from the uncommanded-master scan; unresolved seat-doc rows named.\n\nAnchor: `collect_linkage_facts` `_row_facts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:fe4caa0c6e5ef51f2b168b88005a15f99e4f46721c370ee8cdb67b8d6fb2c388",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_linkage_facts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:d68a0559ae35767208cf5c944faa1f774a6aee25721bdadd5a60ec63ecf2302f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_row_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The current module exposes `SprintLinkageError` and `SprintLinkageRequest` at this ownership boundary; the call context `SprintLinkageCall` is declared in the linkage module.\n\nAnchor: `SprintLinkageError` `SprintLinkageRequest` `SprintLinkageCall`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "30d84dc5cdc2634aabe24bfa2c1935fe650b122e",
+            "content": "sha256:9041e41487456b36794daf760d52093587bfc568530d64d831cf9852f4f3015f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_candidates.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3eac2f250183dcad51cc9ef6846d7f4053faf7de",
+            "content": "sha256:3256aebe343be59dfaacad233edb618791ab8f162665152f9f77588e57a3c9e9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_context.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+            "content": "sha256:dd847fac2054b56fec8c6aafd65ddde455cec04d2d3a8376a61d1425c527e52a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

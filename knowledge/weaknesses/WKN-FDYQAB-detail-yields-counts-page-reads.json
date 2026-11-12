@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "6ca9569b7e2d6609248b68b78a0c854e2e961f70",
+    "content": "sha256:d97df0dd9fc3014f56021cb322b938453a14903bb9f6cf8d608545c62a82f0e6",
+    "locator": {
+      "kind": "symbol",
+      "name": "DETAIL_YIELDS"
+    },
+    "path": "mcp/src/agents_remember/application/review_overview_precompute.py"
+  },
+  "id": "WKN-FDYQAB",
+  "kind": "compute",
+  "origin": {
+    "handoff": {
+      "path": "l201-records-history.json"
+    },
+    "handoffEntry": "w1",
+    "leaf": "260928-MIK-L201",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L201"
+  },
+  "state": "open",
+  "statement": "DETAIL_YIELDS counts page reads, not clicks, so a click's 3-6 page reads strand a detail the person did not click."
+}

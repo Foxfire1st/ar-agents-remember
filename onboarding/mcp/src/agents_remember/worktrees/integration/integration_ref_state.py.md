@@ -2,14 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/integration_ref_state.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:15+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
 | verificationStatus | working-candidate |
-| governingOverview | `overview.md` |
 
 The body describes the uncommitted LCA L9 working candidate. The commit fields identify the latest real commit touching this source file; they do not claim that the candidate is committed or accepted.
 
@@ -44,33 +37,21 @@ Public payloads report before, intended, and observed facts rather than inferrin
 
 No new file-local follow-up is identified by this source reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No domain-documentation source is configured for this slice. The behavior described here is established by current repository source and the authorized LCA L9 change, rather than an invented external reference.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-
-## Repo-Internal References
+### Repo-Internal References
 
 These current source spans identify the implementation owners and the specific assertions supporting the file's behavior. A test definition is evidence of its assertions, not an execution or certification receipt.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Observed objects and public conflict/interruption payloads. | L18-L32; L36-L89; L92-L97; L100-L107 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
-| Exact accepted/intended state classification uses the actual memory output. | L118-L124; L127-L168 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
-| Canonical ref reading preserves stable failure categories. | L171-L205 | [mcp/src/agents_remember/worktrees/integration/integration_ref_state.py](mcp/src/agents_remember/worktrees/integration/integration_ref_state.py) |
+- Observed objects and public conflict/interruption payloads. [1]
+- Exact accepted/intended state classification uses the actual memory output. [2]
+- The total live classifier reads the actual memory output to decide accepted versus intended state. [3]
+- Canonical ref reading preserves stable failure categories. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The operation and fixture boundaries described here are defined by same-repository contracts and Git helpers. No separate cross-repository document is used as evidence for this card.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-
-## Update History
-
-- 2026-09-15T01:15+00:00 — 260913-LCA-L9 working candidate: Changed intended memory-ref classification from retired ledgerCommit to memoryContentCommit; retained missing/unreadable and torn-pair distinctions. Current source and citation targets were checked; the metadata records the last real file commit, and candidate changes remain uncommitted.
-
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.

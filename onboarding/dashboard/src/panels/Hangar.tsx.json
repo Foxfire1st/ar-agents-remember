@@ -1,0 +1,67 @@
+{
+  "path": "dashboard/src/panels/Hangar.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `EnclosureNode` statuses (closeout/integration/cleanup) and existence flags shown/filtered on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:6675e6e29ad874b2806a74cb669fc11217d9577fe7d301d9c1488b8659a5560e",
+            "locator": {
+              "kind": "symbol",
+              "name": "EnclosureNode"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:56ea6fd8e514b3c904078b28103192f1143ce8bcf6150d62159037f4610e3c57",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 148
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:d32d3fa3f9ee309299df68d8e41fcd2129443d1c976d81632c8281b7311b99b4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The running-operation regression proves the durable command is visible and preserved as the full badge title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d424691e3a6ac196a136276f1575955a48f0c53",
+            "content": "sha256:6dabd4b0f55b4c7a9ee0806691010d2397b71502f2b851a78be018092be76c8c",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 140
+            },
+            "path": "dashboard/src/panels/Hangar.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

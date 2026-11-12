@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "Each of the three has a plausible opposite that a reader could expect; deciding them together states what a resumed read may assume about the tree, the entry and the carried state."
+  },
+  "alternatives": [
+    {
+      "option": "Bind the walk to its code tree - a caller-supplied `repositoryRoot` relocates the binding rather than being re-resolved per page - serve entries whole, and re-record a carried entry through the writer instead of keeping a separate `current_carried` state",
+      "reason": "A page that re-resolved its tree could describe code the earlier pages never read, and a walk whose pages disagree is worse than a stale one. MIK-R05 rule 4 already forbids shortening a served entry. A carried entry that the writer re-records has one state, in the record; a second flag would be a second place for the same fact.",
+      "status": "chosen"
+    },
+    {
+      "option": "Re-resolve the tree on every page, shorten served entries, and record carried state beside the record",
+      "reason": "Per-page resolution breaks the walk's premise, shortening contradicts MIK-R05 rule 4, and a parallel carried flag can disagree with the record it describes.",
+      "reconsider_when": "a walk must survive a relocated tree between pages, or a carried entry must outlive the write that would re-record it.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A resumed page names the tree it is bound to, and a relocation is stated rather than assumed.",
+    "No read shortens a served entry, and no `current_carried` state exists beside the record."
+  ],
+  "context": "Three choices in the read look like omissions and are not: what a resumed walk is bound to, whether a served entry may be shortened, and whether a carried entry needs a state of its own.",
+  "decider": "the developer, as the MIK-R73@v1 appendix row 151 states it",
+  "id": "DEC-4XY8DR",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R73",
+        "packet": "requirements/MIK-R73-v1-agent-tool-surface-and-read-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff-repair-4.json"
+    },
+    "handoffEntry": "read-by-design-remainder",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

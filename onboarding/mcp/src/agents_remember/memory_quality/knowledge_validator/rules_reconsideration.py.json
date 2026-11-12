@@ -1,0 +1,146 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reconsideration.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module explains the exact-option complete-link exception rather than an unconditional index prohibition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:c848782bc3599f686d8e1d396a5e07fa6514b7f97f8a098e77f9c7263c79d3de",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Options, linked indexes and the raw decision files of a tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:1a20278d41f4c64e0f3763503a87fb52e6747ba758631747b7e2078bed11a081",
+            "locator": {
+              "kind": "symbol",
+              "name": "_options"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:c767891207c08921d89d1b922859d240198f41226b25a4f71195f197ec24da6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_linked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:ed14277411946071ccdc92b3b0e89e283309450eec4ada0ffbd07b015c3dad5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_decisions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Only moves lacking complete-link equality remain after following unique options on both sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:e1b8a8dc86898abfaec26bdafe4029e72a31f9ed900246cde25bf67a54583d47",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Each remaining move receives the exact option-link recovery and one finding per compared base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:44c819e3b172e513901aba191fa5a06326246aec5874801485155fc2969439a5",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 129
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rule registered on import.\n\nAnchor: `RECONSIDERATION_RULES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9852c4fa906f02f3ecb23e4e745cc44de82d82ae",
+            "content": "sha256:7dc5c973932d0b73a66a3d59f0da70245c5457734900871232b8b563571ad96f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Swap refused twice; reword and append pass; moves into a linked index refused from either side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1176f3ca1d7d895f188bac1a18b73621a5897e93",
+            "content": "sha256:6c2ef4dc7cb430d9ca3d73589947736f199c964bc71a10bbecdedcce90418653",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reorder_of_linked_alternatives_is_refused"
+            },
+            "path": "mcp/tests/test_reconsideration_surfacing.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Mapped indices preserve R14 identity and a deliberately misbound index is the refusing source control; no execution is inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "886a6295ef58c5cdbfa1e1682723c34ea51e94c1",
+            "content": "sha256:57e87619cdfba331edc83c53720555b9dddffd5d872f15adf86f8da15835ccff",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/tests/test_knowledge_decisions.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

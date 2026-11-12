@@ -1,0 +1,420 @@
+{
+  "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:58807b9a9a119fa6c05339021bce2c40289a780e3116578d21540513095f8f14",
+        "locator": {
+          "end": 107,
+          "kind": "line_range",
+          "start": 99
+        }
+      },
+      "id": "RLZ-20AC2N",
+      "invariant": "INV-5M79ZP",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 2",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This block collects every artifact the Orchestrator owes, referring to detailed shapes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-8HSARZ",
+      "invariant": "INV-7FMDAS",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules3,4,5,8,9",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This role may parent agents and therefore owns both upward presentation and downward provenance, including the top-of-chain case.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:586170f032c01e469cc206a21cc7b515199940323564ee5a8d4ea04ae9e6c6ae",
+        "locator": {
+          "end": 8,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-ATVKJ4",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The Orchestrator's opening states that it is selected for concurrent masters or by the developer's explicit single-master request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:20e437212ad5118d6ee8bce72b784f67cb8af518be4342f9ab7fbe7a00e4a15c",
+        "locator": {
+          "end": 89,
+          "kind": "line_range",
+          "start": 89
+        }
+      },
+      "id": "RLZ-D5ZTR6",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph keeps the Manager as the owner of the inner loop and limits the Orchestrator to verifying deliveries and inspecting supplied diffs.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EKQSVP",
+      "invariant": "INV-GWA6VR",
+      "origin": {
+        "handoffEntry": "MIK-R60@v7.1-2",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Always-on role text whose tool-involving pointers now name their tool.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-HB7AP1",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph makes the Orchestrator reuse each existing Manager named by the Architect instead of starting a duplicate.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HRBKB6",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "orchestrator receives the same assignment autonomy and responsibility bounds in its own composed role text.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:117833b28148b422c6bef8c870335839c1ee1bfc67065b1a684128c38c7b3e4a",
+        "locator": {
+          "end": 54,
+          "kind": "line_range",
+          "start": 50
+        }
+      },
+      "id": "RLZ-NHDAV2",
+      "invariant": "INV-NC6F6V",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §9",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The Orchestrator reports a start its permissions forbid to the agent that started it, or in its own chat without one, invents no Architect ID, and assigns a check that belongs to no leaf to an Investigator on its own sprint or one of its masters.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RT5KYP",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The canonical roles/orchestrator.md carries the applicable own-file first-read/task_doc-only write and report/scratch instructions for its role/operation; it is the source the public generator ships.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WH4X9B",
+      "invariant": "INV-9S49CW",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules1,2,2a,5,6,7",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This role/operation source points to operations/orientation.md for developer questions and relayed answers; it is not a self-contained duplicated full-clause home or native delivered-message witness.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:301d424c52ba6e6d0bb090ee1ca7b863e654e0fc5130239d89565b587fdcb799",
+        "locator": {
+          "end": 48,
+          "kind": "line_range",
+          "start": 42
+        }
+      },
+      "id": "RLZ-YF74AS",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The Orchestrator's own-decisions paragraph keeps ordinary readings and rulings with the role and names the same three durable files.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:8076689b4c5ba9d096ae4aa04f425d632d7b21dd5aa5cc33f169d40bacfb899a",
+        "locator": {
+          "end": 68,
+          "kind": "line_range",
+          "start": 58
+        }
+      },
+      "id": "RLZ-ZP7734",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "This paragraph bounds what reaches the Architect for a sprint coordinating agent.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "16": {
+      "note": "Orchestrator coordinates one selected sprint through its Managers, follows started work through canonical facts and verifies delivery without taking over the Manager's leaf diff, repair and evidence loop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:586170f032c01e469cc206a21cc7b515199940323564ee5a8d4ea04ae9e6c6ae",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:8589a5349ec6cc7190254f234cd811c28e5c53530e9ee9e948344c8e8caa74de",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:20e437212ad5118d6ee8bce72b784f67cb8af518be4342f9ab7fbe7a00e4a15c",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The Orchestrator Result contract names its rulings and status artifacts, developer-decision and final report-path messages, verified Manager delivery and separately addressed reports, findings, review, curation and publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:efcd5555d0f07ddd0814e151f886796630afe2bd730a7b4d5328cd31f2103f56",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A parent-started Orchestrator sends upward only developer-needed matters, permission notices and one final report-path message, continues independent work when delivery is held or refused, and uses its own chat for developer decisions when dashboard-started without a parent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:5b4a717f77ff9d7749fe2dee46ae3db12ce40339d99ec2fac87af5bc0da937d3",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:1b77911b099fbe581f26c639c2d18c8db76b1823ff85105afa01ea56e64223db",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Orchestrator may assign an Investigator a concern under its own sprint or sprint/master, never a leaf; the scoped concern is its first message to the returned Investigator ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:61b05b05af80ffaa49730428efa8419e3a2ebfcecdc0810585adf20f0e61034d",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Orchestrator keeps canonical sprint/master containment, Manager leaf ownership, separately addressed review/publication evidence and actual-parent developer questions. Held child permissions use the coordination notice route; covered correct-write recovery is separate from product guards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:20e437212ad5118d6ee8bce72b784f67cb8af518be4342f9ab7fbe7a00e4a15c",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:a48e3739547892ee683e09213d50336af7dd4935dac330b5e41274d8c8a4e4b0",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:80c44cdd9f2365e49c16dd8837f0f9d4b0d67c5bb0d915509f4878e9be0b5407",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:9c6688ba0cb583c7ceb6ba9e2d2aed15309b5699c60e87136cf622e40d5e4909",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59ba88ee7d6793b44fd000ef34192c69a31f9f5b",
+            "content": "sha256:0423c63d873969296820c17d7e9628363f5f7928d402a36fb0e86317d7995afa",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 77
+            },
+            "path": "skills/l-01-agent-lifecycles/core/every-role.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

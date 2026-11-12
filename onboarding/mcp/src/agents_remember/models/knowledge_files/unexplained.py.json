@@ -1,0 +1,417 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge_files/unexplained.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared subject spellings and coverage-split lookup; higher-level worklist/gate checks own source currency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The history row kind built on these patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7c13e7df1327acccc4ecd9c10b2da7c4c70c59b",
+            "content": "sha256:b297338c0e33a8419088ba8d4744a1f9dcfceecfb4895f5f8cfde191bb2ba85d",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnexplainedChangeRow"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Every case checks `predicates.unexplained_row_open` over parsed history/GateContext against the worklist's stored `satisfiedBy`, including onboarding source currency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "content": "sha256:6f8002b9283cff38025ecc1a0ad675670e7d9c5beae775a41494eb5bf975f192",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "content": "sha256:e01774e8be21080b22842949059a2a241368aa6e9025ebaaf655a2d932d041a1",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current source delta inspected statically: Remove counted-change export/answer and one-helper agreement warrant; distinguish pure lookup from currency, preserving subject spellings and markers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The kinds, `no_invariant`, `absent` and coverage states; the removed `COUNTED_CHANGE` symbol is not current evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The subject patterns and the row-subject pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:b90ec4b9ec1ccef5ccd8fce75f170764dc9967dbb8f4e67da30b8d54e584688d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROW_SUBJECT_PATTERN"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hunk subject spelled and parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:b60772fe790f4832181aa4f66c9c87bd180b2370af8e0453cf60022db632429f",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunk_subject"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:7b90b75254d921a08c81d136246d63f3ff9e3f3f8df2311bd34bbc44d12429e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_hunk_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The item ID is a function of the subject alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:644f7c2670e9b292710844ac61a53a178829bd9035aa3709d6452bfe139eff3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "hunk_item_id"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The file subject, `@absent` when C lacks the path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:007db88111eef14712699f7872147c27496052b491a691770344698d72bfc7b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "file_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The row subject that answers an item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:ad9ec2c22eec119da0e1f85f0e9a1c3e98d1a4db4edcc86585c98e77550f7a54",
+            "locator": {
+              "kind": "symbol",
+              "name": "row_subject"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Covered: row-subject lookup; uncovered: onboarding-subject row-ID lookup, never a counted-edit answer. Source currency is checked outside this pure helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:885ccec502fbc78036af9ebbc2ed25d9670b76d302d528e05b29900f5e026698",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 118
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The pure Boolean lookup wrapper is not the current gate owner; the source-bound gate predicate is `application/knowledge_gate/predicates.unexplained_row_open`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:2a46a8dd16dfde5feba21f8eceb0501ea84a0672ae07caaaa874b0acaea2df6a",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:a826dcaf32667a86c5fb427fb505f7db150fc71f13a1ca8ed060079d6e026935",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cb79edf633cadb4bd29fd54e3d43c163348e7cff",
+            "content": "sha256:bbd4b5be79509e4672805c7341760354975da7eb5562138362e7d0c7c4d5d272",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:0236ef6609c2695767eb23d22cd2bda6854aef3d44f595219f74158857411668",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 487
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

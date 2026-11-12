@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/l89.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Capture custody and absent newer fields\n\nAnchor: \"\"scope\": \"Two card reads of the review route, captured by GET from the running dashboard on 2026-10-19 by the helpers of investigator eb128232 for the D356/D367\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "308bf44ea8ad35ff147b297e6ba349f1f84b401a",
+            "content": "sha256:2a6dd10f02a1b9d7ec3e599ed56b942cd62b9f25599d96e68922288059ec5e20",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Two response identities, hashes and request parameters\n\nAnchor: \"\"invariants\": \"the 15 added or changed subjects of the investigator's listing (changeSetOrder.test-utils.ts L104_ROWS)\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "308bf44ea8ad35ff147b297e6ba349f1f84b401a",
+            "content": "sha256:34ff9b246fe8188a99c03e65723a5a881193784ec8d09a0b2cad50c6a969800c",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Recorded outline source and disclosed synthetic rows\n\nAnchor: \"\"l181\": \"INV-1ZKP4R changed, effect weaken, no family (mockup data-real.js); two unchanged rows beside it are synthetic and named INV-0SYNTH and INV-ZSYNTH\"\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "308bf44ea8ad35ff147b297e6ba349f1f84b401a",
+            "content": "sha256:158cb323e206704916ed3a4c64b8bf8b2394de3e8c3644e01632280272a3aa42",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

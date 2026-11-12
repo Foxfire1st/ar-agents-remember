@@ -1,0 +1,89 @@
+{
+  "path": "dashboard/src/panels/TaskNotes.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The component under test.\n\nAnchor: `TaskNotes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:86768c2f73aaf4211588f49da8c710642ab6022be7819a385f6c57cfec332997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The folder entry type shaped by the suite's stub payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "content": "sha256:ed92c2d96120e9edf1b9316ca0e8c1f7629e9bed17074a44422870c862c37b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "FolderEntry"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The component suite's `stubNotesApi` returns the directly evidenced folder payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3070c20a72bc518963b29b04d09db5b95b740dc8",
+            "content": "sha256:134a933e56a511a5e566e303585f98a625b7fea05bcf74f76897c8b126d07123",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubNotesApi"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reader suite covers the content pane this entry surface opens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:03e3c301f302e5a9f9a018a62b682cb232d944b516731c65b285b88018a36549",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Equal content does not repeat resolution; changing content posts the current list, while the empty-list to one-empty-text regression retains the historical joined-key equivalence. [5]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3070c20a72bc518963b29b04d09db5b95b740dc8",
+            "content": "sha256:ec26ac1cd2b746532197dfed2fd84b2dfbec607b94f58af69433697b7cfa8d47",
+            "locator": {
+              "end": 241,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

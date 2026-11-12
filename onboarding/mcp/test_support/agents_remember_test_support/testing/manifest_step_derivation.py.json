@@ -1,0 +1,92 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/manifest_step_derivation.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+        "content": "sha256:7bafa336b2e27febe2158cd3a9e81a3dd3465c184a36f94b2a13f35277198532",
+        "locator": {
+          "kind": "symbol",
+          "name": "action_of"
+        }
+      },
+      "id": "RLZ-7K8GSY",
+      "invariant": "INV-Q2HENX",
+      "origin": {
+        "handoffEntry": "MIK-R84@v12 part 5 + v14 rules 1-3 / one pointer per action",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function derives a pointer's action from its Before/When/For clause, which the step and uniqueness checks compare.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+        "content": "sha256:62e7448b7643774adb11250dfe52a60518074ef7016c945540668d67463cf7ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "manifest_mismatches"
+        }
+      },
+      "id": "RLZ-E7KT1Y",
+      "invariant": "INV-HJ5A68",
+      "origin": {
+        "handoffEntry": "L84-P5-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function compares each declared step with the actions of the pointers to its file and lists every mismatch.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A pointer's action is its sentence's opening Before/When/For clause, or none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+            "content": "sha256:7bafa336b2e27febe2158cd3a9e81a3dd3465c184a36f94b2a13f35277198532",
+            "locator": {
+              "kind": "symbol",
+              "name": "action_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Step and roles are derived for every manifest reference that declares a step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+            "content": "sha256:80f3438c3bfd0f4221eb355b1a9f16e71f381a27ab67eec98e8458acd4357066",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declared step and roles must equal the derived ones, widened only by a nonempty roles reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fa2c3768290b95d032449df5f094b9ada58ee8",
+            "content": "sha256:62e7448b7643774adb11250dfe52a60518074ef7016c945540668d67463cf7ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "manifest_mismatches"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

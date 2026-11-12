@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Raising the websockets pin and constraining the three macOS wheels were both weighed against keeping the lock as resolved, and a later release or platform floor change has to reconsider the two consequences named here."
+  },
+  "alternatives": [
+    {
+      "option": "Keep the dependency set exactly as the lock resolved it on 3.14.",
+      "reason": "Rule 4: no dependency is changed that the move does not need; the reviewer decided the pins stay and owner ruling OR-R020 confirms it, with the consequences named instead of repaired.",
+      "status": "chosen"
+    },
+    {
+      "option": "Raise the websockets pin to a release with a cp314 wheel, or override the wheel.",
+      "reason": "A dependency change the move does not need, and the accelerator's absence was not measured to matter.",
+      "reconsider_when": "A measured workload shows the missing speedups, or the pin's release line publishes a cp314 wheel.",
+      "status": "rejected"
+    },
+    {
+      "option": "Constrain apsw, tiktoken and tree-sitter to wheels that support macOS 10.13.",
+      "reason": "It would change dependencies for a platform floor the move does not change; the pins stay.",
+      "reconsider_when": "A supported macOS x86_64 target below 10.15 appears.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The 3.14 environment runs websockets without its compiled accelerator; no behaviour or speed effect was measured.",
+    "The three named wheels need macOS 10.15 on x86_64; a 10.13-only x86_64 target is not covered."
+  ],
+  "context": "MIK-R91 rule 4 requires the lock to be the one the project files resolve to on 3.14 without changing a dependency the move does not need. On 3.14 the unchanged websockets 15.0.1 pin has no cp314 wheel, so the pure-Python wheel installs and websockets.speedups is not importable in the running 3.14.8 environment; on macOS x86_64 the wheels of apsw, tiktoken and tree-sitter require 10.15 where the 3.13 wheels required 10.13.",
+  "decider": "reviewer L91-F8 under MIK-R91@v1 rule 4, confirmed by owner ruling OR-R020",
+  "id": "DEC-PPC47C",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "d07475d177eb4075c3a88809317f929aa4c070aa",
+        "content": "sha256:8d6ce05195341449e519635a2c45fb3e9ab5c95c4cad8f4992082afe12f20a50",
+        "locator": {
+          "end": 1472,
+          "kind": "line_range",
+          "start": 1466
+        },
+        "path": "mcp/uv.lock"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R91",
+        "packet": "requirements/MIK-R91-v1-the-product-runs-on-python-3-14.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer F8 (route B, B-4 and B-5): the websockets record at mcp/uv.lock:1466-1472 holds one py3-none-any wheel on the candidate where the base held twelve, and websockets.speedups is not importable in the running 3.14.8 environment; apsw, tiktoken and tree-sitter carry macosx_10_15_x86_64 wheels where the base lock held macosx_10_13_x86_64. No behaviour or speed effect was measured."
+      ],
+      "path": "notes/reports/260928-MIK-L91-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R91@v1-lock-pins-on-3-14",
+    "leaf": "260928-MIK-L91",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

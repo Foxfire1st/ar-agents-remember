@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_explainer_service.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_closed_seat_is_resumed_by_the_send_that_reaches_it` protects a closed seat being resumed by the send that reaches it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "content": "sha256:534b38dce0eda16be859529462f482c27a9ee72bb4bf1c77003f731b366d4868",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_seat_is_resumed_by_the_send_that_reaches_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_build_faulted_before_the_seat_rolls_back_every_effect` protects a faulted pre-seat build leaving zero partials.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "content": "sha256:7ae92c3f8330f24ff5b0e4f1b61640e4504ef08fac1160c3d49bc4f0c303748e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_build_faulted_before_the_seat_rolls_back_every_effect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The case `test_failed_retire_stays_pending_and_resumes_original_receipt_and_prunes_gone_grades` protects a failed Retire staying pending and resuming its own receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "content": "sha256:0fc2029ab8f4dc0f850c9f21165f0426151b74aacebfb429c9ea8758be800378",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_retire_stays_pending_and_resumes_original_receipt_and_prunes_gone_grades"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The case `test_a_comparison_that_moves_during_the_build_wins_over_the_packet` protects a comparison that moved mid-build winning over the packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e0a0c9c967717b5d7f8c9da875b4ab41d1aa7de",
+            "content": "sha256:9dfd56a35106cd22a1c0ce077468d43ad80d6125251b219d4ef1ceea24277290",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_comparison_that_moves_during_the_build_wins_over_the_packet"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

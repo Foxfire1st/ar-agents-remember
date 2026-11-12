@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/detail-panel/completed-tasks.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Seeded completed-table cases assert time/number ordering, preview and retained non-completed/sprint order, not timestamp production.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972379661df5248133ad722ce2285f700ca00755",
+            "content": "sha256:0d135dbf0fbe04047a225908ccef11f0edef61aab9a03a46c6e6cdf8750ddbad",
+            "locator": {
+              "end": 117,
+              "kind": "line_range",
+              "start": 48
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parameterized lookup control uses 100 and 300 rows in whole-list and preview modes, plus an entry with no summary. A Proxy counts native task-map reads: preparation equals the uninstrumented result with size + 1 reads; mounted HTML is identical, qualified child navigation is checked, and preview shows five rows. In whole-list mode the missing-document row is observed before clicking the number and completed sort controls. After those clicks the test asserts only the total read bound, reads <= (size + 1) * 4; it does not reassert that row's presence or position. This is source-defined evidence, not a fresh test, timing or performance run; no docPath getter is instrumented.\n\nAnchor: complete parameterized lookup assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972379661df5248133ad722ce2285f700ca00755",
+            "content": "sha256:c50e406178da9da270152644fd165fb204710dc77197baf187baf8e78af67e94",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The dataset supplies served task entries with explicit summary.completedAt values and canonical parent/child keys.\n\nAnchor: dataset definition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "972379661df5248133ad722ce2285f700ca00755",
+            "content": "sha256:b8637dbf71968d08e41463bfa69568d76e792102781e093a93faf87ad1ccf439",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "A half-prepared host that reports nothing leaves the user with a daemon and a broken install and no way to tell which; the cases pin the stage and the retained effects."
+  },
+  "applicability": "Any failed first-run preparation, provisioning or plug-in load response.",
+  "conditions": [
+    "The response names the stage that failed and every effect already completed.",
+    "A daemon left running is reported rather than hidden."
+  ],
+  "exclusions": [
+    "Successful answers, which report the seat instead."
+  ],
+  "id": "INV-Y6WN6Y",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/native-review.md N7; final-a3/source-witnesses.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B06",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every failed preparation response identifies its stage, all prior partial effects and any daemon left running.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,36 @@
+{
+  "path": "dashboard/src/panels/detail-panel/skeleton-order.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Full/bare fixed form order, one objective, actual TaskReader chrome, shared block classes and nonGoals/acceptance expansion remain asserted using native entry/summary/tree inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "77edbbc0b598150dac549cb20cfc1c3303b07b39",
+            "content": "sha256:b7c98f30d29ec849edf2aac8c0c59d29597ce6bd0b1c7ce700b284cb557a909d",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "77edbbc0b598150dac549cb20cfc1c3303b07b39",
+            "content": "sha256:98c1534dfb95f8c96c2829b3ca119140cf5e968f212364a031acfee58a399fb6",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 418
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,423 @@
+{
+  "path": "mcp/tests/test_review_read_latency.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:d60f5903dad836bed90d610df54f3b1c4e4dc506538f44275f33e9dfc143955e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+        }
+      },
+      "facet": "Matching held conversion inputs avoid mktree/hash-object and preserve the full body; each mismatched input and absent tree recomputes.",
+      "id": "PRF-45KFFF",
+      "invariant": "INV-2172NS",
+      "origin": {
+        "handoffEntry": "L40-held-converted-base",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:6d9953dcbd159e4a05c7aa8e18efb049fd42ea51b3ec62685e425f1b2591e285",
+        "locator": {
+          "end": 307,
+          "kind": "line_range",
+          "start": 277
+        }
+      },
+      "facet": "Code and memory changes between resolution and publication retain candidate_unresolved refusal.",
+      "id": "PRF-8NWSBZ",
+      "invariant": "INV-61Y147",
+      "origin": {
+        "handoffEntry": "L40-one-resolution",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:4c3f3a30d164c6bb0614de5ad42b2ad7e705671deae823ac73778c8d6bed1948",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_view_behind_which_a_read_failed_is_never_kept"
+        }
+      },
+      "facet": "Each incomplete isolated-worklist answer recomputes and leaves the leaf-view memo empty; the next complete answer may be memoized. Changed or conflicting outside-tree input observations cause misses. This is worklist memo recovery, not aggregate Git-diff failure or patch recovery.",
+      "id": "PRF-DHRMPP",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L86-A2-facet-replacement-PRF-E4BSR5",
+        "leaf": "260928-MIK-L86"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:86a85d1897b8cf55eea94527e0dff80a2d826bfa31e5713d74512cd72f116636",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
+        }
+      },
+      "facet": "Permission and absence failures in an unrelated canonical task JSON read remain observed even when the worklist completes; neither failure identity enters a kept view.",
+      "id": "PRF-GMC5WP",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:0c9d99fb6ddff32557344dd65f9f7c659a13da3f9d899712575050e7a177ff57",
+        "locator": {
+          "end": 275,
+          "kind": "line_range",
+          "start": 229
+        }
+      },
+      "facet": "The actual dashboard port resolves once, captures each worktree for resolution and publication recheck, preserves index bytes and returns the comparison body.",
+      "id": "PRF-KH4W06",
+      "invariant": "INV-61Y147",
+      "origin": {
+        "handoffEntry": "L40-one-resolution",
+        "leaf": "260928-MIK-L40"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:5c738541ebcebefb5c54b397c881ae93421a101ecff354e2f5b4ec0845707c9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_removed_recorded_tree_is_never_served_from_the_kept_answer"
+        }
+      },
+      "facet": "A recorded tree that can no longer be read produces the fresh answer instead of the kept inventory.",
+      "id": "PRF-KVT76Z",
+      "invariant": "INV-YTPBCF",
+      "origin": {
+        "handoffEntry": "L177-INV-RECORDED-ANSWER-REUSE",
+        "leaf": "260928-MIK-L177"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+        }
+      },
+      "facet": "Three task-edit timings around the isolated child's computation each refuse with inputs_changing and keep no view entry, and a stable next read equals fresh original input; the between-lookups callback is patched in the parent process only, not inside the child's lookups.",
+      "id": "PRF-Q5RPS3",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L57-M1-facet-PRF-YZPTEQ-replacement",
+        "leaf": "260928-MIK-L57"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:1032fcb8f96d63f8fcf3e79397ad48101ed7286e0412ede151587bdc099956ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
+        }
+      },
+      "facet": "Held comparison trees feed the existing worklist without another capture and edits invalidate the shared computation.",
+      "id": "PRF-RWW8CB",
+      "invariant": "INV-5M9WY3",
+      "origin": {
+        "handoffEntry": "L40-actual-read-memo",
+        "leaf": "260928-MIK-L40"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+        "content": "sha256:8a3d32e86d5e64aa7e12b559654d3e5ce2e4f7d65558ca7dcd8465e54c810805",
+        "locator": {
+          "end": 798,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-AKBEXR",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Historical attachment of the already-retired L86/R87 carriage record; source callback adaptation is not a new execution or current native acceptance claim.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "A held converted base tree is not written again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:d60f5903dad836bed90d610df54f3b1c4e4dc506538f44275f33e9dfc143955e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_converted_base_tree_git_holds_is_not_written_again"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The leaf-wide view passes the captured trees and base commits and is computed once.\n\nAnchor: `test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "An incomplete worklist recomputes and is not kept; the next complete worklist may be memoized, while changed/conflicting external-input observations cause misses. No memory-patch failure/recovery is asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "An unreadable or absent task input is observed and nothing is kept.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:86a85d1897b8cf55eea94527e0dff80a2d826bfa31e5713d74512cd72f116636",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_task_input_is_observed_and_never_memoized_even_when_the_worklist_completes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "An edit restored during the computation is computed twice and answered as inputs_changing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:926061922e555bd502b491b56c00c250273dc9c1db29bd4c91ce4cb39f9bce08",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_task_edit_restored_during_computation_refuses_and_the_next_read_uses_original_inputs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "A read after an edit shows the new content.  Anchor: `test_a_read_after_an_edit_shows_the_new_content_and_nothing_composed_is_kept`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "The shared owner establishes a same-size rewrite in the index-write second.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "content": "sha256:427a3170de3c18a4b9b2fa18b40b88af6155a0aacd80a820c91eff7804374dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_in_the_second_of_the_index_write"
+            },
+            "path": "mcp/tests/knowledge_index_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The live leaf view computes once for an unchanged exact comparison, with subsequent edits changing the computation key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:1032fcb8f96d63f8fcf3e79397ad48101ed7286e0412ede151587bdc099956ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_leaf_wide_view_captures_nothing_itself_and_is_computed_once_per_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "An explicit negative assertion forbids a diff invocation containing both comparison memory trees.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:df4ccd09aae1a4267a4b2fe41b84991219c431b0ead6fae6eb636ea13ef50341",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 492
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "The worklist receives the comparison's candidate trees and base commits; it performs no directory snapshot or code capture of its own.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:513da189787a4d586882ec602c928e8e05d81b70635116cf08a3ef294e54eb36",
+            "locator": {
+              "end": 508,
+              "kind": "line_range",
+              "start": 498
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "the recorded leaf-view declaration distinguishes persisted and absent worklists while retaining code facts, refuses malformed and unreadable inputs, checks read identities and leaves LEAF_VIEW_MEMO empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:ef22b8c17e735a9cf6ccb3a4d336bf7fd842d6cb4dbb413c4ad716605beeefd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_recorded_leaf_view_observes_its_stored_worklist_and_keeps_absence_distinct"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Entry and summary adapters provide the optional comparison argument.\n\nAnchor: \"class Ports:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:abdcd3490edf8c45a3db6ae73ce98fddf53ac8800db5b5e05ce8cb0529067ec1",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 122
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The module docstring: the port every case enters through and the machine-independent counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:b61466af54b91b3256a9fd3896f54c206295f1d815d8a0cce5d13ee518fa8a12",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The four review ports as the routes call them.\n\nAnchor: `Ports`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The subject read matches direct read_knowledge_review composition, carries judgment, resolves once and captures each worktree once.\n\nAnchor: `test_a_subject_read_resolves_once_and_captures_each_worktree_once_and_for_the_recheck`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:889b4d4df7f6c4f3fa6078a9b27d3909316d5c1874d01fd04c3acf2a887d7c35",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The recheck refuses a moved candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba9ada60f9f10e5dd378a3092de6a1f4425a5f2",
+            "content": "sha256:f601641214b1eb356b7fa0682c3ebb92975611a6f4a7c21f4cbc6efd13d878f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_recheck_still_refuses_a_candidate_that_moved_while_the_review_was_composed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

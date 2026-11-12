@@ -1,0 +1,239 @@
+{
+  "path": "dashboard/src/data/useReviewCatalogue.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+        "content": "sha256:a06a0577c507ae8ea0c05c51868869bb79ddc0b5cae302aa4c9d68840ca2d62a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReviewCatalogueKey"
+        }
+      },
+      "id": "RLZ-1FTB4X",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L89-W7-DATA-NUMBERED-CATALOGUE",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Carries a specific recorded comparison number independently of the live history/generation fields; the already-owned hook includes it in its question key and request.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+        "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReviewCatalogue"
+        }
+      },
+      "id": "RLZ-6VEXGB6W",
+      "invariant": "INV-555EHWM8",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Files each catalogue answer under its comparisonKey (repo/master/leaf/history) and lets only the latest mounted request store one. It returns a loading state instead of the stored rows whenever those rows' comparisonKey differs from the current comparison, so another task's entries are never shown while this task's read is pending.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+        "content": "sha256:e7add9c951fdefe356d65db54a6b28af26a88b5018c14b9024b15f132747c20e",
+        "locator": {
+          "end": 144,
+          "kind": "line_range",
+          "start": 93
+        }
+      },
+      "id": "RLZ-DGEFJX48",
+      "invariant": "INV-115RDW8H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Keys the reviewer catalogue by repo/master/leaf/history, chosen comparison number and snapshot generation, issues one request for the current key or explicit refresh, and admits only the latest mounted answer. Task entry makes no catalogue call.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+        "content": "sha256:8d0358a1698ce333974b31c03b49883f59b328ab7cfbb7a0a47ba1128e15fa3d",
+        "locator": {
+          "kind": "symbol",
+          "name": "catalogueForComparison"
+        }
+      },
+      "id": "RLZ-TC1MNR",
+      "invariant": "INV-CZVMX3",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F04",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It synchronously quarantines old outline semantics against the current code/knowledge generation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Who owns the read (the reviewer, not the entry) and why the key is the comparison's identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:819af014e3a17532b9e512c5567cc46db32442cc30d24465a591aacea1131559",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Stored and observed generations are reconciled\n\nAnchor: `boundGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:3dedbc11b25a953cc8e6ee72e62e672b1b95ed9150e4667861efb0a87a1c7012",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The read state, now without the analytics `facts`/`stale` fields.\n\nAnchor: `ReviewCatalogueRead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The comparison key: task context, record and generation.\n\nAnchor: `ReviewCatalogueKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The answer mapping.\n\nAnchor: `catalogueAnswer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The hook: keyed read, sequence guard, refresh.\n\nAnchor: `useReviewCatalogue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Its caller, which bumps the generation on a new snapshot pair.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:6049d62ac59090a2802737684c68740b10088e8afb867f789df48d2bef706334",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Catalogue reads carry generation and outline",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:02a3f9456a9310fbb72aebe0e6f9018d601762353a04229c438f3e109a517285",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCatalogueRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The server's outline is lifted onto the read",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:070907c52af1fc877d05b0ffd58eefaac102dd9de162489163b38dba8a56dbf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogueAnswer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A moved comparison clears entries and outline together",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:8d0358a1698ce333974b31c03b49883f59b328ab7cfbb7a0a47ba1128e15fa3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "catalogueForComparison"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

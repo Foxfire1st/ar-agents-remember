@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reading/LocationGroup.test.tsx",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The group expands from its quiet more control to all 31 rows.\n\nAnchor: \"// The review's shared control look (ReviewLayout.tsx `reviewRoot`), read back from its class as\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61d7d609e37d3deb2879b7cbe8a09aeaa5661caf",
+            "content": "sha256:93a27a492e2a815c7f2e7b979b176b297d8ad67a83157ee4cdf51687c70fbd7d",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Opened rows use the full role vocabulary and the first unchanged role is primary-authority.\n\nAnchor: \"// Ruling 9498d6e4 (mockup app.js `groupBox`: `l.role`): an opened group's rows name each location's\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61d7d609e37d3deb2879b7cbe8a09aeaa5661caf",
+            "content": "sha256:87646e96277b761c9749dca15800e4705137c59d38412dd68b51d137b8fe2de7",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

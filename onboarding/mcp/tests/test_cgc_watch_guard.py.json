@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_cgc_watch_guard.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Wait for ready gives up after deadline.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16dd05e81f57259cd2c6a8f3d7ac650ef48d7f7c",
+            "content": "sha256:a754c873662e7b96e76b304577d9ca30ad740396a544e1faabc0be2c35a0df3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_wait_for_ready_gives_up_after_deadline"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Clear poisoned graph keeps indexed graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16dd05e81f57259cd2c6a8f3d7ac650ef48d7f7c",
+            "content": "sha256:f64bf0fda640410c8ba6a27cfd5bd745d419c71b660cf456e9e7ab69840d1425",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_clear_poisoned_graph_keeps_indexed_graph"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Main checks graph then execs cgc.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16dd05e81f57259cd2c6a8f3d7ac650ef48d7f7c",
+            "content": "sha256:f54c4250766c17936b93f78f2510c787e9a7089b760b653a1ae06b2f9e08c034",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_main_checks_graph_then_execs_cgc"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/data/keymap/reserved.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "BROWSER_FORBIDDEN is declaration data; no PTY reserved/matching owner remains.\n\nAnchor: `dashboard/src/data/keymap/reserved.ts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2c529800964b00ab8cc302b9be0d78aece71ce",
+            "content": "sha256:13bedf8d606cd1006ac94f155ee854d92e195952d3d9e3367148c7af424a892c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

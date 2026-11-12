@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_cleanup_kept_line_branch_deletion.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Kept-line branch deletion to the deleted branches is pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b237bdca542e35dd9afb2be240b413c3b11ed2bc",
+            "content": "sha256:10ed2829916126818b7b8d5bf85a1c685b7f6d4b574ce6c2ac74d08846bb4186",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

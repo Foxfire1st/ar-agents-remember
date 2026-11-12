@@ -1,0 +1,29 @@
+{
+  "boundary": "The packet's rule 5 asks only that this product removes nothing when it archives an agent. The host's archive stamps the record and keeps it; no retention duration was found or claimed, and ordinary provider-session contents were not opened.",
+  "id": "LIM-MNF5S7",
+  "limited": "A claim about how long the host keeps an archived agent's chat readable.",
+  "links": [
+    {
+      "relation": "bounds",
+      "target": "INV-9VQQ7W"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_current_history_retry_and_other_selections_preserve_every_artifact; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 5",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-limitation/v1",
+  "status": "proposed",
+  "unsupported": [
+    "No claim about the host's chat retention duration or availability.",
+    "No claim that this product deletes any report, handover, launch record or chat."
+  ]
+}

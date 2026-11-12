@@ -1,0 +1,127 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/finalize.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+        "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleFinalizeTaskResponse"
+        }
+      },
+      "id": "RLZ-A9DDYM",
+      "invariant": "INV-FEB6Y6",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 7",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "The finalize response carries the archive report, so the closing answer can name archived, owed and left-alone targets.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+        "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleFinalizeTaskResponse"
+        }
+      },
+      "id": "RLZ-WT6T54",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The finalize response's two new dictionaries.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Strict tool response base class is defined here.\n\nAnchor: \"class StrictResponseModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e13076db126a04a1f38984bfb6dc23884bff6a",
+            "content": "sha256:ac1d11f8dcec1fbbaf192dec3dc2a73f56f9cd3a9144cdea6cc963328541dbba",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/models/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public response registry maps `lifecycle_finalize_task` to this model. Anchor: `lifecycle_finalize_task`  The deleted representative-payload cases are historical and provide no current pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:0db325a8ce4ad401b18bedd0cf6ab450be2014fd8159b67ba98db9dfe0f1ec54",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The strict finalizer wire declaration retains archive/projection and both optional atomic-series fields, and no auto-close/auto-land seat lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+            "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "577a92e863791fec4b42d0d4c2079abb25ba454c",
+            "content": "sha256:3aee53ff2f2525db01a482f8878179a23c701b66f05645a38d36c3af0cb997dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleFinalizeTaskResponse"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`lifecycle_finalize_task_tool` confines the contract and any named task or master document path, finalizes with the call's dry-run and provider-teardown flags, and answers that result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:b8faaf2501a5033229fa895857ad0fa63834078ab0ae0949c4f02042f7dff1ee",
+            "locator": {
+              "end": 862,
+              "kind": "line_range",
+              "start": 836
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

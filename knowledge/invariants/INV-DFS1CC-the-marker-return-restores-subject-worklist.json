@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A stale setter interface can make return fail after the subject changes, losing the captured reading position."
+  },
+  "applicability": "Return from a followed intent marker in the existing review workspace.",
+  "conditions": [
+    "Capture holds subject, chosen family context and worklist only.",
+    "Restore selects captured subject/context before restoring worklist because choosing a subject leaves worklist.",
+    "The tree-focus request is cleared for marker return."
+  ],
+  "exclusions": [
+    "Removed workspace opened-file, layout and Full file state is not reconstructed.",
+    "Comparison-viewer Back/Escape is a separate return path."
+  ],
+  "id": "INV-DFS1CC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "markerNavigation.test.ts 5/5 green; temporary real-store probe (useWorkspaceState capture/restore) 1/1, then removed (s3-triage.log)"
+      ],
+      "path": "handoff-supported.json"
+    },
+    "handoffEntry": "MIK-L154 marker return worklist",
+    "leaf": "260928-MIK-L154",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Returning from a followed marker restores the captured subject and family context before the worklist view, and clears the tree-focus request on return.",
+  "status": "proposed",
+  "supersedes": []
+}

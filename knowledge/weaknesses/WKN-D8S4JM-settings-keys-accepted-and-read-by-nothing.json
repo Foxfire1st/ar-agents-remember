@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+    "content": "sha256:045dbc5a1afd42155c8a970a08eadf0a3a819e1c69909a44717497d5db1bd514",
+    "locator": {
+      "kind": "symbol",
+      "name": "config_from_mapping"
+    },
+    "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+  },
+  "id": "WKN-D8S4JM",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-37",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The loaders accept settings keys that nothing reads: benchmarksEnabled here and orchestration.qualityGate.memoryCapBytes; paseoRuntime.version is accepted and ignored, and further keys load and are only reported as unused."
+}

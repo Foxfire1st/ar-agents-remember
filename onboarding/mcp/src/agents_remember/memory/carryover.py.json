@@ -1,0 +1,234 @@
+{
+  "path": "mcp/src/agents_remember/memory/carryover.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+        "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+        "locator": {
+          "kind": "symbol",
+          "name": "_apply_carryover_for_request"
+        }
+      },
+      "id": "RLZ-KSMDRZ",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "The live converted apply checks require_converted_formats before authority/candidate reads, preserving central conversion refusal for unconverted inputs while allowing the admitted converted recovery worktree.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Candidate comparison and explicit review selection.\n\nAnchor: `CarryoverRefs` `selected_candidates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:405091a1cb312da2728e779028c9e8f9bfe8fbad4f52127a5cefc9b3c1a1b314",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_candidates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:621f0a3febddc4a1836b7500a24e0cf02a0e359c27af85688fc4785775a5b366",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Converted carryover requires equal converted formats; unconverted input retains central conversion refusal. [10]\n\nAnchor: `build_plan_for_request`, `_apply_carryover_for_request`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:68acefba2d87996c8406ad10991412bec9b768d6e57c36a509db586c64789579",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_plan_for_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Apply checks the converted formats, the configured code and external-memory authority and an ordinary checkout, then writes the selected candidates into the open recovery leaf without committing; closeout commits the judged tree.\n\nAnchor: `_apply_carryover_for_request` `memory_content_commit`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Target storage is established from effective explicit settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7017d03dd3293689706598705718baf9f1d23d1f",
+            "content": "sha256:5a9c9649a42bf93672b5c8bde46a3b0f2e6a06ee23f880f7cdaf0dbd95d978b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "required_target_storage"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared committing explicitly excludes the consumer cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:f3289bb535ddc8dac5e1c007bfbee06aeb8a0fda33591b76a15080ad8550e442",
+            "locator": {
+              "kind": "symbol",
+              "name": "stage_worktree_content"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:65403786714de8e84db7f5bd72a23427d9c3ccd54edda2f4efe9981559d9b9a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "commit_if_dirty"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8f53c952d51eb1b83c2d97993768dbc0809cc6ea",
+            "content": "sha256:4b9bcedb6108e8225ac5ccc2a955c68aff578f2359bacda49ad6651f732304fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_excluded_pathspec"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/capture_index.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Public legacy carryover asserts conversion guidance and no observed ref/index/content/cache mutation; the prior successful-attribution test is retired\n\nAnchor: `test_carryover_apply_refuses_unconverted_memory_with_the_conversion_step`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "659c4e4b7b46e70bfdd7a52d67c89425345d4f8c",
+            "content": "sha256:c0f95d663316f578a2fdcc9fda38ac17dd4209e670da772d11647555eff9b14c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_memory_attribution_producers.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Converted carryover selects paired cards against official code and imports them into the exact recovery worktree without a commit or carried history. [8]\n\nAnchor: `build_plan_for_request`, `_apply_carryover_for_request`, `_require_carryover_authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:68acefba2d87996c8406ad10991412bec9b768d6e57c36a509db586c64789579",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_plan_for_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:995e469cb000e69d917212ec9c2ff7a67b96b37a66646ee8aa825c9a2188a674",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_carryover_for_request"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:047d65803de69b070b49ef1793c2c009a5250a1480b912c88941b3d97f539b4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_carryover_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Carryover performs worktree validation/restore without staging, committing or refreshing a ledger. [9]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:19cfdc182aaa3507362169f9d2b1166cbe09295f05bb1e7ede20664e0e966194",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

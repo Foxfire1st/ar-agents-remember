@@ -1,0 +1,81 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation",
+  "references": {
+    "1": {
+      "note": "Selected exact intent/output and explicit predecessor-history readers survive without new command selection or journal CAS.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "content": "sha256:7ba7c5fca3aecea0293eacd8b8632ff8bf507c93d9a67cf7f4f1e3a9cf5a2947",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b0dc75488f84e9b970fce1a584c4600297291e84",
+            "content": "sha256:eac209b3805133f5c44832117e8af7f65437b471c1a6d8cdd5ddc312d1fb7b45",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Ordinary code/memory publication and informational cache refresh survive outside the removed prepared finalizer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5a0c8c8d38f12b2a398e74c1a64f73ee81bb882375a5dcb2200c28c603c7f6fe",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:edee97bbd27e310531ad25d8367e1ce1b68d4f32c367d57c4290d56452db3d99",
+            "locator": {
+              "end": 1011,
+              "kind": "line_range",
+              "start": 966
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:11ae5d0f9f1b6bd93cd7a7c2b039af7d2f2705640ac5f630475ea73439540a7d",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

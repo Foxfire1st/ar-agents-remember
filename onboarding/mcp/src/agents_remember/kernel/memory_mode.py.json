@@ -1,0 +1,203 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_mode.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+        "content": "sha256:db9477330ae46e27326aa98ab087b3221e0b98d95c1633f94b3a7b223196587f",
+        "locator": {
+          "kind": "symbol",
+          "name": "require_supported_memory_mode"
+        }
+      },
+      "id": "RLZ-ERXPMN",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Refuses a removed member by name first and raises plain ValueError for any other unknown token, keeping removal distinct from mistyping.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+        "content": "sha256:6ae2b95c8cc936992de63cb1c805a2d7231f9b4cb0b71d92516b68f9f4953166",
+        "locator": {
+          "kind": "symbol",
+          "name": "refuse_removed_memory_mode"
+        }
+      },
+      "id": "RLZ-SQWM3Z",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Raises the removal refusal for the disabled mode wherever the product must reject it by name.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "36": {
+      "note": "Supported topology is `external` only",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:158ae71229ce7da25def892080e4ecaf1bbf05b5bf73dd05b0377f495cb5aa62",
+            "locator": {
+              "kind": "symbol",
+              "name": "Topology"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Supported mode is `external` alone",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:f3d496a6f1cf6dd065bfd3b46bc06414a154576598a4366fca3e645e892fe037",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryMode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "On-disk contracts may still carry `disabled`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:0ab91f6651c0b75ef9521ae37583791f356c1d9cfc048daed07d26989df17dff",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReadableMemoryMode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Both removed members declared positively",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:9c9ef33842ab0b3bf8f48d28927373ac702f069473fb605f37be9f7e3ccb0b94",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_MEMORY_MODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The one route out, stated once for every surface",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:1fb555cee42b2d9f78cda94fd3df6ccfef7dab25458d2912ac85e12dd7621257",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Removed roots resolved only to be reported",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:ad2179bb05078a254f5052ae1a3c8dc33bbe2aa6fa30911c3f79407015c88298",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_internal_memory_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Removed modes refused by name, `disabled` via opt-out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:6ae2b95c8cc936992de63cb1c805a2d7231f9b4cb0b71d92516b68f9f4953166",
+            "locator": {
+              "kind": "symbol",
+              "name": "refuse_removed_memory_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Opt-out text names contract, reason, and way out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:e373fe814f717558218017b2895dba22e47b5d89810c7e5e6be6a6418d34a70f",
+            "locator": {
+              "kind": "symbol",
+              "name": "disabled_opt_out_detail"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Removed member refused by name, typo is invalid input",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:db9477330ae46e27326aa98ab087b3221e0b98d95c1633f94b3a7b223196587f",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_memory_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Same removal-versus-typo distinction for topology",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:35fc0b3b626b8d43ec58c0277bcef3c21b195b20688e1b2a72c849095ddc4dc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_supported_topology"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

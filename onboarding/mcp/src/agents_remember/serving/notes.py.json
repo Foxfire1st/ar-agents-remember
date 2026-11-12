@@ -1,0 +1,594 @@
+{
+  "path": "mcp/src/agents_remember/serving/notes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_open_confined_dir"
+        }
+      },
+      "id": "RLZ-4B3HK3",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This function pins the requested folder through held descriptors so a mid-request directory/symlink swap reads as gone instead of listing outside entries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_row"
+        }
+      },
+      "id": "RLZ-5KCQCHVQ",
+      "invariant": "INV-Z66EMHMH",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Stats each entry once without following symlinks; for symlink entries, resolves the lexical path and checks it against the resolved notes root; symlink entries take a second followed stat after resolution.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_open_confined_dir"
+        }
+      },
+      "id": "RLZ-5NWBYG1T",
+      "invariant": "INV-QR24S1VH",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Pins the requested folder through held descriptors with O_NOFOLLOW, refusing the ELOOP/ENOTDIR swap signature instead of following it out.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_folder"
+        }
+      },
+      "id": "RLZ-7RNSV7PG",
+      "invariant": "INV-EJW15DXA",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Assembles the one-folder wire payload with total, offset, remaining and empty-with-reason for a missing folder.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_row"
+        }
+      },
+      "id": "RLZ-7X2C4VRQ",
+      "invariant": "INV-Z66EMHMH",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Decides confinement per entry: only symlinks are resolved and checked against the root; every other entry uses its single cached lstat.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_note"
+        }
+      },
+      "id": "RLZ-983YA0",
+      "invariant": "INV-X1JG4M",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 7",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This unchanged read path serves any confined note at any depth, so depth is no longer a reachability boundary.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_folder"
+        }
+      },
+      "id": "RLZ-9YY9Y1E1",
+      "invariant": "INV-ZJS1XY4R",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Opens and answers the live folder inside each call with no cache or module-level state; every request reads the current tree.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:7e69a5c5252ce9324c46b19420334ae365601d3d20f23b9bf7101e468ec93765",
+        "locator": {
+          "kind": "symbol",
+          "name": "read_note"
+        }
+      },
+      "id": "RLZ-AFAM29GC",
+      "invariant": "INV-2DF3HS9Q",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Confines the requested path with confine_rel before reading, then serves the note size-capped through decode_capped and answers language binary with empty content when the bytes do not decode.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_folder"
+        }
+      },
+      "id": "RLZ-HNH06VQK",
+      "invariant": "INV-SMYSQKTJ",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Answers the live folder on each call with no kept state between requests, so grown notes appear on the next request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0ae21a994d111465147bd661ccec7e8ef284c86d7dcfb0c56b1542d8deaf0cc2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_entries"
+        }
+      },
+      "id": "RLZ-NGTT9WWJ",
+      "invariant": "INV-DA7D417G",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Orders rows directories-first with case-folded tie-break after reading; unstatable names are skipped, never failing the answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:792075f7576822e90ac57da978dd9765e0c31ed25b87b57b6fbca56e1cbe2cac",
+        "locator": {
+          "kind": "symbol",
+          "name": "_FOLDER_PAGE"
+        }
+      },
+      "id": "RLZ-S0GKRK",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This constant fixes the part ceiling the tests pin, so no folder answer grows with the tree.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0186fdab5f017034970f1e1f731805df2b928dc8cb8f049d2702dbfdce22ef17",
+        "locator": {
+          "kind": "symbol",
+          "name": "_notes_json"
+        }
+      },
+      "id": "RLZ-V1EWDR6A",
+      "invariant": "INV-2DF3HS9Q",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Validates the {repo, master} selector (unknown repo 404 unknown-repo, multi-segment master 400 bad-request) and maps AuthorityError/ValueError to 400 bad-path and FileNotFoundError to 404 not-found for both notes routes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_open_confined_dir"
+        }
+      },
+      "id": "RLZ-W8VA2JEP",
+      "invariant": "INV-QR24S1VH",
+      "origin": {
+        "leaf": "260921-ICR-L55"
+      },
+      "rationale": "Confinement lives in the held-descriptor open: a swapped directory fails the open rather than redirecting descent.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_row"
+        }
+      },
+      "id": "RLZ-WPD3J9",
+      "invariant": "INV-413DC8XE",
+      "origin": {
+        "handoffEntry": "L126-413DC8XE-repair",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This row builder skips unresolvable entries instead of listing them, which is the whole mechanism behind the present-with-no-children answer.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+        "locator": {
+          "kind": "symbol",
+          "name": "list_folder"
+        }
+      },
+      "id": "RLZ-XKWZZH",
+      "invariant": "INV-JXQQF4",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 2",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This function is the one-folder answer: confinement, single-level read, stable total order, offset parts and empty-with-reason for missing folders.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+        "content": "sha256:4e85593c5140d457d8466fb9e9071a3c55c636d801d1d71ee4f72305810b888e",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_notes_references"
+        }
+      },
+      "id": "RLZ-Y1SPDE",
+      "invariant": "INV-P2KSPN",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 5",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This endpoint resolves the document references with per-token existence probes, bounded by reference count instead of tree size.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The app factory registers notes routes during app assembly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+            "content": "sha256:5b618c916233fbb800ee634903cc0930bb1d1e99c6bbc106d13abe9f2987055f",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Rows sort directories first, case-folded, exact name breaking ties.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0ae21a994d111465147bd661ccec7e8ef284c86d7dcfb0c56b1542d8deaf0cc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Each row is examined without following symlinks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Bare names never resolve an escaping link.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:3193522bce013d6e6ffbd4849faace0caa972c6bd8e5f74755b102965dc23e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_confined_is_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Each reference resolves to a notes path or null in one request.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:4e85593c5140d457d8466fb9e9071a3c55c636d801d1d71ee4f72305810b888e",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_notes_references"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Bare filenames resolve only at the notes root.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:692bf41cd7e65034c58f20e9a62efac0a7a73db804a33389e351d2926beacb0d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_one"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The part ceiling bounds every folder answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:792075f7576822e90ac57da978dd9765e0c31ed25b87b57b6fbca56e1cbe2cac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_FOLDER_PAGE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The module's folder tests prove parts, order, confinement and bounds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee3a18c16e8a5e3a122f5a0d7b81c1d7c53a8d94",
+            "content": "sha256:2a846ba1820cd457d4ac9640a7eb493345aede967750637e95b116ed178caffb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_notes_folder.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The shared `SCOPED_READ_RESPONSES` refusal-table declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3a2210b12a2fe760312652a13f1f7366c306e92",
+            "content": "sha256:7b27dd0903646ae944feecd369ce9dfd548bfcb3c95b9baac2c849372adbcc57",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCOPED_READ_RESPONSES"
+            },
+            "path": "mcp/src/agents_remember/serving/response_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "A readable-but-unsearchable folder answers present with no children since failed entry stats are skipped; EACCES from the folder open or listing itself propagates (searchable-unreadable and neither keep baseline 500).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:0de19755f32283a7f8fb60c9e392c0725d22feaf2a05aaf1fe8ed77bd2ef87a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_folder_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `confine_rel` realpath confinement this module reuses for reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "content": "sha256:e7439e42dfde2e3ca132f294c995f2162845dad8496330e19b214d075be85ceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "confine_rel"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The repo allow-list authority guard (`require_repo`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:779d115e4f600250810d56478a00d8b217e5c480fa0660dc331fba97d87be490",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`McpRuntimeConfig` and `path_is_relative_to` provide configuration and path confinement.\n\nAnchor: `McpRuntimeConfig`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`language_for` supplies the listing and read `language` field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b5c163ab7290f3ff778e1a69a54324e7da1d022",
+            "content": "sha256:3d9f1313f449a2b6ae1e0661fadc8f18ed03ec27e3bd2a1384f38e61e922ac2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "language_for"
+            },
+            "path": "mcp/src/agents_remember/serving/scope.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The changeset route's single-segment master confinement helper (moved to the new selection module by 260921-ICR-L13; `changeset.py` imports it).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c4737de45af72f420304b097f27413a794c58d4",
+            "content": "sha256:dc40f47eebdfe073d2a20f0994feeb98e82e2264eab80d0840fdbd3d0086d2a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_task_root"
+            },
+            "path": "mcp/src/agents_remember/serving/master_net_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The browser client for these endpoints.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "content": "sha256:1c5fce9a739883de864d730bfb7adbc295e64e474fba2f6be2c7719707abb03f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "One folder answers in parts with total, offset, limit and remaining.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_folder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Folders open through held descriptors without following symlinks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:43f4ba126f1b33e32bea57712a0108f877098422848dc9145d6893174508338f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_confined_dir"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

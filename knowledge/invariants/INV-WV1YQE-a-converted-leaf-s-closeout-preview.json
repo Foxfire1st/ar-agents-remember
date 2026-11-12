@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A preview that answers would-closeout for a leaf the apply refuses sends the orchestrator to ask the developer for a commit approval that cannot be used."
+  },
+  "applicability": "worktree_closeout_preview, and worktree_closeout_apply as a dry run, for a leaf.",
+  "conditions": [
+    "The preview is called on explicit request; nothing polls it (assumption ASM-NJ9P83)."
+  ],
+  "exclusions": [
+    "The exact memory-commit tree, which apply judges again after history closing.",
+    "No external memory to judge; the gate is not made applicable by this preview contract."
+  ],
+  "id": "INV-WV1YQE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_knowledge_reopen.py::test_the_closeout_preview_answers_what_the_apply_will_do; mcp/tests/test_knowledge_reopen.py::test_an_unconverted_leafs_preview_carries_no_gate_verdict"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "L37-preview-is-the-apply",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "A converted leaf's closeout preview reads the same gate verdict as apply preflight over the same two trees: a refusal shows its findings, asks for no commit approval and offers no apply; a passing preview says the gate passed. Legacy external memory is refused before the preview promises closeout, including a series format verdict before publication authority. Preview publishes no closeout to code, memory or contract; the registered call retains its own daily log and completed-call event.",
+  "status": "proposed",
+  "supersedes": []
+}

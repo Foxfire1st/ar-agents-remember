@@ -1,0 +1,35 @@
+{
+  "boundary": "The admitted one-Pi witness with six successful assistant turns and no tools ran on source 9ee/73; the final candidate e377/04 reuses the proven unchanged inputs and a rebuilt bundle, and the current source's qualification is offline state and safety checks. The failure UI is a real backend failure result composed with the currently mounted React consumer and an explicit synthetic backend; no historical production-browser failure screenshot or full visual certification exists. D106 (the host boot service's Codex home) is an open carry the install/render must preserve later, not present behavior.",
+  "id": "LIM-DWGEHG",
+  "limited": "A real install, start and session-preservation witness on the final candidate bytes (expected-evidence items 9 and 10).",
+  "links": [
+    {
+      "relation": "bounds",
+      "target": "INV-GAZREV"
+    },
+    {
+      "relation": "bounds",
+      "target": "INV-96C24X"
+    },
+    {
+      "relation": "bounds",
+      "target": "INV-PB8GDK"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L96-A-2",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-limitation/v1",
+  "status": "proposed",
+  "unsupported": [
+    "No claim that the final candidate bytes were exercised against a real host on a machine without Node.",
+    "No claim that the dated witness's turn sequence is a final-candidate run; the real 9ee witness is not relabeled e377.",
+    "No full visual certificate of the failure UI and no claim that the composed mounted-consumer check is a production-browser capture."
+  ]
+}

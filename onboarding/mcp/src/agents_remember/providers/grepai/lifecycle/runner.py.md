@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/providers/grepai/lifecycle/runner.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/grepai/lifecycle/runner.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [Provider Lifecycle Modules Overview](overview.md)
@@ -44,14 +34,7 @@ stops the watcher container, and validates workspace status through
 chosen earlier in the same GrepAI start flow so its Compose override matches
 the already-started dependency services, and it shares the GrepAI project
 migration helper for standalone watcher startup.
-Watcher status includes a normalized Docker container state summary so MCP
-provider status can report watcher state and uptime, plus an `initialScan`
-probe: `grepai_watcher_initial_scan` reads the watcher's container log since
-its start (`docker logs --since`) and `grepai_scan_state_from_log` classifies
-the watcher's own markers — `Initial scan complete` → `complete`, progress
-markers (`Indexing [`, `Initial scan`, `Embedding`) → `in-progress`, otherwise
-`unknown` — the same marker mechanism as the CGC probe, feeding GrepAI's
-`indexed`/`indexing` states in current-state mapping.
+Retained watcher lifecycle results include normalized Docker container state and uptime, plus an `initialScan` probe. `grepai_watcher_initial_scan` reads the watcher's container log since its start (`docker logs --since`), and `grepai_scan_state_from_log` classifies the watcher's markers: `Initial scan complete` → `complete`; `Indexing [`, `Initial scan` or `Embedding` → `in-progress`; otherwise `unknown`. These are internal lifecycle-result facts. No current MCP provider-state mapping or provider dashboard consumes them.
 
 ### Invariants And Boundaries
 
@@ -62,8 +45,7 @@ markers (`Indexing [`, `Initial scan`, `Embedding`) → `in-progress`, otherwise
   container lifecycle.
 - Watcher `up` should render dependency port mappings from the current start
   result when those services were just started.
-- Watcher status should expose enough Docker state for current provider status
-  without requiring callers to inspect containers themselves.
+- Retained lifecycle results expose Docker state and scan markers without requiring their internal callers to inspect containers themselves; those facts do not restore a public provider status surface.
 - Functions that thread the runtime layout (`grepai_watcher_inspect`,
   `grepai_watcher_workspace_status`, `grepai_watcher_start_prerequisites`,
   `grepai_watcher_create_start_result`, `grepai_docker_state`) type `layout` as
@@ -72,31 +54,32 @@ markers (`Indexing [`, `Initial scan`, `Embedding`) → `in-progress`, otherwise
   `provider_asset_path`; there is no standalone helper that returns the
   Dockerfile text.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Runner settings and workspace paths are derived in GrepAI core. | `grepai_runner_settings` | mcp/src/agents_remember/providers/grepai/lifecycle/core.py:166-189 |
-| GrepAI action dispatch uses this module for start, stop, refresh, and bounded run readiness. | `grepai_docker_start` | mcp/src/agents_remember/providers/grepai/lifecycle/actions.py:177-227 |
-| GrepAI project migration lives with backend startup and is reused here. | `grepai_project_migration` | mcp/src/agents_remember/providers/grepai/lifecycle/backend.py:550-591 |
+### Repo-Internal References
 
-## Update History
+- Runner settings and workspace paths are derived in GrepAI core. [1]
+- GrepAI action dispatch uses this module for start, stop, refresh, and bounded run readiness. [2]
+- GrepAI project migration lives with backend startup and is reused here. [3]
 
-- 2026-08-02T20:53:56+02:00 — W2-B04 curator: repaired 6 citation findings; scoped check passed.
+## Historical provider-surface wording
 
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  added the frozen `GrepaiWatcherStart` and `GrepaiStackResults`;
-  `grepai_watcher_start_prerequisites` now returns `(GrepaiWatcherStart, refusal | None)` and
-  `grepai_docker_state` takes the stack results as one object. The written state file is unchanged.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-10T05:30+02:00 — Watcher status gains `initialScan`: `grepai_watcher_initial_scan` reads the watcher's own container-log scan markers since container start (`Indexing [` progress, `Initial scan complete`) via `grepai_scan_state_from_log` — the same mechanism as the CGC probe, giving GrepAI real indexed/indexing states instead of permanent unknown.
-- 2026-06-02T01:15+02:00 — `grepai_docker_state` roots payload no longer emits `sourcePath` after `GrepaiMemoryRoot.source_path` was removed (roots are watched live in place).
-- 2026-05-31T12:50+02:00 — Removed the unused `grepai_runner_dockerfile` helper and its `provider_asset_text` import (build path uses `provider_asset_path`); re-typed the `layout` param from `Any` to `GrepaiRuntimeLayout` across `grepai_watcher_inspect`/`grepai_watcher_workspace_status`/`grepai_watcher_start_prerequisites`/`grepai_watcher_create_start_result`/`grepai_docker_state`; added matching Invariants And Boundaries notes (1.0.0 review remediation).
-- 2026-05-30T21:33+02:00: Documented the `no_cache` build path for the GrepAI runner/watcher image (`--no-cache` + skip-shortcut bypass for a from-scratch rebuild). Verified against `8927f03`.
-- 2026-05-29T18:35+02:00: `grepai_watcher_dry_run_start_result` `commands` -> `list[dict[str, Any]]`; behavior-preserving (commit `0549b28`).
-- 2026-05-28T12:32+02:00: Updated after GrepAI watcher status began including normalized container-state summaries.
-- 2026-05-27T00:25+02:00: Updated after watcher startup began rendering
-  dependency ports from the current start flow and sharing GrepAI project
-  migration.
-- 2026-05-25T19:09+02:00: Moved into the provider-specific subpackage and dropped the filename prefix while preserving behavior.
-- 2026-05-25T19:01+02:00: Created from GrepAI runner image and watcher lifecycle extracted out of provider lifecycle.
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
+
+> Watcher status includes a normalized Docker container state summary so MCP
+> provider status can report watcher state and uptime, plus an `initialScan`
+> probe: `grepai_watcher_initial_scan` reads the watcher's container log since
+> its start (`docker logs --since`) and `grepai_scan_state_from_log` classifies
+> the watcher's own markers — `Initial scan complete` → `complete`, progress
+> markers (`Indexing [`, `Initial scan`, `Embedding`) → `in-progress`, otherwise
+> `unknown` — the same marker mechanism as the CGC probe, feeding GrepAI's
+> `indexed`/`indexing` states in current-state mapping.
+>
+> - Watcher status should expose enough Docker state for current provider status
+>   without requiring callers to inspect containers themselves.
+
+## Current retirement-boundary evidence
+
+- The retained watcher result includes Docker container state and initialScan classified from watcher log markers. [4]
+- The retained internal Docker status helper composes backend, embedder and watcher results. [5]
+- The typed production watcher service admits only stop and shutdown-all. [6]

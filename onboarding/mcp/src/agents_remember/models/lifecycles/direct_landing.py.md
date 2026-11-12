@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/direct_landing.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/direct_landing.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
@@ -30,7 +20,7 @@ facts required by the execution and recovery owners, without ledger cache state.
 `DirectLandingOperationInput` is a strict Pydantic model with `extra="forbid"`. It carries the
 configuration and contract paths, effective direct input, approval note, gate-policy snapshot,
 exact code commit/tree and candidate tree, memory repository/branch/ref, and `memoryBefore` snapshot.
-Hash and ref fields have declared shape constraints. The validator requires the direct-landing
+Optional `leafId` is part of immutable request/retry identity; older journals default it to `None`. Hash and ref fields have declared shape constraints. The validator requires the direct-landing
 route and a nonblank accepted approval note.
 
 The model does not read Git, verify repository existence, or decide whether a live branch matches
@@ -52,43 +42,45 @@ accepted state from queue rows, task prose, or cache files.
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Accepted direct-create identity
+
+The typed direct input adds exact leafTaskDocumentRef, codeCommitMessage and optional codeBefore. A codeBefore snapshot distinguishes create from verify-existing and identifies the admitted pre-publication ref/tip; empty code message and no codeBefore describe verification. The coordinator retains accepted input, gate-policy snapshots and mutation/output evidence before branch publication, not full pre-code check verdict results. No anticipated code commit is invented.
+
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The accepted input contains code/memory identity and validates route plus intent. | L14-L39 | [mcp/src/agents_remember/models/lifecycles/direct_landing.py](mcp/src/agents_remember/models/lifecycles/direct_landing.py) |
-| The shared snapshot keeps actual object identity and optional content-only comparison. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| The coordinator captures the accepted candidate from actual Git facts. | L425-L457 | [mcp/src/agents_remember/worktrees/direct_landing.py](mcp/src/agents_remember/worktrees/direct_landing.py) |
-| Recovery checks the typed facts against the current repositories and refs. | L77-L134 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_recovery_state.py) |
+- The accepted input contains code/memory identity and validates route plus intent. [1]
+- The shared snapshot keeps actual object identity and optional content-only comparison. [2]
 
-## Cross-Repo References
+
+- The coordinator captures the accepted candidate from actual Git facts. [3]
+
+
+- The strict model carries code/memory identity and its `_accepted_direct_plan_is_exact` validator requires the direct-landing route plus a nonblank approval note. [4]
+- The shared snapshot's `_require_state_evidence` validator keeps actual object identity: `observed is not before` is refused while `observed == before` is reconciled. [5]
+
+- Recovery checks the typed facts against the current repositories and refs. [6]
+
+
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | — | — |
-
-## Update History
-
-- 2026-09-15T00:51 UTC — Removed the ledger byte/path/digest fields and DirectLandingLedgerIntent from the documented vocabulary; retained strict code/memory shapes and clarified the boundary between model validation and actual Git proof. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
+No additional configured cross-repository evidence is claimed.
 
 
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input model package relocation; direct-landing accepted-input and ledger-intent contracts are unchanged.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
-
+- The typed direct input adds exact leafTaskDocumentRef, codeCommitMessage and optional codeBefore. [7]

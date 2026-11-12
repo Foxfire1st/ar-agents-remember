@@ -1,0 +1,111 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_run.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b6516602f16e02b7a9853f9b6f00d79a5625e8ae",
+        "content": "sha256:2e9412168285a4482054d119c5a686756cc175a0cc91128a04eb709711f2a99b",
+        "locator": {
+          "end": 47,
+          "kind": "line_range",
+          "start": 47
+        }
+      },
+      "id": "RLZ-0DHNZG",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-17",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b6516602f16e02b7a9853f9b6f00d79a5625e8ae",
+        "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_install_restart"
+        }
+      },
+      "id": "RLZ-A48E62",
+      "invariant": "INV-CB36W0",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 transition current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "The install admission owner detects a live executable mismatch before Node acquisition or home mutations.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "b6516602f16e02b7a9853f9b6f00d79a5625e8ae",
+        "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_install_restart"
+        }
+      },
+      "id": "RLZ-PXP20H",
+      "invariant": "INV-EQH5X6",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §9 preflight",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This admission owner reads supervisor identity and transition facts before host mutation; later irreversible-site guards separately preserve its no-stop obligation when subsequent observations fail.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The pre-write admission and its restart reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6516602f16e02b7a9853f9b6f00d79a5625e8ae",
+            "content": "sha256:b3755c26c13c6f8ce7b58a66c46c3ed405eb8856f94c83384ecba50059be2098",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_install_restart"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The irreversible-site guard for an install.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6516602f16e02b7a9853f9b6f00d79a5625e8ae",
+            "content": "sha256:a198a9214c13de1a50ccd0c901388547ecc8a16592a663f496bb271bb2f12cdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserve_live_install"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The run context carries the operator's acceptance of a harness-home change.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6516602f16e02b7a9853f9b6f00d79a5625e8ae",
+            "content": "sha256:2e9412168285a4482054d119c5a686756cc175a0cc91128a04eb709711f2a99b",
+            "locator": {
+              "kind": "symbol",
+              "name": "accept_harness_home_change"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,208 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "ensure_host"
+        }
+      },
+      "id": "RLZ-6036XR",
+      "invariant": "INV-96C24X",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §4",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This start-only entry point joins the configured-home operation, observes installed readiness and produces the one bounded start outcome without invoking installation or plugin convergence.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:d2b412f783a3eb2aae2d4b3c4b25beba3e6c97d44167bacad421eb9a4f826730",
+        "locator": {
+          "kind": "symbol",
+          "name": "_observe"
+        }
+      },
+      "id": "RLZ-KPZKR4",
+      "invariant": "INV-7HC1QH",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 status current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "Dashboard host observation presents the same contract-versus-owned-executable comparison under its read-only deadline.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:768cc2660ac745053d44771d1d99dabf17e347f92695d1084c458b362a9ef534",
+        "locator": {
+          "kind": "symbol",
+          "name": "_remedy_line"
+        }
+      },
+      "id": "RLZ-P036B9",
+      "invariant": "INV-7HC1QH",
+      "origin": {
+        "handoffEntry": "MIK-R107@v1 §4 status current66",
+        "leaf": "260928-MIK-L107"
+      },
+      "rationale": "The presentation boundary names the existing explicit provision command when Node restart is required.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:0336c6625a9e4aa695cf0a76334c482aa418972a7ecf5ef31bb67e45fb800895",
+        "locator": {
+          "kind": "symbol",
+          "name": "observe_host"
+        }
+      },
+      "id": "RLZ-TG7AAM",
+      "invariant": "INV-03M6ZA",
+      "origin": {
+        "handoffEntry": "MIK-R96@v1 §6",
+        "leaf": "260928-MIK-L96"
+      },
+      "rationale": "This observation entry point bounds all host reads and formats a host outcome without modifying the host or removing stale records; the CLI composes it with dashboard status.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+        "content": "sha256:bad28799800c15fa650b9422dd21c26ced9f9ae1ea0f16df00041c0a6cfd8cfa",
+        "locator": {
+          "end": 174,
+          "kind": "line_range",
+          "start": 172
+        }
+      },
+      "id": "RLZ-YTA0RW",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-18",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Supporting status only: the host status line names the running host's inherited harness homes and their remedy when the status facts carry a harness-home remedy. It neither records homes nor refuses a restart; the refusal is require_preserved_harness_homes (paseo_harness_homes.py:64-90), which provisioning calls before stopping the daemon (paseo_provision.py:265-271).",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The bounded observation with its state line.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:0336c6625a9e4aa695cf0a76334c482aa418972a7ecf5ef31bb67e45fb800895",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_host"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:83c97eaf0fadd7fc69bda7f061ed63f74f79307947f8e0123aabbd9cf410f217",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The start-only supervision entry point.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:055476941e360a611e75be9449fe29c11740aa259b2215c2509c5dc5860937d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ensure_host"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The locked start path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:6d8163cec7a8ef94cb559e1f8ef6e031741eb976fb558acb2f3d51b8651a1f2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_locked"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The observed Node comparison and explicit provision remedy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:768cc2660ac745053d44771d1d99dabf17e347f92695d1084c458b362a9ef534",
+            "locator": {
+              "kind": "symbol",
+              "name": "_remedy_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The settings read behind every host state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:7b320d6a1acff10e85883e981504da50cf56972908202b2ecd50324fd2f46cb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The observation reports the owned host's inherited harness homes.\n\nAnchor: `harness_home_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:d2b412f783a3eb2aae2d4b3c4b25beba3e6c97d44167bacad421eb9a4f826730",
+            "locator": {
+              "end": 154,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

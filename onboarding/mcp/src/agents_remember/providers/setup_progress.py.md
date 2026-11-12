@@ -1,24 +1,12 @@
 # mcp/src/agents_remember/providers/setup_progress.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/setup_progress.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-07-31T00:00+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../../../overview.md`                              |
-
 ## Governing Overview
 
 [providers overview](../../../overview.md)
 
 ## Purpose
 
-Durable phase-progress reporting for background provider setup (GitHub #53):
-the observable that lets a model (or dashboard) watch a running setup instead
-of holding a multi-minute tool call open.
+Retained phase-progress reporting for internal provider setup and old progress artifacts (GitHub #53). The sink, heartbeat-stamped file and compact status reader survive. `worktree_status` can still report an existing progress file; the retired provider dashboard is not a current consumer, and both retired identities are disabled for new setup.
 
 ## Code Commentary
 
@@ -54,38 +42,37 @@ Terminal states pass through (`ok`, `ready-with-failed-phases`, `failed`,
 - Progress reporting must never raise into the provider setup chain.
 - `stale` is a READER projection of a fresh-state `running` file, never a
   written state; the heartbeat is the only liveness signal.
-- The schema is dashboard-facing: identity fields and the reserved
-  `currentPhase.metrics` shape must stay forward-compatible (bump the schema
-  version on breaking changes).
+- Retained progress files keep their identity fields and reserved `currentPhase.metrics` shape. Internal/old-artifact readers do not establish a current provider-dashboard contract; breaking file-schema changes still require a version change.
 - `seedFallback` is written the moment the fallback phase starts, not after it
   finishes — surfacing the seconds→minutes expectation change is the point.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory repo.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Provider setup functions announce phases through `setup_progress_from(args)`. | `setup_progress_from` | mcp/src/agents_remember/providers/setup_common.py:25-33 |
-| The worktree launcher creates the file and finishes it from the setup payload. | `launch_provider_setup` | mcp/src/agents_remember/application/provider_runtime.py:73-121 |
+- Provider setup functions announce phases through `setup_progress_from(args)`. [1]
+- The worktree launcher creates the file and finishes it from the setup payload. [2]
 
+## Historical provider-surface wording
 
-## Update History
+The following earlier wording is retained as provenance, not a current consumer or operation contract:
 
-- 2026-08-03T02:32:19+02:00 — Curator W3-B02 anchored 3 Repo-Internal citation rows with 4 exact identifiers and generated source ranges; verification metadata was preserved.
-- 2026-07-31T16:35+02:00 — No content impact: the only change to
-  `mcp/src/agents_remember/providers/setup_progress.py` since the L2 base commit is the whole-tree
-  `ruff format` pass in `00e8379`, which re-wrapped 12 line(s) with no token change whatsoever.
-  Checked by parsing both revisions and comparing the abstract syntax trees (identical) and the
-  comment tokens (identical), so no symbol, signature, default, decorator, control-flow branch,
-  docstring, or assertion this card describes has moved, and every claim this card makes about its
-  own source still holds.
+> Durable phase-progress reporting for background provider setup (GitHub #53):
+> the observable that lets a model (or dashboard) watch a running setup instead
+> of holding a multi-minute tool call open.
+>
+> - The schema is dashboard-facing: identity fields and the reserved
+>   `currentPhase.metrics` shape must stay forward-compatible (bump the schema
+>   version on breaking changes).
 
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 attestation: this file was touched ONLY by the
-  whole-tree `ruff format` pass (commit `00e8379`) — line reflow, no behaviour, contract,
-  structure or responsibility change. The sidecar was re-read against the current source and
-  every claim in it still holds, so it was deliberately not rewritten. Verification metadata
-  pinned until closeout stamps the L2 commit.
-- 2026-06-10T07:30+02:00 — Created for GitHub #53: durable, heartbeat-stamped phase progress for background worktree provider setup, with the dashboard-ready schema (identity fields + reserved metrics) the developer requested.
+## Current retirement-boundary evidence
+
+- The retained no-op sink and file schema preserve phase events and bounded write errors. [3]
+- Retained progress projection computes heartbeat age, stale state, elapsed time and compact phase lines. [4]
+- The old progress-file reader retains terminal/stale status and retry arguments. [5]
+- Worktree status can include existing setup progress through the retained port. [6]
+- The shared enablement predicate always disables the two retired provider identities. [7]

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Startup-installation cases pin the install-before-first-call order; without the record a slow start could lose the first call."
+  },
+  "applicability": "Tool-server startup on any host.",
+  "conditions": [
+    "The writer installs before the first call."
+  ],
+  "exclusions": [
+    "Unreadable bindings, which change nothing about startup."
+  ],
+  "id": "INV-19YW49",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_bound_first_call_writes_one_workspace_event_with_caller_and_facts in mcp/tests/test_tool_event_river.py (writer installed at start); pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W04",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Server start installs the writer with the caller snapshot; unreadable binding falls back to chat.",
+  "status": "proposed",
+  "supersedes": []
+}

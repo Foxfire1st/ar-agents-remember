@@ -1,14 +1,30 @@
 # dashboard/src/topology/constel.ts
 
-| Field                  | Value                                       |
-| ---------------------- | ------------------------------------------- |
-| repository             | agents-remember                             |
-| path                   | `dashboard/src/topology/constel.ts`         |
-| doc_type               | `file-level-onboarding`                     |
-| lastUpdated            | 2026-08-01T09:24+02:00                      |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../overview.md`                            |
+## Governing Overview
+
+[dashboard/src overview](../overview.md)
+
+## Current renderer boundary
+
+The imperative canvas renderer consumes the pure constellation model and draws the workspace, repository and active worktree enclosure nodes. Provider satellites, provider orbits/edges and provider engine-state colours are removed. The model's node kinds are `ws|repo|wt` and its statuses are `core|ok|warn|idle`. `constelColors` remains a total `Record<ConstelStatus,string>` with literal CSS-token fallbacks, and `statusColor` indexes that map without a healthy-default branch. The former five-status/sixth-status explanation is historical; the source comment still says “sixth” but the present tuple has four entries. [1] [2] [3]
+
+Every node is positioned from `ang` and `rf`; the renderer has no `PROV_R` parent-orbit branch. The rings are CHECKOUTS and ENCLOSURES. It draws stars, rings, ordinary parent edges, unfrozen comets, core, nodes and labels. A non-ok worktree edge uses its supplied status colour. `buildTopology` supplies workspace/repository/worktree nodes only and derives worktree status from the bound TaskEntry's shared status/tone; it supplies no provider status. [3] [4]
+
+Resize and data updates still paint synchronously, so an occluded tab does not depend on rAF for its first/current frame. `destroy` cancels rAF, disconnects the observer and removes listeners. React owns mount/sizing and supplies model updates. The renderer truncates supplied labels and copies model-provided detail/sub-lines into the tooltip; the L184 limited-word, clockless form and detail ownership remains in `model.ts::worktreeFields` and shared status helpers. Source inspection renews no browser, test or execution acceptance. [2] [6]
+
+| Current claim | Source witness | Existing reference |
+| --- | --- | --- |
+| Four-colour total palette and direct lookup. | `dashboard/src/topology/constel.ts:31-37,73` | [1] [2] |
+| Only workspace/repository/worktree nodes and four statuses; worktree label, word and limit detail stay model-owned. | `dashboard/src/topology/model.ts:23-28,82-109,111-188` | [3]  |
+| Uniform layout, two rings and ordinary edges, with no provider draw stage. | `dashboard/src/topology/constel.ts:90-98,189-225,291-305` | [2] |
+| Synchronous resize/update paint, teardown and model-owned tooltip data. | `dashboard/src/topology/constel.ts:321-349,381-449` | [2] [6] |
+
+## Historical source account
+
+The original card below preserves its source epoch, references and dated history. Its superseded provider display, start, status and consumer claims are not the current operative account. Retained internal mechanisms grant no removed public operation.
+
+<details>
+<summary>Original card and source-epoch evidence</summary>
 
 ## Governing Overview
 
@@ -38,10 +54,7 @@ This replaced the un-migrated twin of `model.ts`'s defect. The palette was
 COLORS.ok` — the same "unknown reads healthy" shape, one map further down the pipeline, and the place
 the `undefined` from an unclassified state landed and came out cyan. Two things changed: the map is
 keyed by `ConstelStatus` (a sixth entry in `CONSTEL_STATUSES` stops the object literal compiling until
-someone picks its hue), and `col` is now `(status: ConstelStatus): string => COLORS[status]` with **no
-`??`**. The missing fallback is deliberate and is the opposite ruling from `model.ts`: there the index
-key is wire data, here it is a `ConstelStatus` this package's own `buildTopology` produced, so the
-lookup really is total and a default would be re-introducing the guess.
+someone picks its hue), and the current `statusColor(scene, status: ConstelStatus)` indexes `scene.colors[status]` with **no `??`**. The missing fallback is deliberate: the renderer consumes the package’s own `ConstelStatus` model, so the palette lookup is total and a default would re-introduce the guess. The earlier contrast with a wire-state lookup in `model.ts` is historical; the current model uses bound TaskEntry status/tone for worktrees and provider engine state for satellites.
 
 `mountConstel({canvas, wrap, tip}, initial, {onSelect})` grabs the 2D context, builds its `CssVarReader`
 over `getComputedStyle(document.documentElement)`, calls `constelColors(v)` once, and returns a handle
@@ -50,7 +63,7 @@ with `update()` + `destroy()`. `layout()` positions nodes: providers orbit their
 clears, then draws stars → ring guides (CHECKOUTS/ENCLOSURES — two rings, `RF.repo`/`RF.wt`; the TASKS
 ring is gone) → edges → comets (non-frozen) → provider nodes → central glow → other nodes → labels →
 "WORKSPACE". Edge colour: provider edges are faint; the `wt` (enclosure) edge is status-coloured when its
-folded lifecycle status is not `ok` (the signal the removed task-rim edge used to carry); all other edges
+model status is not `ok` (for a bound worktree this comes from the entry’s shared task-status tone, not a lifecycle fold); all other edges
 are the neutral `EDGE` colour. `frame()` is the rAF loop (`T += 16`,
 `provSpin`, then `layout()+render()` when `cw && nodes.length`). `resize()` measures the **wrap** rect,
 sets `canvas.{width,height} = wrapSize × min(dpr,2)` and `ctx.setTransform(dpr…)`, then rebuilds stars,
@@ -78,7 +91,7 @@ no rAF loop. `EDGE` and `MUTED` are chrome, not status, so they stay outside the
   throttled) must not be blank.
 - `destroy()` cancels the rAF, disconnects the ResizeObserver, and removes the wrap listeners.
 - Pure model in/imperative draw out: this file never builds the model (that is `model.ts`).
-- The status palette is TOTAL and carries no fallback. `col` must keep indexing `Record<ConstelStatus,
+- The status palette is TOTAL and carries no fallback. `statusColor` must keep indexing `Record<ConstelStatus,
   string>` directly; adding a `?? COLORS.ok` back is the original defect, because a status the palette
   cannot answer would then paint as healthy work.
 - Every status must own a distinct hue and its own `--token`, and every token must carry a real
@@ -91,68 +104,42 @@ no rAF loop. `EDGE` and `MUTED` are chrome, not status, so they stay outside the
 
 No open file-local todos.
 
-## Docs References
+
+**L184 — INV-XZYGEB, ownership corrected.** This renderer paints the labels it is given, truncates them to the space available and copies the supplied detail and sub-line into the tooltip: it presents and propagates what the model hands it. The limited word, its clockless form and the choice of detail are decided in `model.ts::worktreeFields` with the shared status helpers, not here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
+
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source and tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation found. | n/a | n/a |
+No relevant external documentation found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-The renderer sits at the end of one grammar that starts in `model.ts`: a lifecycle state becomes a
-`ConstelStatus` there and a hex string here. Both halves are cited so the seam is traceable in either
-direction.
+The renderer consumes the `ConstelStatus` produced by `model.ts`: the workspace is `core`, repositories are `ok`, a worktree uses its bound TaskEntry’s shared `taskStatusKey`/`statusTone` (`wait` → `warn`, `gone` → `idle`, otherwise `ok`) and an unbound worktree is `idle`. Provider satellites use engine state (`down` → `crit`, `indexing` → `idle`, otherwise `ok`). `constelColors` maps these statuses to token-backed hex colours; it does not interpret lifecycle states. Both model and palette are cited so the seam remains traceable.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas. | `CssVarReader`; `constelColors`; `mountConstel` | dashboard/src/topology/constel.ts:16-16; dashboard/src/topology/constel.ts:31-39; dashboard/src/topology/constel.ts:408-468 |
-| `mountConstel` builds its reader over `getComputedStyle`, calls `constelColors(v)` once, and `col` indexes the result with no `??` fallback. | `mountConstel` | dashboard/src/topology/constel.ts:408-468 |
-| `CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model. | `CONSTEL_STATUSES`; `ConstelStatus` | dashboard/src/topology/model.ts:16-16; dashboard/src/topology/model.ts:18-18 |
-| `lifecycleStatus` is the only producer of the statuses this file paints; its `UNCLASSIFIED_STATUS` is why an unrecognised state no longer arrives here as `undefined`. | `lifecycleStatus`; `UNCLASSIFIED_STATUS` | dashboard/src/topology/model.ts:68-68; dashboard/src/topology/model.ts:85-93 |
-| `constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas. | "gives every status in the vocabulary a colour of its own"; "declares no colour for a status the vocabulary does not contain"; "asks for a themed token per status and offers a concrete fallback for each" | dashboard/src/topology/constel.test.ts:21-30; dashboard/src/topology/constel.test.ts:32-39; dashboard/src/topology/constel.test.ts:41-57 |
-| The React wrapper that mounts this renderer once and pushes new models through `update()`. | `Topology` | dashboard/src/panels/Topology.tsx:82-155 |
+- `CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas. [1]
+- `mountConstel` builds its token reader and stores `constelColors(v)` in the scene once; `statusColor` indexes the resulting total map without a fallback. [2]
 
-## Cross-Repo References
+- `CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model. [3]
+
+
+> Retained earlier citation wording: - `worktreeStatus` maps a worktree row through the shared status and tone and returns `idle` when the row is unbound; `worktreeFields` supplies the node's label, word and limit detail, and `buildTopology` separately supplies workspace/repository and provider statuses. [4]
+
+- `constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas. [5]
+
+- The React wrapper that mounts this renderer once and pushes new models through `update()`. [6]
+
+
+### Cross-Repo References
 
 No meaningful cross-repo references found. The behavior is within the `agents-remember` dashboard
 projection/model/render boundary.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## Update History
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: reviewed this sidecar against the frontend-rail change set (strict-target lint remediation: complexity, max-lines-per-function, react-hooks, jsx-a11y, and import-cycle fixes). No content impact: behavior-preserving refactor; the file's responsibilities and the claims in this card remain current. Verification metadata stays pinned until closeout stamps the code commit.
+</details>
 
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B20 curator: removed duplicated Source ranges
-  from the constel/model rows; exact non-fixing check returns zero findings.
-
-- 2026-08-02T17:36:56+02:00 — 260731-EFA-L6 curator W1-B09: repaired 12 citation finding(s); scoped recheck clean.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T09:24+02:00 — 260731-EFA-L4 curator: documented the palette migration. This file was the
-  un-migrated twin of `model.ts`'s headline defect — `COLORS: Record<string, string>` read through
-  `col = (status) => COLORS[status] ?? COLORS.ok`, the same "unknown reads healthy" shape one surface
-  further down, and the place an unclassified state's `undefined` became a cyan healthy fill. It is
-  now the exported `constelColors(cssVar: CssVarReader): Record<ConstelStatus, string>`, total by
-  type and lifted out of `mountConstel` so jsdom can execute the totality it claims; `col` indexes it
-  with no `??` (deliberate — the key here is a `ConstelStatus` `buildTopology` produced, not wire
-  data). Added the matching invariants and the missing `Docs References`/`Cross-Repo References`
-  prose. Repaired the Repo-Internal citations:
-  both rows linked `agents-remember/dashboard/src/...`, which resolves under the sidecar's own folder
-  and pointed at nothing — now `../panels/Topology.tsx` and `model.ts`, with ranges containing
-  `constelColors`, `mountConstel`/`col`, `CONSTEL_STATUSES` and `lifecycleStatus`. Verification
-  metadata left pinned; closeout stamps the code commit.
-- 2026-06-28T07:30+02:00 — Task 33: the renderer no longer draws a TASKS ring; ring guides are now
-  CHECKOUTS + ENCLOSURES (`RF.repo`/`RF.wt`). The `task`-kind edge branch was removed; the `wt`
-  (enclosure) edge is now status-coloured when its folded lifecycle status is not `ok`, preserving the
-  signal the old task-rim edge gave. No `task` nodes exist in the model anymore. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-23T13:35 — Created (slice 12, render-robustness): documents the imperative renderer and that
-  `render()` now runs synchronously from `resize()`/`update()` (not only under rAF), so the canvas paints
-  in a backgrounded tab where `requestAnimationFrame` is throttled. Verification metadata pinned until
-  closeout stamps the slice-12 code commit.
+- `worktreeStatus` maps a worktree row through shared `taskStatusKey`/`statusTone`, returns `idle` when unbound, and maps `wait` to `warn`, `gone` to `idle`, otherwise `ok`. `worktreeFields` supplies the label, status word and full limit detail using shared status/limit helpers; a limited node's detail contains the word plus every `limitLines` row, with no canvas clock. `buildTopology` creates only workspace, repository and worktree nodes: workspace is `core`, `addRepositories` supplies repository `ok`, and worktrees use that shared derived status and those fields. Search-provider satellites and their status mapping are absent. [4]

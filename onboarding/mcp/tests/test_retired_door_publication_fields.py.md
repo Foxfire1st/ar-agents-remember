@@ -1,15 +1,5 @@
 # mcp/tests/test_retired_door_publication_fields.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_retired_door_publication_fields.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:02 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](overview.md)
@@ -54,36 +44,28 @@ coordination roots.
 
 No new implementation or live-state operation is authorized by this documentation pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets and exact ranges were checked against the L9 working source.
 Source declarations and test assertions are distinguished from execution and acceptance evidence.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The current generation and explicit retired digest names define the test input. | L47-L51; L58-L92; L95-L100 | [mcp/tests/test_retired_door_publication_fields.py](mcp/tests/test_retired_door_publication_fields.py) |
-| The model read drops only the named retired fields and still rejects unknown fields. | L115-L126 | [mcp/tests/test_retired_door_publication_fields.py](mcp/tests/test_retired_door_publication_fields.py) |
-| Store and terminal-archive reads exercise the persisted legacy record. | L129-L153 | [mcp/tests/test_retired_door_publication_fields.py](mcp/tests/test_retired_door_publication_fields.py) |
+- The current generation and explicit retired digest names define the test input. [1]
+- The model read drops only the named retired fields and still rejects unknown fields. [2]
+- Store and terminal-archive reads exercise the persisted legacy record. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 The code/memory or fixture-repository boundaries above are established by package-local source.
 No additional configured external or sibling-repository evidence is claimed.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No additional configured cross-repository evidence. | — | — |
-
-## Update History
-
-- 2026-09-15T01:02 UTC — Created the missing paired sidecar for the retained retired-field tests; documented the narrow existing read rule, current generation fixture without ledger provenance, and real temporary store/archive coverage. Working candidate verified by source inspection; commit metadata records real committed history only.
+No additional configured cross-repository evidence.

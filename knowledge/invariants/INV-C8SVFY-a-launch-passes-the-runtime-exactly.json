@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Binding server command, source, settings and intake prevents a role writing through another installed AR build."
+  },
+  "applicability": "Role launches whose runtime provider accepts tool-server definitions.",
+  "conditions": [],
+  "exclusions": [
+    "Explicit supportsMcpServers=false withholds the definition and records that limit; no alternate harness configuration is created."
+  ],
+  "id": "INV-C8SVFY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ToolServerDefinitionTests::test_the_definition_starts_this_builds_tool_server_with_its_source_and_settings; mcp/tests/test_paseo_tool_server_start.py::ToolServerStartTests::test_the_definition_starts_this_builds_tool_server_which_reports_source_and_binding (integration); mcp/tests/test_paseo_launch.py::RoleFolderAndIdentityTests::test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels; l5-review/evidence/06-worker-receipt.json, 08-tool-server-process.txt, 09-strace-worker-launch-writes.txt; l5-verify/evidence/18-f1-by-hand.txt, 13-worker-tool-server-process.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R04@v1 §1 / F1",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A launch passes the runtime exactly one tool-server definition for the agent, under the fixed name `agents-remember-task`: the interpreter that runs the launching process, started with `-P -m agents_remember.mcp --config <the settings file the launching process was started with>`; AR writes and reads no harness configuration file.",
+  "status": "proposed",
+  "supersedes": []
+}

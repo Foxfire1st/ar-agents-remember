@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Earlier builds closed the list at every load and the host stored that, so the state a browser carries is not the user's choice. The migration opens it exactly once, with a durable marker, and then hands ownership to the host — a wrong reading of the stored state would either keep closing a list the user opened or re-open one they closed."
+  },
+  "applicability": "Every load of the Chats page inside the host's frame, and the host's stored sidebar state in that browser.",
+  "conditions": [
+    "The plugin never closes the host's list at a load and never writes the host's stored panel state except through the host's own toggle.",
+    "The host's stored open/closed choice decides what a later load shows; absent state means open, the host's own default.",
+    "One old stored 'closed' state from earlier builds is opened once, through the host's toggle, and marked per browser so it never repeats.",
+    "A user's menu click before the first poll takes ownership and suppresses the automatic opening."
+  ],
+  "exclusions": [
+    "The plugin does not open a list the user closed, beyond the one marked migration, and does not click the toggle on later loads.",
+    "A standalone tab of the host keeps the user's own sidebar state, as today.",
+    "The collapse behavior other pages need is MIK-R95's; this rule ends it on the Chats page."
+  ],
+  "id": "INV-7QV5CQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/ui-focused.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/native-and-reuse-qualification.json: closedStateByteEqual; notes/reports/role-launch/260928-MIK-L75-worker-0999d37f-1b2a-4c21-a2d8-9a47fece23fd-evidence/d86-final-20261007/browser.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 8",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "After a single per-browser migration of the old closed state, the host owns sidebar open/closed state and its native controls.",
+  "status": "proposed",
+  "supersedes": []
+}

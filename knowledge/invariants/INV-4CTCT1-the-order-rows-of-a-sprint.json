@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "One cross-surface rest/focus contract prevents pointer transit from producing misleading relation changes or breaking keyboard/reduced-motion access."
+  },
+  "applicability": "Pointer/focus relation highlighting on sprint Order rows and the complete graph.",
+  "conditions": [
+    "Pointer highlighting waits180ms; keyboard focus marks immediately.",
+    "Reduced motion removes the fade, not the rest delay.",
+    "Rows and graph share relation/rest semantics; passing between rows does not blank the picture."
+  ],
+  "exclusions": [
+    "Changing producer graph topology/waves.",
+    "Opening a graph without user navigation."
+  ],
+  "id": "INV-4CTCT1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/order-block.test.tsx: the four tests of 'the mark of the order rows (rule 11)'; dashboard/src/panels/sprint-graph/sprint-graph-highlight.test.tsx (unchanged, green); notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f6/sandbox/look2-capture.json probes.order (60 ms: none; rested: self, related x2, other x2; after leaving: none)"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "MIK-R127@v1 rule 11 / order rows",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The order rows of a sprint mark a unit and its relations only after the pointer has rested 180 ms, at once on keyboard focus, with a fade that reduced motion drops; they use the same rest and relation functions as the graph.",
+  "status": "proposed",
+  "supersedes": []
+}

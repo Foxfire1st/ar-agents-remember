@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A bounded diff must disclose omitted content and its temporary Git-object capture: hiding either can make a partial review look complete or conceal the operation's storage side effect."
+  },
+  "applicability": "knowledge_diff bounding and loose-object disclosure.",
+  "conditions": [
+    "The diff exceeds the shared threshold or names an absent path."
+  ],
+  "exclusions": [
+    "A small diff with a present path."
+  ],
+  "id": "INV-JM868W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/focused-tests-admitted.log; notes/run3/L26-current-evidence-20261007/N13-unbounded-diff-negative-current.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 Note 13",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "knowledge_diff is bounded, names omissions and absent selectors, and discloses loose-object capture.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,383 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_reclamation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The historical reclamation owner states its per-route ordering and bounded explicit policy boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:2270c48e14970e4b325d1f3759ac88c82dfa18bc835493b8c78bbb355548caa4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The typed failures preserve ref and snapshot refusal facts without deletion authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:8d2cdc2c8974142bc9972b5768feccd855dacd33a33b7ed6cc31a21a9fdaf4bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectRetentionError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:6f59dd1ce2de981f4831d18db96083f8b33665595c83a8a5042db183f0a47d72",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonReclamationError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Snapshot discard checks exact bytes before removal and writes the measured deletion record afterwards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:f78a7068598131d1b72a4260ff00daa527718fb981c22cd7f3698f08baf466dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:48a64ad8931d00cef7f72463a2411794916a24826b9f87d5c72b4f28e187357e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure_and_remove"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Code release records measured custody before ref release and withdraws its record on refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A moved retained ref is refused before release.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:df54760da3521d4429511706c704e37bb28fa5aacaf26333fdd289313b847310",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_ref_names_the_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Historical reopen keeps unavailable retained canonical knowledge separate from exact readable source and archival deletion facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:d9b1127ccd4028a81d821f6338009dbc0b2c17dad6ae42521ff333ea70abb177",
+            "locator": {
+              "kind": "symbol",
+              "name": "reopen_comparison_generation"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07dda66c98a13ea7b9344ae8f32b60b389587469",
+            "content": "sha256:d245972e8c275e65491aba88b293c9a42e2d2da68fa00219be98c160ae97de6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_channel"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two historical deletion-owner names retained by the manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:b3cad26dc6444ea9c4a238f9cee1763b484a948ba6a2649f29ebce4e50d7e822",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_OBJECT_DELETION_OWNER"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:cf20c8006bfd6e4a4ffc2e98b10dad9b4ae8990afa7686fe2e68475cf676a17a",
+            "locator": {
+              "kind": "symbol",
+              "name": "SNAPSHOT_DELETION_OWNER"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The deletion targets, spelled with the record's own literal vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:cb96171205e7a139335fa0a2c4a9498c6cf5de67628520f46a15ef3e128568d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "CodeObjectTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:797af217e22d8549df4d384e0412855cc1a4a6ffc22eb76caacaf5b67498108e",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeTarget"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:be39c27038ec8022824e354550e1cfaa1828b8a33f6c7b515b22d5a765de798f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:4548934791426979898b094db55fd6bb40b21f37089ac52ba4a356934a7a35f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_CODE_OBJECT_TARGET"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The code release: no pin → refuse; moved ref → refuse before recording; custody measured before deletion; record written first and withdrawn if the release refuses.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:8ea7439e1b26cd6454e4e363a2f9d6d95e09d045ca2ab19e61d4b3a4d6792f94",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_comparison_code_object"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:df54760da3521d4429511706c704e37bb28fa5aacaf26333fdd289313b847310",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_the_ref_names_the_record"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:aae663c17e31ffeccce1b8a866676e7786f120ea51a55f8b30778046ff6e1876",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ref_exists"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The custody names read back from the record rather than re-derived from a live contract, because the enclosure may be gone.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:f694a5a3f4fdc933d2765721d94265a3206ff2c35bc5fc74f5273b325c87459c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_custody_names"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Snapshot discard removes verified historical bytes before writing its per-half deletion record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:f78a7068598131d1b72a4260ff00daa527718fb981c22cd7f3698f08baf466dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_comparison_snapshots"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The digest that is measured rather than copied, the mismatch that records nothing, and the already-absent snapshot that converges as `None`.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fe49634e9ec9be9654d8cf2cfd533cd3eaf6208d",
+            "content": "sha256:48a64ad8931d00cef7f72463a2411794916a24826b9f87d5c72b4f28e187357e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_measure_and_remove"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The record the two operations write, and the manifest read that bounds them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:73d2ab8e235bb64a6aaf9817c167e685cf29aaa0d8cb180b00ae1b58c6774add",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonHistoryDeletion"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:45caf52e247338e80737728b123867c75868e42d906a7ca3a7e785490576f043",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_history_deletion"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_manifest"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The retention owner whose ref the code release deletes, and the two failure statuses it raises.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:f9bf8dc42f67156b384de43f6486c23156208dad567ec64c19f26716ad28c76f",
+            "locator": {
+              "kind": "symbol",
+              "name": "retained_object_readable"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:874ace4ceb964e42fca51d95238b53398b65e9f281bde01d0ddb915da2497f06",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_observation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

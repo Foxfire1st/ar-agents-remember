@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/integration_certification_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The former runtime-owned integration fixture (`integration_fixture`/`IntegrationFixture`) was deleted as unreachable: it had no consumer, and the detached lifecycle worker whose `OperationRuntime` supplied its running record is gone. The surviving real-object fixture in this module is `selected_code_fixture`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c27791e575eb0a7161d9209c6fa86d31e541933a",
+            "content": "sha256:02403c8dfa7e39e62fb09f252bcc66843f59f2926d3663dfdb1381a061ceed9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_code_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The selected fixture retains one target, prepared run and ordered original terminals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c27791e575eb0a7161d9209c6fa86d31e541933a",
+            "content": "sha256:e57bf66536482c1482cb90e80b06f25287927b02127fdac9b2fc2240b70afb03",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedCodeFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Rendering consumes supplied originals and the frozen mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c27791e575eb0a7161d9209c6fa86d31e541933a",
+            "content": "sha256:c83461d4ad0257f81ff8917fce9ea15b13ffd8f96a06de06bcf6fe901ede1794",
+            "locator": {
+              "kind": "symbol",
+              "name": "render"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stored objects derive from a physical publication with injected code execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c27791e575eb0a7161d9209c6fa86d31e541933a",
+            "content": "sha256:02403c8dfa7e39e62fb09f252bcc66843f59f2926d3663dfdb1381a061ceed9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "selected_code_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Structural references are deterministic shapes without a backing evidence publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c27791e575eb0a7161d9209c6fa86d31e541933a",
+            "content": "sha256:e6a4afc430a02a694b038614e64fbfd90728cc4a79eb1fac8d979290629b5b74",
+            "locator": {
+              "kind": "symbol",
+              "name": "structural_quality_references"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,127 +1,72 @@
 # dashboard/src/panels/detail-panel/taskReader.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/taskReader.tsx`          |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
-[panels/ overview](../overview.md)
+[Panels overview](../overview.md)
 
 ## Purpose
 
-The task-document reader grammar of the DetailPanel, extracted from `DetailPanel.tsx`
-by the 260731-EFA-L8 split. Owns `TaskContent`, the master overview/step rendering
-(`MasterOverview`, `MasterSection`, `TaskReader`), the sub-task index with cross-series
-jumps (`SubTaskIndex`), the slice list, spine lane, section/bullets/step-list
-primitives, skipped dispositions, code examples, and the on-demand task-body notice.
-
-
-## 260831-CCR-L23 Task-Requirement Boundary
-
-L23 mounts a `TaskRequirementBoundary` around both `MasterOverview` and
-`TaskReader`. The boundary renders a `TaskRequirementLinksProvider`
-(`grammar/TaskRequirementLinks.tsx`) scoped to the viewed task document
-(`repo=doc.repository`, `master=dirName(doc.docPath)`,
-`document=taskDocumentRefForDoc(doc)?.path`) and forwards the panel's
-`onOpenNotes` as its `onOpenArtifact`. Task prose and the mounted
-`TaskNotes` surface therefore see the registered requirement listing and can
-open requirement packets through the internal reader. Non-requirement rendering is
-unchanged.
+Compose a single entry/summary reader with fixed sprint/master/task content ordering. Head, bounded blocks and own views keep their modules; this owner retains page state and navigation wiring without synthetic series/leaf dispatch.
 
 ## Code Commentary
 
-### Logic
+Each form renders the identity head, body notice and ReaderHead change-set chrome before the bounded ObjectiveLead; a task’s direct-grant slot also precedes the objective. Objective bounds, more/full-view links and entry-keyed open state remain. A sprint composes Now, its scoped closeout queue, inline Order rows, grouped Masters, Requirements, Registers, Decisions/Open questions, Further notes and Notes. A master places optional Non-goals after its objective, then Now, the scoped closeout seam, projected Order, grouped Tasks, Requirements, Design, Acceptance, Decisions/Open questions, Further notes and Notes. Thus both overview forms put Now before CloseoutQueue. Their ordinary index groups retain received order, while the projected graph and completed-task table have their own display ordering. A task places optional Non-goals after its objective, then Steps, Review, Requirements, Design, Acceptance, proposed-code titles, Decisions/Open questions, one References and reports block, Further notes and the single Notes line. Each block omits actual absence; introducing structured prose and discarded-before-start audit remain meaningful content, not duplicate lists. No waitsFor topology or completion timestamp is authored here.
 
-Since 260815-DAG-L14 `SubTaskIndex` also renders typed sprint rows: a row carrying a
-`masterRef` (with a projected target via `docPathForRef`) opens the commanded master document
-directly through `MasterRefIndexRow` (the `⇒` master link — the sprint → master leg of the
-drill-down); an unprojected `masterRef` target falls through to the older slice/static behaviors.
+TaskPage is keyed by the canonical `entry.key`: choosing a different entry resets its own view and objective/note/row expansion, while body arrival for the same entry preserves reader state. The inline requirement-link provider scopes the existing requirement-link provider to the viewed repository/task document and forwards internal artifact navigation on every form. Own-view content uses `DocContentView`; form-specific collection, whole-graph and code-example views stay here.
 
-`TaskReaderSections` walks the task document sections; `SubTaskIndex` renders rows and
-guards the `linkedLifecycleId` cross-series jump; `TaskBodyNotice` reflects the
-on-demand body state; the small primitives (`Section`, `Bullets`, `StepList`,
-`CodeExample`) render markdown-model content without a markdown renderer.
+References/reports and Notes use the entry’s exact reference repository and task-root-relative path. Ancillary reads wait until body loading settles; final Notes reads the root-folder count, not the tree/content. Unavailable bodies keep honest summary fallback.
 
-### Conventions
-
-Presentational grammar; the panel owns data wiring.
-
-### Invariants And Boundaries
-
-The reader renders `TaskDocNode`/`SeriesNode` content only and never mutates it.
-
-### Todos
-
-None recorded.
-
-## Docs References
-
-The curator checked `system/sources.md`; no Domain Documentation source is
-configured for this file.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The reader entry and master overview mount optional graph content and the independently scoped queue. | `TaskContent`; `MasterOverview`; `TaskReader` | dashboard/src/panels/detail-panel/taskReader.tsx:85-132; dashboard/src/panels/detail-panel/taskReader.tsx:167-242; dashboard/src/panels/detail-panel/taskReader.tsx:614-648 |
-| The sub-task index composes rows in received order. | "export function SubTaskIndex({" | dashboard/src/panels/detail-panel/taskReader.tsx:464-502 |
-| The slice list orders and opens authored task documents. | "export function SliceList({" | dashboard/src/panels/detail-panel/taskReader.tsx:505-541 |
-| StepList renders implementation steps, nested substeps, and explicit skip dispositions. | "export function StepList({" | dashboard/src/panels/detail-panel/taskReader.tsx:726-750 |
-
-## Cross-Repo References
-
-No cross-repository implementation source governs this file.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+indexRows/task-groups follow served children and exact entry-key navigation. The head/objective composition is local to this reader; readerTop supplies only TaskBodyNotice. DecisionPreview remains in skeletons and is re-exported. A graph-less sprint retains its scoped queue; full graph is an Order own view. No master-less series/slice fallback remains.
 
 
-## 260815-DAG-L12 Sprint Graph Section
+**L184 — INV-XZYGEB.** This reader is where the page's task entry arrives, so the limit fact it may show has to be passed here. The obligation this leaf records for this place is stated in the invariant named here; the card's earlier account of this file stands, and this paragraph adds what the change made true.
 
-`MasterOverview` mounts optional `SprintGraphSection` graph content and, independently, this sprint's
-scoped `CloseoutQueue` (`sprintRef` = the viewed doc's ref). Graph absence is valid for a reviewed
-atomic-sequential sprint and does not hide scheduling state. A non-sprint master still omits both
-sprint-only surfaces.
+## Boundaries
 
-## 260821-CLIVE Discard Audit And Graph-Less Scheduling
+No authored document-model mutation, lifecycle acceptance or native review occurs here. The extracted directGrant owner posts Give/Revoke through its dedicated adapter; this is external-store mutation, not task JSON authoring or browser permission authority. Form-specific content follows the served summary form; no browser form fallback reconstructs task topology. Revision-keyed register/further preparation is retained in the bounded store resource only after body availability; handlers remain selection-local. Shared Panel/Markdown/token styling remains unchanged; pageStyles.ts scopes the task-page look. The worktree spine, change-set authority, requirement reader and Notes transport keep their existing owners.
 
-`DiscardedSubTaskHistory` renders discarded number/name, reason, `discardedAt`, and proof fingerprint
-in a separate `Discarded before start` section. It is audit history, not part of the live sub-task list
-or completion count. The queue mount is outside the optional graph branch so a graph-less sprint can
-still show exact-current scheduling projection state. `MasterOverviewHeader` is a behavior-preserving
-extraction of the existing kind/title/status header, body notice, change-set bar, and token summary;
-it keeps `MasterOverview` within the function-size gate without changing render order or conditions.
+## Direct execution on the selected task
 
-## Update History
+Only a planned subTask's own page composes TaskDirectGrant from directGrant.tsx after DocHead and before the body notice, ReaderHead and objective: one Direct execution label, a track-and-knob switch and given-by words when granted. Pending disables the switch without moving its served position. directGrant.tsx owns canonical adapter requests, served-state synchronization by document key and giver/time content, typed notice and late-answer suppression; refusals retain the actual grant.
 
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
+Other granted subTask states render bare Direct · given by words and no control; grantless states show nothing. Masters and sprints render neither a row control nor a row mark. This deliberately replaces the old rowDirectGrant/LeafExtra and preserved text-button presentation under the developer's revised scope. It does not change the external grant store, backend start-evidence gate or permission owner.
 
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `TaskRequirementBoundary` provider mount around `MasterOverview`/`TaskReader` (requirement listing scoped to the viewed task document, forwarded `onOpenNotes`).
-
-- 2026-08-24T15:04+02:00 — Added separate discard-before-start audit rendering, corrected the
-  sprint surface contract (optional graph, independent scoped projection), and recorded the
-  behavior-preserving `MasterOverviewHeader` extraction made during commit-hook closure.
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12: `MasterOverview` now mounts `SprintGraphSection` (the sprint execution graph wave-grid view plus this sprint's CloseoutQueue — L12-R5); claim re-read, citation ranges regenerated, stamp advanced to code commit b7f2c8e2.
+## Evidence
 
 
-- 2026-08-20T04:32+02:00 — 260815-DAG-L14: `SubTaskIndex` renders typed `masterRef` rows as
-  `MasterRefIndexRow` (opens the commanded master document directly; unprojected targets fall
-  through to older behaviors), and `docPathForRef` is threaded through `TaskContent`,
-  `MasterOverview`, `MasterSection`, and `SubTaskIndex`. Verified at code commit 9c3180c1.
 
 
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the reader
-  grammar module extracted from `DetailPanel.tsx`. Verification pinned to the leaf
-  base until closeout stamps the code commit.
+
+
+
+
+
+
+
+
+
+- StepsBlock owns the full served step table and derives its header marks from those steps; taskReader supplies doc.steps and the served done/total counts. [4]
+
+
+
+
+
+- The relocated DecisionPreview keeps five newest authored decisions and an authored-only all-link to the records-retaining whole-log target. [5]
+
+
+
+
+
+- The planning-task switch stays rendered while pending, disables its action and displays served giver words and adapter notice. [7]
+
+
+
+
+
+- Only a planning subTask receives the switch; other granted states receive bare words. [8]
+
+
+
+- TaskPage identity is the canonical entry key; the surrounding clock runs for shown entries that carry an event time or a served limited status. [9]
+
+- Both overview forms compose Now before the scoped closeout queue and Order. [10]

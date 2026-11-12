@@ -1,26 +1,19 @@
 # mcp/src/agents_remember/controlplane/durable_store.py
 
-| Field                  | Value                                                     |
-| ---------------------- | --------------------------------------------------------- |
-| repository             | agents-remember                                           |
-| path                   | `mcp/src/agents_remember/controlplane/durable_store.py`   |
-| doc_type               | `file-level-onboarding`                                   |
-| lastUpdated | 2026-09-07T00:42+02:00 |
-| lastVerifiedCommitHash | `97e8ed2e1fae21756c3ad995c30613d4fbfcc503` |
-| lastVerifiedCommitDate | 2026-09-06T02:09:33+02:00 |
-| governingOverview      | `overview.md`                                             |
-
 ## Governing Overview
 
 [overview.md](overview.md)
 
 ## Purpose
 
-`durable_store.py` declares `ar-durable-store/1.0`, the common record, ownership and I/O contract for six control-plane JSONL stores. It owns schema validation, advisory writer/compaction policy, guarded access, durable appends, and the requirement to hold a log lock across read-filter-rewrite. Mechanical file exclusion belongs to `kernel.file_lock`; atomic temp publication belongs to `kernel.atomic_write`.
+`durable_store.py` declares `ar-durable-store/1.0`, the common record, ownership and I/O contract for retained JSONL store consumers. It owns schema validation, advisory writer/compaction policy, guarded access, durable appends, and the requirement to hold a log lock across read-filter-rewrite. Mechanical file exclusion belongs to `kernel.file_lock`; atomic temp publication belongs to `kernel.atomic_write`.
 
 This concentration was introduced after independent store implementations lost whole records through unprotected read-modify-write and unlink races. Reader validation could not recover records that never remained in the log. The historical evidence account below remains separate from the current owner map.
 
 ## Code Commentary
+
+Dashboard-owned appends announce before mutation and capture the writing descriptor's identity while the existing cooperating-writer lock is held. Empty batches record no effect. A writer ignoring that lock can land in the flush-to-fstat window; accepted behavior recovers this named race through independent full healing, not an immediate identity-perfect guarantee.
+
 
 ### Historical 260731-EFA-L5 Evidence Account
 
@@ -80,13 +73,12 @@ the record says it means something this code was not written to interpret. If a 
 ever genuinely introduced, accepting it is a deliberate change here plus the migration to go with
 it, not a comparison operator that already quietly said yes.
 
-**`DurableRecord`** is the pydantic base all six record types inherit. It carries
-`model_config = ConfigDict(extra="forbid")` (previously repeated in each of the six) and a
+**`DurableRecord`** is the common pydantic record base. It carries
+`model_config = ConfigDict(extra="forbid")` (historically repeated in the six-store census) and a
 `schemaVersion` field validated on the way in. This is the whole mechanism behind the two read
 policies: an unknown major raises `ValidationError` at parse time, so a strict reader surfaces it
-and a tolerant reader skips the row, and **no reader anywhere contains a version branch**. Verified
-directly against all six record classes: minor `1.99` accepted, major `2.0` rejected, `banana`
-rejected. Undo the validator and every reader silently accepts a record it cannot be trusted to
+and a tolerant reader skips the row, and **no reader anywhere contains a version branch**. The historical six-class check recorded minor `1.99` accepted, major `2.0` rejected and
+`banana` rejected; it is prior evidence, not a fresh execution or a current six-class inventory. Undo the validator and every reader silently accepts a record it cannot be trusted to
 interpret.
 
 **Process role and checkout execution.** `ProcessRole` includes `mcp`, `dashboard`, and `lifecycle-operation`; compaction ownership remains `mcp`/`dashboard`. `declare_process_role` delegates execution-mode state to `kernel.primitives.checkout_coordination`, and `declared_process_role` narrows that state to those three shared-store writer roles. Explicit test mode and an undeclared CLI return `None`. Declarations belong to actual process entry points: MCP, the dashboard foreground/reload worker, and the detached lifecycle-operation worker. Factories invoked in-process do not impersonate those processes.
@@ -118,10 +110,7 @@ load-bearing part of this module:
 - `is_compaction_owner()` is a **question that never raises**. It returns `True` in a process that
   declared nothing and `True` for a store whose `compaction_owner` is `None`.
 
-**The ownership register** holds all six constants side by side so the differences are comparable:
-`GATE_OWNERSHIP`, `EXPECTATION_ROW_OWNERSHIP`, `ATTENTION_DISMISSAL_OWNERSHIP`,
-`OPERATOR_INBOX_OWNERSHIP`, `ORCHESTRATION_NUDGE_OWNERSHIP`, `AGENT_NOTIFIER_SIGNAL_OWNERSHIP`. Four
-logs accept MCP and dashboard writers; gate also accepts the detached lifecycle-operation writer. Attention-dismissals and supervisor-signals accept the dashboard alone. Locking is *not* one of the differences — all six lock, always.
+**The current ownership register** declares GATE_OWNERSHIP (MCP/dashboard/lifecycle-operation writers, MCP compaction owner) and ATTENTION_DISMISSAL_OWNERSHIP (dashboard writer/compaction owner). Expectation, inbox, nudge and notifier-signal ownership constants are removed; the former six-store census is historical, not a present API inventory. Ownership is advisory for undeclared processes, while serialization remains unconditional for every retained store.
 
 **Checkout target containment precedes locking.** `exclusive_access`, `append_line`, and
 `rewrite_lines` all call `require_durable_write_target`. In an undeclared linked checkout, the only
@@ -134,14 +123,15 @@ Host Dagger registry ownership uses the same kernel mechanics through its own `A
 
 **The I/O.** `read_log_text` returns raw UTF-8 text or `""` when absent. `append_line` and `append_lines` authorize the target, append under the caller's held lock and fsync before closing; the batched helper performs one flush/fsync for the batch. `rewrite_lines` authorizes the target and requires the hold, then delegates to `atomic_write_text`. Its kernel owner writes a hidden per-call pid-and-UUID temp, fsyncs it, replaces the destination, then fsyncs the directory on POSIX. Empty content remains an empty file; the destination is never unlinked.
 
-`migrate_jsonl_records` is a bounded explicit migration: transform each raw JSON object, validate all records before replacement, and rewrite only if at least one record changes. It is not a parallel permissive reader.
+The current module has no `migrate_jsonl_records` helper. Retained schema-version validation refuses unsupported major or malformed versions; generic locked I/O does not authorize a permissive migration reader.
 
 ### The Lock Is The Mechanism, Ownership Is Advisory
 
 The contract keeps the distinction between serialization and advisory ownership explicit:
 
-- **The lock is unconditional.** Every append and every rewrite of every one of the six logs takes
-  that log's lock, in every process, whether or not that process declared anything. There is no
+- **The lock is unconditional.** Every retained store's append and rewrite takes its log's
+  lock, in every process, whether or not that process declared anything. The historical
+  six-store census is not the current ownership register. There is no
   flag that turns it off and no store exempt from it. The `serialized` opt-out an earlier draft
   carried was deleted. This is what took the measured loss to zero.
 - **Ownership is advisory and opt-in.** `check_declared_writer` raises only for a declared shared-store writer;
@@ -165,6 +155,15 @@ The split is deliberate and must not be filed as an inconsistency.
   must not 500 an endpoint or freeze the fleet-wide projection. A tolerant read never writes back
   what it read, so a skipped line is skipped for the duration of one tick.
 
+The current declared split is gate (strict authority input) versus attention dismissals
+(tolerant disposable UI acknowledgements). Gate rewrites use strict input; attention rewrites
+may permanently drop malformed rows only while those rows carry no mutation authority. Before
+using a tolerant log to suppress or permit a mutation, move its read/rewrite path to strict
+validation in the same change.
+
+<details>
+<summary>Historical six-store read-policy census — not current caller guidance</summary>
+
 By store: gate, expectation-rows and operator-inbox are the strict three (their rows change a
 decision); attention-dismissals, orchestration-nudges and supervisor-signals are the tolerant three
 (their rows only render or rate-limit). Gate **and** expectation-rows additionally expose a
@@ -179,6 +178,9 @@ of the three strict stores drives its rewrites from its strict `read`, and each 
 tolerant stores drives its rewrites from its tolerant `read`. The tolerant three therefore *do*
 drop an unparseable row on compaction — which is safe only because none of them carries authority,
 and would stop being safe the moment one of them did.
+
+
+</details>
 
 ### The Process-Wide Mutex — What It Adds And What It Does Not
 
@@ -212,21 +214,7 @@ already has.
 
 ### The Ordering Across Stores (260731-EFA-L16)
 
-The intra-store order above is not sufficient. `exclusive_access`'s docstring now declares ONE
-ORDER ACROSS STORES, TOO: no thread may hold one store's lock — mutex, RLock, or flock — while
-acquiring another store's lock. Evidence a transaction needs from a second store is gathered
-BEFORE entering this one, or the side effect runs AFTER leaving it; never nested. The two nestings
-this rule forbids were each locally documented and locally defensible: the liveness sweep held the
-catalog batch lock across the hosted-interaction synchronizer's operator-inbox/gate acquisitions
-(260718-CHATS-L5 had quarantined that call's failure mode, not its placement), and the
-agent-notifier's lock-held reconcile read the catalog under the inbox lock (260712-TRH-L5's
-"intentionally held across catalog/tmux evidence"). On 2026-08-05 the two deadlocked ABBA in
-production, twice and py-spy-verified, and the uvicorn event loop then queued on the same catalog
-RLock via async endpoints doing synchronous catalog reads, so the daemon stopped accepting. Both
-nestings are un-nested now — `terminal_liveness` defers the synchronizer to after the batch
-commit, the supervisor pre-fetches the catalog before the inbox transaction — and
-`mcp/tests/test_cross_store_lock_order.py` pins the rule with a placement property and a
-rendezvous-parked ABBA reproduction over the real sweeps.
+The lock contract forbids cross-store nesting as well as preserving mutex-before-flock order within one store. Evidence from a second store must be read before this hold or its side effect deferred until after it. The historical notifier/liveness ABBA incident explains that rule, but its removed sweeps and dedicated reproduction module are not present consumers or current execution evidence. Current ownership remains with the shared lock and the actual retained store callers.
 
 ### Capability, Enforced At The Shared Owner
 
@@ -234,18 +222,16 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
 
 ### Conventions
 
-- One rewrite entry point, with the log's lock held unbroken across the read, the filter **and** the
-  rewrite. That invariant holds in all six stores. The *code shape* it is written in does not, so do
-  not read the shape as the rule — this was checked store by store rather than taken from the
-  module's own summary. Three stores use a named locked half: `ExpectationRowStore.compact` →
-  `_compact_locked`, `AgentNotifierSignalCooldownStore.compact` → `_compact_locked`, and
-  `AttentionDismissalStore.prune_lifecycles` → `_prune_locked`. The other three inline the read, the
-  filter and the rewrite in one method body under a single `exclusive_access`: `GateStore.compact`
-  and `GateStore.delete`, `OrchestrationNudgeStore.compact`, and every `OperatorInboxStore` rewrite
-  (which is the near miss — it has `_read_unlocked` and `_replace_unlocked` halves, but filters
-  between them in the public method). Even the split store splits only one of its two rewrites:
-  `AttentionDismissalStore.dismiss` inlines. What must never happen is locking the write half alone:
-  that looks safe and loses records, and `require_lock_held` is where it is caught.
+- The rule is one uninterrupted log hold across the read, filter and rewrite, not a
+  particular helper shape. Current attention writes are `AttentionDismissalStore.dismiss`
+  (`attention_dismissals.py:120-139`) and `reconcile` (`:164-191`); both read inside
+  `exclusive_access` and call `_replace`, whose `rewrite_lines` requires the hold. `reconcile`
+  reclaims only occurrences proved ended or gone by actual complete observations; unread or
+  failed kinds prove no removal, and an unchanged set performs no physical write. There is no
+  current `prune_lifecycles` or `_prune_locked` method. `GateStore.delete` and `compact` still
+  read/filter/replace inside one hold (`store.py:258-299`). What must never happen is locking
+  the write half alone: `require_lock_held` catches an unlocked replacement but cannot prove
+  that the caller's earlier read and filter occurred under the same uninterrupted hold.
 - Errors are a small tree rooted at `DurableStoreError(RuntimeError)`, with `CompactionOwnerError`
   and `UnsafeLockFilesystemError` beneath it. None is ever downgraded to a warning or a no-op.
 - Atomic publication owns hidden pid-and-UUID temp names (`.<log>.<pid>.<uuid>.tmp`), so calls use distinct temporary paths and the watcher skips them through its dot-prefix and `.tmp` filters.
@@ -256,28 +242,29 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
   `lock_path_for` is what keeps the filter in step when a lockfile is renamed — the literal
   `"operator-inbox.lock"` this replaced had silently stopped matching anything once `lock_path_for`
   moved to `operator-inbox.jsonl.lock`. Matching by suffix rather than by basename is what a list
-  structurally could not do: five of the six logs live only under `workspace/`, but `gates.jsonl`
-  lives there **and** once per lifecycle, so `gates.jsonl.lock` appears in every lifecycle directory
-  too. No projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs themselves and
+  structurally could not do: the retained gate store can address `gates.jsonl` under
+  `workspace/` or an existing lifecycle directory. Sibling locks must be filtered wherever
+  a retained watched input lives; that does not reinstate lifecycle-log watch roots. No projection input is named `*.jsonl.lock` — the inputs are the `.jsonl` logs themselves and
   their `.json` sidecars — so the suffix rule cannot over-match.
-- Schema interpretation remains one explicit major-version rule. `migrate_jsonl_records` performs bounded, fully validated migrations under the existing log lock; it does not silently accept an unsupported record schema.
+- Schema interpretation remains one explicit major-version rule. The removed migration helper is not current calling guidance; retained writes validate through their actual record owners and lock boundary.
 
 ### Invariants And Boundaries
 
-- **Unconditional locking.** Every append and every rewrite of every one of the six logs holds that
-  log's lock. Add a store, a writer or a code path that skips it and the lost-update window this
+- **Unconditional locking.** Every retained store append and rewrite holds that log's lock. Add a store, a writer or a code path that skips it and the lost-update window this
   module was created to close re-opens silently.
 - **The lock is held across the read AND the rewrite.** A record list chosen by a read that
   happened outside the lock is already stale, and rewriting from it is the same lost update under
-  a different name. `require_lock_held` is the one place this is checked rather than remembered.
+  a different name. `require_lock_held` checks only the calling thread’s hold at replacement; it cannot establish that the earlier read and filter occurred within that same uninterrupted hold.
 - **`rewrite_lines` never unlinks.** An empty kept set is an empty file. The old `unlink` on empty
   let a concurrent appender holding an `"a"`-mode handle write into an inode with no remaining
   links — the record vanished with no torn line and no trace.
 - **Ownership never decides whether to lock.** `exclusive_access` takes an `ownership` argument
   only to name the log in the refusal when the filesystem turns out not to support locking.
-- **One compaction owner per log, with one declared exception.** operator-inbox carries
-  `compaction_owner=None` because both processes must physically remove rows and neither move
-  travels without the decision it implements.
+- **Current compaction owners are explicit:** `GATE_OWNERSHIP` names MCP and
+  `ATTENTION_DISMISSAL_OWNERSHIP` names dashboard. The former operator-inbox
+  `compaction_owner=None` exception is historical; that ownership constant is removed.
+  The generic `StoreOwnership` policy still admits `None`, without advertising a retained
+  operator-inbox consumer.
 - This module owns coordinator write policy, durable I/O composition and the record base class. Kernel owners provide exclusion and atomic publication. It owns no record
   vocabulary, no retention policy and no MCP surface; those stay in the per-store modules and in
   `interaction_retention.py`.
@@ -286,40 +273,37 @@ The kernel's double-open probe checks actual exclusion on each lock path instead
 
 The earlier Todo about `thread_mutex_for` claiming that all six stores split reclaim into named locked halves is obsolete: the helper moved to the shared kernel and its current docstring no longer makes that claim. The invariant is uninterrupted exclusion across read-filter-rewrite, independent of method shape.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. The current contract is repository-owned; historical observations above remain qualified historical provenance.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain documentation source. | N/A | N/A |
+No configured external domain documentation source.
 
-## Repo-Internal References
+### Repo-Internal References
+
+
+- Current attention writes read and replace under one store hold; reconciliation uses actual observations rather than lifecycle pruning. [12]
+
+- The lock-at-replacement check cannot prove the earlier read was inside the same hold; retained gate delete/compact do hold across the full sequence. [13]
+- The current read-policy split is strict gate authority versus tolerant non-authoritative attention acknowledgements. [14]
 
 The current owner map is verified against the prepared source. Kernel mechanics, coordinator authorization, and caller-specific host registry policy are separate.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Current writer declaration, advisory ownership and compaction roles. | `declare_process_role`; `declared_process_role`; `StoreOwnership` | mcp/src/agents_remember/controlplane/durable_store.py:79-88; mcp/src/agents_remember/controlplane/durable_store.py:91-95; mcp/src/agents_remember/controlplane/durable_store.py:98-138 |
-| Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. | `schema_version_supported`; `DurableRecord` | mcp/src/agents_remember/controlplane/durable_store.py:232-253; mcp/src/agents_remember/controlplane/durable_store.py:256-279 |
-| Guarded coordinator entry translates the shared capability failure. | `exclusive_access` | mcp/src/agents_remember/controlplane/durable_store.py:319-360 |
-| The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. | `lock_path_for`; `thread_mutex_for`; `_LockDepth`; `_verify_lock_capability`; `exclusive_file_lock`; `lock_held` | mcp/src/agents_remember/kernel/file_lock.py:36-38; mcp/src/agents_remember/kernel/file_lock.py:41-55; mcp/src/agents_remember/kernel/file_lock.py:19-27; mcp/src/agents_remember/kernel/file_lock.py:58-84; mcp/src/agents_remember/kernel/file_lock.py:87-114; mcp/src/agents_remember/kernel/file_lock.py:117-119 |
-| Rewrite refuses without a hold; append and rewrite targets retain containment. | `require_lock_held`; `_prepare_append_target`; `_require_rewrite_access` | mcp/src/agents_remember/controlplane/durable_store.py:363-381; mcp/src/agents_remember/controlplane/durable_store.py:431-433; mcp/src/agents_remember/controlplane/durable_store.py:436-438 |
-| Current raw read, single/batched durable append and atomic rewrite. | `read_log_text`; `append_line`; `append_lines`; `rewrite_lines` | mcp/src/agents_remember/controlplane/durable_store.py:384-388; mcp/src/agents_remember/controlplane/durable_store.py:391-402; mcp/src/agents_remember/controlplane/durable_store.py:405-418; mcp/src/agents_remember/controlplane/durable_store.py:421-428 |
-| Explicit migration validates every transformed record before replacement. | `migrate_jsonl_records` | mcp/src/agents_remember/controlplane/durable_store.py:282-316 |
-| Per-call temporary names and atomic publication have one kernel owner. | `_temp_path_for`; `atomic_write_bytes`; `atomic_write_text`; `_fsync_directory` | mcp/src/agents_remember/kernel/atomic_write.py:21-29; mcp/src/agents_remember/kernel/atomic_write.py:51-70; mcp/src/agents_remember/kernel/atomic_write.py:73-75; mcp/src/agents_remember/kernel/atomic_write.py:32-48 |
-| The host registry has its own domain policy over the same exclusion primitive. | `AuthorityRegistry` | mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py:588-846 |
-| Watcher exclusion derives the shared lock suffix and filters every directory. | `is_projection_input_event` | mcp/src/agents_remember/serving/change_watcher.py:189-207 |
-| Undeclared host admission leaves live coordinator lock and append writes refused. | `test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused` | mcp/tests/test_dagger_registry_lock.py:89-114 |
 
-## Cross-Repo References
+
+- The host registry has its own domain policy over the same exclusion primitive. [9]
+
+- Undeclared host admission leaves live coordinator lock and append writes refused. [11]
+
+
+### Cross-Repo References
 
 No meaningful cross-repo references found. This contract governs one package inside this
 repository; nothing outside it reads these logs.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| None. | N/A | N/A |
+None.
 
 ## 260815-DAG-L3 Detached Writer Census
 
@@ -328,92 +312,19 @@ compaction roles. Detached workers declare that execution mode and are admitted 
 whose ownership record includes them; the gate and lifecycle-operation/queue paths therefore no
 longer rely on the earlier undeclared-process bypass.
 
+- Current writer declaration, advisory ownership and compaction roles. [1]
 
-## Update History
-- 2026-09-07T00:42+02:00 — Removed remaining obsolete suite-proof citations; current production invariants and historical records remain preserved.
-
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `test_host_admission_keeps_undeclared_checkout_coordinator_writes_refused` repointed to mcp/tests/test_dagger_registry_lock.py:89-114. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- Major equality and validated record base; tolerant rewrite policy is declared in the module front matter. [2]
 
 
-
-- 2026-09-06T00:23:26+00:00 — L30 recovery: Reverified retained source or route ownership against actual candidate commit 97e8ed2e1fae21756c3ad995c30613d4fbfcc503; replaced the superseded private-candidate stamp.
-
-- 2026-09-06T00:28+02:00 — Reconciled the shared kernel lock extraction, retained guard-before-filesystem ordering and error translation, corrected current writer and atomic-publication ownership, repaired source references, and preserved qualified incident provenance and prior history.
+- Guarded coordinator entry translates the shared capability failure. [3]
 
 
-- 2026-08-29T17:23+02:00 — No content impact: reviewed the Python 3.13 bounded local type-parameter migration in `migrate_jsonl_records` and confirmed that durable-record migration semantics remain as documented. Verification remains closeout-owned.
+- The kernel owns lock naming, thread mutexes, nesting, capability and hold observation. [4]
 
-- 2026-08-18T09:10+02:00 — No content impact: renamed the atomic 'barrier' concept to 'blocker' throughout; behavior unchanged. Verification remains closeout-owned.
+- Rewrite refuses without a hold; append and rewrite targets retain containment. [5]
+- Current raw read, single/batched durable append and atomic rewrite. [6]
+Historical reference 7 in the preserved F001 card records the removed explicit migration helper; it is not a current callable or migration instruction.
+- Per-call temporary names and atomic publication have one kernel owner. [8]
 
-- 2026-08-15T09:10+02:00 — L3 content update: added the lifecycle-operation writer role and
-  separated writer identity from compaction ownership; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current control-plane card for `durable_store.py` with plane-owned seat identity, routing, and enforcement boundaries.
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: process declaration moved to the kernel checkout-policy
-  owner; lock, append, and rewrite primitives now fail closed against live/outside targets for
-  undeclared linked-checkout code before creating filesystem state. Verification metadata remains
-  pinned until approved closeout.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-05T19:26+02:00 — 260731-EFA-L16 curator: recorded the cross-store lock-order doctrine
-  (`exclusive_access` docstring: ONE ORDER ACROSS STORES, TOO — evidence before entry, side effects
-  after exit, never nested) next to the intra-store ordering, with the 2026-08-05 ABBA incident
-  provenance (two py-spy-verified production deadlocks; the event loop parked on the catalog
-  RLock). Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-03T10:05+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 13 live citation findings (6 missing anchors, 6 malformed sources, and 1 duplicate source; the duplicate was live-only drift beyond the 12-item manifest); final scoped check is clean.
-
-- 2026-08-01T19:10+02:00 — Measured-claim repair, confined to the defect section; the contract,
-  lock/ownership, read-policy and reclaim prose was not touched, because the 18:45 pass had it right.
-  The section opened "Ten runs per store at the base commit… Zero torn lines in every run… After the
-  contract landed: 0 lost, 0 raised, 0 torn, all six stores, all scenarios", and the loss column was
-  headed "Measured loss at the base commit" — all of it asserted as findings a reader could check.
-  **Nothing in the tree lets a reader check any of it:** no base-commit measurement artifact is
-  committed, `_store_durability.py::main` can write a JSON payload but none is stored, no test
-  asserts a rate, and no committed test invocation even passes `runs`. That is now said once, at the
-  top of the section. The rates are split by corroboration: 31.45 percent (four sites) and 11.50
-  percent (three) are quoted plainly on the sources' authority; 10.50 / 10.20 / 9.20 / 0.00 percent,
-  "127 of 2000", "ten runs per store" and the whole-not-torn property exist only in this file's own
-  module docstring, which is the text this card documents, and are attributed to it. **The post-fix
-  claim was wrong in both directions and is corrected against the test source, with the class named
-  so the next reader gets there in one step.** `MultiProcessDurabilityTests` asserts `lost == 0` in
-  all three scenarios but over *five* stores in `forced_unlink` (it iterates `APPEND_CASES`;
-  attention-dismissals has no `append`, so it is excluded by construction) and six in the other two;
-  `torn_lines == 0`, `append_error_count == 0` and `reclaim_error_count == 0` are asserted in the
-  `stress` scenario only. Added the one base-commit fact that *is* checkable —
-  `HarnessSensitivityTests` `git archive`s `e52edaf5` and asserts 1-of-1 loss for each unlocked store
-  and 0 for operator-inbox — which is also the only support for `store.py`'s "100 percent in the
-  forced-window scenario". Section heading renamed accordingly; no citation into `durable_store.py`
-  gained a line number. `lastVerifiedCommitHash`/`lastVerifiedCommitDate` left blank, as closeout owns
-  them.
-- 2026-08-01T18:45+02:00 — Citation and accuracy repair; no prose about the read-policy split, the
-  mutex or the lock ordering was changed, because it was right. Converted every citation into
-  `durable_store.py` to symbol-name and docstring-heading form with no line range: the file grew
-  598 → 699 lines mid-leaf and thirteen of the fourteen rows pointing into it had drifted onto
-  other symbols, one claiming to show the six-store ownership register while covering only
-  `GATE_OWNERSHIP`. Added the previously uncited `DO NOT GENERALISE "EVERY REWRITE READS STRICTLY"
-  TO ALL SIX` block, which this card's body already paraphrased. Corrected three false statements
-  about the code: the `declare_process_role` callers are three, not two (`mcp/server.py` `main`,
-  `cli/dashboard.py` `run` and `_dev_app`), with `_dev_app` recorded as the deliberate exception
-  and the only factory that declares, and the uvicorn spawn-child reload worker recorded at its
-  measured weight — an ownership gap, not a durability defect, since the unconditional lock always
-  covered the write; `schema_version_supported` now compares the major for equality and refuses
-  `"0.9"`, so the Todo claiming it accepts `0.x` is gone and the settled rule is recorded instead;
-  and `serving/change_watcher.py` derives `_DURABLE_LOG_LOCK_SUFFIX` from `lock_path_for` and
-  matches by suffix in every watched directory, so the Todo and the reference row claiming it still
-  names `operator-inbox.lock` are both gone and the derivation is recorded. Restated the
-  reclaim-splitting convention against what the six stores actually do — three use a named locked
-  half, three inline read, filter and rewrite under one `exclusive_access` — and filed the one
-  remaining Todo, that `thread_mutex_for`'s docstring claims all six split. Blanked
-  `lastVerifiedCommitHash` and `lastVerifiedCommitDate`, which closeout owns and which the four
-  sibling test cards correctly leave empty.
-- 2026-08-01T18:30+02:00 — Created for 260731-EFA-L5 (durable store integrity): the new
-  `ar-durable-store/1.0` contract module every control-plane JSONL store now routes its file I/O
-  through. Recorded the unconditional per-log lock as the mechanism and ownership as advisory
-  (`check_declared_writer` raises only inside a declared process, `is_compaction_owner` never
-  raises, `require_lock_held` raises from `rewrite_lines` about the calling thread's own lock); the
-  six-store ownership register including the operator-inbox `compaction_owner=None` exception; the
-  deletion of the `serialized` opt-out and the 31.45 percent an unlocked single-writer draft
-  measured; `rewrite_lines` never unlinking; the strict/tolerant read split with the
-  rewrite-reads-strictly property stated per store rather than as a blanket; and the process-wide
-  `RLock` described as defending a simulated regression rather than fixing an existing thread race.
+- Watcher exclusion derives the shared lock suffix and filters every directory. [10]

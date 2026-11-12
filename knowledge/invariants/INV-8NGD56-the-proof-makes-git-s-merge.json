@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The named real-operation regression witnesses protect against false restore acceptance or destructive cancellation caused by a mismatched native merge or index-byte read."
+  },
+  "applicability": "Native reconstruction of a required both-changed regular-path reapply in the managed sync worktree.",
+  "conditions": [
+    "Merge-tree and the configuration read execute in side.worktree.",
+    "The carried head is explicitly the attribute source, regardless of parked or primary checkout attributes.",
+    "Configured diff.algorithm is supplied as the native merge option; the proof does not branch on Git version."
+  ],
+  "exclusions": [
+    "Configuration no native merge consumes is not promised to influence the result.",
+    "Git compatibility measurements are bounded producer evidence, not a universal version certification."
+  ],
+  "id": "INV-8NGD56",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReapplyMergeTests::test_configuration_of_the_worktree_alone_is_the_proofs_configuration (fails on attempt 1 on both gits: finding L163-RV-2), ::test_the_merge_rule_is_the_carried_heads_when_the_parked_work_takes_it_away and ::test_the_merge_rule_is_the_carried_heads_wherever_the_repository_stands in mcp/tests/test_sync_reapply_merge.py; each fails when its part of the construction is weakened (evidence-A2/construction-tests-bite.log); what each command reads, measured on git 2.55.0 and 2.43.0 (evidence-A2/config_context.py, config-context-git255.log, config-context-git243.log); freeze 96c3e0ca + tree fe29dd94 (attempt 2); report role-launch/260928-MIK-L163-worker-A2.md"
+      ],
+      "path": "curator-handoff-list-fa736069.json"
+    },
+    "handoffEntry": "MIK-R162 failure clause (the reapply's own context)",
+    "leaf": "260928-MIK-L163",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The proof makes git's merge in the worktree the reapply ran in, so every setting git's merge reads there, also one set for that worktree alone (a merge driver, the rename and renormalize settings), is the reapply's; the attributes are the carried head's whatever the checkout holds; `diff.algorithm` is the one setting the reapply reads and `git merge-tree` does not, and the proof hands it over as the merge's own option.",
+  "status": "proposed",
+  "supersedes": []
+}

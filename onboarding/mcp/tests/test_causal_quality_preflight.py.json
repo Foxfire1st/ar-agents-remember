@@ -1,0 +1,94 @@
+{
+  "path": "mcp/tests/test_causal_quality_preflight.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A valid failed causal report reaches pytest while the overall quality result remains failed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113769acadce24ce17bf3575cee8c9a7b69d4b39",
+            "content": "sha256:000c3b6bdbaffd09149dedec2bdc331a827cc0c17475264a4c551df86236d02d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_owned_causal_failure_runs_independent_pytest_population"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Missing or invalid reports disable suppression and still run the selected pytest population.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113769acadce24ce17bf3575cee8c9a7b69d4b39",
+            "content": "sha256:e88808657216b07525e0d4abfcda9f9ad98ed307cdb4dc3c4fac6744af6481ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_broken_preflight_disables_suppression_and_runs_selected_pytest"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "113769acadce24ce17bf3575cee8c9a7b69d4b39",
+            "content": "sha256:84548c2f7d314e06bd283ed1640f6ce2a19ae155798595115aa5f07153d5ed93",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_success_exit_without_valid_report_also_uses_safe_mode"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The fixture uses the real quality configuration and explicit failed-report vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "113769acadce24ce17bf3575cee8c9a7b69d4b39",
+            "content": "sha256:4afff8c0da87823723ab22878c6993e21ca6bf3252611cf409043a16c404132e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_quality_config"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "113769acadce24ce17bf3575cee8c9a7b69d4b39",
+            "content": "sha256:0de4973a99c465b582e8b06b9e871da37a3ce12c2311d1bed39a74b5a40ae609",
+            "locator": {
+              "kind": "symbol",
+              "name": "_failed_causal_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Continuation policy is centralized in its dedicated owner rather than duplicated in the test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c158d108f3cae60e00d483e150eb03860a716cf",
+            "content": "sha256:967f100d0f0220d469536678bf02ede522559dc669f1c143db43a21771ce343e",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_preflight_result"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/causal_continuation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

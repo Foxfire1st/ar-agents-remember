@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/run_answers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The response builders preserve shared poll and scope outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2137d159120353fb27456f9014314288e77f8313",
+            "content": "sha256:d4e9e4be3a8583882079abcb542e3c01f266b298068b0d9d9c2f5e7553556b2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unfinished_poll_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2137d159120353fb27456f9014314288e77f8313",
+            "content": "sha256:5c0422fc581e3c8b8cbe2102ddc9aea2dffac2b8f1e8df8b2cc71c8b1713c489",
+            "locator": {
+              "kind": "symbol",
+              "name": "_pair_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2137d159120353fb27456f9014314288e77f8313",
+            "content": "sha256:a0fd33cc615b5db0544f461ebda2a8e621e6dc32d3b89381ff506a1ea53397bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_scope_projection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2137d159120353fb27456f9014314288e77f8313",
+            "content": "sha256:322cbe3053ddf17fcdcafd7e5cea0a81701262139b862248f148ce91b0641db7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_poll_scope_mismatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

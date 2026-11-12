@@ -1,15 +1,5 @@
 # dashboard/src/dev/scenarios.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/dev/scenarios.test.ts`            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-01T10:40+02:00                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
 [dashboard/src overview](../overview.md)
@@ -29,45 +19,32 @@ permanently dead. That is exactly how `refused` and its `refusedPolarity` compan
 
 ### Logic
 
-Five `it` cases over `SCENARIOS`: (1) `build-up` has 6 frames opening on a `worktree_start` caption and
-ending on the `idle constellation`; (2) `tear-down` has ≥6 frames (idle → `removed`/`stack`) and its
-frames' `engineProcesses` phases include `cleanup-pending` (the de-materialise beat — proven via a
-`flatMap` over each frame's `analytics.engineProcesses[].phase`); (3) every scenario has ≥1 frame and
-each frame is a full `WorkspaceProjection` (`version === 2`, `analytics.engineProcesses` is an array, a
-string caption); (4) a folded-in gallery state (`engine-cleanup-pending`) is a single-frame scenario; (5)
-**(05o)** the `memory-block` T3B arc has verify/block/reconcile captions, a frame whose `engineProcesses`
-`health` includes `blocked`, a frame driving a **running `cgc-seed`/`grepai-clone` edge** (so the recover's
-copy-arrow clone beat can't be silently dropped again), and a single `worktreeGroup` across all frames (the
-one-enclosure recover); (6) **(05o T1B)** the `stale-base` arc has preflight/block/fast-forward captions, a
-`blocked`-health frame whose `codeSource.behindSource` is `> 0` and whose `missingFacts` include a
-`contract not yet written` entry (the fleeting born-blocked beat), a frame driving a **running
-`cgc-seed`/`grepai-clone` edge** (the recover's copy-arrow clone beat, so it can't regress to a teleport), and
-a single `worktreeGroup` across all frames (one enclosure). **(05o)** Six further `it` cases pin one arc
-per remaining failure mode, each asserting the choreography off the projection rather than off captions:
-(7) **`seed-fault` (T9B)** — the fault frame drives a `failed`-health node with a `failed` `grepai-clone`
-edge, the `memory`-role provider `runtimeState === "down"` while the `code` provider is NOT down, and a
-re-running `grepai-clone` AFTER the fault (re-seed, not a teleport); (8) **`reindex-reroute` (T9C)** — a
-**`stale`** `cgc-seed` edge plus `seedFallback === true`, never a `blocked`
-health (soft reroute), with the reroute→reindex-settle pair asserted as a same-`worktreeGroup` prop diff.
-Two things changed here in 260731-EFA-L4: the caption match moved from `/refused/i` to `/reroute/i`, and
-the `refusedPolarity === "amber"` assertion was **deleted** — the edge carries no polarity field of its
-own, and the amber flash polarity is derived from the edge state by the renderer
-(`EnclosureCanvas.tsx::refusedPolarityOf`);
-(9) **`provider-block` (T7B)** — a `blocked`-health node with `setupState === "blocked"`, zero `providers`
-(engines never light), `missingFacts` carrying both a `contract not yet written` and a provider-plan/setup
-entry, and the recover running the seed/clone copy-arrows; (10) **`live-sync` (T12B)** — a `blocked` node
-with a `blocked` `ledger-map` edge (but NOT a `worktree-add` block), `memorySource.behindSource > 0`, an
-existing `memoryWorktree`, NO clone/seed beat (the recover is a ff/ref diff since the engines never go
-down), and a final frame that is unblocked with `memorySource.behindSource === 0`; (11)
-**`integration-conflict` (T14C)** — a transient flash frame with a `failed` `integration`/`integration-mem`
-return-lane, a TERMINAL last frame in phase `integration-blocked` with no clone tail (no recover), and the
-flash→STOP pair sharing one `worktreeGroup`; (12) **`abandon` (T18)** — exactly 4 frames whose phases go
-nominal then `abandoned`×3, no `landing` refs on any abandon frame (never lands), `durMs === 1300` on the
-held dissolve beat, and a single `boot-demo` node `id` across all frames (one continuous identity). Across
-the recoverable modes the recover re-runs the clone beats, and each failure beat shares one enclosure
-identity with its resolving neighbour.
+The model assertions cover `SCENARIOS` without mounting a component. `build-up` has four frames,
+opening on a `worktree_start` caption and ending on the `idle constellation`; its two provider beats
+are gone. `tear-down` has at least six frames, begins idle, ends removed/stack, and includes a
+`cleanup-pending` process phase. Every scenario has at least one frame, and each frame has
+`version === 2`, an engine-process array and a string caption. The folded-in
+`engine-cleanup-pending` gallery state remains a single-frame scenario.
 
-**(13) The vocabulary guard (260731-EFA-L4).** A final `it` — *never authors an engine edge state the
+The `memory-block` arc retains verify/block/reconcile captions, a blocked-health beat, a ledger-map
+edge, and one `worktreeGroup` across its frames. The `stale-base` arc retains
+preflight/block/fast-forward captions, a blocked pre-contract process whose base is behind upstream,
+a worktree-add edge, and one worktree group. Both cases explicitly reject `cgc-seed` and
+`grepai-clone` edge kinds; recovery no longer reruns provider copy-arrow beats.
+
+The `live-sync` case pins a blocked ledger-map edge without a blocked worktree-add edge, an existing
+memory worktree behind its source, no seed/clone kinds, and a final unblocked process back in sync.
+`integration-conflict` retains the failed integration return-lane flash, terminal
+`integration-blocked` last frame, absence of seed/clone kinds, and shared flash-to-STOP worktree
+identity. `abandon` retains exactly four frames, nominal then three abandoned phases, no landing refs
+on its abandoned frames, a 1300 ms dissolve hold, and one `boot-demo` identity.
+
+The former `seed-fault`, `reindex-reroute` and `provider-block` test cases are removed. A replacement
+case checks all three names are absent from `SCENARIOS` and every encountered edge kind belongs to
+`worktree-add`, `ledger-map`, `sync`, `integration` or `integration-mem`. It requires a nonempty set of
+encountered kinds so an empty traversal cannot pass. These are authored assertions, not a test run.
+
+**The vocabulary guard (260731-EFA-L4).** A final `it` — *never authors an engine edge state the
 reducer cannot emit* — flattens every `scenario.frames[].projection.analytics.engineProcesses[].edges[]`
 into a `Set` of states, asserts the set is non-empty (so the test cannot pass vacuously on a broken
 traversal), and asserts every member is in the module-local `SERVED_EDGE_STATES` set:
@@ -78,7 +55,7 @@ message names the offending state.
 ### Conventions
 
 Arc assertions read the **projection**, not the captions, wherever the projection carries the fact —
-health, edge state, `seedFallback`, `worktreeGroup` identity. Captions are matched only where the
+health, edge state/kind and `worktreeGroup` identity. Captions are matched only where the
 caption itself is the artefact under test. `SERVED_EDGE_STATES` is a deliberate hand-kept mirror of a
 Python-side comment: there is no generated vocabulary to import here, so the set is written out and
 cited rather than inferred.
@@ -102,79 +79,34 @@ timeline or an empty frame fails.
 
 No open file-local todos.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked the memory repository's `system/sources.md`; it has no configured Domain
 Documentation entries. This card is verified from its direct source, the model under test, and the
 server-side model the vocabulary mirrors.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured Domain Documentation source exists for this file. | — | — |
+No configured Domain Documentation source exists for this file.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The T9C `reindex-reroute` case: `/reroute/i` caption, `stale` `cgc-seed` edge, `seedFallback`, never `blocked`, same-`worktreeGroup` prop diff. | "reindex-reroute" | dashboard/src/dev/scenarios.test.ts:131-161 |
-| `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. | `SERVED_EDGE_STATES` | dashboard/src/dev/scenarios.test.ts:284-294 |
-| Asserts the `build-up`/`tear-down` timelines + frame validity. | `buildUp`; `tearDown`; `version`; `caption` | dashboard/src/dev/scenarios.test.ts:7-14; dashboard/src/dev/scenarios.test.ts:8-25; dashboard/src/dev/scenarios.test.ts:28-36 |
-| The `SCENARIOS` model under test, including the `reindexReroute` timeline whose R4 caption this case matches. | `SCENARIOS`; `reindexReroute` | dashboard/src/dev/scenarios.ts:90-102; dashboard/src/dev/scenarios.ts:260-273 |
-| `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. | `SERVED_EDGE_STATES` | dashboard/src/dev/scenarios.test.ts:284-294 |
-| `_seed_edge_state` — the reducer function that actually emits `stale`; `refused` is not among its answers. | "def _seed_edge_state(" | mcp/src/agents_remember/observer/reducer_impl/_processes.py:638-638 |
-| `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. | `refusedPolarityOf` | dashboard/src/panels/engine-room/geometry.ts:124-134 |
+- The replacement provider-retirement case asserts the three provider arc names are absent and all encountered edge kinds belong to the five retained enclosure lanes, with a nonempty traversal. [1]
 
-## Cross-Repo References
+- `SERVED_EDGE_STATES` and the guard that no authored edge state falls outside it. [2]
+- Asserts the `build-up`/`tear-down` timelines + frame validity. [3]
+
+- SCENARIOS registers build-up, tear-down, memory-block, stale-base, live-sync, integration-conflict and abandon before the resting frames; the three provider arcs are removed. [4]
+
+- `EngineProcessEdge.state` — the served vocabulary `SERVED_EDGE_STATES` mirrors, on an `extra="forbid"` model. [5]
+
+- The surviving state guard lists nine accepted edge states, including stale, and rejects any encountered state outside that set after requiring a nonempty traversal. It does not claim a removed seed-edge reducer still emits them. [6]
+
+- `refusedPolarityOf` derives the amber flash from the edge STATE in the renderer, which is why the edge needs no polarity field and the deleted assertion was fixture-only. [7]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found. The served vocabulary this file mirrors lives in the same
 repository, under `mcp/src/agents_remember/observer/`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
-
-## Update History
-
-- 2026-08-03T09:30+02:00 — 260731-EFA-L6 W3-B07 curator: repaired all 8 assigned citation findings (4 missing anchors and 4 malformed sources); final scoped check is clean. Max-reviewer Tier-2 subject-binding addendum bound the buildUp/tearDown assertion bodies and frame-validity checks instead of declaration-only ranges.
-
-<!-- newest entry by date and time is prepended at the top of the list; prepend-only -->
-
-- 2026-08-01T10:40+02:00 — 260731-EFA-L4 curator (citation pass): re-verified the `projection.py`
-  citation after a worker inserted ten lines above it. `EngineProcessEdge` L752-L771 → L762-L781:
-  the class opens at L762, `model_config = ConfigDict(extra="forbid")` is L770, and the nine-state
-  vocabulary comment plus `state: str` are L778-L779. No body text changed.
-- 2026-08-01T10:04+02:00 — 260731-EFA-L4 curator: corrected the T9C description and documented the new
-  vocabulary guard. The `reindex-reroute` case now matches `/reroute/i` instead of `/refused/i`,
-  looks for a **`stale`** `cgc-seed` edge instead of a `refused` one, and **no longer asserts
-  `refusedPolarity === "amber"`** — that field existed on no server model, was set by the fixture the
-  assertion then read, and the amber flash is derived from the edge state by
-  `EnclosureCanvas.tsx::refusedPolarityOf`. Added case (13), the `SERVED_EDGE_STATES` guard that pins
-  every authored edge state to the nine `EngineProcessEdge.state` documents, plus `Conventions`,
-  `Todos`, `Docs References` and `Cross-Repo References`, which the card lacked. Replaced the `—`
-  citation with ranges proving `SERVED_EDGE_STATES`, the T9C case, `_seed_edge_state`,
-  `EngineProcessEdge.state` and `refusedPolarityOf`. Verification metadata left pinned; closeout
-  stamps the code commit.
-- 2026-06-22T11:00 — slice 05o: added six arc `it` cases, one per remaining failure mode — `seed-fault`
-  (T9B: failed `grepai-clone` + memory engine down, CGC unaffected, re-seed after the fault),
-  `reindex-reroute` (T9C: refused amber `cgc-seed` + `seedFallback`, soft/never blocked),
-  `provider-block` (T7B: `blocked` `setupState`, zero providers, provider-plan + pre-contract
-  `missingFacts`), `live-sync` (T12B: `blocked` `ledger-map`, behind-source memory, ff/ref recover with
-  no clone beat), `integration-conflict` (T14C: failed integration return-lane, terminal
-  `integration-blocked` STOP, no recover tail), and `abandon` (T18: 4 frames, abandoned×3, no landing,
-  one `boot-demo` identity). Each asserts the choreography off the projection (health/edge-state/polarity),
-  recoverable modes re-run the clone beats, and the failure beat shares one enclosure identity with its
-  resolving neighbour. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T10:45 — slice 05o T1B: added a sixth `it` pinning the `stale-base` arc — preflight/block/fast-forward
-  captions, a `blocked`-health frame whose `codeSource.behindSource > 0` and whose `missingFacts` carry a
-  `contract not yet written` entry (the fleeting born-blocked beat), a **running `cgc-seed`/`grepai-clone`**
-  beat (the recover's copy-arrow clone, so it can't regress to a teleport), and a single `worktreeGroup` across
-  the frames (one enclosure). Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-22T00:29 — slice 05o T3B: added a fifth `it` pinning the `memory-block` arc — verify/block/
-  reconcile captions, a `blocked`-health frame, a **running `cgc-seed`/`grepai-clone`** beat (locks in the
-  recover's copy-arrow clone beats so they can't regress to a teleport), and a single `worktreeGroup` across the
-  frames. Broadened the verify caption match to `/verif/i`. Verification metadata pinned until closeout stamps
-  the 05o code commit.
-- 2026-06-19T23:58+02:00 — Created for slice 5i: tests for the scenario model — build-up (6 frames) /
-  tear-down (≥6, with a `cleanup-pending` de-materialise frame) timelines, every frame a valid v2
-  projection + caption, and the gallery states folded in as single-frame resting scenarios. Verification
-  metadata pinned until closeout stamps the code commit.
+No meaningful cross-repo references found.

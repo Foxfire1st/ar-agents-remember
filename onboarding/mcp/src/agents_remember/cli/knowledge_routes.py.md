@@ -1,0 +1,76 @@
+# mcp/src/agents_remember/cli/knowledge_routes.py
+
+## Governing Overview
+
+[mcp/overview.md](../../../overview.md)
+
+## Purpose
+
+**`agents-remember knowledge-routes MEMORY_ROOT --code CODE_ROOT [--code-commit REV] [--family FAM-ID ...] [--json]`: the curator's read-only view of family routes and their mechanical suggestion (MIK-R04 rule 3).** For each family record of the memory working tree it prints the family's routes, its route state and the suggestion labelled `mechanical`. It never writes a route; the curator places routes and writes them through the writer.
+
+## Code Commentary
+
+### Logic
+
+- `add_arguments` declares `memory_root`, the required `--code`, `--code-commit`, the repeatable `--family` and `--json`.
+- `run` parses the memory tree with `knowledge_tree_from_directory` and `parse_tree`. The code files a suggestion reads are the tracked and untracked, not ignored, files of `--code` (`_working_tree_files`, `git ls-files --cached --others --exclude-standard`), or with `--code-commit` the file set of `code_tree_from_git`. An unreadable input prints "cannot read the inputs" and returns 2.
+- The rows are built by `application/knowledge_routes_report.py` (MIK-R73 rule 4): `routes_report` reads the memory tree and the code side and `family_route_documents` builds, per family (filtered by `--family` when given), the family ID, path, status, routes, the state document (`unrealizedFamily`, `routeUnassigned`, `routeless`, `uncovered`, `uncoveredTotal`, `emptied`) and the suggestion's `to_document`. This command is one of the two surfaces that cut their answer from that function, so `knowledge_integrity_check` and the command cannot report different route sets.
+- With `--json` it prints the documents; otherwise `_render` prints each family's states, uncovered paths, emptied routes, the suggestion, and root-level realization files ("realizations at the repository root (route .)"). A requested family that does not exist prints `unknown family: <ID>`; no families prints "no family records".
+
+### Conventions
+
+- Registered in `cli/__main__.py` with the umbrella's declarative `add_arguments` + `set_defaults(func=run)` pair.
+- It reuses `family_routes`; it adds only input reading and printing.
+
+### Invariants And Boundaries
+
+- It only reads: the memory bytes are unchanged after a run (the CLI test asserts it).
+- Exit status: 0 when the families are read, 2 when an input cannot be read.
+- The pre-MIK-R37 no-family observation is historical, not a current command applicability limit; an actually empty family population still prints "no family records".
+- Each document exposes `differs` from set equality between authored and mechanically suggested routes; text prints an explicit difference line only when true. Order alone is not a difference. The suggestion stays mechanical and read-only, not route-authoring authority.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+
+- The read-only output names differs using route-set equality and prints it explicitly without authoring routes. [7]
+
+
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The route design authority is the coordination-root note Doc14
+(`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`, §4.2) and the
+requirement packet `MIK-R04@v2` of task `260928_maintained-invariant-knowledge`; both live outside
+the code and memory repositories, so they are named here and not cited as rows.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+The adapter reuses the route logic; it adds only argument handling and printing.
+
+- The command's arguments. [1]
+
+- The working tree's tracked and untracked, not ignored, files. [2]
+
+
+- Each family's routes, state and suggestion. [3]
+
+
+- Reading, rendering, unknown families and the exit status. [4]
+
+- The subcommand is registered. [5]
+
+- The command offers the suggestion and writes nothing. [6]
+
+
+### Cross-Repo References
+
+No meaningful cross-repo references found: the command reads one memory working tree and one code checkout, both named by the caller.
+
+No cross-repo boundary is crossed by this file.

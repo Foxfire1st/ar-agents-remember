@@ -1,0 +1,147 @@
+{
+  "path": "mcp/src/agents_remember/application/curator_coherence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One admitted contract executes the coherence action and translates the complete domain family.\n\nAnchor: `curator_coherence_tool` `_domain_refusal` `_configured_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:e0f943dab07b0883dffe848c007387e0497b631159a8364dd4c9879a360c5c99",
+            "locator": {
+              "kind": "symbol",
+              "name": "curator_coherence_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:3a4546c7b75e4411b9f217c812cbe4568f6cc11bfdf69c3d4617eaded3d741b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_domain_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:fb3e89c2165370a391a6c82e1bdcf1db7dddefedde93d2d192f0de04fcc840a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:c951a1aea0558ff49732955867f0acc22859b572725806a765078f87722a8fd3",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:39fcbc43d530a94cd1f26251f4f1b500cb1ad57a04938c65f9073dd18a8bcfd8",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:ad9eafd561eefc26bf209dd41132d5f2552e9ec627a85de6c0e5a3038aaffe82",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Configured admission is the shared lower-level API rather than repeated exception lists.\n\nAnchor: `admit_configured_contract` `execute_configured_contract_operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:2cd629788561282f91ce2fb714dbb84d0af712c551874c021fb27516590b00ef",
+            "locator": {
+              "kind": "symbol",
+              "name": "admit_configured_contract"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:95a6b82ba17ba1a53654ccc370194a40588468f5679c084f4a271b094cc59ec5",
+            "locator": {
+              "kind": "symbol",
+              "name": "execute_configured_contract_operation"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:3626a737f58e24ed7bedbabad711659a48ca03bfe3f3c876aaba6ddb095c1445",
+            "locator": {
+              "end": 402,
+              "kind": "line_range",
+              "start": 393
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:579b44b5511fc3a31adf41f56e4f5f9c97bf384bf2acf8ca12c8131a67c4df6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current candidate source supports the operative account; historical sections grant no current tool or execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a01c3f731c8dc69db8897fef8dea34efd31444d",
+            "content": "sha256:ad9eafd561eefc26bf209dd41132d5f2552e9ec627a85de6c0e5a3038aaffe82",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

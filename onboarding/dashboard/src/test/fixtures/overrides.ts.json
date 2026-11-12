@@ -1,0 +1,214 @@
+{
+  "path": "dashboard/src/test/fixtures/overrides.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Partial overrides can erase required task-entry stage, enclosure repoName, task-summary steps or projection enclosures without a cast; the property-name guard does not see this value hole.\n\nAnchor: `current fresh-literal value-hole examples`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:7baa29e96b24e70ccb4d6b9b56849a4da1bcdfaaccfe1d0dbdb7b766594d779d",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Import and boundary review found the same-repository `wire.ts` consumer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:46bf4443d82132cdf1ef00be30eb49fc847bc27ba13257847c6d58d1f419e8f4",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The measured rejection of `exactOptionalPropertyTypes` — 381 errors across 107 files on this tree — and the call-site property the narrow fix has instead.  Anchor: `exactOptionalPropertyTypes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:782945b27878e525e80127dec7ce6bc9826cf7431e7c45941b25b77b45ec66af",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current limits are fresh-literal-only and retained wire.ts builders only; the widened TaskEntry control is a known pass, not a removed conversation/nested builder promise.\n\nAnchor: current widened-variable boundary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6f5c6282b1639a6f68cf31a8433992d2e13676d8a8fb0e08e2d0c32fe754cecc",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "`RequiredKeys<T>`, `Overrides<O, T>` and `NoOverrides`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6924ba64bfcc8eb04dd9c7903f8506f57f0c8d524d4732954337e8f92940bbc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "NoOverrides"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The proof that all four rejections fire, that excess-property checking survives, and that the widened-variable case is a known pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:7ca09dbdd351354a71f1cc7306f2e2911583d6bac1cb637a2a6f78155dad3530",
+            "locator": {
+              "kind": "symbol",
+              "name": "diagnosticsFor"
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:90b7b81cde51b2c5f0ca5a224093d6ac6f264100165168f2f43dc4709b274a6d",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a8e7c68ec7ffbfd48d47afb359d1fee9f46db41f",
+            "content": "sha256:1c8e89d576fa911d1745c142a49830526eeda7a4e1042f3a3bdf5c358624f25b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/fixtureOverrides.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Consumer: every projection builder takes `Overrides<O, Node>`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:aad797a272bbf088f71bebd450c912d579e5b6bc920e080ea5ff3fac42e7882c",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:6eee35b108fa6595aa8e2d09a8729ae69e8e45f84511998c39e6462db6bea1e1",
+            "locator": {
+              "end": 248,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The app project's whole `compilerOptions` block — `strict` is on, `resolveJsonModule` is on, and no `exactOptionalPropertyTypes` entry appears anywhere in it. That absence is the config fact this file exists to answer.\n\nAnchor: `resolveJsonModule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f027a65aa121e2a9a127e28e4eb04a66dc8789d8",
+            "content": "sha256:d89bf5e0b4263f9b850993985c00d2b5b364890384b4ab4f08a14eb5fc37b5a3",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/tsconfig.app.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "tsconfig.driver.json currently enables strict driver checks for e2e and playwright.config.ts; its compilerOptions omit exactOptionalPropertyTypes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1ea2e6f91bd3c1c003efdfca601339ed02b9a2f",
+            "content": "sha256:c78171de288e4e746010720618cb435cc63bf9bb901d3b0463b9678aed5f42f7",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/tsconfig.driver.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

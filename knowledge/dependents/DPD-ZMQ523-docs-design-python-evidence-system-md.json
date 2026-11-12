@@ -1,0 +1,109 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/design/python-evidence-system.md",
+  "id": "DPD-ZMQ523",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-design-python-evidence-system-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "dbfcdac014d956e9b4014fa82769a5b0ec21619f",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py"
+    },
+    {
+      "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+    },
+    {
+      "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+    },
+    {
+      "blob": "5a9cad7d986c1c01cde9b4fd3e110cc2b7605a88",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/cadence_runner.py"
+    },
+    {
+      "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+    },
+    {
+      "blob": "48ad27516e25c526462dc8232bbd3f1f456e4aba",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py"
+    },
+    {
+      "blob": "b085b3643d83812e6e69105238977ba327fa0faf",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py"
+    },
+    {
+      "blob": "30d9312d8d6faed241258dc6c14a5d840ead76b0",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py"
+    },
+    {
+      "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
+    },
+    {
+      "blob": "5691b694e756469475d783c426d9781ef14c8633",
+      "kind": "file",
+      "path": "mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+      "kind": "file",
+      "path": "mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+      "kind": "file",
+      "path": ".dagger/src/agents_remember_quality/main.py"
+    },
+    {
+      "blob": "c0aab806cf4b214842fd3b98831fc39407b31d6e",
+      "kind": "file",
+      "path": ".dagger/src/agents_remember_quality/selection_result.py"
+    },
+    {
+      "blob": "3698ecccaefbec01238063e738b89a996c9e188a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/test_evidence.py"
+    },
+    {
+      "blob": "215a0faf0ceee36983d4b8a323a4bfdb3c50fc1e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/selection_results.py"
+    },
+    {
+      "blob": "5c4d97eb3603a562e58fe97863b2395eaf0aca98",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/dagger_admission.py"
+    },
+    {
+      "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+    }
+  ]
+}

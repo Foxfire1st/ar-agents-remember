@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Role matrix and containment checks prevent worker authority escalation or a manager starting work under another master."
+  },
+  "applicability": "Agent-bound role_start calls.",
+  "conditions": [
+    "A repeated request retains the recorded starter and request identity.",
+    "The earlier system-specialist read spelling canonicalizes to Investigator; it creates no second role."
+  ],
+  "exclusions": [
+    "Developer dashboard selection is not an agent may-start-table call."
+  ],
+  "id": "INV-5TT40M",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MayStartRuleTests::test_each_role_may_start_exactly_the_roles_the_rule_names; MayStartRuleTests::test_a_task_bound_caller_starts_only_under_its_own_sprint_or_master; l8-run/evidence/run-04-W1-timeline.jsonl; l8-review/evidence/tool-04-ambiguous-and-worker-start.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R06@v1 §4",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Who may start what is decided from the caller’s binding: an Architect may start every native role except Architect; an Orchestrator may start Manager, Worker, Reviewer, Curator and Investigator only under its own sprint; a Manager may start Worker, Reviewer, Curator and Investigator only under its own master and sprint; Worker, Reviewer, Curator and Investigator start none. Investigator accepts Projects, sprint or sprint/master selections and refuses a leaf before launch; anything else is refused with the rule in words.",
+  "status": "proposed",
+  "supersedes": []
+}

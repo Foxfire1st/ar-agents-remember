@@ -1,0 +1,64 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "The start ownership constrains every later leaf's seat preparation and is the base MIK-R100 builds on; the prohibited self-start shape is recorded, not claimed as a weighed design."
+  },
+  "alternatives": [
+    {
+      "option": "The Manager starts the Worker and Reviewer together at leaf start and the Curator at the first freeze.",
+      "reason": "The starter briefs an agent and becomes its parent; keeping the three seats under one starter keeps the independent seats independent of the work they check.",
+      "status": "chosen"
+    },
+    {
+      "option": "The Worker starts its Reviewer when a freeze exists and the Reviewer starts the Curator on code PASS.",
+      "reason": "The product refuses that start because the starter briefs and parents the agent it starts; the shape is recorded as prohibited, not as a seriously weighed design.",
+      "reconsider_when": "A later packet changes who may start a leaf's seats or admits a different starter for the set.",
+      "status": "rejected"
+    },
+    {
+      "option": "The Orchestrator or Architect starts the leaf seats for a delegated master.",
+      "reason": "The leaf's checkpoint belongs to the Manager that owns the leaf's gate and transactions; higher seats keep their own starts.",
+      "reconsider_when": "A packet moves leaf-level starts to another named owner.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The Manager owns starts and replacements.",
+    "The Reviewer cold-reads first and the Curator starts exactly at the first freeze."
+  ],
+  "context": "The three leaf seats need a starter, and a seat must not be able to start the one that checks it.",
+  "decider": "the developer; D88, with the developer's direction of 2026-10-07 that the manager spawns them as a set",
+  "id": "DEC-7E3QV1",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R99",
+        "packet": "requirements/MIK-R99-v1-a-leafs-agents-hand-over-to-each-other.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/files/l99-curation-20261007/handoff.json"
+    },
+    "handoffEntry": "DEC-manager-starts-the-set",
+    "leaf": "260928-MIK-L99",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

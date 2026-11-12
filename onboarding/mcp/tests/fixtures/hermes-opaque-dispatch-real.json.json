@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/hermes-opaque-dispatch-real.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e52dc1bf4ab3b0a86deb785bbe3b9510249fd6e7",
+        "content": "sha256:e3ff833a94b865f650f0b3ce46462662b1cf36c799f9d65913da25f15e9fed2e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VP4Y97",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained opaque rows pin the loud shape/provenance record when a dispatch cannot be normalized.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e52dc1bf4ab3b0a86deb785bbe3b9510249fd6e7",
+            "content": "sha256:e3ff833a94b865f650f0b3ce46462662b1cf36c799f9d65913da25f15e9fed2e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

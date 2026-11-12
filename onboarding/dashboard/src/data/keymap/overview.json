@@ -1,0 +1,194 @@
+{
+  "path": "dashboard/src/data/keymap",
+  "references": {
+    "1": {
+      "note": "The reviewer's zone and chords.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfaec6dbfc8f9cbb70c5c68c92188b9a81199d96",
+            "content": "sha256:742d9bf1abb2b3512178f8c373cc482f891e12d2851671a6734c2750972ddc87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/chords.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4c221358c8c345cc317748722a7814bb43f90ee0",
+            "content": "sha256:2ae989cc15a15309b0055d886138da7d8241efb326fc88c3fedf0858a8782e18",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/zones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Chrome/review marker resolution and generic printable/editable passthrough; no slash predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4c221358c8c345cc317748722a7814bb43f90ee0",
+            "content": "sha256:2ae989cc15a15309b0055d886138da7d8241efb326fc88c3fedf0858a8782e18",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/zones.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "REVIEW_CHORDS alone supplies default review commands; invalid and colliding overrides fall back silently to those defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfaec6dbfc8f9cbb70c5c68c92188b9a81199d96",
+            "content": "sha256:742d9bf1abb2b3512178f8c373cc482f891e12d2851671a6734c2750972ddc87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/chords.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d98525da56809e763a8e2125dab624fa6c3f32a9",
+            "content": "sha256:6b2735b7ed8a068f45f99e3223853589238def143ade2b515ad2fa7eebfb023b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "EffectiveKeymap has bindings only, a native cross-tab storage subscription and aria conversion; no profile/activity/signature or same-tab notifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d98525da56809e763a8e2125dab624fa6c3f32a9",
+            "content": "sha256:6b2735b7ed8a068f45f99e3223853589238def143ade2b515ad2fa7eebfb023b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Remaining routing and preference test sources assert their pure keyboard contracts; removed focus/binding/composer tests are not current witnesses. No new test execution.\n\nAnchor: whole current source; whole current source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "686f2a7c4b732a25ed1690adf9b75dd46f072a4f",
+            "content": "sha256:c8ef8fa917b7ab6fb0ae441a216a9e5e5f6b82ffdc6cdc555f1103caa935d67f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/zones.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "aca9c0a076d8a8a98253572558d992b1022aec5c",
+            "content": "sha256:c20aeb879512376684bdc44d7fdc94f3cb3313ad8e1f3d73c9883215123b7ec7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/preferences.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Effective review traversal wiring and its root marker.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reviewer's own binding on its zone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6816d94eb5ed08455c10f33ae7ac2a7f2fdb7d58c1e2882eb74ec75475751d99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeTraversal.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The effective-keymap preference and validation boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d98525da56809e763a8e2125dab624fa6c3f32a9",
+            "content": "sha256:6b2735b7ed8a068f45f99e3223853589238def143ade2b515ad2fa7eebfb023b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/preferences.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The readonly BROWSER_FORBIDDEN tuple lists browser exclusions; no PTY table or matcher remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2c529800964b00ab8cc302b9be0d78aece71ce",
+            "content": "sha256:13bedf8d606cd1006ac94f155ee854d92e195952d3d9e3367148c7af424a892c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/reserved.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,0 +1,196 @@
+{
+  "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9FX5WR",
+      "invariant": "INV-Y6GVZ7",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 6",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This record holds the current capsule, declared-detail and digest measurements with their limits and role ceilings under the developer's D695/D696 decision. The guard binds it by fingerprint, and it in turn pins capsule-budgets.json and capsule-budgets-d694.json as frozen history.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:23beaae89775b40e9aad457c8561cce841137dfff33f837339a979e0e6ab64eb",
+        "locator": {
+          "end": 5028,
+          "kind": "line_range",
+          "start": 4676
+        }
+      },
+      "id": "RLZ-DFYHWJ",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L84-P5-25",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "measuredCurrentRenewalL60PartDD750 is the only sub-record with current:true and its digest words (2,327) equal the final every-role digest; the decision-level currentDigestMapSha256 6d93e314 equals the current digest-map.json. measuredCurrentRenewal88048054R8 is now historical (historicalTree 9a933de3).",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:aa9e2252078c7f858168e56239c002afbcfc5f07929a5948ec63321fb6e9cd53",
+        "locator": {
+          "end": 15,
+          "kind": "line_range",
+          "start": 15
+        }
+      },
+      "id": "RLZ-HP4QWK",
+      "invariant": "INV-12JAM7",
+      "origin": {
+        "handoffEntry": "L84-P5-25",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "The decision-level currentDigestMapSha256 6d93e314 equals the current digest-map.json.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+        "content": "sha256:16e33f8515db8e2fe4fb605e540d2659e1109c4593e16b00a7cdc679cc19db3d",
+        "locator": {
+          "end": 5101,
+          "kind": "line_range",
+          "start": 5101
+        }
+      },
+      "id": "RLZ-QPK1VY",
+      "invariant": "INV-K48GZ2",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Renewal record for the grown digest and recovery detail (D656).",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The decision block binds the historical registry, the predecessor layer and the digest map by SHA-256.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current limits for 34 capsules, the step details and the digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current measurements, including the ordinary linked templates.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:f0cd683eba89fceef7e269a1c7fbf3ead041e2e66d4976e59eee70c9e9ad378e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Role, step and digest ceilings.\n\nAnchor: `current_capsule_ceilings_words`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
+            "locator": {
+              "end": 6371,
+              "kind": "line_range",
+              "start": 6362
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The detail population must equal the manifest's declared step details, and linked templates must be ordinary manifest entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:c5db175a68c58fd0264dc35bea94d6a1bcf9ee7d37c4ad78247a36d6f565009a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_current_source_findings"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The predecessor layer and the historical registry are bound by hash.\n\nAnchor: `predecessorD694Sha256`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:f8c97087b082cc61ff1dbc6f179a6ea20db12d8ff9422c20b48bb78de0686c1e",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The capsule tests read their limits from this record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:a77f13c9b1e17ffda684e14eb60465d59dc3be53400a6ba7085f1842b7df76d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "D695_CURRENT_BUDGETS_PATH"
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

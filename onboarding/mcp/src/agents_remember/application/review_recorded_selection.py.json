@@ -1,0 +1,40 @@
+{
+  "path": "mcp/src/agents_remember/application/review_recorded_selection.py",
+  "realizes": [],
+  "references": {
+    "14": {
+      "note": "Current review composition supplies judgment/proofs and no supporting-record bundle or applicability call.\n\nAnchor: `compose_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c9f8394dfb38bee67a5da3b90ace66147bd5334",
+            "content": "sha256:bc9aed0908cabfef3b176f1734ea114458607fab1f9bf612787eace2cfa4d0c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The surviving pane reads the addressed record’s after-tree leaf-history rows and proof entries; this is not a relocation of the removed behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7915489e9b1bfd326b7927fa39dbc7d55826e3c4",
+            "content": "sha256:3d2ba7c9bb099ac54f2a31d2f629488067e277170ffdc26590526c969bd0ecfa",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_judgment"
+            },
+            "path": "mcp/src/agents_remember/application/review_judgment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

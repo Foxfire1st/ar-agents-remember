@@ -1,0 +1,76 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/orchestrator.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+        "content": "sha256:10ca8084d12e5052765acdbc50bb94b7c39d96caf81f080cf3e7d52bcb2ca623",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YVX677",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-19",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mcp/src/agents_remember/package_data/runtime shipped copy propagates the skills/l-01-agent-lifecycles/roles/orchestrator.md instructions to that installation surface; it is generated output and does not independently set role/task or permission authority.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The Orchestrator reuses each existing Manager named in the Architect's handover and starts one Manager for each other master with role_start under its own sprint; those Managers coordinate their Workers, Reviewers and Curators.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:dde119aa05ee4b68588c34a3a55f40d04ff6e6eb7ae158b33e9c30663f0d8fd3",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Root skills are canonical and the sync script publishes byte-identical package and harness copies.\n\nAnchor: `l-01-agent-lifecycles-role-orchestrator`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:bb027ed51e4124b2628d15f8c590801a98ebfc067500116bf652c11ab16d5e86",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Orchestrator sends the Architect only developer-requiring questions and child permission notices with role_message to the parent agent ID, keeps ordinary requirement readings and operational rulings itself, and follows the held-delivery rule when a send answers held.\n\nAnchor: `role_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+            "content": "sha256:5b4a717f77ff9d7749fe2dee46ae3db12ce40339d99ec2fac87af5bc0da937d3",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

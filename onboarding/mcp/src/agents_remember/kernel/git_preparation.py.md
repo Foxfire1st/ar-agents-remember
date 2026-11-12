@@ -1,28 +1,18 @@
 # mcp/src/agents_remember/kernel/git_preparation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/kernel/git_preparation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:59 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `../../../overview.md` |
-
 ## Governing Overview
 
 [Owning overview](../../../overview.md)
 
 ## Purpose
 
-Typed Git preparation bindings, sealed private capabilities, and exact physical content proof.
+Typed preparation proof; GitPreparationCommandError retains the completed result when readback fails.
 
 ## Code Commentary
 
 ### Logic
 
-The private binding keeps the logical repository/ref and expected old commit separate from the preparation parent, admitted tree, and journal-named private root. Its live authorization callback governs create, materialize, and commit commands through the sole Git runner. Private creation remains strict: every admitted file, mode, and byte must match, and extra or missing content refuses.
+The private binding keeps logical repository/ref and expected-old commit separate from preparation parent, admitted tree and journal-named private root. Its sealed capability revalidates that binding and invokes the live authorization callback around retained-output observation. Physical proof remains strict over exact admitted files, modes and bytes; these types no longer expose a create/materialize/commit command executor.
 
 `ExistingGitPreparationBinding` also names the actual immutable HEAD/tree. In the memory domain it additionally supplies `memory_content_tree`; the runner proves that this certificate subject equals the raw tree with only root `memory.md` removed. Code bindings leave `allow_memory_cache` false and do not carry a memory-content assertion. The optional field's type accommodates code bindings; a memory binding without that field is refused by the runner.
 
@@ -42,39 +32,30 @@ The cache exception is confined to the literal root cache path and never changes
 
 No additional source-local TODO is asserted by this maintenance pass.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The references below use the current package implementation, rather than a source registry or an assumed external specification.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No external domain source is configured. | N/A | N/A |
+No external domain source is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These source owners establish the behavior and boundaries above. Citation ranges were read from the current uncommitted candidate.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Existing observations bind raw HEAD/tree and the additional memory-content subject. | L33-L44 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Private paths, object identities, hook policy, and operation identity are validated before capability use. | L47-L85 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| The sealed private capability revalidates the binding and invokes its live owner. | L88-L98 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| File modes and exact no-follow blob bytes are checked, including replacement during observation. | L133-L159 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| Only explicit memory observations omit root memory.md from physical membership. | L162-L211 | [mcp/src/agents_remember/kernel/git_preparation.py](mcp/src/agents_remember/kernel/git_preparation.py) |
-| The runner requires a memory content subject and proves its entries against the actual raw tree. | L468-L486 | [mcp/src/agents_remember/kernel/git_command.py](mcp/src/agents_remember/kernel/git_command.py) |
+- Existing observations bind raw HEAD/tree and the additional memory-content subject. [1]
+- Private paths, object identities, hook policy, and operation identity are validated before capability use. [2]
+- The sealed private capability revalidates the binding and invokes its live owner. [3]
+- File modes and exact no-follow blob bytes are checked, including replacement during observation. [4]
+- Only explicit memory observations omit root memory.md from physical membership. [5]
+- The runner requires a memory content subject and proves its entries against the actual raw tree. [6]
 
-## Cross-Repo References
+### Cross-Repo References
 
 These helpers can operate on explicitly addressed external-memory Git repositories, but their implementation and authority contracts live in this package. No separate sibling-repository implementation is required to explain this file.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No distinct cross-repository evidence source is configured for this file. | N/A | N/A |
+No distinct cross-repository evidence source is configured for this file.
 
-## Update History
 
-- 2026-09-15T00:59+00:00 — Current uncommitted candidate: Documented the typed existing-output binding, strict code/private proof, and exact memory-cache projection with an independently asserted content tree. Source SHA-256 `da69f0edb15f0013510e79062f54bf213d3dac633a7b448d7f0498e208e17392`. Existing committed verification metadata and earlier history are preserved; no new commit or certification is claimed.
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+- Sealed observation authorization and strict no-follow physical proof survive without preparation command execution. [7]

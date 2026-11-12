@@ -1,43 +1,94 @@
 # mcp/src/agents_remember/worktrees/modules/closeout_external.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/closeout_external.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:58 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
-
 ## Purpose
 
-Owns the external-memory content leg of journaled closeout after code acceptance, then refreshes the disposable ledger view for consumers. A new memory-content commit carries exactly one `Code-Commit:` trailer naming the accepted code commit; cache rendering creates no commit.
-
-## CCR-R12@v5 Current External Transaction Boundary
-
-`external_closeout_commits` receives the accepted code change and normalized input. It refreshes existing onboarding metadata, route-overview metadata, entity fingerprints, and generated route indexes, then creates a memory-content commit only if real memory content changed. The prepared staged-index commit uses `--no-verify`; this owner does not introduce an additional quality or curator gate.
-
-Attribution is rendered before the commit object is created: `effective_input.memory_content_message(code_commit)` supplies the accepted message body and the `Code-Commit:` trailer, and `prove_git_commit` records the exact output. The later cache refresh derives from Git history and returns only informational state. Failure to render or write that cache cannot undo or block a proven memory output.
-
+Owns the external-memory content leg of the admitted closeout transaction after the code output is accepted. The shared `leaf_pair_refusal` also judges recovery, recorded leaf landing and leaf integration with caller-supplied validator bases and a worklist recomputed over the exact commit trees. A new memory-content commit carries the accepted code commit in its `Code-Commit:` trailer; the later disposable ledger refresh is informational and creates no commit.
 ## Code Commentary
 
+A series delegates to its series owner. An ordinary leaf resumes a recorded memory output only after the recovery gate; otherwise it refreshes entity fingerprints and generated route indexes, closes the latest owner history file, and calls `_commit_memory_content`. Card/overview stamping is removed and the corresponding refreshed lists are empty. Unconverted leaf input refuses before refresh/publication.
+
+For converted memory, the history closing and cache ignore rule are present before `_exact_memory_tree` captures the intended output. `_refuse_ungated_memory` validates that exact tree against the parent memory tip and runs the leaf invariant gate with the exact accepted code tree. Even a clean output reused as HEAD is judged. This is the closeout's mandatory invariant gate, not an additional full MQC or curator-coherence operation. Preview reads the same candidate verdict; recovered outputs are judged against the parent line as it stands when recovery reads it. An earlier pass does not guarantee a later pass on moved inputs. A refusal after code publication names the actual code commit, says nothing is integrated and explains that rerunning completes the pair.
+
+`_commit_memory_content` binds the contract work branch and the tip observed before judgment. It rechecks that admission, prepares the cache exclusion, and refuses a staged output different from the judged tree before mutation intent. It publishes the judged object through `publish_tree_commit`; content written after the final check cannot enter that commit and stays uncommitted. The exact accepted memory message supplies code attribution. The legacy staging helper was deleted. The admitted ordinary content leg always captures and gates the exact judged tree, sets `use_current_candidate=False`, and publishes `tree=judged`; unconverted input refuses before publication.
+
+The restoring block runs from the first preparation until publication returns. `_restore_preparations` restores history/ignore bytes only while each still holds what this call wrote, preserving concurrent content. A provably unpublished refusal restores those preparations. A partial publication can raise after the branch moves: a switched HEAD and failed expected-old take-back may leave the memory commit reachable while preparations restore. Proof runs after successful publication return, outside that restoring block; a proof failure leaves preparations in place for recovery. Universal rollback is therefore not this contract. Code is committed before memory; a memory refusal can leave the accepted code output awaiting a successful memory leg.
+
+The publication primitive's Git behavior is separate from prepared closeout policies; this owner does not call the removed `commit_verified_staged` helper. Root `memory.md` remains excluded from real content commits, including force-staged cache data. No cache repair can undo or become a prerequisite for a proven memory output.
+## CCR-R12@v5 Current External Transaction Boundary
+
+`external_closeout_commits` receives the accepted code change and normalized input. It refreshes entity fingerprints and generated route indexes, returning empty card/overview refreshed lists, then creates a memory-content commit only if real memory content changed. The prepared staged-index commit is published through `publish_tree_commit`; this owner does not introduce an additional quality or curator gate, except MIK-R09's closing, exact-tree validation and mandatory gate on converted memory (sections below).
+
+Attribution is rendered before the commit object is created: `effective_input.memory_content_message(code_commit)` supplies the accepted message body and the `Code-Commit:` trailer, and `prove_git_commit` records the exact output. The later cache refresh derives from Git history and returns only informational state. Failure to render or write that cache cannot undo or block a proven memory output.
+## 260928-MIK-L09 The Closeout Memory Commit Closes The Leaf's History File And Validates Its Exact Tree (MIK-R09 Rule 3)
+
+On a converted leaf (`worktrees.knowledge_gate.leaf_memory_converted`: the memory worktree's layout marker, or the
+official memory line's tip), `external_closeout_commits` now:
+
+- closes the leaf's history file before the memory commit (`close_owner_history`, MIK-R07 rule 7): it sets
+  `closed: true`, creating `knowledge/history/<leaf>.json` with no rows when the leaf wrote none; the rows are never
+  rewritten. A converted leaf that names no leaf ID refuses (`_owner`);
+- passes the `HistoryClosing` into `_commit_memory_content(..., closing=...)`, which validates and gates **the
+  exact tree it is about to commit** before `begin_git_mutation` (`_exact_memory_tree`: captured through a private
+  index with the commit's own exclusions; `_refuse_ungated_memory`: validated through `memory_commit_refusal` as a
+  leaf publication against the parent line's memory tip, paired with the closeout's code commit; the carried L22
+  obligation and the L27 admission base). The L37 section below describes the gate;
+- restores its own unchanged prepared file on a refusal or failure before publication, preserving any concurrent edit (a failed tree capture, a failed or
+  timed-out tip read, which is named, or `prepare_memory_cache`), so a refused closeout leaves the file as the leaf
+  wrote it (review R1 F2, ruling 2026-09-30T16:07:55). The closing flag is written inside the same memory commit,
+  which keeps its `Code-Commit` trailer (MIK-R09 Preservation: the paired c-12 transaction).
+
+The plain closeout does not require the curator coherence record, so this call is the enforcement, not a backstop
+(L37 section below). **Legacy closeout is now refused even in a never-converted repository (MIK-R46).** The earlier ungated `unconverted.sh` result is historical evidence of the retired permission, not a current closeout contract. Tests: `test_the_closeout_memory_commit_closes_the_history_file_and_validates_its_exact_tree`,
+and through the public entry `test_the_worktree_closeout_refuses_restores_the_file_and_commits_it_closed_once_valid`
+and `test_the_closeout_s_exact_tree_re_anchor_checks_the_file_it_has_just_closed` (N08).
+## 260928-MIK-L37 The Memory Commit Is Gated And Built From The Judged Tree (MIK-R09 Rules 3 And 5)
+
+- **`_refuse_ungated_memory(contract, code_commit, memory_tree)`** runs, over the exact memory tree with the history
+  closing applied:
+  - the knowledge validator as a leaf publication (`LeafPublication(memory_tree, bases, frozen=closed_out_memory(contract))`),
+    against the parent line's memory tip;
+  - then `leaf_gate_refusal(contract, code_tree=<the code commit's tree>, memory_tree=memory_tree)`: the worklist
+    recomputed over exactly these two trees.
+
+  An open item, an incomplete run or a validator failure raises, and the message names every finding. A failed or
+  timed-out read of the parent tip or of the code commit's tree is a named refusal. No argument skips either check.
+- **`_commit_memory_content`** judges before the memory commit's Git mutation begins, in this order:
+  1. `ignore_memory_cache` writes the ledger cache's ignore rule when content is dirty, so the judged tree already
+     holds the `.gitignore` line the commit will record;
+  2. `_exact_memory_tree` captures the tree and `_refuse_ungated_memory` judges it. A converted leaf with nothing
+     left to commit is judged all the same: the commit the closeout records is its `HEAD`;
+  3. `prepare_memory_cache`, which removes the ledger file from the index (the one index write before the mutation
+     begins; the commit excludes the ledger), then `_require_judged_tree`: the tree the commit would stage through
+     the repository's own index must be the judged tree, or the closeout refuses ("changed while the gate ran");
+  4. `begin_git_mutation` receives the judged tree as `expected_output_tree`, and `stage_tree` makes the index
+     exactly that tree. A file written after step 3 is not committed and stays an uncommitted change.
+
+  Any failure before the commit begins restores route-owned history/ignore bytes only while they still match this call's preparations; concurrent edits are preserved and named (`_restore_preparations`). The closeout commits the code before the memory (`closeout.py::_closeout_commit_phase`),
+  so a refusal here leaves the code commit made and no memory committed; a rerun takes that commit as it is and
+  completes once the gate passes. Unconverted memory has no admitted closeout content leg; its public preflight refuses first.
+- **`candidate_gate_verdict(contract, code_tree)`** asks the gate about the accepted code candidate tree and the
+  memory worktree's current tree and writes nothing. It answers `None` (pass), the refusal text, or
+  `GATE_NOT_APPLICABLE` when the invariant gate does not govern; legacy external memory instead receives its format refusal, including the series format verdict before publication authority.
+  When the gate passes, the same verdict asks the memory refresh's own refusals through
+  `candidate_memory_refresh_refusal` (see the L176 section below), so one refusal can stop the candidate before the
+  approval claim and before either side is committed.
+  `refuse_ungated_candidate` raises that refusal for the apply's preflight; the preview reads the same verdict.
+- **`require_gated_recovery(contract, code_commit, memory_commit)`** judges the tree of a memory commit that a
+  resumed closeout recovered, before `external_closeout_commits` resumes with it. A commit the gate passed passes
+  again; one made without the gate is refused by name.
 ### Logic
 
-Series closeout delegates immediately to `series_memory_closeout`, which reads the exact named memory ref and its source ancestry. Ordinary leaves resume an already recorded memory output through `resume_external_commits`; otherwise they run the raw metadata refreshes and `_commit_memory_content`.
+Series closeout delegates immediately to `series_memory_closeout`, which reads the exact named memory ref and its source ancestry. Ordinary leaves resume an already recorded memory output through `resume_external_commits`; otherwise they run the entity-fingerprint and generated route-index refreshes and `_commit_memory_content`.
 
 The memory writer ignores root `memory.md` when testing content dirtiness. If no actual content changed, it returns existing HEAD and reports that verified-existing output without mutation evidence. For a real content change it prepares the ignored cache location, publishes memory mutation intent, stages content with `memory.md` excluded, commits the attributed message, and proves that exact object. The final writer boundary strips a force-staged cache too. There is no lookup of cached pairings and no second ledger commit.
 
 `refresh_memory_cache` runs only after the memory output is fixed. `MemoryCloseoutOutcome.ledger_repair` contains its informational result, not a ledger commit or recovery prerequisite.
-
 ### Conventions
 
 Accepted messages and the `VerifiedChange` travel explicitly into their consumers. New commits publish intent and exact proof; verified-existing commits publish recovery cells without fabricated mutation evidence.
-
 #### Invariants And Boundaries
 
 - Only real code and memory outputs belong to the recoverable Git transaction.
@@ -46,69 +97,119 @@ Accepted messages and the `VerifiedChange` travel explicitly into their consumer
 - A series never enters leaf memory mutation or owns a synthetic leaf memory checkout.
 - Real ref, tree, and ancestry contradictions remain recovery failures. Missing or malformed cache bytes do not.
 - Direct landing retains its own journal owner; this module does not execute that route.
-
+- **Unconverted memory is never stamped or committed by ordinary closeout, even when no converted memory exists elsewhere (MIK-R46).** `external_closeout_commits` asks `leaf_cutover_refusal(contract, "the closeout")` right after the
+  conversion probe and before `_refresh_external_memory`, and raises its refusal. The closeout as a whole writes
+  nothing in that case because the closeout validator refuses by the same lock before the commit phase starts; this
+  call is the backstop at the memory side.
 ### Todos
 
 None recorded.
+## 260928-MIK-L176 The Candidate Verdict Asks The Memory Refresh's Refusals (MIK-R178)
 
-## Docs References
+`candidate_memory_refresh_refusal(contract, code_tree)` returns every memory-refresh refusal the
+code candidate tree and the memory worktree's tree alone decide, or `None` when the refresh can run
+from this candidate. It composes two legs:
+
+- **the entity leg.** `entity_fingerprint_plan_problems` asks **every** row of the catalog, planned
+  or not, for evidence paths the candidate tree does not hold. The other two diagnostics follow the
+  plan: an unsupported algorithm is read from the plan's unsupported rows, and a missing fingerprint
+  value from a row the plan requires. One line per row carries every fault that applies to it, with
+  its remedy, so a second fault of the same row is never disclosed only after the first is cleared.
+- **the route-index leg.** `route_index_refresh_problems` runs the refresh's own planner as a dry
+  run and turns a refusal into one named line: the step, the offending cache or the inputs, the
+  code root, the memory root, and the error type and text.
+
+The two legs do not share an input mechanism. The entity leg reads the candidate by its tree id
+(`<tree>:<path>`), never `HEAD`, so nothing the closeout writes later changes that answer. The
+route-index leg receives the context the closeout resolves — the code root, the onboarding root and
+the source snapshot its planner reads — not a tree-id argument; in this leaf's frozen pair those
+bytes are the candidate's, but the planner's inputs are context roots, not the immutable tree id.
+The composed refusal opens with the tree it judged and carries one `- ` line per problem; an
+unexpected Git failure while asking is raised with the step, the catalog and the tree rather than as
+a bare Git message.
+
+`closeout_changed_paths` moved here from `closeout.py` and is re-exported there: the verdict must
+judge the same worklist the refresh will judge, and one module owning both keeps them from drifting
+apart. The refresh at the memory commit asks the same refusal through
+`entity_fingerprint_plan_refusal` before it writes, so the pre-commit verdict and the memory-commit
+enforcement cannot disagree.
+
+## Evidence
+
+- Every catalog row is evidence-checked against the candidate tree, planned or not; absent evidence is the unconditional check, while an unsupported algorithm and a missing value are diagnosed from the plan's rows. [50]
+
+- `candidate_gate_verdict` supplies the exact current transaction boundary above. [29]
+- External refresh updates only entity fingerprints and generated indexes; card/overview refreshed lists are empty. [35]
+- The one verdict the preview and the apply's preflight read. [40]
+- Card and route-overview refreshed lists are empty; actual derived work is entity fingerprints and generated indexes. [48]
+
+- The one verdict the preview and the apply's preflight read also asks the memory refresh's own refusals over the code candidate tree and the memory worktree. [49]
+- The route-index refresh's deterministic input refusals are asked through the refresh's own planner. [51]
+- The closeout worklist reader the verdict and the refresh both judge. [52]
+
+### Repo-Internal References
+
+
+- `_restore_preparations` supplies the exact current transaction boundary above. [25]
+
+- `_require_judged_tree` supplies the exact current transaction boundary above. [26]
+- `_refuse_ungated_memory` supplies the exact current transaction boundary above. [27]
+
+- `require_gated_recovery` supplies the exact current transaction boundary above. [28]
+
+
+### Docs References
 
 No external Domain Documentation source is configured for this slice. The current behavior is repository-owned and is supported by the source references below.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external source applies. | — | — |
-
-## Repo-Internal References
-
+No configured external source applies.
 The following current source boundaries establish the ledger-retirement behavior.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| `external_closeout_commits` resumes or creates the memory output, then refreshes its informational cache. | L36-L76 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
-| `_commit_memory_content` reuses clean content or commits attributed memory with root memory.md excluded. | L79-L110 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
-| `_refresh_external_memory` refreshes onboarding, overview, entity, and generated index data before content publication. | L121-L147 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
-| `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. | L150-L159 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py) |
-
 The memory mutation boundary and the cache renderer have separate owners.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Cache rendering returns informational state and creates no Git commit. | L65-L91 | [mcp/src/agents_remember/kernel/memory_cache.py](mcp/src/agents_remember/kernel/memory_cache.py) |
-
-## Cross-Repo References
+### Cross-Repo References
 
 The external-memory worktree is another repository governed by the same closeout contract.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No additional cross-repository evidence applies. | — | — |
-
+No additional cross-repository evidence applies.
 ## 260821-CLIVE-L2 Current Contract
 
 The current entry point is `external_closeout_commits`. Closed admission, immutable generation input, root-journal mutation evidence, and same-generation recovery still govern memory content. Ledger-specific intent, mapping reconciliation, and commits have been removed from this owner rather than retained as a parallel route.
 
-## Update History
 
-- 2026-09-15T00:58 UTC — Rechecked the formatted L9 working candidate and rebound current references after source cleanup; source-sha256=34ad2b8d7424260a75ef5e0aa844d4d2632dbc15fc5b078e03842f7ac87924d4. The older working-candidate snapshot and verification provenance are retained.
+- The owner of the history file the closeout closes. [31]
 
-- 2026-09-15T00:53 UTC — LCA-L9 working-candidate curation: retired ledger Git authority in this file-specific boundary; preserved real Git and lifecycle safeguards and prior history. Source and diff reviewed, source-sha256=16d5e75c399d8b7d97f4ec63d5ae0d5e7fd1067892447147ea1cbb60c5f900cb. Existing verification commit/date remain unchanged until an actual source commit is available; no test or acceptance claim.
-
-- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): `_commit_memory_content` now takes the accepted code commit (`code_commit=change.commit` from the entry point) and commits `EffectiveCloseoutInput.memory_content_message(code_commit)`, so the memory-content commit object carries exactly one `Code-Commit: <sha>` trailer naming the code commit this same closeout landed; the ledger leg deliberately keeps `message_for("ledger")` and no trailer. Rebound every stale range on this card to the post-change source (`external_closeout_commits` 44-90, `_refresh_external_memory` 107-133, `_commit_memory_content` 136-196, `_commit_ledger_mapping` 212-251, `_resumed_external_outcome` 272-294) and added the attribution rows. Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-- 2026-09-13T17:40+02:00 — 260831-LOCR-L36 curator reconciliation: the series leg of `external_closeout_commits` now returns through `series_memory_closeout` (the reconciled-pair reader), not `exact_series_memory_closeout`; recorded that a `series` contract is routed before the leaf memory-worktree assertion and that this module therefore owns no completion proof and no series memory worktree. Re-cited the two rows whose ranges had been written by a 2026-09-11 mechanical projection: the effective-input row is rebound to the exact consumers that carry the input (`_refresh_external_memory`, `_commit_memory_content`, `_commit_ledger_mapping`), and the ownership-boundary row to the literal declaration `def external_closeout_commits(` at its current location, so both ranges are the curator's own reading of the current source rather than a projected symbol mention. Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_commit_memory_content`, `external_closeout_commits` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:135-186, mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-89. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `external_closeout_commits` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-89. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `_resumed_external_outcome` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:256-274. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `_commit_ledger_mapping` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:199-235. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:41:10+00:00: Generated citation repair: `external_closeout_commits` repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:45-89. No content impact: mechanical anchor-range projection bound to citation source snapshot 794cfaf55738c596793ad49b95a946add84e2c03f1bf6499e2f00c6b84bd85ba; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-
-- 2026-09-06T22:00:40+00:00 — Corrected current journal recovery semantics against production source while preserving previous verification pins. Source inspection only.
+- Before publication, owned history closing restores only unchanged prepared bytes and preserves concurrent edits. [32]
 
 
-- 2026-08-29T18:29+02:00 — Added `ExternalCloseoutEvidence` so post-commit memory refresh consumes
-  the same validated coherence decisions as reversible closeout admission.
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the closeout-input and closeout-memory-quality package relocations; external memory, memory-content, and ledger commit order is unchanged.
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
+- `_report_memory_commit` reports verified-existing code/memory outputs without fabricated mutation evidence. [36]
 
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; first verification stamp remains governed-closeout-owned.
+
+- The validator and the mandatory gate over the leaf's exact memory output. [38]
+- The exact tree the memory commit records. [39]
+
+
+- The preflight before the approval is claimed or anything is committed. [41]
+
+- A recovered closeout is judged like a fresh one. [42]
+
+- A commit whose tree is not the judged tree is refused before the memory commit's Git mutation begins. [43]
+
+- Refusal preserves and names edited ignore bytes instead of overwriting them. [44]
+
+- Cache rendering returns informational state and creates no Git commit. [45]
+- The public closeout refuses an open item and commits once it is answered. [46]
+- A file rewritten while the gate runs is never committed unjudged. [47]
+
+
+
+- `external_closeout_commits` supplies the exact current transaction boundary above. [23]
+
+- `_commit_memory_content` supplies the exact current transaction boundary above. [24]
+
+
+- The converted leaf's history file is closed before the memory commit. [30]
+
+- `external_closeout_commits` resumes or creates the memory output (since MIK-R09 closing a converted leaf's history file first; since L37 after asking the cutover lock for unconverted memory, and judging a recovered memory commit before it resumes), then refreshes its informational cache. [33]
+
+- Closeout reuses clean memory or publishes the judged tree with root memory.md excluded; unpublished refusal restores only unchanged owned preparations. [34]
+
+- The lock is asked before any stamping or commit of unconverted memory. [37]

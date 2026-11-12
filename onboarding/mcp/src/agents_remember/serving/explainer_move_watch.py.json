@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/serving/explainer_move_watch.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d0b90abcc062aec1c5239d92cc5f5b03ec072a27",
+        "content": "sha256:a3b7b4442c8a606ee43b1db406f2183a28bc1eb0bdf9bcc4dcdfb0c4dbd74a6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "MoveNoticeWatch"
+        }
+      },
+      "id": "RLZ-73N8J4",
+      "invariant": "INV-15M226",
+      "origin": {
+        "handoffEntry": "L183-moved-notice-lifetime",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "One watcher per coordination-root/ports identity caches by current binding generation/comparison/snapshot, captures only through its comparison owner, filters planning turn-end checks and emits notices without seat wakeups.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "MoveNoticeWatch publishes a move to the subscribers keyed by the exact scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b90abcc062aec1c5239d92cc5f5b03ec072a27",
+            "content": "sha256:a3b7b4442c8a606ee43b1db406f2183a28bc1eb0bdf9bcc4dcdfb0c4dbd74a6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MoveNoticeWatch"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

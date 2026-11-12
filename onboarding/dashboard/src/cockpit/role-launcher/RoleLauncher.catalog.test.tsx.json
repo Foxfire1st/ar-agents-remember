@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.catalog.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Agents are matched by id or by the Paseo label they carry, never by a speed name; an unknown part passes through while a successful empty answer still refuses",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b49924393da60112d2b2d603aefea43b5b6d3e44",
+            "content": "sha256:05670c39ac1dc434910d9d6852715cb61e8f94ec78af8e2b2bddae6c45ca0b86",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

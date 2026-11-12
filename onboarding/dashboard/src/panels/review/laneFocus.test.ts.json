@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/laneFocus.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Two tiny pure controls assert lane count terminology and unmeasured-change-set sentence; classification and actual lane read are not exercised.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c839ed59d213ea75edca89c8decd11da3df218e9",
+            "content": "sha256:7f6b06137d8f7cb931bd4d23696393789c991ba2ff82bc76c945c5f28fcac536",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

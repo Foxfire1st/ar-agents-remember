@@ -1,0 +1,2130 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L158",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a40b0f50a94ef68edce12685dd225ff66eaa593f",
+            "content": "sha256:026483ba11f142c72dede8032d4b161a278a5353ab2d9ccbc33479b8fe5f5566",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_removes_logs_with_the_enclosure"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "45bbe7c19813886bc370e4f10287f226d3e81985",
+            "content": "sha256:93d8ab23bb1b04375d9089e1d06ebdc0ee949edf7117c2792cb77c660c283147",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cleanup_removes_logs_with_the_enclosure"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "PRF-K2K392"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0EVNDM",
+      "items": [
+        "sha256:b2c7fe7214571c03fa237494504ac455a6986dba342b087f8817afe9f56962a9"
+      ],
+      "reason": "The disposable removal fixture adds its task_root for canonical report collection. It still offers enclosure logs to removal and asserts that the folder no longer exists; no product retention or placement contract changes.",
+      "revision": 1,
+      "subject": "INV-E8S0YF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0FZNZA",
+      "items": [
+        "sha256:8fe737e3c09ecb6187c30e608a44365ec78f63e94ae4e2755c03cd23b543e255"
+      ],
+      "reason": "The self-contained fixture follows the guarded user-settings location, workspace-sibling code root and explicit grant/direct-leaf input grammar; the invalid-input control omits required repo_id. These preparation changes restore existing roster, isolation and argument-validation obligations rather than introducing another invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:8fe737e3c09ecb6187c30e608a44365ec78f63e94ae4e2755c03cd23b543e255"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:5acd598c98ad57137933db972918e70cd3431c4dcdc6189798ed0e4f5f8897c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_active_lifecycle_writes_its_event_as_today_and_no_second_one"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:ff7ac8f5f3233c4d22f27a6185ceca96e8532b11b260d7953cdef9c656557451",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_active_lifecycle_writes_its_event_as_today_and_no_second_one"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-6E54VM"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:bb4060d9e42c990bd6881914820dd9ff3a0b7cc3c5e82b0c291cb6689f57e5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:25267c701e945b77701bdc195b4378de0c9841ec83aa66ef50219e20b017fddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-FSFY6F"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-0YK5Y9",
+      "items": [
+        "sha256:31d245ac13a2aa170aa5bd53b084211ea670b15cb6f400a580fe1712e40a4949"
+      ],
+      "reason": "Server_info exercises the unchanged workspace-versus-active-lifecycle branch separation; the exactly-one earlier-kind event and no-second-river-row assertions remain.",
+      "revision": 1,
+      "subject": "INV-P661EM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-17V2FG",
+      "items": [
+        "sha256:5623138b2a88aab82b65b53b29afbfaf660403f6e83b01f50983a88a388e16ac"
+      ],
+      "reason": "The self-contained fixture follows the guarded user-settings location, workspace-sibling code root and explicit grant/direct-leaf input grammar; the invalid-input control omits required repo_id. These preparation changes restore existing roster, isolation and argument-validation obligations rather than introducing another invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:5623138b2a88aab82b65b53b29afbfaf660403f6e83b01f50983a88a388e16ac"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1E3M76",
+      "items": [
+        "sha256:c85330069cbda83730cd4d6bbbea859f46a9dea72c9888fd89d74fcda791edbc"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:c85330069cbda83730cd4d6bbbea859f46a9dea72c9888fd89d74fcda791edbc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2S6B0D",
+      "items": [
+        "sha256:9182b6deaf0ba70eb510c6e1e7933ecf99d95fad26aa089c0f5a39535cd70bb3"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:9182b6deaf0ba70eb510c6e1e7933ecf99d95fad26aa089c0f5a39535cd70bb3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:3b40582d35a60955e28b352d35426f7a880373c2913862ff8b6ef37764adc678",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_fresh_process_writes_its_first_call_through_startup"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:c498f3db6e93cfcbf7effde81c9f7660dfb0f1747c465efe23a37d6bc08223c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_fresh_process_writes_its_first_call_through_startup"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-77Z14G"
+        },
+        {
+          "after": {
+            "blob": "fc6c8d2b29d516b1d5449d1c0add0f4b5f081f52",
+            "content": "sha256:3af965a7c7790993733bde9f9ca9bf81bbde4f1275f30f9dd7afc1eff7394f09",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f08_bound_first_call_through_registered_handler"
+            },
+            "path": "mcp/tests/test_f08_registered_handler_river.py"
+          },
+          "before": {
+            "blob": "f4c1e790e40b463afc085e45eaa3aafa8fc36823",
+            "content": "sha256:a16ded8ded9e5a0cb72b14e6519f0a7f81b9765fb9a1147ef8866109d0cdd826",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_f08_bound_first_call_through_registered_handler"
+            },
+            "path": "mcp/tests/test_f08_registered_handler_river.py"
+          },
+          "id": "PRF-9NMH1H"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:1034c181756b8a89a1d2d77d218093ab5672a27fba8d6a87832e47cc2de6fb4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_registered_startup_writes_a_bound_first_call"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:3ebb5f5713c56cc824a82662c53830fd24b6331cbbc5c5321749bfa9c048e010",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_registered_startup_writes_a_bound_first_call"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-PWYQ6K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-34MYD7",
+      "items": [
+        "sha256:910a269c87aa01ad71c00b7a0d94a836c16389844f3886a52151cf904a2e6e50"
+      ],
+      "reason": "Both registered-handler and startup/fresh-process witnesses use server_info, with its required response fields, and retain startup-installed writer, bound first event and unchanged once-read caller assertions.",
+      "revision": 1,
+      "subject": "INV-19YW49"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3AH71H",
+      "items": [
+        "sha256:28957f3ea74ac79836a7b37bd751ec0f647b2c6d30c5e63ab5d05af005ce5ae6"
+      ],
+      "reason": "The self-contained fixture follows the guarded user-settings location, workspace-sibling code root and explicit grant/direct-leaf input grammar; the invalid-input control omits required repo_id. These preparation changes restore existing roster, isolation and argument-validation obligations rather than introducing another invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:28957f3ea74ac79836a7b37bd751ec0f647b2c6d30c5e63ab5d05af005ce5ae6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:27b76044ac3f5065a8b82e461dcc591b244e917f5933c3ab046e3565065dac57",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-46TQCD"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:7ae9b0d0ea24a2ce3652ee70e7802ec39d3cb2fa5a20f59eebd945b5d66aeabd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_role_start_and_role_message_name_the_started_or_addressed_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:7ae9b0d0ea24a2ce3652ee70e7802ec39d3cb2fa5a20f59eebd945b5d66aeabd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_role_start_and_role_message_name_the_started_or_addressed_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-B5P9Q0"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:cd014c75fd15d4bb527c0738f5fb29ec003db0c068444e6db94d19924a41765e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_unresolved_recipient_stays_literal_without_a_target_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:cd014c75fd15d4bb527c0738f5fb29ec003db0c068444e6db94d19924a41765e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_unresolved_recipient_stays_literal_without_a_target_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-RR8Y64"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-446BZ5",
+      "items": [
+        "sha256:3fd76e857e52e71f694d67bc3831ef3b63b78e4200d3c117188a85f56a32c33f"
+      ],
+      "reason": "The id-addressed fixture now supplies a valid UUID plus the current launch-binding and StartingAgent shapes at the actual lookup sites. The receipt-role assertion and context-only target role are preserved.",
+      "revision": 1,
+      "subject": "INV-0ZW4BP"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0MX54D",
+          "revision": 1
+        },
+        {
+          "id": "INV-18B62F",
+          "revision": 1
+        },
+        {
+          "id": "INV-P661EM",
+          "revision": 1
+        },
+        {
+          "id": "INV-PHS9T7",
+          "revision": 1
+        },
+        {
+          "id": "INV-S11488",
+          "revision": 1
+        },
+        {
+          "id": "INV-VSRHV3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-4WHBGT",
+      "items": [
+        "sha256:a86520841cdbec370c45890e02beda0e84b0257fe1fd81afc95cbb711e5fca0b"
+      ],
+      "reason": "Examined all six members. Server_info replaces the retired vehicle and message fixtures use current UUID/binding shapes; facts-only attribution, once-read caller, one selected write branch, counted drops, river admission and write-free stream/panel obligations remain. Membership, conditional guarantee and routes are unchanged.",
+      "revision": 1,
+      "subject": "FAM-V8AH28"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-2S0FEY",
+          "revision": 1
+        },
+        {
+          "id": "INV-W4XGR4",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0BRG0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-5Q3FM0",
+      "items": [
+        "sha256:0653ebaafbb0fd7f0575ea5c81bb5d7bd60d39cdeba22f44652b63885df25e79"
+      ],
+      "reason": "Examined all three members and the recorded runner limitation. The server_info deadline control preserves bounded initialization/response/cleanup and named timeout behavior. Reader composition and Git-helper exclusions are unchanged; no family member, guarantee or route changes.",
+      "revision": 1,
+      "subject": "FAM-TG3WK0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c37e7a1d783f155bebf0b9f3f30e9c12f6677301",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "PRF-ZWB7FX"
+        },
+        {
+          "after": {
+            "blob": "c37e7a1d783f155bebf0b9f3f30e9c12f6677301",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-8E1MYK"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-CAJ0JE"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:37578a1f10cb0bfb736dc16bace943a4034c864a0d510646723f7ba78e95ada6",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-CDHFWQ"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:f35564b88d082ebc8277f88251110099eace023668849cdc17856dc7aa54752b",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweep"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "sweep"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-CN53DJ"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:f35564b88d082ebc8277f88251110099eace023668849cdc17856dc7aa54752b",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointWorld.sweep"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:c3b7bd4ff2f1d28ae6844906bc176b3ce13a3fed08e6bcf4e89cd09c66741aee",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointWorld.sweep"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-K7KKXM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-64HRTA",
+      "items": [
+        "sha256:c206319f03c2d69df9b5f144300ccd8b768a5b824f837b15c91e9c750e646619"
+      ],
+      "reason": "Removing the retired skill-catalog prefetch leaves the per-tool loop, shared classifier, individual aspect subTests and timeout-then-continue behavior intact. Current roster preparation replaces removed vehicles without changing the sweep obligation.",
+      "revision": 1,
+      "subject": "INV-01JP62"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7HN5SR",
+      "items": [
+        "sha256:49c56ee913bb2579ea5d773ce77d6e332c62298245b8cf58de53b08aeb264c3b"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:49c56ee913bb2579ea5d773ce77d6e332c62298245b8cf58de53b08aeb264c3b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8011VF",
+      "items": [
+        "sha256:ca23666e3d853837eca49255433d618b447819f74dc5aa8c391d628386837740"
+      ],
+      "reason": "The self-contained fixture follows the guarded user-settings location, workspace-sibling code root and explicit grant/direct-leaf input grammar; the invalid-input control omits required repo_id. These preparation changes restore existing roster, isolation and argument-validation obligations rather than introducing another invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:ca23666e3d853837eca49255433d618b447819f74dc5aa8c391d628386837740"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8C2HAJ",
+      "items": [
+        "sha256:ec136bd59941155c73e4b407c0ce22dac17d562acdfff66dae11f826911eee02"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:ec136bd59941155c73e4b407c0ce22dac17d562acdfff66dae11f826911eee02"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8RE3M0",
+      "items": [
+        "sha256:cd88ebaf64299a9396ced15950cbff8a6fcc501a61f21c70f384b423a75d1ff4"
+      ],
+      "reason": "The self-contained fixture follows the guarded user-settings location, workspace-sibling code root and explicit grant/direct-leaf input grammar; the invalid-input control omits required repo_id. These preparation changes restore existing roster, isolation and argument-validation obligations rather than introducing another invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:cd88ebaf64299a9396ced15950cbff8a6fcc501a61f21c70f384b423a75d1ff4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-0VAC47",
+          "revision": 1
+        },
+        {
+          "id": "INV-180VCA",
+          "revision": 2
+        },
+        {
+          "id": "INV-ANKVYJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-B7J1PZ",
+          "revision": 1
+        },
+        {
+          "id": "INV-CQSY2Z",
+          "revision": 1
+        },
+        {
+          "id": "INV-E8S0YF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GWG9HD",
+          "revision": 1
+        },
+        {
+          "id": "INV-JRV850",
+          "revision": 1
+        },
+        {
+          "id": "INV-KJFNBQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-MDE1ZN",
+          "revision": 1
+        },
+        {
+          "id": "INV-QN78E9",
+          "revision": 1
+        },
+        {
+          "id": "INV-SYBT3F",
+          "revision": 1
+        },
+        {
+          "id": "INV-XJ7GV5",
+          "revision": 2
+        },
+        {
+          "id": "INV-Y3TD13",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-96243S",
+      "items": [
+        "sha256:a905b2b429b6e9600feda2418464d6d380806ae9a1dc8e34cd542841cddd876d"
+      ],
+      "reason": "Examined all fourteen members and their routes. Log cleanup fixture preparation and short-path proof-domain repair preserve the joint bounded-answer/log guarantee, including dropped-write exceptions and long-argument shortening. The credential member conditions are clarified to separate secrecy handling from length rendering; no member, route or guarantee changes.",
+      "revision": 1,
+      "subject": "FAM-8SX6BT"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9A1TC9",
+      "items": [
+        "sha256:cc83fb9558ade06532941ed2e26016ca9f4cb1a78f52bd11523c9552f6a47d36"
+      ],
+      "reason": "The self-contained fixture follows the guarded user-settings location, workspace-sibling code root and explicit grant/direct-leaf input grammar; the invalid-input control omits required repo_id. These preparation changes restore existing roster, isolation and argument-validation obligations rather than introducing another invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:cc83fb9558ade06532941ed2e26016ca9f4cb1a78f52bd11523c9552f6a47d36"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R108",
+          "packet": "requirements/MIK-R108-v1-a-tool-answer-holds-what-the-caller-needs-next.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "a40b0f50a94ef68edce12685dd225ff66eaa593f",
+            "content": "sha256:a07eada2d258de6cc2eb124d5f88cc1398717749b125be3c85e5442ac87c6fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_short_credential_variable_value_is_omitted"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "45bbe7c19813886bc370e4f10287f226d3e81985",
+            "content": "sha256:a07eada2d258de6cc2eb124d5f88cc1398717749b125be3c85e5442ac87c6fea",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_short_credential_variable_value_is_omitted"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "PRF-35PF9V"
+        },
+        {
+          "after": {
+            "blob": "a40b0f50a94ef68edce12685dd225ff66eaa593f",
+            "content": "sha256:661dadff1f5d0d3e2c8d5c3c945bb30ff9bc616f9fa0e13bdac528573d551730",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ordinary_env_value_is_written"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "45bbe7c19813886bc370e4f10287f226d3e81985",
+            "content": "sha256:661dadff1f5d0d3e2c8d5c3c945bb30ff9bc616f9fa0e13bdac528573d551730",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_ordinary_env_value_is_written"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "PRF-VZ86GQ"
+        },
+        {
+          "after": {
+            "blob": "a40b0f50a94ef68edce12685dd225ff66eaa593f",
+            "content": "sha256:81f7b274b42c68fd4f4891e990b0e838479c65bc6a272851c7fa7e295b1b3e81",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_home_folder_path_stays_whole"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "before": {
+            "blob": "45bbe7c19813886bc370e4f10287f226d3e81985",
+            "content": "sha256:288cf06bb84846aabc3e0c9351abb5bb790c6892252853de966959bb8b774844",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_home_folder_path_stays_whole"
+            },
+            "path": "mcp/tests/test_tool_answer_table.py"
+          },
+          "id": "PRF-ZDX94J"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-9Y142Z",
+      "items": [
+        "sha256:7fe628ce85781f788ef1d6ec28652fb1c810a5c0312f10cf0093d996ea9d4c70"
+      ],
+      "reason": "Clarify redaction versus argument-length rendering: noncredential ordinary text is not secret-scrubbed, but log-line values over two hundred characters still become length and digest. The retained short-path proof now asserts its precise domain; credential-key/value obligations are unchanged.",
+      "revision": 2,
+      "subject": "INV-XJ7GV5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-AGBGWK"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointWorld._call"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:c4bac9584ff57d79b197e1ae2162e83f182902c091e0956914a3b6bebd602048",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointWorld._call"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-3J2TZH"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:eda1dac8bec47b36bfbbf76e34161d88a49431a722047a5a45471476e11ae0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_tool_that_never_answers_fails_by_name_and_closes_its_handler"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-BCFPZV"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9ZCAH5",
+      "items": [
+        "sha256:ad9d81b63002a08459884cc1af5ba22a043e21a6551bc15f53a3825759d12712"
+      ],
+      "reason": "The deadline control names server_info rather than retired ping and retains closed-handler plus successful next-call assertions. Production phase budgets and timeout classification remain unchanged.",
+      "revision": 2,
+      "subject": "INV-W4XGR4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B8WEAR",
+      "items": [
+        "sha256:71a669adb5cfcec702da71b5f3aebabdef0c1d53cacb448018b346fa610b0491"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:71a669adb5cfcec702da71b5f3aebabdef0c1d53cacb448018b346fa610b0491"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C5Y0SQ",
+      "items": [
+        "sha256:24c59e7130beda1a15199796ec5822107b423e9df112c8b1d7a5753ea62f0757"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:24c59e7130beda1a15199796ec5822107b423e9df112c8b1d7a5753ea62f0757"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-2JJY17"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-9EZEPF"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-AKGZDH"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-BWS0VM"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-H0310T"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-HFA1AY"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:f2d4352a385e3cdf909b5ed9ac5af2bc19aadb9a6d50695f9dfe5d33eacf7b4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:f2d4352a385e3cdf909b5ed9ac5af2bc19aadb9a6d50695f9dfe5d33eacf7b4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_handler_that_bypasses_the_choke_point_arrives_as_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-WNABDT"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-XP45PK"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-2TZQC9"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0e22cc7179c369e635388bfd3aba197fbbebe6ea29118d8866dc36df3dd01c28",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_retained_list_item_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-3QAT32"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:634097930cebc83df9cc501d79c14abf6a1cf46923ac1023b9b35ded0f0c8113",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_code_only_refusal_carries_its_identity"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-4B9V28"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-5XEVC4"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:e70868a155b3a04ce2b756d208c0f43673e28f1561ac0d0b6effd9883252c8c7",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-6BR2QJ"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:8ebad6cf5a03e40d8ab1c44a97616f90c57847a56f70c0e84d2142e2b0e888b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_in_truncated"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:8ebad6cf5a03e40d8ab1c44a97616f90c57847a56f70c0e84d2142e2b0e888b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unknown_in_truncated"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-6KD5XY"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-DJ43FG"
+        },
+        {
+          "after": {
+            "blob": "c37e7a1d783f155bebf0b9f3f30e9c12f6677301",
+            "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:8302a031037ec0811de6b2d01ec3d144c2d51a1eda3e1eb266938d85312aacbf",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-E6ZJX2"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:7ceeb49a6751144d825e834bd62f07eb1396da7a57c67d18846a86dfa311ed37",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-JVS9GH"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:cdb6b316e08fde79922d3052458bc3358fbcbbe7a82093419a564c41950cceea",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:cdb6b316e08fde79922d3052458bc3358fbcbbe7a82093419a564c41950cceea",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-JWBN5A"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:dfe996194515fd253997ddfb6705fbaac0c075af8c661519072383d951395c3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_key_inside_a_kept_nested_mapping_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-N13MBQ"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:0fa6a0ccd9526f61ba8106f1b77029fa7a6cc084687d119ace4fc941ab4d84ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_wrapper_over_an_uncut_list_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-P6CT6J"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:57465413a3f7e77aa839112d552f3dd0aa47352cd37f3eb05287024cd2b77c9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_next_only_refusal_carries_its_next_action"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-PEMT69"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_actionable_next"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:5051eee79bbddebacb81642153d672e5fa69042a984ac06ee8b17ca76b0582d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_actionable_next"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-S2F966"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-TZ43E1"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:616725463860034f01645ef22c9b069790e16605dd50f886654cbdcbdb5299b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "refusal_marks"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-X1MNME"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:da084fd4608c986e3ad2f0d789b5dd2dbf3d3246772075706981aa6e491edc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_a_delivered_answer_that_keeps_an_envelope_field_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-YCW5V7"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:9a397d0483216332d7ceb306f63ff43345b99d1da0e3e5adb34ed09fe75e7041",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_or_guidance_only_next_refusal_stays_bare"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-Z6EA10"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-ZGH1TW"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DAXFJ2",
+      "items": [
+        "sha256:042215eba0397c4b7e550f2241a251541e04b935d17d4b2e35df45b165fceb54"
+      ],
+      "reason": "The supported cc364a32 composition judges envelope bans and same-place keys in _judge_delivered after whole-model validation, then reads actionable refusal marks from the delivered answer in _refusal_arm. Server_info remains the corruption vehicle; no predicate, bound or missing-detail behavior is weakened. Source-only composition renewal, not a new test run or acceptance.",
+      "revision": 1,
+      "subject": "INV-T8FDTX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:694d24b483c857f956557baf04a9ee096f65c59189fb803cc75b88938f5b6d4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-F1R4TH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FE1000",
+      "items": [
+        "sha256:2ae76758968837d1a0fd4af2d3b332c009cb34db887c4b849be5df7e438bfa84"
+      ],
+      "reason": "Synthetic rows use the retained vehicle; the ready marker still reads the newest retained event timestamp without stream mutation. No marker vocabulary or empty-store behavior changes.",
+      "revision": 1,
+      "subject": "INV-AJYRQ5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:694d24b483c857f956557baf04a9ee096f65c59189fb803cc75b88938f5b6d4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-FP4GAR"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:8632d0d3002f548527c91187e5e7aaaf4eeed8c57b491209427027eb6cf92037",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_stream_with_missing_lock_creates_no_observer_file"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:8ac518d7b9341e24cf5f8b04a5016cdb2055f77e573cf4a434e33c4590c2bd19",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_stream_with_missing_lock_creates_no_observer_file"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-RGCW0X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FFTYN5",
+      "items": [
+        "sha256:e495166f810a41c9aaf5e904c23755b9ac3486e6f76c5e6be327a9d0c1cb33eb"
+      ],
+      "reason": "Renamed synthetic event rows preserve stream write-free/no-file controls, ready lastEventTs and missing-lock behavior. No cursor, reclamation or protocol contract changes.",
+      "revision": 1,
+      "subject": "INV-S11488"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G1XNQB",
+      "items": [
+        "sha256:8a38228d5393d2aaa04624b07dd1655e077c0d57925635590b5318ae054bd335"
+      ],
+      "reason": "The self-contained fixture follows the guarded user-settings location, workspace-sibling code root and explicit grant/direct-leaf input grammar; the invalid-input control omits required repo_id. These preparation changes restore existing roster, isolation and argument-validation obligations rather than introducing another invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:8a38228d5393d2aaa04624b07dd1655e077c0d57925635590b5318ae054bd335"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:d862490e8556a303d5d5a2812d12b3f9aeea4a33d9592c4cf47d152659e42b5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:27b76044ac3f5065a8b82e461dcc591b244e917f5933c3ab046e3565065dac57",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_id_addressed_message_records_the_receipt_role"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-32R7EH"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:f7abfa7cd0f520295ff496c96bfba577a19478ae2ba99efaaa5fad590b621c8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:694d24b483c857f956557baf04a9ee096f65c59189fb803cc75b88938f5b6d4c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_connected_stream_changes_no_file_and_names_the_last_feed"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-R1721D"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H0WSVA",
+      "items": [
+        "sha256:134bf419aeb2c0526d954f6c9f81a4b23401fddaf3ca1f3cf6d07d29c5bf89f0"
+      ],
+      "reason": "The valid UUID/current sender fixtures preserve id-addressed receipt-role facts, while renamed synthetic events leave the stream/read and head-label predicates intact.",
+      "revision": 1,
+      "subject": "INV-N6DKKD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HV6QN9",
+      "items": [
+        "sha256:495fb14f5dbcfabeb2bb541f92bb18fb45978ac53ac0e3e9c5613ad76b098b89"
+      ],
+      "reason": "Runtime-install fixtures follow the current user-settings path and authored XDG dimensions; current asset counts replace stale fixture pins without changing production bounds, row validation or log redaction obligations. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:495fb14f5dbcfabeb2bb541f92bb18fb45978ac53ac0e3e9c5613ad76b098b89"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:640814848c4ab4f6f34fbbf221a1e0f6334699c5317fc56b6602f0eccf69e59b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_one_function_serves_the_age_cut_and_the_size_cut"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:4119a9203ecc134561eed3ffb2bcaa1576ce98638e05b53404c7d75059bb3cd7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_one_function_serves_the_age_cut_and_the_size_cut"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-3R6N4T"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:c9f336e830d4b873dacbb3becdac0178353e60a4cbbb98139150349062d1da11",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_every_append_lands_at_or_under_the_ceiling"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:6d2141526622729c651574b46751484f9a011a038877a84d810cc10ff830affb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_every_append_lands_at_or_under_the_ceiling"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-9E0TA9"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_crossing_append_cuts_oldest_rows_and_writes_the_row"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_crossing_append_cuts_oldest_rows_and_writes_the_row"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-F97PTF"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_sibling_workspace_append_never_leaves_the_river_over_the_ceiling"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_sibling_workspace_append_never_leaves_the_river_over_the_ceiling"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-GRR2DQ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-HWW15S",
+      "items": [
+        "sha256:3b5446ab86efc9fd2fd31a7e473c52960a2d21eed302955717aa18032d92afb5"
+      ],
+      "reason": "The event vehicle changes, not the per-append lock admission, sixteen-MiB ceiling, eight-MiB trim level or shared age/size cut assertions.",
+      "revision": 1,
+      "subject": "INV-PHS9T7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JZ06KT",
+      "items": [
+        "sha256:cd3c8c3b4ce9552254dc1e7eb1b7a90c62f2f997b4004f26c2b60b54c636c225"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:cd3c8c3b4ce9552254dc1e7eb1b7a90c62f2f997b4004f26c2b60b54c636c225"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c37e7a1d783f155bebf0b9f3f30e9c12f6677301",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:7991154da41374bfca8f6450500696a9e20feb064efc8e791cfde2e12ff52dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_public_tool_answers_in_the_products_own_vocabulary"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "PRF-8TH88D"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "PRF-KZVVQJ"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_whole_result"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_whole_result"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-3ME8JM"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-FFJB4Q"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:0f306524e822c2ba7fdc3e1c1007d96a0fabab7e2d6d03f04c2b7e9c5bb71836",
+            "locator": {
+              "kind": "symbol",
+              "name": "_returned_arm"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-K55Z4E"
+        },
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_whole_result"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:8a6ac22a1cce7a44906d7512d6a7f215f67bedccbfc8f464e5b9f5f0bafa2d09",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_whole_result"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-QY1TXM"
+        },
+        {
+          "after": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "before": {
+            "blob": "971599a3b3a9f3ed139d1f94437986c9b38b0120",
+            "content": "sha256:90c0dbdff774364521cf04619a3a0d2b2ec5caf00670d4e129649319c43b2d94",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChokePointControlTests.test_an_answer_without_a_readable_whole_result_is_unvalidatable"
+            },
+            "path": "mcp/tests/test_tool_entry_point_controls.py"
+          },
+          "id": "RLZ-WYF5Q2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PD55T8",
+      "items": [
+        "sha256:66cea998f3b824331eec77bc21b1450d4e18e06f4e9077628fbca1cfef021f99"
+      ],
+      "reason": "The supported cc364a32 composition keeps log-named whole-result read in _returned_arm and delegates model validation plus delivered-envelope/key judging to _judge_delivered. Missing or unreadable whole detail still returns unvalidatable, never a delivered-answer fallback. The removed _validated_whole/_ok_false_arm pair is historical. Source-only port review renews these existing covers; no new execution or obligation is claimed.",
+      "revision": 1,
+      "subject": "INV-22N6MM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q08A03",
+      "items": [
+        "sha256:9d6c3fd78415edcb6b3f378db1762486d5d41631106b8fa2e5c20933ca9b1894"
+      ],
+      "reason": "Runtime-install fixtures follow the current user-settings path and authored XDG dimensions; current asset counts replace stale fixture pins without changing production bounds, row validation or log redaction obligations. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:9d6c3fd78415edcb6b3f378db1762486d5d41631106b8fa2e5c20933ca9b1894"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R68WCP",
+      "items": [
+        "sha256:d1e787b66aacb35aeb67811d6f557ea40a2cfa5a135eb11cad311db76cf54963"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:d1e787b66aacb35aeb67811d6f557ea40a2cfa5a135eb11cad311db76cf54963"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S91THH",
+      "items": [
+        "sha256:a2f048dfa44183f52497168a636a4b5d237f2deed4cd78dd3bb97cd31efafa43"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:a2f048dfa44183f52497168a636a4b5d237f2deed4cd78dd3bb97cd31efafa43"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "bc923dd7b8709184ad7aa6f785406aee6c0cb75f",
+            "content": "sha256:0c799bed674fd4ec5f4d0d66c924d14b2159c3d659109cadb7c9f88d9d55390d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "ff2eb5d791823c4f967df13cce99aa34da06fcdd",
+            "content": "sha256:b812f31630e6e5809ed13808fc0b46297968df0e2d2a4a15520973745558a815",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-20QKDA"
+        },
+        {
+          "after": {
+            "blob": "c37e7a1d783f155bebf0b9f3f30e9c12f6677301",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "before": {
+            "blob": "155ad7e2e8143abefcd307e8b080c1296054156a",
+            "content": "sha256:534a557df83cbcab5a5cf8a41bc85a33ca4e8e8d829e376fbca13c56df9fe2f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENVELOPE_LOSING_RAISERS"
+            },
+            "path": "mcp/tests/test_tool_entry_point_sweep.py"
+          },
+          "id": "RLZ-F381M7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T7Z6ER",
+      "items": [
+        "sha256:196aa2c166f76fe3e9861353489ab464a360418c2be202d54959af89580d7570"
+      ],
+      "reason": "The shared-world fixture removes retired calls and the classifier is split without changing its deliberate empty unmarked pin or the separately attributed self-contained sweep pins. This renews source identity, not a historical failure census.",
+      "revision": 3,
+      "subject": "INV-TG334W"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WDBAVM",
+      "items": [
+        "sha256:fe68177896c53c087a0e1fd1abd7c9a054db4fa78cc56392a2f99186c79bbdfa"
+      ],
+      "reason": "Explicit direct_execution_grant interim ownership restores the already-authored L111 roster/table contract; this map entry introduces no separate invariant or new bound. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:fe68177896c53c087a0e1fd1abd7c9a054db4fa78cc56392a2f99186c79bbdfa"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:1033db1d98a5d76b7eab55db81804024709f1f86f4ea90b24100e8e61b273ab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_unbound_server_writes_a_chat_without_a_role_with_its_harness"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:08d5c48dae4b07c0f5b153ce18688efb5646a8b48f25b3638bb15bc031faf97e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_unbound_server_writes_a_chat_without_a_role_with_its_harness"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-05YDKB"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:b148eec9c7669bcfe73630bf5090f4fc554241d98b5a2893eb5947f12c96017a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_caller_is_read_once_at_start"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:ff8e633da7c8e36c31a9a687e93554a31b993aa0fe276f52c35c9b99853332e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_caller_is_read_once_at_start"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-5N48VF"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:6e172fdfb6a2c73e163ae906867c4fa21da6de4f270979d98d9bc6795573b77b",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_task_title_is_read_once_at_snapshot"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:fd2e34ed8718963c924523ade2e16b7953a1dc17825d6bcc011fe99225ac66f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_task_title_is_read_once_at_snapshot"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-9MZC5P"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YHB1QV",
+      "items": [
+        "sha256:d5cddc4ef6144c206a67ad9525b50fc649428e30bc6dc8931895eebe3d9d402a"
+      ],
+      "reason": "The server_info vehicle still exercises the same once-read caller snapshot, unbound chat/harness and title-at-snapshot assertions; no startup reread or binding policy changes.",
+      "revision": 1,
+      "subject": "INV-0MX54D"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YWVMA1",
+      "items": [
+        "sha256:5f4c73fcc06f48f5b034141982182990b93d2411953db802c5d6429cea54f024"
+      ],
+      "reason": "Runtime-install fixtures follow the current user-settings path and authored XDG dimensions; current asset counts replace stale fixture pins without changing production bounds, row validation or log redaction obligations. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:5f4c73fcc06f48f5b034141982182990b93d2411953db802c5d6429cea54f024"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YZZ6SG",
+      "items": [
+        "sha256:7d1b42a90d39c3d038447a127873e5cfebe05b2aaf9cc396ae55decb33434ba5"
+      ],
+      "reason": "The retained server_info builder/model replaces removed ping as the corruption/deadline vehicle. Exact model, envelope and key discriminators remain; this vehicle substitution adds no separate invariant. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:7d1b42a90d39c3d038447a127873e5cfebe05b2aaf9cc396ae55decb33434ba5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:2582f568ae1f8d805a070d4630b7a62c08adeb7f9093145a12f91877cdb6ec6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_failed_write_answers_as_written_and_next_events_carry_then_clear"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:8d97babfc2f5d387acab6a7bf55cd3bf17c3dee9c32bc04cd33843c2749d217d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_failed_write_answers_as_written_and_next_events_carry_then_clear"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-1YAY93"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:bb4060d9e42c990bd6881914820dd9ff3a0b7cc3c5e82b0c291cb6689f57e5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:25267c701e945b77701bdc195b4378de0c9841ec83aa66ef50219e20b017fddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_bound_first_call_writes_one_workspace_event_with_caller_and_facts"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-EQ6GQ2"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:e0a6d350d25a5e0aa817044d618973969cdcba18a306fbac556304bc53b4163e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_no_argument_answer_or_message_text_reaches_an_event"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:e0a6d350d25a5e0aa817044d618973969cdcba18a306fbac556304bc53b4163e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_no_argument_answer_or_message_text_reaches_an_event"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-RCY2AA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z1SD1F",
+      "items": [
+        "sha256:ea0b6e37bf2da1a845b46817a00ffeb2208497b6240cceb5a52c055e338f09e0"
+      ],
+      "reason": "The surviving server_info payload replaces the removed ping vehicle while preserving exactly-one event, facts-only fields and failed-write carry-then-clear assertions.",
+      "revision": 1,
+      "subject": "INV-18B62F"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_sibling_workspace_append_never_leaves_the_river_over_the_ceiling"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:f6684a08ffb03c8742d05c5ad4cf5d2fbffcb3f53ea8aacd3abe75be4d9e145c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_sibling_workspace_append_never_leaves_the_river_over_the_ceiling"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-89X6BQ"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_crossing_append_cuts_oldest_rows_and_writes_the_row"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:9bca301d684d2122e3c3d00b3f8f42ac7f3e37b66e8d111d4c48050178e8121a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_crossing_append_cuts_oldest_rows_and_writes_the_row"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-92MDGG"
+        },
+        {
+          "after": {
+            "blob": "5aaa934052ba121b4f0be7a1c1fb62a335ff3319",
+            "content": "sha256:9594a9f4caa5126a7c5f3ebc3112f5be71d9d9e9b062f5a11505a385f899abfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_failed_removal_counts_and_leaves_the_file_ungrown"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "before": {
+            "blob": "a54a32a6e0b8da7cff5dc4e949b2bd1e98b428ad",
+            "content": "sha256:ea21f99e8261f4970e383bf92d42b7111a9d82a1490b06f72df7a799675f808f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventRiverTests.test_failed_removal_counts_and_leaves_the_file_ungrown"
+            },
+            "path": "mcp/tests/test_tool_event_river.py"
+          },
+          "id": "PRF-9T50E6"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z8CJP2",
+      "items": [
+        "sha256:a2ea9fe9339e297dfc7085754ef104a168c5a880667d1565b3edefe664f6313f"
+      ],
+      "reason": "Renaming the test event vehicle does not change lock-scoped whole-row cutting, failed-removal preservation or sibling-append ceiling assertions.",
+      "revision": 1,
+      "subject": "INV-NJ51EA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZG2AGS",
+      "items": [
+        "sha256:73e7c32843dcdf1a3d5e28d284f1e44f6983a5df2adc781bd872b296cd2c24e4"
+      ],
+      "reason": "Runtime-install fixtures follow the current user-settings path and authored XDG dimensions; current asset counts replace stale fixture pins without changing production bounds, row validation or log redaction obligations. MIK-R158 rules 2-4 require repair at the actual fault without silencing a test.",
+      "subject": "hunk:sha256:73e7c32843dcdf1a3d5e28d284f1e44f6983a5df2adc781bd872b296cd2c24e4"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

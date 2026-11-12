@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/review/explainer/explainerValues.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A malformed explainer answer becomes nothing rather than a default that reads like a real value.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ae78c35486ace740e878addc68b8694ff78aa91",
+            "content": "sha256:75707e84e6b48e801ae7ee737006f2ecfd52f9daeca95eba99a532801f3d362b",
+            "locator": {
+              "kind": "symbol",
+              "name": "isRecord"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

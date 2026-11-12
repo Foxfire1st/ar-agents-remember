@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The cut and outside-knowledge populations can silently disappear from a passing candidate-only check; distinct assertion units protect counts, byte sums, bounded answers and unchanged operation actionability while human review decides causality."
+  },
+  "applicability": "Converted memory-quality landing reports for admitted leaf-base comparisons, and explicit migration comparisons using the same engine.",
+  "conditions": [
+    "The check uses the admitted leaf memory base when supplied; comparison failure is named rather than silently represented as no cuts.",
+    "Measured cuts apply the shared at-least-eight removed lines and removed-greater-than-twice-added predicate; proven source deletion is exempt.",
+    "The added-file census excludes onboarding, knowledge, system and Git administrative metadata; the answer bounds rows while the complete report retains counts, paths and bytes."
+  ],
+  "exclusions": [
+    "Automated judgment that removed text is false or that a cut/addition deserves acceptance.",
+    "A new refusing gate or actionable count contributed by the landing observations.",
+    "Restoring old cuts or removing developer-owned historic folders."
+  ],
+  "id": "INV-NRXFWN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_landing_report.py (32 tests incl. answer-bound and role-text coverage); evidence5 126 cut cards / 351 added files at memory 38a0362d5; attempt-4 report; provenance-manifest.attempt-4.json"
+      ],
+      "path": "successor-knowledge-plan-2.json"
+    },
+    "handoffEntry": "MIK-R120@v1",
+    "leaf": "260928-MIK-L120",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A landing shows what it cuts from a card and what it adds beside the knowledge: measured cut cards and added files, report-only, with two counts in the tool answer.",
+  "status": "proposed",
+  "supersedes": []
+}

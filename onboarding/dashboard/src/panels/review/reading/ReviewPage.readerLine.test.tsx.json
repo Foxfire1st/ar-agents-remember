@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/reading/ReviewPage.readerLine.test.tsx",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "Held subject/card reads retain the next settled block across success and failure.\n\nAnchor: \"// Holds the subject's read and the card read until released; a released read may be answered with\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5bcd8b7780f6718dd3d2da15869108315e1e26a",
+            "content": "sha256:21ff383a5bac28da52edca79440d3f9eff593208720850dc4c8c60923edcfe47",
+            "locator": {
+              "end": 1116,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Fractional/clamp corrections, sticky-head clearance, lane reservations and ready/skeleton height holds.\n\nAnchor: \"it('keeps the line within 1 px of its target through many fractional corrections', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a5bcd8b7780f6718dd3d2da15869108315e1e26a",
+            "content": "sha256:871277365cf57bf33d97ba036b900625a8129235c8fa9a63ea573e7964621903",
+            "locator": {
+              "end": 1116,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

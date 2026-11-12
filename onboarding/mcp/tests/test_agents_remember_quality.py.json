@@ -1,0 +1,54 @@
+{
+  "path": "mcp/tests/test_agents_remember_quality.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Gate four not applicable result does not claim real codex execution.\n\nAnchor: `test_gate_four_not_applicable_result_does_not_claim_real_codex_execution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e7bc5592cb3ced8c27b836edaa44997d05ca5d6",
+            "content": "sha256:ebb3406aee072b3429e2fa816ce2a0630dba224f599e76b8e862c756e6180c41",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Python suite refuses missing or mismatched dagger attestation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e7bc5592cb3ced8c27b836edaa44997d05ca5d6",
+            "content": "sha256:92ca0b9e8a2a2db963af56358895358a7369c2353e159341f830774bdf30abf4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_python_suite_refuses_missing_or_mismatched_dagger_attestation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Dagger quality red gate one still terminalizes every gate one sibling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e7bc5592cb3ced8c27b836edaa44997d05ca5d6",
+            "content": "sha256:d3b6ea5b255f4032788b523e205b437151acdfcbd9625d6ac6093c3f31ca8fe1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_dagger_quality_red_gate_one_still_terminalizes_every_gate_one_sibling"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.noFamily.captured.json",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "This retained fixture keeps unreadable after-family scope distinct from confirmed no-family: partial/unavailable family and judgment states are not measured-empty states, and readable selected invariant source does not synthesize an absent member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bc52f6896fdf0ad644cfb0d387b8615c0354eb7",
+            "content": "sha256:80abc5599691bd91aa9e6ca6e9716fc6a2d712623bd57fcec8691a7d8f99f0f1",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

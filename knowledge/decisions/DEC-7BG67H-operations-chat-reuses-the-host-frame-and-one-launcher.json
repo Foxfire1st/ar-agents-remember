@@ -1,0 +1,74 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "A real design choice with two named alternatives was weighed: rebuild the dashboard's own chat surface or reuse the host's frame with the existing launcher."
+  },
+  "alternatives": [
+    {
+      "option": "Reuse the host's native frame in the rail and the one existing role launcher; remove the older panel.",
+      "reason": "The host already renders the task's agents, their tabs and the message box; the dashboard adds only the selection binding and the bound launcher.",
+      "status": "chosen"
+    },
+    {
+      "option": "Repair the older RailChat panel to show the host's agents.",
+      "reason": "It would rebuild the host's tabs, message box and navigation inside the dashboard and keep two chat surfaces for one task.",
+      "reconsider_when": "The host stops exposing an embeddable frame or a control channel the dashboard can use.",
+      "status": "rejected"
+    },
+    {
+      "option": "Build a dashboard-native chat surface over the launch records.",
+      "reason": "It duplicates the host's message box and cannot run the agents it would display.",
+      "reconsider_when": "The product decides the host's frame is no longer the chat surface of record.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The rail keeps one launcher and one frame; the removed panel's exclusive modules and the highlight direct-target branch go with it; the launch-record read becomes the panel's single discovery source."
+  ],
+  "context": "Beside a document the dashboard showed its own earlier-kind chat panel (pre-Paseo terminal sessions) while the Paseo host already ran the task's agents in its own frame and tabs.",
+  "decider": "developer direction D72/D73 (2026-10-06), packet MIK-R95@v1 rules 2, 8",
+  "id": "DEC-7BG67H",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/cockpit"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-7D9QDG"
+    },
+    {
+      "relation": "explains",
+      "target": "INV-X60KEC"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R95",
+        "packet": "requirements/MIK-R95-v1-the-chat-panel-follows-the-selected-document.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule2",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

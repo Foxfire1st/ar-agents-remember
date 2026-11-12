@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "MIK-R106 v2 rule 5 requires per-revision replacement, verbatim question/choice text and no send before Send; protocol validation and serving response construction jointly enforce that boundary, with bounded/verbatim parser and real retained-channel integration assertions."
+  },
+  "applicability": "Admitted offer-selections and request-explanation messages on a retained frame session’s host channel.",
+  "conditions": [
+    "The existing session binding, request rate and replay checks run before dispatch.",
+    "Each selection map key includes repository, master, leaf, frame and revision; another offer to that key replaces its existing row.",
+    "The response pick names explainer as its default target and is removable; the host does not call a send/start path for either message."
+  ],
+  "exclusions": [
+    "The explicit later Send is outside this host-message operation.",
+    "The 64-entry host map bounds transient stored selections; it is not durable revision history.",
+    "Presenter request recording can fail or be absent without altering the returned question text; recorded false remains explicit."
+  ],
+  "id": "INV-QXH234",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Approved MIK-R106 v2 rule 5 lines73–76; serving/canvas.py _selections_offered/_explanation_requested; canvas/protocol.py payload owners; named source assertions only."
+      ],
+      "path": "L183-retained-frame-session-and-page-tray-W9"
+    },
+    "handoffEntry": "L183-CUR-CANVAS-page-tray-picks",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An admitted page selection offer becomes that revision’s one replaceable selection pick, and a page explanation request becomes a pick carrying the exact question; both target the explainer and preserve plain text without sending a message or starting a model turn.",
+  "status": "proposed",
+  "supersedes": []
+}

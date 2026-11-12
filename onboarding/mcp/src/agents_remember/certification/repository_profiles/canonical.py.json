@@ -1,0 +1,122 @@
+{
+  "path": "mcp/src/agents_remember/certification/repository_profiles/canonical.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8d005fa360cbac2b426278eec6d3e499f056a462",
+        "content": "sha256:186317bf28bcf6dafc5fb9a125004be698f1d5640cc009be665df49c86dfa02b",
+        "locator": {
+          "kind": "symbol",
+          "name": "project_generated_skills"
+        }
+      },
+      "id": "RLZ-G0NHEZ",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The profile owner preserves unrelated inputs, derives skill target/source scopes from the parsed declaration and recomputes the canonical profile digest.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`canonicalize_repository_profile` normalizes one profile and refuses a declared digest that does not match canonical content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d005fa360cbac2b426278eec6d3e499f056a462",
+            "content": "sha256:feccda26744998a3d36c9330c1e0a1c11e3159685fd6d5727cd09daa0aeff85e",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonicalize_repository_profile"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The digest is computed by `repository_profile_digest` over normalized content in models.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f00422a28439082d2b7c652601a8e24931781fc8",
+            "content": "sha256:bc03d81261d1b09a6c9ff4a245be14302817f6e7557ff4686c3075f1461863cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "repository_profile_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f00422a28439082d2b7c652601a8e24931781fc8",
+            "content": "sha256:fe3b19bd4da42f831fca1146b8d4e08a0154a695018ea34b65e6172f296d4803",
+            "locator": {
+              "end": 502,
+              "kind": "line_range",
+              "start": 500
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`load_repository_profile` calls canonicalization and converts digest refusal into a typed `profile-digest-mismatch` finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f68a57c94ffbd97a17bf284feb0f5345c496377b",
+            "content": "sha256:fa9fa6a2fb3e9db7129f222b5a51e9c6625903e47672614ab81e7cb196a8c4d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_repository_profile"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The canonical profile is what planning digests into immutable per-gate plans.\n\nAnchor: `compile_repository_profile_plan`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+            "content": "sha256:aeea039733c6233290f045041f66ad773e2ce673a2a121ff32b6b840e6f237e7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/certification/repository_profiles/planning.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Generated-skills projection validates its input, replaces only the declared skill input scopes and recomputes the projected digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d005fa360cbac2b426278eec6d3e499f056a462",
+            "content": "sha256:186317bf28bcf6dafc5fb9a125004be698f1d5640cc009be665df49c86dfa02b",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

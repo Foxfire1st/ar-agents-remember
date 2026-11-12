@@ -1,0 +1,26 @@
+{
+  "path": "mcp/uv.lock",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
+        "content": "sha256:4f6b0dce4cda1bc753aca254e31f460a0bf2b57af78466ad612da56154af5194",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 5
+        }
+      },
+      "id": "RLZ-7M3P2R",
+      "invariant": "INV-BQFZCR",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e1",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "The lock records the resolved editable distribution with its version; an unlocked mismatch would resolve a different package than the source it locks.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

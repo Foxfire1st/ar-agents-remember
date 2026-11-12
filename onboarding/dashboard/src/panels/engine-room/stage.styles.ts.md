@@ -1,15 +1,5 @@
 # dashboard/src/panels/engine-room/stage.styles.ts
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/stage.styles.ts`          |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
@@ -18,22 +8,21 @@
 
 The pod-stage scene style domain of the Engine Room, split from `engineRoomStyles.ts`
 by the 260731-EFA-L8 R6 ruling. Owns the scene SVG/world labels, enclosure border,
-SVG node boxes, pruned-node register, engine gauge frame/charge/petals, official and
-worktree wires, canopy stroke, lane flags, and warp-coupler geometry.
+SVG node boxes, pruned-node register, canopy stroke, lane flags, and warp-coupler
+geometry.
 
 ## Code Commentary
 
 ### Logic
 
 `sceneSvg` carries layout only (no global transition substrate — motion is
-GSAP/Motion). `engineGaugeOut` is a constant gold bezel with `down` as the one
-fault-coloured frame; `enginePetal` is constant gold with per-state opacity.
+GSAP/Motion).
 `prunedNode` is the dormant/desaturated stale-base register.
 
 ### Conventions
 
 CSS is static; property-split law: a class opacity must never shadow a Motion-owned
-value (see `worktreeWire`, which deliberately carries no opacity).
+value.
 
 ### Invariants And Boundaries
 
@@ -43,32 +32,23 @@ This domain contains no animations and no dynamic per-beat styles.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The scene/wire recipes. | `sceneSvg`; `officialWire`; `worktreeWire`; `canopyStroke` | dashboard/src/panels/engine-room/stage.styles.ts:5-14; dashboard/src/panels/engine-room/stage.styles.ts:171-198 |
-| The engine gauge/pruned-node recipes. | `engineGaugeOut`; `engineCharge`; `prunedNode` | dashboard/src/panels/engine-room/stage.styles.ts:72-105; dashboard/src/panels/engine-room/stage.styles.ts:125-139 |
+- The static scene, node, canopy, lane-flag and warp-coupler recipes. [1]
 
-## Cross-Repo References
+- The pruned-node recipe retains the dormant/desaturated stale-base register. [2]
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the stage
-  style domain split from `engineRoomStyles.ts`. Verification pinned to the leaf base
-  until closeout stamps the code commit.
+No applicable cross-repository source was found.

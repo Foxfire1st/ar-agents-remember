@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/closeout/input.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/closeout/input.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `67b21aeb66df96a971a33ae431a13992f2528b45` |
-| lastVerifiedCommitDate | 2026-09-15T06:37:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [closeout models route overview](overview.md)
@@ -50,86 +40,38 @@ The model does not decide enabledness. Route- and contract-aware code in `worktr
 
 None recorded. Public retry/recover/revise controls belong to L2, not this model.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured. The original CLIVE-L1 explicit-input
 requirement remains, with its ledger leg retired by the authorized LCA-L9 change.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+No configured external domain-documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. | L32-L32; L34-L37; L46-L52; L64-L73; L127-L165 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| Raw observations and typed refusal vocabulary are public data. | L46-L52; L76-L84 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| Effective legs are a discriminated union. | L96-L111; L114-L118 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| Only enabled legs can return a raw commit message; this stays the public echo. | L138-L142 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
-| The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. | input.py: L144-L162; memory_attribution.py: L51-L51; L67-L92 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py); [mcp/src/agents_remember/kernel/memory_attribution.py](mcp/src/agents_remember/kernel/memory_attribution.py) |
-| The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. | L25-L25; L32-L59 | [layers.toml](layers.toml) |
-| The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. | L717-L751 | [mcp/tests/test_memory_ledger.py](mcp/tests/test_memory_ledger.py) |
-| The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. | L86-L116; L119-L137 | [mcp/tests/test_memory_attribution_producers.py](mcp/tests/test_memory_attribution_producers.py) |
-| The worktree and direct routes render attributed memory messages at their real commit seams; no ledger commit is produced. | closeout_external.py: L79-L110; direct_landing_execution.py: L175-L236 | [mcp/src/agents_remember/worktrees/modules/closeout_external.py](mcp/src/agents_remember/worktrees/modules/closeout_external.py); [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
 
-## Cross-Repo References
+- Raw input, resolved plans, effective input, and message-field vocabulary contain code and memory only. [1]
+
+- Raw observations and typed refusal vocabulary are public data. [2]
+- Effective legs are a discriminated union. [3]
+- Only enabled legs can return a raw commit message; this stays the public echo. [4]
+- The model imports and calls the kernel renderer; the key and trailer rendering have one kernel definition. [5]
+- The layer contract that fixes the import direction: `kernel` ranks below `models`, so the model may import the renderer and not the reverse. [6]
+- The round trip that proves this module's rendered trailer is the one the kernel reader parses, rather than two keys that merely look alike. [7]
+
+- The census that enforces the one definition this route now depends on — the key identifier and its interpolation in exactly one production module, and all five producers reaching a shared renderer entry, this model's method included. [8]
+
+
+- The worktree and direct routes render attributed memory messages at their real commit seams (since MIK-R09 the worktree route first validates a converted leaf's exact tree); no ledger commit is produced. [9]
+
+- None [10]
+- None [11]
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
-## Update History
-
-- 2026-09-15 — Preserved the following dated pre-takeover review notes from the parent working tree. They describe that earlier candidate; current behavior is documented above. Exact original files and patches are retained in the master cutover report.
-
-- 2026-09-14T23:55+02:00 — 260913-LCA completed-master review follow-up (same uncommitted change
-  set, `ar/260913_ledger-commit-attribution`, base `bb65a207`): anchor repoint only, no claim change.
-  The ledger test module grew above the round-trip case, so this card's citation moved:
-  `test_the_rendered_trailer_is_the_one_the_reader_parses` 698-733 → 774-809. The range was read back
-  at its current position. Verification metadata remains closeout-owned; no acceptance claim and no
-  verification stamp advanced.
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Narrowed public/effective closeout input to code and memory while preserving the shared attribution renderer. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
-  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T23:52+02:00 — 260913-LCA-L4 curator (uncommitted change set on `ar/260913-lca-l4-ar`,
-  base `5bb124d4`): the delegation moved one rank down. This model no longer names the trailer key at
-  all — `input.py:9` imports `render_memory_content_message` instead of
-  `CODE_COMMIT_TRAILER_KEY`, and `memory_content_message` (`:148-166`) is now exactly
-  `return render_memory_content_message(self.message_for("memory"), code_commit)` (`:166`). Corrected
-  the Purpose, the Logic (which still showed the deleted f-string as where the trailer is rendered),
-  the Conventions and the two render invariants, added the kernel renderer and the one-definition
-  census as evidence, repointed the stale class/method ranges
-  (`CloseoutMessageInput` 44-51 → 47-55, `CloseoutInvalidField` 76-84 → 79-88, the leg union
-  96-118 → 99-127, `message_for` 139-143 → 142-146) and removed the duplicated commit-seam row this
-  table carried. Verification metadata remains closeout-owned; no acceptance claim and no verification
-  stamp advanced.
-
-- 2026-09-13T23:28+02:00 — 260913-LCA-L2 (uncommitted change set on `ar/260913-lca-l2-ar`): this
-  model is part of the change set now. The trailer key it declares-and-renders is no longer declared
-  here: `CODE_COMMIT_TRAILER_KEY` is imported from `kernel/memory_attribution.py` (`input.py:9`), so
-  the writer's key and the reader's key are one literal and
-  `grep -rn '"Code-Commit"' --include=*.py mcp/` has exactly one hit. Corrected the Purpose, Logic,
-  Conventions, the invariants (splitting the
-  rendering's one definition from the key's one declaration) and the reference rows, added the layer
-  contract and the round-trip case as evidence, and repointed the ranges shifted by the new import
-  block — including the record/metadata `governingOverview`, which now points at this leaf's nearest
-  route overview (`closeout/overview.md`) instead of the models route. The L1 entry below stands as
-  the record of what was true when it was written. Verification metadata remains closeout-owned; the
-  `1ddf7fda` stamp is left as it was, since no commit contains this candidate yet — no acceptance
-  claim and no verification stamp advanced.
-
-- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): recorded that this model now owns the attribution as well as the messages — `CODE_COMMIT_TRAILER_KEY` plus `memory_content_message(code_commit)`, which returns the closeout's own message verbatim with exactly one final-paragraph `Code-Commit: <sha>` trailer naming the code commit that same closeout landed. Stated the one-definition rule (both closeout routes render through it; the `memory.md`-only ledger leg keeps `message_for("ledger")` and carries none) and why the seam is the message construction rather than a later step. Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; verification metadata remains blank until governed closeout stamps the landed code commit.
+No separate external implementation source applies to this file.

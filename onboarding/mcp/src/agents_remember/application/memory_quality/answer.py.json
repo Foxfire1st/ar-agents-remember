@@ -1,0 +1,123 @@
+{
+  "path": "mcp/src/agents_remember/application/memory_quality/answer.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+        "content": "sha256:f256545575ae096da31a5d5480bacea7de25ac29c5793d2ec7b05c3b07bfa991",
+        "locator": {
+          "end": 289,
+          "kind": "line_range",
+          "start": 242
+        }
+      },
+      "id": "RLZ-T06K6F",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "`quality_result_answer` at C still projects complete quality results with their finding counts and bounded blocking rows and names the checklist/census paths, leaving the material the logger keeps untouched; the span matches C.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Completed results retain status, blocking totals and report locations.\n\nAnchor: `quality_result_answer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:e5f32156b9e95ddc8e9e6da0ee71602ca6bd411bdd98f8a1b95f5401a648f6ba",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The bounded blocking list preserves repair-loop order and whole-population count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:a714d023277f003eb288453661d9cd5398e45ddeba8451832ae102732866e3dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_blocking"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A taken-over failure retains its own code and recovery action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:ad4053875a98f23c981f9d9198a9916e941e5fbc0d12548b63896b9d9f30755d",
+            "locator": {
+              "kind": "symbol",
+              "name": "carry_failed_quality_reason"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Poll projection distinguishes live, absent and completed runs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:e7decea95606a3baf358ae71e46158e5d89ef98f60f478f768b3b7e2b97f6df3",
+            "locator": {
+              "kind": "symbol",
+              "name": "quality_poll_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The converted answer carries complete landing counts and bounded slim first rows without narrowing retained results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:8231a631e68b412e798b03b24e7915a6b33ebada2442887e77644d07b14f53bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "carry_landing_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Ordinary results project a nonnegative non-Boolean proof count and a bounded-key cache-build summary with a list-derived buildErrorCount.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:eb4e6fad4f7ad943ed02d0ecac8c2b4a29ec1770abcca9d02921177158e7b390",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

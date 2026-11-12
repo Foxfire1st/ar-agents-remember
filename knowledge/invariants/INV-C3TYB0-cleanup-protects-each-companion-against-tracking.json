@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Cleanup deleting a tracked or symlinked companion would destroy content it must protect."
+  },
+  "applicability": "Companion deletion protection in the cleanup owner.",
+  "conditions": [
+    "The companion is Git-tracked or a symbolic link."
+  ],
+  "exclusions": [
+    "An untracked regular companion the reviewed plan deletes."
+  ],
+  "id": "INV-C3TYB0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_copy_cleanup.py; Note 16; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.md"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-R1-F03",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Cleanup protects each companion against tracking and symbolic-link deletion.",
+  "status": "proposed",
+  "supersedes": []
+}

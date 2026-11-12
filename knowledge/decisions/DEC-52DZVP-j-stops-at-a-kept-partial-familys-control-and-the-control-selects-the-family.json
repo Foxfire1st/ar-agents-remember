@@ -1,0 +1,82 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Continuing in place and dropping the stop were weighed and rejected, and later work on roster continuation in the tree has to keep one read path, in which a kept family is continued by selecting it."
+  },
+  "alternatives": [
+    {
+      "option": "At the end of the loaded members of a kept, partly loaded family, `j` stops at that family's continuation control with the usual message and loads nothing; using the control selects that family and continues its list.",
+      "reason": "The developer chose it (D36: \"Stop at its control\"). It keeps the stop that ICR-R32 rule 6 asks for at any family with unreturned members, and selecting the family is a request the server answers.",
+      "status": "chosen"
+    },
+    {
+      "option": "Continue a kept family in place, without selecting it.",
+      "reason": "It needs a second read path and continues for a subject that is not selected.",
+      "reconsider_when": "The server continues a family's roster for a published cursor whatever subject is requested, so that a kept family can be continued without a second read path.",
+      "status": "rejected"
+    },
+    {
+      "option": "No stop at the control of a kept family.",
+      "reason": "It drops ICR-R32 rule 6's sentence.",
+      "reconsider_when": "ICR-R32 rule 6 no longer requires that `j` stops at the continuation control of a family whose members are not all returned.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No selection and no key step loads a page of a kept family.",
+    "Continuing a kept family makes it the selected subject; the family that was selected before becomes a kept one.",
+    "The tree keeps the furthest cursor of two reads of one family, so the control continues where the furthest read ended."
+  ],
+  "context": "A kept family can be one whose roster the server returned in part. Its continuation cursor was published for the subject it was read for, and the server offers a cursor only to the families of the requested subject's context (`family_context_cursor_refusal` in `mcp/src/agents_remember/application/review_family_rosters.py`). The question was what `j` does at the end of the returned members of such a family and how its roster continues.",
+  "decider": "developer (260928-MIK DEVELOPER-DIRECTION D36, 2026-10-01: \"Chosen from three alternatives each (packet draft, Open Truth Gaps G1 to G3): \"Whole, tagged\", \"Stop at its control\", \"Clicks in the tree keep too\"\")",
+  "id": "DEC-52DZVP",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-MWCCQM"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R39",
+        "packet": "requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "863986f5f429c7e0e5821471bcf7cd11a3543cbf",
+        "content": "sha256:0b40886d61b41985dc4493ef135bf8e52feaaf065153c82eea6de446b17fbcdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_context_cursor_refusal"
+        },
+        "path": "mcp/src/agents_remember/application/review_family_rosters.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D36 (2026-10-01), point 2; requirements/MIK-R39-v1-keyboard-traversal-keeps-the-walked-tree.md, Open Truth Gaps, MIK-R39 G2, and rule 8"
+      ],
+      "path": "notes/reports/260928-MIK-L39-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "RULING-D36-G2",
+    "leaf": "260928-MIK-L39",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

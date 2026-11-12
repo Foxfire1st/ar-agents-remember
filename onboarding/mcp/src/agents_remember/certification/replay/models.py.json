@@ -1,0 +1,219 @@
+{
+  "path": "mcp/src/agents_remember/certification/replay/models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The protocol fixes seventeen mandatory acceptance scenarios and refuses numeric reduction thresholds in the vocabulary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:4c9284f4b9542f32dc1271bf5489d1162d2d97e3fffc6f3da5ca97726282ea68",
+            "locator": {
+              "kind": "symbol",
+              "name": "_REPLAY_SCENARIO_IDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The freeze owner consumes the population rows and change records defined here.\n\nAnchor: \"class PopulationGeneration(FrozenContractModel)\"; \"class ReplayFreezeInputChange(FrozenContractModel)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:81942623545337c4ee1bb664e346f83cc62e1561d5b6186e2dcd09c0112ed66c",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:813253d5add789b358b5a4a59608c84bc7f3ebf787877e9e27deaf5bb093c8a0",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Certification contracts share the closed immutable model base.\n\nAnchor: \"class FrozenContractModel\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:f7a5ea8901e77c6b05bef81b105d77eeb31dc6624c20f98ca48378d817c7305f",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 30
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Semantic text is nonblank and unpadded.\n\nAnchor: \"SemanticText = Annotated[str, AfterValidator(_require_semantic_text)]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:7c626e0f94d76e38c400a359bd3d609ebc0b7abe975e56f12c3695c41a0ed310",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Gate identity is the closed literal vocabulary 1 through 5.\n\nAnchor: \"GateId = Literal[1, 2, 3, 4, 5]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:de483d624f4d5e9ac34d041ecac647f93bd9ac41e8ed075f0cb3f9bc99160626",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Rail identity combines its declared id and version.\n\nAnchor: \"class RailIdentity\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+            "content": "sha256:628f20b3dd283d5b3f5dc34d5edc2656a649e7f37d476fe4b74c37b5744ac7d1",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "mcp/src/agents_remember/models/certification/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Certification refusals use the shared typed finding contract.\n\nAnchor: \"class CertificationContractFinding\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+            "content": "sha256:4c6b249bef59d93e837829c6843ca2db493718e4a1f4d865cfc60acd6ff577e7",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 146
+            },
+            "path": "mcp/src/agents_remember/certification/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Span categories alias the R16 telemetry vocabulary, and replay catalogs reuse the telemetry rail records and counts.\n\nAnchor: \"class CatalogCounts(FrozenContractModel)\"; \"class CatalogRailRecord(FrozenContractModel)\"; \"MeasuredSpanCategory = TelemetrySpanKind\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:4c869e906e954c4720276889c98644312eabcf1e80f4d5fd7e2147540a26e711",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "44254dc28868d306abe218a6362867bf90b1341d",
+            "content": "sha256:884e9b9792ebf276ffd1bc003b7a7ec28a811a944b462c64a45940ef79b44672",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 310
+            },
+            "path": "mcp/src/agents_remember/certification/telemetry/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:41b7393cb3b36fb3479ef5e375af212af3d8eb2375d5ff5bb0937fcd99383dc3",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Content digests follow the shared certification digest helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The public subpackage facade re-exports the full vocabulary.\n\nAnchor: `ReplayFreeze`; `ReplayPopulation`; `SpanReduction`; `RunMeasurement`; `ReplayScenarioExpectation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:e7cd61ea0cc33773de044740feafb237316f17a34777fc462c6a1b18bca9a1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,60 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+        "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_bound_explainer_tools"
+        }
+      },
+      "id": "RLZ-5KGW7B",
+      "invariant": "INV-48203N",
+      "origin": {
+        "handoffEntry": "L183-CUR-ET01-bound-explainer-roster",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Registers existing tool implementations on the normal seat server.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The explainer's surface is supplied on the server the seat launch already built\n\nAnchor: `def register_bound_explainer_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+            "content": "sha256:17caf46f54bd82f3877f3554684e5d91524b563a0ed1ef19a22826a585530414",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 208
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A grade carries the binding it was made at and refuses when the environment left it\n\nAnchor: `def register_judgment_tools(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+            "content": "sha256:505de2315ee3a77ab21a7a47668ef15276a01c5f75e07a421d3757d87b1d1780",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

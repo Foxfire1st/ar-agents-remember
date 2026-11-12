@@ -1,0 +1,527 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/projection_store.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "80f68a14806839156738f156091e776e566e18b6",
+        "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XPQ3EA",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is the one writer of the projection files, so the JSON encoding is decided here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared store-root resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:e480f569304f8192087d573b7bb07fc208c8a458bbfd6cde0184b341edb758a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_root"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:1c92ddd1107a8c2abf728dacfe91796645a8a4da9ede40a454c9900431fd2480",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "On task-structure or drift invalidation, ProjectionInputState._refresh_drift passes its retained contracts and an actionable-drift observation to pruning before reading analytical snapshots. Pruning deletes valid branch-orphaned snapshots only with complete native branch/contract/snapshot proof; failure of that proof retains snapshots. A deleted checkout/worktree alone does not prove its branch is gone, and a valid changed occurrence remains visible even when a sibling read is incomplete.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:8e6754d4af49b0510d27b637b4bbd93d599ba4f4e241b712d16f693b77c6f1ba",
+            "locator": {
+              "end": 695,
+              "kind": "line_range",
+              "start": 681
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:18435ff96c58d78a4fe2bdde35fb6370b82624b328689a743d91cdf88a12c207",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:964cfb319d533a030399f793bf91afec60286d13053e8195fd187a95f2ae7cfd",
+            "locator": {
+              "end": 745,
+              "kind": "line_range",
+              "start": 731
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The shared contract snapshot is retained across unaffected ticks, built for full task refresh and updated for directed task refresh.  Anchor: \"_contract_snapshot_cache = ContractSnapshotCache()\"; \"def build(self\"; \"contract_cache=_contract_snapshot_cache\"; \"self._contract_cache.build(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:bd29749b6e40f154ca3e6943c13cca27d437f1b1092776ab5d4c5a0b62e59940",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The input-state pass refreshes tasks, host activity, active enclosure engine facts, drift, start progress and workspace observations, then returns retained projection inputs; it performs no provider display-state refresh.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:33a8ec7128ebb85c6ef4b2b93a02d14c082aae7585ff40358797a710b4fb0126",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_inputs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Projection assembly forwards only retained input fields and closeout queues.\n\nAnchor: `project_and_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The configured-root repository cache retains route coverage and ledger under its TTL.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces_cached"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Input read refreshes admitted domains and separately reads closeout queues on every input pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The repository cache stores route coverage and ledger; the projection edge forwards no sidecar age input and retains closeout queues.\n\nAnchor: `_gather_repo_surfaces` `_gather_repo_surfaces_cached` `project_and_write` `ProjectionInputs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:01bfd1bc7e1a03e7d34c3f0aa1be1c39c8ea8b6bea239152adf690019ccdb2fe",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:954807971041fb1a3214d979f69b958d29612fc8d1400979c0672b3190893772",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gather_repo_surfaces_cached"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:e95ca6ef4f2be52ec48402d13851e1fab71f1936509ae2d2f600bd963b24ffaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionInputs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Active-enclosure admission includes only named worktree groups whose cleanup is not completed, abandoned or reopened; the removed provider admission helper is not the current owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2aaec90408f6075aa7a83c55cdd50b375596acd",
+            "content": "sha256:f11ce536d5075ddd41d142138de2bf385d002f75126d27f30cc5e5400570ed28",
+            "locator": {
+              "kind": "symbol",
+              "name": "active_enclosure_worktree_groups"
+            },
+            "path": "mcp/src/agents_remember/observer/worktree_provider_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "project_and_write drives the pure project_workspace assembler with retained structural and analytical inputs, including the task-entry join the input reader built for the pass. The assembler enriches enclosure actions, takes that join (it builds native task entries from task sources, host activity and the pass clock only when a caller supplies none), and returns their tasks/counts and unbound enclosures alongside retained attention/Engine Room analytics and metrics. Provider refresh and provider display inputs are absent. The pure enclosure-action helpers still gate integrate/cleanup by durable closeout/integration/cleanup facts; there is no project_lifecycle fold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:b67c1f6e987ed016e6495d3760b30de7f0db389af5d6bb403fa7366f01b23a06",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_workspace"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:f0f8192b9ed0fee863d41e875cbceca1c0f0fdd252563e9923f569a534828bf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "enclosure_actions"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:64fed34410118cda4079e04a7c567bcc19c54615151225aa28d550fdbdca6443",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrate_action"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a95148ac75c865e5846b8994fe331ba5fb2ad1f7",
+            "content": "sha256:5f03b88c09c86fd492ed0a904a8e60fc5a7d2dac8ae216f5bc9c9d65aafd3bab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cleanup_action"
+            },
+            "path": "mcp/src/agents_remember/observer/reducer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The worker-owned state refreshes task inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:baaed6f6db2c9d37909ce87e1f577bce5bd956b34f99785d4857b557c8e76fdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_tasks"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:1b04ccb772e22dcc0a65a180419adc66fcffff700599bc52e6e8566cb4ed66eb",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The worker-owned state refreshes engine facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:cbd8b127ee4fc7b32edb046d54507981d9836fb51f9d424c2992df0a9bf543cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_engine_facts"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:f4529841f775726975ad315439ef9bce2fe4bab20d4a4d6d71f2b4cd6b30b5b6",
+            "locator": {
+              "end": 769,
+              "kind": "line_range",
+              "start": 744
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The worker-owned state refreshes progress inputs.\n\nAnchor: `_refresh_progress`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:04ba87c2215930d6e8ccb37062b4e6d587bd52085416fcc597a8c9669ba63ec1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_progress"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Input acquisition and reclamation belong to the worker-owned state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:1fe52595717e8bd3e11961014b84510794058fa1d6e99a7670a6934b268f4d22",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionInputState"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The complete acquired input bundle is represented by `ProjectionInputs`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:e95ca6ef4f2be52ec48402d13851e1fab71f1936509ae2d2f600bd963b24ffaa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProjectionInputs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:6184881d3ef224de20764ed5dd58c33fc7e38d8bfa2363182a328f4739a17977",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`project_and_write` invokes the input state rather than owning those reads itself.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:6f85a783f40f8df5c8afb659c5f7da8114cd5c3877c48f66578a5e8b5479dfb8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:65967a8d8bc5ce2be9c4d102af61ca9d6414dcb1fe1487f617282c4977d7d679",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

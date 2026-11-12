@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The behavior guards a costly publication, restoration or refusal mistake that the sealed findings proved reachable."
+  },
+  "applicability": "The invalid-input tool sweep on baseline and candidate.",
+  "conditions": [
+    "The intentionally invalid lifecycle prerequisites are exercised."
+  ],
+  "exclusions": [
+    "A repair of the four pre-existing ToolError arms; they are reported, not repaired here."
+  ],
+  "id": "INV-MQV6T8",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/snapshot-sweep-owned.json; notes/reports/role-launch/260928-MIK-L26-reviewer-c90c02de-94e9-45be-bd5a-dd61c880a014.evidence/baseline-authority-aligned-sweep.json"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-CX-N01",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The admitted invalid-input sweep exposes four pre-existing ToolError arms and a bare MQC result on baseline and candidate production.",
+  "status": "retired",
+  "supersedes": []
+}

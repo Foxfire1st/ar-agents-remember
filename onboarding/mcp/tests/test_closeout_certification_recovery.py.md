@@ -1,64 +1,48 @@
 # mcp/tests/test_closeout_certification_recovery.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_closeout_certification_recovery.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
 
 ## Purpose
 
-Exercises owner-derived R05 certification recovery decisions through real plan, result, certificate, and selected-reuse compilers. The suite distinguishes exact input deltas, unchanged interruption reuse, prior-red catalog requirements, and retained evidence mismatch refusal.
+Protects retained code-report transport with schema-valid plan/result/certificate compilers. It refuses undeclared or wrong-producer paths, oversize artifacts, inventory mismatches and conflicting producer paths before source reads or destination creation.
 
 ## Code Commentary
 
 ### Logic
 
-`_snapshot`, `_catalog`, and `_chain` build exact fixture authority. The retained tests select only the required suffix after a gate-input change, reject reuse after code change, preserve exact certificates across unchanged interruption, and require complete prior-red evidence before recovery.
+`_inventory_snapshot` builds digest-valid untrusted manifest metadata. `_retained_inventory_case` starts from `selected_execution`, rebuilds rail/result/certificate authority through real compilers and validates the repaired prefix. The parametrized case reaches the actual snapshot guard without replacing selection validation or filesystem resolution.
 
 ### Invariants And Boundaries
 
-- Recovery decisions derive from immutable candidate/profile/plan evidence.
-- Unchanged interruption reuses the exact original prefix; changed inputs reopen the required suffix.
-- Prior-red recovery refuses missing, reordered, or mismatched original evidence.
+- Retained inventories must match exact frozen producer publication and byte bounds.
+- Schema-valid compiler-issued evidence still refuses conflicts and mismatches.
+- Refusal precedes source resolution and destination creation.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Recovery behavior is repository-owned by the exact retained tests. | `test_actual_gate_input_delta_selects_only_its_required_suffix` | mcp/tests/test_closeout_certification_recovery.py:220-235 |
 
-## Repo-Internal References
+- Schema-valid retained-report evidence refuses wrong inventory before source reads or destination creation. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Snapshot and certificate fixtures bind exact recovery inputs. | `_snapshot`; `_catalog`; `_chain` | mcp/tests/test_closeout_certification_recovery.py:87-226 |
-| Gate input deltas reopen only their required suffix. | `test_actual_gate_input_delta_selects_only_its_required_suffix`; `test_code_change_invalidates_all_gates_and_does_not_reuse_old_certificates`; `test_unchanged_interruption_reuses_the_original_exact_certificates` | mcp/tests/test_closeout_certification_recovery.py:220-235; mcp/tests/test_closeout_certification_recovery.py:238-246; mcp/tests/test_closeout_certification_recovery.py:249-258 |
-| Prior-red recovery requires the exact original catalog and evidence dependencies. | `test_prior_red_requires_every_independent_root_and_blocked_dependant`; `test_prior_red_gate_two_requires_the_exact_original_gate_one_certificate`; `test_retained_report_inventory_refuses_mismatched_evidence_before_any_source_read` | mcp/tests/test_closeout_certification_recovery.py:340-357; mcp/tests/test_closeout_certification_recovery.py:413-449; mcp/tests/test_closeout_certification_recovery.py:591-620 |
 
-## Cross-Repo References
+### Repo-Internal References
+
+
+- Digest-valid untrusted manifests and rebuilt result/certificate prefixes reach the real retained-report guard. [2]
+
+
+- Retained inventories refuse undeclared/wrong-producer paths, oversize artifacts, mismatches and conflicts before source reads. [4]
+
+
+### Cross-Repo References
 
 None; the tests use local certification owners.
-
-## Update History
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `test_prior_red_gate_two_requires_the_exact_original_gate_one_certificate`, `test_prior_red_requires_every_independent_root_and_blocked_dependant`, `test_retained_report_inventory_refuses_mismatched_evidence_before_any_source_read` repointed to mcp/tests/test_closeout_certification_recovery.py:340-357, mcp/tests/test_closeout_certification_recovery.py:413-449, mcp/tests/test_closeout_certification_recovery.py:591-620. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_actual_gate_input_delta_selects_only_its_required_suffix` repointed to mcp/tests/test_closeout_certification_recovery.py:220-235. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `test_actual_gate_input_delta_selects_only_its_required_suffix`; `test_code_change_invalidates_all_gates_and_does_not_reuse_old_certificates`; `test_unchanged_interruption_reuses_the_original_exact_certificates` repointed to mcp/tests/test_closeout_certification_recovery.py:220-235; mcp/tests/test_closeout_certification_recovery.py:238-246; mcp/tests/test_closeout_certification_recovery.py:249-258. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited-source reconciliation: created the previously absent test sidecar from source bytes matching code commit `8133b6a9de2f787cb6c4527621a70123357aff31` (candidate-tree source SHA-256 `12b41cb717bd56605d95625e5a16f0719204a22d34da3258ea117b7114e68cf9`). No test execution or future candidate verification stamp is claimed.

@@ -1,0 +1,142 @@
+# mcp/src/agents_remember/application/review_pagination.py
+
+## Governing Overview
+
+[mcp/src/agents_remember/application route overview](overview.md)
+
+## Purpose
+
+The review surface's **page arithmetic**: how one bounded collection's page is
+*stated* on the review surface. The **knowledge comparison's** page is the shipped comparison's own window of its before/after union, and this
+module owns the one thing that is neither owner's: the page value the response publishes. The records page left with the review matrix that read the retired envelope tables (MIK-R74 rule 1): `records_page`, `RecordsPagePosition` and `records_page_refusal` are deleted.
+
+The two ownership boundaries the module exists to hold are stated in its own docstring:
+
+- **It mints no cursor and re-derives no binding.** The continuation a page publishes is the owner's
+  own opaque token carried verbatim — the comparison's `knowledge-diff-cursor/v1` for the knowledge
+  collection, the view's snapshot-bound continuation for the records collection. That is what keeps
+  one pagination authority rather than two, and it is why the collections are *named* rather than
+  uniform: a cursor presented to the other walk is refused by that owner rather than served as a slice
+  of it.
+- **The counts are the owner's own.** `total`, `returned` and `remaining` are read off the
+  comparison's `KnowledgeDiffCounts` and the view's `ViewCounts` exactly as those owners published
+  them; nothing here subtracts two of them to invent the third.
+
+A cursor that no longer binds is a **reset, not a fallback**: the owner's own typed rejection is mapped
+onto the surface's single `comparison_page_reset` refusal carrying the owner's expected/observed
+identities, and the page served beside it is the *current* comparison's first page rather than a window
+stitched from two generations.
+
+## Code Commentary
+
+### Logic
+
+**`MOVED_SNAPSHOT_CODES` is exactly one code — the owners' binding mismatch.** The comparison's own
+binding mismatch and the view's own snapshot mismatch are both spelled `continuation_binding_mismatch`,
+and that alone is mapped onto the new-generation action. Everything else keeps the owner's own next
+action and is reported as `comparison_page_unreadable`, because telling a reader to open a new
+comparison when nothing moved would be a false statement about what happened.
+
+**The two directions are told apart by asking the owner's own decoder, not by reading refusal text.**
+`comparison_reset` calls `continue_diff_from_cursor` on the presented token: a token the comparison's
+decoder reads back *is* one of its cursors, so a refusal on it is a binding mismatch and earns the
+new-generation action; a token it does not read back was never this collection's, so the caller's
+mistake is about *which walk* the token belongs to and the owner's own remedy travels through instead.
+
+**`reset_comparison_page` is the packet's failure behavior made one value.** A cursor for a moved
+snapshot is refused with the explicit new-generation action, and the page that travels with the refusal
+is the first page of the comparison that is there now — the last coherent page of this generation —
+rather than no page, an empty page, or a window taken at a position from the generation that moved. The
+refused cursor stays named on the refusal's own `offending_input`/`expected`/`observed` identities, and
+`continued_from` is `None` because a reset page followed nothing.
+
+### Conventions
+
+- One responsibility per module: this is the page arithmetic beside the review adapter, and the adapter
+  delegates to it rather than repeating it.
+- The page vocabulary (`ReviewCollectionPage`, `REVIEW_PAGE_RESET_NEXT_ACTION`,
+  `MAXIMUM_REVIEW_PAGE_SIZE`, the two page refusal codes) lives in
+  `models/knowledge/review.py`, where the surface's other published shapes live.
+- The owners' words travel through unchanged where the owner's own reason is the answer; the surface's
+  own action is substituted only where the surface is stating a fact the owner cannot (a page whose
+  generation moved).
+
+### Invariants And Boundaries
+
+- **No second pagination authority.** No cursor type, no binding digest and no re-derivation of an
+  owner's counts is created here — the codecs stay with the comparison and the view.
+- **A page with a remainder cannot exist without its cursor.** That is enforced by
+  `ReviewCollectionPage._require_one_walk` at construction, not by a rendering convention.
+- **A refused cursor is never re-resolved** against the generation that is there now; the reset page is
+  a *new* first page, labelled `state="reset"` with the refusal beside it.
+- Untouched: the shipped entry read stays a catalogue that fetches no record page, and the page size is
+  admitted by the route (see `serving/review.py`), not by this module.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+### Repo-Internal References
+
+`ICR-R10@v1`'s scope clause says the new internal module belongs beside its reuse/extension owners and
+must not duplicate their implementation; this card records which half of the responsibility landed
+where.
+
+
+- **The module's own statement of what it owns, of the one cursor authority it reuses, and of the reset rule.** [1]
+
+- **The one moved-snapshot code: the owners' own binding mismatch, and the two directions told apart by the owner's decoder.** [2]
+- The refusal for a cursor that is not this collection's cursor at all, keeping the owner's own words and remedy. [3]
+
+- **The matrix refusal: the binding mismatch takes the surface's action, every other view refusal keeps the owner's, and the presented token is named rather than the view.** [4]
+
+- **The comparison window stated as the surface's page: `total_basis="selection"`, cumulative `returned`.** [6]
+- **The reset page: the current comparison's first page served beside the refusal, with the refused cursor named on the refusal.** [8]
+- **The published page value this module builds, with the constructor check that refuses a remainder without a cursor.** [10]
+- The surface's own new-generation action and the maximum page size the request model admits. [11]
+- **The three bounded collections named once, because their cursors are different documents — the family roster joining the two this module pages (`ICR-R31@v1`).** [12]
+
+- The two page refusal codes on the closed refusal-code union. [13]
+
+
+- The one consumer: the adapter offers a request's cursor to the collection it names and states the page this module returns. [14]
+
+- **The route that admits the page size in its own vocabulary before the request model sees it.** [15]
+
+- The client that renders these pages without ever constructing a cursor. [16]
+
+
+### Cross-Repo References
+
+No cross-repository behavior is exercised in this file. Both owners are this repository's own store
+readers, and every count on a page is measured inside the same process.
+
+No meaningful cross-repo references found.
+
+## 260921-ICR-L31 The Claim About The Named Collections Re-Read Against The Third One
+
+**`ReviewPagedCollection` now names three bounded collections, and this card's claim was corrected
+rather than kept.** `ICR-R31@v1` added `family_members` to the union and to
+`REVIEW_PAGED_COLLECTIONS`, because the family roster is a third owner publishing a cursor: the
+comparison's own cursor positions a page in a union of two snapshots, this view's continuation
+positions one in a single selection of one of them, and the family roster's cursor is the read
+operation's own position in one recorded family revision's scope. Presenting one to another
+collection's owner stays a caller's mistake the owners refuse.
+
+**What did not change here:** this module still pages the two collections it owns. The adapter no
+longer routes the family roster collection through `_collection_page` — that page belongs to the
+family-context projection — so nothing in this module's own behaviour moved with the union.
+
+**Stamp accounting:** the claim was re-read against the anchored construct on the current bytes, its
+wording corrected and its range regenerated to the construct's own extent (`:171-176`), and only then
+was the verification stamp advanced. The hash basis stays the leaf's base commit because the construct
+lives in the working tree; no commit contains what a hash would otherwise claim to have verified.

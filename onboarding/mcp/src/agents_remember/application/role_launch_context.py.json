@@ -1,0 +1,210 @@
+{
+  "path": "mcp/src/agents_remember/application/role_launch_context.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+        "content": "sha256:90e3a72810766cd437a1e7bc9b1ea2453424d104200f67ccd506b9a601dd2fd3",
+        "locator": {
+          "kind": "symbol",
+          "name": "parentless_selection_violation"
+        }
+      },
+      "id": "RLZ-BM98W7",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Applies the table to a selection and words the refusal that dashboard and tool give in the same words.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+        "content": "sha256:a5a369b4f36497af151dfba14dd2bdb80bee688683ab36da6f3d2361ef16dafb",
+        "locator": {
+          "end": 110,
+          "kind": "line_range",
+          "start": 77
+        }
+      },
+      "id": "RLZ-RA6D0D",
+      "invariant": "INV-68QN0P",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §7",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The entry says the launch resolver admits only the three valid investigator selections; `resolve_role_launch_context` at C calls `parentless_selection_violation` before resolving anything (102-109), and that function refuses a leaf-carrying investigator while requiring at least one of sprint/master (62-74).",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+        "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "PARENTLESS_START_SELECTIONS"
+        }
+      },
+      "id": "RLZ-RS4WTS",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The one table of what may be started without a parent; the dashboard's start and the tool's start both read it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+        "content": "sha256:2fac881f7633ac595c45e44b08bff1612b59def1a86b9ab06430cb092a2b2ca3",
+        "locator": {
+          "end": 9,
+          "kind": "line_range",
+          "start": 9
+        }
+      },
+      "id": "RLZ-Y1H7G4",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The launch context re-exports the canonical role membership definitions from models.role_identity, retaining existing import identity without a duplicate definition.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of resolve_role_launch_context supporting the stated file behavior.\n\nAnchor: `resolve_role_launch_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:f7b28dd7554d05981e89e904bb1db6628663c831c79ffc5af1491a7ee2840c22",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of selection_binding supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:93a92158010a3d3456a0d0e2a039ff970cd9500d585c8f66b54bb19ae5036545",
+            "locator": {
+              "kind": "symbol",
+              "name": "selection_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:b390c458d2a65bbbe11f6e2937f9130a4b30dd35273e6394c991fb98ba7ee31a",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The level the free agent holds, which no per-level override reaches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "content": "sha256:d49a923e52a43539c1c40ef136cb3a70bcb028c9ecbcea4a5444f8e65aa8d50e",
+            "locator": {
+              "kind": "symbol",
+              "name": "ROLE_LEVELS"
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The taskless set whose receipts are keyed by their request id.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "content": "sha256:b4d998c454a1ab4b666d9fefe473a52c921b55000f5e9b301ee264eab2c13a3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "TASKLESS_ROLES"
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The parentless row that admits no document reference for the free agent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+            "content": "sha256:c6c898aebabc94e1cc1919521f4b327bf5b9050807de02c2c1a458cbec63c8aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "PARENTLESS_START_SELECTIONS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The free agent is a launcher role with no document and no parent, and every document reference on its start is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
+            "content": "sha256:a19b473c50720880480268ef37eefc789f2eba7e4b3f0943c6fe21c25d2c6550",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_bootstrap_is_a_launcher_role_with_no_document_and_no_parent"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "43f9bd6748e5bd6ae9d7dd9310202824e7060617",
+            "content": "sha256:9cb44c2a72c48d01b91466132b1293139dc1f96e1767d85357504566e6e24b7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_bootstrap_selection_refuses_every_document_reference"
+            },
+            "path": "mcp/tests/test_mik_r196_bootstrap_one_call.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

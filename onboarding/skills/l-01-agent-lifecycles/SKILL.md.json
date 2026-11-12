@@ -1,0 +1,489 @@
+{
+  "path": "skills/l-01-agent-lifecycles/SKILL.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-1FAAAK",
+      "invariant": "INV-PEVJ6G",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The router repeats the sender-line reading and the reply-in-own-chat rule for every capsule.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:ebeceafc3cd5734abb69e12126f6e87e91b186250179f61e612e2ac7f2834ef9",
+        "locator": {
+          "end": 20,
+          "kind": "line_range",
+          "start": 20
+        }
+      },
+      "id": "RLZ-2J32HP",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Launch intake requires the canonical server of this build before AR work.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:a6ca6e023d6e9d0625d458a8810349cac7a6ada8436e2de635f993be78a16a5d",
+        "locator": {
+          "end": 16,
+          "kind": "line_range",
+          "start": 14
+        }
+      },
+      "id": "RLZ-5F3K07",
+      "invariant": "INV-CHNC1N",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-TASKLESS-PROJECTS-SCOPE@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The router distinguishes shared execution location from repository identity and names the two manually selected taskless role scope gates.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
+        "locator": {
+          "end": 12,
+          "kind": "line_range",
+          "start": 8
+        }
+      },
+      "id": "RLZ-G7A9BM",
+      "invariant": "INV-VTGJJK",
+      "origin": {
+        "handoffEntry": "MIK-PNT-DOCTRINE-CAPSULE-SELECTION@draft1",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The router admits eight native role IDs including Bootstrap and composes the selected role file with one applicable operation; the first message also carries the every-role digest and the handover facts, and no other core file is loaded. A handover lacking a supported role or one applicable operation is reported by its exact field and the launch stops.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
+        "locator": {
+          "end": 31,
+          "kind": "line_range",
+          "start": 31
+        }
+      },
+      "id": "RLZ-R0YSNZ",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The role-capsule router states the default and both exceptions for any capsule it selects.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T1GXX9",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+        "locator": {
+          "end": 29,
+          "kind": "line_range",
+          "start": 29
+        }
+      },
+      "id": "RLZ-T4ZSC9",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      },
+      "rationale": "The router carries the narrow parented-coordinator exception that matches the role texts.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TEGHWX",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "States the task-boundary principle once and participates in the skill revision seal.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:b5b828ca3f1723854efcf693215244c88075189d5581b7ea2c8de1e47a71d5da",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-V80KC5",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The router states the reply rule and sends what an unfinished agent awaits, and from whom, to its parent with role_message.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+        "content": "sha256:372b0095be3b7d9666f19b698f1d54b7f3fc95a937c444a882d9fc120b9e34e4",
+        "locator": {
+          "end": 35,
+          "kind": "line_range",
+          "start": 35
+        }
+      },
+      "id": "RLZ-X8MYE4",
+      "invariant": "INV-4E130M",
+      "origin": {
+        "handoffEntry": "Preservation (flags and acceptance)",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Router reserves semantic and Git acceptance to owning roles.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "11": {
+      "note": "One explicit supported role and applicable operation select the role and operation files; the first message adds the every-role digest and the handover facts, and no other core file is loaded.\n\nAnchor: `roles/<role>.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The native launcher names eight role IDs, including Bootstrap.\n\nAnchor: `bootstrap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:c19b914b14c301420b2405564d0667f15f985580fc08a14822ed236af95d6848",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Canonical task/workspace facts arrive separately in the handover; task-bound selection uses its supplied canonical reference and paired workspace. Projects is an execution location.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:71ade18fa481d49c0b75dbbc129e1655591985ff39f7789ef7528cd77a265216",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:21f812e972299c0dd24e239d227f61e09e64a2f3d7c47d3c2302c332dae0f387",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Restore the same role, operation, task, agent and report through reconnect; reconcile an uncertain start with its same request ID and retain separate acceptance/publication authorities.\n\nAnchor: line 33-35",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:726e2fc9729719af993f688485b1c2eb8b66bb514513c8276faaa1936b02b641",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Native role starts and messages use the launching build's task server and actual returned identities. Developer questions follow the actual parent channel when a parent exists.\n\nAnchor: line 20-29",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:38e2ffae55983bd0a9adf38a91c8a8422e73a95ab2a74488f334261cad70c040",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "First delegation to a coordinating agent, developer-chosen direct coordination and parentless dashboard admission have their stated scopes.\n\nAnchor: line 31",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:241bf94e72190110e5074bf81927a22771bc9fc3371f360d4d236ee211590b8b",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:f21fc20197bfcc82e0474481da336035dac17b4e5b9ec87f77676adad3c3f3f4",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:51faace386d6ef11d98fda499b703d41f8bb6187ffab236fc30058351cf6f56d",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:ef363c84a088d4e2e2c5bd08bb52e1802a9edd4cb3cf16714ba2b6cb417e7fe1",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:3d5fee8dfff23f07b0efe612d0fea74c29f4cac291e21abbcafaee73081de94b",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`curator-handoff-list.md` is the producers' contract for the Curator hand-off: Workers and Reviewers send their own lists directly, and Managers and Orchestrators relay none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:bf929dec36a9c0e207d3e3c529116a19e656b7889dff973e81af75d69b559481",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Requirement acceptance binds one requirement revision, needs a complete acceptance block and is judged independently for that exact manifestation; an aggregate claim never closes one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:90e216c8cb79625314d2f7efee1239ec0d54a8df0ad1aaad3dfd9b32f1efc00a",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. Accepted attempts stay closed, and observations outside the sealed findings list go through the parent to the developer without adding or reopening findings or resetting review.\n\nAnchor: `non-attempt-correction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:d730622d2161651da9257c069616180fb5ff149a97082231a7737eebf0757e73",
+            "locator": {
+              "end": 103,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Leaf journals are authority and the master summary is explicitly rebuildable and non-gating.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:168a3a4ae452a875bf0429d49082f922c2a859356ba3eebaade01e74a57d97a0",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 107
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

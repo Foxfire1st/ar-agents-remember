@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/marks.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d6b4995eacd7d52620ae7456cbbc8fab60d3379a",
+        "content": "sha256:26126dd81ddece6c2769c243c9047d1432410d0a789afb6bf1eae4343e128125",
+        "locator": {
+          "kind": "symbol",
+          "name": "weakness_anchor_items"
+        }
+      },
+      "id": "RLZ-3SVK79",
+      "invariant": "INV-ZHTFZ9",
+      "origin": {
+        "handoffEntry": "L118-W4",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The weakness row is raised here for an open base weakness whose anchored file this task changed, and it is registered as advisory so no gate refuses for it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d6b4995eacd7d52620ae7456cbbc8fab60d3379a",
+        "content": "sha256:7cabf440e4a53b992b6dd2755c30a6652e97badc855a47cf9b97645b977cda41",
+        "locator": {
+          "kind": "symbol",
+          "name": "changed_document_items"
+        }
+      },
+      "id": "RLZ-N5W449",
+      "invariant": "INV-ZHTFZ9",
+      "origin": {
+        "handoffEntry": "L118-W4",
+        "leaf": "260928-MIK-L118"
+      },
+      "rationale": "The document row is raised here for a base dependent whose document this task changed or moved, and it is answered only by the record the writer confirmed.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

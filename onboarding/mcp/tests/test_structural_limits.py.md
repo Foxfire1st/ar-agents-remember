@@ -1,15 +1,5 @@
 # mcp/tests/test_structural_limits.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_structural_limits.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:45:53+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -42,43 +32,30 @@ work. This source inspection does not claim a newly executed test or acceptance 
 
 No additional implementation scope is opened by this memory reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The repository has no configured Domain Documentation source. These claims concern its own test
 fixtures and assertions, so the exact retained source is the direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Each current definition below can be inspected in the exact source file. Historical references
 to removed methods are superseded by this current inventory.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A wide class is reported with its measured surface | `test_a_wide_class_is_reported_with_its_measured_surface` | mcp/tests/test_structural_limits.py:132-143 |
-| Moving methods into a sibling module does not lower the count | `test_moving_methods_into_a_sibling_module_does_not_lower_the_count` | mcp/tests/test_structural_limits.py:157-166 |
-| A property and its setter count once | `test_a_property_and_its_setter_count_once` | mcp/tests/test_structural_limits.py:194-208 |
-| Typing overloads count once | `test_typing_overloads_count_once` | mcp/tests/test_structural_limits.py:210-225 |
-| The function length check reports every offender not the first | `test_the_function_length_check_reports_every_offender_not_the_first` | mcp/tests/test_structural_limits.py:236-259 |
-| The directory check rejects a crowded directory | `test_the_directory_check_rejects_a_crowded_directory` | mcp/tests/test_structural_limits.py:261-278 |
-| A declared deviation silences exactly the directory it names | `test_a_declared_deviation_silences_exactly_the_directory_it_names` | mcp/tests/test_structural_limits.py:280-293 |
+- A wide class is reported with its measured surface [1]
+- Moving methods into a sibling module does not lower the count [2]
+- A property and its setter count once [3]
+- Typing overloads count once [4]
+- The function length check reports every offender not the first [5]
+- The directory check rejects a crowded directory [6]
+- A declared deviation silences exactly the directory it names [7]
 
-## Cross-Repo References
+### Cross-Repo References
 
 This card establishes test behavior, not a separate cross-repository protocol or live installation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external evidence is needed for these assertions. | N/A | N/A |
-
-## Update History
-
-- 2026-09-06T21:45:53+00:00 — Reconciled the retained IAS test/helper population and exact citation ranges, preserving prior history and verification provenance; no tests or review were run.
-
-
-- 2026-08-28T06:40+02:00 — No content impact: moved the structural-limit verification import
-  into `agents_remember_test_support`; limit and deviation assertions remain unchanged.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+No external evidence is needed for these assertions.

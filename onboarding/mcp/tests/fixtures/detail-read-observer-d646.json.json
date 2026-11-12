@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/detail-read-observer-d646.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "98051407de642bf5344c8c7b4104bff442612a25",
+        "content": "sha256:16faf8ad31ea79d639b56a74bf38e9ff4c757d46e474617868bcbafda0b071b1",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FM1DT2",
+      "invariant": "INV-HXTSVY",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-text-delivery",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These real read records cover the detail-observer shapes authorized by D646.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "98051407de642bf5344c8c7b4104bff442612a25",
+            "content": "sha256:16faf8ad31ea79d639b56a74bf38e9ff4c757d46e474617868bcbafda0b071b1",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

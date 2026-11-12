@@ -1,0 +1,369 @@
+{
+  "path": "mcp/tests/conftest.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+        "content": "sha256:4b6630a829f00cbb2d79a4f1bc91f9eb2e61a56a77f4d933ecca34d89a3f6b9e",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_unconfigure"
+        }
+      },
+      "id": "RLZ-69RY4R",
+      "invariant": "INV-KJN5GP",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 7",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The pytest shutdown hook owns bounded cleanup of the private tmux server, environment lease and directory even after tmux failure.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+        "content": "sha256:ee6f124a8665b090980a38b3f49843e9c37801611b7796d966354ab4af3e7119",
+        "locator": {
+          "kind": "symbol",
+          "name": "_discard_owned"
+        }
+      },
+      "id": "RLZ-78DR39",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-INV-D",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The ownership test that replaces name-shaped sweeping.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+        "content": "sha256:8986cd965e9ca0b82d45e1fb9dfb15e479bbfd3035dd033426f4126d877a71c3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KZ3BQD",
+      "invariant": "INV-TMKNRV",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-tests-conftest",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The pytest harness isolates the outside scratch parent per process and removes only the roots this invocation created.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+        "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
+        "locator": {
+          "kind": "symbol",
+          "name": "pytest_configure"
+        }
+      },
+      "id": "RLZ-RY44MX",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The first read of the lane manifest in a test run raises a pytest usage error with the text of unreadable_catalog when the manifest cannot be read or parsed, so a test run shows the sentence and not a bare parser error.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The candidate's source and test-support roots come first on the import path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:2729620b8d53ef465294050c5f2e38382ba11614eaa743e3243a0a4c5a399262",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPOSITORY_ROOT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The three registered plugins and the comment on the Git checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:2a2b5e86e74073160c61db344a3d6b0f2454bc3d75b3c4a3b47bf58000aeb26a",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_plugins"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The lane manifest is read once for the integration files, an unreadable manifest is explained, and certification asks for Dagger admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_configure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The refusal text for a manifest that cannot be read or parsed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:44f4a6242429ee8e8bc907f199eaada6fc4e17e7b86dc08834c385caab1ce1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_catalog"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The start-up hook explains a lane manifest that does not parse, and refuses by name a manifest without a `[files]` table or without the two lanes it reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:7716b0fc6f4492586181089d9da952259b1b4a1e6e0d7c8925f4f1b4ea477114",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_configure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The pytest environment owns a private tmux directory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:71e26938618871c6519190bc6be8a6d21d87a16e1f8ed0567a6eab8f840e4db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ISOLATED_ENVIRONMENT"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Environment, lease and temporary cleanup follow an attempted private-server kill even on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:4b6630a829f00cbb2d79a4f1bc91f9eb2e61a56a77f4d933ecca34d89a3f6b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_unconfigure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "18": {
+      "note": "Inherited tmux launcher variables are scrubbed from the test environment.\n\nAnchor: \"TMUX_PANE\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:adfc75bb3ddba3335d3a211dfe786dcbc27eaf6ca20cbf3a299b73a8b39a6269",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Automatic settings teardown derives through the single write guard and fails for a real-account refusal or a path outside the per-test/run-wide temporary roots; it never repairs or relaxes settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:dfabba512af7646f9d773a90070b856af5e42bc9ca7e18086ff0d8779bc7e0a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_user_settings_env_intact"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:391cc45c96b7bb40508304b19bb04bb2d83d754495553bf7bad0b91a75381362",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The two budget names are registered without a default, beside the certify option.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:b156dc6e6a844b2bef08609b65004b03cd8df71ad64f0f57aa27b4fbd77ba266",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_addoption"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "Per-process fixture isolation, subprocess exception and coordination-root ownership at teardown. [20]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:0fef077bb72906dccf89fd0a2b67bae4f835d2be42490559798850205863ef24",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 105
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Integration files are skipped before import in a run that excludes integration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:f6cfa9c9114bb478696ea6932cf4cc88bd4f0ab3ab9a872d03ec0f6d0c2f4b3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_ignore_collect"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The collected items are counted against the two budgets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:c5fd6518a2d5c334ecfc5e958e96bcde80ed2de7f5faca4a6c7538b5a3f98184",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_finish"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The worktree services are bound and reset by a fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:481fdab23f82ab9d11b96075a52668351ba4183e9b0124f8b6983da051ee5460",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_services"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The environment is restored and the temporary directory removed.  Anchor: `pytest_unconfigure`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:4b6630a829f00cbb2d79a4f1bc91f9eb2e61a56a77f4d933ecca34d89a3f6b9e",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The isolated home directories and the switched-off Git configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:d9f5df1e71317c46f8354ee878423213b3052061d115684f5e6a218f00a6ea5d",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The removal of inherited opt-ins and credentials.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+            "content": "sha256:061a6b2181444b485651691474040eb265ec5737770be8a1a2149a5967eb2417",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

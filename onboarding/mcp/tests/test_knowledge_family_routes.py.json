@@ -1,0 +1,623 @@
+{
+  "path": "mcp/tests/test_knowledge_family_routes.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+        "content": "sha256:ea38e5dd768d8033440edf04bf396f677c82e941b286e93cf2a06ba511bfef4e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_family_route_states_are_computed_once_per_validation"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Instrumented family-route state is computed once in one validation context.",
+      "id": "PRF-2EZYA0",
+      "invariant": "INV-E34MWM",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-12-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+        "content": "sha256:cae6a7ecec3783768d7ea508531384753a7f32f668f1b770df7c9f042fd85000",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_nested_family_routes_refuse_and_remain_writer_reported"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: Nested routes, including root plus descendant, refuse at validation while the Writer reporting designation remains.",
+      "id": "PRF-X68WBJ",
+      "invariant": "INV-THFEVY",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R54-v1-rule-11-wave-76",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Doc14 family example validates, and a proof is not a location.\n\nAnchor: `test_the_doc14_family_example_validates_with_every_route_holding_realizations`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0f161efb767870542be4e8ad99bea57bdd5b58ec7848bc5c4e2c621e36992a7a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:8ccdbb213712589f4d0a8a8d7124b3d3a36c250dd1353064b9a28d455c9805f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_doc14_family_example_validates_with_every_route_holding_realizations"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Current source delta inspected statically: Repair route/debt/writer reporting and based controls; retain root routes, waivers and retired exemption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:f26c972feecead02dc4f6ff44e905d7303338192bdfef4fec68dc6e2ba989f62",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:125ba69055e9d51d666cfbf8e253cbc4626d4e746f15a28b41aedbeb20c80b19",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:55a3f8187104b94d0722b60aabb97a387c70b190ed91f6123fef643770845600",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:ab0ee50ad6d3486d1e3efbcfcddc2031248e82809ec0e4d296739312dd3e8057",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:c9f70c5dee9cf765ceafcc5062e0a9c259e3dd318fb1cd32844fdf38e0ff8078",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 363
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:eaab168814e473258f515950d784d47680f999aaf51a0ef2e8d3f5e8caab95a0",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Nested-route refusal, one state computation per fixture family/validation and explicit routes-command difference output are source assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:f0a081dcf0cb2b9106ddce538d1ad349aed07f1f610fb3816cee4bee08903798",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:ea38e5dd768d8033440edf04bf396f677c82e941b286e93cf2a06ba511bfef4e",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:e6d967301caf70d930aa948dfd466428f4a256f10c15100fbd0384e0e393b9e3",
+            "locator": {
+              "end": 507,
+              "kind": "line_range",
+              "start": 474
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Coverage and Non-empty violations name the family, the route and the path.\n\nAnchor: `test_a_realization_outside_every_route_violates_coverage_naming_family_and_path` `test_a_route_that_no_longer_contains_a_realization_violates_non_empty`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0f161efb767870542be4e8ad99bea57bdd5b58ec7848bc5c4e2c621e36992a7a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:aafedcd337d59142aa6d2ab60dfef2f77b1aded657f07e97482659324ed497de",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_realization_outside_every_route_violates_coverage_naming_family_and_path"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:653dc8f0af9a3d05fa6a352c122919dca15bed33551da896a6f7cebc73d25fba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_route_that_no_longer_contains_a_realization_violates_non_empty"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "One broad route passes; the suggestion offers local routes.\n\nAnchor: `test_one_broad_route_satisfies_the_rules_and_the_suggestion_offers_the_local_ones`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0f161efb767870542be4e8ad99bea57bdd5b58ec7848bc5c4e2c621e36992a7a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:67409d043600f0ff2c79695a8b2525595865d6edc7f9624da83bed19b53a4015",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_broad_route_satisfies_the_rules_and_the_suggestion_offers_the_local_ones"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Route spellings: `.` or a repository path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:eb5df9ab7ae8e5abfc55ac2de0582778f39aeb2501ff8d4ba0cf8aa4d255fe86",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_route_is_a_repository_path_or_the_root_route"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Based root-route fixtures pin coverage/non-empty and only carried incomplete legacy-debt reporting; not a no-base pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:24c352f28ab3a88dab69d10872b9949ab383fa5386ac7c28f06015fad7b33ac9",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 304
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:ac6193aeeb9767c04937f663f58962c734105d664580a5cfc264794761329e4e",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 348
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:f26c972feecead02dc4f6ff44e905d7303338192bdfef4fec68dc6e2ba989f62",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:125ba69055e9d51d666cfbf8e253cbc4626d4e746f15a28b41aedbeb20c80b19",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:55a3f8187104b94d0722b60aabb97a387c70b190ed91f6123fef643770845600",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:ab0ee50ad6d3486d1e3efbcfcddc2031248e82809ec0e4d296739312dd3e8057",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:23795dbb89c32d9420b6d86a0c55aae9bcd7fb9ca88ba74c0bbcd89334134514",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 346
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:c9f70c5dee9cf765ceafcc5062e0a9c259e3dd318fb1cd32844fdf38e0ff8078",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 363
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:eaab168814e473258f515950d784d47680f999aaf51a0ef2e8d3f5e8caab95a0",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Current unrealized-family off-merge refusal/sync reporting, actual carried route-unassigned debt and the retired exemption.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:28f89326f00af5919084e2a9babc19f68c153b46e2ced72476e0b0870832d53d",
+            "locator": {
+              "end": 416,
+              "kind": "line_range",
+              "start": 409
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:f26c972feecead02dc4f6ff44e905d7303338192bdfef4fec68dc6e2ba989f62",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:125ba69055e9d51d666cfbf8e253cbc4626d4e746f15a28b41aedbeb20c80b19",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:55a3f8187104b94d0722b60aabb97a387c70b190ed91f6123fef643770845600",
+            "locator": {
+              "end": 371,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:ab0ee50ad6d3486d1e3efbcfcddc2031248e82809ec0e4d296739312dd3e8057",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 387
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:76fea8009a2752e0377995357901d818a3efa5b0fd20c0c6fbb94e569bc51dc1",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 407
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:c9f70c5dee9cf765ceafcc5062e0a9c259e3dd318fb1cd32844fdf38e0ff8078",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 363
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:4a45cae8cc14e35dff6ec559a99a0efe6fb410752498a8f8c4a4cd801802431c",
+            "locator": {
+              "end": 370,
+              "kind": "line_range",
+              "start": 370
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:eaab168814e473258f515950d784d47680f999aaf51a0ef2e8d3f5e8caab95a0",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 385
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A family without routes that is not an unassessed export violates Coverage.\n\nAnchor: `test_a_family_without_routes_that_is_not_legacy_unassessed_violates_coverage` `test_an_unrealized_family_still_needs_a_route_unless_it_is_an_unassessed_export`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0f161efb767870542be4e8ad99bea57bdd5b58ec7848bc5c4e2c621e36992a7a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:eaf2eebc99fd9caec1398337e2e0b1907e608822afad70e194fac630f4162f39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_family_without_routes_that_is_not_legacy_unassessed_violates_coverage"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:cf1c9e0756ab3281369edb814e76a747977e7283f161175d7d4b87f55f808df5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrealized_family_still_needs_a_route_unless_it_is_an_unassessed_export"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A standalone conversion checks no route directory: with no code tree it passes, reporting only the legacy count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "57a9d02cb9368158ac152ea6010b478c2a5bf7ed",
+            "content": "sha256:0d1e9c527689128fe7353f540791500ef4cfb5d2b118af2a6fa4cc6b6be28b9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_standalone_conversion_checks_no_route_directory"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The lane registration.  Anchor: \"mcp/tests/test_knowledge_family_routes.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:8adda2e4b569169c29db5f94ba70ba865ffa308df881aa40153dd219b6e70d95",
+            "locator": {
+              "end": 228,
+              "kind": "line_range",
+              "start": 228
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,77 @@
+{
+  "path": "mcp/src/agents_remember/cli/settings_provenance.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "80b20324674bcedf6f64d93b2430c2dce2d8ba6d",
+        "content": "sha256:f7ed9e841cf92e9053b3b469974139b8536cee8df458d0afc8eb14811906739c",
+        "locator": {
+          "kind": "symbol",
+          "name": "discovered_settings_line"
+        }
+      },
+      "id": "RLZ-V2QXZQ",
+      "invariant": "INV-FEBRX0",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule6 settings provenance",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This function renders the discovered path and same-root dashboard mismatch without changing either settings file.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The line names the discovered file, and adds the daemon's other file only for the same coordination root, or the reason the comparison is unknown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80b20324674bcedf6f64d93b2430c2dce2d8ba6d",
+            "content": "sha256:f7ed9e841cf92e9053b3b469974139b8536cee8df458d0afc8eb14811906739c",
+            "locator": {
+              "kind": "symbol",
+              "name": "discovered_settings_line"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The answering dashboard's process and its `--config` are observed from the port's socket owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "689568d7b4ef58dea3bafd55f21100a7454e3b43",
+            "content": "sha256:999986dd33026468b6fbde11ca9a9de0be9b1393c8050b339cb7c7bee300ab9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_dashboard"
+            },
+            "path": "mcp/src/agents_remember/serving/daemon_identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Discovery prints the line to stderr after selecting the user's settings file.\n\nAnchor: `discovered_settings_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c55dde69055fa5b21e25ce2e244744766ee073a",
+            "content": "sha256:6cce3706bc600ca881c10abcf52c0b91f22bcf766ae2010d32e6561302e90511",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "mcp/src/agents_remember/cli/discovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

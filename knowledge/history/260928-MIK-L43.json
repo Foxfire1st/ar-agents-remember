@@ -1,0 +1,1116 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L43",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-54VCDW",
+      "items": [
+        "sha256:d555007277a8753d4c641231391c72f57eb69063e160a7ae6813db15469a2ce2"
+      ],
+      "reason": "The existing center dispatcher forwards its held payload to the unaddressable-member guard; the failure obligation is realized in that guard/center, with no separate invariant in this prop forwarding.",
+      "subject": "hunk:sha256:d555007277a8753d4c641231391c72f57eb69063e160a7ae6813db15469a2ce2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineNode"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "before": {
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "content": "sha256:7876a97f0dd831513c369c66ca6641b9a1bbabbc119b2a421af92455818ad326",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineNode"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "id": "RLZ-HT081Q"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-6ZX62V",
+      "items": [
+        "sha256:9bbf1f66c0dbf96ffaa5adf34a47700d90b17376c2e9286569f81c8511696e43"
+      ],
+      "reason": "Recorded-effect presentation adds no traversal occurrence or deduplication rule: OutlineNode retains per-family occurrence identity and primary-change stop facts.",
+      "revision": 1,
+      "subject": "INV-AY7A8V"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R43",
+          "packet": "requirements/MIK-R43-v2-recorded-meaning-effects-in-the-reviewer.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "content": "sha256:0d1dcf40075f5e57cfe31da288a8d5da2ecc009c1f678c77f161959e87c5779a",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineNode"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "before": {
+            "blob": "a25a1fcc8f4dc61d8fc2f05e79105414b62f67ae",
+            "content": "sha256:7876a97f0dd831513c369c66ca6641b9a1bbabbc119b2a421af92455818ad326",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineNode"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "id": "RLZ-D0892J"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-75HYDN",
+      "items": [
+        "sha256:546894a3c6aca191e50e47411760c7936e0a7403c348e08145d7e2e4004e62e9"
+      ],
+      "reason": "MIK-R43@v2 rule5 explicitly adds the compact recorded-effect badge to the one-line row and its accessible name. Update conditions for that information while preserving the one-line/title/tooltip obligation.",
+      "revision": 2,
+      "subject": "INV-PKFP2R"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R43",
+          "packet": "requirements/MIK-R43-v2-recorded-meaning-effects-in-the-reviewer.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+            "content": "sha256:7d0308073cdf3310fb4c9705b7e37f9c98246cd6220faa7bc7e007fa9e998007",
+            "locator": {
+              "kind": "symbol",
+              "name": "outlineGroups"
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "before": {
+            "blob": "947d5bdc3e3ce1cc991b3b3e1679a45d13994c4b",
+            "content": "sha256:c64474e7c48b7362b9cd54e3cc6f44e35f050800313d748f7e13e8763f1f8672",
+            "locator": {
+              "kind": "symbol",
+              "name": "outlineGroups"
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "id": "RLZ-BKFAEY"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-B9F5N7",
+      "items": [
+        "sha256:bb08595115b5e08a72ec56476fb55b1022c2ae286652a6ae5d60cc01beea0fe7"
+      ],
+      "reason": "MIK-R43@v2 rule5 deliberately relaxes the older total-one-badge/secondary-mark wording to permit the extra short owner-recorded effect badge on eligible changed rows; primary change-kind precedence and word/tooltip accessibility remain unchanged. This is the approved exception, not an inferred net effect.",
+      "revision": 2,
+      "subject": "INV-W09GQM"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BMCBXA",
+      "items": [
+        "sha256:0bc49edebb8f2f51e3b8d2c9446bf3f510ce7cbab59c63e5070a9136d50003c4"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:0bc49edebb8f2f51e3b8d2c9446bf3f510ce7cbab59c63e5070a9136d50003c4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-C0BJAZ",
+      "items": [
+        "sha256:acb426fdf82845d4d8ccfef427abd53ce3db8496a67ba771cb5e15622663824d"
+      ],
+      "reason": "Whitespace separates the existing composition declarations; no code obligation or source attribution changes in this extent.",
+      "subject": "hunk:sha256:acb426fdf82845d4d8ccfef427abd53ce3db8496a67ba771cb5e15622663824d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "59a5660127f511aeeb7eb0cd6c974764889a181f",
+            "content": "sha256:1876970c9e3f98e550c1b906f6c68c183a77dad10c5c0876f623d66cfcca6094",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "b2a4b8163b634df11013792fe18f84652d820d6b",
+            "content": "sha256:fde7d1383b82a9f405fb58142b8ce8fc1ce3c5ee87c869f83895e8b67bad99a6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C3E31M",
+      "items": [
+        "sha256:436e426a8a5b0d0c09019865c56ac4c1bc8dd4c19c0ce89d71d2299ff79d1068"
+      ],
+      "reason": "The record remains retired; this cover renews its catalog-locus evidence after canonical reordering without resurrecting its historical DB-era repair as current intent.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E28JS7",
+      "items": [
+        "sha256:c61aaae88113731526f3495d0e6497a2ca5eaf4b68c0ed23c96647bafbaa1224"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:c61aaae88113731526f3495d0e6497a2ca5eaf4b68c0ed23c96647bafbaa1224"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FJRT0G",
+      "items": [
+        "sha256:b34000d35d44a837640b0fc994783bfc56e483a425ff0d9055d2c65cc9743a5d"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:b34000d35d44a837640b0fc994783bfc56e483a425ff0d9055d2c65cc9743a5d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GJPVGY",
+      "items": [
+        "sha256:d51c07f924d64d23edb7d38c6dc3b6e898ec34ef7e43ab0f38cc264a1068a1c1"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:d51c07f924d64d23edb7d38c6dc3b6e898ec34ef7e43ab0f38cc264a1068a1c1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-H2W792",
+      "items": [
+        "sha256:324d7c51cca8434aa3e854aee8c63c0131646f32042376dd5c57829dcaa5f9f0"
+      ],
+      "reason": "Recorded reviewer steps extend the existing review presentation within its established source/application/model routes; repository topology, lifecycle/publication authority and entity boundaries are unchanged.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HRW3K9",
+      "items": [
+        "sha256:d35534e50f432d3aa29ec68554de1dc73c650ee7e8e6f4b382d7bbaa94228e39"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:d35534e50f432d3aa29ec68554de1dc73c650ee7e8e6f4b382d7bbaa94228e39"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5KMFT",
+      "items": [
+        "sha256:ff66b85a227b76f5d973f40851e9a272014a826fc10b470da59d74d25cea6afe"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:ff66b85a227b76f5d973f40851e9a272014a826fc10b470da59d74d25cea6afe"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JTCF17",
+      "items": [
+        "sha256:e5200ef272607c9ea52022e233f93baf3063144e190245657f13e8bb10fef696"
+      ],
+      "reason": "Only the test-only user-event dependency is added for genuine keyboard activation witnesses; the dashboard runtime package purpose, build entrypoints and owning root route are unchanged.",
+      "subject": "onboarding:dashboard/package.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-M1Q1CZ",
+      "items": [
+        "sha256:bd804b5c7f4606c231462d27a2b8659208a5cbed0c71d7c95031de4625a1e66f"
+      ],
+      "reason": "This line registers the existing recorded-meaning test module in the canonical unit-regression population; it asserts no runtime invariant or execution result.",
+      "subject": "hunk:sha256:bd804b5c7f4606c231462d27a2b8659208a5cbed0c71d7c95031de4625a1e66f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N1W04H",
+      "items": [
+        "sha256:768c6d9e84bd676b545ae203c72648b4d3b7fa5da1ebf83451c35ffa8748bb97"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:768c6d9e84bd676b545ae203c72648b4d3b7fa5da1ebf83451c35ffa8748bb97"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:d6d373fbd973ebd7730f45b12c7e5edeb658d803d8a7b287111ae9e12ac28b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "id": "RLZ-NF0112J4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R1QEQ7",
+      "items": [
+        "sha256:d6f2f28d3dd3607e6b4f9e8b916fbed0f12c593c43ed8d9bdab0dedbbb090b60"
+      ],
+      "reason": "Recorded steps are adjacent open main-page content; existing family guarantees/member statements remain independently supplied and never move into the compact tree.",
+      "revision": 3,
+      "subject": "INV-H8EM1VJR"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-27SPEH",
+          "revision": 1
+        },
+        {
+          "id": "INV-76C676",
+          "revision": 1
+        },
+        {
+          "id": "INV-777108",
+          "revision": 1
+        },
+        {
+          "id": "INV-AY7A8V",
+          "revision": 1
+        },
+        {
+          "id": "INV-CZVMX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-DEDX8T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MGXG8S",
+          "revision": 1
+        },
+        {
+          "id": "INV-PKFP2R",
+          "revision": 2
+        },
+        {
+          "id": "INV-QAR0F3",
+          "revision": 1
+        },
+        {
+          "id": "INV-S34RA5",
+          "revision": 1
+        },
+        {
+          "id": "INV-S44D2D",
+          "revision": 1
+        },
+        {
+          "id": "INV-W09GQM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WR2WAJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z2XTN1",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RH0TNZ",
+      "items": [
+        "sha256:631d815de4786edda9d1aa04b1b20b5c713d82f594f0e495badc4f0be03f3ff0"
+      ],
+      "reason": "The approved packet extends navigation with matching compact owner-recorded labels and complete main-page steps; all existing traversal/view/filter/member guarantees remain, and the new member/typed-state route closes the projection-to-display obligation. Re-examined the member condition exception: INV-W09GQM now explicitly permits the approved compact effect badge without weakening primary-change precedence or making labels a traversal fact.",
+      "revision": 2,
+      "subject": "FAM-A3YKR5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SJDHSP",
+      "items": [
+        "sha256:4377f25ce1a7e0f278ce00d1424f1b480e2198a668b12aad283ce3bb8cfebfdc",
+        "sha256:8c10b1e8150cfca67fcb4f5743d685e210acffef11b919555222224dca8b6ad0"
+      ],
+      "reason": "The resolved test-only user-event dependency graph mirrors the package manifest addition; no independent runtime or root-route contract changes.",
+      "subject": "onboarding:dashboard/package-lock.json"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-21SDZECS",
+          "revision": 2
+        },
+        {
+          "id": "INV-2E8MG43K",
+          "revision": 2
+        },
+        {
+          "id": "INV-49H32B3F",
+          "revision": 2
+        },
+        {
+          "id": "INV-53F058MT",
+          "revision": 4
+        },
+        {
+          "id": "INV-555EHWM8",
+          "revision": 2
+        },
+        {
+          "id": "INV-8VQR13WX",
+          "revision": 1
+        },
+        {
+          "id": "INV-BR5MTSTY",
+          "revision": 2
+        },
+        {
+          "id": "INV-DYDMDD",
+          "revision": 1
+        },
+        {
+          "id": "INV-H8EM1VJR",
+          "revision": 3
+        },
+        {
+          "id": "INV-J1DFZS",
+          "revision": 1
+        },
+        {
+          "id": "INV-KKJYVB40",
+          "revision": 2
+        },
+        {
+          "id": "INV-MC654E0T",
+          "revision": 1
+        },
+        {
+          "id": "INV-MCVSM81V",
+          "revision": 3
+        },
+        {
+          "id": "INV-RMTHRQ0K",
+          "revision": 2
+        },
+        {
+          "id": "INV-RT13RESK",
+          "revision": 3
+        },
+        {
+          "id": "INV-VPX81HXV",
+          "revision": 2
+        },
+        {
+          "id": "INV-W5CTZJGD",
+          "revision": 2
+        },
+        {
+          "id": "INV-WQZ2WFCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-XX178P3W",
+          "revision": 2
+        },
+        {
+          "id": "INV-YVVW1XCN",
+          "revision": 2
+        },
+        {
+          "id": "INV-Z385RTQS",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZE4QPG25",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZS9ZS878",
+          "revision": 3
+        },
+        {
+          "id": "INV-ZY0YMXMQ",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-WCNQRQ",
+      "items": [
+        "sha256:e3ee2fa6636672df44c2cb19732469cb55d4d0ff49ef9b676e56e6ff81512632"
+      ],
+      "reason": "Examined all24 members: the new history display stays within the same bound comparison, selected subject and independent source/evidence context. It neither fetches a second subject nor changes roster, inspection or source-page ownership; the joint guarantee and routes remain unchanged.",
+      "revision": 6,
+      "subject": "FAM-R6R095RW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+            "content": "sha256:aeda00b292d6ac803238e7450dd3b0ae259976d3a9b1b5a6411d54ba065bb394",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes"
+            },
+            "path": "mcp/tests/test_review_change_kinds.py"
+          },
+          "before": {
+            "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+            "content": "sha256:aeda00b292d6ac803238e7450dd3b0ae259976d3a9b1b5a6411d54ba065bb394",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_states_unknown_records_and_unavailable_membership_or_indexes"
+            },
+            "path": "mcp/tests/test_review_change_kinds.py"
+          },
+          "id": "PRF-C1YGTN"
+        },
+        {
+          "after": {
+            "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+            "content": "sha256:b89943cde40c8d4eea4d96ec97ea8e931bbc2e55c5cce26b2d3246359c9ad193",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+            },
+            "path": "mcp/tests/test_review_change_kinds.py"
+          },
+          "before": {
+            "blob": "183fb7a0b2115c1a19dce2ed1429c14017e79a72",
+            "content": "sha256:b89943cde40c8d4eea4d96ec97ea8e931bbc2e55c5cce26b2d3246359c9ad193",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_reads_only_indexes_and_preserves_catalogue_fields"
+            },
+            "path": "mcp/tests/test_review_change_kinds.py"
+          },
+          "id": "PRF-XG9875"
+        },
+        {
+          "after": {
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "content": "sha256:2885f9ab4ca65d7dd09253160009d79b09b58c288a67f930e34e217f63b1ad28",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_outline"
+            },
+            "path": "mcp/src/agents_remember/application/review_outline.py"
+          },
+          "before": {
+            "blob": "9a96a4b59bc56d9286341e084c6afeeb5d7c8d27",
+            "content": "sha256:0a24d9025cb38ca864f94e945da678b160952d8e1a5fae9b98b886be9bbfc02c",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_review_outline"
+            },
+            "path": "mcp/src/agents_remember/application/review_outline.py"
+          },
+          "id": "RLZ-PDDHZB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YGE80E",
+      "items": [
+        "sha256:b6fd46faa0727655070070ca962073a0defa391f3a248f100d257d68f2a441d4"
+      ],
+      "reason": "The same two memory indexes and shared record-change facts still own the outline. Recorded history labels add index-backed display facts, not a blob, hunk, roster or subject read.",
+      "revision": 1,
+      "subject": "INV-S44D2D"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:14ea0fe41f1d3f751228d060bd99e91bdc30fd9e68e602ed69f0f000c58d0d66",
+            "locator": {
+              "end": 113,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "before": {
+            "blob": "1d2ce3087885774bc27b08dba49bdac96fcaa15a",
+            "content": "sha256:8d88230fc9eb29adac1bee57b1b2aa2e4da2a0a7abe027989c247357ee6a15d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewNavigation"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "id": "RLZ-F8W21K"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z84HMQ",
+      "items": [],
+      "reason": "The summary-count/no-invented-zero obligation is preserved. Its existing presentation entry had bound the same-named props interface; bind the actual summary renderer and its loading/unavailable/count helpers instead, without changing the record, role or rationale.",
+      "revision": 1,
+      "subject": "INV-QAR0F3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:902393a752acb527186c374a3421c660bc6d5774fef9118c59fa4c7ca6009756",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": {
+            "blob": "715eb904920c915dbb44d4a6589c801f539f92cf",
+            "content": "sha256:d6d373fbd973ebd7730f45b12c7e5edeb658d803d8a7b287111ae9e12ac28b6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemberCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "id": "RLZ-KPXX9Y7G"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZBAZRW",
+      "items": [
+        "sha256:ee62c3346ecc9a60dd6221e06d30cd3158d9bda4dbaffa121b68d9cce2826e71"
+      ],
+      "reason": "A confirmed no-family invariant keeps its existing central statement/source/evidence path; the separate recorded-step block uses that same selected identity and invents no family.",
+      "revision": 2,
+      "subject": "INV-BR5MTSTY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZD31SM",
+      "items": [
+        "sha256:d919d662793c97adfcbe0f8add94388a6c455d2c273a928c36dbf502d8e6ad66"
+      ],
+      "reason": "Import/type wiring exposes the already recorded meaning-effect owners to their existing consumers; the obligations are realized at their named projection, wire and display constructs, not this import declaration.",
+      "subject": "hunk:sha256:d919d662793c97adfcbe0f8add94388a6c455d2c273a928c36dbf502d8e6ad66"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:02d022c6e60c6fd9474d9afd392ffdf647b966f73a9ecaec14c1795c482d1aff",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_explanations_cover_the_vocabulary_on_both_sides_of_the_wire"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-044H6R"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:16ae2f7ece06c6c44132e113d42a8df0d2a49b2ac9f54f149a94e1131ad99603",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_roster_continuation_carries_the_steps_of_the_members_it_returns"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-5ZQYM4"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:ef9ee181d47d8b69668bc800215d7f4be5ccb66963530dca70fd6ce5e45de5ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_retired_selection_reads_its_steps_through_compose"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-9K17ND"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:7a1cd131c7b74ca30beaeb4abc4e7b52470e2a4ba00bf9bd02ecad4499d3fec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_family_steps_carry_the_rows_own_revision"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-E7MCVR"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:8f81b93c7acd385755d5035ef7d19bc19128a0680f65c7e12afc8bf17d391782",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_another_owners_row_is_never_a_step"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-NBWHMJ"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:106ec2ea5627b0986006186ab0f5af541b9b4f3c18892f47d30f7f056ef10831",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_outline_labels_equal_the_review_steps_for_a_read_family"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-RC7VHT"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:84e53799262ceb615beb921aedf2ddfb3c8be5d6980f34f7b66ce29788d8cfd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_half_recorded_family_row_makes_the_display_unavailable"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-RQ2Q1E"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:ffe1c26347505159de76f5a9d6a6334be6553c9ecb3feb9b34ec4d77d9560806",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempts_read_in_attempt_order_not_row_or_revision_order"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-TWWF2D"
+        },
+        {
+          "after": {
+            "blob": "d1b4d41c144f1f5d52f74d05f5169feb22797d61",
+            "content": "sha256:e8aa8f433b807b318d4a5a87aab2522bc72a4a07368e713a14a05f7afc65131c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_incomplete_index_is_unavailable_never_none"
+            },
+            "path": "mcp/tests/test_review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "PRF-YCC2M5"
+        },
+        {
+          "after": {
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+            "content": "sha256:2d0df6a17726c69577bbc1e97c6f3e4dbef468d49b15c98c1e12a7e52a050748",
+            "locator": {
+              "kind": "symbol",
+              "name": "memberMeaning"
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-08NGSN"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:0c210fde76a737b61d56d4e1f7d6a076440583bd52b1d601bc51233ed6d1801e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedMeaningStep"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-33M2NT"
+        },
+        {
+          "after": {
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "content": "sha256:ce31c936c3b3c57d22b4a522e6d3379f06dd85d802bf16b677ae4681564b0df6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ItemLine"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-3BAY7N"
+        },
+        {
+          "after": {
+            "blob": "e7b67b89778434c96e1b9f3f299c9a7fb7ab0592",
+            "content": "sha256:9a51ca22614379da4b305842c9ef7b00d37847af69599b6de439ebae27387004",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordMeaningEffects"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3DQJ6S"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:9bc70399bb3fa2000398f77e31afd915567eb6516e030d4eabe29e9e9bdfed2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewMeaningEffects"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-4Y71E7"
+        },
+        {
+          "after": {
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "content": "sha256:ddfc89ee479d865ad3114e7d5190eece4970307e501098567c40873ecc89f7d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowMeaningBadge"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-60GFP7"
+        },
+        {
+          "after": {
+            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+            "content": "sha256:7c2ad02ec4dff7bcada58ec040f3782e2714666b05bb2a007d3e5bd6ceed6aca",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedStepsBlock"
+            },
+            "path": "dashboard/src/panels/review/MeaningEffects.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-69E9XV"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:82ae7dcdff6d1f33e7366b41b208c46e8d27b667e8a65082e04d936eb7780b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordMeaningEffects"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-77JGEF"
+        },
+        {
+          "after": {
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+            "content": "sha256:67021a87fbc959540a2d8159025c1be96534e8fe2fc2bca10ec89b49e7f89b23",
+            "locator": {
+              "kind": "symbol",
+              "name": "OutlineRow"
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-845A8V"
+        },
+        {
+          "after": {
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "content": "sha256:61781573d82387aa678b49c8428e4eafe2accf3e8be16cb31a328966414115fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_outline"
+            },
+            "path": "mcp/src/agents_remember/application/review_outline.py"
+          },
+          "before": "absent",
+          "id": "RLZ-AXYH3M"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:49fd36b2c6f71f21c8300a3aa062d6bf34b95850175b783044fd3036b8581e2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutlineMember"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-BJQJ18"
+        },
+        {
+          "after": {
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "content": "sha256:a762f70c4ed398f09e1aef2e9b8b387b78813ec302c0a52c9c99bfab84ceb77c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_meaning_subjects"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "before": "absent",
+          "id": "RLZ-EGPA5N"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:3a187c6f2eb85d992131cdabacc3e09ee6d40e3f302d54b0d1bcdc880173ba57",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutlineFamily"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-G2TZ3G"
+        },
+        {
+          "after": {
+            "blob": "d4823fec6a353711bfef2b0c84cdc7da2285a007",
+            "content": "sha256:9a227d032fcddc360e00fcebc2f3be7a03c28679194268fbf307e8fdaaee262c",
+            "locator": {
+              "kind": "symbol",
+              "name": "MeaningFieldGuard"
+            },
+            "path": "dashboard/src/panels/review/MeaningEffects.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-HPZC5W"
+        },
+        {
+          "after": {
+            "blob": "84a9c7a8a48ea7d1ffbe5362002e6560d1c3eda4",
+            "content": "sha256:8e3d359536a44431fb6bdcbd18b3bc00dc6a64e4da43b6a8a920f2ea31b5a35e",
+            "locator": {
+              "kind": "symbol",
+              "name": "compose_review"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_review.py"
+          },
+          "before": "absent",
+          "id": "RLZ-HX732X"
+        },
+        {
+          "after": {
+            "blob": "9bcabc6569d7f2765d324912c0997f4e5f11dc6a",
+            "content": "sha256:c04559207febe234ab664a796e1cb3ed346e9108a9a92bdc0f68f87f8ffedc42",
+            "locator": {
+              "kind": "symbol",
+              "name": "nodeBadges"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-K8M23Z"
+        },
+        {
+          "after": {
+            "blob": "32356a41b7d7fa401b64b90c8acadf53e35bcebb",
+            "content": "sha256:d5ca192c0df4fe807649d9d3a6c3789826ff211e88c3c26d6918acf1dfc6a958",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowEffect"
+            },
+            "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-P6MCM7"
+        },
+        {
+          "after": {
+            "blob": "1e222a11645bef99a66457ef1e9ff68d8a883083",
+            "content": "sha256:d28e035ee4651ba0922693da921f9ac186d85438463120e2b56278bf241a2d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "outlineMember"
+            },
+            "path": "dashboard/src/panels/review/changeTriage.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-Q4XYYN"
+        },
+        {
+          "after": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:a23fe7fbf9f7df76598ff41cf81387beb7b9b670faabffc219887d0524d4c8b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnselectedCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-QW4BVS"
+        },
+        {
+          "after": {
+            "blob": "9790ab86669fb4b97d1d18c13f01c70c2244e1d2",
+            "content": "sha256:9d31d7549c067265eee22fdd7a459a4b53f785f2d20553e128e6683805b73925",
+            "locator": {
+              "kind": "symbol",
+              "name": "_meaning_subjects"
+            },
+            "path": "mcp/src/agents_remember/application/review_outline.py"
+          },
+          "before": "absent",
+          "id": "RLZ-SDGM4Z"
+        },
+        {
+          "after": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:87de9ad2eefc88f68c0d0eb3325a1f47f9963a55402f485a5f75ed4e8938da0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "FamilyCenter"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-SNB6VM"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:fe6c1012a4dbd67ab19719cea2fd1b28d39c36dfc6fa845988714be1f881155f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutlineInvariant"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-VE7NFW"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:7e4c0ce4bbe39799ee714e0b38f6c7de88371a6748771b95b10117f0b6c3f2c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPayload"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-WP7N1H"
+        },
+        {
+          "after": {
+            "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+            "content": "sha256:a69af279a9d52dd259d5c48e9012f2d184ec2c08052ba66c5cec283f7f74cdb0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_answer"
+            },
+            "path": "mcp/src/agents_remember/application/review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "RLZ-XEM6QG"
+        },
+        {
+          "after": {
+            "blob": "c1c7c67ada2e84e90b5ac05efb33bdb19e6951a4",
+            "content": "sha256:06f8008c7a34e3547d8089d7ca56174b9bebf704d9f650e0d5b0a6c711e95202",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutlineMeaning"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-XKCXRS"
+        },
+        {
+          "after": {
+            "blob": "112a9855157f940bc999dde2c6fba752f6430f5e",
+            "content": "sha256:917218f6cd072fa651459c79b1450851c5b41125b1954120ebbc188af0f1daa1",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_meaning_effects"
+            },
+            "path": "mcp/src/agents_remember/application/review_meaning_effects.py"
+          },
+          "before": "absent",
+          "id": "RLZ-XVN2T4"
+        },
+        {
+          "after": {
+            "blob": "401279764e9f59409054becaec08871155df7fcf",
+            "content": "sha256:2a6e86d4b2952915b36c083e08763415e668937544ddbf9c369f370f0178607b",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnavailableMember"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-YVFVW1"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-ZHPSQS",
+      "items": [],
+      "reason": "Keep the same recorded-meaning obligation, scope and all prior realization/proof identities; complete the actual wire-model and selected/empty/partial consumer closures so a member/family answer cannot be misattributed or omission treated as absence. PRF-5ZQYM4 establishes returned identity coverage, in-page membership and aggregate expected labels only; the prior per-member own-label attribution is withdrawn without changing this invariant’s meaning/scope or any witness ID.",
+      "revision": 1,
+      "subject": "INV-76C676"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

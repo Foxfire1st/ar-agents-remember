@@ -1,0 +1,43 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The refusal is realized by the validator rule that raises it, the observer that classifies at the paired tree, the full check that counts it and the recorded-landing route that judges a merge commit, and eleven named assertion units prove the refusal on four publication routes with the two report-only dispositions."
+  },
+  "applicability": "Every code and test reference anchor of a converted memory tree, judged against the code tree its publication or validation names.",
+  "conditions": [
+    "The anchor must name the paired code tree's blob for its path, and its located bytes must hash to the recorded content identity.",
+    "The guard is a registered validator rule, so every route that runs the validator judges it and no route can run a selected subset.",
+    "A sync merge and an authoring run report the rule's findings as named repair debt; every leaf publication refuses them."
+  ],
+  "exclusions": [
+    "Requirement, external and unresolved reference targets are outside the rule and the census.",
+    "A validation that carries no paired code tree is skipped rather than guessed.",
+    "A stale anchor whose located bytes are unchanged is closed by re-recording its blob, and the rule refuses it until that repair lands."
+  ],
+  "id": "INV-033XSD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_reference_anchor_guard.py; mcp/tests/test_reference_anchor_routes.py; mcp/tests/test_reference_note_revision.py; mcp/tests/test_reference_anchors_census.py (leaf candidate, no run by this seat)",
+        "Current code e04d5476; worklist item(s) sha256:861a51ea2b0e5af6badd09100a61e1d75d916820ed9a061efc8b7718e94400f9. The command help identifies R198.1-reference-anchor and distinguishes publication/full-quality refusals from authoring/sync reporting. It presents the guard without deciding or performing validation.",
+        "Current code e04d5476; worklist item(s) sha256:4fa89176036bae01fa227dea6e4a308c4c8670b8bea234366d6df7eaf02b8635. The module contract states that non-current code/test references now refuse the whole-tree quality run; landing changes remain report-only. The separately covered converted_knowledge_check performs the refusal.",
+        "Current code e04d5476; worklist item(s) sha256:18a9a97d6a884855dbc4d82052d338616d4254e6a006fe58dbfeab8d762473e2, sha256:79cd71aa19b5926507823c764ed0e0cc0552c4f44016acbf7bcbadcde5d5cd49, sha256:1336c3110e390a3ee6aa0c6fa39329895b54fd3bd5e6a11a7aae2759e9c1eb45. Working-directory tree reads provide the exact regular-file bytes the reference rule judges, returning None for absence and caching per cited path. This is byte supply for the guard, not a second publication authority.",
+        "Current code e04d5476; worklist item(s) sha256:e783da47c7070c554799fdb1622eaebc84a9d6398f3af69d9273de306c97aa4a, sha256:f4076551703f0028f14436bbe7e6f16a287871628e6bc8a5e9645edbf3a2e2dd. The paired-tree protocol requires read(path) to supply exact bytes, or None where nothing exists, for locator/content/blob judgment against that pair. An existence-only tree cannot satisfy this byte contract.",
+        "Current code e04d5476; worklist item(s) sha256:1fc2788973156090a9f1492aeb2beb5ff6172999a6606a980d91cda50bf64119, sha256:601e7ba69f7f12b0fbb820e1e9a3cd2600c6240cae0300857800d226484b0f5c. The Git-tree constructor retains both each path's object ID and its repository, so later byte reads use the named commit/tree's blobs rather than an ambient working copy.",
+        "Current code e04d5476; worklist item(s) sha256:cd08d25e034b4bf6a4e4720bea24f1f7f1d486262ec7753bb510463094fbb2a1. Without a recorded memory base, landing uses the landed commit's first parent only. Passing both parents would misclassify a merge-commit publication as sync reporting and let unchanged stale-anchor memory avoid the required landing refusal."
+      ],
+      "path": "l191-main"
+    },
+    "handoffEntry": "MIK-R198@v2 §5-§7 publication-refuses-stale-anchor",
+    "leaf": "260928-MIK-L191",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A converted memory tree refuses publication of any code or test reference anchor that does not name the paired code tree's blob and resolve there to its recorded content identity, while authoring and a sync merge report the same anchors as named repair debt.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,105 @@
+{
+  "path": "dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The shell-level suite pins graph/queue reachability, sprint scoping, graphless queue reachability, and mounted canonical-reset clearance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a97a91b414fa03d0b57576be7f306eb7cca5ce6b",
+            "content": "sha256:84d5be783113c7dcbce4e208b5168700df8679ee77ed942226bc0932af3d1a93",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The real sprint page surface rendered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "502be409c27eb74c17f996f378046fc8adcb252e",
+            "content": "sha256:ec573cff53f154d2a9eb7c68b3c09300bab15d36ca8a9d123ec6affa32909ddb",
+            "locator": {
+              "kind": "symbol",
+              "name": "DetailPanel"
+            },
+            "path": "dashboard/src/panels/detail-panel/DetailPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The master reader mounts the queue independently of the optional graph section.\n\nAnchor: `MasterOverview` `SprintGraphSection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+            "content": "sha256:82805ff8a3713ade6c30508c8f06281896b47515419deb4f756aec756a13228a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The sprint-scoped queue implementation reads the authoritative store and renders nothing when no matching queue remains.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+            "content": "sha256:4caac3df490d4a28c8dd5a0f548d4a5edd9c7f35a947cd5aed8a6394f22d90df",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutQueueImpl"
+            },
+            "path": "dashboard/src/panels/CloseoutQueue.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The canonical store reset clears all scenario projections, including `closeoutQueues`, in one transaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:6ae77bdf6abb146eeb71ad12c45aa458951015f18c3e53cf3fa6a85396de8a63",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 335
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f4687b5092789e0a1d4182e803092af73f123537",
+            "content": "sha256:cced200f36c56e8c93fbe17acab52d082f0cf155115644acc4f21d0020efd118",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

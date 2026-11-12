@@ -1,0 +1,129 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/release-checklist.md",
+  "id": "DPD-0K35N0",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-release-checklist-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+      "kind": "file",
+      "path": ".githooks/_gate.sh"
+    },
+    {
+      "blob": "d969ca03f76455f4e78a2d6f184bb6af34afe26d",
+      "kind": "file",
+      "path": ".github/workflows/quality-checks.yml"
+    },
+    {
+      "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+      "kind": "file",
+      "path": ".github/workflows/publish-mcp-to-pypi.yml"
+    },
+    {
+      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    },
+    {
+      "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+    },
+    {
+      "blob": "bfaf9b5f20272244ad140fef74d4a5a3aaa3d62f",
+      "kind": "file",
+      "path": "scripts/check-host-contract.py"
+    },
+    {
+      "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+    },
+    {
+      "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_host/package.json"
+    },
+    {
+      "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json"
+    },
+    {
+      "blob": "b7ccb3b9a1089623f0d5395f8007516a26dfc4c3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+    },
+    {
+      "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+    },
+    {
+      "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+    },
+    {
+      "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+    },
+    {
+      "blob": "253baa5c3ea7cc8860c75ab19e6b049a42771265",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/page.ts"
+    },
+    {
+      "blob": "a623ecf0ae000606d5b10a571c5b1633513eb51a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts"
+    },
+    {
+      "blob": "61f51e32545075f0c3a400773e296c06920f7044",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+    },
+    {
+      "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+    },
+    {
+      "blob": "70f7deeb2a294500b2bc299a37e6204a6174017e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/start.ts"
+    },
+    {
+      "blob": "e49d6c05caeb90e4ca8f0595ece7f39e277d944a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_provision.py"
+    },
+    {
+      "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
+    },
+    {
+      "blob": "ee83fb09f37a6d9ffee4382e58e0eab6d3c79d6b",
+      "kind": "file",
+      "path": "scripts/pnt_sandbox/README.md"
+    }
+  ]
+}

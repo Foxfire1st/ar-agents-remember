@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future navigation cleanup must not replace the explicit marker return with outside subject selections and accidentally change walk/history semantics."
+  },
+  "alternatives": [
+    {
+      "option": "Use the review marker’s visible Back operation, not a separate browser-history subject entry.",
+      "reason": "Browser-history selection is an outside selection and can reset the walked tree; the review address deliberately has one history entry.",
+      "status": "chosen"
+    },
+    {
+      "option": "Make each followed marker a browser-history selection and use browser Back as its return.",
+      "reason": "Browser-history selection is an outside selection and can reset the walked tree; the review address deliberately has one history entry.",
+      "reconsider_when": "A new approved navigation contract specifies history entries and retained-walk restoration without silently resetting reading state.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future navigation cleanup must not replace the explicit marker return with outside subject selections and accidentally change walk/history semantics.",
+    "No promise that the current marker return itself preserves every walked family; it restores its owned workspace state."
+  ],
+  "context": "Approved MIK-R67@v2 rule18 and its eight named reasons prescribe these unchanged choices; the separate one-spilled-history choice is expressly approved in L57-F07-ONE-SPILLED-HISTORY-ON-PRIVATE-TEMP-DISK-IS-APPROVED.json. Source obligation: MIK-R67@v2 by-design 1. This records a governing boundary, not an invented design meeting.",
+  "decider": "Approved MIK-R67@v2/D47/D48 for its stated unchanged choices; Architect97e0320d ruling2026-10-16T13:14:22+02:00 for the one-spilled-history resource choice.",
+  "id": "DEC-BDRWPJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "2c55e47896fbccfc402e8646015896baec1e0606",
+        "content": "sha256:cbef0f774205691fa6f16d737959e5d61ec40f9baa33fa61513257ccd6e7a00e",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/review/markerNavigation.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r67-prescribed-boundaries-and-spill-resource-choice-01.json"
+    },
+    "handoffEntry": "CUR-L57-R67-choice-1",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

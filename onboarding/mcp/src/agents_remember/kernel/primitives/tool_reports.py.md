@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/tool_reports.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/primitives/tool_reports.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-10T05:30+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -38,18 +28,11 @@ masks `PASSWORD=...` values in any string.
   background behavior; disk stays bounded regardless of call frequency.
 - Reports are files on disk: secrets are redacted unconditionally (the
   response-path `summarize_command_logs` only redacts failing nodes).
-- Consumers: `runtime_install`, `provider_diagnostics`, `provider_watchers`
-  payload builders in the MCP tool layer; internal callers keep full data.
+- Current report consumer: `runtime_install` in `mcp/tools/core.py`. Provider diagnostics/watchers payload builders were removed by MIK-R112; retained provider internals are not public MCP consumers.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Compact builders that pair with the reports. | `compact_runtime_install_payload`; `compact_diagnostics_payload`; `compact_watchers_payload` | mcp/src/agents_remember/mcp/tools/core.py:105-128; mcp/src/agents_remember/mcp/tools/providers.py:55-70; mcp/src/agents_remember/mcp/tools/providers.py:90-100 |
+### Repo-Internal References
 
 
-## Update History
-
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 5 citation findings for compact response builders and their budget/redaction tests.
-
-- 2026-06-10T05:30+02:00: Created for the S4 response token budgets (2.5.1).
+- The runtime-install payload files executed reports and pairs them with its compact answer. [1]

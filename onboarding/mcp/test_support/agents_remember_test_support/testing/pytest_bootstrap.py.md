@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python testing boundary](overview.md)
@@ -23,20 +13,29 @@ owned-global leak restoration.
 
 The plugin begins the declared test process at import, exposes the random-order seed option/header,
 shuffles collection deterministically when configured, isolates per-process cache, restores and
-reports owned global leaks, and ends the process at pytest unconfigure.
+reports owned global leaks, and ends the process at pytest unconfigure. Before and after each test
+module, an automatic module fixture resets already-loaded reset owners from the closed state
+register. Per-test snapshots remain confined to restored rows; constant-for-tests rows survive
+deferred imports rather than being erased at module boundaries.
 
 ## Invariants And Boundaries
 
 - This module imports no Dagger admission, worktree service, or provider code.
 - Both routes receive identical shared pytest behavior.
 - Global restoration precedes leak failure.
+- The closed-register reset visits already-loaded owners without importing them. The module-boundary fixture also imports the lightweight worktree service holder explicitly, and resets it before the module and in its `finally` path.
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Shared hooks own ordering and process cleanup. | `pytest_collection_modifyitems`; `reject_owned_global_state_leaks`; `pytest_unconfigure` | mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:22-24; mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:41-58; mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py:61-70 |
+The module-boundary fixture resets the worktree service holder as well as the closed mutable-state register, before the module and in its `finally` cleanup. The holder is one object rather than a module-level collection the syntactic scanner discovers; an earlier module's server supplier cannot serve the next module's worktree operation.
 
-## Update History
+## Evidence
 
-- 2026-08-24T21:23+02:00 — Extracted from root conftest for 260824-PDLS.
+### Repo-Internal References
+
+- Shared hooks own ordering and process cleanup. [1]
+
+
+- Already-loaded process state is reset before and after each module. [2]
+- Per-test restoration runs before leak failure. [3]
+
+- The module-boundary fixture resets the worktree service holder as well as the closed mutable-state register, before the module and in its `finally` cleanup. The holder is one object rather than a module-level collection the syntactic scanner discovers; an earlier module's server supplier cannot serve the next module's worktree operation. [4]

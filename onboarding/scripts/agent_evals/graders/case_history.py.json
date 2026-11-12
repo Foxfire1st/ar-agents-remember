@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/case_history.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "da0dcb3633c8c0df3eac3e76b6c86409c2094e60",
+        "content": "sha256:24fc8e70724da75ebe241ba8106045e360eaedb952f505e26a1f654af6393336",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-921DSJ",
+      "invariant": "INV-21Z5X6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-history",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It binds the case-specific expected judgment and before/after native records to the history observation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0dcb3633c8c0df3eac3e76b6c86409c2094e60",
+            "content": "sha256:24fc8e70724da75ebe241ba8106045e360eaedb952f505e26a1f654af6393336",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

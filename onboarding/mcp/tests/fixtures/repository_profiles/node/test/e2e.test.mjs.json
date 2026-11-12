@@ -1,0 +1,37 @@
+{
+  "path": "mcp/tests/fixtures/repository_profiles/node/test/e2e.test.mjs",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Fixture e2e scenario executed by the Gate-4 rail.\n\nAnchor: `test(\"the clean-room service flow composes repository behavior\")`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ddeb3eb11832b558d02ef3368c3d34ca9b10d68",
+            "content": "sha256:9a582efd802aa27ad4435fa8c03a15e898a8cacf82f2e62ab62c7d0491d2b832",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5e945f7cfa341d097ed0e230b57927176df2e959",
+            "content": "sha256:e343ddb49066f4221f0625850a5da3ba527ca494a0c87714e6121e058e8649ae",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/fixtures/repository_profiles/node/scripts/run-e2e.mjs"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

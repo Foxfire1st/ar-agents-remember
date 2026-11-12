@@ -1,0 +1,219 @@
+{
+  "path": "dashboard/src/panels/engine-room/useEngineTimeline.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`phaseStage` / `fxSignature` / `buildFx` + the `useEngineTimeline` context (retract + draw-on + fx, gated).\n\nAnchor: `phaseStage` `fxSignature` `buildFx` `useEngineTimeline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The GSAP-gate determinism tests that pin the no-ticker-under-effects-off contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6c81634e51615e483399292e3462c23681ff3f39",
+            "content": "sha256:97c9c5b09303e37df279b18df372be7e9b54833608b7ef59e6724d7ea2908bbc",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureProcessMap.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof.\n\nAnchor: `function fxSignature(node: EngineProcessNode): string {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:6768f05bbb4d1c870d56b55b932e64ce7df3837770597212bc88985fec5c8df5",
+            "locator": {
+              "end": 145,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof.\n\nAnchor: `export function useEngineTimeline(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:42a580b2d43b802623baf299778905d1334edb1f54d8b1592e27ab5d14b54b64",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 153
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "fxSignature now joins phase, running edge kinds, landing ref states, failed/stale edge descriptors and memoryMode; effec — source ownership, not executed visual proof.\n\nAnchor: `export const EDGE_GEOM: Record<string, readonly [number, number, number, number]> = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3de3f86452a06356eee661d5e4bbdc7ccdf5eb",
+            "content": "sha256:97b1d32acbe5a3c866b61ae80830913b4de58375b86bdeaf7ea3f412391f41df",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "dashboard/src/panels/engine-room/geometry.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`fxSignature`'s refused fold-in now filters `failed`/`stale` only.\n\nAnchor: `fxSignature`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`EngineProcessEdge`'s documented `state` vocabulary, which never listed `refused`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "RETRACT phase (5o) — departing lanes erased tail-to-tip, stroke locked cyan via `gsap.set` before the tween, `clearProps` stroke/filter on complete.\n\nAnchor: `clearProps`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:ec6c8a92fe60e866c893835bc50f3db70dcf9a7af921e051de4129d2035e170a",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`buildFx` installs the canvas effect tweens the markup declares: the pre-block verify scan ring, the warp-core surge bands, the attention `breath`, the terminal stop flash, the one-shot refused-conduit flash coloured by the lane's `data-polarity`, and the flow packet riding `data-path`.\n\nAnchor: `buildFx` `useEngineTimeline`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "745dcb2438f071de87e63481375c2c3790c15d3b",
+            "content": "sha256:82c690fd7471b9257e5261727d2d052ab81ac1eb4725670708637e6bedfc22f6",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The honest-motion gate that suppresses the whole hook under effects-off/reduced-motion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5045a0dfe298de1b76c82e4326d5f177dbd5bc70",
+            "content": "sha256:03fbe4a61df59f3821f011f83ed126d730c7c17a0c274c82b2b3d537bcb9f6a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "useShouldAnimate"
+            },
+            "path": "dashboard/src/panels/engine-room/useShouldAnimate.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The canvas that renders the `data-draw='on'` / `data-fx=…` elements + wires this hook to the `<svg>` root.\n\nAnchor: `EnclosureCanvas`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15444872a266d89123558da6eb8909e81fe96665",
+            "content": "sha256:dc5f212cb9ccbe8d35a4d690d984bb4f5b0b8b5f7e72042f1368075db707b271",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/engine-room/EnclosureCanvas.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`EngineProcessNode` / `EngineProcessEdge` (the `phase` / `edges` / `landing` / `providers` / `seedFallback` / `memoryMode` it reads; `EngineProcessEdge` no longer declares `refusedPolarity`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:8ad3ab8e99817b1e4b23b7b6259fc08e02b0810861d5f984fa3479bfc83258a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessNode"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

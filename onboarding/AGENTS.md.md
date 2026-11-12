@@ -1,18 +1,8 @@
 # AGENTS.md
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `AGENTS.md`                                |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-06T21:48:32+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
-[agents-remember root overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -22,135 +12,45 @@ The source-checkout operating contract routes repository work through the resolv
 
 ### Logic
 
-The opening distinguishes this source package from the installed runtime and sends sibling-repository work to installed coordinator instructions. Sessions follow role briefs or the developer-facing lifecycle; approved durable task documents own code changes. Explicit session authorization determines which workflow actions are already approved.
+The opening distinguishes this source package from the installed runtime and sends sibling-repository work to that repository's role instructions and resolved memory-layer guidance. Free chat answers questions inline. For managed-repository work it creates or resolves the sprint document, writes the developer’s request into it, calls `role_start` once for an Architect without any document reference or brief, and tells the developer where the agent and request are. The developer speaks with the started agent in the dashboard. A different role is started this way only when the developer explicitly names the role and task. A launched role follows its handover; unbound `role_message` remains refused, and a refusal admits no alternative launch route. Approved durable task documents own code changes; explicit authorization determines which workflow actions are already approved.
 
-Memory context and provider configuration are resolved before relying on onboarding. The file names semantic, relationship and intent retrieval strategies and the resolved memory layer's settings, tools, sources and coding guidelines. Root skills, runtime assets and harness templates are canonical; their sync scripts refresh generated package and starter copies.
+Memory context and provider configuration are resolved before relying on onboarding, through the `context_packet` tool reference and the memory-quality tool guidance of the l-01 skill. The file names semantic, relationship and intent retrieval strategies and the resolved memory layer's settings, tools, sources and coding guidelines. Root `skills/` is the canonical authoring source and `scripts/sync-skills.py` regenerates only the package copy the tool server serves; no harness starter package carries a skill folder, and the coordination root carries none either. Runtime assets under `benchmarks/`, `providers/` and `system/` are refreshed by `scripts/sync-runtime.py`. The checkout carries no harness starter packages; harness configuration belongs to user-level harness settings.
 
 Ordinary Python development uses the isolated unit population with four workers. Integration and combined populations are explicit selections. Only lifecycle-owned Dagger execution produces certifying evidence, preserving genuine process identity, disposable state, credential isolation and exact candidate publication. New cases must protect distinct consequential behavior; collected parametrized budgets cannot silently grow. Coverage is diagnostic only. Production CRAP20 is a review trigger, not a blocker or reason to add private-branch tests. Lint, formatting, typing, structural rules, test failures and diagnostic-tool errors remain enforcing.
 
 ### Conventions
 
-Edit canonical asset sources before generated copies. Read stability and reclamation doctrine before changing stores, queues, append-only logs or loops over stores. Report Radon as reported, never passed. Quality reporting must preserve untracked files.
+Edit canonical asset sources before generated copies, and do not recreate repository harness starter packages or workspace harness configuration. Read stability and reclamation doctrine before changing stores, queues, append-only logs or loops over stores. Report Radon as reported, never passed. Quality reporting must preserve untracked files.
 
 ### Invariants And Boundaries
 
-Source instructions do not replace installed coordinator entrypoints or grant protected-ref authority. Coverage floors, score-exception registries and ratchets are not current policy. Historical Dagger-only development and per-leaf acceptance descriptions do not govern this baseline; master-end full verification/review follows the active task policy.
+Source instructions do not grant protected-ref authority; shared instructions belong in the role corpus and the coordination root's `system/` files. The file points durable tasks at the l-01 task-document authoring reference and leaf-task template, scoping work in the architect lifecycle at the l-01 collaboration method, the commit rule at the l-01 Authorized Closeout operation, and retrieval at the l-01 knowledge-use reference. Coverage floors, score-exception registries and ratchets are not current policy. Historical Dagger-only development and per-leaf acceptance descriptions do not govern this baseline; master-end full verification/review follows the active task policy.
 
 ### Todos
 
-No new source-local obligation is introduced by this reconciliation.
+No open file-local todos.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external domain documentation applies. | N/A | N/A |
+### Docs References
 
-## Repo-Internal References
+No configured external domain documentation applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Source scope and role routing. | `## Start Here — Route By Role` | AGENTS.md:1-47 |
-| Resolved memory and retrieval strategy. | `## Memory And Onboarding` | AGENTS.md:51-97 |
-| Canonical sources and generated-copy boundaries. | `## Source Layout` | AGENTS.md:99-149 |
-| Current testing, diagnostic and enforcing policy. | `## Code Quality Instructions` | AGENTS.md:150-206 |
+### Repo-Internal References
 
-## Cross-Repo References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Installed runtime handoff is declared by the source above; no separate cross-repo implementation is claimed. | N/A | N/A |
 
-## Update History
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `## Code Quality Instructions` repointed to AGENTS.md:150-206. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- Source scope and role routing. [1]
 
-- 2026-09-06T21:48:32+00:00 — Reconciled current IAS testing and configuration policy against source; removed obsolete active coverage, host-refusal and deleted-test claims. Existing verification pins and all prior history remain unchanged.
 
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 reconciled the root routing contract to one public
-  `dispatch_agent` call, separated ordinary architect bootstrap from explicit named-role takeover,
-  retained process-derived ambient-versus-plane authority, and kept plane failures fail-closed.
-  Verification remains closeout-owned.
+- Resolved memory and retrieval strategy. [2]
 
-- 2026-08-28T10:03:40+02:00 — Corrected the current code-quality section and citations so they no
-  longer advertise the retired Candidate-A Python wrapper.
 
-- 2026-08-28T05:10+02:00 — Reconciled Candidate A retirement: no Python host wrapper, classifier,
-  manifest, or compatibility route remains; Dagger owns Python investigation and acceptance.
-- 2026-08-26T10:44:52+02:00 — Reconciled the new Python evidence-system doctrine pointer and its acceptance-authority boundary after reviewing the `AGENTS.md` source delta; verification metadata remains closeout-owned.
-- 2026-08-24T21:23+02:00 — 260824-PDLS aligned the agent contract with the exact-node diagnostic
-  and Dagger evidence firewall.
+- Canonical sources and generated-copy boundaries. [3]
 
-- 2026-08-24T13:51:26+02:00 — 260821-DAGQC-L4: reconciled the deliberate
-  direct-targeted Vitest diagnostic route with the guarded Python, Playwright, changed-lines,
-  wrapper, and acceptance rails; added the governing root-overview link and removed the resolved
-  changed-lines documentation-gap claim. Dagger acceptance remains pending and closeout-owned.
-- 2026-08-14T11:25+02:00 — R39 curator: reconciled the root instructions with the exact-once
-  leaf/master cadence and PR-only non-test validation. Verification remains closeout-owned.
-- 2026-08-14T09:37+02:00 — Reopened L23 cadence: recorded exact targeted-at-leaf-closeout and
-  full-at-master-integration ownership; leaf integration and GitHub PR validation do not rerun it.
-- 2026-08-14T06:30+02:00 — L23 final candidate review: source instructions now make the pinned
-  Dagger graph the sole acceptance path and require Python, Vitest, and Playwright to refuse startup
-  without its nonce and in-container attestation. Verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded the free-chat launcher and sprint-qualified
-  architect → orchestrator → manager chain, including the removal of global named-seat fallback.
-  Verification metadata remains pinned until closeout stamps the code commit.
+- Current testing, diagnostic and enforcing policy. [4]
 
-- 2026-08-02T16:46+02:00 — 260731-EFA-L6 curator W1-B03: repaired 11 citation rows with exact anchors and source paths; scoped citation recheck recorded separately. Verification metadata remains pinned until closeout.
+### Cross-Repo References
 
-- 2026-07-31T16:10+02:00 — 260731-EFA-L2 final state. **Retired this card's mid-leaf claim
-  that `AGENTS.md` documents a shrink-only complexity baseline and five enforcing steps.**
-  The source file now says the opposite: nothing in the gate is exempt, the baseline and its
-  gate step are deleted, the four complexity codes are enforced by `ruff` directly, and a
-  finding is cleared by extraction. Recorded the four enforcing steps the file actually
-  names, and recorded honestly that the file **omits the `diff-coverage` step** that the
-  wrapper also enforces. Verification metadata is pinned to the leaf's reformat commit until
-  closeout stamps the code commit.
-
-- 2026-07-31T06:30+02:00 — 260731-EFA-L2 gate honesty (mid-leaf). **Retired this card's claim that
-  agents should "run Ruff, Pyright, and Radon after Python code changes"** — the file now
-  names one gate command, states it takes no path arguments because its scope is
-  `git ls-files '*.py'`, and says plainly that Radon does not enforce anything while
-  remaining CRAP's complexity engine. Added the shrink-only complexity baseline paragraph
-  (both failing directions, the `--write` discipline, the hazard it does not cover) and
-  the `scripts/harness/` source-layout and boundary entries for the generated harness
-  starter trees. Verification metadata is pinned to the leaf's reformat commit until
-  closeout stamps the code commit.
-
-- 2026-07-09T10:40+02:00 — 260707-HFX2-L8 stability/reclamation doctrine: documented the new
-  Code Quality Instructions MUST-READ sentence that points store, loop-over-store, queue, and
-  append-only-log changes at the resolved memory layer's "Stability, Bounded Resources, and
-  Reclamation" doctrine. Verification metadata pinned until closeout stamps the HFX2-L8 commit.
-
-- 2026-07-07T21:00+02:00 — 260707-HFX-L6 architect/orchestrator split: the repo-root
-  session-start contract now routes developer-facing sessions to the architect lifecycle
-  (`roles/architect.md`) and points the plan gate at the architect, while spawned role
-  sessions still follow their briefs. Verification metadata pinned until closeout stamps
-  the HFX-L6 commit.
-
-- 2026-07-06T12:05+02:00 — 260703-L10 (one-vocabulary sweep): the `Start Here` section became `Route By Role` — sessions route through the unified `l-01-agent-lifecycles` skill (spawned agents follow briefs; a developer session is the orchestrator on the request → trust-checkpoint → reframe-research → decide → build → close axis), the dead `orient → ground → frame → decide` axis and the retired skill name are gone, the chat build is removed from the build modes (chat is never a build route; research-only exit or `w-02-light-task-workflow` task), and the IMPORTANT block names the orchestrator lifecycle's plan gate. Verification metadata pinned until closeout stamps the L10 commit.
-- 2026-06-11T14:07+02:00: No content impact: re-verified against merged main `c2c2dcb` after the upstream doc-link/typo merges (PRs #69-#73) and the repository rename from `agents-remember-md` to `agents-remember`; card content already matched the source.
-- 2026-06-08T11:53+02:00: Updated source-layout onboarding for canonical root runtime asset folders (`agents-md-files/`, `benchmarks/`, `providers/`, `system/`) and `scripts/sync-runtime.py`, including the generated package-data boundary. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-03T18:58+02:00: Updated source-layout onboarding for the root-level canonical `skills/` tree and `scripts/sync-skills.py` sync helper. Verification metadata stays pinned until closeout commits the source change.
-- 2026-06-02T03:45+02:00: Rewired the root checkout contract to route every session into `l-01-session-job-lifecycle`: replaced Task Format Routing and the separate `Frame Before You Choose a Format` section with a `Start Here — Enter the Job Lifecycle` section whose only task-format call is L-01's build-mode step (read-only exit / chat build / durable W-02); the standalone W-03 chat workflow is retired and absorbed into L-01's chat build. Part of the L-01 lifecycle reshape (mcp 1.1.0). Verification metadata re-verified at closeout.
-- 2026-06-01T11:18+02:00: Documented the new `Frame Before You Choose a Format` section ahead of Task Format Routing (the `tasks/AGENTS.md` collaboration doctrine applies up front and routes evidence to `c-04-retrieval-strategy-router` skill) and the added `Memory Retrieval Strategies` list pointing to `c-04-retrieval-strategy-router` skill. Verification metadata stays pinned; Repo-Internal Reference line ranges will be re-verified at closeout.
-- 2026-05-29T20:25+02:00: Updated after the workflow-before-code warning was made explicit ("do not randomly commit; use the `c-12-closeout` skill closeout procedure").
-- 2026-05-28T19:52+02:00: Updated after source-checkout code quality guidance added Pyright beside Ruff and Radon.
-- 2026-05-24T04:34+02:00: Updated after source-checkout instructions renamed `c-02-memory-quality-control` skill to memory quality control and made commit approval separate from implementation approval.
-- 2026-05-23T21:31+02:00: Made source-checkout code quality guidance explicit about Ruff and Radon after Python implementation work.
-- 2026-05-23T21:25+02:00: Simplified provider-authority wording and added source-checkout code-quality routing to resolved memory-layer tools and coding guidelines.
-- 2026-05-23T14:20+02:00: Updated source-layout onboarding after `installer/` and `runtime/scripts/` were removed from the source package.
-- 2026-05-23T13:46+02:00: Updated provider readiness guidance to use `context_packet` MCP tool instead of deleted source lifecycle scripts or coordinator `system/settings.json`.
-- 2026-05-21T04:09+02:00: Added the configured-provider readiness check after `c-08-ar-coordination-context-resolver` skill and before `c-02-memory-quality-control` skill for source-checkout work.
-- 2026-05-15T04:12+02:00: Reframed the root `AGENTS.md` onboarding around the source checkout contract and the installed-runtime handoff.
-- 2026-05-15T00:38+02:00: Refreshed after coordinator and memory-layer settings guidance was folded into the repo-root contract during the `AGENTS.md` template reshuffle. Verification metadata remains pinned to the last committed source until closeout.
-- 2026-05-12T18:51+02:00: Refreshed after AGENTS.md emphasized the workflow-before-code warning and separated it from the memory section.
-- 2026-05-12T11:30: Updated after AGENTS.md was shortened to the three workflow formats, workflow-before-code rule, and `c-08-ar-coordination-context-resolver` skill resolver contract.
-- 2026-05-11T19:52: Corrected escaped workflow wildcard wording introduced during the verification refresh.
-- 2026-05-11T19:42: Refreshed verification metadata against commit `aa85d3862bf21fed791e3170e6957f9288c319e8` after coordination rename verification.
-- 2026-05-11T18:34: Updated after the memory system rules switched fallback resolver language to `code_repository_name` and `code_repository_root`.
-- 2026-05-10T03:01: Updated after chat-mode closeout guidance routed approved micro edits through `c-09-git-worktree-manager` skill `direct-closeout`.
-- 2026-05-09T22:57: Refreshed against commit `bb95b99` and tightened references around the six-gate onboarding workflow.
-- 2026-05-09T21:59: Updated for split memory/coordination terminology and `c-09-git-worktree-manager` skill worktree context.
-- 2026-05-09T21:15: Created first file-level onboarding baseline for the agent operating contract.
+Installed runtime handoff is declared by the source above; no separate cross-repo implementation is claimed.

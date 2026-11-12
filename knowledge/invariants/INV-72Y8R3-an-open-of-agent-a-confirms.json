@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Member of the selected-task-chat family: without the display-evidence gate the joint appearance promise fails. It guards the exact D153 failure: acknowledging a chat as shown when no screen displays leaves an endless loading with no named problem."
+  },
+  "applicability": "Every selection that asks the framed Paseo application to show an agent — the master, a task, or a role under a task — on document and Chats pages alike.",
+  "conditions": [
+    "The bridge holds an unanswered open for the requested agent in the current generation.",
+    "The frame's application reports through the standard channel (ready, shown, error).",
+    "The workspace under test comes from the host's agent record, not the incoming message."
+  ],
+  "exclusions": [
+    "Documents without a live agent, which show the launcher per MIK-R95."
+  ],
+  "id": "INV-72Y8R3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "successor report 260928-MIK-L121-worker-R4-MIK-R121-v1.md; paseoPluginClient.test.ts (52+2 new: contradicting-strip silence, native scroll literal acceptance); focused-vitests-r4 log 118 pass; evidence dir phase1-r4-probe-record.md P1"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L121-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R121-R4-P1",
+    "leaf": "260928-MIK-L121",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An open of agent A confirms only when the frame route names the host-record workspace as exact path segments, the stored layout under the exact <server>:<workspace> key names agent_<A> as the shown pane's focused tab, no visible aria-selected agent tab names another agent, and a chat scroll root matching the agent-chat-scroll- prefix (id or test id, either bundle literal or runtime variant) is visibly mounted with no visible loading/not-found marker; any miss fails closed with no fallback.",
+  "status": "proposed",
+  "supersedes": []
+}

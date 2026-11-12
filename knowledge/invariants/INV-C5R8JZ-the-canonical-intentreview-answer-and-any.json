@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "The native field, semantic-effect table, scheduler and renderer share one answer so an open review is visible without advertising the leaf as ready."
+  },
+  "applicability": "TaskDocument/native effects and generated leaf/master renders; absent older fields emit no new header.",
+  "conditions": [
+    "The canonical leaf carries intentReview.",
+    "The existing ready filter still also requires planning, no cycle and Completed prerequisites."
+  ],
+  "exclusions": [
+    "An older absent field, which adds no header line.",
+    "A second ready-list or stored-wave authority."
+  ],
+  "id": "INV-C5R8JZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "scratch/curator/b5e6f7a8-9c01-4d23-8e45-f6a7b8c9d012/helpers/backend/post-L194-source-equivalence.json; semantic-recommendations.json; MIK-R189@v1 rules2,8"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "L183-intent-review-visible-ready-order",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The canonical intentReview answer and any strict agreed revision are rendered from native fields; open reviews stay visible in master order but are excluded from its existing ready set. Field-effect classification treats the answer and agreed revision triple as normative intent, without creating a second ready list.",
+  "status": "proposed",
+  "supersedes": []
+}

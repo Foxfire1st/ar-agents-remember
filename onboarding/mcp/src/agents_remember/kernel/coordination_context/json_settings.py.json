@@ -1,0 +1,87 @@
+{
+  "path": "mcp/src/agents_remember/kernel/coordination_context/json_settings.py",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "One recorded read, the JSON error, and the onboarding wrapper with its root fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:f8d668721fa265f11404a32060f9ce2935b5be43ae4c937a25399c23eed3654c",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Storage mode and default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:84b18ea4cc79a858bd9adf2298fa671e2702392018ba08c66d19e0ba760b9f8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "apply_json_storage_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "One path rule with its include and exclude lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:65fa816ab5ff14521d08133c27ca3e1ab92ef277065db6d693e52e2cf4d7ecd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_path_rule"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The cross-repository allow list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de648bcc90f0df139f1935da685f0443db3f0b4c",
+            "content": "sha256:8c19a0d5cf19c354cdd53e4978c3ed002114ec0a4085415763e4ee6e91cb06f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_json_cross_repo_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "A JSON settings file is recorded with its bytes, also when it is not valid JSON.\n\nAnchor: `_settings_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:267caaf15e6e218966814d04fd2285fd1db099ea6dd45ebe90412f84ac14b800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

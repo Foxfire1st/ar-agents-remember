@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/case_proof.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+        "content": "sha256:bf7b281388fd9bdf14847fd42909e75ca4286ba961540e6d830fc77efd84d0ee",
+        "locator": {
+          "kind": "symbol",
+          "name": "range_proof"
+        }
+      },
+      "id": "RLZ-ZDG4KC",
+      "invariant": "INV-N5KQ73",
+      "origin": {
+        "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+        "leaf": "260928-MIK-L186"
+      },
+      "rationale": "The writer's own resolution of a range: it reads the candidate bytes, asks the snapshot's real resolver whether a title already reaches this case, and returns the titles the proof's evidence pairs with, so the route and its pairing are decided here.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "A range proof answers the locator, the pairing titles, or the reason the lines are no case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:bf7b281388fd9bdf14847fd42909e75ca4286ba961540e6d830fc77efd84d0ee",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 34
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case check is the grammar module's, run over the candidate bytes with the snapshot's name question.\n\nAnchor: `test_case_range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:2db25c60b140544559f8a7c19bc07cdc3b536e01c7ce531eb5117afda8b8b545",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 43
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "An unreadable blob or an unavailable grammar is a refusal rather than an exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:c8f02b94b97875f896d3836dcb7d3b7ae51d4596db90c8953ae32a8aa6b58236",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A title reaches the case only when the snapshot resolves that name to the same content the case's extent holds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:37bed07fc4b682170b58dd412f9d9bf3a58f057e75eeccacf67c4ea8b3f00df9",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 69
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A named proof lands under its own reference and a range proof under the titles it pairs with.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:dda09cc84b9b6084fc322c07f699fd2e577ad8eeebff920f9c99ba992438c47b",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The first outcome recorded for a title stands, so a case proved twice is one result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f2877a8f215264bdc76c3b8bd580f41b65b78b9a",
+            "content": "sha256:96fe70ea981b18f6bdcabcc47d4a715bbe62d9fc8bbe710a651e1d96bdee5824",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

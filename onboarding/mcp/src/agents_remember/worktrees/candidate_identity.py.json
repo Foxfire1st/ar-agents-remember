@@ -1,0 +1,183 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/candidate_identity.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+        "content": "sha256:fbc826fa82f1b5192f7794b8af61ebba98e26674d93b92bf5086e8240f189573",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_candidate_identity"
+        }
+      },
+      "id": "RLZ-FPACVQ",
+      "invariant": "INV-EA9XDB",
+      "origin": {
+        "handoffEntry": "L116-W3-record-only-binding",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This resolver binds the candidate worktree's HEAD tree plus tracked and untracked bytes through the task/contract authority, and returns unproven on any failed read.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+        "content": "sha256:0c6dc5f6b225efe7640c2f20ed099097f0d9b84304c0ff2559de9ff589fb5f6f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fold_untracked_entry"
+        }
+      },
+      "id": "RLZ-FY73AY",
+      "invariant": "INV-4DNDW7",
+      "origin": {
+        "handoffEntry": "L116-F01",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This lstat dispatch selects link, regular and other entry kinds without following a link and propagates failed reads as unproven.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+        "content": "sha256:82e2368394fa6aa7f584f6ae8be6fb64bc313d9ec1f4cb126476cd8422425df1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fold_link_entry"
+        }
+      },
+      "id": "RLZ-HBA0VS",
+      "invariant": "INV-4DNDW7",
+      "origin": {
+        "handoffEntry": "L116-F01",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This branch binds link kind and readlink payload without opening its referent.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+        "content": "sha256:6e333e1bc5184afa97d19662ea9322b913dfc6a8ae97a15ac9f1a812b21bfb3c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_fold_regular_entry"
+        }
+      },
+      "id": "RLZ-QD8KH2",
+      "invariant": "INV-4DNDW7",
+      "origin": {
+        "handoffEntry": "L116-F01",
+        "leaf": "260928-MIK-L116"
+      },
+      "rationale": "This branch binds regular kind, executable-bit flag and content, failing unproven on read failure.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Successful HEAD lookup is used; failed lookup remains unproven without an error-text classifier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:d69ec4c3aff0800de5d28b8bcc8f0c02d79d18e9aee14900086c5c1884e50897",
+            "locator": {
+              "kind": "symbol",
+              "name": "_git"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:870b2c51f491de009d1f4f7c7d82372236d8bcc2d93771291a48ab9055afbbec",
+            "locator": {
+              "kind": "symbol",
+              "name": "_head_tree"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Candidate input construction and fail-unproven propagation over actual untracked entry representations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:fbc826fa82f1b5192f7794b8af61ebba98e26674d93b92bf5086e8240f189573",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_candidate_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:0093ea798da20e2ec1de6c1b9a493c2caa7c5ce72fbc4c264ea63faf86aa2de5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hash_untracked"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:ea92f8219ea5a8940187e6192db3544db420fe787aa3a8e0fa415db6b6a120be",
+            "locator": {
+              "kind": "symbol",
+              "name": "_candidate_root"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Untracked entries preserve link kind/target, regular kind/executable bit/content and other-kind tags without following a link; failed reads stay unproven.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:0c6dc5f6b225efe7640c2f20ed099097f0d9b84304c0ff2559de9ff589fb5f6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fold_untracked_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:82e2368394fa6aa7f584f6ae8be6fb64bc313d9ec1f4cb126476cd8422425df1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fold_link_entry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4efa5d510d120679ef8ca021d0603e382c537fce",
+            "content": "sha256:6e333e1bc5184afa97d19662ea9322b913dfc6a8ae97a15ac9f1a812b21bfb3c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fold_regular_entry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

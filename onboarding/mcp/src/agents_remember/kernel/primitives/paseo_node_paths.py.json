@@ -1,0 +1,63 @@
+{
+  "path": "mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The platform refusal and managed paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80bad09d63104a1029e6f580b1122a747f58a7bf",
+            "content": "sha256:481c88c45a68d78523eed58d96fa8859ef7f0446bc950ebfc5e8c6cb9f12365b",
+            "locator": {
+              "kind": "symbol",
+              "name": "product_node"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80bad09d63104a1029e6f580b1122a747f58a7bf",
+            "content": "sha256:3b4775c38b8f1046fb0dd2355050f189f97d77a6a1ab08dea7ec13c959bc0b4a",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The unset-or-empty XDG default rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80bad09d63104a1029e6f580b1122a747f58a7bf",
+            "content": "sha256:6864825bda8c3ad0c645317decb836c75375dbe4a0cf7e7eac46a5213210e9f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "xdg_home"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80bad09d63104a1029e6f580b1122a747f58a7bf",
+            "content": "sha256:b779f07863101be7dfd40711deaccc1287f6205fb01d2cacf1002ca54d2bd58a",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 58
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,2524 @@
+{
+  "attempt": 2,
+  "closed": true,
+  "leaf": "260928-MIK-L168",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-03KMAV",
+      "items": [
+        "sha256:964b2106bd2089fc980ca3238a88efe6cca97bdd63cd8a64cd3a9d3d68d52dcd"
+      ],
+      "reason": "These added selector/store imports wire MasterNowCells to the served global unknown-count predicate. The actual runtime figure guard is bound by the original Worker host-activity-once entry; module wiring is not a separate stage/activity or host authority invariant.",
+      "subject": "hunk:sha256:964b2106bd2089fc980ca3238a88efe6cca97bdd63cd8a64cd3a9d3d68d52dcd"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:bda3d07f6eab73a8515ba13aa6a5049fa68379e72de734bf4849c6447571b157",
+            "locator": {
+              "end": 388,
+              "kind": "line_range",
+              "start": 382
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:bda3d07f6eab73a8515ba13aa6a5049fa68379e72de734bf4849c6447571b157",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-B6TTTQ"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:620b7d1b9785f7f80ae5eb881c3023a5c9e838012593ae99153eb566b9ff65a2",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 368
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:b1138dc97d59a73611f139615940f561bcad835cef99af4fa5bb92676f39b81d",
+            "locator": {
+              "end": 346,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-WG0RE0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-048DHV",
+      "items": [
+        "sha256:a6673ea03319ba5de51145aadd141bb675bff15f6dfcbfa7843b89bca3995421"
+      ],
+      "reason": "TaskRow passes a held flag into the disclosure path; its displayed textValue construction remains the same short-id/title or title-only branch. The parent/fold interaction repair adds no typeahead matcher or internal-full-id lookup, so the existing typing obligation is preserved.",
+      "revision": 1,
+      "subject": "INV-G71Q09"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:5733369f99dfb2a77bb688a4eed4f0fb25fd2e6437a68692057b5ccb7da82590",
+            "locator": {
+              "kind": "symbol",
+              "name": "StepsBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "before": {
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:5733369f99dfb2a77bb688a4eed4f0fb25fd2e6437a68692057b5ccb7da82590",
+            "locator": {
+              "kind": "symbol",
+              "name": "StepsBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "id": "RLZ-53QNQ9"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:9e342015d2f8d06d7f6426f4956cd77817cbe2aced86f806ffda1186d66ee1c7",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 409
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-CSAQ91"
+        },
+        {
+          "after": {
+            "blob": "c4032f6b05c16ae96a5dffe53412bfe1b2738069",
+            "content": "sha256:f2db132f3d3b491488bb5d5f42e9cc1bb8b8447667188492b6d7d63f0a664c70",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/progress.py"
+          },
+          "before": {
+            "blob": "c4032f6b05c16ae96a5dffe53412bfe1b2738069",
+            "content": "sha256:f2db132f3d3b491488bb5d5f42e9cc1bb8b8447667188492b6d7d63f0a664c70",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/progress.py"
+          },
+          "id": "RLZ-DS3HET"
+        },
+        {
+          "after": {
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 452
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "before": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "id": "RLZ-F7T6YN"
+        },
+        {
+          "after": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:6a7dc5a62252810328f533481c447488de83f12910607cc8b31d0978ef8f4f99",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 322
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:6a7dc5a62252810328f533481c447488de83f12910607cc8b31d0978ef8f4f99",
+            "locator": {
+              "end": 326,
+              "kind": "line_range",
+              "start": 322
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "id": "RLZ-KT4Z9R"
+        },
+        {
+          "after": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:d040fcb9ca18ef81dc73abeeb0af8d97c2ef5b0fef5ccd8bc87f302dc5bb47d3",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:d040fcb9ca18ef81dc73abeeb0af8d97c2ef5b0fef5ccd8bc87f302dc5bb47d3",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 306
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "id": "RLZ-MAT6CH"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": {
+            "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+            "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "id": "RLZ-Q4GTQ8"
+        },
+        {
+          "after": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:5b6c60e522cfe63faea8e6a4689dceb96e0eb7a44199ba51285bc3c7b736c665",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:5b6c60e522cfe63faea8e6a4689dceb96e0eb7a44199ba51285bc3c7b736c665",
+            "locator": {
+              "end": 332,
+              "kind": "line_range",
+              "start": 329
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "id": "RLZ-QTMXBW"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 86
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": {
+            "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+            "content": "sha256:99ef2c76fc9f209c548d24c81938d4649e17824ec801c1f39e02d7bce5a6ed64",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "id": "RLZ-XRDYTZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-08FBXA",
+      "items": [
+        "sha256:3d82af439607074314547440336e5cf9abb0f2a22ae7dac21224e6e809d17900"
+      ],
+      "reason": "RowFigure now suppresses unavailable host works/paused figures. It still passes the same cached major-step states and steps to StepMarks, and the separate complete StepsBlock/model/progress owners are unchanged. The child-activity display addition changes no major-only count, done precedence or canonical task-step state.",
+      "revision": 2,
+      "subject": "INV-DMAS27"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0H2G67",
+      "items": [
+        "sha256:c1f586c44ff2f7eb090528ac8ba3b527b917971b0a92d706fb342425854b75e5"
+      ],
+      "reason": "The observer route account now distinguishes the one producer membership join, record-master precedence, genuine absent-master fallback and content-deduplicated master-owned disagreements from native stage/activity and independent operational facts. The underlying task truth/host ownership remains explicit; these added membership facts are not mislabelled preservation of the old reciprocal-only rule. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "sources": [
+        {
+          "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+          "path": "mcp/src/agents_remember/observer/projection.py"
+        },
+        {
+          "blob": "d37db285155926a5393191721b105ab17f124661",
+          "path": "mcp/src/agents_remember/observer/task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0KZSNK",
+      "items": [
+        "sha256:ad9aa35277217be7d3494405636e3472cf722b752c705cfb80edd7d5ca09cbaa"
+      ],
+      "reason": "The actual Order drawing now selects its work accent from the resolved entry started stage and ready/waits from dependency facts, while its status word still reads the canonical entry. The body/evidence distinguish this added accent from native activity, Now membership, counts and start permission. This source update does not silently approve the pending C4 scope replacement in existing records.",
+      "sources": [
+        {
+          "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+          "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/orderGraph.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1E68QB",
+      "items": [
+        "sha256:1212fb8d0083169d17ac2a724521011cb4d454d1622e1e4ff2f22bf75dbec396"
+      ],
+      "reason": "This is an added TreeView data member and its comment: the released-key set is passed to the already recorded treeItems/terminalFold algorithms. It adds a carrier, not an independent guard, selection identity or persistent preference promise. INV-ME6CA1 already records and realizes the actual per-episode override semantics.",
+      "subject": "hunk:sha256:1212fb8d0083169d17ac2a724521011cb4d454d1622e1e4ff2f22bf75dbec396"
+    },
+    {
+      "because": [
+        "DEC-7C4MJW"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+            "content": "sha256:054b6c12e0675a1ed31fc8320c8320605ab76746a6ac4978c1e87293fa12e9a9",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "before": {
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:f3f819a3c4294b159775caa8d1019db8d199e0d9fddab47cd8df1d251dfda6ba",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "id": "RLZ-015DRS"
+        },
+        {
+          "after": {
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+            "content": "sha256:e62d99c56d259261f024f1c8a512fd52370be12d7b458d411086613ec6c61942",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "before": {
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:e62d99c56d259261f024f1c8a512fd52370be12d7b458d411086613ec6c61942",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 114
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "id": "RLZ-8PXSCT"
+        },
+        {
+          "after": {
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:49d13250bb60e724187db4e34281606e3e65f5d4df83920d7935261734721436",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "before": {
+            "blob": "66607c8748bbb4f94154ffd1893a44a92f9486e8",
+            "content": "sha256:49d13250bb60e724187db4e34281606e3e65f5d4df83920d7935261734721436",
+            "locator": {
+              "end": 152,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+          },
+          "id": "RLZ-BM077Q"
+        },
+        {
+          "after": {
+            "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+            "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "before": {
+            "blob": "93ffe77d936316b626b29345160cb4f334d0451b",
+            "content": "sha256:14c288bf49275ee4d0dbd7de0c50a6659fb7648032621e9f0eb7a93fbc628750",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 256
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "id": "RLZ-VSG7ME"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-1NNJ1P",
+      "items": [
+        "sha256:cfdd1428fc6fc5efd13d85878d3b8260c5952e01dce9ea6284fa06630b9ff96a"
+      ],
+      "reason": "The actual BASE revision 2 described shared task-state presentation without the restored Order started-accent exception. The D305 successor ruling deliberately adds that finite exception independently of host activity, while words/marks, Now placement, waves, counts/progress, dependency directions and readiness/start boundaries remain. This corrects the provisional wave-1 no-impact judgment after the full BASE comparison; it is a meaning replacement, not preservation, and does not broaden the exception to the complete SprintGraphView palette. No code change or round follows.",
+      "revision": 3,
+      "subject": "INV-5PPM67"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-24W3PC",
+      "items": [
+        "sha256:37d3fee74362e2cd330c83db505c3c2b581fd9cf7411f4a5bc8a0857af8148d6"
+      ],
+      "reason": "The governing panel body now explains selection-episode hold release, parent-only arrows and completed-fold click behavior, shared state words with one host notice, and once-on-master served disagreements. It replaces conflicting unconditional hold prose and preserves canonical entry, body and operational-authority boundaries. This is route content reconciliation, not a new implementation grade.",
+      "sources": [
+        {
+          "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+          "path": "dashboard/src/panels/TaskGroupDisclosure.tsx"
+        },
+        {
+          "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+          "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+        },
+        {
+          "blob": "f4c12bf1fee634e968a3ce2497d34389b5aeca1a",
+          "path": "dashboard/src/panels/detail-panel/masterSeries.test.tsx"
+        },
+        {
+          "blob": "62889f481e3d1aaec57c6c2d8dab97ac76ef4066",
+          "path": "dashboard/src/panels/detail-panel/order-block.test.tsx"
+        },
+        {
+          "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+          "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+        },
+        {
+          "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+          "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+        },
+        {
+          "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+          "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+        },
+        {
+          "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+          "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+        },
+        {
+          "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+          "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+        },
+        {
+          "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+          "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+        },
+        {
+          "blob": "267764a20f0a8b77f0aca50760ae7db675d63c7a",
+          "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx"
+        },
+        {
+          "blob": "784161d6d6f458d16ee11d0e84c087129edc3732",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts"
+        },
+        {
+          "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+        },
+        {
+          "blob": "e9a764615275cf934b43c9b1a0a07a0675e00d4c",
+          "path": "dashboard/src/panels/useCollapsedTaskGroups.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2EGWMF",
+      "items": [
+        "sha256:5a0a01d875bd0391856d93193837da066a44112c6a86f4c18a2091ba86ab6734",
+        "sha256:c61d68cd43bbe15ee22d5dfbb052d76440677e5c5bdc2295f267d0e55e2e6f59"
+      ],
+      "reason": "The BASE sample had no disagreement payload. Current manual data adds names-another-master, listed-twice and unresolvable-master examples, including recordMaster/parent/masterLiteral fields. The card identifies the actual three shapes and preserves the manual-sample versus generated-schema distinction; it does not pretend the sample covers every enum member or real coordination data.",
+      "sources": [
+        {
+          "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
+          "path": "dashboard/src/fixtures/snapshot.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/fixtures/snapshot.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2HG8M6",
+      "items": [
+        "sha256:20c0b097a83bbec2f1045f22c20361987307796e6488bb30ef173831d74f7d1b",
+        "sha256:6c3c918c838a968b129b0825a28a37b60f2acff0974efae57d207e28165dfdfe",
+        "sha256:9160cd48ee09685836fe89034242e5fd90f220cddd44760f5ae0ec8bbacbcee6",
+        "sha256:a99764f830c494096480bc519b548a021bc1a63bc0c66db32a78b00b01a0c17f",
+        "sha256:ac5f3c344f102ed3963d74de081bcb4445f51b6e1e66dff28e544bdc8d3aff98",
+        "sha256:e4e282d3fa94bb0a76ad07df07d4b726979e28fd20f844c75a267bf14e911f3c"
+      ],
+      "reason": "The old operative claim that work/waits variants were removed is replaced: Order node/ID/meta recipes and legend now have the actual work, ready and waits variants. Reference 3 is renewed against both current style extents and common status presentation, preserving relation-mark evidence. Declared CSS is not measured contrast/geometry or a new stage authority; C4 remains a separate record-scope question.",
+      "sources": [
+        {
+          "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+          "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/pageStyles.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2VPXEX",
+      "items": [
+        "sha256:0e851975784acba945540fdd6c9faabf1bfde9570819b0bc80d9407b9c3f138b"
+      ],
+      "reason": "The current test account names code-only fallback for genuinely absent masters, retention/refusal of contrary or unresolved input, deterministic single-parent reach and complete-content report distinctions. It preserves native task-state/host tests and distinguishes parameterized functions from named JavaScript cases. Migration custody stays producer evidence; no migration or test execution is replayed. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "sources": [
+        {
+          "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+          "path": "mcp/tests/test_task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_task_entries.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3GT3PV",
+      "items": [
+        "sha256:f352f4e83e92780b8c6c3759a91fdb0ef552c2fef5f0f9e715089a650ef0c709"
+      ],
+      "reason": "No route impact: only the sibling test expectation changes to the common started word for unknown activity. GraphBox still obtains the qualified master word/tone through the shared status presentation, and layout, segment grouping, dependency badges, pin/rest and queue ownership are unchanged. The route account promises no literal per-task unknown sentence and does not own the Order-preview golden accent.",
+      "sources": [
+        {
+          "blob": "ed4f82791ccd36f16f121bcbede0a5301c4fda2f",
+          "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/sprint-graph/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:f17ab219c7c66267e38cbd9bff0e40e24e05cc9f5f9028425beac826250206e9",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "before": {
+            "blob": "cfa90f06e4586e011e00707422154dfc77cce5a0",
+            "content": "sha256:f17ab219c7c66267e38cbd9bff0e40e24e05cc9f5f9028425beac826250206e9",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "dashboard/src/panels/detail-panel/taskBlocks.tsx"
+          },
+          "id": "RLZ-5JFBQB"
+        },
+        {
+          "after": {
+            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+            "content": "sha256:1734f75d8454a146ab72ec506fbf6ee42846d546f9551c36811962547685df43",
+            "locator": {
+              "end": 523,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "before": {
+            "blob": "8774e82c7f7a93dda014fdb8b987e2391fd21fd1",
+            "content": "sha256:51d0432de61b27fb95ce483e9491b0e76d8c8b399982ca329a0a8591145e909e",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 506
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "id": "RLZ-8FGD85"
+        },
+        {
+          "after": {
+            "blob": "5d6b1775664c1768f5d4dec5275c1fd867c641cd",
+            "content": "sha256:2b0f5cc3d648d305b402a6f610577d15b993507d2729db1d67d95affcaebf215",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+          },
+          "before": {
+            "blob": "5d6b1775664c1768f5d4dec5275c1fd867c641cd",
+            "content": "sha256:2b0f5cc3d648d305b402a6f610577d15b993507d2729db1d67d95affcaebf215",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+          },
+          "id": "RLZ-KXCBQY"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:983658d30481cce4cb5994b573218070fca4fa0f1da1165b9da082abbc504407",
+            "locator": {
+              "end": 488,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:9e342015d2f8d06d7f6426f4956cd77817cbe2aced86f806ffda1186d66ee1c7",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 409
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-RKKZ22"
+        },
+        {
+          "after": {
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
+            "locator": {
+              "end": 471,
+              "kind": "line_range",
+              "start": 452
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "before": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:6275e656f0c00da3209adea8a68ba93d83917caa67e459418e7a268757c9798d",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 450
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "id": "RLZ-SB78XK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-4A0DDB",
+      "items": [
+        "sha256:feb29c0030403b1b48cb8746fce9dde4fa7015b0c27c1631e8860fd8a5ac7f7e"
+      ],
+      "reason": "The touched TaskEntry type adds optional disagreements while retaining its optional cached TaskSummary; RowFigure adds host-availability suppression only around the child-activity figure. Existing major/child steps still reach the same StepMarks/StepDot path without a new hover request or focus stop. The separate full Steps table remains the non-pointer reading owner.",
+      "revision": 1,
+      "subject": "INV-SQ7NQA"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4DVCN4",
+      "items": [
+        "sha256:10080c5760b2eb11485e0e18e3677c03084616d7b2cae42ef071212a5b7ad3b5",
+        "sha256:3b04f0dbf770b390a2ad503ac89753b3bd589f738e6def56273c49b9fc84cc9d",
+        "sha256:61978e79ca1391cedf3ba46896104afd3bcbdc2b5983de05e4e1779437a4c3fb",
+        "sha256:89e55140682af716b1733f5f853e7cd68795152b032ac5f21dafd6d8418dd661",
+        "sha256:b50658187c10948ea605e08631513fc177d30e009d19c5cd0457307ad082bb81",
+        "sha256:e7f30b079c354fe489ea4504ec988185f50aa7126702a2c8d6cccff6b3b0b25a"
+      ],
+      "reason": "The current hook delegates transient chosen-document hold policy to its caller and updates durable collapsed/open preferences when the caller invokes the action, rather than refusing held toggles. The card distinguishes remembered preferences from per-selection-episode release state and does not broaden the keyboard path to fold rows.",
+      "sources": [
+        {
+          "blob": "e9a764615275cf934b43c9b1a0a07a0675e00d4c",
+          "path": "dashboard/src/panels/useCollapsedTaskGroups.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/useCollapsedTaskGroups.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5QTCGZ",
+      "items": [
+        "sha256:12225ed1eef6a384ee2c0589607eec12837921e4296b1341d6dda39c3d9fc772"
+      ],
+      "reason": "This import adds the existing served-disagreement renderer to its master-page consumer. The positive INV-WQ8YGE carriers bind the renderer, content predicate and TaskChildrenBlock; the import declaration supplies no independent hierarchy or repair rule.",
+      "subject": "hunk:sha256:12225ed1eef6a384ee2c0589607eec12837921e4296b1341d6dda39c3d9fc772"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6523BE",
+      "items": [
+        "sha256:ead8897a1c44a4f6b1e926390f59b0a41e33cdd0f86b55df04a537ba7851d4ac"
+      ],
+      "reason": "Updated status commentary to the started word for unknown host activity without changing its served key; added source evidence. The display clock still formats event age and never decides task stage or activity.",
+      "sources": [
+        {
+          "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+          "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/pageParts.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-73AEYM",
+      "items": [
+        "sha256:6f97b96e619088c24c39f6d923e3b52bae93480c9c295e4fe3671dcf8e2deab6"
+      ],
+      "reason": "The governing dashboard route account now connects the served task forest, single shell host-unavailability presentation, shared status word, explicit disclosure hold release and master-owned disagreement display. These are current consumer changes rather than a second canonical browser task authority. The evidence names the changed owners; it is not whole-dashboard execution acceptance. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "sources": [
+        {
+          "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+          "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+        },
+        {
+          "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+          "path": "dashboard/src/cockpit/Cockpit.tsx"
+        },
+        {
+          "blob": "509354addd9e2aeeda8761fe71e212ceff11c4f2",
+          "path": "dashboard/src/fixtures/snapshot.json"
+        },
+        {
+          "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+          "path": "dashboard/src/test/contract.test.ts"
+        },
+        {
+          "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
+          "path": "dashboard/src/types/projection.schema.json"
+        },
+        {
+          "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+          "path": "dashboard/src/types/projection.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-78NB7A",
+      "items": [
+        "sha256:2359aa97adf7b9485c8569ba639b19923ae8265d8b0c1b48cd6d944710915906",
+        "sha256:2f4fdaf506d4006830c35fe27b03fe358c4fab13b4724df61aa808361a82b19b",
+        "sha256:3c76235874f791073778d3c2d9d8bc699fb383ce1187ec7142b11b97715529b5"
+      ],
+      "reason": "The pure test adds released fold/parent keys and requires them to close over the chosen child. The card qualifies the earlier unconditional selected-reach wording and explicitly distinguishes supplied release inputs from the React hook selection-episode lifetime. Long-history and authored-order assertions are retained, not rerun here.",
+      "sources": [
+        {
+          "blob": "784161d6d6f458d16ee11d0e84c087129edc3732",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/treeRows.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:e8446165df3ff8fd7a9ad9ad1d07047bb19b80c4e552c6583aa805d3c675ac54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_declared_child_without_a_document_gets_one_entry_and_the_same_counts"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c9767f086b6253fa708e633f8b4b920027b6fef7",
+            "content": "sha256:e8446165df3ff8fd7a9ad9ad1d07047bb19b80c4e552c6583aa805d3c675ac54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_declared_child_without_a_document_gets_one_entry_and_the_same_counts"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-Z0Z6XJ"
+        },
+        {
+          "after": {
+            "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+            "content": "sha256:9c52f7c7461f38e6409969a4eef3a7d4cc6bea55f09de41c3eb6e11c989db41f",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "before": {
+            "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+            "content": "sha256:9c52f7c7461f38e6409969a4eef3a7d4cc6bea55f09de41c3eb6e11c989db41f",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "id": "RLZ-3CEKPH"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:d35205fe9e6cf8658a264e2bf4ccb94f2f8f6820bdb9676b67f7467f34020d8f",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 456
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": {
+            "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+            "content": "sha256:d35205fe9e6cf8658a264e2bf4ccb94f2f8f6820bdb9676b67f7467f34020d8f",
+            "locator": {
+              "end": 460,
+              "kind": "line_range",
+              "start": 440
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "id": "RLZ-48F336"
+        },
+        {
+          "after": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:f649a1a5e5f91224b368fe8584c9bce97933e5ffe20e249313226b31b1d6038a",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:f649a1a5e5f91224b368fe8584c9bce97933e5ffe20e249313226b31b1d6038a",
+            "locator": {
+              "end": 199,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-645WGZ"
+        },
+        {
+          "after": {
+            "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+            "content": "sha256:c79774887a356bc99797adba5bf7b35aba4b4520204f4e55594ff13d3c106dac",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "before": {
+            "blob": "cb7649c76f226f56141cd36720b382cea60352c7",
+            "content": "sha256:41031c00797f98df98a1fff26b2e1012b1b57ec230be5686b88ede32065280fc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "id": "RLZ-6RPNQ9"
+        },
+        {
+          "after": {
+            "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+            "content": "sha256:c3fd8a7c8d84e764e3cfa4bd5bec4492ed7110680cbb54bf0bbf9246ecfd9ee2",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "before": {
+            "blob": "6e8be56cd905b97635845cad055ebd18423e0214",
+            "content": "sha256:c3fd8a7c8d84e764e3cfa4bd5bec4492ed7110680cbb54bf0bbf9246ecfd9ee2",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "id": "RLZ-86SP7E"
+        },
+        {
+          "after": {
+            "blob": "6a773125cc623e2db3077af920369e0578744743",
+            "content": "sha256:a14aceed65b94153c20574fa615b25fa330f8c70322668da0c850b2c9528c21d",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "before": {
+            "blob": "6a773125cc623e2db3077af920369e0578744743",
+            "content": "sha256:a14aceed65b94153c20574fa615b25fa330f8c70322668da0c850b2c9528c21d",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "id": "RLZ-C5YJ9B"
+        },
+        {
+          "after": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:6d6248a533778c85bd2accbc6c603fdf6cb8ad5d93e633cf81f3123e008f8c24",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "id": "RLZ-CE32HP"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:dbe49d5a69cfb1581e9b50572a15ef3854e761048028856d12e1ef937c86cfdc",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 50
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": {
+            "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+            "content": "sha256:dbe49d5a69cfb1581e9b50572a15ef3854e761048028856d12e1ef937c86cfdc",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "id": "RLZ-DN3M1F"
+        },
+        {
+          "after": {
+            "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+            "content": "sha256:a3cbd097a3b3b01ac5e44dbb111b7f02613565ac84ccca32c31acc1ff80bca24",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "before": {
+            "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+            "content": "sha256:a3cbd097a3b3b01ac5e44dbb111b7f02613565ac84ccca32c31acc1ff80bca24",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 102
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "id": "RLZ-FND35A"
+        },
+        {
+          "after": {
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 404
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:ffaaad5daaeed93b8e273cc7db34c010926e5c65a1c4c6b0f7363ce1299f2f50",
+            "locator": {
+              "end": 408,
+              "kind": "line_range",
+              "start": 404
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-FZBMHD"
+        },
+        {
+          "after": {
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "content": "sha256:8159a9f1af02644e3f7b7d0d71e053f914a2d8f225331e632e26ef0ce230396c",
+            "locator": {
+              "end": 942,
+              "kind": "line_range",
+              "start": 928
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:16e5970a46910dd1344abb6a52268d0748cff9a6915059c338585f7dd70e77e3",
+            "locator": {
+              "end": 940,
+              "kind": "line_range",
+              "start": 928
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-GKR34V"
+        },
+        {
+          "after": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:869704b8d4d60d7c91edde3997921556a5a4aa49dbb0092981e5823ad4f31904",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "before": {
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "content": "sha256:fcc0b0267c77599d98fbf89d383b7bbfdc967551852d9f03af4284f7511f4490",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "id": "RLZ-HNN2VC"
+        },
+        {
+          "after": {
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "content": "sha256:18bee63a4c544130e5096fcc1f7d244bd4569845af15167d9de30ca66b86f205",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "before": {
+            "blob": "68121e9668db87a9d23260c691ac8c1ba4513e6d",
+            "content": "sha256:18bee63a4c544130e5096fcc1f7d244bd4569845af15167d9de30ca66b86f205",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/store.ts"
+          },
+          "id": "RLZ-RG81PB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-7GM44B",
+      "items": [
+        "sha256:e1ef4280a394e0455f481625ef2a7359866d2bed19a6cd1a64282cf6c864f819"
+      ],
+      "reason": "TaskEntry adds optional disagreements and the server producer adds deterministic list/record reconciliation, including raw master-literal preservation. Both are part of the existing single native task surface. No second lifecycle/series/document task collection is introduced; independent operational surfaces remain distinct. The new field and reconciliation are additions, not byte preservation.",
+      "revision": 1,
+      "subject": "INV-MGGEBY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-7PQ9NB",
+      "items": [
+        "sha256:662584bc41d38a42127cbd79d8eb656fec365d915c8c996746d6693315927b48",
+        "sha256:b4896a920b3d944aaec7c66fc685019c5fb6f179230a23472875964c8feb9a58",
+        "sha256:e494e45d03533b416adde8ee46a60446a2e7e65dd89a346e20ddfd06dde4eacb"
+      ],
+      "reason": "The generated schema adds optional TaskEntry disagreement transport and the four-kind TaskListDisagreement definition with required record identity and optional discrepancy fields. The card explains the actual generated shape and Python regeneration owner, not a second membership validator, native reconciliation grade or permission to hand-edit generated code.",
+      "sources": [
+        {
+          "blob": "966f1ee1ccf363d924b3ca1244903a625fd79afb",
+          "path": "dashboard/src/types/projection.schema.json"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/types/projection.schema.json"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-92QZYD",
+      "items": [
+        "sha256:069798bdce9a66b2be41bd739403b61456b3a51fa7e36f09d55950f3963da78a",
+        "sha256:1d24f5a7685ec436314431cff791e3ecee600c227d729776fe0adabd3855aca8",
+        "sha256:2ed59273b665d3df5448fc46f6588dbb8972f67fe8cfe10155fe64aa2e28b27a",
+        "sha256:426eab8f8dae94238320d69ffbe39a19e50bd3de1e4aef33e4b5ffd058a35753",
+        "sha256:4cb82d48115825c58b71d7c13e90c6d3fa4ffda31d9f59049033dc7f9cf72a4e",
+        "sha256:538ed014e851b31e0dfd4231ffd5ff9c6495186df9b67b4b0d5e1b92aec6469a",
+        "sha256:60d6bb423b63ec12bdcaf83a5869755c6f81bd5db88ad4bb0b55618181249363",
+        "sha256:66e77b08174d726fcbd1f858269dcdb9e64ebf34778a00021350002939459044",
+        "sha256:868fc99836fb421357e56aad534f3123aa97e9a958b074aab26fedb24e857865",
+        "sha256:8c42783b98b1c91161db3fd98746ec9c0273c63efa0885f69f066551da141c63",
+        "sha256:ad148177d0f2ccf989eb1edb1ed9aff852cc31b9ee9232402306c9646c86eaa5",
+        "sha256:b7fc27913db9c030d15322ad7ab7816091f156ee3bf975173f949c886bf7fe75",
+        "sha256:bd574a817ae0fd413cd039a523edece536088548b4d26c212942cff038e07f81",
+        "sha256:c3af78806c577d75a7d8d070716aa83cabb807f58de0c3f3d3c31d9b5ad40220",
+        "sha256:fbeddcdef6fc2ad5c224c890510266962e002ff192ea1af20dc4f35733b74837",
+        "sha256:fbff45019f73eaf5ef7700eb61b0983ddfa22fe2313684a949278ebc2e030316"
+      ],
+      "reason": "The mounted tree cases now exercise collapse over a chosen child, parent-arrow override, ordinary selection changes, A-to-B-to-A and A-to-none-to-A release expiry, and hidden-list transitions. The card distinguishes those assertions from pure tree construction and browser execution, retaining source-bound failure/after custody in the producer reports rather than claiming a fresh Curator run.",
+      "sources": [
+        {
+          "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+          "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-B2AX12",
+      "items": [
+        "sha256:8894034f009b2a3eec55599ee6a3455828d2c6499d6797b8ae6d32fad136edb3"
+      ],
+      "reason": "The BASE control ignored its held-state click; current source delegates the actual collapsed state and caller-owned click action through one disclosure button, with wider pointer ownership and unchanged glyph geometry. The card replaces unconditional held behavior and distinguishes the button from list-owned selection-episode state. Pointer isolation remains a concrete event boundary, not a new task selection.",
+      "sources": [
+        {
+          "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+          "path": "dashboard/src/panels/TaskGroupDisclosure.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/TaskGroupDisclosure.tsx"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-MGGEBY",
+          "revision": 1
+        },
+        {
+          "id": "INV-VDWN33",
+          "revision": 1
+        },
+        {
+          "id": "INV-WQ8YGE",
+          "revision": 2
+        },
+        {
+          "id": "INV-X0KED3",
+          "revision": 1
+        },
+        {
+          "id": "INV-XZYGEB",
+          "revision": 2
+        },
+        {
+          "id": "INV-YK0D2W",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z0BXKJ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CH84FG",
+      "items": [
+        "sha256:6a99f4027cf09d5ea0226836dd01956c638844032a1a42c1a5a12124deb609e1",
+        "sha256:a7321f90be5c2b934c20ab6b8f011efcb11836ed347b70d6d3956b0ed31e5be1"
+      ],
+      "reason": "Replace the BASE joint reciprocal-only membership premise with D305 record-master precedence and genuinely absent-master fallback, plus master-owned disagreement evidence. A separate browser membership repair/collection remains excluded. All six member identities and existing routes remain; document stage, bound-host activity/event time, startup reconciliation, display age and native transaction boundaries are not changed by this membership repair. The explicit C4 successor ruling keeps task words/marks shared while qualifying the Order started accent, without another native stage/activity owner. This joint replacement covers both finite D305 changes. The continuing once-only host presentation is now a separately admitted invariant from the unchanged Worker host-activity-once entry, and the joint guarantee adds that member. The generated structured-disagreement carrier adds only the actual dashboard/src/types directory to this family’s routes; prior roster/routes and all covers remain. The family row records the full BASE-to-current replacement, not merely the last carrier repair. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "revision": 2,
+      "subject": "FAM-14NZRC"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D93CHK",
+      "items": [
+        "sha256:a7243efaa3d0b91f9141bd724fcc818b2df3521e5d8c757917bd397927f1e507",
+        "sha256:c988d121f373ae03f301a7a6489543ce6f5987e531f59782e4c059ef61338d6e"
+      ],
+      "reason": "Created the ordinary mirrored card and four native references for served disagreement rendering, complete row identity, present-record navigation and actual TaskChildrenBlock composition. Explicitly distinguishes React keys from producer deduplication and display from membership authority.",
+      "sources": [
+        {
+          "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+          "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/listDisagreements.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:3734d8dc3f42621be9065d01258e25ae30a5a46cb60e88570d1e4e9a87bb86a1",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 279
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": {
+            "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+            "content": "sha256:3734d8dc3f42621be9065d01258e25ae30a5a46cb60e88570d1e4e9a87bb86a1",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "id": "RLZ-G8WYZY"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
+            "locator": {
+              "end": 353,
+              "kind": "line_range",
+              "start": 318
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": {
+            "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+            "content": "sha256:822479f7734fae906c6a81e61122d46a3938e42cdb2d66a1cd49ee81dd57e7ca",
+            "locator": {
+              "end": 337,
+              "kind": "line_range",
+              "start": 303
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "id": "RLZ-WKA99C"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-DJ7KHH",
+      "items": [
+        "sha256:cbf0dd2b0fab8787800a8caa2c9a327f326ddedce76404e2b85f179bc20894d9"
+      ],
+      "reason": "TaskChildrenBlock adds served list disagreements and a has-content predicate. Its existing sub-task/group rows still draw no direct-execution control or mark; the added disagreement navigation is not a grant control. MasterNowBlock remains byte-identical apart from shifted location. This preserves the stated no-direct-execution obligation, not an assertion of unchanged block contents.",
+      "revision": 1,
+      "subject": "INV-07RDCZ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E0MXAM",
+      "items": [
+        "sha256:bd5dc275f2bd390dbe65d014d5cfae139ec58b3e7c63e442c51a2636c771ed86"
+      ],
+      "reason": "The serving-projection route now connects the common full/directed task-source builder to original master-literal retention, one task-entry membership producer and the master-page disagreement surface. It preserves JSON-primary named-body/schema/read-tolerance boundaries rather than attributing the new literal to the unrelated observer helper. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "sources": [
+        {
+          "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+          "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "replace",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 3
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 3
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 3
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-E756FR",
+      "items": [
+        "sha256:31bfa0b363a74fd67949f6d92dd65faca64b92c24e6eaa6d4684d1f90ae4c526"
+      ],
+      "reason": "Replace the BASE joint unconditional selected-ancestor hold with the explicitly ruled per-selection-episode release and parent-only arrow path. Attention overlay, entry-owned state/hover, own-band order, typeahead, cycle/seen reach and all eight member identities remain; the three retired lifecycle/inbox members remain historical, not live guarantees. Routes and membership are unchanged. This is a finite D309/C2 meaning replacement, not a preserved guarantee.",
+      "revision": 4,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F0408Z",
+      "items": [
+        "sha256:1a82a8f3662da5c2b37e6433908f13e5cfa6967289b365ad2c88e1c440ccf3e1",
+        "sha256:4db84a509820e68fc7553ba4d9bc913d6b71e6395c402d3f222d596723142121"
+      ],
+      "reason": "The file account now describes direct canonical-entry selection, served root/child traversal with cycle/seen protection and existing stable order, plus the figure inputs used for once-only host unavailability. Added warning transport never authorizes a browser membership repair or duplicate entry. This is a concrete source-account update, not a stage-derivation or readiness change.",
+      "sources": [
+        {
+          "blob": "be6915e0b22a01804bf3b8c5138d58b08839d3a3",
+          "path": "dashboard/src/data/selectors.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/selectors.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-G1SA9Y",
+      "items": [
+        "sha256:aec08c98aeb2229a9cca65692f013928e563b4ca8c475896232230521468f3c6",
+        "sha256:f567c958366de739c0c4958226ccff7a16eca9b72bffcd79e3a669d1dccccf2c"
+      ],
+      "reason": "The closed-vocabulary registry adds projection.tasks[].disagreements[].kind with the four actual producer values. The card now names that addition, preserving nonvacuous sampled-path and legal-value checks versus exhaustive schema-generator parity. It is not a current execution, corpus diagnosis or proof that the three sample rows exhaust the four kinds.",
+      "sources": [
+        {
+          "blob": "e04bc90c0459913ff00bb72c86e355b1b0d28a8e",
+          "path": "dashboard/src/test/contract.test.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/test/contract.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GRYSS5",
+      "items": [
+        "sha256:d934c0454b7d7ce134a793ce73ebd5b7b4f1a933f4b4d869af34df7e9b9ceff9"
+      ],
+      "reason": "This adds the TaskListDisagreement DTO import. The concrete membership/reporting implementation and literal-preserving input are separately bound to INV-WQ8YGE; the import itself neither decides membership nor establishes another contract.",
+      "subject": "hunk:sha256:d934c0454b7d7ce134a793ce73ebd5b7b4f1a933f4b4d869af34df7e9b9ceff9"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-GW3QXZ",
+      "items": [
+        "sha256:254a8eaebca4227b16a24b30fd66fcaaf4bbc9d322cb409b4c9da1a5b4620b08"
+      ],
+      "reason": "The tests route account adds the actual task-entry absence, unresolved-literal, conflicting-list, once-only reporting and reachable-root assertions as source-scoped regressions. It retains native host/task authority and strict fixture/execution limits; reading the cases is not a fresh test run or whole-L88 acceptance. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "sources": [
+        {
+          "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+          "path": "mcp/tests/test_task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "because": [
+        "DEC-ZVT2KF"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:9f77aaed92cee2256fa2177958c1a138558b8b0a13b14c2b33ccab9a976c9233",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conflicting_membership_is_deterministic_reciprocal_and_reachable"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c9767f086b6253fa708e633f8b4b920027b6fef7",
+            "content": "sha256:970e1324e077cbceb43735b63ae77aa231bbbee71b4db97bff952c5bad8870e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_conflicting_membership_is_deterministic_reciprocal_and_reachable"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-5VYQ3G"
+        },
+        {
+          "after": {
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:7790eb1bf3d61bb572693f096ca46d0a2f8e4bd39fc7f12fa200be0ea0c3294c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": {
+            "blob": "c9767f086b6253fa708e633f8b4b920027b6fef7",
+            "content": "sha256:7790eb1bf3d61bb572693f096ca46d0a2f8e4bd39fc7f12fa200be0ea0c3294c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_only_declared_reciprocal_membership_sets_parent_and_all_tasks_are_reachable"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "id": "PRF-98REG9"
+        },
+        {
+          "after": {
+            "blob": "45ef0d9edb04c93587a47a16df7ad2b57e692a78",
+            "content": "sha256:33a79e3a123d8bedddd5e4c5c1eb95028ff21b12dcd4a4dff8e6d4fcbb8b0189",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_record_naming_no_master_belongs_to_the_listing_master_and_disagreements_are_served"
+            },
+            "path": "mcp/tests/test_task_entries.py"
+          },
+          "before": "absent",
+          "id": "PRF-PVMS5F"
+        },
+        {
+          "after": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:4d73bc201adcf3e1d83326ef3945271c823b12c2bea11d49fcf2b755a14eac26",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentSource"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": "absent",
+          "id": "RLZ-0CF3DA"
+        },
+        {
+          "after": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:a38fc109b713a348f9e3d3efd6074cbe05615e596ad2f9eeee92fb8f221d11d1",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:a38fc109b713a348f9e3d3efd6074cbe05615e596ad2f9eeee92fb8f221d11d1",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-17TQDT"
+        },
+        {
+          "after": {
+            "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+            "content": "sha256:f0ed83a15510d20fcbd23e95c91789481ae0e65bfa7dfb299076cf4b963acced",
+            "locator": {
+              "kind": "symbol",
+              "name": "ListDisagreements"
+            },
+            "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-1X4EEC"
+        },
+        {
+          "after": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
+            "locator": {
+              "end": 1093,
+              "kind": "line_range",
+              "start": 1079
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "7fd286e8f506c4eda1b00757ae2dcc75194bab80",
+            "content": "sha256:b86f86bed78f99f0d2aea43d8777da52b524be369474c1858449c6e583be1c7f",
+            "locator": {
+              "end": 1093,
+              "kind": "line_range",
+              "start": 1079
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "id": "RLZ-9FTBAR"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:93982e481ea7f5da2f115db98bb0637f2fa238b62042f3a2cdc853aad15e6dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskChildrenBlock"
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-9N472M"
+        },
+        {
+          "after": {
+            "blob": "85572eb5c023ddcb57cfaa6eed4873d5ceb88d09",
+            "content": "sha256:c92247940d190f4547da9376c8a59c91d620b760e07c8c467dcf46da2efef914",
+            "locator": {
+              "kind": "symbol",
+              "name": "disputeKey"
+            },
+            "path": "dashboard/src/panels/detail-panel/listDisagreements.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-9TCZ12"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:06c747829dc40ba797bde883f77a2122e94bfb2ced2107347366cb118f03227b",
+            "locator": {
+              "kind": "symbol",
+              "name": "hasTaskContent"
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-AGQEGH"
+        },
+        {
+          "after": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_listed_child"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": "absent",
+          "id": "RLZ-CKRQ0F"
+        },
+        {
+          "after": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:0eb38b6e2fc63076263a6b8e0b7d2fc798a9d7220c2a0fbf0d8729eaaf73e2e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_report_unlisted_records"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": "absent",
+          "id": "RLZ-E00P61"
+        },
+        {
+          "after": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:12141bcb294203846818af3cdbfb562b8e983736b8b9ea90b87f531865ca92ea",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "before": {
+            "blob": "82940e3ebb28c7077e598da5addafff90ec6ef78",
+            "content": "sha256:8dc8f6dd48fc4c5a0d9fa23d2633be4108f7f4a1a864726bd1bac1973a13106c",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "id": "RLZ-EMRFV4"
+        },
+        {
+          "after": {
+            "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+            "content": "sha256:d469a250e50db9dae88629cb398d3e3448e6e0d71d0579ee6160f152abc88507",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "before": {
+            "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+            "content": "sha256:d469a250e50db9dae88629cb398d3e3448e6e0d71d0579ee6160f152abc88507",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "id": "RLZ-FVENTP"
+        },
+        {
+          "after": {
+            "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+            "content": "sha256:ecb9c4678b31232029af67f5cedfd91ad0051f90444c7841dcad5fb365b570f7",
+            "locator": {
+              "end": 276,
+              "kind": "line_range",
+              "start": 248
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "before": {
+            "blob": "fd8a63153d92e122e337addca365b8a2260cbcf5",
+            "content": "sha256:ecb9c4678b31232029af67f5cedfd91ad0051f90444c7841dcad5fb365b570f7",
+            "locator": {
+              "end": 271,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+          },
+          "id": "RLZ-H3H1XK"
+        },
+        {
+          "after": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:31f778f0f5a88a1e7b0bdd8ba417cd6318ca9fa59c747038b52659593aa55fb3",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "before": {
+            "blob": "3aa75e7e06e051f836a57a221e7f05a63b7b4a59",
+            "content": "sha256:31f778f0f5a88a1e7b0bdd8ba417cd6318ca9fa59c747038b52659593aa55fb3",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+          },
+          "id": "RLZ-QQW438"
+        },
+        {
+          "after": {
+            "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+            "content": "sha256:2a7401aeee9f844eda1d3f5894a7bbbcb6703c46f1cf1ab35521906e6aeaa9af",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskListDisagreement"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-T0VC3P"
+        },
+        {
+          "after": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:5b7c2d53eeecbe87a72783e9595e23aaed908b96d578e253327a1d34d215199c",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "before": {
+            "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+            "content": "sha256:5b7c2d53eeecbe87a72783e9595e23aaed908b96d578e253327a1d34d215199c",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "dashboard/src/panels/detail-panel/model.ts"
+          },
+          "id": "RLZ-VA5H6T"
+        },
+        {
+          "after": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:6d6248a533778c85bd2accbc6c603fdf6cb8ad5d93e633cf81f3123e008f8c24",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": {
+            "blob": "9e4b2543510affa9e5cc0d4f7e4ee8b261894051",
+            "content": "sha256:b925dcd46887d9d1f145bcfbf499a5ead0e8ae231c2927f6bb436051d0c3534b",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "id": "RLZ-VHJM2M"
+        },
+        {
+          "after": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:a0f34fb6fbfa3fb538e89a3cf4571cacb8d2ef693fb87b11e08b9c5ddd1bb905",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+            "content": "sha256:a0f34fb6fbfa3fb538e89a3cf4571cacb8d2ef693fb87b11e08b9c5ddd1bb905",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-Y2SRXJ"
+        },
+        {
+          "after": {
+            "blob": "d37db285155926a5393191721b105ab17f124661",
+            "content": "sha256:d1fdd46de7e3835f6ab74f75cdd7e66c814beb79b729db03939b5fd86b3711eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Membership"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ZGTYYQ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-H2F41J",
+      "items": [
+        "sha256:3df7a6f075adecf5a55d88f95be6502d596b52a5a83a9c1aeee4c3b36055cf54"
+      ],
+      "reason": "At memory BASE revision 1, every documented subTask required reciprocal declared parent input. D305 deliberately adds fallback only for genuinely absent master input, keeps contrary/present-unresolvable input out, and adds served master-owned disagreements with whole-content deduplication. These are additions and a changed admission rule, not preservation. Authored order, commanded relations, one reachable acyclic placement and worktree independence remain; the source-adapter rationale is corrected to its actual normalized-plus-literal contribution. Additional current carriers bind the literal-preserving input, disagreement-only visibility/generated transport, or the button CSS support without changing the current record meaning. Every prior cover is retained. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "revision": 2,
+      "subject": "INV-WQ8YGE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K75HXY",
+      "items": [
+        "sha256:1ccaf3b7ab45a2b2f10ed6e97617caf68ab7f05e7f177518ca723025d71509a9",
+        "sha256:845371c2d23ea28956da2a4e6f4a35566dcb820bc0e7bfda467bfa64578b5683"
+      ],
+      "reason": "No content impact: the only owned test delta changes the unknown-activity expected word to started in the existing reactive-entry case. The current card already describes table-derived task words/tones for all native cases and separate ready/waiting/cycle facts, without promising the removed literal caption. Layout, accessible-name, entry-store update and seeded-proof limits remain accurate; this is not the Order-preview accent change.",
+      "sources": [
+        {
+          "blob": "ed4f82791ccd36f16f121bcbede0a5301c4fda2f",
+          "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KBQ2WQ",
+      "items": [
+        "sha256:b8c771778de4bc07d9e6589203a8fb530040f2dfa21f5c7f1d144fb7f436e933"
+      ],
+      "reason": "This replaces a false old held-immunity comment with the D309 caller-owned action account. The operative renderer and changed INV-ME6CA1/INV-PH90HV already carry that meaning; comment text alone creates no additional invariant, arrow path or execution proof.",
+      "subject": "hunk:sha256:b8c771778de4bc07d9e6589203a8fb530040f2dfa21f5c7f1d144fb7f436e933"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KF41XM",
+      "items": [
+        "sha256:6b1425064239466d3f6f61ee2e4543a5a41938e0de54a33fe68de4b842143cfe"
+      ],
+      "reason": "This is a new explanatory comment, not an executable guard or an independent pixel-width promise. The actual CSS pointer-region addition and live disclosure renderer are separately bound to INV-ME6CA1. The historical approximately-7px cause belongs to producer measurement; no fresh browser measurement is inferred here.",
+      "subject": "hunk:sha256:6b1425064239466d3f6f61ee2e4543a5a41938e0de54a33fe68de4b842143cfe"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-KM1TSK",
+      "items": [
+        "sha256:624cc8a1661c44de34c2ba3aa0f66af5ae0e06ae569b775f3c13799815e3126e"
+      ],
+      "reason": "BASE displayed works/paused and the old per-bucket unknown caption. Current initial-nonzero case asserts stage words, one unavailable notice and no activity wording. The separate 0→1→0 case asserts initial figures/no notice, notice and no works at one, then notice removal only at zero; restored figures after return are not asserted. The ordinary card and same-number reference now keep these phases separate. Native proof facets are corrected under their existing IDs; no new test execution or native-host availability converse is claimed.",
+      "sources": [
+        {
+          "blob": "179bdf56092d03a6ed7c1f6b76a0c3f0df227faf",
+          "path": "dashboard/src/cockpit/Cockpit.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NZ57G9",
+      "items": [
+        "sha256:6406bd9c35d7bccf45299e5e09bd214a276914f944c89ef190ae0fc8abb597b7"
+      ],
+      "reason": "The tree projection now accepts explicit release keys, so automatic selected-ancestor/fold opening yields to a released control while entry-own bands, supplied order and cycle/seen uniqueness remain. The card states the new exception and keeps completed folds distinct from selection and flat grouping. No parent is invented from worktree or browser chronology.",
+      "sources": [
+        {
+          "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+          "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/treeRows.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PJD210",
+      "items": [
+        "sha256:700f57c930ecae368bb45639dc35847fc4075677aac06a193f940f3be37414c6"
+      ],
+      "reason": "The projection account adds the structured four-kind disagreement DTO and optional TaskEntry carrier, with qualified record/other-master identities and original malformed literal. These fields expose producer evidence without altering task stage, activity, graph readiness or authoring permissions; source declarations alone are not a runtime whole-input validation claim.",
+      "sources": [
+        {
+          "blob": "359083eb794b3a5462b9e53d4dde2b27ec8ec7a9",
+          "path": "mcp/src/agents_remember/observer/projection.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/projection.py"
+    },
+    {
+      "because": [
+        "DEC-MGZMT5"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "784161d6d6f458d16ee11d0e84c087129edc3732",
+            "content": "sha256:7433eebaedcc85bfd1bfa4ca3e2abe229496b1e66300a2052a84776a6b882cac",
+            "locator": {
+              "kind": "symbol",
+              "name": "keeps a completed master folded despite an active child, then opens down to a selected child"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-51SNZZ"
+        },
+        {
+          "after": {
+            "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+            "content": "sha256:b08f6639cb3e9589967c2f34fc31481c442513b471a034bf69362e2f22b3e2c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "uses served hierarchy and remembers closed parents; a chosen descendant holds its ancestors open until a click"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-QQ6JRK"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:174c1ef05448d6ea07371b6c64acd9b92827c1110af971743ad21a86605352c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleList"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-34GJ8Q"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:4f503828228e8b5155e4d089003b6d36e0e6e982f2af514c693cfbbc22cdf784",
+            "locator": {
+              "kind": "symbol",
+              "name": "useTreeToggles"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-5EN7GW"
+        },
+        {
+          "after": {
+            "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+            "content": "sha256:5a6ec3438064bec875e9a600bcb46f43cceb5d316091c0564647ae8c43609f56",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeItems"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "before": {
+            "blob": "9b2154a3b6fe3dfc85fc7a8b780f7138f8ba4d90",
+            "content": "sha256:bafb429745f1cf766aab86f9896ac0d8a88c903f5ab22aae8e9ab1f09aecf583",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "id": "RLZ-79CD08"
+        },
+        {
+          "after": {
+            "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+            "content": "sha256:43f4e1e74e8457cedb2c5c7e204a683af61c920c59ea31a57b435fa708176db3",
+            "locator": {
+              "kind": "symbol",
+              "name": "disclosure"
+            },
+            "path": "dashboard/src/panels/TaskGroupDisclosure.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-AZVP92"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:90435f3587820390a9d4221c9b44fafba62e33db6c65e15b240904acd990a498",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReleasedHolds"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-KNDKRP"
+        },
+        {
+          "after": {
+            "blob": "90c9a05c19c4e703bef2f88c75b0d4b0c4303dcc",
+            "content": "sha256:70a094545102e07970acf088c6a8fb59a26f41e65317fd92c80b787c49b808eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminalFold"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "before": {
+            "blob": "9b2154a3b6fe3dfc85fc7a8b780f7138f8ba4d90",
+            "content": "sha256:8ac5439b404debbba38e45263ca47a6e4b0395b9e63cd3dcd55d3eb0ac47c0eb",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "id": "RLZ-X1KK3E"
+        },
+        {
+          "after": {
+            "blob": "8dbda171e779d2a6b6f014aad28c5be7fe7d554c",
+            "content": "sha256:6373db1c5b6720fed6fb52d8191711bd5dad50e6eebeedf538d81708e6fd15d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskGroupDisclosure"
+            },
+            "path": "dashboard/src/panels/TaskGroupDisclosure.tsx"
+          },
+          "before": {
+            "blob": "e18c409e57f75c10be2ba7a41c80499f47fda0fd",
+            "content": "sha256:78245f9de446df6d57e42080f9773859a21066cbac2a976e6cfd7ff27bbe6470",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskGroupDisclosure"
+            },
+            "path": "dashboard/src/panels/TaskGroupDisclosure.tsx"
+          },
+          "id": "RLZ-XKHWVG"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:f0b97f15953fec0a0dc80045526ba2f4ab2afd1efc0dfb96bbb4b6320d41c7a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "FoldRow"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-ZTEXJ0"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-PT5ND6",
+      "items": [
+        "sha256:de4773c4f91acfb7b753b1d2e2aa94c787af6f2c1a74dbf82cd0e810f045bf20"
+      ],
+      "reason": "At BASE revision 2, held selected ancestors could not close. D309/C2 deliberately lets explicit parent/fold clicks and existing state-changing plain parent arrows override the hold without changing the selected document, with release expiring on each observed selection episode, including hidden transitions. It does not give arrows to completed folds. Stable entry-own ordering, supplied ties, terminal folds and cycle/seen uniqueness remain. Old disclosure/tree rationales are replaced, not left as active contradictions. Additional current carriers bind the literal-preserving input, disagreement-only visibility/generated transport, or the button CSS support without changing the current record meaning. Every prior cover is retained. Evidence (L168-C-A016-extra-carriers-INV-ME6CA1): Exact BASE/current hunks: L168-A016-last-15-hunk-witnesses.json; typed record/primary renderer already written in meaning-wave4b.",
+      "revision": 3,
+      "subject": "INV-ME6CA1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q7Y9N2",
+      "items": [
+        "sha256:caf2300f8a8bea6f715122a8167a9deced94ac2bd7cf7ba3c05b5a4f658ab78e"
+      ],
+      "reason": "The content predicate and TaskChildrenBlock now keep a master with only served disagreement evidence visible and render that evidence independently of ordinary child rows. The current card states the actual empty/body decision and one native entry lookup, with no browser reparenting or extra task collection.",
+      "sources": [
+        {
+          "blob": "1554453f4bf62ac7a5c7a56e91240e1015a0ef44",
+          "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/task-groups.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QAXTZ8",
+      "items": [
+        "sha256:266fce74cfbc944828759323d83c0c99c5e3f2c3a6aea2fd408492f64901d932",
+        "sha256:5bfe9a48dd33963e406082c16faee745c520fe995d7ceebfd6d2fa960535d098",
+        "sha256:6aaf54cbfed3c1af0af378c0a6028750ceffdd6a2064edadb5d082a45f118bb0",
+        "sha256:dbe80bd404817c914a392a56a81967379e22a181f398063638b8592412e50afa"
+      ],
+      "reason": "Current assertions add the golden work accent for each started activity, restore the in-work legend and keep nonstarted ready/waits accents distinct; unknown activity now uses the started word. The card explicitly adds these changes beside the preserved placement, dependency and progress assertions. Any broader stored tone-guarantee interpretation is separately pending C4, not discharged by this onboarding trace.",
+      "sources": [
+        {
+          "blob": "62889f481e3d1aaec57c6c2d8dab97ac76ef4066",
+          "path": "dashboard/src/panels/detail-panel/order-block.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/order-block.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QQ5JHV",
+      "items": [
+        "sha256:bd758e25a35ec2fb1157e65be0e2ca01f5894d22838a7312078e474edd2d32c6"
+      ],
+      "reason": "The file body now names project_task_sources passing doc.master as master_literal beside normalized declared_parent. This is an added source distinction, not mere forwarding preservation: downstream admission must distinguish genuinely absent master from a present unresolvable value. The shared full/directed builder remains the source owner; it performs no record repair. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "sources": [
+        {
+          "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+          "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RR7D5T",
+      "items": [
+        "sha256:c485d62a1b729f2ecb53c395a630d42edb5f90cf2ecf6f60bcb7361ab25afc34"
+      ],
+      "reason": "The current card replaces held-open immunity with explicit parent/fold-click release and plain-parent-arrow release only when that arrow changes state; fold lines gain no arrow handler and modified chords remain browser-owned. It records per-selection-episode reset, including hidden transitions, and the actual nonzero unknown-count figure suppression without asserting its converse. This implements the finite D309/C2 account, not a code verdict.",
+      "sources": [
+        {
+          "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+          "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-3TFHGH",
+          "revision": 1
+        },
+        {
+          "id": "INV-5PPM67",
+          "revision": 3
+        },
+        {
+          "id": "INV-8W6XYQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-DQ11Q9",
+          "revision": 2
+        },
+        {
+          "id": "INV-G5APSX",
+          "revision": 2
+        },
+        {
+          "id": "INV-R7YJ4E",
+          "revision": 1
+        },
+        {
+          "id": "INV-WHBGH5",
+          "revision": 2
+        },
+        {
+          "id": "INV-XKS34Z",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-RSYNX2",
+      "items": [
+        "sha256:359996269efe15344d84c5adf48d9811acf1e705facc2d449fed4a1e0f15a2a4"
+      ],
+      "reason": "All eight current member records were read against BASE and the frozen source. INV-5PPM67 now explicitly records the D305 Order accent, but this family guarantees entry-owned words/tones/filtering and separate graph readiness, not a requirement that every graph accent come from the common activity table. Started-stage accent still comes from the qualified entry; only works enters Now and other unfinished units remain once in waves. The other member meanings and unchanged native prerequisite authoring, derived topology, cycles, gone references, file-less dependency and no-Order guards remain their existing owners; there is no start gate. Therefore the joint guarantee, routes and roster do not change. This is not whole-L88 recertification or fresh test execution.",
+      "revision": 2,
+      "subject": "FAM-8P577R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S02FHK",
+      "items": [
+        "sha256:717f04f33f5787cbb683770969c0df7c3a5ebc4b1ef73783420b2f95e6aa53dd"
+      ],
+      "reason": "This added selector import wires the existing shell to the one served-count predicate. The native positive host entry covers TopBar and the predicate itself; this import declaration adds no distinct invariant or second activity owner.",
+      "subject": "hunk:sha256:717f04f33f5787cbb683770969c0df7c3a5ebc4b1ef73783420b2f95e6aa53dd"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-S4255N",
+      "items": [
+        "sha256:b2fad891b0ea14053c028988a830931272130dd28a2905f6170d0bffa7703d0a"
+      ],
+      "reason": "Replaced the obsolete unknown-count bucket account with the actual one global host-unavailability notice and suppressed works/paused words. Renewed reference 94 against actual header and shared labels; retained unrelated shell/takeover contracts.",
+      "sources": [
+        {
+          "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+          "path": "dashboard/src/cockpit/Cockpit.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SNDGAN",
+      "items": [
+        "sha256:d414a7ef79d8c37728b43f17afe20ebb3a461ba6e1b364920bb16da550248bf2"
+      ],
+      "reason": "No route impact: selectors remain consumers of the one served task map/forest; the current route account already excludes browser hierarchy reconstruction and names selectors as the retained derivation owner. The added selection/figure inputs change the bounded file account, not this route purpose, authority, children or transport ownership. Existing review/grant/cache boundaries are not recertified as new behavior.",
+      "sources": [
+        {
+          "blob": "be6915e0b22a01804bf3b8c5138d58b08839d3a3",
+          "path": "dashboard/src/data/selectors.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-V4Y12W",
+      "items": [
+        "sha256:1fa88620d49a28efd5de4f9a3b304caf2a7f71c2a56a1a210e540a8d981fc25e",
+        "sha256:3a70f225bdd0a47c1adb33e516e5d13c70e836fef4994e9a23efe833d7aa9374",
+        "sha256:9213736c8dff3c45350da3ec08751a54d27e477fb6cb22660e11082bb9e63ffa"
+      ],
+      "reason": "The parameterized row/page assertion for started/unknown changes from repeated host-state wording to started, while attention severity remains a different surface. The file account adds this exact expected-word change and preserves the existing fake-time ownership/cleanup limits; the global notice is not claimed to mount in this test.",
+      "sources": [
+        {
+          "blob": "267764a20f0a8b77f0aca50760ae7db675d63c7a",
+          "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/lifecycle-list/signals.test.tsx"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-W6B8MJ",
+      "items": [
+        "sha256:63a4bd82f52ba21861757389562bb02ef587f75e2a89d351ff6889b4851285e9"
+      ],
+      "reason": "The TypeScript mirror now carries TaskListDisagreement and its optional entry field beside existing TaskEntry/TaskSummary contracts. The body/evidence name the exact fields and generated Python provenance; the DTO carries served evidence and does not grant client reparenting or native stage authority.",
+      "sources": [
+        {
+          "blob": "27ab725f01e310493256da673c0f870a77b85bbf",
+          "path": "dashboard/src/types/projection.ts"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/types/projection.ts"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-XCDAH2",
+      "items": [
+        "sha256:a756abad50eb6fc081ec8fe9d1c5970f2a9a94419d985a27dce1976641a7a1f5"
+      ],
+      "reason": "The body now records the actual changed admission: absent master may bind to the listing master, a contrary or unresolvable present master is not silently adopted, and each acyclic child is admitted once in authored order. It names whole-content deduplication by declaring-master key plus model_dump_json, conditional reporting for records no list holds, and served diagnostics without repair. Stage/host and worktree authority are kept separate. MEMORY1 F01 correction under the exact Architect 04:06 ruling: the non-subTask rejection clause was an unsupported Curator addition, absent from both BASE and A016. Own-master validation/refusal is explicitly scoped to documented subTasks; other listed kinds retain identity/cycle-guarded list placement without own-master validation. Contrary/unresolvable subTask refusals remain required. The record, related joint guarantee/continuing choice, ordinary carriers and four realization rationales are corrected consistently; no code change or new CODE grade.",
+      "sources": [
+        {
+          "blob": "d37db285155926a5393191721b105ab17f124661",
+          "path": "mcp/src/agents_remember/observer/task_entries.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/observer/task_entries.py"
+    },
+    {
+      "because": [
+        "DEC-MGZMT5"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "ba9872fae85cfd8b36d51d97bfdcc9a35155da34",
+            "content": "sha256:8676356b172ff4839c83ffa4054bad01da4aa3c4a73fc0f4be280ef7e5bcb950",
+            "locator": {
+              "kind": "symbol",
+              "name": "opens and closes the focused parent with plain arrows and leaves modified arrows alone"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "before": "absent",
+          "id": "PRF-GV7YMY"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:c85bd6adc77b39f4b53985c22dbfb6eaede11a71e9bb7c4aed978bab142251d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "plainArrow"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:c85bd6adc77b39f4b53985c22dbfb6eaede11a71e9bb7c4aed978bab142251d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "plainArrow"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-QCVCHH"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:9351ab82f065bd3a86a80c178163cca857f254a9ff5d751a6707f3e0e380d506",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeKey"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:4f32f731679e5888b59d7ae7b694a7d7518f22427b0a0c60f4b67552b57352a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeKey"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-R8BMK6"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-Y06H4V",
+      "items": [
+        "sha256:9678dbdce67cc1b520ca336e17b328677504938772bfb064c34b2c7357d0dd7c"
+      ],
+      "reason": "At BASE revision 2, a held selected ancestor resisted left-arrow collapse. The explicit Architect C2 ruling deliberately replaces that immunity with the existing plain-parent-arrow override when state changes. Only the parent path changes: completed folds get no arrow handler, modified chords stay browser-owned and other list keys retain their path. The old treeKey rationale is replaced. This is a meaning replacement under D309, not a clarification or code-preservation claim. Evidence (L168-C-A016-source-account-INV-PH90HV): Current canonical ruling, original Worker 9-entry list plus overlay 1, independent Reviewer five-entry list, A016 bindings and R16 verdict; L168-A016-before-after-meaning-witnesses.json preserves actual BASE/current source and records. Source assertions are read, not rerun.",
+      "revision": 3,
+      "subject": "INV-PH90HV"
+    },
+    {
+      "because": [
+        "DEC-7C4MJW"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "267764a20f0a8b77f0aca50760ae7db675d63c7a",
+            "content": "sha256:001662af8ba2ab194f29e5419cfd56735a4f10bdc8a863e88ae0804dd5c6da76",
+            "locator": {
+              "kind": "symbol",
+              "name": "row and page share host-time age through deltas and a later page mount"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx"
+          },
+          "before": {
+            "blob": "094aefce5c2e973a5258549950ab20787044fda4",
+            "content": "sha256:001662af8ba2ab194f29e5419cfd56735a4f10bdc8a863e88ae0804dd5c6da76",
+            "locator": {
+              "kind": "symbol",
+              "name": "row and page share host-time age through deltas and a later page mount"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx"
+          },
+          "id": "PRF-1A20PB"
+        },
+        {
+          "after": {
+            "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+            "content": "sha256:084521da53daa61c98bb15a13feb17b75e373e8a5dfdd5355ea58a509bb7fba5",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "before": {
+            "blob": "e5630104c8f10440412034a54590fcafa4c71772",
+            "content": "sha256:084521da53daa61c98bb15a13feb17b75e373e8a5dfdd5355ea58a509bb7fba5",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+          },
+          "id": "RLZ-1TB49P"
+        },
+        {
+          "after": {
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:122fe1c6ccc9c13929d0c2bbad24b068d96281d16a1c843001d08e3578342a15",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "before": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:1f72a31368a7ab1bade3e051bc155321716406653daf2bdf755259f60d7c37d9",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "id": "RLZ-3BN5C1"
+        },
+        {
+          "after": {
+            "blob": "901cf61d779e58bf30849e0eea78a9123b9792fd",
+            "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskStatusWord"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "before": {
+            "blob": "17da14e723222a8d50b4ed6f0595390ab1fe1f6a",
+            "content": "sha256:bec535690b5faf1601fe89c5a7f5d82293bac62ca9b92f69bc74eb4b140f1f54",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskStatusWord"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "id": "RLZ-918MDG"
+        },
+        {
+          "after": {
+            "blob": "6e5e8b5903fcf5108cc0ec06035fdc04c06c8256",
+            "content": "sha256:4da2f3673c7cb49f91e03e8cc7d1fb5e2feaf8d368c897d9712c8fa6c6b375f9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": {
+            "blob": "a1da64452b66ed600866ad56b37418f973ed3e37",
+            "content": "sha256:7c34b7f9e0a2c1a1cd3327c87946b9b48a8bf05cf594b6c384141eb20b689763",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "id": "RLZ-HFGBT2"
+        },
+        {
+          "after": {
+            "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+            "content": "sha256:45463f023756e33d7c6ffa549aa93bb8b7eccd5e13d27b721c1417a9271aa0d8",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "before": {
+            "blob": "e3c34e678d99cdf3d9ef8384089af04567c1df26",
+            "content": "sha256:45463f023756e33d7c6ffa549aa93bb8b7eccd5e13d27b721c1417a9271aa0d8",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 51
+            },
+            "path": "dashboard/src/panels/detail-panel/taskDocPanels.tsx"
+          },
+          "id": "RLZ-MM7PFZ"
+        },
+        {
+          "after": {
+            "blob": "7c23fc026184269dcb443c859e6aed12dcc0b0ac",
+            "content": "sha256:64cc963d7185772de2377f6df8b25f628adb638073399e4636cafdaf23f475c9",
+            "locator": {
+              "end": 956,
+              "kind": "line_range",
+              "start": 951
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "b4f749cf2dfc7341eb4fd7dfe8071e85037056de",
+            "content": "sha256:f908f2d4746d085cee8998340d7c99e4dd8acf6483330fe4a70914a05638bc63",
+            "locator": {
+              "end": 949,
+              "kind": "line_range",
+              "start": 946
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-XT3RN1"
+        },
+        {
+          "after": {
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:eb4288f2212f563aae934cb98a343593e1aa1141708a4d2479f89780a57579ee",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "before": {
+            "blob": "10fa9b314498732151de2f419d952921a92ebe84",
+            "content": "sha256:eb4288f2212f563aae934cb98a343593e1aa1141708a4d2479f89780a57579ee",
+            "locator": {
+              "end": 201,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx"
+          },
+          "id": "RLZ-Z1ZEK4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-Y08S01",
+      "items": [
+        "sha256:671127abc197ba34447d19823b071d27ebd1297974cb0c4478ee34a82af6c797"
+      ],
+      "reason": "The actual BASE revision 1 promised all task tones from one shared table. The D305 successor ruling deliberately narrows it only for the Order drawing’s started border/ID/meta accent; words and marks everywhere remain common, and readiness remains neither stage nor permission. This corrects the provisional wave-1 no-impact judgment after the full BASE comparison; it is a meaning replacement, not preservation, and does not broaden the exception to the complete SprintGraphView palette. No code change or round follows.",
+      "revision": 2,
+      "subject": "INV-XZYGEB"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z26RVX",
+      "items": [
+        "sha256:109d0af1b1e9df31adafa15760817e5eb0b038192708f97cb7018647fad5e348",
+        "sha256:1d4d68e0871ef15fb2c3d73d865dfbfe0c83f31bd1e82582acfb8db6cf16add5",
+        "sha256:d1a886414c066dd5c204fd7c6ca7b5d9c0af2140ec31620d6a49a132930065e1"
+      ],
+      "reason": "The ordinary-master component source adds served disagreement rows, distinct-content identity and the warning-only parent whose body is otherwise empty. The updated card names those exact source assertions and preserves existing graph/reader boundaries. It does not promote a seeded UI case into membership-producer or migration execution proof.",
+      "sources": [
+        {
+          "blob": "f4c12bf1fee634e968a3ce2497d34389b5aeca1a",
+          "path": "dashboard/src/panels/detail-panel/masterSeries.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/masterSeries.test.tsx"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

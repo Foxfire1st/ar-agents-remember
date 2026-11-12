@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/certification/repository_profiles/canonical.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/certification/repository_profiles/canonical.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Certification overview](../overview.md)
@@ -33,6 +23,8 @@ discovery, and no fallback path: it is pure canonicalization.
 
 ## Code Commentary
 
+`project_generated_skills(profile, declaration)` first validates the input profile’s existing digest, parses the supplied copy declaration and refuses a declaration with no skill targets. It replaces only the generated-skills input’s sorted target scopes and declaration-inclusive source scopes, then derives the projected profile digest. Unrelated profile authority remains literal. This explicit pure projection is not repair of a mismatched input digest, file publication, executor admission or certification execution.
+
 `canonicalize_repository_profile(profile)` first calls `_normalize_repository_profile(profile)`
 (from `models.py`) to produce normalized semantic bytes, then computes
 `repository_profile_digest(normalized)` over exactly those bytes. If the profile's declared
@@ -46,7 +38,7 @@ The module re-exports `repository_profile_digest` in `__all__` so programming ag
 canonical identity does not require importing the private models helpers directly.
 
 The digest is computed in `models.py` (over the normalized canonical payload, sorted JSON with
-compact separators); this module only enforces that the declared digest authorizes the bytes.
+compact separators); canonicalization enforces the declared digest, while the explicit generated-skills projection derives a new digest only after validating its input.
 
 ## Invariants And Boundaries
 
@@ -59,7 +51,12 @@ compact separators); this module only enforces that the declared digest authoriz
 - A `ValueError` here is the deliberate contract with `authority.py`, which owns converting it
   into a typed `CertificationProfileError` finding.
 
-## Docs References
+## Evidence
+
+- Generated-skills projection validates its input, replaces only the declared skill input scopes and recomputes the projected digest. [5]
+
+
+### Docs References
 
 The governing requirement is CCR-R22@v1 (Repository-Owned Certification Gate Profiles). The
 normative profile-digest/freeze contract is stated there: the framework freezes one profile
@@ -79,7 +76,7 @@ invalidate the certificate dependency closure ("## Resolution And Freeze" /
 schemas to the MCP while each repository owns one explicit versioned Gate 1-4 profile.
 
 
-## Repo-Internal References
+### Repo-Internal References
 
 `canonicalize_repository_profile` (this file) is invoked by `authority.load_repository_profile`
 after schema validation and before graph validation, so the digest check runs exactly once per
@@ -89,16 +86,8 @@ of the canonical graph (`validate_repository_profile`) lives in
 `certification/repository_profiles/validation.py`; planning consumes the canonical profile for
 plan digest compilation.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `canonicalize_repository_profile` normalizes one profile and refuses a declared digest that does not match canonical content. | `canonicalize_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/canonical.py:13-24 |
-| The digest is computed by `repository_profile_digest` over normalized content in models. | `repository_profile_digest` | mcp/src/agents_remember/certification/repository_profiles/models.py:401-403 |
-| `load_repository_profile` calls canonicalization and converts digest refusal into a typed `profile-digest-mismatch` finding. | `load_repository_profile` | mcp/src/agents_remember/certification/repository_profiles/authority.py:42-92 |
-| The canonical profile is what planning digests into immutable per-gate plans. | `compile_repository_profile_plan` | mcp/src/agents_remember/certification/repository_profiles/planning.py:71-118 |
+- `canonicalize_repository_profile` normalizes one profile and refuses a declared digest that does not match canonical content. [1]
+- The digest is computed by `repository_profile_digest` over normalized content in models. [2]
+- `load_repository_profile` calls canonicalization and converts digest refusal into a typed `profile-digest-mismatch` finding. [3]
 
-## Update History
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `repository_profile_digest` repointed to mcp/src/agents_remember/certification/repository_profiles/models.py:401-403. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): rewrote the task-artifact Docs References rows as prose.
-
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): created the sidecar for the new canonicalization/digest-entry module of the repository-owned certification profile package.
+- The canonical profile is what planning digests into immutable per-gate plans. [4]

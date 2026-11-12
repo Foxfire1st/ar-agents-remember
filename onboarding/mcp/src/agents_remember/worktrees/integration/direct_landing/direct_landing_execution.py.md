@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T01:06 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [Nearest governing overview](../overview.md)
@@ -20,9 +10,7 @@ identify or claim a future commit for these working changes.
 
 ## Purpose
 
-Executes and recovers the actual memory-content output of an accepted direct-landing generation.
-The code commit already exists; this module either commits changed memory with its attribution or
-reuses the accepted clean memory HEAD.
+Executes and recovers the memory-content output of an accepted direct-landing generation. Code already exists in verify mode, or is the one proven provisional create output; this module pairs changed memory with its attribution or reuses the accepted clean memory HEAD.
 
 ## Code Commentary
 
@@ -31,7 +19,7 @@ reuses the accepted clean memory HEAD.
 `execute_direct_landing` checks mechanical convergence, reconciles durable Git evidence, builds the
 operation-bound Git arguments, and calls `_direct_memory_commit`. After the real memory output is
 known, it refreshes the consumer cache best effort and finishes the journal with `codeCommit`,
-`memoryContentCommit`, and `ledgerCache`. `memory.memoryHead` is the actual memory-content/ref output.
+`memoryContentCommit`, and `ledgerCache`. `memory.memoryHead` is the actual memory-content/ref output. `_direct_landing_result` also carries `staleDocuments` when there are any (MIK-R124 rule 4): the count of documents this publication made stale and the read that lists them, computed through `landing_document_answer` from the operation's code commit and the landed memory commit, because this route's raw result is what its answer projects from.
 
 `_direct_memory_commit` reuses a proven or recovered commit, archives an unchanged interrupted
 attempt before retry, and validates a prepared mutation against its accepted parent/ref/tree.
@@ -65,54 +53,46 @@ message rendering.
 
 No new file-local follow-up is established by this documentation pass.
 
-## Docs References
+## Accepted-create recovery
+
+Create execution receives the accepted provisional code output and converges its memory leg under the same generation. An interrupted code/ref/memory observation must be reconciled or reported as the retained developer-decision state; retry/recover does not allocate another code commit. Existing memory proof, exact tree/ref/message validation, unchanged-head reuse and best-effort cache refresh retain their owners.
+
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository. No external domain documents
 were available through the configured registry to consult; the current claims are grounded in the
 working source and package-local evidence below. The registry is discovery input, not a citation.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation evidence. | — | — |
+No configured external domain-documentation evidence.
 
-## Repo-Internal References
+### Repo-Internal References
 
 These repository-relative targets were checked in the L9 code checkout. The cited ranges support
 the current working-candidate behavior; historical entries below retain their original scope.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Execution publishes or reuses real memory output and refreshes the cache afterward. | L42-L75; L175-L236; L316-L337 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
-| Prepared attempts preserve repository and exact pre-commit tree evidence. | L239-L255; L258-L287 | [mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py](mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py) |
-| Shared mutation intent and proof retain actual object checks. | L84-L105; L270-L301; L504-L518 | [mcp/src/agents_remember/worktrees/integration/mutation_evidence.py](mcp/src/agents_remember/worktrees/integration/mutation_evidence.py) |
-| The lifecycle recovery owner resumes the generation before execution. | L39-L70 | [mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py](mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_recovery.py) |
-| Lost-receipt recovery and clean reuse are exercised with real temporary repositories. | L274-L314; L316-L340 | [mcp/tests/test_direct_landing.py](mcp/tests/test_direct_landing.py) |
 
-## Cross-Repo References
+- Execution publishes or reuses real memory output and refreshes the cache afterward. [1]
+
+
+- Prepared attempts preserve repository and exact pre-commit tree evidence. [2]
+
+- Shared mutation intent and proof retain actual object checks. [3]
+
+- The lifecycle recovery owner resumes the generation before execution. [4]
+
+
+- Lost-receipt recovery and clean reuse are exercised with real temporary repositories. [5]
+
+
+### Cross-Repo References
 
 Configured code and memory repositories or temporary fixture repositories are described through
 the package-local implementation above. No additional external or sibling-repository evidence
 source is configured for this file's claims.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No additional configured cross-repository evidence is claimed. | — | — |
-
-## Update History
-
-- 2026-09-15T01:06 UTC — Rebound source citation ranges after final shared-helper updates and formatting; current body contracts rechecked against the working candidate. No committed-source hash or execution claim was advanced.
+No additional configured cross-repository evidence is claimed.
 
 
-- 2026-09-15T00:51 UTC — Removed all ledger execution and recovery claims; documented one attributed content commit or clean HEAD reuse, cache-excluding shared staging, best-effort cache refresh, and lifecycle-owned recovery resumption. Working candidate verified by source inspection; real last-touch commit metadata retained, with no future commit hash or certification claim.
-
-
-- 2026-09-13T21:42+02:00 — 260913-LCA-L1 (uncommitted change set on `ar/260913-lca-l1-ar`): `_direct_memory_commit` gained a required keyword-only `code_commit`, and `execute_direct_landing` passes `operation_input.codeCommit`, so this branch-addressed closeout route commits `effectiveInput.memory_content_message(code_commit)` — the closeout's own body plus exactly one `Code-Commit: <sha>` trailer naming the verified code commit, rendered from the shared `EffectiveCloseoutInput` definition instead of a route-local copy. Recorded that `_direct_ledger_commit` is deliberately unattributed (`message_for("ledger")`, no trailer). Rebound the stale ranges on this card (`_existing_direct_mapping`/`_require_head_ledger_bytes` 365-420, `snapshot_is_clean_at_head` mutation_evidence.py:42-57) and added the attribution rows. Verification metadata remains closeout-owned; no acceptance claim and no verification stamp advanced.
-
-- 2026-08-27T18:33+02:00 — Simplified the exact-current-mapping branch into named predicates and
-  centralized clean-snapshot truth in mutation evidence. Behavior and refusal vocabulary remain
-  unchanged; the former CRAP offender now has cyclomatic complexity 3.
-- 2026-08-26T14:32+02:00 — Documented memory-only direct landing: a later memory state for unchanged
-  code prepends a new current row and preserves same-code history; only exact current equality is
-  idempotent. Verification remains closeout-owned.
-- 2026-08-25T15:44+02:00 — Created during PDLS whole-system reconciliation after source and
-  requirement review. Verification remains closeout-owned.
+- Memory execution converges the same accepted create generation without a second code publication. [6]

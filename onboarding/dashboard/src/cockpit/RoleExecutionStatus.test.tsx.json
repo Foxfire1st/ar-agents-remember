@@ -1,0 +1,75 @@
+{
+  "path": "dashboard/src/cockpit/RoleExecutionStatus.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The held Result case enables fake time before mount, flushes each initial/result reply and advances the 1,500 ms reread in async `act`. It preserves the exact read count, absent report request and cleared failure/Start assertions after the reread opportunity; teardown restores real timers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
+            "content": "sha256:996a0d7890773e1a237e362604ea67f9f6b019160165150c84b521a012d36ea7",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
+            "content": "sha256:199588ce4f4242ac1612512552045db12aafe789498756616caf525564af2c52",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
+            "content": "sha256:ba536f7ac5249a9339edab2a0cdaf1ec2bd5a6e2eefdbabee22c5ef84867383d",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 49
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd3ebd051de8f414283d900dae6cad98fac7801a",
+            "content": "sha256:d2653ccb926a535b886050332985cb037b530d77b401d3eb1c90cc5f1380a1a3",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

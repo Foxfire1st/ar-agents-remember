@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Exclusive publication and loser reconciliation prevent simultaneous launch processes making duplicate agents for one selection."
+  },
+  "applicability": "Concurrent processes publishing at one task-bound launch receipt address.",
+  "conditions": [],
+  "exclusions": [
+    "Taskless new request IDs intentionally use distinct addresses."
+  ],
+  "id": "INV-HE16XQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "RepeatAndConflictTests::test_a_task_bound_receipt_is_created_exclusively; l4-review/evidence/g1-…, h3-…; l4-verify/evidence/d1-*, d2-*; l4-verify3/evidence/d1-*, d2-*"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R03@v1 §12 / G6 / A9 / A18",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A receipt is created with exclusive file creation: the complete file is linked under its name in one step that fails when the name is taken, so of two processes launching the same selection at the same moment one is refused naming the other's execution, and two processes with the same request id converge on the stored call.",
+  "status": "proposed",
+  "supersedes": []
+}

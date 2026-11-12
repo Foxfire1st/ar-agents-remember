@@ -1,0 +1,131 @@
+{
+  "path": "dashboard/src/tray/trayPreferences.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b828605037d06e1c274d411fbf1534c425bfbd63",
+        "content": "sha256:5dcb7942b1256068ed57c99705d74d9505bb74e88689cf8e781935392421f56d",
+        "locator": {
+          "kind": "symbol",
+          "name": "DEFAULT_BOUNDS"
+        }
+      },
+      "id": "RLZ-64PN75",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The default bounds as dashboard preferences: 20 picks, 5 MiB per image, 20 MiB per message.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b828605037d06e1c274d411fbf1534c425bfbd63",
+        "content": "sha256:bc5f8f767a7442d472d279c094138476265286119e53c5a7749a503c082899f3",
+        "locator": {
+          "kind": "symbol",
+          "name": "readBounds"
+        }
+      },
+      "id": "RLZ-CWSQ4F",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the stored bounds, keeping a default for an invalid value.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b828605037d06e1c274d411fbf1534c425bfbd63",
+        "content": "sha256:f43078df0862068ab787f3ba27202c7be0de78f540d49cc8f2e679c4c1079489",
+        "locator": {
+          "kind": "symbol",
+          "name": "createTrayPreferences"
+        }
+      },
+      "id": "RLZ-FDY0WT",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Owns setBound/resetBounds and the in-memory preference values when browser storage refuses.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b828605037d06e1c274d411fbf1534c425bfbd63",
+        "content": "sha256:967d01ff46fc6362e2d249fd995bd71ba78c5b3199e12ecb051a631e44aed0df",
+        "locator": {
+          "kind": "symbol",
+          "name": "readCopyOnHighlight"
+        }
+      },
+      "id": "RLZ-Q9D0R6",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Keeps the per-origin copy preference and defaults it on.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Owns browser-local copy and positive tray bounds preferences.\n\nAnchor: \"export const COPY_ON_HIGHLIGHT_KEY = 'ar.tray.copy-on-highlight.v1';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b828605037d06e1c274d411fbf1534c425bfbd63",
+            "content": "sha256:893e4b659e7f29adb6f015b543aceb9dc410f11620623e45df7c16d92718e7e5",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Owns browser-local copy and positive tray bounds preferences.\n\nAnchor: \"export const BOUNDS_KEY = 'ar.tray.bounds.v1';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b828605037d06e1c274d411fbf1534c425bfbd63",
+            "content": "sha256:ab62acf1f4f899db65649b7693fa9b22d51fe326b1d248e0c37d5146545dd9b3",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Owns browser-local copy and positive tray bounds preferences.\n\nAnchor: \"export const DEFAULT_BOUNDS: TrayBounds = { maxPicks: 20, maxImageBytes: 5 * MIB, maxMessageBytes: 20 * MIB };\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b828605037d06e1c274d411fbf1534c425bfbd63",
+            "content": "sha256:accafb9f5cf082755691180dc224ff9752445bda964371289c26bf8c549e760b",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 24
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

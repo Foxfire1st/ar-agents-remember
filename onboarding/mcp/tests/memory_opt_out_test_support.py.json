@@ -1,0 +1,97 @@
+{
+  "path": "mcp/tests/memory_opt_out_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared-once contract between the two split refusal modules",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21eabf7c98320c2b46ef5652e01c355778575028",
+            "content": "sha256:0873d4bd9a2feeee07b941687ae97944960dacd5882248c2ecece389e49eaa40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Status, repo, and removal-reason constants",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21eabf7c98320c2b46ef5652e01c355778575028",
+            "content": "sha256:0873d4bd9a2feeee07b941687ae97944960dacd5882248c2ecece389e49eaa40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Scratch coordination with the five memory shapes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21eabf7c98320c2b46ef5652e01c355778575028",
+            "content": "sha256:0873d4bd9a2feeee07b941687ae97944960dacd5882248c2ecece389e49eaa40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Common refusal assertions incl. the never-borrowed texts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21eabf7c98320c2b46ef5652e01c355778575028",
+            "content": "sha256:0873d4bd9a2feeee07b941687ae97944960dacd5882248c2ecece389e49eaa40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "On-disk legacy contract incl. unknown-cell degradation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21eabf7c98320c2b46ef5652e01c355778575028",
+            "content": "sha256:0873d4bd9a2feeee07b941687ae97944960dacd5882248c2ecece389e49eaa40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Genuine live legacy leaf with disabled leaf and series",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21eabf7c98320c2b46ef5652e01c355778575028",
+            "content": "sha256:0873d4bd9a2feeee07b941687ae97944960dacd5882248c2ecece389e49eaa40",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

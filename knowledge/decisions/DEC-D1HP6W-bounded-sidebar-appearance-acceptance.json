@@ -1,0 +1,59 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The recorded choice explicitly rejects the former alternative and binds future Operations presentation/appearance work; silently reintroducing it would reverse the developer's decision."
+  },
+  "alternatives": [
+    {
+      "option": "Name and accept small measured differences that preserve decent readable appearance and behavior",
+      "reason": "The developer said it need not be atomically perfect as long as it looks decent; missing, clipped, overlapping, unreadable or misbehaving content remains a finding.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat every measured pixel difference, including the last bell scaling difference, as a required repair",
+      "reason": "The developer explicitly bounded the architect's stricter appearance/retake rulings.",
+      "reconsider_when": "A later explicit developer-approved design or acceptance ruling requires exact matching for a specified appearance.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "This bounds the Operations look, not semantic, missing-content or behavioral obligations; measured differences must remain disclosed."
+  ],
+  "context": "The approved-sidebar comparison has small measured drawing/layout differences; the developer bounded visual acceptance rather than requiring atomic pixel perfection.",
+  "decider": "Developer — D244; canonical leaf Decision Log 2026-10-12T15:26:32+02:00",
+  "id": "DEC-D1HP6W",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+        "content": "sha256:8c2e59d2103e642eaff7520c9803a834fc23cefd64395e770e423edf541e5d70",
+        "locator": {
+          "kind": "symbol",
+          "name": "BellIcon"
+        },
+        "path": "dashboard/src/panels/AttentionQueue.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D244; canonical leaf Decision Log 2026-10-12T15:26:32+02:00",
+        "requirements/MIK-R144-v1-the-operations-sidebar-is-rebuilt-to-a-look-the-developer-approved.md",
+        "260928_maintained-invariant-knowledge/144_the-operations-sidebar-is-rebuilt-to-a-look-the-developer-approved.json"
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "bounded-sidebar-appearance-acceptance-evidence",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

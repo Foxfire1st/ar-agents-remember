@@ -1,0 +1,186 @@
+{
+  "path": "dashboard/src/panels/detail-panel/skeletons.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+        "content": "sha256:3018d9f6f11a4a58a0d1ad68bf647d4c7aaaf9380903bd72661cefede5e6be90",
+        "locator": {
+          "end": 290,
+          "kind": "line_range",
+          "start": 221
+        }
+      },
+      "id": "RLZ-96J9PM",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-NBCGCF",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "These shared decision-row, list and numbering extents keep recorded time, decision text and rationale together and assign oldest-based numbers only to authored decisions.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+        "content": "sha256:aed504fe87ed1afa17e61c509a084c17d2a879176cabe857a8874f10aa8360d0",
+        "locator": {
+          "kind": "symbol",
+          "name": "DecisionPreview"
+        }
+      },
+      "id": "RLZ-C2WSJF",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "Draws the five newest authored decisions, numbers only authored entries and labels the omitted-entry link with the authored count while preserving a records-only log target.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+        "content": "sha256:bd72c230a30dbb171c7c159f8d36587cba70d520af38c7d86673db4e858bad6b",
+        "locator": {
+          "end": 360,
+          "kind": "line_range",
+          "start": 336
+        }
+      },
+      "id": "RLZ-DTXWD7",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Uses the bounded requirement preview with a complete counted own view.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+        "content": "sha256:cf7f88d032c7eb87443e0cd439e784a056d490676d99fadc23ee93723e464a74",
+        "locator": {
+          "end": 447,
+          "kind": "line_range",
+          "start": 414
+        }
+      },
+      "id": "RLZ-JFTGK2",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Adds FixedMarkdownBlock with optional/nonempty omission, bounded preview and local all/less expansion; it gives nonGoals/acceptance fixed places without a new reader route.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+        "content": "sha256:0795c45703bdbd48bdc69b744b82f182b8f93952948f425e4043bf60689067ac",
+        "locator": {
+          "end": 631,
+          "kind": "line_range",
+          "start": 575
+        }
+      },
+      "id": "RLZ-VXHAV0",
+      "invariant": "INV-H2Y6HE",
+      "origin": {
+        "handoffEntry": "F5-V01",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the cells of the shown columns and of the opened rest through the Markdown grammar; its rows open on a click by the shared rule and stay table rows.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+        "content": "sha256:85936f75108d3c88072f7f2090da2664b559c59df4b6e128100360aa43bc2fc1",
+        "locator": {
+          "end": 157,
+          "kind": "line_range",
+          "start": 123
+        }
+      },
+      "id": "RLZ-WVCTJ6",
+      "invariant": "INV-7JFCAF",
+      "origin": {
+        "handoffEntry": "curator-bounded-summary-and-own-view",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Captures and restores the actual scroll owner for own-view navigation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Own views capture and restore the entry-time scroll owner; stable Back reads saved refs and Escape listens while an own view is open.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+            "content": "sha256:62f0118d8cf289530faf906302ae0f57f1cf8fdcb30eb00b8580e7cdf589a7c0",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 88
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The preview shows five newest authored decisions, excludes product records from counts/numbering and links to the records-retaining whole log with an authored-only label.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+            "content": "sha256:32ab283daa0ee36e5993928a28412835196db8bb609b3ecf64ef3a04254ad545",
+            "locator": {
+              "end": 325,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Short and long register previews retain a link to every original section byte.\n\nAnchor: `RegistersBlock`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+            "content": "sha256:4922fdeefae597b12f97a14dea4bd0c1cf01b9bbc83b80030110d74aaa54d319",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Complete register section prose is rendered in its own view, not reconstructed from preview rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c9059b737b5ca32dc1181b0d4f8d6180ef3e28de",
+            "content": "sha256:fe817071fb2a59bf30cf62b5ae007af3c6a14a16e2e073d0dab257ec7fbdedda",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisterViewBody"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

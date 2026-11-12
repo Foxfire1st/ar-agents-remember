@@ -1,0 +1,66 @@
+{
+  "path": "mcp/src/agents_remember/mcp/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`server_info_payload()` reports `SERVER_VERSION`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:2279b5117c8ec77d939c520d86a9db7b861b9dab74561c33a41cda7c4da8e453",
+            "locator": {
+              "kind": "symbol",
+              "name": "server_info_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+            "content": "sha256:3dac1809e31b19e52cf548b1fdddd896cc1c6351d1d6b748470cb4f51bd981ee",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Tool tests assert the public version through `server_info_payload`: the safe-config-summary case compares the served build's version to `SERVER_VERSION`.\n\nAnchor: `test_ping_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:014a31e91261ac251849113bdbf98d769ce65b64bb6d214f453ac0cb2189c083",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 52
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

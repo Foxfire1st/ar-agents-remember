@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_knowledge_index_access_time.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An access changes only usage and preserves the identity memo, witnessed by test_access_changes_only_usage_and_preserves_identity_memo",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4860e1ef195a9c618e0c9761cb179b6ce19df891",
+            "content": "sha256:c2c957c152618d56ad5446fdfa03edf9a9fcec610f80c51157491af9711452bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_access_changes_only_usage_and_preserves_identity_memo"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

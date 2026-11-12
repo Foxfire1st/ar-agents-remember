@@ -1,0 +1,112 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_comparison.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+        "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
+        "locator": {
+          "end": 113,
+          "kind": "line_range",
+          "start": 91
+        }
+      },
+      "id": "RLZ-9JM0HE",
+      "invariant": "INV-31006K",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 12",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It obtains the numbered record and lists its exact code and scoped memory tree ranges without substituting a live range.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+        "content": "sha256:2004ff3886977e74a42ca44019dd8aa47b7256e3bc806fc648423fd938eb54b1",
+        "locator": {
+          "end": 13,
+          "kind": "line_range",
+          "start": 12
+        }
+      },
+      "id": "RLZ-EJJDVZ",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N09",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The read_git alias routes the four native Git read sites through the shared exact-address/generation-qualified cached_read context; change_counters delegates identical file-count inputs. This is consumer wiring, not unconditional zero Git or a second diff parser.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+        "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "comparison_file_diff"
+        }
+      },
+      "id": "RLZ-S0QJD9",
+      "invariant": "INV-NGZMXY",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F01",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It confines the lexical Git path and applies it unchanged to recorded tree lookups.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "One diff per half supplies status and counts, renames off",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+            "content": "sha256:783ab7b384ab9f8d28393380340e929d7bf278f5c796745cd79c2abd4c23390c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_files"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The list echoes recorded code/memory trees and uses the shared native counters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+            "content": "sha256:eb6fcb63db16588e6450691417a27bc7dd6da68480e749cd2771d86f94dd9a3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_changeset"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "File diffs read immutable trees and confine memory paths",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e84fc2df7e40a6285754ff191c6d25ca8f9cf56",
+            "content": "sha256:4b21a74e7d64f63a8df861e72f951fb8f24fa338f35f2da810ae512b27ab35f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_file_diff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

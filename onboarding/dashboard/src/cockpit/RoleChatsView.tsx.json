@@ -1,0 +1,95 @@
+{
+  "path": "dashboard/src/cockpit/RoleChatsView.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
+        "content": "sha256:7575f3d6faca9e2a28f9e77b1045070315d50f0c1acc8a826c67ecb9f86c7cd8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-5Y0T30",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The shown-chat owner accepts only actual frame reports; undefined availability cannot invent a shown subject.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
+        "content": "sha256:79b9c4f7e05d7510a2bbbe85ca53a13faefb2b29437a77738ad872cca309aaa6",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleChatsView"
+        }
+      },
+      "id": "RLZ-N2GAYG",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Publishes the active unbound Chats frame’s actual shown agent and never publishes a report/bound launcher as that frame.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "RoleChatsView composes the shared launcher, optional native frame, conditional dock and report reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
+            "content": "sha256:4ce27d4ddf3fab5abfa5266d9878fede16e6515e5c1f50e5b1e601c8b24ffd5d",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 222
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The presentation hook supplies the frame target and scope through chatFrameTarget/chatFrameScope, preferring the named chat and otherwise using the current scoped execution and document selection; this request is separate from observed shown-chat identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bc6bcca5d994d77343956d9c967b3c1c06b7234",
+            "content": "sha256:3e27c41b19ceffe406e2469709be423f78731e5aa5e962ee95c24564d1cf893d",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "dashboard/src/cockpit/roleChatTarget.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The Chats pane publishes only the agent ID its active, unbound frame reports showing. Until a string report arrives, and while a report takeover or bound launcher owns the surface, it publishes no shown-chat identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d02f366f758059bd1e42d8a48f3df07e7e90d36f",
+            "content": "sha256:82b99de25fefeed78c7446ed82c86f3830a8800aacf91ad8f102da168e291f32",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 215
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

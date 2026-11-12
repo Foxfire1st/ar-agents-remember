@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [lifecycle models overview](overview.md)
@@ -54,7 +44,9 @@ cit:([`build_evidence_dependencies`, `require_evidence_dependencies`], mcp/src/a
 while treating edges to records outside the supplied set as external roots — no historical file scan
 cit:([`validate_evidence_dependency_graph`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:287-322).
 `dependency` and `canonical_sha256` are the two builder helpers every domain uses to construct edges
-cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:214-223; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:325-329).
+cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:243-252; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:354-358).
+
+`MAX_EVIDENCE_DEPENDENCIES` is derived from the coherence model's bounded judgment and assessment populations, fixed dependencies and validator edge. It covers record builders whose own models bound their payloads, without changing dependency schema, names or meaning. Coherence judgments may cite distinct evidence files; sharing evidence is valid when that file actually supports each judgment, never a workaround for an arbitrary cap. Master-scope route review has no own finite model bound and remains subject to the shared refusal, as the explicit scope ruling states.
 
 ### Conventions
 
@@ -80,51 +72,52 @@ cit:([`dependency`, `canonical_sha256`], mcp/src/agents_remember/models/lifecycl
 
 No additional file-local TODO is established by this candidate review.
 
-## Docs References
+## Evidence
+
+- Shared evidence capacity follows from the bounded coherence payload. [6]
+
+
+### Docs References
 
 No configured Domain Documentation applies; the dependency encoding is repository-owned.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The encoding has no external authority. | — | — |
+The encoding has no external authority.
 
-## Repo-Internal References
+### Repo-Internal References
 
 Every consumer record type binds its own edges through this single encoding; the mutation/cycle
 matrix in the evidence-dependency test suite fixes the contract.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. | L31-L50; L141-L211 | [mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py](mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py) |
-| The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. | L94-L131 | [mcp/src/agents_remember/models/lifecycles/curator_coherence.py](mcp/src/agents_remember/models/lifecycles/curator_coherence.py) |
-| The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. | L158-L196 | [mcp/src/agents_remember/models/lifecycles/door.py](mcp/src/agents_remember/models/lifecycles/door.py) |
-| Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. | L438-L493 | [mcp/src/agents_remember/models/lifecycles/operation.py](mcp/src/agents_remember/models/lifecycles/operation.py) |
-| Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. | L292-L347; L449-L491 | [mcp/src/agents_remember/worktrees/route_review.py](mcp/src/agents_remember/worktrees/route_review.py) |
+
+- The dependency-kind vocabulary and closeout-door policy contain no ledger-provenance input. [1]
+
+- The memory-quality attestation binds candidate-state, code/memory trees, report bytes, and validators. [2]
+- The closeout door binds code/memory candidate trees, topology, intent, and the review/memory/admission/scheduling provenance records. [3]
+- Lifecycle operations declare the admitted candidate, door, plan, and normalized operation input. [4]
+
+- Route review binds code tree, task intent, per-evidence-file SHA-256, and validator. [5]
 
 
-## Cross-Repo References
+
+### Cross-Repo References
 
 No separate cross-repository implementation claim is made.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No external implementation source applies. | N/A | N/A |
+No external implementation source applies.
 
-## Update History
+## KS-R15@v1 Assessment Policy And The Coherence Record's Own Edge
 
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Retired the ledger-provenance kind and mandatory closeout-door edge. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+Two entries changed, and neither widens the closed kind vocabulary. The kind `review-record` already
+existed here; what this leaf adds is the **permission** for the `curator-coherence/v1` policy to use
+it. That permission is what lets the coherence record declare a typed edge to each stored assessment,
+so a reader can resolve an assessment from the record without parsing a payload. The record's own edge
+to the assessment is the only direction: the assessment does not declare the record it lives in,
+because a record citing itself is the self-invalidating sequence the design exists to avoid.
 
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `_require_current_dependencies`, `build_route_review` repointed to mcp/src/agents_remember/worktrees/route_review.py:292-347, mcp/src/agents_remember/worktrees/route_review.py:449-491. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-09-04T10:05+02:00 - 260831-CCR-L12 Gate-5 memory pass for cfd09381 (CCR-R12@v4): recorded the `quality-report/v2` policy change - `admission` became an optional dependency kind so a published report binds the shared-Dagger-authority snapshot digest when present and stays valid without one.
-
-
-- 2026-09-03T17:35+02:00 - 260831-CCR-L27 Gate-5 memory pass (src-a): repaired the prose cit anchor (quoted module docstring) and separated the two-range source with a semicolon.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): created the card for the new shared typed evidence-dependency encoding introduced by the R03 leaf; no prior sidecar existed.
+The new `review-assessment/v1` policy requires exactly the inputs `KS-R15@v1` §5.1 enumerates and
+nothing else: `candidate-state` is the exact knowledge snapshot identity, `code-tree` and the optional
+`memory-tree` are the source trees, `semantic-topology` is the registered-scope manifest,
+`task-intent` is the task/requirement identity pair, `evidence-bytes` is the cited bytes, and
+`validator` is the resolver/policy version pair. `review-record` is deliberately **not** required
+there, for the direction reason above. This entry therefore adds one policy and no kind, which is the
+additive kind of change a new record type is supposed to make in this module.

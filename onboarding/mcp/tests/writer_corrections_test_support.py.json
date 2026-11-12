@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/writer_corrections_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Supplies shared writer-correction fixture ownership, native writer calls and linked-decision/requirement input constructors. Synthetic fixture identities are not live task authority. The helper does not grant real memory-write permission or silently turn the intentionally missing packet into a valid reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a3689be7ee91cdfc6e5798214c0a333ab6125f1",
+            "content": "sha256:fc7cb870cc3abd6f0edef030d35be095c61a760406b509296df9d0d602d6de5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,2580 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L172",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0HSZN5",
+      "items": [
+        "sha256:aca4e053502fbe0eefc68dd29683d95bb13989dd26584fc1fc9757616ce5eb0c"
+      ],
+      "reason": "The optional `provider` field on the turn-end agent input is what the eligibility gate reads to tell a provider the product knows from an unknown one. It carries no obligation the changed record does not state; with no value the gate holds, which is the record's own condition.",
+      "subject": "hunk:sha256:aca4e053502fbe0eefc68dd29683d95bb13989dd26584fc1fc9757616ce5eb0c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0J4RE6",
+      "items": [
+        "sha256:a0c36ac834b1723fde5f539ce6f1cd2be718aa9920a27fc8a499fd23a617a8d1"
+      ],
+      "reason": "The tracker fields `archived`, `started` and `notedMissing` hold the departed-agent window the current-Manager fallback and the once-only log read; they carry no obligation beyond the record that states both.",
+      "subject": "hunk:sha256:a0c36ac834b1723fde5f539ce6f1cd2be718aa9920a27fc8a499fd23a617a8d1"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-A6GAKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-NFV5VJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-P2WRNQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-PEVJ6G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-0QVDZS",
+      "items": [
+        "sha256:4bf3f60519ec4b42df11cbb1bfd62a62f21f1466962273468f043dff8e1e428d"
+      ],
+      "reason": "Examined the single-coordinator guarantee and every member. Its explicit clause that the plugin's turn-end metadata is a nonsemantic wake signal still holds: the line now also carries the agent's own last line and may reach the current Manager, but it remains metadata that decides no ruling, verdict or acceptance, and the coordination default did not change.",
+      "revision": 2,
+      "subject": "FAM-PNH1QS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0ZWJ6V",
+      "items": [
+        "sha256:382f3a1e46d8a0a57d84d1110c05f66fa503312013f68c20e64c35b913919d7f"
+      ],
+      "reason": "A Reviewer sentence map re-pinned to the shipped stage-end text; the guarded obligation belongs to the doctrine record.",
+      "subject": "hunk:sha256:382f3a1e46d8a0a57d84d1110c05f66fa503312013f68c20e64c35b913919d7f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-179HSA",
+      "items": [
+        "sha256:2e9e465a83b0dc64333fae9a904d2fd1fc09bddeb92b7face018d7eb9b77cb01"
+      ],
+      "reason": "The new last-text limit and the bounded historical stores are the cap and the resource bounds of the same wake line and tracker; they are conditions of the changed record, not a second obligation.",
+      "subject": "hunk:sha256:2e9e465a83b0dc64333fae9a904d2fd1fc09bddeb92b7face018d7eb9b77cb01"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1PZM4E",
+      "items": [
+        "sha256:f32d99a80fda47abb7fa9dda22a843a7070b1c2d80e513ab94fa20f88287bdd1"
+      ],
+      "reason": "The overview now says a running parent holds the line until its turn ends unless the product names its provider as steering, that the gate is re-asked before each send, that each line goes once in turn-end order, and that a refused return still gives the line; its evidence bullet qualifies the restriction to a parent already in a turn, says an admitted send always asks for a steer and that a free parent takes the line at once. The sentences they replace said running turns simply defer notification and that parent-wake sends used the host's explicit steer behaviour.",
+      "sources": [
+        {
+          "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        },
+        {
+          "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        },
+        {
+          "blob": "5ccc7bf4679fed087954ded749224fb69c462518",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-27J02Z",
+      "items": [
+        "sha256:c38fc8dc593455a2ca3c43e1f855ffbb8dfdfae0d68f7fa4ab738fadcbd3127b"
+      ],
+      "reason": "`notePermissionResolved` passing the role records on is the same send-time re-resolution reached from a permission resolution; the changed record's condition covers it.",
+      "subject": "hunk:sha256:c38fc8dc593455a2ca3c43e1f855ffbb8dfdfae0d68f7fa4ab738fadcbd3127b"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 2
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-2G0NK6",
+      "items": [
+        "sha256:a24123db7e504090b1a3f11f3b81e219b3b2a952808703cb4b4105e568795bef"
+      ],
+      "reason": "Examined the propagation guarantee and its three members: the extracted launcher, the settings reference and the generated mirrors updated by one change with mirrors derived. This leaf changed canonical skill text and re-ran the public generator over the package-data and eight harness copies; no mirror was hand-edited and no retired text returned, so the guarantee holds.",
+      "revision": 3,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2TJEM6",
+      "items": [
+        "sha256:b19b88bf6f6ab5a5372683b8a21a9beb14bf30be7f35e65e54fb701fb8b2423a"
+      ],
+      "reason": "A one-line header change naming MIK-R117 and MIK-R172 beside the rule it already described; the record carries the obligation.",
+      "subject": "hunk:sha256:b19b88bf6f6ab5a5372683b8a21a9beb14bf30be7f35e65e54fb701fb8b2423a"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2VDJ5V",
+      "items": [
+        "sha256:8d30aa82b3e03e16852b783a242d0ef86458e2dd8c9dbb224eb341f50a309631"
+      ],
+      "reason": "A section records the stage-end facet, its Reviewer and Curator equivalents and the Curator repair marker re-pinned to the shipped sending sentences.",
+      "sources": [
+        {
+          "blob": "06be148009d7ce065dbd4fc7f60b00ca64e80157",
+          "path": "mcp/tests/test_review_limit_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_review_limit_wording.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3AW4B9",
+      "items": [
+        "sha256:021bebb025f215e78722a42ca2eeafdce245f9c0c47993b684bbf12af680a850"
+      ],
+      "reason": "`noteTurnStarted` records the provider through the same helper the turn end uses, so a turn that starts after the last start event still has its provider when its line is composed. The recording itself states nothing beyond the changed record's provider condition.",
+      "subject": "hunk:sha256:021bebb025f215e78722a42ca2eeafdce245f9c0c47993b684bbf12af680a850"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3KW9ZD",
+      "items": [
+        "sha256:ec06078d4eaa83414304cb66b040fdec81613ee120c9c4672ca7db14c1e8a083"
+      ],
+      "reason": "Examined the route's area map. The changed files keep their roles and ownership: the plugin's turn-end meaning lives in the plugin route's own overview and file cards, the hand-over text in the CLI card, and the four test files in the tests route. Nothing here states a transport or turn-end rule this leaf made untrue.",
+      "sources": [
+        {
+          "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-4JERMG"
+        },
+        {
+          "after": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:ef52b8633abf33e327cc8c7d5fcd5c0e8256de40797c52340738b2714ee1a36a",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "content": "sha256:8b6920aa36e98c45ca2ff5f34c7378698411e1b7769d2d63b602d32330f49300",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 17
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-CJF248"
+        },
+        {
+          "after": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:b5dd7e76af9ae885092e013ed37f601ae0f3fb90bd166d075e39de593a088c20",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "content": "sha256:987e84087b01f41ed3c0b942ef8667bc4e3c675089a471ee387279b16c0afb73",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-E9F3YP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3TVKNV",
+      "items": [
+        "sha256:e44f6b51150c882461add53b817d853b4598788d4061d83b83de3a3fd0fb976d"
+      ],
+      "reason": "Examined the delivered-parentable-role guarantee: questions to the parent, independent work without a developer wait, pending-report recovery, own-chat only for an unreachable parent, recorded quotes. The changed sentences concern the return of a hand-over and what an unfinished agent awaits; question routing and recovery are unchanged, so the realization re-anchors and the statement stands.",
+      "revision": 2,
+      "subject": "INV-9S49CW"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-40VJ42",
+      "items": [
+        "sha256:5225ded9193983972779c4939468ca2f7e8d7ead034bd3aa9b94461e536539ca"
+      ],
+      "reason": "`noteAgentArchived` moving an owed line to its alternate is the fallback duty of the changed record; the extent adds no separate invariant.",
+      "subject": "hunk:sha256:5225ded9193983972779c4939468ca2f7e8d7ead034bd3aa9b94461e536539ca"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+            "content": "sha256:22675fad2a8ef6adef65aabf651f18e8b9e8d2da35a50605e148ab057c8b4a5a",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+            "content": "sha256:71f74224f3bd0cca5410b6a493f7ee77b7f25b5177904b3a6d53c8a98310a327",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-02MMZJ"
+        },
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-ABKXPC"
+        },
+        {
+          "after": {
+            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "content": "sha256:42a57ef95d86ec6143a7a4dda4c8dafbcb4ed38a315d3747a3cfe30edc1872f0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "272c06c18fcf71bad8e04850a1c21f8507f9bf43",
+            "content": "sha256:4289cef7a7c38fe36c9b2ea3ea4666ad6e63a2d1cabc2ffa42c0f54d6d2ea0be",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-BKYWR9"
+        },
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-D1DKW9"
+        },
+        {
+          "after": {
+            "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+            "content": "sha256:f985dcd92c6b6786747ba632199658bf0c5051f361fe9982d6e1dc9df3b989c0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
+            "content": "sha256:bb9b4c53078b18ce49707656d1cf5e68d3823bf99ca6d8a3787bf28cf00785f4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-EK6J3B"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:76cbc7846c513c07d1fb28a9bf1abda59aeff7f4356d477124b11802dbe8bf0b",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:5bc82009a4f30cd6ce12fb5eddd7f0bc741146e6f582074f6d1fbf5465bb4375",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-EQZH1P"
+        },
+        {
+          "after": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:743206fd0aa45bc40d42fdaa4c664eb1ceeee8b594a9f3bc20e95988ed500d8f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "content": "sha256:4ea1f343c440527bb8221563be13477ee1d991a5fd32a6f68d5e69ee9029b7a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-K6HJZY"
+        },
+        {
+          "after": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:c011e78b94b97cccdcf45e5fc1da33852adad5ee8b7a50f9fa6bc1d876a02383",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "content": "sha256:9443caffe60f07440799307778a8e4db7ec6f5e7bc77e7e863a352d2e51cb0c4",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 8
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-Q1RJX3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5MX661",
+      "items": [
+        "sha256:f98d5928ba7d521cb8006ee3975246fbee11a7d565ca8e3cc30b5216af447904"
+      ],
+      "reason": "Examined the propagation guarantee: canonical text reaches every shipped mirror through the public generator, retired text is not resurrected, and no first-read text uses assignment_read. This leaf re-synced the nine canonical files into the package-data and harness copies; the mirrors stay derived and the retired sentence stays retired, so the realization re-anchors and the statement stands.",
+      "revision": 1,
+      "subject": "INV-NNQR91"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7FMDAS",
+          "revision": 2
+        },
+        {
+          "id": "INV-82ZTHK",
+          "revision": 3
+        },
+        {
+          "id": "INV-8AMSGV",
+          "revision": 3
+        },
+        {
+          "id": "INV-9S49CW",
+          "revision": 2
+        },
+        {
+          "id": "INV-HGSFJ8",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-607EG2",
+      "items": [
+        "sha256:72f41bcda8c196340439e3469f8927928bbad1201454fefb346421ef7a7a816c"
+      ],
+      "reason": "Examined the chain's guarantee and every member: actual-parent-ID question routing, separate own-authority recommendations, named permission waits and quoted answers down to the asker. This leaf changes where a hand-over and an awaited thing are sent and what a wake line carries; it neither widens the parentless own-chat admission nor changes question routing, so the joint guarantee still holds.",
+      "revision": 2,
+      "subject": "FAM-7AEA19"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6FF36P",
+      "items": [
+        "sha256:6337f5917f5b9558cb24f13573ca515ade74919408f2ffbfcd8059c84c419b92"
+      ],
+      "reason": "A stage-end paragraph now states that an unfinished Curator sends what it awaits, and from whom, to its parent with `role_message`, and that faults of its own work or instrument and coherence findings are repaired rather than relabelled.",
+      "sources": [
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8DDM1B",
+      "items": [
+        "sha256:12cb3c5240266e92da1a3816f27989b48caf1178feaf143dbe4161c69242f281"
+      ],
+      "reason": "The stage-boundary sentence now sends what an unfinished Worker awaits, and from whom, to its parent with `role_message` instead of naming it in a last line.",
+      "sources": [
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+            "content": "sha256:2ed13e9eb192ba65bbb4d545dbe1279f43772e4fb4ea57c6d3b680e8fd40d29c",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "before": {
+            "blob": "272c06c18fcf71bad8e04850a1c21f8507f9bf43",
+            "content": "sha256:e58efcfaa0d132f85659d500ac8e798d12f9a66e47f3a95467d5c0e430e82de8",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 177
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "id": "RLZ-165F81"
+        },
+        {
+          "after": {
+            "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+            "content": "sha256:1bd04d2211b5c466b5ea0f5ddcf4d296835c7d59d0a851c1d31bac8d008e8364",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "before": {
+            "blob": "63a70b856ad6d75ee43c1c61d581a300035ce5a8",
+            "content": "sha256:deb3eb63aba067041c7922d01ca03a16f83c4772a224f3cef556254ded8c0d41",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "id": "RLZ-QDM8GH"
+        },
+        {
+          "after": {
+            "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+            "content": "sha256:2a988c4a8bcb6558f609f41cb4c72d6a5b6d9c42fa7e5468cc66c4e48bd24606",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "9c3645680ef1a2c5c09b50320b7189006fa67d90",
+            "content": "sha256:9fc458926097ec223e5a72a623adf8379e15c97c4e407dc851040c87937b20d4",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-SHXSR1"
+        },
+        {
+          "after": {
+            "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+            "content": "sha256:0a7dc3e827c8519d3c2f9215a6e24fdc560c6af1230254d2b77eddba8b8e5866",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "before": {
+            "blob": "3940f282abb6f48c2dc00a01de5e55b87d64b2f6",
+            "content": "sha256:553297497d6c255a25f7d34a23f2eb7cfcc657a8b6067117abf7ec47325c684b",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "id": "RLZ-WDW9QT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-954M4H",
+      "items": [
+        "sha256:35b276f5f2aa679c1eb8ed42745f5f7ecd56c6c113551f957e4b86727b641d6c"
+      ],
+      "reason": "Examined the number-free stage-end guarantee for the worker, reviewer, curator and manager texts: no review-round number, the stage-end section and its facets. The stage-end sentences now send what is awaited with `role_message`; they still name no number and keep the same facets, so the realization re-anchors and the statement stands.",
+      "revision": 1,
+      "subject": "INV-CV3MW4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-96T04Z",
+      "items": [
+        "sha256:d01ea1007b95b7c4a26c19f0832f2065b2ae68dd9f2d01610c2fa716e62712f3"
+      ],
+      "reason": "`noteTurnEnded`'s flow — flush, permission gate, recipient resolution, suppression, hold — is the entry point of the changed record's whole obligation; the extent adds no second one.",
+      "subject": "hunk:sha256:d01ea1007b95b7c4a26c19f0832f2065b2ae68dd9f2d01610c2fa716e62712f3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9DMQ5A",
+      "items": [
+        "sha256:9c3b98b4717cfef8a87fe01d19af4c022ecae40dd04d0e3ec4154d31154f7418"
+      ],
+      "reason": "The `seq` field on `HeldLine` and its comment are the carrier of the turn-end order the changed record's ordering condition names; the field alone adds no obligation and its absence falls back to queue position.",
+      "subject": "hunk:sha256:9c3b98b4717cfef8a87fe01d19af4c022ecae40dd04d0e3ec4154d31154f7418"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:ff2be6ec2a1459b1f663d264834d85c6b0555c72aa4be851edff07de33a90c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "d01d128cbae6946dda02f35b63bb394573a888a2",
+            "content": "sha256:37fef5ea3b82689ff28c7932963814480b0b59ee3997a7fd99237f735f052e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-5DAQEC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-A1F4BS",
+      "items": [
+        "sha256:7aa54440ec7df613d72b893277ca94c7c82c431416557b3756a1f42cdf3c62fc"
+      ],
+      "reason": "Examined the leaf `leafSeats` guarantee. The compiled hand-over's usage sentence changed beside it; the seat list, the sibling role-message arguments and the absence of sibling agent ids are unchanged, so the realization re-anchors and the statement stands.",
+      "revision": 2,
+      "subject": "INV-W58B84"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AFB8RZ",
+      "items": [
+        "sha256:35de7ce706cf14a9dc732306c7bc8021486ebab7269f05518ccb025d74d7a2f7"
+      ],
+      "reason": "The `flushHeldLines` wrapper and its `flushOnce` split introduce the non-overlap gate: a later flush awaits the one in flight and releases it in a `finally`. It is the mechanism the changed record's once-and-in-turn-end-order condition names, not a second obligation; the moved body is otherwise the same flush.",
+      "subject": "hunk:sha256:35de7ce706cf14a9dc732306c7bc8021486ebab7269f05518ccb025d74d7a2f7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B685J9",
+      "items": [
+        "sha256:560a5ba285959e7925e36a9e9263b66de349ded844eb116bde5eb7755203d333"
+      ],
+      "reason": "A sentence map re-pinned to the shipped stage-end text; the obligation is the sending rule the doctrine record states, and the test only guards it.",
+      "subject": "hunk:sha256:560a5ba285959e7925e36a9e9263b66de349ded844eb116bde5eb7755203d333"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BWVQV9",
+      "items": [
+        "sha256:471b3b68f67d5ffa793d961588f371a7a5f5021b08ee8c8c9943100f3e0a91b0"
+      ],
+      "reason": "Examined the roles route's responsibility map. It states each role's ownership and boundaries, not the stage-end transport; the five changed role cards carry that, and no responsibility moved.",
+      "sources": [
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/overview"
+    },
+    {
+      "considered": [
+        "FAM-7AEA19",
+        "FAM-TYQYTP",
+        "FAM-83BTBD"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-C19REE",
+      "items": [
+        "sha256:a3de6699eb7ba11988458f6443042874e5aa6b21e054fbc17baf95035976f33b"
+      ],
+      "reason": "Considered FAM-7AEA19 (the developer question chain), FAM-TYQYTP (the bounded investigation) and FAM-83BTBD (the leaf's direct loop). Each binds a different joint obligation — question routing and quoted answers, the investigation's report and mutation boundary, and the three seats' direct hand-overs. None states where a reply or an endorsed hand-over travels, and the new obligation adds one transport rule to routes those families merely share. Do not group by shared route or by the word return.",
+      "revision": 1,
+      "subject": "membership:INV-QZW2X2"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-C4ZHHN",
+      "items": [
+        "sha256:c7e17ea30b1f55f28b7dc902522c72f4d23d1c72db46bbc11e316d7c2f37fac1"
+      ],
+      "reason": "A section now states the reply rule and the sending of what an unfinished agent awaits to its parent, and the message paragraph separates a reply to a sender that waits on its own call from a hand-over; the retired own-chat answer sentence is registered against return.",
+      "sources": [
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": "skills/l-01-agent-lifecycles/SKILL.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:c3a046543a6f6f7a7103cb121c262c9e5b92bb775be24d5cb7f614bae8f2938d",
+            "locator": {
+              "kind": "symbol",
+              "name": "the last line is shortened to 300 characters"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-09JM5B"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:7f9357d76cece40b447f597a588c43a0e8e597ebda9792b4c892223347f5bccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "a line for a parent in a turn waits for that turn and is not sent into it (MIK-R172@v2 rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-0VFQAF"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:0d8d143294ebaa7bd28c5a584bb1fb62dfde1700278687512accb40f33b1737f",
+            "locator": {
+              "kind": "symbol",
+              "name": "a refused return gives the line (MIK-R172 rule 4)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-1PXCQM"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:71ec7fd1279ea5dfe4fdbc9d548ef1ed5e3643dafd7d259d51589dbba61674c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "a parent whose provider is unknown is treated as one that does not steer"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-5DNF5B"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:cdde4e3b554f9983ce065886e826e027ad684bd35e97ba88cd82b7e5ec0d1c73",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn-end order survives an in-flight prior flush (L172-R4-F02, schedule one)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-6CBT49"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:1dea8a869df4fbaa45106b9481b2537fb2e95e22f37da77fe37b4d0befebd48b",
+            "locator": {
+              "kind": "symbol",
+              "name": "held lines are sent in the order the turns ended, across a requeue (rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-BHBAB8"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:49d372d200894d99cad37a40559ced49e062a4a8057f4294d13dc06370c1a1c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a second batch is not sent into the parent turn the first batch started (L172-R4-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-DKQNE4"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:91c9a4f28f6bc3cf705e73553fa930bd44e66e3197dd087c1cb17722fe929817",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider history is reclaimed on archive and capped (L172-R4-F03)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-FHYFYQ"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:b4efde863e683bc72a89dc2a759dcfb6e5b73614251e266dc0095e10df6082c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "a silent end sends one line with the facts and the agent's last line"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-GQ2EVM"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:b4d955c0f0149c2e4e1a89ea2c444947724665795bb13c065c58bd9d29a0aae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty last text says no text and an unreadable one says so"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-JBJD6A"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:34e2c008f921658b4dafa829be4331b3b4cceba17d4e1c6b842be2106788eaee",
+            "locator": {
+              "kind": "symbol",
+              "name": "a parent whose provider is known to steer gets the line at once (MIK-R172@v2 rule 6)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-KCYXP2"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:f576654d8678badd8189f5f4e05e6dfebfbcb2feebb373cd7caf4eeec51538b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "turn-end order survives Manager rebinding (L172-R4-F02, schedule two)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-M4B1KY"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:7ed48b55cdeb12dba6e278cdac1fe094a6e9eaa933507e7d5e54a9c98b6dba5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent whose recorded parent is archived wakes the current Manager of its master"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-M65N8C"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:349bf3a5f00712194e05b8e09370aa5ced9da29fed823576c9eeebd31d8bfac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "a real failed send keeps the debt and is retried in order, once (L172-R4-F02 retry)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-PFG976"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:76ce9a73110b214716ddd00ec9a633570a932b405a50dfbaf87a2f1a2f2092e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "a held line reaches the successor when the archive has no alternate yet (L172-R1-F02)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-QSEPFH"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:c104ed9463d2031b92566c6dbf5eaf9bef515f8f1ffccf3abd28e85b8a8f5c0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "an empty ended turn says no text, never an earlier turn's text (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-VEZBDV"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:bf63407c151714dd5e5e018e0889ed7f45b346f4ca3c094fc982ecc23a883c25",
+            "locator": {
+              "kind": "symbol",
+              "name": "an agent the agent list does not hold is named in the host log once"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-ZSC2T3"
+        },
+        {
+          "after": {
+            "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+            "content": "sha256:1b0b7a0284fd0f028677b03f245b9fb9dbbbbb42c51f054cfa23b03b9373c642",
+            "locator": {
+              "kind": "symbol",
+              "name": "a return in an earlier turn does not silence this turn's line (L172-R1-F01)"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+          },
+          "before": "absent",
+          "id": "PRF-ZXQ4R7"
+        },
+        {
+          "after": {
+            "blob": "5ccc7bf4679fed087954ded749224fb69c462518",
+            "content": "sha256:63242da817153793e5a05f3743450bfb5205ecd7e03da5ad1a457071e88d0593",
+            "locator": {
+              "kind": "symbol",
+              "name": "registerParentWakeEvents"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-1HAN2T"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:b6b127b1042ef423bac37449efcf8848eb557d88c0248fa7441e1e52637ec9b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_STEERING_PROVIDERS"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-29Q98S"
+        },
+        {
+          "after": {
+            "blob": "22f5e74821ea81289840c2fd5e82169b8d322e5c",
+            "content": "sha256:dd03b6ef895ec97d1dd2f6495b952ccec74bf3750ffa7aabae03392ce0a75a76",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/role_agents.ts"
+          },
+          "before": {
+            "blob": "22f5e74821ea81289840c2fd5e82169b8d322e5c",
+            "content": "sha256:dd03b6ef895ec97d1dd2f6495b952ccec74bf3750ffa7aabae03392ce0a75a76",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 26
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/role_agents.ts"
+          },
+          "id": "RLZ-42490J"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:b9b235f19d4d4d73249b9a94adc99c25866c028ce2725bc55f69820bf2a1efbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "composeTurnEndedLine"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-712BJ3"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:9fb79052ae73cc3187d731165e770120c6a57df5194ac5c67648dbcbd8fab176",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-9VEJKT"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:5f704ccd5e767e325484a8e8fa360844afeb1586605eb2d37433bcca2b0b23eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnHasReturnToParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-C1KP4R"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:2563114c90d0bac3a177989383c568e47dbbe21ca267c9b1e14ad14056d80793",
+            "locator": {
+              "kind": "symbol",
+              "name": "providerOf"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-CCGKX4"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:4fb34b9b3863421de2cbf0fa071758261db2cabd6590e40937285df2b8b4bbe5",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteAgentArchived"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-D5653M"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:db613d606f6686bca62c109a34995ca6d35ebe37ef2e86dff44d8623fb611df2",
+            "locator": {
+              "kind": "symbol",
+              "name": "parentMayTakeLineNow"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-DKJY6H"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-EC5NRM"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:8a3aaab7ecab50d39c4b31b8b1a8557b6a9d683ec012d9342f76158bb6fa7ab2",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolveWakeParent"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-F0RH12"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:2cdba7021787671ef106e8b22f49742d45ef5eebed4a70d8d25ac207c2ff0393",
+            "locator": {
+              "kind": "symbol",
+              "name": "createTurnEndedTracker"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-H3YF9Z"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:e849bf3b385184f6fd49c3108d60621e40ea6fe181d43bf9d93e80b2778db5f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TURN_ENDED_PROVIDER_LIMIT"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-HD9RDK"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:de3480e09ce7d2f3c90d97895001cfcebd49d40600ada729447660bd0101b4ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "keepTurnEndOrder"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-J5K3GT"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:ff687f1496efef565939cb4c7861dab7c03641ae48a3d251a0f791f53fc05b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "turnRows"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-KGDGST"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:12d27939ebe98d478357e1d46d240ded00b6e4cbf25dd17095519bc0a6e344d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "lastLineOfTurn"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-NT30EH"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:650f3573b5b41e241967e99cbf467d147556d65473f455dea0c52aacee1c413b",
+            "locator": {
+              "kind": "symbol",
+              "name": "rememberProvider"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-RTMAJK"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:9fb79052ae73cc3187d731165e770120c6a57df5194ac5c67648dbcbd8fab176",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+            "content": "sha256:09cfd507ab1eafdf2dc904cd5c5b9e3bca3fe88ff57a6e3746a2428ea406a0aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "flushHeldLines"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-S39QFR"
+        },
+        {
+          "after": {
+            "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+            "content": "sha256:d60420abbb49571da0d8e06fceed50ea60ec3ac8b7d5a287a18497fc605c7595",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+          },
+          "before": {
+            "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+            "content": "sha256:d60420abbb49571da0d8e06fceed50ea60ec3ac8b7d5a287a18497fc605c7595",
+            "locator": {
+              "end": 172,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+          },
+          "id": "RLZ-VXB4Y7"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:f657b26103b4299ea7c702e3c25feef8aeffc35894366f58395c5583729677a5",
+            "locator": {
+              "kind": "symbol",
+              "name": "currentManagerOf"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-YWH75T"
+        },
+        {
+          "after": {
+            "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+            "content": "sha256:56bab8b10e056df08d661be864473c28c7cda3b8b533c3c33b2ccc259001de52",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "before": {
+            "blob": "09f339b7c9d38caf120e180d2ae2331bdebc0bcb",
+            "content": "sha256:9269a8f06d37cd197480018986cd10f245238a2c5f3f7aa6636bf66c02df565e",
+            "locator": {
+              "kind": "symbol",
+              "name": "noteTurnEnded"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+          },
+          "id": "RLZ-ZA95M4"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-C8D860",
+      "items": [
+        "sha256:aefc653968e7819cefaef60100555c58e374ee49535ef7016a83acda97ebdd46"
+      ],
+      "reason": "MIK-R172@v2 rule 6 changes this obligation's delivery: a recipient that is in a turn is told when that turn ends rather than steered into it, unless the product names its provider as steering; the gate is asked again at each actual send; each line is sent once and in the order the turns ended, across a requeue and a Manager rebind; and the provider history is bounded, with an evicted entry reading as unknown and therefore holding. The statement, the deferral condition and the store bound now say that; revision 2 said a busy recipient simply deferred the line and named no provider bound. Evidence (L172-TURN-END-WAKE): notes/reports/reviewer/8faa44b1-8e8c-49f7-8030-5d8ddb02539d/r4-a5-code-verdict.md (MIK-R172@v2 accepted on A5; L172-R4-F01/F02/F03 fixed); notes/reports/reviewer/8faa44b1-8e8c-49f7-8030-5d8ddb02539d/r4-a5-verification.md; r4-a5-probes-before.log / r4-a5-probes-after.log",
+      "revision": 2,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CNSWCP",
+      "items": [
+        "sha256:8346c2312f60e3f0e0b49aba8f41ad7d87ca1186bf23e64fe45c6187d5136e83"
+      ],
+      "reason": "Examined the tests route's lane membership, evidence catalogs and module responsibilities. This leaf changes sentence pins and adds one wording case inside modules the route already describes; lane membership, the two catalogs' structure and module responsibility are unchanged.",
+      "sources": [
+        {
+          "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+          "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+        },
+        {
+          "blob": "06be148009d7ce065dbd4fc7f60b00ca64e80157",
+          "path": "mcp/tests/test_review_limit_wording.py"
+        },
+        {
+          "blob": "04e92cf5dcbf1f0e0c3d761fbe0ca8871fa1a97d",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        },
+        {
+          "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DSBC4Y",
+      "items": [
+        "sha256:600565d775d52f2b64ea24f955d695c08fea3b15217a9b221f905128243d755d"
+      ],
+      "reason": "The card now says the report is sent with `role_message` to the supplied parent role/task address and that only a parentless run leaves it to the developer's own chat; it no longer says the report is returned in the own chat.",
+      "sources": [
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/investigator.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-6FJEPD"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-E3H3BH",
+      "items": [
+        "sha256:aef51c8e96256547dc854686096e39719d1012020a8d62646d136d6fccaee082"
+      ],
+      "reason": "Examined the Investigator report guarantee: read source, check only in scratch or a sandbox, write the named report and return it to the supplied parent role/task address. The report is now sent with `role_message` to that address; the address, the report and the check boundary are unchanged, so the realization re-anchors and the statement stands.",
+      "revision": 2,
+      "subject": "INV-YT1AD8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E8V0XC",
+      "items": [
+        "sha256:a401d7e47f65b5998785d8b229e13ac340562bb420e7ed50755dd419ca391d42"
+      ],
+      "reason": "A Manager sentence map re-pinned to the shipped stage-end and repair text; the guarded obligation belongs to the doctrine record.",
+      "subject": "hunk:sha256:a401d7e47f65b5998785d8b229e13ac340562bb420e7ed50755dd419ca391d42"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-DX43S4"
+        },
+        {
+          "after": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:006ebced49dda456feef33483f16c0537a3358063497726f9afeed2d4630297e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-TEGHWX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EFR3CW",
+      "items": [
+        "sha256:3f9b1dc6e9d088c5921a0c0b09b7c858d212b4b6c182c7d2103b9773a4eb9019"
+      ],
+      "reason": "Examined the role-work-organisation guarantee: one self-contained role text per role, harness freedom and the helper boundary. This leaf changes one stage-end sentence about where an awaited thing is sent, which is the sending rule and not this guarantee; the realizations re-anchor to the candidate text and the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-7VZRZW"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EH232E",
+      "items": [
+        "sha256:e1063b9ba12b73696763b917ba87d96da4364b713fb1250ea3f3fd53a9d78c8d"
+      ],
+      "reason": "The root overview states repository purpose and area layout and lists no role-transport or plugin detail. The 72 changed harness skill files are generated copies of the canonical skill tree, which with its card and this leaf's rows carries the contract.",
+      "sources": [
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".agents/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".agents/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".agents/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".agents/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".agents/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".claude/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".claude/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".claude/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".claude/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".claude/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".codex/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".codex/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".codex/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".codex/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".codex/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".cursor/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".cursor/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".cursor/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".cursor/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".cursor/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".github-vscode/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".hermes/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".hermes/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".hermes/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".hermes/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".hermes/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".openclaw/workspace/skills/l-01-agent-lifecycles/roles/worker.md"
+        },
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": ".pi/skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": ".pi/skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": ".pi/skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": ".pi/skills/l-01-agent-lifecycles/operations/orientation.md"
+        },
+        {
+          "blob": "c1ca237cbef48e6790002772f6026d98fe214427",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/curator.md"
+        },
+        {
+          "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/investigator.md"
+        },
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/manager.md"
+        },
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/reviewer.md"
+        },
+        {
+          "blob": "0d6a077cfd4c3913268626c0ab9f40ea6777fece",
+          "path": ".pi/skills/l-01-agent-lifecycles/roles/worker.md"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ESAPQX",
+      "items": [
+        "sha256:16b843e98d833a8cb18bb5073b4c5faf0dcc9d485669579ffcda9c5850b23159"
+      ],
+      "reason": "The stage-boundary sentence now sends what an unfinished Manager awaits, and from whom, to its parent with `role_message` instead of naming it in a last line.",
+      "sources": [
+        {
+          "blob": "6ba05488eb248f84bc128d538e99e4c2472add5d",
+          "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-F94FEC",
+      "items": [
+        "sha256:0a16d3d0844ff28e5dd57b9c90629781f0a84ad7d0e7b3bc7b5889391807cc8f",
+        "sha256:743702a154a7b32f0191311387ed0a11f68afeb900590095cdfbb82fe4b19ac9",
+        "sha256:ae1bf13864054455c0e894d281a912913a997f1e69b594e758bfcae44082157a",
+        "sha256:cb045b23c6a662965182a003c9d22d5cf62cb3aca77a6f35de661b402c627327"
+      ],
+      "reason": "A section records the added case that requires the four stage capsules to carry the sending clause, their orientation capsules and the hand-over the reply rule and the acceptance home the artifact clause, and that fails on any remaining chat-as-answer or chat-as-report coupling.",
+      "sources": [
+        {
+          "blob": "e8af992c881afbbc0f6fdbe7bd9130c43b7b66b2",
+          "path": "mcp/tests/test_role_instruction_wording.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_wording.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G6B3RT",
+      "items": [
+        "sha256:6b49804a43fbc476b697352c699de932de411be6570d566a1ebc0a72c31358a8"
+      ],
+      "reason": "`createTurnEndedTracker` initialises the bounded stores; the bounds are the record's condition, and the constructor itself states no obligation.",
+      "subject": "hunk:sha256:6b49804a43fbc476b697352c699de932de411be6570d566a1ebc0a72c31358a8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GZXAES",
+      "items": [
+        "sha256:35102dc60683aceec4b560ff690aa3dd08f67d639ad69734edd5586221c142ad"
+      ],
+      "reason": "The `task` and `alternate` fields of a held line exist so a flush can re-resolve a departed parent exactly once, which the changed record states as its condition; no second invariant.",
+      "subject": "hunk:sha256:35102dc60683aceec4b560ff690aa3dd08f67d639ad69734edd5586221c142ad"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "541f15fba478277772b410bd15974fb889feaabc",
+            "content": "sha256:3777b7cda5bc54537ba433f45e2058507fddc5ad723fcd1769c521855a2e3889",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "before": {
+            "blob": "1d8ff0d5b32a38eb4b384c61d6beb6855cd9768e",
+            "content": "sha256:fb88b4cb11d7d27e66b17718d83c21144cbe42b604b12e4b12dde8eac6be3a9b",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+          },
+          "id": "RLZ-BPMMTC"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H3XXDZ",
+      "items": [
+        "sha256:38d398a3b7aab9dfef24d11eafb011fd0cf3bc738decd91a5d6f3b66cfb126b4"
+      ],
+      "reason": "Examined the single tool-server definition guarantee. This leaf changes the orientation text's reply rule, not the launch definition or its fixed name, so the realization re-anchors and the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-C8SVFY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H6Q2BW",
+      "items": [
+        "sha256:76b8733f0f7757f2cdc28979081dbd5df917fda59887e4a646f2915fdf30555b"
+      ],
+      "reason": "`noteTurnStarted`'s archive revival and the bounded `started`/`parentOf` windows keep the fallback's 'current Manager' ordering and the tracker's resource bound; both are conditions of the changed record.",
+      "subject": "hunk:sha256:76b8733f0f7757f2cdc28979081dbd5df917fda59887e4a646f2915fdf30555b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-RMJW06"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H7506Z",
+      "items": [
+        "sha256:ec5e7b9580a203ed17ead527a233d7b447944e31ed930ced501ce3edcd185182"
+      ],
+      "reason": "Examined the remediation-order guarantee. The Investigator report's transport changed; the order still follows the report, so the realization re-anchors and the statement stands.",
+      "revision": 1,
+      "subject": "INV-MM63KX"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7HBKZR",
+          "revision": 2
+        },
+        {
+          "id": "INV-AF2DN3",
+          "revision": 1
+        },
+        {
+          "id": "INV-AW14ZP",
+          "revision": 1
+        },
+        {
+          "id": "INV-CV3MW4",
+          "revision": 1
+        },
+        {
+          "id": "INV-K76Z77",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-HNZQPV",
+      "items": [
+        "sha256:4ece9f35af93a787f2e4d5a483c80fbb01c054a854bb831c0753a1bfaf41b0b4"
+      ],
+      "reason": "Examined the budget-accounting guarantee and every member. The stage-end sentences this leaf changed still name no review-round number, and the budget registry's formula and ceilings did not move; settings authority and the separate code/memory counts are untouched.",
+      "revision": 1,
+      "subject": "FAM-K65H24"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HY0JJT",
+      "items": [
+        "sha256:da35d79f35e06f705790a508cc013883677d85ac43d04e0664989bb2a0121b42"
+      ],
+      "reason": "The task-address helpers (`taskAddress`, `stringsOf`, `recipientIsParent`) decide which return names the waiting agent, the suppression condition the changed turn-end record states; no separate invariant is minted for their internal shapes.",
+      "subject": "hunk:sha256:da35d79f35e06f705790a508cc013883677d85ac43d04e0664989bb2a0121b42"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J49MQK",
+      "items": [
+        "sha256:df32913b4e9d9230d82ed172a6d34d6ef9698a29abee11d3a2c0f1f401ae4058"
+      ],
+      "reason": "Examined the route overview's routing, role-ownership, curation and closeout account. It does not restate how a role answers or hands over; that rule lives in the router, orientation, acceptance home and role cards, and this overview's own statements remain true.",
+      "sources": [
+        {
+          "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+          "path": "skills/l-01-agent-lifecycles/SKILL.md"
+        },
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        },
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+        },
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7E3JNX",
+          "revision": 1
+        },
+        {
+          "id": "INV-RKGNF8",
+          "revision": 1
+        },
+        {
+          "id": "INV-V7M37D",
+          "revision": 3
+        },
+        {
+          "id": "INV-W24J6Q",
+          "revision": 2
+        },
+        {
+          "id": "INV-W58B84",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNJ14G",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-JH4341",
+      "items": [
+        "sha256:f18375920ee94e8de5c5e0ce7fa7c60611946cb94d78b3fe727777d550a1ddb2"
+      ],
+      "reason": "Examined the loop's guarantee and every member: direct hand-overs between the three seats, separate bookkeeping and pending-retry lanes, and the Manager receiving only its named occasions. Sending a hand-over with `role_message` is what the loop already required; this leaf states it explicitly and adds the ended-turn wake, so the joint guarantee is unchanged, not relaxed.",
+      "revision": 1,
+      "subject": "FAM-83BTBD"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KDB6SQ",
+      "items": [
+        "sha256:7a8b416e0efe2982e84d8acd1ef7fa6cd0be7fe2731888f1bbf78074927d64ca"
+      ],
+      "reason": "The role-match branch widened to read named strings and to defer to the per-record task pairing; both are the recognition rule the record states as its suppression condition.",
+      "subject": "hunk:sha256:7a8b416e0efe2982e84d8acd1ef7fa6cd0be7fe2731888f1bbf78074927d64ca"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MRM2TG",
+      "items": [
+        "sha256:f5ba0a751da18ee43e0e5f19429705571ac9c15964c741124526f7c04a79ec73"
+      ],
+      "reason": "decisions_L172 is now recorded: 22 changed capsule measurements for the rule-1 sending change, `curator/curation` replacing text at 3,698 words and no capsule over 3,700.",
+      "sources": [
+        {
+          "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+          "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/capsule-budgets.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MTMS4S",
+      "items": [
+        "sha256:3033dd7714d0bac63b54442f3fe23d6c5c5d0d49257e6fc8b80f2a53c8b74bca"
+      ],
+      "reason": "The acceptance-surface marker list follows the shipped clause the doctrine record states; a test's marker list carries no invariant of its own.",
+      "subject": "hunk:sha256:3033dd7714d0bac63b54442f3fe23d6c5c5d0d49257e6fc8b80f2a53c8b74bca"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N5APFM",
+      "items": [
+        "sha256:1767404b9385a805efe96e904bcee645d3b30446c1ffd26a6fd54535b7e447cc"
+      ],
+      "reason": "A comment line correcting which module wires the decision (`turn_events.ts`); the wiring's obligation is realized at the handler and stated by the record.",
+      "subject": "hunk:sha256:1767404b9385a805efe96e904bcee645d3b30446c1ffd26a6fd54535b7e447cc"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NC78T9",
+      "items": [
+        "sha256:cd963e4eb06a8fe15bf23c6c5b7e0284193c2ddc21773b1de21c9af15d17d0dc",
+        "sha256:f77b853a7591566be02f535747ef4d718b4ed8d27004ecd37e63bfed9e8a1325",
+        "sha256:fd59402c5ffd76cdca29fdcbd981209f36b54e27736040d1d626e4b8bf757036"
+      ],
+      "reason": "A section records the deliberate R125 orientation fingerprint re-pin for the rule-1 sentence change and states that the audience declaration itself did not change.",
+      "sources": [
+        {
+          "blob": "04e92cf5dcbf1f0e0c3d761fbe0ca8871fa1a97d",
+          "path": "mcp/tests/test_role_capsule_audiences.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_capsule_audiences.py"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZP9PM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NC8043",
+      "items": [
+        "sha256:f73fe831d168e5d5fb032f061ede1763c0976c73bed31e02fbc40bad0dfda51d"
+      ],
+      "reason": "Examined the instruction-composition guarantee and both members. The compiled usage text changed as plain text over admitted sources; no tool grant, settings authority or controller read path moved, so the joint guarantee holds.",
+      "revision": 1,
+      "subject": "FAM-XX4TGY"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P85PJA",
+      "items": [
+        "sha256:87d97284f7f7c452458fdb4d5bceb0dc428259767a5c4f702427c4dd82a6d63d"
+      ],
+      "reason": "The card's Contract and Boundaries now carry MIK-R172@v2 rule 6 on top of the v1 account: a parent in a turn takes the line only when the product names its provider as steering (the set is empty), the gate is asked again at each actual send, delivery keeps the turn-end order across requeues and a Manager rebind, and the provider history is named, capped and safe to evict. The sentences they replace said a running parent simply deferred the line and left the provider out.",
+      "sources": [
+        {
+          "blob": "2227e467e79051787c31b1ecf346b8e2fd8bfa62",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q7Y2K1",
+      "items": [
+        "sha256:39fd55a455b9c763729590390480b0ab9add40dc711718783da1437e0f8815ca"
+      ],
+      "reason": "The module header restates in prose the obligation the same file's record states — the turn's own last line, the delivered return and the fallback recipient; a comment is not a second invariant.",
+      "subject": "hunk:sha256:39fd55a455b9c763729590390480b0ab9add40dc711718783da1437e0f8815ca"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:006ebced49dda456feef33483f16c0537a3358063497726f9afeed2d4630297e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:2c2e7fc2f9da67da4840f9342af43eb2b709543437289a0ae232b4dbc187cbad",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-T1GXX9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-QMCB2H",
+      "items": [
+        "sha256:946d757349dfa3ff8dacf3bf9c38bdb4d58e995f621c636fa0a6576dbffc549c"
+      ],
+      "reason": "Examined the shared round-limit and retired-wording guarantee. This leaf retires another chat-as-answer sentence and registers it; the guard's declared sources and its prohibition remain, so the realization re-anchors and the statement is unchanged.",
+      "revision": 3,
+      "subject": "INV-HGSFJ8"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-A8E0YE",
+          "revision": 1
+        },
+        {
+          "id": "INV-H0WCGX",
+          "revision": 1
+        },
+        {
+          "id": "INV-MM63KX",
+          "revision": 1
+        },
+        {
+          "id": "INV-WAY665",
+          "revision": 1
+        },
+        {
+          "id": "INV-YNHABM",
+          "revision": 2
+        },
+        {
+          "id": "INV-YT1AD8",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-RF6641",
+      "items": [
+        "sha256:fd158951d4dd5c873a55db2a8c2e187d4d16330f1e3f9c8789485e6f37f3ab41"
+      ],
+      "reason": "Examined the investigation guarantee and every member. The report still returns to the supplied parent role/task address before any remediation, and the read, check, mutation and order boundaries are unchanged; the leaf only stops describing the own chat as the report's transport when a parent exists.",
+      "revision": 3,
+      "subject": "FAM-TYQYTP"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:71ecf542b0d4ca2bcaec738a56b9f2cd68bf82f318190e3d52ca5fb6e9e482ce",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-1FAAAK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-T0F6Z3",
+      "items": [
+        "sha256:9e80fce804e29a4ea432badc260f0c29af23aedf3dc6d44079ab861189ff5107"
+      ],
+      "reason": "Examined the answer-first guarantee for the Architect. The changed reply rule tells an agent where a return travels; the Architect's answer-first duty and its `From`-line recognition are unchanged, so the realization re-anchors and the statement stands.",
+      "revision": 1,
+      "subject": "INV-PEVJ6G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TE6ZY6",
+      "items": [
+        "sha256:b7ef98f28a288c1726c9b3140f63ae632c277e55502aaca703cd72afbe309088"
+      ],
+      "reason": "The added `records` parameter of `flushHeldLines` is the send-time re-resolution of a departed parent, which is the changed turn-end record's own condition; the signature line carries no second obligation.",
+      "subject": "hunk:sha256:b7ef98f28a288c1726c9b3140f63ae632c277e55502aaca703cd72afbe309088"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TH98WJ",
+      "items": [
+        "sha256:d5c1327cff3cf137e0086e1d4d942cfe1f5769e59486d6aeb407563c17796a9c"
+      ],
+      "reason": "A section records the acceptance-surface marker list following the shipped clause: a file hands itself over to nobody, the artifact is sent with `role_message` to the agent that waits, and a file on record wakes no one.",
+      "sources": [
+        {
+          "blob": "74a051a27a76bfa2d21ab404b581911d5e391701",
+          "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-TSXCRG",
+      "items": [
+        "sha256:1f133ffbc523ff74da8ed37cc53573c7ccaffed883f27614a381a7e243c22da3"
+      ],
+      "reason": "The composition paragraph now carries the reply rule: a reply reaches a sender only when it waits on its own call, and everything else, including what an unfinished agent awaits, is sent with `role_message`.",
+      "sources": [
+        {
+          "blob": "541f15fba478277772b410bd15974fb889feaabc",
+          "path": "skills/l-01-agent-lifecycles/operations/orientation.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/operations/orientation.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V70E1D",
+      "items": [
+        "sha256:814cd1b8824a893209c42d9b0fb52dc2315b3f79f660c88a2d48e4154c32288c"
+      ],
+      "reason": "A Curator facet string re-pinned to the shipped stage-end and repair sentences; the guarded obligation belongs to the doctrine record.",
+      "subject": "hunk:sha256:814cd1b8824a893209c42d9b0fb52dc2315b3f79f660c88a2d48e4154c32288c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:ff2be6ec2a1459b1f663d264834d85c6b0555c72aa4be851edff07de33a90c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "d01d128cbae6946dda02f35b63bb394573a888a2",
+            "content": "sha256:37fef5ea3b82689ff28c7932963814480b0b59ee3997a7fd99237f735f052e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-KABSJ7"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VEDWE1",
+      "items": [
+        "sha256:c96bb3f748bb7e010bec31cf2d7bc549a9a085e15b083aedf291996b62d0fec1"
+      ],
+      "reason": "Examined the rendered-file reading guarantee. The compiled hand-over text changed; controllers still read canonical rendered files through harness file tools, so the realization re-anchors and the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-QZP9PM"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-0NTWBB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VHSD08",
+      "items": [
+        "sha256:0c712b071f78991951b9e30d529ff20b9bf531a993d6afcda803d464e465652f"
+      ],
+      "reason": "Examined the parent-started Investigator guarantee: concern from the parent's first message and missing scope asked of that parent. The Investigator's report return changed; its concern intake did not, so the realization re-anchors and the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-A8E0YE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6ad3461df40df313b315fdae9146c2fa44a20c76",
+            "content": "sha256:184be4c9aa3c4cd62631168539645c00782089e88da946d19316e220c770cf03",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "before": {
+            "blob": "a8e2b869f7f277422f7b891f9c31efa0b3c45d4c",
+            "content": "sha256:71ecf542b0d4ca2bcaec738a56b9f2cd68bf82f318190e3d52ca5fb6e9e482ce",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "id": "RLZ-T4ZSC9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VVHTPS",
+      "items": [
+        "sha256:e02296a8bc5730eecdab466f8c2cf972b4391cea4a3effe54f06159947da77c6"
+      ],
+      "reason": "Examined the coordinating-agent decision guarantee. The changed reply sentence tells that agent where to send a hand-over, not what it may decide, so the realization re-anchors and the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-NFV5VJ"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WBDJ2R",
+      "items": [
+        "sha256:15909bb3b6e525f6e07519206190c2a3fb60d04ef9dacf7954c163d4837d5e0e",
+        "sha256:3a477f3dadbcf3565cd005872ea8ec73256799fca94c9a4eddb6ea5d4f7af08f"
+      ],
+      "reason": "The Code Commentary now says the handler passes the agent's provider with the turn-end event so the gate can tell a known steering provider from an unknown one, beside the turn id, the permission-resolution records and the once-only log line. It previously said parent sends explicitly steer an active turn, which the candidate no longer does for an in-turn parent.",
+      "sources": [
+        {
+          "blob": "5ccc7bf4679fed087954ded749224fb69c462518",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_events.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+            "content": "sha256:ff2be6ec2a1459b1f663d264834d85c6b0555c72aa4be851edff07de33a90c01",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "before": {
+            "blob": "d01d128cbae6946dda02f35b63bb394573a888a2",
+            "content": "sha256:37fef5ea3b82689ff28c7932963814480b0b59ee3997a7fd99237f735f052e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_compile_handover"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-2E88NK"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XMB2MA",
+      "items": [
+        "sha256:92fae4f83aae50e1155ab7a6568f6d5e39cb83c332d3ec5d86179697aee3458c"
+      ],
+      "reason": "Examined the handover guarantee: developer questions to the actual parent, leaf peer routing, parentless recovery. The compiled hand-over's reply sentence changed, not its question routing or the parent identity; the realization re-anchors and the statement is unchanged.",
+      "revision": 3,
+      "subject": "INV-8AMSGV"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-9BPGSN"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XR58SD",
+      "items": [
+        "sha256:39c47fc27152de4a5c0210655e0fc5d5f1b777cdb204e4b10e8f33eb4b3772a8"
+      ],
+      "reason": "Examined the Investigator's mutation boundary. Sending the report with `role_message` instead of returning it in the chat changes no write authority, so the realization re-anchors and the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-H0WCGX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YF3Q1X",
+      "items": [
+        "sha256:554ed7396ebac9b359bc37843b839ea2cc10e6d6a1026142ec589ba1fdc7d6fa"
+      ],
+      "reason": "The outcome type's `parent` field and the `none` log field carry what the fallback delivery and the once-only log return to the handler; the changed record states those effects.",
+      "subject": "hunk:sha256:554ed7396ebac9b359bc37843b839ea2cc10e6d6a1026142ec589ba1fdc7d6fa"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YVEC6M",
+      "items": [
+        "sha256:10286a3d7a075943c4f6742c37c2909c01e796a9a437d00efac62227ce66e7f3"
+      ],
+      "reason": "A section now states that the compiled `roleTools` usage tells a role its reply reaches a sender only when that sender waits on its own call and otherwise goes with `role_message`, with the same grants and parent identity.",
+      "sources": [
+        {
+          "blob": "c9f8ba03e5e1d604196d32f8c737808565896625",
+          "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "61e88989c300f3783c4e50987a0ec98378fc2ab0",
+            "content": "sha256:4cf9656f8621f433e4db4c68b65f2b168fc66cab629ded109fdc9b473357f82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "before": {
+            "blob": "0132f87337a9300c812803a830a8117bd94b1230",
+            "content": "sha256:f311f843cabda40d3ae8fc6016b55385067edb6f65209a9fa46f69b10f1ed145",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "id": "RLZ-1YB3RJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z3QZS5",
+      "items": [
+        "sha256:d744a78b2a4513109092b8f89eba79a9eb7ddb1558cd69dc86027cea845187b1"
+      ],
+      "reason": "Examined the Investigator's one-scoped-concern guarantee. The report's transport changed; the concern scope did not, so the realization re-anchors and the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-WAY665"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "8a27b23b4a89567fcca94c191cc8d3a025f13225",
+            "content": "sha256:2c7ed0e16182be8ae1203d862337589bf57fe7dcdccf3f4e74c1cfdaadcbaece",
+            "locator": {
+              "end": 692,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "before": {
+            "blob": "7a707458c0afa009452584dc52c6c205135b548a",
+            "content": "sha256:0e95431c6f630e5087e444b9a93c5980a35f9b687d6367fa03a0b3cdc4769bc3",
+            "locator": {
+              "end": 596,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "id": "RLZ-9FX5WR"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z6D3MZ",
+      "items": [
+        "sha256:b7637889efe03aaec44da8f9e695c006421ca9408a42735664d4f05bc482e765"
+      ],
+      "reason": "Examined the capsule-registry guarantee: the 38 rows, the eleven-tenths budget formula and the ceilings. This leaf re-recorded 22 changed capsules and added the `decisions_L172` record; no formula or ceiling moved and no capsule exceeds 3,700, so the realization re-anchors and the statement stands.",
+      "revision": 3,
+      "subject": "INV-Y6GVZ7"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZB3MNB",
+      "items": [
+        "sha256:58b8cd067204ebdb7d6d9bc2590d2663d8457e31b7c40318097650e8f2f17832"
+      ],
+      "reason": "The stage-boundary sentence now sends what an unfinished Reviewer awaits, and from whom, to its parent with `role_message` instead of naming it in a last line.",
+      "sources": [
+        {
+          "blob": "d8db6ab3f23f35a78d5972d5615bd1d506476e7f",
+          "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZB8XVR",
+      "items": [
+        "sha256:3b32d296a1e076401eaf2dc9bea495921d83ea0bfa851de8749757106acdc46a"
+      ],
+      "reason": "The mechanical-truth paragraph now says the relay delivers its signal to the agent that waits and carries the ended agent's last line, and the artifact paragraph requires sending the artifact with `role_message` — replacing the sentence that said a subordinate needs no second completion post.",
+      "sources": [
+        {
+          "blob": "2a112bdb1148478a8a719636588cb908fab01cac",
+          "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+        }
+      ],
+      "subject": "onboarding:skills/l-01-agent-lifecycles/core/acceptance.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZNTPKJ",
+      "items": [
+        "sha256:04eddf87f3f8d4f512a9147959b4b061376f7e7d428d61ca590f29fa826ecbee",
+        "sha256:115370c700325f959312426449701fc584bf823353ec2a2c6b1579ebe2c81591",
+        "sha256:292420f235c2b2dd18e2ffeb39c5ce6a37d975fd7dddb28cd2e563462fdcaa91",
+        "sha256:29bd1838c4f5c6f5087a065d218416543a8cc68abfc6e8bb34ea96f669ae7129",
+        "sha256:3808f93abf51ad7f17e84c812e18c11f3005e932a9252cca3d461177b196a8c8",
+        "sha256:3b9cd47a1361075925c63a36d407dfe2403e7f9a5e9e36c5f1df246203d99566",
+        "sha256:4f892f021a3e8403e998d8f69e6fda3c1959af80ee127c9fa7ecea9a27ec5620",
+        "sha256:51135151e520c0c895d040183444b57adc9e5f1870a7e9c24a6e71de52c29a10",
+        "sha256:635bc2d524114aa77e3ffcc80a872f17c909d7ec22678c647fe31df8af48b0f3",
+        "sha256:66624f8699f90918eb2e4fd11050daf29889a8ff4cd28c3fd0fa1b502b05f9bf",
+        "sha256:91ccc1af018842190d99c5c3de0d8014819c0ac9c02e00298a8527b23cce68f7",
+        "sha256:9614c5620d4c4183f6f7ae039534deef9c06c6b09f775e44ab2e1642e9b9fd67",
+        "sha256:e39bad043aff7c185e117fa153b4b3f06a5ade6bff3b52de6261a5af5904cb3d",
+        "sha256:ef0122c117dbd2fa8fa62e97909d4d0d59f922a71a8c060f6d32258c3352fd1f",
+        "sha256:f36ff8051d7cfcd65460d1e8a9fb01631df36deb2a25483ead5220b5c5b467a4"
+      ],
+      "reason": "The test card now names the rule-6 schedules on top of the earlier coverage: the held line for an in-turn parent, the known-steering and unknown-provider split, order across a requeue, an in-flight flush and a Manager rebind, the per-send gate that keeps an unsent batch owed, the failed-send retry in order, and the capped provider history. Its earlier sentence said busy parents defer notices and claimed only an explicit steer option.",
+      "sources": [
+        {
+          "blob": "02028fc1ac562ad5c7f21f4fe9ca6b9c1a254de1",
+          "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZQQM38",
+      "items": [
+        "sha256:1fff85efd9c2689a10fd1814478953a5c2424c9da5e7a8c562914f1ea4496b6b"
+      ],
+      "reason": "`recordNamesTask` and `candidateNamesParentTask` pair a path with the repository the same reference states, which is how an accepted return to the waiting agent is recognised — the changed record's suppression condition, realized here in detail rather than as a separate obligation.",
+      "subject": "hunk:sha256:1fff85efd9c2689a10fd1814478953a5c2424c9da5e7a8c562914f1ea4496b6b"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

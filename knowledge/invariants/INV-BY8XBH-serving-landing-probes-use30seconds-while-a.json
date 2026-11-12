@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Separately owned serving composition, observation scheduling and safety operations must not mistake missing page interest or launch permission for permission to hide required observations; operation-level tests guard the distinct boundary."
+  },
+  "applicability": "Transient per-contract due state in serving-bound landing observation.",
+  "conditions": [
+    "Only current eligible exact identities are retained at interested discovery.",
+    "Semantic answer fields and row ordering determine the unchanged epoch; the fact at is semantic.",
+    "Due periods are checked on ordinary sweeps and are not total publication-latency bounds."
+  ],
+  "exclusions": [
+    "The schedule is not durable landing truth.",
+    "Observation timestamps and computed age alone do not change a semantic answer.",
+    "Explicit unbound refresh calls do not use the policy."
+  ],
+  "id": "INV-BY8XBH",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/d2665764-add6-4e1c-aa4f-3cfe1d657d22/role-launch/freeze-2/report.md"
+      ],
+      "path": "curator-handoff-corrected.json"
+    },
+    "handoffEntry": "MIK-R165@v1 §4",
+    "leaf": "260928-MIK-L166",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Serving landing probes use30seconds while a semantic answer is unchanged for under120seconds, then120/600/3600seconds by unchanged age; semantic answer or contract changes reset freshness and the schedule retains only current contract identities, while explicit unbound refresh callers keep their existing API.",
+  "status": "proposed",
+  "supersedes": []
+}

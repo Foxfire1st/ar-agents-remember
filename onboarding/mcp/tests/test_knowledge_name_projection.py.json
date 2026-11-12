@@ -1,0 +1,92 @@
+{
+  "path": "mcp/tests/test_knowledge_name_projection.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An invariant fixture receives names and openable declarations without its statement.\n\nAnchor: `KnowledgeNameProjectionTests.test_invariant_rows_name_but_do_not_carry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "content": "sha256:d91f10c1419154c803f5213bda13c9babc8507c14e5d05cb441774871f76ff2a",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Accepted scope-token pages preserve participant names without sentinel record prose.\n\nAnchor: `KnowledgeNameProjectionTests.test_registered_scope_token_walk_delivers_names_not_prose`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "content": "sha256:426ed436d8a687780ef847b203d66dba225bd73311122085a18999ea1d0c2eff",
+            "locator": {
+              "end": 664,
+              "kind": "line_range",
+              "start": 618
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A relative location opens against the named memory root at the entry declaration line.\n\nAnchor: `RegisteredDeclarationTests.test_relative_declaration_opens_from_the_answered_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "content": "sha256:059176a320d7a3f21bfbf80b90bb531d016ed56e1725f62b82db66a8e6a53fc0",
+            "locator": {
+              "end": 710,
+              "kind": "line_range",
+              "start": 686
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A walk resumed after a checkout move refuses its old binding.\n\nAnchor: `RegisteredDeclarationTests.test_resumed_walk_after_a_checkout_move_is_refused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "content": "sha256:003253a6d9f374c6c7e65e8a49c84ca6ab1b0899b2f40d4e7689d2a815820a87",
+            "locator": {
+              "end": 824,
+              "kind": "line_range",
+              "start": 775
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The four comment placements bind resolver-None arguments while the runtime calls remain unchanged; this is source evidence, not a new test execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8612b6046a3c84c1c3e3d9f87439e5e6e0de7ee3",
+            "content": "sha256:939bb501180b7039bfa3a77ec3d66d1b3fa91b2f4004c173fb51c20fdf4b5e15",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 332
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

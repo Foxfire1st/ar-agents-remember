@@ -1,0 +1,977 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L75",
+  "rows": [
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-00S87J",
+      "items": [],
+      "reason": "New family authored from six obligations that only hold together: the strip's controls-only content, its constant height, the single failure line, the Result-opened report, the one read-only route that makes that report reachable, and Result's preserved re-read/steering. Each member was read against its candidate source and the reviewer's evidence; no existing family reaches these obligations.",
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+            "content": "sha256:3aba7b6e888d4c3d1e2d8306354b7d5660c5090fef0b269b44abd2fdb09133cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+            "content": "sha256:fd931b00e1c2950a9f95673864b81d09f9b65a3ec4f5b5c4276d085a15aa5dce",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-9XE68C"
+        },
+        {
+          "after": {
+            "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+            "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "ff96a644b492b9b9b98f1abb6c40a635b87e50f0",
+            "content": "sha256:5f7a1176fa63ebbc73a5e2341da276983d376bc8cf7946f0f6e30fb36fd2cb08",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-EZBH44"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1D16ZW",
+      "items": [
+        "sha256:e6fd253702940b1abed884407bcc74f37c3b12875549e864e62a164957085420"
+      ],
+      "reason": "The visible-tab scan now also fans its value out to the hierarchy listener, so the same live candidate set feeds the Parent pill's gate; the bridge's intersection with the current SDK IDs and the per-frame-lifetime reset are unchanged, and the dashboard's own use of the set narrows to scoping a navigation failure because the sidebar is gone. Both entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-22AFD8",
+      "items": [
+        "sha256:9b004e18e049d2e8a09cf0e1325f3495fc525df4d2dceaed162fa39a8ad8dd29"
+      ],
+      "reason": "The suite keeps its injected-directory cases and adds the D86 pill/selection cases; the card is updated for the added cases in the same pass.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoHierarchy.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-24EQ8T",
+      "items": [
+        "sha256:991d427dca8a88136bcb771f915e38e611833f04869405d05dc5ff890a744c32"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:991d427dca8a88136bcb771f915e38e611833f04869405d05dc5ff890a744c32"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R75",
+          "packet": "requirements/MIK-R75-v1-the-launcher-strip-does-not-repeat-the-chat.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "f4860145a16e9ef681008639942d7796d9d92104",
+            "content": "sha256:288c14aba152f8e643586623051661e3204f82a0af2c46416eac206e729c1e97",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoNavigation"
+            },
+            "path": "dashboard/src/cockpit/PaseoNavigation.tsx"
+          },
+          "id": "RLZ-31Y7TT"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "b97d6dab0d489d79176670d8103d5b1722f67f19",
+            "content": "sha256:caedd008e3055c8d909691b2fcc9ea86484bb887c33d429b3881d384f867408c",
+            "locator": {
+              "kind": "symbol",
+              "name": "groupPaseoChats"
+            },
+            "path": "dashboard/src/cockpit/paseoNavigationModel.ts"
+          },
+          "id": "RLZ-M8HE95"
+        }
+      ],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-33BJ53",
+      "items": [
+        "sha256:696f0ce306693827a11fdfdb11dfbda9dd432752a2b73e850fa433361aec2099"
+      ],
+      "reason": "The dashboard draws no chat navigation of its own (rule 7) and PaseoNavigation.tsx and paseoNavigationModel.ts are deleted with their tests, so the grouping obligation has no remaining realization; the host's own list is the navigation (rule 8) and the invariant is retired. No parallel grouping is kept or rebuilt.",
+      "revision": 1,
+      "subject": "INV-P42RRV"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3RB7BY",
+      "items": [
+        "sha256:60edcef960c58ddb200180178fbf993de281d9e49cc48aab5a65fe243780e97a"
+      ],
+      "reason": "The data route gains one small client module (roleReport.ts) whose call and error wording are carried by its card; the route's account of the dashboard's data clients and serving boundaries is unaffected.",
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4G99KH",
+      "items": [
+        "sha256:f28d4b772c30daffba9cca8831ccdbb19e6fdfa478fc4b9723aa8cf622acf680"
+      ],
+      "reason": "The tests route's account of its lanes and governance catalogs still holds: one new test module was registered in both catalogs and one module gained the fifth route; no lane, suite boundary or catalog authority changed.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4YJW81",
+      "items": [
+        "sha256:b2079753c56e358ffe012425a629e269e2cacac444fd43cca75f2c25f7ac69e0"
+      ],
+      "reason": "The hunk deletes the dashboard's catalog/activity parsing that only the sidebar used; rules 7 and 9 remove it with its consumer, and the surviving selection and Parent-error parsing is carried by their invariants.",
+      "subject": "hunk:sha256:b2079753c56e358ffe012425a629e269e2cacac444fd43cca75f2c25f7ac69e0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-58XG5E",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The catalog gains one consumer row for the new report test module; its structure, the 19 contracts and the 83 artifacts are unchanged, and the ownership checks keep reading source-derived ownership. The card's account of the catalog's authority is unaffected.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+            "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-V6FJD9"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-60HVPZ",
+      "items": [
+        "sha256:4f25d87f957cce512150052f59ee2ac41e45510baa634a6c2a11c718ef891600"
+      ],
+      "reason": "The same edits leave the queued-update partitioning and snapshot replacement semantics untouched; the entry is re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-XENPC7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6BFV7P",
+      "items": [
+        "sha256:e3917c9788deb175a28ce989d9935bebb03acfdc13de0ba7d142236c45072450"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:e3917c9788deb175a28ce989d9935bebb03acfdc13de0ba7d142236c45072450"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-762TFG",
+      "items": [],
+      "reason": "New family authored from five obligations that only hold together: the removal of the dashboard's own navigation, the host-list ownership with its one opening migration, the kept plugin selection/bridge behavior, the Parent pill's live-value gate, and the rule that no parallel navigation is built. Each member was read against its candidate source and the reviewer's evidence.",
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7P6XB1",
+      "items": [
+        "sha256:2c10f7991da36410f5f31babe28a467e5e023d0fe69642302825f76b73f594b1"
+      ],
+      "reason": "Removing the paseoAgentSpin keyframes removes a rule that only the deleted dashboard sidebar used; the card was updated to record that removal under rule 7. No other section, token, layer or convention of the stylesheet changed, and the effects-off freeze and the RV-1 word-break override are untouched.",
+      "subject": "onboarding:dashboard/src/index.css"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7VPT0N",
+      "items": [
+        "sha256:47da7173c0dc1390241ccbf9f85469328a665e93fbb7356ea3cfccb3e0143a3a"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:47da7173c0dc1390241ccbf9f85469328a665e93fbb7356ea3cfccb3e0143a3a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9BQC6Y",
+      "items": [
+        "sha256:f05e5a7dcae5f3ea50a788f553843cd48e8f8de146a75984858115e7dc628efe"
+      ],
+      "reason": "The hunk adds the per-browser marker key constant; rule 8's obligation is realized at the migration helper that reads and writes it, not at the constant.",
+      "subject": "hunk:sha256:f05e5a7dcae5f3ea50a788f553843cd48e8f8de146a75984858115e7dc628efe"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D3K2E2",
+      "items": [
+        "sha256:37c31405c0f2edea29e77d063e1469038c8dfe348d1515fc512cd0e775db2a8d"
+      ],
+      "reason": "The hunk deletes the sidebar-only frame-control surface (the pane's hierarchy/selection setters, the navigate call and the hierarchy message cases); rules 7 and 9 own what remains, and no invariant applies to the deleted bytes.",
+      "subject": "hunk:sha256:37c31405c0f2edea29e77d063e1469038c8dfe348d1515fc512cd0e775db2a8d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D8F3Z0",
+      "items": [
+        "sha256:f72e3b39dcc3d3f46a9b2fbba27157f1c19a1cb82736549fbfa60dd6f6598cf5"
+      ],
+      "reason": "The hunk deletes the launcher's removed navigation button, its state and its props, or the removed reply/status/capability block; rules 1 and 7 own both removals and the surviving controls and failure line carry the behavior.",
+      "subject": "hunk:sha256:f72e3b39dcc3d3f46a9b2fbba27157f1c19a1cb82736549fbfa60dd6f6598cf5"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EJM7B3",
+      "items": [
+        "sha256:fae74ef4f01466ae577351bf864d23650b4d10f391bae58285ff1db4cde0f16d"
+      ],
+      "reason": "The hunk deletes the launcher's removed navigation button, its state and its props, or the removed reply/status/capability block; rules 1 and 7 own both removals and the surviving controls and failure line carry the behavior.",
+      "subject": "hunk:sha256:fae74ef4f01466ae577351bf864d23650b4d10f391bae58285ff1db4cde0f16d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EMJAX0",
+      "items": [
+        "sha256:b29d06cc9610341a6bf825e6e9b3f1e85dfa6a1dabb65736ae3f0c6678814902"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:b29d06cc9610341a6bf825e6e9b3f1e85dfa6a1dabb65736ae3f0c6678814902"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EWZHDX",
+      "items": [
+        "sha256:19f7db15e215c1fa87946796994d1b70cf3d0f11df2327a3ddddbefa0e64d3de"
+      ],
+      "reason": "The hunk adds the import of the shared selection listener; rule 9a's obligation is realized at startHierarchy's gate, not at the import line.",
+      "subject": "hunk:sha256:19f7db15e215c1fa87946796994d1b70cf3d0f11df2327a3ddddbefa0e64d3de"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FWTRF6",
+      "items": [
+        "sha256:45416f843442cc0d23e823cbb9f6dcc5084e7deebf8626050237c185d5edd599"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:45416f843442cc0d23e823cbb9f6dcc5084e7deebf8626050237c185d5edd599"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FZJWPE",
+      "items": [
+        "sha256:f0e201b5f0e90739f7e3d1b546817fca68447132264efef5e1ec4edfe5c14380"
+      ],
+      "reason": "The standalone look/sidebar preference cases still hold; the card's account of the file is unchanged by the migration helper beside it.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoPluginLook.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G9V85X",
+      "items": [
+        "sha256:6ef24d6a3ad29edefaa5b4c2d4cd3c2c002908a832882d33b37e89e3a6b3f363"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:6ef24d6a3ad29edefaa5b4c2d4cd3c2c002908a832882d33b37e89e3a6b3f363"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GEACP1",
+      "items": [
+        "sha256:40a415fcf12f3030a8ec526756ea69f657f58337cb026d7a28d24a183cc5cb00"
+      ],
+      "reason": "The hunk changes the migration helper's doc comment and signature line as it is renamed from the collapse; rule 8's obligation is carried by the helper's realization, and the comment carries no behavior.",
+      "subject": "hunk:sha256:40a415fcf12f3030a8ec526756ea69f657f58337cb026d7a28d24a183cc5cb00"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HSXB08",
+      "items": [
+        "sha256:6face0c524e75d2b521b8c871aa61aca7abee746338724916f73c42c4301888b"
+      ],
+      "reason": "The module's pinned route set gains the fifth route and its name changes; the card is updated in the same pass.",
+      "subject": "onboarding:mcp/tests/test_previous_host_removed.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-J5XM1K",
+      "items": [
+        "sha256:b59c07f46b227dd4c507e47039c401b1bf660088bc4b6fce80fe2955e71215c6"
+      ],
+      "reason": "The suite still verifies honest execution fields and Result/Revive wiring; the display cases now assert the failure line and the unchanged bar. The card is updated in the same pass.",
+      "subject": "onboarding:dashboard/src/cockpit/RoleExecutionStatus.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JH8ZNT",
+      "items": [
+        "sha256:eb5f781f75f215f57c13528cc1ca48f92eabf17891a5932da5e3f0822723d9d7"
+      ],
+      "reason": "The hunk changes only the frame module's imports as the sidebar's modules leave it; no behavior applies to the import lines.",
+      "subject": "hunk:sha256:eb5f781f75f215f57c13528cc1ca48f92eabf17891a5932da5e3f0822723d9d7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JTGM3H",
+      "items": [
+        "sha256:b75559d19dd03d9d6f60f46fc25b797e7e13921b80320d32dd3265211217d7bb"
+      ],
+      "reason": "The hunk deletes the launcher's removed navigation button, its state and its props, or the removed reply/status/capability block; rules 1 and 7 own both removals and the surviving controls and failure line carry the behavior.",
+      "subject": "hunk:sha256:b75559d19dd03d9d6f60f46fc25b797e7e13921b80320d32dd3265211217d7bb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K1S9YA",
+      "items": [
+        "sha256:46287fa90df6f076ff08f97d96be84a15d37ba99da4e3f65d87f1101e022c02d"
+      ],
+      "reason": "The helper suite keeps its framing/trust/writer-provenance cases and changes the sidebar case from the load-time collapse to the one opening migration; the card is updated in the same pass.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoPluginClient.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KJRG7Y",
+      "items": [
+        "sha256:533a418dde340072023e6ab2d74701918805b471eb4921e7930dae9127aab297"
+      ],
+      "reason": "The hunk deletes the dashboard's catalog/activity parsing that only the sidebar used; rules 7 and 9 remove it with its consumer, and the surviving selection and Parent-error parsing is carried by their invariants.",
+      "subject": "hunk:sha256:533a418dde340072023e6ab2d74701918805b471eb4921e7930dae9127aab297"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R75",
+          "packet": "requirements/MIK-R75-v1-the-launcher-strip-does-not-repeat-the-chat.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+            "content": "sha256:a7e703b60ba6542cb670431a28e85291b3d655a63fcbd3c3df680370921430f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "938d34d0a3991aa37925eac157daada7619620aa",
+            "content": "sha256:33c547411a2a3ea1376570881d8886605b23acb0b3a0c1955526d511fb7697cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-7BAFW6"
+        },
+        {
+          "after": {
+            "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+            "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+            "content": "sha256:7e466cd87bd082eec95ecf3801ade2ab9baf82ee38264394cd171bdcc0288ec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "display"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AVC402"
+        },
+        {
+          "after": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:007bdd0c908e809a852c368dba65b0484767dfaa24cbd32eaf65360bc909065f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "ce4c933479dbe1f7d31b34450ff93cf46ec8b5fc",
+            "content": "sha256:afcd14ec7564354e5b34c3c31559845e5a891620147c104bc97b75b1f93369d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-XXYE2Y"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-M6S8V1",
+      "items": [
+        "sha256:f1b9ea0021156089996c49b8b0f98dcb499eb1f85d3cf29f1657609360078909"
+      ],
+      "reason": "The pane and its frame keep their persistence and the display steering is unchanged, but the launcher-owned navigation toggle the statement leaned on is removed with rule 7, so the statement and scope drop that claim; RoleChatsPane's old toggle rationale is revised in place. Owner prospective resolution navigation-3 applied.",
+      "revision": 2,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R75",
+          "packet": "requirements/MIK-R75-v1-the-launcher-strip-does-not-repeat-the-chat.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "f4860145a16e9ef681008639942d7796d9d92104",
+            "content": "sha256:df996d0fd55141d3f9292ff97d096c5af7cd131de750272be122fbbc76764147",
+            "locator": {
+              "kind": "symbol",
+              "name": "activity"
+            },
+            "path": "dashboard/src/cockpit/PaseoNavigation.tsx"
+          },
+          "id": "RLZ-564XJT"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "f4860145a16e9ef681008639942d7796d9d92104",
+            "content": "sha256:28180e996e8a5a817cafca56491882b1d295343bdda6c51c09568fe463cafc0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentIdentity"
+            },
+            "path": "dashboard/src/cockpit/PaseoNavigation.tsx"
+          },
+          "id": "RLZ-ED9XQ4"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "09027e7ade2617895d7b02242d58df1ab73ec68e",
+            "content": "sha256:03fa1f89d2defba23f4037c12e903644c058e75189bc9ea16aa0ee08bc5ce4cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentActivity"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "id": "RLZ-TEM1TT"
+        },
+        {
+          "after": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+            "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-Y4N5D7"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-MA24ZX",
+      "items": [
+        "sha256:15eefe2da9aa07be1eb9920fdd22b5299155078f53ca3130edaaba4f8def0c8f"
+      ],
+      "reason": "The dashboard sidebar and its catalog/activity parsing are deleted with rule 7 and the removed agentActivity construct, so the invariant's presentation half and three of its realizations go (RLZ-564XJT, RLZ-ED9XQ4 and RLZ-TEM1TT); the plugin's projection is retained for the unchanged bridge and the consumer MIK-R95 plans, and the statement is narrowed to it. Owner prospective resolutions navigation-2 targets 0 and 1 applied. Evidence (L75-reassess-INV-E4TSZB-admission): Owner prospective O01 resolution, navigation-2: the dashboard realizations are removed and the retained plugin target remains independently resolved; the realization entries remaining under INV-E4TSZB sit in one file.",
+      "revision": 2,
+      "subject": "INV-E4TSZB"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MJQZJZ",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The module is added to the unit-regression lane's population; no lane boundary, ordering rule or catalog authority changed, so the card needs no body change.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MRBZEX",
+      "items": [
+        "sha256:b732ff02c899bae135d94a77ed75355c0e9e7a5ed458b8ece432b084f59b0026"
+      ],
+      "reason": "The notes-reader route's contract — one controlled reader reusing the Change-Set viewer's pane and reading through the existing notes endpoints — still holds; the added role-report kind is file-local behavior of its card and adds no route or endpoint of its own.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MYS2TM",
+      "items": [
+        "sha256:f421bc31238a6c9cbf266660c6536615aedd67470879d9349fe9e84efa6d1fac"
+      ],
+      "reason": "The MCP route gains one CLI route module (role_report.py) beside the existing role-launch routes, registered through the same application factory; the route's account of the server, its tools and its boundaries is unchanged.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NCD4JV",
+      "items": [
+        "sha256:242339e2b78e43e9d08cd637f85e63eb77d25a9136b96caea9852feff021e671"
+      ],
+      "reason": "The route's subject — the dashboard source tree and its cockpit/panels/data boundaries — is unchanged. The cockpit changes are file-local behavior carried by their cards; no new route, layer or boundary appears, and the removed sidebar was a component inside the existing cockpit route.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:e1379b558a997528d6f36e211bd24e30e440d481eebbb87ac51dec1b2cea9533",
+            "locator": {
+              "kind": "symbol",
+              "name": "allEntries"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+            "content": "sha256:e1379b558a997528d6f36e211bd24e30e440d481eebbb87ac51dec1b2cea9533",
+            "locator": {
+              "kind": "symbol",
+              "name": "allEntries"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-1AXCW1"
+        },
+        {
+          "after": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+            "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-T7JY0X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-NG2MPV",
+      "items": [
+        "sha256:5b2ca3f4b3343da42d51aa3dc9849bd5f930e44671e1dadafffa8f3b4e552af2"
+      ],
+      "reason": "The leaf's edits to hierarchy.ts added the selected-candidate gate and the listener next to the directory walks; the pagination contract (every remaining page followed, absent or repeated cursors refused) and the shared PAGE_SIZE for the initial and continuation reads are unchanged, and both entries are re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-PF6J5D"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P70Y2R",
+      "items": [
+        "sha256:de1370a1d2ab62522c4822f61f3cc5b49cd3256a4c822afce86ae3056fcb77f3"
+      ],
+      "reason": "The hunk adds the import of the one report-route registration helper to the launcher's route module; rule 4a's obligation is realized at the registration function and the route, not at this import statement.",
+      "subject": "hunk:sha256:de1370a1d2ab62522c4822f61f3cc5b49cd3256a4c822afce86ae3056fcb77f3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q823BB",
+      "items": [
+        "sha256:35017576d8f0efa3925b3f7d13c89447683becb787ea60b107cd121f6b0e2b58"
+      ],
+      "reason": "The suite keeps its notes/requirements cases and adds the role-report kind; the card is updated for the added case in the same pass.",
+      "subject": "onboarding:dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q9ANTT",
+      "items": [
+        "sha256:a819b78c96f0e596060da793b5cd3b1d7ffd1a7bea10e6a7ca39707451148f1c"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:a819b78c96f0e596060da793b5cd3b1d7ffd1a7bea10e6a7ca39707451148f1c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QSNE97",
+      "items": [
+        "sha256:d1e361bcaa77cc4ac2f440a1fc2baeea94a1248a97179753d349a4ff91e1a0a8"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:d1e361bcaa77cc4ac2f440a1fc2baeea94a1248a97179753d349a4ff91e1a0a8"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+            "content": "sha256:8d90f4e43207d461b1078a42ffdcaf1911200cb7c57c5fc08527c020d587ee52",
+            "locator": {
+              "kind": "symbol",
+              "name": "onSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-M4FHMG"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-QXV8XY",
+      "items": [],
+      "reason": "The added helper is the second place rule 9a's obligation is realized: the selected-candidate publisher fans the same value out to the hierarchy's listener and returns the removal function, so the pill's gate and the bridge's check read one live publisher instead of a second identity source.",
+      "revision": 1,
+      "subject": "INV-XQMXT2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R11NTA",
+      "items": [
+        "sha256:99e040f6b9d0e235b510af0fa1354a02d61e84286f0017bc63a8a3998fda17a4"
+      ],
+      "reason": "The hunk changes the frame-load import to the renamed migration helper; rule 8's obligation is realized at bootstrapEmbed's call and at the helper, not at the import line.",
+      "subject": "hunk:sha256:99e040f6b9d0e235b510af0fa1354a02d61e84286f0017bc63a8a3998fda17a4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R91TS5",
+      "items": [
+        "sha256:1c4df0e9d077ce28efdca93b5737d5e2bfc3eaf14a19191ae06b4fcd24ebc98b"
+      ],
+      "reason": "The hunk deletes the sidebar-only frame-control surface (the pane's hierarchy/selection setters, the navigate call and the hierarchy message cases); rules 7 and 9 own what remains, and no invariant applies to the deleted bytes.",
+      "subject": "hunk:sha256:1c4df0e9d077ce28efdca93b5737d5e2bfc3eaf14a19191ae06b4fcd24ebc98b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SX8MTM",
+      "items": [
+        "sha256:a7188771056c9bff6254109f8d1b24d965fa4b7cc64cbb7a2c18b34e94039a97"
+      ],
+      "reason": "The hunk deletes the launcher's removed navigation button, its state and its props, or the removed reply/status/capability block; rules 1 and 7 own both removals and the surviving controls and failure line carry the behavior.",
+      "subject": "hunk:sha256:a7188771056c9bff6254109f8d1b24d965fa4b7cc64cbb7a2c18b34e94039a97"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T4ST0Y",
+      "items": [
+        "sha256:48fecb3f1b2f2c0ecc602fb033eda5dc735f3356910de74e36917afe154f91d9"
+      ],
+      "reason": "The hunk deletes the sidebar-only frame-control surface (the pane's hierarchy/selection setters, the navigate call and the hierarchy message cases); rules 7 and 9 own what remains, and no invariant applies to the deleted bytes.",
+      "subject": "hunk:sha256:48fecb3f1b2f2c0ecc602fb033eda5dc735f3356910de74e36917afe154f91d9"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "receive"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+            "content": "sha256:3db0955128547a99ef8f35c57c23fa106bc61640c7573f7eded51610edbfcaaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "receive"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-D6KWM4"
+        },
+        {
+          "after": {
+            "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+            "content": "sha256:a0441a0296f68cfd10eb544a04124e4bcfd0e395d60f7903f70fb671a2f3b4b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "938d34d0a3991aa37925eac157daada7619620aa",
+            "content": "sha256:3d0315742077ce1fa8ea3a0161624d86dcab2ede154fe6522da9ea114fb541c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "EmbeddedFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-MDFGTP"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VBK3EM",
+      "items": [
+        "sha256:02dc85b1baf42743319c6be8399b98ce535bc230dced7321de9d3f9e8f312c0f"
+      ],
+      "reason": "The frame's clipboard delegation, its configured-origin acceptance and its window check are untouched by the removed sidebar; the frame body lost only the navigation rail. Both entries re-anchor unchanged at the candidate.",
+      "revision": 1,
+      "subject": "INV-1PVR72"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VJDC79",
+      "items": [
+        "sha256:3cde536635c8132a4fcda4c7244ae96cbecfeaeaa3ee65958f6a979b88d4a09e"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:3cde536635c8132a4fcda4c7244ae96cbecfeaeaa3ee65958f6a979b88d4a09e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WBE5EZ",
+      "items": [
+        "sha256:f2de32411fb9b229848f1952f43755412725c3caff175390d835b2755c97b04d"
+      ],
+      "reason": "The hunk deletes a piece of the dashboard's own chat-navigation sidebar from the frame body (its mount, props, state or notice) and carries no invariant of its own; rules 7 and 9 own the removal and the surviving frame behavior.",
+      "subject": "hunk:sha256:f2de32411fb9b229848f1952f43755412725c3caff175390d835b2755c97b04d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WGF75R",
+      "items": [
+        "sha256:410a23cc4aacc29d6b1fa18558f3a1bb6a5ea94a5f6ff0c82e56d9acce35f037"
+      ],
+      "reason": "The hunk deletes the dashboard's catalog/activity parsing that only the sidebar used; rules 7 and 9 remove it with its consumer, and the surviving selection and Parent-error parsing is carried by their invariants.",
+      "subject": "hunk:sha256:410a23cc4aacc29d6b1fa18558f3a1bb6a5ea94a5f6ff0c82e56d9acce35f037"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-WSQHET",
+      "items": [],
+      "reason": "OR-R014's sealed interpretation 09 is now a condition of rule 3: after a failed task-bound dispatch and a failed options read the base selector/Start behavior is restored and that path offers no Retry, while the one failure line remains. The guarantee is unchanged; its scope now names the boundary explicitly.",
+      "revision": 1,
+      "subject": "INV-C7AT8R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X7S94P",
+      "items": [
+        "sha256:7d0e470bae9918ef646878d6a85073dd7ff346da8d27364ced7f72020da38a88"
+      ],
+      "reason": "The hunk adds the two module imports rule 4 needs (the report call and the shared reader); the obligation is realized at Result's handler and at the reader, not at the import statements.",
+      "subject": "hunk:sha256:7d0e470bae9918ef646878d6a85073dd7ff346da8d27364ced7f72020da38a88"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y2S2XX",
+      "items": [
+        "sha256:e2fb0ba3a7a7f10bd3643cb0bb4a960c26cb339945ddd0f9cbedfa613e1aa8e7"
+      ],
+      "reason": "The hunk deletes the sidebar-only frame-control surface (the pane's hierarchy/selection setters, the navigate call and the hierarchy message cases); rules 7 and 9 own what remains, and no invariant applies to the deleted bytes.",
+      "subject": "hunk:sha256:e2fb0ba3a7a7f10bd3643cb0bb4a960c26cb339945ddd0f9cbedfa613e1aa8e7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "f758c127da523d2c6813effc40285cd4ebd08bfd",
+            "content": "sha256:39ddd04e63f089f607434a217dc1e241292c402c6cef1bf87f3c62c2388c7986",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AY5KZV"
+        },
+        {
+          "after": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "bb8bb2f4e3402e371378b57345e1894722b9ed52",
+            "content": "sha256:6ed106c8af00175cc87c28fc63d9f8e88bfc5c4da3ce0e2b0c9cf9bd2e056f8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-FZQP72"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Z56CX9",
+      "items": [
+        "sha256:9d3815f9c24640be4fe040a0987f065e91a31002c26f1381345edb130e30a441"
+      ],
+      "reason": "The message switch dropped only the sidebar-only hierarchy kinds while the source-scoped Parent failure display remains, and the hierarchy still owns the Parent composer pill, now gated on the live selected candidate set (rule 9a). Both claims hold at the candidate and their entries are re-anchored.",
+      "revision": 1,
+      "subject": "INV-0286SX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZCBHS8",
+      "items": [
+        "sha256:09b09e1fe4c176fe9ecadebbb5b34ace50f4298170f4213a8921b8e393c93bff"
+      ],
+      "reason": "The catalog/tier cases the card describes remain; the launch-lock case now expects the one actionable line. The card is updated in the same pass.",
+      "subject": "onboarding:dashboard/src/cockpit/RoleChats.launcher.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZFZXCC",
+      "items": [
+        "sha256:2105f118694753a6bf31330593cf1be97b998bccef0bee7c33b48350d576d1cc"
+      ],
+      "reason": "The hunk deletes the launcher's removed navigation button, its state and its props, or the removed reply/status/capability block; rules 1 and 7 own both removals and the surviving controls and failure line carry the behavior.",
+      "subject": "hunk:sha256:2105f118694753a6bf31330593cf1be97b998bccef0bee7c33b48350d576d1cc"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZN08GK",
+      "items": [
+        "sha256:53cb986f96ba129fc1d98554c4bc450bceab6285317c689d3a19188be16900aa"
+      ],
+      "reason": "The suite drops the grouped-navigation cases with the removed sidebar and keeps the origin/window, selection and Parent-failure cases its card describes; the card is updated for the removal in the same pass.",
+      "subject": "onboarding:dashboard/src/cockpit/PaseoChatFrame.test.tsx"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

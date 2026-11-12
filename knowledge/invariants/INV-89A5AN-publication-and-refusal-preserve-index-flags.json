@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Dropping index flags, intent-to-add or sparse entries during publication or refusal would lose staged work."
+  },
+  "applicability": "Index restoration across publication and refusal.",
+  "conditions": [
+    "The index holds flags, intent-to-add entries or sparse-checkout entries a tree cannot record."
+  ],
+  "exclusions": [
+    "Entries the caller staged for the commit itself; those follow the judged tree."
+  ],
+  "id": "INV-89A5AN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_git_command.py::PublishTreeCommitGuardTests::test_the_index_keeps_what_no_tree_records_after_a_publication_and_a_refusal; N11-index-shape.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 11e",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Publication and refusal preserve index flags, intent-to-add entries outside the commit and sparse-checkout entries.",
+  "status": "proposed",
+  "supersedes": []
+}

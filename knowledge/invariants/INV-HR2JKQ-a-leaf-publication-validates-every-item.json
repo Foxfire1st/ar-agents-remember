@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The five parametrised file/base/route shapes pin the population the item check reads: an open file is judged, the leaf's own closed file is judged at its publication, and a closed file at a master route or closed by an earlier frozen closeout is not. Restoring the base-filtered population fails two of the five, so the regression cannot pass unnoticed."
+  },
+  "applicability": "Every R09-history-rows item-token judgment over converted memory: at a leaf's publication (closeout, direct landing, recorded landing), at a master's checkpoint, at a master-level landing and at a sync.",
+  "conditions": [
+    "An open history file is item-judged at every route.",
+    "At a leaf publication the leaf's own history file is item-judged whatever its `closed` flag says, when neither a comparison base nor a frozen commit holds it closed.",
+    "At a master's checkpoint, a master-level landing or a sync, a closed history file of one of the master's leaves is covered by MIK-R52 rule 5 (closed, owned by a leaf the master accounts for, byte-identical to that owner's recorded publication) instead of being item-judged here."
+  ],
+  "exclusions": [
+    "A history file closed in a comparison base, or closed by an earlier non-integrated closeout of the same leaf: historical, and outside both history checks.",
+    "The unknown-subject rule, which still reads every history file at every route; the merge rule `R09-history-rows-merged`, the hidden-change rule and MIK-R22 rule 7."
+  ],
+  "id": "INV-HR2JKQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/178_a-leafs-closed-history-is-judged-at-its-own-publication-ar/role-reports/reviewer/b3e57f01-2c48-4a91-8f36-1d90ac6582b7/role-launch/reviewer-probe.json; /home/firefox/projects/ar-coordination/worktrees/agents-remember/178_a-leafs-closed-history-is-judged-at-its-own-publication-ar/role-reports/reviewer/b3e57f01-2c48-4a91-8f36-1d90ac6582b7/role-launch/focused-regressions.txt"
+      ],
+      "path": "L178-ingest-list.json"
+    },
+    "handoffEntry": "MIK-R180@v1",
+    "leaf": "260928-MIK-L178",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A leaf publication validates every item of its own newly published history, while history item checks and re-anchor checks use the same checked_history_files scope.",
+  "status": "accepted",
+  "supersedes": []
+}

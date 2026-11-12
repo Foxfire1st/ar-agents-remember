@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The keepalive obligation needs both the rail shell wrapper and the frame descriptor latch; neither file alone promises the retained element. Typed per-case proofs were withdrawn as extractor-unsupported; case evidence lives at file granularity in the cards."
+  },
+  "applicability": "The shell's right-rail document chat for the dashboard-open lifetime after its frame has been created, including the review page's chat column.",
+  "conditions": [
+    "Operations keeps first-show creation when no preload was requested; a review requests preload while its chat column is closed.",
+    "A cold review preload loads the Paseo client without an agent address or agent start; showing the column asks for its bound existing task chat through ar.open when the channel is ready.",
+    "The review is a grid slot beside the same right rail, and neither the DocumentChat nor its iframe is moved to another parent.",
+    "River/chat and sidebar visibility changes hide the retained wrapper; ordinary page transitions and ready-channel task changes retain the same frame generation.",
+    "The hidden wrapper remains out of keyboard and accessibility reach."
+  ],
+  "exclusions": [
+    "The Chats page's separate frame.",
+    "A host application or version change.",
+    "Explicit Retry, host-return or qualified unavailable-channel recovery loads, which keep their existing separate rules.",
+    "Any new agent menu or creation of an agent on page/column open."
+  ],
+  "id": "INV-VMREN3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/sidebarChatStaysLoaded.test.tsx (toggle keeps element; switch keeps element; ghost keeps element) + e2e/sidebar-chat-stays-loaded.spec.ts (walk, execution owed on Owner path)"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L122-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R122@v1 rules 2-3",
+    "leaf": "260928-MIK-L122",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The shell keeps one DocumentChat and its frame mounted across Operations, task documents and the review page, hiding it without unloading so draft and scroll survive visibility toggles.",
+  "status": "proposed",
+  "supersedes": []
+}

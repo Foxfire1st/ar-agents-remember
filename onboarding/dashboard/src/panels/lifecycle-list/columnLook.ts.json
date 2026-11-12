@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/columnLook.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5b0386930ff4640a12d17aea540cb3f3dc58d331",
+        "content": "sha256:b3f7df644cd004a039145f8e78ceacab131b61880d1439ebeee005655c93d607",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 13
+        }
+      },
+      "id": "RLZ-SNMDJ0",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "This exact frozen presentation construct supplies the typography/bounds named by the clause; its formerly missing proof is now supplied in the paired mounted evidence.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The exported caret cell keeps a fixed one-character lane, muted colour and 0.72rem task-page smaller text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b0386930ff4640a12d17aea540cb3f3dc58d331",
+            "content": "sha256:b3f7df644cd004a039145f8e78ceacab131b61880d1439ebeee005655c93d607",
+            "locator": {
+              "kind": "symbol",
+              "name": "caretCell"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Sidebar typography takes its title and smaller-text sizes from the task-page row and count recipes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+            "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

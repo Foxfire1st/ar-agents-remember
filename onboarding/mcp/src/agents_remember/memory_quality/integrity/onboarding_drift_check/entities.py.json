@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/entities.py",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "Entity census parsing preserves exact keys/evidence/row text and refuses duplicate or misaligned structure, never grading currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "789eb8c15a6d0709af6e7d1de4e61a85369bf59f",
+            "content": "sha256:13bf1edf12b56b1845dd2e379a5261b261645e1c9792f6f1f6276c9f41ff4339",
+            "locator": {
+              "kind": "symbol",
+              "name": "parse_entity_census_rows"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

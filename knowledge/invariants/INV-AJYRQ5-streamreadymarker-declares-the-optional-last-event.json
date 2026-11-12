@@ -1,0 +1,30 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The last-feed case pins the marker field; without the record the panel loses its silent-river line."
+  },
+  "applicability": "Every ready marker the stream emits.",
+  "conditions": [],
+  "exclusions": [
+    "Stores holding no event at all, where the field is absent."
+  ],
+  "id": "INV-AJYRQ5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "case test_connected_stream_changes_no_file_and_names_the_last_feed in mcp/tests/test_tool_event_river.py (ready carries lastEventTs); pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W09",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "StreamReadyMarker declares the optional last_event_ts field.",
+  "status": "proposed",
+  "supersedes": []
+}

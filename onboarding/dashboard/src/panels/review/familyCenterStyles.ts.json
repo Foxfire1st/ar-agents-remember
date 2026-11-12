@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/familyCenterStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Keep the exact shared visual declarations used by the family center and its extracted guarantee component; this module changes no record or selection semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e0049db016565aba0724e41c7dd25dffed8f4cf",
+            "content": "sha256:831297e9b06912587c78b075fce33a7de887e2ff990bb6d310e34a624399db9c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

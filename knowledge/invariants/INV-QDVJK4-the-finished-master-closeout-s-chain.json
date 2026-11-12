@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Admission by shape lives in the merge-admission module and the publication-admission reader, so one statement keeps every pull-request merge from being refused by ancestry alone."
+  },
+  "applicability": "The finished-master closeout's chain check over the master line's merge commits.",
+  "conditions": [
+    "The merge has exactly two parents.",
+    "The second parent is a landed leaf commit in the exact leaf landing chain.",
+    "The merge tree equals that leaf commit's tree."
+  ],
+  "exclusions": [
+    "A merge that fails any shape clause, which the chain check still refuses.",
+    "Fast-forward publication, which creates no merge commit."
+  ],
+  "id": "INV-QDVJK4",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_publication_merge_shape.py (10 passed; real-route test fails on the pre-change copy with atomic-series-leaf-chain-invalid); rehearsal pr-merge step"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v5.4",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The finished-master closeout's chain check admits a pull-request merge by its shape alone: exactly two parents, the first the line's previous first-parent commit, the second a landed leaf commit H in the exact leaf landing chain, and the merge's tree equal to H's tree; the leaf is found from the merge's own second parent, and the series reads its landing workflow from its memory work branch.",
+  "status": "proposed",
+  "supersedes": []
+}

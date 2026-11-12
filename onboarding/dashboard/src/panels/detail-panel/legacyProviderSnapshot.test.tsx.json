@@ -1,0 +1,154 @@
+{
+  "path": "dashboard/src/panels/detail-panel/legacyProviderSnapshot.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+        "content": "sha256:2f120793351deb1e1f6829e086b53adac59d244d66109749fe2b71a6f74a797f",
+        "locator": {
+          "kind": "symbol",
+          "name": "a snapshot from before the provider removal > publishes no alert for the retired attention kinds"
+        }
+      },
+      "facet": "a legacy snapshot cannot surface either retired kind",
+      "id": "PRF-HYF3HY",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+        "content": "sha256:a5bab29cdd342024987dc2f38a0294754cdb0c6a8cd6913c650ed7f74cf4b4bd",
+        "locator": {
+          "kind": "symbol",
+          "name": "a snapshot from before the provider removal > renders the same worktree spine as a snapshot without the legacy records"
+        }
+      },
+      "facet": "an enclosure recorded before the retirement renders the same spine as one recorded after it",
+      "id": "PRF-XRWZ0D",
+      "invariant": "INV-H2G4R2",
+      "origin": {
+        "handoffEntry": "L192-W-R199-01",
+        "leaf": "260928-MIK-L192"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+        "content": "sha256:5714e458430bad297e4745e86ae14137ad10f42e683a40fa2c039195dddabcb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "a snapshot from before the provider removal > leaves the store with no provider map and no setup buckets"
+        }
+      },
+      "facet": "a legacy payload leaves the store with no derived provider map and no setup buckets, while the analytics object it still carries keeps its other keys",
+      "id": "PRF-Z6QQ2N",
+      "invariant": "INV-GQ9C07",
+      "origin": {
+        "handoffEntry": "L192-W-R199-02",
+        "leaf": "260928-MIK-L192"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The superseded wire shapes are declared inside the test, and the payload reaches the store as a value rather than a cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+            "content": "sha256:96e109e4fe6e9b22c25fc02a3b217094c5f5ed8bd72aab7996f353408953c039",
+            "locator": {
+              "kind": "symbol",
+              "name": "LegacyProjection"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The legacy payload and the clean payload differ only by providers, setup buckets and the retired attention kinds.\n\nAnchor: `legacy()`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+            "content": "sha256:9e3277a5e2dfa66041bf191dfd9cf38f789a5eebd5e1fcf45eb89ea5a566af7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The store keeps no provider map from a payload that carries one, and keeps the enclosure and group it can derive.\n\nAnchor: `'providers' in state`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+            "content": "sha256:5714e458430bad297e4745e86ae14137ad10f42e683a40fa2c039195dddabcb6",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Tasks view renders identical spine HTML with and without the legacy records, and the spine is not empty.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+            "content": "sha256:4d40ded021459d9e9676111606e25d37d2172c159329e5148fd0fa4d4ee67bfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "spineHtml"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+            "content": "sha256:a5bab29cdd342024987dc2f38a0294754cdb0c6a8cd6913c650ed7f74cf4b4bd",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 210
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`provider-down` and `failed-setup` reach the queue as fixture items and leave the bell with nothing waiting.\n\nAnchor: `AttentionQueue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99928149437dc84563b06163d2c8f12ae9ff2234",
+            "content": "sha256:2f120793351deb1e1f6829e086b53adac59d244d66109749fe2b71a6f74a797f",
+            "locator": {
+              "end": 231,
+              "kind": "line_range",
+              "start": 224
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

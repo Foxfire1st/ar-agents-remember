@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/panels/review/treeScroll.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38a030d1313af8f432cc6dad4314f5b26c64cb5f",
+        "content": "sha256:36ff0b933f310f73e4d1bf8a7c30caa5b1286d8002da59814b69089491d790ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "revealTreeRow"
+        }
+      },
+      "id": "RLZ-ETYY4W",
+      "invariant": "INV-811GC5",
+      "origin": {
+        "handoffEntry": "RP09",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Local reveal accounts for pinned rows by changing only this tree scroller's scrollTop; it writes no element height or style.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "5": {
+      "note": "treeScroll.ts current behavior at this source owner.\n\nAnchor: \"export function revealTreeRow(row: HTMLElement \\| null): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38a030d1313af8f432cc6dad4314f5b26c64cb5f",
+            "content": "sha256:36ff0b933f310f73e4d1bf8a7c30caa5b1286d8002da59814b69089491d790ac",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

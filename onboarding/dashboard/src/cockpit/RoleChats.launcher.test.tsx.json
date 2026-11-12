@@ -1,0 +1,93 @@
+{
+  "path": "dashboard/src/cockpit/RoleChats.launcher.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+        "content": "sha256:be9d9c913c16b5803f00f5b9414094fb4a66f6cfd5e41abce610cec136c3218f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DKX1HV",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The mounted R71 assertions retain explicit speed submission and feature preservation through model/effort changes, and read resolved mode/instruction provenance through chips and hover.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The launch-lock reread case enables fake time before mount, flushes the initial reply, then advances the 1,500 ms product reread in async `act`. Its no-status/no-alert and restored-Start assertions follow the actual reread opportunity; teardown restores real timers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "content": "sha256:17be3c090d1fb2451483e4bd738d2fa3addc4e634f3de2eb70fd28a866d9cdad",
+            "locator": {
+              "end": 173,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Configured tier, incompatible-model refusal and foreign-agent default disclosure remain asserted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "content": "sha256:a2ae369fd05974f67c97e4bfc0d5230fe7c250c894a763f6dcee7862b08c6bc6",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "content": "sha256:413ad7073a78fdb2cbd6e5963df05d9a04fd9a2f18f23eb0e4845a62daf20153",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 178
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Mounted R71 assertions read mode/instruction chips and their source hovers while retaining explicit-only feature submission and feature preservation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aa568e81418dfcb5ebc49229c1a56a197229d346",
+            "content": "sha256:a896582639d1f296d7cc640534e25b566cc36e2f60b6bad67ffcc0c508d0302d",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

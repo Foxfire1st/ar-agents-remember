@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The text and list branches can independently conceal a structural edit: stripped token boundaries can be called whitespace, while unbounded/unequal list correspondence can invent a pair. Both guards must hold for this bounded wording-presentation obligation, and their source/proof facets name the distinct cases. Existing reading-place and comparison-inspection family guarantees do not express this combined alignment safety; no existing family is broadened."
+  },
+  "guarantee": "For supplied intent wording, text classification does not hide a changed non-whitespace token boundary as whitespace-only, and list alignment does not guess pairs beyond its whole-list cell rail or across unequal remaining gaps. The list branch retains the ordered supplied items and explicit cell_limit/unpaired_gap reasons rather than manufacturing pair identity. Together these guard both text and list presentations against unsupported unchanged/pairing appearances; neither member alone does. This is classification/alignment structure, not semantic approval, original-file byte authentication or a measured whole-view/runtime budget.",
+  "id": "FAM-VJ5Q3S",
+  "members": [
+    "INV-76J49B",
+    "INV-8Y3BRE"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-word-diff-joint-family-01.json"
+    },
+    "handoffEntry": "CUR-L57-token-faithful-wording-family",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "dashboard/src/panels/review"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded token-faithful intent wording"
+}

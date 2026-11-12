@@ -1,0 +1,140 @@
+{
+  "path": "mcp/tests/test_role_message_wording.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The product surface inventory and positive/negative controls qualify the wording oracle.\n\nAnchor: `RoleMessageWordingTests.test_the_surface_census_matches_the_product_inventory`; `RoleMessageWordingTests.test_the_oracle_catches_directives_and_keeps_legal_lines`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:bbd21ddb4eaf78a34493f5f4e865d5d8ccf1618d7b40d6371fa4506e78767f9b",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 456
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Roles, operations and templates must express the file-message contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:55630e3349570e2864637ac522e0312b1e66a88862d3029b0d04d44690cd2b11",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_role_text_states_messages_as_files"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The parentless compiled-text helper collects each selected role's prompt and handover. The compiled-capsule test obtains the role's declared message step, combines that detail with its prompt for the file-message markers and scans both prompt/detail and serialized handover for forbidden wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:c8ad6344843fa673b5e2f94afc968ea80ffb2baacd3a8e1ac31b99245eae79b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_compiled_capsules_state_messages_as_files"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:5e6e22f5c38a42c50310b7075c5668fc956a0f70998a071006d4b226b83d8129",
+            "locator": {
+              "end": 452,
+              "kind": "line_range",
+              "start": 440
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Message-file markers are checked through the declared shared message step for role and addressed-operation surfaces, and through each handover template's action pointers to the message-handover reference. Operation checks visit every declared recipient, including Worker implementation and Curator/Manager curation, and compiled prompt checks combine the role text with its delivered detail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:1afae0566fba4830913403b0dc7f661383de794dccb0450cd82ed555c58e5dae",
+            "locator": {
+              "kind": "symbol",
+              "name": "template_message_text"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:ebc905cf1b2b6977bfa1f5c41a836d69e8503e86b3594df2e11019e89c778958",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The oracle keeps Reviewer- and Curator-specific file-message marker alternatives and requires each current delivered shared-step facet. Deleting a real marker must fail, and each role's alternatives must fail on unrelated surfaces. Declared operation recipients include both Curator and Manager curation; pointer, declaration, audience and step mutations must also fail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:7a1217069209962e6d363c798cd79cfca6c3567a86c7ebc0409e054819d1e01a",
+            "locator": {
+              "kind": "symbol",
+              "name": "OPERATION_RECIPIENTS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:05c9ef57b253150d3553f9ebff469543fa6fec854fec7fe30df42da75553db47",
+            "locator": {
+              "end": 559,
+              "kind": "line_range",
+              "start": 552
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`message_step` reads the actual role/operation-aware shared detail. Reviewer direct-verdict ownership is checked in the review operation's intake-and-verdict section, and retired duplicate verdict directions fail reinsertion controls. Six curation handoff targets must resolve to exact headings; Bootstrap keeps its no-message own-chat route, and pointer/declaration/audience/step/action mutations fail. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f624e7cd409c0f951cc46a51ee412db86de05c2",
+            "content": "sha256:75e1f4eb37ab51653c3414439d4ec7c3c346296360a8d04060aa3bf52059dd05",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_message_step_requires_pointer_declaration_audience_and_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

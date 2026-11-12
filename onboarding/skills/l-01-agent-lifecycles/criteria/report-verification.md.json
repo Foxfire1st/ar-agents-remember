@@ -1,0 +1,180 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/report-verification.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The canonical catalog owns report-verification doctrine rather than the generated bundle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:4ce75540c5a4383bb63a1500246f9c47845f4f94db7898b694ff82091cba813b",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "RV-6 is standing by requirement beside RV-1, RV-2, RV-4 and RV-5; RV-3 remains a candidate. RV-6 checks what a claimed complete or gate run included and omitted, requires the same message/subtest cause on the base before a failure is called pre-existing, and permits carried evidence only when the files it exercises remain byte-identical to the earlier run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:deceb948e92cc11ebc7d98677140300a5879f0edb519bc9ced8465c655bbec65",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generator retains a target record type; this declaration is not a fresh synchronization check.\n\nAnchor: `class SkillTarget:`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:932ecfb6de5eb944491881bceacb9f148bc06c2a7032a15f5f3eaad604b79419",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The current generator derives skill targets from the checkout declaration rather than an old TARGETS constant.\n\nAnchor: `def skill_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The reviewer binding table includes report-verification in every listed review type.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:1f762636392a1025af19edf0cff6729b687350a2575e221e185d8ea49c58d5f3",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "RV-1 requires artifacts behind claims and checks both content and mode in the same filesystem view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:8932219663840f03feec649f153bee9a0ece02174cc5c3d95d9d376e314925d2",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "RV-1 adds path-safe untracked enumeration, no-follow inspection, bounded content and explicit race/intent handling.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:722c03158cf09e491c8edb62a1d072e4bc5d9736c59907de7ae92ef09268d6d0",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "RV-2 enumerates sibling classes; RV-4 records load-bearing disclosures in the decision log.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:adc9f707e83fb55a0f929dce8f294af0d0b6cea5756b641f7ffd0b559be275aa",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 31
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "RV-5 proves the resolved invocation source and contract rather than trusting nominally canonical commands.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:090d83eb5de4f685dc40736941cbeb2f00f2cb76e31aa0b0a7b1d1b62b90d5fd",
+            "locator": {
+              "end": 45,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "RV-3 remains a candidate; baseline exploration and promotion, under the shared catalog rules, do not expand sealed fix-verification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "041fe889333367856d6a37a1494a8e18fb7f8f8b",
+            "content": "sha256:c7895820d7b57b7a1b22b4582fd6566e3c7ee85a8969a760b1cea92020bc05cd",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

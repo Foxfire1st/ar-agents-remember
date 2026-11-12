@@ -1,0 +1,347 @@
+{
+  "path": "mcp/src/agents_remember/application/dataset_copy_survey.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:32ef720c1e6f42d064db61246faa15ad92b0526626c2b59c59476259eda0af23",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_snapshot_owner"
+        }
+      },
+      "id": "RLZ-56D9GC",
+      "invariant": "INV-HSEKYE",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-12",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:dc28c6e45ff051876367c6f0860b6a978f133604c3297bb34bc91eb2d86eaceb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_generation_population_refusal"
+        }
+      },
+      "id": "RLZ-8ABP70",
+      "invariant": "INV-14MXY5",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-03",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:563529998151ea5124066e68417ba2dba9ade006af8d29e944e4e10abbe92e50",
+        "locator": {
+          "kind": "symbol",
+          "name": "_release_one_group"
+        }
+      },
+      "id": "RLZ-A05EYV",
+      "invariant": "INV-468X0P",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-03",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:efb1a4ca8123c3bf48f65c41e7a229449fa183164061d5067aa82a8c8f643934",
+        "locator": {
+          "kind": "symbol",
+          "name": "_census_task_documents"
+        }
+      },
+      "id": "RLZ-A63NFC",
+      "invariant": "INV-HSEKYE",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-12",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:7692bc2a837927ab4d160cae907069684a849a0d20fa0047337906c91fc0605b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_verify_owner_history"
+        }
+      },
+      "id": "RLZ-B0GST2",
+      "invariant": "INV-49BQPT",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-04",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:eccfd4833a5923ed2e9003bb3cf6b64df90d4e370e4fadcb60bd3cee4de89b67",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_document_status"
+        }
+      },
+      "id": "RLZ-B1RET6",
+      "invariant": "INV-H97F8K",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-12",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:dc28c6e45ff051876367c6f0860b6a978f133604c3297bb34bc91eb2d86eaceb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_generation_population_refusal"
+        }
+      },
+      "id": "RLZ-BNS7YE",
+      "invariant": "INV-468X0P",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-03",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:8be744bc0ff94889866baca86d2126b8bc67792c0df216e9f3b7f422b8427a47",
+        "locator": {
+          "kind": "symbol",
+          "name": "_repair_owner_release"
+        }
+      },
+      "id": "RLZ-BZ9APD",
+      "invariant": "INV-49BQPT",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-04",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:17268f34583cae534629a48b737f2161535ae19a62f604d0ee7af88c7ec1dd13",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_owner_release"
+        }
+      },
+      "id": "RLZ-CWXR6C",
+      "invariant": "INV-W2HVAT",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-04",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:8be744bc0ff94889866baca86d2126b8bc67792c0df216e9f3b7f422b8427a47",
+        "locator": {
+          "kind": "symbol",
+          "name": "_repair_owner_release"
+        }
+      },
+      "id": "RLZ-E1XW9P",
+      "invariant": "INV-W2HVAT",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-04",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:32ef720c1e6f42d064db61246faa15ad92b0526626c2b59c59476259eda0af23",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_snapshot_owner"
+        }
+      },
+      "id": "RLZ-ESTA45",
+      "invariant": "INV-H97F8K",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-12",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:563529998151ea5124066e68417ba2dba9ade006af8d29e944e4e10abbe92e50",
+        "locator": {
+          "kind": "symbol",
+          "name": "_release_one_group"
+        }
+      },
+      "id": "RLZ-J2MWWT",
+      "invariant": "INV-14MXY5",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-03",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:7692bc2a837927ab4d160cae907069684a849a0d20fa0047337906c91fc0605b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_verify_owner_history"
+        }
+      },
+      "id": "RLZ-K0KQY9",
+      "invariant": "INV-W2HVAT",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-04",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:eb16d74feb7c59f2afeff129c2e4d1418b73c993c123afbb9a148bc66c9b65ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "_release_snapshot_groups"
+        }
+      },
+      "id": "RLZ-MF2NQS",
+      "invariant": "INV-YETAXG",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-13",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:eb16d74feb7c59f2afeff129c2e4d1418b73c993c123afbb9a148bc66c9b65ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "_release_snapshot_groups"
+        }
+      },
+      "id": "RLZ-P5BZPE",
+      "invariant": "INV-8FSQZJ",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-13",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:17268f34583cae534629a48b737f2161535ae19a62f604d0ee7af88c7ec1dd13",
+        "locator": {
+          "kind": "symbol",
+          "name": "_run_owner_release"
+        }
+      },
+      "id": "RLZ-V4792H",
+      "invariant": "INV-49BQPT",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-04",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:eccfd4833a5923ed2e9003bb3cf6b64df90d4e370e4fadcb60bd3cee4de89b67",
+        "locator": {
+          "kind": "symbol",
+          "name": "_task_document_status"
+        }
+      },
+      "id": "RLZ-YEK2X3",
+      "invariant": "INV-HSEKYE",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-12",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+        "content": "sha256:efb1a4ca8123c3bf48f65c41e7a229449fa183164061d5067aa82a8c8f643934",
+        "locator": {
+          "kind": "symbol",
+          "name": "_census_task_documents"
+        }
+      },
+      "id": "RLZ-Z6GMEW",
+      "invariant": "INV-H97F8K",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-12",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Copies are surveyed, classified and owner-released; finished-task copies delete, unreadable control documents refuse.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87f667053e5114433a51bfe17959d0bc8f0bd714",
+            "content": "sha256:27a43675c6990091a45c0169c4d3570516cddc7047dd527f47879ea8c11198d2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

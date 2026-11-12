@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/hermetic_bootstrap.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/hermetic_bootstrap.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | a06d2ffcfae2c277f2ae19330c17d09c616b77e8 |
-| lastVerifiedCommitDate | 2026-08-28T13:58:55+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python testing boundary](overview.md)
@@ -33,13 +23,9 @@ reuses the kernel's native subprocess environment, removes repository selectors,
 - Cache/temp roots must be outside the candidate tree.
 - Environment leases are idempotently reversible on every exit path.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Candidate source root is validated explicitly. | `candidate_test_process` | mcp/test_support/agents_remember_test_support/testing/hermetic_bootstrap.py:50-59 |
-| Child isolation is centralized. | `hermetic_pytest_environment` | mcp/test_support/agents_remember_test_support/testing/hermetic_bootstrap.py:62-84 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-08-24T21:23+02:00 — Created for 260824-PDLS.
+- Candidate source root is validated explicitly. [1]
+- Child isolation is centralized. [2]

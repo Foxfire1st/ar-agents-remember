@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_ranges.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "MasterRangeAnswers answers immutable ranges and nothing else.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fce0218c0b6e646ca773875c9a13be469cb7a835",
+            "content": "sha256:081ccb1366b5dd9345307c22aefa7adb991e5ab7bf23876719e5cfc31dbd3dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "MasterRangeAnswers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

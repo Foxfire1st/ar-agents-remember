@@ -1,115 +1,66 @@
 # mcp/src/agents_remember/mcp/registration/core.py
 
-| Field                  | Value                                                   |
-| ---------------------- | ------------------------------------------------------- |
-| repository             | agents-remember                                          |
-| path                   | `mcp/src/agents_remember/mcp/registration/core.py`       |
-| doc_type               | `file-level-onboarding`                                  |
-| lastUpdated            | 2026-09-06T22:15:27+00:00 |
-| lastVerifiedCommitHash | `dc03c64a91947cee470622c560c516854eec86b5` |
-| lastVerifiedCommitDate | 2026-08-30T17:41:53+02:00|
-| governingOverview      | `overview.md`                                            |
+## Current operative account
+
+Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused.
+
+- The registered tools are `server_info`, `context_packet`, `read_ar_files` and `runtime_install`.
+- context_packet takes `repo_id`, `include_drift`, `include_freshness` and `task_context`; it has no `include_providers` parameter. It delivers slim roots, task ID/master, action lines and optional build/pair commits. The process serving-build commit is forwarded into this projection. Its drift description measures onboarding reference anchors and tree validity, reports a stale reference for repair while publication and the full quality run refuse it, distinguishes invariant currentness via knowledge_read/integrity, requires a changed-source card or no-impact record, and repairs nothing; omitting include_drift measures nothing.
+- `read_ar_files` takes up to 20 path strings, names cards/states/overview locations and carries no file text, session served state or continuation. Per path it also names one count of the open weaknesses on the file and one count of the documents that stand on it (`openWeaknesses`, `dependentDocuments`), each absent at zero and never a record's text; a count that cannot be taken is said once in `statesProblem` and refuses nothing. `refresh` remains receivable only for a typed removal refusal and is scrubbed from the advertised schema; object entries are refused.
+- `resolve_context` is not registered or forwarded; orientation is `context_packet`. Read-only marks are applied centrally after all registrars; `context_packet` is marked false because its opt-in freshness capability fetches remotes.
+- runtime_install describes stop-only leftovers and unused provider keys, not provider builds or restarts.
+
+## Current source contract evidence
+
+- The orientation registrar supplies the current naming/slim-packet and drift-description account; identity annotations and installer registration remain separately attributed. No execution acceptance is inferred. [6] [7] [9]
 
 ## Governing Overview
 
-[registration route overview](overview.md)
-
-## 260731-EFA-L8 Change
-
-The tool-registration functions gained bare-`*` keyword-only signatures (the 19
-PLR0917 fixes across `mcp/registration/*.py`); the rule stays enabled and call sites
-already pass keywords. Registered tools are unchanged.
-
-## Purpose
-
-`register_core_tools(server, config)` declares server identity, the orientation reads, and the two
-installers: `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`,
-`runtime_install`, `skills_install`. Its identity family binds the one process-scoped
-`ServingBuildPayload` used by `server_info`.
+[overview](overview.md)
 
 ## Code Commentary
 
-### Logic
+The registered identity reader `server_info` retains explicit ToolAnnotations: `readOnlyHint=True`,
+`destructiveHint=False`, `idempotentHint=True`, `openWorldHint=False`. These describe the identity
+operation, not a promise that its admitted tool-call logging creates no bytes.
 
-Seven `@server.tool()` declarations, each forwarding to its `mcp/tools/core.py` payload builder.
 `register_core_tools` obtains one strict payload through the application-owned
 `mcp_serving_build_payload()` gateway and passes that immutable value into the identity registrar;
 every `server_info` call therefore reports the same boot and candidate identity without
 request-time reprobes or an MCP-to-serving domain import.
-The docstrings are the model-visible contract and carry the semantics that are not in the types:
-
-- `ping` — liveness only; no configuration, no side effects.
-- `server_info` — the settings loaded **at startup**; a settings edit needs a harness restart.
-- `context_packet` — one orientation call. `include_providers` defaults true; `include_drift` and
-  `include_freshness` default false because they cost a drift scan and a remote fetch respectively.
-- `read_ar_files` — the research-phase read: ≤5 repo-relative paths, each paired with its file-level
-  onboarding plus the auto-attached repo and governing route overviews (deduplicated per session,
-  `refresh=true` re-serves after a compaction). Native read is the edit precondition once building
-  begins.
-- `resolve_context` — the one declaration here that packs: the five flat locators (`repo_id`,
-  `task_name`, `parent_task`, `leaf_id`, `contract_path`) become a `TaskRef`, while `worktree_name`
-  and `topology` stay separate arguments because they are not part of "which task".
-- `runtime_install` — the operator text distinguishes preserved user data (`memory-repos/`,
-  `providers/data/`) from replaced managed scaffold, explains that `install_provider_deps=true` may
-  refresh `providers/runners/` after stopping watchers, and that `no_cache=true` forces a
-  from-scratch image rebuild past the skip-if-tag-exists shortcut.
-- `skills_install` — flat packaged skills copied by frontmatter name; most harnesses only discover
-  them after a restart.
 
 ### Invariants And Boundaries
 
-- The signature is the published MCP schema. `resolve_context` keeps its five locators flat and
-  builds the `TaskRef` inside the body; typing the parameter as `TaskRef` would republish the tool
-  as a nested object.
-- `runtime_install` and `skills_install` register `dry_run=False` — act-by-default. The docstrings
-  say to preview first; the default does not.
-- No behaviour here. `read_ar_files`'s onboarding-lookup status vocabulary, the route-index rule,
-  and the per-session dedup all live in `application/read_files.py`.
+- `runtime_install` registers `dry_run=False` — act-by-default; `dry_run=true` previews.
+- No behaviour here. `read_ar_files`'s onboarding-lookup vocabulary lives in `application/read_files.py`.
 - `server_info` must receive the shared process build; constructing or re-resolving a new build in
   the handler would break correlation with the dashboard and harness acceptance evidence.
 - Serving-domain ownership stays behind `application.runtime.startup`; this MCP adapter consumes
   only the strict model payload.
 
-## Repo-Internal References
+### Role Runtime and Scope
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Six of the seven payload builders (all but `read_ar_files_payload`). | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| `read_ar_files_payload`, imported through the `mcp.tools` facade. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| `TaskRef` — the locator bundle `resolve_context` packs. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
+server_info describes optional toolServer and agentBinding of a launched server. Registered context_packet/read_ar_files accept optional TaskScopedReaderContext with exact task and contract together; absent context keeps Projects scope. Core registration forwards typed requests without permitting caller-defined roots.
 
-## Update History
+## Evidence
 
-- 2026-09-06T22:15:27+00:00 — Reconciled retained registration behavior and removed deleted wiring-test claims; current policy and verification provenance preserved.
+- The identity tool retains its explicit read-only/non-destructive/idempotent/closed-world annotations without restoring ping. [9]
+- `read_ar_files_payload`, imported through the `mcp.tools` facade. [2]
 
+- The registration takes the keyword-only `experiment` parameter and builds the run's request itself. [4]
 
-- 2026-08-30T17:08:05+02:00 — ARSPAWN-L4 Dagger repair: routed serving identity through the
-  application gateway and typed the registrar against `ServingBuildPayload`. Verification remains
-  closeout-owned.
+- Frozen implementation of _register_identity_tools supporting the stated file behavior. [5]
 
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: the core registrar now captures the shared
-  process build once and projects it through every `server_info` response. Verification metadata
-  remains pinned until closeout.
+- The installation tools and the runtime_install registration. [7]
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+- The packet description states what include_drift measures and that omitting it measures nothing. [8]
 
+- `_register_orientation_tools` declares the read-only orientation tools `context_packet` and `read_ar_files` and scrubs the removed `refresh` argument from the advertised schema. [6]
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+## The install description and the skill corpus
 
+The `runtime_install` description says the call refreshes the coordinator scaffold (instructions, docs, provider assets), keeps `memory-repos/` and `providers/data/`, prunes legacy binaries, installs no skill folder because skills are package-served, stops leftover provider watchers, reports unused provider keys and starts none, and provisions the pinned host/plugin from the active MCP authority's `paseoRuntime`. It also says daemon settings may be reconciled while user-settings protections and host-restart deferrals remain, that the result reports running-server currentness and every host action, and that a running dashboard is refreshed; `dry_run=true` previews the install actions.
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+- The install tool registration whose description states the scaffold install, running-server currentness report and running-dashboard refresh. [10]
 
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
-
-- 2026-08-08T17:18+02:00 — No content impact: 260731-EFA-L9 rewrote this source's imports/callers only (model-extraction caller wave); the behavior this card documents is unchanged and the body was re-verified current. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: recorded the bare-`*` keyword-only signature remediation (PLR0917). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:42:00+02:00 — W3-B01 curator: curated 2 Repo-Internal table citations with exact `TaskRef` and registration-wiring test anchors. Verification metadata remains unchanged for closeout.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: created with the package. These seven declarations
-  moved verbatim out of `server.py`; `resolve_context` additionally packs its locators into the new
-  `TaskRef`. Verification metadata pinned to the pre-change commit until closeout stamps the L2 code
-  commit.
+- Identity/orientation/install declarations use the light sentinel and lazily resolve payload builders and operation request constructors; task_context remains typed on both readers and explicitly supplied refresh remains refused. [11]

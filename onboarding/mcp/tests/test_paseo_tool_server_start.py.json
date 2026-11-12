@@ -1,0 +1,41 @@
+{
+  "path": "mcp/tests/test_paseo_tool_server_start.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
+        "content": "sha256:e35ce2689f34d16f39053aae28a4527933540cd074288e1195291b6f6c964aff",
+        "locator": {
+          "kind": "symbol",
+          "name": "ToolServerStartTests.test_the_definition_starts_this_builds_tool_server_which_reports_source_and_binding"
+        }
+      },
+      "facet": "Starts generated stdio server and checks serving build package root and binding from selected source.",
+      "id": "PRF-ZYFEAK",
+      "invariant": "INV-C8SVFY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §1 / F1",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "994c892314aaed072dbf28fd2c499a6806062ea3",
+            "content": "sha256:3baf9f2d6d50cec8500c7a914fe99b0b75e5e0f01ce45486d57d9b46624f64f8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

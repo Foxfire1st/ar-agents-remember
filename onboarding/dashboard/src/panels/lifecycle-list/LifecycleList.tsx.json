@@ -1,0 +1,538 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:a9dd83114c8aa3c1a791515f6dd66dcf36a62e2dcf619ed93d0734085484d60f",
+        "locator": {
+          "kind": "symbol",
+          "name": "LifecycleList"
+        }
+      },
+      "id": "RLZ-34GJ8Q",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Retains selection changes through memo comparison even while hidden, so old release state cannot survive an unobserved selected-key transition.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:4f503828228e8b5155e4d089003b6d36e0e6e982f2af514c693cfbbc22cdf784",
+        "locator": {
+          "kind": "symbol",
+          "name": "useTreeToggles"
+        }
+      },
+      "id": "RLZ-5EN7GW",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Composes remembered parent/fold preferences with explicit held-aware release actions for the current chosen document.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7P31X1",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The plain tree wires bell subject selections to existing real task/chat navigation owners.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-95MZBK",
+      "invariant": "INV-7GVWYD",
+      "origin": {
+        "handoffEntry": "INV-7GVWYD",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This list renders the row, its hover and its mark, and also the group label, so it is where the two kinds of place are told apart.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:620b7d1b9785f7f80ae5eb881c3023a5c9e838012593ae99153eb566b9ff65a2",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskRow"
+        }
+      },
+      "id": "RLZ-9SSX60",
+      "invariant": "INV-JW28W1",
+      "origin": {
+        "handoffEntry": "MIK-R175@v2",
+        "leaf": "260928-MIK-L102"
+      },
+      "rationale": "This construct carries the packet obligation; adjudication is accepted on L102-A1, with route evidence and any failures preserved in the Reviewer verdict.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:bda3d07f6eab73a8515ba13aa6a5049fa68379e72de734bf4849c6447571b157",
+        "locator": {
+          "end": 459,
+          "kind": "line_range",
+          "start": 453
+        }
+      },
+      "id": "RLZ-B6TTTQ",
+      "invariant": "INV-G71Q09",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / typing",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Builds the text a row is typed by: the id as the row writes it and then the title for a task numbered in its master, the title alone for every other row.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:5f5723f17048daba148a12a8204e0601d4bbb09a8e32f6b5678f76b6f0013ab4",
+        "locator": {
+          "end": 564,
+          "kind": "line_range",
+          "start": 547
+        }
+      },
+      "id": "RLZ-CSAQ91",
+      "invariant": "INV-DMAS27",
+      "origin": {
+        "handoffEntry": "curator-realizations-INV-DMAS27",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This sidebar row passes its existing steps through the same major-only mark function and supplies those steps to the shared dots rather than flattening the children.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HFGBT2",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-W-R167-04",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "The row renders TaskStatusWord directly and does not derive status from contracts or session records.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:90435f3587820390a9d4221c9b44fafba62e33db6c65e15b240904acd990a498",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReleasedHolds"
+        }
+      },
+      "id": "RLZ-KNDKRP",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Observes selection changes and expires the released-control set at each selection episode.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:c85bd6adc77b39f4b53985c22dbfb6eaede11a71e9bb7c4aed978bab142251d6",
+        "locator": {
+          "kind": "symbol",
+          "name": "plainArrow"
+        }
+      },
+      "id": "RLZ-QCVCHH",
+      "invariant": "INV-PH90HV",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Returns the arrow only when no modifier key is held, so Alt and the left arrow stays the browser's \"back\".",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:9351ab82f065bd3a86a80c178163cca857f254a9ff5d751a6707f3e0e380d506",
+        "locator": {
+          "kind": "symbol",
+          "name": "treeKey"
+        }
+      },
+      "id": "RLZ-R8BMK6",
+      "invariant": "INV-PH90HV",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Acts only on a focused parent with a plain horizontal arrow whose requested state differs; the held-aware action may release the chosen-document hold. Fold lines and modified/other keys get no new handler.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RDR3CC",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "The plain tree wires bell subject selections to existing real task/chat navigation owners.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:5f5723f17048daba148a12a8204e0601d4bbb09a8e32f6b5678f76b6f0013ab4",
+        "locator": {
+          "end": 564,
+          "kind": "line_range",
+          "start": 547
+        }
+      },
+      "id": "RLZ-RKKZ22",
+      "invariant": "INV-SQ7NQA",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-SQ7NQA",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "RowFigure passes entry.summary.steps directly to non-master step marks; hover reads cached supplied steps without a document request.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:620b7d1b9785f7f80ae5eb881c3023a5c9e838012593ae99153eb566b9ff65a2",
+        "locator": {
+          "end": 479,
+          "kind": "line_range",
+          "start": 439
+        }
+      },
+      "id": "RLZ-WG0RE0",
+      "invariant": "INV-G71Q09",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 5 / typing",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "TaskRow supplies the inline visible-prefix textValue from displayed short id plus title for a numbered child, otherwise title alone; no removed typedText helper is implied.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:2e7f9b77ee396c0068696e31b7754bfe05b20a8c204bbf6392ced2382b760662",
+        "locator": {
+          "kind": "symbol",
+          "name": "RowFigure"
+        }
+      },
+      "id": "RLZ-WSQMQG",
+      "invariant": "INV-YK0D2W",
+      "origin": {
+        "handoffEntry": "D305 item 4 / L168-W-A015-host-activity-once",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Hides the side-panel row's works/waiting/paused figure (activityPhrase) while the host is unknown.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+        "content": "sha256:f0b97f15953fec0a0dc80045526ba2f4ab2afd1efc0dfb96bbb4b6320d41c7a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "FoldRow"
+        }
+      },
+      "id": "RLZ-ZTEXJ0",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "A completed-fold click uses its held-aware disclosure action without selecting the fold or adding a horizontal-arrow path.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "26": {
+      "note": "Unmodified horizontal arrows affect a focused parent, including closing a held parent when the requested state differs; task/fold rows gain no arrow action and modifiers remain untouched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:7e2587c5e54f3d912c72949970d049517445cbed2c87453589dfbff7050150f7",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Typeahead preserves title-only matching and the displayed prefix for numbered rows.\n\nAnchor: `textValue`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Pure row state/word/hover and pure tree flattening own the presentation derivation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+            "content": "sha256:eb7364d6f97d5a86d22ccd68c558c53a29de0284605e5dadc640f07faf707333",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6e4cb0f1271f303406e738d0cd3a47b6415c56ef",
+            "content": "sha256:2846b6d2c185ae2a48641c2a406f97cacb445daf1b5162897e4d7316ef72f49c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The remaining component behavioral suites hold row admission, hierarchy and independent Operations signals; this is source inspection, not a new run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43ceca142b694494d71b86d1b9dfb66ad8fd4fe0",
+            "content": "sha256:efa14e3149beb27705ab43bcdab87b01c607bf6457e183c937397d32258677fa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/admission.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d7468b6db9b5e13351473326b66604a80f6c3d12",
+            "content": "sha256:b52ef29168630226661788607929d9bba36bfe24528e8bb57e2cf9a2f4474eae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "67b970d373b054a824efc6465b9c28a3baf87049",
+            "content": "sha256:126c49611e8e49e66acb27800b3f8e5abe3fdd3d5023c8ac00f576732fd6d206",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/signals.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "columnPresentation supplies 0.72rem group headings and 0.8rem ordinary row text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:c0161d4662536728b1f47a477c0236a9f3dacc3a3e72e8853e1dd4baf4fb9d68",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "columnPresentation gives IDs, fold text, repository, state word and figure explicit 0.72rem while rowTitle retains ellipsis.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:f80e5b888af5462b4cef92e7b8cb8972cdba700ff47b7914c4a955517062d443",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The shared caret uses 0.72rem without changing its fixed lane.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b0386930ff4640a12d17aea540cb3f3dc58d331",
+            "content": "sha256:b3f7df644cd004a039145f8e78ceacab131b61880d1439ebeee005655c93d607",
+            "locator": {
+              "kind": "symbol",
+              "name": "caretCell"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnLook.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Task-page rows and smaller labels/counts supply the two text sizes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+            "content": "sha256:caf6b06ee131a5362479982095ffd91aba4645ed64e94ff5a2f8657330f0e424",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 163
+            },
+            "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Non-task forms suppress the child works/waiting/paused figure when the served unknown-activity count is nonzero; BY PHASE keeps the explicit works-to-aborted order, with waiting between works and paused, through its group comparator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:ef86271ac8a7a2c23b1f25c3a77c492db92b9f4fca192d0be7211fad27f26de5",
+            "locator": {
+              "end": 489,
+              "kind": "line_range",
+              "start": 472
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:7dcd50508c03676269adb07c8128e5f72fe9878a8f833394d19ea13675e02bf1",
+            "locator": {
+              "end": 660,
+              "kind": "line_range",
+              "start": 660
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:52d94cc07999cb530c86c50b6fd41f2a59b0716af6b95030503bd8f3fb60fad4",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 587
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Explicit disclosure releases a drawn-open parent or fold, while every selection transition expires prior release keys.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:008405cd80acbe73ee37a16c867a2678d9dba5263997961af4df2ca3a6c94e40",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "The row's native title is gone from every ancestor of a step mark, while its own cells keep the hover text.\n\nAnchor: `TaskRowLine`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:5f511b9dc808020d9b6c65cd8741c728321eb6f5d73caf4e95ed8bf21cfba947",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

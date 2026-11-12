@@ -1,0 +1,32 @@
+{
+  "anchor": {
+    "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+    "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/__main__.py"
+  },
+  "closed": {
+    "commit": "8d2e754789e30f0d3be10fdd33f83cf6fe367141",
+    "task": "260928-MIK-L138"
+  },
+  "id": "WKN-GFFS7F",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-22",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "closed",
+  "statement": "The collection failure and the ruff findings this record named are gone before this leaf: commit 8d2e75478 (L138) made the tests a removal left unloadable load and run, and no file imports application.provider_tools; ruff check --select PLR0915,F401 passes on both cli/__main__.py and mcp/registration/core.py."
+}

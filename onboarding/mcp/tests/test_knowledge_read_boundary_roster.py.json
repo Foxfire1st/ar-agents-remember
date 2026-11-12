@@ -1,0 +1,38 @@
+{
+  "path": "mcp/tests/test_knowledge_read_boundary_roster.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every route names its outcome\n\nAnchor: `test_the_protected_read_roster_names_every_route_with_its_outcome`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "329b4205031e24890a7146ab2dcf5bf47d238505",
+            "content": "sha256:c8753ad7d33571319a6750c64cef759b87a9702f16a53ff351a4a44dc38f6a44",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Cockpit boundary needs no live lifetime",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "329b4205031e24890a7146ab2dcf5bf47d238505",
+            "content": "sha256:485c7b1c25320e578a2af2ed1dfacafc45fba2d4e5926278dcb2324afd623326",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_cockpit_boundary_names_its_outcomes_without_a_live_lifetime"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

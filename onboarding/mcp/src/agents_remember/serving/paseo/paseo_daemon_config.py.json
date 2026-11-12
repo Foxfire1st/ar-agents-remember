@@ -1,0 +1,125 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+        "content": "sha256:75e42ad1c00d4b996d93f3b48b0a99a316bce0e75027910fd393ab6d8e4e4d04",
+        "locator": {
+          "kind": "symbol",
+          "name": "provider_denied_tools"
+        }
+      },
+      "id": "RLZ-8N8F28",
+      "invariant": "INV-P8F6BT",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 2",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Reads from the host's `config.json` the rules its provider entry denies in its options, because the host lets a list in the request take the place of the configured list.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+        "content": "sha256:586b599d1c6174470873cdde7467bd2649e84850f324f6da59ea2d1181cdf91a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BB4Z7C",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "L184-M1-F14-settings",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The daemon configuration read inspects the host's configured `extraArgs` for the start's record and names the harness whose map went unread; it enforces the extra-argument rule, not the usage-report rule.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+        "content": "sha256:586b599d1c6174470873cdde7467bd2649e84850f324f6da59ea2d1181cdf91a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-G1NJXJ",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The daemon read is declared here as a port serving may call, and a failure names the harness whose map went unread — no cli import is made from this layer.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+        "content": "sha256:586b599d1c6174470873cdde7467bd2649e84850f324f6da59ea2d1181cdf91a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-X8S863",
+      "invariant": "INV-ZNXNZC",
+      "origin": {
+        "handoffEntry": "L192-W-R199-06",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The daemon configuration module holds the host-provider entries written into the daemon file; the write runs settings -> provision -> write_provider_entries, and L184's DaemonConfigRead port beside it reads the running configuration for host extra arguments rather than forwarding settings.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The private provider write with its rollback files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+            "content": "sha256:0604516d08bb02b7f16747b3138c7fa9013d3b5eebebfc631ed9b5626bd03c5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_provider_entries"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The recovery decision is observed without changing recovery files and shared by preview and recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+            "content": "sha256:40367785c95b36e60a73bdf29499ffeb52503281590084cf625dcc6532311b1a",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_recovery_plan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The running daemon's provider map is read through the port and an unread map refuses.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+            "content": "sha256:22c5780c6c4e15d83140af1866284b15941eeb152ac24efe9912499a122d00d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_provider_extra_args"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

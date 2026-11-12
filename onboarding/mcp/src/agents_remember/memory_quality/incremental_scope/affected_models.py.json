@@ -1,0 +1,67 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/incremental_scope/affected_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "AffectedUnitPlan verifies canonical relative .md identity, exact canonical dependency/edge sets and self-digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0518fb5e2549ef0287384b0e88e861ace0b06334",
+            "content": "sha256:59e0da859705b92dc183647e56e4900f0652557e5d712d713ba9b48802e5b38d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AffectedUnitPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "AffectedUnitResult verifies terminal status, finding/selected-file counts, evidence digest and result digest without aggregate readiness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0518fb5e2549ef0287384b0e88e861ace0b06334",
+            "content": "sha256:c2286ca1d79b24bded2fca2973758d1109d2b07e537cd2e26542b7a3f2d6334b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AffectedUnitResult"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "GateCertificateIdentity remains owned by the certification certificate models; the surviving per-unit models no longer import it for an aggregate closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0e93c2d3419610ef954016745933be9fb43f2a1a",
+            "content": "sha256:13e15cb90796adde3d5b9c39cf6271a588cadef7cc00a88475e6b4d793a8bacd",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateCertificateIdentity"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0518fb5e2549ef0287384b0e88e861ace0b06334",
+            "content": "sha256:59e0da859705b92dc183647e56e4900f0652557e5d712d713ba9b48802e5b38d",
+            "locator": {
+              "kind": "symbol",
+              "name": "AffectedUnitPlan"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

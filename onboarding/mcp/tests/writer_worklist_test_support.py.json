@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/writer_worklist_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Prepares the one native persisted-worklist prerequisite for positive writer fixtures, preserving explicitly supplied inputs. Negative tests that supply malformed worklists are not repaired by this helper. This pytest-only preparation is neither a runtime bypass nor authority to recompute a live leaf through scratch roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e34f3e614d3dbf6ecc4233dc6394e2262f7ec6c",
+            "content": "sha256:8c7066711f1e24035f460c60baa52e65082f899c5e1504df0a1db92797cd674e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

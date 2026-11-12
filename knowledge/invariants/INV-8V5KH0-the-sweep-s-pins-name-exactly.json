@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The raiser-pin and unmarked-aspect assertion units compare their actual observed arms with the declared pins in both directions. Current empty pins and same-change ownership remain explicit; earlier green execution is historical custody, not a fresh run."
+  },
+  "applicability": "The sweep and shared entry-point world after the L110 quality-answer repair.",
+  "conditions": [
+    "Each nonempty pin names its owning leaf and rule; empty pins remain explicit."
+  ],
+  "exclusions": [
+    "The original T34 nine are historical provenance; the current retained positive T34 population is memory_baseline_adopt, guarded separately.",
+    "Any new raiser or vanished pin, which fails rather than being absorbed."
+  ],
+  "id": "INV-8V5KH0",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "EntryPointProbeTests raiser-pin test; unmarked-aspect subTest; D55 sweep+controls whole plus valid-progression integration on bytes e6f32045",
+        "R3 verdict; sweep:38-58",
+        "R3 verdict; sweep:94-101",
+        "R3 verdict; sweep:86-92",
+        "Architect ruling notes/run3/L130-THE-FIVE-ARE-THE-PINNED-FIVE-RULING.json following d246006f; owner handover notes/run3/L130-L71-pinned-five-exact-handover/owner-pin-handover-and-successor-preparation.json (b9153996); supplied patch two-pin-ownership-and-bidirectional-hunks.patch (8aac324e) copied byte for byte with L71 settings/construction excluded; bound runs exit 0 with pins matching observed"
+      ],
+      "path": "l130-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R130@v1 rules 4+5 + failure/recovery",
+    "leaf": "260928-MIK-L130",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The sweep pins equal exactly its unrepaired surfaces in both directions; the remaining lifecycle raisers retain their owner, the repaired bare memory_quality_check pin is empty, and each future repair removes its pin in the same change rather than absorbing a new failure.",
+  "status": "proposed",
+  "supersedes": []
+}

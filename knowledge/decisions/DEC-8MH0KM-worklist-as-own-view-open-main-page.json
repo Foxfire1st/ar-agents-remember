@@ -1,0 +1,104 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Both shapes were live (SourceExplorer/UnexplainedLane/panel vs page); every later file/worklist/disclosure change must keep the single page, the own view and the count."
+  },
+  "alternatives": [
+    {
+      "option": "One existing comparison change-set viewer with filters and return, a separate leaf-worklist view, and no leaf-wide knowledge diff. Required changed review content stays open; the main page admits at most 20 identifiers/provenance disclosures, up to two unchanged/not-comparable location groups per shown subject, and one fold per unchanged stretch of a shown card.",
+      "reason": "D48's single diff owner and own worklist place remain. Approved MIK-R86 v2 rules 12-13 amend the disclosure classes and per-subject budgets, while MIK-R89 v2 rules 4-6 keep changed lines open, bound unchanged groups and put raw records in one bottom provenance disclosure.",
+      "status": "chosen"
+    },
+    {
+      "option": "Reviewer-owned file lists with focused diffs plus the Knowledge-changes panel with raw patches and per-item facts dumps.",
+      "reason": "D48 rules it out: three file lists for the same 179 files and 1,037 panel disclosures.",
+      "reconsider_when": "A comparison the change-set routes cannot name must still be judged file by file inside the review.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Keep one existing comparison change-set viewer with its filters and way back, and a separate reachable leaf-worklist view; retain the rejection of reviewer-owned duplicate file lists and per-item facts dumps.",
+    "The main-page limit is at most 20 identifiers/provenance disclosures, plus at most two unchanged/not-comparable groups per shown subject, plus one fold per unchanged stretch in a shown card. Changed content is not folded and opened groups show location lines rather than cards.",
+    "The raw comparison/subject records live in one closed Technical details provenance disclosure at the bottom of the reading column; the old all-disclosures-total wording is superseded by these explicit classes."
+  ],
+  "context": "Developer direction D48 with D47 on the L86 main page (2026-10-04): unexplained/unknown attribution opens a full-page diff viewer with return; no source-change bar; default to changed first; the leaf worklist as a view of its own. Approved MIK-R86 v2 rules 12-13 and MIK-R89 v2 rules 4-6 amend the current disclosure account for L89, while retaining the earlier D48 context and rejection.",
+  "decider": "Developer direction D48 with D47 (2026-10-04). Approved MIK-R86 v2 rules 12-13 and MIK-R89 v2 rules 4-6 amend the current disclosure account for L89, while retaining the earlier D48 context and rejection.",
+  "id": "DEC-8MH0KM",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "08853db6854ab477ec058722dfab0bf4a553bd04",
+        "content": "sha256:7339bf8ab16af1b74dd867dc4fd44aa03533fb0a612047f7c2c44638aece94b3",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafWorklistView"
+        },
+        "path": "dashboard/src/panels/review/LeafKnowledgeChanges.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7d93eb292cff4db200e775504be284256f58938e",
+        "content": "sha256:65c1724fbac8f4f5e001bf3def4a41f0f42c711b225db3bad6a5a3e756708923",
+        "locator": {
+          "kind": "symbol",
+          "name": "TechnicalDetails"
+        },
+        "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "69d1abd7f8abd450ebc5c8e857774ea96914797d",
+        "content": "sha256:dec3e41a910cc3917d0df46509f29ab9c680cd7eb86e51506d37f95e12ebd50a",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocationGroup"
+        },
+        "path": "dashboard/src/panels/review/reading/LocationGroup.tsx"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R86",
+        "packet": "requirements/MIK-R86-v2-the-reviewers-sidebar-is-a-navigation-tree.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R89",
+        "packet": "requirements/MIK-R89-v2-the-intent-review-page-reads-a-change-set-from-its-changes.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "DEC-D48-worklist",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

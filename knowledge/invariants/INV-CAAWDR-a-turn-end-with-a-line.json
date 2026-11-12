@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The declaration parser, the wait state, the turn-end hook and the tests are separate files, so one statement keeps a declared wait distinct from a silent end."
+  },
+  "applicability": "A seat's turn that ends with a background-process wait.",
+  "conditions": [
+    "The ending line starts with WAITING FOR BACKGROUND: and names each process, its pid or log and its expected end."
+  ],
+  "exclusions": [
+    "An undeclared turn end, which is a silent end."
+  ],
+  "id": "INV-CAAWDR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "plugin tests 268 pass / 1 skip; failing-before in scratch partD/logs/failing-before.log"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v8.1-5",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A turn end with a line starting `WAITING FOR BACKGROUND:` declares a background-process wait (each process: what, pid or log, expected end); it is not a silent end, gives the parent nothing, arms the plugin's check (3 minutes by default, `check in <N> minutes` with N clamped to 1-30 and the row saying so), the check asks the seat for each process's state, the seat's next undeclared end or its archiving ends the wait, one end may declare both waits and one check asks about both, and each event is a turn-end row.",
+  "status": "proposed",
+  "supersedes": []
+}

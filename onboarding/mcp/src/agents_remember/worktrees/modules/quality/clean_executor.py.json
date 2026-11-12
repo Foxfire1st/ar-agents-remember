@@ -1,0 +1,262 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only the admitted executable is resolved for the profile adapter.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:5c7497fcb8a8a3471c1b6f484588e8bf608e298741dad1ab50a89340f6f2c910",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_executor"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:296c5bf7ddc4ba093782503ada470c15d37d1a8ee06a044e451757be91810fb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_executor_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The single report reader and pruner implementation live in the path owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "999a59779d53606089e7056e6b917fac1fda276a",
+            "content": "sha256:01d71a892e26e328f7714f2da3835d14e90dc650bc106f301029035b17eab82f",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_report_path_from_manifest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "999a59779d53606089e7056e6b917fac1fda276a",
+            "content": "sha256:9e5af5aaa4b52c7fb1ffcccb058cdabe081ae95871b1a43da515aedfd226324f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_prune_report_generations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/report_publication_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The exact admitted executor and frozen authority determine the launch command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:296c5bf7ddc4ba093782503ada470c15d37d1a8ee06a044e451757be91810fb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_executor_command"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unavailable admitted executor produces a typed prerequisite failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:4797ef19d89ea48d73e320143a528d48fd4b46a211395d1a65e85b4a9c7192fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_executor_prerequisite_failure"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The executor admits authority, materializes the candidate and executes the profile adapter.\n\nAnchor: \"def run_clean_quality(\"; \"def _prepare_sandbox(\"; \"def _admit_prepared_profile(\"; \"def _write_sandbox_manifest(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:c31c44b305b342e4f6c3d4037cabb3059bc27489a971a3f951ee67d0e3963661",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:b4bac8c8e1399315494e84507a5155c8c19d071010a3c373a3786a8ec2f789c5",
+            "locator": {
+              "end": 392,
+              "kind": "line_range",
+              "start": 344
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:2909c7c1992a9a2014a465dac364f98e3596222c250335a3dd64c791443401c9",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+            "content": "sha256:3d594ab559ced4191d7a7a82941a00770ac4f0c1d9b4281bf747b47f97f7d20c",
+            "locator": {
+              "end": 170,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Exported decoder bytes determine the pipeline result and whether certifying evidence exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:1c7473a036cffcde38ae8787ba75f20961518fee9bd19f7ade8d5e73a6157069",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_executor_outcome"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:da7ca1d6910652fff749faedfebf76f417e8f43cce522f2b3cc2ce537c2b7c1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exported_pipeline_exit"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Publish one immutable evidence generation, then atomically point readers at it.\n\nAnchor: \"def _publish_reports\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:13451b32599b14c9f5d260e27c75591cf91f338c8b39a81190ebc27c94ac964f",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 446
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Export inventory validation checks the declared report members before publication.\n\nAnchor: \"def _validated_export_inventory\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:3e19f99333a2567574790e9b5553021be51f65544088fc6830addefa26a611e6",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 544
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Immutable generation identity includes the exported report inventory.\n\nAnchor: \"def _generation_digest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:27515117f2b28a68d16859c18fdf03d9c149f9d420ac8771a9579d4266217d08",
+            "locator": {
+              "end": 620,
+              "kind": "line_range",
+              "start": 605
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Mint from one caller-held immutable generation snapshot.\n\nAnchor: \"def certifying_evidence_from_published_manifest\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:744694ff9e42c39ea3c302344332c62f33f0422b898a4337a0247b7f9f11a9c8",
+            "locator": {
+              "end": 773,
+              "kind": "line_range",
+              "start": 742
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "One serialized acceptance firewall shared by lifecycle consumers.\n\nAnchor: \"def require_published_quality_evidence\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+            "content": "sha256:35ff6ece7785682d26b913b53f250514fe80e510c5e3be2b1bb2fe8e97baad0d",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 776
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

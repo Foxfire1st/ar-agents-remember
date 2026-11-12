@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Refusing newly restated header labels prevents a prose dependency or branch/master label from contradicting the typed field on which projection and coordination rely without destroying historical notes."
+  },
+  "applicability": "New task_doc header notes whose labels restate master, parent sprint, dependency, execution nature or integration branch fields.",
+  "conditions": [
+    "The refusal names the correct typed field.",
+    "Existing notes remain and may be edited or removed; an additional reserved-label note is new."
+  ],
+  "exclusions": [
+    "Automatic rewriting of historical header notes."
+  ],
+  "id": "INV-7F81PT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_task_document_order.py::test_new_header_notes_name_the_field_and_legacy_notes_remain_editable"
+      ],
+      "path": "L162-curation-wave-9-producer-knowledge.json"
+    },
+    "handoffEntry": "MIK-R128@v1 rule 8",
+    "leaf": "260928-MIK-L162",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "New header notes that restate master, parent sprint, dependency, execution nature or integration branch fields are refused with the proper field, while existing notes remain.",
+  "status": "proposed",
+  "supersedes": []
+}

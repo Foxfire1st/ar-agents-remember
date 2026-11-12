@@ -1,0 +1,135 @@
+{
+  "path": "dashboard/src/data/conditionalReads.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+        "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+        "locator": {
+          "end": 74,
+          "kind": "line_range",
+          "start": 42
+        }
+      },
+      "id": "RLZ-52JCCC",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "`ConditionalReads.load` shares a pending read only when its facts equal the request's facts; a different facts identity aborts the older read and starts its own, so an answer computed for older facts is never handed to a newer request.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+        "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConditionalReads.load"
+        }
+      },
+      "id": "RLZ-800XVT",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L174-GD-CONDITIONAL",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The same-facts pending entry is bounded by the resource capacity and is removed when its last live owner leaves; a leaving owner cannot retain or abort another owner's result.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+        "content": "sha256:1e463d05bde6ab36f3d4fab161e3fd30bd9cb57a721208e4ffb1ff928948ebb7",
+        "locator": {
+          "kind": "symbol",
+          "name": "ConditionalReads.load"
+        }
+      },
+      "id": "RLZ-BSC2Y0",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The store's pending entry is keyed by URL and facts, counts live waiters, and removes the entry before aborting it when its last waiter leaves; an owner's abort ends only that owner's wait.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+        "content": "sha256:2e86b205678c12c59bfde5a72a8d29caa073dced34d6d049b3aec5f6c9a399a3",
+        "locator": {
+          "end": 117,
+          "kind": "line_range",
+          "start": 83
+        }
+      },
+      "id": "RLZ-ZC9DFF",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "In `read`, a superseded (aborted) read neither keeps nor relabels an answer; a 304 relabels the kept answer to the facts of the read that confirmed it; a 200 stores the answer with its facts.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+        "content": "sha256:d1995211f0466e3747dfab76e15c7560a779a734a936b937f77fcdcdea410c4d",
+        "locator": {
+          "end": 40,
+          "kind": "line_range",
+          "start": 37
+        }
+      },
+      "id": "RLZ-ZTFRGJ",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "`ConditionalReads.peek` returns a kept answer only for the facts it was read or revalidated for, so a retained answer from older facts is not shown for newer facts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Same-facts sharing and bounded pending replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+            "content": "sha256:52333615bf6f2ffa4e93f734721ecc5b49388954b2c1a49c549ed05e1d3fbc13",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retained values are facts-qualified.\n\nAnchor: `ConditionalReads.peek`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94b655f3eeed0aa2634a80eccceff00be538d56e",
+            "content": "sha256:d1995211f0466e3747dfab76e15c7560a779a734a936b937f77fcdcdea410c4d",
+            "locator": {
+              "end": 40,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

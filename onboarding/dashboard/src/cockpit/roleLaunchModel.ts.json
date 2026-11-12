@@ -1,0 +1,498 @@
+{
+  "path": "dashboard/src/cockpit/roleLaunchModel.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:d46df0f1a209ea08dbf58ea59225e9a658583a98b0daa133f082b69c9a03eb1d",
+        "locator": {
+          "end": 529,
+          "kind": "line_range",
+          "start": 529
+        }
+      },
+      "id": "RLZ-0YC8HB",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-ab58b7",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Locates the selected model by its supplied host ID or label before validating the effort.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:a39d85e8eea0a0302b95121cf39c0c9b51cefaa2ae03024471383733afa53e8b",
+        "locator": {
+          "kind": "symbol",
+          "name": "tasklessRequestStorageKey"
+        }
+      },
+      "id": "RLZ-22DBNE",
+      "invariant": "INV-S2SR50",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1 §10",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "The earlier browser storage address remains the same for original retries.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:f2e6da2ead26f6599ade1ce3b6ea5332292aa259b65644e7661145749a2a1e6a",
+        "locator": {
+          "end": 492,
+          "kind": "line_range",
+          "start": 492
+        }
+      },
+      "id": "RLZ-35JMQA",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-214ded",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Locates the selected model by its supplied host ID or label before checking the offered tier.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:f895a0fd1a357f0a850937f85392e97429902a73f6f07d3418dc92c77437c661",
+        "locator": {
+          "end": 480,
+          "kind": "line_range",
+          "start": 462
+        }
+      },
+      "id": "RLZ-3SFDSE",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-54d70b",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Resolves configured model identity and feature override values against supplied host rows and distinguishes unknown models; matching accepts host IDs or labels without a private alias table.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "usesRequestReceipts"
+        }
+      },
+      "id": "RLZ-44423S",
+      "invariant": "INV-A0240E",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F02 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Per-request cardinality is distinguished from Projects altitude so task-bound Investigators keep exact request identities.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:ef1cb9473a9b3f11e6baa224930e4d30220a0a49ad5fcf52173504ae512c582f",
+        "locator": {
+          "end": 440,
+          "kind": "line_range",
+          "start": 440
+        }
+      },
+      "id": "RLZ-5F5AGJ",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-741b9c",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Avoids treating an unanswered catalog as proof that the configured provider is unsupported.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:5b5d478a5da8085cf5cd64e26fa6d51caad18c2518a1969f20cebb32767b46dc",
+        "locator": {
+          "end": 443,
+          "kind": "line_range",
+          "start": 443
+        }
+      },
+      "id": "RLZ-5GERWP",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-ee8691",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Locates the selected provider by its supplied host ID or label before validation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:f649a1a5e5f91224b368fe8584c9bce97933e5ffe20e249313226b31b1d6038a",
+        "locator": {
+          "end": 208,
+          "kind": "line_range",
+          "start": 200
+        }
+      },
+      "id": "RLZ-645WGZ",
+      "invariant": "INV-MGGEBY",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N10",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Launch options carry the served entry and exact reference only when reference and summary exist; sprint filtering uses the same canonical entries. Documentless placeholders are not made launchable by synthesizing body identity.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:ecf5217348563a4381f569317ba3b67f49fec33a99700cc49d9fc4876ed9aa9f",
+        "locator": {
+          "end": 542,
+          "kind": "line_range",
+          "start": 532
+        }
+      },
+      "id": "RLZ-76V41E",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-9cae90",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Keeps unresolved model/tier/effort availability unknown rather than inventing a negative offer; known effort rows are still checked.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:0dce181c2ce4f0edf162a3772b3b5f11e628575894740df84b887f82477945a9",
+        "locator": {
+          "end": 272,
+          "kind": "line_range",
+          "start": 270
+        }
+      },
+      "id": "RLZ-9CP18T",
+      "invariant": "INV-BS7TH8",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1/L98-A02/L98-R02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "This predicate defines per-request Investigator cardinality at both Projects and selected-task scopes separately from taskless altitude.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:7ed744ab627d402113afe4684874a13c629adb422c4573b9371debc2d12020a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "roleAgentOverrideFor"
+        }
+      },
+      "id": "RLZ-EPB617",
+      "invariant": "INV-63Z0MN",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-17",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The existing override helper carries the feature map while deriving model/effort/tier override, with no second launcher or compatibility carrier.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:b1522eddde970b91717f48e4aa4bd27fde6de7cb35713f518273b0c398b871d4",
+        "locator": {
+          "end": 447,
+          "kind": "line_range",
+          "start": 445
+        }
+      },
+      "id": "RLZ-ETENDE",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-93c21c",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Canonical host-row matching preserves whether selected provider/model values belong to the configured role before lower-layer values are inherited.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:7949c36caa3d602fd123b659c70e6cc475743d745728c6320bc98cb84fdadd04",
+        "locator": {
+          "kind": "symbol",
+          "name": "boundTasklessRequest"
+        }
+      },
+      "id": "RLZ-PWESKX",
+      "invariant": "INV-5MP23G",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule4",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "It lets a bound Projects row adopt a saved open request while returning an uncertain request unchanged so its exact identity survives reconciliation.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:31f778f0f5a88a1e7b0bdd8ba417cd6318ca9fa59c747038b52659593aa55fb3",
+        "locator": {
+          "end": 234,
+          "kind": "line_range",
+          "start": 211
+        }
+      },
+      "id": "RLZ-QQW438",
+      "invariant": "INV-WQ8YGE",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-19",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "childOptions resolves only the served parent.children keys in their published order; masterOptionsForSprint/taskOptionsForMaster filter the resolved entry forms and do not reconstruct hierarchy from repository names or document paths.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:5848b7133ad9624a1e5a18fb174b3ef8f36bdbd8dc77309b78cee32ccf0b2c37",
+        "locator": {
+          "end": 495,
+          "kind": "line_range",
+          "start": 494
+        }
+      },
+      "id": "RLZ-RF6974",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-31c52f",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Passes a configured tier through when model or tier availability is unanswered and checks actual offered rows once known.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+        "content": "sha256:e71c07959e53da84b159bdd65d26224598219d2772fc838ff8a2019b050fe180",
+        "locator": {
+          "end": 527,
+          "kind": "line_range",
+          "start": 527
+        }
+      },
+      "id": "RLZ-YDM5E1",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-attach-4f0ca2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Skips unoffered-model refusal when the model inventory is unknown; known inventories remain validated.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Current source owner or exact assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:3752bb5f787b286ba1d696879ac26b78cb3ffe5cd7e0f2ef994ccd632d289800",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 319
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The same start-only reason enters saved retry payload and POST body.\n\nAnchor: Current source; preserved L88 property 8",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23529e12c8dab32a4452754b164a6d4b58310a63",
+            "content": "sha256:a68d7b7d28047a14feb0f8f3f85133add244a62e154e9a779c29702492fc08dc",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "dashboard/src/cockpit/roleChatDispatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 9",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:13fbcafc5ae9bb05d6cabbc5da84898fe988f69b864f8bb501fdd724654f2283",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 76
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Choice validation matches host IDs or labels without case and retains configured values when catalog data is unknown, instead of silently selecting an alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:b1348ebbf91c56c4434d1a9029ba5328f63d342e3dfc2ba5221d4df8b31822a2",
+            "locator": {
+              "end": 479,
+              "kind": "line_range",
+              "start": 434
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Service-tier validation matches known host offers without a fast alias; unknown models or tiers leave the configured tier unchecked.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:dc8da94864d0dddfc3abbc784e7e58e951f3ae7018a0e03b52017c72fd3f4a15",
+            "locator": {
+              "end": 503,
+              "kind": "line_range",
+              "start": 485
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current source implements this file’s stated Investigator boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:2905e9a1663eaf05eab9a9794d6eaa1a269c5bf6bea258f0b060221c741fc690",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 10",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:7772cb0776ba30b4ff02c26afb253dcb92286df2c38b1049dbc73957d09ac00c",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: Current source; preserved L88 property 11",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:9afc25e9dd74e822070a4893adadcb7f3a41223bcb1a3ef953852d4de9a2fb9c",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 357
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: Current source; preserved L88 property 5",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: Current source; preserved L88 property 6",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Saved taskless UUID/pending plus trimmed reason/override restoration keeps the legacy Investigator storage slot.\n\nAnchor: Current source; preserved L88 property 7",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+            "content": "sha256:7772cb0776ba30b4ff02c26afb253dcb92286df2c38b1049dbc73957d09ac00c",
+            "locator": {
+              "end": 347,
+              "kind": "line_range",
+              "start": 301
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

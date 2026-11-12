@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_witness_driver_helpers.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Snapshots list files with sizes; missing roots stay missing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "592ddfbb8b460af62a1c58d435c1a1ce412d9f3a",
+            "content": "sha256:ce6630c51c1ec86dcb447544bb0072acecac08e19a578686e12e945fda99854c",
+            "locator": {
+              "kind": "symbol",
+              "name": "TestWitnessHelpers"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

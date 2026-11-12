@@ -1,0 +1,249 @@
+{
+  "path": "dashboard/src/panels/review/IntentMarkers.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+        "content": "sha256:e7e364e5cf8ccb3da6543fb31e688181e11ebd6c50ae38107cba5763f0d20cbd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-15WVXB",
+      "invariant": "INV-ECF6G4",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design 3",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Reveals marked changes in their complete collapsed-run context instead of hiding neighboring marks.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Markers are read from the per-file classification and drawn in the diff gutter.\n\nAnchor: \"// Per-hunk intent markers in the reviewer's diffs (MIK-R34): each hunk of a changed text file names the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:198b98943a2907fadbea6a8c3c2d2e2d99c66f3ae1b55170e0f02687ffb403cc",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Side filtering and the scope Back control remain exported.\n\nAnchor: \"export function sideMarks(marks: PaneMarks \\| undefined, side: 'before' \\| 'after') {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:e91847f58902ae5826ca4e4f0b14ea44ad3a667e736505d9656aa7355abc1f76",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 538
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Stored card-renderer tests cover owner-side hunk placement, separate proof lists, explicit unavailable/mismatch states and marker return. Whole-file fixture texts are supplied as card excerpts; the removed full-file reader is not exercised.\n\nAnchor: \"it(\"marks each owner hunk on the owner's side lines, a deletion in the before editor\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9bedc98d994ee74f9d5f71b64883ad4da7e7b72c",
+            "content": "sha256:957175b6f29e30cd076e40cf616784baa15e18051054586ab129a888cb9bce29",
+            "locator": {
+              "end": 534,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "dashboard/src/panels/review/IntentMarkers.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Unchanged, changed and separate-side card excerpts pass their visibility input to useExcerptMarking and render its note/panel with the excerpt; no SourceContent full-file caller remains in this card owner.\n\nAnchor: \"function UnchangedExcerpt({ card, language, visible }: ExcerptProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:de27616024007d66bf0f77c259a50fc874c6fb2b1bbf885be282b5856819e1a6",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 576
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "A marker inside a collapsed run dispatches uncollapseUnchanged for that run and its mapped sibling run where both editors exist.\n\nAnchor: \"function expandMarkedRuns(editors: DrawnEditors, marks: readonly PaneMark[]): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "850d93cf5ed952e2e11779b72cf7a029bb4290bd",
+            "content": "sha256:29969799cd0e15a896993191e961070b630a3e5a8991e8255fe6fdc6d202cdbf",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 311
+            },
+            "path": "dashboard/src/panels/file-viewer/markGutter.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "A potentially meaningful marker-status row is reserved before the read, with fixed height, ellipsis and full current text in its title.\n\nAnchor: \"function speaksOfMarks(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:353d1defec25d540422e0475bd5e61b30b12600c97a6f83c224de28aca70ef00",
+            "locator": {
+              "end": 496,
+              "kind": "line_range",
+              "start": 454
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The pane input names path, pane, classification, layout and window; whole-source state is absent.\n\nAnchor: \"export interface PaneMarkInput {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:7d1c6b4e46c9f25e5712294b8968528cc48f81b52d86b062223f3d64813271ef",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pane placement and returning-hunk matching reopen the originating list and pass reveal/settle to the gutter.\n\nAnchor: \"function returningHunk(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:e8ad791e5d72c128137f4eef191188cccea1dee1b36190066a17b2985ee69da5",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 137
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hunk control exposes label, ranges, expansion and compact visual text through its declared styles and attributes. The hunk button retains its full accessible name and title.\n\nAnchor: \"const markButton = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:aa2d385f8541fe796a247c530edcd825babc3621da11db3ff7b65c04a25f7e08",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The panel and entry lists retain separate realization/proof groups, facets, occurrence targets and intersection-only wording.\n\nAnchor: \"const TONE_NOTES: Record<HunkMark['tone'], string> = {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:6cf6051d58a66b68ac8f3089894685bcccf63ac845bd2b57456c3fc737a642ea",
+            "locator": {
+              "end": 349,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "File-level notes distinguish confirmed unexplained from unreadable attribution; the old past-text component is removed.\n\nAnchor: \"const FILE_MARK_TEXT: Record<'unexplained' \\| 'attribution_unknown', string> = {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:58fc8a96ab9cdef1cdac932a91c3adc7a3156454f7f1b16712024c07d06982ff",
+            "locator": {
+              "end": 377,
+              "kind": "line_range",
+              "start": 352
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Excerpt windows check only drawn side blobs and classify a changed card only when visible.\n\nAnchor: \"function excerptWindow(side: ReviewTreeEntrySide, drawn: boolean) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:fa8156b8cecebdcdb7ed3834db6b4fe0073bdd05c674458d342bddf50b14eb37",
+            "locator": {
+              "end": 451,
+              "kind": "line_range",
+              "start": 381
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Unlisted, loading, unavailable and mismatched-content reasons remain explicit.\n\nAnchor: \"export function MarkReadNote({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2f1e83eab894e2eb7b32234d42d08a44c4ec7040",
+            "content": "sha256:72931e79bd41ae7bc7f5c35fa722441b782c57f417d591e58aff67fa91d94a8b",
+            "locator": {
+              "end": 535,
+              "kind": "line_range",
+              "start": 499
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

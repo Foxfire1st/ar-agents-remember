@@ -232,7 +232,7 @@ Source comments explain the technical **why** of the code and must stand alone f
 3. Keep the technical constraint, evidence boundary, invariant, or trade-off that a future maintainer needs to preserve.
 4. Product-role vocabulary is allowed when it names a real runtime role, and shipped `docs/design/` pointers are allowed when they explain the product contract.
 5. Put workflow history and review provenance in Git history, task artifacts, and onboarding rather than source comments.
-6. Bounded `L<leaf>-R<n>` / `L<leaf>-S<n>` requirement identifiers naming a durable leaf requirement or step are allowed in source comments and are the preferred way to tie a comment to its contract (doctrine D-6, reconciled at 260815-DAG-L15). This carves out the bounded identifier convention only: task, chat, review, decision-item, or report provenance and paths stay out of source comments.
+6. Bounded `L<leaf>-R<n>` / `L<leaf>-S<n>` requirement identifiers naming a durable leaf requirement or step are allowed in source comments and are the preferred way to tie a comment to its contract (the Reviewer's code-seam criterion CS-7 checks every changed line against this rule and this exception). This carves out the bounded identifier convention only: task, chat, review, decision-item, or report provenance and paths stay out of source comments.
 
 ## Required Agent Behavior Before Editing
 
@@ -453,6 +453,20 @@ stops is claiming more than it verifies.
 the anti-concurrency closeout audit — `notes/2026-09-10-anticonsurrency-smell-audit/CUT-SPEC.md`
 and its ledger. The exemplar that clears the bar is
 `mcp/tests/test_wire_vocabulary_exhaustiveness.py`, which measures 165 of 213 and says so.
+
+## Before a handover
+
+Before each freeze, run the focused tests for the changed behavior and the fast commit-hook checks on a clean copy of the candidate's final bytes. Use a shared clone at the base with the candidate tree read in, under umask 022. Follow [the registered tools and commands](tools.md#transaction-boundary): generated-copy checks, Ruff, Ruff format and Pyright; when the candidate changes the dashboard, also its code generation, lint and type check. Use the command sections in that file for the exact invocation and environment.
+
+Repair failures before freezing, then check the final bytes. The freeze report names each check, its result and the clean copy's Git tree, bound to the handed-over candidate. These fast deterministic checks and focused tests are handover work; full code-quality and full-test operations still require an explicit developer request. They do not supply certification or replace independent review.
+
+## Tool building
+
+Tool replies carry the outcome and the next action's facts. Put full lists in workspace files and return their paths and totals; a count names its unit, such as files, records or findings. Deterministic tools establish mechanical facts and leave semantic decisions to the role that owns them. Refusals follow [Guard Admissibility](#guard-admissibility), including an exact working remedy or an honest statement that none exists.
+
+A tool defect must not strand a correct write. Use the primary tool first and correct faulty input through that same tool. For a correct-input write refusal, retain the actual input and refusal, check the serving build and admitted route, and try an honest route that tool admits. If none exists, scoped correct-write recovery may authorize an open manual write only for the same tool and input class already admitted to the role. Notify the record or machine-state owner before writing; record manual provenance, every attempted input/refusal, every check that still works and the defect's issue row. Claim no tool receipt. Missing or unadmitted capability is not a refused correct write.
+
+This write recovery grants no read, check, validation, sync, start, product-guard or commit-gate exception. Repair validator and gate findings through their normal routes. A denied or unanswered permission request remains a stop across tools, commands, helpers and later turns.
 
 ## Stability, Bounded Resources, and Reclamation
 

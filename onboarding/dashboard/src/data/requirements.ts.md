@@ -1,15 +1,5 @@
 # dashboard/src/data/requirements.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/requirements.ts`             |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -74,38 +64,26 @@ for the sibling notes surface. Address helpers are pure and total over their inp
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is configured.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared JSON transport and query-string helper the client is built on. | `getJson`; `qs` | dashboard/src/data/files.ts:90-100 |
-| The listing and content shapes this client returns. | `RequirementsListing`; `RequirementContent` | dashboard/src/data/requirements.ts:11-17; dashboard/src/data/requirements.ts:19-24 |
-| The server surface behind the two endpoints (task-context root selection + packet walk). | `register_requirements_routes` | mcp/src/agents_remember/serving/requirements.py:181-208 |
-| The grammar provider that supplies the registered-packet listing to Markdown/TaskNotes. | `TaskRequirementLinksProvider` | dashboard/src/grammar/TaskRequirementLinks.tsx:13-61 |
-| The client test suite. | "data/requirements client" | dashboard/src/data/requirements.test.ts:33-49 |
+- The shared JSON transport and query-string helper the client is built on. 
+- The listing and content shapes this client returns. [2]
+- The server surface behind the two endpoints (task-context root selection + packet walk). [3]
+- The grammar provider that supplies the registered-packet listing to Markdown/TaskNotes. [4]
+- The client test suite. [5]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation boundary is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A same-origin view over the local serving API; nothing crosses repositories. | — | — |
+A same-origin view over the local serving API; nothing crosses repositories.
 
-## Update History
-
-- 2026-09-05T06:39:59+00:00 — L31 scoped citation curation against frozen ea359649: repaired anchor grammar and exact source coordinates while preserving the current behavioral claims. No content impact; source verification metadata was not advanced.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the new
-  task-local requirement-packet client and the reserved `requirements/` address
-  resolution helpers (list/read + `isRequirementAddress` /
-  `resolveRequirementAddress` / `requirementAddressFromReference` /
-  `resolveRequirementReference`). Verified at code commit 1993dd25.
+- Retired at the fifth freeze d59c3493: dashboard/src/data/files.ts::qs - the bytes it recorded now occur 5 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/data/files.ts::getJson - cited by 2 anchors in this card; the name occurs 6 times in that file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

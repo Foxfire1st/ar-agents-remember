@@ -1,76 +1,107 @@
 # dashboard/src/panels/useCollapsedTaskGroups.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/useCollapsedTaskGroups.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-12T12:58+02:00                           |
-| lastVerifiedCommitHash | `ae8c47ce897b04380ebcb80f750d77ed4dc9f37d`       |
-| lastVerifiedCommitDate | 2026-08-26T08:10:26+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [panels/ overview](overview.md)
 
 ## Purpose
 
-Owns the Operations task-group disclosure preference. It keeps groups expanded on first use and
-persists collapsed stable task-selection keys across dashboard refreshes or component remounts.
+Owns the Operations task-group disclosure preference: the keys the READER collapsed. Rows are expanded
+on first use, an explicitly collapsed row stays collapsed, and both persist across dashboard refreshes
+and component remounts.
+
+> **Corrected by the `260921-ICR-L34` curation, because the code this section described was reverted.**
+> This card described the **two-set** state `260921-ICR-L33` introduced (`collapsedKeys` **and**
+> `openedKeys`, with a `setCollapsed(key, collapsed)` that resolved the next state in the caller).
+> Commit **`a9a1a41b`** — *"Revert L33's operations-list change; clear the pre-existing ruff-format
+> red"*, a direct emergency commit with no curator pass behind it — restored this module to its
+> 28-line pre-L33 bytes. There is **one** set again (`collapsedKeys`), the callback is
+> `toggleCollapsed(key)`, and the second storage key `operations.tasks.opened.v1` does not exist. A
+> reader who acted on the paragraph above would have written against an API that is in no tree.
 
 ## Code Commentary
 
 ### Logic
 
-`useCollapsedTaskGroups` initializes a `Set<string>` from `localStorage` when running in a browser,
-otherwise returning an empty set for non-browser rendering. `toggleCollapsed` immutably adds/removes a
-typed task selection key, writes the v1 JSON array to `operations.tasks.collapsed.v1`, and returns the
-new set to the caller.
+`useCollapsedTaskGroups` initializes ONE `Set<string>` from `localStorage` when running in a browser,
+otherwise an empty set for non-browser rendering. `STORAGE_KEY` is
+`operations.tasks.collapsed.v1`, and its published meaning is unchanged: a key in it is a row the
+READER collapsed. The hook returns `{ collapsedKeys, toggleCollapsed, collapse }`; `collapse(key)` unconditionally records the key as collapsed even when a selection hold currently draws it open. `toggleCollapsed(key)` inverts
+that one key immutably and writes the whole set back
+(`window.localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]))`), behind the same
+`typeof window === "undefined"` guard the initializer uses. **`openedKeys`, `setCollapsed` and
+`CollapseState` exist nowhere in either tree** — the L33 additions were removed by the revert, not
+renamed, and the card's former two-set description is deleted rather than re-worded, because a rename
+would have been repairable and this was a deletion.
 
 ### Conventions
 
-The hook follows the dashboard's small persisted-flag pattern: the storage key is versioned, the public
-state is a `ReadonlySet`, and the hook returns a stable callback via `useCallback`.
+The hook follows the dashboard's small persisted-flag pattern: the storage key is versioned
+(`…collapsed.v1`), the public state is a `ReadonlySet`, and the callback is stabilised with
+`useCallback`.
 
 ### Invariants And Boundaries
 
-- Unrecorded groups are expanded by default.
+- **One set, one meaning.** A key present in `collapsedKeys` is a row the reader collapsed; a key
+  present in neither is expanded, which is the module's default.
 - Persistence is keyed by stable typed task-selection keys, never labels or array positions.
-- The hook owns presentation preference only; it does not filter BY PHASE, clear selection, or mutate task data.
-- The app-written v1 payload is intentionally trusted; no migration or corruption fallback is part of this leaf.
+- The hook owns presentation preference only; it does not filter BY PHASE, clear selection, or mutate
+  task data.
+- The app-written v1 payload is intentionally trusted; no migration or corruption fallback is part of
+  this module.
+- **Boundary: the default-collapse rule is not the hook's.** Whatever decides that a row starts closed
+  lives in the list component, which is why the hook can stay one inverted set.
 
 ### Todos
 
-None known for this leaf.
+No additional work is asserted. The single-set storage contract remains; explicit collapse is now available to the current disclosure owner.
 
-## Docs References
+## 260921-ICR-L33 The Second Half Of The Collapse State — **WITHDRAWN BY `a9a1a41b`**
+
+> **This section's claim is no longer true of any tree, and the `260921-ICR-L34` curation is recording
+> it rather than deleting the history.** L33 introduced a second persisted array,
+> `operations.tasks.opened.v1`, and changed the hook's signature to `setCollapsed(key, collapsed)` so
+> the caller could resolve a row's default. Commit **`a9a1a41b`** reverted the operations-list change —
+> a direct emergency commit with no curator pass behind it — and the module is back to its 28-line
+> pre-L33 shape: one array (`operations.tasks.collapsed.v1`), `toggleCollapsed(key)`, and no
+> `openedKeys`, `setCollapsed` or `CollapseState` anywhere in the code tree. The paragraph below is kept
+> as the record of what L33 did; **the body above is what the code does now.**
+
+The v1 array was the whole of this hook's state for as long as every closed row was one the reader had
+closed. `ICR-R33.4` broke that: the projection itself now holds some rows closed — a master with no
+live worktree work, whose only children are its own landed leaves — and "the reader opened it" is not
+representable in a set that only records collapses. The fix is a second array rather than a second
+meaning for the first: `operations.tasks.opened.v1` records the opens, `operations.tasks.collapsed.v1`
+keeps recording the collapses, and `LifecycleList`'s `rowIsCollapsed` resolves them against the row's
+own default (explicit collapse wins; otherwise the default, overridden by an explicit open). The public
+signature changed with it — `toggleCollapsed` became `setCollapsed(key, collapsed)` — because the
+caller resolves the next state and the hook only stores it. **Nothing about the persistence contract
+weakened:** both payloads are still the app-written v1 JSON arrays this hook trusts, keyed by stable
+typed task-selection keys, and the hook still owns presentation preference only.
+
+## Evidence
+
+### Docs References
 
 No relevant documentation found after checking the resolved `system/sources.md`; it has no configured
 Domain Documentation entries. The storage behavior is a local application contract covered by tests.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain-documentation source was available for this local hook. | — | — |
+No configured domain-documentation source was available for this local hook.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. | `LifecycleListImpl` | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-259 |
-| Focused tests verify stable storage keys, remount persistence, independent nested state, and expanded defaults. | "operations.tasks.collapsed.v1" | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:217-217 |
-| The existing persisted-flag pattern was the worker's local implementation reference. | `usePersistedFlag` | dashboard/src/panels/file-viewer/usePersistedFlag.ts:6-25 |
+- One immutable persisted set supports both ordinary toggle and unconditional collapse, without a second opened-state store. [4]
 
-## Cross-Repo References
+
+- The parent list applies the hook only to BY REPO hierarchy visibility and leaves selection/detail separate. [1]
+
+
+- Focused tests pin the stable `operations.tasks.collapsed.v1` keys, independent sprint and master disclosures that stay collapsed across a remount, and BY PHASE grouping that stays flat and never changes selection. [2]
+
+- The existing persisted-flag pattern was the worker's local implementation reference. [3]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The preference is local to the dashboard browser surface and has no cross-repository interface. | — | — |
-
-## Update History
-
-- 2026-08-02T16:44:57+02:00 — L6 W1-B02 curator: repaired 3 repository-internal citations for the parent list, focused persistence tests, and persisted-flag reference.
-- 2026-07-12T12:58+02:00 — Created for 260712-TRH-L3. Candidate source is uncommitted; verification metadata
-  is pinned to the leaf base until closeout stamps the eventual code commit.
+The preference is local to the dashboard browser surface and has no cross-repository interface.

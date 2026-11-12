@@ -1,0 +1,105 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "The exception is the Order drawing accent, not the complete SprintGraphView word/mark palette or a second task-stage/activity/count owner. The alternatives are documented previous/rule-question choices, not invented design-discussion history."
+  },
+  "alternatives": [
+    {
+      "option": "Choose Order border, ID and meta styling from the native started stage independently of host activity; keep all task words and marks common, and keep readiness separate from stage or permission.",
+      "reason": "D305 restores the lost golden border. The 2026-10-17T02:27:47+02:00 Architect ruling explicitly narrows the older F1 common-tone rule for the Order drawing started accent only.",
+      "status": "chosen"
+    },
+    {
+      "option": "Retain the older F1 rule that every Order graph accent must follow the shared activity-aware task-status tone.",
+      "reason": "The explicit D305 successor ruling restores the started work accent even for paused or unknown activity and calls this a meaning replacement, not preservation.",
+      "reconsider_when": "A new developer ruling withdraws the started accent exception and again requires those graph accents to match activity-aware status tones.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The exception is the Order drawing accent, not the complete SprintGraphView word/mark palette or a second task-stage/activity/count owner."
+  ],
+  "context": "D305 restores the lost golden border. The 2026-10-17T02:27:47+02:00 Architect ruling explicitly narrows the older F1 common-tone rule for the Order drawing started accent only.",
+  "decider": "Developer D305/D307/D309, interpreted by Architect 97e0320d in the canonical L168 ruling; C4 is the direct quoted 2026-10-17T02:27:47+02:00 successor ruling.",
+  "id": "DEC-7C4MJW",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "content": "sha256:37a4753fd4ab7e929cefced990df5173966ca4b079fd1540dd290ab56facdda7",
+        "locator": {
+          "kind": "symbol",
+          "name": "toneOf"
+        },
+        "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+        "content": "sha256:4640f165a90d0bbeeb3974c55751dd3df71e4a36c747894a516bafdae52c0276",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderNode"
+        },
+        "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+        "content": "sha256:0e3c60367677e3809f92601745c8105b01a606bd7010695cf0a1bb661993d81a",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderNodeId"
+        },
+        "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "5c5274962d831fe4690e16c298af3bafe5d0f386",
+        "content": "sha256:faf7cad8487f139dc9dcfe916350ea9654ea6348e03d83b1ea3eec008241a304",
+        "locator": {
+          "kind": "symbol",
+          "name": "orderNodeMeta"
+        },
+        "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "e48c5cc89ac681ebc193fa31cb7a646e9dcc2050",
+        "content": "sha256:37a4753fd4ab7e929cefced990df5173966ca4b079fd1540dd290ab56facdda7",
+        "locator": {
+          "kind": "symbol",
+          "name": "toneOf"
+        },
+        "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "D305 restores the lost golden border. The 2026-10-17T02:27:47+02:00 Architect ruling explicitly narrows the older F1 common-tone rule for the Order drawing started accent only. Source: /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/run3/L168-REOPENED-FOR-THE-SIDE-PANEL-TREE-D305.json; C4 authority /home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/messages/20261017T002901Z_manager-5b50bf38_to_curator-2a74a542.md; original producer lists remain separate and unchanged."
+      ],
+      "path": "L168-A016-decisions-wave4a.json"
+    },
+    "handoffEntry": "L168-C-A016-ruling-accent",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

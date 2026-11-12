@@ -1,0 +1,344 @@
+{
+  "path": "dashboard/src/panels/engine-room/fixtures.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Node/edge types this file shapes — the import list here, resolving to the mirror there.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:21cac9e0ab2bd51c63ac823fa1d60ca86b9759849b9cbd5ccabcdb3bd7aa8072",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "`engine-landing-pushed` (05k, D3 \"code lands\": feat `pushed` · PR `merged` · origin/main `tip` · origin/mem-main still `planned`) — the D2·D3 split\n\nAnchor: \"engine-landing-pushed\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:ba149021a0a6054211ec39d9bb653f3bb07d5453a9590b70d7cb658258a396e6",
+            "locator": {
+              "end": 796,
+              "kind": "line_range",
+              "start": 796
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The two cleanup-pending scenarios carry the retired `retry_cleanup` next action — stale demo data the untyped `nextAction: string` cannot flag.\n\nAnchor: \"engine-cleanup-pending\"; \"Replayed onto moved main\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The dashboard type that makes the stale literal unobservable: a plain `string`, not a closed union of server-producible actions. The anchor is the declaration immediately above `nextAction?` inside `EngineProcessNode`, because a bare `nextAction` is not unique in this file (it also declares the `TaskDocProjectionEffect` field).\n\nAnchor: \"missingFacts: string[];\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:a69870ff3d37fe34a2fcd072803a7c290dbee8f1bcc7de15513ba6e0295450d5",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:a69870ff3d37fe34a2fcd072803a7c290dbee8f1bcc7de15513ba6e0295450d5",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "EngineRoomScenario carries name and processes only, without a workspace provider stack.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:ec497b05891a156bbfa7c61edd877f6923f205f98619c6e8fccf549ad495f6c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineRoomScenario"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The edge builder retains worktree-add, ledger-map, sync and integration lanes without provider seed/clone lanes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:19e8e15e2eb11715d5d2312b55105a3927ff7e6d47ebcb6082825c4412f497b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EdgeStates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:395c8291e744c1c51dfd2d09c67c682d0484c8ed0551d941fb9231aaf796a83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "edges"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The process builder carries enclosure, worktree, ledger, landing and action facts without provider setup/runtime fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:609e33527f78bd0bc97a80d3df00b22a934d13d5341f1b8cb505c62543cc3f9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "engineProcess"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The retained boot stages describe enclosure materialisation without provider runtime-deploy or seed/clone beats.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:95fb8dae098511d52f073c18934e3871e536d120e62866d25e567217304d35b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootStages"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b655ff830c5a9c45e80be3c51bbd8390324add5b",
+            "content": "sha256:7c58dd7321607af85369d6195ac8adb1453c30395cf1e33057b309150c52f17e",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "dashboard/src/panels/engine-room/DiagnosticsPanel.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The exported scenario list collects enclosure/process fixtures without a workspace provider array.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:e18a3b7761e8fdb781e6a1eed5d50bfe15888c9c0b8aafb79966ed768931a372",
+            "locator": {
+              "kind": "symbol",
+              "name": "ENGINE_ROOM_SCENARIOS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`EngineProcessEdge` server model — `extra=\"forbid\"`, no `refusedPolarity`, no `refused` in the state comment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ada1520ab5545be71a00dae1420683fd0b82938",
+            "content": "sha256:4b31b460cf2bfd78dc4589df8a552c328a633762e9e07d658f5db4e360b63935",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineProcessEdge"
+            },
+            "path": "mcp/src/agents_remember/observer/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`EngineRoomScenario` interface + exported `ENGINE_ROOM_SCENARIOS`\n\nAnchor: `EngineRoomScenario` `ENGINE_ROOM_SCENARIOS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:32cf712b9c7b122379105031817441971f436256ea62140649c48161267282cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`engineProcess` core builder (override-last spread)",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:609e33527f78bd0bc97a80d3df00b22a934d13d5341f1b8cb505c62543cc3f9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "engineProcess"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`edges` / `EdgeStates` graph emitter (incl. the `integration` + memory-lane `integration-mem` edges); `EdgeStates` no longer carries a `cgcRefused` flag and the `cgc-seed` lane takes `states.cgc` straight through.\n\nAnchor: `edges`, `EdgeStates`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:395c8291e744c1c51dfd2d09c67c682d0484c8ed0551d941fb9231aaf796a83e",
+            "locator": {
+              "kind": "symbol",
+              "name": "edges"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:19e8e15e2eb11715d5d2312b55105a3927ff7e6d47ebcb6082825c4412f497b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "EdgeStates"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:e77143fb33eb54f47e0a76582b61c7f489c9d19833c50a473dffed1b6d27a76d",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 132
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`bootStages` six-frame build-up (B0 main-only → B5 nominal, 5i), spread into the export tail",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:95fb8dae098511d52f073c18934e3871e536d120e62866d25e567217304d35b9",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootStages"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "`engine-retired` (D6 stack-removed) + the D4/D5 split (`engine-landing-merged` integration-pending, `engine-cleanup-pending` de-materialise)\n\nAnchor: \"engine-retired\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8e709ead155da60c76cf2682665cc540e1219207",
+            "content": "sha256:5a1834d863e9bb5fb199156f6a21ff31cbc6bad7fb5eafffe11f2a72fbfe553b",
+            "locator": {
+              "end": 631,
+              "kind": "line_range",
+              "start": 631
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

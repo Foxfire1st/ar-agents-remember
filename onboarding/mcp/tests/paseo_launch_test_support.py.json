@@ -1,0 +1,54 @@
+{
+  "path": "mcp/tests/paseo_launch_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68d8e484f74b3f8bde6a3f11fb4eb94c45f86e6f",
+            "content": "sha256:90b4b0e682b7d0fdb75ac517942eb006cf6a6144bd754f5b6fe172156fab0dd9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module additionally owns `FakeRuntime`, its catalog/server constants and recorded launch-call set. This in-memory bridge stand-in holds agents/workspaces across calls, preserves before/after-effect failure scenarios and supplies state/archive/resume plus `agents-live` answers; `unlisted` makes the census incomplete. `GivenToAgentExpectations` derives the data a dispatch gives an agent, but its first-message line comes from the production `artifact_line`, so only the data is independent and the formatting is shared. Launch/status/document-chat suites share the fake, not a live harness or production host.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68d8e484f74b3f8bde6a3f11fb4eb94c45f86e6f",
+            "content": "sha256:90b4b0e682b7d0fdb75ac517942eb006cf6a6144bd754f5b6fe172156fab0dd9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "FakeRuntime._agent_create now records a serviceTier only when featureValues actually contains service_tier, separately copies any supplied featureValues map and retains modeId when supplied. This supports permission-feature-only payloads without a service-tier KeyError and exposes submitted choices to the controlled observations. Default-model and idempotent agent-state behavior remain.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "68d8e484f74b3f8bde6a3f11fb4eb94c45f86e6f",
+            "content": "sha256:90b4b0e682b7d0fdb75ac517942eb006cf6a6144bd754f5b6fe172156fab0dd9",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

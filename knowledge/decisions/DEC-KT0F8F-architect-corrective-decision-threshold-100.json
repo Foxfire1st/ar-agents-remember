@@ -1,0 +1,65 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The Architect weighed two real current alternatives today, in-place correction against a superseding record, and the choice constrains how the threshold record is read from now on."
+  },
+  "alternatives": [
+    {
+      "option": "Correct the original DEC-MTYDB4 record in place.",
+      "reason": "The unsupported text and the fact that it had been written would both vanish from view, hiding the original claim this correction answers.",
+      "reconsider_when": "The original record is retired by a later authority anyway and the correction no longer needs an inspectable predecessor.",
+      "status": "rejected"
+    },
+    {
+      "option": "Create a new corrective decision that supersedes the original through the supported supersedes relation.",
+      "reason": "The original stays inspectable and the correction itself is on record with its real current alternatives, decider and date.",
+      "status": "chosen"
+    }
+  ],
+  "consequences": [
+    "The threshold of 100 and its D92 counting rule are unchanged; the approved packets stand and no code scope is opened.",
+    "The original DEC-MTYDB4 remains stored and is read as superseded by this record; its alternative claim is withdrawn, not edited.",
+    "A later L99 widening of the Curator allowance is not anticipated by this correction."
+  ],
+  "context": "The original DEC-MTYDB4 record claimed that OR-R035 had weighed an always-on fan-out and a runtime-enforced threshold before choosing the instruction threshold. The independent memory reviewer (L72-MR1-K3, sealed R2) found no retained deliberation for that claim, and Architect97 ruled on 2026-10-07 that the claim is withdrawn: the threshold 100 came from OR-R035 as an implementation choice on its original date and no alternatives were weighed then. This record is the current corrective deliberation, not a reconstruction of original history.",
+  "decider": "Architect97e0320d-431f-4f4c-8c86-66a6dca880a7, 2026-10-07 (direct ruling on Root recommendation after the R2 seal).",
+  "id": "DEC-KT0F8F",
+  "links": [
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R72",
+        "packet": "requirements/MIK-R72-v2-the-architect-hands-coordination-to-one-agent.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-208SQT"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L72-ARCHITECT-CURRENT-CORRECTIVE-DECISION-K3-20261007.json sha256:8b39eefdedd6a674f6c02df9462fe652dca3f91464dc399c413b675e32cafec0"
+      ],
+      "path": "handoff-k3fix.json"
+    },
+    "handoffEntry": "L72-MR1-K3/architect-corrective-ruling",
+    "leaf": "260928-MIK-L72",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": [
+    "DEC-MTYDB4"
+  ]
+}

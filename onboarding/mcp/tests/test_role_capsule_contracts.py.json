@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_role_capsule_contracts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Marker removal preserves source-addressed metadata and validates malformed or off-audience declarations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf86c55b7c2ab2e93b68b7e65def40678f2e8542",
+            "content": "sha256:c78a3e432545031136345dc4fd98f9f611e8551998e47dc8a332297686da9e45",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shipped contract enumeration requires exactly matching sender/receiver sides and field lists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf86c55b7c2ab2e93b68b7e65def40678f2e8542",
+            "content": "sha256:6da63f364e430802c89a3b7444f63e507cdb70dae1aea3451c74196409c98f0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shipped_contracts_have_one_matching_sender_and_receiver"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

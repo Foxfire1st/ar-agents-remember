@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/constants.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:3d62e46f544b23376c4b332d4e33e3ae50b5c66fbdcef0c9ba675d46f6fe1773",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_repo"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Workspace instruction templates remain declared constants",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac76ec64057a6893daa0f473b52ee8c8482e6475",
+            "content": "sha256:f880ff165f14f8cfc5793c97f247080fdd3697235b851c0c1b81c08ec746e41e",
+            "locator": {
+              "kind": "symbol",
+              "name": "WORKSPACE_AGENTS_TEMPLATE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The retired coordinator startup files are declared by the install experiment module",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bf9ac72bbb7c8c5de47dafe426cd1ab91b20c7bd",
+            "content": "sha256:a1158b05bc0d2bae48bf1d67aee004da27d54031e586096258000ff3cb8d046c",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_STARTUP_TARGETS"
+            },
+            "path": "mcp/src/agents_remember/install/experiment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

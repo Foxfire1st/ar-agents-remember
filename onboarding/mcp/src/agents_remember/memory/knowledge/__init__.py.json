@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge/__init__.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package boundary: schema, codecs and reads, but not approval, task status or Git attribution",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efc073000dc65803fb024200db57f962af308567",
+            "content": "sha256:07c429739f75254d7f3a4d78b660bb3f95f5d72722e6c6cd346641938d9dd6ed",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The served surface is one schema, its pin, and the read opens\n\nAnchor: `CURRENT_GENERATION`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efc073000dc65803fb024200db57f962af308567",
+            "content": "sha256:fd7f7c6e254738abe5170ad7f22870ac7a385d2df0fd62a510c9e4693e7e0d87",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 14
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The connection contract re-exported here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:443116d5d7ec42b5e741759b495286c4fe4d15aa5f75ea5038f71c378f3fa3b5",
+            "locator": {
+              "kind": "symbol",
+              "name": "BUSY_TIMEOUT_MILLISECONDS"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9c7a8f0bd625027cff8b6d9d775cae6526466089",
+            "content": "sha256:0ade81c5cb9c5790671542b21896edaa0640f14246b71d2e3725870cb85e0926",
+            "locator": {
+              "kind": "symbol",
+              "name": "immediate_transaction"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/connection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The read-only open joins the surface\n\nAnchor: `open_read_only_store`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efc073000dc65803fb024200db57f962af308567",
+            "content": "sha256:c1b5262078c3f39b4c48267d7d9b13c1a4e7ba71fa1420f842f9a0769c1c9845",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The layer charter paragraph that records this storage home in `[package.memory]`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:00d440558bd114fff2b419abbdeeb9bb03fa80ef5048aa4a8cb0484ea4784960",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 206
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

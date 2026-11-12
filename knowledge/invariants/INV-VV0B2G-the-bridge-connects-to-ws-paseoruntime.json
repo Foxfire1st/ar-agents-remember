@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Environment filtering and connected-server identity checks prevent a valid role call reaching another developer daemon."
+  },
+  "applicability": "Every Python-to-JavaScript agent, workspace and catalog bridge call.",
+  "conditions": [],
+  "exclusions": [
+    "Home-addressed runtime management commands retain their separate CLI boundary."
+  ],
+  "id": "INV-VV0B2G",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_bridge.py::BridgeProcessTests::test_the_script_is_pointed_at_the_configured_runtime_and_no_other; mcp/tests/test_paseo_bridge.py::BridgeProcessTests::test_unconfigured_or_never_started_runtime_refuses_before_any_process; mcp/tests/test_paseo_bridge.py::BridgeScriptTests::test_script_failures_are_named_and_another_daemon_is_refused"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R02@v1 §3",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The bridge connects to `ws://<paseoRuntime.listen>/ws` and to no other daemon: the script's environment is built from the settings with every inherited `PASEO_*` and `AR_PASEO_*` variable dropped, the connected daemon's server id must equal the one in `<home>/server-id`, a daemon that reports another id or none is refused with `paseo_runtime_mismatch`, a home without that file is refused before any process starts, and reconnection is off.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,2315 @@
+{
+  "path": "dashboard/src/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Knowledge destination in the registry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Fixture-honesty sweep, its five rules, its scanned roots, and the unmarked-module blind spot. The third anchor is the guard header's own question, quoted as it is written; this row previously carried a paraphrase that occurs in no file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:3d749a3bd1af25ed418d7774a2209c8c2c6cf0a8136d2bf4d524fc62aad15ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SCANNED_ROOTS"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:f21d8eb560fed0eee217854d3ff81ab2adfb0c8f56cd97417016d5f8cb0d1806",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:87d9afb339b8148bd37f0e4ad0ab30a715763943d6df7e1aa4ffe338220f0d18",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:e4fe33b5ab72d1e360b6cfbbd87f7bd59677a983c32e6ab2acded3d1af7a2105",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The vocabulary tuples and their derived types are generated from the producer schema; `Metrics` carries only the ignored-host-agent count, and the per-stage and per-activity buckets are the `TaskCounts` fields the projection and each task entry carry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:3392bfcc22276f192aed9fa84c970db0395da4b0b61a2f84855546c3b833b504",
+            "locator": {
+              "kind": "symbol",
+              "name": "Metrics"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Historical lifecycle topology grammar: the former unclassified-state fallback is not the current TaskEntry status algorithm; the constellation palette is a separate retained concern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "constelColors"
+            },
+            "path": "dashboard/src/topology/constel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "JSON-module widening and the override type that survives `exactOptionalPropertyTypes` being off.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "390e10afba18e0b24c3be759f12f90011179665f",
+            "content": "sha256:30723aabe219bb62232e8a0734e2040f71a412509e3b93904379b5647311c0d3",
+            "locator": {
+              "kind": "symbol",
+              "name": "AsJsonModule"
+            },
+            "path": "dashboard/src/test/servedProjection.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6f0551e6feea6c5ac5293a4de3eb72fdfe92c5864c12eb7f96bba1c5da212696",
+            "locator": {
+              "kind": "symbol",
+              "name": "Overrides"
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Public lifecycle recovery commits contain only real code and memory outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The generated lifecycle mirror carries the cursor beside coherent identity and version fields. Anchor: \"export interface LifecycleOperationProjection {\"\n\nAnchor: \"export interface LifecycleOperationProjection {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "locator": {
+              "end": 292,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:516e1efcab915cbb3d91c8d2699f5aa34c47dd203545c1688e71b29b0b6880d1",
+            "locator": {
+              "end": 303,
+              "kind": "line_range",
+              "start": 274
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The fixture supplies a meaningful revision for the sample operation.\n\nAnchor: `meaningfulRevision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2a52ba245b323a37cc2fd3f07dc9a634a1e5e433",
+            "content": "sha256:7cb94c53a35ca6b3b3e5beae9ada33afec15c308a60ee91655f97dae7eb83208",
+            "locator": {
+              "end": 689,
+              "kind": "line_range",
+              "start": 689
+            },
+            "path": "dashboard/src/fixtures/snapshot.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Presence of ChangeSetTarget.review selects the Operations review page, including the empty task-context target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:ee59bf32cd91e8947c89a98d01bb5870d522a6f8a849945813e9bf77551d943c",
+            "locator": {
+              "kind": "symbol",
+              "name": "shellFlags"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "ReviewMain forwards task-context or named-subject targets to ReviewSurface; its retained comparison overlay separately mounts ChangeSetViewer.\n\nAnchor: `ReviewSurface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:9c898e23808c604be33f2c071b32853c61789e1eb88b9f826b62c46c105aa1f0",
+            "locator": {
+              "end": 62,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A reader URL opens the shell on the Knowledge view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:409540b125e4c7c5d65447dd5bea00a6a6188f9aabc75858d21842e3030eaa16",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Operations’ conditional ReviewMain forwards optional subject/history; non-review change sets retain ChangeSetTakeover.\n\nAnchor: `ReviewMain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:777253fc05f1a97f04505f792ccf18d28c6e1900222422cbeb565baa32ce04aa",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 781
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The tree owns one All changes link; card ranges use the page-wide context control and path links reach comparison-bound files.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:94416125afb074fccd35d47727eeb9c9ee3d8ac8925931d11a44462e673250f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReadingLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Every leaf’s entry opens task context and shows changed-intent counts; the reviewer opens unselected unless explicitly addressed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:444a1a2b6f518385b374f4c9f6bb0df8a6cc2a8e1735572a370ae58e2d24d2f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:ac724c1d81d5fc08fd044f8b4a3e853ab9847b9f2cb6f76f7071dcf318ec232c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The shared liveness predicate gates Working and labels the Intent Review `(recorded)` for a closed leaf; it selects no different review record and does not gate Intent Review availability.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:d972a17fb5c09baa79f099400d5b3d3f563db77b321edafc37f58e3f94645bff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The shared catalogue hook takes repository/task context and calls the existing subject catalogue client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:e7add9c951fdefe356d65db54a6b28af26a88b5018c14b9024b15f132747c20e",
+            "locator": {
+              "end": 144,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:8e782d547cb8a35eef706f164ee528a2375c1c9b1357a02ae164273ece6e4e8b",
+            "locator": {
+              "end": 673,
+              "kind": "line_range",
+              "start": 649
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:e470c7af378ec882122a77bf080a3c8d115848d26b0bbe570bf422af45d7c4bb",
+            "locator": {
+              "kind": "symbol",
+              "name": "intentReviewEntries"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "**The entry that is offered for every leaf; since `260921-ICR-L47` the subject catalogue is read by the reviewer on entry (not by the task entry), and never gates it.**\n\nAnchor: `useReviewCatalogue` `DocChangeSetBar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:93636c1b2d30a2760d953db6f7ab43c584c69412119977a471cac57465de3e3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:d972a17fb5c09baa79f099400d5b3d3f563db77b321edafc37f58e3f94645bff",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "73fa1d355d2dc4410a2b30bb85fd00413dbd9452",
+            "content": "sha256:780491a1b7a07a5c0592961ed3caf204693ee543c04870c0e337bbc9af03b168",
+            "locator": {
+              "kind": "symbol",
+              "name": "useReviewCatalogue"
+            },
+            "path": "dashboard/src/data/useReviewCatalogue.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "**The review target whose selector is optional, with presence marking a review and an empty object meaning the task context.**\n\nAnchor: `ChangeSetTarget`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:e656c01c927e10b2e799d307c0a76ad7e1213190e5bb94ca7744fe0cbadddbc8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f573a5c5c9d295de071c004326eb932c2d61dd8d",
+            "content": "sha256:3f13ccac412f23f05699ce7cdae5be8adb30a1b2e71ece5c69d6b8ca0c2a8925",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetTarget"
+            },
+            "path": "dashboard/src/panels/changeset/ChangeSetViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "ReviewMain mounts ReviewSurface for a target with or without a selector.\n\nAnchor: `ReviewSurface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:de0f222b8bf74d7cf7b209bef410afa439bdbc389c6def791f3585dcd2fe9504",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "**The client's inventory types and the request that omits the selector when there is none.**\n\nAnchor: `ReviewSourceInventory` `intentReview`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:3a72132f0e91797658680ee56804a30bd93c76a74d449d6f3d58b4e7c0b8e002",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ce89268a33bb0945a416e077ebb738159b133809",
+            "content": "sha256:950d3b870b93a5113e6a5ee6a9023583438a80b65df212ca5ca4dbe31e289909",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewSourceInventory"
+            },
+            "path": "dashboard/src/data/review.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The retained Knowledge layer renders the reader beside the path tree; the former transient ViewBody case is gone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:6c298755fc2ec4b5aede20cb8c8a61fc89c2534a04840780d97a5902059bdcbe",
+            "locator": {
+              "end": 719,
+              "kind": "line_range",
+              "start": 717
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:fbe21d52e1d8d8c83153d9ca4ed20ac9707c3a8afe0e459a982f0e2694c00e25",
+            "locator": {
+              "end": 902,
+              "kind": "line_range",
+              "start": 888
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:e08ce2f044305ed910cacee750b6b34aa85f69321357643e1fc0907ab65e1289",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The case that measures the browser half: no subject offered, and the target is still a review.\n\nAnchor: `stubCounters`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2680883fd95c1837bd963491dd5d403fb3d0a345",
+            "content": "sha256:980e9fca0fbab6ff35a66abca12f05ac8c3b34d8ef76d6725d5b396e8380e9b6",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 446
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "**The review route's own decode: the body is the answer whatever the status.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f3302a8f0d3f3743960dbb22069270aecf18300",
+            "content": "sha256:926bec36aa5d3aa3b9e56da95657348563f04036e913943aa3fab0f7c682a750",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewTransport.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "**The one renderer every non-review state goes through.**\n\nAnchor: `ReviewOutcomeRegion` `ReviewProblemBlock`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:640ebe01c24104c561f4b394efb8ce1124b7113cad8614ebd4a746652b38c400",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:74471e933b7f1282d2b582656b01f556829f0c7f7cc23c680357692ebd1152da",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewOutcomeRegion"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4dda0f8e45d38b01cd7700d66b0a93e90ef87991",
+            "content": "sha256:5f92f2865c97e98c45bd53aac3a91bae430ec443ba8b3144489a6a5af0ca080f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewProblemBlock"
+            },
+            "path": "dashboard/src/panels/review/ReviewOutcome.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Current imported source owns this scoped route boundary: the cockpit's persistent Chats layer mounts the Role-chats pane.\n\nAnchor: `RoleChatsPane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:0e083528be45ad099dc01a9c0c450064660ea4947830ae120697f07fd2b38969",
+            "locator": {
+              "end": 723,
+              "kind": "line_range",
+              "start": 720
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "The route's Role-chats pane owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:75963cacf0433c265325b78bc40b9a20945fdbed2896e5536b9636c1e4567617",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "The route's embedded chat frame.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:011f51091c3826cba23b53b50b6b8895f19e466aa1f445f4eeb6a35a49890ef2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Test and hook completion share hang guards.\n\nAnchor: `testTimeout`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
+            "content": "sha256:94bd62113a653331247f545cdff0961f18765b354052ac8292df3c2cabfb0ffd",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Bounded source guard scans dashboard test and support files.\n\nAnchor: `the dashboard suite does not depend on machine load`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce6332e5f3e2af96e6412b4b2b47358e425d092e",
+            "content": "sha256:14f4ae9e65512fd17bbff76f78e318de569fcd63e3cd9781776bbc1394268d28",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "dashboard/src/test/loadIndependence.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The header count itself: the h2 is a bare `Tasks · {count}` with no tooltip saying what the count counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:8b757399da4e112d5124db74fe382507568aded023a23e103e1156ae7202ce7a",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 189
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "RoleChatsPane binds the current role-launch selection to document/options scopes, request controls and the options loader, then passes that state to RoleChatsView. This composition is shared across roles; it does not itself implement an Investigator-specific selection or execution rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23061a7413ce30005806ccc7de11a018fd262e79",
+            "content": "sha256:d4a5a6d2f5856f7d4d85efc44dcfa1cee26f6b7b1a6ac13adaca495a102a34ea",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The root already says Engine Room has no product-bar entry and is exercised through injected initialView. The changed so — source ownership, not executed visual proof.\n\nAnchor: `const buildUp: Scenario = {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58403a8e3f376b93e6cea8747e0d8ecdb222dd8c",
+            "content": "sha256:437ea35d69b1f71eec7c9cecad85849b51f6643335af985a47323391103b8bfd",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "dashboard/src/dev/scenarios.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "EngineRoomImpl builds its model from engineProcesses alone and selects the process/ledger data for enclosure presentation; it reads no lifecycle collection or provider projection.\n\nAnchor: `buildEngineRoomModel`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:aa8eeae3a915f870dcca67708e5a28b6f7bca6db3f044e696cc9ecce45f21bac",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 119
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:2aede7278b5afa2f34d995f55e47a09251c5042e5d230c595155d47469266519",
+            "locator": {
+              "kind": "symbol",
+              "name": "EngineRoomImpl"
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "The cockpit retains Engine Room for injected initialView tests, gives it no dashboard/product-bar entry, and mounts its layout only when the selected view is engine. This is source ownership, not executed visual proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:921e455be43c5f1c647d35565a6cba24b9ae6ee6e59f1fd30d46f9bec932c12d",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:dcdf7b26bdc676b80b0311450589915c44d94af9f9d33e708a387ca83267569b",
+            "locator": {
+              "end": 691,
+              "kind": "line_range",
+              "start": 687
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The four-entry product bar and retained product layers remain distinct from injected views; review URL state can override ordinary opening view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:29d3d4539fa8862f31ceefba386db2c2bb6805610e1898aeb18a22f4b2ab535f",
+            "locator": {
+              "kind": "symbol",
+              "name": "VIEWS"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:60bc25696b100ddfbef71aa797ce37aced694af3c96337092f369c0042e28c6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "MainLayers"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "The review target keeps task/history identity; the page also restores validated selection and older-comparison state from sel/comparison URL keys.\n\nAnchor: `readReviewHashState`; `writeReviewHashState`; `useSelectionUrl`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a95dab3d3b1d2c6d67aa03480e0490509bfa53b",
+            "content": "sha256:10f2755501d81a7d1199558d81289a35006444b00341b5fc77886fd2cc788e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewHash.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4758f75763c0c52a61f41df5ec508257a8961518",
+            "content": "sha256:5abad082e5f7da69cccdd304f2dd94d62fc3256c2ad769767050e6d133cd2924",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Native execution results are scoped by document identity and, for selections using request receipts, by the active request ID. Stored/saved receipts are selected only under those scopes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e171e7cca2fec0b1fd921c915a36af2fb0c591",
+            "content": "sha256:18122260b28f99ef258102b738664a036a7a0066b9b75fc900944f7f066903e4",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 117
+            },
+            "path": "dashboard/src/cockpit/roleChatControls.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "048b32b6982011c16588c213c0e77d2c806b8886",
+            "content": "sha256:b092cafb815fd85b0f00794dcbf5206b8e2ca9f8dfe5c72030d845b316f0a735",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "dashboard/src/cockpit/roleChatExecutionView.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Frame descriptor activation and explicit retry are separate from retained frame identity",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:8523a9c4686ee2b6788e4aff3f1fd88e135c8a61103da57f7c79bfd835730fa1",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Every leaf's review entry opens the page's own default comparison — the live candidate for a live leaf, the delivered recorded pair for a closed one — independently of summary availability",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:ce3b000d26bd4be73eb864376b3fca819fd12f789a501d754072678d4a1af0bc",
+            "locator": {
+              "end": 179,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Intent and attribution counts have separate partial/unavailable treatment",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:6e8ac5418ae5e6e7cf8523783226c6c09c7a9f1033308ab0ed2dfd7cf7991bf3",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:988598071ca473174a2b97b5fcc8a66088f0b3ec670e2764e2ad551141a42a66",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Question/read identity and memory-input epoch prevent superseded responses from display or inappropriate unshown reuse; live-watch notification is separately wired by the surface.\n\nAnchor: `startRead` `memoryWatchActions` `useSurface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0366167bda00c0062a05f383aec92f821ffea4c0",
+            "content": "sha256:c0724c069fc17549ced45f45704c06567e7bf27103e7635d91df0ba2382105e7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCycle.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:051725227fe4220602c84f0c8d3f3256077664ced2285c6ff8bbf329759e3f80",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSurface"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "The operations list shows every served task entry, including one with no worktree, and its head is a bare `Tasks · {count}` beside the BY REPO / BY PHASE switch.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:dc88ca3d4bb9dd699d740c6d174486df5b39c42d3ff177499814549e0ebba7e2",
+            "locator": {
+              "end": 441,
+              "kind": "line_range",
+              "start": 411
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:a98adc8694538e1c1f51f09e3ed4f3f7e1f47fb176320cca0e07123bb4ca1899",
+            "locator": {
+              "end": 576,
+              "kind": "line_range",
+              "start": 539
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Collapse state has one persisted collapsed set",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e9a764615275cf934b43c9b1a0a07a0675e00d4c",
+            "content": "sha256:395acc600cd7427c247fbe457e04057c4bdde34e795b947fd35795daa52158f3",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/panels/useCollapsedTaskGroups.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Historical lifecycle partition generator account: the retired state/metrics partition is not the present task model. Generated schema/TypeScript stale comparison remains a distinct source responsibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:61f4119dc547de7388a12cc2047abdf3393b90ab2c79160ba4fff37be16691c2",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 436
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:de6218b26cd4693cba6753856b42753af4f2a95cc8ba1bcee4f4d7252b6ee9e3",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 472
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:ddf496f5974ca1e88639b14b88f629c7c2d2e8ca40bb642f3713d6cb0e2ac01a",
+            "locator": {
+              "end": 517,
+              "kind": "line_range",
+              "start": 502
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Wire discovery and fixture scope retain named blind spots",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:cd99619b8c11a2f3cf8c7f93950be821424904ec1e24b7282d47a9efc94f4b15",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "e87c7782c9414ddd44713084a9a37d1b860749ab",
+            "content": "sha256:d31aaf51c9f02260f177528e626cee7093e4672f88a33e47ce74e6ea9530279c",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "dashboard/src/test/wireFixtureGuard.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "57": {
+      "note": "Required-field override protection applies to fresh override literals at the call site and only to top-level keys in the fixtures/wire.ts builders. Widened Partial values, nested values and other modules remain outside this mapped-type guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1728908f2e1d3aa121a935b106bb55590cb0bbc",
+            "content": "sha256:6b52920f4413d542897cbd86e64b1c9cd84ef0f30e237f0d9c521d5870358d62",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "dashboard/src/test/fixtures/overrides.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "58": {
+      "note": "A worktree node's constellation status comes from the task entry's own status tone: a waiting task warns, a finished one idles, and an enclosure with no entry idles.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:69eaf23af5108dc2733475877d8b523c22c0c5b790a04f32dbccdbc24c443063",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "Engine Room's present body composes enclosure map, stack, boot and diagnostics",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c89382b7530853796de958e287f52a05bf0222f3",
+            "content": "sha256:4897c0f84e170f3cbbf725160849ab497538ac71b4134750aa67c46b6ac21882",
+            "locator": {
+              "end": 177,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "dashboard/src/panels/EngineRoom.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Shell navigation, persistent layers and shared drivers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:57e2f656bc20222f62328519d9d1cb2e901ebceaae50dfbc50c5bceaa6af534f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "The surviving dashboard TypeScript solution declares its project references; the removed browser-probe module contributes no current import contract.\n\nAnchor: lines 1-8",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da5d2822a340c1b0eba095c24ac846e9267d3272",
+            "content": "sha256:6ac819956399698bcfb02a7bc2312eddc29295202c1794f5f0b0839e52507ef9",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/tsconfig.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Operations review composition and its retained comparison-page overlay have separate owners; whole-file inspection uses comparison viewer links.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:94416125afb074fccd35d47727eeb9c9ee3d8ac8925931d11a44462e673250f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReadingLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "Unknown chat ownership does not hide the frame; only confirmed absence does.\n\nAnchor: `chatPresentation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
+            "content": "sha256:83efbfa27503cc53b64b97313ff2352ded9f2c92796d8b787affe1783fe7da70",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "549cf610137c56828d056d1a3b11a3818c82bbd1",
+            "content": "sha256:8ba560f316f457667f7257445e0b57a1068febe45836a462fa0efd2c99b5f6d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "chatPresentation"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "Preclick knowledge is bounded and polling belongs to visible pane/tab lifetime.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7885d6f1c072a6550bb16c28bdf7c02988232427",
+            "content": "sha256:e3b8f8dcd045a769b3e39c793e19e68510af5fdffbcf8056708d0177d6d8dc10",
+            "locator": {
+              "kind": "symbol",
+              "name": "useKnownChats"
+            },
+            "path": "dashboard/src/cockpit/document-chat/knownChats.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "The tree’s All changes count names measured/pending/unavailable totals; non-text inventory remains a comparison-viewer fact.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "Authored stage wins over host observation; only started tasks receive bound contributor activity and eventAt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:97b5afbcb4c4f92a14c39ada1467d8a0b0098a8ad5d950e0f7b481bd53adf329",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_state"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "Declared task sources become one entry forest with worktree binding kept separate from task admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "Task-status words consume served activity/stage, while the shared display clock formats event age rather than deciding task state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:50ba2324b13d627caa87ce9cea377110f794bead4ecfc7ed8e08c5336bbd0c8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskStatusWord"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:8657e7cba2795e4372839b6be97cc4f685971f9c5fca9a6bf05e6cddec60610e",
+            "locator": {
+              "kind": "symbol",
+              "name": "taskStatusReading"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:c4c01fea27bb0930b922c2397a93d401757edb6784435aefcb88c1f093c5c713",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Retained body responses are keyed by the revision actually returned, not the requested revision.\n\nAnchor: `load`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:47df2d81e453a6579042dff7f941e53c0a6c344e821447974664f4f2d2100f2b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:726947bc1372ae3dede8142c02fdc08ce36876f12045a7500ed20ebf9ccf77a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "load"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Task fixtures copy sampled identity/content fields while explicitly choosing planned stage and empty collections/count defaults.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:7849f98e85f0c21dc59a2f2e13cf3c526ee19b8f6e2d0cf725fb28f0272c51cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASE_TASK_ENTRY"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "71": {
+      "note": "Topology maps the bound task through shared status presentation; an unbound enclosure is idle.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d6c061b2bf9f32b160e796212e1d8d724a8d4a57d15d7f18803d71dc3c1d3caa",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktreeStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "A configured Step up action stays in the shared wrapping launcher and sends canonical selection plus a reason, not preview permission overrides. The original request identity and trimmed reason survive saved taskless requests, remount and retry. A stepped-up receipt labels base mode, notes and feature chips non-applied and reports the request's selected model plus its step-up source — the host's observed model replaces it only when the host reports an applied model — with unreported mode/features explicit. This adds no chat navigation or acceptance authority.\n\nAnchor: Current source; preserved L88 property 65",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "49001f5ff9548e3c0b4a3ba3b69a05fb6fc8646f",
+            "content": "sha256:535316a94eebd817ef3d0c5f01db1c9fd275d85b44caa7168cb9aa5647a3c946",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/cockpit/role-launcher/StepUpControl.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88de0373d5339b3b1f1fb7cc23c59975ee6b560a",
+            "content": "sha256:3f9e66aaf9e547933bfddf9dc79310cf8126d7a068156eac880b468ed5138a7d",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "dashboard/src/cockpit/RoleLaunchFeatures.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_listed_child"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "Responsive shell style and the actual narrow railed/takeover consumers are separate from reviewer-local scroll ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:2f0351b4a30042357bf94304cc67490467c7f2061f43c0a18180d68c26f92010",
+            "locator": {
+              "kind": "symbol",
+              "name": "RailedBody"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:c688a9d5c0ad3d4db07f8f6744f1c7420309636a4a1a0130efdf84e274954380",
+            "locator": {
+              "kind": "symbol",
+              "name": "shell"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+            "content": "sha256:02d7a66ba412684679f12e38224087695dba6d0ca84b73e921c353290813ee81",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/layout.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "Current shell owners for the review page account.\n\nAnchor: `ReviewMain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:1eff69e5c56a21b35d68e856cfc14df01eb74c55b851910912f9e64261692075",
+            "locator": {
+              "end": 788,
+              "kind": "line_range",
+              "start": 776
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "Current layout owners for the review page account.\n\nAnchor: `reviewRoot`; `ReviewGrid`; `readingColumn`; `stackedPage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a39d2696fb623960725d081d87a81d303feb34",
+            "content": "sha256:bd87300f145db9978548756295b019a5e012f775c32f9ad670009e988bddf66f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReviewLayout.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "Current tree owners for the review page account.\n\nAnchor: `TreeHead`; `ReviewTree`; `TreePinned`; `treeLane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d7280e0e04dbc4babd2458e0ca38d283250c9b0b",
+            "content": "sha256:c75b25739a5107f1ed09be0e5479569d62a9a1298f8fa9e3d995b4e586003fec",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewDestinations.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "Current source owners for the review page account.\n\nAnchor: `ReviewBlockCard`; `CodeContextSwitch`; `layoutForWidth`; `TreeHead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f004efc247fbe02ff63076ce1476bca8a7b4ad94",
+            "content": "sha256:2c770a9ba73686f8a8fbfc07cec28f365bcbfa3e28b53aee67d01f15e5df2d23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1420e1434026edca20149aa327ac22c97d0457dc",
+            "content": "sha256:94416125afb074fccd35d47727eeb9c9ee3d8ac8925931d11a44462e673250f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReadingLayout.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "Current chat owners for the review page account.\n\nAnchor: `DocumentChat`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:9e29a6f39a93a440da8f1d2d92bd0a81f51c92296063aab804777b188d187de0",
+            "locator": {
+              "end": 600,
+              "kind": "line_range",
+              "start": 551
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f8009641b9edd4b7cd8fb5ad5c0a9e974bb87f2d",
+            "content": "sha256:da4915cfff8d499a9702bb95735d546d1a905086e7c6763bb5571e5e34568cfb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewPage.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:8e5f2fcedb05bf6c185589dc69d141ea796fba1166b00c429e7aa6e3df6bd921",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "Current tray owners for the review page account.\n\nAnchor: `TrayLayer`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:43a1c97bd022af137cd909968fba7bff200f95c7b44ae4c9dffd2703f21f5a5c",
+            "locator": {
+              "end": 882,
+              "kind": "line_range",
+              "start": 876
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7047c1f17a0ed1811467a411bfed806cdf8e657c",
+            "content": "sha256:306a113f5872d414179c145f75244ab78209007275b7e8214433f76a304962f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/TrayLayer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4a59b3a84a8572b11b1a88ae4df41f6ba7d0477a",
+            "content": "sha256:7dd2f5f5ffe124ac6f7017abdcb7732fd48aad7492fb7e94b0da99d0511865d5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/tray/TrayButton.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1966b41dd85b7de3f0205cd0231ded65a7772c78",
+            "content": "sha256:8e5f2fcedb05bf6c185589dc69d141ea796fba1166b00c429e7aa6e3df6bd921",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/reviewChat.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "Current lane owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dd43b2a06c461d86230be648e274a74066401da2",
+            "content": "sha256:51c95c8a9e7dc99b29d030f5ba328acc7a8f3106941e5de5869abf6b485f7d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/LaneSection.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "Current navigation owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b87c6e5d5e3a7ab5cc242cc08bb5346a018eeb4d",
+            "content": "sha256:444a1a2b6f518385b374f4c9f6bb0df8a6cc2a8e1735572a370ae58e2d24d2f8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewNavigation.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87252afa8609aa2eda711a8fc975b964a7f97733",
+            "content": "sha256:ac724c1d81d5fc08fd044f8b4a3e853ab9847b9f2cb6f76f7071dcf318ec232c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewPage.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "Current selection owners for the review page account.\n\nAnchor: `useReviewSelection`; `readSubjectOf`; `restoreSelection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4758f75763c0c52a61f41df5ec508257a8961518",
+            "content": "sha256:5abad082e5f7da69cccdd304f2dd94d62fc3256c2ad769767050e6d133cd2924",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/useReviewSelection.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f08ecb5932f96691082d3c9120d30a6cbff7521f",
+            "content": "sha256:2db1560e07d8a9f3010dcc925a088602718308826f6dcd535ee0c9411d3e3d2c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/selectionRestore.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "Current watch owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ba9b634c8dc962571424e64723fc44a8335f134",
+            "content": "sha256:a73bf6c6219abab8134fa362baffae4257741e3a61a1255dd3d2c832032b6118",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/reviewMemoryWatch.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "Current cache owners for the review page account.\n\nAnchor: `ReviewReadCache`; `sameGeneration`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3499890289fceaa6c58051f49d8242838b8e0d73",
+            "content": "sha256:e4f17ea6c1b0ddd03a06af59f71ec8ae7e0d0c04bc605c9e079911862d5fb773",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewReadCache.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "Current wash owners for the review page account.\n\nAnchor: `RosterNext`; file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "001a6d546effd9f6a846d5f8ba58d9e8c7f6233d",
+            "content": "sha256:2a99d712d92b75078eb815fba54a0f35a5efb71caa8a63c4e516398368f51a3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/FamilyTree.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1da2184f401cc6745d87bb6bed59ef1a259a8a3",
+            "content": "sha256:0f7fb64dbffd7c61262b052124de9ea11f107f3ccb5876cf6e082e4502cdebca",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/treeStyles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "Current composition owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "Current model owners for the review page account.\n\nAnchor: `changeSetModel`; `ReadingColumn`; `ReviewTree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "672ce8fd4dd62a7f6c9945096f467600b5c4543a",
+            "content": "sha256:ccc5bc49224275cd4f0941a8432de768d551b0f1407c4caba9a74dbd2b3b22a7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/changeSetOrder.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6ad6d3a0f7add2f77d6450f5347b61416090768c",
+            "content": "sha256:82c52028341ebe98c65cedda5a5de78d38c91693bf29c284b77e22cf18df8c99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/ReadingColumn.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23b4b91094455811bf1a94a416461ad26b7a6937",
+            "content": "sha256:8050d2b5c3fe855a6148209894c8087ba3ac2f1bc727d96306b5a162a12aa46f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/tree/ReviewTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "Current details owners for the review page account.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e7e188023aa8b8b2abaabc34f5e65182b20af69d",
+            "content": "sha256:76f740f159009ad15f621415a67d4890e7bf083018f11fe3ec7d9f159a23a046",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/reading/TechnicalDetails.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "aacb83d79d19978ad947b4ac88eba523ad8e4fb5",
+            "content": "sha256:ba77287e15f39970a8964523103e46e7263d4d0479b7f377a370d3485757ac0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "49343b438babb334380943fd5a5b14179143b0fe",
+            "content": "sha256:293d6027f0781d8a974b7456c9c890c384a984e0e96c589b1fea64664d82fe7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/review/ReviewRecordPanes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "Opt-in hidden preload starts the client without an agent URL; the descriptor answer uses current visibility.\n\nAnchor: `if`; `const named = !preload &&`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:01864cec4999cd7603ed5792352fd8c901dead91253d89fcc41f15c6b6598d6a",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:b61b93df4c0d9df419424441d7a19e258b6a222e85c996008109c7c0db03fbf4",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "The model admits typed tray provenance and the box's geometry in one block, with the pair admission immediately after it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:afe46fbebb17933096c946f1dac0350b26f7116987b6140715d483d548627d91",
+            "locator": {
+              "end": 378,
+              "kind": "line_range",
+              "start": 318
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "A composer measurement may carry the box's optional left and width, which the model admits only as a pair of finite values with a positive width.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b222683100abd582daa85755533e41d9728ce83",
+            "content": "sha256:4bed65d88e6de9a56ca6f8b45a48045e938a4fdba648cc0bdce9f60494f80a97",
+            "locator": {
+              "kind": "symbol",
+              "name": "composerExtent"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "The frame controller validates the configured origin and the actual frame window before parsing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:e5beb601419ca737f6c746b38b07144d68e7d2f65aa03221ea6fa254f900823c",
+            "locator": {
+              "end": 233,
+              "kind": "line_range",
+              "start": 201
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "The ready-bound subscription is released on relink or stop.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:419b24242db2692ba46474d14911aaedbca99d560e0769bfd7417b863d06a987",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 141
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Relinking and stopping release the previous tray subscription.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+            "content": "sha256:8108a9ad7a7263c26caba97991ea05cd8889e9169074e6489b47e4a4d74db9dc",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 283
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "The explainer’s exact-task header menu is the explicit way to choose another chat in that column. Explain and the matching first-request signal open a fixed-target form; its Send starts the build, while ordinary opening only reads state. A leaf document in active Operations also exposes the explainer’s Retire control, including from a cold state read. In Review, the top-line Review \\| Explanation switch replaces only the reading body, while the tree and shared chat remain outside it; a planned page shows intended effects, and supplied explainer grades remain inference in the shared tree and reading order.\n\nAnchor: `DocumentChatImpl`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87320203450d777a0b564196b6dccdb508028659",
+            "content": "sha256:d6273c2ee23f5f7a2f6a384db0b6d8a306e45e45759a089705365c66345f2ccc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/cockpit/document-chat/DocumentChat.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

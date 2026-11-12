@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_persisted_stamps.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Disk census identity is deterministic while memory keeps the observed history changes, so a restart at the same census restores",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1925bfa3b7f8e0fc04c24f4fa7e02c58e54bde77",
+            "content": "sha256:bbd1cd3086aab2db00f6b29961df9a95b9bd54e61a3d81dffd9969e8baf810c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_restart_at_same_census_restores_after_different_memory_history"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

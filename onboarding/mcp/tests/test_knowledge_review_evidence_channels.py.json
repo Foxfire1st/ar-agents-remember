@@ -1,0 +1,43 @@
+{
+  "path": "mcp/tests/test_knowledge_review_evidence_channels.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+        "content": "sha256:d9122ab0fd70e1b4954ac2e3f17bc174e0d4be0b7a026ec96268c9ebbc607b54",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unresolved_count_must_match_the_entries_not_only_the_total"
+        }
+      },
+      "facet": "Rejects a declared zero beside one unresolved/current entry and a declared one beside a no-concern/current entry, both within assessmentCount=1; requires the unresolved-count error, isolating this equality guard rather than a later status disagreement. Stored assertion inspected, not executed here.",
+      "id": "PRF-HVWVSF",
+      "invariant": "INV-XYE5A3",
+      "origin": {
+        "handoffEntry": "CUR-L57-assessment-unresolved-population",
+        "leaf": "260928-MIK-L57"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "30": {
+      "note": "Current tree-history and proof assertions replace the old assessment/channel journeys. They exercise present/absent/unresolved operands, compared/added/removed/unresolved revision states, source currentness, history attempts/membership rows, and family proofs beyond a roster page. An unread history keeps its own proof state; a synthetic movement-copy input is not a native two-move producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea4ef5d83ffe9733de18c20f0e1a405aaf633a41",
+            "content": "sha256:4192208cc310a63847fdebaa7d63c7b4059cc4f2ed3f11c743d2aa51e6c36a35",
+            "locator": {
+              "end": 411,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

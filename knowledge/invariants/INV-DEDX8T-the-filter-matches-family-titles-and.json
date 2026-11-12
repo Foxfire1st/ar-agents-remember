@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: FamilyTree.triage.test.tsx; ReviewSurface.navigationTree.test.tsx"
+  },
+  "applicability": "The intent-review sidebar filter over the subjects and locations admitted by the active Changed or All view.",
+  "conditions": [
+    "A matching family id or title keeps that family's members of the active view.",
+    "A matching subject id, title or recorded effect keeps its changed-location rows.",
+    "Location matching includes changed, unchanged and not-comparable locations; a folded match keeps its subject and matching group row reachable in the reading column.",
+    "The filter narrows tree rows only; it does not alter the reading column's model, sort or block identities.",
+    "An empty result states that nothing matches."
+  ],
+  "exclusions": [
+    "Searching full guarantee or statement bodies rather than the subject title.",
+    "Including subjects outside the active view merely because their location text matches.",
+    "Expanding a folded location into source cards inside the tree."
+  ],
+  "id": "INV-DEDX8T",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "FamilyTree.triage.test.tsx; ReviewSurface.navigationTree.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 9",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The sidebar filter matches each shown subject's id, title and effect and each location's path, symbol and role within the active view.",
+  "status": "proposed",
+  "supersedes": []
+}

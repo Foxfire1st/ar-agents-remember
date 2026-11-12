@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three proving tests pin slot discovery, review-bound apply and placement protections; without them orphaned indexes would linger outside the managed root."
+  },
+  "applicability": "Citation source index discovery and deletion.",
+  "conditions": [
+    "Slots outside the managed namespace."
+  ],
+  "exclusions": [
+    "The managed namespace; Git-tracked indexes, which list and keep."
+  ],
+  "id": "INV-EYMRKQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_copy_cleanup.py::test_citation_slots_are_found_wherever_publishers_root_them; ::test_a_cache_added_after_the_review_refuses_the_apply; ::test_citation_protections_hold_at_every_placement; /var/tmp/mik-run3/l82/evidence-window/copies-apply.json#deletedCaches; notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list.json"
+    },
+    "handoffEntry": "L82-CODE-R1-05",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The citation-index rule scans only temp/citation-source-index and leaves publisher-shaped unmanaged slots under task notes or enclosure cache roots outside the managed subtree unlisted and undeleted.",
+  "status": "retired",
+  "supersedes": []
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Registering through the legacy names would work today and stop hearing every event after 2027-04-30, silently ending wake and activity tracking."
+  },
+  "applicability": "How the plugin registers its host-activity and turn events.",
+  "conditions": [
+    "The host is Paseo 0.15 or later."
+  ],
+  "exclusions": [
+    "The legacy server.on names, which work only until 2027-04-30."
+  ],
+  "id": "INV-2SNZPZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "plugin tests; notes/reports/260928-MIK-L60-evidence/partB/step-log.md (plugin loads, hooks heard)"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v6.5",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The plugin registers its events with the Paseo 0.15 hook names through server.addHook; the legacy server.on names stop working after 2027-04-30.",
+  "status": "proposed",
+  "supersedes": []
+}

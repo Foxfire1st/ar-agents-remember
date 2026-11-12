@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A bare Git message once sent a Manager looking for a read in the wrong repository, and the compound case proves one refusal names every fault of a row with its remedy."
+  },
+  "applicability": "Every closeout refusal produced by the entity-fingerprint memory refresh, at the candidate verdict and at the memory commit.",
+  "conditions": [
+    "Each problem names the catalog file, the entity row and every evidence path the code candidate lacks.",
+    "Each problem states the action that clears it."
+  ],
+  "exclusions": [
+    "A refusal raised by a Git read the refresh cannot perform, which names its step, path and tree."
+  ],
+  "id": "INV-1ZQS29",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "the same focused test module: the preview's findings name the catalog, the row and pkg/gone.py in test_a_deleted_evidence_path_stops_the_preview_and_the_preflight_before_the_code_commit, and the step/path/tree case is test_an_unexpected_git_failure_in_the_refresh_names_its_step_path_and_tree"
+      ],
+      "path": "curator-list.json"
+    },
+    "handoffEntry": "L176-2-record",
+    "leaf": "260928-MIK-L176",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A closeout refusal from the memory refresh names the catalog file, the entity row and every evidence path the candidate lacks, and says what clears it.",
+  "status": "proposed",
+  "supersedes": []
+}

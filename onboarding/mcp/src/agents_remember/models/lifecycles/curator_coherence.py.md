@@ -1,47 +1,61 @@
 # mcp/src/agents_remember/models/lifecycles/curator_coherence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
-[lifecycle models overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
 Defines the strict structured contracts for curator source candidates, agent-owned judgments,
 immutable coherence generations, the sole live authority manifest, optional attempt snapshots, the
-four-action public request/response API, and — since the closeout plane was cut away — the frozen
-`ValidatedCuratorCoherence` value (`:372-385`) that carries one validated authority with its record,
-its two paths, its digest and its evidence. Under CCR-R03@v1 the memory-quality attestation and
+four-action public request/response API, and the frozen
+`ValidatedCuratorCoherence` value that carries one validated authority with its record,
+its two paths, its digest and its evidence. The memory-quality attestation and
 immutable coherence record additionally carry a typed direct-dependency declaration so evidence is
 a content-addressed consumer of exactly its declared inputs
-cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-92; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-233).
+cit:([`CuratorQualityAttestation`, `CuratorCoherenceRecord`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:80-106; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:223-304).
 
 ## Code Commentary
 
 ### Logic
 
+`CuratorCoherenceRecordedJudgment.evidenceArtifact` is an optional owner-stamped existing path/SHA/size value; its digest must equal the originally recorded judgment hash. It is absent from caller judgment inputs and omitted canonically when absent, so old record seals stay intact. `ValidatedCuratorCoherenceGeneration` carries a digest-addressed integrity result without a live authority claim; `ValidatedCuratorCoherence` remains the live selected authority result. `CuratorCoherencePaths.judgment_evidence` derives custody under the existing artifact root.
+
 `CuratorQualityAttestation` accepts only the exact `ar-curator-memory-quality/v1` schema and checks
 candidate count and uniqueness. `CuratorCoherenceRecord` keeps semantic requirement revision,
 delivery attempt, and content identities in separate fields and requires the recorded judgment set
-to exactly equal the source-candidate set. `CuratorCoherenceRequest` makes publication a strict
-compare-and-swap shape while forbidding publication-only fields on status, prepare, and validate.
+to exactly equal the source-candidate set. The optional `judgments_file` is a transport for the two content collections, not a tenth required
+publication identity. Read actions refuse it; publication rejects either explicit inline list
+alongside it, including an empty one. Candidate kind counts/set digest/locations and published
+judgment/assessment counts describe status answers; the exact authority and original collections
+remain file-owned. `CuratorCoherenceRequest` makes publication a strict
+compare-and-swap shape, forbids publication-only fields on status, prepare, and validate, and
+refuses by **naming** the member it is refusing on rather than by naming a category: a
+`publish` refusal lists every missing publication member by its request field name, and a read action's
+refusal names the publication-only field it received.
 
-R03 binds the attestation's rendered report and inspected pair to a declared dependency
+A `status` or `validate` answer for a leaf whose closeout completed reports `state="closed-out"` with
+the closeout's `codeCommit` and `memoryContentCommit`; the response declares both as optional
+hex commit fields.
+
+**The refusal is the whole diagnosis, because pydantic reports a model-level validator with
+`loc: ()`.** `_action_has_one_input_shape` requires **nine** non-null fields
+for `publish`. Each entry is a `(request-field name, value)` pair, and the `publish`
+refusal appends `missing: <every absent field by request name>`; the sibling branch states
+`supplied: <what it received>` instead. The JSON schema
+cannot carry the requirement — `required` is `["action", "contract_path"]` because the constraint is
+conditional on `action == "publish"` — which is why the description and the message are the
+load-bearing surfaces.
+
+The dependency declaration binds the attestation's rendered report and inspected pair to a declared dependency
 population: `memory_quality_attestation_dependencies` declares the candidate-state (pair contract
 digest), exact code and memory candidate trees (git-object digests), the rendered-checklist bytes,
 and both validator identities; `require_memory_quality_attestation_dependencies` rebuilds that
 expected set from the attestation's current source facts and refuses
 `memory-quality-attestation-dependencies-stale` on any mismatch
-cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:94-133; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:134-159).
+cit:([`memory_quality_attestation_dependencies`, `require_memory_quality_attestation_dependencies`], mcp/src/agents_remember/models/lifecycles/curator_coherence.py:109-146; mcp/src/agents_remember/models/lifecycles/curator_coherence.py:149-172).
+
+Judgment and assessment bounds are shared declarations consumed by the dependency-capacity derivation and publication guard. Over-model payloads refuse with the bound and actual count before artifact writes. The dependency schema and preexisting record encoding remain compatible; capacity is not an invitation to point unrelated judgments at a shared evidence file.
 
 ### Conventions
 
@@ -56,7 +70,11 @@ type, never hand-written per domain.
 - Exactly one judgment exists for each `(sourceFile, onboardingFile, classification)` tuple.
 - Markdown is not represented as an input model; it is projection output only.
 - The stable manifest points to one content-addressed generation.
-- Publication requires every expected identity and an authorized declared caller.
+- Publication requires every expected identity and an authorized declared caller, and a refusal
+  names each absent field by request name rather than the class of them.
+- One declaration states what publication requires: `PUBLICATION_MEMBERS` is the authority for the
+  validator, the `publish` refusal and the `prepare` text, so no reader can name a member the others
+  do not know about and an appended member needs no second edit.
 - The attestation binds the exact code/memory candidate trees it inspected; a changed tree stales
   the evidence, and no filename, mtime, or marker substitutes for the typed digest edges.
 
@@ -64,60 +82,129 @@ type, never hand-written per domain.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured external documentation applies; the schemas are repository-owned.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The lifecycle schema has no external authority. | — | — |
+The lifecycle schema has no external authority.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The quality attestation validates exact candidate count and uniqueness. | `CuratorQualityAttestation` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:65-91 |
-| Immutable record validation enforces exact candidate-to-judgment coverage. | `CuratorCoherenceRecord` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:189-235 |
-| The discriminated action request separates read actions from publication CAS input. | `CuratorCoherenceRequest` | mcp/src/agents_remember/models/lifecycles/curator_coherence.py:259-317 |
-| The R03 dependency vocabulary used by this record type. | `EvidenceDependencies`, `dependency`, `require_evidence_dependencies` | mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:99-122; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:216-227; mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py:240-277 |
+- The quality attestation validates exact candidate count and uniqueness. [1]
+- Immutable record validation enforces exact candidate-to-judgment coverage. [2]
 
-## Cross-Repo References
+- The discriminated action request separates read actions from publication CAS input, and names the publication fields it is missing. [3]
+
+- **The one declaration of what `publish` requires, and the per-member flag marking the two `prepare` does not derive.** [4]
+- **The refusal that names every missing publication member by request field name, in declaration order, and calls out a missing delivery identity.** [5]
+- **The sibling refusal that names the publication-only field a read action received.** [6]
+
+- **The statement of the complete publication input set, read from the declaration at call time.** [7]
+
+
+- **Which publication fields a request supplied, `judgments` included, and the validator that refuses on it.** [8]
+
+
+
+- The R03 dependency vocabulary used by this record type. [9]
+
+
+
+The following declarations carry the changed boundary.
+
+- Owner custody preserves original judgment bytes and old encoding. [10]
+- A durable generation integrity result makes no live readiness claim. [11]
+
+- The response declares the closeout commit identities a closed-out answer reports. [12]
+
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| These are local MCP and lifecycle records only. | — | — |
+These are local MCP and lifecycle records only.
 
-## MCAR-L03 Acceptance Identity
+## Acceptance Identity
 
 Both the source memory-quality attestation and immutable curator-coherence record require
 `pairIdentity`. Public coherence responses expose the pair and typed pair-refusal field/repair
 arguments. Missing pair data is invalid rather than being read through a compatibility path.
 
-## 260831-CCR-R03 Declared Attestation Dependencies
+## Declared Attestation Dependencies
 
-The source attestation now carries `dependencies`; the coherence observer and publication owner
+The source attestation carries `dependencies`; the coherence observer and publication owner
 recompute the exact dependency set from the candidate pair, code/memory candidate trees, and
 rendered-checklist digest at currentness time, so the memory-quality evidence cannot be rebound to
-another candidate or report (worker handover: notes/reports/260902-CCR-L03-worker-delivery.md).
+another candidate or report.
 
-## Update History
+## The Publication Set States Itself
 
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/models/lifecycles/curator_coherence.py` changed since the recorded
-  verification commit. Re-read the card against the frozen on-disk source and re-checked its claims
-  and cited ranges: nothing this card asserts is falsified by the change, so no wording changed.
-  Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source gained the
-  `ValidatedCuratorCoherence` dataclass and its imports since the recorded verification commit.
-  Re-derived every cited range (+3 for the added imports; `CuratorQualityAttestation` measured at
-  `:65-93`) and added the new value to the Purpose surface list. No other claim changed;
-  verification metadata remains closeout-owned.
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for fbc89847233b1c5959f56475f2cb51f936d5ef0b (CCR-R03@v1/L03): recorded the typed direct-dependency declarations on the memory-quality attestation and coherence record, plus the new attestation dependency builders/currentness guards; prior pair-identity and judgment-set prose preserved.
+The nine members `publish` requires are **one declaration** — `PUBLICATION_MEMBERS`, a tuple of
+`PublicationMember` beside the request model, in the request model's own field order, each entry
+carrying its caller-written field name and whether `prepare` derives it. The validator reads the declaration through `getattr`, so a
+member appended there is checked, named and stated with no second edit. `JUDGMENTS_MEMBER` names
+`judgments`, which is a publication input too but not one of the nine the `None` check covers — a leaf
+with no source candidates publishes with an empty judgment list.
 
-- 2026-08-29T21:46+02:00 — MCAR-L03: made the exact pair mandatory acceptance evidence across
-  attestation, record, and response models. Verification remains closeout-owned.
+The three readings of that declaration are the requirement:
 
-- 2026-08-29T08:52+02:00 — Created for MCAR-L02 A005's strict coherence identity, authority,
-  snapshot, action, and response contracts. Verification remains closeout-owned.
+- `publication_refusal` opens with the sentence `publish requires every identity,
+  predecessor, and caller field` — and appends the missing members by request field name in declaration
+  order. Only the **missing** members that are the caller's own delivery identities are called out, as
+  `semantic_requirement_revision` and `delivery_attempt` are the two `prepare` does not derive; naming a
+  member the caller did supply would reproduce the defect this text exists to remove.
+- `forbidden_publication_refusal` names the publication-only request fields a `status`/`prepare`/
+  `validate` call actually carried, in the request model's own field order, so `judgments` is named in
+  its real position between `delivery_attempt` and the `expected_*` members. The `freeze_snapshot`
+  branch has its own message.
+- `publication_input_statement` is what the `prepare` response carries (see the publication card on the
+  closeout route): it names the per-candidate judgments and every declared member, and marks the two it
+  does not derive. It reads the declaration at call time, so an extended declaration reaches the text
+  with no edit.
+
+The two delivery identities are **required**.
+
+## Typed Assessment Collection
+
+This authority carries a **second typed collection beside `judgments`**, and the separation is the
+point rather than an implementation detail. A judgment's identity is the `(sourceFile, onboardingFile,
+classification)` triple, and `_judgments_cover_candidates_exactly` refuses a record whose judgment set
+is not exactly its source-candidate set. A knowledge review's subject is a family, an invariant
+revision or a comparison — none of which is a source-file pair — so appending one to `judgments` would
+either break exact coverage or fabricate a source-candidate tuple for a family, which the design
+forbids outright.
+
+`CuratorCoherenceRecord.assessments` is that separate collection, bounded by
+`MAX_CURATOR_REVIEW_ASSESSMENTS = 256`. The bound is deliberately far below the candidate bound: an
+assessment is an authored act a human writes, not a machine-produced row per changed file, so a
+thousand of them on one leaf is a defect rather than a workload. Its own validator,
+`_assessments_are_uniquely_identified`, refuses a repeated assessment identity and says nothing about
+source candidates, which keeps `_judgments_cover_candidates_exactly` the only rule relating judgments
+to candidates. The field defaults to empty, so every already-published generation stays valid: an
+assessment is optional content and its **absence** is reported as the `none-recorded` state rather
+than as an empty favourable disposition.
+
+`CuratorCoherenceRequest.review_assessments` is the submission-side input, named by
+`REVIEW_ASSESSMENTS_MEMBER`. It is deliberately **not** a member of `PUBLICATION_MEMBERS`: every one
+of those nine is an identity `publish` must be told, while this one is content a leaf may legitimately
+have none of, and making it required would force every existing caller to supply an empty list to say
+so. Like `judgments` it is refused on `status`/`prepare`/`validate` by the shape validator, so the four
+actions keep one input shape each.
+
+## The Record Carries A Durable Attestation Copy
+
+`CuratorCoherenceRecord.attestationCopyPath` (optional, `None` when absent) keeps the attestation
+recoverable: the record's `attestationPath` names a file inside the leaf's own **enclosure**, and
+`lifecycle_finalize_task`'s automatic cleanup reclaims that enclosure, so without a copy the bytes
+`attestationSha256` commits to would be recoverable nowhere. The publication copies those exact bytes into the surviving task
+tree beside the record, content-addressed by the attestation's own digest, and records the
+task-root-relative path here.
+
+The field is deliberately optional rather than required: authorities published before it existed carry
+no copy, and that absence has to be distinguishable from a copy that was written. It adds no new record
+validity rule — it is the durable address of bytes the record already commits to — and the publication
+refuses (`curator-coherence-attestation-stale`, `curator-coherence-content-address-collision`) rather
+than recording a path whose bytes do not match `attestationSha256` (see the publication card on the
+closeout route).

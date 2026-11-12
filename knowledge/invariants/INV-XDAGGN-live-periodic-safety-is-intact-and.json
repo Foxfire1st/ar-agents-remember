@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across the lifespan callback, the watcher service that performs the stop, the metrics store and the degradation state machine, and it is the reason a distinct decision (DEC-ZS4FH6) still constrains later work. The stop's settings source is the part a reader gets wrong, so the record states it: authority settings, not the generated document. Tests cover the sample, the transition and the missing entry."
+  },
+  "applicability": "The serving application's periodic provider-metrics tick, for as long as the process lives.",
+  "conditions": [
+    "Samples may be present, empty or unreadable; the tick runs regardless of launch authority and dashboard interest.",
+    "The degradation thresholds and failSafeEnabled come from the settings the tick reads."
+  ],
+  "exclusions": [
+    "Any inference that an empty or revoked authority setting proves a fleet absent.",
+    "Any start, install or query path reached from the safety loop."
+  ],
+  "id": "INV-XDAGGN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_l192_safety_stop_authority_settings.py (legacy entry selects the provider; no entry selects none) and test_provider_degradation.py green; the prose half of this rule is asserted by test_l192_provider_safety_prose.py, one of the two modules repaired under the scoped pyright finding with no assertion changed. No live-container stop was executed or claimed."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-05",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Live periodic safety is intact and now effective: the dashboard samples, records, evaluates, compacts and, on the transition into critical under failSafeEnabled, stops a provider the authority settings enable, because the stop reads those settings instead of an empty generated document.",
+  "status": "proposed",
+  "supersedes": []
+}

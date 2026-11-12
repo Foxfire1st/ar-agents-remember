@@ -1,0 +1,180 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "content": "sha256:da4f9e5c7445b0656438a4b3a6fb7b8cd76d6c5baaf8de813ce0e6cc355f9ebe",
+        "locator": {
+          "kind": "symbol",
+          "name": "direct_gate_verdict"
+        }
+      },
+      "id": "RLZ-870H2F",
+      "invariant": "INV-95NQR7",
+      "origin": {
+        "handoffEntry": "L50-CUR-EXP-F02",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Returns the opt-out verdict for the removed mode instead of probing memory that is not there.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "landing_gate_refusal"
+        }
+      },
+      "id": "RLZ-9CPSN9",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Asks the lock for a master, checkpoint or recorded landing whose landed commit and bases all lack the marker, before the validator or the gate port is asked.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_cutover_refusal"
+        }
+      },
+      "id": "RLZ-AR3Q4W",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Carries the lock to the worktree layer's routes (the closeout validator, the closeout commit, direct landing, record landing and a leaf's integration) and names the leaf's line; it is called only after a marker probe found the memory unconverted on every side.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaf_gate_refusal"
+        }
+      },
+      "id": "RLZ-FP4XHH",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L37-cutover-lock",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the closeout validator's route: when the gate does not apply because the leaf's memory is unconverted, it returns the lock's refusal instead of passing.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
+        "locator": {
+          "kind": "symbol",
+          "name": "closed_out_memory"
+        }
+      },
+      "id": "RLZ-JD5AC5",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Names the commit whose closed history files are frozen for the validator and the gate: the memory commit of the closeout the contract records as completed, and nothing for a contract that records none.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+        "content": "sha256:9055645ff3ba79a95ca391f43fa641ca8854b33ff9d2eebacc5fb23fb7d03327",
+        "locator": {
+          "kind": "symbol",
+          "name": "HistoryClosing"
+        }
+      },
+      "id": "RLZ-XXWZ1F",
+      "invariant": "INV-KSJZS0",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 9 honest-refusal",
+        "leaf": "260928-MIK-L52"
+      },
+      "rationale": "The closing whose restore() reports the takeback outcome.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "19": {
+      "note": "Disabled contract refused before the cutover probe",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:54b4f95134fee9ba49567b3c59a20dbc524e5b99411883ad7a0dfab929a9e8a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_cutover_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Disabled contract refused before the validator gate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:432ff046e10433c7569e56f86456caa342921364f14b881c5fa017a21fd151a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_gate_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Disabled contract refused before the direct verdict",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:da4f9e5c7445b0656438a4b3a6fb7b8cd76d6c5baaf8de813ce0e6cc355f9ebe",
+            "locator": {
+              "kind": "symbol",
+              "name": "direct_gate_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Conversion probe reads one marker, nothing else",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:24721572f575894b915f5f8db78f5871a6688aae3dcadad1969af45942dc481b",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_memory"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

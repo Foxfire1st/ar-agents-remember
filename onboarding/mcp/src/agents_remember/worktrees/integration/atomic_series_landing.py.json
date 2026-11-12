@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/atomic_series_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e929a55afdb169788881582a6467954404bbfdbf",
+            "content": "sha256:5563cce4dcb8f12cccbe660f3d18f3531dd1f1b010fa13aaf16a1334fae35bc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicLandingBlocker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e929a55afdb169788881582a6467954404bbfdbf",
+            "content": "sha256:5563cce4dcb8f12cccbe660f3d18f3531dd1f1b010fa13aaf16a1334fae35bc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicLandingBlocker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e929a55afdb169788881582a6467954404bbfdbf",
+            "content": "sha256:5563cce4dcb8f12cccbe660f3d18f3531dd1f1b010fa13aaf16a1334fae35bc6",
+            "locator": {
+              "kind": "symbol",
+              "name": "AtomicLandingBlocker"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

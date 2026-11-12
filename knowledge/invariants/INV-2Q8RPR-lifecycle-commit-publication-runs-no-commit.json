@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "At least one proof names this invariant's exact behavior at the candidate."
+  },
+  "applicability": "Ordinary and direct exact-tree publication and integration pre-ref admission.",
+  "conditions": [
+    "The repository pre-commit hook is resolved for the worktree and judged tree; absence is recorded as hook=none, not a skipped configured check.",
+    "Failed, unrunnable, timed-out or tracked/index-mutating hooks refuse publication before ref movement.",
+    "Successful admission records a tree-bound Commit-Check-Pass fact.",
+    "Integration trusts the parsed tree-matching landing trailer as its fact; this is not independent authentication of historical hook execution. With no matching fact, it runs the check before master refs move."
+  ],
+  "exclusions": [
+    "Commit-tree does not itself invoke commit-msg, prepare-commit-msg or post-commit; the explicit repository pre-commit check precedes it.",
+    "Removed prepared-only journal spellings supply no live publication authority and permit no bypass on surviving ordinary/direct routes.",
+    "Reference-transaction hooks retain their separate native ref-movement role."
+  ],
+  "id": "INV-2Q8RPR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_direct_landing.py::DirectLandingTests::test_converted_direct_landing_commits_the_judged_tree_and_requires_governing_row; N11-memory-commit-hook.log; test_git_command.py hook test; skills/c-12-closeout/SKILL.md"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 note 11f",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "Product landing publication requires the repository pre-commit check on the exact judged tree before a new commit is published or its ref moves. Ordinary/direct commit-tree routes run the explicit check without bypass. Integration requires a matching tree-bound Commit-Check-Pass fact or reruns the repository check on that candidate tree.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash |  `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate |  2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [activation overview](overview.md)
@@ -23,6 +13,21 @@ so two masters sharing one protected source pair advance independently: this tra
 the addressed contract's own `reconciling -> active` transition.
 
 ## Code Commentary
+
+A fresh series sync evaluates `_legacy_series_memory_refusal` before publishing its reconciling selection.
+The check mirrors the exact transaction sides: already-current (including source-ancestor/work-ahead) and
+skip-memory remain admitted; legacy fast-forward pairs and all-legacy merge triples refuse; an adopting
+converted source proceeds; a converted target refuses an out-of-format legacy source. Mixed or all-converted
+merges retain their normal transaction. Missing branches and unanswered early probes proceed to the existing
+transaction's named judgment, not an invented early format result. In-flight continue/cancel retain their
+own selection authority. A certain legacy refusal therefore publishes no reconciling state. The check
+reads the memory source branch the sync will pull, through the source strategy
+(`source_strategy(args.sync_source).source_branch`): on a `sync_source="repository-default"` call that is
+the memory repository's default branch, not the contract's own line. The current-pair proof that gates
+`active` reads the pair `source_pair` (in `sync_transaction_sources`) names for the contract's own
+source line.
+
+
 
 ### Logic
 
@@ -49,20 +54,20 @@ with the refused pass's own message kept at the end.
 Admission refusals retain the exact contract path and any explicit `memory_sync_choice` and
 `resolution_action` in executable `worktree_sync` retry arguments. A successful sync pass whose
 source pair moved again still returns blocked implementation admission. These are current source
-rules; the deleted transition suite supplies no current execution evidence.
+rules.
 
-CCR-R25 routes expected activation failures through `_AdmissionRefusalRequest` and the shared
+Expected activation failures are routed through `_AdmissionRefusalRequest` and the shared
 `atomic_series_admission_projection`. The refusal path reuses an error's retained observation when
 available, otherwise performs a bounded read-only observation, then emits the exact contract
 fingerprint, activation facts, retry precondition, and status action. There is no
 "waiting: named blocker owns the source-pair selection" branch and no foreign-blocker summary: every
 refusal this path describes is corrective action on the addressed contract, and selection is per
-contract, so another master is never reported as this contract's blocker. This changes the public
+contract, so another master is never reported as this contract's blocker. The projection is the public
 explanation only; selector publication, source sync, continuation/cancellation ownership, and the
 reconciling-to-active transition remain in the same transaction.
 
-cit:([`_admission_refusal`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:229-277)
-cit:([`_sync_selected_atomic_series_under_authority`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226)
+cit:([`_admission_refusal`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:419-467)
+cit:([`_sync_selected_atomic_series_under_authority`], mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:397-416)
 
 ### Conventions
 
@@ -89,66 +94,29 @@ into `WorktreeCommandResult`. Fetch is evidence only; local tips are pinned afte
 Exact result states and citations are reconciled to the frozen source; verification remains empty
 until the real code commit exists.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Selector publication and this contract's exact continuation/cancellation ownership live in the activation authority. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Selector publication and this contract's exact continuation/cancellation ownership live in the activation authority. | `publish_atomic_series_selection`; `require_selected_atomic_series`; `require_atomic_series_cancellation_owner` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:155-212; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:215-243; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:246-272 |
-| The transaction translates expected activation errors through the shared structured admission projection. | `_AdmissionRefusalRequest`; `_admission_refusal` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:46-52; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:229-277 |
-| The selecting entry point refuses invalid inputs first, then re-reads the exact contract before reconciliation. | `activate_atomic_series_contract` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:55-100 |
-| The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active. | `_sync_selected_atomic_series_under_authority` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:164-226 |
-| A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. | `_reconciling_result`; `_mid_flight_summary` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:280-294; mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py:297-335 |
-| The sync driver admits, resumes, continues, cancels, or recovers one exact journal generation. | `sync_contract_under_authority` | mcp/src/agents_remember/worktrees/sync_transaction.py:82-110 |
+- The transaction translates expected activation errors through the shared structured admission projection. The refusal's retry arguments repeat the caller's sync source. [2]
 
-## Cross-Repo References
+- The selecting entry point refuses invalid inputs first, then re-reads the exact contract before reconciliation. [3]
+
+- The internal sync driver publishes reconciling, proves continue/cancel ownership, and advances only this contract to active. [4]
+
+- A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state. [5]
+- The sync driver admits, resumes, continues, cancels, or recovers one exact journal generation. [6]
+
+### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
 ## CCR-L42 current candidate
 
-Atomic-series admission refusals now preserve the full source detail directly in retry arguments and public summary/detail; the former bounded-detail truncation wrapper is gone, while activation ownership and retry routing remain unchanged.
-
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification):
-  `mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py` changed
-  since the recorded verification commit. Re-read the card against the frozen on-disk source and
-  re-checked its claims and cited ranges: nothing this card asserts is falsified by the change, so
-  no wording changed. Verification metadata remains closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the source moved since
-  the recorded verification commit (the mid-flight reconciling rewrite and summary the card already
-  documents). Re-read the card against the current source: `_reconciling_result` (280-294),
-  `_mid_flight_summary` (297), `_admission_refusal` (229) and the sync authority range (82-110) all
-  still hold. No wording changed; verification metadata remains closeout-owned.
-- 2026-09-14T13:20+02:00 — Mid-flight reporting: recorded `_reconciling_result` rewriting a
-  `synced`/`already-current` pass to `atomic-series-reconciling` and the new `_mid_flight_summary`,
-  which leads with the stuck master's task-document ref and contract path, its publication time, its
-  revision, the incomplete source reconciliation, and both `worktree_sync` exits, with the refused
-  pass's message kept last. Added the matching invariant and reference row, and re-derived the
-  `_AdmissionRefusalRequest` and `sync_contract_under_authority` anchors. Verification remains
-  closeout-owned.
-- 2026-09-13T14:19:25+02:00 — Contract-scoped refusal path: rewrote Purpose/Logic/Invariants so the transaction moves only the addressed contract's `reconciling -> active` transition after an exact source sync, and removed the "waiting: named blocker owns the source-pair selection" summary branch — every refusal is corrective action on this contract. Rebound citations to the frozen source; verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-10T15:06+02:00 — No content impact: mechanical citation re-derivation after the closeout auto-carry change shifted lines in `sync_transaction.py` / `sync_transaction_state.py`; the cited symbols and their meanings are unchanged.
-- 2026-09-10T00:20:36+02:00 — CCR-L42 current candidate reconciliation: Atomic-series admission refusals now preserve the full source detail directly in retry arguments and public summary/detail; the former bounded-detail truncation wrapper is gone, while activation ownership and retry routing remain unchanged.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation rebound transaction citations to the current selector publication and continuation/cancellation definitions; transaction ownership is unchanged and no acceptance claim is made.
-- 2026-09-08T16:24:06+02:00 — CCR-L38 preparation range refresh: repointed selector publication and continuation/cancellation definitions after the frozen activation additions. This is a mechanical source-range correction; verification metadata remains closeout-owned.
-- 2026-09-08T16:05:21+02:00 — CCR-L38 source-grounded candidate pass: documented refusal projection, retained observations, and the unchanged selector/sync transaction boundary. Verification metadata remains closeout-owned; no Gate 5 or acceptance claim.
-
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of reconciling, selected sync,
-  continue/cancel, and active exposure states.
-
-- 2026-08-26T06:05+02:00 — Moved the admission transaction into `worktrees/activation/` with its
-  behavior and history intact; import rewrites are mechanical consumers of the new canonical path.
-
-- 2026-08-26T02:55+02:00 — Drafted selecting-transaction onboarding against the pre-Dagger
-  candidate; final behavior inventory and verification remain open.
+Atomic-series admission refusals carry the full source detail, untruncated, in the public `summary` and `detail` beside the executable retry arguments; activation ownership and retry routing are as described above.

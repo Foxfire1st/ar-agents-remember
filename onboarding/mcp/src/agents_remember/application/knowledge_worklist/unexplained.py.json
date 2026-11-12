@@ -1,0 +1,573 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_worklist/unexplained.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+        "content": "sha256:002d387a77b31a3831f13575e09f8b020a02838ac2ddb912059a7831ae61bf26",
+        "locator": {
+          "kind": "symbol",
+          "name": "unexplained_items"
+        }
+      },
+      "id": "RLZ-60CVGQ",
+      "invariant": "INV-CCNH0Z",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-2-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The caller limits grouping to uncovered changes, distinguishes real cards and retains every grouped base/candidate source blob before currentness evaluation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module docstring: registration, what is raised, coverage and satisfaction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:bc94153dc45ded3d55492c1ee3f241b5b7e8d7b3b040200079337486a47cc163",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A side's identity; an out-of-range read is a named problem.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:5eb5d559eb20a3b46096d9e51689888d23a0f0ad572c85b62bc91ad27ddc0902",
+            "locator": {
+              "kind": "symbol",
+              "name": "_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "What an item admits.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:5309017309cf9d83a2f13d3a3eb98edc77eb7a0103a03a4a27835f525690ba45",
+            "locator": {
+              "kind": "symbol",
+              "name": "_admits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Unlinked hunks and non-text changes collected; identical lines share a subject.\n\nAnchor: `_Collector` `change`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A symlink's or submodule's object from its tree entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:2f0e0080f68de63c363a568fb205d06078dff73ac1579a5434f10fd0f2b25a6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_object"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The file item bound to its C-side object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:04a6f9f0d60fd958f99fa5a2711797e2ff875994f9aa956a24f37d25c1759811",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The representative item binds its complete source map, actual counted change and eligible current onboarding row",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:d039bd0971aaf71503545f4b6c9bb7bea0c4bbefe1a3da7fdf7413b9e2ee7d3e",
+            "locator": {
+              "end": 447,
+              "kind": "line_range",
+              "start": 420
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:acfbd8faf74c35ab5cd3f2290a0702e186114fa37f3c9856ca65b2aea6450790",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The answering set from covered items only; stray `no_invariant` rows are unnecessary.\n\nAnchor: `unexplained_items`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Settlement retains complete source maps and the trace item currency without inventing an answer",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:ea50f126a3994d5bec71303ffe17d2bf702f68a0313710d8b7d08c61a7df406a",
+            "locator": {
+              "end": 549,
+              "kind": "line_range",
+              "start": 538
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:b540290b6094547f641a3bf013dfa1e92d9f83b5297f0bc8a5c7e0f00889b83d",
+            "locator": {
+              "end": 605,
+              "kind": "line_range",
+              "start": 577
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The onboarding subjects an uncovered item needs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:f05f597dcee0086a922c3d7c951103e1952f0d806adaaf5cc5896d5266815a38",
+            "locator": {
+              "kind": "symbol",
+              "name": "answering_trace_subjects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Open unexplained items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c9b4f541cf2e79cea8df65a6ba276e94e5baa95902e77e295a9242f48d7a7c7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_count"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one satisfying-row text over both kinds and the coverage split.\n\nAnchor: `_SATISFYING_ROW`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Step 7 of the run: the items join the one sorted list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16989165e155eb17986848e5f06e66d2f310f31f",
+            "content": "sha256:c16f4be68071ea31f9aec73c7866e4572986ecf529fcc488e1b5576b4140bdba",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/compute.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Per-change linkage belongs to linkage._Linkage._change; linkage._classify_hunk symmetrically requires changed lines on the side supplying coverage: delete-only B, insertion-only C.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:c0ccd7c87236c95c6ef8f7fbbbf3cad1fe809e6da7b3aa82c2eb332e3453e75e",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6d7207b62870c112ca4f25941c37846c0152a38a",
+            "content": "sha256:2538a9857190784faf002a61a8e4a84e25c9a3273724f0ecc49ac48fa22ac285",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/linkage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "leaf_completion settles uncovered items after worklist_onboarding and recomputes their digest and unnecessary-row projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:3cb8a543d732ea06c4ab9a18f5942b93c08652327a951a5f5cf58ee5cf83e24e",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc3ddad2210e25566378995fa748618b9afcee64",
+            "content": "sha256:41d6beee0030108837165c928f5c4f7652f325700e0f354a1f47e5bc5c7fe92c",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 103
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf_completion.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Covered hunk: no_invariant, attach or author; never onboarding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "content": "sha256:f825d81bd20d8cf7850de9ef4ce58be1edd7e52c35259ddf0b59e1dd617218e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_covered_hunk_is_answered_by_no_invariant_attach_or_author_and_never_by_onboarding"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Delete-only hunk: only no_invariant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "content": "sha256:d60461cab31a7c45c0e524c82d34be464ca2c9d9459174deddd897f0e1e51c71",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_delete_only_hunk_admits_only_no_invariant"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "An uncovered file: its onboarding trace; its no_invariant row is unnecessary.\n\nAnchor: `test_an_uncovered_new_file_is_satisfied_by_its_onboarding_trace`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4db279a6707405d8691a10946c71c433d9c71823",
+            "content": "sha256:66b6cbe0523bee0559e9bd323bd871e4d0c69c177ace2e539a62ba7c626ca2e0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_unexplained_change_disposition.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Current source-bound trace construction and row admission use the complete blob map",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:acfbd8faf74c35ab5cd3f2290a0702e186114fa37f3c9856ca65b2aea6450790",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 280
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The initial uncovered-item fact and its answer use one actual counted card change; settlement may still replace both from the trace item. A counted edit alone does not answer the item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c4900bcedbbf44212a41caa27dda53a0e5b0612aeb35db8efb35ea9c5dea8341",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Exact generated-copy filtering, representative collection and complete source/base maps precede item settlement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:77503e7bcbecee261786f4a388395af7612b8f201b0d5c582340727f8c7d22f0",
+            "locator": {
+              "end": 526,
+              "kind": "line_range",
+              "start": 458
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Current onboarding row selection consumes the complete source blob map, never a counted edit alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:faf6006c77a6aa18f14aa32b7260f77c5627a4503e902253699b69bec54b5b08",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 278
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A hunk item's row is found by its item ID.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:4a65282322584e98f66101055886ad09d1f8490c0d9e490771dbbd0a8cbdd325",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hunk_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Both kinds registered on import with their facts and owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:0afb2afcf4382d030f2b17a5d4abd8ff3b8de798026bb5f4abc85382799cecab",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNEXPLAINED_HUNK_KIND"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:5eb3ad767767d947549662bc7773c7c2302bddb2d0b48cff3728ddea256a9501",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNEXPLAINED_FILE_KIND"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unreadable census makes coverage undecidable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:76a15ededbb3106b633c5592d2f07b0de71740c1bc24eef7be909e96ef64ba8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CoverageUnreadable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The governing route and its latest census status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:93ac376c08b839d4c4200ca7e6dde93a414b52b7225233c506cf7437fbefa0e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteCoverage"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:69d0379c187f44fdb84c6aeee09116d2ad523b3c229be37b1ae0677d706f9205",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_status"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The route half of coverage over one memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:8d8f51b897e5e5239fc174977bb78781f99781cfc0df3dc8e0adf10cc449a16e",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_coverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Covered by a realization entry in K_B or a migrated route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:6faca4c637c6f850986b96dd16d34e9bd91de267852ca0546df40e8917c30079",
+            "locator": {
+              "kind": "symbol",
+              "name": "_coverage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Unexplained items retain groups and expose open counts with unnecessary covered rows",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "62a9874eea7180a43ff42b31d50d47fc23a761ec",
+            "content": "sha256:c7771ba87604b475ea215eee61f01211dcf224cd547a03320f09fcdde563d7af",
+            "locator": {
+              "end": 256,
+              "kind": "line_range",
+              "start": 235
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

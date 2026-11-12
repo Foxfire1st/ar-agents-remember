@@ -1,0 +1,87 @@
+{
+  "path": "mcp/tests/test_platform_subprocess.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Native environment uses enclosure reports and filters windows path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a9868e24a6990272984545195dc08bfb3dcf976",
+            "content": "sha256:3bf5eda837b1b38f4aa7a15da667bc65b35518f195faa85cedb28c5af1187e7f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_environment_uses_enclosure_reports_and_filters_windows_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Native command prefers the linux tool after a windows path",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a9868e24a6990272984545195dc08bfb3dcf976",
+            "content": "sha256:164a99266f4ba1b7f2a80c0e6765e9e123773605c7a5d9196aa139c0af93ab89",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_command_prefers_the_linux_tool_after_a_windows_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Native command refuses an explicit windows shim",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a9868e24a6990272984545195dc08bfb3dcf976",
+            "content": "sha256:2c3cd68199ad938e013fd6dbd9a326c5ecd7fa28b8a518518399321d8a97968a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_command_refuses_an_explicit_windows_shim"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Native environment refuses windows backed temp root",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a9868e24a6990272984545195dc08bfb3dcf976",
+            "content": "sha256:e6576d35ee8ef0e45a85a88721160458747e54693d0f416b32ac63828b21f788",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_environment_refuses_windows_backed_temp_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Windows runner keeps its environment and paths unchanged",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a9868e24a6990272984545195dc08bfb3dcf976",
+            "content": "sha256:ec3a256734723b74ffc9b4f51bf7494f52fff8ff6c4c5dd7f5acd94ba4379f12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_windows_runner_keeps_its_environment_and_paths_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

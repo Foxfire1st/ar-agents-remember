@@ -1,0 +1,69 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work",
+      "real_alternatives"
+    ],
+    "justification": "The four boundaries determine later transaction and history changes; treating the formerly catalogued limits as bugs was rejected in favor of preserving their specific attribution, approval, input and timeline reasons."
+  },
+  "alternatives": [
+    {
+      "option": "Retain the four designs together with exact-pair admission at every landing.",
+      "reason": "Code attribution needs the already-existing code commit; failed claims cannot reliably be released; judgment holds only for current inputs; frozen publication history retains prior change decisions without letting fabricated history replace them.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat the four retained boundaries as accepted limits to remove or work around.",
+      "reason": "The requirement identifies them as designs with reasons, not exemptions from landing judgment. Removing them would lose code attribution, invent approval recovery, reuse stale verdicts or overwrite durable judgment history.",
+      "reconsider_when": "An approved redesign changes attribution, approval-claim authority or frozen-history ownership while preserving exact judged publication.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Code is committed before memory because the memory commit names its code commit in its trailer; the leaf's own branch is not a landing line until closeout completes and rule 3 guards the landing.",
+    "An approval covers one attempt because releasing a claim after a failure cannot be guaranteed; the gate preflight runs before the claim so a gate refusal costs no approval.",
+    "A recovered closeout is judged against the parent line as it is now because a verdict holds only for the inputs it read.",
+    "A change already on the parent line may be answered by any later row, and a changed family row keeps its disposition in a later attempt of the same leaf; the changed row stays frozen in the landed history and the record timeline while rule 5 blocks replacement."
+  ],
+  "context": "The packet distinguishes four retained transaction/history designs from bypasses to repair: code/memory order, approval claim lifetime, input-bound recovery and parent-line history.",
+  "decider": "Approved MIK-R52@v1 rule 11 under D47",
+  "id": "DEC-4107JG",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-HWAWFT"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-MS9BMJ"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R52",
+        "packet": "requirements/MIK-R52-v1-every-landing-route-judges-what-it-lands.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/worktrees"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "four-retained-designs",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

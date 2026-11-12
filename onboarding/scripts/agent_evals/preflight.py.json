@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/preflight.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "75b9b82a11ef62241007e2c7b076cba60620e01e",
+        "content": "sha256:8df5f3fb2c379a54e4024f730273db824b72f1722932f4b3f6806d5be07af982",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-ZFVDX9",
+      "invariant": "INV-9KC11K",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-case-admission",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It runs the serving writer validation and intake checks against the provisioned case trees before an actor starts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75b9b82a11ef62241007e2c7b076cba60620e01e",
+            "content": "sha256:8df5f3fb2c379a54e4024f730273db824b72f1722932f4b3f6806d5be07af982",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

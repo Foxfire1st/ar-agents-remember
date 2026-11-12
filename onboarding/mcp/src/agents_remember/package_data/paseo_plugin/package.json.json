@@ -1,0 +1,78 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_plugin/package.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+        "content": "sha256:7c27827ff9392c3c78ec33310857c7fbc49991cb7c44fb7b2e5e0b0ada5bd551",
+        "locator": {
+          "end": 18,
+          "kind": "line_range",
+          "start": 18
+        }
+      },
+      "id": "RLZ-2KGG45",
+      "invariant": "INV-JS6GJ7",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:pin-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "The plugin builds against the host SDK, so its @getpaseo/plugin development dependency follows the pinned host.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+        "content": "sha256:a496e358679e573614fb505010f2f501f8b158c688a24332091576cdd943e2ca",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3M3903",
+      "invariant": "INV-0TCWT9",
+      "origin": {
+        "handoffEntry": "INV-0TCWT9",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The package's dependencies are what the build sees, so the SDK's version is fixed here.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The plugin's development SDK `@getpaseo/plugin` is pinned to 0.15.4.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+            "content": "sha256:7c27827ff9392c3c78ec33310857c7fbc49991cb7c44fb7b2e5e0b0ada5bd551",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The manifest lists the plugin's shipped files and declares the `typecheck` and `test` scripts the release checklist runs in a scratch copy.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "428e7402be66e10353fb1f711081521ebd388f8e",
+            "content": "sha256:3e76fb0ec26c7120083452690d5918eddfc05f3fdcbce465e30f5aa6ff31e8bf",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

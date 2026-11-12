@@ -1,0 +1,71 @@
+{
+  "path": "mcp/tests/test_paseo_role_tools_start.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f47d1b91908649f215b39b35be68d7c820006bf3",
+        "content": "sha256:d045ef94c9920b1023b49ebe798e6c79360adb88d0138bba21b99d8b88eb3fd7",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleStartTests.test_terminal_enclosures_refuse_both_entry_points_before_roots_or_launch"
+        }
+      },
+      "facet": "Both entry points refuse a terminal enclosure before any root use, launch or receipt and name reopen-required with the task_reopen preview.",
+      "id": "PRF-602QXQ",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule7",
+        "leaf": "260928-MIK-L95"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A chat without a role starts through the dashboard's table, and a selection outside it is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f47d1b91908649f215b39b35be68d7c820006bf3",
+            "content": "sha256:e5e0771fcdd617cca5077529c19d8586a458b563c294a7fce17d76079d8f4585",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A start runs the launcher's path with the caller as parent and one request id serves the starter and the launcher.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f47d1b91908649f215b39b35be68d7c820006bf3",
+            "content": "sha256:e5e0771fcdd617cca5077529c19d8586a458b563c294a7fce17d76079d8f4585",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Starts are serialized, and a start that waited out its time says to call again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f47d1b91908649f215b39b35be68d7c820006bf3",
+            "content": "sha256:e5e0771fcdd617cca5077529c19d8586a458b563c294a7fce17d76079d8f4585",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

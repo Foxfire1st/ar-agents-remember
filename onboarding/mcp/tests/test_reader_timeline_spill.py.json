@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_reader_timeline_spill.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e3b89db6dbf5d9bd047dc4278a7e682259c8c1ff",
+        "content": "sha256:bef91bc8fa68585e54d7376361190b3987008fae3d95bfaaa80ae07f8c9b7a89",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-HT3E97",
+      "invariant": "INV-DFA51A",
+      "origin": {
+        "handoffEntry": "MIK-R67@v2 by-design one-spilled-history",
+        "leaf": "260928-MIK-L57"
+      },
+      "rationale": "Regresses legal oversized and resident walks, complete content/bindings, caller acquisition, retry and actual backing reclamation.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "New timeline-spill tests count one materialization/hash/freeze per legal walk, preserve event ordering/documents/attempt/path, use anonymous unlinked files beyond RAM budget and verify actual fd cleanup on eviction/clear/revision replacement/process exit. Failure creation/read/unreadable-source retry, continuation binding and resident/spill shared budget are separate explicit cases. The truth-view manifest-miss case holds the sections it does not defend: it stubs the summary as the record's id and title, and stubs `truth._outgoing` with the current signature — a selection alongside the record — returning an empty link list and no link error, beside empty kind parts and no decisions, so the case can only fail on the caller/history-acquisition path it defends. These declarations are not tests run here.\n\nAnchor: `_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3b89db6dbf5d9bd047dc4278a7e682259c8c1ff",
+            "content": "sha256:273735bfd682479d071b7b2355427a8a9cc555dcbb83423000cbe90128d5a700",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 396
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

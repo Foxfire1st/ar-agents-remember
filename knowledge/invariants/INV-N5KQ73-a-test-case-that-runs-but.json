@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Four registered cases pin the admitted forms and every refusal. Without the route a curator must either drop the proof or cite a neighbouring construct, so an invariant that a running parameterised case does establish is recorded unproven or proven by the wrong place."
+  },
+  "applicability": "A curator hand-off's proof for a JavaScript or TypeScript .test. or .spec. file at the code candidate, where no path::name resolves to the case the proof names.",
+  "conditions": [
+    "The range equals exactly one case's extent: the outermost it or test call, from its first line to the line that closes it.",
+    "Every modifier is read by name on the case and on each enclosing describe: each, for, only, concurrent, sequential, skip, todo, skipIf, runIf, fails.",
+    "The case runs: no .skip, .todo, .skipIf, .runIf or .fails applies to it or to an enclosing suite.",
+    "No path::name reaches the case; a case a title reaches is refused as a definition and the refusal names the name."
+  ],
+  "exclusions": [
+    "A call whose callee carries a member outside those modifiers (test.describe, test.step, test.setTimeout), and a call with a parse error: both are no case.",
+    "A file that is not a JavaScript or TypeScript .test. or .spec. file.",
+    "The inner it.each([...]) call of a parameterised case, which is no case of its own."
+  ],
+  "id": "INV-N5KQ73",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_memory_case_ranges.py (9 tests, 4 cited); 6 of them passed in the focused run of 2026-10-21; report role-reports/worker/6d23acbf-b211-5811-8ded-6aeaf57a721d/role-launch/260928-MIK-L186-worker-6d23acbf-b211-5811-8ded-6aeaf57a721d.md"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "a-proof-names-a-case-by-its-lines-only-where-no-name-reaches-it",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A test case that runs but that no name reaches is proved by the exact lines it occupies, and a case that does not run proves nothing and no range reaches it.",
+  "status": "proposed",
+  "supersedes": []
+}

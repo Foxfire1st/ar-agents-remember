@@ -1,0 +1,58 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/curator/coherence-judgments.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The full catalog projection is not a leaf gate.\n\nAnchor: `finalFullCatalog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10513955b43f3b4b2afbc651d7f9c1cc30d72893",
+            "content": "sha256:3eccdc6857969670abcb463c2ce4d191ef34b5da2460233c56e89002ec287720",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Publication binds the requirement revision, delivery attempt and per-judgment evidence file.\n\nAnchor: `semantic_requirement_revision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10513955b43f3b4b2afbc651d7f9c1cc30d72893",
+            "content": "sha256:f0f2207a22acf6f48c623f3efa1db797c23dd6f01645a793c6ad0c771f77362a",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The disposition table defines each judgment outcome.\n\nAnchor: `capture-candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "10513955b43f3b4b2afbc651d7f9c1cc30d72893",
+            "content": "sha256:c7d491241ca00eb89db934ac97631fadb65457e26c5c7e7838ef7c92bace1685",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

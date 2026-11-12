@@ -1,0 +1,39 @@
+{
+  "path": "mcp/tests/test_semantic_topology_refusals.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Semantic topology refuses exact missing ambiguous and malformed facts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfb63b6594a0d38fbb0d06756f88390a9d50bbc4",
+            "content": "sha256:a257fefb646950168046fa0ba964a9971738a8916aa46d7a4fd5ffb90e04aff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_semantic_topology_refuses_exact_missing_ambiguous_and_malformed_facts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Semantic topology refuses duplicate node during whole graph admission",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bfb63b6594a0d38fbb0d06756f88390a9d50bbc4",
+            "content": "sha256:ebba1dda760848d235df1539c334bb516db2a895d45d75a13b68b487b27473cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_semantic_topology_refuses_duplicate_node_during_whole_graph_admission"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

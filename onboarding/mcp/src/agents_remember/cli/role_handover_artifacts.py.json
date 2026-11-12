@@ -1,0 +1,293 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:2511c8d3bf48b183947659848c4bfb2c5c58b1bccb9e9e15a51c7a84eb243e1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "handover_artifact_reference"
+        }
+      },
+      "id": "RLZ-6Y2Y88",
+      "invariant": "INV-AV4AMJ",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §1",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "handover_artifact_reference publishes that same locator alongside the canonical frozen artifact.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:809735a38872fe29b581beb1b1e8882d94a9b94bda9e214e296366398b21e235",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_handover_artifact"
+        }
+      },
+      "id": "RLZ-70KS6M",
+      "invariant": "INV-X9GE8J",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §5 (written once) / A3 / A4 / F8",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Builds bounded artifact reference beside report from exact compiled bytes.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:dbdcdb6ae268dfb4b540af3751a7ca161c6a211dd870fd1d914ba783c1090c9f",
+        "locator": {
+          "kind": "symbol",
+          "name": "restore_handover_artifact"
+        }
+      },
+      "id": "RLZ-7Q796E",
+      "invariant": "INV-87JRHY",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §5 (retry) / A10 / F14",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Checks reference line, digest and reached file; reconstructs only missing exact saved bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "write_detail_artifacts"
+        }
+      },
+      "id": "RLZ-EYJCHF",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "MIK-R125@v1/details",
+        "leaf": "260928-MIK-L88"
+      },
+      "rationale": "Publishes each selected detail under its content-bound adjacent artifact path.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:d0d663bcfc091bc0986e96a22e6e35d8feb333fd372356726da4595410e9fb4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "artifact_line"
+        }
+      },
+      "id": "RLZ-HQ32SR",
+      "invariant": "INV-B31E3G",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §2",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "artifact_line writes that reference and digest into the actual opening message.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+        "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MXZRHV",
+      "invariant": "INV-X9GE8J",
+      "origin": {
+        "handoffEntry": "L185-attach-inv-x9ge8j",
+        "leaf": "260928-MIK-L185"
+      },
+      "rationale": "The module composes the whole artifact line in artifact_line: the one line before the message that names the text file and, when the reference carries a complete hand-over, that second file too — calling handover_file_line for the path/digest fragment and keeping the legacy one-file line for a receipt without it. It also writes and restores the text artifact itself. It does not format the second file's path and digest; that fragment is role_handover_file.handover_file_line.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of write_handover_artifact supporting the stated file behavior.\n\nAnchor: `write_handover_artifact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Exact reuse is protected by `cli/immutable_artifact`'s descriptor-level regular-file and no-follow checks, imported here as the write-once and preflight seams.\n\nAnchor: `_matches`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Test source models a regular-to-link swap and unchanged foreign bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "43773442dc036099b1e1b09e474d46b04e6b0be7",
+            "content": "sha256:3c80992011479cb850362c7118da9c8d25f5d4ffbd195f2fb4bfd668a8173834",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_takeover_publication_is_write_once_and_checks_the_open_file"
+            },
+            "path": "mcp/tests/test_step_up_recovery.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of restore_handover_artifact supporting the stated file behavior.\n\nAnchor: `restore_handover_artifact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`write_once`, imported from `cli/immutable_artifact` as `_write_once`, is how this module's artifacts are created once and reused only when they already hold the same bytes.\n\nAnchor: `_write_once`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks path, bytes, digest, read-only mode, exact reuse and conflicting-content refusal.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_written_once_beside_the_report_and_named_by_one_line`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:88ecec4dd65503f1c54ee16384abb8df0c3e80d639a9ae19e9850df2f58b6448",
+            "locator": {
+              "end": 670,
+              "kind": "line_range",
+              "start": 577
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks size limit and refuses links without changing their target.\n\nAnchor: `HandoverArtifactTests.test_the_artifact_is_a_regular_file_of_bounded_size`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:3be784b682d17a0d01ae3b40071d847264f7777c4d62ec48665cca2020d9af22",
+            "locator": {
+              "end": 751,
+              "kind": "line_range",
+              "start": 722
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Through leaf/taskless routes checks restoration/refusal, exact advice and unchanged receipt/foreign link target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfd95f0c56ed965a4f09d45ba05ac7b22d817eca",
+            "content": "sha256:4dc722dec514ba85baeea7792421fe2c1886339d093bdbad55cb3e1da156fdef",
+            "locator": {
+              "end": 875,
+              "kind": "line_range",
+              "start": 837
+            },
+            "path": "mcp/tests/test_paseo_agent_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Per-source deterministic detail names reuse immutable publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:53ae089e7b885fad8e278a7a4540e98ab4b52f03f6e60ecbb8260f070081a4d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_detail_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Takeover reference retains exact bounded bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:0a4361d03a45c742cba9e1477163995b1c25d9cfd3dabb6c40d6d3351b40784d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_step_up_artifact"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Replay binds takeover bytes to the saved report and primary handover.\n\nAnchor: `restore_step_up_artifact`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+            "content": "sha256:94ad19414a723cec114d8614cd62cb4725235023dd00f52100f22520efe37873",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

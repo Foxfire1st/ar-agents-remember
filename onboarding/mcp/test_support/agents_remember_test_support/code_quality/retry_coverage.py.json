@@ -1,0 +1,108 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/code_quality/retry_coverage.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Context proof requires branch arcs and pytest runtime contexts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "449554e3be13ac278df4e36c0735bdc32f285bd4",
+            "content": "sha256:5243c17df26580ab6f9ee68655e60c9a4490da56ac1d9db9a99c91a85a26ce87",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_context_proof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unchanged contexts are extracted to a separate retained database.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "449554e3be13ac278df4e36c0735bdc32f285bd4",
+            "content": "sha256:395c24c7fd1e1fb1865253e6c9881f26af50c2a4716c42eb6a4bb8ad636f532e",
+            "locator": {
+              "kind": "symbol",
+              "name": "retain_unchanged_contexts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retained and fresh evidence are merged and atomically republished fail closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "449554e3be13ac278df4e36c0735bdc32f285bd4",
+            "content": "sha256:199577f6bf7c2ce0e5ce3b0fdbd679c819acacff9ddddb947405a837d035975b",
+            "locator": {
+              "kind": "symbol",
+              "name": "merge_delta_artifacts"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "449554e3be13ac278df4e36c0735bdc32f285bd4",
+            "content": "sha256:258a1d9bd4a587d0c0eb0667a9d6bb91ae9d3700e7e235916d72ffc6194bb959",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Focused forcing proves successful composition, a known-empty retained subset, and two-artifact cleanup on failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "544fbfb8840a5777d244ac443c4e55ee1df60ebb",
+            "content": "sha256:f8965d9a233704540062cb685dead2ebf55130e411a42991b8ffd084a952533a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_retained_and_delta_contexts_merge_before_json_is_scored"
+            },
+            "path": "mcp/tests/test_retry_coverage.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "544fbfb8840a5777d244ac443c4e55ee1df60ebb",
+            "content": "sha256:042efc0d1c5116197df44c61e4ba0c30c485b94187c3e4f02e9462aed687fff9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_retained_subset_merges_only_fresh_delta_contexts"
+            },
+            "path": "mcp/tests/test_retry_coverage.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "544fbfb8840a5777d244ac443c4e55ee1df60ebb",
+            "content": "sha256:068eb668ee968985067a503e2fb08638ade360840ab0b3ee2a55c4c63347e125",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_merge_failure_removes_both_public_artifacts"
+            },
+            "path": "mcp/tests/test_retry_coverage.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

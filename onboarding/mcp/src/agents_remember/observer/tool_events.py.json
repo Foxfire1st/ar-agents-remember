@@ -1,0 +1,108 @@
+{
+  "path": "mcp/src/agents_remember/observer/tool_events.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+        "content": "sha256:f40a0e9c4ddacfbe2782d7b95dc9623a9e26a547faeb9b59fd28434d5d5c112b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_answer_facts"
+        }
+      },
+      "id": "RLZ-3JQQSX",
+      "invariant": "INV-WZR89C",
+      "origin": {
+        "handoffEntry": "MIK-R115@v1 rule 3",
+        "leaf": "260928-MIK-L115"
+      },
+      "rationale": "The workspace event answer-facts owner records the actual delivered answer token count as one event fact; no ambient owner or projected aggregate is retained.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+        "content": "sha256:2ad0c4b014e0ab79c3ed2458a859b378be9ed027f119369f088492819a6fcf2d",
+        "locator": {
+          "end": 247,
+          "kind": "line_range",
+          "start": 189
+        }
+      },
+      "id": "RLZ-TGXA8G",
+      "invariant": "INV-18B62F",
+      "origin": {
+        "handoffEntry": "L114-W01",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "ToolEventWriter.record is the one choke point through which every host-path tool event reaches the river; the per-append bound holds only if this writer admits each row under the river lock and counts what it cannot write.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One process-wide writer per tool server; record never raises, losses counted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:2ad0c4b014e0ab79c3ed2458a859b378be9ed027f119369f088492819a6fcf2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ToolEventWriter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Facts-only row: fixed answer keys plus caller, never content.\n\nAnchor: `build_tool_event`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:4e53d58ec737ed4e7dbb8e4e3a9cf80ebb66e99d6e502056baa04cc4ab17c9e9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The started/addressed role rides a context variable around the choke.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:d05666d40d53f780bef9ee3807bbfa4dee669370ccc05f22f2c0c2a3c696dd06",
+            "locator": {
+              "kind": "symbol",
+              "name": "call_target_role"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The choke writes one river event per completed call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+            "content": "sha256:db24aaa4c677843b12e305218671e7a210542ea8f41f557a36cfbffdba17b67f",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_tool_completed"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

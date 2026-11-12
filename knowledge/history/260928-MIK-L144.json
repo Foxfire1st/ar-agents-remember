@@ -1,0 +1,543 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L144",
+  "rows": [
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:38ba50865a9c2b641091375444655f6b14930bd9d02f6d11d5b9c1feedaedda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "askingWord"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-04VW2N"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:02d3714739beb8edee62ef0c1a4ad8f6ea34bf29bff661105ae6645174920a70",
+            "locator": {
+              "kind": "symbol",
+              "name": "RowWord"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-EZXMEF"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:aa5afb91f79f8cfe340b576408a591a80b99610fbac2653bbd088351b3c6706c",
+            "locator": {
+              "kind": "symbol",
+              "name": "PickupDismiss"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-SBJAE6"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-0KDJ65",
+      "items": [],
+      "reason": "The newly admitted Operations obligation preserves the original producer statement and actual code-owner scope; its complete resolved target set is authored without replacing unrelated existing invariants.",
+      "revision": 1,
+      "subject": "INV-TA1XAA"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:e541679199412f6566202707609c28104c200712a36c2bca51ddeb929f569aad",
+            "locator": {
+              "kind": "symbol",
+              "name": "readChoice"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-3JDRTC"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:95abe5abcb86557820713d255742d1f4237a5b48d7d21fa503e3cfab40aab409",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRevealChosen"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-AMQZFX"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:0d9e3559368d6d704459e972e889f1637b0c26b44b4c1458414df583dffe687a",
+            "locator": {
+              "kind": "symbol",
+              "name": "chosenRowKey"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-WWAC2A"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-4RH7H0",
+      "items": [],
+      "reason": "The newly admitted Operations obligation preserves the original producer statement and actual code-owner scope; its complete resolved target set is authored without replacing unrelated existing invariants.",
+      "revision": 1,
+      "subject": "INV-JD110F"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:aa46180e0533f0c4fda448d6634b2f98f1342ea94f04976008ebef7e5307ba1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LAYER_BOUND"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-0014SR"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:6c1e238da4b6758643ff678394e86b83fed334e3ed7395aa8dc46a4362572d32",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleListRender"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-89SXF2"
+        },
+        {
+          "after": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:dfd8f4a548ef1867f4c02d120c877d285820f344a4c115608d898562454355c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionQueueImpl"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-BE8ACJ"
+        },
+        {
+          "after": {
+            "blob": "6a460c6fd89ea57d3d7f84df6ae7869d0d6d5a95",
+            "content": "sha256:f058fdc61aecbaeef4672242b2e4adc74de88dac61e431e94347e2b14ab16ce4",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionLayer"
+            },
+            "path": "dashboard/src/panels/AttentionQueue.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-HE8N5R"
+        },
+        {
+          "after": {
+            "blob": "f2a0c19687a17a6ccf7f4639369c323139256b91",
+            "content": "sha256:0548775398b21f55d77c62b077eea7a89ef0c8cccded5362a6fd0d4f89577a0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeftRail"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-PPNW5M"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-6DBBXS",
+      "items": [],
+      "reason": "The introduced invariant statement, scope, admission and target IDs are preserved. M1-01 corrects the local responsibility account at the same realization IDs; full composite behavior remains implemented. Every original governing cover is retained; no source execution or CODE reset is asserted.",
+      "revision": 1,
+      "subject": "INV-K9B8G8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8361V0",
+      "items": [
+        "sha256:c2f22b93efbf6efbcf50bb2a49e3673c956c867a75efbab7b4f89fa5b45660fc"
+      ],
+      "reason": "Queue import removal, LeftRail composition and its comment implement the bell nested in the list rather than a sibling panel. Existing shell layer retention, session, selection and launcher owners are unchanged; the new bell obligation has its own invariant rather than revising those unrelated shell invariants. Authority: MIK-R144@v1 rules3/3a/5. Every extent in this exact worklist item was inspected against the candidate.",
+      "subject": "hunk:sha256:c2f22b93efbf6efbcf50bb2a49e3673c956c867a75efbab7b4f89fa5b45660fc"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ABBF98",
+      "items": [
+        "sha256:b10f0e70a96524c00770e078cb1926348b7c848a6b9d1d8ddb27670588c686d2"
+      ],
+      "reason": "Queue import removal, LeftRail composition and its comment implement the bell nested in the list rather than a sibling panel. Existing shell layer retention, session, selection and launcher owners are unchanged; the new bell obligation has its own invariant rather than revising those unrelated shell invariants. Authority: MIK-R144@v1 rules3/3a/5. Every extent in this exact worklist item was inspected against the candidate.",
+      "subject": "hunk:sha256:b10f0e70a96524c00770e078cb1926348b7c848a6b9d1d8ddb27670588c686d2"
+    },
+    {
+      "disposition": "assigned",
+      "examined": [
+        {
+          "id": "INV-7GVWYD",
+          "revision": 1
+        },
+        {
+          "id": "INV-G71Q09",
+          "revision": 1
+        },
+        {
+          "id": "INV-JD110F",
+          "revision": 1
+        },
+        {
+          "id": "INV-K9B8G8",
+          "revision": 1
+        },
+        {
+          "id": "INV-ME6CA1",
+          "revision": 1
+        },
+        {
+          "id": "INV-PH90HV",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA1XAA",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZPRPXZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-AXQRHH",
+      "items": [],
+      "reason": "Re-examined all eight members after M1-01 responsibility reconciliation. The joint guarantee, admission, membership and governing routes remain unchanged: local rationale corrections distinguish chronological ordering, bound ownership, held-fold collection and outside-attention selection from their composite owners. No new family or intent revision is proposed.",
+      "revision": 1,
+      "subject": "FAM-57TZPE"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:51dc2af098c2dbe329f8ba8911a79ae4cf1400ded74153cac0a10b9a5bba3c30",
+            "locator": {
+              "kind": "symbol",
+              "name": "typedText"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-B6TTTQ"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:19666ef36f7d4344e9061f7b56540a9b52170430584337d1a3c956f93786b599",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRow"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-WG0RE0"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-AZRHP9",
+      "items": [],
+      "reason": "The newly admitted Operations obligation preserves the original producer statement and actual code-owner scope; its complete resolved target set is authored without replacing unrelated existing invariants.",
+      "revision": 1,
+      "subject": "INV-G71Q09"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CA92FH",
+      "items": [
+        "sha256:e46991a1ec735efbb61044a686695812d17a567ae935b5f1a849fdccfe9b878c"
+      ],
+      "reason": "Queue import removal, LeftRail composition and its comment implement the bell nested in the list rather than a sibling panel. Existing shell layer retention, session, selection and launcher owners are unchanged; the new bell obligation has its own invariant rather than revising those unrelated shell invariants. Authority: MIK-R144@v1 rules3/3a/5. Every extent in this exact worklist item was inspected against the candidate.",
+      "subject": "hunk:sha256:e46991a1ec735efbb61044a686695812d17a567ae935b5f1a849fdccfe9b878c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:d35ebde20d7026521a43b2ba947725d6c4039736a6f01dd8d0737eca177cddd8",
+            "locator": {
+              "kind": "symbol",
+              "name": "plainArrow"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-QCVCHH"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:ff38ed7a0687c82dcd323a3267c1e424968784216a5e51e989e7d175953abe59",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeKey"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-R8BMK6"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-CBAP2B",
+      "items": [],
+      "reason": "The newly admitted Operations obligation preserves the original producer statement and actual code-owner scope; its complete resolved target set is authored without replacing unrelated existing invariants.",
+      "revision": 1,
+      "subject": "INV-PH90HV"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DG0HVE",
+      "items": [
+        "sha256:c3d5882f409b2b3fc1eb7def9ccff7bccb546d89f052f3bc041713b6a7341c9e"
+      ],
+      "reason": "Only a comment changes from chat-activity chip to the current working word; the same working-line/chat-activity selector, wait and real-harness assertion remain byte-identical. There is no card at this gradually adopted source and no new assertion or runtime contract to onboard.",
+      "subject": "onboarding:dashboard/e2e-chats/support/drive.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DYXVRH",
+      "items": [
+        "sha256:d092000eb198fe00b8c54e6baa642fc94896dcdf49255911f78ba7a61c33f823"
+      ],
+      "reason": "The only drive.ts change names the working word instead of a chip in a comment. The overview already describes assertWorkingStateSeenDuringTurn, its unchanged selectors and real-harness streaming guard; no suite purpose, assertion or harness ownership changes.",
+      "subject": "onboarding:dashboard/e2e-chats/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FDRHGT",
+      "items": [
+        "sha256:71dff3f4226f5f06608386fbaba3c6454a14fe0311f235fc8a478feeb7b7494d"
+      ],
+      "reason": "Queue import removal, LeftRail composition and its comment implement the bell nested in the list rather than a sibling panel. Existing shell layer retention, session, selection and launcher owners are unchanged; the new bell obligation has its own invariant rather than revising those unrelated shell invariants. Authority: MIK-R144@v1 rules3/3a/5. Every extent in this exact worklist item was inspected against the candidate.",
+      "subject": "hunk:sha256:71dff3f4226f5f06608386fbaba3c6454a14fe0311f235fc8a478feeb7b7494d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:135f4253cb19c40f3b3a54e1a4490bf9a781ae2512d14accd216b48ce0c61c61",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowHover"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-A2WBWC"
+        },
+        {
+          "after": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:af3bcd498858ea5d6b3a0f9242631fb696ea0443a6752e6b0dd6b5811eab05ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowWord"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-A8JVG7"
+        },
+        {
+          "after": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:38ba50865a9c2b641091375444655f6b14930bd9d02f6d11d5b9c1feedaedda6",
+            "locator": {
+              "kind": "symbol",
+              "name": "askingWord"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-ATHRPW"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-HK3NFZ",
+      "items": [],
+      "reason": "The introduced invariant statement, scope, admission and target IDs are preserved. M1-01 corrects the local responsibility account at the same realization IDs; full composite behavior remains implemented. Every original governing cover is retained; no source execution or CODE reset is asserted.",
+      "revision": 1,
+      "subject": "INV-7GVWYD"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KRJT4D",
+      "items": [
+        "sha256:6b079ded1292248fb4617db2d95d6a4db11b72a0eaecac1f2398331b71ede0c1"
+      ],
+      "reason": "Read the repository governing overview: these local UI/test/token changes neither alter the system memory/runtime/transport/paired-publication obligations nor add a repository entity. The affected Operations account belongs to the Panels/grammar/src cards and overviews, not a root task-log section.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-N9QAG3",
+      "items": [
+        "sha256:b4c85b3156064691976bceb34b8d15a353a28bf39f4c473347dac73929b3dbb2"
+      ],
+      "reason": "The added compact column recipe composes the existing metrics and selected/focus authority; its explanatory comment names the new consumer. It changes neither viewTabMetrics nor the offered/sent role-launcher behavior or hover information promised by the existing compact-launcher invariant. Authority: MIK-R144@v1 rules3/3a/5. Every extent in this exact worklist item was inspected against the candidate.",
+      "subject": "hunk:sha256:b4c85b3156064691976bceb34b8d15a353a28bf39f4c473347dac73929b3dbb2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
+            "content": "sha256:81b2ece97f126349e7025970f27a135c348597ba55130dcaa796c8a53e3ce57b",
+            "locator": {
+              "kind": "symbol",
+              "name": "treeItems"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-79CD08"
+        },
+        {
+          "after": {
+            "blob": "0cdb05b43b696a44dd2de57a0ec30412310ff930",
+            "content": "sha256:762638344217c053411c6ba0fd920d9cba6afaeda8f577896fd32c390c1a0b78",
+            "locator": {
+              "kind": "symbol",
+              "name": "compareRows"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/treeRows.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-QKE8AG"
+        },
+        {
+          "after": {
+            "blob": "43e17a6f6194ff6dff8b56c726c525f51bee26a0",
+            "content": "sha256:a47a4158072c8505a9d0ee8ee60d2478c937d1ece06a8044f53bf32a0e926cee",
+            "locator": {
+              "kind": "symbol",
+              "name": "heldFoldKeys"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-X1KK3E"
+        },
+        {
+          "after": {
+            "blob": "e18c409e57f75c10be2ba7a41c80499f47fda0fd",
+            "content": "sha256:78245f9de446df6d57e42080f9773859a21066cbac2a976e6cfd7ff27bbe6470",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskGroupDisclosure"
+            },
+            "path": "dashboard/src/panels/TaskGroupDisclosure.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-XKHWVG"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-NX4ZTM",
+      "items": [],
+      "reason": "The introduced invariant statement, scope, admission and target IDs are preserved. M1-01 corrects the local responsibility account at the same realization IDs; full composite behavior remains implemented. Every original governing cover is retained; no source execution or CODE reset is asserted.",
+      "revision": 1,
+      "subject": "INV-ME6CA1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:822d9936305c1f480eca335bd1a5e8cbc3f8aac17869a195b9ee89d478d372e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycleReported"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-JVVP8S"
+        },
+        {
+          "after": {
+            "blob": "5054ab36b1752e3b2bed5b92939b79df7ef46ac5",
+            "content": "sha256:af3c2bc651292e118f5abea6720008e29985a08a8ef08276e97a68acb173eb41",
+            "locator": {
+              "kind": "symbol",
+              "name": "rowState"
+            },
+            "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-KKKE31"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-PDDZTK",
+      "items": [],
+      "reason": "The newly admitted Operations obligation preserves the original producer statement and actual code-owner scope; its complete resolved target set is authored without replacing unrelated existing invariants.",
+      "revision": 1,
+      "subject": "INV-ZPRPXZ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V9Q5P6",
+      "items": [
+        "sha256:fd69a6576339f59cad481e90c9327c5db288ad8ecf9c9772035a992308091021"
+      ],
+      "reason": "Four unused dim/ghost rank tokens are removed while gold/purple and all other palette, React Aria conditions and generation configuration remain. The current tier-token explanation belongs to grammar overview and tokens.css card; this previously unadopted config needs no invented separate architecture contract.",
+      "subject": "onboarding:dashboard/panda.config.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WHMRSA",
+      "items": [
+        "sha256:686e632fdde1d85aaaacd1579656fb04b9b748caeab0974e4858b3f340eed619"
+      ],
+      "reason": "The added compact column recipe composes the existing metrics and selected/focus authority; its explanatory comment names the new consumer. It changes neither viewTabMetrics nor the offered/sent role-launcher behavior or hover information promised by the existing compact-launcher invariant. Authority: MIK-R144@v1 rules3/3a/5. Every extent in this exact worklist item was inspected against the candidate.",
+      "subject": "hunk:sha256:686e632fdde1d85aaaacd1579656fb04b9b748caeab0974e4858b3f340eed619"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZJGCE0",
+      "items": [
+        "sha256:4693569fddd3922c5427ec13b048020c1a58a86d9a2585542050e4ff3cd8d58c",
+        "sha256:8c3bf1f94e995d0560c3242c543eea102a2eddd0fc93244f93f90dfb09c13af7",
+        "sha256:9dc80b00381338ae70f6a71263657463b63a1b258f7868196c47e481d5e5220d",
+        "sha256:c7c16c3198d8df10829327c0ac3783bbe4d994eac225c921c7b19a282d09c20d"
+      ],
+      "reason": "The existing suite focus/pty/layout contracts remain. Its three attention protocols now open the bell and close the modal before Detail querying; the current card separately records those adjustments and no Playwright execution is asserted. No other end-to-end guarantee changes.",
+      "subject": "onboarding:dashboard/e2e/cockpit.spec.ts"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

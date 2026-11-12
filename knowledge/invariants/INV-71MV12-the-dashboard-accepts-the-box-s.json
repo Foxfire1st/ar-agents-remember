@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The policy is carried across the model that validates and the channel that stores it, so one place cannot tighten the pair alone. It guards a plausible and costly error: a validator that rejects a whole composer report because its new fields are unusable would blank the tray's measured placement for that page, and one that accepts half a pair would place the tray at a width the box does not have. Three channel cases hold it, including eight rejected shapes."
+  },
+  "applicability": "Composer reports an in-frame plug-in posts to the dashboard's tray channel, on every frame page - the Chats view and the document/review column - provided the report's vertical fields are the ones the parser admits.",
+  "conditions": [
+    "The pair is admitted only when both left and width are finite numbers and width is greater than 0.",
+    "A report whose vertical fields are finite and admissible, meaning a finite top, height and frameHeight with height >= 0 and frameHeight > 0, and which carries no pair, is valid and yields the vertical-only measured edge; the pair rules never waive those vertical guards.",
+    "A report whose vertical fields fail those guards is rejected whatever its pair says.",
+    "The pair-less shape also occurs with the current plug-in: pick.ts rounds left and width, so a box narrower than half a pixel posts width 0 and the validator drops it. An older plug-in that has not been provisioned posts the vertical edge alone."
+  ],
+  "exclusions": [
+    "The dock's placement once an extent is accepted, which INV-S3NMAZ owns.",
+    "The ar.tray-space reservation height and the scroll root it pads.",
+    "Pick messages and their provenance, and every other tray message type.",
+    "Event origin and window trust, which the frame controller supplies before parsing."
+  ],
+  "id": "INV-71MV12",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/frameTrayChannel.test.ts::\"takes the box's own left and width as a pair\"; dashboard/src/cockpit/frameTrayChannel.test.ts::\"drops a partial, non-finite or non-positive pair and keeps the vertical edge\" (eight vectors); dashboard/src/cockpit/frameTrayChannel.test.ts::\"keeps a composer message without the pair valid\"; those cases drive PaseoFrameControl.receive -> parsePluginMessage -> receiveFrameTray, i.e. validator and channel on one path; npx vitest run src/tray/TrayDock.test.tsx src/cockpit/frameTrayChannel.test.ts src/cockpit/paseoPluginPick.test.ts -> 35 passed / 35"
+      ],
+      "path": "l189-handoff-list-v1.json"
+    },
+    "handoffEntry": "MIK-R197@v1 rule 2",
+    "leaf": "260928-MIK-L189",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The dashboard accepts the box's left and width only as a pair of finite numbers whose width is greater than 0, keeps a composer message that carries no pair valid, and drops a partial, non-finite or non-positive pair while the vertical edge survives.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/grade_sources.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "92b7eee5eec1cc0466e46854570168864b2b41e9",
+        "content": "sha256:a0bb839e99cf034a1f89146d0772c915e70bfd209a8d19e40f0532f420cf18cd",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-NFW8NG",
+      "invariant": "INV-WXN503",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-grade-identity",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It records explicit producer modules and transitive local dependency hashes for grade provenance and stale selection.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92b7eee5eec1cc0466e46854570168864b2b41e9",
+            "content": "sha256:a0bb839e99cf034a1f89146d0772c915e70bfd209a8d19e40f0532f420cf18cd",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

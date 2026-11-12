@@ -1,0 +1,24 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/operations/bootstrap.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+        "content": "sha256:c988052b9a104b4206086b55f10178c308a38eebe091cac422d7b5976a73b96f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EZ12AC",
+      "invariant": "INV-CZV6J3",
+      "origin": {
+        "handoffEntry": "L188-B10",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The generated operation delivers the same setup boundary to hosted resource/capsule readers.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

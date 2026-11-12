@@ -1,0 +1,183 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/doctrine.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+        "content": "sha256:2e70e85a3990878db1f504e05170e0719403c8bd7bd373eb13bda95b267b700e",
+        "locator": {
+          "end": 33,
+          "kind": "line_range",
+          "start": 33
+        }
+      },
+      "id": "RLZ-0YWAAA",
+      "invariant": "INV-42NQQG",
+      "origin": {
+        "handoffEntry": "MIK-R60@v10.1-4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "D-6 now points to CS-7 instead of restating the check.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Canonical doctrine source binds its review through the Reviewer table and the shared catalog rules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+            "content": "sha256:b11038435b45913a12abd38565a6f36db84252243c5b417cb8b1669564c75c0d",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The reviewer binding table selects doctrine where the review type and change surfaces require it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:1f762636392a1025af19edf0cff6729b687350a2575e221e185d8ea49c58d5f3",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 45
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Baseline mode and fix-verification are explicit supplied review modes, not inferred whole-review authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:8f2ee02adb5091afb65c3d528c202589d6edd193ad5ecc44c7c9035a3392ad13",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 31
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "D-1 requires mechanism-backed enforcement claims; D-2 sweeps contradictory sibling doctrine; D-3 walks stuck states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+            "content": "sha256:5d8946a2d4e3f42affb01558f451b38f7eeccfaeff6b27ffd7d3a23425953816",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "D-4 distinguishes organizational/atomic topology and protects integration branches from feature/fix work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+            "content": "sha256:b96f2389dcb0c71564595bb051cbac0d3bb6f4163cc37c078f9ab7cf9be3d803",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "D-5 separates detected facts from explicit role judgment and labels tie-breaking as such.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+            "content": "sha256:a65ba21546b98093bfc2a97eb8a0eea0e72121e884e2731267bf49689e4b9028",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "D-6 is a pointer: code-seam criterion CS-7 owns the check of source comments against the repository's Source Comment Scope, including its bounded requirement-identifier exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4728c8b76220f20c2df94aba239de9167c7977ae",
+            "content": "sha256:325c867e3b4175b0a370efc0c133e468da51df00c3c3a784a03f838cef4a0242",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Novel lenses and the promotion ratchet apply to baseline review, not sealed fix-verification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56cbc03e2c77342364358f8f0cb498b39f2b8d45",
+            "content": "sha256:383951438d9f9e749a2deabc09dcc10dee8056b6e2e6ae15e681c00d66d07cb7",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/code-seam.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The package is a propagation target of canonical skills; source declaration is not an installation or synchronization receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/test_quality_subprocess_environment.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Only outer retry/report controls are removed while admission and semantic values survive.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9164cf3539be59d2cf01e7cbef66cf8700d4e858",
+            "content": "sha256:0639a0778f5c529f2e287fe0c714e1628a21a2ab366a75c95d6cb324b28e1fa6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_outer_retry_controls_do_not_leak_into_candidate_tests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The production owner defines the exact closed set.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24d87f3c6683cb6a7215173e66c75306dff0350c",
+            "content": "sha256:88db3904691122c92af63b6f11360d57c8ac86d203485e4633df6783f077fe73",
+            "locator": {
+              "kind": "symbol",
+              "name": "OUTER_INVOCATION_ONLY"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24d87f3c6683cb6a7215173e66c75306dff0350c",
+            "content": "sha256:9a7adbdab6e7797feefe389286a2bc2b572aa3307a31661e48bfc97e7c54625d",
+            "locator": {
+              "kind": "symbol",
+              "name": "child_environment"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/quality_subprocess_environment.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

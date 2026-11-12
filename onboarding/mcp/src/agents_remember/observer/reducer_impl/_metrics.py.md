@@ -1,43 +1,29 @@
 # mcp/src/agents_remember/observer/reducer_impl/_metrics.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/reducer_impl/_metrics.py`                                            |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-07T22:45:00+02:00                                            |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                                        |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                          |
-
 ## Governing Overview
 
-[overview](../../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
-Analytical rollups: token series, staleness histogram, and workspace metrics. The reducer's slice-3b rollups: the bounded cumulative token series, the verification-age histogram, the workspace metrics rollup, and the analytics assembly. All remain pure functions of already-read inputs.
+Pure analytical assembly over already-read retained inputs. Verification-age histogram and stalest-sidecar ranking functions are removed. Native task stage/activity counts belong to task-entry production; the old lifecycle `_metrics` function is not present here. This module computes no token aggregate.
 
 ## Code Commentary
 
-- `_metrics`
-- `_decimate_token_series`
-- `token_series`
-- `staleness_histogram`
-- `_staleness_bucket`
 - `build_analytics`
-- `_stalest`
+
+Analytics retains supplied drift, route coverage, tool reports and ledgers, with caller-derived attention and Engine Room process surfaces. No setup surface is retained. It emits no verification-age sidecar list, lifecycle buckets, taskDocuments, series, pickup or expectation collection and owns no task-stage/action authority. The former lifecycle metrics and tool.completed liveness account belongs to the predecessor, not this current assembly function.
 
 ## Invariants And Boundaries
 
 - The card mirrors the source file one-to-one at `mcp/src/agents_remember/observer/reducer_impl/_metrics.py`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module's own top-level surface is listed in Code Commentary; no cross-file citation rows are needed for this split module. | — | — |
 
-## Update History
+- Analytics assembles retained feeds and caller-derived overrides without sidecar ranking. [2]
 
-- 2026-08-07T22:45:00+02:00 — 260731-EFA-L7 curator: created this file-level onboarding card for the split module; content derived from the current worktree source. Verification metadata pinned until closeout stamps the 260731-EFA-L7 commit.
+
+
+
+### Repo-Internal References

@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/detail-panel/promotedIdentity.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The promoted-identity suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b585430b501f79dc56461eff09b2ede6d3e15bd1",
+            "content": "sha256:bb8f9daa61f7cc87118212a02dbb2f2255bec1db298e888f8c07deccb8469324",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

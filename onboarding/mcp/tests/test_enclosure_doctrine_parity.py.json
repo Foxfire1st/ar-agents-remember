@@ -1,0 +1,75 @@
+{
+  "path": "mcp/tests/test_enclosure_doctrine_parity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "50ac1fcdc8681a1e38829b0ad79556cd035bd0cd",
+        "content": "sha256:49ec53d4b526b6117887cab7e45333e7c1cdf89c50a0d0c71bcd8cf557960eaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_mcp_reference_rows_name_exception"
+        }
+      },
+      "facet": "The MCP reference rows name the exception.",
+      "id": "PRF-9X8D48",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "50ac1fcdc8681a1e38829b0ad79556cd035bd0cd",
+        "content": "sha256:e6998b59d11a52e6347319eeeb14296feda2b9627e23e668377c1df95aee72fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_documented_next_actions_are_registered"
+        }
+      },
+      "facet": "Every documented next action names a registered tool.",
+      "id": "PRF-EC4642",
+      "invariant": "INV-NY15B8",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-08",
+        "leaf": "260928-MIK-L82"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "50ac1fcdc8681a1e38829b0ad79556cd035bd0cd",
+        "content": "sha256:49ec53d4b526b6117887cab7e45333e7c1cdf89c50a0d0c71bcd8cf557960eaa",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_mcp_reference_rows_name_exception"
+        }
+      },
+      "facet": "The MCP reference rows name the exception.",
+      "id": "PRF-QJCN5H",
+      "invariant": "INV-4ST2K1",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-08",
+        "leaf": "260928-MIK-L82"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The MCP reference rows' bounded pre-locator exception and the registration of every documented next action are pinned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50ac1fcdc8681a1e38829b0ad79556cd035bd0cd",
+            "content": "sha256:45eb6d1e563f383be051ad013518739291401e085b020230e65fd3873274f524",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

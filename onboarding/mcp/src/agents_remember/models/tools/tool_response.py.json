@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/models/tools/tool_response.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Defines the function `finalize_tool_response`, which validates a declared response (or the stale-build refusal), applies optional caller enrichment and counts tokens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a82c6e7b9b4fa460c90f61260685b7e5d3ec4fa7",
+            "content": "sha256:8614b4bd9643c8f33dfb3dbf05d3a66fce56cb3539fc9d636fe3b2d6d4e19164",
+            "locator": {
+              "kind": "symbol",
+              "name": "finalize_tool_response"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

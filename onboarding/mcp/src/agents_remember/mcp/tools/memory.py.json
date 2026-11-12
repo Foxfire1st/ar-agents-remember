@@ -1,0 +1,291 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/memory.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:5aad99e6ca9de0e4f39431d106120972c20f02e56705d2290d7b43ecc939b5cc",
+        "locator": {
+          "kind": "symbol",
+          "name": "compact_carryover_payload"
+        }
+      },
+      "id": "RLZ-0TCV23",
+      "invariant": "INV-REPB8B",
+      "origin": {
+        "handoffEntry": "L56-CUR-final-facet-INV-REPB8B",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Projects the full planning result separately, keeping publication guidance in next.summary and leaving complete candidates for whole-result logging; existing plan payload remains the actual logger.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:c6b72dfc1314f7fa35e91655e5e6845898d18e11ffb2d7a291f00627888efc68",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_fix_whole"
+        }
+      },
+      "id": "RLZ-40PPMN",
+      "invariant": "INV-CR4CJ8",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 3",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The original synchronous computation retains the contract-scoped repair and authority refusal path.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_plan_payload"
+        }
+      },
+      "id": "RLZ-76306H",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`memory_carryover_plan_payload` at C still resolves the cutover-lock refusal helper at the operation rather than at module discovery, and keeps the full refusal plus the compact projection; the symbol's bytes match C's.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:1d8e5e92f72c2130862a7d87c1e49c3cfb77726ab7baf772afb55740c8ab6189",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_payload"
+        }
+      },
+      "id": "RLZ-8R01VM",
+      "invariant": "INV-QSA8WP",
+      "origin": {
+        "handoffEntry": "MIK-R213@v1 rule 2",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "The public payload selects sync/start/poll and preserves the ordinary preview projection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
+        "locator": {
+          "kind": "symbol",
+          "name": "_carry_legacy_refusal"
+        }
+      },
+      "id": "RLZ-CN0MBW",
+      "invariant": "INV-JT28KJ",
+      "origin": {
+        "handoffEntry": "L46-curator-unconditional-boundary",
+        "leaf": "260928-MIK-L46"
+      },
+      "rationale": "The public status projection preserves the central legacy code and conversion detail instead of leaving recovery only in a log.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:4f54e6f38987cf9270c2e363362117f4bcae7ae067096e41872b77e795ff4266",
+        "locator": {
+          "kind": "symbol",
+          "name": "_carry_legacy_refusal"
+        }
+      },
+      "id": "RLZ-ECTGHA",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "`_carry_legacy_refusal` at C still imports the cutover lock inside the function call that needs its code, so the legacy-format code is resolved at the carryover/refusal operation and the answer keeps the same full refusal and compact projection.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:8e13a1eb9935af949caa040b1e823534e54df7aac00b3cd48edcbddc9a43d90c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_fix_answer"
+        }
+      },
+      "id": "RLZ-G52W6N",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "The citation status projection retains the synchronous result fields and completed preview repair details while the whole result is recorded separately.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:c6b72dfc1314f7fa35e91655e5e6845898d18e11ffb2d7a291f00627888efc68",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_fix_whole"
+        }
+      },
+      "id": "RLZ-HPM03Q",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 5",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The extracted synchronous application wrapper translates only ConfiguredContractAuthorityError; background worker settlement has a separate error envelope.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:3dcddad935eda28d068e65014a7b2c9056140aba53823fd329a100ad867a9375",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_baseline_adopt_payload"
+        }
+      },
+      "id": "RLZ-HXR0S4",
+      "invariant": "INV-5X9WH6",
+      "origin": {
+        "handoffEntry": "L183-legacy-baseline-answer",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The payload now computes whole first and supplies the filtered answer only for legacy-format; full is still handed to _tool_payload. Other changes defer cutover imports with the same error semantics.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:7c23001311b7fb2a709788e53a1db173f981881e96fa4bdc440b5a38387a003b",
+        "locator": {
+          "end": 495,
+          "kind": "line_range",
+          "start": 460
+        }
+      },
+      "id": "RLZ-NKTNVE",
+      "invariant": "INV-1V9ARB",
+      "origin": {
+        "handoffEntry": "L110-C-status",
+        "leaf": "260928-MIK-L110"
+      },
+      "rationale": "The route-index status projection preserves outcome/counts, omits successful root paths, and retains stale indexes for repair while the whole result holds written indexes.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:9587e21b84f3111c38c400ea4bbb19364ebc17e8c540588423cf39ea08983674",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-P25D9K",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Declares the tool's arguments and answer so the revision is reachable from the mounted surface.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:8512bf49ed060b04bc987a87a99f12c2e9bf03d022426c17124c865589a1f38c",
+        "locator": {
+          "kind": "symbol",
+          "name": "memory_carryover_plan_payload"
+        }
+      },
+      "id": "RLZ-TY118W",
+      "invariant": "INV-REPB8B",
+      "origin": {
+        "handoffEntry": "L56-CUR-CARRYOVER-PLAN-FULL-RESULT",
+        "leaf": "260928-MIK-L56"
+      },
+      "rationale": "Keeps complete candidate facts for whole-result logging and derives the compact answer separately without filing a per-call report.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+        "content": "sha256:d3f622fc4d9f4c5ecba385b0dbf495db20bdefab71304abd6bbdb5033341f253",
+        "locator": {
+          "kind": "symbol",
+          "name": "_citation_authority_refusal"
+        }
+      },
+      "id": "RLZ-VVT227",
+      "invariant": "INV-ZA39KM",
+      "origin": {
+        "handoffEntry": "MIK-R70@v1 rule 5",
+        "leaf": "260928-MIK-L70"
+      },
+      "rationale": "The single refusal builder used by the retained citation_fix_payload states configured-contract-authority-invalid, detail and next action once; the former MCP migration caller is retired.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Mode dispatch preserves the default synchronous application call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:1d8e5e92f72c2130862a7d87c1e49c3cfb77726ab7baf772afb55740c8ab6189",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix_payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Start and poll enforce their distinct argument shapes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:96f11ef494b807389f2f26320f71b8489459f52c9b7d56bb1575859f9824ccfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_run_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Completed preview projections retain ordinary citation counts and failure work orders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f33904d9efb39530affd7e1a084186df0c3169dc",
+            "content": "sha256:8e13a1eb9935af949caa040b1e823534e54df7aac00b3cd48edcbddc9a43d90c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_citation_fix_answer"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

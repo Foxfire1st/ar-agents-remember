@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/cockpit/paseoPluginClient.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A page is replaced once and the resulting page consumes its reload flag without replacing itself again.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0f80e06ab1d7d0ce090e56d8267067d1c954b9f",
+            "content": "sha256:669444946535381ac75a0883ee4c6bb0e10edf248d0dff1579831c9344b5b841",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 65
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Parent detection, exact origin pairing and the actual parent window are asserted separately from top-level or lookalike pages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0f80e06ab1d7d0ce090e56d8267067d1c954b9f",
+            "content": "sha256:202a0d4776e44643a39edec34d8a742a47e28babc8b7fd72ef1017d35227ada0",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 271
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The client-part cases distinguish standalone, listed and unlisted frames, waiting for the embed list before opening the trusted channel.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e0f80e06ab1d7d0ce090e56d8267067d1c954b9f",
+            "content": "sha256:810dfe7292eda39b9930af02aee6e12aab2b0c22b2b704d8daff898e25f3d485",
+            "locator": {
+              "end": 889,
+              "kind": "line_range",
+              "start": 684
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Saves standalone look/sidebar values before storing the AR appearance, and keeps earlier saved values when the last recorded writer was a frame.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+            "content": "sha256:2489c2655c8c9107fc7247e595db39ea255c75abdd98551c20dd39cd2236bfae",
+            "locator": {
+              "kind": "symbol",
+              "name": "applyEmbedLook"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Waits for an exact embed-list match before trusting a new parent and drops a previously trusted bridge when the refreshed list excludes it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f7deeb2a294500b2bc299a37e6204a6174017e",
+            "content": "sha256:21a9252700e1369c56ba2ab44e0a4665ff8ebe256f8b65eb87a07b0a352c01c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "startClientPart"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/start.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

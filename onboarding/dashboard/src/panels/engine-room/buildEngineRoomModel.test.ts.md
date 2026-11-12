@@ -1,20 +1,31 @@
 # dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`       |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+The pure builder now accepts only the published process array. Its view retains exactly node/enclosureKey and the original process identity, without a second session/lifecycle join. Empty input yields no provider fallback; stable worktreeGroup identity and active-before-cleanup sibling ordering remain.
+
+### Maintenance boundaries
+
+The remaining tests protect published-process identity, honest empty input, stable enclosure keys and phase/leaf ordering. Provider lift/fallback and lifecycle/gate-attachment claims are retired. This is pure source assertion scope, not a mounted or producer-state-deletion proof.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- The tests call buildEngineRoomModel with one process-list argument: a published process is retained by reference with only enclosureKey/node in its view, and empty input produces no provider fallback. Further pure assertions keep worktreeGroup as a stable enclosure key across an id change and order an active leaf before its cleanup-pending sibling. These are source assertions, not a fresh test or visual run. [8]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 Vitest suite pinning the pure `buildEngineRoomModel` builder for the enclosure-centered Engine Room process map. It locks the behaviors that keep the client seam inference-free: joining each server-composed process node to its live lifecycle by `lifecycleId`, exposing the lifecycle gate, lifting workspace-scoped providers into `workspaceEngines`, falling back to legacy per-worktree stacks only when worktree providers exist but no process nodes do, sorting active leaf enclosures ahead of cleanup/retired siblings, and (slice 5f S0) exposing `enclosureKey = worktreeGroup` stably across a fleeting→real id swap. Local `node`/`lifecycle`/`worktreeEngine` factories build minimal fixtures so each case isolates one rule.
 
@@ -25,9 +36,9 @@ Vitest suite pinning the pure `buildEngineRoomModel` builder for the enclosure-c
 No exports; one `describe("buildEngineRoomModel")` block with five `it` cases plus three fixture factories.
 
 - `node(over)` returns a minimal `EngineProcessNode` (defaults `derived` code source, `external` memory, empty edges/providers/landing, `worktreeGroup: "/w/r/grp"`) merged with overrides; the `landing: []` default (slice 5h) satisfies the new required `EngineProcessNode.landing` field, and the `ledgerRows: []` / `ledgerRowCount: 0` defaults (5h ledger popover) satisfy the new required ledger fields; `lifecycle(over)` builds a `LifecycleProjection` requiring only `id`; `worktreeEngine(id, group)` builds a worktree-scoped `ProviderNode`, tagging `role: "memory"` when `id` contains `memory`/`grepai`.
-- "attaches each process to its lifecycle by lifecycleId" feeds one node with `lifecycleId: "L1"` and a matching lifecycle, asserting `processes[0].lifecycle.id === "L1"` and `usesFallback === false`.
+- "attaches each process to its lifecycle by lifecycleId" feeds one node with `lifecycleId: "L1"` and a matching lifecycle, asserting `processes.lifecycle.id === "L1"` and `usesFallback === false`.
 - "exposes the lifecycle gate on the process view" feeds a matching lifecycle with `gate.kind` and asserts
-  `processes[0].gate` carries it.
+  `processes.gate` carries it.
 - "lifts workspace-scoped providers into workspaceEngines" passes a `scope: "workspace"` provider and asserts it surfaces in `workspaceEngines`.
 - "falls back to groupEngines when worktree providers exist but no engineProcesses" asserts `usesFallback === true`, one `fallbackStacks` entry, zero `processes`; the converse case (a process present) asserts no fallback.
 - "exposes worktreeGroup as the enclosure key" builds two models from nodes with different `id`s (`start:demo` vs `/contract.md`) but the same `worktreeGroup`, asserting both yield `enclosureKey === "/w/r/grp"` — the morph-identity invariant.
@@ -40,42 +51,19 @@ No exports; one `describe("buildEngineRoomModel")` block with five `it` cases pl
 - The fallback rule is mutually exclusive: `usesFallback` is true only when `engineProcesses.length === 0` and worktree stacks exist; the "does not fall back" case guards against regressing that AND.
 - The `enclosureKey` case pins that identity tracks `worktreeGroup`, not the node `id`.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `buildEngineRoomModel` under test | `buildEngineRoomModel` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66 |
-| `node`/`lifecycle`/`worktreeEngine` fixture factories | `node`; `lifecycle`; `worktreeEngine` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:10-42; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:44-58; dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:60-69 |
-| Lifecycle join + workspace lift + fallback cases | `buildEngineRoomModel`; `workspaceEngines`; `fallbackStacks`; `usesFallback` | dashboard/src/panels/engine-room/buildEngineRoomModel.ts:33-66; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:39-39; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:59-59; dashboard/src/panels/engine-room/buildEngineRoomModel.ts:63-63 |
-| `enclosureKey` = worktreeGroup stable-across-id-swap case | `enclosureKey` | dashboard/src/panels/engine-room/buildEngineRoomModel.test.ts:132-134 |
-| EngineProcessNode is the generated projection contract consumed by this surface. | "export interface EngineProcessNode {" | dashboard/src/types/projection.ts:233-233 |
-| LifecycleProjection is the generated projection contract consumed by this surface. | "export interface LifecycleProjection {" | dashboard/src/types/projection.ts:365-365 |
-| ProviderNode is the generated projection contract consumed by this surface. | "export interface ProviderNode {" | dashboard/src/types/projection.ts:513-513 |
+### Repo-Internal References
+
+- `buildEngineRoomModel` under test [1]
+- `node`/`lifecycle`/`worktreeEngine` fixture factories [2]
+- Lifecycle join + workspace lift + fallback cases [3]
+- `enclosureKey` = worktreeGroup stable-across-id-swap case [4]
+
+- EngineProcessNode is the generated projection contract consumed by this surface. [5]
+
+- `buildEngineRoomModel` takes one `EngineProcessNode[]` argument; the surface consumes no separate lifecycle projection type. [6]
 
 ## Series-Contract Notes
 
 The stable-key regression uses a real-node id ending in `series-contract.md`, preserving the invariant that process identity comes from `worktreeGroup` rather than the contract file path.
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-03T09:35+02:00 — 260731-EFA-L6 W3-B07 curator: repaired 6 citation findings (3 missing anchors and 3 malformed sources) in the three assigned repository-reference rows; all anchors and ranges were resolved against the frozen source index.
-
-## Update History
-
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: added a model-level regression for active leaf ordering ahead of cleanup-pending siblings and seeded the helper with `leafId`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the stable-enclosure-key regression now uses a `/series-contract.md` real-node id, matching the new leaf enclosure contract path. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T13:45+02:00 — Task 11: added a case pinning `EngineProcessView.gate` from the joined
-  lifecycle. Verification metadata pinned until closeout stamps the task-11 code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover: the `node` fixture factory adds the `ledgerRows: []` / `ledgerRowCount: 0` defaults to satisfy the new required `EngineProcessNode` ledger fields. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T08:51+02:00 — slice 5h H1: the `node` fixture factory adds the `landing: []` default to satisfy the new required `EngineProcessNode.landing` field. Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-16T01:55 — slice 5f S0: added a fifth case pinning `enclosureKey === worktreeGroup` stable
-  across a fleeting→real id swap. Verification metadata pinned until closeout stamps the S0 code commit.
-- 2026-06-15T19:35 — Created for slice 5e: vitest for the pure model builder (lifecycle join, workspace lift, fallback). Verification metadata pinned until closeout stamps the 5e code commit.

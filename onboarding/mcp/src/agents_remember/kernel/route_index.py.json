@@ -1,0 +1,44 @@
+{
+  "path": "mcp/src/agents_remember/kernel/route_index.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+        "content": "sha256:1b3a12f9929c2f14e349bb8b78dc13bf55f0a3568f619f3bd7fd089695b45067",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checked_survey"
+        }
+      },
+      "id": "RLZ-B3KQCB",
+      "invariant": "INV-R1F96Z",
+      "origin": {
+        "handoffEntry": "MIK-R217@v1-empty-memory",
+        "leaf": "260928-MIK-L204"
+      },
+      "rationale": "An absent onboarding root is surveyed as zero routes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c8ea2ba5138e5b5662c32749fef651002f28bbee",
+        "content": "sha256:1b3a12f9929c2f14e349bb8b78dc13bf55f0a3568f619f3bd7fd089695b45067",
+        "locator": {
+          "kind": "symbol",
+          "name": "_checked_survey"
+        }
+      },
+      "id": "RLZ-ZSJ5EY",
+      "invariant": "INV-N4TG39",
+      "origin": {
+        "handoffEntry": "L204-non-directory-refusal",
+        "leaf": "260928-MIK-L204"
+      },
+      "rationale": "The guard distinguishes an absent collection from an existing non-directory path.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

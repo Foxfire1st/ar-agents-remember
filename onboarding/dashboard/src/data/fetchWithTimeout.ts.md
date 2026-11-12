@@ -1,15 +1,5 @@
 # dashboard/src/data/fetchWithTimeout.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/fetchWithTimeout.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-07-24T13:17:50Z |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [data overview](overview.md)
@@ -29,7 +19,7 @@ to fetch, and clears the timer in `finally` on every settle path.
 ### Conventions
 
 It deliberately uses timer-visible controller cancellation rather than `AbortSignal.timeout`, so fake-timer
-tests can advance the real transport bound.
+tests can advance the real transport bound. Removed catalog-poll, missedBeats and boundedAttempt examples no longer describe consumers; the helper’s controller/fetch/finally policy itself is unchanged.
 
 ### Invariants And Boundaries
 
@@ -40,33 +30,21 @@ semantics; the bound must abort the socket, not merely stop awaiting its promise
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+No relevant external documentation is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The helper aborts and always clears its timer. | "export async function fetchWithTimeout" | dashboard/src/data/fetchWithTimeout.ts:15-15 |
-| Shared boot reads use the helper before entering their single-flight maps. | "export function shareInflight" | dashboard/src/data/inflight.ts:21-21 |
+- The helper aborts and always clears its timer. [1]
+- shareInflight shares a caller-supplied pending callback and owns no fetch or timeout; the transport bound is supplied inside the caller callback, not by this map itself. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The helper is local browser transport plumbing. | "export async function fetchWithTimeout" | dashboard/src/data/fetchWithTimeout.ts:15-15 |
-
-## Update History
-
-- 2026-08-05T00:45:16+02:00 — 260731-EFA-L6 S18-B24 curator: replaced the `n/a` rows with exact
-  anchors and fixer-generated ranges; exact non-fixing check returns zero findings.
-
-- 2026-07-24T13:17:50Z — Created for aborting hung browser fetches. Verification hash/date remain
-  pinned to the pre-commit source stamp.
+- The helper is local browser transport plumbing. [3]

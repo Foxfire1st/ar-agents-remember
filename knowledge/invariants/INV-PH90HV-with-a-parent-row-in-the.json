@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Avoids stealing modified browser chords or silently losing existing task navigation when adding parent arrows."
+  },
+  "applicability": "Keyboard disclosure on a focused Operations parent row, not a new keyboard path for completed folds.",
+  "conditions": [
+    "Only unmodified left/right arrows act on a focused parent row, and an arrow requests a toggle only when its desired state differs.",
+    "A deliberate parent arrow may end the current chosen-document hold and change disclosure without changing the selected document; the release expires when the selection episode changes (INV-ME6CA1).",
+    "Non-parent rows and completed-fold lines gain no arrow handler. Modified chords and all other keys retain their existing browser/list behavior."
+  ],
+  "exclusions": [
+    "Intercepting browser-modified chords.",
+    "Changing up/down, Enter or typeahead reach."
+  ],
+  "id": "INV-PH90HV",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/lifecycle-list/hierarchy.test.tsx: \"opens and closes a parent row with the right and left arrow keys\"; sandbox tries in notes/run3/operations-sidebar-proposal/comparison/behave.json (arrowKeys, both widths) and captures/foldkey.json; comparison page, section \"The one addition\"."
+      ],
+      "path": "curator-ingest-L144-v1.json"
+    },
+    "handoffEntry": "MIK-R144@v1 rule 5 / the one addition",
+    "leaf": "260928-MIK-L144",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "On a focused Operations parent row, plain right opens it and plain left closes it, including a selected ancestor held open for the chosen document when the arrow changes state. Task rows and completed-fold lines gain no left/right action. Alt, Ctrl, Shift and Meta chords stay with the browser; up, down, Enter and visible-text typeahead keep their existing reach.",
+  "status": "accepted",
+  "supersedes": []
+}

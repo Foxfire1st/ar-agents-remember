@@ -1,0 +1,52 @@
+{
+  "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real failing and passing hooks are installed in both repositories, and a landing refuses on the first and lands on the second.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "content": "sha256:62c9a5cddc51b8275352e3613f48cd5d39202ebfbce82bc8bbbf9a2069de955d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A refused publication gives back refs, index and files, and the memory attribution is read from the committed object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "content": "sha256:62c9a5cddc51b8275352e3613f48cd5d39202ebfbce82bc8bbbf9a2069de955d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Branch races are applied at named seams of the shared publication, and checkout disturbances at named moments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "content": "sha256:62c9a5cddc51b8275352e3613f48cd5d39202ebfbce82bc8bbbf9a2069de955d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

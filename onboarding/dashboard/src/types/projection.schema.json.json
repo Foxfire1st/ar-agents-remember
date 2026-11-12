@@ -1,0 +1,267 @@
+{
+  "path": "dashboard/src/types/projection.schema.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+        "content": "sha256:226243af578a1991bdde83d7cd74b6f6a014c39efb20e48e7a0cbd474ca578c2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-67JYPK",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The schema is the contract the client is generated and checked against, so the fact's shape is stated here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+        "content": "sha256:226243af578a1991bdde83d7cd74b6f6a014c39efb20e48e7a0cbd474ca578c2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-T8YPHW",
+      "invariant": "INV-EQGQ9G",
+      "origin": {
+        "handoffEntry": "L192-W-R199-13",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The served schema carries the same split: `ProviderLimit` present, provider-only node and attention defs gone, so a payload carrying a retired provider field fails validation instead of reaching a panel.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The generated phase enum excludes ledger-commit phases while preserving the code/memory publication vocabulary.\n\nAnchor: `memory`; \"memory-refresh\"; \"direct-memory-commit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:08fd4c678367505913cec7c8f518284e86983114365e0ace8fd824f4a5351510",
+            "locator": {
+              "end": 1562,
+              "kind": "line_range",
+              "start": 1525
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Optional nullable graph cycle flag. [11]",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:de7a9a2b766a346bf335e024dd411cbde184c3bd15734856db8aa94b8382d688",
+            "locator": {
+              "end": 2961,
+              "kind": "line_range",
+              "start": 2946
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Generator separates core JSON schema from served TypeScript tail; entry point can sync/check but was not invoked here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+            "content": "sha256:c18f31c577f41468edd16e036b0729ca9394f2cda2fe7364274e3f716a20df86",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 57
+            },
+            "path": "scripts/sync-projection-types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "527515e1985ecb2b9d7453925878b291e3c617c6",
+            "content": "sha256:9e779eec0a5bb3435a4889ad985fe339292f653ed4f4a290181666889168dc56",
+            "locator": {
+              "end": 497,
+              "kind": "line_range",
+              "start": 471
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/projection_types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The generated dependency requires id/title with optional reference, and TaskEntry retains eventAt without task-event ageSeconds.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:28ece8176b3079718fe68b53b0699ea398356ddeaa64ead23615cc7eb26b4d96",
+            "locator": {
+              "end": 2543,
+              "kind": "line_range",
+              "start": 2508
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:a62e52110d70c6915b6cfac3e59f21f770f8b72e83e49c417e9137ef9cbf6582",
+            "locator": {
+              "end": 2821,
+              "kind": "line_range",
+              "start": 2642
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Generated TaskEntry disagreement references and the four-kind closed object preserve qualified record identity and optional discrepancy detail. Schema shape alone is not reconciliation.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:4fff23359a56b850b9fde5ac1cb651839f91cc207f9a5c1797a67d4f44eeac83",
+            "locator": {
+              "end": 2688,
+              "kind": "line_range",
+              "start": 2674
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:b0655f9af5de3025e2bcdd48921d052387ff776d332aa46dd99e0a51d1015b3c",
+            "locator": {
+              "end": 3190,
+              "kind": "line_range",
+              "start": 3119
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `$defs` block contains all reusable projection schema definitions.\n\nAnchor: \"$defs\"; `$defs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:3d163ef9c8b6f0b233ca0b1ea53c0aa93528cd28d158bfd8aaa82d3b800c0364",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`ActionAvailability` declares reducer-decided action safety for the cockpit.\n\nAnchor: `type`; `ActionAvailability`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:86fcac0c5945509626938cce67b13b16e99be6eae647e0eed2753d8448428d46",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The optional task-intent reference on the lifecycle operation projection.\n\nAnchor: `null`; \"taskIntent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:eb4f79755eff93d54725906fe8bf4c1690bbce5de6de74236e9e572c92fdf856",
+            "locator": {
+              "end": 1648,
+              "kind": "line_range",
+              "start": 1638
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The served closeout-queue node: no `maxItems` on `members`, `maxItems: 256` still on `sourceProblems`.\n\nAnchor: `type`; `members`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:f96067877ac97df77c4da0cf77d05f0e0809220a9ece9807d98580c193fbed3e",
+            "locator": {
+              "end": 450,
+              "kind": "line_range",
+              "start": 388
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The coherent operation envelope generates optional generation, first-class direct-landing kind, bounded legal-control payloads, and terminal/unreadable/incoherent status variants.\n\nAnchor: `type`; \"One coherent, task-addressed lifecycle journal observation.\"; \"incoherent\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e4e981920755181d86e4534e106eab8e46a8ce97",
+            "content": "sha256:71e5839fb83a7787d8ecf6c3ae6051dd016be94dc896294661d807999b936238",
+            "locator": {
+              "end": 1670,
+              "kind": "line_range",
+              "start": 1384
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The generated TypeScript mirror requires the legalControls array on its operation observation.\n\nAnchor: `string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:46894d777463298a1a95031da8c618c203b9bf1480eda1c328419e41a1166d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationProjection"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

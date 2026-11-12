@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/index.css",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The `:root` vars referenced by the base layer.\n\nAnchor: \":root\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3937980214959ecc1e7f07ca0e39bbdf9e91037",
+            "content": "sha256:3eea504bf20b41c4729d3cce40c23851d3ae95b5017e6b0a1a8ca385eb3357c8",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "dashboard/src/styles/tokens.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Panda PostCSS plugin that fills the layers.\n\nAnchor: \"@pandacss/dev/postcss\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "123e830e5b23c02d099d862927f805381a359198",
+            "content": "sha256:6e830312171f300da7870835bf1e57520dde57af125e479f927f821fd5fbe93c",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "dashboard/postcss.config.cjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Exact current six-layer order, root overflow and global pulse/freeze rules; removed WebTUI is not a current owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:3a1f98fcaa7b5dd4c8473ae5c87ae91d6b57a45da0a536be66342490150e8d25",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

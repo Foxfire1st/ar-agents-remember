@@ -1,0 +1,315 @@
+{
+  "path": "dashboard/src/tray/trayStore.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+        "content": "sha256:8509697f77961a35988cd68e5cc67ad19a210dd7bc5d8de8a22f935fe5fddf04",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray store > keeps no bytes of an image refused by the count or the message bound, and keeps a live pick’s bytes"
+        }
+      },
+      "facet": "Count/message refusal stores no image bytes, while a still-live pick preserves its shared image bytes.",
+      "id": "PRF-7Z330Z",
+      "invariant": "INV-TMFQYP",
+      "origin": {
+        "handoffEntry": "TRAY13",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+        "content": "sha256:9284876d022c99738a71eb1ddf5233a1eced2cf421e0700056a474df4bb02df3",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray store > sets the default target once, by the first pick (rule 7)"
+        }
+      },
+      "facet": "Chat passage defaults to its source; an object defaults to shown chat, later picks leave it unchanged, no shown chat gives no default, and explicit prior choice wins.",
+      "id": "PRF-A3DHGR",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+        "content": "sha256:b5aee7e0e574e4b7e68a5b9602d27a688d12ce0646f3c7631b3e45bba71f515d",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray store > lets a first pick on the review page with its column closed wait for the chat the column shows"
+        }
+      },
+      "facet": "A deferred first pick adopts the next shown-chat publication once; explicit choice or leaving the wait blocks later publications from changing targets.",
+      "id": "PRF-A84602",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+        "content": "sha256:6f23a90bb65752dbf017bbae53d3aafcec8f3796f157ec5fc275f31b93b6d198",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray store > keeps whole files of distinct comparisons apart across a reload; the same whole file adds nothing"
+        }
+      },
+      "facet": "Distinct whole-file comparison identities survive a stored reload, while re-adding the same object adds no second pick.",
+      "id": "PRF-B0ACYA",
+      "invariant": "INV-WHB4TJ",
+      "origin": {
+        "handoffEntry": "TRAY01",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+        "content": "sha256:ff340f474144f8adb2ad188636fe8878ec172b027d1caae6986c450e6809ce24",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray store > decides the default again when the last pick is removed, and keeps a target he chose"
+        }
+      },
+      "facet": "Last-pick removal resets an automatic default and pending wait; removing only one of two picks or removing the last with an explicit target preserves the required choice.",
+      "id": "PRF-KEEXBZ",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+        "content": "sha256:2c961d2b95b3af937f69462523169d9c7761f9f0594c06c42e0941138ab1c684",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray store > keeps the tray in memory and says so when the browser storage refuses"
+        }
+      },
+      "facet": "Quota refusal keeps a reference pick with a named memory-only warning; IndexedDB refusal keeps an image pick and removing it clears that warning.",
+      "id": "PRF-M3Q8K0",
+      "invariant": "INV-A595E3",
+      "origin": {
+        "handoffEntry": "TRAY06",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+        "content": "sha256:be9e2b45c3067f70bda9d0815639a2ed821c29af7702ec1c8c86a35e8995f9a4",
+        "locator": {
+          "kind": "symbol",
+          "name": "the tray store > survives a reload: a new store reads the same tray from this origin’s storage"
+        }
+      },
+      "facet": "A new store using the same storage/image store restores three pick kinds, note, free text and target; the image digest remains present.",
+      "id": "PRF-ZAF59K",
+      "invariant": "INV-A595E3",
+      "origin": {
+        "handoffEntry": "TRAY06",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('adds one pick per object: a second ⊕ on the same object adds nothing', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:17b0d0bee1d35be565d7fb776a7efc64505a7bc844812c08a14a10bf9232978f",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 106
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('drops on reading a stored chat passage that names no message time, and keeps the rest', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:6fcb6f9670878c051ba81803c84f957be413ac6498dba4b17a1e5c6ab30cc63b",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 328
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('keeps the tray in memory and says so when the browser storage refuses', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:c75cd1e7f755e0bceb68f84ee3ed6526182620506eced4f677a44486339776a8",
+            "locator": {
+              "end": 361,
+              "kind": "line_range",
+              "start": 349
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('keeps whole files of distinct comparisons apart across a reload; the same whole file adds nothing', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:a35a4e3a9618ae1412d05ac056266fe44068faf13673355925291cb680112234",
+            "locator": {
+              "end": 127,
+              "kind": "line_range",
+              "start": 115
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('keeps no bytes of an image refused by the count or the message bound, and keeps a live pick’s bytes', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:4f1c0fafae84d9240f6f23ff697aec2c811dbf523c28592955191904895199d1",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 147
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('keeps a note that is added, edited and removed, sets it by a quick intent, and removes a pick', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:e4f2d929c7f15f6d1a3be6e456dab2f0dac6e014dcfb98a17437092fd2513b16",
+            "locator": {
+              "end": 197,
+              "kind": "line_range",
+              "start": 185
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('refuses a pick over a bound by name, before it enters', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:3d88b47fcf91e7352ab49de59448e6b90c4666aa5bb2f2017d1e8cbdda38cc98",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 200
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('sets the default target once, by the first pick (rule 7)', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:b15de23645b845ecac20f3329a60a32f5dc8d9d3554c2a04a6532fb516d3b64d",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 217
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('decides the default again when the last pick is removed, and keeps a target he chose', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:640e247f86e0c8856638cf1b57c6ccb63cb30c14d556e3c275051abb3b684578",
+            "locator": {
+              "end": 254,
+              "kind": "line_range",
+              "start": 242
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('lets a first pick on the review page with its column closed wait for the chat the column shows', () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:34a563088b7756be1a5a9d7ab5b476426fb669e2952870795936596014d561f0",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Checks collection identity, bounded admission, first-target policy, persistence and compensation.\n\nAnchor: \"it('survives a reload: a new store reads the same tray from this origin’s storage', async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d76af2b9c438d93988c72533bcbf24c4d1c03aa4",
+            "content": "sha256:f3ed7400c3835b84adaab6c0b59be6e8414207eaa75c86641cf348cc573faf1f",
+            "locator": {
+              "end": 315,
+              "kind": "line_range",
+              "start": 303
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A requirement compressed into fragments is not written text: the reader cannot act on it, and no later check restores what the compression dropped."
+  },
+  "applicability": "Every requirement written into a task issue.",
+  "conditions": [
+    "The requirement's obligations are known from its current packet."
+  ],
+  "exclusions": [
+    "Internal mechanics with no visible effect, which are dropped.",
+    "Measurements, figures, ports and dates, which stay as the requirement states them."
+  ],
+  "id": "INV-RS3GFG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "All 16 leaf bodies rewritten; L183 at outcome level 59,945 B with its frame sections unchanged; the 92,576-B packet-clause draft was not used."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "PUB-07-r35-full-sentences-outcome-level",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every leaf requirement is written at the level of outcomes in full grammatical sentences: what a person sees and does, what the product does in reply, the visible refusal names and the limits; internal mechanics are dropped or folded into the outcome they serve, never compressed into fragments.",
+  "status": "proposed",
+  "supersedes": []
+}

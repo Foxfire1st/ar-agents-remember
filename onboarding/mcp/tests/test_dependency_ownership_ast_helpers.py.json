@@ -1,0 +1,199 @@
+{
+  "path": "mcp/tests/test_dependency_ownership_ast_helpers.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+        "content": "sha256:684cb64a528a0e5f81c560ac1ab49bb611da8cbf8b448ba902a77443a52c1bf7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_repository_inputs_reach_their_supported_consumers"
+        }
+      },
+      "facet": "The ownership graph accepts the layers.toml declaration only when it matches independently observed consumers, while unknown ownership remains incomplete.",
+      "id": "PRF-272X8D",
+      "invariant": "INV-YYFPVG",
+      "origin": {
+        "handoffEntry": "MIK-R206 item 6",
+        "leaf": "260928-MIK-L197"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+        "content": "sha256:57b406ba201a99a6b4b375107efefe15f8601638942c42cfa6e7ec0ea9722014",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_catalog_that_does_not_parse_fails_these_checks_with_the_recovery_sentence"
+        }
+      },
+      "facet": "A catalog that does not parse gives the production-proof checks the shared recovery sentence, not a bare parser error.",
+      "id": "PRF-QADP85",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "L42-restore-PRF-113HT2",
+        "leaf": "260928-MIK-L42"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+        "content": "sha256:c0f0bd3c74e5301bb3958196c43e4518a58a350ddf492a29ccc6138a1c1a40ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "_load"
+        }
+      },
+      "id": "RLZ-QAHHXF",
+      "invariant": "INV-K0CS85",
+      "origin": {
+        "handoffEntry": "MIK-R51@v1-union-merge-checked",
+        "leaf": "260928-MIK-L51"
+      },
+      "rationale": "The helper guard reads the lifecycle catalog through read_catalog, so a catalog that does not parse gives its checks the recovery sentence.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "Anchor: Schema and declared/reference identity equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:f1478000d770da2dee3e69937fb94fb64f821bac5971c1c8a7f53b24b3476787",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Anchor: The governing artifact discovery rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce3cde113e7a8b3f96d10aeda24fb596e7d676f5",
+            "content": "sha256:b95aa1102a23a8f4823b7dd407a2bd73d11ade6dd2bfe159c88a1b95cba410fc",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_governance.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Anchor: Malformed-catalog assertion preserves the shared recovery sentence and path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:57b406ba201a99a6b4b375107efefe15f8601638942c42cfa6e7ec0ea9722014",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 66
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Anchor: Actual repository-input consumers and explicit no-consumer case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:b3f47c9f58ffc9b10060ff4b2b970d2a0c6ff1a381e8c34b06fda3a77dfdf712",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchor: Current closure/identity test, not the removed completion-proof guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:1b076a2c580d312e7644952166e9989350e31fc335d9100c122b291144b3d098",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "62": {
+      "note": "Anchor: The same real dependency census.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:b3f47c9f58ffc9b10060ff4b2b970d2a0c6ff1a381e8c34b06fda3a77dfdf712",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 35
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "63": {
+      "note": "Anchor: Current complete governed/cataloged closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:3672aed0c66c9a13bdcaaf2d3042e26f7c8fc9bc2049a720a17f501987701a9d",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Anchor: Governed/cataloged equality and inventory validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3cb4acefc75918dfb35141065f94992c7937eebd",
+            "content": "sha256:3672aed0c66c9a13bdcaaf2d3042e26f7c8fc9bc2049a720a17f501987701a9d",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

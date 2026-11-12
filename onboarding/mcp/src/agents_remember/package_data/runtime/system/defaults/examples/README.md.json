@@ -1,0 +1,58 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/README.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The README states that examples are split by target folder rather than by inferred ownership from file names.\n\nAnchor: \"Examples are split by target folder\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "861c0d40c90897a18ebc8da2d1e4bb888c32bed4",
+            "content": "sha256:16bab5012b5495ba958f4f77c2e53bf0c2dc2b3b1e92de00d3ce338e95fec509",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The README defines coordinator examples as workspace-wide instructions and tools, memory-repo examples as rules for their own code repository, and names the memory-repo task-publication.md landing-flow starter and the code quality report template.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "861c0d40c90897a18ebc8da2d1e4bb888c32bed4",
+            "content": "sha256:ee4f13773506780167fc00b11b9c4a19650c5bc5565d79a20be9a8a1970b9a0c",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Coordinator files route agents through product context resolution before repository-specific work.\n\nAnchor: `context_packet`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "861c0d40c90897a18ebc8da2d1e4bb888c32bed4",
+            "content": "sha256:02316b8a2acf9b77abd01ae56391f03842cf2e0e42e318a5e30fe227cc75ff0d",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

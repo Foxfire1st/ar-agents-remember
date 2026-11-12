@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_line_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "line_changes counts a resolved range by the reviewer's rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e73a9ac5e31090ef1f38e4b6fc234c5481bc7c0f",
+            "content": "sha256:67aa1940dc556dcc377f5e674043407f15d88bc49f995ae4b9caf1e3b34b5dee",
+            "locator": {
+              "kind": "symbol",
+              "name": "line_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

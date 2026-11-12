@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T19:16:43+02:00 |
-| lastVerifiedCommitHash | `e0820b04a499cbfb2079c78485346c50917a238a` |
-| lastVerifiedCommitDate | 2026-09-13T18:02:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [activation overview](overview.md)
@@ -75,35 +65,25 @@ repository and exact contract path needed for a subsequent read-only `worktree_s
 The source is an uncommitted candidate. Closeout owns the eventual commit-derived verification
 stamp; this sidecar does not claim acceptance or Gate 5 evidence.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- Request fields define the optional contract, requested identity, activation observation, and edge-evidence inputs. [1]
+- The public projection assembles requested identity, contract fingerprint, activation, retry, and status evidence while bounding its public detail. [2]
+- Requested identity resolves the canonical master reference and the exact contract path with no source-pair fallback. [3]
+- The activation projection retains observed state, contract fingerprint, bounded detail, and exact selected identity. [4]
+- The status action keeps the repository and exact contract path for a read-only `worktree_status` call. [5]
+- Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states. [6]
+- The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. [7]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Request fields define the optional contract, requested identity, activation observation, and edge-evidence inputs. | `AtomicSeriesAdmissionRequest` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:18-30 |
-| The public projection assembles requested identity, contract fingerprint, activation, retry, and status evidence while bounding its public detail. | `atomic_series_admission_projection` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:33-74 |
-| Requested identity resolves the canonical master reference and the exact contract path with no source-pair fallback. | `_admission_requested_identity` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:77-89 |
-| The activation projection retains observed state, contract fingerprint, bounded detail, and exact selected identity. | `_admission_activation` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:92-116 |
-| The status action keeps the repository and exact contract path for a read-only `worktree_status` call. | `_admission_status_action` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:119-137 |
-| Retry guidance distinguishes vacant, unreadable, and general contract-scoped correction states. | `_admission_retry_precondition` | mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py:140-158 |
-| The response model carries the contract fingerprint, activation, retry precondition, and status action with no classification, blocking, or source-pair field. | "class AtomicSeriesAdmission(StrictResponseModel):"; "class AtomicSeriesAdmissionActivation(StrictResponseModel):" | mcp/src/agents_remember/models/worktree.py:205-218; mcp/src/agents_remember/models/worktree.py:180-192 |
-| Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail. | "def test_registered_sync_refusal_addresses_only_this_contracts_own_state(self) -> None:"; "def test_registered_status_and_sync_bound_oversized_unreadable_detail(self) -> None:" | mcp/tests/test_activation_admission_registered.py:178-222; mcp/tests/test_activation_admission_registered.py:268-321 |
+- Registered forcing proves a sync refusal addresses only this contract's own state and bounds oversized unreadable detail. [8]
 
-## Cross-Repo References
+
+### Cross-Repo References
 
 No cross-repository source is configured for this memory root.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-
-## Update History
-- 2026-09-13T14:19:25+02:00 — Contract-scoped admission: rewrote Purpose/Logic/Conventions/Invariants so the projection emits `contractFingerprint` plus activation, retry precondition, and status action, removed the classification, blocking, and source-pair keys and the whole cross-contract blocker story, and recorded the contract-scoped vacant/unreadable/general retry wording. Citations rebound to the frozen source; verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-08T19:16:43+02:00 — CCR-L38 CQ04 preparation rebound the public admission `detail` field to the shared 8192-character diagnostic bound, preserving oversized parser-error evidence through structured refusal output without mutation or acceptance claim.
-- 2026-09-08T18:54:49+02:00 — CCR-L38 CQ01 preparation reconciled admission unreadable-detail projection with the shared bounded diagnostic helper. Concrete validation evidence remains available under the public response limit, with no authority mutation or acceptance claim; verification remains closeout-owned.
-- 2026-09-08T17:36:08+02:00 — CCR-L38 source-grounded preparation added the one-to-one sidecar for the current `atomic_series_admission.py` diagnostic projection. The source remains uncommitted; the base metadata is retained and closeout owns the eventual verification stamp. No acceptance or Gate 5 claim.

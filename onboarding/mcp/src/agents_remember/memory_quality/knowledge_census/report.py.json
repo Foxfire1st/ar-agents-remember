@@ -1,0 +1,104 @@
+{
+  "path": "mcp/src/agents_remember/memory_quality/knowledge_census/report.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A slice by route or kind, with counts and measures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b402e6d421e3388cc4265b019e6498b4159abba",
+            "content": "sha256:75c36f7a5611d1adb57c3c587bd10672cf4ba40b1fd909072e262b7272e21979",
+            "locator": {
+              "kind": "symbol",
+              "name": "Slice"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "A route line: governing status and this census's history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b402e6d421e3388cc4265b019e6498b4159abba",
+            "content": "sha256:0904da7ed123124e155e4e61e9b30a49a06aebad575f5ba5b794d14bf2e76018",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteLine"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The report's text and JSON forms.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b402e6d421e3388cc4265b019e6498b4159abba",
+            "content": "sha256:b903503490a9dfa00a2b0e3c0b0d48aecf6e0dbd716c4beb05ee968c0754cb54",
+            "locator": {
+              "kind": "symbol",
+              "name": "CensusReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One census's report; route status governed across the tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b402e6d421e3388cc4265b019e6498b4159abba",
+            "content": "sha256:2d7a524cc936194c7a04a4888edf8bfa39ade97a8ebf635c0c9a337d1010a78b",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_report"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Every census, or one; an unknown ID refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b402e6d421e3388cc4265b019e6498b4159abba",
+            "content": "sha256:49ac290a200df84527dab8219dff4d1973bd3871901e453ec9e2037e5f4cf93d",
+            "locator": {
+              "kind": "symbol",
+              "name": "census_reports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The report on the fixture census matches the conforming example.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f86d20bf0fec7d5d1d7a06e51767968b6725696",
+            "content": "sha256:96ef1338ce931ef2e2765dee035c52f27face146f96f753c8d941d1248098090",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_report_on_the_fixture_census_matches_the_conforming_example"
+            },
+            "path": "mcp/tests/test_knowledge_census_report.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,14 +1,22 @@
 # mcp/src/agents_remember/application/read_files.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/application/read_files.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `0506b57a1a80e0b377e9cc3303e1841d3bd4799a` |
-| lastVerifiedCommitDate | 2026-09-01T12:17:08+02:00|
-| governingOverview      | `overview.md`                              |
+## Governing Overview
+
+[overview.md](overview.md)
+
+## Current operative account — MIK-R109
+
+`read_ar_files_tool` names governing knowledge for one to `READ_AR_FILES_MAX_PATHS` (20) repository-relative path strings. It resolves admitted context once, measures record states at the code checkout's HEAD tree, and returns per-path existence, a readable governing card location or none, state counts/card state and bounded action-asking record names/headings. Each named row also carries two counts taken from one reader selection over the same memory tree: `openWeaknesses`, the open weaknesses anchored to the file, and `dependentDocuments`, the documents that stand on it. Either is absent at zero and neither carries record text; a count that could not be taken is said in the row's `statesProblem` rather than answered as zero, without replacing a problem sentence the row already had, and an unconverted tree carries neither count. Source text, card text, sidecar bodies and overview text never leave this answer. Missing/unconverted memory names no card; unavailable HEAD leaves states unmeasured. A confined outside path is refused in its row without losing valid siblings. Existing sidecar storage and authoritative route-index decisions remain; overview locations are deduplicated once per call, deeper-first and deterministic. There is no published_intent payload, source-range parser, refresh/reset-marker consumer, served ledger or continuation. There is no ambient read.packet emission or per-file event-facts accumulator; completed-call observation belongs to the separate response boundary. Removed refresh is refused by the payload boundary, while object/non-string entries are refused here with argument-removed.
+
+## Current source contract evidence
+
+
+- The addressed read names governing knowledge only; it emits no ambient read.packet or source/card content.
+
+
+## Historical original card — all remaining original prose and evidence are non-operative
+
+The complete original account below, including Purpose, Commentary, invariants, dated notes and evidence captions, is retained only for custody. It grants no current callable tool, inline-text result, session deduplication, database read or execution acceptance.
 
 ## Purpose
 
@@ -17,6 +25,14 @@ It resolves a batch of up to five paired source+onboarding reads of repo-relativ
 paths inside an AR-managed repo, returning a plain dict the payload module wraps.
 Resolution lives here (not in the payload module) so a later dashboard
 `GET /api/files` route can reuse the same logic.
+
+Since 260921-ICR-L19@v1 the same call is also the ordinary route to the repository's **published
+intent**: the payload carries a `published_intent` block beside `files`, resolved from the same
+`CoordinationContext` and read through the shipped selective read at the dataset's own snapshot. The
+selection, the seeds and the named absences belong to `application/published_intent.py`; this module
+only carries the block.
+
+Reads paired source and onboarding and attaches the existing published-intent and front-door context.
 
 ## Code Commentary
 
@@ -41,11 +57,40 @@ assembles the payload, optionally attaching the deduped front-door, and finally
 emits a facts-only `read.packet` — passing `repo.repo_id` (slice 07b, so the
 packet carries `data.repoId`, the read's repo) alongside the per-file facts.
 
+**The payload also carries `published_intent`** cit:([`published_intent_block`], mcp/src/agents_remember/application/published_intent.py:464-479), attached at
+the assembly from the same context and the paths this call was addressed at cit:(["published_intent", `memory_format`, `legacy_published_intent`], mcp/src/agents_remember/application/read_files.py:162-170) and imported from its owning module
+cit:([`published_intent_block`], mcp/src/agents_remember/application/read_files.py:36-36). The key is present on **every** call, including when the
+repository publishes nothing yet, because "nothing is recorded" is an answer a fresh planner needs and an
+omitted block is indistinguishable from a route that never ran; every one of its failures is carried
+inside the block, so it can never cost the caller the source and onboarding bytes this call exists to
+return. The block's three decisions, its named states and its bounds are documented in
+`application/published_intent.py.md`.
+
+**Since MIK-R24 (rules 5 and 9) what the block holds depends on the memory tree's format**
+(`application/read_files_format.py`). The format is `text/v2` exactly when the memory root (the
+onboarding root's parent) holds `knowledge/layout.json`.
+
+- **Converted tree.** `published_intent_block` runs as described above, and each file result that has
+  onboarding also gets `format: "text/v2"`, the card's sidecar and its resolved references
+  (`converted_card_parts`).
+- **Unconverted tree.** The block is `legacy_published_intent`: `state: "legacy-format"`, the memory root,
+  and a detail naming both conversion routes. No knowledge section is read, and each file result that
+  has onboarding is marked `format: "legacy-format"`, with the Markdown returned as it is. The old format
+  is never misread as the new one.
+
+**The legacy-format read is active in this build (architect ruling, 2026-09-29).** It therefore changes
+what this build's `read_ar_files` returns on today's unconverted trees: the database publication is no
+longer served through this route. This build is not installed before MIK-R37. The ICR-R19 route cases
+(`tests/test_read_ar_files.py`) now measure the database block through `published_intent_block` directly,
+and the converted-tree route is covered through `read_ar_files` itself
+(`tests/test_knowledge_conversion_toolchain.py`). The taskless `knowledge_read`, `knowledge_diff` and
+`knowledge_project` tools are unchanged.
+
 **`FileReadStatus` is declared in `models/read_files.py`** cit:([`FileReadStatus`], mcp/src/agents_remember/models/read_files.py:29-29) — the onboarding-lookup outcome
 for one requested path, `found | missing | disabled | unsupported |
 not_requested` — with `VALID_FILE_READ_STATUSES` derived from it by `get_args`
 cit:([`VALID_FILE_READ_STATUSES`], mcp/src/agents_remember/models/read_files.py:32-32); this module imports the alias
-cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:52-52). 260731-EFA-L4 moved the declaration here from
+cit:(["from agents_remember.models.read_files import FileReadStatus"], mcp/src/agents_remember/application/read_files.py:73-73). 260731-EFA-L4 moved the declaration here from
 `models/read_files.py`; the later staged reversal moved it back, because the
 alias is served wire vocabulary and the model side owns it (see Update History).
 The deciding direction is unchanged: `_resolve_onboarding` is the only function
@@ -53,7 +98,7 @@ that decides the value and `_read_one` drops it into an untyped payload dict, so
 `test_wire_vocabulary_exhaustiveness` asserts the set this function actually
 returns *equals* the declared alias.
 
-`_parse_file_request` cit:([`_parse_file_request`], mcp/src/agents_remember/application/read_files.py:139-160) validates one entry: a non-empty repo-relative `path`; an
+`_parse_file_request` cit:([`_parse_file_request`], mcp/src/agents_remember/application/read_files.py:187-208) validates one entry: a non-empty repo-relative `path`; an
 `onboarding` flag (default true; only `False` suppresses the lookup); and a
 `source` that is either `"full"`/absent (whole file) or a `{startLine, endLine}`
 dict. The range is validated up front — both ends must be integers `>= 1` and
@@ -80,7 +125,7 @@ source-omitted (`None`, byte count 0) so one bad file never aborts the whole
 batch. The returned byte count is the UTF-8 length of what was returned — a fact
 for the event, never the content.
 
-`_resolve_onboarding` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:209-238) returns
+`_resolve_onboarding` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:262-291) returns
 `tuple[FileReadStatus, str | None, bool]` — `(status, body, attach)`. Since
 260731-EFA-L4 the first element is **narrowed to the alias this module imports**
 rather than a bare `str`. With onboarding
@@ -100,16 +145,28 @@ a direct `mirror_onboarding_path` file probe so a repo with sidecars but no buil
 index still resolves. A route index that says covered but whose sidecar is
 unreadable reports `missing` (don't probe further).
 
-`_attach_front_door` builds the session-deduplicated front-door: the repo overview
+`_attach_front_door` builds the front-door deduplicated by lifecycle and resolved code/onboarding roots: the repo overview
 (`overview.md` at the onboarding root via `_repo_overview`) plus the governing
 route-overview chain for each requested path (`_governing_route_overviews`, nearest
 folder first, excluding the repo root which is delivered as `repository_overview`).
 Each piece is hashed (`_content_hash`, `sha256:`) and run through `_should_serve`:
 with no active lifecycle there is no ledger so everything is served (best effort);
-otherwise a piece is served only when `amb.is_served` says it is new or
-content-changed, and `amb.record_served` records it. Each request path is
+otherwise `_overview_scope_key` hashes the resolved code and onboarding roots into the
+repo/route overview kind, and a piece is served only when `amb.is_served` says it is new or
+content-changed for that lifecycle and root pair; `amb.record_served` records that same identity. Each request path is
 re-`_confined_rel`'d here so the front-door's route derivation never depends on
 `_read_one` having confined it first.
+
+**Since MIK-R05 the block has one rendering here: `served_earlier`** (rule 4). On a converted tree the
+assembly wraps `published_intent_block(...)` in `_chain_rendered(block, amb, lifecycle_id)`, which calls
+`knowledge_leaf.chain.shorten_served` with a callable over the same `_should_serve` ledger the front-door
+uses, under a distinct kind, `_KIND_CHAIN_FAMILY` = `knowledge_chain_family`, keyed by family ID. A
+`chain_family` row already served to this lifecycle, and unchanged since, comes back as a `served_earlier`
+reference row in the same position, so the block's counts, manifest and continuations are those of the full
+selection. The selection is not changed here, and `knowledge_read` never shortens. A chain entry returned
+through `knowledge_read` does not count as served; `refresh=true` and the compact-reset marker re-serve it,
+and with no active lifecycle every row is served in full, exactly like the overviews. The unconverted branch
+(`legacy_published_intent`) is not wrapped, so unconverted reads are unchanged.
 
 `_maybe_reset_served` is the MCP-side **consumer** of the compact-reset marker
 (`<observer_root>/workspace/compact-reset.json`, named by `_COMPACT_RESET_MARKER`):
@@ -152,13 +209,41 @@ ever appears it is honored once.
   repo (a fact, distinct from the lifecycle's envelope `repoId`).
 - The route-index public surface is consumed read-only here; the small private
   nearest-route prefix walk does not extend it.
+- **The published-intent block is additive and never fatal.** It is resolved from the same context and
+  attached on every call, and it answers with a named `state` (`recorded` / `not-recorded` / `unusable`)
+  instead of raising, so the paired source+onboarding bytes this entry point exists to return are never
+  lost to a missing, corrupt or foreign publication. The block's selection is not made here:
+  `application/published_intent.py` owns it, and this module must not re-derive a dataset path or a seed.
+- **Only this entry point deduplicates chain entries, and only by rendering** (MIK-R05 rule 4): the shortened
+  row still counts, and overview attachment is unchanged (MIK-R05 Preservation; the front-door dedup tests
+  pass unchanged). The chain kind is distinct from `_KIND_REPO_OVERVIEW` and `_KIND_ROUTE_OVERVIEW`.
+- **A requested path is carried into the block unchanged.** The block is seeded with `request.path` for
+  every parsed request, so a path this entry point accepted is the path the intent read is asked about;
+  path confinement and the intent seed are one spelling, not two.
 
-## Repo-Internal References
+### Role Runtime and Scope
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The thin payload wrapper that returns this application entry point's dict through the token choke point. | `read_ar_files_payload` | mcp/src/agents_remember/mcp/tools/read_files.py:13-22 |
-| The strict response contract this dict validates against; `FileRead.status` is typed by the `FileReadStatus` alias declared in that model. | `FileReadStatus` | mcp/src/agents_remember/models/read_files.py:29-29 |
+Overview dedup now keys each lifecycle entry by both resolved code root and onboarding root through _overview_scope_key. Identical relative overview paths/content from different admitted leaves no longer suppress each other. The published-intent chain shortening and the MIK knowledge projection remain their existing separate logic.
+
+## Evidence
+
+### Repo-Internal References
+
+
+- The thin payload wrapper that returns this application entry point's dict through the token choke point. [1]
+
+
+- **The published-intent half this entry point attaches: the owning module's public surface, the import it arrives through, and the assembly line it is attached at.** [2]
+
+
+- **The memory-format switch: a tree counts as converted only when it carries the layout marker, a readable dataset selection and the text format; anything else is `unconverted` and names no card.** [3]
+
+
+- The import of the format helpers. [4]
+
+
+- The strict response contract this result validates against: `ReadArFilesResponse`, whose per-path `NamedFile` types the card location, the record counts, the action-needed records and the refusals. [6]
+
 
 | Repo-resolution authority guard. | `require_repo` | mcp/src/agents_remember/kernel/authority.py:16-24 |
 | The authority-violation error raised on a bad batch/range/path. | `AuthorityError` | mcp/src/agents_remember/errors.py:110-116 |
@@ -171,36 +256,7 @@ ever appears it is honored once.
 | The ambient lifecycle: `read.packet` emission and the served-onboarding dedup ledger consumed here. | `emit_read_packet` | mcp/src/agents_remember/observer/ambient.py:426-453 |
 | The observer-root resolver locating the compact-reset marker. | `observer_root` | mcp/src/agents_remember/serving/projections/paths.py:32-34 |
 
+### Runtime Source References
 
-## Update History
 
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Split three pooled helper claims and distinguished the ordinary symlink-resolving confiner from the stricter artifact confiner. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `AuthorityError` repointed to mcp/src/agents_remember/errors.py:110-116. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
-
-- 2026-08-04T18:16+02:00 — 260731-EFA-L6 S18-B16 curator: resolved the 4 manifest-assigned findings the W1-B10 pass had preserved as Tier 3. The staged reversal has since landed in the frozen source, so the false status-ownership claims were corrected to it: `FileReadStatus`/`VALID_FILE_READ_STATUSES` are declared in models/read_files.py L29/L32 and this module imports the alias at L46 — ownership paragraph, the vocabulary invariant, the models table row, and two history line-spellings now say so. Scoped fixer + non-fixing recheck green under the frozen snapshot; verification metadata unchanged.
-
-- 2026-08-02T16:45:41+02:00 — 260731-EFA-L6 curator W1-B10: repaired 21 citation findings (9 rows/prose pointers); preserved false status-ownership claims as Tier 3; scoped recheck clean except 4 preserved Tier-3 findings.
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. The rename itself changed no behavior. **FLAGGED, NOT FIXED — this body is stale for a reason that is NOT the rename, and the curator who owns that change should repair it.** A separate staged change in the same code worktree moved `FileReadStatus` and `VALID_FILE_READ_STATUSES` back OUT of this module into `models/read_files.py` (now L29 and L32 there); this module imports the alias at L43 and declares neither. That reverses the 260731-EFA-L4 decision recorded below, so the "**This module declares `FileReadStatus`** (line 54)" claim in `Code Commentary`, the `VALID_FILE_READ_STATUSES` (line 57) claim, and the L54/L57/L146/L216-L218 anchors are all false against the current worktree. The claims are left verbatim rather than rewritten into something plausible, because the intent behind the reversal belongs to that change, not to this one. `_should_serve` also moved from `amb.is_served`/`amb.record_served` to `amb.served.is_served`/`amb.served.record`, which this card does not mention either way. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T09:42+02:00 — 260731-EFA-L4 curator: body updated. This module now DECLARES
-  `FileReadStatus` (line 54) and the derived `VALID_FILE_READ_STATUSES` (line 57); the alias moved here
-  from `models/read_files.py` because `_resolve_onboarding` is the only function that decides the
-  value, and its signature is now `-> tuple[FileReadStatus, str | None, bool]` cit:([`_resolve_onboarding`], mcp/src/agents_remember/application/read_files.py:209-238) instead
-  of `-> tuple[str, ...]`. The card had described the status vocabulary only as the returned tuple's
-  first element with no type and no owner. Added the ownership paragraph and the matching
-  invariant. Citations: `_parse_file_request` L146 and `_resolve_onboarding` L216-L218 pinned; the
-  `models/read_files.py` reference row now names `FileRead.status` L35 as the importer, and a row
-  was added for the exhaustiveness suite. Verification metadata pinned until closeout stamps the
-  L4 commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: the `resolve_coordination_context` call moved onto the
-  resolver's `CoordinationHints` / `EnclosureSelector` parameter objects; the rest of the file was
-  touched only by the whole-tree `ruff format`. Batch limits, status vocabulary, dedup and the
-  `read.packet` emission are unchanged. Verification metadata pinned until closeout stamps the L2
-  code commit.
-- 2026-06-28T22:41+02:00 — operations-integration L1: extracted the path-confinement guard (`_confined_rel`) and the sidecar-pairing helpers (`_route_sidecar_status`/`_governing_indexes`/`_load_route_index`/`_sidecar_body`) into `kernel/sidecar_pairing.py`, shared with the new dashboard `serving/files.py`; they are now imported here under their former private names. Behavior-preserving — the slice-07 suite is unchanged. References updated (the direct `meaningful_body`/`mirror_onboarding_path`/`sidecar_status` rows now flow through `sidecar_pairing`). Verification metadata pinned until closeout stamps the L1 code commit.
-- 2026-06-23T01:40+02:00 — Slice 07b v1: the controller now passes `repo.repo_id` to `emit_read_packet`, so the emitted `read.packet` carries `data.repoId` (the read's repo). Body + invariant note only — verification metadata pinned until closeout stamps the slice-07b code commit.
-- 2026-06-23T00:53+02:00 — Slice 07 (S5): retargeted the compact-reset note — the `compact-reset.json` **producer** is **not** a session-hook concern; it is deferred to the post-3.0 agentic-control-plane follow-up (fresh-worker / new-lifecycle = fresh ledger). `_maybe_reset_served` (consumer) + the `refresh=true` path remain as defensive scaffolding; `refresh=true` is the working manual reset. Docstring text only. Verification metadata pinned until closeout stamps the slice-07 code commit.
-- 2026-06-22T22:33+02:00 — Created for slice 07 (S2+S3): the `read_ar_files` controller — paired source+onboarding batch reads (≤5 files), the net-new `_confined_rel` path-confinement guard, ranged/full source read, storage-mode + route-index onboarding lookup (present→found, absent→missing without probing, external-as-sidecar), the session-deduped front-door auto-attach (repo overview + governing route chain + sidecar `meaningful_body`), facts-only `read.packet` emission, and the `refresh` + compact-reset-marker consumer (the marker producer is deferred to slice-07 S5 / Probe B). Verification metadata pinned until closeout stamps the slice-07 code commit.
+- The batch's overview locations: each named path contributes its ancestor chain, every overview is listed once for the call, and deeper chains sort before their ancestors. [7]

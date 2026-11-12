@@ -1,0 +1,181 @@
+{
+  "path": "dashboard/src/panels/review/top-line/ComparisonSelector.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+        "content": "sha256:f7f4bcdc17098463012e356bf2e7183623d0f76a5dfa2e46ef90b5943ed0e02a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonSelector"
+        }
+      },
+      "id": "RLZ-2W3B3Z",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It exposes recorded numbers and clears the menu on the reader choice.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+        "content": "sha256:f7f4bcdc17098463012e356bf2e7183623d0f76a5dfa2e46ef90b5943ed0e02a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonSelector"
+        }
+      },
+      "id": "RLZ-6DBQ2Q",
+      "invariant": "INV-FGDCZG",
+      "origin": {
+        "handoffEntry": "TRAY14_QUIET_OBJECT_CONTROL",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The comparison label is the host for its optional named change-set offer; an absent pick supplies no offer.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+        "content": "sha256:0ba0ee6b7c3e95ed4a58dd6e0b6e4511b260085df47035b260b61752f7d7e86d",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeliveredOption"
+        }
+      },
+      "id": "RLZ-H40RCV",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "Offers the delivered pair as the menu's own default row, so the default is reachable from the selector whichever number holds that pair.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+        "content": "sha256:8283a3a364fb574b74252b49cc25b42fba4b3e9881fb94bc07fff1fa4a8a6784",
+        "locator": {
+          "kind": "symbol",
+          "name": "addSlot"
+        }
+      },
+      "id": "RLZ-PTHDAG",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It reserves the widest taken-state add control instead of letting the adjacent chip move.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+        "content": "sha256:f7f4bcdc17098463012e356bf2e7183623d0f76a5dfa2e46ef90b5943ed0e02a",
+        "locator": {
+          "kind": "symbol",
+          "name": "ComparisonSelector"
+        }
+      },
+      "id": "RLZ-Q1YCQD",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It reserves the adjacent label/add widths so their state changes do not consume the chip place.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Reserved widths\n\nAnchor: \"const label = css({ display: 'inline-block', minWidth: '14ch', textAlign: 'start' });\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:8249a1f80022674f829c83748671d94b63fbba8d64f5de373ef4b1c1b4f00905",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shown time, current row and latest/read-only labels\n\nAnchor: `function ComparisonOption({ number, shown, latest, delivered, recordedAt, now, choose }: OptionProps) {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:3ab5de9616e45ab783531e4f30b6f4fb8c826876dbbcaea1efa612fd9543c400",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 117
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Descending menu, the two callbacks and the tray pick\n\nAnchor: `export function ComparisonSelector({ leaf, shown, resolved, delivered, recordedAt, now, latest, onChoose, onChooseDelivered, pick, buttonRef }: ComparisonSelect`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:f7f4bcdc17098463012e356bf2e7183623d0f76a5dfa2e46ef90b5943ed0e02a",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 168
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The delivered pair has its own row that chooses the page's default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:0ba0ee6b7c3e95ed4a58dd6e0b6e4511b260085df47035b260b61752f7d7e86d",
+            "locator": {
+              "kind": "symbol",
+              "name": "DeliveredOption"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "A recorded number is labelled delivered, latest or read-only from the supplied delivered value and highest number.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c24ee38198136ad641b3a888f927d115e2f8fd46",
+            "content": "sha256:3ab5de9616e45ab783531e4f30b6f4fb8c826876dbbcaea1efa612fd9543c400",
+            "locator": {
+              "kind": "symbol",
+              "name": "ComparisonOption"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation is realized in the report function and in the mounted row that answers it, and it exists because two surfaces reporting different route sets would make a curator's placement unverifiable from the tool answer."
+  },
+  "applicability": "Every answer that reports a family's routes to an agent: the knowledge-routes command and the knowledge_integrity_check answer.",
+  "conditions": [
+    "The memory tree is readable and, when a suggestion is asked for, the code root is a Git checkout."
+  ],
+  "exclusions": [
+    "A code root that is not a Git checkout: the family's own routes and state are still reported, and the suggestion is stated unavailable rather than guessed.",
+    "A route is never written by either surface."
+  ],
+  "id": "INV-XYD593",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R73@v1 rule 4; the function behind knowledge-routes is the one the integrity check's routes answer calls"
+      ],
+      "path": "handoff-draft-4.json"
+    },
+    "handoffEntry": "R73-R4",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The routes report is answered by one function, so the curator's command and knowledge_integrity_check return the same routes, route state and mechanical suggestion for a family.",
+  "status": "proposed",
+  "supersedes": []
+}

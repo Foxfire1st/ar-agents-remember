@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+    "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+    "locator": {
+      "kind": "symbol",
+      "name": "_register_installation_tools"
+    },
+    "path": "mcp/src/agents_remember/mcp/registration/core.py"
+  },
+  "id": "WKN-BQ3A0A",
+  "kind": "context",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-weakness-06",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The served descriptions of runtime_install and server_info tell of provider assets, provider watchers and provider keys, which every agent reads although no part of the product starts or queries a provider."
+}

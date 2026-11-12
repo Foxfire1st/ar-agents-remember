@@ -1,0 +1,144 @@
+{
+  "path": "mcp/src/agents_remember/providers/cgc/lifecycle/process_control.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+        "content": "sha256:e1ad7965a2867ab847ad207bb2a5331fafafe99f93cd03b34f2f1ec5efbfca63",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-C6NAWW",
+      "invariant": "INV-XZ48GR",
+      "origin": {
+        "handoffEntry": "L192-W-R199-03",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The cgc process-control module keeps its stop closure and the shared result helper, and no longer carries the start-only chain that lost its caller.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+        "content": "sha256:e1ad7965a2867ab847ad207bb2a5331fafafe99f93cd03b34f2f1ec5efbfca63",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WPM3CT",
+      "invariant": "INV-M8V5ZA",
+      "origin": {
+        "handoffEntry": "L192-W-R199-07",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The stop-side process control that renders those templates is retained while its start-only half is gone.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Shared process helpers provide durable namespace checks and command execution.\n\nAnchor: \"def process_namespace_status() -> dict[str\"; \"def run_command(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "337ede2a94b54f8ec9ed9a95d5597c700991e152",
+            "content": "sha256:d07740071a26e48f00680a992b67403463c24834ff51b0dca629662803963f0a",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/command_runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46d785a42fdf7e9a82640d6dd94104b2b8a39dbb",
+            "content": "sha256:5362c901ebf8a3448b38dd62bd79702baca882cde2dd5f0624a64cfbfa105f59",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/providers/lifecycle/process_status.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "cgc_backend_start is a retained backend implementation outside this process-control chain; this module retains the stop-class closure and delegates watcher service removal to Compose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:00b756eaa7901627221708c9551fc11690b19e365a2f6c79287b198dc5e3a36e",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_stop"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:335c76855e0da2922ebdbf796f62a803969496396da593678399fab6f08f9e9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_stop_all"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:7f20d10778edf9d5ed09bdbe2ac8f17c4a1e11dea6cab2d7d21416abcdbbddd5",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Docker watcher inspection helpers live in the runner module; the stop command this module builds is Compose's own service removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fb4f5a0a5b2ed87206ad5bba0e678780b67da4f",
+            "content": "sha256:e7cb0e0c83656f59556ac0ce63aef9b9bc762aa1e58035b3a15cfcd79af962cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "cgc_watcher_running"
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stop, dry-run and layout-action results are the operations this module still owns; the per-layout refresh path that also read its concurrency helper is retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b951246c7fde0b145aac05a589c5d0d1bc1574c",
+            "content": "sha256:e1ad7965a2867ab847ad207bb2a5331fafafe99f93cd03b34f2f1ec5efbfca63",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

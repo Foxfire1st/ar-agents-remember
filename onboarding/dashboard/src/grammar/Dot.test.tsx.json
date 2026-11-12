@@ -1,0 +1,306 @@
+{
+  "path": "dashboard/src/grammar/Dot.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The suite declares `ALL_VARIANTS` with the explicit `FALLBACK` member.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:05564ae2982b10ba2b48f196392042f06683b33b1b072ebf9f9d16319de85207",
+            "locator": {
+              "kind": "symbol",
+              "name": "ALL_VARIANTS"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The recipe defines attention-severity appearances, not task lifecycle marks.\n\nAnchor: `dot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:3bf23101250eb6f1cc151d92ae358f52e91a507bb65e47c844bcae9683e979db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The effects-off source comment explicitly keeps the rule unlayered so it wins over the effects layer.\n\nAnchor: \"Unlayered + !important so it always wins over the effects layer.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:bcb3ffa73641c1a7701ce0be35e21850cf69891ec1a8d6e78ed5366ad3cbac67",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The `html[data-effects=\"off\"]` selector is declared here.\n\nAnchor: \"html[data-effects=\\\"off\\\"] *,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:284d9d8f29e4edf764a64141ba53cd62fc163c3aff75290ddb0eaf9a8ba0e571",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The effects-off rule disables animation with `!important`.\n\nAnchor: \"animation: none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:afc0a74be48ac8051e01d5aa56079b0f06b3229de1ccc0ab1504839150c4403f",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The effects-off rule disables transition with `!important`.\n\nAnchor: \"transition: none\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "319b14c211d7a499f34bc89014be9d0a17ca8dea",
+            "content": "sha256:6935588978e4999bc8730141ea3282d45a5034b4d27c9b8b74398c942c1beadb",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "dashboard/src/index.css"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "`Cockpit.tsx` mounts `LifecycleList` in its left rail, and that list's task-column pivot head (`TaskPivotBar`) renders `AttentionQueue`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:1297cc6720fd77406c3b49582242e6faa38d2f037f3995de7c618d38e6057b8c",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 505
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+            "content": "sha256:7db2e4397ad712730e983140da67ac2cc4f7b3f02037c42e4e831f2cc9fb48e8",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:353f62432aeec1b4e809106db774a2a920b614513dd9caa7a2b3543006fb52e0",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "`Cockpit.tsx` renders `LifecycleList`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:1297cc6720fd77406c3b49582242e6faa38d2f037f3995de7c618d38e6057b8c",
+            "locator": {
+              "end": 510,
+              "kind": "line_range",
+              "start": 505
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`markOf` renders one mark and returns the rendered element for assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:9b4cb9846db623d4e5c023b75d7ae94562bc580cff98795fba8146db1bc1ebea",
+            "locator": {
+              "kind": "symbol",
+              "name": "markOf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "`appearanceOf` derives the observable appearance key from the rendered mark.\n\nAnchor: `appearanceOf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:d897a74a9e088f348e4530e21e54c5c2c57080e4b2595617ec39723e6eb0c028",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The vocabulary assertion requires exactly alarm/warn/info.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:dad4a85c6b9521a8a6c70bf969d254b41a18ffe7ff165275986caa834ddcb00c",
+            "locator": {
+              "end": 51,
+              "kind": "line_range",
+              "start": 45
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The suite asserts distinct appearances for every variant and the fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:cc36efe27a519b707ceffeb9a576300213aad99f003ed5b6f4b90e7e8a098b7d",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The suite asserts that every variant carries its own ink.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abe657a609e6b8169b65273494d0e5dab54df810",
+            "content": "sha256:cf11b17e57cd33434be471c958e66ffe09c1ee8cbb1cad61035fac6f57630108",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "`DOT_VARIANTS = dot.variantMap.variant` is the derived vocabulary this suite imports rather than copying.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
+            "locator": {
+              "kind": "symbol",
+              "name": "DOT_VARIANTS"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`DOT_GLYPHS` is the glyph table used by the dot recipe.\n\nAnchor: `DOT_GLYPHS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:3bf23101250eb6f1cc151d92ae358f52e91a507bb65e47c844bcae9683e979db",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The `cva` base uses `color: \"muted\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad18738b0d781e04a5a6ed715ccbd1f67f02b34b",
+            "content": "sha256:ab0482c579d3c4f2bc618bd18acc0d0aa39a46ef3e0321030d5e58d36a636d04",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "dashboard/src/grammar/Dot.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

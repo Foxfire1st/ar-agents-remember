@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/application/review_judgment_proofs.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Proof projection uses after-tree family membership and shared after-code currentness, not execution acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95817a85e88961434e160f46701103c592a8b689",
+            "content": "sha256:cf853f1864fcdb21032e1f64a0783422305ce4887da1e12e291c1d53b5a8403a",
+            "locator": {
+              "kind": "symbol",
+              "name": "judgment_proofs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

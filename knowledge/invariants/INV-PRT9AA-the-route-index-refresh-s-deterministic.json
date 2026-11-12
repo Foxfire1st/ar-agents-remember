@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unreadable route cache half-landed a leaf by failing after the code commit; the refusal is planned in onboarding.py and composed into the verdict in closeout_external.py."
+  },
+  "applicability": "The route-index refresh half of a converted leaf's closeout.",
+  "conditions": [
+    "The refresh's own planning function is asked as a dry run, so the refusal class cannot drift from what the refresh raises."
+  ],
+  "exclusions": [
+    "A failure not decidable from the two trees, such as a permission or a race, which still surfaces after approval."
+  ],
+  "id": "INV-PRT9AA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/a17f4d83-52c9-4b06-9e14-7d38b05ac621/role-launch/evidence/L176-A2-pass-after-12-tests.txt: with invalid UTF-8 bytes in the candidate memory tree the preview refuses naming 'route-index plan' and overview.index.json, the apply refuses with the same text, and both HEADs are unchanged"
+      ],
+      "path": "curator-list.json"
+    },
+    "handoffEntry": "L176-7-record",
+    "leaf": "260928-MIK-L176",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The route-index refresh's deterministic input refusals are asked by the closeout's candidate verdict, through the refresh's own planner, so an unreadable route cache stops the closeout before the code commit and names the step, the path and the error.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,260 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/organizational_completion_repair.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Repair evidence is persisted at the exact failed-operation seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:5abd2be3ce4b84dd08899e3043795098297166a69169657cc38cc211b3733e8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_organizational_completion_repair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Classification describes accepted, reset or conflicting contract state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:483538b09744784853200ef8ebee608969c133678e45bf7294dcaa3e55841bfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalRepairState"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:9b99b87d24b2490b956e9f84b045f3de7f91e0e6cae9156f908320ebed705eee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_reset_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The public classifier uses the retained journal repair evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:297495f387048208438400a336f6205b09f5f3b5cbd15cf3e734aaf31f5f0458",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_organizational_completion_repair"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The durable reset identity contains the code/memory pair and exact contract hashes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:184556f4eba48da2a60a65f7e05976a05f6dc0e3aa94367cbea9214d13a13c35",
+            "locator": {
+              "kind": "symbol",
+              "name": "organizational_completion_repair_evidence"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:9b99b87d24b2490b956e9f84b045f3de7f91e0e6cae9156f908320ebed705eee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_reset_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preparation proves cancelled ownership, matching pair/task binding and exact reset state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:38b9e780f065433b2c8c71cfa0ce3631a729cd0558f1b1d0ee337a4c76f18b1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_organizational_completion_repair"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:99834dd42b0124405634fd85a2637020fd5cad3bfaf741902f4140cb70f8f02e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_matching_repair_binding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Operation and code/memory source authorities are revalidated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:6b70e9a0f076707d66f8c2b4b241384091042795ddfb15ef166073564c6e5145",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_operation_identity"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:51323d5b409d55f036434ee892411d17d5a072b5f11f8af0488f6e43b1f3b01b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_code_operation_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:7af1eed3311fdd8b8a0bea649a11ade4383c408c23500abbf1eca1bc10c8fbe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_memory_operation_authority"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The repair tuple contains the exact code candidate and memory-content commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:64081a8085457f8d3fbce642489bcf4c3c6c7b66b87e4f18f7f8cd6cb15bbffb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_repair_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The reset clears only the accepted closed pair/state and creates the waiting successor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:ba1757cf25d67323b50232795454745bd4fc8c9f439ec94d1b8bce14ecb52734",
+            "locator": {
+              "kind": "symbol",
+              "name": "_quality_repair_contract"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:be97af694e05d08ab0a84af89dc875d1274f855fcee7ae8a8f3a07fc54cec1f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_successor_repair_door"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Publication requires unchanged integration refs, unmoved sources and accepted/reset contract bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:31f366af2c68dafcf60747f927ba29889c7d243483aee76363d05e2337de3c02",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_reset"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:9b99b87d24b2490b956e9f84b045f3de7f91e0e6cae9156f908320ebed705eee",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_reset_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The actual code and memory source branches must remain at their recorded bases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:836198a603e1e0a3ec01784051e49a81235395e62ed162d02eb313cb1316150f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_sources_unmoved"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Reset publication failures retain exact expected/observed state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24ca50e73cf6943e84002d8bb00cacd85445f89b",
+            "content": "sha256:74ba15ad7c650feb4def18db7d283aa083ebfc133eb5526cf58fdf1889c1705a",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrganizationalRepairPublicationError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

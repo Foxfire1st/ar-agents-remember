@@ -1,0 +1,53 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/investigator.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Investigator starts without a task reference, on a sprint, or on a sprint and master, never on a leaf; its concern arrives in its parent's first role_message, or from the developer's request when it has no parent, and a missing concern or scope is asked for, never invented.\n\nAnchor: `role_message`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:1a3fbdae5a641e6ba78c1b61efc7144ba9794425ce79c7278633fe4313354740",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:c1ecdf09b17272fddd1d11a81f35c1581f021fd96075cb4b49c6aa93dfc56bce",
+            "locator": {
+              "end": 78,
+              "kind": "line_range",
+              "start": 78
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The Investigator reports what is and what is not, with evidence for each. It states no requirement, ruling or duty of its own; a needed change is an open question for the parent, not a fix to apply.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:5050eddc7ae94d38b46a52289e4c291723543e9cce31cc1f0776945fc590a448",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

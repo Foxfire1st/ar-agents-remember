@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/cockpit/roleChatOptions.repair.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The test file asserts the cases and limitations described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fc0fe6031f9ca0ab01bae287c9bd1da136845f0",
+            "content": "sha256:ebb016a8b5372a6870536e6e1ea49237441a43b5365cf6a6fba7a126f0418490",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

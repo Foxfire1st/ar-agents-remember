@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The cancel-capable host operation and the archive service realize the no-idle-check rule in two files."
+  },
+  "applicability": "Every archived leaf agent, whether idle or in a turn.",
+  "conditions": [
+    "The host's existing cancel-capable archive command is used.",
+    "No idle check and no wait for a turn precedes the call."
+  ],
+  "exclusions": [
+    "The host's behaviour after the archive call is the host's; the product does not claim an atomic idle-only condition."
+  ],
+  "id": "INV-PRP52X",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Frozen sourcebeb9473e +8a9894a4/f5ee11cc; test_admitted_cleanup_and_abandon_archive_before_destructive_outputs; durable post-sync/full-focused-final.log (157 passed), pyright-final.log (0 diagnostics); complete real-host witness remains pending. Rule8 also has unchanged role launch/repeat/message regressions in the same focused selection."
+      ],
+      "path": "notes/files/260928-MIK-L76-curation-evidence-20261007/handoff-full.json"
+    },
+    "handoffEntry": "MIK-R76@v1 required behavior 3",
+    "leaf": "260928-MIK-L76",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Leaf archival uses the existing cancel-capable host archive operation without an idle check or a turn wait.",
+  "status": "proposed",
+  "supersedes": []
+}

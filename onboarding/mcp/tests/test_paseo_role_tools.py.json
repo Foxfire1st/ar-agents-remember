@@ -1,0 +1,135 @@
+{
+  "path": "mcp/tests/test_paseo_role_tools.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+        "content": "sha256:a65a05a8019b67b8070acda0cab30c5dff2f84b10f0cdaa8a3269b85e773ac42",
+        "locator": {
+          "kind": "symbol",
+          "name": "MayStartRuleTests.test_each_role_may_start_exactly_the_roles_the_rule_names"
+        }
+      },
+      "facet": "Checks all 49 caller/target pairs against exact table.",
+      "id": "PRF-6Z2ETD",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+        "content": "sha256:0aaf9db27ae898b6697a1fb98b89cbfb5740a347139afbd5c61282db2d04250d",
+        "locator": {
+          "kind": "symbol",
+          "name": "MayStartRuleTests.test_a_task_bound_caller_starts_only_under_its_own_sprint_or_master"
+        }
+      },
+      "facet": "Checks own orchestrator sprint and manager sprint/master binding containment.",
+      "id": "PRF-V8HQV0",
+      "invariant": "INV-5TT40M",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §4",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "May-start rules, another starter's receipt, a reused request id and the registered tool surface are asserted here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+            "content": "sha256:2cfff97ded7af4098cd45a92fe82501115b7cfd9591734bae1a44ed088ecbe50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The second start reaches the held dispatch lock before pending is asserted.\n\nAnchor: `test_starts_run_one_at_a_time_and_a_start_waits_for_the_one_before_it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f47d1b91908649f215b39b35be68d7c820006bf3",
+            "content": "sha256:e5e0771fcdd617cca5077529c19d8586a458b563c294a7fce17d76079d8f4585",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_role_tools_start.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The controlled fixture patches the actual bridge, caller, recipient, held-store and retirement owners after extraction. The registry still exposes role_start, role_start_set, user_settings_init and role_message, and an unbound role_start_set call is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+            "content": "sha256:2cfff97ded7af4098cd45a92fe82501115b7cfd9591734bae1a44ed088ecbe50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A native binding refusal carries no redundant operation envelope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+            "content": "sha256:2cfff97ded7af4098cd45a92fe82501115b7cfd9591734bae1a44ed088ecbe50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The role answer stays concise while a real `tool_call_context` supplies the dispatch log for detailed controls.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+            "content": "sha256:2cfff97ded7af4098cd45a92fe82501115b7cfd9591734bae1a44ed088ecbe50",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The role, task and report registration exists before agent-create begins, under the existing dispatch lock.\n\nAnchor: `test_a_start_runs_the_launchers_path_with_the_caller_as_parent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f47d1b91908649f215b39b35be68d7c820006bf3",
+            "content": "sha256:e5e0771fcdd617cca5077529c19d8586a458b563c294a7fce17d76079d8f4585",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_paseo_role_tools_start.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

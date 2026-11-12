@@ -1,0 +1,533 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_catalog.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:da9bb84ab152d8536f1b564e85fc8e34c877b27ff313d5c52d3f751764b17d81",
+        "locator": {
+          "kind": "symbol",
+          "name": "runnable_harnesses"
+        }
+      },
+      "id": "RLZ-0V5GSP",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Uses the shared catalog for settings initialization, returning host ID/label rows or unknown rather than an invented empty offer set.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:21f0800be2a7997db8296707a004b040b28dba444cb781207687a04bf3ee2259",
+        "locator": {
+          "kind": "symbol",
+          "name": "provider_accepts_tool_servers"
+        }
+      },
+      "id": "RLZ-17J7VC",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Uses the shared catalog and withholds the task server only for an explicit false provider capability.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_options"
+        }
+      },
+      "id": "RLZ-1A9CAN",
+      "invariant": "INV-002A1G",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-05",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The public options route exposes offered controls and their sources for onboarding and the dashboard; it is not a guessed static feature list.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_options"
+        }
+      },
+      "id": "RLZ-4FRACE",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Requests full offers for a launcher view and returns the catalog's current/saved/unknown provenance.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_catalog"
+        }
+      },
+      "id": "RLZ-6YVTSR",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Asks the configured runtime for each top-level operation; only nested calls reuse the current operation's catalog.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:67430d25426b08cbcf32fd77c3ad62a3f43489b11864e45a57c31c5008847c4d",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_mode"
+        }
+      },
+      "id": "RLZ-AQA2BV",
+      "invariant": "INV-7DMXZ3",
+      "origin": {
+        "handoffEntry": "L202-M1-mode-offers",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Uses known offers to resolve defaults or refuse a named value, while unanswered offers leave configured mode unchecked.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:620526a163bd5b191428039bdfb97ab0ce593c22b9ec51e2f05bb1ea55895ec4",
+        "locator": {
+          "kind": "symbol",
+          "name": "launcher_catalog_question"
+        }
+      },
+      "id": "RLZ-DVGZB0",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Bounds answer reuse to a single operation and resets that ContextVar when the operation exits.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agent_selection"
+        }
+      },
+      "id": "RLZ-HFP40K",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Validates known offers before creation and leaves choices unchecked only for unanswered parts.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-J15B66",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This is where the launch record is assembled from the plan, so a plan the start did not build leaves the field out of the record.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:54b6ef2a933944520c73acab6fbbcf27cb55859f30f861d728f627d6fcde5299",
+        "locator": {
+          "kind": "symbol",
+          "name": "_scope_matches"
+        }
+      },
+      "id": "RLZ-KC8GKY",
+      "invariant": "INV-WT3VCM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-02",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Binding comparison excludes provider/model-specific lower values when their recorded binding differs from the actual host choice.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:d6760aa54784fc632ef9b14625915a343b8caf98e0d524bcbdeb1e2e57c253c9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_omitted_lower_choices"
+        }
+      },
+      "id": "RLZ-NSXZH4",
+      "invariant": "INV-WT3VCM",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-02",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Ignored lower values are retained with their source/reason for the returned provenance instead of silently disappearing.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_features"
+        }
+      },
+      "id": "RLZ-Q50PP6",
+      "invariant": "INV-002A1G",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-05",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Resolution preserves provider/model applicability and validates feature values against known host offerings before create. A catalog part with neither a fresh nor a saved answer remains unchecked, so its configured value reaches the host unchanged.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+        "locator": {
+          "kind": "symbol",
+          "name": "settings_role_launch"
+        }
+      },
+      "id": "RLZ-SJXXVV",
+      "invariant": "INV-EV2BJZ",
+      "origin": {
+        "handoffEntry": "L183-settings-seat-launch-and-lazy-resume",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agent_selection"
+        }
+      },
+      "id": "RLZ-SR53ZZ",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-01",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The resolver uses Paseo provider/model/effort/tier IDs or labels, without restricting provider selection to AR built-in harness declarations. It validates known fresh or saved offerings and leaves a part unchecked when neither answer exists.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:66a8b3fc57f621f7f7d97009ee3df3c3d0e7e05bc491e30032c9f07b48e5d835",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_notes"
+        }
+      },
+      "id": "RLZ-SWAWHM",
+      "invariant": "INV-1Q4W04",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-06",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Notes resolution uses the existing user-role source and host profile as inputs without interpreting text as permission settings.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:9c2ca81f6a5216bcf902204da2632f872bba64b511ad27977b39bb6c3f004ab3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_question_catalog"
+        }
+      },
+      "id": "RLZ-X66C8E",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Calls the host and merges its reply or failure through the shared durable per-part store.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:9d4087a3a9ee3ee4277be5feb9389d15a256d9d55f0d417c5cbe3f39ffebfe46",
+        "locator": {
+          "kind": "symbol",
+          "name": "settings_role_launch"
+        }
+      },
+      "id": "RLZ-YA1GYN",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Resolves settings-driven explainer choices through the same resolve_agent_selection path.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:40c6195a6d5fe3993fdd56133bde208da01b7adffd23af71e23dfa57f5342ca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_features"
+        }
+      },
+      "id": "RLZ-Z7SMV6",
+      "invariant": "INV-VKTCC4",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-03",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "After scoped composition, feature values are checked against known host-offered types and options; parts with neither a fresh nor a saved answer remain unchecked. Local mode, notes and permission authority is enforced separately by _refuse_repository_role_authority and NON_PERMISSION_FEATURES.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+        "content": "sha256:8a9b221e6e947655d7e8c9a202ee41d6a9b1a1c2b902f7b82c40a496208bfe76",
+        "locator": {
+          "kind": "symbol",
+          "name": "paseo_catalog_scope"
+        }
+      },
+      "id": "RLZ-ZFQTQP",
+      "invariant": "INV-RQ2ZB8",
+      "origin": {
+        "handoffEntry": "L202-A6b-shared-fresh-catalog",
+        "leaf": "260928-MIK-L202"
+      },
+      "rationale": "Defines the configured runtime identity for shared saved answers.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of launcher_catalog supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:f1dea313b6bd96304f69e0c24045259f2588effc6ff0d2c5f53348cb91b06716",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_catalog"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The settings role defaults carry origins/sources, host role and useHostDefaultMode through resolve_agent_selection; this is normal catalog-qualified launch resolution rather than a second explainer-specific model catalog.\n\nAnchor: `settings_role_launch`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of resolve_agent_selection supporting the stated file behavior.\n\nAnchor: `resolve_agent_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _selection_refusal supporting the stated file behavior.\n\nAnchor: `_selection_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks that every view and start asks fresh and explicit refresh rescans provider discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "content": "sha256:66809e1332ee7087d3d160d114770950a23628d2cf1a3cc43e0ecebac4291bde",
+            "locator": {
+              "end": 237,
+              "kind": "line_range",
+              "start": 178
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks rejected choices create no receipt, workspace, agent or enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00532bdbe263591821e2365606c47747da6ed99a",
+            "content": "sha256:76deccd2f509435da730cdd3a5519c9a381776b2e2ca596aebb34dc673bf64a8",
+            "locator": {
+              "end": 336,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "mcp/tests/test_paseo_catalog.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Options include the configured alternative.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:237c17e79fafac87d5035439a39a7ba09dcc077f73281383e7665255b24d2d64",
+            "locator": {
+              "kind": "symbol",
+              "name": "launcher_options"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Host catalog validation and step-up provenance share the existing resolver.\n\nAnchor: `resolve_agent_selection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:40f8fc4905c5f963c386d83fdfb55e5b4a87f2020075842498fb330455e8fedc",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_agent_selection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:902cecd5d251f33487590646e3eaaf501aab7c8bc83423fad14ff75055defd7f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The host-default-mode path remains conditional; concrete modes are checked when mode data is known, while unknown mode data passes the configured value through.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+            "content": "sha256:67430d25426b08cbcf32fd77c3ad62a3f43489b11864e45a57c31c5008847c4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_mode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Test source contrasts ordinary auto with step-up host default.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16a38f7bb452bd43808dd3d21e01fe4c729b1582",
+            "content": "sha256:8e1cbf50b78103e452181875e3898119f4603b2fe5c917edba5407a5f1d730db",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cross_model_omitted_mode_uses_host_default_without_changing_base"
+            },
+            "path": "mcp/tests/test_step_up_choice_validation.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,125 @@
+{
+  "path": "mcp/tests/test_canvas_kit_assets.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "8720fcee92fb830936f762943f7ac20af2379c34",
+        "content": "sha256:f62556701cddc30ed1c4711c0f0b2e3c46f38c43c809b4bd3bb42ac50175706f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unshipped_or_tampered_kit_file_is_refused_by_name"
+        }
+      },
+      "facet": "An unshipped or tampered kit file is refused by name.",
+      "id": "PRF-4NN9MS",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-verification-points",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8720fcee92fb830936f762943f7ac20af2379c34",
+        "content": "sha256:f62556701cddc30ed1c4711c0f0b2e3c46f38c43c809b4bd3bb42ac50175706f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unshipped_or_tampered_kit_file_is_refused_by_name"
+        }
+      },
+      "facet": "An unshipped or tampered kit file is refused when carried.",
+      "id": "PRF-6JQ7AQ",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox-a9",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8720fcee92fb830936f762943f7ac20af2379c34",
+        "content": "sha256:f62556701cddc30ed1c4711c0f0b2e3c46f38c43c809b4bd3bb42ac50175706f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unshipped_or_tampered_kit_file_is_refused_by_name"
+        }
+      },
+      "facet": "An unshipped or tampered kit file is refused by name.",
+      "id": "PRF-VDY0D1",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-manifest",
+        "leaf": "260928-MIK-L104"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "8720fcee92fb830936f762943f7ac20af2379c34",
+        "content": "sha256:f62556701cddc30ed1c4711c0f0b2e3c46f38c43c809b4bd3bb42ac50175706f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unshipped_or_tampered_kit_file_is_refused_by_name"
+        }
+      },
+      "facet": "An unshipped or tampered kit file is refused by name.",
+      "id": "PRF-ZB149G",
+      "invariant": "INV-R38XGA",
+      "origin": {
+        "handoffEntry": "MIK-R104-r13-kit-toolbox",
+        "leaf": "260928-MIK-L104"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_a_named_kit_file_is_carried_under_its_contract_path` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8720fcee92fb830936f762943f7ac20af2379c34",
+            "content": "sha256:5298eb734fb29d018367114a460630272c187734bde11a92623079a5fb8f4f22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_named_kit_file_is_carried_under_its_contract_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The case `test_an_unshipped_or_tampered_kit_file_is_refused_by_name` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8720fcee92fb830936f762943f7ac20af2379c34",
+            "content": "sha256:f62556701cddc30ed1c4711c0f0b2e3c46f38c43c809b4bd3bb42ac50175706f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unshipped_or_tampered_kit_file_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The case `test_a_page_that_carries_a_kit_file_is_ready_and_needs_no_network` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8720fcee92fb830936f762943f7ac20af2379c34",
+            "content": "sha256:e53fc5249053c6ff7e60113c921fe0a009e060227bcbd37ce6f48c8d2eb5ca38",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_page_that_carries_a_kit_file_is_ready_and_needs_no_network"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

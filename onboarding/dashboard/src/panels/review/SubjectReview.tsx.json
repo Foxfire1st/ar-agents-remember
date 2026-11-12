@@ -1,0 +1,207 @@
+{
+  "path": "dashboard/src/panels/review/SubjectReview.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:91c499995e5329b4d1c254b1f0cf706211a7f51bc6cc0325c40bd8cb30f9741e",
+        "locator": {
+          "end": 151,
+          "kind": "line_range",
+          "start": 146
+        }
+      },
+      "id": "RLZ-1Y624V",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:38918e14ac52f996ea75a7e5f0e4ec30be23035d2e7b6c6c635a8dfe99eb2177",
+        "locator": {
+          "kind": "symbol",
+          "name": "SelectedStatement"
+        }
+      },
+      "id": "RLZ-4BD3B78H",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Draws the statement comparison only from knowledge.revision_selection when its record kind and id match the selected subject, and otherwise states that no comparison was supplied. Ambiguous or unresolved selections show the per-side states with no diff, so no before/after pair is inferred.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:4ac656886ae885cbf6a9639d15772125434c854d682cb21a9aa379856bd5b6a5",
+        "locator": {
+          "end": 64,
+          "kind": "line_range",
+          "start": 63
+        }
+      },
+      "id": "RLZ-4QS97T",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:9734e49753862f0d4cfc8e8b3bf0682e8fb313f9c84811215a0c36d8af2783a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "revisionLabels"
+        }
+      },
+      "id": "RLZ-HGEXKX",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "A changed pair is labelled only when both carried versions exist and differ; a single selected revision may use its one actual version on both sides.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:26da62ea2d75e1f7221e888f3fa4144b8229c9612d9b0a6d00b2749d31d90d0e",
+        "locator": {
+          "end": 143,
+          "kind": "line_range",
+          "start": 141
+        }
+      },
+      "id": "RLZ-JMCHD1",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:a96bd5fb27bfe861fdb43300ac459bec7940b1786d3bc5c0b760a881da26baea",
+        "locator": {
+          "end": 61,
+          "kind": "line_range",
+          "start": 61
+        }
+      },
+      "id": "RLZ-QQ049X",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:1e3904cb3b382d2b47f7b93939c3c2514a4c0882d9d404552a441c65378a5fb0",
+        "locator": {
+          "kind": "symbol",
+          "name": "shownVersion"
+        }
+      },
+      "id": "RLZ-RJ8PQ1",
+      "invariant": "INV-P1QKHK",
+      "origin": {
+        "handoffEntry": "RP15",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Takes the exact matched member version or the side's carried version, supplying no substitute version.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+        "content": "sha256:7a2e3a7a5ce812b5faa7ae75db27313e712fa47a13de4b83e14206b6f2f38567",
+        "locator": {
+          "end": 56,
+          "kind": "line_range",
+          "start": 56
+        }
+      },
+      "id": "RLZ-Z52XW2",
+      "invariant": "INV-21SDZECS",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-21SDZECS",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The heading display versions come from the exact selected member/primary revision selection, and are omitted when a distinct pair is absent; short raw revision IDs no longer fabricate display versions. This supports exact selected-subject presentation without changing its statement operands.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "20": {
+      "note": "SubjectReview.tsx current behavior at this source owner.\n\nAnchor: \"function authoredSides(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:2d9477def81f4e00c097d072bd05cf198b65262849c73d51cf3700e559d22a5e",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 87
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "SubjectReview.tsx current behavior at this source owner.\n\nAnchor: \"export function SelectedStatement({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:9d0f6b367513f1faca4467b0222f6ed63037b52f2fadbe44a5ad5efbbc5d65f1",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "SubjectReview.tsx current behavior at this source owner.\n\nAnchor: \"import type { ReviewSubject } from './ReviewNavigation';\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65da80233c61fee36508e14b7c87ed65437a34a7",
+            "content": "sha256:b9c5a10b14f877688caa72fb3a2ee6248b43005dc3fcd20eac47e4496bc67037",
+            "locator": {
+              "end": 224,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

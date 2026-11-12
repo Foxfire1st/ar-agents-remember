@@ -1,0 +1,179 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "The page is new in this task; its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate and the page was read whole; 29 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/roles.md",
+  "id": "DPD-B540GW",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-roles-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "d2551603e8f9ee3fd9a1e650477fd1dacb08f5b9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/role_launcher.py"
+    },
+    {
+      "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/role_identity.py"
+    },
+    {
+      "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/role_launch_context.py"
+    },
+    {
+      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+    },
+    {
+      "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
+    },
+    {
+      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "blob": "ce02a53623bbc91e452717b9870f6c71ab46f72c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_retire.py"
+    },
+    {
+      "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+    },
+    {
+      "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+    },
+    {
+      "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+    },
+    {
+      "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+    },
+    {
+      "blob": "ab10f3cdc3aba28b9e189c902501164cc29da34b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/controlplane/held_store_layout.py"
+    },
+    {
+      "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "blob": "5af0810d48c7081071943b58140287ce1a2dc662",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts"
+    },
+    {
+      "blob": "bfd1d73438ae05c1a74dcbc30c790ff903c343fb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/native_attention.py"
+    },
+    {
+      "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+    },
+    {
+      "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+    },
+    {
+      "blob": "54eeeb005b8ba5c7f3f16c096ec59d5ea61a2c10",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/bootstrap.md"
+    },
+    {
+      "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+    },
+    {
+      "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+    },
+    {
+      "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+    },
+    {
+      "blob": "e32d2f6632d4f275f439e4e4ca3413878897c633",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/orchestrator.md"
+    },
+    {
+      "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+    },
+    {
+      "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+    },
+    {
+      "blob": "3903efa8f0713c724e5bcb650130d538b0ec4be8",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/core/launcher.md"
+    },
+    {
+      "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/core/authority.md"
+    },
+    {
+      "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+    },
+    {
+      "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/route_review.py"
+    },
+    {
+      "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+    },
+    {
+      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+    }
+  ]
+}

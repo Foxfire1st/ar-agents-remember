@@ -1,0 +1,111 @@
+{
+  "path": "dashboard/src/panels/review/explainer/planned/PlannedReview.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+        "content": "sha256:2e15b8f55c507067f64f642af7289f87abb7d8700191abd792d1260c832f237f",
+        "locator": {
+          "kind": "symbol",
+          "name": "starts nothing: no fetch is made and no frame or host channel is mounted"
+        }
+      },
+      "facet": "Pins intended wording, inert packets, resolved/unresolved paths and synchronized deterministic order with no starts.",
+      "id": "PRF-DTCYY1",
+      "invariant": "INV-JFJ3Y3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE06-planned-intent",
+        "leaf": "260928-MIK-L183"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+        "content": "sha256:68369dec65ae9cb448c88af45bbf552f857efd9897f871048403534d54fea1ce",
+        "locator": {
+          "kind": "symbol",
+          "name": "renders packet bodies safely, navigates resolved Scope tip addresses while keeping unresolved paths as text, and synchronizes planned tree and reading rows"
+        }
+      },
+      "facet": "Pins intended wording, inert packets, resolved/unresolved paths and synchronized deterministic order with no starts.",
+      "id": "PRF-X7SCZQ",
+      "invariant": "INV-JFJ3Y3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE06-planned-intent",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The page makes no request and mounts no frame or channel, even after every control is pressed\n\nAnchor: `starts nothing: no fetch is made and no frame or host channel is mounted`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "content": "sha256:2e15b8f55c507067f64f642af7289f87abb7d8700191abd792d1260c832f237f",
+            "locator": {
+              "end": 262,
+              "kind": "line_range",
+              "start": 252
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "One host answer reads as a planned page, and a refusal or another mode reads as nothing\n\nAnchor: `reads one host answer as a planned page, and refuses anything else`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "content": "sha256:c6a235d368eed7113374c0739127df67139840fd93a1218d144072a5a590b645",
+            "locator": {
+              "end": 273,
+              "kind": "line_range",
+              "start": 264
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The product's three sorts win over any sort a payload names\n\nAnchor: `ignores a payload's own sort list: the control is the product's`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "content": "sha256:baf9d60985dbb0a1aca6b9e81655bfcdab37e017a3a28f2a8888388ca8a79f79",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Packet bodies stay inert, resolved scope paths open, unresolved ones stay text, and tree and reading rows agree\n\nAnchor: `renders packet bodies safely, navigates resolved Scope tip addresses while keeping unresolved paths as text, and synchronizes planned tree and reading rows`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e931f7dfbaf47158e3ea2e73553362acc1fd7dc",
+            "content": "sha256:68369dec65ae9cb448c88af45bbf552f857efd9897f871048403534d54fea1ce",
+            "locator": {
+              "end": 369,
+              "kind": "line_range",
+              "start": 294
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

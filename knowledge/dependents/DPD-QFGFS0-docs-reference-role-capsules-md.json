@@ -1,0 +1,84 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 2 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/reference/role-capsules.md",
+  "id": "DPD-QFGFS0",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-reference-role-capsules-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/SKILL.md"
+    },
+    {
+      "blob": "1cb1b0d96c335765d43638350cb1524b3d2c72cc",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/reference/message-handover.md"
+    },
+    {
+      "blob": "a25806bf819c4fcfb46827a42776588021e88e7a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_handover_artifacts.py"
+    },
+    {
+      "blob": "ef4a777f258e408def37c9a00eba870bb6180bd5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_handover_file.py"
+    },
+    {
+      "blob": "10fb7a51df0dc168eef360291e299855421627b7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_handover_projection.py"
+    },
+    {
+      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+    },
+    {
+      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+    },
+    {
+      "blob": "5865a5625745237980b5f2727a2b258b47488104",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+    },
+    {
+      "blob": "767a1220ee8320263cd39307f582fd4044b04fcc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_instruction_details.py"
+    },
+    {
+      "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    }
+  ]
+}

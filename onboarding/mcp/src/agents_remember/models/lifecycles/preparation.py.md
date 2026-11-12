@@ -1,22 +1,12 @@
 # mcp/src/agents_remember/models/lifecycles/preparation.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/preparation.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935`|
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Owning overview](overview.md)
 
 ## Purpose
 
-Closed preparation intent, genuine existing memory proof and raw commit output vocabulary.
+Both new legs use ordinary hooks; legacy code strict-code-no-verify remains readable but never skips checks.
 
 ## Code Commentary
 
@@ -41,35 +31,22 @@ The documented types and paths do not themselves establish execution, certificat
 
 No source-local TODO is asserted here.
 
-## Docs References
+## Evidence
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured domain documentation applies. | N/A | N/A |
+### Docs References
 
-## Repo-Internal References
+No configured domain documentation applies.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. | L26-L26; L43-L69; L171-L192 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
-| `_canonical_preparation_path` owns the corresponding behavior described above. | L30-L40 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
-| `ExistingMemoryPreparationProof` owns the corresponding behavior described above. | L43-L69 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
-| `_one_header` owns the corresponding behavior described above. | L331-L338 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
-| `_identity_date` owns the corresponding behavior described above. | L341-L354 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
-| `_require_output_headers` owns the corresponding behavior described above. | L357-L377 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
-| `require_prepared_output_matches_intent` owns the corresponding behavior described above. | L380-L414 | [mcp/src/agents_remember/models/lifecycles/preparation.py](mcp/src/agents_remember/models/lifecycles/preparation.py) |
+### Repo-Internal References
 
-## Cross-Repo References
+- Memory reuse binds exact raw HEAD/tree plus certified content and cannot simultaneously request a new write. [1]
+- `_canonical_preparation_path` owns the corresponding behavior described above. [2]
+- `ExistingMemoryPreparationProof` owns the corresponding behavior described above. [3]
+- `_one_header` owns the corresponding behavior described above. [4]
+- `_identity_date` owns the corresponding behavior described above. [5]
+- `_require_output_headers` owns the corresponding behavior described above. [6]
+- `require_prepared_output_matches_intent` owns the corresponding behavior described above. [7]
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No cross-repository source is needed for this card. | N/A | N/A |
+### Cross-Repo References
 
-## Update History
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Replaced ledger-mapping reuse proof with exact historical HEAD/tree and separately certified memory content. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-
-### 2026-09-06T17:13:06+00:00 — Initial L34 implementation card
-
-Created from the current source. Verification metadata is intentionally unset until a genuine commit-based verification occurs; no test or acceptance result is asserted.
+No cross-repository source is needed for this card.

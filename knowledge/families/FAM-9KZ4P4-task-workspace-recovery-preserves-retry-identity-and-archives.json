@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Deterministic identity alone could reuse an archive, live-only placement alone could duplicate on retry, and either without the bound could traverse forever; identity, finite traversal, preservation and hidden-replay interpretation jointly make recovery safe."
+  },
+  "guarantee": "Explicit task workspace preparation traverses a bounded deterministic successor chain after an archived, archiving or hidden completed replay, preserving live-task identity and old archives, refusing misplaced descriptors, and returning only a refreshed live workspace; retries converge through the host creation ledger.",
+  "id": "FAM-9KZ4P4",
+  "members": [
+    "INV-5KTZYC",
+    "INV-QQ3071",
+    "INV-S50VDC",
+    "INV-DHYX3Y"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "task-workspace-recovery",
+    "leaf": "260928-MIK-L169",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "routes": [
+    "mcp/src/agents_remember/cli"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Task workspace recovery preserves retry identity and archived history"
+}

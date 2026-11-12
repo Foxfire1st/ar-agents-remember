@@ -1,0 +1,460 @@
+{
+  "path": "mcp/tests/test_knowledge_leaf_read.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "20": {
+      "note": "`test_a_path_selects_one_family_hop_in_the_declared_order` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_path_selects_one_family_hop_in_the_declared_order`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:d61bca96a785e2f5ad9501a9757c35dd2194e1d64e438f4d65c4f20503d549a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_selects_one_family_hop_in_the_declared_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "`test_both_surfaces_return_one_selection_under_one_manifest` supplies the current fixture or assertion described above.\n\nAnchor: `test_both_surfaces_return_one_selection_under_one_manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:2a1962c0b3e7d47a6d499d049219f0be3a4da0716216a8a11e800c9af1a7feba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_both_surfaces_return_one_selection_under_one_manifest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "`test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository` supplies the current fixture or assertion described above.\n\nAnchor: `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45e2cd79cf396f760481cc794ac4bebfdc50225ca51ab34f9f1f8f8434bcb0c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "`test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` supplies the current fixture or assertion described above.\n\nAnchor: `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:6813425e3d105df3e40f839f0ff37e2cccc0cfc9f7287c5b94ccaf2209d9a83d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The converted-tree world written through the text-file layout.\n\nAnchor: `_graph` `_invariant` `_family` `_sidecar`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:e160fed7fe608e894be53e250bc191da22eb5b8e5307036df01f4cdb5ed7d9a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:bbf13c6de35ed7f2befbe434996bfd4ad5e1b15c45f01bb9989759ae346fb6c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_invariant"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:2c122f528f9a18c38353aff398a31e4e0048423461bd20d3c356d94d65ecfed4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_family"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:1550c5e20aebf17732d975b2c5c6c660114e5d4766df68e6494dc2ae622bdbaf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sidecar"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Selection, order, reference row, frontier, the chain rows after it, counts and policy.\n\nAnchor: `test_a_path_selects_one_family_hop_in_the_declared_order`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:d61bca96a785e2f5ad9501a9757c35dd2194e1d64e438f4d65c4f20503d549a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_selects_one_family_hop_in_the_declared_order"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Same manifest, ordered IDs and mapped kind/role pairs between the internal block and knowledge_read, not identical full rows.\n\nAnchor: `test_both_surfaces_return_one_selection_under_one_manifest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "Family IDs in the invariant view, with the fixture title excluded.\n\nAnchor: `test_the_invariant_view_names_its_families`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "Name-only conforming page with admitted states/kinds and existing location files.\n\nAnchor: `test_the_conforming_example_returns_the_whole_family_in_one_response`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "MIK-R05: a path without entries under a route is a page of its chain rows, stating `registration_absent`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:42f22a52bc23231200bab37cd394f75fd4c8cac97f90ec086cac1ffea41c7de0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_without_entries_still_returns_its_route_chain"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "A path with no entry and no governing family refused on both surfaces with its `routeChain`, and refusals naming the tree.\n\nAnchor: `test_absent_and_partial_states_are_named`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:3c54873d98f78b741e973be5ec50b4cc9caf498b9fae409715f5d44acc972cc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_absent_and_partial_states_are_named"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "A partial index named on both surfaces.\n\nAnchor: `test_a_partial_index_is_named_on_both_surfaces`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:272512901e21549d45fb6ed6218487c8a9608ac878686c3ea3bef81d445b1e73",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_partial_index_is_named_on_both_surfaces"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "32": {
+      "note": "A root with no commit refused by name.\n\nAnchor: `test_a_repository_root_with_no_commit_is_refused_by_name`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:c8045976de50597c0667f74db8102581957942600a0625b0601289e196ce2173",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repository_root_with_no_commit_is_refused_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "A leaf walk resumes at its code tree, with no path in the token.\n\nAnchor: `test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45e2cd79cf396f760481cc794ac4bebfdc50225ca51ab34f9f1f8f8434bcb0c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_leaf_walk_resumes_at_its_code_tree_from_the_named_repository"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "More than one queue of seeds refused by name within the threshold.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:d508d6891a52082aa93efcb1f2e6f0c763d6bdef112b0b7bfa352d4941c1e5f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_tail_longer_than_one_queue_is_refused_by_name_within_the_threshold"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:d1757747966b5958b8fddc6f7b0917bf56b35d394574d00a6d0aeffe8735f175",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DEEP"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "The derived reference title.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:9ec38008dbe37f6963594f3b765bfd7237a7cfd3e7406ae97cda89d48b149956",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_derived_reference_title_is_the_first_sentence_cut_to_a_fixed_length"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "Identity seeds keep the scope read beside the leaf, and the mixed-block policy.\n\nAnchor: `test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf` `_walk_entries`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:45a5e09bf2d4b3896d6ee1c8919dab0a701ef6d6834636ae1091f966959e477d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:6813425e3d105df3e40f839f0ff37e2cccc0cfc9f7287c5b94ccaf2209d9a83d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_identity_seeds_on_a_tree_keep_the_scope_read_beside_the_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "93ce182b4c1f78319f6efa68e94a4ae0ac23f63f",
+            "content": "sha256:3cf06c265fde7542bb047c8b07455a8c4ec42686a87fffb64c6781408fb0da9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_walk_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The lane row.  Anchor: `test_knowledge_leaf_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:6027af8247fcbbf12777fca8eae097ec0fc644ead20dc6255cbb7bb10446dd31",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 238
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

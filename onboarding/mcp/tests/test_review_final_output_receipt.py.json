@@ -1,0 +1,114 @@
+{
+  "path": "mcp/tests/test_review_final_output_receipt.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "19": {
+      "note": "`TreeReceiptFixture` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:3ad7e4b59069321bbb7137bd8380813a68e60273f8605b040319ac41066be6fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TreeReceiptFixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "`test_receipts_bind_both_delivered_trees_and_keep_both_result_keys` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:1770356ce1277781575e0daa48db338af2e31cda7e0b11715418a8a8838709c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_receipts_bind_both_delivered_trees_and_keep_both_result_keys"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "`test_memory_movement_and_absent_memory_never_claim_delivered_coverage` supplies the current fixture or assertion described above.\n\nAnchor: `test_memory_movement_and_absent_memory_never_claim_delivered_coverage`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:1037e087ab7fa4a4f9e54fbb399be3242e1a3f83a50f78afe7ee0bd1c161f031",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:31b8316a3d6c1d35574e5aa8c3029f94620c7d087b336dcac82e1c53bf459ac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_movement_and_absent_memory_never_claim_delivered_coverage"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "`test_source_forgery_is_refused_and_receipts_are_leaf_scoped` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:8c984b7f6fbcb26009a9f8bf1c2bcac5d61d2efd5cee5f64e32298dcb305be3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_source_forgery_is_refused_and_receipts_are_leaf_scoped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "`test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof` supplies the current fixture or assertion described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "47f543e6f8938531a9b9d47338c21ac978a0c542",
+            "content": "sha256:d4635a344c50793ee4c17883e116b9bc7fbb5242e78d3d5ccc19c264caa7cc22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_historical_v1_receipt_remains_readable_without_claiming_memory_tree_proof"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The lane row and the exact-scope consumer rows (the _user_settings_guard.py and Node package-lock artifacts) this module is registered in.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

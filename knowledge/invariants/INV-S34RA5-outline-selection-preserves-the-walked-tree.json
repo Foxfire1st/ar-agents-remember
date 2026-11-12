@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: ReviewSurface.walk*.test.tsx; changeTraversal.test.tsx"
+  },
+  "applicability": "Row selection, traversal and keyboard in the tree.",
+  "conditions": [
+    "Family/member rows select the canonical subject under its family and keep the walked context.",
+    "j/k use the rule13 block identity: drawn changed subject blocks then lane hunks, one stop per shared drawn region; folded groups and unchanged/unknown locations are not stops.",
+    "An end message leaves the selection unchanged; traversal never requests a roster page."
+  ],
+  "exclusions": [
+    "MIK-R39 rules 8-10 catalogue controls inside the tree."
+  ],
+  "id": "INV-S34RA5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "ReviewSurface.walk*.test.tsx; changeTraversal.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 8",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Outline selection preserves the walked tree. j/k traverse the reading column's drawn changed blocks in display order, while tree arrows move focus and Enter/Space select rows.",
+  "status": "proposed",
+  "supersedes": []
+}

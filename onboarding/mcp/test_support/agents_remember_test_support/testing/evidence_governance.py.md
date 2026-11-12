@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/testing/evidence_governance.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/testing/evidence_governance.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-28T07:20+02:00 |
-| lastVerifiedCommitHash | `f2b7c648f540efb9d64ceea22e11e651cb5cc914`|
-| lastVerifiedCommitDate | 2026-08-31T15:32:32+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Python test evidence infrastructure](overview.md)
@@ -47,23 +37,17 @@ than falling through a fixed extension allowlist.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain documentation governs this repository-owned predicate.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Discovery combines support, durable suffix, policy, task/date, and configured-size authority while excluding the lifecycle catalog policy input. | `governed_artifact_paths`; `LIFECYCLE_CATALOG_PATH` | mcp/test_support/agents_remember_test_support/testing/evidence_governance.py:11-52 |
-| The lifecycle validator consumes this exact predicate. | `_validate_catalog_coverage` | mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py:553-571 |
+- Discovery combines support, durable suffix, policy, task/date, and configured-size authority while excluding the lifecycle catalog policy input. [1]
+- The lifecycle validator consumes this exact predicate. [2]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository boundary applies.
-
-## Update History
-
-- 2026-08-28T05:10+02:00 — Made the lifecycle catalog's policy-input exclusion explicit after the
-  first v19 Dagger proof caught self-referential threshold discovery.
-- 2026-08-28T04:37+02:00 — Created for the operational configured-size evidence-governance owner.

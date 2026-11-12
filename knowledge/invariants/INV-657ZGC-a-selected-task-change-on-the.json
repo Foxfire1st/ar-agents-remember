@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Three retained cost tests pin the byte ceiling, row bound, master independence and pinned-live equality, failing without the bounded request set."
+  },
+  "applicability": "Every selected-task change on a generated large master measured under the ruled protocol.",
+  "conditions": [
+    "The change reissues the bounded notes request set with aggregate answer bytes under the 1000000 ceiling and fewer than 100 drawn rows.",
+    "The masters' own pinned live replies are re-verified against a freshly built tree by a retained test on every run."
+  ],
+  "exclusions": [
+    "No latency gate is claimed; runner teardown UNKNOWN stays literal.",
+    "The bound covers the ruled request set, not arbitrary future surfaces."
+  ],
+  "id": "INV-657ZGC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "connector 7354B/60e3bb40 + mounted 9372B/48286195 + fixture 21193B/0544c058; R5 verdict 14743B/e162eb22 PASS"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 8",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A selected-task change on the generated 100001-file master reissues the bounded notes request set with aggregate answer bytes under the fixed 1000000 ceiling and fewer than 100 drawn rows, served the masters' own pinned live replies whose bytes a retained test re-verifies against a freshly built tree, proving response size does not grow with descendant count.",
+  "status": "proposed",
+  "supersedes": []
+}

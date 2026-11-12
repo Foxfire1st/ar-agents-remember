@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/data/reviewOpen.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Exactly six opening reads are named and sent under one page id with the sixth marked as the last; a repeat read of the same name gets no id and opens nothing new",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a9b529c29eb8fcc29bbdf3589e22931fccc8c97",
+            "content": "sha256:f950796f3621563a137b722c5d89aae19cd093529c149140696223a89ae59632",
+            "locator": {
+              "end": 50,
+              "kind": "line_range",
+              "start": 50
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

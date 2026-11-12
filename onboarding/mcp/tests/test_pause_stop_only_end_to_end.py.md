@@ -1,15 +1,5 @@
 # mcp/tests/test_pause_stop_only_end_to_end.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_pause_stop_only_end_to_end.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -26,6 +16,11 @@ databases, the whole coordination tree, both worktrees, the enclosure, and every
 its leaf rows and statuses. A ref move, a new commit object, a landing, a ledger row or a leaf
 advance all show up as a difference. The activation snapshot is the pause's one legitimate write and
 is measured separately, which is what makes "the pause touched nothing else" a real assertion.
+
+It also pins what the pause must **not** report as a stop. The already-stopped success is answered
+from an observed `vacant` state, and two records the pause can meet are not that: one that cannot be
+read, and one whose `selectedMaster` names another master while reading `vacant`. Both refuse, and
+both are asserted to leave the bytes they were refused for exactly as they were.
 
 `worktree_checkpoint_landing` is the SEPARATE, explicitly requested publication. No case here
 reaches it, and the module docstring states that as a prohibition: a test that paused a master by
@@ -67,13 +62,23 @@ The measurement:
   authority JSON such as the curator-coherence record, whose bytes `_world()` still covers).
 
 Each case fails independently. Merging any two would make a failure ambiguous, which is why the
-module carries eight: the no-publication measurement; the hand-back payload; the already-stopped
-success a never-selected master now produces; leave-idempotence; the leaf refusal; per-contract
-record isolation; the tampered-record refusal; and resume.
+module carries ten: the no-publication measurement; the hand-back payload; the already-stopped
+success a never-selected master now produces; release-idempotence; the leaf refusal; per-contract
+record isolation; the record this contract does not own; the unreadable record; the record naming
+another master; and resume. The last three are the refusal shapes the module keeps apart on purpose
+— a leaf contract owns no selection, a record this contract does not own is someone else's
+selection, and an unreadable record is not evidence of anything — and the state a master is actually
+in decides which one a caller meets, so a single "refused" case would not pin them.
+
+The two newest cases exist because the already-stopped success keys on an **observed** `vacant`
+state, and two records the pause can meet also read `vacant` or must not be trusted: a record that
+cannot be parsed, and a record whose `selectedMaster` names another master. The registered public
+route refuses both, and the second is the shape that would be a reported stop if vacancy alone were
+believed.
 
 ### Conventions
 
-- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 159), and every case is
+- Lane `integration` in `mcp/tests/test-evidence-lanes.toml` (line 163), and every case is
   `unittest`-style in one class with a temporary directory per case.
 - The module drives public entry points only. Like `test_checkpoint_landing_end_to_end.py`, it exists
   because a seam-level suite can be fully green while the composition a caller reaches is wrong.
@@ -97,14 +102,33 @@ record isolation; the tampered-record refusal; and resume.
   "Nothing was published", and that `observe_atomic_series(...).state == "vacant"` with the released
   record echoed in `atomicSeriesActivation`.
 - **Refusals are inert, and the one non-refusal is inert too.** The never-selected case **succeeds**:
-  a master holding no selection is already stopped, so `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`
-  asserts `ok`, `state == "atomic-series-already-vacant"`, `paused is True`,
-  `atomicSeriesActivation.state == "vacant"` and no `nextTool`, and then asserts the success was inert
-  — no activation record was created and `_world()` is unchanged. A leaf contract refuses with
-  `pause-requires-atomic-master` and leaves the parent master's own selection untouched; a record
-  naming another contract refuses with `atomic-series-activation-release-unreadable` and is neither
-  repaired nor released. (Before this change set the never-selected case asserted the
+  a master holding no selection is already stopped, so `test_pausing_a_master_that_was_never_selected_succeeds_and_publishes_nothing`
+  asserts `ok`, `state` and `status` both `atomic-series-already-vacant`, `paused is True`,
+  `atomicSeriesActivation.state == "vacant"`, and no `nextTool`/`nextArgs`/`nextOperation` at either
+  level; the success is also asserted to be **explicit and unmistakable** — the state is not the
+  released `"paused"`, the summary names that no selection was held and that nothing was published,
+  `nextStep` carries exactly `summary`, and the observation carries a vacant `record` with `pausedAt` where a released
+  pause carries the record its own release wrote — and then asserted **inert**: exactly one activation
+  record exists, holding the pause fact and nothing else, and the branch tips, `_world()`, every task document and the ledger bytes are
+  unchanged. That is the byte-level form of "nothing else was written or moved beyond the pause fact". A leaf contract refuses
+  with `pause-requires-atomic-master` and leaves the parent master's own selection untouched; a
+  record this contract does not own (an **active** foreign record) refuses with
+  `atomic-series-activation-release-unreadable` and is neither repaired nor released; an
+  **unreadable** record refuses with the same `atomic-series-activation-release-unreadable` and has
+  its bytes compared before and after; and a **vacant** foreign record — fingerprint and path of
+  this contract, `selectedMaster` naming the other master, so the observation itself reads `vacant`
+  — refuses with `atomic-series-activation-selected-contract-mismatch`, is never released, and leaves
+  the master it names still `active`. The case asserts that `vacant` premise through
+  `observe_atomic_series` before pausing, which is what makes it a proof rather than an outcome
+  check. (Before this change set the never-selected case asserted the
   `atomic-series-activation-selection-missing` refusal; the pause now answers that status itself.)
+- **The foreign-record shape decides which guard a caller meets.** An *active* foreign record is
+  refused one step earlier, inside the observation's `_load_selected_contract`
+  (`atomic-series-activation-master-mismatch` → observation `unreadable`), so it surfaces as
+  `atomic-series-activation-release-unreadable`; only a *vacant* foreign record reaches the release's
+  own exact-owner guard and its `selected-contract-mismatch`. Both are refusals and both are inert,
+  but a case written against the active shape cannot reach the guard the vacant shape reaches — the
+  two cases are not interchangeable.
 - **Per-contract isolation.** The two masters' `activation_path`s differ and their records name
   different masters; pausing A leaves B's record bytes identical, B's state `active`, and B able to
   select again through the public route. Neither master is a waiting reason for the other, and the
@@ -120,74 +144,91 @@ record isolation; the tampered-record refusal; and resume.
 
 None recorded. Verification metadata on this card remains closeout-owned.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this memory root.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
+### Repo-Internal References
 
-## Repo-Internal References
+- The measurement helpers: byte digest of a tree, one repository's full ref and object state, and a task document's status. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The measurement helpers: byte digest of a tree, one repository's full ref and object state, and a task document's status. | `_tree_digest`; `_git_state`; `_document_status` | mcp/tests/test_pause_stop_only_end_to_end.py:54-64; mcp/tests/test_pause_stop_only_end_to_end.py:67-77; mcp/tests/test_pause_stop_only_end_to_end.py:80-81 |
-| The one-world-per-case fixture: two atomic masters on one shared source pair, each with its own contract-keyed record. | `PauseStopsAnAtomicMasterTests` | mcp/tests/test_pause_stop_only_end_to_end.py:84-436 |
-| The public pause and the public select/resume route the module drives instead of inner helpers. | `_pause`; `_select` | mcp/tests/test_pause_stop_only_end_to_end.py:118-124; mcp/tests/test_pause_stop_only_end_to_end.py:126-133 |
-| The measurement composite, the branch tips, the task-document walk, and the per-contract record read that make "nothing else moved" assertable. | `_world`; `_tips`; `_documents`; `_activation_bytes`; `_record_bytes` | mcp/tests/test_pause_stop_only_end_to_end.py:148-166; mcp/tests/test_pause_stop_only_end_to_end.py:168-179; mcp/tests/test_pause_stop_only_end_to_end.py:181-197; mcp/tests/test_pause_stop_only_end_to_end.py:137-139; mcp/tests/test_pause_stop_only_end_to_end.py:141-146 |
-| The eight cases and the distinct protection each one buys. The never-selected case now asserts the already-vacant SUCCESS and its inertness; before this change set it asserted the missing-selection refusal. | `test_pausing_a_master_moves_no_ref_and_creates_no_commit`; `test_a_paused_master_hands_the_turn_back_with_no_next_call`; `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing`; `test_pausing_an_already_released_master_is_idempotent`; `test_pausing_a_leaf_contract_is_refused`; `test_pausing_one_master_leaves_the_other_masters_record_byte_identical`; `test_a_record_this_contract_does_not_own_is_refused_not_released`; `test_resuming_a_paused_master_restores_work_with_nothing_published` | mcp/tests/test_pause_stop_only_end_to_end.py:201-232; mcp/tests/test_pause_stop_only_end_to_end.py:234-261; mcp/tests/test_pause_stop_only_end_to_end.py:263-284; mcp/tests/test_pause_stop_only_end_to_end.py:286-300; mcp/tests/test_pause_stop_only_end_to_end.py:302-327; mcp/tests/test_pause_stop_only_end_to_end.py:329-371; mcp/tests/test_pause_stop_only_end_to_end.py:373-410; mcp/tests/test_pause_stop_only_end_to_end.py:412-436 |
-| The public operation under test and the release it performs, including the already-stopped branch the never-selected case now reaches. | "def worktree_pause_tool("; "def pause_result("; `_already_stopped_result`; `_already_vacant_payload` | mcp/src/agents_remember/application/worktree_tools.py:470-499; mcp/src/agents_remember/worktrees/modules/pause.py:80-80; mcp/src/agents_remember/worktrees/modules/pause.py:131-150; mcp/src/agents_remember/worktrees/modules/pause.py:153-170 |
-| The per-contract address and the observation the cases read to prove the released state is the existing `vacant`. | `contract_fingerprint`; `activation_path`; `observe_atomic_series`; `activation_waiting_reason` | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:130-135; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:137-142; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:145-152; mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:275-288 |
-| The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. | "class QueueFixture:"; "MASTER_A = TaskDocumentRef("; "MASTER_B = TaskDocumentRef("; "def git(repo: Path, *args: str) -> str:" | mcp/tests/test_closeout_queue.py:186-727; mcp/tests/test_closeout_queue.py:58-58; mcp/tests/test_closeout_queue.py:59-59; mcp/tests/test_worktree_support.py:83-83 |
-| The lane this module is registered in. | "mcp/tests/test_pause_stop_only_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:163-163 |
-| The two shared-support artifacts whose exact consumer lists carry this module (its entry is at `:322` in the first block and `:402` in the second). | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:282-341; mcp/tests/evidence-lifecycle.toml:362-421 |
-| The separate publication no case here reaches. | `worktree_checkpoint_landing` | mcp/src/agents_remember/mcp/registration/closeout.py:180-209 |
-| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:149-150 |
-| The end-to-end playthrough that exercises pause and resume in lifecycle order and proves the master a pause stops still admits a leaf. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
+- The one-world-per-case fixture: two atomic masters on one shared source pair, each with its own contract-keyed record. [2]
 
-## Cross-Repo References
+- The public pause and the public select/resume route the module drives instead of inner helpers. [3]
+- The measurement composite, the branch tips, the task-document walk, and the per-contract record read that make "nothing else moved" assertable. [4]
+- The never-selected case succeeds with an explicit vacant record carrying pausedAt, exactly one activation file and unchanged remaining world, tips, documents and ledger. The other pause and refusal cases retain their separate assertions. [5]
+
+- The public operation under test and the release it performs, including the already-stopped branch the never-selected case now reaches. [6]
+
+- The per-contract address and the observation the cases read to prove the released state is the existing `vacant`. [7]
+- The observation's own guard the *active* foreign record meets before the release's exact-owner guard, which is why the two foreign-record cases produce different refusal statuses. [8]
+
+- The exact-owner guard the *vacant* foreign record reaches, and the release that refuses it as a contract mismatch. [9]
+
+
+- The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. [10]
+
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py"
+
+
+
+- The shared closeout fixture this module builds its real Git world from, and the Git helper it measures with. [12]
+
+
+
+
+> Retained earlier citation wording: - The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py"
+
+
+
+
+
+> Retained earlier citation wording: - The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
+
+
+- The separate publication no case here reaches.
+
+
+
+- The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [16]
+
+
+- The end-to-end playthrough that exercises pause and resume in lifecycle order and proves the master a pause stops still admits a leaf. [17]
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies to this repository-owned boundary proof.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
 
-## Update History
 
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the rewritten
-  never-selected case is the change, and the earlier entries record it. Re-checked all eight case
-  ranges, the helper ranges and the two manifest rows: they hold. No wording changed. Verification
-  metadata remains closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because one or more of its anchors resolved more than
-  once at the verification commit, so no historical location was unique. Repaired the citation, not
-  the claim: each anchor that named a construct by bare name now names its exact declaration text,
-  which resolves once in the code tree, and any range that had drifted off its construct was re-read
-  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
-  the claim is about. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 1
-  claim(s) whose anchor no longer sat in its cited range and normalised 5 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 2 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T20:42+02:00 — 260831-LOCR-L38 (uncommitted change set on
-  `ar/260831_lifecycle-owned-completion-relay`): recorded the renamed and re-asserted never-selected
-  case. `test_pausing_a_master_that_was_never_selected_is_refused_and_writes_nothing` is now
-  `test_pausing_a_master_that_was_never_selected_succeeds_and_writes_nothing` and asserts the
-  already-vacant SUCCESS (`ok`, `state == "atomic-series-already-vacant"`, `paused is True`,
-  `atomicSeriesActivation.state == "vacant"`, no `nextTool`) plus the same inertness: no activation
-  record created and `_world()` unchanged. The Purpose, the eight-case list, the refusal invariant and
-  every reference row were re-derived against the current module (the never-selected case grew from 14
-  to 22 lines, so five later case ranges shifted), the `pause_result` citation was repointed to
-  `pause.py:80-128` after the pause module grew to 209 lines, the lane row was corrected to
-  `test-evidence-lanes.toml:159`, the two evidence-lifecycle artifact blocks were re-cited as
-  `282-336` and `338-392` with this module's consumer entries at `:319` and `:375`, and the playthrough
-  module was added as the lifecycle-level companion. Verification metadata remains closeout-owned; no
-  acceptance claim and no verification stamp advanced.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 curator: created the card for the new integration boundary
-  proof. Recorded the public-operation-only discipline (`worktree_pause_tool`, `worktree_sync_tool`),
-  the two-masters-one-source-pair fixture that makes per-contract isolation testable, the measurement
-  composite and why the activation store is the one excluded write, the eight independently-failing
-  cases and the distinct protection each buys, the refusal statuses, and the prohibition on ever
-  pausing a master by landing it. Verification metadata remains closeout-owned; no acceptance claim.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [11]
+
+
+- The lane this module is registered in. Source caption: "mcp/tests/test_pause_stop_only_end_to_end.py" [13]
+
+
+- The curator-coherence shared-support artifact declares test_pause_stop_only_end_to_end.py as an exact consumer; declaration does not establish invocation.
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1126-1126 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+- The separate publication no case here reaches. Anchor: `worktree_checkpoint_landing` [15]

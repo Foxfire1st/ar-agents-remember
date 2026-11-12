@@ -1,0 +1,59 @@
+{
+  "path": "skills/l-01-agent-lifecycles/templates/repo-overview.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The root overview layout lists its sections from What This Repo Is to Evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e05b645614eb1371097857ed81acf0ed9c8ea162",
+            "content": "sha256:4945deed4342d13b523ffc4024d0e3c8ae35dd07175814a6091c0dc5701b0820",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source areas and load-bearing files are tables linking local overviews and cards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e05b645614eb1371097857ed81acf0ed9c8ea162",
+            "content": "sha256:7053693e0dd1b4929ba405eed90a2760a71d46fbd595ebc83022f9f6a51af52e",
+            "locator": {
+              "end": 26,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The card-format reference points to the overview layouts before an overview is created.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab2dde55ffb6fabcf5dded641acd559ed294af60",
+            "content": "sha256:3ba5e5922a0dbe11688b780a8d210935c0ee9d9319b6f9487d3ff30010680710",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

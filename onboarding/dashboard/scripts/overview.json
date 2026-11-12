@@ -1,0 +1,241 @@
+{
+  "path": "dashboard/scripts",
+  "references": {
+    "1": {
+      "note": "The canonical admission validator checks token shape, fixed-path readability, and exact nonce equality; its throwing wrapper accepts only an optional diagnostic subject. The pinned Dagger graph supplies the matching attempt token and attestation file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:aa10c6c1e8543a7962406400499148de4d7cd42667a97a69f61af0c0a5280616",
+            "locator": {
+              "kind": "symbol",
+              "name": "daggerTestEnvironmentError"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6cfcfe06689e7f605be8a95f8561cbe45420c3d2",
+            "content": "sha256:1de2dde639c181144bafc495e4c5c0e171c566a10e6eb82bd2c14d11940e7a64",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+            "content": "sha256:c404a93523cefb50363c667e624e64e578fd94bd4b047faf2c71572b58ae3acc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_candidate_attempt"
+            },
+            "path": ".dagger/src/agents_remember_quality/main.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declaration mirrors the validator's runtime exports and optional diagnostic subject.\n\nAnchor: exported attestation constants",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:964bced0f0ba69fe975cc6af95b6c4bb0f753a74b8aefa5a2b7496aede2413b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "daggerTestEnvironmentError"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.d.mts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2dcd56c500d7e60426cd39df6b3a03e589da3ad",
+            "content": "sha256:18d76d7e5a65f878d9670b98f644de279c70f45855573bb9701f643f5513ea79",
+            "locator": {
+              "kind": "symbol",
+              "name": "requireDaggerTestEnvironment"
+            },
+            "path": "dashboard/scripts/require-dagger-test-environment.d.mts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The changed-line scorer is importable for diagnostic callers. It counts changed lines within recorded statement ranges, excludes the specified test/dev/types paths, normalizes dashboard keys, and ignores files without coverage entries. Its direct CLI guards admission first, resolves the base in the Python environment-candidate order, uses a 256 MiB Git buffer, reads coverage, and reports uncovered lines without a percentage floor.\n\nAnchor: direct-invocation condition",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:cb7730f6fc03c1359e26142f2b686d9fbaa3ee160492e41afd6440741b958631",
+            "locator": {
+              "kind": "symbol",
+              "name": "measureDiffCoverage"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:0227974000e1aff9e885c86a05263aecdd735df1f54f2c3a91dacc8e9020128b",
+            "locator": {
+              "kind": "symbol",
+              "name": "executableStatementLines"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:42135e5f222e4528924938a23936b77b7b0cd251963dc083b96abd1104103548",
+            "locator": {
+              "kind": "symbol",
+              "name": "coveredStatementLines"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:4b32d703087866562863ddad91d669e9c436679d00b97f1211fd6c4b2de17fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:ce2237c9d5fd3ee1c8ffe16151abfae0948fc69667c0239fc102a39c8dc7bf65",
+            "locator": {
+              "kind": "symbol",
+              "name": "candidate_sources"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "32b722250415940d4a176b42593587c0c3e4243d",
+            "content": "sha256:dfa5cc8974878c6b02ee30710884b3fc2b723e8e98f2b616302ad25a0da0d826",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_base"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "680b283027f83f9505b3894df457d45e63a990e0",
+            "content": "sha256:71bb282f238bb7c186fed0e235239bbb8123473b0b97efda899af4f378dd2285",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "dashboard/scripts/check-diff-coverage.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The executable-statement contract suite proves both CLI refusal and pure accounting, including multi-line statement ranges, absent coverage entries, exclusions, and dashboard key normalization.\n\nAnchor: `describe(\"check-diff-coverage executable-statement semantics\", () => {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e190d2457a4dad0b99fc4a3060474f98d7a7a5b",
+            "content": "sha256:43ab834e4ceecc7b5d4ff941c9405f8fa33869d169e44a625c5d886a8b555041",
+            "locator": {
+              "end": 110,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "dashboard/scripts/check-diff-coverage.test.mjs"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Vitest collects the route's script tests. The build chain runs the bundle checker, which fails above the default 32 MB raw-byte budget (or `AR_DASHBOARD_BUNDLE_BUDGET_BYTES`), and a successful coverage run writes `dashboard-suite-result.json` with the pass fact, the coverage path and rounded coverage totals.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3e11c5781a563030ed73ad70c65b5c1e87a440b6",
+            "content": "sha256:fdb83473d75d8fc70dd87e307f7de7895edf7ea0bdeaef4967c00ef2fe3fa4ea",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "dashboard/vitest.config.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+            "content": "sha256:99faebf32a5ae25404b4ad8052eda09db4dd65543263cde07bacfd46392f6015",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 6
+            },
+            "path": "dashboard/package.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a1e0dc9c57dbc7213141a02d8518c6dbff5b0e12",
+            "content": "sha256:ed8f8bb975c36b40b5fe2105692ddfac1ff1d2049bdf6db3989a04afea44b9c8",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "dashboard/scripts/check-bundle-size.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "798ea8871b9971fcc8ca0738b73d4f4958774084",
+            "content": "sha256:49d3162f69d5aad1c6b21ba134d78f2cd96e9caa2dd3588dac094a7638ee3556",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "dashboard/scripts/write-suite-result.mjs"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

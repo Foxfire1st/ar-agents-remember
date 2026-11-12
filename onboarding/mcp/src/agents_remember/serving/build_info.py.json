@@ -1,0 +1,318 @@
+{
+  "path": "mcp/src/agents_remember/serving/build_info.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Current HTTP state and SSE snapshot assembly add served_state_tail onto a copied projection body, with the wire checker allowing only that tail owner. Anchor: `served_state_tail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c284363bcc9358c1351d82fe3b311d7fd74521f2",
+            "content": "sha256:f63c2b3cfeeb40ba504f031a5ef7a3c1ce5ef91d398ea58ac7ce7206fb84dfc3",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "mcp/src/agents_remember/serving/_app_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "774a0f8612b76b00dccec2b920f251f4f0c79132",
+            "content": "sha256:1734f0ffe5aaf7c8a347781aa03fabd86a46d6892dd4e660c26dac8c4db461b4",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 12
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/wire_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:ad5d25867040247493249ea381a2e832027e36a20946e1ea211845c77f244510",
+            "locator": {
+              "end": 143,
+              "kind": "line_range",
+              "start": 132
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The shared Git runner applies caller-selected bounds and isolated repository environment; both probes here pass their 2s bound as `GitRunnerOptions(timeout=...)`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:5736f26e501829b927f3ec0a34e374e5efc5a275e4525a777ce9ab8182fc831a",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declaration of the `servingBuild` key, and the tail builder that applies this module's honest-unknown rule with `exclude_none=True`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:54e29f7445ed60cd40874c54db0938b16b8218f2e6559440c44b79c022e4503a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServedWorkspaceProjection"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d8ea8b003d022ea227cbfd92d758896b2371146e",
+            "content": "sha256:ba2ac51148c3514136559662808aa4f64706af7a822c9513f1f6bb156d355f15",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 49
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`SERVER_VERSION` supplies the wheel version in the daemon restart identity through the kernel resolver, which uses installed package metadata with a source-checkout literal fallback (kernel-owned since L9).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_server_version"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/version.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cockpit compares and renders the serving/client identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55465c1b52382000bb2af1af534a8e31d6407719",
+            "content": "sha256:f975107c86061b39549c59d93af8856e01db404ee4501a14e5a1e82fb9ecb1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "ServingBuildStamp"
+            },
+            "path": "dashboard/src/cockpit/serving-build-stamp/ServingBuildStamp.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:26561e37b82a0bfda157844f207916a08f8a2d9464e8294380ef66b1e6b58444",
+            "locator": {
+              "end": 929,
+              "kind": "line_range",
+              "start": 929
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fingerprint sidecar this module reads is generated at release time beside the generated bundle, and is written only after a build that carries the same value.\n\nAnchor: \"if not bundle_is_current(fingerprint):\"; \"FINGERPRINT_FILE.write_text(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:0c073bc71a772f7826af7d8508ca3767c941db66570765c57c6a7bf6ed454262",
+            "locator": {
+              "kind": "symbol",
+              "name": "bundle_is_current"
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:7859ba4fa262afb75b771b6be40d36c2f91b55eb82a1a36565d63b016be2084c",
+            "locator": {
+              "end": 246,
+              "kind": "line_range",
+              "start": 236
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The release job fails if either the bundle or this sidecar is missing from the wheel or sdist.\n\nAnchor: \"agents_remember/package_data/dashboard/index.html\"; \"agents_remember/package_data/dashboard.fingerprint\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "content": "sha256:25d21be4173050c2479907b804510a10b2ed8dc7cd1c5e7e16d9e6df29e3c172",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 110
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The serving payload carries optional dashboard build identity; omission does not fabricate a built or clean state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a98d07922b6fc1d752ba17136ea7a1634652373",
+            "content": "sha256:1f90589baad869e97def5b1fd2c6ab2fb53c32076611fa8703ab83ecc96860fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "payload"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The canonical selector list identifies inherited Git variables to remove.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:9be6edd7629b87ba159b0a5805c8d9965ced076237c86d4585d132efd11a3ae5",
+            "locator": {
+              "kind": "symbol",
+              "name": "GIT_REPOSITORY_SELECTOR_ENV"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:a861bb54d9a3235afff353218e4c62d66f21d7055fd17bb9950f1e59f7537b4f",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:a39cce29374f23fdd8e37ac828f3e731b6a622fe8a690067591eaee9add399b6",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 63
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The Git environment removes canonical repository selectors before execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:86485973cec1b30881a8538bc29f5f42f53066c3901c053eb5c3b164acaf512d",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_environment"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:3a65f1712894f28e00fe1248124b625f52415d557bf203b7adfc9d043476ca63",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 156
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

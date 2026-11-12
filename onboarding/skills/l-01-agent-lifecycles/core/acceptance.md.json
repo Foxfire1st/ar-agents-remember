@@ -1,0 +1,234 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/acceptance.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+        "content": "sha256:fb025a200afe6ac8d334342fcb121c2933cc522c599a350fcf66a0842e600f0d",
+        "locator": {
+          "end": 39,
+          "kind": "line_range",
+          "start": 39
+        }
+      },
+      "id": "RLZ-2XXZ75",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Unit AC2.1 states the durable approval-record definition inline instead of linking every-role.md#requirements-and-limits, its own place-22.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+        "content": "sha256:4cf207f8c52bc403ede25b12b64691df3bd45eb807fa335f04d564166ca42e52",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AH7N65",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L172-INV-C",
+        "leaf": "260928-MIK-L172"
+      },
+      "rationale": "The acceptance home states that a written artifact is sent with role_message to the agent that waits, and that a file on record wakes no one.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+        "content": "sha256:029282b960ad449b8bfde36bc5b46d81abb39232409b6d49031da6df26d36326",
+        "locator": {
+          "end": 24,
+          "kind": "line_range",
+          "start": 24
+        }
+      },
+      "id": "RLZ-MX6XHJ",
+      "invariant": "INV-QZW2X2",
+      "origin": {
+        "handoffEntry": "L62-CUR-6db-attach-INV-QZW2X2",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The sender must message the waiting seat with the finished object and evidence path; a filed report/ended turn is not that act.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Mechanical completion, artifact-blind relay, owner validation and unchanged authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:9cd80acee3a4afd36c9ea8fff7aea7a32943cb978c0fe7dc38663f57980d0de2",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Acceptance is per owned stable ID and version with complete rationale/citations/evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:90e216c8cb79625314d2f7efee1239ec0d54a8df0ad1aaad3dfd9b32f1efc00a",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Requirement revisions and formal delivery attempts have separate immutable lineage.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:8618afe3b198e71d75ab81f676df6dcc629c16edc3bf9b3b41a772ac282cf6fa",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Stable-contract or expiry evidence promotion is independent of requirement acceptance.\n\nAnchor: `node:...::test_replacement`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:5b09e9550514fd926d498855ff4fc242ede87dc697df6a863bffe8f8ae7acb9d",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Seat/artifact/validator duties and no second completion row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:d2df7bfce82472f0486da721c1d51a2270011d9fc3013035ccc71bde788a8234",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Immutable attempts, malformed-row correction, candidate-specific review and successor rules.\n\nAnchor: `non-attempt-correction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:77f438d3a80ac6b4df44e7dc3996130cd61442657e7ee88ed02e859c45f3be39",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Leaf journals are authority; summaries cannot gate work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:168a3a4ae452a875bf0429d49082f922c2a859356ba3eebaade01e74a57d97a0",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 107
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Selected Worker transport includes direct freeze handoff and producer-preserving post-PASS Curator list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:72f0048b8bc152a5d4e5f3efbcaa13eb8bc17df4f07a149e94693df8ce13768c",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The host relays mechanical turn completion without inspecting acceptance artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:338e801d4df395f116683bc4df6bcc751d73d997dcc14699292fbeed9c3dd871",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Each seat has its own artifact and distinct validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:a141be6b67f3695edf4421cf4815de8c400b7f7597f53bd51fe0504b89b618e4",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 26
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

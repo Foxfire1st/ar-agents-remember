@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents delivering another role’s operative duties or silently omitting applicable shared instructions."
+  },
+  "applicability": "Operation-root instruction blocks compiled for one selected role and applicable operation.",
+  "conditions": [
+    "Common passages and passages addressed to that role are delivered; excluded passages are not delivered.",
+    "Malformed recipient declarations anywhere in sections-mode source refuse before delivery; the delivered-content seal retains original source revisions."
+  ],
+  "exclusions": [
+    "No grant of another role’s duties or tool permissions.",
+    "Unsectioned all-audience blocks retain their declared whole-body semantics."
+  ],
+  "id": "INV-WR3J18",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/47d47893-c5d1-4ea1-a7cf-85b7faed8dcd/round1-final-integrated-verification-results.json"
+      ],
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "MIK-R125@v1/composition",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The compiler delivers the selected role plus only common and explicitly addressed stage instructions, refusing invalid audience declarations before delivery.",
+  "status": "proposed",
+  "supersedes": []
+}

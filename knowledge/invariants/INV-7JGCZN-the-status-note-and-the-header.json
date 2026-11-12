@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "The bound spans shared clipping, note selection and head composition; preserving its count domain prevents silently hiding legitimate notes or inventing a stronger test claim."
+  },
+  "applicability": "Status/header-note presentation on fixed sprint/master/task document pages.",
+  "conditions": [
+    "Six is the budget of notes actually drawn, after chain/primary facts already stated are removed.",
+    "Short facts and longer note lines share those six slots; stated notes contribute all-link coverage, not slots.",
+    "Long text opens in place and an all-notes link exposes any unrepresented notes."
+  ],
+  "exclusions": [
+    "A combined bound of six including mandatory chain/primary strip facts.",
+    "Claiming the candidate tests cover the exact consumed-facts-plus-six combination."
+  ],
+  "id": "INV-7JGCZN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/page-look.test.tsx: 'keeps a short note in the strip and opens a long one in place'; dashboard/src/panels/detail-panel/skeleton-bounds.test.tsx: 'shows six lines and a link to all where there are more'; dashboard/src/panels/detail-panel/page-look.test.tsx: 'draws the primary requirement as its link and its text once, under Requirements' (a 'Primary requirement' note is no head note where the fact stands). No test of the candidate covers a 'Master' or 'Parent portfolio' note, or a document with more than six notes of which the strip states some; measured outside the candidate with a probe: notes/reports/worker/7b2c4e19-5d63-4a8f-b1e0-127000000a01/evidence-f7-synced/header-note-bound/probe.log (nine notes: six drawn, no link; ten notes: six drawn, link to all 10)."
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "MIK-R127@v1 rule 10 (b)",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The status note and the header notes of a task page are labelled lines that open in place. The head draws at most six header notes as notes, the short ones as facts of the strip and the longer ones as lines, six over both together, with a link to all where the document holds a note that is neither drawn nor stated. A note labelled 'Master' or 'Parent portfolio' where the chain names a parent, and a note labelled 'Primary requirement' where the primary-requirement fact stands, is stated by that fact, is not drawn as a note and takes none of the six places; so the head can hold the chain, the primary-requirement fact and up to six notes.",
+  "status": "proposed",
+  "supersedes": []
+}

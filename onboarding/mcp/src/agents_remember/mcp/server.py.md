@@ -1,18 +1,15 @@
 # mcp/src/agents_remember/mcp/server.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/mcp/server.py`    |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-09-05T08:46+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
-| governingOverview      | `../../../overview.md`                     |
-
 ## Governing Overview
 
-[MCP package overview](../../../overview.md)
+[overview](../../../overview.md)
+
+## Current source contract evidence
+
+
+
+
+
 
 ## Purpose
 
@@ -20,56 +17,60 @@
 `AgentsRememberMCP`, `create_server`, `run_server`, and `main`; tool ownership remains in the
 registration families.
 
-The tool surface it used to carry — every `@server.tool()` declaration and its model-visible
-docstring — now lives in `agents_remember.mcp.registration`, one module per family. If you are
+Every `@server.tool()` declaration and its model-visible docstring lives in
+`agents_remember.mcp.registration`, one module per family. If you are
 looking for what a tool advertises, what it refuses, or which payload builder it forwards to, that
 is the [registration route overview](registration/overview.md), not this file.
+
+Starts the configured MCP application with either the ordinary registration families or the launch-bound explainer surface.
 
 ## Code Commentary
 
 ### Logic
 
-`create_server(config) -> FastMCP` does four things in order:
+`create_server(config)` composes the application and server in the following order:
 
 1. `install_compact_content()` — idempotent; makes the JSON text mirror of every tool result emit
    without FastMCP's hardcoded indentation. It affects text-mirror serialization only, never
    `structuredContent` or tool behaviour.
-2. `install_ambient(AmbientLifecycle(EventStore(observer_root(config))))` — one ambient lifecycle
-   per server process, with the store root resolved through the shared `observer.observer_root`.
-   The `lifecycle_*` tools and the `_tool_payload` choke point read that singleton, so it must be
-   installed before any tool runs.
-3. `AgentsRememberMCP("Agents Remember")`.
-4. `for register_tools in TOOL_REGISTRARS: register_tools(server, config)` — the loop is the only
-   place that decides which families a server advertises.
+2. Install a supplier through the light kernel service holder; the first dependent worktree operation builds the default services once, including `LeafAgentArchive(config)`. Initialize the boot-time caller-identity tool writer through `server_startup.initialize_mcp_application(config)` and complete FastMCP settings before constructing the server. The writer's constructors are light; this is no blanket optional-work deferral claim.
+3. `AgentsRememberMCP("Agents Remember", instructions=launched_server_instructions())`. A readable
+   launch binding supplies the canonical task-server instruction line; unbound or unreadable binding
+   supplies no instruction line.
+4. Read the required explainer binding before choosing the surface. An ordinary launch invokes the ordered `TOOL_REGISTRARS`; a valid bound launch registers only the 22-tool explainer surface and saves its seat binding for per-call validation. An invalid required binding refuses instead of selecting the ordinary roster.
+5. `apply_read_only_marks(server)` applies the single `mcp/read_only.py` inventory to every registered
+   tool. An unlisted name raises `UnknownReadOnlyMark`; server creation fails rather than advertising
+   an unmarked tool. This step changes annotations, not registration order or handler ownership.
 
-`run_server(config)` is `create_server(config).run()`.
+`run_server(config)` records this process in the running-server registry as an `"mcp"` server (`register_server`), runs `create_server(config).run()`, and calls the returned cleanup when serving ends; the cleanup removes the record and is also registered to run at normal process exit.
 
 ### Closed dispatch input at the public transport boundary
 
-FastMCP 1.x generates argument models that ignore undeclared keys by default. For
-`dispatch_agent`, that would silently discard a caller-supplied `model`, `thinking`, or other spend
-override even though the public contract says settings own those choices. `AgentsRememberMCP`
-therefore uses FastMCP's public `list_tools` and `call_tool` hooks to publish
-`additionalProperties: false` and reject undeclared dispatch inputs before the registered handler
-runs. This is one closed-schema enforcement seam, not a second registrar or handler. Other tool
-registration, descriptions, and argument ownership remain in `mcp/registration/`.
+AgentsRememberMCP.list_tools first awaits the FastMCP answer, then schedules start_after_discovery(config) with the running loop’s call_soon and returns that already-produced answer. The shared latch starts outside-scratch reconciliation once, including on a bare no-config server, and dashboard autostart only with config/settings. call_tool reaches that same latch as the fallback for a client that never lists, before checking the bound surface and entering tool_call_context. Bound explainer calls also validate their launched seat before the registered handler. The retained delegation and raised-call logging use the shared boundary. Tool argument admission belongs to each retained registered schema. The synchronous dispatch wrapper described below keeps that validation path while moving the handler body off the event loop.
+
+### Stale installed builds refuse publication writes at dispatch
+
+Inside the tool-call context, a server with config reads its build currentness off the event loop (`build_currentness`) and carries that reading through the call with `tool_build_currentness`, so the answer boundary can annotate answers from a stale installed build. A checkout build yields no reading unless inspection is asked for, and a bare no-config server reads nothing. When the reading is an installed build in state `stale`, the call's arguments are validated against the registered tool's argument model, and a call that `is_stale_build_write` names a publication write is answered by `stale_build_refusal` (code `server-build-stale`, naming the loaded and installed digests and the restart remedy) without running the handler. Reads, previews, unnamed tools and current or unknown readings go on to `_dispatch_tool`.
+
+- A stale installed build's publication writes are refused before dispatch; other calls dispatch under the carried currentness reading. [13]
+- `run_server` registers the process as an `"mcp"` server and runs the cleanup when serving ends. [14]
+
+### Tool-call logging at the transport boundary (MIK-R108 rule 3)
+
+`call_tool` brackets every call in `tool_call_context` carrying the exact arguments, start time and
+this server's config (`_agents_remember_config`, set once by `create_server`) to the answer boundary,
+which logs the completed call; a call that raises is logged here by `_log_raised_tool_call` and
+re-raised, with the log write itself never raising. Refusals raised by registered tools happen inside the
+context and are logged like other raised calls.
 
 `main(argv)` parses a required `--config` (an absolute path to trusted MCP settings JSON), calls
 `declare_mcp_process()` **before** `load_config`, turns a `ConfigError` into an argparse error, then
-calls `prepare_mcp_process(config)` between config loading and `run_server`. The early declaration
-is load-bearing for worktree-hosted MCP development: without it the checkout policy would classify
-the process as an undeclared CLI and ignore the supplied authority in favor of the leaf-local dummy
-coordinator. `prepare_mcp_process` idempotently reasserts the same declaration and invokes the
-dashboard-autostart hook. That hook is a no-op
-unless the trusted settings set `dashboard.autoStart`; otherwise a daemon thread adopts a healthy
-dashboard daemon, spawns an absent one, or restarts one on version mismatch. It is total and
-threaded so it can never delay or break the stdio handshake this process exists for, and its only
-output goes to stderr — stdout is the MCP protocol.
+calls `prepare_mcp_process()` between config loading and `run_server`. The early declaration remains necessary for trusted worktree-hosted MCP authority. Preparation only reasserts the declaration. Process entry and initialization start neither the sweep nor dashboard supervision; list_tools computes its answer before scheduling the shared latch on the next loop callback. The first call_tool on either surface invokes that same latch as the fallback before its surface check and dispatch. The first attempt starts the sweep even without config; with config and trusted `dashboard.autoStart` enabled, the existing total launcher also starts its daemon thread. Later calls start neither again. The sweep thread runs its heavy worktree owner in a one-shot child with stdin=DEVNULL, so it cannot consume the serving process’s MCP stdin. Launcher/sweep failures are contained and stdout remains the MCP protocol.
 
 ### Durable-store process-role startup is owned by the application boundary
 
 `main` calls the application-layer `declare_mcp_process` before authority loading, then the
-`prepare_mcp_process` wrapper before optional dashboard supervision.
+`prepare_mcp_process` wrapper before serving; the joint sweep/conditional-dashboard start is scheduled after the tools/list answer is produced, with first-tool-call fallback through the same latch.
 `controlplane/durable_store.py` names two concurrent writers of the six
 control-plane JSONL logs, `"mcp"` and `"dashboard"`, and the declaration is what lets shared code
 ask which one it is running in. `StoreOwnership.is_compaction_owner()` answers `role is None or
@@ -83,7 +84,8 @@ factory would stamp `"mcp"` onto the interpreter and every later test in it — 
 exercise the dashboard's own write paths. `main` runs once, in a process that exists only to be the
 MCP server, so the wrapper declares a fact about the process rather than about whoever last built a
 server object. The dashboard declares its role on both real entry paths: `_dev_app` for the reload
-worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:52-81; mcp/src/agents_remember/cli/dashboard.py:161-196).
+worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:133-169; mcp/src/agents_remember/cli/dashboard.py:249-284).
+worker and `run` for the foreground/daemon command path cit:([`_dev_app`, `run`], mcp/src/agents_remember/cli/dashboard.py:166-196; mcp/src/agents_remember/cli/dashboard.py:276-311).
 
 What the declaration does **not** buy is durability. Every append and every rewrite of all six logs
 takes that log's `flock` unconditionally, in every process, declared or not; the role only decides
@@ -96,90 +98,107 @@ that skips this line loses no records — it just stops being distinguishable fr
   a new family means a new module plus one entry in `TOOL_REGISTRARS`.
 - The transport subclass may enforce a closed public boundary only when the framework-generated
   boundary is demonstrably weaker. It must not duplicate handlers, invent fallbacks, or become a
-  second tool registry. ARSPAWN-L4's dispatch-only undeclared-input refusal is the current instance.
-- Keep `install_compact_content()` and `install_ambient(...)` at the top of `create_server()`,
-  before tools can be exercised.
-- **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process(config)` stays before
+  second tool registry.
+- Initialize compact-content serialization and application services before registering tools;
+  no ambient lifecycle installer remains.
+- **`declare_mcp_process()` stays before `load_config`, `prepare_mcp_process()` stays before
   `run_server`, and neither declaration may move into `create_server`.**
   `create_server` is called in-process by the test suite and `_declared` has no reset, so declaring
   there marks the whole interpreter `"mcp"` — after which `is_compaction_owner()` answers `True` for
   every MCP-owned log in a test that is exercising the dashboard, and `check_declared_writer()`
   answers for a process that is not the MCP server. The mirrored dashboard obligations are
   `cli/dashboard.py::_dev_app` and `cli/dashboard.py::run`.
-- The dashboard-autostart hook must stay total and threaded; anything that can raise or block here
-  breaks the handshake.
+- The shared post-discovery latch starts the sweep once even without config, and invokes dashboard autostart only with config/settings. The tools/list path schedules it after its answer exists; the first-call path is the fallback. The first attempt consumes the latch, with no second sweep or dashboard launch on later lists or calls.
 - Do not add a raw shell or arbitrary-command tool to this server.
 
-## Repo-Internal References
+### Role Runtime and Scope
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `create_server` builds the FastMCP instance and invokes the registered tool families. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. | "from .core import register_core_tools"; `TOOL_REGISTRARS`; `__all__` | mcp/src/agents_remember/mcp/registration/__init__.py:24-24; mcp/src/agents_remember/mcp/registration/__init__.py:36-49; mcp/src/agents_remember/mcp/registration/__init__.py:51-51 |
-| The stable tools package declares the public import surface for payload builders. | "Pure payload builders for Agents Remember MCP tools." | mcp/src/agents_remember/mcp/tools/__init__.py:1-6 |
-| The package imports worktree payload builders from the owning module. | "from .worktree import (" | mcp/src/agents_remember/mcp/tools/__init__.py:95-95 |
-| The package explicitly exports its builder vocabulary. | "__all__ = [" | mcp/src/agents_remember/mcp/tools/__init__.py:115-115 |
+Readable launch binding supplies one canonical launched-server instruction line. Unbound or unreadable binding supplies no instructions; malformed binding still refuses at its actual server_info/bound-tool boundary rather than changing startup authority. create_server retains existing worktree services and application trust composition.
 
-## Cross-Repo References
+## Leaf agent archive binding (MIK-R76)
+
+`create_server` installs the supplier whose first dependent worktree operation builds default services with `leaf_agent_archive=LeafAgentArchive(config)`, so finalize and abandon still reach the same archive owner. Supplier installation itself does not construct those services. Archive behavior remains in `cli/role_launch_archive.py` and the admitted terminal transactions.
+
+## Evidence
+
+### Repo-Internal References
+
+
+
+
+
+- The registration package imports each family registrar, collects them in `TOOL_REGISTRARS`, and exports that collection for server wiring. [2]
+
+- The stable tools package declares the public import surface for payload builders. [3]
+- The package imports worktree payload builders from the owning module. [4]
+- The package explicitly exports its builder vocabulary. [5]
+
+### Cross-Repo References
 
 No sibling repository defines this process wiring.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | n/a | n/a |
+No meaningful cross-repo references found.
 
-## L23 Runtime Package Review
+### Runtime Source References
 
-The transport server now imports its composition boundary as
+
+
+
+
+
+## Startup composition boundary
+
+The transport server imports its composition boundary as
 `application.runtime.startup as server_startup`. Startup trust, configuration, registration, and
-durable-store ownership remain application concerns; only their package location changed.
+durable-store ownership remain application concerns.
 
-## Update History
-- 2026-09-13T17:20:55+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:115-115. No content impact: mechanical anchor-range projection bound to citation source snapshot 27fb62d06e30428d8072f72f17b576fb89ccd41fd08d4f26b1a4a9e383adc055; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T01:06:15+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:114-114. No content impact: mechanical anchor-range projection bound to citation source snapshot 1740540b8733028dd833a3538d739271e8925ea5f51911a0f8dcd8c49e7e1c13; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "from .worktree import (" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:95-95. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "__all__ = [" repointed to mcp/src/agents_remember/mcp/tools/__init__.py:113-113. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
 
-- 2026-09-05T08:46+02:00 — L31 scoped MCP curator: reviewed 1 declined citation claim against frozen code `ea35964985f30080488270e71ac81657ac40682b`. Separated package purpose, worktree imports, and public exports, repairing the blank-line export anchor. Existing verification hash/date are retained; this scoped source read and citation repair do not certify the entire card or a gate.
 
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4: recorded `AgentsRememberMCP` as the one strict
-  dispatch transport seam. Production registration remains family-owned; no compatibility handler
-  or private FastMCP registry was added. Verification metadata remains pinned until closeout.
 
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 curator: re-anchored citation range(s) to current source after the L16 line movement (cited files changed, card source unchanged); verification metadata unchanged.
+## Synchronous dispatch and write ordering
 
-- 2026-08-13T09:05+02:00 — L23 curator: recorded the startup-module move into the runtime package
-  and confirmed the transport/application boundary is unchanged; final provenance remains
-  closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-- 2026-08-10T18:31+02:00 — 260731-EFA-L21: MCP now establishes its trusted execution mode before
-  loading authority settings, while the existing preparation operation remains before serving and
-  idempotently reasserts the same role. Verification metadata remains pinned until approved
-  closeout.
+After the existing launch-surface and seat checks, `_dispatch_tool` runs a synchronous registered function through `asyncio.to_thread` on a per-call Tool copy. FastMCP still validates the original arguments, injects context and converts the result. The worker receives the call's ContextVars; async handlers retain their existing event-loop path.
 
-- 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound registrar imports/collection and tools builder imports/exports to packet-specified source spans. Verification metadata unchanged.
+Potentially mutating synchronous calls hold one per-server lock until their worker stops. Cancellation does not release it while the thread is alive, including repeated cancellation. Centrally declared read-only calls and explicitly nonwriting modes bypass the lock; the bypass is a dispatch policy, not host-wide purity or permission. A string-coercible false value does not satisfy the strict boolean checks.
 
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: moved the live account to the current
-  application-layer startup boundary: `main` calls `prepare_mcp_process`, which declares the MCP
-  role before optional dashboard supervision; dashboard role declaration is present on both
-  `_dev_app` and `run`. New self/cross-file ranges are explicit scoped fixer output.
 
-- 2026-08-03T02:43:00+02:00 — W3-B01 curator: curated 9 Repo-Internal table citations with exact overview headings, current module identifiers, and live test anchor. The earlier call-site commentary was superseded by the current application-layer startup boundary recorded in the S18-T3 entry above. Verification metadata remains unchanged for closeout.
-- 2026-08-01T13:20+02:00 — 260731-EFA-L5 curator: recorded the process-entry declaration boundary and why it stays outside the in-process "create_server(config).run()" factory cit:(["def declare_process_role(role: ProcessRole) -> None:"], mcp/src/agents_remember/controlplane/durable_store.py:76-84). The dashboard owns its mirrored entry paths cit:(["def _dev_app("], mcp/src/agents_remember/cli/dashboard.py:52-81). Verification metadata pinned until closeout stamps the L5 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: **rewritten**. The whole tool-registration surface
-  left this file for the new `mcp/registration/` package, and `create_server` became wiring plus a
-  loop over `TOOL_REGISTRARS`. The previous body — a per-tool catalogue of signatures, refusal
-  vocabularies and docstring contracts accumulated over ~30 entries — described functions that are
-  no longer in this file at all; that content now belongs to the registration route overview and its
-  thirteen file sidecars, which were written from the current source. Verification metadata pinned
-  to the pre-change commit until closeout stamps the L2 code commit.
-- 2026-07-24T14:31Z — 260718-CHATS-L5I incremental curator: reconciled the public
-  `worktree_closeout_preview` / `worktree_closeout_apply` descriptions with approval-before-apply and
-  mandatory quality-before-mutation ordering. (Those descriptions now live in
-  `registration/closeout.py`.)
+- Threaded synchronous dispatch retains the registered validation and conversion path. [10]
 
-> **Earlier history (not a dated entry).** This file's Update History was a long per-tool
-> registration log (2026-05-23 through 2026-07-24) recording which tool gained which argument or
-> docstring clause. Every one of those entries is about text that moved to `mcp/registration/`; the
-> log was not carried forward here because it would document a surface this file no longer has. The
-> landed history remains in git and in the registration sidecars' own records.
+
+- Declared reads and explicit nonwriting modes bypass the synchronous write lock. [11]
+
+
+- Cancellation drains the shielded worker before releasing its caller. [12]
+
+
+
+- `create_server` builds the FastMCP instance and invokes the registered tool families.  Anchor: `create_server` 
+
+
+
+- Frozen implementation of launched_server_instructions supporting the stated file behavior. [6]
+
+
+
+- Frozen implementation of create_server supporting the stated file behavior.  Anchor: `create_server` 
+
+
+
+- Current transport wiring retains boot-time caller identity and lazy worktree service construction. It schedules a shared post-discovery sweep/conditional-dashboard latch after producing the list answer, with first-call fallback; application initialization installs no ambient lifecycle.
+
+Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:281-314 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d445e83e7d28e3c34b15d8299d279d65ab9183b9; mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted [8]
+
+
+
+- Initialization names the worktree supplier and selects the ordinary or bound surface. list_tools produces its answer before scheduling start_after_discovery; call_tool invokes the same latch before bound-name/exact-seat checks. The latch starts the sweep even without config and starts dashboard supervision only with config/settings; bound checks and raised-call logging retain their owners. [9]
+
+
+- `create_server` builds the FastMCP instance and invokes the registered tool families. [1]
+
+- `create_server` installs compact content, initializes the application services, registers every tool family, adds a bound explainer surface and applies the read-only marks. [7]
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py::create_server - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py:281-314 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit d445e83e7d28e3c34b15d8299d279d65ab9183b9; mcp/src/agents_remember/mcp/server.py:93-127 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit dc03c64a91947cee470622c560c516854eec86b5. Retired means the anchor no longer stands, not that the cited subject was deleted.

@@ -1,0 +1,91 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9d0d9de269f8ce88534dd78ab58d135e71e88072",
+        "content": "sha256:f36593638f68ebeaccf4eabbbc0a528fd178c561c8cef4faa97ed13672d8614a",
+        "locator": {
+          "kind": "symbol",
+          "name": "atomic_leaf_documents"
+        }
+      },
+      "id": "RLZ-NQE97Y",
+      "invariant": "INV-B9EZM6",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-abandoned-outside-chain",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function resolves only non-abandoned rows to owned documents, skips abandoned file/document requirements and assigns colliding numbers to the non-abandoned row.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "9d0d9de269f8ce88534dd78ab58d135e71e88072",
+        "content": "sha256:7deb00a8a9f516314b7eff39fd1e450fe8820c0e2a689384ea41d402f16bd050",
+        "locator": {
+          "kind": "symbol",
+          "name": "exact_atomic_leaf_contracts"
+        }
+      },
+      "id": "RLZ-WCN6PR",
+      "invariant": "INV-B9EZM6",
+      "origin": {
+        "handoffEntry": "MIK-R41@v3-abandoned-outside-chain",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "Loads every leaf enclosure of the master, refuses an abandoned row whose enclosure records completed integration, requires an enclosure only for the rows that are not abandoned, and returns only those contracts, so an abandoned row's unlanded enclosure never reaches the chain proof.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "5": {
+      "note": "Only non-abandoned rows require exact owned documents; colliding numbers belong to those rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d0d9de269f8ce88534dd78ab58d135e71e88072",
+            "content": "sha256:f36593638f68ebeaccf4eabbbc0a528fd178c561c8cef4faa97ed13672d8614a",
+            "locator": {
+              "kind": "symbol",
+              "name": "atomic_leaf_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The exact enclosure population preserves the abandoned-but-landed refusal.\n\nAnchor: `exact_atomic_leaf_contracts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d0d9de269f8ce88534dd78ab58d135e71e88072",
+            "content": "sha256:2bd089dada1c1cd2496b3657ed7d92aaadbaa7a16abe6a80588ff7ff01ba6c23",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Static controls cover absent/unlanded abandoned enclosures and an empty file cell while preserving the master.\n\nAnchor: `test_abandoned_rows_without_enclosures_and_with_unlanded_enclosures_pass`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d24389c3568444823237ed60dc8c5c033291659f",
+            "content": "sha256:78d1665c7012718b946dd7baff42277ac8e466b60ff19950c787fa96f3d9a3ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_abandoned_series_closeout.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

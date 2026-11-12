@@ -1,0 +1,72 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L51",
+  "rows": [
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-6GVK07",
+          "revision": 1
+        },
+        {
+          "id": "INV-K0CS85",
+          "revision": 1
+        },
+        {
+          "id": "INV-RDQYV3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-86MAA1",
+      "items": [],
+      "reason": "New family authored from three new invariants that only hold together: the union merge declared in .gitattributes, the canonical-form refusal of both loaders, and the write command that repairs without deciding. Each member was read against catalog_canonical.py, evidence_lifecycle.py, lane_manifest.py, evidence_lanes.py, mcp/tests/conftest.py, catalog_selection.py and .gitattributes, and against their tests in test_evidence_catalog_canonical_form.py; independent review R4 re-derived the obligations from the final candidate (24 mutations fail a test; the catalog sync retained every landed row and field). The reader refusals of rule 7 and the worker-refusal hand-off were examined and placed in the union invariant. The worklist shows no entry of an existing invariant in the changed files and no reached family, so no existing record covers this guarantee.",
+      "subject": "FAM-DBX1PN"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R51",
+          "packet": "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [],
+      "disposition": "changed",
+      "effect": "introduce",
+      "id": "ROW-A5BWZS",
+      "items": [],
+      "reason": "New invariant: the retained production-chain proof owns no artifact row and no contract. `proof_ownership` in mcp/tests/test_dependency_ownership_ast_helpers.py computes it, and two tests prove it. It replaces the pinned digest and counts (DEC-TQ2ZRD). No existing invariant covered the property.",
+      "revision": 1,
+      "subject": "INV-RVNFEZ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D62DY8",
+      "items": [],
+      "reason": "The document is outside the path rules (docs/** is excluded) and has no card, so the gate raises no item for a card of its own. Its changed passages (the consumer-scope bullet, the canonical form, the command, what the loader checks and the paragraph that states no inventory size) are described in docs/design/overview.md, which this leaf changed.",
+      "subject": "onboarding:docs/design/python-evidence-system.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-E9AZ8M",
+      "items": [],
+      "reason": "The card states the three entries and the comment; the root overview states the entry. The comment now says that no test checks that the entry names the shipped file, which the changed README and the card state as well.",
+      "subject": "onboarding:.gitattributes"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JXFDT9",
+      "items": [
+        "sha256:8f3a0f021431275a28408f49c7e3d85f85af89c2d4307bfdd58ca8199f4509c0"
+      ],
+      "reason": "The changed tiktoken README moves no route boundary. The catalog-accounting paragraph of this overview named the removed pin and the catalog's row counts; it now says that no byte or count of a catalog is pinned.",
+      "subject": "onboarding:mcp/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

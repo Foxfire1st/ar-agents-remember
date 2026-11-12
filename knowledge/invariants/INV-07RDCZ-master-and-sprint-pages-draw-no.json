@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Per-row controls/marks repeat grant actions on completed or unselected tasks; the developer explicitly rejected that presentation. The three row constructs share one source file, so no cross-file criterion is claimed."
+  },
+  "applicability": "Master and sprint sub-task rows on fixed document pages.",
+  "conditions": [
+    "A master or sprint page draws an ordinary or grouped sub-task row."
+  ],
+  "exclusions": [
+    "The selected task own-page switch and external grant persistence."
+  ],
+  "id": "INV-07RDCZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "directGrantControl.test.tsx draws-nothing-on-master-rows case; git diff shows only deletions of the hand-through"
+      ],
+      "path": "post-sync-structured-wave-v2.json"
+    },
+    "handoffEntry": "L150-R9",
+    "leaf": "260928-MIK-L150",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Master and sprint pages draw no direct-execution control and no direct-execution mark on any sub-task row.",
+  "status": "proposed",
+  "supersedes": []
+}

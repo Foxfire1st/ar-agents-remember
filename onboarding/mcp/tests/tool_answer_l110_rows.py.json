@@ -1,0 +1,185 @@
+{
+  "path": "mcp/tests/tool_answer_l110_rows.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real output must satisfy its row and enforced production bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:75b7ed5a92ef0d7e2459f3a00fa14949169a49c3e1bf392c7d74ddee506a6fe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_production_answer"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The user-settings row declares its caller uses and 900-token bound without returning the settings file text.\n\nAnchor: current definitions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:6fbaad159f32a99c6342be17aac600f5ead8b60e4e95a5ed2b8a75a6199ce1ab",
+            "locator": {
+              "end": 678,
+              "kind": "line_range",
+              "start": 644
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:b37fc38f6781c23482b406ed9937d1ba437eccfaa0f07bac205d9c6ca554d7cf",
+            "locator": {
+              "end": 758,
+              "kind": "line_range",
+              "start": 753
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual delivery guard must preserve an in-bound projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:7ffeea4af79244d4abd4126047905b151d77c78d3a01cacbd2dceb14e410f6a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_answer_survives_the_guard"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Generic strip-and-cap supplies cases for unprojected tools.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:2890ee446679ca00af8cddbe42d9881687d87e4a3f6717ed347b6f64f1d75c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "delivery_shaped"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The quality row admits cutCardCount, addedFileCount, cutCards and addedFiles",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:11ed08f4a2ccf007c475704172a73f8bf94f63e97c68ad8c47603e599b60d092",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 151
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Authored uses distinguish cut justification/addition requirement placement from blocking repair work",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:1b05e55e0cacfadd35cf493767894063c64096a5c2c469f219411c7a0ed5047e",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 186
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Quality row bound remains1500 with sync/start/poll production paths.\n\nAnchor: QUALITY_ROW_BOUND and QUALITY_PRODUCTION_PATHS",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:fe4d7ce1d97feed420a8b4fe93210b6d8080f28605c4b0512a142dda433dc7b6",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 219
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Baseline status names the caller use of legacyCards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:c1018018d08f4ed1d4f7d8cece51a36e4976944147233894cfd0eb08111b5a2b",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASELINE_STATUS_ROW_USES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Baseline adoption names the caller use of legacyCards.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:5832a9051cf6ae7ccbe366518cabeb9cbed14a53cb4ac3ac4633ad69e356fe0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "BASELINE_ADOPT_ROW_USES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The quality row names informational proof coverage and actual cache-build/stale/error counters without changing its bound or production paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fbe67f8ef7b5a4a36b4ec3dcc12cba3daa461c80",
+            "content": "sha256:9d9ff04d28ed530e0a3c125dbce17bcba260bcc4e1a145510f5c1858f0720efa",
+            "locator": {
+              "end": 226,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

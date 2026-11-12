@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/panels/review/reviewSelection.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selection forms and sort domain\n\nAnchor: \"export type ReviewSelection =\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "657c2d613b40c27fe45cac3caf885960f8ecccc1",
+            "content": "sha256:2a173911345b4c6c5c7b0064fa43e50d239fe661c949f58515b2f3b48ae4d25d",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 8
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The sort vocabulary retains seven deterministic values and four memory-dependent sorts, accepts nonempty judgment:<category> keys through REVIEW_SORTS.includes and derives their ✦ labels through SORT_LABELS.\n\nAnchor: `REVIEW_SORTS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "657c2d613b40c27fe45cac3caf885960f8ecccc1",
+            "content": "sha256:6d8f8332ca50c54d1a0160df398a113cd846d559be3a7de534727239bd9c8239",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Declare subject, exact block and lane selections, plus deterministic and explainer-category sort vocabulary. DeterministicSort contains the seven existing sorts; JudgmentSort is a nonempty judgment:<category> key. isJudgmentSort, judgmentCategoryOf and judgmentSortFor convert that vocabulary. REVIEW_SORTS keeps the deterministic array for enumeration but its includes handler accepts valid judgment keys; SORT_LABELS derives their ✦ category label. MEMORY_SORTS still identifies only the four entry-memory-dependent deterministic sorts. This file owns vocabulary, not ranking, persisted preference or judgment authoring.\n\nAnchor: `DeterministicSort`, `isJudgmentSort`, `REVIEW_SORTS`, `SORT_LABELS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "657c2d613b40c27fe45cac3caf885960f8ecccc1",
+            "content": "sha256:6d8f8332ca50c54d1a0160df398a113cd846d559be3a7de534727239bd9c8239",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

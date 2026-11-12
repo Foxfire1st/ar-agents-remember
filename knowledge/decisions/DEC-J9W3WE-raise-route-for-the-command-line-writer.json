@@ -1,0 +1,82 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two real alternatives were weighed and rejected, and the choice binds every later refusal text and the command's option list."
+  },
+  "alternatives": [
+    {
+      "option": "Refuse the whole batch and name the mounted knowledge_write with the exact contract path, hand-off path, hand-off name and authorization reference.",
+      "reason": "One refusal names one route that works, the item stays open, and the curator sends the same batch through the mounted writer that runs the same functions.",
+      "status": "chosen"
+    },
+    {
+      "option": "Commit the other rows and list the raise rows as unwritten.",
+      "reason": "It adds a second commit rule, reports a partial write as done while the item stays open, and splits one hand-off across two transactions.",
+      "reconsider_when": "A batch whose other rows are large enough that a whole-batch refusal costs more than a second commit rule.",
+      "status": "rejected"
+    },
+    {
+      "option": "Give the command task-document authority through a declared mode or a settings port.",
+      "reason": "It would widen the checkout guard the leaf preserves and give the command a power the mounted tool already has.",
+      "reconsider_when": "A deployment in which the mounted tool is unavailable and the command is the only authoring route.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The command's refusal carries one fixed clause per cause and the mounted call.",
+    "--config is removed and the parser refuses it.",
+    "The mounted route's texts are unchanged, and both routes still refuse under the same conditions (INV-AG8G8C)."
+  ],
+  "context": "A leaf's raise appends a question to the leaf's task document. The command line reaches the task document only through MCP authority settings it trusts, and the primary checkout's guard, a linked worktree's root and a foreign root all refuse it. The old refusal advised --config, which no route reads, and told the curator to use a worktree the root check then refused.",
+  "decider": "The developer's rulings D429 and D115, with MIK-R194 v1 rule 9",
+  "id": "DEC-J9W3WE",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-S5VHSM"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "e25778094b4d4e23d7c30c0823713d84f26bfa75",
+        "content": "sha256:0a682a032a3451bbf5c84b4a72c3c94979d829f0b26a4fe5d28d417836df7419",
+        "locator": {
+          "kind": "symbol",
+          "name": "mounted_route"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_write_command.py"
+      }
+    },
+    {
+      "alternative": 2,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+        "content": "sha256:60d6a22455fc9fd968357b89f6570f559b327bdcc2578df2a131bfb550f02c9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "checkout_cli_location"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R194 v1 Required Behavior rule 9 and its Exclusions; the requirement packet's rule 9 chooses this over committing the rest and listing the raise rows"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "MIK-R194@v1 rule 9 route choice",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

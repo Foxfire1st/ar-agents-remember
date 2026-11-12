@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/outside_scratch_reconcile.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bdcffb119a966436d12f85949cca616463148c8c",
+        "content": "sha256:c30b9b9296f02dbd5afe47584cd8f4cc0673c6f3c02ed49c37fd483bed15e77c",
+        "locator": {
+          "kind": "symbol",
+          "name": "reconcile_outside_scratch_roots"
+        }
+      },
+      "id": "RLZ-BF24XD",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The sweep itself, which the overview names as the package's reclamation entry.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bdcffb119a966436d12f85949cca616463148c8c",
+        "content": "sha256:aebc5521a72d03c4db0afb7dc772cc9b5640ff4178e81cddbd843e29a892774f",
+        "locator": {
+          "kind": "symbol",
+          "name": "with_outside_scratch_reconcile"
+        }
+      },
+      "id": "RLZ-CKB7VH",
+      "invariant": "INV-NNKNDP",
+      "origin": {
+        "handoffEntry": "L198-INV-C",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The wrapper every ending route goes through after it settles.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

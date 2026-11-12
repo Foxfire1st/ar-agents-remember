@@ -1,0 +1,2203 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The route's stop: release this contract's selection, refuse a non-series contract, report a released master as `paused` or a master that held no selection as `atomic-series-already-vacant`, and propose no next call in either success.\n\nAnchor: `pause_result` `_already_stopped_result` `_already_vacant_payload` `_paused_payload` `_refusal_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:f3b7b1b5f3399297953ade6c23f1e975da21c5d4a0a7570b2b06066c3dab1b0a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "100": {
+      "note": "The start-progress owner suppresses lineage-refused beats before any progress write.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9227773387e3bae878d9ce48db571537d9ff3de5",
+            "content": "sha256:5c4c37854a00a7de5ade11b58d2705eba183f00b97288df27de650ac8cce3ae4",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 66
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_progress.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "Start binds and mirrors admitted stage through task-fact publication; explicit attach preserves stage and dry-run publishes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a83e3b0ba83b697ae4190cd329fec12aefa5f8f7",
+            "content": "sha256:645749bc10470be4dc5c58ed620ffce1275f51c22b7d7ceedddf24aacd7a5758",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_start_task_facts"
+            },
+            "path": "mcp/src/agents_remember/worktrees/start_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "Native stage preparation preserves absent documents, promotes only admitted input stages and prepares matching master-row synchronization.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+            "content": "sha256:45037c06bc64eea050a8cdff48d66c4e0a4be04ba4ef9ef9e0d187b22ace8933",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_task_stage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_stage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Abandon publication restores task and contract sources on publication failure; this does not recreate prior reclaimed resources.\n\nAnchor: `publish_abandoned_task`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+            "content": "sha256:fd1b67a3eb2db4aa0e69c0c4d8b56495f210c9182b46723ffb7157dcb94d1979",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+            "content": "sha256:c0072023a33fe6eb6463e8fa22fd075bba5d42c095ecdeddd8aaeafe15c8ab7a",
+            "locator": {
+              "kind": "symbol",
+              "name": "publish_abandoned_task"
+            },
+            "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "Ancestry, disjoint byte paths and equal reviewed after-images define the clean-sync exception.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:7a65b3a43ec9a86839f97e43234988f11363361deea0709be2ff20d9a481fe43",
+            "locator": {
+              "kind": "symbol",
+              "name": "clean_sync_keeps_route_review"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "The door keeps the original record-digest provenance while checking its other inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "106": {
+      "note": "The neutral process holder supports an explicitly named lazy supplier: first lookup retains its bundle and reset clears bundle and supplier. Start/creation checks every leaf stage, planning attach checks before re-entry, and task-stage publication refuses planning/abandoned-to-inProgress while intent review is open; existing later-stage attach remains separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:ae24711ffa2588e8c5b4bfee02e4cbf71befeb53805469bfd229a1beca397c13",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_services"
+            },
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d1dd581ce7a39878387a2f6a26246563ee31c405",
+            "content": "sha256:df4e9f4174d0511ace4f7789030d2b0857e130995ac3ac65724b0e657ecca6a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "reset_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/kernel/worktree_service_binding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ff9e4fca054c6ed5dc91a1d267603fc32236d8f9",
+            "content": "sha256:45037c06bc64eea050a8cdff48d66c4e0a4be04ba4ef9ef9e0d187b22ace8933",
+            "locator": {
+              "kind": "symbol",
+              "name": "plan_task_stage"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_stage.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:9ba4e862fe0f5132658fdeb769f1c9e98939478fd2e2143fd854a320668552de",
+            "locator": {
+              "kind": "symbol",
+              "name": "_open_intent_review_start_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ca78649db203d17f9087e7728f77b20e3a1d144",
+            "content": "sha256:57380391a2464786fd255bb6f564c24f4af215513cb146389724293577264c50",
+            "locator": {
+              "kind": "symbol",
+              "name": "_contract_intent_review_block"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The child-admission seal is deleted: the parent-series helper is now resolution only and no lifecycle cell refuses a leaf.\n\nAnchor: `require_parent_series`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad8ead1570b3768fc61e53a84ee6fdb7e46505dd",
+            "content": "sha256:adb98b4ad2b137027edeb544d7102ea297d86c01140eeb6d0b93872a03d22800",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The stop cannot reach a publication, asserted structurally over the module's import closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:3cee22c074a1321d04fd58e1890fc02bdd44f6700364e32bb2d89460fd0f26b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "PUBLICATION_MODULES"
+            },
+            "path": "mcp/tests/test_pause_is_not_publication.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a24443a30248d8bc65193ddde2d9f9ca3bd89244",
+            "content": "sha256:f952656104dd9726ab83c6b0d6ff3d9de4727e7bc3d1a6483f42b3ce4547198d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_pause_cannot_reach_any_publication_module"
+            },
+            "path": "mcp/tests/test_pause_is_not_publication.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Selection observation treats absence as vacant and refuses a record that is not this exact contract rather than inferring from task or queue state; the record address is the contract's own digest.\n\nAnchor: \"def contract_fingerprint(\"; \"def activation_path(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
+            "content": "sha256:8873f85453764b66074b38456dd555d2d7a1a5e400b0f7c6795998742010474c",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_atomic_series"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
+            "content": "sha256:43fa914c6970f7935d94f2a425140ab5639b240575efb963f845ae9005ac30c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_record_identity"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
+            "content": "sha256:10d1737c51836553255dfb464c23079367c2aa306fb3eaebb19d1f4e795c4b01",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 130
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74c0cad8eea0efbf34e6484bc10c8d3f7324cb40",
+            "content": "sha256:7c08e5a860b1bf82c64c5b31bda2cff218bb28404e571f30939e94e7fdb9b072",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 137
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Selecting admission publishes reconciling, delegates exact sync, and publishes active only after the current source pair is proven; the public admission explanation stays contract-grounded and never names a foreign master as a precondition.\n\nAnchor: \"def atomic_series_admission_projection(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:82a0467e81acda8134452cb44246bd38e3d67121d07bc23793e8ba7e05db8703",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_atomic_series_contract"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:630ac1cdcec197b6d2a3c68fbc6b0a37d5a076d74cbd235fc33dd544da42b423",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_selected_series_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c4582d616975e814d836e783e7740241623795fa",
+            "content": "sha256:85bd47f3bdd06d8a0318d43353a8c94570de8fa1188f078f837fbad4308c3480",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Sync recovery reads its canonical enclosure-root reports journal first, with the old lifecycle location only a legacy fallback; operation observations do not derive transaction state from task prose.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:888445edc330c6b525441a393fc1814ef0a452abccf4087af43ae902183bc703",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncOperationStore"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_sync_operation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_operation_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:0722fd8efa8195977a4cc573e86e739deb63a7b2638366489ba687b04635512e",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_sync_operation_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The sync driver retains content conflicts for continuation, permits only continue or cancel as resolution actions, and validates a staged retained merge before completing it; knowledge content is resolved in the memory worktree, not through an authored-reconcile action.\n\nAnchor: `sync_contract_under_authority` `_continue_resolution` `_finish_retained_merge` `sync_input_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:ce81740d2e4cb263c942716af0d464e2cbb0d81cb98bf15d04ba52d79ae18843",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_contract_under_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:3fce0f446e84a30cefa7d3cb960ba443023ed4a0f53dd572c5c21a9be7b3715c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continue_resolution"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:27263045c63dce8ebca834cad04afc20cbff97d45266c1e9c9724c18d3d87c14",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_retained_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:420bba6070f930e9f28cc012c50608dc342c1eceec049eb67436eb236f2ead87",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_input_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:92637d10b86307a10fd54e9bc790c61e5f8b55b20307915e6582c85f4299d52f",
+            "locator": {
+              "end": 521,
+              "kind": "line_range",
+              "start": 500
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:6ca6441940c2a59539a1da57c4e60adf31f06b1b57c9d240d2ac99e12a400adc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Cancellation restores only operation-owned heads; malformed or missing journals recover only through explicit pinned-ref proof.\n\nAnchor: `cancel_sync` `recover_unreadable_journal` `recover_missing_journal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:49a16a4d82b78900965c3ad0fa38ede749418938846086882583afaceb0e8758",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Every sync proof is Git state — the admitted head, the already-current decision, the staged resolution (validated by the MIK-R22 knowledge validator before its commit when the memory is converted, after a crossing sync's history file is closed), and the completed branch — and none of them reads a ledger row list.\n\nAnchor: `_finish_staged_memory_merge`, `_already_current_result`, `_require_completed_branches`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_staged_memory_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:36e8e6e3886d04112e9ee640f0ce775ab12ab51e902fa8086f496bd5abdeacf6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_already_current_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:4c14ef1128e8d76827f7b5aad6fdd4f416ba99102bb37715a114928c26fcb5a9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_completed_branches"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A mid-flight selection reports the stuck contract and both exits, and a succeeding pass beside it never reports its own success state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:ea05cd69d2800a2c3aa4fabb826af781496ab06d3aa7a199b00d121bda4f49f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconciling_result"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80877588e0a3d187d2937065266942c9c8c15a2e",
+            "content": "sha256:d859ade20e14875fb6e8933036d66394899f9ba1d0037a0d02155fcbd2bf2516",
+            "locator": {
+              "kind": "symbol",
+              "name": "_mid_flight_summary"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Checkpoint captures the current code and memory branch tips without a ledger mapping prerequisite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+            "content": "sha256:d20baf102c103562275f1f962c9d56908d2ac73c7dd825b2278c0def63765742",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_series_checkpoint_refs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Consumer source rows are derived only from Git attribution.\n\nAnchor: \"Only committed Code-Commit attribution contributes mappings.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:075c604f68bbcdc38ab786bf1d991f36cd4b86e8ab3f3e72b6daa87321d35cd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_ledger_source"
+            },
+            "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:843eecbd9398bdd7bf1688e81834a92fbb9c2274951f0ba8df57064b34224eec",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Real memory source ancestry remains a landing requirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_integrated_memory_ancestry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Converted memory uses structural file plan.\n\nAnchor: `_knowledge_merge`, `_apply_knowledge_merge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_knowledge_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact series rule retained in extracted owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_in_flight"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact series rule retained in extracted owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_in_flight"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact series rule retained in extracted owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_in_flight"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Master review history reset in extracted series owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:91a5967451e5aa12fb72c05b33da5e83e2851ab39c1029b6daf33bb2a7f246a6",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 477
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact series rule retained in extracted owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:d424aed091836a5806346e94edcebe40e4716778073398e69ca2ae6bb72acd2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_in_flight"
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Each landing is an ancestor of the ref, and each step is proved by enumeration against the positions the chain's own contracts record. Source caption: `_require_landing_spine_side` `_require_admitted_step` `_landing_source_positions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:c594bbfaf8e1bf47119844ca9d5e4b68fa8eeb98e2196aa4a271db97ef28e4db",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_admitted_step"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_merge_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:c45d08541822829df3854e488e60e9655f5080211e4ce86a0100bec539341221",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landing_source_positions"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_merge_admission.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+            "content": "sha256:a7819073bdd4a44d9d573fcb998aa980753410dbfc254b1d356bfc7d04073afd",
+            "locator": {
+              "end": 827,
+              "kind": "line_range",
+              "start": 751
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Inside means reachable from the step's end and not from its start, so a position that only descends from the step is outside it while a line merged in from the side is inside. Source caption: `_positions_inside_the_step` `_reached_by_the_official_positions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:e516bed8e0b65642c58a5d3ca8a7cdda409f338e13d4f8e71763d070a0b04785",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 415
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_merge_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Both directions of the step rule are pinned by one collected case, because both lanes sit at exactly their budget, and the descending-position counter-case is untouched.\n\nAnchor: `test_a_leaf_level_sync_position_is_admitted_and_a_silent_one_is_refused` `test_a_position_that_descends_from_a_step_does_not_vacate_it`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4916f04b8b3de1b829daa61ae1fdaebcd4d9266b",
+            "content": "sha256:0b338c822941b12225cd603622e90638d7dd9692c21eb8e32d41352b71e7b5f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_atomic_series_chain_pair_order.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "38": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The order the spine walk consumes: non-empty leaves are proved landed before ordering by the pair predicate, refusing unless exactly one minimum exists; empty landings are excluded from that ordering and separately proved at a joint chain position. Source caption: `_require_exact_atomic_landing_chain` `_ordered_atomic_landing_chain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+            "content": "sha256:28b5396779b9c7482b3532072707987d36124ac09bb8113a99ac1c2833cc859d",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 354
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+            "content": "sha256:02e5731f2841807f21685490a02dc9c44e108c44bc2b3298c8233da78f6ad8c6",
+            "locator": {
+              "end": 542,
+              "kind": "line_range",
+              "start": 457
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Continue/cancel inputs and specific old-journal read tolerance.\n\nAnchor: `sync_input_refusal` `SyncSideRecord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:6ca6441940c2a59539a1da57c4e60adf31f06b1b57c9d240d2ac99e12a400adc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:78d0295cca9d2206e6161162136546049c854471bd75ab1a1ea7d9fd16ae5f46",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "Supported staged continuation and cancellation guidance.\n\nAnchor: `continue_side_merge`, `resolution_required`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:a58de0c68499a1c7e744f240a8a00072cc8d27f4f61bf8e73b5392afaf2d7463",
+            "locator": {
+              "kind": "symbol",
+              "name": "continue_side_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:8681ec0272c8340c334c8eaf956a0e75974de8eec574ec99f2ede6b6bc4cbc30",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_required"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The route helper: marker probe, fail-closed on unreadable trees, refusal without a paired code commit or a bound validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5891a6a7401ef37c894e00b76e81c0d767668d36",
+            "content": "sha256:aa332bb18e41592517bc51018ebd391b7c27da4223ac1a258d8dc761d4c215a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "has_layout_marker"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5891a6a7401ef37c894e00b76e81c0d767668d36",
+            "content": "sha256:266112f38d4fc0f657ca1e53046b5369394d04150813d8df6b2cb20f4bee0524",
+            "locator": {
+              "kind": "symbol",
+              "name": "memory_commit_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The port the helper calls (since MIK-R09 with a `leaf_refusal` twin) and the bundle field that carries it (beside `knowledge_crossing`, since MIK-R24, `knowledge_worklist`, since MIK-R08, `review_artifact_cleanup`, since MIK-R25, and `knowledge_gate`, since MIK-R09).\n\nAnchor: `KnowledgeValidationPort` `WorktreeServices`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "The sync validates the staged memory merge before its commit, against a converted base when a parent is unconverted (MIK-R24 rule 7).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_staged_memory_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The driver maps the refusal to its own state with a recovery line.\n\nAnchor: `_knowledge_validation_refused`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:6ca6441940c2a59539a1da57c4e60adf31f06b1b57c9d240d2ac99e12a400adc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The route never commits converted memory unvalidated, and an unreadable tree is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3768b4016fd921a34a69b6dcfcf2df78901c48a7",
+            "content": "sha256:62151ea2bf987bce7d8838359f0c442a79464ef9234f04006c48193750924082",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_worktree_route_never_commits_converted_memory_unvalidated"
+            },
+            "path": "mcp/tests/test_knowledge_validator_routes.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "47": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The plan before Git, and its application to the started merge.\n\nAnchor: `crossing_plan` `apply_crossing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Structural planning applies to all converted sides: conflicts, conversion, and since MIK-R66 the alignment diagnostics (aligned cards, renumbered references, kept evidence lines, skipped cards) are reported, even on a clean merge.\n\nAnchor: `_knowledge_merge`, `_apply_knowledge_merge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:eb1fed75ae6bdd3627ae2f50b590865656ddb09e3c7080e05ebe45dd8aec1ea5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_knowledge_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:bf6f2da12671f7ce7b698d8c61875ab0cc51965fe457d3f17792ce054468617d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_apply_knowledge_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "49": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The port and its request and view.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:8f96680898f7f47505195bd2aa85e34b5d6ac2fa29060e19da8ebdc618203b6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeCrossingPort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:10d81f79abdf38659f44010a5b9c65c7a311ee40ed2b6ad9be2937df7577de6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:e34f9c8dba1e627374789d808cc8164b9fe72317a29b0ea8244f32c2a2a3bcd2",
+            "locator": {
+              "kind": "symbol",
+              "name": "CrossingPlanView"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "The unconverted-line refusal (MIK-R46 rule 1): a tree whose official line is converted converts only through the crossing sync, and the cutover lock refuses any other attempt by name.\n\nAnchor: `unconverted_line_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:0860cab26f7e5d70b2a1f337343d94382f3e23a8bc1411dfcd644d11cfd5b007",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The durable report and the master-line history file closed at commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:f3f0c7ee1f793ec67ce30436950163e72dd40e0a71753c28fe1c62ede4ff2921",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_crossing_report"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ef6345d05ffe2c156f9923c9abef905ee5bb31ef",
+            "content": "sha256:3302222db837b98bf5fef2034d41306d014a5ba2a0f0829d178b3ca479d7dab3",
+            "locator": {
+              "kind": "symbol",
+              "name": "close_crossing_history"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_crossing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The port and the bundle field (which since MIK-R09 also carries `knowledge_gate`).\n\nAnchor: `KnowledgeWorklistPort` `WorktreeServices`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "53": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The completed result gains the summary; every failure leaves it unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:4914b185c2e5d37db635c28801ec25eb7e089977c7b791b1c9b13703c40528f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_recomputed_worklist"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:891cae08c8d5b0e773a64d1940b51a1ac566213ac0137ba3f1bd58f7c4aefb56",
+            "locator": {
+              "kind": "symbol",
+              "name": "recompute_knowledge_worklist"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "54": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The `continue` replay recomputes too.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "717d1670bb032c7c1d6cd404b78aeb00ff0ea01e",
+            "content": "sha256:1878b0e5f75356e4c1f49f02da11786351b0b85f974ec6fcbd1eb47f0f3c6766",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_resolution_replay"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_results.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "55": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The archive hook's request and port.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:78c2fc03754e60799b7b340e453b7d27c2a418c9e2c5107fd7eabba637286785",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewArtifactCleanupRequest"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:c589198488aae3fba7f0728df8cb78c599fbc4fa68ae434456c7908c9274782d",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewArtifactCleanupPort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "56": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The conditional finalizer helper acts only on archived or would-archive results; a series archive skip invokes no cleanup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:a49a9c54c5362e6d72020b6b913bbb89e032b6b1b422a3b457811dfe1887d4dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_with_review_artifact_cleanup"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "57": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Finalize resolves a leaf naming none through the shared helper.\n\nAnchor: `_folder_parent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "58": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Reopen resolves a leaf naming none through the same helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:d7ae3e856d2a369ac754b7915fb9f7fc4d32d178f18549a7718980357f8fe3fd",
+            "locator": {
+              "end": 575,
+              "kind": "line_range",
+              "start": 565
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "59": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Reopen's placement guard on the leaf and the master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:3800c4595e1f9a984649face53b7226fad3aae0895f842726784da91c9f124bb",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 485
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "eb7f219c54077c4961695239a2bdaf7de1332e9c",
+            "content": "sha256:a734863be97b21bfc368a8228dac7cbb585ee17082113bb5fe4fade3cf404239",
+            "locator": {
+              "end": 541,
+              "kind": "line_range",
+              "start": 501
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Current custody/release of historical pins; no creation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:8a42dc6b7bcee527e6e8e183306a265ac7762ed3aebdab6174cd9937bd3b9951",
+            "locator": {
+              "kind": "symbol",
+              "name": "code_object_custody"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "912d1707bae355645c256a55af1b52aeb7276c9f",
+            "content": "sha256:76e1344c022398ef8d50dd167e4a7ea60196db6ebcd824cd1664f9a2729d6cbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "release_retained_code_object"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/code_object_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "60": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The layer's probes, the unbound refusal and the closeout's own write.\n\nAnchor: `converted_memory` `GATE_UNBOUND` `close_owner_history`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout validator's and the landings' gate.\n\nAnchor: `leaf_gate_refusal` `landing_gate_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "62": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The direct landing's closing, kept and settled per generation.\n\nAnchor: `keep_direct_closing` `settle_direct_closing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "63": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The port, the landing request and the direct verdict.\n\nAnchor: `KnowledgeGatePort` `LandingGateRequest` `DirectGateVerdict`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "64": {
+      "note": "Direct apply selects the history source, closes it, then judges the retained closed tree with restore on refusal; exact retry reuses the retained generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:46ea685defa6d5a6c2ae12d11cd38463eb2b01a2fef1c6a4899f85adfe84c08c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "The unconditional legacy-input refusal and its recovery wording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:299e20bd8b429ee9b9bd297e5e884b38171e7a4d9e485b633f99fbb8d7188da1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The worktree layer's helper that names the leaf's line.\n\nAnchor: `leaf_cutover_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:b1e557792c411356882132a3a924065201ef785ec9d460d05479740ad13966b2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The managed sync asks the lock at admission.\n\nAnchor: `_cutover_locked`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:6ca6441940c2a59539a1da57c4e60adf31f06b1b57c9d240d2ac99e12a400adc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout closes a reopened leaf's latest attempt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:6b4c04dfd9b35b403d74935df75e70d266ec4abe29546e36f92139e9313e049e",
+            "locator": {
+              "kind": "symbol",
+              "name": "latest_owner_history"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "The rollback restores the cache before the merge abort.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:d97b331539bed08d8bb17a4fe08fb8c7706ee94b36bf4048fe03eedbc4a5800d",
+            "locator": {
+              "kind": "symbol",
+              "name": "rollback_side"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The commit whose closed history files are frozen: the recorded, completed closeout's.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
+            "locator": {
+              "kind": "symbol",
+              "name": "closed_out_memory"
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The memory trees of a commit that publishes a leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:7f7658aef8f8814a4f38488dc3f46c8ca272521cc949289aed2959d643702830",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafPublication"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "72": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The contract is probed and read once through the read recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:bfec3a3775045fe3fe7e3a92d32691cdcd15bb5f228b4411aa801ec873ff97a9",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 460
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A read is recorded with the identity of its exact bytes, or as absent or unreadable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:e786348fd708fd63c48c22be7a4bb9715f5c1ae97ba0ff3a8f903c1247849231",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_text"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A missing file is recorded at the probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8a23691198bebbe2d0f859101a6f6dab3b9b29d0",
+            "content": "sha256:7f62b031768c3439106d46110e3a664a0a6fc84e1d085beb6626a63fdcb57395",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_exists"
+            },
+            "path": "mcp/src/agents_remember/kernel/recorded_reads.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Only non-abandoned rows need an enclosure, and a landed abandoned row refuses.\n\nAnchor: `exact_atomic_leaf_contracts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d0d9de269f8ce88534dd78ab58d135e71e88072",
+            "content": "sha256:2bd089dada1c1cd2496b3657ed7d92aaadbaa7a16abe6a80588ff7ff01ba6c23",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The chain proof is built from those enclosures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+            "content": "sha256:6d5715eb1e130695cd587653b7ce684c1e13e0ef342229b15e9286ed2d860094",
+            "locator": {
+              "kind": "symbol",
+              "name": "_exact_atomic_landing_chain"
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A task holding a series contract is skipped with the commanding sprint or the retire route named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a6426966075d0545fc7e6ffea623bf8eebc99c4",
+            "content": "sha256:7d724964b494ab897ee122054392a6164bf5da21692be99a161da38e85572c96",
+            "locator": {
+              "kind": "symbol",
+              "name": "_series_archive_skip"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_resolver.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Retirement readiness refuses actual open leaf work and unfinished or unreadable current operation authority, and returns evidence and retained facts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:8c1e9770cbb0bd51d7bb9f1e75c123ae56fc5ba570bee5e5f3f9694d6d58b040",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_master_retirement_ready"
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "**Retained historical source account — superseded by the current route account:** Attribution alone supplies source rows; invalid code objects are separately excluded\n\nAnchor: `completed_direct_owner`, `parked_wip_failures`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
+            "content": "sha256:6e5e9b3efcc9f545307510c28ff4d3d2d09d3e2eda135be60cb3359dba30f029",
+            "locator": {
+              "kind": "symbol",
+              "name": "completed_direct_owner"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:f0dff9c8e1941e3fa32c0dd46a1446b8119fd22cd943fec5624cd6dd9d81dd4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "parked_wip_failures"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4928d1695e5b94efd6ce1e9eedcebf1c1caa9da5",
+            "content": "sha256:075c604f68bbcdc38ab786bf1d991f36cd4b86e8ab3f3e72b6daa87321d35cd2",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/worktrees/ledger_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Task observation, knowledge validation, the knowledge crossing, the worklist recompute, the review-artifact archive hook and the mandatory invariant gate use explicit service ports; `WorktreeServices` carries each as a field.\n\nAnchor: `MemoryQualityPort` `CertificationContinuationPort` `WorktreeServices`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "Cancellation proves ownership first and restores every parked side before terminal retirement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:340169bbfd65c940c2789ec169cfec2b3f1f34a02615475f4d89e1c2b9420d0c",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 168
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5891a6a7401ef37c894e00b76e81c0d767668d36",
+            "content": "sha256:266112f38d4fc0f657ca1e53046b5369394d04150813d8df6b2cb20f4bee0524",
+            "locator": {
+              "end": 118,
+              "kind": "line_range",
+              "start": 64
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "81": {
+      "note": "An exact direct replay retains its generation, except that an unpublished self-cancelled refusal starts a fresh generation; a changed request can replace retired terminal evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:42142156f8934a41dd1df920ed0da657c720f8b1315cb768325673bd8652165e",
+            "locator": {
+              "end": 1706,
+              "kind": "line_range",
+              "start": 1662
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:7ab017492371811a9ba7b82b1b0d72b17404fabe25de51094b909e82f718eb5d",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "82": {
+      "note": "**Retained historical source account — superseded by the current route account:** Sync lock skips absent, already-current and skip sides; moving candidates alone park",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "703a4ae7e5f0d15d047c331c374bf47f6a4063c0",
+            "content": "sha256:eb212c867f6cfd09d4439893f9934f7753a0e26d6a2b6742c2421c6b2d7a4e20",
+            "locator": {
+              "end": 343,
+              "kind": "line_range",
+              "start": 263
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "**Retained historical source account — superseded by the current route account:** Report selection does not include aligned-card count alone",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:6d9acb80e9fa246b2a26664452a8b1ca81fce26d91578019b2d9da128b76bab8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_needs_crossing_report"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "84": {
+      "note": "**Retained historical source account — superseded by the current route account:** Memory merge validates exact staged tree before commit and proves pinned parents",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a63984305b167f217f656a85724a6f70fad04702",
+            "content": "sha256:3a20c476b4a05e39bde63fb4fdfa2181f4fc1b6ef772829bf6e7a2c479190ca6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_staged_memory_merge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_merge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "**Retained historical source account — superseded by the current route account:** Completion publishes journal before cleanup; worklist failures omit summary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:23b619646dceb4a55b973d7389a5d05b6836d583916918b8d4d098809e36360e",
+            "locator": {
+              "end": 136,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "**Retained historical source account — superseded by the current route account:** Malformed explicitly selected copy contracts raise; indeterminate failures depend on own refresh",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+            "content": "sha256:d82fe2f3e652d9f402fffa97decdb6a14048d800230943d046d6a31f558c9835",
+            "locator": {
+              "end": 188,
+              "kind": "line_range",
+              "start": 127
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "87": {
+      "note": "**Retained historical source account — superseded by the current route account:** Checkpoint captures its own refs and rechecks them at publication",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+            "content": "sha256:24b3a17fad4bbcc5fffbcc5328cb9072ba423220282887f9f65fec19f3fca882",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f67644c1701e0d683788944412a932744fd0bc2b",
+            "content": "sha256:d9a7b9863ac518d6e6de0365d91ecaaa703e93a790f129b4dad54c294a6c2555",
+            "locator": {
+              "end": 260,
+              "kind": "line_range",
+              "start": 212
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "88": {
+      "note": "**Retained historical source account — superseded by the current route account:** Abandoned rows omit required enclosures but existing contracts still parse and completed landings refuse",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d0d9de269f8ce88534dd78ab58d135e71e88072",
+            "content": "sha256:9eb19f9d76f63b05e5f326f961bbd61546169cf4f92b1645d959d483af1243d5",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_leaf_contracts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "**Retained historical source account — superseded by the current route account:** Chain enumerates additions and bounds ancestry admission to positions inside the step",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1fd1422c3c66140847529fbabe1c2f0c2f380e9",
+            "content": "sha256:1b7a4b1b1b222b1be4c80250e0a1e2eb49c2b233eb02d9ededd087e8389c714b",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "mcp/src/agents_remember/worktrees/series_merge_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The activation record is a strict per-contract fingerprinted snapshot with explicit selection states.\n\nAnchor: `AtomicSeriesActivationRecord` `AtomicSeriesActivationArchiveEvidence`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
+            "content": "sha256:370e42bfb4c36180e5f33c5b29f18bbb17ae3b49c6b2ba83a09cb828ceaeeef2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "**Retained historical source account — superseded by the current route account:** Completed closeout alone freezes history; latest attempt is closed with reversible exact-byte restoration",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:7e62f02406a1bca57e4306035af6d5886206e02c2f674f2f64628597fec7b90e",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:5e782eb6fa8dd27c2740d48b24b4c8388b91d8c0d4003ad36d2ac368284bb241",
+            "locator": {
+              "end": 431,
+              "kind": "line_range",
+              "start": 372
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "**Retained historical source account — superseded by the current route account:** Prepared converted closeout still refuses history closing; landing combines validation and gate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:f2d0082983bc5298969f6b108a8ae5cf58eae73c9187b57329125dd0ce938d22",
+            "locator": {
+              "end": 247,
+              "kind": "line_range",
+              "start": 211
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:67d47854920238903c844bd4769263945e3ecae17cf2d940b09799639597a8b1",
+            "locator": {
+              "end": 355,
+              "kind": "line_range",
+              "start": 316
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "**Retained historical source account — superseded by the current route account:** Pause checks removed memory mode, exact series identity and observed vacancy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:06e04305602360a4e2d7fb597ff0ae9b20fa86e11a35cf533f0faeefb3be94f8",
+            "locator": {
+              "end": 153,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "**Retained historical source account — superseded by the current route account:** Series reopen preserves landing on reconstruction and tolerates missing/unreadable task document as a report fact",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:30addfa9e7315b04c8eea4889493c643b27f6dba93e3bb0ea6bdb33b71352eee",
+            "locator": {
+              "end": 412,
+              "kind": "line_range",
+              "start": 273
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dfe0753185e5a094aa76840372354516987503d5",
+            "content": "sha256:ed87aa1001f8f50db3e1e01f775557a7358c9377813a609c920c75dec8290262",
+            "locator": {
+              "end": 553,
+              "kind": "line_range",
+              "start": 501
+            },
+            "path": "mcp/src/agents_remember/worktrees/reopen_series.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "**Retained historical source account — superseded by the current route account:** Retirement refuses unfinished/unreadable current authority and selects remedies by locator availability\n\nAnchor: _survey_operations",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38f3592d3b8cfb6deac55b2116b1755e5403be7e",
+            "content": "sha256:99c4b020ac0714e5abd0ec68ade6c104c4b2b9391ee6a4f263cadd8618aecd0a",
+            "locator": {
+              "end": 438,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "**Retained historical source account — superseded by the current route account:** Terminal archival is explicit, skipped on preview/non-leaf and best effort after admission\n\nAnchor: archive_terminal_agents",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
+            "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_agents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "Shared native reapply expectation uses the carried-head rule and effective worktree context, never an alternate or plain-file fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f56826a17887834f619a63425e06602c15715faa",
+            "content": "sha256:9760f9e90bffa86df3c9c2d10bcd85b1600ebc4c2247d661ac0658f254f9ce0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ReapplyMerge"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_proof.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Binary staged bytes remain exact in cancellation ownership comparisons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b2ac502f4c8e261b04d7ea2c1079845d00914c99",
+            "content": "sha256:d6ca6f6c8d1d1796163dd85e473697753ef40f66cd41bd2c6cbd8a3716dcbbd6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_index_state"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_git/_cancel.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "Native merge faults are propagated before any cancellation mutation, and later work the transaction does not own is saved and named rather than refused.\n\nAnchor: `cancel_sync` `_refuse_cancel_for_later_work`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "24a1020618364183d4a463dddbad48cd8692d934",
+            "content": "sha256:49a16a4d82b78900965c3ad0fa38ede749418938846086882583afaceb0e8758",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_recovery.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Task recovery guidance never invokes removed get: an established safe leaf can offer task_doc.replace with the exact slug, contract and fields, while an unknown leaf or parent path offers file repair without a guessed mutation. Launch copies contain the own leaf plus declared local requirements, name missing sources without failing launch solely for absence, and refresh/reclaim on canonical publication under the existing rollback and copy budgets. Status copy drift is informational; missing notice is not universal byte equality. Packet-owned refusal presentation preserves the central conversion sentence and single probe-made case, with exact sync args or quoted separate first-conversion argv and no step for unknown. These accounts change neither canonical-file authority, checkpoint/pause distinction, cleanup/reclamation eligibility, paired source lineage nor sync behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:299e20bd8b429ee9b9bd297e5e884b38171e7a4d9e485b633f99fbb8d7188da1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

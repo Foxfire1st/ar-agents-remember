@@ -1,0 +1,96 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/terminal_inventory.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:f33df56c4dcf1a2cfe492f7001f07a9265d5c1b949bb8890a06a752626076649",
+        "locator": {
+          "kind": "symbol",
+          "name": "terminal_without_remains_reason"
+        }
+      },
+      "id": "RLZ-34ZF3P",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Historical retired-defect attachment: this current repair owner persists/returns the durable no-remains reason. It does not establish that the old missing-reason defect still exists.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:f33df56c4dcf1a2cfe492f7001f07a9265d5c1b949bb8890a06a752626076649",
+        "locator": {
+          "kind": "symbol",
+          "name": "terminal_without_remains_reason"
+        }
+      },
+      "id": "RLZ-80VFRB",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:fc2a99e2fcec1da7f2658e24ad28aa3efc5593542dbd5ef4a39fac90b6d3aca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "_outside_scratch_absent"
+        }
+      },
+      "id": "RLZ-GKDZ7F",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The extra condition the remains-free reason now requires.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+        "content": "sha256:6dceb7ab40340ff77ed6d4ac3aa5ef5dc67ed5f31d710b46b16cdc4fcd852cd5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MDB7T1",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-terminal_inventory",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Requires the recorded outside scratch root to be absent before the no-remains terminal exception applies; cleanup and abandon produce removal entries, and cleanup_report presents their outside-scratch inventory.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One shared no-remains probe finishes locator-less, folder-less, branch-less enclosures with a persisted reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ee6db74488e0d17caf189312ecd6be58b0690a45",
+            "content": "sha256:d46fd4d860893928d2daaeac69f1c3d174e40f0c24538057769df8705f2b6006",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

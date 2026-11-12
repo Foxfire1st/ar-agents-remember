@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The read cycle admits only eligible whole answers and rejects old-epoch completions, while the bounded cache owns generation changes and explicit memory-input invalidation."
+  },
+  "applicability": "Whole-subject review answers read by one mounted review surface.",
+  "conditions": [
+    "The answer was admitted, is whole rather than a page, and carried no refresh identity.",
+    "The review store is bounded LRU at 24 answers and lives only as long as the mounted surface.",
+    "Whole-review reuse requires no explicit review-input invalidation since admission; memoryChanged advances inputEpoch, clears the review store and requests a refresh."
+  ],
+  "exclusions": [
+    "Paged and roster-continuation reads, which stay owned by the read cycle.",
+    "Refusals and failures, which are always asked again.",
+    "Re-validating a moved live candidate on return; the reader's refresh re-asks (O-R1-1, by design).",
+    "The former unconditional no-request promise for a same-tree pair after explicit memory-input invalidation; an old input epoch is not a reusable answer."
+  ],
+  "id": "INV-MC654E0T",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "5db7b64f-00ad-4eae-b593-94a3e26a3fca",
+    "task": "260921-ICR"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Within an unchanged retained comparison generation and review-input epoch, admitted whole-subject reviews are reused on return. Refresh re-asks; explicit memory-input invalidation clears review reuse and rejects old-epoch completions, while a changed comparison generation clears the bounded surface-owned review store. Refusals and failures are not retained.",
+  "status": "proposed",
+  "supersedes": []
+}

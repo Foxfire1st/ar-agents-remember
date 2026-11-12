@@ -1,0 +1,42 @@
+{
+  "path": "mcp/src/agents_remember/install/assets.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Runtime install uses packaged assets unless a caller supplies an explicit source root.\n\nAnchor: `packaged_source_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:677cb0c06e5fbd1b309876b27fb2ded12dcdba005b300d1915c2f9ec372e603a",
+            "locator": {
+              "end": 863,
+              "kind": "line_range",
+              "start": 859
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Benchmark tooling resolves packaged benchmark cases through the same package-data root.\n\nAnchor: `packaged_source_root`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "65949714952ae6e1d1063da49cc2055cda8bba99",
+            "content": "sha256:e7d8871317eaefbd4185475f5a5b92b6505ca81447ac6f624ed3567055740748",
+            "locator": {
+              "kind": "symbol",
+              "name": "benchmark_root_context"
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner_modules/roots.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/detail-panel/state.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "d2888af16213c962443c354697eb0c58e39858e2",
+        "content": "sha256:61c7b024b683182d974bb4a3cd25e5674fcb64758de322e51e6eaaceab42d3b0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-01X8QQ",
+      "invariant": "INV-H2G4R2",
+      "origin": {
+        "handoffEntry": "L192-W-R199-01",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "The detail-panel state no longer carries provider selection or subscription fields for the spine.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "d2888af16213c962443c354697eb0c58e39858e2",
+        "content": "sha256:61c7b024b683182d974bb4a3cd25e5674fcb64758de322e51e6eaaceab42d3b0",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-80ZFNN",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Existing unchanged navigation/delta support retains the original sealed L190-R1-F08 property; no new edit or independent invariant is claimed.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The state hook and its pure resolvers.\n\nAnchor: `useDetailPanelState` `resolveSelectedTaskDoc` `resolveViewedLeafKey`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2888af16213c962443c354697eb0c58e39858e2",
+            "content": "sha256:61c7b024b683182d974bb4a3cd25e5674fcb64758de322e51e6eaaceab42d3b0",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

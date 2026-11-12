@@ -1,0 +1,109 @@
+{
+  "path": "dashboard/src/panels/EventRiver.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The panel under test (now a virtualized list; the `read.packet` per-kind row on an otherwise-generic river).\n\nAnchor: \"Event river\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
+            "content": "sha256:ef26f0328200084e026f5713fdda36413dfcfcca991070029e6f373e3f3a1a71",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "dashboard/src/panels/EventRiver.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The hydration, virtualization, and jsdom-layout-stub regressions pin no premature empty state and that the full window is retained + virtualized (header count `Event river · 66`, newest row mounts).\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "content": "sha256:b4a4ffe83306a73e4b3bb6275c50b97a6c4e18087aa3023686a80db0da7fd7ab",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 53
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "`ev` delegates to the shared `observerEvent` builder and drops the `as ObserverEvent` cast.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:a92eb4045a39968fbc72ac369963f8dcb6636c870da9512cd4f60357431dabd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observerEvent"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "`observerEvent` — the shared envelope builder supplying `schema`/`trust`, typed against the mirror.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a129de9436ae3d8f076d34f4eabb33240781dedf",
+            "content": "sha256:a92eb4045a39968fbc72ac369963f8dcb6636c870da9512cd4f60357431dabd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "observerEvent"
+            },
+            "path": "dashboard/src/test/fixtures/wire.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "read.packet rows are synthetic compatibility fixtures in these declared rendering cases, not evidence that the removed ambient emitter still exists. Source inspection, not execution.\n\nAnchor: Source-defined basename and multi-file fixture cases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "156c6ba6a1374ce1679b8a088ef5d98d8dafc9a3",
+            "content": "sha256:fad45c7260c08bdd74d0f41e6d4da6e363bd876435566ba720941cd8f2907ff1",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The `ObserverEvent` shape (trust/actor/kind/data) the helper builds.\n\nAnchor: `ObserverEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/types/event.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

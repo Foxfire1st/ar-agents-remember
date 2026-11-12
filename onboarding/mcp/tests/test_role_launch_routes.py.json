@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_role_launch_routes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Report links, projection reuse, the public execution result, dispatch and taskless identity are asserted through the routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4fa0abfddd2cc263752f0d4ce25563995e117ce7",
+            "content": "sha256:7a9ab1a969e5825cd62bfe61224067b56a062c72c26c3325a2f9f24755b7d181",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskReportAccessTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

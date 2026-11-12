@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future worklist/UI change must not turn advisory directory context into changed item identities, fabricated reach or new gate obligations; doing so would invalidate stored judgments for display-only reasons."
+  },
+  "applicability": "Mechanical route-chain enrichment of converted-leaf touched, stale and unexplained worklist items from the already parsed candidate memory.",
+  "conditions": [
+    "Route-chain lookup uses candidate families and the leaf-chain selector over the same parsed side, reporting family IDs, titles and routes under a mechanical label.",
+    "Enrichment preserves the existing item envelope and identity and adds context only; the assembly applies it to the selected item kinds."
+  ],
+  "exclusions": [
+    "Context is not a semantic reachability computation, a new worklist item, a satisfaction judgment or publication authority.",
+    "No second store or blanket claim that every family in a directory is reached."
+  ],
+  "id": "INV-ADXT15",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r55-rule-1",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-33-complete-history.json"
+    },
+    "handoffEntry": "MIK-R55@v1 rule 1",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Route-chain facts on touched, stale and unexplained items provide mechanical candidate-family context without changing item identity or raising items.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/tray/trayStyles.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Supplies shared tray presentation and bounded popup/list layout.\n\nAnchor: \"// The tray's look: one amber-topped panel, one row per pick, one line when it is minimised, a quiet\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14430231971e024a121dc9e6bb04f4b774579408",
+            "content": "sha256:dd487e9938f7ed7fdaac9c530fc4895106ef71e0f834a5616e2e29ea94becc15",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Supplies shared tray presentation and bounded popup/list layout.\n\nAnchor: \"export const chips = css({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14430231971e024a121dc9e6bb04f4b774579408",
+            "content": "sha256:8ac981a1c9e2570c5b6ab45f9d64da1f12636f68233d0910f248c684827bec91",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 136
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Supplies shared tray presentation and bounded popup/list layout.\n\nAnchor: \"export const chipIcon = css({ color: 'cyan', paddingTop: '0.05rem' });\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14430231971e024a121dc9e6bb04f4b774579408",
+            "content": "sha256:1701230c8fb6ce420645da1898d695a6fcb513a71fcc6f2b2cf4daf1f9ba8a38",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

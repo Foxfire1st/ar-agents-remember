@@ -1,112 +1,66 @@
 # mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-05T08:27+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules overview](../overview.md)
 
 ## Purpose
 
-Owns the external-memory quality phase adapter used by worktree closeout. The module was extracted
-from `closeout.py` so the coordinator remains below the repository's 1,200-line structural rail;
-the extraction preserves the same fail-closed checks and the same before/after phase result.
+Retains helpers for running a declared memory-quality check group and combining two quality
+results. No production caller was found by the production AST/reference census with CLI and declared entry-point inspection. The source's closeout
+docstrings and failure text describe their former use; they do not establish current closeout
+execution. Current closeout consumes the exact memory-quality attestation separately.
 
 ## Code Commentary
 
 ### Logic
 
 `run_memory_quality_phase` asks the injected `MemoryQualityPort` for a drift context rooted at the
-active code checkout, runs exactly the supplied check group against the resolved onboarding root,
-and raises a bounded, actionable failure when `ok` is false. An optional
-`unstamped_code_commit` lets the pre-refresh citation phase compare a dirty leaf against its real
-base without fabricating closeout provenance. The formatter includes at most the first five
-findings in the exception while the full quality result remains owned by the quality service.
+active code checkout, runs exactly the supplied check group, and raises when `ok` is false. The
+optional `unstamped_code_commit` passes through as comparison context. Failure text includes at
+most five finding summaries; a successful call returns the full quality-service result.
 
-`combine_memory_quality` joins the pre-refresh and post-refresh results into the one closeout gate
-reported to callers. It merges check maps and findings, sums ordinary and report-only counts,
-bounds the combined report-only sample to 50 rows, and records the service-declared check groups in
-`closeoutPhases`. The pre-refresh result may be empty for memory modes or check configurations that
-do not require that phase; the post-refresh result is required.
-
-### Conventions
-
-The injected service declares phase membership; the adapter only passes those check groups and
-combines returned evidence. Its caller runs the code-quality gate before memory preflight.
+`combine_memory_quality` merges the supplied check maps and findings, sums ordinary and
+report-only counts, bounds the report-only sample to 50 rows, and records service-declared check
+groups under `closeoutPhases`. The first result can be empty; the second must provide the indexed
+fields. This is result composition when directly called, not a live closeout gate.
 
 ### Invariants And Boundaries
 
-- This module owns memory-quality execution and result composition, not commit, ledger, approval,
-  source-lineage, or metadata-refresh ordering. Those irreversible boundaries remain in
-  the closeout coordinator and external-memory commit owner.
-- A failed quality result raises; it is never converted into a warning or fallback path.
-- Check membership comes from `MemoryQualityPort.check_groups()`. Do not duplicate the configured
-  citation/style split here.
-- The pre-refresh unstamped commit is comparison context only. Real verification hashes remain
-  closeout-owned after the code commit exists.
-- Bounded exception evidence must not replace or truncate the full service result returned after a
-  successful closeout.
+- The helpers own neither commits nor approval, lineage, metadata refresh or transaction ordering.
+- A failed quality result raises; it is never converted into a warning.
+- Group names come from `MemoryQualityPort.check_groups()`.
+- These functions do not implement identical-copy grouping or trace judging. The curator's trace
+  gate owns that work; closeout checks its attestation rather than invoking this phase runner.
 
 ### Todos
 
-The coordinator helper's docstring still says memory preflight precedes the expensive code gate;
-the executable `_closeout_quality_preflight` caller enforces the opposite order. Source correction
-belongs to implementation work; this card follows the caller's actual order.
+The retained module docstrings and refusal wording still name the former closeout pipeline.
+There is no executable `_closeout_quality_preflight` caller in the final source tree.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured for this repository-local closeout adapter.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+No relevant external documentation is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. | `run_memory_quality_phase`; `_failure_message` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-53; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:17-30 |
-| The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. | `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
-| The module owns both memory-quality phases as standalone callers: `run_memory_quality_phase` runs one declared check group and refuses with bounded evidence, and the closeout transaction no longer invokes a code gate or a memory preflight. | `run_memory_quality_phase`; `combine_memory_quality` | mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:33-54; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-80 |
-| The external-memory commit owner runs the refresh and the memory/ledger commits; it no longer combines a memory-quality gate result. | "def external_closeout_commits("; "def combine_memory_quality(" | mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-44; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-56 |
-| The memory-quality port declares drift context, check groups and quality execution. | "class MemoryQualityPort" | mcp/src/agents_remember/worktrees/services.py:111-128 |
-| The injected service bundle keeps memory quality and certification continuation as distinct ports. | "class WorktreeServices:" | mcp/src/agents_remember/worktrees/services.py:145-151 |
+- One phase builds the service-owned drift context, runs the exact check group, and refuses on a non-clean result with bounded evidence. [1]
+- The combined result preserves both phase check maps, findings, counts, bounded report-only evidence, and declared phase membership. [2]
 
-## Cross-Repo References
+- The retained runner executes a supplied check group when directly called. No production call of either helper was found by the production AST/reference census with CLI and declared entry-point inspection; the current closeout owner imports neither helper. [3]
+
+- The external-memory commit owner runs the refresh and the memory/ledger commits; it no longer combines a memory-quality gate result. [4]
+- The memory-quality port declares drift context, check groups and quality execution. [5]
+
+- The injected service bundle keeps memory quality and certification continuation as distinct ports. [6]
+
+
+### Cross-Repo References
 
 No cross-repository interface is owned by this internal closeout helper.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: "def external_closeout_commits("; "def combine_memory_quality(" repointed to mcp/src/agents_remember/worktrees/modules/closeout_external.py:44-44; mcp/src/agents_remember/worktrees/modules/quality/closeout_memory.py:56-56. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-10T09:50+02:00 — CCR-R12@v5 transaction-only curation against code commit `4bbe2c37b0fa70b07af4ddbc247aeee1f58343b0`: re-read the two caller rows: this module owns the memory-quality phases standalone and the closeout transaction no longer invokes a code gate or a memory preflight. Verification metadata remains closeout-owned.
-
-- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: narrowed the service-bundle reference
-  to the unique `class WorktreeServices:` declaration; the distinct memory-quality and
-  certification ports remain unchanged and verification metadata remains closeout-owned.
-
-- 2026-09-05T08:27+02:00 — L31 native curator: Retained the memory-quality protocol contract after reviewing WorktreeServices; corrected the caller order to code gate before memory preflight, recorded the stale helper docstring, and refreshed phase/service evidence. Reviewed against frozen code `ea35964985f30080488270e71ac81657ac40682b`; this records source verification, not gate acceptance.
-
-- 2026-08-29T18:42+02:00 — Split the pre-code and post-refresh citation claims so each lifecycle
-  boundary has unique, verifiable source provenance; the two-phase quality contract is unchanged.
-
-- 2026-08-25T08:16+02:00 — 260824-PDLS wave 004: moved this preserved sidecar with its behavior-preserving package split, repointed source evidence, and verified the emergency-landed source path at code commit `cb6623775a04cbdeb0509dc26f08a8268189c3f6`; this is onboarding provenance, not Dagger certification.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
-
-- 2026-08-13T12:26+02:00 — L23 closeout-gate repair: created from the behavior-preserving
-  extraction of external-memory phase execution, bounded failure formatting, and two-phase result
-  composition out of `closeout.py`. The 1,200-line structural rail remains enforced; verification
-  provenance remains closeout-owned.
+No applicable cross-repository source was found.

@@ -1,0 +1,180 @@
+{
+  "path": "mcp/tests/test_tool_answer_rows_packaging.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A constructed forty-path population survives compaction with and without a supplied report path; the retained real carryover case derives plan only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:ee3656b577ac3b41f1bfc9af88c88d654b4a5568766fa73131696d0ac9dd58bb",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:59cd6b62d402c8d0a88da76d79f66c0977bdf91669cf82335d1fac075af29560",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 318
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Refresh and stale-preview results derive the route row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:162da5204e2b02dabbc9644da169776902466e0ccf2f775570cf33794fdb6fbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "RouteProductionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Actual validator results derive integrity answer cases. Anchor: `IntegrityProductionTests`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:ab470390f4f89273305115fbbd2088afa5d33706c9f24973f1a8c065481e237a",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrityProductionTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Real coherence responses use a uniquely owned fixture whose actual encoded root has a 160-byte minimum; XDG and finally cleanup remain, with unchanged emitted responses, 850 bound and density floor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:11ed838af0dfc9e8ba01b06a7861dea7cbaf84fb95f5cfa7270070284daf4ee6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_coherence_paths_derive_the_row_cases"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Fixture width is authored and the owned root is cleaned at context exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:85d3929540360c8bf7aba91b8a47a8a658e909a4fb87d313701e52279211e515",
+            "locator": {
+              "kind": "symbol",
+              "name": "_fixed_width_case_root"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Embedded XDG roots share that fixture and restore through patch.dict.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:bb3972e97bdaafef025ac35956cc99aa9ae002488e9f022563945af413a3648c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_case_xdg"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Packaging imports the surviving fixture owner directly; this replaces only the removed test-module provider edge.\n\nAnchor: current import",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:ac72a16b665675f225524aa477bbb79a5a41543e4ad14a9a01f32906e1bbdc4a",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The actual fixture builder composes its review world and owned topology; packaging's coherence case exercises real service actions over forty constructed candidates without changing guard assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "31f0adcbc17a05521aedc8127bc5c09e5092a017",
+            "content": "sha256:6bec4e588b3a9d4ce53576b39f803c406856389e0d68e51c3fd1c4dd13c60903",
+            "locator": {
+              "end": 109,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/tests/review_curator_fixture_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:66daf1f61e34ef86d10e6ca6db6c74a01c467106714deb3ddd75e27434a88fc3",
+            "locator": {
+              "end": 483,
+              "kind": "line_range",
+              "start": 403
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "`_fixed_width_case_root` uses the literal /tmp parent for its unique constant-width fixture roots. The separate coherence fixture continues to use tempfile.gettempdir(). Raw emitted responses, existing bounds and density floors remain the assertion inputs; paths are not rewritten to fit. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b36bc9e889991a8c1f20d1a6b4a4981f1b88e001",
+            "content": "sha256:515d8fb88513db21608d2d3156b355793c73bcb9b57c8f85ec05e347b7a08d17",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

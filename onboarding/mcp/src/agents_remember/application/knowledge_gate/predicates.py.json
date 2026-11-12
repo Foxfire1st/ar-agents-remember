@@ -1,0 +1,249 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_gate/predicates.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+        "content": "sha256:fe0280b08b4ea7b0e88aab3497f039783cbab20591f724696c0547175e9c231c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-9R6X1J",
+      "invariant": "INV-MKZ0EA",
+      "origin": {
+        "handoffEntry": "L48-C-callsite-hunks-carry-rule-obligations",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "Helper _again and the drift-remedy body around family_row_open carry the disposition-specific re-row wording.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+        "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_row_open"
+        }
+      },
+      "id": "RLZ-G8T8H0",
+      "invariant": "INV-EH65RT",
+      "origin": {
+        "handoffEntry": "L48-W-MIK-R48-v2-delivery",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "the gate currentness check comparing the recorded own revision with the candidate family",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+        "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_row_open"
+        }
+      },
+      "id": "RLZ-GYT7S8",
+      "invariant": "INV-2TZ2E3",
+      "origin": {
+        "handoffEntry": "MIK-R48@v2 rule 4",
+        "leaf": "260928-MIK-L48"
+      },
+      "rationale": "The predicate reopens a governing row on family revision drift before applying existing member coverage.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+        "content": "sha256:07ca253b99a77661c91e7476596f954d6d9508410004a1c4d70dd0d15f041502",
+        "locator": {
+          "kind": "symbol",
+          "name": "family_row_open"
+        }
+      },
+      "id": "RLZ-HK1WEC",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Holds a reached-family item open when the worklist marks the family's guarantee as changed and the governing family row is neither changed nor retired.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+        "content": "sha256:d179d72d5ddf6471721ef0bcf8e12d552b2ab4ee28231e319c1f6c9a785de92e",
+        "locator": {
+          "kind": "symbol",
+          "name": "invariant_row_open"
+        }
+      },
+      "id": "RLZ-QE6KRP",
+      "invariant": "INV-XN0FG8",
+      "origin": {
+        "handoffEntry": "L37-changed-row-governs",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Holds an invariant item open when the governing row is not the changed row of a record whose revision the leaf changed, and names the remedy.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+        "content": "sha256:d179d72d5ddf6471721ef0bcf8e12d552b2ab4ee28231e319c1f6c9a785de92e",
+        "locator": {
+          "kind": "symbol",
+          "name": "invariant_row_open"
+        }
+      },
+      "id": "RLZ-YK532N",
+      "invariant": "INV-WM6BTP",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-8-actual-guards",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The actual invariant predicate prioritizes the governing changed-row reason while retaining missing-cover details.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Row-own closed provenance and source/count currency.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:40c678f955ad5c1762658f12b4a669e7c4b2268f0ab0278136fe2864f4470fef",
+            "locator": {
+              "end": 484,
+              "kind": "line_range",
+              "start": 398
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Covered versus uncovered unexplained admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:63cdb302ff58c308d452322726f4e250fc8d5c27053e8585ddafcc930179f72a",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 487
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Membership/record revision and disposition predicates with registrations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:f92d78b5a6c3861cf3c1fec3f5863d0e7787b5da3378336713ef4a7890779920",
+            "locator": {
+              "end": 528,
+              "kind": "line_range",
+              "start": 460
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Governing changed-row violations take diagnostic precedence and retain missing-cover details.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:d179d72d5ddf6471721ef0bcf8e12d552b2ab4ee28231e319c1f6c9a785de92e",
+            "locator": {
+              "end": 288,
+              "kind": "line_range",
+              "start": 260
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reconsideration delegates with candidate knowledge and code, translating CodeReadError into GitReadFailed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:c5717a8cc4c259cd4843ea995f5c26a3949b37995eda8137115985c6e624bb2a",
+            "locator": {
+              "end": 591,
+              "kind": "line_range",
+              "start": 582
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Link-target items are answered by absence of the target in candidate knowledge, never by a history row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:33306da2f8fbf8003c6a1b43b029cb098d81fba07a5e7cb92b3824a2bfd032a1",
+            "locator": {
+              "end": 606,
+              "kind": "line_range",
+              "start": 594
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Display verdicts reuse the registered gate predicate, including the history-free witness check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:ec086bd75bb8f2b5ad6108109f020c48937a76a137bf1ab8e87f254ea1f08dba",
+            "locator": {
+              "kind": "symbol",
+              "name": "item_verdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The row lookup follows the kind’s actual history subject.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f312d2bd30e408565bad26d89ed227a954d4cd8a",
+            "content": "sha256:d9b18723f02dcc20979cb57bbd6e95ef7088676b8dc8103427288f671b3fc747",
+            "locator": {
+              "kind": "symbol",
+              "name": "_witness_row"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

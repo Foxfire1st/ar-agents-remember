@@ -1,0 +1,279 @@
+{
+  "path": "dashboard/src/panels/review/changeTraversal.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:94909db2268850939697da82d2835fb4575e9e3872ec69c1aa7bafe86ec31131",
+        "locator": {
+          "kind": "symbol",
+          "name": "blockStops"
+        }
+      },
+      "id": "RLZ-13TWQ0",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "itemsOf was replaced by the block order, with no roster page requests.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:e4c1fc36fb3c77ef8a0155e69031553a940dc5e90bf298f2f5b45ed5c772e35f",
+        "locator": {
+          "end": 184,
+          "kind": "line_range",
+          "start": 183
+        }
+      },
+      "id": "RLZ-1QHDR8",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:f4ab47f0d3f392e7b126ad27412113c8248675e4b42082b83834da809afde80f",
+        "locator": {
+          "kind": "symbol",
+          "name": "useBlockTraversal"
+        }
+      },
+      "id": "RLZ-2BR4MX",
+      "invariant": "INV-CK3PTB",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Binds traversal end status to the ordered drawn block-stop keys through useStatusFor; changed stops clear the old message permanently.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:dca5b20d5d68933b3851f8697cf6e01d4c77068d17e108edb168705069bc570b",
+        "locator": {
+          "end": 85,
+          "kind": "line_range",
+          "start": 66
+        }
+      },
+      "id": "RLZ-359W5T",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:020df093944af44b7a4766a6e0f2527a3950544d597775f2310669a9fe241645",
+        "locator": {
+          "kind": "symbol",
+          "name": "useStatusFor"
+        }
+      },
+      "id": "RLZ-3CW82B",
+      "invariant": "INV-CK3PTB",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-end-message-belongs-to-its-rows",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "Stores status with the committed ordered block-stop key, returns it only for that same key, and clears it in a layout effect when the key changes. Repeated identical status is a no-op; the render updates no status state.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:33c8ef3ce1937bb26e9faeff8bce604713149db8c8d5ba844f4090f6039535a5",
+        "locator": {
+          "end": 132,
+          "kind": "line_range",
+          "start": 98
+        }
+      },
+      "id": "RLZ-5990VN",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:e670e0f495b16a67b3d64aef8721c90207ec898274b5ec24eec5d342046e19f5",
+        "locator": {
+          "end": 158,
+          "kind": "line_range",
+          "start": 158
+        }
+      },
+      "id": "RLZ-D30MFE",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:94909db2268850939697da82d2835fb4575e9e3872ec69c1aa7bafe86ec31131",
+        "locator": {
+          "kind": "symbol",
+          "name": "blockStops"
+        }
+      },
+      "id": "RLZ-HT081Q",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L86-CODE-R1-F03",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "It orders each family/subject place around the drawn changed-block stops and does not duplicate blocks for later family occurrences.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:6824dbfb061e140f9b1b5d5e09e76e75d3c90e097f7dbab1c9aaedc46116bbc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "nextStop"
+        }
+      },
+      "id": "RLZ-W9PW0P",
+      "invariant": "INV-MWCCQM",
+      "origin": {
+        "handoffEntry": "MIK-R39@v1-kept-partial-family-stop",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "forward was replaced by nextStop; no page action exists in its output.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:6824dbfb061e140f9b1b5d5e09e76e75d3c90e097f7dbab1c9aaedc46116bbc1",
+        "locator": {
+          "kind": "symbol",
+          "name": "nextStop"
+        }
+      },
+      "id": "RLZ-WYVRS8",
+      "invariant": "INV-S34RA5",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 rule 8",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "The old nextChange row traversal is replaced by typed block traversal.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+        "content": "sha256:ac9214ff9b27da431944b4910b97c80d789d8423e4b78ee4bc20049955a12cdf",
+        "locator": {
+          "end": 156,
+          "kind": "line_range",
+          "start": 141
+        }
+      },
+      "id": "RLZ-Z1W56N",
+      "invariant": "INV-AY7A8V",
+      "origin": {
+        "handoffEntry": "L89-CURATOR-HUNK-ATTACH-INV-AY7A8V",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Traversal follows the model drawn blocks and loaded lane hunks, recognizes shared aliases and non-stop displayed places, starts before the first stop when selection is absent/unrepresented, and leaves selection at an end.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "32": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function blockStops(model: Pick<ChangeSetModel, 'groups'>): TraversalStop[] {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:3d492fd51100c1ce788ac9bcdd146f1d3f0ee19150b5416dee8beff495e5d9d7",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 90
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function laneStops(hunks: readonly ReviewBlockIdentity[], paths?: readonly string[]): TraversalStop[] {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:223da9df71196d6e203d3bbf3a320db6fc95ffaa3f45a889673fc8b051801951",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 100
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function nextStop(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:6824dbfb061e140f9b1b5d5e09e76e75d3c90e097f7dbab1c9aaedc46116bbc1",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "changeTraversal.ts current behavior at this source owner.\n\nAnchor: \"export function useBlockTraversal({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a736d92455bd6c4434a6f089f8ab22b229b39da3",
+            "content": "sha256:31f3c1f0dcf739e64718a41f513387c4b462fbaa28bb64485423118f29ccd295",
+            "locator": {
+              "end": 227,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

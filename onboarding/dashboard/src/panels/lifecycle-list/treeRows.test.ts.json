@@ -1,0 +1,92 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/treeRows.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "be256d804f069bcf6f3fa3e1e59914d9f9e9cf6e",
+        "content": "sha256:7433eebaedcc85bfd1bfa4ca3e2abe229496b1e66300a2052a84776a6b882cac",
+        "locator": {
+          "kind": "symbol",
+          "name": "keeps a completed master folded despite an active child, then opens down to a selected child"
+        }
+      },
+      "facet": "Pure TreeView release inputs let a containing terminal fold and ancestor close over the selected descendant; this is not hook-lifetime execution evidence.",
+      "id": "PRF-51SNZZ",
+      "invariant": "INV-ME6CA1",
+      "origin": {
+        "handoffEntry": "L168-C-A016-source-account-INV-ME6CA1",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "be256d804f069bcf6f3fa3e1e59914d9f9e9cf6e",
+        "content": "sha256:395a86e6f913c9d381ab72d10c7ef65f9a478beff6d2810a14a9941c41a17c07",
+        "locator": {
+          "kind": "symbol",
+          "name": "orders the started band by host time, newest first, and leaves untimed rows after them"
+        }
+      },
+      "facet": "the started band orders timed rows newest first and leaves untimed rows in the server's order",
+      "id": "PRF-TBP4XW",
+      "invariant": "INV-NAV9HB",
+      "origin": {
+        "handoffEntry": "MIK-R174@v1",
+        "leaf": "260928-MIK-L102"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The tests protect authored ordering, fold scope and selected reach, and emit an unlisted or missing-parent record as a root once each in authored order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be256d804f069bcf6f3fa3e1e59914d9f9e9cf6e",
+            "content": "sha256:eddfb1365ee0a7dfb83656ef146861116180108682386dcad08f8d5f270e1cfc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Pure tree inputs show a released fold or ancestor staying closed over the chosen child; no mounted keyboard or hook-lifetime execution is inferred.\n\nAnchor: Current source assertions",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be256d804f069bcf6f3fa3e1e59914d9f9e9cf6e",
+            "content": "sha256:f4ade7a5fcf038bc6123c62e53f32f491c6869657be420965b2d81a5eb5ef2c0",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The started band puts host-timed paused rows newest first and leaves untimed rows in the server's order.\n\nAnchor: `orders the started band by host time`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be256d804f069bcf6f3fa3e1e59914d9f9e9cf6e",
+            "content": "sha256:395a86e6f913c9d381ab72d10c7ef65f9a478beff6d2810a14a9941c41a17c07",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

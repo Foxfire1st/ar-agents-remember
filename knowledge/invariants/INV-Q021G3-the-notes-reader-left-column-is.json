@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The obligation spans the reader adapter and the shared tree component in two files; the reader-side cases pin fill, vanish recovery and the cap while the shared tree stays untouched."
+  },
+  "applicability": "Every notes-reader session on any master.",
+  "conditions": [
+    "The left column renders the shared ExplorerTree fed one folder at a time from the folder endpoint.",
+    "The open note loads beyond the first part; a vanished folder empties with the server reason.",
+    "The cache evicts least-recently-used unprotected folders toward a 32-folder bound. The insertion folder and every cached folder in the open-note ancestor chain are protected; when no unprotected victim remains, eviction stops and the cache may stand above 32."
+  ],
+  "exclusions": [
+    "The reader owns no tree of its own; the shared component is unchanged.",
+    "Eviction never drops the open note or its ancestor chain."
+  ],
+  "id": "INV-Q021G3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "NotesReaderViewer.test.tsx; vitest green in full suite 2214"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 4",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The notes reader left column is the shared ExplorerTree fed one folder at a time, loading the open note beyond the first part and emptying vanished folders with the server reason. The folder cache holds at most 32 folders except that the insertion folder and open-note ancestor chain are protected from LRU eviction; it may stand above 32 when every possible victim is protected.",
+  "status": "proposed",
+  "supersedes": []
+}

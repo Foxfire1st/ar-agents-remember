@@ -1,0 +1,68 @@
+{
+  "path": "dashboard/src/data/streamLiveness.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Liveness tuning, one-shot backstop, and visibility handling.\n\nAnchor: `startStreamLivenessWatchdog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7d1f72236133b5d0ae97c5be4d03f0b75f92450",
+            "content": "sha256:feb450ed0cc00f6b96af55a396f936bec5bbec336ac011f7b850e526338aaaeb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The state stream installs this watchdog on an open channel; the raw events stream deliberately does not, since a fresh subscribe cannot carry its `Last-Event-ID` cursor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:cf5f1579a8129b23f47a3d502b594dd0d1f80319c389869374573b49c72de134",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d07a34e704f66d30bdfda13f53b076f4073e0482",
+            "content": "sha256:21079fe4792334fa37c8be234a11cb408f5ff21e6c021da2c7ae5256b310f042",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 216
+            },
+            "path": "dashboard/src/data/stream.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The watchdog is local browser transport policy.\n\nAnchor: `startStreamLivenessWatchdog`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7d1f72236133b5d0ae97c5be4d03f0b75f92450",
+            "content": "sha256:feb450ed0cc00f6b96af55a396f936bec5bbec336ac011f7b850e526338aaaeb",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

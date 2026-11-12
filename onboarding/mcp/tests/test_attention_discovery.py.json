@@ -1,0 +1,43 @@
+{
+  "path": "mcp/tests/test_attention_discovery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7a9e878e1d2e8a8b1aea5a07d9ccfb54ba3f47d4",
+        "content": "sha256:b9bc10d327b9189e6774f94ef72afa584d789c191f0dbc37998527c4ae577fda",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_held_discovery_shares_one_entry_allowance_at_two_sizes"
+        }
+      },
+      "facet": "One discovery allowance is shared across the population at two sizes.",
+      "id": "PRF-ERBZQW",
+      "invariant": "INV-XP08W1",
+      "origin": {
+        "handoffEntry": "L190-R1-F11",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7a9e878e1d2e8a8b1aea5a07d9ccfb54ba3f47d4",
+        "content": "sha256:b3a14634966776bb754f02f22dff1e2a18de5fa549d8ac4cd095888f0ac0e403",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KJEEVW",
+      "invariant": "INV-XP08W1",
+      "origin": {
+        "handoffEntry": "L190-R1-F11",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Two-size enumeration, cursor shedding, incompleteness and eventual-discovery controls pin actual bounded work.",
+      "role": "support"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

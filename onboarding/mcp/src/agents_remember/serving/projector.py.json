@@ -1,0 +1,246 @@
+{
+  "path": "mcp/src/agents_remember/serving/projector.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+        "content": "sha256:113273088c3c6ab5c653e7f60278a1430d62ece461320b7df32192cf34ec222b",
+        "locator": {
+          "end": 395,
+          "kind": "line_range",
+          "start": 367
+        }
+      },
+      "id": "RLZ-7JZBQ0",
+      "invariant": "INV-GP90VQ",
+      "origin": {
+        "handoffEntry": "L40-live-completion-pacing",
+        "leaf": "260928-MIK-L40"
+      },
+      "rationale": "The shared finally hook reports elapsed real thread work after success, failure or cancellation drain.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+        "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
+        "locator": {
+          "end": 232,
+          "kind": "line_range",
+          "start": 230
+        }
+      },
+      "id": "RLZ-ASMCG7",
+      "invariant": "INV-BMZ47D",
+      "origin": {
+        "handoffEntry": "MIK-R165@v1 §3",
+        "leaf": "260928-MIK-L166"
+      },
+      "rationale": "Exposes the real shared SSE subscriber set as a read-only server interest predicate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+        "content": "sha256:c52d2078d26138a4597480b9927d42db90c5b019174b217c604124fbfca9813f",
+        "locator": {
+          "kind": "symbol",
+          "name": "Projector.run"
+        }
+      },
+      "id": "RLZ-PP5Q3E",
+      "invariant": "INV-S8GHB9",
+      "origin": {
+        "handoffEntry": "L81-R1-F08",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The actual settled Projector/input-reader/project_and_write/watched-owner composition has only heartbeat/full wakes through repeated zero-input cycles; one genuine outside update in that same native-watcher test promptly publishes a change.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+        "content": "sha256:73cf180b9738b6073bf18558ff40a0fdbf24dec67b61cb8cff41613cc8a3a654",
+        "locator": {
+          "end": 305,
+          "kind": "line_range",
+          "start": 282
+        }
+      },
+      "id": "RLZ-S8TKV9",
+      "invariant": "INV-84PT5A",
+      "origin": {
+        "handoffEntry": "L81-R1-F06",
+        "leaf": "260928-MIK-L81"
+      },
+      "rationale": "The existing projector carries failed reconciliation into the next eligible same-pacer cycle.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The projector publishes one successful tick by computing events, committing stable/current authority, then notifying subscribers.  Anchor: \"def _publish_projection(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:1bc048a329b741374a79ec926485102fb060c79d82a6fcd448157d4bbafb4a3e",
+            "locator": {
+              "end": 469,
+              "kind": "line_range",
+              "start": 469
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Subscription activation registers its queue before current-snapshot capture and removes it in `finally`.  Anchor: \"self._subscribers.add(queue)\"; \"self._subscribers.discard(queue)\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:18cca4d32ee2d3c3397ff23be7c1560237452174f7e631917420743020adb519",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 539
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:0174f49a6c0f72cd96c6a5c567604dc84f4a2a766afd12af379076c88dbca096",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:18cca4d32ee2d3c3397ff23be7c1560237452174f7e631917420743020adb519",
+            "locator": {
+              "end": 539,
+              "kind": "line_range",
+              "start": 539
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:0174f49a6c0f72cd96c6a5c567604dc84f4a2a766afd12af379076c88dbca096",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The stream consumes one projector subscription under explicit aclosing, and decorates snapshot events with the served-state tail (build stamp with the serving process id, build currentness, checkout binding and optional watcher health). Missing facts are omitted; deltas carry no whole-workspace tail.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc5a76bfa47fb00462718595192e8a264ec58f06",
+            "content": "sha256:ec265d3b656ba74ff2a80249d4da45d57ecd8039b73106f1ea793a916e311525",
+            "locator": {
+              "kind": "symbol",
+              "name": "stream_events"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "All real tick outcomes reach completion only after actual work/drain.  Anchor: `Projector._tick`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:d7a68aeb274b23edb4473420694dc423a382d7bfb0d6473b34f37cdcbada7cdb",
+            "locator": {
+              "end": 380,
+              "kind": "line_range",
+              "start": 363
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Landing interest reads the actual state-stream subscriber set without adding mutation or publication authority.\n\nAnchor: `Projector.has_subscribers`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 230
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The composed runtime preserves interest until the final real subscriber leaves.\n\nAnchor: `LandingPageCadenceTests.test_composed_runtime_probes_only_until_the_last_subscriber_leaves`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
+            "locator": {
+              "end": 223,
+              "kind": "line_range",
+              "start": 185
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

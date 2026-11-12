@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/test_role_single_server.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The complete file owns the behavior and limits described above; documentation/tests are not fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6e37b4806d2bab90f46929c69179f32df12e046",
+            "content": "sha256:75da005965ffcc521c2397a7b7697836dba9b530aafbef9018878a4faffcbf9f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

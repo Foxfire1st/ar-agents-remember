@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Error cutting inside the measured bound is proved by the named passing final-measure case; single-file member of the family."
+  },
+  "applicability": "Every short form carrying an error.",
+  "conditions": [
+    "The error is cut to 600 chars, then end-reduced until the measured form fits 400.",
+    "errorCut marks a cut error; the detail file holds it whole."
+  ],
+  "exclusions": [
+    "Answers without an error.",
+    "Codes, which are never cut."
+  ],
+  "id": "INV-0VAC47",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_tool_answer_table.py::ToolAnswerFinalMeasureTests (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §4 error-cut",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Errors are cut to 600 chars then end-reduced until the measured whole fits 400 with errorCut, the full original detail preserved beside it.",
+  "status": "proposed",
+  "supersedes": []
+}

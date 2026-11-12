@@ -1,0 +1,337 @@
+{
+  "path": "mcp/tests/test_role_instruction_corpus.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+        "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationGuardTeethTests.test_reinserting_each_retired_statement_is_detected_on_its_own_surface"
+        }
+      },
+      "facet": "Each seeded exact obsolete statement is independently detected on its own protected shipped surface.",
+      "id": "PRF-2WCJ07",
+      "invariant": "INV-MTRR08",
+      "origin": {
+        "handoffEntry": "L100-R100-doctrine-coherence",
+        "leaf": "260928-MIK-L100"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+        "content": "sha256:a299d712543a1c91d213a2773ed8b56ea87dd0a171a76de1a75d2bd980aa02e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationGuardTeethTests.test_one_seeded_old_sentence_is_observed_to_fail_the_guard"
+        }
+      },
+      "facet": "A seeded old sentence is observed to fail the guard, so the guard is falsifiable.",
+      "id": "PRF-4AGWPG",
+      "invariant": "INV-K5SFG7",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-retired-wording-register",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+        "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationGuardTeethTests.test_reinserting_each_retired_statement_is_detected_on_its_own_surface"
+        }
+      },
+      "facet": "Reinserting any registered retired statement on its own source surface is detected by the corpus scanner.",
+      "id": "PRF-81CXEW",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+        "content": "sha256:a1c68282fc876f23e3507165b6a1ad9454eaf58a35ef929883ccbb71e56c0036",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_names_its_publication_moments"
+        }
+      },
+      "facet": "For the Manager and the Architect, the role's publication clause stands once in the source and once in the package copy, and the generic 'When publishing task work' sentence is refused.",
+      "id": "PRF-EPK1G4",
+      "invariant": "INV-A6TJRJ",
+      "origin": {
+        "handoffEntry": "L84-CUR-07-architect",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+        "content": "sha256:51e26760b792682d1dda82ee0050babfc1a1fd3da4dd3b2dc18a35293d9385e2",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationGuardTeethTests.test_reinserting_each_retired_statement_is_detected_on_its_own_surface"
+        }
+      },
+      "facet": "Every registered retired sentence reinserted on each surface that shipped it is reported by the guard.",
+      "id": "PRF-F5RVVJ",
+      "invariant": "INV-K5SFG7",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-retired-wording-register",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+        "content": "sha256:a1c68282fc876f23e3507165b6a1ad9454eaf58a35ef929883ccbb71e56c0036",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_role_names_its_publication_moments"
+        }
+      },
+      "facet": "For the Manager and the Architect, the role's publication clause stands once in the source and once in the package copy, and the generic 'When publishing task work' sentence is refused.",
+      "id": "PRF-XFN1ZP",
+      "invariant": "INV-25E23P",
+      "origin": {
+        "handoffEntry": "L84-CUR-07",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+        "content": "sha256:5eeb8a9872166abc64baac5102d3fba23c8e68ba96f11f93bb3592c27b316b0e",
+        "locator": {
+          "kind": "symbol",
+          "name": "CurationPolicyTests.test_no_shipped_surface_still_carries_a_retired_curation_statement"
+        }
+      },
+      "facet": "No shipped canonical or generated surface still carries a registered retired sentence.",
+      "id": "PRF-YT7KRB",
+      "invariant": "INV-K5SFG7",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-retired-wording-register",
+        "leaf": "260928-MIK-L72"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The resolver under test reports missing manifest sources rather than silently accepting them.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:661dffee802e82084f6713b5f70e2619b8d89e9da6a0c6936eff222b688f4c17",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 154
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The corpus this module is the behavioral check for: the canonical root `skills/l-01-agent-lifecycles/` tree, whose declared contract is `ROLE_ORDER`, `MACHINE_SECTION` and `OPERATION_KEYS`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:3d8ddf6e7a091da09769dff9f9a7aa88457bece00c58b671dc1097ac331efdc3",
+            "locator": {
+              "kind": "symbol",
+              "name": "MACHINE_SECTION"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The manifest this module resolves, and the corpus it governs.\n\nAnchor: `schema`; `entry_router`; `routing_conditions`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:db9c1016ec2b2f95f7ebc1d9895edf41f06d2ac6a748c9f18fcde8649748dcd6",
+            "locator": {
+              "end": 2,
+              "kind": "line_range",
+              "start": 2
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:f657ca4a79e44dd339e0199c6c5a7f219c9b2ada1d263c310bdbe5e1e188294d",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 4
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a99ff78812f4ba8840370589fc2dc832d742c95ffe58e905f5b9e14eec6ce5f7",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "This module declares narrow normalized-text R53 assertions over canonical plus the sole packaged copies of the Curator ingestion template and card-format reference; the propagation owner separately checks projection byte equality.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:edeee161a2a6dffe3f9f3ff927a4bd14cf11c4b6417f4e90d4b9600e2b1f2388",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Task-authoring guidance checks delegate to the shared task-document instruction contract across the canonical and declared generated roots, and a separate real task_doc fixture covers the legacy-master refusal and new JSON-master authoring. Neither is a copy-equality result or executed acceptance; existing retired-sentence controls and propagation-owner equality responsibility remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:7020da9e33011db12df983119555d90e2149e62c74b13524e8cd4d13a2acee9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_new_master_then_indexed_leaf_dependencies"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The handoff checks consume the canonical corpus and declared generated roots; the fragment-one control derives its surface through `fragment_one_surfaces` rather than naming a fixed skill.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:edeee161a2a6dffe3f9f3ff927a4bd14cf11c4b6417f4e90d4b9600e2b1f2388",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_hand_off_list_contract_has_one_home_its_consequences_declared"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:8ddd4575a7efa1cecedb1b1bc65ee975422cf82336a25023f8b81f1c021b05a0",
+            "locator": {
+              "end": 1033,
+              "kind": "line_range",
+              "start": 1024
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Packet-alignment and independent-preparation cases bind each clause to its actual step and reject deletion or relocation. Separate cases require knowledge worklist and landing-gate explanations at their current owners and check the admitted parser/tool surfaces; they do not grant relay artifact-inspection authority. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:ccb3f6df0d76780cce081f20922730214b87084f6a75855342865413ae756cfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_packet_alignment_and_advisory_review_keep_independent_preparation"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:624dbe7119fb7d728022517ca5270aeeb7361305d1ee52beda664cc1f7dadd3b",
+            "locator": {
+              "end": 1070,
+              "kind": "line_range",
+              "start": 1068
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:35070a35700e11ec647e235039c8fecba34d2ab69712b70d73eb2d4a4feb5c0c",
+            "locator": {
+              "end": 1078,
+              "kind": "line_range",
+              "start": 1073
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Neither the lifecycle tree nor the root `AGENTS.md` names the retired job lens or reframe-research phase, and `lenses.md` is absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:f5d721cebf410518865853530b627f16d82eb2ec529bcefa9741c4df80ed0783",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_root_instructions_name_no_retired_job_lens_or_phase"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Each copy of the Manager and Architect roles holds its publication clause once, names `system/task-publication.md` once and has no generic publishing sentence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+            "content": "sha256:a1c68282fc876f23e3507165b6a1ad9454eaf58a35ef929883ccbb71e56c0036",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_role_names_its_publication_moments"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

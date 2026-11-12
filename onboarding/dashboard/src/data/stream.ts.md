@@ -1,18 +1,8 @@
 # dashboard/src/data/stream.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/data/stream.ts`                   |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-07-18T07:22+02:00 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
-[data overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
@@ -24,26 +14,23 @@ observer-event stream that feeds the Event River.
 
 ### Logic
 
-`STATE_EVENTS` lists every named state delta the backend emits — the keyed-collection events
-(`lifecycle`/`enclosure`/`provider` plus their `.removed` markers) and the whole-value replacements
-(`activeWorktreeGroups`, `metrics`, `analytics`). `activeWorktreeGroups` (task 33) is the bounded
+`STATE_EVENTS` lists the named deltas this browser connection subscribes to — the keyed-collection events
+(`task`/`enclosure` plus their `.removed` markers) and the whole-value replacements
+(`buildCurrentness`, `taskCounts`, `activeWorktreeGroups`, `metrics`, `analytics`). A `buildCurrentness` event updates the serving build's Python-file state on the open connection, without a reconnect or snapshot. There is no named `closeoutQueues` listener or matching delta reducer here; full snapshot application separately retains `projection.closeoutQueues`. This listener list must not be read as proof that every snapshot field has a corresponding delta. `activeWorktreeGroups` is the bounded
 active-enclosure set the Topology constellation filters on; its delta arrives as a wrapped
 `{activeWorktreeGroups: [...]}` marker the store unwraps. `connectState(base)` opens
 `GET /api/stream`, applies full `snapshot` payloads through `store.applySnapshot`, sends named deltas to
-`store.applyDelta`, and maps EventSource `open`/`error` to the connection badge state. `connectEvents`
+`store.applyDelta`, and maps EventSource `open`/`error` to the connection badge state. Each subscribe reads `reviewMemoryScope()` and, when present, adds `reviewRepo`, `reviewMaster` and `reviewLeaf` query parameters. Guarded `review.memory` handlers mark watchdog liveness, parse and publish the payload with an initial flag, then clear that flag; `review.memory.error` handlers parse and publish errors without marking liveness. The initial flag resets on every EventSource `open`. Scope notifications reuse the reopen function, and disposal unsubscribes them before stopping the watchdog and closing the source. The imported watch owner chooses the first registered scope, checks publication scope/revision, and notifies matching registrations for a missing baseline, changed revision or initial message; matching errors invoke failure callbacks. These checks do not establish server authorization. `connectEvents`
 opens `GET /api/events`, forwards each raw `event` payload to the supplied `onLine` callback, and invokes
 the optional `onReady` callback when the backend emits its explicit `ready` marker after retained backlog
-delivery. 260715-FEUI-L2 (review finding 2) adds the optional **`onInterrupt`** callback, fired on
-the EventSource `error` event: every connection replays a backlog before its own `ready` (an
-undecodable `Last-Event-ID` cursor makes the server fall back to the full initial window), so a
-consumer gating application on `ready` must RE-CLOSE its gate on interrupt — the seat-event
-reconciler's per-connection backlog gate in `Cockpit.tsx` is the consumer this exists for.
+delivery. The callback receives the parsed marker: `parseReady`
+hands the opener `{ lastEventTs }` when it names one, and an unreadable marker still
+opens the gate. The current connectEvents signature contains onLine, base and optional onReady only. It has no onInterrupt/error callback or seat-event backlog reconciler; the state stream retains its independent open/error connection status.
 
 ### Conventions
 
 Actions are captured once from `dashboardStore.getState()` because Zustand action references are stable.
-The module does not parse raw event objects itself; it forwards the EventSource `data` string to the
-store's parser.
+The raw `connectEvents` event handler forwards the EventSource `data` string unchanged to `onLine`; `parseReady` parses its ready marker separately. State snapshots, deltas and review-memory messages are JSON-parsed in this module.
 
 ### Invariants And Boundaries
 
@@ -52,61 +39,54 @@ resume models: `/api/stream` re-snapshots; `/api/events` resumes by raw event cu
 readiness separately. This module owns only browser transport wiring, not projection interpretation or
 retention.
 
-### 2026-07-24 Curator Delta
+### Open deadline and liveness
 
 The state EventSource now has an open deadline and uses the shared liveness watchdog. Sleep/wake can
 quietly cycle an open corpse, but a fresh subscribe that never opens drops the connection to the honest
 signal-lost state instead of retaining a live badge forever.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No relevant external documentation is needed beyond the browser EventSource API used directly here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant documentation found after checking local project source and package contracts. | `connectState` | dashboard/src/data/stream.ts:30-114 |
 
-## Repo-Internal References
+- The state channel's `connectState`: one `EventSource` over `/api/stream` merging the snapshot and each named delta into the store, with a bounded open deadline and the liveness watchdog. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| State stream snapshot and named deltas merge into the Zustand store. | `connectState` | dashboard/src/data/stream.ts:30-114 |
-| Raw event stream forwards `event` rows and the backend `ready` marker. | `connectEvents` | dashboard/src/data/stream.ts:129-140 |
-| `Cockpit` passes `markEventsHydrated` as the raw stream ready callback. | `markEventsHydrated` | dashboard/src/cockpit/Cockpit.tsx:383-383 |
-| The backend raw stream emits a `ready` event once after backlog delivery. | "if not ready_sent:" | mcp/src/agents_remember/serving/events.py:274-276 |
 
-## Cross-Repo References
+### Repo-Internal References
+
+
+- State stream snapshot and named deltas merge into the Zustand store. 
+
+
+- Raw event stream forwards `event` rows and the backend `ready` marker. [3]
+
+
+- `Cockpit` passes `markEventsHydrated` as the raw stream ready callback.
+
+
+- The backend raw stream emits a `ready` event once after backlog delivery. [5]
+
+
+- The browser listener table has build-currentness, task/count and operational events, but no closeoutQueues named listener. [7]
+
+- Snapshot application separately retains closeoutQueues alongside canonical tasks and operational projections. [8]
+
+- The state connection subscribes to the named `buildCurrentness` delta beside the task, enclosure and whole-value events. [12]
+
+### Cross-Repo References
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This client transport module talks only to this package's dashboard serving endpoints. | `connectState` | dashboard/src/data/stream.ts:30-114; dashboard/src/data/stream.ts:129-139 |
+- connectState reads optional review-memory scope into request parameters, guards handlers against stopped or replaced sources, publishes parsed memory messages with an initial flag reset on open, and publishes parsed errors separately. Memory messages mark watchdog liveness; memory errors do not. Disposal unsubscribes scope notifications. [9]
+- The watch owner selects the first registered scope. Registration changes notify scope listeners when that selected scope changes and reset the revision baseline. publishReviewMemory checks matching scope and a string revision, then notifies matching registrations for an undefined baseline, initial message or changed revision. publishReviewMemoryError invokes matching failure callbacks. These are client coordination checks, not authentication. [10]
+- The client opens this package’s state and raw-event endpoints through the separate connectState and connectEvents owners; memory scope reuses the existing state connection.
 
-## Update History
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `markEventsHydrated` repointed to dashboard/src/cockpit/Cockpit.tsx:383-383. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
+attachReviewListeners now owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open, preserving the prior reconciliation behavior.
 
-- 2026-08-04T18:40+02:00 — 260731-EFA-L6 S18-B18 curator: normalized the 6 citation rows to plain
-  anchored sources: `connectState`/`connectEvents` ranges, the `Cockpit` ready callback
-  (Cockpit.tsx 369-380), and the backend `ready` marker (events.py 253-276). Zero findings
-  remain.
+- attachReviewListeners owns the guarded review.memory, review.memory.error and review.explainer.moved listeners. A current moved event marks watchdog liveness and publishes to the exact-scope moved-notice subscribers; it does not change snapshot/delta ownership. One isCurrent predicate excludes a stopped or replaced source for all state handlers. The memory initial-baseline flag is a shared mutable holder reset on open. [11]
 
-- 2026-07-24T13:17:50Z — Added state-stream half-open and never-open honesty behavior. Verification
-  hash/date remain pinned to the pre-commit source stamp.
 
-- 2026-07-18T07:22+02:00 — FEUI-L8 manual route refactor: retargeted this direct data file card
-  from the packed dashboard/src parent to the new nearest data authority overview. Source behavior
-  is unchanged by this memory-only governance move; verification hash/date remain pinned.
-
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 (review finding 2): `connectEvents` gained the optional
-  `onInterrupt` callback wired to the EventSource `error` event — the reconnect signal the
-  seat-event per-connection backlog gate re-closes on (a reconnect replays backlog before its own
-  `ready`; an undecodable cursor replays the full initial window). Verification metadata pinned
-  to the leaf base until closeout stamps the L2 code commit.
-- 2026-06-28T15:30+02:00 — Task 33: documented the `activeWorktreeGroups` entry added to `STATE_EVENTS`
-  (the bounded active-enclosure set the Topology filters on; delivered as a wrapped whole-value delta the
-  store unwraps). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: created the missing sidecar and documented the
-  `/api/events` ready callback used to prevent Event River empty-state flicker before backlog hydration.
-  Verification metadata is pinned to the last committed file version until closeout stamps the task-29
-  code commit.
+- State stream snapshot and named deltas merge into the Zustand store. [2]

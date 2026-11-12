@@ -1,0 +1,40 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "The tick, the activity-record reader, the held-receipt queue and the bounded sweep together replace a queue that waited for the next message; the turn-end cases witness the exact behaviour."
+  },
+  "applicability": "Every native role message the product holds because its recipient could not take it, whether the hold is a recipient's ended turn or a provider limit.",
+  "conditions": [
+    "The serving loop runs the held-delivery tick; delivery follows the host's own activity record where it shows the recipient's turn end.",
+    "The sweep stays the fallback and visits receipts that hold messages before the other receipts.",
+    "The recipient is idle without an open permission at the moment of delivery.",
+    "The one limit check reads the limit file before the send and holds a limited recipient's message with the reason and the reset time, also when the recipient is idle.",
+    "For a limited recipient the drain pauses with outcome provider-limit before any host read, and a recipient the publication shows ended gets one host read per ended stamp; a tick that finds an agent limited delivers nothing to it in that tick, and the first sweep after the reset delivers what waits, in order, within that sweep, the 30 s bound counting from the reset."
+  ],
+  "exclusions": [
+    "No later message is needed or sent to trigger the delivery.",
+    "The parent wake line of the host plugin is MIK-R172's, not this clause's.",
+    "The presenter's send is out of scope."
+  ],
+  "id": "INV-4DQMNE",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_held_queue.py::TurnEndDeliveryTests::test_a_turn_end_delivers_what_waits_without_another_message and ::test_a_turn_end_holds_the_message_while_a_permission_still_waits (class run: 18 passed); report role-reports/worker/8500ba4e-39b3-5373-8e2d-cfe91a38af4c/role-launch/260928-MIK-L171-worker-8500ba4e-39b3-5373-8e2d-cfe91a38af4c.md; L171-F03 repair: test_a_queued_receipt_past_the_first_slice_is_reached_within_bounded_ticks at queue sizes 33 and 65"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v1 rule 1",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A message held because its recipient could not take it is delivered when that recipient's turn ends, by the product's own tick with no further message sent, in bounded units that never build a per-tick census. A recipient held by a provider limit waits for the reset instead, and the answer that names a reset is the provider-limit hold's: an ordinary hold names no reset it does not have.",
+  "status": "proposed",
+  "supersedes": []
+}

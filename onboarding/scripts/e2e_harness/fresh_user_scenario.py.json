@@ -1,0 +1,242 @@
+{
+  "path": "scripts/e2e_harness/fresh_user_scenario.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Anchor: One recorded invocation/result, not inferred completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:ceea01788551f8dd778f3a2c9f47adc3aa094d6c075e514f70f86ffb16541788",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 155
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Anchor: Actual task topology and first atomic start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:7f51f17434e792c8f35bd7a8b4330c53499d61d4d7db662435bf79467c7caa40",
+            "locator": {
+              "end": 386,
+              "kind": "line_range",
+              "start": 316
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:f4e18a5a553c45cf22f957df6fa774260a161d0d863a5cd1f0a6aa7976624b06",
+            "locator": {
+              "end": 417,
+              "kind": "line_range",
+              "start": 389
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Anchor: Explicit fixture memory-series branch setup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:f0238f33d87aa10742dc38a33244b1fbf7362bee67c8e424701fecfcf9894089",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 454
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Anchor: Independent invariant result recorder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:0556c4cba75ee70525a4ee3f163af06579b6e79fde1743359b8f339670fecc8c",
+            "locator": {
+              "end": 1007,
+              "kind": "line_range",
+              "start": 993
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Scenario fixture and reporting imports use the e2e_harness-qualified module identities. The runner and test select the scripts root, and the test loader uses importlib.import_module for those shared identities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:0d50eb38b2d3c24b97d25d711afc99131152ceb1a99f234bf6f6b8c98de9b43a",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "57d707d85cd92b037c1dc86bfb3a310db97446eb",
+            "content": "sha256:3e5fa02f1359253aa0b154c049a573e5c2fadc7aa45202c8731398366c431ab1",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "scripts/e2e_harness/run_fresh_user.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0efc8cc4ef2107ae05cd51f89d2c8949693ddb09",
+            "content": "sha256:45e9fde04dd3507db32729bf74a83ad27f94aab7b7b7581077ce9cbe833cc19a",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 47
+            },
+            "path": "mcp/tests/test_fresh_user_harness.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Anchor: Actual candidate package-source guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:146b9ccd5d57e2ee59d46d2bf6c8ffd4735e0c2a0be79d206951e96050741ae8",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 189
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:28eba8b65b6d984e337f6c9c07eec0723938c4cf1be169824b57ffed6d69089f",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchor: Ordered current fixture chain without the deleted free-agent step.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:6fa184b11c49fad4d4d20a5ff4245413935839f726560f5e8908c0e6a76a6631",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Anchor: Two fixture chains and their independent invariant results.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:aec13a57ebfbb49d4ac31c089f8ca903e9b27d37b7e3532aa748ac970d39abda",
+            "locator": {
+              "end": 990,
+              "kind": "line_range",
+              "start": 908
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor: Citation preview work order, not rewritten memory.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:395971011845bfcccfd6d826b2a1ed071a303bc8e5e5af2edc4c69fbefe8ab82",
+            "locator": {
+              "end": 825,
+              "kind": "line_range",
+              "start": 813
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Anchor: Missing-enclosure citation step remains blocked by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:40f88859406a353b419d0078bdb03256964176f7604dab511840235e47ae0101",
+            "locator": {
+              "end": 848,
+              "kind": "line_range",
+              "start": 828
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Anchor: Blocked topology reports only the recorded attempts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bd7d5d79d2564f528e5d67762a9e6eec6c5dbda",
+            "content": "sha256:f30d84e1585938f147125d1ad89021e2308c6d181efbf33be963832f779909d9",
+            "locator": {
+              "end": 905,
+              "kind": "line_range",
+              "start": 851
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

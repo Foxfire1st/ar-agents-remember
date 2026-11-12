@@ -1,0 +1,182 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Freeze the complete profile and registered memory authority before Gate 1.\n\nAnchor: \"def prepare_certification_records\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:ead39babb5dbb817b4e66d47d3da5c5585b21f071a9c1cc59a20d8b01f06f705",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Admission persistence preserves the stored admission provenance.\n\nAnchor: \"def _persist_admission\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:ae582f5b65494583df549a74054e9e610d0b514f23a23409b40399c547d7568c",
+            "locator": {
+              "end": 543,
+              "kind": "line_range",
+              "start": 543
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Published candidate and complete profile plan must agree before recording.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:10e95b74c120ff22b569fb8329487fce8064cf94a2c2aadd29a50b4df046dfe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_publication_admission"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:990592e1ec6c50636330178ec3237f2be3370ebd00e8e5b06dad761447626305",
+            "locator": {
+              "kind": "symbol",
+              "name": "record_published_generation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:1587bab636ada946cfdbe62a710586af70a631f6653b4eea7e211e311284e550",
+            "locator": {
+              "end": 253,
+              "kind": "line_range",
+              "start": 209
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The selected journal is bounded and validated before atomic replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:ede9094bdead046e5bcc7195f607ecee77d298e000855d2285977c9dee4533eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "journal_gate_records"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:0ba7384c5ba62b7e297177283aeb41fda36f6ea57a0a3ddcd3cceb9b4c14139b",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 312
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Result and certificate publication reopens nested evidence and original objects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:8a6ad9020a5ad7eb2a042043c4be2b6db9cb28bce59393fded20b58981bca8a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_record_gate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:00f05d06b1ca138d6697c049709d6b6deec39b3bb2840ffe824b5a02f3be9e7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_gate_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:2cf75848658668a6de895e4716979acb6d130bf6482139b1e453b8ff7325fcca",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 311
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Map a terminal gate catalog into typed rail results (payload-bound).\n\nAnchor: \"def terminal_results\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4ad582e28b720638911ddaaf33f4f7f151fb69ae",
+            "content": "sha256:83c5a71be805f92ee08242534d601cc7bc0b32ea5c257d848a9421a11c35fb5a",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/quality/certification_terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Memory rails are read through the bound certification-memory owner.\n\nAnchor: \"def _bound_memory_rails\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c62c700c4a20f4dd0b17d1dd95a68c03136291af",
+            "content": "sha256:129c0a473cf06f659efaa194aa2706d976ca7b93ab1ce42e67b32341cd6e9326",
+            "locator": {
+              "end": 475,
+              "kind": "line_range",
+              "start": 475
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

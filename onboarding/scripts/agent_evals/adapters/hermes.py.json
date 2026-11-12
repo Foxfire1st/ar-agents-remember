@@ -1,0 +1,42 @@
+{
+  "path": "scripts/agent_evals/adapters/hermes.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c97cb6881b5990d40efa4f3c2b8c7ef124e0d403",
+        "content": "sha256:919d0485fa1ee7a87656f47bb7bb27edc7cb66945d17479325b802f39c555dd5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-TZMZ69",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It reads the observed session schema and retained native rows, including compaction context and final turn-stop facts.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.\n\nAnchor: Current declared source extent",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c97cb6881b5990d40efa4f3c2b8c7ef124e0d403",
+            "content": "sha256:919d0485fa1ee7a87656f47bb7bb27edc7cb66945d17479325b802f39c555dd5",
+            "locator": {
+              "end": 458,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

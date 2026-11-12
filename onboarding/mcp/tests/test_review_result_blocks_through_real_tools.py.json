@@ -1,0 +1,49 @@
+{
+  "path": "mcp/tests/test_review_result_blocks_through_real_tools.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Real sync rebinding and delivered integration receipt are checked in this module; item judgment is explicitly substituted for the receipt case.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e446f0e3a7054f2c42f12461169587fc9e26f7",
+            "content": "sha256:a14abb271218267b4c1b160cf66c1a3c12b1d3bb78591f9c5a715fba9e628055",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The helper stubs only item judgment; the integration case still checks the delivered receipt through the real tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "52e446f0e3a7054f2c42f12461169587fc9e26f7",
+            "content": "sha256:d3e5eab085765618fb604b61d43d12eb12f1280db3e8d00224c0698f52506edb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_integrate_without_item_judgment"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "52e446f0e3a7054f2c42f12461169587fc9e26f7",
+            "content": "sha256:9a20ec1db317fd47812b5f35b9b6073a0fb96ca6e4f6e1f51802b6fa3beb0fcc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_real_integrate_tool_attaches_the_delivered_receipt_for_a_reviewed_leaf"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

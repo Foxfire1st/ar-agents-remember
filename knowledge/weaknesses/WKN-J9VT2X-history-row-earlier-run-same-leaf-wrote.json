@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "cc966901ffa6d3381f59972d9ea67dde6b05d04c",
+    "content": "sha256:488dd3d6909dce02510096a7f7f5d35102bf19f1833be9d3f2abf9dedbab5f7d",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/models/knowledge_files/history.py"
+  },
+  "id": "WKN-J9VT2X",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-3",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "A history row that an earlier run of the same leaf wrote cannot be withdrawn. Leaving it out of the hand-off list keeps it, and for an onboarding subject the only disposition is `no_impact`, so a row that became false stays. On L82 one such row (ROW-F3VKG4) was removed by hand from the unlanded history file under ruling `22a3fe86`."
+}

@@ -1,0 +1,74 @@
+{
+  "path": "mcp/tests/test_curator_coherence_closed_out.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
+        "content": "sha256:691c6ee3be6ee33ca222794dfa8ed0750579f3ed60e6c894353040184c823415",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_status_and_validate_answer_closed_out_after_the_closeout"
+        }
+      },
+      "facet": "After completed closeout both status and validate answer closed-out with actual recorded identities.",
+      "id": "PRF-RFW9MQ",
+      "invariant": "INV-PFVBQM",
+      "origin": {
+        "handoffEntry": "MIK-R52@v1 rule 10 closed-out-answer",
+        "leaf": "260928-MIK-L52"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "For both status and validate, a completed closeout answers `closed-out` with its code and memory-content commits and the coherence record digest, without comparing the live candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
+            "content": "sha256:691c6ee3be6ee33ca222794dfa8ed0750579f3ed60e6c894353040184c823415",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_and_validate_answer_closed_out_after_the_closeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The shortcut never invents a missing record.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
+            "content": "sha256:aca1fddd80b07ca6c37fc3b7169ab38acdd8009ff386b8891b7d846397d6650d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_completed_closeout_without_a_record_answers_absent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Before the closeout, status and validate answer current or valid without code or memory commit fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f39eaaf8ff33d0bc9b518526621852da00d48253",
+            "content": "sha256:c5e550b04a49e72d97e0ca608d9c7c9b2ed152926e51d97e438964f313e74568",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_status_before_the_closeout_is_not_closed_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

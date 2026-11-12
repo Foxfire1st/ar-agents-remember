@@ -1,0 +1,266 @@
+{
+  "path": "mcp/tests/test_paseo_role_messages.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:8e9a86ce5806f73681acbde57b6a5fdffb646e2058745f2c0fe0caa6fa0e363e",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among"
+        }
+      },
+      "facet": "Checks live taskless-role ambiguity reports IDs and sends no message.",
+      "id": "PRF-0Y1E2J",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:e20303c69117682838d784af68b1defec3ca586da6a32bfef49161b00e210426",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_a_copy_the_recipient_already_holds_is_not_sent_again"
+        }
+      },
+      "facet": "A copy the recipient already holds is not sent again, with a host that does not deduplicate by itself.",
+      "id": "PRF-26WJX8",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:ccd3e84f8514500c45a85b2ffb004da1b76737072252d749a7548586721597ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_a_leaf_seat_with_two_live_agents_refuses_by_role"
+        }
+      },
+      "facet": "A leaf role address refuses both live occupants instead of choosing the newest.",
+      "id": "PRF-3VCEZ3",
+      "invariant": "INV-RTQCXN",
+      "origin": {
+        "handoffEntry": "L100-R100-set-start-and-held-seats",
+        "leaf": "260928-MIK-L100"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:3634cf322fe00cb0e9adefadc1a8e9e918545156f839165530a39ff44d90a6c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_a_held_batch_preserves_the_reported_replacement_and_warning"
+        }
+      },
+      "facet": "A held batch answered after a replaced turn keeps the replaced disposition and the plain warning, and RoleMessageResponse accepts it.",
+      "id": "PRF-CGV660",
+      "invariant": "INV-18M0W3",
+      "origin": {
+        "handoffEntry": "L171-F07 / L171-A4",
+        "leaf": "260928-MIK-L171"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:03df2e00732053eac4f196e3823d07fdc0674ab25719046a3289f34c4ae023f4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_role_resolves_through_the_receipts_to_its_live_agent"
+        }
+      },
+      "facet": "A resolved live agent receives the message; an archived recipient is refused with recipient-archived.",
+      "id": "PRF-CH947F",
+      "invariant": "INV-GM5MS3",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 8",
+        "leaf": "260928-MIK-L76"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:cc436df495e1fb520007242b039758f2930cf4c00b1253b9f55899e983710df7",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_more_executions_than_are_asked_about_are_refused_and_the_cut_is_said"
+        }
+      },
+      "facet": "Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent.",
+      "id": "PRF-R2W0VG",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:e7ff83c5af5a3dcc8cd80df1f4b004a66f8ab71b2cee7554ba2a7453bc6fcaf0",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_the_hosts_own_activity_record_holds_a_message_the_snapshot_calls_idle"
+        }
+      },
+      "facet": "The host's own activity record holds a message the agent snapshot calls idle.",
+      "id": "PRF-R5DRRY",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:4f66061320eecbe3aad712785453109c579a077284a8523050e17dc45168ddbe",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_a_delivery_that_takes_held_messages_answers_ok"
+        }
+      },
+      "facet": "A delivery that takes held messages answers ok and the response model accepts it.",
+      "id": "PRF-T45AY3",
+      "invariant": "INV-4XSRF7",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 4",
+        "leaf": "260928-MIK-L171"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:5aad1879def5af4162bb5cbb976da3c2e12fe86e8f5a056821746390bcc3d3dd",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_an_unknown_send_outcome_is_not_delivered_twice"
+        }
+      },
+      "facet": "An unknown outcome leaves one copy: the held row keeps its id and a timeline copy stops the resend.",
+      "id": "PRF-VDDN82",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:80a3281585d1be4c73b123a58af65b844ed7c70176c54b2d15b4da26359046ef",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests.test_only_an_agent_id_of_this_lines_receipts_is_a_recipient"
+        }
+      },
+      "facet": "Checks foreign IDs and self-addresses are refused.",
+      "id": "PRF-YAM9QW",
+      "invariant": "INV-R9S24S",
+      "origin": {
+        "handoffEntry": "PNT-R06@v1 §5 / G7 / F3 / A1",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:271bbbbe1a0fe86ab57dc371d0b9e18527a151c2c4d355c76f911e15419ea5cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests"
+        }
+      },
+      "facet": "The role-message cases cover holding, single delivery, the answered batch and the steer-or-hold send.",
+      "id": "PRF-ZXXEXP",
+      "invariant": "INV-3PV53M",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 7",
+        "leaf": "260928-MIK-L171"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:3634cf322fe00cb0e9adefadc1a8e9e918545156f839165530a39ff44d90a6c3",
+        "locator": {
+          "end": 1045,
+          "kind": "line_range",
+          "start": 1019
+        }
+      },
+      "id": "RLZ-EQQKFW",
+      "invariant": "INV-18M0W3",
+      "origin": {
+        "handoffEntry": "L171-F07 / L171-A4",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "The real public tool, store, drain and answer are exercised in the retained permission-then-running schedule, with only the transport replacement result controlled.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+        "content": "sha256:271bbbbe1a0fe86ab57dc371d0b9e18527a151c2c4d355c76f911e15419ea5cb",
+        "locator": {
+          "kind": "symbol",
+          "name": "RoleMessageTests"
+        }
+      },
+      "id": "RLZ-QSMYXH",
+      "invariant": "INV-3PV53M",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 7",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "The four new and two rewritten cases live here, beside the send and hold paths they exercise, so the regression each names is checkable where the behaviour is defined.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Role addressing, reachability bounds, holding, at-most-once delivery, turn steering and waits are asserted here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:d748e8b79f8a79a11bf315549d6d5d9ab7d798cec63dbf692bdc1172d2f7c535",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A message file carries one timestamp, sender and recipient and reports its returned SHA-256, while a bodyless delivered text keeps its existing form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:61f93f4c1eb85edff82e3e5eb98b49944915513b00816806a1e3e9dcb7d055d3",
+            "locator": {
+              "end": 242,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

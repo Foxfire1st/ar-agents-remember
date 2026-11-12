@@ -1,0 +1,78 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/shared/seat-recovery.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "860da0815eb495dbf793659fcb20cb7fbea9e9e6",
+        "content": "sha256:b9fbad012bff36f1d17ca9859b4e9eb4716e1d476dd7966e424448b3557ba15d",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 7
+        }
+      },
+      "id": "RLZ-23HXB7",
+      "invariant": "INV-K48GZ2",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Recovery detail: a declared helper or background wait remains a wait.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Idle leaves are read first, and a silent turn with running helpers or a process the seat started is told to collect its results and finish, while a declared helper or background wait stays a wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "860da0815eb495dbf793659fcb20cb7fbea9e9e6",
+            "content": "sha256:a191c59852ea63fc606f7ae3cd124852ccdf03a6c3acb52941cbbf6ea3882b60",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Stopped or archived seats change only on the developer's word, and replacement preserves the predecessor's work.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "860da0815eb495dbf793659fcb20cb7fbea9e9e6",
+            "content": "sha256:5a714d3ae2c8f4d988cdab0ecbc109af66e71f6dc944807f1ab815e4cd616694",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Unavailable-provider work moves through an authorized fallback role set, and other model changes go up for decision.\n\nAnchor: `role_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "860da0815eb495dbf793659fcb20cb7fbea9e9e6",
+            "content": "sha256:05a38985b7913d86d69be8c8eb7576f54347d7d7d8e5e42809114047d807a7aa",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

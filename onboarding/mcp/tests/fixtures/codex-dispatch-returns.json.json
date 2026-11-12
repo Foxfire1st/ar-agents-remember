@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/codex-dispatch-returns.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "53ee8d85dbf429a7b06fb1bf6d7941087de611d1",
+        "content": "sha256:0da133c0b07cb8908fc237c18215059e4d45ed0972b9992b685d48cc4ee91156",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-XJAMTF",
+      "invariant": "INV-R4JZ3F",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-codex-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These retained returned tool values pin the result-bound nested dispatch interpretation.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "53ee8d85dbf429a7b06fb1bf6d7941087de611d1",
+            "content": "sha256:0da133c0b07cb8908fc237c18215059e4d45ed0972b9992b685d48cc4ee91156",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

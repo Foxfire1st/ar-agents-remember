@@ -1,0 +1,53 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "A future UI change must not bypass writer admission or authoritative gate visibility through a private review-only disposition path."
+  },
+  "alternatives": [
+    {
+      "option": "Keep disposition authoring in the existing writer with author, task and authority provenance and gate visibility.",
+      "reason": "Appendix151 specifies the writer, where the gate sees dispositions. review_record_rendering.submission explicitly reports the read-only surface and directs authoring to that owner rather than shipping a substitute write route.",
+      "status": "chosen"
+    },
+    {
+      "option": "Publish judgments through a private reviewer mutation route or local controls outside the existing writer and gate.",
+      "reason": "It would create another authoring authority and hide or weaken admission/provenance the existing writer and gate enforce.",
+      "reconsider_when": "An approved requirement explicitly delegates a review authoring route while preserving the existing provenance, admission and gate contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A future UI change must not bypass writer admission or authoritative gate visibility through a private review-only disposition path.",
+    "No new serving authoring endpoint, no assertion that this rendering module executes the writer/gate, and no automatic memory acceptance."
+  ],
+  "context": "Approved MIK-R57@v2 appendix83/151 and rule6 require this by-design choice to be recorded, not deferred as a gap. Source obligation: MIK-R57@v2 by-design writer-authority. This is the requirement-prescribed boundary, not a claim that an undocumented alternative was seriously weighed.",
+  "decider": "Approved MIK-R57@v2 under D18/D47/D48; Curator records the specified boundary under constrains_future_work.",
+  "id": "DEC-RHTQR8",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "8eafcdd6f1f2e70dfd792d2dc57a62caed505101",
+        "content": "sha256:64120005fabcf3773d46f7ae9c91c031396a5756a537ec7be8ac2076dc656e53",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "mcp/src/agents_remember/application/review_record_rendering.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "CUR-L57-R57-choice-writer-authority",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

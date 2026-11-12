@@ -1,62 +1,34 @@
 # mcp/src/agents_remember/models/structural/agent.py
 
-| Field | Value |
-|---|---|
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/structural/agent.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-11T14:29+02:00 |
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Structural wire models](overview.md)
 
 ## Purpose
 
-Defines strict agent-facing DTOs for dispatch, parent/child messaging, retirement, and rename. The
-wire contains stable work-domain identity and intentionally has no runtime addressing fields.
+Declare the native receipt-tracked seat-retirement request/response and canonical role vocabulary.
+Dispatch, shared structural-delivery and parent/child messaging DTOs are absent.
 
 ## Code Commentary
 
-### Logic
+`StructuralRole` names the task-seat roles (architect, orchestrator, investigator, manager, worker,
+reviewer, curator) and the earlier system-specialist spelling.
+The frozen `RetireChildRequest` carries task_document_ref, role, reason, optional agent_id and
+interrupt_turn; the native owner, not this dataclass, enforces starter/receipt identity and
+refuses an empty target or an unadmitted interruption.
 
-Request dataclasses accept only task-document, role, content, label, and reason fields. Response
-models share `StructuralTargetResponse`, exposing the resolved task document and role plus status.
+`RetireChildResponse` declares retire_child, status, optional taskDocumentRef, role and detail;
+its role validator calls canonical_role. It inherits the retained ToolResponse envelope and
+does not expose a runtime-occupant response field. Internal task gate/activation owners remain
+separate; this DTO is not a plane-hosting API.
 
-### Conventions
+## Current model evidence
 
-Every operation has a distinct response model so the registry remains self-describing while the
-structural target shape stays common.
+The complete current source has only the role Literal, RetireChildRequest and
+RetireChildResponse.
 
-### Invariants And Boundaries
+## Evidence
 
-- Public request dataclasses define only the listed structural fields; registration and wire tests
-  guard the absence of plane-only address vocabulary.
-- Session, lifecycle, terminal, inbox-row, and gate ids are forbidden on public schemas.
-- Do not add legacy aliases for removed exact-id requests.
+- The retained role Literal and native retirement request/response have no dispatch/shared-delivery DTO. [1]
 
-### Todos
-
-None.
-
-## Docs References
-
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The request family uses structural fields only. | `DispatchAgentRequest` | mcp/src/agents_remember/models/structural/agent.py:39-69 |
-| The response family returns structural targets without runtime ids. | `StructuralTargetResponse` | mcp/src/agents_remember/models/structural/agent.py:71-107 |
-
-## Cross-Repo References
-
-
-## Update History
-
-- 2026-08-11T14:29+02:00 — Re-read `DispatchAgentRequest` and widened its citation to include
-  the dataclass declaration; verification metadata remains pending for governed closeout.
-- 2026-08-11T06:47+02:00 — 260731-EFA-L19: created for the public structural agent DTO family.
+- The task-seat role literal holds seven canonical roles plus the system-specialist spelling. [2]

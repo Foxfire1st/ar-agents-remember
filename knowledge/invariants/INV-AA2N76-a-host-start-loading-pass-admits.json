@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The pass enforces memory/concurrency/priority while the transport confines every load to the non-interrupting timeline operation; omitting either can over-admit or interrupt live agents."
+  },
+  "applicability": "Automatic tree-agent warmup on the admitted configured host process start.",
+  "conditions": [
+    "A single OS lease and exact-start progress record own the pass across product servers.",
+    "Memory is checked before admission; unknown/below6GiB waits and eventually gives up with click-load reasons.",
+    "The host listing supplies unarchived candidates, and inflight loads retain their slot."
+  ],
+  "exclusions": [
+    "No host restart, refresh_agent, message send or archived-agent resurrection.",
+    "No latency/processor-share promise follows from the feature witness."
+  ],
+  "id": "INV-AA2N76",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "MIK-R145@v1 rules2-5; native round5 passed freeze; mcp/tests/test_paseo_warmup_run.py and test_paseo_warmup_operations.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "MIK-R145@v1-bounded-resume-admission",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A host-start loading pass admits at most two timeline resumes, waits when available memory is unknown or below the threshold, promotes clicked pending agents, and never sends a message, interrupts a turn or refreshes an archived agent.",
+  "status": "proposed",
+  "supersedes": []
+}

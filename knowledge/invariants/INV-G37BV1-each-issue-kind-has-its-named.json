@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A body without its kind's shape hides the status or the open order, so a reader cannot tell whether a task is planned, in work or landed, nor follow what the master still owes."
+  },
+  "applicability": "The bodies of the four issue kinds this repository publishes: task, master, sprint and completed-master summary.",
+  "conditions": [
+    "The kind is one of the four the standard names."
+  ],
+  "exclusions": [
+    "Milestones and historical leaf issues, which this repository never publishes."
+  ],
+  "id": "INV-G37BV1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "All 39 bodies carry their kind's sections; the master has 202 requirement rows and the sprint 21 completed-master links."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "PUB-03-rule-6-issue-shapes",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each issue kind has its named shape: a task opens with purpose, links, requirement IDs, status and waits, then the named sections; a master carries grouped delivery, the open order and the folded requirement table; a sprint links its masters and end; a completed-master summary says what it set out to do, delivered and when.",
+  "status": "proposed",
+  "supersedes": []
+}

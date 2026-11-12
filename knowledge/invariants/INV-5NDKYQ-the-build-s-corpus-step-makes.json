@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Sending setup and task creation to a server resolved to live roots would mutate the wrong repository; exact server-info admission rejects foreign roots, repositories and providers before the corpus calls."
+  },
+  "applicability": "Corpus setup and task-document calls after the selected build server initializes.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "Protocol initialization and the server_info read necessarily precede this admission.",
+    "No unit case or new composed execution of the helper was run here; this claim is source inspection with retained producer-run evidence."
+  ],
+  "id": "INV-5NDKYQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "worker evidence 02-build.txt (the build against the real tool server succeeded)"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "Corpus admission (the build's tool server)",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The build's corpus step makes no call through a tool server that does not report exactly the sandbox's coordination root and Projects folder, exactly the one repository `sandbox-app`, and no provider.",
+  "status": "proposed",
+  "supersedes": []
+}

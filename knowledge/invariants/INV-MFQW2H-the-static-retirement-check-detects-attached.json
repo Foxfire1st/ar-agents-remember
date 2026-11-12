@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A production database write spelled attached, qualified, quoted, aliased or WITH-prefixed would escape the static check."
+  },
+  "applicability": "The static retirement check over production SQL spellings.",
+  "conditions": [
+    "The reader classifies attached, qualified, quoted, aliased and WITH-prefixed forms."
+  ],
+  "exclusions": [
+    "Raw string or comment occurrences that name no write."
+  ],
+  "id": "INV-MFQW2H",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_knowledge_database_retired.py::test_the_static_check_catches_the_forms_the_review_found_it_missed; F09-SQL-forms.log"
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R3 finding 9",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The static retirement check detects attached expressions and row writes using qualified, quoted or aliased tables and WITH prefixes.",
+  "status": "proposed",
+  "supersedes": []
+}

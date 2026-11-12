@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives"
+    ],
+    "justification": "The approved appendix names this continuing choice and explains why the contrary requested behavior is not adopted: The appendix explicitly separates derived current work from historical judgments rather than promising a second worklist-history store."
+  },
+  "alternatives": [
+    {
+      "option": "The worklist is derived; its durable history is the authored history files.",
+      "reason": "The appendix explicitly separates derived current work from historical judgments rather than promising a second worklist-history store.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat a sequence of derived worklist snapshots as the authored knowledge history.",
+      "reason": "The appendix explicitly separates derived current work from historical judgments rather than promising a second worklist-history store.",
+      "reconsider_when": "Only if the owning approved requirement is explicitly revised to authorize this changed boundary; this prose is not a computed trigger.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Retain the chosen current design and the rejected alternative with its actual recorded reason; do not relabel it as a gap or later work.",
+    "No executed test, new implementation, changed inherited guarantee, relocation permission or independent acceptance follows from this decision."
+  ],
+  "context": "Continuing approved MIK-R55 appendix entry 151. | 151 (part) | Latest worklist only; \"stale\" against \"unverifiable\"; a family whose route died; a family only in the candidate; a blob ID of the other object format; the memo's read set; three L09 changes on unconverted lines; coherence judgments and the onboarding gate; the `overview` collision; entity fingerprints; the previous master's review section; the gate's message; the count of invariants without a proof; the test lanes; finalize boundaries of MIK-R38; L47's preservation test; cards the L37 curation did not review; `dispatch_agent` on the ICR master | Built: rules 7 and 8 and the real-data run. By design: the worklist is derived and its history is the history files; a leaf that kills one route of a family repairs that family, because its row judges the family as a whole; an object ID of the other format cannot name an object of the repository, and \"incomplete\" refuses safely; the onboarding gate reads only what the memory tree holds; fingerprints are signed at closeout from committed blobs. A leaf whose folder master lists no row for it is completed with its parent update reported as skipped (MIK-R38 rule 3), and a test's lane is not its kind. A lane's ceiling is a budget that a leaf raises with a reason. `dispatch_agent` refused the ICR master because its series contract disagrees with its sprint; the refusal shows both sides (`worktrees/modules/startup/master_series_admission.py:312`), and that master is completed. Not real after MIK-R46 and MIK-R65: unconverted lines no longer operate. Moved, with the text checked: lane order to MIK-R51 rule 3; unreviewed cards and entries to MIK-R19@v3 rules 6 and 10, which read every card of every route | 7, 8, 9 | Current normative amendments govern over historical illustrative wording. This records the existing choice, not a new feature or future-work gap.",
+  "decider": "Architect-approved MIK-R55 v1 corpus; Curator records its continuing choice under R54.13/R55.10.",
+  "id": "DEC-Y7Y37H",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R55",
+        "packet": "requirements/MIK-R55-v1-worklist-and-gate-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "wave-83-complete-history.json"
+    },
+    "handoffEntry": "L54-by-design-derived-worklist",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

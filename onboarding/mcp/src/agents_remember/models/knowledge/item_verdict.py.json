@@ -1,0 +1,57 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/item_verdict.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The value declares three states and optional witness/row/reason fields, with no state-specific model validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ea2ffcb7c07d58606cea05ee5da0c01a2332bfa",
+            "content": "sha256:c64e220fb593d3e07664c81609e8e2d77e626cdb3fee4d6f7888d4ce44b0c25c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ItemVerdict"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The public gate function owns per-item verdicts and produces undecided answers on unreadable candidate input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "content": "sha256:f449236e1b03d7287bd83a549f8c75ac32aff35f68a4280565e0af10d1db4d28",
+            "locator": {
+              "kind": "symbol",
+              "name": "item_verdicts"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The review adapter gates verdicts on comparison binding and complete computation, then delegates to the gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ea5b52c5b44c5cbc9d2e35ca26e403d5f1550bcc",
+            "content": "sha256:b1ebf1a605b94e9fac010de2f2d8474168071f82b03a634e5bd29bebaa5fde2c",
+            "locator": {
+              "kind": "symbol",
+              "name": "worklist_answers"
+            },
+            "path": "mcp/src/agents_remember/application/review_worklist_answers.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

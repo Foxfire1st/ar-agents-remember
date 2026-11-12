@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A surviving workflow that points at a removed carryover procedure reads as executable authority but cannot be followed; the reference must resolve to the kept carryover workflow."
+  },
+  "applicability": "Every executable reference from a surviving lifecycle workflow to a carryover procedure.",
+  "conditions": [
+    "Each reference resolves to the kept carryover workflow that states the procedure."
+  ],
+  "exclusions": [
+    "Rebuilding a retired skill to keep a reference alive."
+  ],
+  "id": "INV-EAX9HM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/doctrine-review.md P4; final-a3/removal-hits.json; a2/retired-section-map.md."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B13",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 3,
+  "schema": "ar-invariant/v1",
+  "statement": "Every surviving executable carryover reference resolves to the kept carryover workflow that states the procedure.",
+  "status": "proposed",
+  "supersedes": []
+}

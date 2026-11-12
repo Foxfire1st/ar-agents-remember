@@ -1,18 +1,12 @@
 # mcp/src/agents_remember/observer/ulid.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/ulid.py`       |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-06-13T11:15+02:00                           |
-| lastVerifiedCommitHash | `84e95ad0379cd864af3cbae21b7ffe3fd2d2b1b1`       |
-| lastVerifiedCommitDate | 2026-06-28T18:49:06+02:00|
-| governingOverview      | `overview.md`                                     |
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
-`ulid.py` mints ULIDs for observer event and lifecycle ids: 48 bits of
+`ulid.py` mints ULIDs for observer event ids: 48 bits of
 millisecond timestamp + 80 bits of randomness, rendered as 26 Crockford Base32
 characters, so the strings sort lexicographically by creation time.
 
@@ -25,23 +19,12 @@ uppercase minus I, L, O, U).
 
 ## Invariants And Boundaries
 
-- **Stateless ⇒ thread-safe.** Called from both the request thread and (later)
-  the lifecycle heartbeat thread; `os.urandom` / `time.time_ns` are thread-safe,
-  so no lock is held. Within one millisecond two ids share no ordering guarantee
-  — order *within* a lifecycle is the JSONL append order; the id is the
-  cross-lifecycle merge / unique key.
-- Mint-and-compare only: ids are never parsed back, so no decode path exists.
-- A dependency-free local mint by design (stdlib `uuid.uuid7` would supersede it
-  once the Python floor reaches 3.14; keeping minting in one module makes that a
-  one-function swap).
+- **Stateless and concurrent:** request threads can call `new_ulid` without a mint lock. Within one millisecond two IDs have no ordering guarantee; JSONL append order orders the feed, while the ULID supplies a merge/unique key. There is no lifecycle-heartbeat caller contract.
+- Mint-and-compare only: IDs are never parsed back.
+- The dependency-free local mint owns the stable format across Python upgrades.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Events carry a ULID `id`. | `id` | mcp/src/agents_remember/observer/events.py:54-54 |
+### Repo-Internal References
 
-## Update History
-
-- 2026-06-13T11:15+02:00: Created for slice 2a. Verification metadata is pinned
-  until closeout stamps the 2a code commit.
+- Events carry a ULID `id`. [1]

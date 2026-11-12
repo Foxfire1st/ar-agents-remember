@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/src/panels/review/canvas/canvasDocument.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The panel observes entry, departure and challenge answers for its session.\n\nAnchor: None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f132403962aa9af2217f2b65a610b6c3d0ad5810",
+            "content": "sha256:4f7777664c16ba74ff82725e5f554e9389acce77b1151ab22de82b776bf3c781",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

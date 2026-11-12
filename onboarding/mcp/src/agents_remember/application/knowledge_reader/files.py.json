@@ -1,0 +1,98 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_reader/files.py",
+  "realizes": [],
+  "references": {
+    "11": {
+      "note": "The three file states and the bounded code text.\n\nAnchor: `FileRead`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Control characters are refused before any Git call; after whitespace/slash stripping and PurePosixPath normalization only a `..` part is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "A memory file comes from disk or a commit; a missing file or a failed/not-blob type probe is absent, a later blob-read or decode failure is unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The size asked before the bytes; a tree is not a file; binary detection.\n\nAnchor: `code_text`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The census files of the selected tree.\n\nAnchor: `census_files`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e99baab151543016edc30c0bf7a5db68ac957f3b",
+            "content": "sha256:11787a0fdc8f176b7935400c9812b96d9405b4f47827026cfe80003ae1b112c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The one pathname inventory that now answers directory listings.\n\nAnchor: `read_tree_listing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "be05f862f8abdce1e737a3b7888b6bf27b93274c",
+            "content": "sha256:adfabe1875671003c723cc24fd2c77503984f45db46aa4c77090f99e845e2f7c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_reader/tree_coverage.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

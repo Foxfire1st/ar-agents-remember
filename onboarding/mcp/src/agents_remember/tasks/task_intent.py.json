@@ -1,0 +1,429 @@
+{
+  "path": "mcp/src/agents_remember/tasks/task_intent.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:ad98f41357803e614888b1c877161432a866e4d747480445dc62b38c734bef4e",
+        "locator": {
+          "end": 126,
+          "kind": "line_range",
+          "start": 125
+        }
+      },
+      "id": "RLZ-0VN3QY",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Adds optional nonGoals and acceptance to canonical TaskIntentV1; these authored prose fields now participate in intent identity.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:d3336f2be640bcba5d99cdc7d858b64c607ec0adeef06cfb8ecc2ec8df368ec6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_NESTED_FIELDS"
+        }
+      },
+      "id": "RLZ-1DTY6P",
+      "invariant": "INV-C5R8JZ",
+      "origin": {
+        "handoffEntry": "L183-intent-review-visible-ready-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit normative-classification allowlists admit the native review field and its strict child fields. This is an allowlist/classification claim; TaskIntentV1 does not serialize intentReview, so this anchor makes no digest-change promise.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:df438c1059a150464aff29c529918b232f745101d7b828b9186a70c42c5ca9e1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_approved_packet_ref"
+        }
+      },
+      "id": "RLZ-58G7G9",
+      "invariant": "INV-D2HZQ8",
+      "origin": {
+        "handoffEntry": "MIK-R42@v2-gate-verdict-follows-selections",
+        "leaf": "260928-MIK-L42"
+      },
+      "rationale": "Resolves the task root and the packet locator through observed_resolve and records the packet's bytes under the caller's locator, which gives the gate the selection rows that a retargeted packet link changes.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:d9ed4674f4881ff0e65120e61e6eb1d07b3b971438654eeb617e11741d3cc6ea",
+        "locator": {
+          "end": 132,
+          "kind": "line_range",
+          "start": 130
+        }
+      },
+      "id": "RLZ-8379RC",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Drops absent expectedKnowledgeEffects/nonGoals/acceptance before snapshot serialization so old documents retain absent-field identity instead of hashing new null keys.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:05f9327e3e6cb3a25a22128b6410755be417904c6deb7ff047dd677f6f0b51ec",
+        "locator": {
+          "end": 201,
+          "kind": "line_range",
+          "start": 200
+        }
+      },
+      "id": "RLZ-EK1G64",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Projects candidate nonGoals/acceptance into TaskIntentV1; this is normative prose propagation into identity, not just a view field.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:153158efb360377b85cab93ac2914daf0fda29829e553446feee808e9d6aaa3b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_ROOT_FIELDS"
+        }
+      },
+      "id": "RLZ-F83B71",
+      "invariant": "INV-C5R8JZ",
+      "origin": {
+        "handoffEntry": "L183-intent-review-visible-ready-order",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Explicit normative-classification allowlists admit the native review field and its strict child fields. This is an allowlist/classification claim; TaskIntentV1 does not serialize intentReview, so this anchor makes no digest-change promise.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:eca43fd415764946df9485bc308f410f1330cf5594d94b6b75cc8d9f7c170d37",
+        "locator": {
+          "end": 261,
+          "kind": "line_range",
+          "start": 259
+        }
+      },
+      "id": "RLZ-QG9M7D",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Applies the same absent-field omission in projected intent payloads; old identities stay stable while present nonGoals/acceptance affect the canonical intent.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+        "content": "sha256:90bf2b1b2b7eed377ed611e3b0fc6cfb14ee5bbe0f3a966535fb0b02b7580fac",
+        "locator": {
+          "end": 148,
+          "kind": "line_range",
+          "start": 147
+        }
+      },
+      "id": "RLZ-VJBMV7",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "curator-extra-source-links-INV-T3TNTX",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "Includes nonGoals and acceptance in authored-intent field selection, so those edits reach the canonical identity rather than disappearing from it.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "The strict leaf projection declares optional expectedKnowledgeEffects/nonGoals/acceptance and drops each only when None, retaining empty prose values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:6b35bbf688102c0902c119c7e24cbabfec1cccb252ae8dbc9b2f50d791053e91",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 108
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The root/nested allowlists consume normative fields, including fixed nonGoals/acceptance, not structural waitsFor or audit completedAt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:05a9e6a01cd46ec9ad0cc6f216abef0b4ae37aae1c04006de51413792ccbbbe7",
+            "locator": {
+              "end": 156,
+              "kind": "line_range",
+              "start": 128
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:da29e572316bf1ad53a864d6c7ab899e91629c97f6d1ddfa0be41d5d04d4701c",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 147
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Leaf projection refuses a master and passes nonGoals/acceptance explicitly; the separate master projection refuses leaves and shares the None-only optional-slot omission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:2a70823b6fcbaac6b53faf06e6bc8fabff91aaa0530b4e089bb8e3e1f9f98ef0",
+            "locator": {
+              "end": 218,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:6191af59d49f6b911565b097ac156b6be95343e2ba33b495b938234e24bc5403",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The digest of the canonical projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:b479503be445e8b1660ea875d81d5a69432d8c51acd8192bcf92e97b87a3e9e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The currentness assertion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:ea3980c42105e1d218003016208a3a85fd50428adb3f555b921a9b2d7d25fed0",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_task_intent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The allowlist and the taxonomy must agree in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:6eae6a754590ffe8be0ff968d8637d0aa25df24272c66dbd915697bc158f668e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_allowlisted_classifications"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Requirement text and packet references.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:32fc15d6eb25299ccdc78f1b30b6ffaeb5b9e5fa0027ed57c5a3169f6bc4edb9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_requirements"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The packet owner: recorded resolutions, confinement before reading, one read recorded under the caller's locator, identity check.\n\nAnchor: `_approved_packet_ref`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:9dd05c561299097e2391331336cbf06a3036cc935f4a44f59b73bcb3897ed15f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The metadata table of a packet.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:acdb3914cfd938ab271b758c82005f53fbaa51c5e714f9b8fcc33f1486f809e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_metadata"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The requirement owner calls the packet owner and carries its refusal back.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71e27f85838585de229479262deff87f5dda3c66",
+            "content": "sha256:eea2675f32c7316986dd711c17ed9da97bf95ecc3bbdbac2f94a0ac39ade500b",
+            "locator": {
+              "kind": "symbol",
+              "name": "consume_owner_resolution"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/requirement_owner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "A packet link retargeted outside the task and back is recorded by its resolve row; outside, no packet byte is read or recorded.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "75a04d4049c18ff472b2caefabad7faa53cdb34b",
+            "content": "sha256:525de24ac76e4627bf2b0ffd1ba7d5e701c5ec644922ae6ffdbf7c3ae47c2e32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_packet_confinement"
+            },
+            "path": "mcp/tests/test_reviewer_worklist_reads.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "One confined packet read records caller and resolved-file byte identity; invalid UTF-8 receives a named task-intent refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:df438c1059a150464aff29c529918b232f745101d7b828b9186a70c42c5ca9e1",
+            "locator": {
+              "end": 401,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Intent-review answer/agreement fields are added to the exhaustive normative allowlists; leaf construction still explicitly supplies TaskIntentV1 slots without intentReview, unlike the master dictionary projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:153158efb360377b85cab93ac2914daf0fda29829e553446feee808e9d6aaa3b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_ROOT_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:d3336f2be640bcba5d99cdc7d858b64c607ec0adeef06cfb8ecc2ec8df368ec6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NESTED_FIELDS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:2a70823b6fcbaac6b53faf06e6bc8fabff91aaa0530b4e089bb8e3e1f9f98ef0",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_projection"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "677ef0d057fea2af70dbd317e35f4f66b1539221",
+            "content": "sha256:6191af59d49f6b911565b097ac156b6be95343e2ba33b495b938234e24bc5403",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_master_projection"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

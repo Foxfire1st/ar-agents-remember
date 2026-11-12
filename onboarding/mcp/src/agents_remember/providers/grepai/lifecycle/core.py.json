@@ -1,0 +1,70 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "GrepAI PostgreSQL backend lifecycle consumes backend settings from this module through `grepai_backend_start`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3df8da82683fe7294e7c194efa8a34bfc048b4",
+            "content": "sha256:7ac492e6b9e8a62a4c06f5f0edb1cad6a270b83afdeb7489d3f55c69c0a70a84",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_start"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/backend.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI Ollama lifecycle consumes embedder settings from this module through `grepai_embedder_backend_start`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "922ac28a95c9dfe97a206a29c94aed5715a85ab3",
+            "content": "sha256:bb6a2e2ddadbf974bf58818459a417a687e6a64d02a5f0752e7f34a2aa374766",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_embedder_backend_start"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/embedder.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "GrepAI runner image/container lifecycle consumes runner settings and workspace config from this module through `grepai_watcher_container_start` and `grepai_runner_image_build`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:e5b998e6daf0fc9f118233ced436e19b0838a82f32afebdab5d42906ae9b04a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_watcher_container_start"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "796e4c70b862b7de82257e5eb047d141fcaa873a",
+            "content": "sha256:47649d350ad0153e6cbea04794c5a718a6cfd4869143dd6e65e51723d1a8549a",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_runner_image_build"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

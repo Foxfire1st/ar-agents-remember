@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Inherited AR roots, Git redirections or caller-session identity can make a disposable child operate on live state or join its parent chat; explicit environment scrub prevents these errors while retaining logins."
+  },
+  "applicability": "Processes launched through the PNT sandbox Operations seam.",
+  "conditions": [
+    "The selected sandbox command is running on Linux with readable process or source observations; otherwise its named refusal applies."
+  ],
+  "exclusions": [
+    "Harness logins and home selectors intentionally remain and can use files outside the sandbox.",
+    "A harness-created tool server receives these values only if the harness forwards them or the launch definition carries them."
+  ],
+  "id": "INV-B6R816",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_pnt_sandbox.py::BuildInputTests::test_the_environment_loses_what_selects_another_runtime_and_keeps_logins; worker evidence 15-process-environment-and-files.txt, 31-g5-session-variables.txt; review R1 [05-env]; review R2 [02-env]; member table FAM-4 in section 3.3"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R11@v1 §7 (environment) / G5 / F8",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "Sandbox isolation retains its exact-name and selector removals and now adds sandbox-owned XDG roots while reading the product session list.",
+  "status": "proposed",
+  "supersedes": []
+}

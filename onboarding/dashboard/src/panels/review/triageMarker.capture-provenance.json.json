@@ -1,0 +1,41 @@
+{
+  "path": "dashboard/src/panels/review/triageMarker.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command, at which source tree and over which scratch and comparison the body was captured.\n\nAnchor: \"captured_at\"; \"source_tree\"; \"after break-family -- comparison 3\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71cc9625e061e903240d9ef379d3567b86b9bea4",
+            "content": "sha256:f5ef416720baa0380b46708d9e635c874f9b3674f4a42ce7ee36d2131e22532e",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one receipt row.\n\nAnchor: \"src/panels/review/triageMarker.cards.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "71cc9625e061e903240d9ef379d3567b86b9bea4",
+            "content": "sha256:758ae486d345f665b5b53342d8ee92d7918ceea92f3ba0c2e0e72c44ab922e2f",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 12
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

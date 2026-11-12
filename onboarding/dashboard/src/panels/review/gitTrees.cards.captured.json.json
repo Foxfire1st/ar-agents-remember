@@ -1,0 +1,76 @@
+{
+  "path": "dashboard/src/panels/review/gitTrees.cards.captured.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The proof entry, added in this leaf, with its facet.\n\nAnchor: \"PRF-7Q3M5K\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c5a3d685c83a76f6251978affbbd1cb212c1bec",
+            "content": "sha256:e376779843376a22902db8b80411a1b81d786a42f609c0d8a5fbd6f3539c4976",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The one changed entry.\n\nAnchor: \"\\\"change\\\": \\\"changed\\\"\"; \"RLZ-CXH58B4W\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c5a3d685c83a76f6251978affbbd1cb212c1bec",
+            "content": "sha256:3bcebbbc617da31595b0c2b1d428d22c4f9900d87d1bb9bbffe12c2de9903659",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 101
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The comparison it was read from.\n\nAnchor: \"\\\"number\\\": 1\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c5a3d685c83a76f6251978affbbd1cb212c1bec",
+            "content": "sha256:443b009268241f69db4741933d4cb848f1d0f251611d46ed9cc39d0aa5f34440",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The receipt row for this body, with the invariants it names.\n\nAnchor: \"gitTrees.cards.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:1b972ab552f29d34adf63d9b7d484b859d66c13cea2a541a5341f339e0bc1bd2",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "dashboard/src/panels/review/gitTrees.capture-provenance.json"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

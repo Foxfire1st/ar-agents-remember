@@ -2,145 +2,86 @@
 
 | Field                  | Value                                      |
 | ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| doc_type               | `route-local-overview`                     |
 | sourceRoute            | `mcp/src/agents_remember/benchmarks/runner_modules` |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `270704b86116728a64ada83ee258a0e7726206b4` |
-| lastVerifiedCommitDate | 2026-09-14T18:18:08+02:00|
-| governingOverview      | `../../../../overview.md`                  |
+
+## Governing Overview
+
+[overview](../../../../overview.md)
 
 ## Purpose
 
-The `runner_modules` package contains the focused implementation modules behind
-the public `benchmarks/runner.py` facade. It exists to keep benchmark manifest
-handling, workspace setup, provider registration, Codex execution, JSONL
-analysis, service payloads, and CLI wiring independently navigable and testable.
+The `runner_modules` package contains the focused implementation modules behind the public `benchmarks/runner.py` facade. It separates benchmark manifest handling, workspace preparation, local MCP registration, Codex execution, JSONL analysis, service payloads, and CLI wiring so their owners are independently navigable. The facade re-exports these modules and retains a repository-preparation wrapper for its caller hooks.
 
 ## Hot Path Summary
 
-- `models.py`, `constants.py`, and `manifest.py` define benchmark case data,
-  supported provider ids, manifest path validation, case loading, and
-  prompt/variant selection.
-- `filesystem.py`, `commands.py`, and `workspace.py` own benchmark workspace
-  mutation: copying runtime assets, safe removal, Git checkout preparation,
-  template rendering, memory repo preparation, and whole-case setup.
-  `commands.py`'s `run_command` captures stdout/stderr and never inherits the
-  parent's stdio (on MCP stdio transport those are the protocol pipes; 2.5.1,
-  GitHub #49) — failures raise with a bounded output tail. Since 260731-EFA-L3 it
-  never inherits a **git repository selector** either: both `run_command` and
-  `repo_has_commit` pass `env=git_environment()` from
-  `kernel/git_command.py`, which strips the eight `GIT_DIR`-family variables
-  (`GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`,
-  `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`,
-  `GIT_PREFIX`). The scrub covers **every** spawned command, not only the ones
-  whose argv starts with `git`, because the git argv this runner spawns is
-  `clone` / `checkout --detach` / `reset --hard` / `clean -fdx` against a scratch
-  workspace — with `GIT_DIR` inherited, the most destructive commands in the
-  package would run against whatever repository it names instead. The case manifest
-  is NOT provider launch authority (containment R1, 260707-HFX-L1):
-  `workspace.filter_benchmark_provider_ids` filters manifest provider ids
-  against the caller's `allowed_provider_ids` — the live MCP authority set the
-  benchmark application entry points always pass (`None` = no authority context, FAIL-CLOSED
-  since review B4; the explicit `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env
-  escape restores an unfiltered direct-script run) — before any workspace
-  registration is written or a provider launches, and reports skipped ids
-  loudly. `models.py`'s two service requests carry the field; `services.py`
-  and `execution.py` thread it down to `prepare_case`.
-- `mcp_registration.py` writes benchmark-local MCP/Codex configuration,
-  generates provider settings with central `logs/mcp` and `logs/providers`
-  paths, and invokes package-local provider setup. Benchmark provider setup is
-  **hermetic-cold**: `prepare_configured_providers` wires no seed source, so a
-  benchmark builds each index from its own fixture and never starts/clones the
-  live workspace provider backends (task 260619). Its
-  `disarm_stale_benchmark_registrations` (review B3) is the sweep both
-  `services.py` entry points open with: persisted workspace registrations are
-  the authority files for sessions booted in those workspaces — the one place
-  the fleet kill-switch cannot reach — so every prepare/run pass narrows them
-  to the live authority set (idempotent, loud per-file report, `None`
-  untouched).
-- `execution.py` owns Codex PATH resolution, sandbox policy, command
-  construction, per-run metadata, and benchmark run orchestration; its
-  `benchmark_mcp_config_overrides` points the benchmarked Codex at the
-  benchmark's own MCP server.
-- `analysis.py`, `services.py`, and `cli.py` own JSONL metrics, summary
-  rendering, MCP service payloads, and the argparse command surface.
+- `models.py`, `constants.py`, and `manifest.py` define case data, supported provider identifiers, manifest path validation, case loading, and prompt/variant selection.
+- `filesystem.py`, `commands.py`, and `workspace.py` prepare the source-only and with-memory workspaces: copy provider assets, remove old paths and the retired coordinator startup files, render the workspace instructions, prepare pinned Git checkouts and the memory repository, then write registration and invoke provider setup.
+- `mcp_registration.py` writes benchmark-local MCP settings and Codex configuration. Its runtime configuration helper constructs benchmark-scoped provider paths under `providers/runners` and `logs/providers`, with MCP transcripts under `logs/mcp`. Its lifecycle-settings helper takes no workspace argument and delegates to the shared generator, which emits `contextProviders.enabled=false` and an empty provider map. The setup call therefore does not promise that every benchmark builds provider indexes.
+- `execution.py` resolves Codex from PATH, validates sandbox selection, constructs the command, records run metadata, schedules prompt/variant/repetition tasks, and writes summaries. It reads the workspace's Codex MCP configuration into command overrides so the run can use that workspace's configured server.
+- `analysis.py` extracts JSONL event counts, command counts, turn token usage, final answers and errors, combines them with run metadata, and renders summaries. `services.py` returns prepare/run payloads; `cli.py` calls those services and exposes list, prepare, run and analyze commands. `roots.py` selects an explicit benchmark root or the packaged benchmark cases.
 
-## Docs References
+## Construction
 
-No external Domain Documentation source is configured for this memory repo.
+Five frozen value objects describe the runner's preparation and execution flow: `BenchmarkWorkspace`, `BenchmarkTask`, `BenchmarkRun`, `BenchmarkPreparation`, and `BenchmarkRunOutcome`. Both service request types project their preparation fields into `BenchmarkPreparation`, including `allowed_provider_ids`. Prepare passes that object to case preparation; run passes it through execution's preparation step unless preparation is skipped.
 
-## Repo-Internal References
+Case preparation filters requested provider identifiers before constructing the workspace object used for registration and provider setup. Registration persists the filtered identifiers with benchmark scope and instance identity. Provider setup skips an empty selection; otherwise it receives a temporary document from the disabled, empty lifecycle-settings generator. The request wires no seed source, retains its explicit CGC refresh option, and removes the temporary document in a `finally` block.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The public facade re-exports this package for existing callers. | "def prepare_repo" | mcp/src/agents_remember/benchmarks/runner.py:28-28 |
-| MCP application entry points call the benchmark service entry points through the facade. | `skills_install_tool` | mcp/src/agents_remember/application/runtime/skills.py:11-28 |
-| The shared seed resolvers refuse a benchmark-scoped target as defense-in-depth for the hermetic boundary. | `GrepaiSeedOptions` | mcp/src/agents_remember/providers/grepai/seed.py:30-35 |
+The prepare service sweeps persisted registrations before preparing selected cases. The run service sweeps them before executing selected cases. CLI requests do not supply an authority set, so they reach the filtering and sweep functions with `allowed_provider_ids=None`.
 
-## Cross-Repo References
+Runner runtime-configuration imports come from `kernel/primitives/runtime_config.py`. Git preparation delegates to `kernel/git_command.py`; `commands.py` owns dry-run reporting and failure reporting rather than subprocess construction.
 
-Benchmark cases may clone external repositories during runs, but this package's
-source-level behavior is local to `agents-remember`.
+## Invariants and Boundaries
 
-## 260731-EFA-L2 Shared Runner Value Objects
+Manifest provider selection is not launch authority. An explicit authority set retains only matching identifiers and reports skipped identifiers. With no authority set, filtering returns no providers unless `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` is explicitly set. This filtering boundary does not override the shared lifecycle generator's disabled provider settings.
 
-`models.py` now owns five frozen value objects the runner modules are signed on:
-`BenchmarkWorkspace` (a materialized case workspace), `BenchmarkTask`, `BenchmarkRun`,
-`BenchmarkPreparation` and `BenchmarkRunOutcome`. The load-bearing one is `BenchmarkPreparation`:
-**both** `BenchmarkPrepareRequest` and `BenchmarkRunRequest` project onto it through a `preparation`
-property, so `prepare_case` takes one object and the prepare and run entry points cannot drift
-apart on preparation semantics. `allowed_provider_ids` rides on it, so the containment R1
-authority set still reaches `filter_benchmark_provider_ids` with its FAIL-CLOSED `None` handling
-intact.
+The registration sweep narrows provider maps in matching persisted benchmark settings and reports each changed file. It leaves them untouched when the authority set is `None` and makes no change when their identifiers already fit the supplied set. Both services invoke the sweep independently of their preparation/execution dry-run behavior.
 
-## 260731-EFA-L9 Route Impact — Caller Re-Points
+Benchmark Git preparation uses the shared runner, which strips `GIT_DIR`, `GIT_WORK_TREE`, `GIT_INDEX_FILE`, `GIT_OBJECT_DIRECTORY`, `GIT_ALTERNATE_OBJECT_DIRECTORIES`, `GIT_COMMON_DIR`, `GIT_NAMESPACE`, and `GIT_PREFIX`. It captures stdout/stderr and supplies `DEVNULL` as stdin when no input is provided, keeping these Git subprocesses off the parent's protocol streams. A nonzero preparation command raises with at most the last 2,000 characters of its selected output. Clone and fetch use the bulk remote timeout; repository reuse is checked through the metadata timeout. Repository preparation checks out the pinned commit, resets it, and cleans untracked files in the benchmark checkout.
 
-The benchmark runner callers were rewritten by the L9 caller wave: `McpRuntimeConfig` imports now come from `kernel/primitives/runtime_config.py` (the former `mcp/config.py` home) and tool-report/command-capture helpers from `kernel/primitives/`. Runner behavior and benchmark case handling are unchanged.
+Local MCP registration requires the source repository directory name to match the repository identifier and the memory repository to be at `coordinationRoot/memory-repos/ar-<repoId>`.
 
-## Update History
+The retained GrepAI clone and CGC seed resolvers skip a benchmark-scoped target before starting a source backend. These are conditional protections in the retained seed implementation; they do not establish a current index-build promise for this runner's disabled lifecycle settings.
 
-- 2026-08-13T09:05+02:00 — No route impact: L23's current source delta does not change any
-  `benchmarks/runner_modules/` source. The benchmark runner's existing containment and execution
-  model remains unchanged; verification provenance remains closeout-owned.
+Benchmark cases can clone external repositories, but the implementation owners described here are local to `agents-remember`.
 
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
+## Authority Bounds
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T20:59+02:00 — 260731-EFA-L3 curator: extended the `commands.py` hot-path bullet, which
-  previously recorded only the stdio-isolation half of the subprocess hygiene contract. Both
-  `run_command` and `repo_has_commit` now also pass `env=git_environment()`
-  (`kernel/git_command.py`), stripping the eight `GIT_DIR`-family repository selectors from every
-  command this runner spawns — the workspace-prep argv (`clone`, `checkout --detach`,
-  `reset --hard`, `clean -fdx`) is the reason the scrub is unconditional rather than git-only. No
-  change to the module split, the containment R1 authority filter, or the L2 value objects.
-  Verification metadata pinned until closeout stamps the L3 commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2: added the shared `BenchmarkWorkspace` / `BenchmarkTask`
-  / `BenchmarkRun` / `BenchmarkPreparation` / `BenchmarkRunOutcome` value objects and re-signed
-  `prepare_case`, `run_case`, `maybe_prepare_case`, `run_one`, `run_dry_batches`,
-  `benchmark_run_payload` and the MCP-registration builders onto them. Generated files and run
-  outputs are unchanged. Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-07-07T20:45+02:00 — No route impact: 260707-HFX-L2's only change under this route is
-  `mcp_registration.py`'s `prepare_configured_providers` opting INTO the synchronous cgc
-  refresh fallback (hermetic-cold benchmarks need the timeout-bounded graph build now that
-  the fallback default is off) — the prepare/registration model this overview narrates is
-  unchanged; detail in the file sidecar.
-- 2026-07-07T17:40+02:00 — 260707-HFX-L1 review fixes (B3/B4): `workspace.py`'s filter now treats
-  `None` FAIL-CLOSED with the `AR_BENCHMARK_ALLOW_UNFILTERED_PROVIDERS=1` env escape (B4), and
-  `mcp_registration.py` gained `disarm_stale_benchmark_registrations` — the stale-registration
-  sweep both `services.py` entry points open with (B3). Verification metadata pinned until
-  closeout stamps the HFX-L1 commit.
-- 2026-07-07T16:50+02:00 — 260707-HFX-L1 route impact (provider containment R1): the manifest is
-  no longer launch authority — `workspace.py` gained `filter_benchmark_provider_ids` (applied in
-  `prepare_case` before registration/launch, skipped ids reported), `models.py`'s
-  `BenchmarkPrepareRequest`/`BenchmarkRunRequest` gained `allowed_provider_ids` (None = direct
-  script use, unfiltered), and `services.py`/`execution.py` thread it through. Verification
-  metadata pinned until closeout stamps the HFX-L1 commit.
-- 2026-06-28T19:10+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): restored the **hermetic-cold** benchmark provider-isolation content (task 260619 / MCP 2.9.2) that the series carryover had reverted to pre-2.9.2 prose — `mcp_registration.py` wires no seed source, `execution.py`'s `benchmark_mcp_config_overrides` points at the benchmark's own MCP server, plus the grepai/seed.py defense-in-depth reference. The merged tree at 84e95ad keeps main's hermetic behavior (the series did not touch this route's source).
-- 2026-06-19T13:42: Benchmark provider setup is now hermetic-cold — `workspace.py`/`mcp_registration.py` wire no seed source, so benchmark stacks index their own fixture and never start/clone the live workspace backends (task 260619). `execution.py` gained `benchmark_mcp_config_overrides` so the benchmarked Codex uses the benchmark's own MCP server.
-- 2026-06-11T14:12+02:00: No route impact: the repository rename sweep replaced `agents-remember-md` with `agents-remember` in files on this route; route structure and overview content are unchanged.
-- 2026-06-10T05:30+02:00 — Route body caught up with 2.5.1: `run_command` captures output and never inherits parent stdio (GitHub #49). Previous closeouts had only stamped the verification header (developer-flagged gap).
-- 2026-05-30T21:51+02:00: Re-verified the route against `825a172`; the module split summary still matches. The only route change since `3f09b75` was `mcp_registration.py` renaming the generated `providerSeconds` cap to `providerSetupSeconds` (documented on its file card).
-- 2026-05-28T12:32+02:00: Updated after benchmark provider settings and scaffolded runtime assets moved logs under the central `logs/` tree.
-- 2026-05-26T02:26+02:00: Created when `benchmarks/runner.py` was split into focused implementation modules.
+The retained service implementations and CLI callers establish the local call flow described here.
+
+Lifecycle, landing and acceptance authority are outside this source account. Their current status is a named uncertainty: this inspection supplies no test execution, native-host execution, whole-build result, landing result or memory acceptance.
+
+## Evidence
+
+- The facade re-exports runner modules and retains its repository-preparation wrapper.
+- Retained seed options and resolver predicates preserve the benchmark-scoped no-seeding boundary.
+- Case models, manifest validation, selection, shared preparation and workspace construction.
+- Benchmark registration, registration sweep and disabled lifecycle-settings construction.
+- Git preparation delegates to the shared environment, argv and subprocess owner.
+- Codex execution, analysis, service payloads and direct CLI callers.
+
+## No skill exposure in a benchmark workspace
+
+Preparation mirrors no skill tree into a workspace: `sync_runtime_assets` removes the retired coordinator startup files (`AGENTS.md`, `system/AGENTS.md`, `tasks/AGENTS.md`) and replaces the provider assets, no `.codex/skills` exposure helper exists, no preparation object carries a skill-exposure mode and no command accepts one. The workspace's harness reads the skills the tool server serves from its package copy, through the benchmark-local MCP registration the workspace writes.
+
+- The runtime-asset sync that writes no skill tree.
+
+[1] mcp/src/agents_remember/benchmarks/runner.py — lines 28-28; mcp/src/agents_remember/benchmarks/runner.py — lines 10-24; mcp/src/agents_remember/benchmarks/runner.py — lines 28-33
+[3] mcp/src/agents_remember/providers/grepai/seed.py — symbol GrepaiSeedOptions; mcp/src/agents_remember/providers/grepai/seed.py — symbol _clone_inputs; mcp/src/agents_remember/providers/cgc/seed.py — symbol _seed_precondition_skip
+[4] mcp/src/agents_remember/benchmarks/runner_modules/models.py — lines 1-156; mcp/src/agents_remember/benchmarks/runner_modules/manifest.py — lines 1-223; mcp/src/agents_remember/benchmarks/runner_modules/workspace.py — lines 1-293; mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py — lines 1-176
+[5] mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py — lines 1-300; mcp/src/agents_remember/providers/settings.py — lines 32-47; mcp/src/agents_remember/providers/provider_setup.py — lines 56-121; mcp/src/agents_remember/providers/setup_common.py — lines 66-102
+[6] mcp/src/agents_remember/benchmarks/runner_modules/commands.py — lines 1-57; mcp/src/agents_remember/kernel/git_command.py — lines 58-68; mcp/src/agents_remember/kernel/git_command.py — lines 151-231; mcp/src/agents_remember/kernel/git_command.py — lines 302-347; mcp/src/agents_remember/benchmarks/runner_modules/workspace.py — lines 38-75
+[7] mcp/src/agents_remember/benchmarks/runner_modules/execution.py — lines 1-420; mcp/src/agents_remember/benchmarks/runner_modules/analysis.py — lines 1-221; mcp/src/agents_remember/benchmarks/runner_modules/services.py — lines 1-117; mcp/src/agents_remember/benchmarks/runner_modules/cli.py — lines 1-185; mcp/src/agents_remember/benchmarks/runner_modules/roots.py — lines 1-17
+[8] mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py — symbol sync_runtime_assets
+
+
+- The facade re-exports runner modules and retains its repository-preparation wrapper. [1]
+- Retained seed options and resolver predicates preserve the benchmark-scoped no-seeding boundary. [3]
+
+- Case models, manifest validation, selection, shared preparation and workspace construction. [4]
+
+- Benchmark registration, registration sweep and disabled lifecycle-settings construction. [5]
+- Git preparation delegates to the shared environment, argv and subprocess owner. [6]
+
+- Codex execution, analysis, service payloads and direct CLI callers. [7]
+
+- The runtime-asset sync that writes no skill tree. [8]

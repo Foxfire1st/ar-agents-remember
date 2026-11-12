@@ -1,0 +1,307 @@
+{
+  "path": "mcp/tests/test_mik_r177_gate_groups_identical_copies.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:027e83b8893b2708ce3b4b2976192058a9e14b4bbb8b5147dca464c70669504b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_existing_trace_item_keeps_priority_over_unexplained_source_groups"
+        }
+      },
+      "facet": "An existing trace item keeps its own sources despite conflicting unexplained-group metadata.",
+      "id": "PRF-450WJT",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L196-source-binding-reconciliation",
+        "leaf": "260928-MIK-L196"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:aa55f2ede535c00b7c7865d703364d786b2b37814387e85af911077867b53708",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cardless_group_row_binds_every_source_the_unexplained_gate_compares"
+        }
+      },
+      "facet": "The real writer binds all supplied uncovered group member paths to candidate-owned absent/live values, and the unchanged consumer accepts the row. Deleted and single cases use native worklist output; mixed live/deleted input is explicitly supplied, not native grouping-emission evidence.",
+      "id": "PRF-5J8S9G",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:1c2aa4a1edf7516a6d06b2a2b6249d214daecba54b1d8da647c8286bcc63a081",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_one_row_binding_every_copy_answers_the_worklist_and_the_gate"
+        }
+      },
+      "facet": "shows the worklist's grouped item and the gate's item are the same item, answered by one row and raised by the gate",
+      "id": "PRF-5RYMBX",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "L56-INV-0APWSR-rev2",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:f27cd664d3afd443c22457ca2f548445559aa18d142b17d4032ad4c37c6f81ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_single_source_card_is_the_same_item_in_the_worklist_and_the_gate"
+        }
+      },
+      "facet": "shows a one-source card keeps the worklist's item identity in the gate as well",
+      "id": "PRF-6ERDZ5",
+      "invariant": "INV-HGJNDG",
+      "origin": {
+        "handoffEntry": "L56-INV-HGJNDG-rev2",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:85bba71b83f3a0325e43268fa4896dedb2d5814f29c5be27bd5a4b43f06fa80d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_quality_run_refuses_by_name_when_the_worklist_run_names_no_groups"
+        }
+      },
+      "facet": "shows an unreadable or absent run yields one named incomplete finding instead of judging ungrouped items",
+      "id": "PRF-6RC52D",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "L56-INV-0APWSR-rev2",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:aa55f2ede535c00b7c7865d703364d786b2b37814387e85af911077867b53708",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cardless_group_row_binds_every_source_the_unexplained_gate_compares"
+        }
+      },
+      "facet": "Cardless deleted groups, a deleted/live pair and a single path bind exact candidate blobs or absent and satisfy the unchanged unexplained-item predicate.",
+      "id": "PRF-AFQ8B0",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L196-source-binding-reconciliation",
+        "leaf": "260928-MIK-L196"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:027e83b8893b2708ce3b4b2976192058a9e14b4bbb8b5147dca464c70669504b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_existing_trace_item_keeps_priority_over_unexplained_source_groups"
+        }
+      },
+      "facet": "An existing trace item keeps its source-set priority over conflicting uncovered group metadata, and the real writer row is accepted by the gate.",
+      "id": "PRF-AP9XA2",
+      "invariant": "INV-7V4K9G",
+      "origin": {
+        "handoffEntry": "L188-da612e11-writer-source-binding",
+        "leaf": "260928-MIK-L188"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:6359f20aa227c88f6bd4acfbb602d30dff0eb62b28928545bf619ed8ca0e089e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_empty_group_is_the_old_singleton_item_and_the_row_does_not_answer_it"
+        }
+      },
+      "facet": "Without groups, the card item is a different singleton; the row matches but does not answer it, and the trace gate reports MISSING_CODE. No closeout entry is exercised.",
+      "id": "PRF-MMXM0G",
+      "invariant": "INV-0APWSR",
+      "origin": {
+        "handoffEntry": "L56-INV-0APWSR-rev2",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:85bba71b83f3a0325e43268fa4896dedb2d5814f29c5be27bd5a4b43f06fa80d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_quality_run_refuses_by_name_when_the_worklist_run_names_no_groups"
+        }
+      },
+      "facet": "The test invokes controller._onboarding_refresh_gate with an incomplete worklist run and with no run. It exercises the controller branch that returns recomputation guidance, and asserts one named incomplete finding, its worklist path and that no ungrouped items are judged. It does not assert the recomputation instruction's wording, exercise six malformed shapes through the gate, or invoke closeout.",
+      "id": "PRF-PTW8KZ",
+      "invariant": "INV-2FA2B5",
+      "origin": {
+        "handoffEntry": "L56-INV-2FA2B5-rev2",
+        "leaf": "260928-MIK-L56"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+        "content": "sha256:07e31c0ae8d193744f74563c43b24a5fcad60dd404e55450f8f875143a73eab4",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_run_with_no_groups_is_a_valid_empty_map_for_the_gate"
+        }
+      },
+      "facet": "The controller group reader returns an empty mapping and no problem for a complete worklist run whose identicalChanges is empty; this case calls the reader only.",
+      "id": "PRF-W1QB8X",
+      "invariant": "INV-HGJNDG",
+      "origin": {
+        "handoffEntry": "L56-INV-HGJNDG-rev2",
+        "leaf": "260928-MIK-L56"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One row binding every copy closes the worklist item and the memory-quality gate sees that same answered item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:1c2aa4a1edf7516a6d06b2a2b6249d214daecba54b1d8da647c8286bcc63a081",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_row_binding_every_copy_answers_the_worklist_and_the_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Without groups the card item is a different singleton and the matched row does not answer it; the trace gate reports MISSING_CODE.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:6359f20aa227c88f6bd4acfbb602d30dff0eb62b28928545bf619ed8ca0e089e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_group_is_the_old_singleton_item_and_the_row_does_not_answer_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The memory-quality gate refuses absent or incomplete worklist runs by name instead of judging ungrouped items.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:85bba71b83f3a0325e43268fa4896dedb2d5814f29c5be27bd5a4b43f06fa80d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_quality_run_refuses_by_name_when_the_worklist_run_names_no_groups"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Six malformed group shapes are refused by the controller group reader; this case invokes no closeout or second gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:8fe1120c218f3bbff78c6c8dd643d5221bf9d272b0cb331b02336bad485b847f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_each_gate_refuses_a_malformed_group_by_name"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A complete run with an empty group map yields an empty map and no problem from the controller group reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:07e31c0ae8d193744f74563c43b24a5fcad60dd404e55450f8f875143a73eab4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_run_with_no_groups_is_a_valid_empty_map_for_the_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A single-source card is the same answered item in the worklist and the memory-quality gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:f27cd664d3afd443c22457ca2f548445559aa18d142b17d4032ad4c37c6f81ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_single_source_card_is_the_same_item_in_the_worklist_and_the_gate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "An existing trace source set wins over conflicting unexplained-group metadata.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:027e83b8893b2708ce3b4b2976192058a9e14b4bbb8b5147dca464c70669504b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_existing_trace_item_keeps_priority_over_unexplained_source_groups"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Cardless deleted, mixed and singleton source maps are authored by the writer and accepted by the unchanged predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0fd3f3f496cf16e4d19848dacc9424419d70742",
+            "content": "sha256:aa55f2ede535c00b7c7865d703364d786b2b37814387e85af911077867b53708",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cardless_group_row_binds_every_source_the_unexplained_gate_compares"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,26 +1,14 @@
 # dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
-[overview.md](overview.md)
+[notes-reader/ overview](overview.md)
 
 ## Purpose
 
-Vitest + Testing Library coverage for the L17 Notes Reader. It covers the two leaf-required axes plus the
-content pane and the cockpit takeover wiring, and it absorbs the note-CONTENT rendering cases (markdown /
-text fallback / binary placeholder) that used to live in `TaskNotes.test.tsx` before the inline reader was
-retired.
-
+`NotesReaderViewer.test.tsx` proves the notes-reader takeover: the reader appears only when a note is
+opened, keeps the Operations rails while hidden, and stays mounted across Back and Forward like the
+File Viewer.
 
 ## 260831-CCR-L23 Requirements-Artifact Cases
 
@@ -31,18 +19,63 @@ L23 re-tagged every existing render with `kind="notes"` and added a
 open-path `requirements/<path>`) and renders the exact selected packet's markdown
 over the real `/api/requirements/read` URL.
 
+## L126 Folder-Tree, Paging, Whole-Log and Task-Report Cases
+
+Since L126 the suite additionally pins the one-folder-at-a-time tree and its
+transports; the flat-list rail and `/api/notes/list` fetch prose below is
+superseded for these cases (retained as history where it describes unchanged
+takeover/content-pane behavior):
+
+- **Tree** — one-level tree with closed folders on open; expand loads a folder's
+  children; folders over the part ceiling show a next-part row; deep paths open
+  to the note with the way folders open and the note marked.
+- **Fill/vanish/cache** — fill-to-note, vanish (twice), and LRU-plus-pin cache
+  cases.
+- **Whole log** — two authored rows use shared numbering (`#2`, `#1`), short times, formatted decision/rationale and reading/block classes. Product records remain in a closed muted disclosure at the end, and opening it creates no authored decision row. Input bytes stay unchanged, fetch is not called and Back invokes the supplied callback. Empty, records-only and authored-only inputs assert row/disclosure presence. The mixed fixture is reversed into descending time order; the former independently unsorted whole-log case was removed, so this suite no longer independently establishes storage-order independence.
+- **Folder callback stability** — an unrelated rerender does not refetch a retained folder; expanding another folder still performs the demanded load.
+- **Task-report read** — exact task-report read by recorded identity; existing
+  role-report preservation kept.
+- **Transport** — folder (`/api/notes/folder`), read (`/api/notes/read`),
+  single-request resolve (`/api/notes/resolve`), and reports
+  (`/api/role-launch/reports`); no route walks the tree.
+
+## Role-Report Kind Case
+
+The suite also renders the `role-report` kind and pins that the supplied report's body, file name and
+truncation notice appear in the shared pane with no rail (MIK-R75 rule 4).
+
 ## Code Commentary
-
-### 260707-HFX2-L13 Fetch-Fixture Compatibility
-
-The notes-reader fetch stub now serves `/api/task-document` before its notes list/read branches. The
-notes viewer embeds task-reader flows whose `DetailPanel` dependency fetches full task bodies on
-demand, so this branch preserves the suite's isolation while leaving notes API assertions unchanged.
 
 ### Logic
 
-- **Rail** — lists the master's notes (reports/ included) with the open note highlighted; the highlight
+The two cases that assert the reader is absent initially and survives Back now mount
+`CockpitShell initialView="operations"` because MIK-R79 made Chats the opening view. The reader
+behavior asserted (absence, rails, mounted identity across Back) is unchanged.
+
+### Conventions
+
+Vitest + Testing Library; the notes API is stubbed per case.
+
+### Invariants And Boundaries
+
+The cases bind the notes reader's takeover and keep-alive behavior on the Operations context; they do
+not assert the product tab list.
+
+### Todos
+
+No additional work is asserted by this card.
+
+### 260707-HFX2-L13 Fetch-Fixture Compatibility
+
+The body stub looks up tasks[qualifiedKey].summary and returns a real Response. Folder/read/resolve/reports stubs remain controlled; this setup is not a notes transport contract change.
+
+### Logic
+
+- **Rail** — one folder's entries at a time (the open folder's files and
+  subfolders), with the open note highlighted; the highlight
   follows the controlled `path` prop (rerender moves `data-active`); a rail click calls `onSelectNote`.
+  (The flat whole-list rail prose of the earlier era is superseded; see the L126
+  section above.)
 - **Content pane** — a markdown note renders formatted through the reused `DualPane` sidecar (`sidecar-pane`);
   a text note renders through the shared file pane (`file-pane`); a binary note degrades to DualPane's
   `pane-placeholder`. The CodeMirror leaf `../file-viewer/FilePane` is `vi.mock`ed to a `<pre>` — the house
@@ -57,102 +90,60 @@ demand, so this branch preserves the suite's isolation while leaving notes API a
 
 ### Cockpit seed fixtures
 
-`masterDoc()` + `seedMaster()` build the one-master projection the takeover cases select a row from.
-Both are **typed against the mirror, not cast**: `masterDoc()` returns a `TaskDocNode` outright (its
-trailing `as unknown as TaskDocNode` is gone) and `seedMaster()`'s projection ends in
-`satisfies WorkspaceProjection`. That distinction matters more here than on a shared fixture, because
-these are hand-written literals — the double cast was the only thing between them and the mirror, and
-it made the seed immune to contract change: a new required `Analytics` field failed fifteen other
-files and not this one. `metrics` is now `metricsFor([])` rather than a hand-listed bucket literal, so
-a new lifecycle state adds a required bucket that this seed derives instead of missing.
-`Analytics.agentPickups` and `.expectationRows` are required in the current generated mirror.
-The local `seedMaster` literal supplies both as empty arrays, so it remains checked against
-that contract.
+masterDoc builds typed TaskEntry/reference/summary; seedMaster applies projection({tasks:[masterDoc()]}). No TaskDocNode cast, parallel SeriesNode or metricsFor lifecycle rollup remains.
 
 ### Invariants And Boundaries
 
-Fetch is stubbed per-URL (`/api/notes/list`, `/api/notes/read`; a `{repos:[]}` fallback keeps the hidden
-File Viewer layer happy). No real network, no store mutation beyond the seeded projection. The seed
+Fetch is stubbed per-URL (folder `/api/notes/folder`, read `/api/notes/read`,
+single-request resolve `/api/notes/resolve`, reports `/api/role-launch/reports`;
+a `{repos:[]}` fallback keeps the hidden File Viewer layer happy). No real
+network, no store mutation beyond the seeded projection. The seed
 must stay cast-free: a fixture that cannot fail when the projection contract moves stops describing the
-contract the day it moves.
+contract the day it moves. (The `/api/notes/list` fetch prose of the earlier
+era is superseded; see the L126 section above.)
 
-## Cross-Repo References
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository. The requirement packet
+`MIK-R79@v1` (rule 16) fixes the opening view; it lives outside the code and memory repositories, so
+it is named here and not cited as a row.
+
+No configured live documentation source was available for this pass.
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed by this file.
 
 No meaningful cross-repo references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| A frontend component test; nothing crosses repositories. | — | — |
+A frontend component test; nothing crosses repositories.
 
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The component under test. | "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" | dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:309-309 |
-| The shell driven by the takeover-wiring test. | "export function CockpitShell(" | dashboard/src/cockpit/Cockpit.tsx:860-860 |
-| `masterDoc` and `seedMaster` — the cast-free seed and its `satisfies WorkspaceProjection`. | `masterDoc`; `seedMaster` | dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:258-301 |
-| The seed task document is checked against the generated TaskDocNode. | "export interface TaskDocNode {" | dashboard/src/types/projection.ts:647-647 |
-| Analytics requires agentPickups and expectationRows arrays, along with the other projected collections. | "export interface Analytics {" | dashboard/src/types/projection.ts:92-106 |
-| The seeded snapshot satisfies the generated workspace contract. | "export interface WorkspaceProjection {" | dashboard/src/types/projection.ts:816-816 |
-| The seed derives metrics through the shared lifecycle rollup helper. | "export function metricsFor(" | dashboard/src/types/projection.ts:466-466 |
-
-## Update History
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 0 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "export const NotesReaderViewer = memo(NotesReaderViewerImpl)" repointed to dashboard/src/panels/notes-reader/NotesReaderViewer.tsx:309-309. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: "export function CockpitShell(" repointed to dashboard/src/cockpit/Cockpit.tsx:860-860. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `masterDoc`; `seedMaster` repointed to dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:258-284; dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx:285-301. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `kind="notes"` re-tagging of existing renders and the new requirements-artifact reader suite (list/read stub + exact packet render).
+### Repo-Internal References
 
 
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12 curator: re-anchored citation range(s) to current source after the L12 line movement (cited files changed, card source unchanged); verification metadata unchanged.
 
-- 2026-08-20T04:44+02:00 — 260815-DAG-L14: `masterDoc` fixture defaults `seats: []`; the
-  `WorkspaceProjection` citation re-pinned to the current interface range. Verified at code commit
-  9c3180c1.
+- Current whole-log assertions cover authored numbering/times/formatted text/rationale, muted counted product-record end disclosure, input preservation and no fetch; seeded cases are not execution. [8]
 
 
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: the notes-reader TaskDocNode fixture now supplies
-  empty `executionWaves`; viewer behavior and assertions are unchanged.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
 
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 5 citation items; scoped citation check now passes.
+- The viewer routes takeover content through the shared pane without a second reader. [9]
 
-- 2026-08-01T11:50+02:00 — 260731-EFA-L4 curator (citation pass): `types/projection.ts` adopted the
-  server's state partition (`LIVE_STATES` + `TERMINAL_STATES` composed into `LIFECYCLE_STATES`), moving
-  every anchor below it. Re-anchored the four inline ranges in the mirror row, each on its proving
-  symbol: `TaskDocNode` L381-L410 → L418-L447, `Analytics` L626-L641 → L663-L678 (optional
-  `agentPickups` L670 / `expectationRows` L672), `WorkspaceProjection` L674-L689 → L711-L726, and
-  `metricsFor` L213-L220 → L250-L257. Table stayed two columns; no body claim changed.
+> Retained earlier citation wording: - Retained folder/content viewer and shell takeover owners remain. [17]
 
-- 2026-08-01T11:45+02:00 — 260731-EFA-L4 curator: the body described the rail, content pane, back and
-  takeover cases but said nothing about the projection seed those takeover cases depend on, which is
-  exactly where this leaf's change landed. Added the seed-fixture section: `masterDoc()` lost its
-  `as unknown as TaskDocNode` and `seedMaster()` its `as unknown as WorkspaceProjection` in favour of
-  `satisfies`, and `metrics` moved from a hand-listed bucket literal to `metricsFor([])`. Checked the
-  thing that could have made that consequential — whether the newly-enforced typing changed any seeded
-  value the takeover assertions read. It did not: the `masterDoc` literal is unchanged field-for-field
-  (the cast was gratuitous over an already-complete node), and `metricsFor([])` is a superset of the old
-  six-field literal, which no assertion here reads. Also verified why the short `analytics` literal
-  still compiles under `satisfies` — `Analytics.agentPickups` and `.expectationRows` are optional in the
-  mirror (cit:(["agentPickups", "expectationRows"], dashboard/src/types/projection.ts:93-93; dashboard/src/types/projection.ts:97-97)) — and recorded it, since that is the one thing that would otherwise look like a
-  type error. Added the cast-free-seed boundary and two two-cell reference rows (this table is
-  consistently two columns; the line ranges ride inside the Finding cell rather than adding a third).
+- `masterDoc` and `seedMaster` — the cast-free seed, which builds its entry through the shared `taskEntry` builder instead of a double cast. [19]
 
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13: extended the notes-reader fetch fixture for the
-  on-demand task-document body endpoint used by the embedded detail reader. Verification metadata
-  remains pinned until closeout stamps the eventual L13 code commit.
 
-- 2026-07-07T20:50+02:00 — agent-orchestration L18 (finding 2 / L17R-2 remedy): added the
-  truncated-markdown banner cases — `truncated: true` markdown renders the first-2-MiB banner above
-  the DualPane; the negative case pins no banner on non-truncated markdown. Verification metadata
-  pinned until closeout stamps the L18 commit.
-- 2026-07-07T14:00+02:00 — Created for agent-orchestration L17: rail listing + highlight-follows-selection,
-  rail-click switch, markdown/text/binary content rendering (FilePane mocked), back, and the CockpitShell
-  takeover open→back→reopen survival test. Verification metadata pinned until closeout stamps the L17 commit.
+- The cast-free seed builds its master entry through the shared `taskEntry` builder, so the seed is typed against the task mirror with no cast. [20]
+
+
+
+- Shared builders provide generated WorkspaceProjection. [22]
+
+- The shell driven by the takeover-wiring test.
+
+
+- Obsolete Analytics collection/metricsFor lifecycle reference claims are retired.
+
+- Retired at the fifth freeze d59c3493: dashboard/src/cockpit/Cockpit.tsx:791-842 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361. Retired means the anchor no longer stands, not that the cited subject was deleted.

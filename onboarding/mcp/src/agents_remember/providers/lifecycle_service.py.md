@@ -1,76 +1,50 @@
 # mcp/src/agents_remember/providers/lifecycle_service.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/providers/lifecycle_service.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a` |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
-| governingOverview      | `../../../overview.md`                     |
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
-`lifecycle_service.py` is the typed provider lifecycle service boundary for MCP
-callers. It lets MCP application entry points run provider operations from trusted lifecycle
-settings without building CLI `argv` or invoking `lifecycle.main()`.
+`lifecycle_service.py` retains typed provider lifecycle services for internal consumers.
+The former MCP provider application entrypoints and lifecycle CLI were removed; these
+service definitions do not restore either callable surface.
 
 ## Code Commentary
 
 ### 260731-EFA-L2 Typed Request Object
 
-`run_cgc_lifecycle(service_config, request)` takes the frozen
-**`CgcLifecycleRequest(action, repo_id=None, native_args=(), port=8000, context=None)`**. The
-action and its inputs are only meaningful together: `native_args` carry a `run` query, while
-`port`/`context` carry where a `visualize` server binds and which graph it serves. `native_args` is
-a tuple because the request is frozen, and is expanded with `list(request.native_args)` at the CLI
-boundary. The allowed-action check (`run`, `visualize`, `refresh-all`) and its `ValueError` are
-unchanged.
+`CgcLifecycleRequest` and `run_cgc_lifecycle` are gone with the provider start,
+visualize and query surface. `ProviderLifecycleServiceConfig` is the module's only
+typed input: no request object, action allow-list or CLI boundary remains here.
 
 ### Logic
 
-`ProviderLifecycleServiceConfig` carries the server-derived coordination root,
-temporary lifecycle settings path, dry-run mode, and timeout. The service
-functions normalize those paths, build internal namespaces, and dispatch to the
-provider lifecycle implementation functions:
+`ProviderLifecycleServiceConfig` carries the trusted coordination root, lifecycle
+settings path, dry-run mode, and timeout. `run_watchers_lifecycle()` normalizes that
+config, builds the internal namespace, and dispatches to the watcher lifecycle
+implementation:
 
-- `run_cgc_lifecycle()` supports `run`, `visualize`, and `refresh-all`.
-- `run_grepai_lifecycle()` supports `run` and `refresh`.
-- `run_watchers_lifecycle()` supports `status`, `start`, `stop`, and
-  `shutdown-all`.
+- `WATCHER_SERVICE_ACTIONS` admits `stop` and `shutdown-all` only.
+- Any other action raises `ValueError` before dispatch.
+
+No CGC or GrepAI service entrypoint remains in this module.
 
 The service API catches provider lifecycle operational errors and returns
-structured `ok: false` payloads for MCP callers.
+structured `ok: false` payloads for internal callers.
 
 ### Invariants And Boundaries
 
-- MCP callers should pass only server-owned settings, not caller-selected roots.
-- This module is not a generic shell wrapper and does not expose arbitrary
-  provider CLI parsing to MCP.
-- CGC service calls do not carry a Python executable because Docker runner
+- Internal service callers must supply trusted lifecycle settings, not treat these helpers as public provider tools.
+- This module is not a generic shell wrapper and does not parse arbitrary provider CLI arguments.
+- No service call here carries a Python executable; the Docker runner
   lifecycle owns provider execution.
-- The dev/operator CLI facade is `lifecycle.py`; MCP provider tools should call
-  this service layer instead of the CLI `main()` path.
+- The retained `lifecycle` package is a lazy backend facade; its CLI and `main()` execution
+  adapter were deleted. Do not prescribe a CLI or public MCP provider-tool replacement.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP provider tool application entry points call this service layer. | ["from agents_remember.providers import lifecycle_service"] | mcp/src/agents_remember/application/provider_tools.py:21-21 |
-| CLI/operator implementation functions remain behind the lifecycle facade. | `_EXPORT_MODULES`, `__getattr__` | mcp/src/agents_remember/providers/lifecycle/__init__.py:9-24; mcp/src/agents_remember/providers/lifecycle/__init__.py:27-34 |
+### Repo-Internal References
 
 
-## Update History
-
-- 2026-08-02T20:45:43+02:00 — L6 W2-B02 curator: anchored 3 repository-internal application, facade, and service-boundary test references; final scoped result 0 (checker-clean).
-
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `run_cgc_lifecycle` was re-signed from five keywords to `(service_config, request:
-  CgcLifecycleRequest)`. The supported actions, the refusal and the returned payload are unchanged.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-05-26T12:51+02:00: Updated after removing the CGC provider Python executable from the typed service config.
-- 2026-05-25T19:16+02:00: Updated after the `provider_lifecycle.py` compatibility shim was deleted and service imports wired to `providers.lifecycle` directly.
-- 2026-05-23T20:56+02:00: Created for F-04 so MCP provider tools call a typed lifecycle service instead of the provider lifecycle CLI main.
+- Retained backend implementation functions are exported lazily through the lifecycle facade, not an active CLI parser. [2]

@@ -1,0 +1,229 @@
+{
+  "path": "mcp/src/agents_remember/mcp/tools/__init__.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+        "content": "sha256:55e8b1fb6a433c140a0369bc4b22f83a7aac05c4a4d35af946e31d4d2f430702",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KAXJAV",
+      "invariant": "INV-Q7KYQH",
+      "origin": {
+        "handoffEntry": "MIK-R198@v2 §8 reference-note-revision",
+        "leaf": "260928-MIK-L191"
+      },
+      "rationale": "Exports the new tool module with the others on the memory surface.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The lifecycle finalizer payload builder is owned by the `lifecycle_finalize` submodule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbc2a027fa8329302b9ba1a1af26589d7940d865",
+            "content": "sha256:1401ce89181b17dff2611b4f0e8f325b4a79dc9190966ebb4fd77cab54c32db4",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/lifecycle_finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The lifecycle finalizer payload builder is re-exported by this facade.\n\nAnchor: \"from .lifecycle_finalize import lifecycle_finalize_task_payload\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:218d13cfa0841258c627be215df00b1f9e19bcb9d40a8b411b297ae088958f81",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The pure payload facade includes worktree_pause_payload in __all__; that exports its builder, rather than independently advertising or authorizing a tool.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:8e168fd7b891101dea5bc81debe8d9cadd3c39b2cff20b96d70c69e217dc761c",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:ee46b74e435aa051d6a16b79f477300701170f315db86141a3c32e33398b5fcf",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 94
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The pause payload builder is re-exported by this facade from the `.worktree` import block and listed in the `__all__` extent, exactly per the documented pattern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:fb764dddd8da140c48bbb30b0b67b35b385afa6b01ab8d1398acaaec3982aeb1",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 40
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:c0c56b9ba7975a1b5b937211a9318e464e8a7ec02388a34042a34ccf525e67c8",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 55
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Frozen implementation of __all__ supporting the stated file behavior.\n\nAnchor: `__all__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:55e8b1fb6a433c140a0369bc4b22f83a7aac05c4a4d35af946e31d4d2f430702",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:1228ca06d2f549d886d031ce6918afaf2dfadeafa43c67157ac851de691aa68d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The pure payload facade now exports direct_execution_grant_payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:df959d9d3f7ba34f7c60118d616c6a8ab87a48ca45bd5c8ea306c10cb871e965",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:55e8b1fb6a433c140a0369bc4b22f83a7aac05c4a4d35af946e31d4d2f430702",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`gate_response_wait_payload` is listed in `__all__`.\n\nAnchor: \"__all__ = [\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:ed4d77a0a5436bf22b0d8c7ff20f7ff77c4f1cb32c6a8c91d502d82ca66676b4",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:fafba0527c3953c4b6e0e5b5739ba83612f8053bcdc9466730193cd1d590b408",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The existing payload facade exports the explicit explainer control call and payload; it adds no second command implementation.\n\nAnchor: file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a29daece8de46849bc5b8afc1f6e66a0b6a4f5c",
+            "content": "sha256:9758079924e30ddc058b3d0e45f0f28d2d1a9150396fe49599644056c8d9ca51",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 22
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

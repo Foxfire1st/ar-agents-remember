@@ -1,0 +1,204 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Canonical task-source and document readers remain read-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:f38ee32cdbc0dc2b782dc72be96e3b4699b06fe9cd4312d14492d0ed8351a5b6",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The current reader hub re-exports enclosure/engine, analytical and canonical task-document readers; it exports no workspace or worktree provider reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:1b6f4b17e1219ce0e0099e9467a0d85af53a01397cf31166cf364f17ab380d48",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Anchor: Current engine fact reader excludes gate/pickup/expectation records.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:361d3ec4648c8899f471f606230c5881f48bb96d420fce0774fdddeb9d9886fb",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Anchor: Both enclosure and engine readers reuse the supplied ContractSnapshot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:2f6940ab288c04c55a6691b11a7e8de53c87916c70766ee9b6a9b3b8dd87dc0e",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 44
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:361d3ec4648c8899f471f606230c5881f48bb96d420fce0774fdddeb9d9886fb",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Anchor: Current per-tick contract snapshot owner.\n\nRetired at the fifth freeze d59c3493: mcp/src/agents_remember/serving/projections/contract_snapshot.py:63-131 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 7bf564a663bb61f12844dee39538dd09a1633cdb. Retired means the anchor no longer stands, not that the cited subject was deleted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "76448da20fe8c1c57050ff52099e23ce2db06b49",
+            "content": "sha256:54c7acf08be5dcf752fc9b38bbca0c509c4d6b9513c83961a60d3f785c6b0a2f",
+            "locator": {
+              "end": 52,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "mcp/src/agents_remember/serving/projections/contract_snapshot.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The hub retains drift, route coverage, tool-report, ledger and worktree-start progress readers; verification-age and provider-setup readers are absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8be3f293c9a38e01524f4b0f2f2252f9b0d2aecc",
+            "content": "sha256:791b179d5d01592bbefe8f4b08a1766add2d6f503f1d5338956d5c21553bb4d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_start_progress_entries"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:0922ececb5dbe5610b6c5290e7dbb1e1eb32ad5de54e2c68e1b2d8cb751b64c2",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 19
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The extracted parser retains addressed unknown-field pruning without forgiving other malformed data.\n\nAnchor: `_projected_document`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:ff5ac511e0d698f5f84ad870b6a061f08c95a504abeea453f0ee998e356b059f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "No provider-node reader is exported from this facade. Retained engine and analytical readers do not supply provider display nodes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:e5582b8aa0a4940f3f663cf3cf1a6d8ae089f89e57ad80ae1ead5d92f2044862",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d2b1b035f7c9e9c2f1a7ae7b6badaf2fabe6470b",
+            "content": "sha256:1b6f4b17e1219ce0e0099e9467a0d85af53a01397cf31166cf364f17ab380d48",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

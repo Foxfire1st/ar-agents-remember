@@ -1,0 +1,140 @@
+{
+  "path": "dashboard/src/tray/traySend.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "sendTray"
+        }
+      },
+      "id": "RLZ-BEH2QG",
+      "invariant": "INV-M71W78",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE02-first-request",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Diverts archived/placeholder explainer targets into the first-request form before ordinary posting; only the no-live-target branch bypasses settlement of the whole collection.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "sendTray"
+        }
+      },
+      "id": "RLZ-D5DN46",
+      "invariant": "INV-T6DV0Q",
+      "origin": {
+        "handoffEntry": "TRAY08",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Captures picks/text once and sends one full body to each chosen target independently.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-DJBF34",
+      "invariant": "INV-4DQMNE",
+      "origin": {
+        "handoffEntry": "INV-4DQMNE",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This parser is where a delivery's fields arrive from the server, so the reset has to survive here.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+        "content": "sha256:d39c5571adee78c8eb06cff73ac2327e79c3217ca8ca7cc11e93e52ceb6cc5c7",
+        "locator": {
+          "kind": "symbol",
+          "name": "sendTray"
+        }
+      },
+      "id": "RLZ-ZEF2RM",
+      "invariant": "INV-P7QEA9",
+      "origin": {
+        "handoffEntry": "TRAY10",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Hands every target's answer to `settle` with the pick ids and text that Send carried.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "messageRepository chooses the message filing repository from the shown page, the first structured reference or the recipient’s task; it does not post or decide whether an archived explainer target is diverted.\n\nAnchor: `messageRepository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "parseDelivery accepts named delivered, held or refused answers and retains message-file identity, reason, detail and a supplied provider-limit reset without treating other answers as a delivery.\n\nAnchor: `parseDelivery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "serverDetail reads a textual server detail or joins validation error locations and messages so a refused ordinary send retains the host’s stated reason.\n\nAnchor: `serverDetail`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Before a native send, sendTray separates archived/placeholder explainer targets from live recipients. The first archived target opens its leaf's first-request form with the current text; when no live target remains it returns without wiring picks or posting, preserving the collection. In a mixed selection, the remaining live targets still post and their ordinary settlement applies; this module does not report the first-request handoff as a delivered message. Mixed selections follow ordinary live-target settlement, which can consume the shared picks for successful live recipients.\n\nAnchor: `sendTray`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f9fefd3840bd0f06bf8849aa277b1f6f761783f",
+            "content": "sha256:c75b43a5cf315eeda07471f6ee6e9ad71282c5d18be6df80ac3f966832093868",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

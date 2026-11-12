@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_tree_overview.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The compact projection preserves the full read's counts and the gate's authority, and an unknown inventory is never shown as a measured zero",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b57cb37f82eb62cba02c33b0de6b20d538a1fb4e",
+            "content": "sha256:4c505fe2e5faf0254b7eaa40e7c472c5b7b267a8e264490f83484a003e367957",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_inventory_unknown_is_not_measured_zero"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

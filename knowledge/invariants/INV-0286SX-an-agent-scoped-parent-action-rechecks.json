@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts rechecks current source/parent after lookup, client/hierarchy.ts owns the native Parent pill, and dashboard/src/cockpit/paseoFrameControl.ts scopes errors to selected sources, preventing a late Parent result from navigating or blaming an unrelated chat."
+  },
+  "applicability": "Agent-specific Parent composer actions issued by the listed embedded web page.",
+  "conditions": [
+    "The source is still a visible native selection candidate and its current SDK parent edge equals the requested target after lookup.",
+    "The bridge lifetime remains live."
+  ],
+  "exclusions": [
+    "Stale source, changed relation and stopped bridge completions have no navigation/error consequence.",
+    "A current missing or archived parent leaves the child chat in place."
+  ],
+  "id": "INV-0286SX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "F1/F3 sealed regressions; real W/R/C Parent→Architect and root-no-pill in four profiles; two labelled trusted-frame presentation faults with sdkLookupProved=false.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/paseoHierarchy.test.ts::checks current visible caller and parent relation, including deferred navigation, unavailable parents and root transitions | exact facet: Deferred lookup is ignored after tab/relation changes; a still-visible split-pane caller can open its current parent, and missing/archived parents or root transitions do not replace the child. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: 9846d14267b2efcad039016e81e1bf1388b97ed2 | source line: 134 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Unrecorded typed proof case: dashboard/src/cockpit/PaseoChatFrame.test.tsx::reports Parent failure only for a current visible native tab, including split panes, with no pending dashboard request | exact facet: Wrong-origin or nonselected-source Parent failures are ignored, while a selected child in a split pane receives its own visible failure without iframe replacement. | C tree: 83aa7103dca3c104e58df155baead24f10be784f | frozen test-file blob: cf6d8c2b5d9dbcf4429f50d2a2ace711a0f8cb72 | source line: 203 | bound limitation: Installed public writer cannot create typed proves from inline Vitest/Playwright it/test titles; no declaration symbol, file proof or alternate selector is substituted. | validation: source/assertion inspection only; no test execution in this curation pass.",
+        "Source binding: C tree 83aa7103dca3c104e58df155baead24f10be784f; current target resolution 2026-10-05T08:13:05Z; root-authorized bounded evidence treatment 2026-10-05T08:18:12Z; exact cases/facets retained as origin/handoff evidence because installed writer cannot resolve inline test titles. Admission independently uses spans_locations, prevents_costly_mistake. No writer repair, test rename, fabricated/file-wide proof, source change or new test execution."
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R05@v3 §6 / current Parent context",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An agent-scoped Parent action rechecks visible source identity and current native parent relation after lookup; stale/teardown completion does nothing, and a current unavailable-parent error keeps the child in place.",
+  "status": "proposed",
+  "supersedes": []
+}

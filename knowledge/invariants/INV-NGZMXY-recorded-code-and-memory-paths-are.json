@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Durable repair-verification obligation from R1 findings fixed on W02 and sealed in R2 (verdict b8956ffd, eleven-dispositions 42a8ec7a); l86-repair-W2/serving.md; python-51-final.log real registered code/memory symlink cases"
+  },
+  "applicability": "Recorded comparison diff reads on Git trees.",
+  "conditions": [
+    "Lexically confined code and memory paths with no current-filesystem symlink following.",
+    "The exact historic Git path selects its own recorded blobs."
+  ],
+  "exclusions": [
+    "Live working-tree reads outside recorded trees."
+  ],
+  "id": "INV-NGZMXY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "l86-repair-W2/serving.md; python-51-final.log real registered code/memory symlink cases"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "L86-CODE-R1-F01",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Recorded code and memory paths are lexically confined without following current filesystem symlinks, so the exact historic Git path selects its own recorded blobs.",
+  "status": "proposed",
+  "supersedes": []
+}

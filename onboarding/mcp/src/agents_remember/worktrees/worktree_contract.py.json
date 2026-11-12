@@ -1,0 +1,208 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/worktree_contract.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+        "content": "sha256:da3b060bfda58f134741cb04ec99b41311634bb63bf30f9c8fc3b7611f06fcea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_named_place"
+        }
+      },
+      "id": "RLZ-162JBK",
+      "invariant": "INV-JWCHAQ",
+      "origin": {
+        "handoffEntry": "F11",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "Every contract read passes this check, so a copy that names another path is refused where it is found rather than being obeyed as live authority.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+        "content": "sha256:bef19cd9b469e0f45b6c0ba56e168e79e15ecab7b48c5a8576f5bd68aaf7a506",
+        "locator": {
+          "kind": "symbol",
+          "name": "_memory_mode_fallback"
+        }
+      },
+      "id": "RLZ-3SJ7K7",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "Reads an empty or unknown memory_mode through the recorded memory topology: either a worktree or ledger yields external; neither yields disabled. This keeps older contracts readable without inventing an external memory repository.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+        "content": "sha256:f28d3e60339396a53a8008df8fc7a8acbb84510e1d58bbef449b4d68d3425c98",
+        "locator": {
+          "kind": "symbol",
+          "name": "_outside_scratch_lines"
+        }
+      },
+      "id": "RLZ-B0ZQ5X",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-INV-A",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The serializer that emits the three lines or nothing.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+        "content": "sha256:36b528d484ffed2f7fb229b285c7426d978638b1aab1beae427753acbfd3d58a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-MR7ATJ",
+      "invariant": "INV-T8672G",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-worktree_contract",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The contract carries the outside scratch record through its data, its text and its round trip, and writes it only where a generation recorded one.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "64": {
+      "note": "Removed-but-not-`disabled` refused at read; `disabled` loads",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:26996662d674c421b52338842395974ccfa281719b1c53aa3b4c60babf6a7a80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_parsed_vocabulary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "65": {
+      "note": "Unreadable mode degrades to external or removed-disabled",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:bef19cd9b469e0f45b6c0ba56e168e79e15ecab7b48c5a8576f5bd68aaf7a506",
+            "locator": {
+              "kind": "symbol",
+              "name": "_memory_mode_fallback"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "66": {
+      "note": "Request side refuses removed modes by name",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:4ad4ee1d7ce035aa8b4626b3e4c1274f186852a2b51da62504c9f51ba31b40e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_task_vocabulary"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "67": {
+      "note": "Started contracts are always external",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:a3d0016bafded923b7c8e95b298c527eb9c7e9503f9af0aacda3455973a9b78d",
+            "locator": {
+              "kind": "symbol",
+              "name": "default_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "Write path is external-only by type",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:81837d1072d78bda8af3de79925baa82d5f7044b97d3863d87534344dfa02a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ContractCells"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Read record carries the readable vocabulary",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:de8fea3db94fe34a6b30d3583ecaff1cdf4c047fc7b04d32ee0d7eb5571a40fb",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 246
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Runtime vocabulary set is external-only",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:7b1dc695e21f8e0c8ec7876b57111bf6c08266b9ed061d4098bda640d4088dc8",
+            "locator": {
+              "kind": "symbol",
+              "name": "VALID_MEMORY_MODES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "Healing reports foreign contracts as skipped and unreadable contracts as errors without treating either as a healable enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:1f6c875b482db31158a77efe39670ab2ecbd390dbee7dd4e75071c723ab2ac80",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load_sweep_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

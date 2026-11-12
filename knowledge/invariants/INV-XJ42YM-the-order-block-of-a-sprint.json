@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "spans_locations"
+    ],
+    "justification": "A bounded order preview must retain all graph units/reasons through the full view without becoming an alternative topology owner."
+  },
+  "applicability": "Sprint Order preview and its complete graph own view.",
+  "conditions": [
+    "Entry stage determines completed/aborted exclusion and entry activity determines now versus wave membership; task words and tones use the shared status table.",
+    "Graph waves, ready/waiting/cycle annotations and edges remain dependency facts, not a second task-state vocabulary.",
+    "No separate graph-derived done/abandoned count is presented; the complete graph remains available in its own view."
+  ],
+  "exclusions": [
+    "Re-deriving graph waves or master task order.",
+    "Treating the bounded preview as the entire graph."
+  ],
+  "id": "INV-XJ42YM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/panels/detail-panel/order-block.test.tsx: 'draws what is not finished in rows by wave and what has landed as a count', 'keeps the whole graph one link away and returns'; dashboard/src/panels/sprint-graph/SprintGraphPage.test.tsx; notes/run3/task-page-proposal/compare-look-repair-2.html (block by block, Order); the reason of an edge is drawn as a link since F6"
+      ],
+      "path": "ingest-new-obligations.json"
+    },
+    "handoffEntry": "L127-F5 sprint Order block",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The sprint Order preview groups supplied unfinished graph units by producer dependency wave, resolving each against its native task entry and the shared status table for task state, tone and activity. Only units with works entry activity stand in now; paused or host-unknown started units remain once in their wave. Graph-derived done/abandoned totals are absent; the complete projected graph with every unit, task and edge reason remains one link away.",
+  "status": "proposed",
+  "supersedes": []
+}

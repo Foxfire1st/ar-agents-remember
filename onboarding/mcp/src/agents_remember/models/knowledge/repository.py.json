@@ -1,0 +1,100 @@
+{
+  "path": "mcp/src/agents_remember/models/knowledge/repository.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The namespace model and its nonblank authority-home rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3ec48e021d7d76d6910369d094c39829c3f921a",
+            "content": "sha256:974f5ab27a7e0fbde4dd3ce5b614a492148e243f0a3573a302444c15db02f47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The `repository` table this identity keys, and its no-update/no-delete triggers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:e3d7c3be7f0d028f3f130f6997b0e77e52361078fdc06563d8cff467df1b6156",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec5bf0677108161ea883091d9613a34d21a3697c",
+            "content": "sha256:3af5982a81b1ac20e0c0455e33681e976661b9104fbc971bca2af85f91ab84f7",
+            "locator": {
+              "end": 291,
+              "kind": "line_range",
+              "start": 284
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/schema.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The repository value declares namespace and authority home; the old rebinding writer is retired.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e3ec48e021d7d76d6910369d094c39829c3f921a",
+            "content": "sha256:974f5ab27a7e0fbde4dd3ce5b614a492148e243f0a3573a302444c15db02f47b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RepositoryIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The index reader queries its bound namespace and opens a read-only connection.\n\nAnchor: `OpenedKnowledgeStore.get_repository`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:5a7d444f6d5aa6950d3170e1dfb74ced2b56bfcb496f38dd0485d8bcd71c6898",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_only_store"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "18bf95513cea9638fc5f978e605aa03076a27454",
+            "content": "sha256:e6d4e725d111f5a961626b85278bd8696a5f851a65bc42c2aba348b5aa7d6fbc",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 94
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

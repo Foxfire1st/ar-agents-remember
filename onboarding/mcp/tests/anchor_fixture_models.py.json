@@ -1,0 +1,22 @@
+{
+  "path": "mcp/tests/anchor_fixture_models.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The file realizes its current contract at the corrected candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e852b71ce80180b12f5682c62e4baa1e186d0ec2",
+            "content": "sha256:30f7ce2646503a87e0993a06168e7c7b2212f918b7a4606b72b228c0b2ce0f97",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

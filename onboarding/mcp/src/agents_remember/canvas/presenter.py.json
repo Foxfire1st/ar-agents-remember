@@ -1,0 +1,92 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+        "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_require_prospective_load"
+        }
+      },
+      "id": "RLZ-6HCN7M",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "This is the model-free load that must succeed before any ready pointer moves.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+        "content": "sha256:18d05f8c8ac76d7b3355cdec9de0eb8408ea8a240dc87b09bebd49e54be60330",
+        "locator": {
+          "kind": "symbol",
+          "name": "Presenter"
+        }
+      },
+      "id": "RLZ-RVJTK7",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "MIK-R105-r1-explicit-confined-publication",
+        "leaf": "260928-MIK-L104"
+      },
+      "rationale": "The capability's admission, attempt lifecycle and publication live here; nothing else starts one.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "Publication loads the prospective revision once without a model before any ready pointer moves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+            "content": "sha256:e9bd5b14dc7760b083ce06c23dbdaa9ee9be067e1d6a9d0feebcf032bc46db8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_prospective_load"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A runner that cannot confine its writes refuses by name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+            "content": "sha256:dc0a32d4caa7c4f178ae8af02dee0e0cdfe9d9163155a3e093e1ae9de56e6c41",
+            "locator": {
+              "kind": "symbol",
+              "name": "UnconfiguredPresenterRunner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The current implementation adds readiness part-map persistence and typed publication refusal propagation; the existing prospective-load and attempt identity account remains valid.\n\nAnchor: `Presenter`, `UnconfiguredPresenterRunner`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "560327480bc431b5c381b1341fecbfe988acdd33",
+            "content": "sha256:15342eb648138b47fd5c27cd077a86757e78bb48613c0cfbaa1ae4bd3452e3d7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

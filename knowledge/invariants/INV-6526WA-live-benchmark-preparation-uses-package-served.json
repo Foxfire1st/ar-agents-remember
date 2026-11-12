@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Benchmark preparation was the second consumer of the installed copy; leaving a fallback there would keep the retired distribution alive outside the product."
+  },
+  "applicability": "Live benchmark case preparation that needs the shipped skills.",
+  "conditions": [
+    "Skills come from the package-served tree.",
+    "No coordination-root or harness-local installed copy is used as a fallback."
+  ],
+  "exclusions": [
+    "Recorded historical benchmark evidence."
+  ],
+  "id": "INV-6526WA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "a2/distribution-review.md F4; final-a3/removal-hits.json executable benchmark consumer hits; benchmark CLI/request copy defaults."
+      ],
+      "path": "handoff-draft.json"
+    },
+    "handoffEntry": "L188-B19",
+    "leaf": "260928-MIK-L188",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Live benchmark preparation uses package-served skills without coordination-root or harness-local installed-copy fallback.",
+  "status": "proposed",
+  "supersedes": []
+}

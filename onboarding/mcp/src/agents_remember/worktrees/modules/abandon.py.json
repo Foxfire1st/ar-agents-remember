@@ -1,0 +1,501 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/abandon.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:0133f2aed3e0146a26eeb89d0b71fc996abe5b86dccac45ca653fb8d1e1028fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_branches"
+        }
+      },
+      "id": "RLZ-3GFFJV",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:3451c83cc9d0f29eb652854cdc8517a3e0ff3a66b12bbf8aaa30a8d2f3bae0f4",
+        "locator": {
+          "end": 487,
+          "kind": "line_range",
+          "start": 431
+        }
+      },
+      "id": "RLZ-6PXMTZ",
+      "invariant": "INV-AXWPVF",
+      "origin": {
+        "handoffEntry": "L82-MEM-M1-S-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Current single owner of this sealed acceptance obligation.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:af34bd65f334ad4c015282ee8614c0dc2c1169e8bb7f9f4319e61c14e5da6bea",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_worktrees"
+        }
+      },
+      "id": "RLZ-HHM6JG",
+      "invariant": "INV-39FYQE",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F04",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The terminal way-out mechanics tear down both legs and rebuild external, with the operation proof retained alongside.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:57a0794dac3c550f3a1b59eb88116279fd0873b10be611cd254e677907ff8b72",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KCH5N2",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-F-mcp-src-agents_remember-worktrees-modules-abandon",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "Abandonment removes the generation's recorded outside scratch root and reports it, or refuses while it remains.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:367c79d12a1064456921fa57c7b3d8ff8509efb2c529a25cc538d0e4b13fb901",
+        "locator": {
+          "end": 320,
+          "kind": "line_range",
+          "start": 317
+        }
+      },
+      "id": "RLZ-PJVT0S",
+      "invariant": "INV-Z0BXKJ",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-01",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "_finish_abandon_without_remains plans the abandoned task/parent stage and returns task_stage_refusal before provider teardown; this enforces preflight before destructive terminal work.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:feafd7278135162dd69498634f3b00920f5bc0d1a5629db855bc453baf050d41",
+        "locator": {
+          "kind": "symbol",
+          "name": "_abandon_directories"
+        }
+      },
+      "id": "RLZ-SDKCH6",
+      "invariant": "INV-N70HF0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-10",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The actual Abandoned route calls the collection/removal boundary before enclosure removal, retaining nonempty canonical report evidence.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:87ad594177115fc04b50aff6eff5bd6b00773d0b5bc979042702cd18771592d2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_already_abandoned"
+        }
+      },
+      "id": "RLZ-SGXCTV",
+      "invariant": "INV-BDYV4D",
+      "origin": {
+        "handoffEntry": "L198-INV-B",
+        "leaf": "260928-MIK-L198"
+      },
+      "rationale": "The completed-retry branch that reports the root or blocks on it.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+        "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
+        "locator": {
+          "kind": "symbol",
+          "name": "_publish_abandon"
+        }
+      },
+      "id": "RLZ-ZSF5CK",
+      "invariant": "INV-R6DNZB",
+      "origin": {
+        "handoffEntry": "L82-CODE-R1-06",
+        "leaf": "260928-MIK-L82"
+      },
+      "rationale": "Historical retired-defect attachment: this current repair owner persists/returns the durable no-remains reason. It does not establish that the old missing-reason defect still exists.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Successful abandon and exact terminal replay are wrapped with exact source-pair release.  Anchor: `abandon_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:40e16785a8feb0b92aeb65cd5814eeede4efbdb7403ecb496729a07062b2861f",
+            "locator": {
+              "end": 212,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The typed contract amendment record holds the six optional vocabulary cells.\n\nAnchor: \"class ContractCells:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:94b53095cea2ad42bb9785a81659e67e5225b20b174b3af6b3be014fb68f7e2b",
+            "locator": {
+              "end": 191,
+              "kind": "line_range",
+              "start": 191
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The typed amendment helper preserves unspecified cells and applies supplied vocabulary values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:15ff2b77804c98eb561cb5c8b92ae8240ddb9bce099af7731e8320f260faa919",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 190
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The current module exposes `abandon_result` at this ownership boundary.  Anchor: `abandon_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:7a86dbe0abf3f890e8e414f6aca08255f07a30778499d81e4e0e5c06d4c78236",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 162
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "`remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "content": "sha256:e17908e803a0963f77a43608b2d5adbd3cee3f03d892f343615f641b7a3d6fe3",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_force"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "`remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38b1dccdd3748dc7d095c969fb81d964e1075f11",
+            "content": "sha256:fee30c4fcfd11f9734404ad8bd80b39cc7981508be63ae8a98790bd6c96940fd",
+            "locator": {
+              "end": 334,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/cleanup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "`WorktreeArgs` types the abandon input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:aa5fda34dde0755a15aa9f1d706e5c0bfe973689ff8774eeb5c501a2726680d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Abandon evaluates provider liveness and terminal blockers for dry run as well as apply. A blocked preview returns abandon-blocked/blocked with the original coded blockers rather than would-abandon where the real call refuses. Force keeps its existing discard override; explicit approval, check order and unrecognized fail-closed exceptions retain their owners. Recognized terminal-state failures are answered before mutation, not generalized to every RuntimeError.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:deb0849fda385e1003d96293a7fbec6ab535d372876aa8db7d3de65ca2d03ad8",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "No-remains abandon validates task-stage authority before teardown.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:1cd6600be0a0654cc885b6b086bc65fc722483f905dab9e515eccce97288f9bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finish_abandon_without_remains"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The normal publication returns shared task/contract projection effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:603402e4b3b74ccb8366b134343edd9d49fb2bc215330335ee24450b0308e7db",
+            "locator": {
+              "end": 522,
+              "kind": "line_range",
+              "start": 463
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "One shared owner publishes/restores task stage and contract under the terminal guard.\n\nAnchor: `publish_abandoned_task`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5ccbb891fc3b5b1a85848561a6ac63c70b433d5",
+            "content": "sha256:fd1b67a3eb2db4aa0e69c0c4d8b56495f210c9182b46723ffb7157dcb94d1979",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/abandon_task_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The terminal bridge preserves missing, unreadable, or different selection and never clears a newer owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4df4324735948c916744cbd6d02298769da89c55",
+            "content": "sha256:3a00552ad62fb39e17881fca1a99e72e77ec42e0376a23afba78315f45693c59",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_terminal_atomic_series_release"
+            },
+            "path": "mcp/src/agents_remember/worktrees/activation/atomic_series_activation_terminal.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Abandon passes its dry-run flag into terminal result validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_outputs_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e5a10d614d0e28fb14c5e7a0703d8fb4ce35def4",
+            "content": "sha256:97310f133dfca42cf7c733d01b9c23d1ac7894702a084a69ba599541e3342102",
+            "locator": {
+              "kind": "symbol",
+              "name": "_abandon_outputs_result"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Provider teardown is delegated to the provider-runtime teardown function.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:2aa48a21f45fe58ab4750793d6e04cb30fa24541e46271d4235ebc8f95b8b1ea",
+            "locator": {
+              "kind": "symbol",
+              "name": "teardown_worktree_providers"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`remove_registered_worktree` (from cleanup), `delete_branch_if_merged`, `delete_branch_force` (from `terminal_branch_retirement`), and `remove_empty_dir` are reused through the terminal owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fba56276158a0598e01ea849d08083987da3f1fe",
+            "content": "sha256:8e58b4070331d3fcd12f77132d203db94d86f77c85aa6cfc9370533dd5dcaa20",
+            "locator": {
+              "kind": "symbol",
+              "name": "delete_branch_if_merged"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_branch_retirement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`WorktreeArgs` types the abandon input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "287418608a3ce1c662d9b1c309ec69d4523ac4ef",
+            "content": "sha256:16909810c747239109ba8d1c32692dd59bbd28bca8f289821c345d0080ddb9c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorktreeArgs"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/args.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The closeout registrar exposes `worktree_abandon` with `force` forwarded from the MCP layer.\n\nAnchor: \"def worktree_abandon\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:7403fc53f7d92a57cb8563f17fa2ce8a42b91877c7139744ada91dedc03874f5",
+            "locator": {
+              "end": 250,
+              "kind": "line_range",
+              "start": 250
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Series reports-tree preservation is decided by the legacy child-enclosure guard imported from terminal validation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:1a7dfc6f818e444df8a75d0f217c2d499b02cb4898523113feb6257e90ca2750",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_series_reports_is_child_enclosure"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The cleanup vocabulary includes abandoned and reopened as declared terminal/reopen states.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:e092fb2568484314845a9e60f9dea7437e90fa9fe0e646662ff06051f4a2749b",
+            "locator": {
+              "end": 37,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

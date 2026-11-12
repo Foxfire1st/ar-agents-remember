@@ -1,0 +1,104 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_state.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Observed objects and public conflict/interruption payloads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf752bb0ee4a0ecb964397aa064ec9746c1121e",
+            "content": "sha256:d345c84a750a073cc42dd9828ce1b0877b29941df561db83d1adb3d75866dbd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntegrationRefObservation"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbf752bb0ee4a0ecb964397aa064ec9746c1121e",
+            "content": "sha256:09faddf575ed49884134c855ff66a1afd2b21fc08b9ed444a026e92a5d511887",
+            "locator": {
+              "kind": "symbol",
+              "name": "observed_objects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Exact accepted/intended state classification uses the actual memory output.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf752bb0ee4a0ecb964397aa064ec9746c1121e",
+            "content": "sha256:29eb37fa226aea3ca5154bac78791f1835860306c862cc6c0272e39f0063b2f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_integration_refs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbf752bb0ee4a0ecb964397aa064ec9746c1121e",
+            "content": "sha256:aaa7de996c6593c7a8d97a9695cc5810d00b5f9c4cf5c0a97af95e2fed433a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_integration_authority_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The total live classifier reads the actual memory output to decide accepted versus intended state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf752bb0ee4a0ecb964397aa064ec9746c1121e",
+            "content": "sha256:29eb37fa226aea3ca5154bac78791f1835860306c862cc6c0272e39f0063b2f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_integration_refs"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cbf752bb0ee4a0ecb964397aa064ec9746c1121e",
+            "content": "sha256:aaa7de996c6593c7a8d97a9695cc5810d00b5f9c4cf5c0a97af95e2fed433a4a",
+            "locator": {
+              "kind": "symbol",
+              "name": "classify_integration_authority_refs"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Canonical ref reading preserves stable failure categories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cbf752bb0ee4a0ecb964397aa064ec9746c1121e",
+            "content": "sha256:5f063208b86aaa1ed8b37481f1100c92b926b8233d5edb4458bc4370cd184c07",
+            "locator": {
+              "kind": "symbol",
+              "name": "_read_ref"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

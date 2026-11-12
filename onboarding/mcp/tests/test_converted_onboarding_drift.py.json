@@ -1,0 +1,449 @@
+{
+  "path": "mcp/tests/test_converted_onboarding_drift.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+        "content": "sha256:304145b8cfea33472e99f513bf0399a85ddcc76d8d3ed1e082f52a4f845cbca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_first_baseline_commits_exactly_the_validated_tree"
+        }
+      },
+      "facet": "Only the validated tree is published: commit-tree object, expected-old ref move, recorded-tree verification.",
+      "id": "PRF-55071H",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+        "content": "sha256:fb21bb9406682c579909273f36276ce13fa40d9b584ee6d7c74760100324de7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dry_run_and_refusal_change_nothing"
+        }
+      },
+      "facet": "A successful would-adopt dry-run preview and a separate blocked-invalid live refusal each preserve the HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprint.",
+      "id": "PRF-8PB5NR",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-ZCRMS7",
+        "leaf": "260928-MIK-L53"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+        "content": "sha256:fb21bb9406682c579909273f36276ce13fa40d9b584ee6d7c74760100324de7f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_dry_run_and_refusal_change_nothing"
+        }
+      },
+      "facet": "A successful would-adopt dry-run preview and a separate blocked-invalid live refusal each preserve the HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprint.",
+      "id": "PRF-BH6JAR",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L53-inherited-proof-narrowing-INV-DZB7MC",
+        "leaf": "260928-MIK-L53"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+        "content": "sha256:304145b8cfea33472e99f513bf0399a85ddcc76d8d3ed1e082f52a4f845cbca5",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_first_baseline_commits_exactly_the_validated_tree"
+        }
+      },
+      "facet": "Only the validated tree is published: commit-tree object, expected-old ref move, recorded-tree verification.",
+      "id": "PRF-CRZ8GQ",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Converted trees are measured on the converted basis, with the expected count, actionable count and states, and no legacy classification key in the actionable sample.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:a68d1102e48d6449c8fd5684ba500f7d8b1b951fe4f50ea4cabcbb0bc367e449",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A successful would-adopt dry-run preview and a separate blocked-invalid live refusal preserve HEAD/unborn, write-tree-stdout, porcelain-status and non-.git path/byte fingerprints.\n\nAnchor: `test_dry_run_and_refusal_change_nothing` `_fingerprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:5b3ffcd50cfa8450d6e7f73e1f5f5c25158a1484a1758f8044f1d399281b1a91",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "255daddda6969fc7e295b91d7ce2d94800694b07",
+            "content": "sha256:093af6977a118ad22070eaecea956ad652f995ce5ab35aacce179445ff1daee9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/converted_onboarding_drift_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Surviving descriptions (the `include_drift` description in core registration and docs/tool-details.md) state measurement/currentness/advisory wording. The l-01-agent-lifecycles copies carry the drift commands, curation, stale-orientation and current-row doctrine (an `onboarding_trace` row answers; a counted change of the card alone never answers); the surviving l-01-agent-lifecycles copy must state that drift acceptance lifts only the stale-anchor gate and still refuses validator violations as R198.1-reference-anchor and blocked-invalid.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:8817e1b1aecb2f4de8c68c77faf28b8f403a4a6f4173a959631c0736acf7bd17",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The context-packet leaf route binds the leaf base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:341c2a6e29b416b644eb870c9f430bf31176a17301c15a41025633ac2a556f9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_context_packet_leaf_route_binds_the_leaf_base"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Injected RuntimeError(\"boom\") for both dry-run values preserves HEAD/unborn, write-tree-stdout, porcelain-status, non-.git path/byte fingerprints and ls-files --stage; intent-to-add, unstaged symlink target and staged file text remain asserted. Source caption: `test_interval_failure_leaves_everything_untouched` `_fingerprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 493
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "255daddda6969fc7e295b91d7ce2d94800694b07",
+            "content": "sha256:29df62445da1cb39c37d2747b849dd43c1741bfe9a6f11ec49d0cd9cde65a5fa",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 217
+            },
+            "path": "mcp/tests/converted_onboarding_drift_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Static description assertions inspect surviving descriptions and the l-01-agent-lifecycles copies, retain current-row doctrine, and reject restoration of the removed drift tool registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:8817e1b1aecb2f4de8c68c77faf28b8f403a4a6f4173a959631c0736acf7bd17",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Carried deleted-path refusal and context/summary parity remain asserted at their current owners; current-row doctrine is a separate static text check, not executed acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_context_packet_agrees_with_the_summary_on_carried_anchors"
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:77c1b954673e2d496e09aa7b1bff0672c1cd8afef25c1d131b6b1516a35c3715",
+            "locator": {
+              "end": 244,
+              "kind": "line_range",
+              "start": 180
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Full actionable findings, not the limited sample, own fingerprint identity; incomplete input yields null.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:4cdca97b0c0eb9cf548b1bd76df22f580520a4f0b4087a3a49c97bda70eedc30",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_complete_drift_fingerprint_changes_beyond_equal_counts_and_sample"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The converted result names every measured field.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:357bb9b93290a1cb0bde44751616dd7f8a6d430a33ed543f937aba5e8ee87fd3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_result_names_every_measured_field"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Empty, missing and unbuildable-base trees report truthfully, never as checked-zero.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:adc7fd1dda5deb7203c88bfa3d9ba18921f148b231ad6f282a1ad3e4787a5ac3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_empty_missing_and_unbuildable_base_trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The carried deleted-path test refuses R22.6-carried-stale rather than new-anchor-path; the moved helper constructs anchors, the separate descriptions case checks current-row doctrine, and the split context/summary case asserts three matching violations.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:ef7e89a8c734c22546ac6bb09ee279b183e37e6d8e9714ad581b86eb915a4e5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_carried_anchor_is_refused_as_carried_stale_never_as_new"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "255daddda6969fc7e295b91d7ce2d94800694b07",
+            "content": "sha256:7b990676f0c575f8af2a1f0263a7a127d3df934fd9e1100297a0790aae97cd6b",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/tests/converted_onboarding_drift_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consumers return the same summary; the carried deleted-path test and split context/summary fixture retain matching carried-stale observations and three violations. The moved descriptions assertion is separate current-row doctrine, not additional carried-stale proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:76ff18f75331facfdaa1ce0c87c8eb6b179b348bf43de1609afa5e40acfd770e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_three_consumers_return_one_answer"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
+            "locator": {
+              "end": 365,
+              "kind": "line_range",
+              "start": 320
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 362
+            },
+            "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:cc9f81a349f6dee3fd16af75f3f5dd8fe684a3b2a3fffd3db812b77f5496b49a",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 213
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Report and snapshot come from the same measured result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:c235349b2af6acc4887d5b64ef297c09455140bbee53eadfe03d74a0a0b0cb9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_report_and_snapshot_come_from_the_same_result"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Converted baseline states block on violations first, then on unaccepted drift.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:90d65886325c64e8fde792c4ae767b2cc27db43b1b423f26a7be5a48fd39c762",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_baseline_states_for_converted_trees"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Accepting drift never clears a validator violation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:a79590b9f9f9d4a3e84993c8792b1a059c852cfd8c9459aebeb0ccaa16a75225",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_accept_drift_never_clears_a_validator_violation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The first baseline commits exactly the validated tree.\n\nAnchor: `test_first_baseline_commits_exactly_the_validated_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4f10003e3ea83769774013eca0bd6d31e078bcd0",
+            "content": "sha256:5b3ffcd50cfa8450d6e7f73e1f5f5c25158a1484a1758f8044f1d399281b1a91",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across 2 files that together perform the obligation."
+  },
+  "applicability": "The corrected documentation delta on the final freeze.",
+  "conditions": [
+    "The two documentation files differ from the prior freeze by the listed provenance spans only."
+  ],
+  "exclusions": [
+    "Executable behavior; AST, tokens and APIs are equal."
+  ],
+  "id": "INV-NJT6A9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Complete style-only.delta.diff and actual task-scoped paired source read; independent executable AST/token/API and 3855-path-state equality qualification in the verdict."
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "L26-CX-N03 (post-takeover completion)",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The seven named closeout and recovery provenance spans are removed while their technical explanations and durable MIK-R09 citation remain.",
+  "status": "retired",
+  "supersedes": []
+}

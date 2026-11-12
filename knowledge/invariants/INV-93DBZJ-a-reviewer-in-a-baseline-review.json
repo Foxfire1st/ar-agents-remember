@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Without the rerun and the repeated search, a Reviewer passes a freeze whose recorded list omits a test that names the changed text, and the omission surfaces only after both lanes have passed."
+  },
+  "applicability": "Every baseline review and every fix-verification round a Reviewer opens on a leaf.",
+  "conditions": [
+    "The Worker's freeze recorded the names it searched and the file list it ran.",
+    "The repeated search runs on the frozen candidate, not on a working tree that has moved past it."
+  ],
+  "exclusions": [
+    "A clean sync that sends no freeze and opens no round.",
+    "A record-only repair whose candidate bytes are identical, which is checked on the last recorded round."
+  ],
+  "id": "INV-93DBZJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Reviewer reran the recorded 36-file list (511 passed, 1478 subtests) and repeated the search on the frozen candidate with no unrun match; reader B answer in worker evidence/reader-grades.md"
+      ],
+      "path": "l205-producer-list"
+    },
+    "handoffEntry": "MIK-R218.2@v1",
+    "leaf": "260928-MIK-L205",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A Reviewer in a baseline review reruns the Worker's recorded focused-test list and repeats its search on the frozen candidate; a test file the search finds that the Worker did not run is a finding.",
+  "status": "proposed",
+  "supersedes": []
+}

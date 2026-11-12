@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/panels/review/triageOrderPreference.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "63ec06b7c44eeefd8d5747741f27d2952a8d7d7c",
+        "content": "sha256:074d52c0211d2624b012f3478495766fede546d9014da620914d1a9bbcd4758b",
+        "locator": {
+          "kind": "symbol",
+          "name": "readTreeOrder"
+        }
+      },
+      "id": "RLZ-1GJ11F",
+      "invariant": "INV-ZEB6H9",
+      "origin": {
+        "handoffEntry": "RP01",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It preserves the existing storage key and translates or defaults the stored sort without adding a second preference.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "6": {
+      "note": "triageOrderPreference.ts current behavior at this source owner.\n\nAnchor: \"export function sortOf(value: unknown): ReviewSort {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63ec06b7c44eeefd8d5747741f27d2952a8d7d7c",
+            "content": "sha256:7f9d6b1598c0b65844206a2ff872e9fabd62143e41f7d5bfa9cf439b4053210d",
+            "locator": {
+              "end": 33,
+              "kind": "line_range",
+              "start": 18
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "triageOrderPreference.ts current behavior at this source owner.\n\nAnchor: \"export const treeOrderStore = createStore<TreeOrderState>((set) => ({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "63ec06b7c44eeefd8d5747741f27d2952a8d7d7c",
+            "content": "sha256:373969c5cda1ef196e7eb8139f4c91fc0f82981fa2232ac470a00a5b37f8a84c",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

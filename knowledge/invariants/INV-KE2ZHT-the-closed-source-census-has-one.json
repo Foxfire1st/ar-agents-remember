@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "An unregistered mutable product owner silently leaks across files and evades the reset tests."
+  },
+  "applicability": "The registered module-level mutable product state population checked by test_suite_load_independence.",
+  "conditions": [
+    "Every discovered state has an explicit reset, restored, read-only or benign treatment and reason.",
+    "Reset rows are exercised at module boundaries and restored rows checked around each test."
+  ],
+  "exclusions": [
+    "Object, closure and library state outside the scanner census.",
+    "No claim that scanning alone proves every possible order dependency."
+  ],
+  "id": "INV-KE2ZHT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "current census39:3restored7constant29reset; reset coverage28subtests plus real ambient lifecycle"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L87-curator-73a5c9f7-9924-4b1a-b1dd-cc1d4764c587.W02-writer-batch.json"
+    },
+    "handoffEntry": "MIK-R87@v1 4",
+    "leaf": "260928-MIK-L87",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The closed source census has one explicit treatment and reason per process state, with restored rows checked per test and reset rows checked at module boundaries.",
+  "status": "proposed",
+  "supersedes": []
+}

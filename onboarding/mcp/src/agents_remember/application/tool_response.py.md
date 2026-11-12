@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/tool_response.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/tool_response.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-04T10:05+02:00|
-| lastVerifiedCommitHash | `f93ac631ca161e5880db3a937728cb256686b13b` |
-| lastVerifiedCommitDate | 2026-09-04T09:56:23+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [overview](overview.md)
@@ -24,18 +14,39 @@ Complete one tool result at the application boundary.
 
 Module-level surface:
 
-- `_agent_notifier_banner` (function, lines 22-31) — Return the stale-supervisor banner without blocking a tool response.
-- `_attach_lifecycle_tail` (function, lines 34-44)
-- `complete_tool_response` (function, lines 47-61) — Validate, enrich, count, and observe one application result.
+- `_attach_contract_guidance` — Attach a stale installed build's currentness reading; preserve explicit producer recovery; otherwise derive only exact-contract guidance and the two argument-bound preview stops.
+- `complete_tool_response` — Validate the whole result, shape or receive its status projection, log, measure final delivery, and observe one application result.
 
-The registered response model is selected and validated before final output. Lifecycle hints
-and notifier banners are attached as model fields through the finalizer’s enrichment callback,
-then token counting and serialization cover the complete emitted response. Explicit producer
-recovery guidance takes precedence; cross-task guidance is omitted. Observer tool completion
-receives that same finalized payload rather than an independently reconstructed response.
+The registered response model is selected and validated before final output. Contract-bounded operational hints,
+and the `buildCurrentness` reading of a call served by a stale installed build, are attached as model fields through the finalizer's enrichment callback;
+whole-result serialization then retains that finalized payload. An explicit caller-sized `answer`
+projection wins when supplied. Without it, `_select_shaped_answer` applies the task/landing/role
+projectors only to their owned tools; unrelated tools retain the stripped whole result. That default selection invokes `truncate_lists`, except for a `server-build-stale` refusal, which keeps its stripped whole result without projection or list cap. Whichever answer is shaped, a finalized `buildCurrentness` is copied onto it. An explicit `answer` is instead dict-copied and does not pass through that default list-cap function; an under-bound explicit mapping returns unchanged by the token guard. Both paths retain whole-result validation/logging and the final delivered-token guard, whose short form is not a universal per-list cap.
+Explicit producer recovery guidance takes precedence; cross-task guidance is omitted. Observer
+completion receives the finalized whole payload with the delivered answer count, not a rebuilt result.
 
-cit:([`complete_tool_response`], mcp/src/agents_remember/application/tool_response.py:84-98)
-cit:([`_attach_lifecycle_tail`], mcp/src/agents_remember/application/tool_response.py:65-81)
+Caller diffs are separate readable reports: `_attach_caller_diff_report` attempts to retain the
+complete diff independently of the investigation detail. A cut diff names that report when it
+exists, otherwise the available detail or an honest not-retained marker. Waited role replies are
+fitted to keep their beginning after log attachment and again after a late line error, before the
+generic guard. These answer changes preserve one workspace completed-call event and do
+not supply Git, task or review acceptance.
+
+### Event River Feed At The Completion Choke
+
+`complete_tool_response` always records the call once in the workspace river through
+`record_tool_completed`, with the finalized whole payload and delivered answer count.
+There is no ambient lifecycle branch, session-adoption prerequisite or second event stream. The tool answers as if the
+event had been written even when the write is counted as dropped.
+
+### Answer boundary and log wiring
+
+`complete_tool_response` finalizes through the answer choke (`models/tools/tool_answer`): the
+envelope count fields are stripped, over-bound answers leave as the measured short form, and the
+whole result is filed beside the daily log. `_write_delivered_line` re-runs the guard after every
+late line failure and keeps the short-form ceiling once the answer is cut; the observer and the log
+line count the delivered answer, and `_canonical_json` is the canonical form used for whole-result
+byte accounting.
 
 ### Conventions
 
@@ -49,34 +60,18 @@ Module-level definitions follow the package conventions; names prefixed with `_`
 
 None.
 
-## Repo-Internal References
+## Evidence
+
+- Whole-result validation/logging and explicit or default tool-specific projected-answer guarding remain distinct. [4]
+
+### Repo-Internal References
 
 This module defines the top-level symbols cited below; each row points at the exact source range holding the anchor.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Defines the function `_agent_notifier_banner` (lines 22-31) — Return the stale-supervisor banner without blocking a tool response.. | `_agent_notifier_banner` | mcp/src/agents_remember/application/tool_response.py:53-62 |
-| Defines the function `_attach_lifecycle_tail` (lines 34-44). | `_attach_lifecycle_tail` | mcp/src/agents_remember/application/tool_response.py:65-81 |
-| Defines the function `complete_tool_response` (lines 47-61) — Validate, enrich, count, and observe one application result.. | `complete_tool_response` | mcp/src/agents_remember/application/tool_response.py:84-98 |
+- Exact-contract enrichment preserves explicit recovery guidance, with guarded preview stops from the call argument. [2]
 
-## L23 Final Candidate Disposition
+- The completion choke validates the whole, selects the answer, retains available caller diff reports, measures final delivery and emits one event through its existing owner. [3]
 
-The response completion boundary continues to normalize bounded task-addressed payloads only. L23's
-operation phase and report evidence can pass through the existing response contract, while private
-operation keys, worker PIDs, leases, and resume tokens remain absent.
-
-## CCR-R18@v1 Task-Addressed Next-Step Bounding
-
-260831-CCR-L18 added `bound_next_step(response, step)` (line 30): before a lifecycle tool response advertises `nextStep`, any guidance whose `nextArgs` name a task address (`contract_path` / `enclosure_path` / camel-case variants) is checked against the response's own exact address (`contractPath` / `enclosurePath`). Guidance that names a different task address — or whose response is ambiguously addressed across multiple paths — is omitted (step becomes None), while exact-address and address-free/external guidance survives unchanged. `_attach_lifecycle_tail` now routes both the producer-supplied `nextStep` and the ambient-derived step through this guard before publishing the envelope, so a cross-task recovery edge can never be offered from another contract's response.
-
-## Update History
-
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the `bound_next_step` task-address guard on lifecycle tool responses (cross-task guidance omitted). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
-
-- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the source only repoints `finalize_tool_response` to its moved `models.tools` package. Verified at code commit `1d446724`.
-- 2026-08-14T06:30+02:00 — No contract expansion: L23 keeps tool-response completion bounded while
-  carrying the existing task-addressed lifecycle-operation projection; private recovery identity
-  remains excluded. Verification stays closeout-owned.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-05T00:00+02:00 — 260731-EFA-L6 closeout pass: created this file-level onboarding card for the new source file; anchors and ranges derived from the current worktree source. Verification metadata pinned until closeout stamps the code commit.
+- The enrichment sets `buildCurrentness` on the validated envelope only when the call carries a stale installed-build reading. [5]
+- A `server-build-stale` refusal keeps its stripped whole result, without a tool projection or list cap. [6]
+- Whichever answer is shaped, the finalized `buildCurrentness` is copied onto it. [7]

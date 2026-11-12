@@ -1,0 +1,100 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Locking the three tools as the rule's wording asks was the reviewer's reading and was declined, and a later change that makes one of them commit or write knowledge has to lock it."
+  },
+  "alternatives": [
+    {
+      "option": "Historical D31 alternative: Leave the three card writers unlocked, as the documented exception to the rule's wording.",
+      "reason": "Predecessor D31 rationale, not current unconverted-input permission: They write onboarding cards and route indexes only, never knowledge records and never the database; they commit nothing themselves, and the closeout that would commit their edits is locked, so on an unconverted line their edits cannot land.",
+      "status": "chosen"
+    },
+    {
+      "option": "Historical D31 alternative: Lock the three tools like every other write, as the rule's wording says.",
+      "reason": "Predecessor D31 rationale, not current unconverted-input permission: Their writes cannot be committed while the closeout is locked, so the ruling records them as the exception instead.",
+      "reconsider_when": "One of the three tools starts to commit, or to write knowledge records or the database.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The D31 three-tool statement is predecessor policy, not an assertion that citation_migrate still exists or that an ordinary unconverted input may now be written.",
+    "The surviving converted card/index writers retain their own admission and ordinary closeout retains commit/publication authority."
+  ],
+  "context": "Historical D31/F8 exception for the then-three cards-only tools. MIK-R24 rule 9 says that writes on an unconverted line refuse once its repository holds converted memory. Three tools write onboarding cards and route indexes into a leaf's working tree and were found unlocked in review: citation_fix, citation_migrate and route_index_refresh. Current-source qualification on passed L56 CODE8a3d6b82 over base7fe223: citation_migrate is removed and is not an executable exception. Surviving citation_fix and route_index_refresh remain worktree-only card/index writers with existing converted-root/leaf authority; unconverted ordinary inputs retain the central conversion refusal. This record grants no commit or knowledge-record write.",
+  "decider": "architect under developer direction D31 (260928-MIK-L37 leaf document, decision 2026-10-01T05:05:16, F8)",
+  "id": "DEC-VMMJDN",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-JT28KJ"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_tool"
+        },
+        "path": "mcp/src/agents_remember/application/memory_tools.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
+        "locator": {
+          "kind": "symbol",
+          "name": "route_index_refresh_tool"
+        },
+        "path": "mcp/src/agents_remember/application/memory_tools.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:b138d8d6c8cc66ad7f51dad3972cb2d9fc8732425e5b8d4983ba5e762944a940",
+        "locator": {
+          "kind": "symbol",
+          "name": "citation_fix_tool"
+        },
+        "path": "mcp/src/agents_remember/application/memory_tools.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": {
+        "blob": "8cc37ec945797a2390b14f47bdce27f8fe5816d5",
+        "content": "sha256:20715addb462bc44fb693c9aedfe978d20f77305d2676685c56bbe2d1c386530",
+        "locator": {
+          "kind": "symbol",
+          "name": "route_index_refresh_tool"
+        },
+        "path": "mcp/src/agents_remember/application/memory_tools.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Leaf document decision 2026-10-01T05:05:16 (F8), on review 260928-MIK-L37-review-R1.md finding (g); cutover notes 260928-MIK-L37-cutover-notes.md section 2"
+      ],
+      "path": "r2-10-fix-round.json"
+    },
+    "handoffEntry": "RULING-CARD-WRITERS",
+    "leaf": "260928-MIK-L37",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

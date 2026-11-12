@@ -1,0 +1,69 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/install/pi.md",
+  "id": "DPD-2B7PTY",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-install-pi-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "2f783bd16246b9c1d169fd35ee33f0908e937c91",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/harnesses.py"
+    },
+    {
+      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+    },
+    {
+      "blob": "54ec9f04b391dfafa4822a69b41c26fcf760201e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/caller_harness.py"
+    },
+    {
+      "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/agent_binding.py"
+    },
+    {
+      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+    },
+    {
+      "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/skill_resources.py"
+    },
+    {
+      "blob": "bca333ae11bd912a4042f43c258df9126d70dc72",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/named_choices.py"
+    },
+    {
+      "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+    }
+  ]
+}

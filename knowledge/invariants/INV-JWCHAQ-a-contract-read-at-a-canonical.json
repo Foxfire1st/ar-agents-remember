@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "One case, parametrised over both canonical enclosure arrangements, protects the refusal and its two exit paths; a copy silently obeyed as authority starts or lands the wrong leaf, which is the cost the requirement records."
+  },
+  "applicability": "A contract document found at one of the canonical places inside a task folder - a task folder's own series-contract.md or an enclosure's.",
+  "conditions": [
+    "The document records its own place in its series_contract_path cell."
+  ],
+  "exclusions": [
+    "A file under notes/, requirements/ or a deeper folder: not a contract at all, so it is never checked and never obeyed.",
+    "A folder that holds no contract: nothing to check."
+  ],
+  "id": "INV-JWCHAQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_a_contract_at_a_canonical_place_naming_another_path_is_refused (both parameters); evidence/focused-reviewer-tests.log; Worker F11-negative-control"
+      ],
+      "path": "handoff-draft-2.json"
+    },
+    "handoffEntry": "F11",
+    "leaf": "260928-MIK-L73",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A contract read at a canonical enclosure location must name its own path and is refused with both paths and a remedy when it instead names the master contract.",
+  "status": "proposed",
+  "supersedes": []
+}

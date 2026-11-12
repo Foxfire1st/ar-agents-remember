@@ -1,0 +1,920 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L121",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-02RNZP",
+      "items": [
+        "sha256:767d763305a67c1b4de19ca1b1004f50b46e684a7cf42516fc6a23e92fb070b2"
+      ],
+      "reason": "One protocol-comment line recording workspaceId on ar.open; the channel obligation is realized in code targets of MIK-R121-R4-P1, and the comment carries none of its own.",
+      "subject": "hunk:sha256:767d763305a67c1b4de19ca1b1004f50b46e684a7cf42516fc6a23e92fb070b2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "before": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:1b2a77ac877c603a391748189753868f8a71da1a8826c6ef30044a03b6e29d49",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentSidebar"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "id": "RLZ-6M98MR"
+        },
+        {
+          "after": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserveSidebarChoice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "before": {
+            "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+            "content": "sha256:49398c2b3570fe515dcbf89a6c9c782bab1241a36973425e7beede681c50ab8f",
+            "locator": {
+              "kind": "symbol",
+              "name": "preserveSidebarChoice"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+          },
+          "id": "RLZ-P0SXSZ"
+        },
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-TWYV9Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-051M1E",
+      "items": [
+        "sha256:8745ed5317396d7be9c8de486223737fc2b25a42aff5fac45ce7b492777bb64b"
+      ],
+      "reason": "The ar.page isolation handling in installBridge is byte-untouched; the leaf only adds display-confirmation state around it. Realizations re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-4S93MX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1B396G",
+      "items": [
+        "sha256:53cb986f96ba129fc1d98554c4bc450bceab6285317c689d3a19188be16900aa",
+        "sha256:d905aff420645df10bcde56f746926be80c871a0d58e975f503b6ebb05881167"
+      ],
+      "reason": "Added document-page cases pin the new deadline-naming and cross-workspace no-reload behavior; the card's account of the frame contract still holds.",
+      "subject": "onboarding:dashboard/src/cockpit/PaseoChatFrame.test.tsx"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "before": {
+            "blob": "7d5323ca23bf7ba51e9dc9bdab0ba798d5f12795",
+            "content": "sha256:7d73c6ca0c817a4eea8e25241354f5b5a6dd458722848980580458b77cb21d6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocumentChatReadTests.test_read_filters_archived_and_missing_agents_and_keeps_document_workspaces"
+            },
+            "path": "mcp/tests/test_role_document_chats.py"
+          },
+          "id": "PRF-TEWFNK"
+        },
+        {
+          "after": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-6CV9KK"
+        },
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-C3ZC91"
+        },
+        {
+          "after": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "before": {
+            "blob": "f22f2cbb0ddb8fbc0f9c531532d9b54837321c69",
+            "content": "sha256:bba4a3e903e9f0576a5649a3ca7187c3098e555ac5867220d34b7026bccb9886",
+            "locator": {
+              "kind": "symbol",
+              "name": "useDocumentChat"
+            },
+            "path": "dashboard/src/cockpit/document-chat/state.ts"
+          },
+          "id": "RLZ-G8BE9E"
+        },
+        {
+          "after": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "before": {
+            "blob": "56963a5e7f7c270ef1a197dd00bbc8d4d43e3db5",
+            "content": "sha256:55a3b12e080473f5095f2fc24130ef453580e1a6e98be6198835cfc810510e89",
+            "locator": {
+              "kind": "symbol",
+              "name": "documentChatBinding"
+            },
+            "path": "dashboard/src/cockpit/document-chat/model.ts"
+          },
+          "id": "RLZ-S0YF0Z"
+        },
+        {
+          "after": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:8b3cde819f2a7cbadd67febc508062a74a9cf276cc03398507ce9b233c1c8294",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
+            "content": "sha256:5eb098c3fe9e89e26d7a6319efa13a9d3eeffe2c2aabcf41b941219bfe419600",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoFrameControl"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-SFPH0W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1FB2QR",
+      "items": [
+        "sha256:a224ce578d45f7c59124829f25c1371e7ad222cc6720063d9ec24fdd47c296cb"
+      ],
+      "reason": "The open generation and the ar.open agent-plus-workspace posting are unchanged; the arm() deadline now names the unanswered agent but the ready navigation still follows the selection without a reload. Realizations re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-7D9QDG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-22J5GD",
+      "items": [
+        "sha256:641399cf3292e6d156b385643d8c1a7e9f038eafbabcfd33431a7ade643ba4ba"
+      ],
+      "reason": "Single import line serving the display-sign change authored as invariant MIK-R121-R4-P1; the line carries no obligation of its own.",
+      "subject": "hunk:sha256:641399cf3292e6d156b385643d8c1a7e9f038eafbabcfd33431a7ade643ba4ba"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+            "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-6G1VXD"
+        },
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-9G4ASB"
+        },
+        {
+          "after": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-N3QWTS"
+        },
+        {
+          "after": {
+            "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+            "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreStandaloneLook"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "before": {
+            "blob": "4e39d1a69bf0cc22669c1e5d6e0373a88101efd0",
+            "content": "sha256:1a6bdc960720b7b64950acc70396a5a8d02a604419bac4a428394c2091a5b673",
+            "locator": {
+              "kind": "symbol",
+              "name": "restoreStandaloneLook"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+          },
+          "id": "RLZ-PVXBE8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2KTZE1",
+      "items": [
+        "sha256:5f5b7b31a7ffad86c6fc2c8604d4a391509ba2d24a386e0bf1219a4a58710376"
+      ],
+      "reason": "The selection publication path is unchanged apart from the extraction, and the Parent-target check in installBridge is untouched. Realizations re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-STRQX4"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "before": {
+            "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+            "content": "sha256:88f57cfd597fb666154382eab905ba32779eaf78d06f47a311e8bdb4cd2333c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "startHierarchy"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+          },
+          "id": "RLZ-CEW3NM"
+        },
+        {
+          "after": {
+            "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+            "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-J93MBC"
+        },
+        {
+          "after": {
+            "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+            "content": "sha256:8d90f4e43207d461b1078a42ffdcaf1911200cb7c57c5fc08527c020d587ee52",
+            "locator": {
+              "kind": "symbol",
+              "name": "onSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+            "content": "sha256:8d90f4e43207d461b1078a42ffdcaf1911200cb7c57c5fc08527c020d587ee52",
+            "locator": {
+              "kind": "symbol",
+              "name": "onSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-M4FHMG"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3J2CC2",
+      "items": [
+        "sha256:b3a1db741e53566aae57ffda4b6ed30f480226f29332747c13d971c4dc76ff4b"
+      ],
+      "reason": "The live selection publisher semantics are unchanged, so the pill gate still re-evaluates on the shared value with no retained earlier selection. Realizations re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-XQMXT2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3TA1DD",
+      "items": [
+        "sha256:a89e7e38c70bb433607223eb7b0dead0803552f9a3baa2daf5fe4ca5d9c89808"
+      ],
+      "reason": "The card's pure-model account still holds; agentTimeoutText joins the existing pane-sentence family and its obligation is recorded as an invariant with realizations.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoFrameModel.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4B1G51",
+      "items": [
+        "sha256:20341e1cd01b625a32643e567b98807da3ebcc6d7c1067e584d4d66b0b3796a1"
+      ],
+      "reason": "The card's bridge account (paired origins, selection intersection, Parent checks, generation guard) still holds; the new display-sign and agent-alone-navigation obligations are recorded as invariants with realizations.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:7313736abc6b0ffd0d6fe6e09627cf2d3f5e2e59e23efb8ffeac36f5751e472e",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
+            "content": "sha256:7313736abc6b0ffd0d6fe6e09627cf2d3f5e2e59e23efb8ffeac36f5751e472e",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-9XE68C"
+        },
+        {
+          "after": {
+            "blob": "7f35409c0ead21784b841b92101dc1bb086c6d98",
+            "content": "sha256:e19a2d1ae40f78ba801b1d0f5341bf7edf1d2d3719f876847c4ea14d0216ded6",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "before": {
+            "blob": "a4f2e59e2adf2865387c345b289c2ca59ae935cd",
+            "content": "sha256:1fc4dbd1c066bea251ae51a649ceaa43e47dc49aa12cc39817f403c11de834ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "watchSelectedChats"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+          },
+          "id": "RLZ-EZBH44"
+        },
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-PG0AHJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-51HNE4",
+      "items": [
+        "sha256:54ae115eb278eb1cb2cc6aedc9074bcfb23ac7fccca50d2b3f829f1c7d9228b6"
+      ],
+      "reason": "watchSelectedChats delegates to the extracted readSelectedChats with byte-identical visible-tab logic, and the bridge intersection before publishing is unchanged. Realizations re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R121",
+          "packet": "requirements/MIK-R121-v1-the-chat-of-a-selected-task-opens-in-the-sidebar.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "dc93c2e121bcf6780acd62c38bc7587e63e769a7",
+            "content": "sha256:c26319ea1a18417c3770f0e47f8e96aec89a363e760412dded033408ea1c8b0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentTimeoutText"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-D21787"
+        },
+        {
+          "after": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:fd559019f9befd140955e05079a57e8fa101a960fc63d6434e7d4119407804f4",
+            "locator": {
+              "kind": "symbol",
+              "name": "arm"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-TW9MMS"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-5B1QRQ",
+      "items": [],
+      "reason": "Scope correction (F03): the recorded Chats exclusion is removed and both pages covered, per the unconditional shared arm() path. Grounds: The recorded exclusions exempted Chats-page deadline behavior the shared arm() function implements unconditionally on every page, with no page branch and a Chats fallback case in the producer's own evidence. The corrected scope covers document and Chats pages alike.",
+      "revision": 1,
+      "subject": "INV-KSCJ1Q"
+    },
+    {
+      "disposition": "changed",
+      "effect": "weaken",
+      "examined": [
+        {
+          "id": "INV-72Y8R3",
+          "revision": 1
+        },
+        {
+          "id": "INV-BTK24H",
+          "revision": 1
+        },
+        {
+          "id": "INV-KSCJ1Q",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-5PE1E5",
+      "items": [],
+      "reason": "Guarantee correction (F04): bounded to truthful acknowledgment with retention and guarded fallback explicitly allowed. Grounds: The recorded text promised no other agent's screen ever and an unconditional fallback load; the members implement false-acknowledgment prevention with prior-screen retention and a loaded-identity-guarded at-most-one fallback. The bounded text states exactly that joint behavior; three-member composition and no-reload promise preserved.",
+      "revision": 1,
+      "subject": "FAM-JY9AN3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6964F8",
+      "items": [
+        "sha256:d3d61a846ffe85c10da59737265a3de18ac603ae810088edcb51c40866ec4748",
+        "sha256:ec75312a4f34a718ba78603fd4dfd2a093320e3dec5ec335d17e6db1226c0d23"
+      ],
+      "reason": "The card's entry-wiring account still holds; the agent-alone comment records the pinned navigation contract carried by the new invariant.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/index.client.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 1
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-7FWC0W",
+      "items": [
+        "sha256:5642ae61bfc67e4ae08a7c054e97498207ea1bdb3388b2e20c02ab25fe0ea855"
+      ],
+      "reason": "Family guarantee examined against the L121 display-confirmation and deadline-naming additions: no member promise changes, no member added or removed, routes unchanged. All ten members examined at their current revisions.",
+      "revision": 2,
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7TDS4G",
+      "items": [
+        "sha256:5b36c7cecbb03a0c368284a3ac0862a73c44ccb85b00bdbe742a5596e5cb0818"
+      ],
+      "reason": "Single import line serving the deadline-naming change authored as invariant MIK-R121-R2-P3; the line carries no obligation of its own.",
+      "subject": "hunk:sha256:5b36c7cecbb03a0c368284a3ac0862a73c44ccb85b00bdbe742a5596e5cb0818"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A8NCDH",
+      "items": [
+        "sha256:db6788f83c35e0a748a35c6acac93e375916602e4c1a56b04dcad81615c67c7f"
+      ],
+      "reason": "The e2e witness suite and its config are task-evidence instruments with no governed code contract; the root overview account is unchanged.",
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AG5HJJ",
+      "items": [
+        "sha256:d24b18942a26b228e470fb12726ec9c3bef0d62d7b7758ac98c22a06b2d038c8"
+      ],
+      "reason": "R1 DEV-rig spec retained as task history; the admitted rule-1 witness is the sandbox suite. The file carries no governed code contract and no card is owed for it.",
+      "subject": "onboarding:dashboard/e2e/document-chat-cross-workspace.spec.ts"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R121",
+          "packet": "requirements/MIK-R121-v1-the-chat-of-a-selected-task-opens-in-the-sidebar.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:38a4834dc2dba60ca9b9146a51899241bc6de67efa6968a9f896939865129db7",
+            "locator": {
+              "kind": "symbol",
+              "name": "agentChatVisible"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-4EXMTZ"
+        },
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:569e5af472233cc7c4add15ef13ead26bdbcbd417434a8d5698bd5f25c5dcde7",
+            "locator": {
+              "kind": "symbol",
+              "name": "displaySatisfied"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-5XXHCD"
+        },
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:dc2febbb6af49e5234bfc30e74df9fc6cb40241d185d0f37c39eab80914bbafa",
+            "locator": {
+              "kind": "symbol",
+              "name": "noContradictingSelection"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-GFZT5P"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-BD94KC",
+      "items": [],
+      "reason": "Scope correction (F03): the recorded Chats exclusion is removed and both pages covered, per the pageless shared display gate. Grounds: The recorded Chats exclusion claimed a preserved prior channel the shared display gate does not have: pendingDisplay.workspaceId comes from the host agent record on every page and confirmDisplay/displaySatisfied have no page branch. The corrected scope covers both pages with the host-record workspace condition.",
+      "revision": 1,
+      "subject": "INV-72Y8R3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-1P5780"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-C2ZYZZ",
+      "items": [
+        "sha256:f12b74aae6401e0d1cb7bceb28585ffc06de20e944611bb5935143bb799957ab"
+      ],
+      "reason": "The bridge teardown path is retained and now also stops the display timer alongside the existing stops; teardown still releases owned SDK, DOM and timer resources. Realizations re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-XENPC7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CAP73R",
+      "items": [
+        "sha256:9879335efd32e0728521f913d96eff0e39d2d31b95701e1d69ddaa76f4da42f8"
+      ],
+      "reason": "Header comment documenting the agent-alone navigation and display-evidence contract authored as invariants MIK-R121-R2-P1 and MIK-R121-R4-P1; the prose carries no obligation of its own.",
+      "subject": "hunk:sha256:9879335efd32e0728521f913d96eff0e39d2d31b95701e1d69ddaa76f4da42f8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EB1BQ7",
+      "items": [
+        "sha256:289b437c6b3107b15a59b4da9aa686a1b6f3888897b7ffabb89914d405b668c5",
+        "sha256:387261b1174b8447becc6ea0ddb2e0af2c098831c9043265f86ae43edbb13998",
+        "sha256:408ad72c20cb52a9451fed034b698a4a87e8aa626c6153c1bdbb7fac19fddb60",
+        "sha256:46287fa90df6f076ff08f97d96be84a15d37ba99da4e3f65d87f1101e022c02d",
+        "sha256:55977ced633c8dac7537c5911b775963b83b20263744c4b8f442bbe27b5bbdf2",
+        "sha256:5b8dcdddcd1529b1ad301807843669c241c14685b9233ee0c34550f358faa89e",
+        "sha256:beff23980e826b3c2dda2646d3fc9f9425e22ed04ea9f09f0c71a9f2ea86ab61",
+        "sha256:eadbe7a28c6c42fff502317bf23b7079746c731f052c4acc81653e0fdf55116e"
+      ],
+      "reason": "Added bridge-behavior cases pin the new display sign; the card's helper-suite account still holds and the sign obligation is recorded as an invariant with realizations.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoPluginClient.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G91D83",
+      "items": [
+        "sha256:3ffb25f20ed0430a38b2ef1f3851ae5509b6be937485fac7076603b4fb8e9e53",
+        "sha256:65446c060a3de0449fdc7049d963025c2e94e471419c128e122226c7023495cf",
+        "sha256:a120bd2a5f690a948b57542a8d4a27754406d87ab4022f78c6ce0d18bce8622e",
+        "sha256:b8482fcae1e0bbdd4712a80cd77b10e9a862da83d11905422a4316f82bbee39e"
+      ],
+      "reason": "Card Purpose now enumerates both MIK-R121 rig routes with their bounded DEV-only purposes, distinguishing handled paths from the default index; counted body change. This row replaces the earlier no_impact row (F02 correction).",
+      "subject": "onboarding:dashboard/src/dev/DevApp.tsx"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ND617B",
+      "items": [
+        "sha256:9008d8138897fffbbed872d9d8184d48ca45bf33de987d3ffdc7324c94323098"
+      ],
+      "reason": "Playwright config of the admitted witness suite (no webServer, wide+narrow projects); configuration of a task instrument with no governed contract. No card is owed for it.",
+      "subject": "onboarding:dashboard/playwright.l121witness.config.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SA7ZCJ",
+      "items": [
+        "sha256:2de567b4c0fdb960eb83d847a2b50b49598b36706a37e27e32d5c6c5fec15910"
+      ],
+      "reason": "The card's visible-tab-scan account still holds byte-identical logic in the extracted helper; no contract change.",
+      "subject": "onboarding:mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SVEGKA",
+      "items": [
+        "sha256:4d49cdf66e58764d585036a9d867c476d177e5fa0a9ce0ac288ccc544cb082c3"
+      ],
+      "reason": "Mechanical extraction of the unchanged visible-tab scan into readSelectedChats; the sign obligation is authored over entry MIK-R121-R4-P1's bridge targets and the scan contract stays recorded under the INV-C71CTF and INV-STRQX4 realizations re-anchored by this leaf's rows. No separate obligation of its own.",
+      "subject": "hunk:sha256:4d49cdf66e58764d585036a9d867c476d177e5fa0a9ce0ac288ccc544cb082c3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T8JY1K",
+      "items": [
+        "sha256:b65123de8c8c33a82537674e1b40a506dc203afa1b69252c66cebc1120beefea"
+      ],
+      "reason": "The new DEV rig files and dashboard test additions live under the existing dev-harness and cockpit routes; the route account is unchanged.",
+      "subject": "onboarding:dashboard/src/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V8SATV",
+      "items": [
+        "sha256:047fbac4300a49b6e16e0d54209012cb7284939c8141236963831ae1e40857dd"
+      ],
+      "reason": "The bridge, selection and entry changes live under the existing plugin-client route; the route account is unchanged.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VRREJ6",
+      "items": [
+        "sha256:3b24696367752d8f8061985b3131ccf0aa021241ec7cf356fa32f06ddbf0a50e"
+      ],
+      "reason": "The card's controller account (wanted/settled tracking, ready ar.open without replacement, single URL fallback) still holds; the new agent-naming deadline obligation is recorded as an invariant with realizations.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoFrameControl.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fb9ca83fa3143598c8efeddd62aebf30e3be5a69",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
+            "content": "sha256:ccebaf97a0998a6e49ca24b323b70f5a5a8b81452b343b7e47d70be8ea7f1f36",
+            "locator": {
+              "kind": "symbol",
+              "name": "onMessage"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-AY5KZV"
+        },
+        {
+          "after": {
+            "blob": "66f63b526cfeef92f3048946ce23151a0e05a04b",
+            "content": "sha256:7b4a0e79c9da07da0586bbebc998f4c35b0a992f810acadc29f9170977f8bf44",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-W98CK3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-WBQDW5",
+      "items": [
+        "sha256:743570d550bf4880dd75877fa79efc9fa50b5bd1b9fd96f58e2011b86ad50754"
+      ],
+      "reason": "installBridge grew the display-confirmation wait around the unchanged parent lifetime, visible-source and SDK parent-edge rechecks, and onMessage is untouched. Realizations re-anchored at C.",
+      "revision": 1,
+      "subject": "INV-0286SX"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YZVNVH",
+      "items": [
+        "sha256:e675f305455c1643d1a24f1775f659e45f7772b487c744fa4f53f014fd2883de"
+      ],
+      "reason": "Admitted rule-1 scripted witness suite: a task-evidence instrument whose legs and verdicts live in the Reviewer verdict and evidence, not in a governed code contract. No card is owed for it.",
+      "subject": "onboarding:dashboard/e2e/document-chat-sandbox-witness.spec.ts"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

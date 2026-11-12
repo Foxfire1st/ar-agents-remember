@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Confusing requested reading tools with runtime grants could give an investigating role write or lifecycle authority it never received."
+  },
+  "applicability": "Requested tools in the canonical Investigator capsule.",
+  "conditions": [
+    "The canonical manifest and the wording test name the same retained request list.",
+    "Runtime authority is independently admitted; a provider concern is read through retained evidence routes, and provider state change belongs to its owning leaf Worker."
+  ],
+  "exclusions": [
+    "Requests do not authorize writes or enlarge another role’s requested tool set."
+  ],
+  "id": "INV-YNHABM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "test_role_instruction_wording.py exact fourteen requests; .capsule-matrix.json unchanged other-role tools"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L98-curator-89a3f43e-2fd9-4e77-94ac-ff94bdf3b836.A02-curated-handoff.json"
+    },
+    "handoffEntry": "MIK-R98@v1 §6",
+    "leaf": "260928-MIK-L98",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The Investigator capsule requests the retained context, source, knowledge, task-status and role-message interfaces; no retired provider or code-search operation is requested, and requested tools grant no additional runtime mutation authority.",
+  "status": "proposed",
+  "supersedes": []
+}

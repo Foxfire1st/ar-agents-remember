@@ -1,0 +1,96 @@
+{
+  "path": "mcp/src/agents_remember/application/lifecycle/direct_landing.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.\n\nAnchor: `direct_landing_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module's concrete API, control flow, and validation boundary are implemented here.\n\nAnchor: `direct_landing_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Refusal payloads forward the typed task-intent next action.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:f2ca60bec427d7837229c3891918ed53e9e59ee40575cfd1561be2161b7e5f2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_error_payload"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:b503876d205c0545ae477ec9a819903d779de5c6f8b4fb7bd003e4dd13934bed",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_intent_recovery"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "No meaningful cross-repository reference applies.\n\nAnchor: `direct_landing_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The application boundary preserves current grant admission and journal-owned direct recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1de673c8175f9a7c79e3ffec19987cd26c195f52",
+            "content": "sha256:c2597afcc61ebcd3d7cc8b9fdf12ee3f4da3903a42846ca6e6130894e5a199a4",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

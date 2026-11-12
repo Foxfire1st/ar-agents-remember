@@ -1,0 +1,23 @@
+{
+  "path": "dashboard/src/panels/changeset/useInspectionCounter.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The counter shown belongs to the inspected comparison, and a failure is never displayed as a count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d235f1ba58c0fe10b6c538e0a59b261cf9f44a9f",
+            "content": "sha256:ee8d91a95773065af0ee4558c1bd855120d84cc90028fe8a4b50f7ec5de1769f",
+            "locator": {
+              "kind": "symbol",
+              "name": "useInspectionCounter"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

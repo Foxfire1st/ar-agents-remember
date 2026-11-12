@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "6f67bb038ad8fbe809c2027b6b98879459a2e1ce",
+    "content": "sha256:2ce77f99d363de2e86b7363d1728ecedfa524c0311fa0cb21dba831bfa104af2",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "skills/c-05-create-or-update-onboarding-files/workflows/converted-card-workflow.md"
+  },
+  "id": "WKN-Q3692H",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-18",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "The text says that the citation fixer's `--contract` and the regeneration of the index work for a leaf only and names no route without a task; it calls `overview.index.json` an uncommitted cache. A second agent on a fresh scaffold read it and had no route. The route without a task is built by L78 (MIK-R78); the text is corrected there and read again at L62."
+}

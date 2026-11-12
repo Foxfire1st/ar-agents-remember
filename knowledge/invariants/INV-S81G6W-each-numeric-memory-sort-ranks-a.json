@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The maximum-entry and unavailable-state proof prevents an incomplete or first-entry-only ranking from presenting itself as the chosen measured sort."
+  },
+  "applicability": "The four numeric memory-fact sort options of the review page.",
+  "conditions": [
+    "Aggregate maximum value over all entries, not only the first or changed entry.",
+    "An unavailable memory state makes all four options unavailable, displays its reason and applies Priority while preserving the requested preference.",
+    "A chunk with unavailable facts makes the merged memory state unavailable; do not sort a partially measured subset as if complete."
+  ],
+  "exclusions": [
+    "Memory currentness, which ranks the shown state rather than a maximum numeric value.",
+    "Producing the backend values or converting unavailable values into zero."
+  ],
+  "id": "INV-S81G6W",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 13, exact id MIK-R89@v2 rule 3 · memory sorts; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 20, exact id MIK-R89@v2 Failure and Recovery · memory values unavailable; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 94, exact id W8; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP05",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Each numeric memory sort ranks a subject by its highest bound entry value and Priority ties, and unavailable entry-memory values disable all four sorts with the reason while the other sorts remain usable.",
+  "status": "proposed",
+  "supersedes": []
+}

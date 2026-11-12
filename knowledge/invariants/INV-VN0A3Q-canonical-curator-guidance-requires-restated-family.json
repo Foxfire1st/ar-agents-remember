@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The instruction is realized in the handoff template, the curator role and the curation operation, and mirrored into every generated copy."
+  },
+  "applicability": "Curator instruction surfaces, canonical skill files and generated copies",
+  "conditions": [
+    "A changed family row is named in a hand-off"
+  ],
+  "exclusions": [
+    "Effect display and wire format, which the D37 packet owns",
+    "New effect vocabulary, of which none is added"
+  ],
+  "id": "INV-VN0A3Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "population-copy-size-helper.json — 27 byte-equal mirrors; current canonical diff and test_role_instruction_corpus.py in focused-junit.xml; rules2/6 production enforcement."
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L48-curator-c94be97e.handoff-list.json"
+    },
+    "handoffEntry": "MIK-R48@v2 rule 7",
+    "leaf": "260928-MIK-L48",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Canonical curator guidance requires restated family guarantees to carry an authored effect and leaves own revision to the writer; the 27 generated copies equal the three canonical surfaces.",
+  "status": "proposed",
+  "supersedes": []
+}

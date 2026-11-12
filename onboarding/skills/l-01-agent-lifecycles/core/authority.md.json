@@ -1,0 +1,207 @@
+{
+  "path": "skills/l-01-agent-lifecycles/core/authority.md",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:a801839c908a1556102e5b810654315d8fd55ec1bc2e0c7936d1c87416e36d9a",
+        "locator": {
+          "end": 17,
+          "kind": "line_range",
+          "start": 17
+        }
+      },
+      "id": "RLZ-0W0MTJ",
+      "invariant": "INV-85VB61",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 6",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The seat-binding table's Projects row states that an Architect start names no document: the sprint document holds the developer's request, and the developer names it to the Architect in the dashboard.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-BNWWSD",
+      "invariant": "INV-CQCPAD",
+      "origin": {
+        "handoffEntry": "MIK-R113@v1 rule 10",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The table of which document a role is bound to: the Architect's row names none, and a start that names one is refused.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:8d5cece31a056c6dfee460571a08b10320d084ffcd3d9689f2665073898b505e",
+        "locator": {
+          "end": 43,
+          "kind": "line_range",
+          "start": 43
+        }
+      },
+      "id": "RLZ-C0SB4V",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Unit AU4.2 holds its per-start override definition at source instead of a link into its own every-role digest place.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:504a3d76f4d3082d9e46f23392ddd2feb9cfa1e10871342fd207c591d4839ac3",
+        "locator": {
+          "end": 124,
+          "kind": "line_range",
+          "start": 124
+        }
+      },
+      "id": "RLZ-CQARG2",
+      "invariant": "INV-8VNSKJ",
+      "origin": {
+        "handoffEntry": "L84-R1-05",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "This authority paragraph is the home of the correct-write recovery for a refused covered write.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-EK96T9",
+      "invariant": "INV-7VZRZW",
+      "origin": {
+        "handoffEntry": "R99-14-harness-work",
+        "leaf": "260928-MIK-L99"
+      },
+      "rationale": "Removes obsolete read-only/no-orchestration helper restrictions while retaining role-seat immutability.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:0b5793a5eed7f39d50472afc02642112829537759300ebe9e0997e4415bf22ba",
+        "locator": {
+          "end": 106,
+          "kind": "line_range",
+          "start": 106
+        }
+      },
+      "id": "RLZ-PGN9GF",
+      "invariant": "INV-K48GZ2",
+      "origin": {
+        "handoffEntry": "MIK-R60@v8.6",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The authored source of that digest line (unit AU10.3).",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:01ae3bdc5473b0963bfe36428c2ea853518d8a651e0451e04c61bad822ffb2e0",
+        "locator": {
+          "end": 108,
+          "kind": "line_range",
+          "start": 98
+        }
+      },
+      "id": "RLZ-RJJN3V",
+      "invariant": "INV-JAACMT",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-continuation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "The shared handover-and-wait section bans watchers, polling and timer loops for every role, and states native helper collection within the turn and, on any harness, the declared helper wait (`WAITING FOR SUBAGENTS:`) and background-process wait (`WAITING FOR BACKGROUND:`) with their `check in <N> minutes` check (1 to 30, default 3), no parent progress message, and that a declared wait is not a silent end.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:d93f0f515c2ea493d145d063ee7e6b98a7a555cf1b6298f28ef5ffbcb4fc684a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VCT9ZR",
+      "invariant": "INV-HGSFJ8",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rules6,11,13",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This shared source retains its existing duty while replacing only the developer-question channel and required quote provenance.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+        "content": "sha256:0b5793a5eed7f39d50472afc02642112829537759300ebe9e0997e4415bf22ba",
+        "locator": {
+          "end": 106,
+          "kind": "line_range",
+          "start": 106
+        }
+      },
+      "id": "RLZ-WH7GSH",
+      "invariant": "INV-0V8R02",
+      "origin": {
+        "handoffEntry": "L84-P5-12",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Unit AU10.3 holds its helper-collection definition at source, including the D709 neutral sentence that helpers run on the seat's own model unless the developer names another.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Canonical structural seat and parent authority; the file is an authoring reference whose shared duties reach roles through the every-role digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:8225c6fb00b3dc55bfbac8431ef07d9a5b44597bd060bf433c2d006ff44ebe80",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared rules for sandbox evidence, scratch-path removal and live-host operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:88dd1ddd5da803a340087dbb72957ffdc9c23004c057c3ca51cd4e0b9de78bdc",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

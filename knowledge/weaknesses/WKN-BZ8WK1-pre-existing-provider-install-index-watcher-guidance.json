@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+    "content": "sha256:7826c72a7a27a46f2dff03a535a1e576667459cad0ad1b66aac3c83ab7df91f0",
+    "locator": {
+      "kind": "symbol",
+      "name": "_register_installation_tools"
+    },
+    "path": "mcp/src/agents_remember/mcp/registration/core.py"
+  },
+  "id": "WKN-BZ8WK1",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "rule9-ingest-list.json"
+    },
+    "handoffEntry": "mark-L112-CUR-C01",
+    "leaf": "260928-MIK-L118",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L118"
+  },
+  "state": "open",
+  "statement": "The served description of runtime_install in mcp/registration/core.py names provider assets and the stop of leftover watchers of search providers; nothing else in the product sets up a search provider. The earlier provider-install/index/watcher guidance and the context_packet(include_providers=true) claim are gone from the public pages at the candidate."
+}

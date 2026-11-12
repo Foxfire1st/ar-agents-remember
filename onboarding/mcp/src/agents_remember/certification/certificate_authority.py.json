@@ -1,0 +1,198 @@
+{
+  "path": "mcp/src/agents_remember/certification/certificate_authority.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The certificate authority enforces exact predecessor edges, consumed-artifact binding, and finalization currentness.\n\nAnchor: \"def validate_certificate_chain(\"; \"def _bind_consumed_artifacts(\"; \"def validate_finalization_currentness(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:b2bccf58e54a8ed6e052e532ed097a59abd2b8b410ab94322b90cfe38a681d66",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 113
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:b66ce93e6f2a7d289dfbd2e744bb50f037f0bc0f90d4e28b7e68ab21fa4e6772",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 363
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:84872d39554544fed0764099ea710b2bb87c6ed4b04ce46cb054bb00748cf727",
+            "locator": {
+              "end": 198,
+              "kind": "line_range",
+              "start": 198
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One green certificate is issued from exact current plans, predecessors, and the result manifest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_gate_certificate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:5ee715dc7322f7f2499c02135c9cf1ec2c4b772112a5ee975cca4be45112fa5d",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Chains are validated as one exact prefix against current gate-local inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:896ca958a33b21b2435f825c5923bb1356117b1b48f650c57835bd3cfb0b7d7d",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_certificate_chain"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:a943293f3b282f8dee3b8f630f9f4a95010409d7296a294184cd653d1f07acdb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_certificate"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:cc88c5d547428f73d445733ea86f8888074e524cb8b0fbf7cd551f3f917d9050",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 109
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:28f8522d70f73d0421c1a7fb79270fa17cc77a959457f21b2d2f25893b167841",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Consumed artifacts resolve to exactly one earlier green certificate; Gate 3 binds Gate-2 artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:9129a441ef19c9d898fbeabea10f92b5ba629bef82c60d13f1c93b5242d9ab5b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bind_consumed_artifacts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Finalization binds the memory pair and revalidates authority currentness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:dee45a2a0965f2ce9d127436e57b8823ee9890e86b2efc6c666ab1067aad4cbd",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_finalization_authority"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:05889704d4c413d13df9d3d0acbe9a1e8b70add22e41384f7a31bde61bf5092a",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_finalization_currentness"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:700f320a9ad3e1720417d7bd9566efbe837f879c3c731a15eff7607f886533c2",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 135
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Gate-5 memory inputs become canonical certificate inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:517485ced7481a575ba35d4afbcacafa9442a4e8040dd0ddd5091dbb7aa0ef00",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_five_input_identities"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

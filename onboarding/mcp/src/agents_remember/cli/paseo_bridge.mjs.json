@@ -1,0 +1,461 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_bridge.mjs",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:270242269aad9f08fca1cc861d39d3d766a5d901f514702c82b0a6ccd746ac6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentCreation"
+        }
+      },
+      "id": "RLZ-1F9QGM",
+      "invariant": "INV-XJJ3NX",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 preservation boundary 3 / L113-R1-F06",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "Applies the same filter at the bridge, for a call that reaches it by daemon or by client.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
+        "locator": {
+          "kind": "symbol",
+          "name": "sendToAgent"
+        }
+      },
+      "id": "RLZ-32592A",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It reads the recipient just before the send, treats the host's own activity record as a second read of the same state, refuses busy for a running turn of a provider that does not steer, and steers only where the product knows a steer is taken.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:dde3196997ecb99484b431c4bdcdea7319f9ffbfb3abdd7b98bbdbbdcabe1e6c",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentState"
+        }
+      },
+      "id": "RLZ-3E84XH",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The native state response includes provider and last-message/status fields, and distinguishes absent activeTurn from false by reporting null.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-7J6Y4G",
+      "invariant": "INV-AFTG56",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-01",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The host bridge returns actual provider/model/mode/feature offerings and the wire metadata the Python resolver consumes; it is the boundary to host capability, not another catalog.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AM4R8J",
+      "invariant": "INV-BCXFH9",
+      "origin": {
+        "handoffEntry": "NEW-LIMIT-FROM-REPORT-ONLY",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This bridge is the one process that takes the plugin's answer and then asks it for the list, so the number has to be carried here.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:75900b8557745b97f613a702c436f4f9d035483edaad70c0f851b9bb1b7f84ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "cancelSeat"
+        }
+      },
+      "id": "RLZ-D33A31",
+      "invariant": "INV-VCAQVB",
+      "origin": {
+        "handoffEntry": "L183-exact-seat-cancel-state",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:eb965c50d97b4d583cefe1ad5bd54453088164b6884bd14d6eedd34e169811a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentHasMessage"
+        }
+      },
+      "id": "RLZ-FZWSPY",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It reads the recipient's timeline and answers whether a user message carrying the client message id is already there, which is the record the resend is reconciled against rather than the host's willingness to deduplicate.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:270242269aad9f08fca1cc861d39d3d766a5d901f514702c82b0a6ccd746ac6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "agentCreation"
+        }
+      },
+      "id": "RLZ-P34QJB",
+      "invariant": "INV-ZKV9B3",
+      "origin": {
+        "handoffEntry": "MIK-R132@v1 rule 4",
+        "leaf": "260928-MIK-L113"
+      },
+      "rationale": "The bridge's side of the same: it passes on the keys the host's create request has and nothing else.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:6c07cdcacec59018a2d37926c78d7c5116144e7adfd092686dc81af532beb3fb",
+        "locator": {
+          "kind": "symbol",
+          "name": "providerSteers"
+        }
+      },
+      "id": "RLZ-S9852F",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It is the product's own knowledge of which providers take a steer - a provider the runtime drives through its ACP driver does not - and it is the whole of the test the rule asks for.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:1eb47e79656d46d170216bb1f9900e74a177c1225bbc89c59edaf3309a15c509",
+        "locator": {
+          "kind": "symbol",
+          "name": "archiveAgent"
+        }
+      },
+      "id": "RLZ-VXDQ6B",
+      "invariant": "INV-PRP52X",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 3",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This existing host operation archives the exact ID, retaining the host archive behavior that ends a running turn.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
+        "locator": {
+          "kind": "symbol",
+          "name": "closingText"
+        }
+      },
+      "id": "RLZ-XV2YYX",
+      "invariant": "INV-HJ9MR9",
+      "origin": {
+        "handoffEntry": "L117-R06",
+        "leaf": "260928-MIK-L117"
+      },
+      "rationale": "The bridge hands over the whole final text so transport never silently truncates what policy must file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+        "content": "sha256:773f6528c0313df70b181925f552765ca75485f7368e6d53d10dbc13e95a2c7c",
+        "locator": {
+          "kind": "symbol",
+          "name": "connect"
+        }
+      },
+      "id": "RLZ-YH1Y0Z",
+      "invariant": "INV-VV0B2G",
+      "origin": {
+        "handoffEntry": "PNT-R02@v1 §3",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Disables reconnect and refuses a connected daemon identity different from the selected home.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The native bridge returns the assembled whole final reply without a character cut; the separate delivery policy owns truncation and filing.\n\nAnchor: \"function closingText(items) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:dc4b0ba7d331f26aac77692912e4b0a24eb1526a7618e6d7b3d902492fb188a0",
+            "locator": {
+              "end": 1435,
+              "kind": "line_range",
+              "start": 1425
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:7a10d57d523966bba3cebe6f4f6b5dd321cc23e068c9c8daf909957b772839ae",
+            "locator": {
+              "end": 1464,
+              "kind": "line_range",
+              "start": 1454
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:0d5e445b019128ecebe46e232d30f49c6695f2761a825540af92458db1082715",
+            "locator": {
+              "end": 1197,
+              "kind": "line_range",
+              "start": 1187
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`agents-live` reads unarchived agent IDs through `daemon.fetchAgents`, at most ten pages of 200 entries. It reports `complete` only when the runtime explicitly says `hasMore: false`; a bound or missing next cursor ends the read without establishing absence. It neither resumes agents nor reads their timelines. Whole-reply transport remains separately owned by `closingText`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ab582dd663d455dc656664d8318e003ef81510a",
+            "content": "sha256:9680ca44d3e83fb4e89e64c53f89776491a4d176dd3d936e566a422fc4098387",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 5
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_live_agents.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:80f6449fd43c2ba54bc140818c827de48a6769a360d8f11d04c7b1c77c65f6a2",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A still-loading provider retains discovered modes/default mode/fetched time; missing modes and unanswered models remain unknown rather than successful empty lists. Catalog discovery keeps enabled provider identities at the deadline instead of treating still-loading models as a whole-catalog timeout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:651a5ea43c69f6ee656c77fa70f99b7d95a5bfd7bba72d7bfcc07a7eb0fa7340",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 478
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:45132b987e67cb2f1f3b5f04d0a99fa24f027deb38b5574a95e9e7cec047086e",
+            "locator": {
+              "end": 492,
+              "kind": "line_range",
+              "start": 484
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:39043f275a0350151a247964773c654a3185b5b092bb205f10f99b3b8ea7a641",
+            "locator": {
+              "end": 444,
+              "kind": "line_range",
+              "start": 418
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:4238e748b54b426a4e652fe949ddc419d78191483bb0568cb7e240a58c129343",
+            "locator": {
+              "end": 499,
+              "kind": "line_range",
+              "start": 494
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The command table delegates workspace-open to the imported workspace owner while retaining the bridge command surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:80f6449fd43c2ba54bc140818c827de48a6769a360d8f11d04c7b1c77c65f6a2",
+            "locator": {
+              "end": 266,
+              "kind": "line_range",
+              "start": 249
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`agentCreation` no longer imposes the old Claude-only review-presenter fence or injects `tools: ''` / `strict-mcp-config`. The settings role uses the normal harness launch; the product confines its own bound tool server at registration and dispatch. Retained `presenter-transcript` and `presenter-cancel` remain legacy presenter operations, while `agent-cancel` targets the exact explainer seat and request.\n\nAnchor: `cancelSeat`, `agentState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Optional image/text lists are validated before recipient lookup and accompany the same native send without changing steering or plain-message options.\n\nAnchor: \"async function sendToAgent({ api, daemon }, input) {\"; \"export function sendExtras(input) {\"; \"function listOf(input, name, check) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:c968c1884cff2af1a86b7b33d364870c7af2cc16de93126ea32c6bee30f4b8f2",
+            "locator": {
+              "end": 1219,
+              "kind": "line_range",
+              "start": 1158
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "content": "sha256:b64dbf12f1d75397980d4e00a8d9cd7dd0bf4466d3565d651723d079dd0679da",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ec4c4fce720e19a599f8c48c9500f3f0afdfb63",
+            "content": "sha256:eb841119c142e5bdabb37b0080a5cdbc4a07988a80f88c299b0779f190953a3a",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_send_attachments.mjs"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:14a3c70b338ddd80b68af4f59bec9ef9c5cc6d9b2408feb2ae6ed36e86d8ed28",
+            "locator": {
+              "end": 1248,
+              "kind": "line_range",
+              "start": 1187
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:587762a7b859ee62f1826f00eabd576184420aeb0195a7097a90aee22bed0429",
+            "locator": {
+              "end": 940,
+              "kind": "line_range",
+              "start": 881
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "agent-cancel validates agentId/requestId, finds only that id, cancels it and re-reads it. agentState includes provider, lastUserMessageAt and lastStatus; absent activeTurn is null rather than false. The removed review-presenter Claude-only fence is replaced by server-surface enforcement, not a new native harness fence. The native state response includes provider and last-message/status fields, and distinguishes absent activeTurn from false by reporting null.\n\nAnchor: `cancelSeat`, `agentState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "611f85b75393a0a209952c8b5417ef17cd0a3368",
+            "content": "sha256:26798fe49fa61570a56da80682902293b42ca5b6ac48c535d13801526466fc6a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

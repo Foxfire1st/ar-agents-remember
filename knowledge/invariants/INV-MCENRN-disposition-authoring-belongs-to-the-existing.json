@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A future UI change must not bypass writer admission or authoritative gate visibility through a private review-only disposition path."
+  },
+  "applicability": "The four-tree reviewer writer-authority boundary chosen in MIK-R57@v2 appendix83/151 and rule6.",
+  "conditions": [
+    "The reviewer submission/read surface names the existing authoring authority and its provenance; a stale comparison disables submission rather than selecting substitute inputs."
+  ],
+  "exclusions": [
+    "No new serving authoring endpoint, no assertion that this rendering module executes the writer/gate, and no automatic memory acceptance."
+  ],
+  "id": "INV-MCENRN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/48060148-87d0-4e1e-ad2e-6f1fa353092d/role-launch/freeze05-builder-curator-handoff.md#producer-47"
+      ],
+      "path": "freeze11-r57-eight-prescribed-by-design-boundaries-01.json"
+    },
+    "handoffEntry": "MIK-R57@v2 by-design writer-authority",
+    "leaf": "260928-MIK-L57",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Disposition authoring belongs to the existing writer and gate rather than a private reviewer write path.",
+  "status": "proposed",
+  "supersedes": []
+}

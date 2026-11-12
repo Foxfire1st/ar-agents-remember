@@ -1,0 +1,206 @@
+{
+  "path": "mcp/src/agents_remember/models/role_capsules/__init__.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen DTO surface this package re-exports. Anchor: `CapsuleAdmittedFacts` `CapsuleCapsule` `CapsuleCompilationResult` `CapsuleBinding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:dd176736cd45826295ab7e8823cd0daa90ae87e13a0f34eb93404d222c7c71e7",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 198
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:9b1e198f52a10ca3a182baeab94a683f79a3e0010d7945cdb107613cdbd3e21e",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 461
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:372b60031c0d67597a35a00adfa085d1e81e08fded7627846c3e61026916c63d",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 479
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:fba635e4a8c48dbcba56094aea3dadd7a723aa3dd607642e47be93ae599628bc",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8673a0cc0f664527b38318f5c02481ab5826e739",
+            "content": "sha256:91d16094a7db73921e53d72de9f592915733741a1ed3399038c33c888f05244b",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/types.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The I/O boundary this package deliberately does not contain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:d83e2d57f2e37404de9d44a0dd51cfb781229885bb74bc9f34618a97fcef8b59",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5b2145bba70163c198afb85dbe914657fc8c6b9f",
+            "content": "sha256:915fd89222d1328505df921b788cb9559a7190b597c8b7549b071d961fa0e4f3",
+            "locator": {
+              "end": 92,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/sources.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The sibling package that owns admitted-context resolution and reading.\n\nAnchor: `CapsuleCompilationOutcome`; `CapsuleAdmissionRequest`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1dd0b1463a17ce23128b22d06e82ce24f1df5c1c",
+            "content": "sha256:7fb86a812d5f7475ae949d059f4808d226d000bcb629d8cc069f6350163c2285",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 9
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The layer contract that places these value types in `models` and the I/O in `application`; it declares the target order (`errors < kernel < models < … < application < mcp < cli`) and states that it fails against the tree until the named leaf moves the code.\n\nAnchor: `[contract]`; `rule`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:a61a4fdfbfe3426b07c832a4a9f5d3720b928cb03a528b0e959f5d74c80a1e70",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "check_layering reads layers.toml, loads its contract and builds a report for mcp/src/agents_remember. LayeringReport.ok requires no violations, cycles, stale present flags, undeclared directories or undeclared imports. These definitions establish no candidate-specific violation count or fresh execution result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:f134280fcd0a69bf0773201d352b7814b51c4732841b7a4fe6458e8d5d1e884b",
+            "locator": {
+              "end": 340,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:e07187b947938609ba57dd8dbac7214da9928f7d65679569b60f277a46f5ab6f",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 42
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The unit tests that pin the fitness function itself (not this candidate's result).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
+            "content": "sha256:a78a9bf39a659e5a5b2b809304ed5ccf5360807e0fb57723bed8af902718150c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_write_tree"
+            },
+            "path": "mcp/tests/test_layering.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "23b0782366b995fd3bfd4e6bf0d6cba8823b7190",
+            "content": "sha256:6bcb43940a58ca1762f93294c1a9d5d98c201dd9d0f3625ee101d3f87fd837ab",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/tests/test_layering.py"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

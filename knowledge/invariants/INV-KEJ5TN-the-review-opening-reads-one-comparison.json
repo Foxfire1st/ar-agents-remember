@@ -1,0 +1,45 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The opening request-count and chunk proofs guard whole-catalogue expansion or a second per-selection card fetch while keeping real large queries admissible."
+  },
+  "applicability": "Initial comparison page reads and the card-read set in Changed or All.",
+  "conditions": [
+    "Logical opening reads are summary, task context, outline, leaf-wide trees, shown-invariant cards and lane; cards use ceil(i/500) requests for i distinct shown invariants.",
+    "Cards wait until the leaf-wide tree read answers or fails and the catalogue settles, because Changed needs its code facts.",
+    "Compute the card set without the selection; an explicit selection adds its own subject read but no independent card read.",
+    "A selected subject outside that fixed set can show its heading/subject slot without cards.",
+    "The dashboard server request-head bound admits one 500-identity card query while retaining a finite head bound."
+  ],
+  "exclusions": [
+    "Treating six logical read kinds as exactly six HTTP requests for more than 500 invariants.",
+    "Every possible task/host/chat/frame read as part of the six review reads.",
+    "Speculative subject reads or cards for all catalogue subjects in Changed."
+  ],
+  "id": "INV-KEJ5TN",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 5, exact id MIK-R89@v2 rule 2 · shown subjects; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 92, exact id W6; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 125, exact id MIK-R89@v2 rule 2 · the six opening reads; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 126, exact id MIK-R89@v2 rule 2 · read 5 chunks; disposition retained verbatim in the review map.",
+        "Immutable worker producer list role-reports/worker/aea58f6f-16c1-5ed6-bd6b-cd96cb9da869/role-launch/260928-MIK-L89-A4-curator-handoff-list.json SHA-256 4d62a4a718332826b8d4064427dd6798bb34793781822b9272c563712bcec596, ordinal0 162, exact id W4; disposition retained verbatim in the review map.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0; static source and assertion reading only, no new test execution or browser acceptance. This entry is an explicitly NEW Curator projection, separate from immutable producer data.",
+        "A4-F5 tree 25756231aa86f63ba59f91bec01146d27461e470; no new execution or code acceptance claim."
+      ],
+      "path": "authoring-wave5.corrected-input.json"
+    },
+    "handoffEntry": "RP07",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The review opening reads one comparison model with cards only for the opening shown-subject set, in chunks of at most 500 invariant identities, and a subsequent selection reuses those cards.",
+  "status": "proposed",
+  "supersedes": []
+}

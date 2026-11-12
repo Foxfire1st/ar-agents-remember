@@ -1,0 +1,226 @@
+{
+  "path": "dashboard/src/panels/sprint-graph/SprintGraphView.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:f21bb4ed973d6fce10ceafbb6ffbe238ef556a5b0a27eb2286f531e9856e4aa9",
+        "locator": {
+          "kind": "symbol",
+          "name": "GraphPredecessors"
+        }
+      },
+      "id": "RLZ-BV81PB",
+      "invariant": "INV-H2Y6HE",
+      "origin": {
+        "handoffEntry": "F5-V01",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Draws the reason of an edge of the whole graph through the Markdown grammar.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:94892f75555830d05e4356c451dee7069bcb4bbc404677b22baee6cf045cf1bc",
+        "locator": {
+          "end": 154,
+          "kind": "line_range",
+          "start": 150
+        }
+      },
+      "id": "RLZ-ECDCN3",
+      "invariant": "INV-XJ42YM",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-22",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "readinessOf returns cycle when node.cycle is true; otherwise it passes through only ready or waiting frontierState and returns undefined for landed, in-flight or abandoned. These are dependency annotations, not task-status words: GraphBox obtains task state from the canonical entry and shared presentation table.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:032ede3a6fc72c348dab59296f93f491152201d8bbdd2035af22c00e6fcf03b6",
+        "locator": {
+          "kind": "symbol",
+          "name": "useReducedMotion"
+        }
+      },
+      "id": "RLZ-PWT969",
+      "invariant": "INV-4CTCT1",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 11 / order rows",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "Reads the reader's wish for reduced motion; exported for the rows, which drop the fade on it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:292ca2a27e7af02425de5c78691fd924c319a23077541d8bc9d84953e38f628d",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRestHighlight"
+        }
+      },
+      "id": "RLZ-TQMDXJ",
+      "invariant": "INV-4CTCT1",
+      "origin": {
+        "handoffEntry": "MIK-R127@v1 rule 11 / order rows",
+        "leaf": "260928-MIK-L127"
+      },
+      "rationale": "The one rest logic of rule 11 (180 ms, at once on focus); exported so the rows and the graph cannot drift apart.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:6f5a5c01e4363b57960c454e49402ef105205a13722bb291b90115ddf378c1a3",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-VKR9H4",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This view is one of the named places that show one task's word.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+        "content": "sha256:4b97c0b23c1b36662a1d4659733b442bde44f328ce590a10b2386840b86b08b9",
+        "locator": {
+          "kind": "symbol",
+          "name": "GraphBox"
+        }
+      },
+      "id": "RLZ-Z1ZEK4",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "L168-CUR-M2-21-N03",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "GraphBox resolves the node's master task and renders the visible StatusWord with its until and limit, the readiness badge, and the accessible label naming the status. The earlier range ended inside the key handler, before the elements it claimed.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The wave-grid component and box renderer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:46c765703e228f1be2d5202d901a064e308232c346f9b579a5e7ca83378904e0",
+            "locator": {
+              "end": 207,
+              "kind": "line_range",
+              "start": 148
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a995ff889391494f6d68d05f4de87e3777f7460",
+            "content": "sha256:8f6f11b6c46f7fa3c0c786782a7032b042b5826856eee435d661f9abb67d8de6",
+            "locator": {
+              "end": 351,
+              "kind": "line_range",
+              "start": 281
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+            "content": "sha256:83840dfa9d07a36af705e950d0bac49290fafdcc113a57b84e7fa5a92d808a1b",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 71
+            },
+            "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The wire model consumed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c10d7b98c4d536e0d0de3c1b7e8dff50d23677af",
+            "content": "sha256:aba557ba3e3dd7a0538e54add74e8b5a26632e69e6fbd0805b7b5e653c9c6735",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskExecutionGraphView"
+            },
+            "path": "dashboard/src/types/projection.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The responsive grid/leaf contracts.\n\nAnchor: `waveGridStyles` `leafLineStyles`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4e9801e315eb3e0cb3f9d8873ee957b31c30c2b6",
+            "content": "sha256:1745412435e7d451ae33aea1bfee4aef20a71146dc013e6e03f2acb387e52abb",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/sprint-graph/styles.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The component forcing suite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0073056ad9df27c87365b0f9004653d15172e706",
+            "content": "sha256:f0be5acda6a5bc0f415c559f1bf953523f4a65b1366c4d94d2348df2ac9e2245",
+            "locator": {
+              "end": 193,
+              "kind": "line_range",
+              "start": 106
+            },
+            "path": "dashboard/src/panels/sprint-graph/SprintGraphView.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sprint Order own view mounts this complete graph rather than a second inline wave-grid list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3697bf67f62826377744697f4c60a9d4a4711332",
+            "content": "sha256:af592f172b0641f43098950639df9c6576c90fa15a937449204db16749eda386",
+            "locator": {
+              "kind": "symbol",
+              "name": "OrderGraphViewBody"
+            },
+            "path": "dashboard/src/panels/detail-panel/orderGraph.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/ReviewHeader.tsx",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "Task/title/record controls and supplied owner nodes compose one top line.\n\nAnchor: \"export function ReviewHeader({\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b05e12945020a3cab2a0739fdcc215348575db22",
+            "content": "sha256:ae111b25bf183b9cf0b9c9830582794b3c411efc5aa092a2ecd9a26aa2e96b29",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Dated leaf ids shorten without changing their underlying identity.\n\nAnchor: \"// The leaf's short id, as the mockup's label names it (app.js `topline`, \"Intent review · L181\"): the\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b05e12945020a3cab2a0739fdcc215348575db22",
+            "content": "sha256:39c0a652125028abaebbff6ae8807b50352f744bf230e14602cebd55b24d58f2",
+            "locator": {
+              "end": 169,
+              "kind": "line_range",
+              "start": 165
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Responsive title and record styling releases width without dropping complete tooltip text.\n\nAnchor: \"// next ones; its own parts wrap inside it, so none runs past the line or under the chip (rule 11).\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b05e12945020a3cab2a0739fdcc215348575db22",
+            "content": "sha256:7c11c2956494f40fbb6c50ca0be213692fb9d0e959c35ed071dac390e23967b8",
+            "locator": {
+              "end": 230,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,59 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.triageMarkers.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e2cc5b79154fa92e4f0b0f4ca555b754006d5ef5",
+        "content": "sha256:09dba8f0929b0b7b518e9d246288c81643e05efb7ef4912ee45f3309da01289b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-90D2YS",
+      "invariant": "INV-WZAMFR",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 12",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "This suite returns to the marker and advances frames while asserting that the held marker focus is kept; it no longer presses J or delivers a selected reply, so it carries no J-to-next-row focus journey.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e2cc5b79154fa92e4f0b0f4ca555b754006d5ef5",
+        "content": "sha256:09dba8f0929b0b7b518e9d246288c81643e05efb7ef4912ee45f3309da01289b",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-FRC8YH",
+      "invariant": "INV-TJE3KM",
+      "origin": {
+        "handoffEntry": "MIK-R86@v1 W03 source-currentness native resolution",
+        "leaf": "260928-MIK-L86"
+      },
+      "rationale": "Historical attachment of the already-retired L86/R87 carriage record; source callback adaptation is not a new execution or current native acceptance claim.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The partial-family invariant route supplies the unknown reason once in each rail/reading zone without an invented member row. An unavailable outline does not steal a held marker return. This file no longer contains its former j-next journey and does not claim that journey moved into these two cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2cc5b79154fa92e4f0b0f4ca555b754006d5ef5",
+            "content": "sha256:abea3b7c73151210817309072c3e7d3c41cb8b107ff7305a5b6c7129272c0c56",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 103
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

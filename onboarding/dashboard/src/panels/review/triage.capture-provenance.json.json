@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/triage.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current receipt preserves its explicit section names and declared capture custody; reading the metadata does not independently execute or validate any recorded run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc7ac05259c5676e1a7ca9d8562de5a1d540fa0d",
+            "content": "sha256:b021ff4831e81e6c9f632f2c473b96d7768994b72446979b627072b7c80ec90d",
+            "locator": {
+              "end": 168,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

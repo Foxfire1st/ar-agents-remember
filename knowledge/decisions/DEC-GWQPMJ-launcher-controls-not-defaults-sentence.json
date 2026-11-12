@@ -1,0 +1,73 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The requirement explicitly rejects a smaller/moved sentence and a copied tab definition; the chosen compact-control presentation constrains later launcher work without changing launch authority."
+  },
+  "alternatives": [
+    {
+      "option": "Represent defaults and instruction/mode provenance in controls and hover, with one shared tab visual definition.",
+      "reason": "Keeps the existing launch information and accessible names without the mismatched sentence/titled row.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the defaults sentence smaller or move it below the controls.",
+      "reason": "Still leaves the sentence the ruled controls-only row removes.",
+      "reconsider_when": "A later approved requirement explicitly calls for a running defaults summary in this surface.",
+      "status": "rejected"
+    },
+    {
+      "option": "Copy the tab metrics into a launcher-local recipe.",
+      "reason": "Creates a second visual authority and permits the two surfaces to drift.",
+      "reconsider_when": "A later approved design deliberately separates the launcher and tab visual contracts.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Mode/instruction/permission information is conveyed by chips and hover; selector names stay accessible.",
+    "Provenance and full selected labels survive compact display; launch policy and payloads are unchanged.",
+    "Controls may wrap whole with width or excess features; reply prose remains absent."
+  ],
+  "context": "The prior launcher had visible selector titles, a running defaults sentence and a browser-look feature control unlike the cockpit tabs. The developer asked to remove titles, tighten selectors and match the tabs while retaining what the launcher offers and sends.",
+  "decider": "Developer direction D206, approved MIK-R133@v1 under D47/D48.",
+  "id": "DEC-GWQPMJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-MXTMP8"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-3DKC7T"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7f6cc9a11ef6150c90de6828e89f182239701808",
+        "content": "sha256:6b0d0c39b7a67456d5d8953831418de84ba58a2d67fe1cc92a13f8c1b11bbd7a",
+        "locator": {
+          "kind": "symbol",
+          "name": "viewTabMetrics"
+        },
+        "path": "dashboard/src/grammar/viewTabLook.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Developer direction D206; MIK-R133@v1 rules1-9 and non-conforming examples (sentence kept smaller/moved, copied tab look); preserved R71 launch authority."
+      ],
+      "path": "l133-post-sync-curated-handoff.json"
+    },
+    "handoffEntry": "L133-D206-controls-presentation",
+    "leaf": "260928-MIK-L133",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

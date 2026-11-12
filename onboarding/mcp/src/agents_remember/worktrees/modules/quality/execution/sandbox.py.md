@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:15:01+00:00 |
-| lastVerifiedCommitHash | `602143bd1d48226f4d53b83ff7c5002a695dcdff` |
-| lastVerifiedCommitDate | 2026-09-09T00:26:24+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -43,29 +33,18 @@ The outer clean executor owns preparation, runtime admission, gate starts and cl
 
 None recorded for this file's bounded responsibility.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The resolved registry supplies no applicable external Domain Documentation source for this card. | — | — |
+### Docs References
 
-## Repo-Internal References
+The resolved registry supplies no applicable external Domain Documentation source for this card.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fresh preparation loads configured authority and observes actual source selection. | `_admit_prepared_profile` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:42-66 |
-| Selected preparation retains frozen semantic authority and bounded raw-file provenance. | `_selected_profile` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:69-118 |
-| Manifest publication rechecks source selection and binds actual retained transport. | `_write_sandbox_manifest` | mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py:121-169 |
+### Repo-Internal References
 
-## Cross-Repo References
+- Fresh preparation loads configured authority and observes actual source selection. [1]
+- Selected preparation retains frozen semantic authority and bounded raw-file provenance. [2]
+- Manifest publication rechecks source selection and binds actual retained transport. [3]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No separately configured cross-repository source is used for this card. | — | — |
+### Cross-Repo References
 
-## Update History
-
-- 2026-09-09T02:42:21+02:00 — CCR-L24 inherited/current-source reconciliation 2026-09-09: Re-read the current card purpose, logic, invariants, and cited route against the frozen candidate source; no content or route change was required, and the existing claim bytes remain accurate. source-sha256=36ce3ed52ec3000f97590c46b25bd5607b77cf3672bfe9d433151eb6b872f61a; verification metadata remains unchanged because commit-owned realization is pending.
-
-
-- 2026-09-06T15:15:01+00:00 — Created from the complete source at `c69d5171187fa1957025e393270db9f5a864ab14`. Documented the selected-original, terminal or transport responsibility and its actual neighboring owners. Source verification is not execution or acceptance evidence.
+No separately configured cross-repository source is used for this card.

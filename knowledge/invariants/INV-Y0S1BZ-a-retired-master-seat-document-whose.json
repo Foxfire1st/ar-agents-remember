@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The case {'path': 'mcp/tests/test_untyped_sprint_rows.py', 'symbol': 'test_a_retired_masters_kept_seat_document_is_readable_and_its_writes_refuse'} proves this obligation on the candidate."
+  },
+  "applicability": "A retired master whose sprint row kept its seat document's file cell.",
+  "conditions": [
+    "The retirement wrote a plain retirement row that retained the legacy seat file.",
+    "A task_doc write would synchronize the seat document's row."
+  ],
+  "exclusions": [
+    "A retirement row that carries no file cell.",
+    "Reads of the seat document, which stay readable."
+  ],
+  "id": "INV-Y0S1BZ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "focused.txt; negative-O3.txt"
+      ],
+      "path": "entries-list.json"
+    },
+    "handoffEntry": "L41-continuation-O3",
+    "leaf": "260928-MIK-L41",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A retired master seat document whose file cell was retained remains readable, and task_doc writes that would sync its retired row deliberately refuse with the words the master is retired.",
+  "status": "proposed",
+  "supersedes": []
+}

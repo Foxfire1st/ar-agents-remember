@@ -1,0 +1,39 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/evidence_provenance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Candidate and machine facts form one content-bound provenance payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7403a5746ba9ac8ddb68552db026851bfb8e691",
+            "content": "sha256:ccb79fdee2ec7ae58d700237573a5264c6b8c56fd7563d4dd25637552623c6c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "capture_provenance"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The CLI refuses without Dagger admission before publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f7403a5746ba9ac8ddb68552db026851bfb8e691",
+            "content": "sha256:8d8d81d09ff107850aba192c4a1785865e3ba3b8b2247339d8cc76c3847fad0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

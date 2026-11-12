@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/panels/review/explainer/ExplanationView.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+        "content": "sha256:c276d9b9b9f625cb34918ecdc83502b351ed3df6be3b26b27fdd89af2dbafb53",
+        "locator": {
+          "kind": "symbol",
+          "name": "opens in one isolated frame with no model: a channel for its revision and nothing else"
+        }
+      },
+      "facet": "Pins revision-specific placement, isolation and controls over the mounted stubbed transport.",
+      "id": "PRF-1BQ9NK",
+      "invariant": "INV-YY035T",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE04-saved-reading",
+        "leaf": "260928-MIK-L183"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A saved page opens one isolated frame for its exact revision and starts nothing\n\nAnchor: `opens in one isolated frame with no model: a channel for its revision and nothing else`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+            "content": "sha256:5ae7ef93a7cef86ae7339f8ff4c2efbd8c3570ad125379ee2e9606f56a26269d",
+            "locator": {
+              "end": 1044,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A navigated or departed frame is revoked alone, and its sibling keeps its document\n\nAnchor: `revokes and reopens only the navigated compare frame on departure or second load without disturbing its sibling`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a299beb4ef3337f8a5a1ec713a793e28ead801cf",
+            "content": "sha256:2f69972b38d0ac6dd7444a4f63bd5445bc2e052fea1f4486aafa4e8ed5454d58",
+            "locator": {
+              "end": 1044,
+              "kind": "line_range",
+              "start": 913
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

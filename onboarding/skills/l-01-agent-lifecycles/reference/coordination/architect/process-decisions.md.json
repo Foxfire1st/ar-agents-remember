@@ -1,0 +1,76 @@
+{
+  "path": "skills/l-01-agent-lifecycles/reference/coordination/architect/process-decisions.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "One page of coordinating rules, one-line reports of formal decisions, and standing rulings applied first.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96e8210cc58e42d2df0d82c2bbd6a6f0586bfabb",
+            "content": "sha256:173fe38dc0574b49b853acb108da01b2745f09adcdb280ed6081d1eac44c2b3b",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recurring dead ends and unresolved blockers go to the developer without granting rounds or scope.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96e8210cc58e42d2df0d82c2bbd6a6f0586bfabb",
+            "content": "sha256:263b4fabd19ab33b30b9f54e8477a099994ae9e05dd8f2571006acc5f04c7e4b",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Mid-master process weaknesses are recorded, not rebuilt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96e8210cc58e42d2df0d82c2bbd6a6f0586bfabb",
+            "content": "sha256:3148234a9b9f52ce574c844fb539603605fe5a623503e48cb14f90a7fcef980f",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 25
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Architect role points here before deciding or escalating a coordination issue.\n\nAnchor: `process-decisions.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de0e221dc51f2f0b067db007cb4c00b17ab3bd39",
+            "content": "sha256:f64e3b56a4d253a4a702acecc53fa48333b398950105fe322d8a92773cace2f4",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 116
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/architect.md"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

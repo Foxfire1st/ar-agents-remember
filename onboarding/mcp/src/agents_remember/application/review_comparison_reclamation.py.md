@@ -1,0 +1,157 @@
+# mcp/src/agents_remember/application/review_comparison_reclamation.py
+
+## Governing Overview
+
+[application route overview](overview.md)
+
+## Purpose
+
+The two explicit deletion owners for historical comparison content. Earlier canonical freezes recorded each pin or snapshot's deletion owner and cleanup scope. Those freeze producers are retired; these operations still reclaim only the exact historical artifact its retained manifest identifies. No new canonical dataset is frozen here.
+
+The module exists because of the packet's own rule — *a new snapshot or pin that cannot name its bounded
+reclamation path is unbounded durable state* — and its whole design follows from two properties the
+reopen depends on:
+
+1. **Record ordering differs.** Code-pin release writes its deletion record before removing the ref and withdraws it if release refuses. Snapshot discard currently verifies and removes bytes before writing its record. The earlier record-first description was unimplemented; current source documentation states this removal-before-history boundary.
+2. **Only what the manifest named, inside the scope the manifest recorded.** A code release deletes
+   exactly the ref the manifest recorded and refuses a ref that has moved; a snapshot discard deletes
+   exactly the recorded `cleanup_scope` of each retained half. Neither touches the manifest — the
+   manifest is the record *that the generation existed*, and a reopen has to be able to say so — and
+   neither reaches into another generation's directory or another leaf's namespace.
+
+**Nothing here decides *when* a comparison is finished with.** Release and discard are explicit acts a
+caller performs: the freeze and reopen paths never call them, so *when* a comparison may be reclaimed is
+a lifecycle decision with no owner in this leaf.
+
+## Code Commentary
+
+### Logic
+
+**`release_comparison_code_object` (`:77-124`) — the deletion owner for one generation's code pin.** It
+reads the generation's manifest through `_read_manifest_for_owner` (`:244-250`), and if the record names
+**no pin** it raises `CodeObjectRetentionError("code-object-ref-absent")` rather than reporting a
+successful no-op: a tree that committed history already held has nothing this owner may release. It then:
+
+- **fails fast before recording anything.** `_require_the_ref_names_the_record` (`:150-165`) refuses when
+  the ref no longer points at the recorded commit, checked *ahead of* the record for the reason the
+  record exists — "a deletion record written for a release that was then refused would claim a history
+  this owner never made unavailable, and a later reopen would report that claim". The retention owner
+  re-checks under its own call, so this is a fail-fast rather than the authority.
+- **measures custody before deleting it.** The record's `released_custody` is
+  `code_object_observation(repository, retained.tree, names)`, taken *before* the ref is deleted, because
+  "neither can be recovered after the fact" — and a reader of the record cannot tell afterwards whether a
+  release discarded the last copy of a tree or merely stopped duplicating history a branch already holds.
+  `_custody_names` (`:127-138`) reads the names back **from the manifest**, not from a live contract,
+  because a release happens long after the leaf's enclosure may be gone and the record is the only thing
+  that still knows which refs were asked.
+- **writes the record, then deletes, and takes the record back if the deletion refuses.** If
+  `release_retained_code_object` raises, the already-written record is unlinked (`record.unlink`) so the
+  operation leaves neither a false record nor a half state.
+
+**`discard_comparison_snapshots` (`:174-210`) — the deletion owner for the retained knowledge
+snapshots.** For each `retained` binding it writes one `ComparisonHistoryDeletion` per half, in the
+record's own vocabulary (`_knowledge_target`, `:144-147`: `knowledge-before` / `knowledge-after`), inside
+that half's own recorded `cleanup_scope`, and returns the records it wrote. A half that is not `retained`
+is skipped: it has no artifact to delete. The manifest file itself is never removed.
+
+**The deleted digest is *measured*, never copied from the manifest.** `_measure_and_remove` (`:213-241`)
+reads the snapshot, digests it, and compares against `binding.artifact.sha256`
+**before** unlinking anything. A mismatch raises
+`ComparisonReclamationError("snapshot-bytes-mismatch")` with both digests named and *nothing* recorded or
+removed — because a deletion record that named content this owner did not delete would be a false record
+of its own act. A snapshot that is already gone is recorded as `deleted_digest=None`, so a retry of an
+interrupted discard **converges** instead of failing, and the record still states what was found. An
+unreadable file (anything but `FileNotFoundError`) is `snapshot-unreadable` rather than a silent skip.
+
+**The two error types are raised rather than returned, deliberately.** `ComparisonReclamationError` is
+raised because "the caller is a deletion: the caller must not proceed to record a deletion, and a
+returned value would make 'nothing was removed' easy to overlook at the one place where removing the
+wrong bytes is irreversible" (its own docstring in `errors.py`); `CodeObjectRetentionError` is reused for
+the ref-shaped failures because the same typed failure already owns them.
+
+### Conventions
+
+`__all__` publishes the historical owner constants and the two explicit deletion operations. These names preserve old manifest ownership; they establish no current canonical freeze producer. `CodeObjectTarget` and
+`KnowledgeTarget` (`:67-68`) are `Literal` types spelled with the record's own literal vocabulary, so a
+release and a discard cannot come to name a target the record does not have. `_now()` (`:71-74`) is the
+module's one clock read, used only when the caller supplies no `recorded_at`; both operations accept one
+so a caller can make a batch of deletions share a timestamp.
+
+### Invariants And Boundaries
+
+- **Record-first applies to code release.** Snapshot discard removes verified bytes before recording the deletion; an interruption in that interval has no established record-first guarantee. Current source documentation explicitly names this window.
+- **A deletion record is withdrawn if the deletion it describes does not happen.** The code release
+  unlinks its record when the retention owner refuses.
+- **A released ref must still name the recorded commit.** A moved ref is refused and the ref is left in
+  place.
+- **A discarded snapshot must still hold the recorded bytes.** A mismatch is refused with nothing
+  removed and nothing recorded; an already-absent snapshot is recorded honestly as `None`.
+- **The manifest is never deleted** — a reopen has to be able to say the generation existed.
+- **Scope is per-generation and per-half.** Nothing here reaches into another generation's directory,
+  another leaf's namespace, or a path outside a recorded `cleanup_scope`.
+- **No policy.** *When* a comparison may be released or discarded is not decided here; this module
+  provides the acts, and no owner in this leaf calls them.
+- **Boundary: retained-history deletion is explicit and leaves an unavailable-history record rather than
+  aliasing today's data** — the reopen reports `unavailable-history` from these records, never by
+  resolving whatever the path holds now.
+
+### Todos
+
+None recorded.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+### Repo-Internal References
+
+Every claim on this card is checkable in the module's own docstring and functions, in the manifest fields
+it is bounded by, and in the cases that measure both deletions. Three details a reader should carry: the
+code-release record is written **before** ref deletion and withdrawn if release refuses, while snapshot bytes are removed before their history is written; the deleted digest is
+**measured**, not copied, and an already-absent snapshot converges as `None`; and the custody recorded at
+release is taken *before* the ref is removed, because it cannot be recovered afterwards.
+
+
+- The historical reclamation owner states its per-route ordering and bounded explicit policy boundary. [1]
+
+
+- The two historical deletion-owner names retained by the manifest. [2]
+
+- The deletion targets, spelled with the record's own literal vocabulary. [3]
+- **The code release: no pin → refuse; moved ref → refuse before recording; custody measured before deletion; record written first and withdrawn if the release refuses.** [4]
+- **The custody names read back from the record rather than re-derived from a live contract, because the enclosure may be gone.** [5]
+
+- Snapshot discard removes verified historical bytes before writing its per-half deletion record. [6]
+
+- **The digest that is measured rather than copied, the mismatch that records nothing, and the already-absent snapshot that converges as `None`.** [7]
+- The record the two operations write, and the manifest read that bounds them. [8]
+- The retention owner whose ref the code release deletes, and the two failure statuses it raises. [9]
+
+- The typed failures preserve ref and snapshot refusal facts without deletion authority. [10]
+
+
+
+- Snapshot discard checks exact bytes before removal and writes the measured deletion record afterwards. [11]
+
+
+
+- Code release records measured custody before ref release and withdraws its record on refusal. [12]
+
+
+- A moved retained ref is refused before release. [13]
+
+
+- Historical reopen keeps unavailable retained canonical knowledge separate from exact readable source and archival deletion facts. [14]
+
+
+### Cross-Repo References
+
+No cross-repository behavior is implemented in this file. It runs Git against the repository the
+manifest names and unlinks files under the coordination task root.
+
+No meaningful cross-repo references found.

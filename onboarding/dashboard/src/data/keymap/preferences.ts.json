@@ -1,0 +1,54 @@
+{
+  "path": "dashboard/src/data/keymap/preferences.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "REVIEW_CHORDS is the retained default command table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfaec6dbfc8f9cbb70c5c68c92188b9a81199d96",
+            "content": "sha256:742d9bf1abb2b3512178f8c373cc482f891e12d2851671a6734c2750972ddc87",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/chords.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "BROWSER_FORBIDDEN is the shared validation exclusion set.\n\nAnchor: `dashboard/src/data/keymap/reserved.ts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df2c529800964b00ab8cc302b9be0d78aece71ce",
+            "content": "sha256:13bedf8d606cd1006ac94f155ee854d92e195952d3d9e3367148c7af424a892c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/keymap/reserved.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Current defaults contain only REVIEW_CHORDS; the stored override and subscription surface remains.\n\nAnchor: `dashboard/src/data/keymap/preferences.ts`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d98525da56809e763a8e2125dab624fa6c3f32a9",
+            "content": "sha256:6b2735b7ed8a068f45f99e3223853589238def143ade2b515ad2fa7eebfb023b",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

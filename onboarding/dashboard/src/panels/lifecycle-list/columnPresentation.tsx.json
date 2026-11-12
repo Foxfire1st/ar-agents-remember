@@ -1,0 +1,78 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/columnPresentation.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+        "content": "sha256:516806e520f6bd8d636878384426d04e668a123e7f41a38d5c9f21372a2776e2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-21HBXK",
+      "invariant": "INV-YNWH01",
+      "origin": {
+        "handoffEntry": "L190-R1-F08",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Column composition passes subject callbacks without restoring client-side native-event inference.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+        "content": "sha256:474f6e0f390585d000429dcd344d250356e2400ca6bf5c83152e22a64e9f1490",
+        "locator": {
+          "end": 213,
+          "kind": "line_range",
+          "start": 172
+        }
+      },
+      "id": "RLZ-89SXF2",
+      "invariant": "INV-K9B8G8",
+      "origin": {
+        "handoffEntry": "MIK-R144@v1 rule 3a",
+        "leaf": "260928-MIK-L144"
+      },
+      "rationale": "Places the bell at the right end of the column's head, beside the grouping switch; the queue has no block of its own in the column.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+        "content": "sha256:38e85062975ff4236ae8af2b451b60fbd74e6d1b361a6702aca3271cc3082f89",
+        "locator": {
+          "end": 166,
+          "kind": "line_range",
+          "start": 49
+        }
+      },
+      "id": "RLZ-B0ZF1M",
+      "invariant": "INV-8WM5H4",
+      "origin": {
+        "handoffEntry": "MIK-R163@v1",
+        "leaf": "260928-MIK-L164"
+      },
+      "rationale": "The extracted presentation declarations preserve owned row/group font sizes, bounded cells and focus treatments. Earlier mounted typography evidence is historical and does not certify the new major-step progress lane.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Extracted column styling and controlled grouping pivot preserve separate row derivation and task-own state; there is no pickup dismissal control.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83b4bd442bbeab34f2f4e4d7d95140c60cc3bee6",
+            "content": "sha256:516806e520f6bd8d636878384426d04e668a123e7f41a38d5c9f21372a2776e2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

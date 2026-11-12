@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents treating fluent or short prose as proof of preserved meaning and silently dropping an actor, condition or exclusion."
+  },
+  "applicability": "Curator-authored invariant statements, family guarantees, history reasons and proposed rewrites governed by the shared writing profile.",
+  "conditions": [
+    "Keep the actor, action, object, applicability, conditions, exclusions, modal force, evidence identity and frozen history.",
+    "Independent facet/case review precedes ordinary writer publication of a claimed same-meaning rewrite."
+  ],
+  "exclusions": [
+    "No word-count, fluency or style heuristic establishes semantic equivalence or grants mutation authority.",
+    "This guide does not assert full ASD-STE100 conformance or rewrite historical witnesses."
+  ],
+  "id": "INV-RKQ450",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/47d47893-c5d1-4ea1-a7cf-85b7faed8dcd/round1-r88-carry-forward.json"
+      ],
+      "path": "whole-curation.json"
+    },
+    "handoffEntry": "MIK-R88@v1/guide",
+    "leaf": "260928-MIK-L88",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Curators use one STE-inspired profile that preserves actors, scope, conditions and exclusions without letting writing heuristics judge semantic equivalence.",
+  "status": "proposed",
+  "supersedes": []
+}

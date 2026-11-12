@@ -1,20 +1,33 @@
 # dashboard/src/panels/engine-room/conduits.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/engine-room/conduits.tsx`             |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-07T08:19Z                                           |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`                  |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `overview.md`                                               |
-
 ## Governing Overview
 
 [panels/engine-room overview](overview.md)
 
-## Purpose
+
+## Current enclosure-only composition
+
+Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data-strategy. Opacity is 0 while retiring or planned, otherwise 1 with no clone-specific delay. Running draw/marker/packet and inner-path ghosting plus landing progression survive.
+
+### Maintenance boundaries
+
+Replace provider-edge and replay-shape assertions with geometry-gated worktree/ledger/sync/integration paths. Remove clone arc/transient-delay rules; document zero-delay opacity, running markers/packets and retained LandingFlows. Correct the already-stale replay-bend claim rather than preserve it through L112.
+
+Source/test/fixture inspection is not a fresh mounted capture or a passing test run.
+Historical provider-shaped input data and retained compatibility definitions do not
+restore removed provider visuals or tool exposure.
+
+- Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof. [3]
+- Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof. [4]
+- Conduit returns null for edge kinds without EDGE_GEOM; all supported paths are straight, replay only changes title/data- — source ownership, not executed visual proof. [5]
+
+## Historical superseded account (non-operative)
+
+The prior onboarding below is retained for provenance and unrelated design history.
+It is not current provider-render, fallback, prototype-parity or execution guidance.
+Current behavior and its limits are the operative contract above.
+
+
 
 The SVG conduit and landing-flow renderers of the Engine Room scene, extracted from
 `EnclosureCanvas.tsx` by the 260731-EFA-L8 responsibility split. `Conduit` draws a
@@ -46,32 +59,24 @@ Ghosting applies to the held memory lane while its code sibling stays solid.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The per-edge conduit renderer with replay/ghost handling. | `Conduit` | dashboard/src/panels/engine-room/conduits.tsx:70-138 |
-| The landing-tier flow renderer and its ref resolution. | `LandingFlows` | dashboard/src/panels/engine-room/conduits.tsx:192-205 |
 
-## Cross-Repo References
+- The per-edge conduit renderer with replay/ghost handling. [1]
+
+- The landing-tier flow renderer and its ref resolution. [2]
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the new
-  conduits module extracted from `EnclosureCanvas.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+No applicable cross-repository source was found.

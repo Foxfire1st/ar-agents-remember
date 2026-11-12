@@ -1,0 +1,56 @@
+{
+  "path": "mcp/src/agents_remember/canvas/presenter_tools.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+        "content": "sha256:8548552e374058641d1e8f4b3cb00ef8d2f4eb50ab1cf15e29f61bf0f195e4d9",
+        "locator": {
+          "kind": "symbol",
+          "name": "AuthoringTools"
+        }
+      },
+      "id": "RLZ-NRXTRA",
+      "invariant": "INV-GWMA1V",
+      "origin": {
+        "handoffEntry": "L183-CUR-ATTACH-confined-authoring",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The shared authoring implementation now admits explicit explainer instructions/grants and drafts roots while retaining exact input digests and guarded output paths; the removed standalone server is not recreated.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The shared authoring implementation admits the prepared folder and its exact input grants.\n\nAnchor: `AuthoringTools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+            "content": "sha256:9324a22ea57299596e459be2abf70d8dac4280dbacdd8bfbf258b5e3b3831c39",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "AuthoringTools admits the prepared input grants and output folder; the standalone presenter server constructor and CLI entry are removed.\n\nAnchor: `AuthoringTools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4dd69ffa2141b0e24ed49d9d835e75c341c5b8d",
+            "content": "sha256:9324a22ea57299596e459be2abf70d8dac4280dbacdd8bfbf258b5e3b3831c39",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

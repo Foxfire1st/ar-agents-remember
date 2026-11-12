@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/l86.family.captured.json",
+  "realizes": [],
+  "references": {
+    "4": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "66856fe5a8a21152e1b58f399ec77e64a13da47c",
+            "content": "sha256:76dd0132f9ca1540937f57c67ee273cb401900baf86bba61d617af5b9f465a9e",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

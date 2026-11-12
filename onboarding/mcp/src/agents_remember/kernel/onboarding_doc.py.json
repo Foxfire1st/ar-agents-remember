@@ -1,0 +1,128 @@
+{
+  "path": "mcp/src/agents_remember/kernel/onboarding_doc.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "History extraction and history-line delta parsing survive; metadata-row rewriting was removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
+            "content": "sha256:4f75729ce2f9d909051989ffc4af25e167ef95d9db2418164bb038e04e5dc978",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 116
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
+            "content": "sha256:e88faebbba65d146f40860310b057b247ca96496dc4f9b9907a22a6069d1ce9d",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 125
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The onboarding owner imports retained Markdown table parsing, not the removed body/history classifiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
+            "content": "sha256:39ae0f388b10d3d1c59c520850dfc5faffea5e6d83d43714e305b6f8034c0708",
+            "locator": {
+              "kind": "symbol",
+              "name": "markdown_table_cells"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:0c5deb490c9c9d5f464cbb89bf465ef96f96bbeaceb03a350061899f5d9d2321",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The public worktree facade still imports and exports source-onboarding plans and entity/index refresh helpers; metadata-row rewriting was removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:09882988e3f13fce980ba4f47bce626b72921e047865fcbf3e448ee377fb391f",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:62ac5d6481568c1f145e095f4de47b87c94bd63f48961d4b311a03c007a1b8d3",
+            "locator": {
+              "end": 165,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Meaningful-body normalization strips verification fields and history.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
+            "content": "sha256:8d1d37a28c5b77ff665fa5eea7b58ae6355fef345762b3f47ef840f1cb2a0222",
+            "locator": {
+              "kind": "symbol",
+              "name": "meaningful_body"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "History extraction is section-aware.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "67a2ea5e0dc585ffaf0b58510d28387af2701164",
+            "content": "sha256:4f75729ce2f9d909051989ffc4af25e167ef95d9db2418164bb038e04e5dc978",
+            "locator": {
+              "kind": "symbol",
+              "name": "update_history_section"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

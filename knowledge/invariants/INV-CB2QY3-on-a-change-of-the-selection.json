@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Releasing input against the earlier agent or blanking the sole frame would violate selection ownership without helping native drawing."
+  },
+  "applicability": "Input and waiting presentation while a document selection changes.",
+  "conditions": [
+    "The pane shows the application native screen rather than retaining a second picture.",
+    "Negotiated on-chat is exact selected-screen evidence; drawing is a separate completion."
+  ],
+  "exclusions": [
+    "An older plugin can settle its waiting line at its earlier answer as the notice explains."
+  ],
+  "id": "INV-CB2QY3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/paseoFrameLateAnswer.test.tsx › \"is let through when the application says it is on the chat, while the line stays until the chat is shown\"; dashboard/src/cockpit/paseoPluginBridge.test.ts › \"tells a dashboard that reads it once when the application is on the agent's chat, before the chat is drawn\"; dashboard/src/cockpit/document-chat/knownChats.test.tsx › \"keeps the earlier chat shown and out of reach while it asks, and hides the frame only on the answer no chat\"; sent-text probes S-tip and S-old of Attempt3"
+      ],
+      "path": "producer-list.json"
+    },
+    "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+    "leaf": "260928-MIK-L140",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "On a change of the selection the frame is never hidden or blanked; it takes no input from the click until the application is on the selection's chat, and the dashboard's one line stays until the conversation is shown.",
+  "status": "proposed",
+  "supersedes": []
+}

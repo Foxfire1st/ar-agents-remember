@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "Removing the dashboard's sidebar without ending the plugin's load-time collapse would leave the host's list closed; ending the collapse without a one-time migration would keep old stored 'closed' state forever; keeping the Parent pill where the host gives no live value would leave a control that cannot act; and a document page that let its collapse write the shared stored choice would change every other frame and tab. The members together promise one navigation that behaves and one that never lies, now on the document page too."
+  },
+  "guarantee": "The dashboard keeps the retired Chats sidebar, its grouping plane and its Show/Hide chat-navigation control removed; the host's native list still owns its sidebar opening, closing and remembered choice. The task-bound review explainer column has the admitted header menu for its explainer and other matching task seats, and explicit menu selection steers the retained frame; this does not restore the retired dashboard sidebar. A document-mode frame collapses the native list and hides its toggle without changing the stored choice, while Chats preserves that choice through native controls. The plugin's Parent control remains offered only for a live known source the bridge can check. Ordinary taskless default selection and exact execution steering retain their owners, and the obsolete AR session/composer/highlight plane remains removed.",
+  "id": "FAM-8GST1A",
+  "members": [
+    "INV-WEZ24E",
+    "INV-7QV5CQ",
+    "INV-STRQX4",
+    "INV-XQMXT2",
+    "INV-QS9SRX",
+    "INV-4S93MX",
+    "INV-7D9QDG",
+    "INV-A3AK6R",
+    "INV-X60KEC",
+    "INV-YJ2H50"
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "L75-the-host-list-is-the-only-chat-navigation",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "routes": [
+    "dashboard/src/cockpit",
+    "mcp/src/agents_remember/cli",
+    "mcp/src/agents_remember/package_data/paseo_plugin/client"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Native chat navigation and scoped review-seat selection"
+}

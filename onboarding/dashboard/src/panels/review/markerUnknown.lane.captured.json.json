@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/markerUnknown.lane.captured.json",
+  "realizes": [],
+  "references": {
+    "3": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad9b1cb3a5dfc465752cfec43ea7a82764a5906d",
+            "content": "sha256:d99afc7bdf0e118564ce36b1060799fcb267cd97e9a6b23393ce1f39990b3e30",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

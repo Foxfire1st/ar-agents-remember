@@ -1,43 +1,29 @@
 # mcp/src/agents_remember/application/task_docs/task_doc_publication.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_doc_publication.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [governing route overview](overview.md)
 
 ## Purpose
 
-Own exact task-document source-CAS and task-first publication. One mutation publishes canonical
-task bytes and invalidates the complete affected sprint-projection union under the task-publication
-lock, then rebuilds each disposable projection independently.
+Own exact task-document source-CAS, task-first publication and the repository task-root file-lock boundary. Task-document preparation and central publication share that one re-entrant file lock; a call-scoped marker refuses a publication nested inside an active publication. Disposable projection invalidation and per-scope rebuild do not replace this source/copy rollback boundary.
 
 ## Code Commentary
 
 ### Logic
 
-`TaskDocPublication` carries the original/candidate documents, complete accepted JSON/Markdown
-source snapshots, and optional publisher. `task_doc_publication_transaction` first invokes the
-central zero/one graph-document assertion, derives exact before/after projection scope changes, and
-builds a `TaskDocPublicationTransaction`. `publish_task_doc_transaction_and_refresh` delegates that
-transaction to `publish_task_fact_mutation`: accepted bytes are rechecked, task truth is written,
-and every affected projection scope is invalidated under one task-publication lock; each invalidated
-projection then rebuilds independently. Dry-run validates the same source pair and previews the
-same projection effects without writing. A mismatch raises `TaskDocPublicationConflict` with
-bounded expected/observed evidence.
+`TaskDocPublication` carries original/candidate documents, exact JSON/Markdown source snapshots and an optional publisher. Its prepared documents retain each owning task-root/document pair, so a synchronized commanding sprint is not rewritten under the leaf root; graph cardinality unwraps those pairs and write_task_doc_batch publishes the exact batch. The transaction builder checks zero-or-one graph cardinality and derives the complete before/after projection-scope union. `run_task_doc_call` takes `kernel.file_lock.exclusive_file_lock` on `coordination_root/tasks/<repository>` before the task-doc dispatcher reads the authoritative edit source or prepares its candidate. `lock_path_for` names the sibling `<repository>.lock`; the central `publish_task_doc_transaction_and_refresh` re-enters that same lock, with no second task-root lock/order.
+
+The central wrapper sets the call-scoped `_publication_active` marker and resets its token in `finally`. A nested task-doc entry answers `task-document-publication-in-progress` before its callback runs; a direct nested central call raises the named `TaskDocError` before its publisher runs. Re-entrant locking therefore does not admit a second successful publication inside the active interval.
+
+Under that lock the private central body delegates exact CAS, task publication, copy refresh and projection work to their existing owners. A copy-refresh exception restores the pre-batch source snapshots before the lock is released; rollback failure is named and chained, not hidden. Another thread/process waits, then its task-doc call reads and prepares after rollback so its keyed question stands. The top-level independently prepared topology/retirement/linkage callers keep exact CAS and clean conflict refusal, without retries. Whole-source rollback remains the admitted design; there is no per-key inverse. Dry-run validates the same source pair and previews effects without publication. A source mismatch raises `TaskDocPublicationConflict` with bounded expected/observed evidence.
 
 L04 narrowed the dry-run preflight: `validate_task_doc_transaction` now collects source-currentness
 and scope-union resolution into one closure so the read-only path exercises the identical exact
 source-pair transaction as protected publication, including the mutation-classified scope selection
 performed by `resolve_projection_scope_union` over `TaskDocScopeChange` entries.
+
+`validate_task_doc_transaction` also checks every candidate `subTask` that does not name an explicit `master`. Its folder master must exist and resolve to kind `master`, with a `subTasks` row whose number equals the candidate leaf ID. Resolution uses the prepared candidate overrides from the same transaction, so a prepared master/row is read consistently with its leaf. Missing folder-master authority or the matching row raises `Sub-task publication requires a master.` This conditional guard is exercised by dry preflight and protected publication; it does not claim to validate explicitly named-master paths through this branch.
 
 Ordinary disk-backed graph-title reads deliberately remain inside the publisher callback, after
 the task lock is held, so the title snapshot used for rendering is read under the same
@@ -50,17 +36,16 @@ transaction, rather than making registration and other prepared-document callers
 scope-union or publisher behavior. This keeps accepted-source CAS, task-first publication,
 invalidation, and rebuild behind one API.
 
+Publication refreshes rendered task-document copies inside the same publisher: after the accepted write, `refresh_task_document_copies` rewrites the changed leaf in every existing enclosure atomically per file, and a copy failure rolls back the accepted sources before re-raising, so a failed copy refresh never leaves task truth ahead of its reads.
+
 ### Conventions
 
-Callers prepare all selected/affected source snapshots before entering the transaction and must not
-re-read a weaker subset inside their own publisher. Pure validation may precede locking; disk state
-that participates in a read-modify-write invariant is read only inside the publisher callback.
+The ordinary task-doc entry holds the task-root file lock from authoritative source read through preparation and central publication. Independently prepared callers still carry the complete exact source pair into the central CAS; they cannot weaken it to a subset or retry automatically. Disk graph-title reads remain inside the publisher callback. Pure submitted-batch graph cardinality may be checked before central publication.
 
 ### Invariants And Boundaries
 
 - Exact JSON and Markdown bytes for every selected/affected document are one CAS precondition.
-- Task truth is authoritative. Queue/projection state is disposable: task publication invalidates
-  the full affected scope and projection rebuild happens after the lock, per scope.
+- Task truth is authoritative. Queue/projection state is disposable: the owner invalidates the full affected scope and rebuilds per scope. The outer task-root file lock remains held until the central call returns, including its refresh/rollback and projection work.
 - A publication batch has at most one graph-bearing document. Unsupported cardinality refuses
   before transaction construction; there is no first-document selection or split retry.
 - Existing on-disk title reads stay inside the protected publisher callback to avoid rendering
@@ -72,46 +57,41 @@ that participates in a read-modify-write invariant is read only inside the publi
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal lifecycle seam.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The source file itself is the current evidence for this file-specific contract.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The module defines the exact task publication request, transaction, and result models. | `TaskDocPublicationConflict`; `TaskDocPublication`; `TaskDocPublicationTransaction`; `TaskDocPublicationResult` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:34-49; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:52-61; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:64-72; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:75-78 |
-| Publication delegates exact validation, task write, affected-scope invalidation, and independent rebuild to the task-first owner. | `publish_task_doc_set`; `publish_task_doc_transaction_and_refresh`; `preview_task_doc_projection_effects`; `preview_task_doc_transaction_projection_effects` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173 |
-| Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback. | `task_doc_publication_transaction` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:176-206 |
-| Scope changes bind each candidate to its exact accepted original bytes. | `task_doc_scope_changes` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:209-245 |
-| Dry-run preflight validates source currentness and the classifier-scoped union through the same closure as publication. | `validate_task_doc_transaction`; `require_task_doc_sources_current` | mcp/src/agents_remember/application/task_docs/task_doc_publication.py:248-259; mcp/src/agents_remember/application/task_docs/task_doc_publication.py:262-279 |
-| Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes. | `TaskDocGraphPublicationTests` | mcp/tests/test_task_doc_graph_publication.py:93-140 |
 
-## Cross-Repo References
+- The module defines the exact task publication request, transaction, and result models. [1]
+
+- One task-root file lock and the call-scoped active marker surround central publication; the private body performs exact validation, source publication, copy refresh/rollback and per-scope projection work. [2]
+- The outer task-doc call holds the same repository lock before reading/preparing the edit and refuses a nested publication before invoking the callback. [7]
+
+- The kernel primitive uses a sibling lock file, a per-resource thread mutex and flock, with same-thread re-entry sharing the outer hold. [8]
+
+- Native nested-refusal fixtures cover append and replacement and require task-source and memory bytes to equal their pre-batch values after failed refresh. [9]
+
+- Graph cardinality is checked before transaction construction while disk title reads remain inside the publisher callback. [3]
+
+- Scope changes bind each candidate to its exact accepted original bytes. [4]
+- Dry-run and protected publication share exact source-currentness, conditional folder-master/matching-row validation with prepared overrides, and classifier-scoped union resolution. [5]
+
+- Focused proof refuses two graph documents before publisher/projection mutation and preserves sentinel bytes. [6]
+
+
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-## Update History
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `TaskDocPublicationConflict`, `TaskDocPublicationResult`, `TaskDocPublicationTransaction`, `TaskDocPublication`, `preview_task_doc_projection_effects`, `preview_task_doc_transaction_projection_effects`, `publish_task_doc_set`, `publish_task_doc_transaction_and_refresh`, `require_task_doc_sources_current`, `validate_task_doc_transaction` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:130-145, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:148-155, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:158-173, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:248-259, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:262-279, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:34-49, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:52-61, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:64-72, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:75-78, mcp/src/agents_remember/application/task_docs/task_doc_publication.py:81-85. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `task_doc_publication_transaction` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:176-206. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `task_doc_scope_changes` repointed to mcp/src/agents_remember/application/task_docs/task_doc_publication.py:209-245. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `TaskDocGraphPublicationTests` repointed to mcp/tests/test_task_doc_graph_publication.py:93-140. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
+- The waiting second-thread writer prepares after failed-batch rollback and its question remains, for append and replacement cases. [10]
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for
-  3e276f2b2052b641afbee180a472259f21b500df (CCR-R04@v1/L04): recorded the L04 dry-run change —
-  `validate_task_doc_transaction` now folds source-currentness and
-  `resolve_projection_scope_union` into one closure so preflight exercises the exact
-  source-pair transaction including mutation-classified scope selection. Verification is pinned
-  to the owning commit.
+## Current source evidence
 
-- 2026-08-26T10:44:52+02:00 — Documented `publish_prepared_task_documents` as the single public path for already-prepared document batches, removing repeated transaction assembly from callers.
 
-- 2026-08-24T13:43+02:00 — DAGQC L1: ordinary publication now delegates graph-batch
-  cardinality to the central zero/one owner before transaction construction while retaining
-  on-disk title reads inside the protected publisher callback. The card was reconciled with the
-  already-landed task-first invalidation/rebuild transaction. Verification metadata remains pinned
-  until closeout.
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: created from the accepted full L2 candidate. Verification fields remain blank until the architect-owned closeout has a real code commit to stamp.
+- Prepared document/root pairs preserve each real write target through the shared exact-source publication. [11]

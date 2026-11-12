@@ -1,0 +1,712 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The registration that mounts the role tools and the settings initializer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:4b798506f80b100d62092176e695cb65788d16efa306bb3ca0665c474cbd4ce5",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `explainer_control` and `citation_note_revision`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:e65598ad08d511a5ffa26a3099d273596eea7844d5c2a00685c2ccb183271c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:3cf29d3ca7682b6651c5944ff70aa77ec90c7f2e16d6df26e1244a14174dd8c4",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "[11] pyproject.toml — lines 38-38",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b7d94fc2a811ecaa875d929ec1242369625dadc",
+            "content": "sha256:099fc8a76c1c3855e16525e55b4246e43e679d8c7af08b945c90347ee2c062d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskRef"
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_ref.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "[12] mcp/src/agents_remember/application/task_docs/task_ref.py — symbol TaskRef",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
+            "content": "sha256:8e272d5d3aebe96cc9f9600241586e3ded7ea7ec493af34631d2b12e90cd5971",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutMessageInput"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "55d70d4c4f5afc640625e66189bae6733fc902fd",
+            "content": "sha256:dde7ba7bb8b303bbf419202b9a1fb3358d68f2505b2a5b83df405199a842647e",
+            "locator": {
+              "kind": "symbol",
+              "name": "CloseoutInvalidField"
+            },
+            "path": "mcp/src/agents_remember/models/closeout/input.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "[13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:e6e1dac341d2f9320dfc6df77c23a0721ce53a5a182fdc79390f7b16f089f263",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "[16] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 172-199; mcp/src/agents_remember/mcp/registration/worktrees.py — lines 177-203",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L111 predecessor declared 41 public names after L109 removed resolve_context (that earlier 42-name epoch was historical); the current composed ordinary source has 44 — the 41 predecessor plus mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:560387f2a58cd5720aac11b4af3f53b1112325cda9f1ab06f47c592d3a6e2b9f",
+            "locator": {
+              "end": 97,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "[17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:78e83592b213ecb099716542f26a923e3696e51b893d6798fb40bac36a3fbec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_read"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_diff"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_integrity_check"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The role-agent registrar mounts role_start, role_start_set and role_message; the callables preserve their declared argument shapes and delegate to their application payload owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:5a704496656c0aff16cbdc2495936483d24a641f89dad79ad5ce86d676717ee9",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:346e0407356a876361763afd6d7a0dcbe8da56e35e07a2902d046c097eef1031",
+            "locator": {
+              "end": 159,
+              "kind": "line_range",
+              "start": 121
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:d5fccfa00edaf41799345ca2547bb87aaf2a0a09355e4a3997599019a505cd27",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 179
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "mcp/src/agents_remember/mcp/registration/core.py — code file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_REGISTRARS"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "Current composed PUBLIC_TOOLS declares 44 ordinary names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "[2] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 95-97",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:c19a478af6a295a298495f09d8ff35aa57dc4b5a2fc22dcbfbc2678f286a47cb",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 90
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "[29] mcp/src/agents_remember/models/tools/public_roster.py — code file",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:2a0c1ef223f4a96d0b2c802064282856e3da48addd7a68e59f66ca56434f1ae7",
+            "locator": {
+              "end": 116,
+              "kind": "line_range",
+              "start": 69
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5865a5625745237980b5f2727a2b258b47488104",
+            "content": "sha256:52044c70862e4e13740be40f57fd4f6accb5d0e68cdc480b1ba24576c9669969",
+            "locator": {
+              "end": 183,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "[31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:44c82fd66623074547ce6352c099043a559721610f6838ac09e1c2d3e3ead069",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 133
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+            "content": "sha256:eeb8903d1b0373cedaa3c2a8796fb91f94fb8083674172832c118203a0b17f3e",
+            "locator": {
+              "end": 294,
+              "kind": "line_range",
+              "start": 235
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:4d31e5049bb9a3ebaa611e04d347596ef4cedf8358845ba7fa42554f50968103",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:2551434e724a6763e4bb2c3c5ddb06137013df9bbd881cb708b55c6341625e34",
+            "locator": {
+              "end": 31,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:d84e9a91cb5e4f0a0edb4cf4644d903f169844892b73bf1052455e0f8120731e",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:a766a8ed126d6bbcc3a9a8d03f5d2c9ea550d5ba3b4fd04691ed0868302fd989",
+            "locator": {
+              "end": 72,
+              "kind": "line_range",
+              "start": 46
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:8a9fd0bcbaddafaa58cc24755ef325741fe8cd53e62d0036559686356ca00ebe",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 75
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:f75bfc78f7b6cafbe4847030de23115333c08e4d02e817cd10a2533719847c83",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:28565e891ca67b1483c64db677e32e2112b4454130c76fc29db51bf18a1951b2",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+            "content": "sha256:bcc8f0cf4c36713979b2d314f88b10875dcb2216ce2e4afecaba44a15e14513f",
+            "locator": {
+              "end": 128,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+            "content": "sha256:595bf15a1be758eaa5ba44719cd837715b81d6f11175d532db981e88751305f6",
+            "locator": {
+              "end": 255,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:310a67575a14cff92e1bcebd1e8f270cfcfc70b25eb6681a972f6fbad24bfbbb",
+            "locator": {
+              "end": 211,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+            "content": "sha256:087297c73a5bf5fe7d9fa1fc2c40195fdc944f637813ab2d1f507c4615396e12",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "[3] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 90-99",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:417c74110107ef6158b5d5127b0095e65ff5f2e048cd33d14729d560f3784a66",
+            "locator": {
+              "end": 98,
+              "kind": "line_range",
+              "start": 85
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3f91234661460904091f50cb41164456aa515f04",
+            "content": "sha256:8ec9fa9c67ef661e617e2a1fd5d91e1f659cb1d41ff8208cce462f290df64f42",
+            "locator": {
+              "end": 208,
+              "kind": "line_range",
+              "start": 84
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "41": {
+      "note": "The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat.\n\nAnchor: `register_explainer_surface`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+            "content": "sha256:37ac1a3d42b41a1bfab8b5e89e34290a66825c96cd886a12e9f14ae72b132ba9",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 308
+            },
+            "path": "mcp/src/agents_remember/mcp/server.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "One registered citation operation forwards the extended signature.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+            "content": "sha256:8c8970683147f31767f3c402cb5be5e66ff82056236a64dead9f16f9747fc52e",
+            "locator": {
+              "kind": "symbol",
+              "name": "citation_fix"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "[4] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 85-98",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:5bf4fec216570f74150d1131db48e49fd565f12d55d5ef00851951eb96279e9c",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 89
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "[5] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 89-91",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_integrity_check"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "[6] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": " mcp/src/agents_remember/mcp/server.py — symbol create_server",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbd96445dae6e10e1c4052722fab1b614aafedfe",
+            "content": "sha256:c0e54f12b9211f7fb26dd24d118a8562de4972ce6d7beb7a43b920a7fc979f42",
+            "locator": {
+              "kind": "symbol",
+              "name": "_tool_payload"
+            },
+            "path": "mcp/src/agents_remember/mcp/tools/base.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

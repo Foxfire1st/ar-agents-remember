@@ -1,116 +1,102 @@
 # mcp/src/agents_remember/tasks/task_intent.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/tasks/task_intent.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview      | `overview.md`                             |
-
 ## Governing Overview
 
 [tasks/overview.md](overview.md)
 
 ## Purpose
 
-Canonical normative task-intent projection and identity for one leaf task document (CCR-R02@v2).
-The module turns an already-resolved task document into a strict `task-intent/v1` projection
-containing only explicitly allowlisted normative slots, hashes that canonical JSON into the
-SHA-256 intent digest, and provides the single currentness assertion
-(`require_current_task_intent`) that closeout, door, and lifecycle consumers call before any
-evidence reuse.
+The normative task-intent projection of one leaf task document and its identity. The module turns a
+resolved task document into the strict `task-intent/v1` projection of allowlisted normative fields, hashes
+its canonical JSON into the intent digest, and offers the one currentness assertion that owners call
+before they reuse evidence. It is also the owner that confines, reads and checks an approved requirement
+packet.
 
 ## Code Commentary
 
-### Logic
+### Projection and identity
 
-The projection operates on `ResolvedTaskDocument` (never on raw paths or prose) and reads the
-shared exhaustive field taxonomy from `document_field_effects.py`:
+- `TaskIntentV1` holds the leaf identity, objective, requirements, design, steps with substeps, code
+  examples with their note, acceptance obligations, and optional `expectedKnowledgeEffects`,
+  `nonGoals`, and `acceptance`. Models remain frozen and extra-forbidding. `canonical_value`
+  drops only these three slots when their value is None; empty fixed-prose strings remain
+  meaningful canonical values. Thus adding absent optional slots does not add keys to the
+  intent input; this is a construction account, not a measured corpus hash/parity verdict.
+- `_ROOT_FIELDS` and `_NESTED_FIELDS` name the fields the projection consumes.
+  `_validate_allowlisted_classifications` compares them with the shared field taxonomy
+  (`document_field_effects`) in both directions and raises `task-intent-schema-unclassified` for a slot
+  that is not classified normative and for a normative field outside the projection.
+  The root normative inventory includes `nonGoals`, `acceptance` and `intentReview`; the nested
+  allowlists include the answer and agreed-revision fields. Structural `waitsFor` and audit
+  `completedAt` stay outside normative intent. The leaf `TaskIntentV1` construction still passes
+  its declared slots explicitly and does not pass `intentReview`; the master dictionary projection
+  retains its normative projection. Allowlist admission alone is not a claim that changing the
+  answer changes a leaf digest.
+- `task_intent_projection` refuses a master (`task-intent-leaf-required`) and an unsupported schema
+  version. `task_intent_identity` is the SHA-256 of the projection's canonical JSON with sorted keys and
+  compact separators. `task_intent_master_projection` projects a master's own normative fields as a plain
+  mapping and refuses a leaf.
+  Leaf construction passes the fixed-prose slots explicitly. Master projection applies
+  the same None-only omission to `expectedKnowledgeEffects`, `nonGoals`, and `acceptance`;
+  it does not make empty strings absent or turn display dependency/time fields normative.
+- `require_current_task_intent(observed, current, owner=..., next_action=...)` raises
+  `<owner>-task-intent-stale` when the observed identity differs from the current one.
+- `_requirements` refuses blank requirement text, and refuses packet references without any exact text
+  (`task-intent/v2-cutover-required`).
 
-- `TaskIntentV1` (line 88) is the strict frozen projection: `schema: task-intent/v1`, the leaf
-  identity, objective, requirement texts or approved packet refs, design, allowed step/substep
-  obligation text, normative code examples, `codeExamplesNote`, and typed acceptance obligations.
-  Generic freeform sections, comments, notes, decisions, progress, lifecycle, and audit fields are
-  never projected; `canonical_value` (line 101) emits the by-alias JSON for hashing.
-- `_ROOT_FIELDS` (line 105) / `_NESTED_FIELDS` (line 122) enumerate exactly which
-  `TaskDocument`/nested-model fields task-intent/v1 consumes; `_validate_allowlisted_classifications`
-  (line 239) refuses both a slot missing its normative taxonomy membership and a taxonomy-normative
-  slot outside the projection, so projecting can never silently drop a newly classified field.
-- `task_intent_projection` (line 132) refuses a master (`task-intent-leaf-required`), requires
-  the supported schema version, and translates taxonomy failures into
-  `task-intent-schema-unclassified`.
-- `task_intent_identity` (line 180) hashes the canonical projection with
-  `json.dumps(sort_keys=True, separators=(",", ":"))` into a 64-hex digest, producing
-  `TaskIntentIdentity`.
-- `require_current_task_intent` (line 196) reuses the model-layer rejection seam and raises
-  `{owner}-task-intent-stale` when the observed identity differs from the current one, with the
-  owner-chosen `next_action`.
-- `_requirements` (line 259): exact text must be non-blank, and `task-intent/v1` refuses a
-  packet-ref replacement of exact task text (`task-intent/v2-cutover-required`). An approved
-  packet ref resolves task-root-relative, must be a Markdown file inside the task root, must be
-  readable, and its structured `Stable ID`/`Version` metadata must match exactly
-  (`_approved_packet_ref` line 283, `_packet_metadata` line 316); duplicate metadata fields
-  refuse as ambiguous.
-- `_acceptance_obligations` (line 336) projects only questions typed as
-  `AcceptanceObligationQuestion`.
+### The requirement packet owner
 
-### Conventions
+`_approved_packet_ref(task_root, reference)` is called for a packet reference of the projection and, through
+`memory/knowledge/requirement_owner.consume_owner_resolution`, for every requirement endpoint of a
+knowledge record.
 
-The projection is never a whole-document hash and never a digest of decision prose. New normative
-slots require both a schema revision and a taxonomy classification; the pair is enforced at
-projection time.
+1. It resolves the task root and then `<root>/<reference path>`, both through `observed_resolve`.
+2. An absolute reference path, a resolved path outside the task root, or a suffix other than `.md` raises
+   `task-intent-requirement-packet-outside-task`. This happens before any byte of the packet is read.
+3. It reads the packet's bytes once. A missing or unreadable file raises
+   `task-intent-requirement-packet-missing`.
+4. The bytes decode as UTF-8, with invalid input raising `task-intent-requirement-packet-encoding-invalid`; `\r\n` and `\r` are then normalized to `\n`. `_packet_metadata` reads the
+   two-column table before the first `## ` heading; a repeated field raises
+   `task-intent-requirement-packet-metadata-ambiguous`. `Stable ID` or `Requirement ID` must equal the
+   reference's ID and `Version` its version, else `task-intent-requirement-packet-version-mismatch`.
+5. The result names the packet by its resolved path relative to the task root.
 
-### Invariants And Boundaries
+Inside a recording block the call leaves these rows: one `resolve:` row for the task root, one `resolve:`
+row for `<resolved task root>/<reference path>` with the reference path's own links unresolved, and byte observations of the one read under both the caller locator and the resolved physical file. A failed read retains its named absence/unreadability observation; recording the physical identity does not replace the logical locator or require another read. A symbolic link that is retargeted afterwards therefore changes the
+`resolve:` row, even when the other target holds the same bytes, and a packet that resolves outside the
+task root leaves the `resolve:` row and no byte row. Outside a recording block the function records nothing
+and its answers and errors are the same.
 
-- Only allowlisted normative slots change the digest; step status, decisions, timestamps, audit
-  prose, lifecycle id, enclosures, evidence, and status notes are excluded by construction.
-- An approved requirement packet ref is authoritative only after confined path/readability,
-  unambiguous metadata, and exact id/version checks; approval-like prose alone cannot create a
-  typed reference.
-- Integration generations do not carry leaf task intent; this module is leaf-only.
+## Evidence
 
-### Todos
 
-None recorded.
+- The strict leaf projection declares optional expectedKnowledgeEffects/nonGoals/acceptance and drops each only when None, retaining empty prose values. [12]
 
-## Docs References
 
-The configured Domain Documentation registry is empty; no external documentation claim is made.
 
-## Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Strict allowlisted v1 projection model. | `TaskIntentV1` | mcp/src/agents_remember/tasks/task_intent.py:88-102 |
-| Normative slot allowlists for the document and nested models. | `_ROOT_FIELDS`; `_NESTED_FIELDS` | mcp/src/agents_remember/tasks/task_intent.py:105-129 |
-| Projection entry point refusing masters and translating taxonomy failures. | `task_intent_projection` | mcp/src/agents_remember/tasks/task_intent.py:132-177 |
-| Canonical digest production from the projection. | `task_intent_identity` | mcp/src/agents_remember/tasks/task_intent.py:180-193 |
-| Currentness/staleness assertion for owners. | `require_current_task_intent` | mcp/src/agents_remember/tasks/task_intent.py:225-243 |
-| Allowlist/taxonomy symmetry enforcement. | `_validate_allowlisted_classifications` | mcp/src/agents_remember/tasks/task_intent.py:268-285 |
-| Requirement text/packet handling and the v2-cutover refusal. | `_requirements`; `_approved_packet_ref` | mcp/src/agents_remember/tasks/task_intent.py:259-313 |
-| The shared exhaustive field-effect taxonomy consumed here. | `TaskDocumentFieldEffect`; `fields_with_effect` | mcp/src/agents_remember/tasks/document_field_effects.py:50-61; mcp/src/agents_remember/tasks/document_field_effects.py:518-528 |
-| The typed slot/identity models imported from the sibling model module. | `TaskIntentIdentity`; `ApprovedRequirementPacketRef` | mcp/src/agents_remember/models/task_intent/__init__.py:55-59; mcp/src/agents_remember/models/task_intent/__init__.py:22-36 |
+- The root/nested allowlists consume normative fields, including fixed nonGoals/acceptance, not structural waitsFor or audit completedAt. [13]
 
-## CCR-R02@v2 Normative Task-Intent Identity
 
-This module is the projection/identity half of CCR-R02@v2. Its canonical packet
-(`requirements/CCR-R02-v2-normative-task-intent-identity.md`) requires closeout evidence to bind
-a separate versioned normative task-intent identity that changes only for obligation/plan changes.
-The allowlist + shared-taxonomy rule and the "decision prose is audit-only" rule are implemented
-here. The L25 delivery verified at `99dc249b` carries the sealed L02 Attempt-10 candidate per
-`notes/reports/260831-CCR-L25-worker-delivery.md`.
 
-## Update History
 
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `require_current_task_intent` repointed to mcp/src/agents_remember/tasks/task_intent.py:225-243. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `_validate_allowlisted_classifications` repointed to mcp/src/agents_remember/tasks/task_intent.py:268-285. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+- Leaf projection refuses a master and passes nonGoals/acceptance explicitly; the separate master projection refuses leaves and shares the None-only optional-slot omission. [14]
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  created this card for the new canonical task-intent projection module (`task_intent_projection`,
-  `task_intent_identity`, `require_current_task_intent`, allowlist/taxonomy symmetry checks,
-  approved-packet resolution); documented the leaf-only and never-a-whole-document-hash boundaries.
-  Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
+
+- The digest of the canonical projection. [15]
+- The currentness assertion. [16]
+- The allowlist and the taxonomy must agree in both directions. [17]
+- Requirement text and packet references. [18]
+
+- The packet owner: recorded resolutions, confinement before reading, one read recorded under the caller's locator, identity check. [19]
+
+- The metadata table of a packet. [20]
+- The requirement owner calls the packet owner and carries its refusal back. [21]
+- A packet link retargeted outside the task and back is recorded by its resolve row; outside, no packet byte is read or recorded. [22]
+- A packet changed and restored while it is read, and a link retargeted during the read, are recorded under the link's own path. 
+
+- One confined packet read records caller and resolved-file byte identity; invalid UTF-8 receives a named task-intent refusal. [24]
+
+- Intent-review answer/agreement fields are added to the exhaustive normative allowlists; leaf construction still explicitly supplies TaskIntentV1 slots without intentReview, unlike the master dictionary projection. [25]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_packet_reads - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

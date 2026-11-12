@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Holding, the kept id and the timeline reconciliation are one promise about an unanswered send; the cases witness both the hold and the single copy."
+  },
+  "applicability": "Every send whose host answer is a refusal, a timeout or an unknown outcome.",
+  "conditions": [
+    "A refused or unanswered send is held with that reason and stays in the recipient's held store.",
+    "The held copy keeps the message id it was attempted under.",
+    "Before a resend, the product reads the recipient's timeline for that id."
+  ],
+  "exclusions": [
+    "No send is repeated when the recipient's timeline already holds the copy.",
+    "The sender's answer reports the message as held, never as lost."
+  ],
+  "id": "INV-AMJAZT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_paseo_role_messages.py::RoleMessageTests::test_a_host_that_does_not_answer_holds_the_message_and_delivers_it_once and ::test_an_unknown_send_outcome_is_not_delivered_twice (KeyError 'heldReason' on the base, pass on the candidate, one copy each); report role-reports/worker/8500ba4e-39b3-5373-8e2d-cfe91a38af4c/role-launch/260928-MIK-L171-worker-8500ba4e-39b3-5373-8e2d-cfe91a38af4c.md; L171-F02 repair: test_a_copy_the_recipient_already_holds_is_not_sent_again (a host that records ids and does not deduplicate)"
+      ],
+      "path": "handoff-L171-curation.json"
+    },
+    "handoffEntry": "MIK-R171@v1 rule 3",
+    "leaf": "260928-MIK-L171",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When the host does not answer a send, the message is held with that reason and the id of the attempt, and a later delivery goes out under that same id so a host that records ids delivers it at most once.",
+  "status": "proposed",
+  "supersedes": []
+}

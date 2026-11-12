@@ -1,0 +1,22 @@
+{
+  "path": "mcp/src/agents_remember/package_data/canvas/kit/ar-video/23fd71bf/PROVENANCE.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provenance for the pinned kit entry: the developer's video toolkit engine and its vocabulary, recorded with the commit it was taken from.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2c38be2caa995a173224ea5a5612bb645885843",
+            "content": "sha256:66110f0f0a93d56203b0b9c641a67a9db256676a92be15918c39b3ac16a79881",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

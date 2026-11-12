@@ -1,0 +1,79 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L70",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4JG2P9",
+      "items": [
+        "sha256:dfcf42f5c89c08febbd3a2c81a45322251091cf658223d5deef56de03a31bedb"
+      ],
+      "reason": "The route overview's account of the payload-builder route still holds: the new configured-authority refusal is file-local behavior of `memory.py`, carried by its card, and no route boundary, builder registry or seam changes.",
+      "subject": "onboarding:mcp/src/agents_remember/mcp/tools/overview"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-2S0FEY",
+          "revision": 1
+        },
+        {
+          "id": "INV-W4XGR4",
+          "revision": 1
+        },
+        {
+          "id": "INV-X0BRG0",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-7W872A",
+      "items": [],
+      "reason": "New family authored from three obligations that only hold together: the reader fixture composing its server through the product factory, the reader exercise's bounded named waits, and the sweep's bounded per-tool phases. Each member was read against its source and the review evidence; the worklist reaches no existing family, and the one entry of an existing invariant that the change touched, PRF-W1HHQB, has its own row.",
+      "subject": "FAM-TG3WK0"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0c75122a7ec9c252dbd7ec955ac8315c6a53ac1b",
+            "content": "sha256:0f651d353ac549ec8d4c8cea50b1708c6685ba7689a87c3d7d5ca9f55ec8d3ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "before": {
+            "blob": "01537fd522b89d227e77ec4276d7322fa2832ebb",
+            "content": "sha256:234b2d3df4a6761ec19cc6f3fdafc15461359c232e524d497ea649178ddacef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "id": "PRF-W1HHQB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VS1GDR",
+      "items": [
+        "sha256:bc6cc3f820895d6f283326c04211bad6f62f8aea9cb80f6f58b1c6694003f5b6"
+      ],
+      "reason": "The leaf changed the reader protocol test's fixture, waits and cases; the anchored primary test's assertions and the task-scoped admission it proves are intact, so the invariant's meaning is unchanged and its proof entry is re-anchored at the candidate.",
+      "revision": 1,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z5ECMH",
+      "items": [
+        "sha256:2ea45eeb4122aa873c4477a1d59294ae0b12821e01931fbc51dc180d171eff2f"
+      ],
+      "reason": "The four changed test modules keep their lanes and cases; the reader and sweep cards carry the new bounded waits and controls, the citation and doctrine cards carry their new cases and roster rows, and the route's account of the test population and catalogs is unaffected.",
+      "subject": "onboarding:mcp/tests/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

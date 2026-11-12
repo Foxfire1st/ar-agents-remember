@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Sending unsupported host keys can produce false suppression claims without changing harness behavior."
+  },
+  "applicability": "The launch-call to pinned host create-payload boundary, including the bridge.",
+  "conditions": [
+    "Saved exclusion metadata remains product-owned.",
+    "Only host-read provider options are sent as the suppression mechanism."
+  ],
+  "exclusions": [
+    "An internal record is not itself proof that a host consumes an exclusion."
+  ],
+  "id": "INV-ZKV9B3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-R132-reading-4.md and readings 1 to 3 in notes/reports/worker/4d887780-0efc-4deb-aad6-2c4a010f6769/role-launch/; mcp/tests/test_role_single_server.py"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R132@v1 rule 4",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The create request carries no key the pinned host does not read: the exclusion record stays in the launch call, and of it only `providerOptions` reaches the host.",
+  "status": "accepted",
+  "supersedes": []
+}

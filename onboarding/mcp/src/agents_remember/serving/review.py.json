@@ -1,0 +1,163 @@
+{
+  "path": "mcp/src/agents_remember/serving/review.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+        "content": "sha256:90063c8291f95506706a14c495d8eb7191febaac8e868bc666486c4588f7cd53",
+        "locator": {
+          "kind": "symbol",
+          "name": "_status_for"
+        }
+      },
+      "id": "RLZ-1NKG97",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The shared transport maps the comparison owner's candidate_unresolved refusal to 404 rather than a successful latest catalogue.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+        "content": "sha256:0fe8a0544b58649419cea2d3257779a3bf0f3bebf800d204ff5b1fc4e49aba7d",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_review_routes"
+        }
+      },
+      "id": "RLZ-CKET10",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "RP11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "The entries route admits its comparison query, returns a negative number as 400 and sends every other number unchanged to the comparison-aware catalogue owner.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "25": {
+      "note": "Route vocabulary and numbered catalogue port remain application-injected values.\n\nAnchor: \"# row a reader opened, naming the generation the listing published. Like the other two it is GET-only\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:f0d425707180a38e87eb6b9af38d4cf9ebb44b5ca9e32c3c8875f932380d0999",
+            "locator": {
+              "end": 114,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The shared exception mapping is actionable and catches exactly the two named exceptions.\n\nAnchor: \"def _transport_refusal(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:99f822d7a6b447cb484139ee0b8b0d260a6c613a40ea79c1d77504d253c67d9a",
+            "locator": {
+              "end": 200,
+              "kind": "line_range",
+              "start": 159
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Whole query admission distinguishes task context and subject without guessing selectors.\n\nAnchor: \"def review_request_from_query(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:213ac2fb8c7559b5e917f8c3d06d7f058864a4419125614e034f47c5f5bcea96",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "History/digest/paging admission names the input that failed.\n\nAnchor: \"def _admitted_history(value: str \\| None) -> ReviewHistoryRef \\| UnadmittedReviewQuery \\| None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:72c36b1853e7795bebf868f77edd45538e2b672c11ea075f7ca8f193ad4268b7",
+            "locator": {
+              "end": 585,
+              "kind": "line_range",
+              "start": 423
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The catalogue forwards its optional number and refuses negatives after missing-port handling.\n\nAnchor: \"def api_review_intent_entries(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:564ea83085e68b0e7f970124baf1fbbf60dfc1362b7c5a28fa5bc1248c7d3d72",
+            "locator": {
+              "end": 663,
+              "kind": "line_range",
+              "start": 649
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The negative-number body and one model serializer keep explicit expected/action fields and omit only None.\n\nAnchor: \"def _negative_comparison(comparison: int) -> dict[str, Any]:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:e0b81f19cf6daf0a2953fa72ed929f8c86fac3cf26e7a1719279bd7b68e23b5b",
+            "locator": {
+              "end": 761,
+              "kind": "line_range",
+              "start": 738
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Source-content completeness and transport retain their own refusal rather than substituting a generation.\n\nAnchor: \"def _source_content_response(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "050a7b3c21af1530d738d777cb78427adf3f57ca",
+            "content": "sha256:fe6ab17ff3acabb8f181b93f031a24f168320bc940c8716bd340f8345d8c3674",
+            "locator": {
+              "end": 801,
+              "kind": "line_range",
+              "start": 764
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

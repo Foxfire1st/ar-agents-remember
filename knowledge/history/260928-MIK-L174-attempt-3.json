@@ -1,0 +1,507 @@
+{
+  "attempt": 3,
+  "closed": true,
+  "leaf": "260928-MIK-L174",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-03SKJZ",
+      "items": [
+        "sha256:fc98499d7352750e9d130d72f469a403ee84ec56af3611819c82cfd9c6e8de69"
+      ],
+      "reason": "The repository overview's account of the serving and kernel areas still holds: no route, module purpose or entry point was added, moved or removed, and the change sits inside two existing modules and one existing test module. It names no counter or cache mechanic that this change made untrue.",
+      "sources": [
+        {
+          "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+          "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-08R6VW",
+      "items": [
+        "sha256:0243b89f02585772eeb37ad1c6f98bde98ec53551c5e133282c615987687931a"
+      ],
+      "reason": "The tests overview states the evidence policy for this population and names no case inventory. Two cases were added inside a module it already covers, so its statements hold.",
+      "sources": [
+        {
+          "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
+          "path": "mcp/tests/test_master_net_generation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-4PJSG2",
+      "items": [
+        "sha256:0b92ed8246b103e99f21392a73058efd825cba650461cf6d53272a271b7dc604",
+        "sha256:57e5f7fd3111e06bb40faf2d4e81d9e1d7652b140a255e21bab3408c704183e9"
+      ],
+      "reason": "One case is added for the unmeasured series: a stubbed master answer with generation null, currentness unmeasured and zero counters must render the unmeasured state, print no +0 -0 total, and disclose that no base and no selected result resolved. The card names it beside the existing counter-refusal cases.",
+      "sources": [
+        {
+          "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-58S07W",
+      "items": [
+        "sha256:29e6a1cc3e12b1b5339ccb988146c9ca833041713161f9b182abb2e4eeb71a14"
+      ],
+      "reason": "The observe keyword is threaded through route_sidecar_status so a caller can observe the paths its answer was derived from. The status decision itself is unchanged, so INV-WS8GFNAC still holds as written; the reuse guarantee the observation serves is INV-ZNXX7H's. No new promise is made by the plumbing.",
+      "subject": "hunk:sha256:29e6a1cc3e12b1b5339ccb988146c9ca833041713161f9b182abb2e4eeb71a14"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5WP8Q7",
+      "items": [
+        "sha256:9a0d799d30d44df3f53ae6accbdd9675f3f0317ff221f2256c19270a15e3366c"
+      ],
+      "reason": "S8: the bar no longer prints a total for a master answer that names no generation while its currentness reads unmeasured. It is its own unmeasured state with a disclosure saying the series has no measured range and what did not resolve; the measured-empty and unrecorded states keep their own renderings. The card also states the declared limitation: the bar names the state and reads again only on its own next read, so a page already holding a degraded answer keeps it until then.",
+      "sources": [
+        {
+          "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/detail-panel/changeSetBar.tsx"
+    },
+    {
+      "disposition": "assigned",
+      "examined": [
+        {
+          "id": "INV-GRVXS8R9",
+          "revision": 1
+        },
+        {
+          "id": "INV-WS8GFNAC",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZRTBZAS4",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-973N1G",
+      "items": [
+        "sha256:4dae508793580743ff71da432f8fd4487fc4753249e59a281bc10863af0bec45",
+        "sha256:8c5ad692b9ea6e2fddb9e6b3ed9fe225eaa6f6f5305dcaa57c8037099311ee4c"
+      ],
+      "reason": "The family was an exported legacy record with no routes, so Coverage was waived. Its four realization entries sit in four directories, and those are the routes assigned: the two skill-generation places under application/runtime and scripts, the sidecar pairing kernel module, and the task store. The guarantee, title, members and admission are unchanged; all three members were examined at the composed candidate and each still supports the guarantee that generated artifacts are disposable projections.",
+      "revision": 2,
+      "subject": "FAM-1ZDJXHP4"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7TMGB0",
+          "revision": 2
+        },
+        {
+          "id": "INV-BRGWKX",
+          "revision": 1
+        },
+        {
+          "id": "INV-C1RTSG",
+          "revision": 3
+        },
+        {
+          "id": "INV-GDWJKR",
+          "revision": 1
+        },
+        {
+          "id": "INV-M46Y3E",
+          "revision": 1
+        },
+        {
+          "id": "INV-NPEQB1",
+          "revision": 1
+        },
+        {
+          "id": "INV-QK8XNM",
+          "revision": 2
+        },
+        {
+          "id": "INV-WNHAWD",
+          "revision": 2
+        },
+        {
+          "id": "INV-ZNXX7H",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-BGGE6Q",
+      "items": [
+        "sha256:df01e8e1ec7f108c7a9e5fe2b22d6337a5b344a713d47320c9ec1c0c62b7fed7"
+      ],
+      "reason": "The change-set bar's counter work touches a member of this family without changing its joint guarantee: content reuse stays generation-qualified and bounded. All nine members were examined at the composed candidate; the only member whose condition moved is INV-C1RTSG, whose own row records the added state, and INV-ZNXX7H, whose realization set the S7 stretch extended.",
+      "revision": 2,
+      "subject": "FAM-EASWS6"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-115RDW8H",
+          "revision": 2
+        },
+        {
+          "id": "INV-74578B97",
+          "revision": 3
+        },
+        {
+          "id": "INV-8BYGSPZF",
+          "revision": 3
+        },
+        {
+          "id": "INV-8FWJM8RR",
+          "revision": 3
+        },
+        {
+          "id": "INV-EZ8QKFX6",
+          "revision": 3
+        },
+        {
+          "id": "INV-R93S8Y30",
+          "revision": 3
+        },
+        {
+          "id": "INV-SVZY1FHR",
+          "revision": 2
+        },
+        {
+          "id": "INV-T0EWDB7H",
+          "revision": 4
+        },
+        {
+          "id": "INV-TH4KXFTX",
+          "revision": 3
+        },
+        {
+          "id": "INV-WCEGX72X",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-BVYJ2A",
+      "items": [
+        "sha256:f23c82b3c132dfc0f84a850806bec2c5433da972f99458fdd1b41ffb30ac15fb"
+      ],
+      "reason": "The change-set bar's state work touches INV-TH4KXFTX without changing this family's joint guarantee. All ten members were examined at the composed candidate; the only member whose condition moved is INV-TH4KXFTX, which now names the unmeasured state, and its own row records that.",
+      "revision": 4,
+      "subject": "FAM-WEF4M4H1"
+    },
+    {
+      "considered": [],
+      "disposition": "no_family",
+      "id": "ROW-C8AHF4",
+      "items": [
+        "sha256:5f07dde69201e8c1b1ce01842372a4315e51631e34a93fb2c9db18a5e65a6733"
+      ],
+      "reason": "The S8 obligation is a presentation guarantee on the change-set bar: a master answer that names no generation is unmeasured, never a measured zero. No authored joint guarantee covers what a counter state promises, and grouping it by route or by component is the inference the family shape refuses. The entry records the same basis as no_family.",
+      "revision": 1,
+      "subject": "membership:INV-JH8ZHH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-D6YVYW",
+      "items": [
+        "sha256:b0b86b8c7bfb8891d090a51fc6512d8459f36ccf5ae326b9e253af18e5b6e4f0",
+        "sha256:2a82e54d3b41ed542f4c4591e5d8811b7100226f7f60c6607a087bec4ac2948c",
+        "sha256:169aa9d335d561c4007a43c99a967ef2d8b55d5cceebf0d45128f3449ec739aa",
+        "sha256:e9ab956f5c380f9ade0342da213bed37398b7d79748a426ddd34e90497081641"
+      ],
+      "reason": "Two cases now hold the endpoint-keyed master net, and the card lists both with their ranges beside the original nine-case cohort account.",
+      "sources": [
+        {
+          "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
+          "path": "mcp/tests/test_master_net_generation.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_master_net_generation.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DB20GF",
+      "items": [
+        "sha256:f522e44307503d94a0265818cd4ecbe7f6dc11902b2144da639f36d6e77cd1cf"
+      ],
+      "reason": "The governing-index walk reports each candidate index, an absent one included, before reading it, and factors the index path into one helper. The nearest-index decision is unchanged; what moves is only that the caller can now observe the inputs, which serves INV-ZNXX7H's reuse rather than creating a new promise.",
+      "subject": "hunk:sha256:f522e44307503d94a0265818cd4ecbe7f6dc11902b2144da639f36d6e77cd1cf"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DXN8XJ",
+      "items": [
+        "sha256:c730ad0507572e4878b2fd7231f1e32d53bb22f26c7cf6079d3546b69b4590ab"
+      ],
+      "reason": "The panels overview names the panel set and each panel's purpose, not the counter states of one control inside the detail panel. No panel was added, removed or renamed, and the change-set bar's state account is its own module card's. Nothing this overview states became untrue.",
+      "sources": [
+        {
+          "blob": "4819bdda012cab487d632ae9f351502c11e5e9a5",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.test.tsx"
+        },
+        {
+          "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+          "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+        }
+      ],
+      "subject": "onboarding:dashboard/src/panels/overview"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:71fa11b449377ad53a5ea1f8709e31ba8dc17859a548994c22ea9e683b519a62",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "before": {
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
+            "content": "sha256:899b464fd62e8002bed4f1b81ce361fc612cf6a82dcd813d0aff0e7949f78456",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "id": "RLZ-ZBAHA3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-E2C5RT",
+      "items": [
+        "sha256:ff2ae39c317d4dcda2ea0fe4ccab1906232e5e54bbcfc77837851d143de1545a"
+      ],
+      "reason": "The promises are unchanged: the document stays rendered while a change-set read is pending or fails, and the counter controls carry their own states. The condition list named four states and now names five, because the master series gained the unmeasured state S8 introduced. Its realization RLZ-ZBAHA3 is re-anchored to the composed candidate and keeps its ID. Evidence (L174-A13-c1rtsg-state-list): dashboard/src/panels/detail-panel/changeSetBar.tsx, masterUnmeasured and changesetTotal at the composed candidate; dashboard/src/panels/detail-panel/changeSetBar.test.tsx:658-696",
+      "revision": 3,
+      "subject": "INV-C1RTSG"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E7XA8R",
+      "items": [
+        "sha256:ee71d3179099ffc28941195ef40f40c11731ee3c9465d095dd9f2f8f89fab5af",
+        "sha256:44f226a6083c2052efe41a8a397bd6b03ca630fb3de64ccf959c6c260aeb0335",
+        "sha256:30bad7c3d673c4beb741512c9572f5ea88b3fb842bdfc4a4bf32327551784dc8",
+        "sha256:bee36dfd1624c544b146e184e559573c0d5a8f7479a11a1a2cb3d164c1279968",
+        "sha256:1a85e423be77bb663ada52ec2a688bc41826037e941f3e4bc34a22abe604f385",
+        "sha256:82f8a64fee8d7051a0a91215fea689fc0b658c199101b16b2a61fd6700c3c1c4",
+        "sha256:cc3610f98f97afcbbc34e43dc3065af8e9e85640a90cdfbb1b4d4fea447e712a",
+        "sha256:1424dd15eb8e42e855e53e535bfeb3bc3882a553bf4a79f81895f876f951fd85"
+      ],
+      "reason": "The read-lifetime paragraph said the cache wrapped task, file-diff and master reads, which implied that a master read is reused. It is not: the cache reuses keyed reads, and the master response is composed per request from the endpoint selection, per-file sidecar flags and per-leaf rows. The paragraph now names each reused read and each read that stays native, states the master net's key by endpoint digest and onboarding root, and adds the measured timing line: repeat reads 0.048-0.064 s net-only and 0.232-0.252 s with the leaf rows, first reads 3.132 s and 13.690 s, the installed dashboard check not measured, and the 100 ms revisit relaxed and not claimed as met.",
+      "sources": [
+        {
+          "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+          "path": "mcp/src/agents_remember/serving/changeset.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/changeset.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dc229d234ae888019f18a20c91a1cd0135ada287",
+            "content": "sha256:cb5e759ba031d2dfc8f4ed405ee0fb5c2affc09ae99eccf422fc1c176963c292",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetReadState"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "before": {
+            "blob": "5cf51539b6df8e9517869d32694e6d48754342e6",
+            "content": "sha256:f709534c1e156d88c7c1b3e810cd1d44b90ecf1b34df0d9f7f3842e54e67095c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ChangeSetReadState"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "id": "RLZ-YNHTQMA1"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-K5R598",
+      "items": [
+        "sha256:adf44fe7b59768e3e442ee58273bdd9b78ee6b6cb0ae8c93987e1629a0c371f4"
+      ],
+      "reason": "The promise is unchanged: a control carries a one- or two-word state, and the owner's code, reason, offending input and next action sit in a closed disclosure beside it. The condition now names the unmeasured read state among the states a control can carry, so the enumeration matches the state word it renders. Its realization RLZ-YNHTQMA1 is re-anchored and keeps its ID. Evidence (L174-A13-th4kxftx-state-list): dashboard/src/panels/detail-panel/changeSetBar.tsx, ChangeSetReadState and ChangeSetStateDetails at the composed candidate",
+      "revision": 3,
+      "subject": "INV-TH4KXFTX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KMM15V",
+      "items": [
+        "sha256:f36658b1ccc3e63d90ea70770b038ce25de2b89100205ab9c628485708624e85"
+      ],
+      "reason": "The helper computes the route-index path for one route. It is a pure locator used by the observation points above; it decides nothing and adds no obligation.",
+      "subject": "hunk:sha256:f36658b1ccc3e63d90ea70770b038ce25de2b89100205ab9c628485708624e85"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
+            "content": "sha256:af78af1868dcac26bb9065a409bc7621337daa0405be962d6dadf2a9b9c0da90",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_net_is_served_again_from_its_endpoint_commits"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "before": "absent",
+          "id": "PRF-4C8VH4"
+        },
+        {
+          "after": {
+            "blob": "3aa6597ae8c47d8bba7aff36c724913e3a9c6644",
+            "content": "sha256:c1d5f13edb4b7801f534b198ccea6fe396361264cc17ce14d330daf23f4da5b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_master_nets_sidecar_flags_follow_the_onboarding_index"
+            },
+            "path": "mcp/tests/test_master_net_generation.py"
+          },
+          "before": "absent",
+          "id": "PRF-S3X30D"
+        },
+        {
+          "after": {
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:08c8222529bbf7e612a06a6ae0d8b88fce6f251abf74f8b623a75ffd1f87dd31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_onboarding_root"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "before": "absent",
+          "id": "RLZ-FMFAT4"
+        },
+        {
+          "after": {
+            "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+            "content": "sha256:bfeef34bf103e598392abb42a00b1671b0247033a6e700ec60a64826e186e239",
+            "locator": {
+              "kind": "symbol",
+              "name": "_master_net"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Z3F5FE"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-M6GA09",
+      "items": [
+        "sha256:f859c6ecd02bc87bc5d4a4693c4ce6afe9c8f3a5b61ef1f94c1c30f596349e4d"
+      ],
+      "reason": "The invariant already required an id-keyed cached change set to be byte-identical to the native read, and the master net now meets it: its two sides, counters and sidecar flags are one read keyed by the four-endpoint digest and the onboarding root, served again with no observation on a hit, with every deciding sidecar path observed before it is read. This adds two realizations and two proofs and changes no statement, condition, exclusion or status. Evidence (L174-A12-master-net-attribution): role-reports/worker/e2f5a3c8-47b1-4d09-8a6e-3b2c95d1f074/a12/evidence/master-read-before.json; .../master-read-after.json; .../sidecar-input-count.txt; notes/reports/reviewer/3c7e9d21-58a4-4b0f-a2d7-8e6a1f4b90c3/verdict-r7-a12.md",
+      "revision": 2,
+      "subject": "INV-ZNXX7H"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T97GHE",
+      "items": [
+        "sha256:f42f7ad153c0952c9152c26cbbd80b9f9f597b1aee5004b253b270b11996fd49"
+      ],
+      "reason": "The added docstring paragraph states what the observe callback does. It changes no obligation: the nearest-first governing-index decision and the mirror fallback are INV-WS8GFNAC's and are unchanged, and the reuse the callback enables is stated by INV-ZNXX7H. A parameter that only reports the inputs a decision consulted carries no separate promise.",
+      "subject": "hunk:sha256:f42f7ad153c0952c9152c26cbbd80b9f9f597b1aee5004b253b270b11996fd49"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VMC2HH",
+      "items": [
+        "sha256:beb7ac6b25b3719b13bbd5a936843b5f99611c67e78861e30a5e2d79c7fa0f00"
+      ],
+      "reason": "The mirror-probe branch reports its path to observe before probing it. The fallback's behaviour and its position after the governing-index chain are unchanged, so INV-WS8GFNAC keeps its meaning; reporting an input adds no obligation of its own.",
+      "subject": "hunk:sha256:beb7ac6b25b3719b13bbd5a936843b5f99611c67e78861e30a5e2d79c7fa0f00"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+            "content": "sha256:9822d02e8099f8ef819816ebe06b903025c7b5f4e98a7753a2285c7a31ecc7c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_sidecar_status"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "before": {
+            "blob": "28c6d442c3bee361d688bddebe7aea088c48189c",
+            "content": "sha256:2e71355d5cb062db0fffb72aff9583aa01e984c62e6d24a6976dc1ec4f22db1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_sidecar_status"
+            },
+            "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+          },
+          "id": "RLZ-P5GN64FZ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XMF6PE",
+      "items": [
+        "sha256:1c17e3519ff223bc50338980f1e516ca74a68321ee6657a0b080393358ae9a96"
+      ],
+      "reason": "route_sidecar_status gained an optional observe keyword and reports each deciding path before reading it; the nearest governing index still decides and the mirror probe is still the fallback, so the invariant's obligation is unchanged. The realization RLZ-P5GN64FZ is re-anchored at the composed candidate and keeps its ID.",
+      "revision": 1,
+      "subject": "INV-WS8GFNAC"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YR2DCP",
+      "items": [
+        "sha256:999f0a167e25496dab426baf2ed1e8087612c58dafe6f2b551e8c2a2cca544f8"
+      ],
+      "reason": "The serving overview describes the change-set API and the modules that own it, not how a read is retained. The two changed serving functions keep their routes, response shapes and refusal kinds; the reuse account and the measurement live in the module card. Nothing the overview states became untrue.",
+      "sources": [
+        {
+          "blob": "8bdffe4683b00da6aed0b4f57d68f0689505bb48",
+          "path": "mcp/src/agents_remember/serving/changeset.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Z3034Z",
+      "items": [
+        "sha256:f42f7ad153c0952c9152c26cbbd80b9f9f597b1aee5004b253b270b11996fd49",
+        "sha256:29e6a1cc3e12b1b5339ccb988146c9ca833041713161f9b182abb2e4eeb71a14",
+        "sha256:beb7ac6b25b3719b13bbd5a936843b5f99611c67e78861e30a5e2d79c7fa0f00",
+        "sha256:f522e44307503d94a0265818cd4ecbe7f6dc11902b2144da639f36d6e77cd1cf",
+        "sha256:f36658b1ccc3e63d90ea70770b038ce25de2b89100205ab9c628485708624e85",
+        "sha256:01321779cf8b0e21df48ebe0cff7b9a271b6864eebd5a13027cec06699728181"
+      ],
+      "reason": "The card described route_sidecar_status's nearest-first governing-index walk and its mirror fallback but not the observe callback added for the master net. The card now states that every deciding path — each candidate route index, an absent one included, and the fallback mirror sidecar — reaches observe before it is read, which is what lets a caller serve a byte-identical answer from its key. The decision itself is unchanged.",
+      "sources": [
+        {
+          "blob": "2705131141c595386bfe5506c4ccabd7a5792892",
+          "path": "mcp/src/agents_remember/kernel/sidecar_pairing.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/sidecar_pairing.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

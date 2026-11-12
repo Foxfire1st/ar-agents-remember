@@ -1,0 +1,179 @@
+{
+  "path": "dashboard/src/cockpit/paseoPluginPick.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "content": "sha256:2652e89299d479172d5582b3de348303a0a95e29456222fd5c253be22e2e6fb3",
+        "locator": {
+          "kind": "symbol",
+          "name": "the message box and the tray's space > reports the box's own left and width beside Paseo's sidebar and terminal, and posts again when only they change"
+        }
+      },
+      "facet": "In a split layout the posted rectangle carries the box's own left and width, and a width change alone posts again.",
+      "id": "PRF-437HHH",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "L189-S3NMAZ-EXT",
+        "leaf": "260928-MIK-L189"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "content": "sha256:3879b00ce9b27faedcdb40c52504ad1bc40e0f1f9b37d19ba84e9092db5ac4e5",
+        "locator": {
+          "kind": "symbol",
+          "name": "chat text picks inside the frame > names the agent from the stored focus in the compact layout; a user message, a tool call and a message far back each go with their own time"
+        }
+      },
+      "facet": "Fixture chat picks use the stored compact-layout focus and each picked user/tool/old row’s own timestamp; no timeline read supplies provenance.",
+      "id": "PRF-5HT3C5",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "content": "sha256:bd9350653b6b44bf9c5884b20fbd3abc6d0aa37637210e76c8e0cb59b84f4258",
+        "locator": {
+          "kind": "symbol",
+          "name": "the message box and the tray's space > reserves the tray's height on the chat's scroll root alone, in a split layout"
+        }
+      },
+      "facet": "The reserved height pads the chat's scroll root alone - not the sidebar, the terminal pane or the page body - and is released at zero.",
+      "id": "PRF-FT7QFD",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "L189-S3NMAZ-EXT",
+        "leaf": "260928-MIK-L189"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "content": "sha256:97b6bc1d59bd7b38de62657ceec8cc8e9a7fa193b869dc97fe204ecab5378e42",
+        "locator": {
+          "kind": "symbol",
+          "name": "chat text picks inside the frame > gives one named notice and no offer when a Paseo update leaves the rows' own records unreadable"
+        }
+      },
+      "facet": "Unreadable fixture row records emit one named notice and create no offer or pick during that channel lifetime.",
+      "id": "PRF-HYHC5C",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "content": "sha256:755774a8cac732920f0e5494943834f9b2f9e16dcb37b66e3d54ca466a26e21b",
+        "locator": {
+          "kind": "symbol",
+          "name": "chat text picks inside the frame > offers ⊕ add on highlighted chat text and posts its pick with agent, message and the row's own time, keeping selection and focus"
+        }
+      },
+      "facet": "The fixture offer posts the selected text, agent, message ID and recorded row time, while offer mousedown/click preserves the selected range and focused element.",
+      "id": "PRF-JRK159",
+      "invariant": "INV-8TZW5X",
+      "origin": {
+        "handoffEntry": "TRAY04",
+        "leaf": "260928-MIK-L89"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "content": "sha256:91df952762ccc0535c7f38041f997314bfe2fcdc44c18469568f4466b6847446",
+        "locator": {
+          "kind": "symbol",
+          "name": "the message box and the tray's space > reports the box's new position when the layout moves it without resizing it"
+        }
+      },
+      "facet": "A container resize and a class change that resizes nothing each post the box's new left; an identical rectangle posts nothing.",
+      "id": "PRF-YJGS0Y",
+      "invariant": "INV-S3NMAZ",
+      "origin": {
+        "handoffEntry": "L189-S3NMAZ-EXT",
+        "leaf": "260928-MIK-L189"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+        "content": "sha256:10398479e5da2ee87ba1405f273a10b6c54ce80fcf0397642e490439ea804f80",
+        "locator": {
+          "kind": "symbol",
+          "name": "chat text picks inside the frame > refuses by name, in place, text of a message the host has not recorded yet: no pick goes without its time"
+        }
+      },
+      "facet": "An untimed recorded-row offer changes to the named refusal and posts no pick; a later recorded timestamp allows the selected row to be picked.",
+      "id": "PRF-YV47WD",
+      "invariant": "INV-GE7PTW",
+      "origin": {
+        "handoffEntry": "TRAY03",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selection-preserving add and no timeline read\n\nAnchor: \"it(\"offers ⊕ add on highlighted chat text and posts its pick with agent, message and the row's own time, keeping selection and focus\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "content": "sha256:46e52ed800fa21cfeacaa7d6248918a26faff7a83dd4166769e9a41ea5bb85cb",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 227
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Unrecorded time, unreadable DOM, copy preference and no-agent boundaries\n\nAnchor: \"it(\"refuses by name, in place, text of a message the host has not recorded yet: no pick goes without its time\", async () => {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "content": "sha256:75c85df1ca63aee48172818c15c2d34661738e92aeb9bef0b3d92dfe074b0714",
+            "locator": {
+              "end": 439,
+              "kind": "line_range",
+              "start": 291
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Composer measurement, reservation and grace/recovery cases",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ab42aad68322f93e143cb69ec66a5c34da41f647",
+            "content": "sha256:c0afd20ca0f8ff0c42997fd7d188813b85dad55489230a85f638da5eec77828b",
+            "locator": {
+              "end": 601,
+              "kind": "line_range",
+              "start": 442
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

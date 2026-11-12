@@ -1,0 +1,541 @@
+{
+  "path": "mcp/tests/test_knowledge_review_surface.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module has fifteen current test declarations. Its old header still names removed coverage and is not a current case census; the bounded forbidden-name vocabulary remains declared.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:9c7a186fa892459687e9ef694019f9d7f79caa9d4f7449124ddc92a0bb7e188c",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The missing-role display case: reported roles are None or a permitted value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:c9ced5b0c066f50dea45680d2d1971c375eb5df30c825d2d649925f2c4ea0237",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_role_stays_unclassified_and_is_never_guessed_from_a_name"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:0425754e8424bd0c3f8f033c00eba7b6ca933c6f264d8e0451abb9ac22110253",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 274
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The recursive schema-name scan excludes the declared forbidden names, and the neighboring vocabulary case checks no record kind/table/status of its own; this is bounded assertion coverage, not a universal free-text conclusion proof.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:aca19d05b37d6a1d1c865871e74edbe8f01b62d6fea11d403fe2beaab0bfb147",
+            "locator": {
+              "end": 307,
+              "kind": "line_range",
+              "start": 296
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:535cb473f9f95ad83f3a13acfbb28ccc885b19c299a435b6cf5713baa9188d79",
+            "locator": {
+              "end": 318,
+              "kind": "line_range",
+              "start": 310
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:9c1281290594bba0361c2b6c1b2421cb2cd241bfd24f88bee66760e1e0c9efef",
+            "locator": {
+              "end": 328,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The rendering case compares both fixture indexes row-for-row by count before and after composition; it is not a general filesystem-write audit.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:925cc6fcf0f1d0f349463d2015440f9449e42130e5fa1be0339e0a34480245c4",
+            "locator": {
+              "end": 341,
+              "kind": "line_range",
+              "start": 331
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The selects-nothing case, comparing the payload's identity and counts against the shipped comparison value for value.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:a57eae007b6c8e049cde12a7b37638dbe4a828974ffc0721bc6eb3588e26f4e9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_adapter_selects_nothing_because_the_shipped_comparison_is_the_comparison_rendered"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:e33ce3f45ec28247a93d4bd4710d30dd7b5d4f188fee8d46941ccd8c9b7cd6e6",
+            "locator": {
+              "end": 389,
+              "kind": "line_range",
+              "start": 340
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "**The staleness pair, asserted from both directions, plus the absent-submission-path case.**\n\nAnchor: `test_the_stale_rule_holds_in_both_directions` `test_the_surface_reports_the_absent_submission_path_instead_of_growing_a_private_one`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:e75eed75b1ca85e95163733a3d07486168d1859a54acd81823f40f9c1c616fd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stale_rule_holds_in_both_directions"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:80bd6b0bb7e8cdfac7aae42455c9b131f14d79140154342f11eea1067d1c13f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_surface_reports_the_absent_submission_path_instead_of_growing_a_private_one"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:1025594e50cbb5a23e3fa30dbdf7c23b2166ed5342e0bae5d00b4081486468b6",
+            "locator": {
+              "end": 644,
+              "kind": "line_range",
+              "start": 622
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:85e9200aa32e2108ac160f5f120fa7076a938840589a8ce80accf5ca14c6b1cc",
+            "locator": {
+              "end": 426,
+              "kind": "line_range",
+              "start": 417
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:9c7a186fa892459687e9ef694019f9d7f79caa9d4f7449124ddc92a0bb7e188c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The surviving state case renders with its removed-field assertion, and the missing-side case mixes constructor refusals with rendering.\n\nAnchor: `test_an_item_whose_author_is_not_published_is_shown_as_an_unresolved_reference` `test_a_missing_side_is_its_own_state_and_never_an_empty_string`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:a5f17dda786cd03bcdedb0ab095932c00145b8a7eb9423316d8fde5e7a2e2558",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_item_whose_author_is_not_published_is_shown_as_an_unresolved_reference"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:6ccfa76b579526620207be48e999658db5888ae6e79a8f92d742ddb89468830e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_missing_side_is_its_own_state_and_never_an_empty_string"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:422108f6a072aa6fd09c0e269840100ebc6f1841d8014c4293d8c1edca54c0f8",
+            "locator": {
+              "end": 459,
+              "kind": "line_range",
+              "start": 445
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "19": {
+      "note": "Distinct knowledge/source/judgment pane types, no authored_effects/signals, typed labelled catalogue entries, retry identity present on both sides, a direct retry comparison with a page and one absent identity excluded are asserted. The body does not compare every catalogue identity or open an unanswerable subject to assert its reason.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:62f2d925fc02c6440bb2eac72c018f0739754395d233ea31d4faf7800daff8e6",
+            "locator": {
+              "end": 544,
+              "kind": "line_range",
+              "start": 472
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "**The lane declaration, which is a precondition rather than metadata.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:0753257dc2b79f881f380b8681aa5ded3b4e356b794086776ece0c5b7a215bb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytestmark"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "A knowledge-only change retains a compared selected pair while its inventory is measured empty; malformed inventory combinations are rejected and unrepresentable names require a partial measured inventory.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:7f4a484ac931d377d260853f9985aa136c386a5f36241cd3eddb478581be048f",
+            "locator": {
+              "end": 614,
+              "kind": "line_range",
+              "start": 547
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:1870b597ea8ffe4018bd695196ebba832f65b575cd6ac928090df35559b897c8",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 617
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "The module is selected once in the unit-regression lane and named by seven exact-scope lifecycle artifact records; registration is not execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The leaf id the resolution reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:aefb9102af4af0998d69bb0e697be6e35744cc9683434b1e5a1990f2aeec36e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "REPOSITORY_LEAF"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The config that names no real root, so only the resolution's own refusals can answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:b3290840b99d08ae6a117d1c7919fb91f00139d0bccaded62a144e46cd57c223",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_config"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The fresh two-snapshot fixture per case, and the resolution assembled without a contract so the composition can be driven without a coordination tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:569502bf735b86e9d8cd035fd0e1c66865de363e3f3ada6a426801b336a9f01b",
+            "locator": {
+              "kind": "symbol",
+              "name": "fixture"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:f4db2ccd4d0f53dc2fae9f5c5133896e9575ace058c9f78342a05eb45b16897d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolution_for"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The one request shape, the narrowing helper the optional selector obliged, and the one failing-loudly render helper every pane case goes through.\n\nAnchor: `review_request` `reviewed_selector` `render`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:50c3bbd9a3e6f6cd500b0c88b74e20bca0933df8a5c5eff3d4bb0428d89a9348",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_request"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:6084a0581a7d33db9f7765ff5e23045bb9d7997d03f5d9fefb7dc790a56c0bc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "reviewed_selector"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:a9d72066544a8b45d64b5b4db6086c40cfbc12b665a8abb1f0bf81d5158ccd35",
+            "locator": {
+              "kind": "symbol",
+              "name": "render"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:f3fa9828ee2fcbffea5063cd560d041547749771fb04eaca1101077fed6dc13e",
+            "locator": {
+              "end": 140,
+              "kind": "line_range",
+              "start": 134
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:5dad3dcca181340681bbd4d55956620146be51fda40f7bc54549e137b5260c44",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 188
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:9c7a186fa892459687e9ef694019f9d7f79caa9d4f7449124ddc92a0bb7e188c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The shipped two-snapshot support the whole module is built on, with the independent byte-safe Git observation this leaf's inventory cases compare against.\n\nAnchor: `build_diff_fixture` `DiffFixture` `independent_changed_records`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:89e6a01e76fd13467e7a2ecb6f31901685045bb135f47e56e5dfb8f4a62a8fe8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:93278447340ac95295f133b59e4f66156f4b6856936d678eeb57d00502567eda",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_diff_fixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:22dfb1ee84670abf255273f091ceecbfb65214bb1921d6f80fc131d2d651c6b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "DiffFixture"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f71d2f06be49d435153b9c1758713da504a05c2e",
+            "content": "sha256:061866315310050b29472dd283530f910051ba1434bc9de325377aa09af49bff",
+            "locator": {
+              "kind": "symbol",
+              "name": "independent_changed_records"
+            },
+            "path": "mcp/tests/diff_scope_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The knowledge case asserts the compared revision pair, statement presence, side-specific condition tuples and comparison-owned field changes, not literal statement-text equality. The source cases retain sibling/before-side and unmapped/outside-selection counts.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:57e24fdde9dc16abc96ce23eb02b78b746b3dc11b33a47a36848161797ce573b",
+            "locator": {
+              "end": 245,
+              "kind": "line_range",
+              "start": 182
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:310b03dd905a026e1ce524b5c7313db771be0229b6584f6642707cd227dda2a8",
+            "locator": {
+              "end": 259,
+              "kind": "line_range",
+              "start": 248
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "08bea4f9b3ca380cc4c3bb5a101b29d3db8479d2",
+            "content": "sha256:e618d10655301c4ce200798224e7dc212b32f2a0fcd1f1fca7fae598a0b3c0c1",
+            "locator": {
+              "end": 275,
+              "kind": "line_range",
+              "start": 262
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

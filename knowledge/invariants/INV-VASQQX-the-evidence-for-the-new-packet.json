@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Shape-only fixtures would certify scenarios the real owner never exercised, including the maximum admitted store."
+  },
+  "applicability": "Evidence that the packet and frame contracts hold at their real owner seams and maximum admitted populations.",
+  "conditions": [
+    "The comparison owner's payload, a real bound tree and the measured store ceilings are available."
+  ],
+  "exclusions": [
+    "Installed-UI or presenter-session evidence, which belongs to later packets."
+  ],
+  "id": "INV-VASQQX",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A5-verdict.md; A5-fixed-list-verification.md; A5-checks-complete/; prior A4 full-criterion account retained"
+      ],
+      "path": "l102-curator-list.json"
+    },
+    "handoffEntry": "L102-F16",
+    "leaf": "260928-MIK-L102",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The evidence for the new packet/frame contracts must measure the specified real owner seams, finite costs and maximum store, rather than treating shape-only smoke cases as proof of the omitted scenarios.",
+  "status": "proposed",
+  "supersedes": []
+}

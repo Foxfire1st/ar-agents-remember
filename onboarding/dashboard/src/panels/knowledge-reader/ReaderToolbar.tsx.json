@@ -1,0 +1,251 @@
+{
+  "path": "dashboard/src/panels/knowledge-reader/ReaderToolbar.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:69e9de28a5de4fd4d8ec6318264799f01f1d9f3863d4e9ac1d174c1654a65655",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderToolbar"
+        }
+      },
+      "id": "RLZ-17XRS5",
+      "invariant": "INV-7XYFX3",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 13",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ReaderToolbar owns the rendering or source-selection boundary that implements this obligation: At forty rem and narrower Browse shows a full-screen tree and selecting a row returns to the document.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:8f7a2ed92a97965a87303ccd9b4b229cb777e35ea86dc0f370ce3329a79f68be",
+        "locator": {
+          "kind": "symbol",
+          "name": "SelectionNotes"
+        }
+      },
+      "id": "RLZ-HSR3JD",
+      "invariant": "INV-64M4A6",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 2",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "SelectionNotes owns the partial-index and code-note lines after the R1 repair; the producer's PartialIndex name was the pre-repair construct.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:69e9de28a5de4fd4d8ec6318264799f01f1d9f3863d4e9ac1d174c1654a65655",
+        "locator": {
+          "kind": "symbol",
+          "name": "ReaderToolbar"
+        }
+      },
+      "id": "RLZ-KZMD8R",
+      "invariant": "INV-64M4A6",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 required behavior 2",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "ReaderToolbar owns the rendering or source-selection boundary that implements this obligation: Repository, memory selection and record lookup stay in one header line, while index problems remain fully visible in the document.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+        "content": "sha256:175889d32e1cfd550a81a8890951baa02be4ae50e555558cb3b038ccfae9949d",
+        "locator": {
+          "kind": "symbol",
+          "name": "useRead"
+        }
+      },
+      "id": "RLZ-N0YWKV",
+      "invariant": "INV-QE6278",
+      "origin": {
+        "handoffEntry": "MIK-R79@v1 / L79-TK-O1 acquisition scope",
+        "leaf": "260928-MIK-L79"
+      },
+      "rationale": "useRead owns the current view/parameters promise and tags visible answer/failure state with its selection key; the memoized loader returns the same acquisition to both consumers.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "One mounted view/parameter promise, keyed visibility and ignored inactive effect completions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:175889d32e1cfd550a81a8890951baa02be4ae50e555558cb3b038ccfae9949d",
+            "locator": {
+              "kind": "symbol",
+              "name": "useRead"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Named choices, commit-list and record-list failures.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:846ebb9d089004adb02297d97f7e25585b287c111eebb834a2a8843278d96dbf",
+            "locator": {
+              "kind": "symbol",
+              "name": "SideFailures"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Published/live-leaf/commit options, including disabled unconverted entries and the URL-selected value.\n\nAnchor: current options and selector",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:20daa7626161117a1f3f3ca274a8052a79a23ee8af4ea7dad7c61245e21ceaea",
+            "locator": {
+              "end": 190,
+              "kind": "line_range",
+              "start": 133
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Supplied selection identities and a supplied non-commit pin, not a renderer-owned cleanliness measurement.\n\nAnchor: current pin and selection banner",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:2e4fea711b5e76a83ecafd84bd24393fba7b5b2f3b020cdea244d5e84c21e38d",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 62
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:15488436c281155d45816d9231b1965b878eddc4461593c59acc00ba79bcb856",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The code note and complete supplied partial-index problem list.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:8f7a2ed92a97965a87303ccd9b4b229cb777e35ea86dc0f370ce3329a79f68be",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectionNotes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The added mounted name-selection field validates through a root path read and navigates only on a view answer.\n\nAnchor: current commit/branch field",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:d109b39f497d41bf33faf6e2c02268a62d8ee7ec17c38e7eebb8419124cdff4d",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 192
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "One-line control layout and the narrow-width Browse callback remain separate from parent full-screen layout.\n\nAnchor: current style and toolbar body",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:32f943be61894defa95400e7da22cdf92defd33b9be8efe3ab2ee63801fb4e40",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a01cef75c71aa3fda6bae526501fa075f45f4197",
+            "content": "sha256:69e9de28a5de4fd4d8ec6318264799f01f1d9f3863d4e9ac1d174c1654a65655",
+            "locator": {
+              "end": 393,
+              "kind": "line_range",
+              "start": 321
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The parent’s single records acquisition feeds lookup and the Records loader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+            "content": "sha256:20a230bc9ef376838caf15c2a0ca90fbe00012cbc9b6f82959ede26c793017c2",
+            "locator": {
+              "end": 281,
+              "kind": "line_range",
+              "start": 203
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "13d16ed646c66456c46a044d8f55fae75ceb3ca3",
+            "content": "sha256:850b3a42cabc9276dbe59a2665989300ba30bcdc5b47b22202fc95d93568e94d",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "dashboard/src/panels/knowledge-reader/KnowledgeTree.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

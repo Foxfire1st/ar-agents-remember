@@ -1,0 +1,362 @@
+{
+  "path": "mcp/tests/test_dashboard_build_currentness.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+        "content": "sha256:c2e9ce0f320b13b3edb1506242673cd28a27ea7a6801f7aa3e955929f948af2e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unresponsive_socket_owner_can_be_stopped_and_replaced"
+        }
+      },
+      "facet": "An own dashboard whose HTTP build answer times out or returns 503 is stopped and replaced.",
+      "id": "PRF-3KZ955",
+      "invariant": "INV-GJTCT9",
+      "origin": {
+        "handoffEntry": "L84-R1-01",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+        "content": "sha256:cf2a134dfaac4c25a1a349e6cebcfe76c0318beefefebafe7da2450a280a8291",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_equal_version_digest_change_restarts_and_matching_bytes_adopt"
+        }
+      },
+      "facet": "With the version unchanged, a different Python digest restarts the daemon and an equal digest adopts it.",
+      "id": "PRF-94TYNP",
+      "invariant": "INV-19ZN9E",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule4 dashboard replacement",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+        "content": "sha256:a8fefd5b60197ae8c6f15b5f260983fc619220211e1e93bc302702c28267120a",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_saved_pid_is_repaired_from_actual_listener_before_stop"
+        }
+      },
+      "facet": "A saved process id that does not answer on the endpoint is replaced by the actual listener before any stop.",
+      "id": "PRF-JSG8FE",
+      "invariant": "INV-19ZN9E",
+      "origin": {
+        "handoffEntry": "MIK-R84@v5 retained v1 rule4 dashboard replacement",
+        "leaf": "260928-MIK-L84"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+        "content": "sha256:887ffeae9fb68c480d31a47db6d4a4693a0ce32c1f0671058dce4667bb21a053",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_unresponsive_foreign_or_changed_socket_owner_is_not_signaled"
+        }
+      },
+      "facet": "A foreign or changed socket owner is not signalled.",
+      "id": "PRF-PSXAR9",
+      "invariant": "INV-GJTCT9",
+      "origin": {
+        "handoffEntry": "L84-R1-01",
+        "leaf": "260928-MIK-L84"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A saved pid is repaired from the actual listener and only that pid is stopped.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:a8fefd5b60197ae8c6f15b5f260983fc619220211e1e93bc302702c28267120a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_saved_pid_is_repaired_from_actual_listener_before_stop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "An unresponsive owner does not prove a new child ready; its one-second bound runs on the fake clock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:c851b91a5a2ae6854cd523436422ccf24b5c6cdcc9644fc68da8f85ed5cbe222",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unresponsive_owner_does_not_prove_new_child_readiness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The Linux listener lookup checks the socket inode and the dashboard command.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:00e916be9939362e40bb0d01bd6219f89cbed4dd9c1cef398004175647be4121",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_listener_lookup_checks_socket_inode_and_dashboard_command"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A foreign-root listener is neither adopted nor signalled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:d551bf606bfcf4278a231df65ef576e21477719d7c12a5d2c4e492fd454b4616",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foreign_root_listener_is_not_adopted_or_signaled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "macOS process arguments keep spaces and empty arguments.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:071e14a26ab1b35ed1588263fd9baee68d1e9da9b31cc6ff4b0c90c3cc2322e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_darwin_sysctl_arguments_preserve_spaces_and_empty_arguments"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The macOS owner supports adoption, readiness and stop; its readiness waits use the hang guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:524a3d6f94d7d4586606cad582b8670ec459593b78ecb33bde25cf4cd7639e12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_darwin_owner_supports_adoption_readiness_and_stop"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Native identity errors are unknown and never signal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:dfbd398e6069a20a7803b2e778be65b0bf6b34f742c1552dabf52e6d3a07585c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_identity_errors_are_unknown_and_never_signal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "An unchanged projection poll and an open stream observe a newly stale build.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:629492b6d3c9d339860b60a8f01701fda7b9dc995bbe8058424d10d102231a02",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unchanged_projection_poll_observes_new_stale_currentness"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The macOS adoption readiness waits run under the suite's hang guard, and the unresponsive-owner case's one-second bound runs on a fake clock, so neither depends on machine load.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:c9051c67e777e250ab215779753bd9eab1a1b3f253ff1da59728238f78c97b1c",
+            "locator": {
+              "end": 356,
+              "kind": "line_range",
+              "start": 355
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:8e49b3f9b7e95eaf8e29bb33cf093d1ef0868aaa65a8743712ad263b8625656a",
+            "locator": {
+              "end": 494,
+              "kind": "line_range",
+              "start": 490
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "An unproven saved pid is never signalled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:0c513c7dd1001ab89cbb811db62ada3de122fc5746fe7e5dc12f12bd52e22639",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unproven_saved_pid_is_never_signaled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A changed digest at an equal version restarts once and matching bytes adopt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:cf2a134dfaac4c25a1a349e6cebcfe76c0318beefefebafe7da2450a280a8291",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_equal_version_digest_change_restarts_and_matching_bytes_adopt"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A failed stop keeps the stale identity and an unknown digest acts on nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:c46edda38832d436c1cbced045ac0d17f9ef1e6f07cee70e848debece45c8797",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_failed_stop_keeps_stale_daemon_identity_and_reports_failure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "A runtime preview does not repair the saved state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:3333a881ee617f18115dc4938acf2e8207b5bf6640594ce50f66243a514bdceb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_runtime_preview_does_not_repair_saved_state"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The HTTP build and the socket owner must be the same process.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:72c6616149a49f0e229f03a355e7da55f0f55de822409d1e0e9ba7fd7287a868",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_http_build_and_proc_socket_identity_must_agree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "An unresponsive same-root owner can be stopped and replaced.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:c2e9ce0f320b13b3edb1506242673cd28a27ea7a6801f7aa3e955929f948af2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unresponsive_socket_owner_can_be_stopped_and_replaced"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A foreign, changed or absent owner is not signalled.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:887ffeae9fb68c480d31a47db6d4a4693a0ce32c1f0671058dce4667bb21a053",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unresponsive_foreign_or_changed_socket_owner_is_not_signaled"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Repeated status prints the served first-seen time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4991c85ffed7db29624c8ec7a6c5665a252576ca",
+            "content": "sha256:c50f9e98286cf6b4b1551d6c5ad244d98b2e89e96c94767df5c9d9861c4e5178",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_repeated_status_prints_served_first_seen_time"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

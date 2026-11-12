@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_object_census_witness.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Two identical requests run one census, witnessed by test_two_identical_requests_run_one_census",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cdeed8c81d1a1a836c203cb5d6b71ab08f8ab2be",
+            "content": "sha256:9c5d25aa5502f79a2bf34281688263a11df6bbf831a809bb8c98635ec4b30893",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_identical_requests_run_one_census"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

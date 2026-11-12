@@ -1,0 +1,684 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_role_tools.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:352aeecbb61b1546e1c531078d752b12ab659017adad5b11888bfa7f3a6ffadb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_name_replacement"
+        }
+      },
+      "id": "RLZ-173APY",
+      "invariant": "INV-5EY4EN",
+      "origin": {
+        "handoffEntry": "MIK-R171@v2 rule 2",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It names a replaced running turn plainly in the answer, which is the gap v2 rule 2 requires to be stated rather than hidden.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:e1c770b6e9749d413706899730b29e3b5d8d8c10ce8599d2298d5bfbb8a06a72",
+        "locator": {
+          "kind": "symbol",
+          "name": "send_role_message"
+        }
+      },
+      "id": "RLZ-3DKDAC",
+      "invariant": "INV-GM5MS3",
+      "origin": {
+        "handoffEntry": "MIK-R76@v1 required behavior 8",
+        "leaf": "260928-MIK-L76"
+      },
+      "rationale": "This unchanged role-message owner retains archived-recipient refusal and is not altered by leaf archival.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:ce4fed2530cafe8bcb3aef66ec961a93135199c9553f1b58be505054b76684c5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4AJ94X",
+      "invariant": "INV-1ZKP4R",
+      "origin": {
+        "handoffEntry": "INV-1ZKP4R",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This module builds the tool answer a limited recipient's message returns.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:2472cefe0f77a03045a4b389e5f8e1102c885b522d539b95d6a9ff74107686da",
+        "locator": {
+          "kind": "symbol",
+          "name": "_filed_message_id"
+        }
+      },
+      "id": "RLZ-5EWHGA",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It recovers the id the message was filed under, which is the identity the resend must reuse.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deliver"
+        }
+      },
+      "id": "RLZ-7MG9HB",
+      "invariant": "INV-BS7TH8",
+      "origin": {
+        "handoffEntry": "MIK-R98@v1/L98-A02/L98-R02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "This message entry point now invokes capacity admission before native send or resume and returns the named refusal rather than starting a ninth execution.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:d9c486831df4838ded9e6993733bcfb0961a4c32142f7e6bdfd15c0491c35cfe",
+        "locator": {
+          "end": 1119,
+          "kind": "line_range",
+          "start": 1081
+        }
+      },
+      "id": "RLZ-BVTKAZ",
+      "invariant": "INV-82ZTHK",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rule12",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:3e9100a819ac7dd689a6d9fb5c1687ad3312467abc59095ac554caf866a14819",
+        "locator": {
+          "end": 364,
+          "kind": "line_range",
+          "start": 350
+        }
+      },
+      "id": "RLZ-J6YQNS",
+      "invariant": "INV-N6DKKD",
+      "origin": {
+        "handoffEntry": "L114-W38",
+        "leaf": "260928-MIK-L114"
+      },
+      "rationale": "The resolved recipient's durable receipt already records its role, so the completed event carries the actual role for the id-addressed form too.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:4da243e498ffe93f8bf0e4cd2466b5da0d94d6a5d1f9f6bd243f977e812ac7ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "_undelivered"
+        }
+      },
+      "id": "RLZ-KRHPKS",
+      "invariant": "INV-82ZTHK",
+      "origin": {
+        "handoffEntry": "MIK-R93@v1 rule12",
+        "leaf": "260928-MIK-L93"
+      },
+      "rationale": "This refusal constructor returns the changed nextAction wording while preserving the refusal reason and runtime delivery behavior.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:242903221b0fe9124d4a771bbe1d8a4f3e310777cefec81070989063bebf1fd0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deliver_or_hold"
+        }
+      },
+      "id": "RLZ-NJJDFT",
+      "invariant": "INV-AMJAZT",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 3",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It decides between delivering and holding; here a host-unreachable, timed-out or unknown-outcome send becomes a held message with its reason and the id of the attempt instead of a refusal that loses the file.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_then_delivered"
+        }
+      },
+      "id": "RLZ-QR5NNP",
+      "invariant": "INV-4XSRF7",
+      "origin": {
+        "handoffEntry": "MIK-R171@v1 rule 4",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "It builds that answer; here it keeps the receiving turn's id internal instead of emitting it as a response field the model forbids.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
+        "locator": {
+          "kind": "symbol",
+          "name": "_deliver"
+        }
+      },
+      "id": "RLZ-SGCSYP",
+      "invariant": "INV-0EASG7",
+      "origin": {
+        "handoffEntry": "L98-CODE1-F01 / Worker repair L98-A02",
+        "leaf": "260928-MIK-L98"
+      },
+      "rationale": "Message delivery and closed-session resume execute inside the existing request admission owner, before either host operation starts a turn.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:e1c770b6e9749d413706899730b29e3b5d8d8c10ce8599d2298d5bfbb8a06a72",
+        "locator": {
+          "kind": "symbol",
+          "name": "send_role_message"
+        }
+      },
+      "id": "RLZ-V2YZGK",
+      "invariant": "INV-Z0DCW1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-11",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The message owner treats collection failure as an answer detail while still delivering the message to the recipient.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+        "content": "sha256:6c1f3b2d543a5d0110c11582e9e7b7e46c1154b7e4a536e453517d7cbf80c0a9",
+        "locator": {
+          "kind": "symbol",
+          "name": "_held_then_delivered"
+        }
+      },
+      "id": "RLZ-WETPS8",
+      "invariant": "INV-18M0W3",
+      "origin": {
+        "handoffEntry": "L171-F07 / L171-A4",
+        "leaf": "260928-MIK-L171"
+      },
+      "rationale": "The held-drain answer must propagate the transport disposition through the same replacement warning helper as direct delivery.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of start_rule_violation supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:c48df9a1f1aaafe92bbecd9163de74c180b08fd1081068db975efb22b063708d",
+            "locator": {
+              "kind": "symbol",
+              "name": "start_rule_violation"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A message that would start a turn on a selected-task Investigator passes the shared selection capacity owner (`investigator_message_capacity`) before native send/resume, and a full selection refuses with `investigator-capacity`.\n\nAnchor: `investigator_message_capacity`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+            "content": "sha256:694e9bf81ae3b2dcdcb9e69f5f6790f6ba06cbed892d1baa993d5b54efcf83f5",
+            "locator": {
+              "end": 996,
+              "kind": "line_range",
+              "start": 979
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Unheld native dispatch owns capacity/send/resume and invokes shared long-reply filing after its wait.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+            "content": "sha256:35d445b9fbcf93f458571be8f1390bc1608b893aa8f8d362f1414820e2be1fb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Upstream held-message ordering is decided before native send; permission holding never answers a prompt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+            "content": "sha256:242903221b0fe9124d4a771bbe1d8a4f3e310777cefec81070989063bebf1fd0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_deliver_or_hold"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Typed public start conversion includes stepUp.\n\nAnchor: Current source; preserved L88 property 15",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:ce893ea39695242eee3cf56eae0142dcf200ec58da229efb604f1a7d439327a8",
+            "locator": {
+              "end": 311,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:ab2f912fa61d56db6e3f923572e47dae171179619b1b4e411ce1ae342b3e9d64",
+            "locator": {
+              "end": 314,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:1c6cfe59dafcc81b25c3c311eb4890625aaa682a59c70e6e6c40e392b390b839",
+            "locator": {
+              "end": 308,
+              "kind": "line_range",
+              "start": 243
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The extracted answer owner derives second-copy status from the applied task-server flag and recorded exclusion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:bae4627cff64a6320a1f7b275993044113038bc0bd40eb71731ec564c6d32579",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 161
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Readback, provenance and retry advice are extracted without changing receipt identity.\n\nAnchor: Current source; preserved L88 property 17",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:26d87d9df225d7f7552bd73bd494540cb202246d07350830a53ecec682da9c76",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "On valid saved receipt context, role-facts publication belongs to pre-launch/replay and receipt-aware resume, not to the post-answer projection; filesystem/runtime publication is best effort, not host execution or plugin-consumption evidence.\n\nAnchor: Current receipt publication versus answer projection",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c7802873c1a67ff9cf7024b59cd2ad83838feaf8",
+            "content": "sha256:2d9fcd4224b3aa8a1056860ebc8387fe9f8f371fd84a9ab8c81eaac043799bf1",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 13
+            },
+            "path": "mcp/src/agents_remember/cli/role_activity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:7444244c4bf0aafe48c70951dd2b4d08494b80c9612b41cb44b3b397151ca660",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+            "content": "sha256:335301dc67e6a6ce25d1e76d95073f50c01b78998c766e879349f05afade47e3",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:fb204c62fce606ae6c928d09415ba9506ab2110ae7f1e06b0bfb1351365f5a62",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b4c32636d1b3142af6daf7fb0560284f0500da8",
+            "content": "sha256:e0599bedbc353596bd239ec382536966f335442da377d98f4bbad012c85c2ba8",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 96
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The start path's own override rule, now owned by the caller-harness module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:3ac5d9853ec3a35ba0bfce2b34dd1067035a83f8254e5dc3ad97fdc96376d5bc",
+            "locator": {
+              "kind": "symbol",
+              "name": "_agent_override"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _start_role supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:301fdbafa8ddeff8b8b6779ade103f7f461c9f53baae8fbd7de8b3274495b5aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_role"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The start carries the client harness; configured-host choices are checked before dispatch, while a cold root defers binding and validation until after preparation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:301fdbafa8ddeff8b8b6779ade103f7f461c9f53baae8fbd7de8b3274495b5aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "_start_role"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+            "content": "sha256:3acdd5dcc455eb1ce9f1c05d3f0f2bae5b9f1d8232496b38830022114e1546c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_to_caller_harness"
+            },
+            "path": "mcp/src/agents_remember/cli/role_agent_override.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:754408ad18741d52cf5e04e2ab1fed531e79502b9ee5044bb4360ad704ad495c",
+            "locator": {
+              "end": 290,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:3f7db8c4cfd8eb528c25b0ed0f52e041a7c901032c5758a3df8121cfeb1f9203",
+            "locator": {
+              "end": 300,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "932a9eb64943b87d06372b21f57b90a7dbfad8a7",
+            "content": "sha256:9bc0df8385879b45f8fc2a81c89b74d4005f4c6bb842c47f060b2903ef46d49f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/role_agent_override.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _resolve_recipient supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55811f6d0fea6bc48121bd9e8a7666bfb4f45799",
+            "content": "sha256:263fc31278fc9bea43e7e85be88f6e272b56f0b509dcbebb5ed747fc7c1df019",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_recipient"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_recipients.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Checks all 49 caller/target pairs against exact table.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+            "content": "sha256:2593d0ec139ad97f1bb0be0d8299b2ac4c8dc4ea687c5b761cab87b0e942a29e",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/tests/test_paseo_role_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Checks own orchestrator sprint and manager sprint/master binding containment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efdd76c6e03cd7a5879e496c68a65f78cdf9e4a4",
+            "content": "sha256:7573ff3b62151555a8d70fa2424e941b85763432b7b516b0afe6d5d1ce0a415f",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/tests/test_paseo_role_tools.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Checks foreign IDs and self-addresses are refused.\n\nAnchor: `RoleMessageTests.test_only_an_agent_id_of_this_lines_receipts_is_a_recipient`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:872f8246b3ac6e79da7a84eebfbbd16c2af919f5af3d5c1b992c93704c138be3",
+            "locator": {
+              "end": 565,
+              "kind": "line_range",
+              "start": 518
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Checks live taskless-role ambiguity reports IDs and sends no message.\n\nAnchor: `RoleMessageTests.test_several_live_agents_of_a_role_are_refused_with_their_ids_never_chosen_among`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:b80d60e687c8d38b602def038f3001b0f0ddc61fdd2d58b37f1e835776bde360",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 302
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Exceeding 24 reads refuses and discloses list cut rather than selecting newest agent.\n\nAnchor: `RoleMessageTests.test_more_executions_than_are_asked_about_are_refused_and_the_cut_is_said`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "38512a23b3c677ade6ae9f338032127c732110d7",
+            "content": "sha256:6cb683f725caad5644be0c2e7c2f6754c2fa8d167d14f70837d9fbe1bdc7c28d",
+            "locator": {
+              "end": 470,
+              "kind": "line_range",
+              "start": 440
+            },
+            "path": "mcp/tests/test_paseo_role_messages.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The host-unreachable remedy that names the install step and the one start.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+            "content": "sha256:6360d6906f33f67364a091fa810512750413c1193bdccd08992ec081f5f091b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_host_unreachable"
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

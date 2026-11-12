@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Invented endpoint resolution or an archive fallback over a present live owner would publish unverifiable requirement authority. Changed-link/deferred-row checks prevent that mistake without promoting informational validator observations into a commit gate."
+  },
+  "applicability": "Requirement-owner selection, the Writer changeset endpoint checks, deferred planned requirement references and validator endpoint observations.",
+  "conditions": [
+    "Resolve the live task directory first; only when it is absent may the corresponding tasks/<repository>/0_archive task directory supply the owner. A present but unresolved active owner is not bypassed.",
+    "With coordination authority, newly added or changed unresolved record links refuse before publication; unchanged unresolved links remain observations and absence of coordination authority is not fabricated resolution.",
+    "A deferred planned requirement reference must resolve at its owner or the row refuses with correction guidance.",
+    "Endpoint documents expose authored occurrence states and archive provenance as observations; they do not turn requirement endpoint observations into validator commit refusals."
+  ],
+  "exclusions": [
+    "Requirement-owner resolution is separate from packet approval/latest-version policy, record-link path currentness and task-question publication.",
+    "No archive move, task write, execution result or validation/commit/MEMORY acceptance is performed by this guarantee."
+  ],
+  "id": "INV-DP689F",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/tasks/agents-remember/260928_maintained-invariant-knowledge/notes/reports/worker/0e651ec5-2eed-4b58-b19f-e2336d4978ca/repair-freeze-0a36ddc4/builder-report.md#mik-r54-rule-10",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-61/mechanism-review.json",
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/54_writer-and-validator-corrections-a4b3b3af8d-ar/role-reports/curator/1ad64580-9e4a-42ce-adc0-169869767dba/wave-75/proof-source-review.json"
+      ],
+      "path": "wave-60-complete-history.json"
+    },
+    "handoffEntry": "MIK-R54@v1 rule 10",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Requirement endpoints resolve live or archived owners, newly authored unresolved links and deferred requirements refuse in the Writer, and validator endpoint observations never refuse a commit route.",
+  "status": "proposed",
+  "supersedes": []
+}

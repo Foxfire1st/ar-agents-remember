@@ -1,0 +1,55 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing/task_document_instruction_contracts.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The four authoring entry points and their exact pointer sentences.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "216df7ae84c0867d941ed69364dba3f133fdfc0b",
+            "content": "sha256:f46d2ae3b3f48297f40119123e4bb90805a079bf8f4b72d20fdf5fc219eacb14",
+            "locator": {
+              "kind": "symbol",
+              "name": "POINTERS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The field conventions the authoring detail must state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "216df7ae84c0867d941ed69364dba3f133fdfc0b",
+            "content": "sha256:cd31bf754e7d98d22a5810137826ac02ed4a918c59f4b4dabad6680efbc7a550",
+            "locator": {
+              "kind": "symbol",
+              "name": "CLAUSES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Pointers, clauses, template headings and manifest entries are checked on the canonical and generated surfaces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "216df7ae84c0867d941ed69364dba3f133fdfc0b",
+            "content": "sha256:a909d63f34725e6fdc9ad0cc07c663a5d6faa65c3c0331ca991d9cd9190a652e",
+            "locator": {
+              "kind": "symbol",
+              "name": "assert_contract"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

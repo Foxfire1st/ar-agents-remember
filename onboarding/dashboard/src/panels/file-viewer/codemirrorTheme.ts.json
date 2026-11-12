@@ -1,0 +1,55 @@
+{
+  "path": "dashboard/src/panels/file-viewer/codemirrorTheme.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`FilePane` builds its `EditorView` with this theme bundle.\n\nAnchor: `FilePane`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbbb34c143ffd24687f884bd401852c94fb43a96",
+            "content": "sha256:4381a6ac5fd2d1fed3c3059c96f97e25dc55475450953631d92a8d35b059cd90",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/file-viewer/FilePane.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The CodeMirror chrome bundle reads the panel, ink, grid, amber selection, and monospace font tokens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
+            "content": "sha256:6a21dc2544a6b64407258861c6dfcf652b4a525e6af86e1fbf76d7853283466c",
+            "locator": {
+              "kind": "symbol",
+              "name": "chrome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The syntax-highlight bundle reads the cyan and mint syntax tokens.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a459a6de463b2b40cfb77ccea0765deaed21c3c",
+            "content": "sha256:6b51590c96ded3f47575ee9a7b1d34e028dd3dc829be8170232005413f42c3bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "highlight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,67 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The constants-based marking and its rejected text/shape alternatives govern every future decision surface; a new record kind must re-establish its marking."
+  },
+  "alternatives": [
+    {
+      "option": "Mark records from the writers' own exact constant and skip-step prefixes.",
+      "reason": "Constants move with the writers, so the marking tracks what the product writes; the match is exact/prefix string comparison with no enforced authorship separation — an author typing those exact strings would be muted (unguarded; see L126-MEM-04).",
+      "status": "chosen"
+    },
+    {
+      "option": "Match record text patterns on the page.",
+      "reason": "Text matching breaks when writers reword records and risks muting authored decisions.",
+      "reconsider_when": "Record text gains a stable machine prefix owned by the writers.",
+      "status": "rejected"
+    },
+    {
+      "option": "Change the stored decision shape to carry a flag.",
+      "reason": "A shape change breaks every reader of the decision log for a marking the projection can carry.",
+      "reconsider_when": "The log schema is versioned with a migration for all readers.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The newest-five count mutes entries matching the writers' constants, keeping other authored history intact."
+  ],
+  "context": "The newest-five rule must mute product-written records without matching authored text, under the architect time-order ruling.",
+  "decider": "Architect time-order ruling (Parent a7c93988), carried in the R5 dispositions.",
+  "id": "DEC-NVR5NW",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-NBCGCF"
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R126",
+        "packet": "requirements/MIK-R126-v1-the-task-page-shows-what-belongs-to-the-task.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "predicate tests + preview tests + whole-log unsorted test; pytest/vitest green"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L126-curator-handoff.json"
+    },
+    "handoffEntry": "MIK-R126@v1 rule 6",
+    "leaf": "260928-MIK-L126",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

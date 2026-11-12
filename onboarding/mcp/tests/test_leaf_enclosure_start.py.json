@@ -1,0 +1,58 @@
+{
+  "path": "mcp/tests/test_leaf_enclosure_start.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "99346162891d46e0697036bb7b478df89496bb19",
+        "content": "sha256:008d1de8ee70e6764dc3fa288398174d95886173264d99e50ce02315094b1d5c",
+        "locator": {
+          "kind": "symbol",
+          "name": "LeafEnclosureStartCommandTests.test_native_stale_recovery_survives_the_child_and_both_entry_points"
+        }
+      },
+      "facet": "Native producer shape, child recovery transport, parent projection and the common refusal translator are asserted; the shared public entry wiring is separately source-observed and not exercised by this test.",
+      "id": "PRF-AHFF9T",
+      "invariant": "INV-8J056T",
+      "origin": {
+        "handoffEntry": "L95-M1-KNOW-02-proof-8j056t",
+        "leaf": "260928-MIK-L95"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99346162891d46e0697036bb7b478df89496bb19",
+            "content": "sha256:ea073f6440e20fce74e0df411c2a8079aebbb844eab450bdc83b75bd85df3af3",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Adds a test importing the shared launch_world. A real child Python process runs the private command with mocked configuration/start seam. Inside start, canonical leaf resolution tolerates unreadable review only under launch context and task writing preserves the raw reviewState. The context is false outside the command, ordinary reader validation still refuses and parent assertions reread preserved raw state.\n\nAnchor: Current test/support source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "99346162891d46e0697036bb7b478df89496bb19",
+            "content": "sha256:ea073f6440e20fce74e0df411c2a8079aebbb844eab450bdc83b75bd85df3af3",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

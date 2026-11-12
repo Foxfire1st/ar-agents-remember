@@ -1,0 +1,94 @@
+{
+  "path": "dashboard/src/data/conditionalReads.test.ts",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+        "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
+        "locator": {
+          "kind": "symbol",
+          "name": "bounded conditional page results > retains parsed identity on 304 without reading a body, and replaces it on a new ETag"
+        }
+      },
+      "facet": "A 304 keeps the parsed identity without calling json, validates the new facts token and sends the prior ETag; new response bytes replace that identity.",
+      "id": "PRF-FQRGS0",
+      "invariant": "INV-WNHAWD",
+      "origin": {
+        "handoffEntry": "L168-W-R168-03",
+        "leaf": "260928-MIK-L168"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+        "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
+        "locator": {
+          "kind": "symbol",
+          "name": "retains parsed identity on 304 without reading a body, and replaces it on a new ETag"
+        }
+      },
+      "facet": "Retained values are visible only under their confirmed facts; a 304 confirms bytes for the newly revalidated facts without decoding.",
+      "id": "PRF-NPX3QW",
+      "invariant": "INV-74578B97",
+      "origin": {
+        "handoffEntry": "L168-CUR-INV-74578B97-C01-support",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Facts-qualified 304 identity with no body decode.\n\nAnchor: retains parsed identity on 304 without reading a body, and replaces it on a new ETag",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+            "content": "sha256:8cb12317447405a2c93532439f2f0b4196763a696d7c5db4e2a71b737837f59b",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Actual-store entry and byte bounds over growing histories.\n\nAnchor: the actual file-response store reaches its 16 MiB byte bound over two growing histories",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+            "content": "sha256:c5c07198a78a4b50fc06a8f134271e1d02b4bdfb0878c1ee34e51fbba1b08677",
+            "locator": {
+              "end": 87,
+              "kind": "line_range",
+              "start": 36
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Oversize, same-facts pending sharing, abort and current failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0664e76469b7fd63cd8e3da581d1b99a59d8d550",
+            "content": "sha256:abe189f94073f6e2683767a0d13236756b06b51a6aeccbb7bcdff65d6db9dbaf",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 89
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_judge_guard.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f57397d3487bf1185644e88f327c04fe877d33a6",
+        "content": "sha256:77caebae389f7f5b6d5be7650ecec06f23c310bc027ead694dff8070815fa11d",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YVA4NW",
+      "invariant": "INV-SYN8W6",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-judge-package",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_retained_codex_character_rejection_stops_before_any_execution.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f57397d3487bf1185644e88f327c04fe877d33a6",
+            "content": "sha256:77caebae389f7f5b6d5be7650ecec06f23c310bc027ead694dff8070815fa11d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

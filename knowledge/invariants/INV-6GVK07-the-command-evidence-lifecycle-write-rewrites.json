@@ -1,0 +1,41 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A rewrite command that dropped a row, assigned a lane or guessed at a broken file would change the governed inventory under the name of formatting, and nobody would review that change."
+  },
+  "applicability": "The --write mode of python -m agents_remember_test_support.testing.evidence_lifecycle over the two test catalogs of a repository.",
+  "conditions": [
+    "The derived set of an exact row comes from observed_test_consumers and that of an exact-source row from observed_source_consumers.",
+    "When the source tree shows no consumer for an exact or exact-source row, the list is kept as written, ordered and without duplicates, and the command prints that it kept it.",
+    "A file does not exist when its path is not a file; a directory in its place counts as gone, and the command names every removed line.",
+    "A row whose own artifact file does not exist is named in the report and left in place. When none of a row's listed consumers exists, the list is left as written.",
+    "The command writes one blank line between tables and one newline at the end of a file; a change of spacing alone is reported once per file as whitespace normalised, unless another line about that file is printed (a change, or a note that names a row). A list whose order, duplicates, quotes or commas changed is printed by name with what was changed.",
+    "A refusal is raised before either file is written: a catalog that cannot be read or decoded, CRLF line endings, a catalog that does not parse, a table header or a list in a form the line rewrite does not read, a list that is not closed by a bracket on a line of its own, a comment inside a list, a lane manifest without a [files] table, a contract or artifact row listed twice, a directory whose files Git cannot list, incomplete dependency facts, or ambiguous modules."
+  ],
+  "exclusions": [
+    "Adding or retiring an artifact or contract row and choosing the lane of a test file, which stay authored edits.",
+    "The consumers of an all-tests row, which are derived when the catalog is loaded; a list written on such a row is only ordered and freed of duplicates.",
+    "The [[override]] rows of the lane manifest, which the command leaves as they are."
+  ],
+  "id": "INV-6GVK07",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rules 4); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md",
+        "requirements/MIK-R51-v1-shared-test-catalogs-merge-without-conflict.md (rule 4); notes/reports/260928-MIK-L51-worker.md; notes/reports/260928-MIK-L51-review-R1.md; notes/reports/260928-MIK-L51-factcheck.md"
+      ],
+      "path": "notes/reports/260928-MIK-L51-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R51@v1-write-command-decides-nothing",
+    "leaf": "260928-MIK-L51",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The command evidence_lifecycle --write rewrites both test catalogs to canonical form and makes no decision about their content. It orders contract rows by id and artifact rows by path. It writes every consumers list and every lane list in ascending order, one path per line, in double quotes, with a comma after each path, without duplicate lines. It sets the consumers list of an exact or exact-source row to the set derived from the source tree when that set is not empty. It removes each lane line whose file does not exist, and each consumer line whose file does not exist while another listed consumer exists. It adds and removes no row, never assigns a lane, never empties a consumers list, changes no field of a row other than its consumers, keeps every comment outside a list, and changes nothing on a second run. It refuses every catalog or source tree that it cannot read in this way, and a refusal writes nothing to either catalog. The report names each list or file it changed: a list whose order, duplicates, quotes or commas changed is printed by name with what was changed, and a change of spacing alone is reported once per file as whitespace normalised, unless another line about that file is printed (a change, or a note that names a row).",
+  "status": "proposed",
+  "supersedes": []
+}

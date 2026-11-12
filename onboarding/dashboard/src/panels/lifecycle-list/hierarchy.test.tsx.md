@@ -1,76 +1,96 @@
 # dashboard/src/panels/lifecycle-list/hierarchy.test.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/lifecycle-list/hierarchy.test.tsx`    |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-08-24T15:04+02:00                                      |
-| lastVerifiedCommitHash | `f95487ec993b58d34911bba0206a7fa6ef9684eb`                  |
-| lastVerifiedCommitDate | 2026-08-24T15:28:18+02:00|
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
 
 ## Purpose
 
-The hierarchy/phase-grouping suite split from `LifecycleList.test.tsx` by the
-260731-EFA-L8 test split. Pins row grouping, phase ordering, and collapsible
-hierarchy behavior of the Operations list.
+The native Operations hierarchy suite pins served parent/children, repository-name ordering, need bands and stage/activity grouping. BY PHASE is retained UI wording, not lifecycle reconstruction.
 
 ## Code Commentary
 
 ### Logic
 
-Seeds the collapsible hierarchy projection and asserts group headers, phase
-ordering, and re-show behavior.
+Native parent/child/order/count facts retain persisted independent disclosures, selected ancestor reach, accessible terminal folds, plain-arrow/modifier behavior, numbered/title typeahead and full hover. Completed-parent folds ignore active descendants until opened; phase grouping is flat. Aborted counts stay outside progress, and mismatched count/tree fixtures require served activity totals, not client recounting.
 
 ### Invariants And Boundaries
 
-Assertions preserved from the monolithic suite; shared cleanup from
-`test-utils.tsx`.
+Shared cleanup and disclosure/keyboard boundaries remain. Native parent/child keys and status/count facts replace lifecycle/series inference; source inspection is not fresh mounted execution.
 
 ### Todos
 
 None recorded.
 
-## Docs References
+The disclosure cases also check that a click can close a held parent without choosing another document, that selection transitions discard prior release state, and that plain parent arrows release a hold while modified chords remain untouched. Completed-fold clicks remain a separate control; this suite adds no fold-arrow handler.
+
+The hover assertions read the title cell's `title`, because the row line itself carries no title, so the browser shows none over the step dots.
+
+## Evidence
+
+- The suite reads the row's hover from the title cell, which is where the retained text lives. [3]
+
+- Chosen-document holding yields to explicit disclosure for the current selection episode, while plain arrows stay confined to parent rows. [2]
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The hierarchy/grouping suite. | `describe` | dashboard/src/panels/lifecycle-list/hierarchy.test.tsx:19-321 |
 
-## Cross-Repo References
+- The hierarchy/grouping suite. [1]
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
+
+## 260921-ICR-L33 The Landed-Leaf Cases (reverted; historical account)
+
+**Historical only.** The landed-leaf `describe` and its five cases were reverted after L33: the
+current candidate suite has one `describe` and none of the cases below. The account is retained as
+the record of what the reverted tests measured, and it is not current suite documentation.
+
+- **`holds a fully landed master closed by default and reaches its leaf when opened (R33.1/R33.4)`**
+  (`:416-448`) — a dead-worktree enclosure with a `Completed` leaf renders one closed master row
+  (`Tasks · 1`), and one click on its disclosure makes the leaf reachable at `data-depth="1"`,
+  `data-parent-key=taskdoc:/tasks/master-a/task.json`, `data-landed="true"`, selectable as
+  `taskdoc:/tasks/master-a/01_landed-leaf.json`, `Tasks · 2`.
+- **`shows a master's landed leaves beside its live ones without a click (R33.1)`** (`:449-477`) — a
+  master that still holds live work is open by DEFAULT, so its landed leaves are rendered with no
+  interaction at all.
+- **`never closes a row that carries OTHER rows, even when its own work has all landed (R33.4)`**
+  (`:478-602`) — an orchestration row with landed leaves of its own that also commands another master,
+  every worktree dead. It asserts the commander is NOT auto-collapsed (`data-auto-collapsed` is null,
+  its disclosure reads "Collapse Commander tasks" with `aria-expanded=true`), that the commanded master
+  is reachable without a click, **and** that the commanded master — whose only children are its own
+  landed leaves — is itself still closed with its leaf not forced open, so the rule stays targeted
+  rather than becoming "never collapse anything". Deleting
+  `(structuralChildren.get(row.key) ?? 0) === 0` from `markAutoCollapsed` turns the full delivered suite
+  from `1708 passed` into `1 failed | 1707 passed` — this case, at its line-584 assertion — and
+  replacing the rule outright (never auto-collapse) fails its targeting assertions at 598-599; both
+  mutations were run by the verifier in scratch copies outside the worktree, so the case is not passing
+  for the wrong reason in either direction.
+- **`counts the task entries it carries, not the projection's documents (R33.4)`** (`:603-691`) — the
+  header counts ENTRIES, and the case pins the `h2`'s own tooltip sentence as well as the count, so the
+  sentence cannot drift away from the number it explains (perturbing either the production string or
+  the expected substring fails it).
+- **`keeps a landed leaf that no series index resolves out of the list (R33.4)`** (`:692-`) — a
+  boundary guard rather than fix evidence: it passes on the base too, and it exists because floating an
+  unindexed landed leaf to the top of the list is the plausible regression this rule invites. It is the
+  case the residual disclosure rests on: one real landed leaf
+  (`260713_turn-aware-expectation-supervision/05a_bootstrap-approval-hotfix.json`) is deliberately not
+  floating, so "a landed master's leaves are reachable" is not unconditional.
+
+The suite's own row is re-derived for this leaf's growth (`19-321` → `19-355`); no pre-existing case was
+re-worded or weakened.
 
 ## 260821-CLIVE Discarded Progress Proof
 
-The suite now proves that a planning master with one live leaf and one discarded-before-start entry
-renders `0/1 · 1 discarded`, explicitly not `1/1`. This preserves the distinction between audited
-removal and completed execution while leaving hierarchy, phase grouping, collapse behavior, and
-long-title coverage unchanged.
-
-## Update History
-
-- 2026-08-24T15:04+02:00 — Added the regression that discarded work is shown separately and does
-  not increase completion.
-
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the
-  hierarchy suite split from `LifecycleList.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+Native completed/aborted fixtures retain accessible hidden/shown terminal folds and exclude aborted work from progress. Discarded-before-start derivation is historical; these cases consume published counts, not prove their production.

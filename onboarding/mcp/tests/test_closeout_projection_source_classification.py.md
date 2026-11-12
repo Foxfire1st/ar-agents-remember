@@ -1,15 +1,5 @@
 # mcp/tests/test_closeout_projection_source_classification.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_closeout_projection_source_classification.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T19:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d`|
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -89,71 +79,77 @@ execution or acceptance evidence.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; the proving evidence is this
 repository's own source and its own declared refusal codes.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external source is required for this repository-owned classification proof. | n/a | n/a |
+No external source is required for this repository-owned classification proof.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| One node past the master bound, every node a well-formed master reference. | `_oversized_graph` | mcp/tests/test_closeout_projection_source_classification.py:45-56 |
-| The real raiser refuses the sprint's own authored graph, and its declared code classifies `invalid`. | `test_a_graph_past_its_bound_refuses_by_its_own_declared_code` | mcp/tests/test_closeout_projection_source_classification.py:59-86 |
-| The ordinary source stays readable with no problems, and unreadable sources still report `unreadable`. | `test_an_unreadable_source_and_the_ordinary_case_are_unchanged` | mcp/tests/test_closeout_projection_source_classification.py:89-100 |
-| Every declared capacity code classifies `invalid`. | `test_every_declared_capacity_code_classifies_as_invalid` | mcp/tests/test_closeout_projection_source_classification.py:103-108 |
-| The classification the module pins: membership of the declared set, with the other vocabularies' markers untouched. | `_problem`; "error_type in CAPACITY_REFUSAL_CODES" | mcp/src/agents_remember/worktrees/queue/closeout_projection.py:835-863 |
-| The single declaration that owns the capacity codes and their classification. | `CAPACITY_REFUSAL_CODES`; `MASTER_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:34-34; mcp/src/agents_remember/worktrees/queue/closeout_queue_errors.py:38-40 |
-| The raiser that publishes the code the first case reads back. | `MASTER_CAPACITY_EXCEEDED`; `EDGE_CAPACITY_EXCEEDED` | mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py:165-174 |
-| The fixture this module composes instead of rebuilding the world. | `QueueFixture`; `REPO`; `SPRINT` | mcp/tests/test_closeout_queue.py:56-57; mcp/tests/test_closeout_queue.py:186-727 |
-| The two artifact rows that declare this module as an exact consumer, both through `test_closeout_queue`. | "path = \"mcp/tests/closeout_input_test_support.py\""; "path = \"mcp/tests/curator_coherence_test_support.py\"" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_closeout_projection_source_classification.py" | mcp/tests/test-evidence-lanes.toml:138-138 |
+- One node past the master bound, every node a well-formed master reference. [1]
+- The real raiser refuses the sprint's own authored graph, and its declared code classifies `invalid`. [2]
+- The ordinary source stays readable with no problems, and unreadable sources still report `unreadable`. [3]
+- Every declared capacity code classifies `invalid`. [4]
+- The classification the module pins: membership of the declared set, with the other vocabularies' markers untouched. [5]
+- The single declaration that owns the capacity codes and their classification. [6]
+- The raiser that publishes the code the first case reads back. [7]
 
-## Cross-Repo References
+- The fixture constants this module composes. The fixture this module composes instead of rebuilding the world. [8]
+
+
+
+
+> Retained earlier citation wording: - The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence.
+
+
+
+
+
+
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py"
+
+
+
+
+### Cross-Repo References
 
 Each case's `QueueFixture` builds the repositories it needs — a code repository and, where the fixture
 declares one, an external memory repository — as real temporary Git repositories, which is what lets
 the graph admission and projection path run at all. No production cross-repository authority is claimed
 by this focused module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The fixture's repositories are real temporary Git repositories created per case, not mocks. | `QueueFixture` | mcp/tests/test_closeout_queue.py:186-727 |
 
-## Update History
+- The fixture's repositories are real temporary Git repositories created per case, not mocks. [11]
 
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (flag resolved): the code worktree is frozen, so
-  the earlier flag is now measured rather than conditional. `mcp/tests/evidence-lifecycle.toml`
-  carries the inserted `checkpoint_landing_test_support.py` artifact block at `:342-361`, which
-  leaves `path = "mcp/tests/curator_coherence_test_support.py"` at `:363` — the position this row
-  already cites — and `path = "mcp/tests/closeout_input_test_support.py"` at `:283`. The pair
-  `283-283` / `363-363` is confirmed against the frozen tree, and the flag above stands as the
-  record of the interim state it described. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this row cites the
-  curator-coherence artifact path at `mcp/tests/evidence-lifecycle.toml:363`, which is its position
-  in the current working tree, where the in-flight `checkpoint_landing_test_support.py` artifact
-  block sits above it. The committed HEAD still carries that path at `:343`; the two forms differ
-  only by that uncommitted insertion, so the citation is correct for the tree this leaf is being
-  curated against and must be re-measured if the insertion does not land. Flagged rather than
-  silently chosen; verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 2
-  claim(s) whose anchor no longer sat in its cited range and normalised 3 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-14T14:20+02:00 — 260913-LCA-L7 curator (uncommitted change set on `ar/260913-lca-l7`):
-  created this one-to-one sidecar for the leaf's new integration module. Recorded the measured defect
-  it pins (a capacity code spelling `capacity-exceeded` never matched the `cap-exceeded` substring the
-  classifier tested, so a sprint past its graph bound was reported unreadable), the case-by-case proof
-  shape — one node past the master bound refused by its own declared code and classified `invalid`, the
-  ordinary source readable with no problems while unreadable codes still report `unreadable`, and every
-  declared capacity code classified `invalid` — and the two ownership facts the registration carries:
-  the **integration** lane row at `mcp/tests/test-evidence-lanes.toml:137`, and the exact-consumer
-  entries in `mcp/tests/evidence-lifecycle.toml` at `:307` and `:366`, both reached transitively
-  through `test_closeout_queue`. Verification metadata is intentionally blank: the candidate is
-  uncommitted, no commit contains this file yet, and closeout owns the stamp; no execution or
-  acceptance claim.
+
+- The fixture's repositories are real temporary Git repositories created per case, not mocks. [12]
+
+
+
+
+
+
+
+
+
+
+
+
+- The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence.
+
+Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1041-1041 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1053-1053 - the bytes it recorded now occur 78 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1840-1840 - the bytes it recorded now occur 23 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1919-1919 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3891-3891 - the bytes it recorded now occur 311 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3903-3903 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:150-777 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:1040-1184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/tests/evidence-lifecycle.toml:1827-2454 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ca4abf009f8afe94468f68137ddbae38930c0649. Retired means the anchor no longer stands, not that the cited subject was deleted [Past-epoch source caption, detached from live reference 9. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); recorded commits code d59c3493ec682c2ab58fd9d1ed127d08038e90c4, code a416985be1ec9cf8ec92f64882f50ca012518ac4, code de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7, code ca4abf009f8afe94468f68137ddbae38930c0649. No historical event or intent inferred.]
+
+Current source: The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence.
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_closeout_projection_source_classification.py" [10]
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:1041-1041 - the bytes it recorded now occur 7 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1053-1053 - the bytes it recorded now occur 78 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1840-1840 - the bytes it recorded now occur 23 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1919-1919 - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3891-3891 - the bytes it recorded now occur 311 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:3903-3903 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:150-777 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a416985be1ec9cf8ec92f64882f50ca012518ac4; mcp/tests/evidence-lifecycle.toml:1040-1184 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit de5a7adbb21b2f6f22c3ced0eed9dd7189fe93c7; mcp/tests/evidence-lifecycle.toml:1827-2454 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ca4abf009f8afe94468f68137ddbae38930c0649. Retired means the anchor no longer stands, not that the cited subject was deleted.
+
+
+- The current lifecycle catalog declares this module as an exact consumer on four artifact rows: _user_settings_guard.py, curator_coherence_test_support.py, the Node package-lock fixture and writer_worklist_test_support.py. These are dependency declarations, not runtime fixture-consumption or execution evidence. The `curator_coherence_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `fixtures/repository_profiles/node/package-lock.json` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. The `writer_worklist_test_support.py` artifact row declares `test_closeout_projection_source_classification.py` as an exact consumer. [9]

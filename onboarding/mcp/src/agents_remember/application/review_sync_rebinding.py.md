@@ -1,0 +1,174 @@
+# mcp/src/agents_remember/application/review_sync_rebinding.py
+
+## Governing Overview
+
+[application route overview](overview.md)
+
+## Purpose
+
+Measure the complete post-sync code and memory candidates against one retained tree comparison. Missing inputs are states after a completed sync, never transaction gates.
+
+## Code Commentary
+
+### Logic
+
+Recording requires a successful carrying sync and an exact comparison selected by `select_review_comparison`. Code capture uses the existing future-code owner. `_resolved_memory` captures the complete candidate through an isolated index copy and checks that memory HEAD did not move; the real index is never staged.
+
+Each channel retains reviewed/resolved trees and its match. Unavailable memory is unmeasured, never agreement. `rebinding_names_the_generation` accepts only a tree-bound record equal to the retained comparison. Historical v1 dataset rebinding proves no exact memory-tree coverage.
+
+### Invariants And Boundaries
+
+Failed capture invents no identity; a moved pair remains moved and needs renewed comparison coverage. No non-carrying result records a resolution. Read-back separates absence, unreadability and historical limits. This measurement changes no landing authority or earlier review.
+
+### Todos
+
+None recorded.
+
+### Logic
+
+**What counts as a completed sync is three checked facts, not an inference from payload keys.**
+`resolved_pair_completed` requires the operation to be `worktree_sync`, `ok` to be true, and
+the state to be one of the three in `_CARRYING_SYNC_STATES` — `synced`,
+`sync-pass-completed-memory-skipped`, `sync-pass-completed-source-moved-again`. `already-current` is
+deliberately **not** a carrying state: that result reports that the recorded pair and the participating
+work branches already contained the official line, so nothing was carried and there is no resolved pair to
+measure a review against. The success conjunct is carried even though every producer of those three states
+returns zero today, because a carrying state beside `ok: false` is a result this tool must not measure.
+
+**Every state that carried nothing is described by its own entry.** `_CARRIED_NOTHING` is a
+table rather than a ladder, one row per state, each pairing a block state with the store fact it observed:
+`would-sync` → `preview`, `already-current` → `no-movement`, `sync-resolution-required` → `not-resolved`,
+`sync-resolution-incomplete` → `omissions-awaiting-reconciliation`, `sync-cancelled` → `cancelled`,
+`memory-sync-choice-required` → `choice-required`. A state outside the table answers `not-measured` naming
+the state it was actually given.
+
+**A `sync-resolution-required` result is named by the kind of resolution it waits for.**
+`_nothing_to_bind_block` hands that state to `_resolution_required_block` before the table is read, so the
+table's own `sync-resolution-required` row is not the one a leaf's result uses. The block state is
+`omissions-awaiting-reconciliation` when a parked candidate was reapplied (`resolution.wipRestore`) and
+the payload's top-level `omissions` block, as the sync answer carries it, reports authored items the resolved tree lacks (its detail gives the item count, the
+per-kind counts and the report path), `parked-reapplication` when the sync retained the parked candidate and
+its stash for the owner to resolve, and `retained-merge` when it stopped with unmerged paths in a retained
+merge of the official line. None of the three covers a resolved pair.
+
+### Invariants And Boundaries
+
+- **No refusal reaches the sync.** `rebinding_result_block` catches the unmeasurable-capture
+  control-flow exception and the storage/os/runtime/value errors, and writes a state onto the payload in
+  each case. Nothing in this module can block the Git transaction it describes.
+- **One file per (leaf, generation), not per sync.** A later sync over the same generation replaces that
+  answer instead of accumulating a second one beside it, because the question is "does the review still
+  describe what the leaf holds".
+- **Boundary: paths are recorded as produced.** `task_root` and `contract_path` travel as the contract
+  gave them, so a relocated coordination root leaves a record whose paths no longer resolve where they
+  did; the identities remain readable.
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The statements below are grounded in repository source only.
+
+No configured domain documentation could be checked.
+
+### Repo-Internal References
+
+Every claim on this card is checkable in the module's own docstrings and functions and in the cases that
+drive the real tool. The three details a reader should carry: **the record's verdict is derived from one
+rule shared with its own validator**; **a sync that cannot be measured is still returned unchanged**, with
+the reason on the payload; and **the record is checked against the store before it is read as a
+measurement of a generation**, because a forged record is internally consistent.
+
+
+- The module docstring states what it measures — the exact post-sync code and memory candidates against one retained tree comparison — and that a missing comparison, capture or evidence is a result state rather than an admission gate, with historical v1 records readable but proving no memory-tree coverage. [1]
+
+
+- The module's surface: the two result dataclasses, the per-generation reader and the result block, with the record types imported from the knowledge model module. \|  \| Anchor: `ReviewSyncRebindingPublication` `ReviewSyncRebindingRead` [2]
+
+- The one durable file-name prefix, one file per leaf and judged generation. [3]
+
+- **The one action that produces a comparison current with the resolved pair, stated once.** [4]
+
+- **The three states in which the transaction carried the official line, and why `already-current` is not one.** [5]
+
+- **The six states that carried nothing, each with the store fact it observed.** [6]
+
+- **The three checked facts, including the success conjunct carried for a producer that does not exist yet.** [7]
+
+- The resolved code side's capture failure becomes the state `source-unmeasured` with the capture owner's named reason. \|  \| Anchor: `_ResolvedSourceUnmeasurable` [8]
+
+
+- One published rebinding: the durable artifact, the record, and the read-back that proves it. [9]
+
+
+- The read-back's four states — recorded, legacy-limit for a v1 record that proves no memory-tree coverage, not-recorded naming the location, and unreadable with the reason — with covers_resolved_pair() as the predicate a consumer branches on. [10]
+
+
+- The one durable destination a generation's rebinding is published to. [11]
+
+
+- **Measuring one finished sync and publishing it, and the two cases that publish nothing at all.** [12]
+
+
+- **The never-raising entry point the sync tool calls, and the states it writes instead of raising.** [13]
+
+
+- Reading one generation back: recorded, legacy-limit for a v1 record that keeps its identities but proves no reviewed memory tree, not-recorded naming the location, and unreadable with the reason. [14]
+
+
+- **The check against the store that a forged-but-consistent record cannot pass.** [15]
+
+
+- **The carried-nothing vocabulary, one entry per observed state.** [18]
+
+
+- When a finished sync has no selected comparison, the block carries the selection owner's state and detail as its own. \|  \| Anchor: `_nothing_to_bind_block` [19]
+
+
+- The shipped capture owner's refusal converted into a state rather than an exception. \|  \| Anchor: `_ResolvedSourceUnmeasurable` [21]
+
+- **The one verdict rule the writer and the record's validator share.** [24]
+
+- The sealed record itself: the reviewed pair, the resolved pair, both channel matches and the state. [25]
+
+- The generation store's own order and the manifest this module reads and never rewrites. [26]
+
+- Select the retained tree comparison, not a canonical dataset generation. [27]
+
+- The durable-evidence pair every rebinding is published and read back through. [29]
+
+- **The shipped capture owner whose add-all tree is the resolved source side.** [30]
+
+
+- The publication route whose declared location the resolved knowledge side is read at. [31]
+
+- **The production call site: the sync tool's result, after its Git work and contract write.** [32]
+
+
+- **The reopen owner's fifth channel, which makes the per-generation reader a production consumer.** [33]
+
+
+- **The live read that renders the measurement, and the movement that outranks a carried identity.** [34]
+
+
+- Exact/memory-only movements are measured without relabeling; parked work is captured without staging. [35]
+
+
+- Unavailable memory and historical v1 records claim no pair coverage. [36]
+
+
+- Live movement names its exact memory input and refuses contradictory fields. [37]
+
+
+### Cross-Repo References
+
+No cross-repository behavior is implemented in this file. It reads a task root, the leaf's own worktree and
+a publication location that all lie inside the contract's own repository boundary; the relocation boundary
+that follows from a recorded absolute path is stated above.
+
+No meaningful cross-repo references found.
+
+## Retirements
+
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/application/review_sync_rebinding.py:1-42 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit b52adc8bc0564f6328d3543e48998e9235f1e417. Retired means the anchor no longer stands, not that the cited subject was deleted.

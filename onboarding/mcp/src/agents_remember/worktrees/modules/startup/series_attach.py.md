@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/startup/series_attach.py
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `mcp/src/agents_remember/worktrees/modules/startup/series_attach.py` |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `../overview.md` |
-
 ## Governing Overview
 
 [worktrees/modules overview](../overview.md)
@@ -72,39 +62,29 @@ than a raise — the same shape the rest of `start.py`'s result builders use.
 None recorded. The extraction is a size-rail move; folding any new policy into this file would
 undo the reason it exists.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No configured Domain Documentation source applies to this repository-internal attach seam.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain source is required for this repository-owned command result builder. | "def series_attach_result(" | mcp/src/agents_remember/worktrees/modules/startup/series_attach.py:20-71 |
+- No external domain source is required for this repository-owned command result builder. [1]
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The one exported helper: the series branch of attach, with its two named refusals and the lineage refusal it splices in. | "def series_attach_result(" | mcp/src/agents_remember/worktrees/modules/startup/series_attach.py:20-71 |
-| The caller this module was extracted from, which still owns the rest of the attach route and now delegates its series branch here. | `attach_result` | mcp/src/agents_remember/worktrees/modules/start.py:168-182 |
-| The terminal-cleanup vocabulary that decides the first refusal. | `TERMINAL_SERIES_CLEANUP` | mcp/src/agents_remember/worktrees/scheduling_mode.py:35-35 |
-| The branch liveness probe and the command-result type every return uses. | "def branch_exists("; "class WorktreeCommandResult:" | mcp/src/agents_remember/worktrees/modules/git.py:81-86; mcp/src/agents_remember/worktrees/modules/models.py:14-16 |
-| The atomic-series status projection spliced into every payload, and the source-lineage proof whose refusal is the third refusal. | `atomic_series_status_projection`; "def source_lineage_for_contract("; "def lineage_refusal("; "def lineage_block_payload(" | mcp/src/agents_remember/worktrees/activation/atomic_series_activation.py:434-446; mcp/src/agents_remember/worktrees/source_lineage.py:94-109; mcp/src/agents_remember/worktrees/source_lineage.py:110-124; mcp/src/agents_remember/worktrees/source_lineage.py:139-158 |
-| The status payload the helper starts from. | "def status_payload(" | mcp/src/agents_remember/worktrees/modules/guidance.py:503-505 |
+- The one exported helper: the series branch of attach, with its two named refusals and the lineage refusal it splices in. [2]
 
-## Cross-Repo References
+> Retained earlier citation wording: - The caller this module was extracted from, which still owns the rest of the attach route and now delegates its series branch here. [3]
+
+- The terminal-cleanup vocabulary that decides the first refusal. [4]
+- The branch liveness probe and the command-result type every return uses. [5]
+- The atomic-series status projection spliced into every payload, and the source-lineage proof whose refusal is the third refusal. [6]
+- The status payload the helper starts from. [7]
+
+### Cross-Repo References
 
 No meaningful cross-repository boundary is owned by this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | `series_attach_result` | mcp/src/agents_remember/worktrees/modules/startup/series_attach.py:20-71 |
+- No applicable cross-repository source was found. [8]
 
-## Update History
-
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator: created the one-to-one sidecar for this new
-  module. It is `start.py`'s `_attach_series_result` moved verbatim and renamed
-  `series_attach_result` to bring that file back under the size limit, so the card records the
-  extraction rather than a behaviour change: the states, messages, payload composition and refusal
-  order are the ones `start.py` already emitted, and the caller's series branch is the citation
-  that proves it. Verification metadata remains closeout-owned; no verification stamp advanced and
-  no acceptance claim is made.
+- The caller this module was extracted from, which still owns the rest of the attach route and now delegates its series branch here.  Anchor: `attach_result` [3]

@@ -1,0 +1,93 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation",
+  "references": {
+    "1": {
+      "note": "Queued construction and exact integration snapshots retain separate responsibilities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:20645ae5252fb6a886f24a7c8a45325d614dc3c19c071607b8dc2364996655ab",
+            "locator": {
+              "kind": "symbol",
+              "name": "queued_operation_record"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:79440cb03a070e4c2f2302f3dca90f497df21ce3470fb6d2ad2794e20d1ab2e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_integration_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Resume preserves the accepted generation and mutation histories, requires exit when termination evidence is present, and delegates closeout phase selection to the recovery projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
+            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "locator": {
+              "kind": "symbol",
+              "name": "requeued_same_generation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:3caf704ecd9d7d01c6578d92f43c151d4e6523373c7326cf851e1b616beec585",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_recovery_phase"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b5b61ca2f4419a815ed7db876059e06a39ca9e47",
+            "content": "sha256:cc2252b72df6bec6dc405f4f895bb7bc3cf0e3bc955ccf353c7b1e839c795c18",
+            "locator": {
+              "kind": "symbol",
+              "name": "closeout_generation_retained"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/recovery_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Integration generation authority follows the actual publication pair: the closed-out code commit and external memory-content commit, without selecting a ledger commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:79440cb03a070e4c2f2302f3dca90f497df21ce3470fb6d2ad2794e20d1ab2e2",
+            "locator": {
+              "kind": "symbol",
+              "name": "snapshot_integration_authority"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

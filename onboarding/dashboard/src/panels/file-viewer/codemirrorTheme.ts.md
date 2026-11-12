@@ -1,15 +1,5 @@
 # dashboard/src/panels/file-viewer/codemirrorTheme.ts
 
-| Field | Value |
-| ---------------------- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/panels/file-viewer/codemirrorTheme.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-06-29T17:00+02:00 |
-| lastVerifiedCommitHash | `ad30dd38c3dcfa13fb85f44b281488499e92519a` |
-| lastVerifiedCommitDate | 2026-07-03T08:10:19+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [file-viewer/ overview](overview.md)
@@ -41,22 +31,12 @@ read from CSS custom properties rather than hardcoded, so the theme tracks the l
 `tokens.css` owns the actual OKLCH values. Purely presentational and shared by every CodeMirror surface
 (the plain pane and L4's diff) so syntax tokens stay identical across them.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `FilePane` builds its `EditorView` with this theme bundle. | `FilePane` | dashboard/src/panels/file-viewer/FilePane.tsx:20-50 |
-| The CodeMirror chrome bundle reads the panel, ink, grid, amber selection, and monospace font tokens. | `chrome` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:9-27 |
-| The syntax-highlight bundle reads the cyan and mint syntax tokens. | `highlight` | dashboard/src/panels/file-viewer/codemirrorTheme.ts:29-46 |
+### Repo-Internal References
 
-## Update History
-- 2026-08-04T13:25:51+02:00 — 260731-EFA-L6 S18-B01 same-reviewer semantic-binding repair: split the pooled theme-token claim between chrome and syntax owners under the adversarial verdict, then the exact scoped fixer/check passed.
 
-- 2026-06-29T17:00+02:00 — L4 follow-up (readability): comments and operators/punctuation/brackets now use
-  a mid-lightness ink/bg blend (`color-mix(in oklab, var(--ink) 60%/75%, var(--bg))`) instead of `--grid`
-  (the gutter/border tone, near-invisible on the dark bg); gutter line numbers keep `--grid`. Shared by the
-  File Viewer + L4 diff. Verification metadata pinned until closeout stamps the L4 follow-up commit.
-- 2026-06-29T09:06+02:00 — Created for operations-integration L2 (File Viewer): the read-only CodeMirror
-  theme bundle (`EditorView.theme` chrome + a `HighlightStyle`) mapping the podracer `tokens.css` OKLCH
-  vars onto the code pane. Verification metadata pinned to the task base until closeout stamps the L2
-  code commit.
+- `FilePane` builds its `EditorView` with this theme bundle. [1]
+
+- The CodeMirror chrome bundle reads the panel, ink, grid, amber selection, and monospace font tokens. [2]
+- The syntax-highlight bundle reads the cyan and mint syntax tokens. [3]

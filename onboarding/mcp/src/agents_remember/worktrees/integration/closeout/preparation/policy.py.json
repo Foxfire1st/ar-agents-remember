@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/closeout/preparation/policy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`PreparationPolicyError` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d72b63c6450c02a415d605cff6e476cd2849d5",
+            "content": "sha256:79e32c9bb363166c3bb5af77a16d6ea278b89b0c24a3d738fe116a0c75cfb9a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "PreparationPolicyError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`GitPreparationPolicy` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d72b63c6450c02a415d605cff6e476cd2849d5",
+            "content": "sha256:44a09fc2cda71848d6a19e3dc77f785e8ac0184aa9ed9653cd8c297ba24ecef9",
+            "locator": {
+              "kind": "symbol",
+              "name": "GitPreparationPolicy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_configuration_digest` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d72b63c6450c02a415d605cff6e476cd2849d5",
+            "content": "sha256:95b1bc0b8fbbc00464a3d9bb0ecb75dd06e7d4cc892de26a0846aefe687f67d5",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configuration_digest"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`_hook_observation` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d72b63c6450c02a415d605cff6e476cd2849d5",
+            "content": "sha256:422e9e6ae3b97b4ccb9e9ec9b286557c2db8703829a68dbca4e7960c7018b5e6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_hook_observation"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`_file_identity` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d72b63c6450c02a415d605cff6e476cd2849d5",
+            "content": "sha256:223cc57a798293526f7743e8331c4784b5fb3ef68fd45101b8afe3514107ba6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_file_identity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`observe_git_preparation_policy` owns the corresponding behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44d72b63c6450c02a415d605cff6e476cd2849d5",
+            "content": "sha256:30024d6009ad00f1eac551f4bd640ee9436272dbd4fdda1695cd71b8ce619339",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_git_preparation_policy"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

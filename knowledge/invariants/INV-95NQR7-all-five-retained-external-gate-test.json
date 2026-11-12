@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Realized across the landing, closeout and gate modules, which each refuse a non-external contract itself; guarded by the external-leg gate-route tests, which pin the explicit-operation caller shape the R6 fix proved, not the non-external scope."
+  },
+  "applicability": "Every lifecycle-layer route that lands, closes out or records a task, on every repository.",
+  "conditions": [
+    "The contract carries a mode other than external.",
+    "Direct and registered callers alike."
+  ],
+  "exclusions": [
+    "Status, attach and abandon reads, which R3a/R4d expressly retain.",
+    "External contracts, whose gate behavior is unchanged."
+  ],
+  "id": "INV-95NQR7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "The exact R3-to-R4 delta consists of test_knowledge_gate_routes.py::test_a_timed_out_blob_read_or_an_unverifiable_entry_refuses_a_master_landing (three calls at current lines584/592/601), test_knowledge_cutover.py::_blocked (line155 plus both required-operation lambdas), and test_knowledge_closeout_gate.py::test_a_master_or_checkpoint_landing_waits_until_no_entry_at_a_changed_path_is_stale (line942). All five calls pass operation=\"worktree_integrate\"; _blocked takes its operation explicitly with no default or compatibility adapter. integrate.py::_knowledge_gate_block still requires the keyword-only argument and its external logic is byte-identical to the credited R3 candidate. The Worker retained three-module runtime proof five-external-callers.stdout SHA531226eeb8fc805402dc6ed0cbc4bc64e74b3cab9f42eb3adda97c7786050386: 29 routes +8 cutover +18 closeout-gate =55 passed, EXIT0, PID1922520, 2026-10-10T14:05:41Z–14:06:11Z, Python3.14.8/pytest9.1.1, empty stderr. Current95 source hash controls match the supplied manifest; the three files have not changed after that proof. Carry the R3 ledger-first/four-branch fixes, product caller threading, all five actual sibling refusals and independent42-pass routes result under the unchanged original criterion. No new executable R4 test or whole caller census was needed; current diffs and retained runtime proof refute the former TypeError.",
+        "Curator-owned expansion of R6 L50-CODE-R1-95NQR7 (producer input retained verbatim at notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r6.curator-handoff.json); additional realization anchors placed by the curator for sidecar coverage.",
+        "Curator-owned F01 attribution repair: complete original producer input is notes/reports/role-launch/260928-MIK-L50-reviewer-bc8a682c-745f-42b2-a47d-8d978449ac08-code-r6.curator-handoff.json (SHA-256 3ad6cd419e6a447b8cbe8371201b317965fffd5110fc6cd9b052bd8047705f72), entry L50-CODE-R1-F02, with every original producer field unchanged. Named original plus separate curator resolution: notes/reports/role-launch/260928-MIK-L50-curator-8f6ac14e-c1c0-43fe-b347-6b8ed2158727.evidence/named-producer-inputs.json. Existing origin.handoff.path notes/reports/260928-MIK-L50-curator-handoff-list.json is the historical CURATOR-OWNED WRITER PROJECTION, not the original producer input; expanded L50-CUR-EXP items belong to the Curator. F04 projection represents seven of nine targets: both original proof.stdout targets remain in original input and are not code realizations. Four other retained findings match all nine producer fields. F05 and requirement adjudication remain task-local in the complete seven-entry original; no waiver or lost evidence."
+      ],
+      "path": "notes/reports/260928-MIK-L50-curator-handoff-list.json"
+    },
+    "handoffEntry": "L50-CODE-R1-F02",
+    "leaf": "260928-MIK-L50",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Lifecycle landing, gate and closeout routes refuse a contract carrying a non-external mode once the caller passes its explicit calling-route operation; the five retained external-leg gate tests pin the explicit-operation caller shape the R6 fix proved.",
+  "status": "proposed",
+  "supersedes": []
+}

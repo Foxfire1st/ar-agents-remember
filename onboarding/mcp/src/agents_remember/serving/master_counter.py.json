@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/master_counter.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "CounterReader reads the counter from the native rows and names a busy preparation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7506c4bef647399da1161881536834d5434fbac6",
+            "content": "sha256:27ce92d51b825527e8c80e2933ccd81656fd74edddb434935a46b57c5394b9b0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CounterReader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

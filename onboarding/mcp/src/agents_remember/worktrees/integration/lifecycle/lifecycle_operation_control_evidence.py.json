@@ -1,0 +1,71 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The current `_cancellable_closeout_facts` boundary implements the preparation contract above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "content": "sha256:8b29bca233b0fee8609060b5e51191ba27c971229d4ef84e7b5a869bb8534ccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cancellable_closeout_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`_reconciled_closeout_record` reconciles actual mutations and derives their two recovery commit cells.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "content": "sha256:68fb75fee856514b9742f0f390ac491e1b2363f08f9b366da2c9076e0079abea",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconciled_closeout_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`_cancellable_closeout_facts` combines protected-output and private-preparation facts for cancellation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "content": "sha256:8b29bca233b0fee8609060b5e51191ba27c971229d4ef84e7b5a869bb8534ccd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_cancellable_closeout_facts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The module defines `prove_cancellable_git`; `unchanged_integration_refs` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "content": "sha256:bc8472c11e4ade131e99f8d227aec90a6b1b1e08c67269477ad373fb17846667",
+            "locator": {
+              "kind": "symbol",
+              "name": "prove_cancellable_git"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

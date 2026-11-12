@@ -1,0 +1,55 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The canonical ruling explicitly weighed building, deferring or declaring needless the parent wake; the chosen event-based observer constrains future host integration."
+  },
+  "alternatives": [
+    {
+      "option": "Build the observer in the product server plugin on native host events",
+      "reason": "The host exposes the event and timeline; product-owned metadata can give a parent one wake without polling or copying agent prose.",
+      "status": "chosen"
+    },
+    {
+      "option": "Defer the silent-turn rule to another task",
+      "reason": "The necessary host event already exists, so the declared fallback condition is not met.",
+      "reconsider_when": "The host ceases to expose the required native events or an explicitly approved new requirement defers the rule.",
+      "status": "rejected"
+    },
+    {
+      "option": "Treat the wake rule as needless",
+      "reason": "Silent idle turns strand parent-owned work and the rule explicitly requires the wake.",
+      "reconsider_when": "The owning requirement explicitly removes the silent-turn obligation.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Use the product plugin/client, start-published role/task/report metadata and the turn timeline. Send fixed nonsemantic lines only, defer while parent/children are active or permission-waiting, and preserve acceptance authority. Decision tests are not the deferred after-landing live observation."
+  ],
+  "context": "The parent wake rule was omitted on the inference that no observation surface existed, while the host plugin interface actually supplies native turn-end and permission lifecycle events.",
+  "decider": "Architect 97e0320d-431f-4f4c-8c86-66a6dca880a7, canonical notes/run3/L117-THE-HOST-TELLS-THE-PRODUCTS-PLUGIN-WHEN-A-TURN-ENDS-AND-RULE-ELEVEN-IS-BUILT-RULING.json",
+  "id": "DEC-2ST2MZ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-1ZKP4R"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L117-THE-HOST-TELLS-THE-PRODUCTS-PLUGIN-WHEN-A-TURN-ENDS-AND-RULE-ELEVEN-IS-BUILT-RULING.json"
+      ],
+      "path": "ingest-joint-routes-and-continuing-decisions-v2.json"
+    },
+    "handoffEntry": "CUR-L117-DEC-TURN-END",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

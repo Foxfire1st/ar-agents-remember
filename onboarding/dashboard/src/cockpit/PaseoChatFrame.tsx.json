@@ -1,0 +1,269 @@
+{
+  "path": "dashboard/src/cockpit/PaseoChatFrame.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:011f51091c3826cba23b53b50b6b8895f19e466aa1f445f4eeb6a35a49890ef2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-25DTRT",
+      "invariant": "INV-AE8ZGP",
+      "origin": {
+        "handoffEntry": "L190-R1-F09",
+        "leaf": "260928-MIK-L190"
+      },
+      "rationale": "Frame protocol issues actual open requests and reports observed chat identity rather than assuming the request succeeded.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "useFrameDescriptor"
+        }
+      },
+      "id": "RLZ-4H5EAG",
+      "invariant": "INV-VMREN3",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rules 2-3",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "useFrameDescriptor latches creation on first activation or an admitted review preload, then retains the descriptor across ordinary selection and visibility changes; hidden starts pass preload to the controller instead of an agent address.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:52779ed6470faab67d0ad0c3607267ef4bcdd8005fc8f14ea862cd2817feaca2",
+        "locator": {
+          "end": 309,
+          "kind": "line_range",
+          "start": 285
+        }
+      },
+      "id": "RLZ-6CV9KK",
+      "invariant": "INV-7D9QDG",
+      "origin": {
+        "handoffEntry": "MIK-R95@v1 rule2",
+        "leaf": "260928-MIK-L95"
+      },
+      "rationale": "The shared frame keeps one native element while a ready target switch moves it by message and carries the document page mode; it stops being a Chats-only mount.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:3c5f0380ec70248470ba50eab1aa60c87ebc2bbcebb42a2e049a18dd3a8af960",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoChatFrame"
+        }
+      },
+      "id": "RLZ-7BAFW6",
+      "invariant": "INV-D0QATN",
+      "origin": {
+        "handoffEntry": "PNT-R15@v1 / PNT-R16@v1 persistent Chats and inline navigation",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "The shared frame keeps one native element across a ready target switch and carries the document page mode through the trusted channel; INV-D0QATN revision 2 excludes the removed dashboard navigation, so no conditional outside-frame navigation is claimed.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:e53008b2ba387a8845906759f284a52cc958aac5c12cb93db62d6a46730f3ae3",
+        "locator": {
+          "end": 355,
+          "kind": "line_range",
+          "start": 355
+        }
+      },
+      "id": "RLZ-93GQVS",
+      "invariant": "INV-Y7WR54",
+      "origin": {
+        "handoffEntry": "MIK-R122@v1 rule 7",
+        "leaf": "260928-MIK-L122"
+      },
+      "rationale": "data-generation exposes the count on the mounted pane where tests already assert frame identity.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmbeddedFrame"
+        }
+      },
+      "id": "RLZ-MDFGTP",
+      "invariant": "INV-1PVR72",
+      "origin": {
+        "handoffEntry": "PNT-R05@v3 / paired embed trust and origin clipboard policy",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Grants clipboard-read/write through the iframe allow attribute with only the resolved embedded origin.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+        "locator": {
+          "kind": "symbol",
+          "name": "frameWait"
+        }
+      },
+      "id": "RLZ-NHP8GP",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Holds the frame out of reach until the application is on the selection's agent, and keeps the line while a request is open.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmbeddedFrame"
+        }
+      },
+      "id": "RLZ-Y4PJ59",
+      "invariant": "INV-WEZ24E",
+      "origin": {
+        "handoffEntry": "MIK-R75@v1 current rule 7",
+        "leaf": "260928-MIK-L75"
+      },
+      "rationale": "The frame body no longer mounts or reserves space for a dashboard sidebar; the embedded frame is the whole body again.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "EmbeddedFrame"
+        }
+      },
+      "id": "RLZ-ZW8J2W",
+      "invariant": "INV-CB2QY3",
+      "origin": {
+        "handoffEntry": "ruling 4be3d695 2a, read by ruling ee770e77",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Renders the hold (inert, no pointer) and the line at the bottom edge of the frame, off the application's header.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+        "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+        "locator": {
+          "kind": "symbol",
+          "name": "frameWait"
+        }
+      },
+      "id": "RLZ-ZWAT5M",
+      "invariant": "INV-EEX84Q",
+      "origin": {
+        "handoffEntry": "MIK-R140@v1 rule 2",
+        "leaf": "260928-MIK-L140"
+      },
+      "rationale": "Decides from the controller's state whether the pane shows the waiting line and whether the frame takes input.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The stable controller dispatches known target changes before paint and receives frame messages.\n\nAnchor: \"function useFrameController({ scope, target, page }: PaseoChatFrameProps) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:c7a4fc61095f067877f1ac5bed4772b8fd71b9f6819e2309ac3f81bea6e76879",
+            "locator": {
+              "end": 217,
+              "kind": "line_range",
+              "start": 171
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "First activation, opt-in preload and Retry own descriptor reads; hidden startup names no agent.\n\nAnchor: \"function useFrameDescriptor(active: boolean, preload: boolean, controller: PaseoFrameControl) {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:27de29b5f6d105fb5bd7e7138a408c40124e45530e5d0d9ebe8edb95231ce7bb",
+            "locator": {
+              "end": 283,
+              "kind": "line_range",
+              "start": 254
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The frame component forwards the steered selection scope into EmbeddedFrame, whose container renders data-scope. Generation keys the iframe; clipboard permission names the embedded origin and held input is blurred and inert.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:b3dee5250129eeb0845b2f65822e5f38f8a080b73f1140db63b528d1c7cffdb6",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 297
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:4aee7a987050a33b80473eaff4f5cde3cfdd5cdc4bdadb401c400f9e815a42c3",
+            "locator": {
+              "end": 396,
+              "kind": "line_range",
+              "start": 335
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The selected screen's shown/on-chat/loaded state determines input reachability and its waiting line.\n\nAnchor: \"function frameWait(showing: PaseoFrameShowing, agentId: string \\| undefined, page: PaseoChatFrameProps[\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5a3bb6c6a5382877125ddc2272f02996a5d6ecc2",
+            "content": "sha256:ff64c97c2919ce2bffbc2c43023eb92d633cb226e79604ad5f3414b20af38fd0",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 236
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

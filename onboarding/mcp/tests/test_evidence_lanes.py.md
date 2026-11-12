@@ -1,15 +1,5 @@
 # mcp/tests/test_evidence_lanes.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_evidence_lanes.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T21:46+00:00 |
-| lastVerifiedCommitHash | `d36109038b3f2b500c138f9dc1ea9c9f9a247489`|
-| lastVerifiedCommitDate | 2026-09-06T22:21:49+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Test suite overview](overview.md)
@@ -36,34 +26,43 @@ This single registry test does not enumerate every collected node or prove the h
 
 No file-local implementation change is requested by this reconciliation.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory root. These are repository-owned fixture and assertion contracts; no external library behavior is inferred.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain evidence applies to the file-local claims above. | N/A | N/A |
+No configured domain evidence applies to the file-local claims above.
 
-## Repo-Internal References
+### Repo-Internal References
 
 The retained source anchors below support the fixture roles and assertion boundaries described above. They identify current behavior, not a request to restore historical test counts or percentage targets.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Incomplete or ambiguous registry is refused. | `test_incomplete_or_ambiguous_registry_is_refused` | mcp/tests/test_evidence_lanes.py:66-74 |
+- Incomplete or ambiguous registry is refused. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository implementation evidence is required for these local test and fixture claims.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Fixture repositories and protocol doubles do not establish a live external integration. | N/A | N/A |
+Fixture repositories and protocol doubles do not establish a live external integration.
 
-## Update History
+## 260918-TSIP-L4 — The Armed Hook And The Loader's Verdict (`T48`/`T49`)
 
-- 2026-09-06T21:46+00:00 — Reconciled the actual retained source after IAS test simplification at d3610903: corrected fixture/test roles, removed obsolete current-coverage claims and refreshed existing-source citations. Earlier entries remain historical; verification stamps remain closeout-owned.
+Two cases added (**+32 lines**; file **74 → 106 lines**), no existing case touched.
 
+- **`test_the_enforcing_hook_is_registered_and_armed`** asserts the armed state from the plugin
+  manager's own `hasplugin`/`get_hookimpls()` — not from source text — because `evidence_lanes`
+  defines `pytest_collection_modifyitems` and, until this leaf, nothing registered it: the suite
+  passed while the manifest refused.
+- **`test_the_shipped_loader_accepts_this_population`** runs `load_lane_manifest` against this
+  worktree's real population and **pins no count**, so a leaf that adds both a module and its row
+  is green while a leaf that adds only a module is red.
 
-- 2026-08-28T06:28+02:00 — PDLS wave 005 curator: created the missing sidecar for exhaustive,
-  explicit, fail-loud evidence-lane classification.
+Two-sided evidence: unregistering the hook (`M11`) fails the armed-state case with
+`assert False = hasplugin(...)`; dropping the row with the hook on (`M12`) refuses collection
+outright — `ERROR: test evidence lanes have 1 finding(s): … no tests ran` — and forcing the hook
+on *before* the row existed gives `INTERNALERROR> AssertionError … crashitem`, which is the
+symptom `T48` recorded.
+
+**This module's own lane is `architecture-fitness`** (`mcp/tests/test-evidence-lanes.toml:233`),
+recorded by `260831-LOCR-L07`.

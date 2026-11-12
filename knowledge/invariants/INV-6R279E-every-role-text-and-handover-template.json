@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The producer-facing declaration, canonical guidance and distinct runtime/contract owners must agree across their locations; one path alone cannot preserve this message transport boundary."
+  },
+  "applicability": "Canonical role/operation/template message-file instructions, their generated source copies and shared launcher compiled-text output.",
+  "conditions": [
+    "Every covered surface states evidence-as-files, body/attach and the settings limit without a pinned number."
+  ],
+  "exclusions": [
+    "Source wording and shared parentless compiler checks do not certify live consumption by every harness.",
+    "Existing role powers, question addressing and independent acceptance authority remain with their separate contracts."
+  ],
+  "id": "INV-6R279E",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_role_message_wording.py (negative variants incl. three sealed verbatim, allowed controls, ten-surface census, seven compiled capsules) (L117-C1-F03); sync-skills --check; checks-attempt4/pytest-focused.log; worker report Attempt 4"
+      ],
+      "path": "ingest-wave2-r01-r07.json"
+    },
+    "handoffEntry": "L117-R07",
+    "leaf": "260928-MIK-L117",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every role text and handover template states messages-as-files with the settings' limit and no number, and the regression oracle pins that wording across sources, copies and compiled capsules.",
+  "status": "proposed",
+  "supersedes": []
+}

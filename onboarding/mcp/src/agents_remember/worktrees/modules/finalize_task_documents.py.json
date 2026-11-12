@@ -1,0 +1,347 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:eac3f9bb57f21d1fe14f586afed06b33860d3df08bf8e74f340b1b93802cc9d4",
+        "locator": {
+          "kind": "symbol",
+          "name": "_read_own_document"
+        }
+      },
+      "id": "RLZ-1J8A6S",
+      "invariant": "INV-1DFJ7N",
+      "origin": {
+        "handoffEntry": "L41-R7 note 12",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This function reads the task's own document for finalization and turns an unreadable one into the refusal that names the file, because its kind cannot be known.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:0bdbd8387c7627a84f84fac0b1295ecb4c587e4fbe56074c912da5efaa3b3adf",
+        "locator": {
+          "end": 362,
+          "kind": "line_range",
+          "start": 356
+        }
+      },
+      "id": "RLZ-2RMDT8",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 16",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This completion candidate changes status and writes completedAt only on a new completion, while carrying the existing decision list unchanged and leaving an already completed document untouched.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:f0f80037ed6b27ed55c27287495e1f6316b673120cc9900124efa61a89b1a260",
+        "locator": {
+          "kind": "symbol",
+          "name": "_folder_parent"
+        }
+      },
+      "id": "RLZ-5NXF76",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-9-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The folder-parent resolver refuses a missing master or missing leaf row and retains exact parent-argument and leaf-file checks.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:776eb72a88693420cd9eac049dcf9986df7ccdd357e0c84d1da35ca0b7ecd29a",
+        "locator": {
+          "end": 379,
+          "kind": "line_range",
+          "start": 365
+        }
+      },
+      "id": "RLZ-AY53HV",
+      "invariant": "INV-MFZR5A",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 14",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This parent candidate changes the exact child row to Completed without synthesizing a master decision, and retains the existing unresolved-master demotion rule.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unreadable_other_members"
+        }
+      },
+      "id": "RLZ-BKPGCV",
+      "invariant": "INV-T1ZJXG",
+      "origin": {
+        "handoffEntry": "L41-R7 note 11",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This pass reads admitted canonical sibling paths and omits only proven unreadable members from the temporary validation view, preserving recorded membership and refusing unresolved identity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unreadable_other_members"
+        }
+      },
+      "id": "RLZ-C0XWKE",
+      "invariant": "INV-FQWZBE",
+      "origin": {
+        "handoffEntry": "L41 ruling 1 (finalize and the other members)",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This pass uses admitted canonical paths, preserves stored membership, and keeps named missing/unbound/duplicate/foreign-reference refusals.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:e903a5f1fff0200e2cc55c6317ecb2f8e5af4593be6d77cdf6b94a9b19a5d2eb",
+        "locator": {
+          "kind": "symbol",
+          "name": "_holds_master_document"
+        }
+      },
+      "id": "RLZ-DWDG7N",
+      "invariant": "INV-6Q7947",
+      "origin": {
+        "handoffEntry": "260928-MIK-L41-CW01",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The lstat admission check distinguishes a missing entry from an existing or uninspectable entry, which must reach the authoritative owning-document reader.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:0bdbd8387c7627a84f84fac0b1295ecb4c587e4fbe56074c912da5efaa3b3adf",
+        "locator": {
+          "end": 362,
+          "kind": "line_range",
+          "start": 356
+        }
+      },
+      "id": "RLZ-F6YV1A",
+      "invariant": "INV-MFZR5A",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 14",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This completion candidate changes status and writes completedAt only on a new completion, while carrying the existing decision list unchanged and leaving an already completed document untouched.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:7d43307f339df04e559fadc13cfeb1254253a6d117173de55c1cfc55579e7548",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_parent_target"
+        }
+      },
+      "id": "RLZ-FE8R7Z",
+      "invariant": "INV-6WXVEA",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 9",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This finalizer refuses absent or unlisting master authority before preparing a task-document write.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:bfb718dbc632d8a4dd68c461ac0041384addac761c218724851215ed4da14fe9",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_series_targets"
+        }
+      },
+      "id": "RLZ-R4Y562",
+      "invariant": "INV-E20AY2",
+      "origin": {
+        "handoffEntry": "L41-continuation-O5",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "The existing finalizer already enforces this rule; it is preserved.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+        "content": "sha256:14552dc8da9929454b0c53616992cc6b8230de0242d74f3d3ba6cea9c947d2b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unreadable_other_members"
+        }
+      },
+      "id": "RLZ-VHD81R",
+      "invariant": "INV-Q157G2",
+      "origin": {
+        "handoffEntry": "260928-MIK-L41-CW02",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This readability pass uses admitted canonical paths, builds only the validation view for proven unreadable members, and names unresolved identity before the generic missing-folder diagnostic can replace it.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Series finalization selects the master and any proven typed or correlated seat row; absent or ambiguous correlation is reported as skipped unless a parent was asserted.\n\nAnchor: `resolve_series_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:dae78692c3f880a9249afa60c0944470b31b3405c308e45b8f77235c248a2a2a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Targets are resolved by contract kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:a9612950fd7b574d7294aca3085b559985ab520d4b3a1021b85b9f77dcb18833",
+            "locator": {
+              "kind": "symbol",
+              "name": "_resolve_task_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The selected master-only or master-plus-sprint documents are previewed or published atomically after source rechecks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:7d4c6ee97430b57346fc185cd3dea13cabe9347e22dbac95ac14c9b07bbc5aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile_series_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Selected parent row becomes Completed after retired-row and exact-number checks, then existing unresolved-row demotion applies. Decisions and parent completedAt are not rewritten by row completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:776eb72a88693420cd9eac049dcf9986df7ccdd357e0c84d1da35ca0b7ecd29a",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 365
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Retained survey concern: the former static correlated/absent/ambiguous-row evidence includes an obsolete Finalize-decision assertion and cannot establish current behavior. Current source selects targets as before, stamps own completion time once, and preserves own/parent decisions. No test was run or offered as current proof.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:172bb77e79b3df6f8c918b1367be4731184955c5b5c48373fddfba4340ab0162",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 356
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:3813921e25b4100369731a7c274133d3987d9c946df362dcb806497734504781",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 415
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Missing leaf/master/row authority refuses with repair guidance rather than standalone completion.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:7d43307f339df04e559fadc13cfeb1254253a6d117173de55c1cfc55579e7548",
+            "locator": {
+              "end": 147,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:f0f80037ed6b27ed55c27287495e1f6316b673120cc9900124efa61a89b1a260",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Leaf completion preserves each owning path/document pair for preview and publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:b705e748abe3fc1804e896c80efd47571fc9022362499f965ed657f9190e94f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reconcile_task_documents"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,103 @@
+{
+  "path": "mcp/src/agents_remember/cli/role_launch_defaults.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+        "content": "sha256:753bf531760de36e76dbae7dfc1383d9674a66e7456c01cccf9be20470b63af2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-AX1K8P",
+      "invariant": "INV-9DMNQS",
+      "origin": {
+        "handoffEntry": "NEW-R192-EXTRA-ARGS",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The plan is built here, so the unread marker's survival is decided at this one early return.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+        "content": "sha256:753bf531760de36e76dbae7dfc1383d9674a66e7456c01cccf9be20470b63af2",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-S0CK5Z",
+      "invariant": "INV-QBWBNV",
+      "origin": {
+        "handoffEntry": "NEW-R192-RULE19-PORT",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The caller passes read_config into the host-map read, so the upward edge is replaced by an injected implementation rather than a module import.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Repository/altitude defaults and alternative projection are one per-use read.\n\nAnchor: `role_defaults`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+            "content": "sha256:753bf531760de36e76dbae7dfc1383d9674a66e7456c01cccf9be20470b63af2",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c44891c82ea86bbdd51370115aba9141b3fe42fb",
+            "content": "sha256:185979bfa70fed7866d04e986bce991efe5f127f4422f91de2430aea9979c968",
+            "locator": {
+              "kind": "symbol",
+              "name": "role_defaults"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Preparation keeps the host-read wrapper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+            "content": "sha256:d6bee5d8e2ab2748115514e0f60af6b4be865d324bd52a5754df3646272561e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "_role_defaults"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Loader validates authority and effective alternative distinctness.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+            "content": "sha256:d709c4479088842b26eb621a81d5b87d5cbaaed0f4cbeb1813505a3c83b1ce59",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_agentic_settings"
+            },
+            "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

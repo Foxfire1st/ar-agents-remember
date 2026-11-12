@@ -1,0 +1,150 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+        "content": "sha256:9b65a81a30d17e2ed99b282e85d0a2f7fb038ce30e966585ada8b7fe7e69e3c5",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-4GTTNN",
+      "invariant": "INV-ZNXNZC",
+      "origin": {
+        "handoffEntry": "L192-W-R199-06",
+        "leaf": "260928-MIK-L192"
+      },
+      "rationale": "Host provider settings are still read and forwarded through the serving boundary.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+        "content": "sha256:8c68db359fff338a685aecdecd705519dc6a0dfd7d406c6a52914b7011b68a32",
+        "locator": {
+          "kind": "symbol",
+          "name": "IDLE_RUNTIME_CLEANUP_SETTING"
+        }
+      },
+      "id": "RLZ-AHMJ5V",
+      "invariant": "INV-MAZGMS",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "The 0.15.4 key path.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+        "content": "sha256:fd07d9209dd0b397b73daddc5af0d752638eacdb96c298db7286ac503a42cb6a",
+        "locator": {
+          "kind": "symbol",
+          "name": "daemon_settings"
+        }
+      },
+      "id": "RLZ-PTCH31",
+      "invariant": "INV-MAZGMS",
+      "origin": {
+        "handoffEntry": "MIK-R60@v6.4",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Writes the key false (live) with the other daemon settings.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The complete setting list with its start/live split.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:fd07d9209dd0b397b73daddc5af0d752638eacdb96c298db7286ac503a42cb6a",
+            "locator": {
+              "kind": "symbol",
+              "name": "daemon_settings"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The restart reasons of a running daemon.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:710b69084d866c838184f67b062fa89c9707766bf85f24c25b0ecea12eeac7b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "restart_reasons"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:daf202af2bd7715065ff04e2357995d3e988efd2675cd9445c418d3a039f44fc",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 79
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The setting comparison works on a configured document without the CLI.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:fca5c1e6fb98d35236efab27311bcdcf8c5aa824cfb7a2ba428698fb9e22dec4",
+            "locator": {
+              "kind": "symbol",
+              "name": "pending_settings_from_document"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The cleanup key written false in the daemon-settings tuple, with its key constant.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:f2d55564897bda6297a4aba6b43bf2895aabb6d7db70c734a26a1995660885c6",
+            "locator": {
+              "end": 53,
+              "kind": "line_range",
+              "start": 44
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+            "content": "sha256:7ee805525c0b66b638941703909a46b52c016d68b55462ffb481dd52d557bd5b",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

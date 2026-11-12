@@ -1,0 +1,156 @@
+{
+  "path": "mcp/src/agents_remember/certification/replay/compare.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The report binds exact leg freezes, comparability, measured legs, and all scenario outcomes in one digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16661cb188e4097ac21f764a70327d7b962bb053",
+            "content": "sha256:d9b26b9eae5f9ae70f1e185ba6acdd40550047478c38b1b9a34062d7a6fa61fb",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayComparisonReport"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The report binds freeze and population records from the freeze owner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9b2a684167e7146188ab141517bd754337d5c1",
+            "content": "sha256:9cf3548e8b5e6943cb612172557492ebac78e157496e2ccdd5d729dca07a2f07",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayFreeze"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/freeze.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc9b2a684167e7146188ab141517bd754337d5c1",
+            "content": "sha256:992e603aba1634e0f0bda4c2325ad18789bbb56bf5164d9d5d3d6fe90b628cf7",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayComparabilityReport"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/freeze.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dc9b2a684167e7146188ab141517bd754337d5c1",
+            "content": "sha256:f506a4ec755ff2de2b6e349adb99dc6e7f039c1945d3b6ed599cf15ee672c098",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayPopulation"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/freeze.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The builder projects the mandatory scenarios over the measured evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9e25b8013f41d8d17d243942f7757b21a3704f36",
+            "content": "sha256:d3e079cdd3ec65ee1fe2d5e9fd7d97d633795cefe2b2ea8ef6acd624a7bf7d9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "evaluate_all_replay_scenarios"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/scenarios.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The report consumes the measured vocabulary from the replay models module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:e7f18e5cecdcbe91a8e405ef8b3dfd4ccfe126db022c9fba3fd8dc4737f65937",
+            "locator": {
+              "kind": "symbol",
+              "name": "RunMeasurement"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:e41aeee03710b4722f5a8c5362be2288cd16d3e1b7ddb483c9836aeae041e076",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReplayScenarioEvidence"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "87090780c77fff86342affb39ab0026e9b470030",
+            "content": "sha256:c3b598b6c39a36fc4a0c319b0e382f04b1d7c3522fe3b7363e89b1bc2f7a6f6f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScenarioOutcome"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/models.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Content digests follow the shared certification digest helper.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5fec41e626660b1b088e42d53af5306e94975bdd",
+            "content": "sha256:1ca5c19a7deb5986c8a551fcc0549203bdaf5272bd1a547bfcee08054fee4776",
+            "locator": {
+              "kind": "symbol",
+              "name": "content_digest"
+            },
+            "path": "mcp/src/agents_remember/certification/digests.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The public subpackage facade re-exports the comparison surface.\n\nAnchor: `build_replay_comparison_report`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fea8af22b7d4b068885dc61c7a81bf30136a77b",
+            "content": "sha256:e7cd61ea0cc33773de044740feafb237316f17a34777fc462c6a1b18bca9a1c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/certification/replay/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

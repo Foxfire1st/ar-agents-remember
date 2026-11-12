@@ -1,0 +1,528 @@
+{
+  "path": "mcp/src/agents_remember/application/review_source_realization_link.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+        "content": "sha256:60ca04320f4b7404fedfe7f2805b5f467ec0456308bc98e463b8c51af6615f9c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_anchor_spelling"
+        }
+      },
+      "id": "RLZ-3G19299R",
+      "invariant": "INV-M9AMAYWY",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Accepts a requested path as an anchor spelling only when PathSeed validation succeeds and the validated value is byte-identical to the request. A padded or otherwise normalized spelling returns False and is never matched to the path it would normalize to.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+        "content": "sha256:9bf4e1e3d753bd5a6fd2070b32e9c81f1ada34a122b0a1a82f7981ab2e12b42b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_bound_knowledge"
+        }
+      },
+      "id": "RLZ-7GKF4ASW",
+      "invariant": "INV-RS0EVBHD",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Chooses which knowledge may admit an unchanged path. The resolution's own halves are used when the requested after tree is the one the leaf binds now; otherwise it searches this leaf's comparison generations from newest to oldest for one that recorded exactly the requested tree pair and reopens it. With no such generation it returns an explicit no-knowledge link, and the leaf's current knowledge is never substituted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+        "content": "sha256:f17f1fac35685d723b396fe3ab0f16850dad7d409ed3c9f8215e03adc5bbf52f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_side_reading"
+        }
+      },
+      "id": "RLZ-CHBR2MK5",
+      "invariant": "INV-XTXZESS6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Asks one bound snapshot through the read owner's exact fetch_realizations_at_path query, which reads claims at one path and expands no family, so scope size cannot fail it. When that finds no realization it asks the snapshot's derived index for a proof entry at the path, which only a tree comparison's index holds, and reads a proof as linked too. An absent snapshot is reported as unread and marked absent, an unreadable one as unread with its cause, never as not_linked.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+        "content": "sha256:7ca3162b210e28ae0b41ff020882d0b9ec231cc4ff6de3e8094ac12962e5256b",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_realization_link"
+        }
+      },
+      "id": "RLZ-HD60BGRJ",
+      "invariant": "INV-9ECAFVTQ",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Answers whether the requested comparison's own knowledge links the path. It uses only the knowledge bound to that comparison (_bound_knowledge), requires the exact spelling to be anchor-shaped with no nearby match, reads each half for an anchor at exactly that path, and reports the linking sides; the result is undetermined when a half could not be read.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of which comparison, which fact, what is not a criterion, and why unreadable knowledge is undetermined.**\n\nAnchor: \"Which comparison.\"; \"What is not a criterion.\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:642a33520a4855350b8cd15cd593137092121144199767d332de1194ca3c1ba7",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The read owner's identity resolution and exact claim-at-path query this module re-uses.\n\nAnchor: `open_read_context` `fetch_realizations_at_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:ca739f3b2996c442fd9c6e03488e5ff8b46ff05da0437375a48061f73df7d72f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfbf190e976da5468ef9928b02043db63c848cff",
+            "content": "sha256:9c9aaf65ffc369553d7d60225c04bf83b189a21e3d169f53c6aded5061406b36",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9d2460c7b39373ba3a888ebd88da47468cc93266",
+            "content": "sha256:3b8eed5fbfb87e74aa54c8c4c607da5cf6af518e8986d2891659a70661f90548",
+            "locator": {
+              "kind": "symbol",
+              "name": "open_read_context"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bfbf190e976da5468ef9928b02043db63c848cff",
+            "content": "sha256:933e11489e3349649464c6e4176e35a1fcfbd83a794a7f7f9cbdb443ba04f4af",
+            "locator": {
+              "kind": "symbol",
+              "name": "fetch_realizations_at_path"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/read_queries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The generation owners that bind a superseded pair to its retained knowledge.\n\nAnchor: `read_generation_refs` `read_manifest` `task_root_for_review` `resolve_committed_leaf_review`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:c9150b4c6814ed6e50f4c4cea4115c966d2881137f619f854fab26b2d0b943a0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:04ef00a4f26959260c046b0d4b570cbdd72b409cf0306989fabf5f177feb3741",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:87757e4339e7c19f1a026e13d00e4aa193e7a0755fb81b60e184edf04ae29031",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_generation_refs"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:b0cd4a2490fa79806b19d1b7854d5b9a05b2663b9aa5e3a6eccb3c3359e8f6c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_manifest"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "251e7c89eb87aa6086e0059351fa20f921d94638",
+            "content": "sha256:86c676926d0f09f27ada6d3c7327e294ab92463a55fbe583bdf78e32f7901a61",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_root_for_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_comparison_generation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c39e9055a99425a3cd8d683e96d279c87b35d720",
+            "content": "sha256:780810baad0324cbfb864c23c86741ada531a1c33f0a5be32250abba6093f296",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The namespace record (the record beside the bytes, or, since MIK-R25, a derived knowledge index's own namespace) and the path-seed shape rule.\n\nAnchor: `review_namespace` `PathSeed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:8de3b4a99e46a7a49e39828cefaeed2dd86dcfc20fc33eb37b8f80a4de26b653",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "content": "sha256:fbd98175de6f3059b83374833481f33639bdf4840ffee08959b2e96e4c46239f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1d90d4f0e878dfd10c90e1cc30e2037832907004",
+            "content": "sha256:c12f2d6be24cf899b572b83562f39ddbadfda75b97c536d420b20daa0a109c61",
+            "locator": {
+              "kind": "symbol",
+              "name": "review_namespace"
+            },
+            "path": "mcp/src/agents_remember/application/review_candidate_resolution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e3dd598b62290d22b1995fc556f1f6cc8ae0761f",
+            "content": "sha256:c9bae576442e9ed3c038b1f056f35e178a320f84b9c96b858f33f086e7154ed6",
+            "locator": {
+              "kind": "symbol",
+              "name": "PathSeed"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**Cases: cross-comparison refusal, recorded historical bytes after the tree moves, closed leaf, padded spellings, and the lowered selection bound.**\n\nAnchor: `test_a_path_linked_only_in_another_comparison_is_refused_for_this_one` `test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes` `test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation` `test_a_padded_spelling_is_never_admitted_as_attributed_context` `test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:4f7ecc8772618d62abc5902fc65b5a8b5e48a7d69e4e689e810128c571ba4261",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:7bbc9e7dfed79e65b20eaf2e0849f7218fe90927136e619991fd3b13f69a5fac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_path_linked_only_in_another_comparison_is_refused_for_this_one"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:3dc9ddf1f8d5fac8720ff2aa75bbd9c609e8a5280195d0b8df5344bd632caa9e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_after_the_live_tree_moves_the_listed_pair_keeps_its_exact_attributed_bytes"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:d7ec1eb1845df3bf24feec266350742adf96310815ade2db0d7677825cd7e606",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closed_leaf_opens_its_attributed_path_from_the_retained_generation"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:a106a785d11d775de2dbf51735afe26592c9a63c2898e28a6995b83e9aa0a3f0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_padded_spelling_is_never_admitted_as_attributed_context"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "373b98939739fd3634b0fe64b4ea2d00c508d5bb",
+            "content": "sha256:a5c5eb8aabdd1c83dee386edc801dcb89b560a1e569df0fc4788f2d66657ff5f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_selection_bound_below_the_scope_cannot_refuse_a_linked_path"
+            },
+            "path": "mcp/tests/test_knowledge_review_attributed_source_content.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface and the half order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:fbfa27ba7f4e377a8146bc2be877018c20c7259092d18207098b623b97f3da57",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:a4250d94ee4e3060b3a62b111181d52da347dd0ac233571beddd00627027c5eb",
+            "locator": {
+              "kind": "symbol",
+              "name": "_SIDES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "**The answer value: linking halves, the stated sentence, whether the negative was established, and whether the unread knowledge was never created.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:e38536d621ff2f1518f2d862f59e980f3b720a7be1752b531ee2256e6186b1e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "RealizationLink"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "**The entry point: bind the comparison, check the spelling, read the namespace, ask each half; the halves' answer composed apart.**\n\nAnchor: `recorded_realization_link` `_link_of`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:1d48a327261da8e5b431d2148745fd5f228e87171e9b8e12a8113c31c32ccb4d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:7ca3162b210e28ae0b41ff020882d0b9ec231cc4ff6de3e8094ac12962e5256b",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_realization_link"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:2b3c852b39c712c31e4f35eb1a8aca0218ed6d1061b3e1a1cbf0129c139c0c60",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link_of"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**Exact-spelling check: the validated seed must equal the request string.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:60ca04320f4b7404fedfe7f2805b5f467ec0456308bc98e463b8c51af6615f9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_anchor_spelling"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**Comparison binding: current pair, recorded superseded pair, or nothing — never the leaf's current knowledge.**\n\nAnchor: `_bound_knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:1d48a327261da8e5b431d2148745fd5f228e87171e9b8e12a8113c31c32ccb4d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:9bf4e1e3d753bd5a6fd2070b32e9c81f1ada34a122b0a1a82f7981ab2e12b42b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_bound_knowledge"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Halves a closed leaf's generation did not retain are not read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:682dd73fa5485c414204727b4aa21e2d52846289615981d14d94295fa9f85a91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_halves"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "**One half asked by the exact claim-at-path query, with unreadable kept apart from not linked, and an absent snapshot marked.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:f17f1fac35685d723b396fe3ab0f16850dad7d409ed3c9f8215e03adc5bbf52f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_reading"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:0a05886280855dfafbb50c12daab99692236f88f0b01cef637a2547fff09fb0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_sentence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A tree index's proof entry at the path links it; a dataset (no `ix_entry`) answers nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc638f5e47c02721604a66086ebc28876ec93f4c",
+            "content": "sha256:de197048b69592f6a2f5db36b73419ab0b4458216a6ba94de800dbcfe96168a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_proof_at_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

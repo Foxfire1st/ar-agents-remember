@@ -1,0 +1,309 @@
+{
+  "path": "dashboard/src/topology/constel.ts",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+        "content": "sha256:de1ecbe32148898f8081577a4083b9abb984c7356d1f89bf125777bd61ecf757",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-WBN62J",
+      "invariant": "INV-XZYGEB",
+      "origin": {
+        "handoffEntry": "INV-XZYGEB",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "This renderer paints the labels it is given and copies the supplied detail into the tooltip: it presents the status word and detail the model hands it. The limited word, its clockless form and what the detail says are owned by model.ts and the shared status helpers, not decided here.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`CssVarReader` and the total `constelColors(cssVar): Record<ConstelStatus, string>`, extracted from `mountConstel` so the palette is reachable without a canvas.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:12d2460b1a40a9cda35b6a2484f2b5e689953029172cd14866fc6116216fac84",
+            "locator": {
+              "kind": "symbol",
+              "name": "CssVarReader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "constelColors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:e01d375c5487b04ae8462b795a076f8cd749832339025551285bf5068e95d767",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountConstel"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:12d2460b1a40a9cda35b6a2484f2b5e689953029172cd14866fc6116216fac84",
+            "locator": {
+              "kind": "symbol",
+              "name": "CssVarReader"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:f53636330ee7ec12551b481449425862fa552d1c9deca278efcf4998770d6ee5",
+            "locator": {
+              "kind": "symbol",
+              "name": "constelColors"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:e01d375c5487b04ae8462b795a076f8cd749832339025551285bf5068e95d767",
+            "locator": {
+              "kind": "symbol",
+              "name": "mountConstel"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`mountConstel` builds its token reader and stores `constelColors(v)` in the scene once; `statusColor` indexes the resulting total map without a fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:70df06c77ae8d21055d2c259e4d56e0e85876786c79759f01b7a637489f0ba1b",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:28ba578d7838dba106c3d5fde6d809b14d3c153f26779bbef07c3a1de2b79691",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:70df06c77ae8d21055d2c259e4d56e0e85876786c79759f01b7a637489f0ba1b",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "235b077ab68b7adfffa2b675a339fb346dca83c1",
+            "content": "sha256:28ba578d7838dba106c3d5fde6d809b14d3c153f26779bbef07c3a1de2b79691",
+            "locator": {
+              "end": 433,
+              "kind": "line_range",
+              "start": 408
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CONSTEL_STATUSES` and the derived `ConstelStatus` this palette is keyed by — the single vocabulary shared with the model.\n\nAnchor: `CONSTEL_STATUSES` `ConstelStatus`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:42573ce5c78e597a8799eec27360bf40b57381b7f19ba075170a2b29e01cb18f",
+            "locator": {
+              "kind": "symbol",
+              "name": "ConstelStatus"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`worktreeStatus` maps a worktree row through shared `taskStatusKey`/`statusTone`, returns `idle` when unbound, and maps `wait` to `warn`, `gone` to `idle`, otherwise `ok`. `worktreeFields` supplies the label, status word and full limit detail using shared status/limit helpers; a limited node's detail contains the word plus every `limitLines` row, with no canvas clock. `buildTopology` creates only workspace, repository and worktree nodes: workspace is `core`, `addRepositories` supplies repository `ok`, and worktrees use that shared derived status and those fields. Search-provider satellites and their status mapping are absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "046383e5c526185a26684c0f11200956456de65e",
+            "content": "sha256:d3d10649bf9236c7aa420388c78fdc9c43caf883bf6224f15a0e32bad2bc395f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/topology/model.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`constel.test.ts` executes the palette's totality, hue-uniqueness, and token/fallback shape without a canvas.\n\nAnchor: \"gives every status in the vocabulary a colour of its own\"; \"declares no colour for a status the vocabulary does not contain\"; \"asks for a themed token per status and offers a concrete fallback for each\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5cd90de22d3d3f04486ad0a2e6b381a9a947f997",
+            "content": "sha256:dd68c3374aab0ffce0e884470a9e866efce01ad2f6738a101167414fedfb8a8f",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "dashboard/src/topology/constel.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cd90de22d3d3f04486ad0a2e6b381a9a947f997",
+            "content": "sha256:2be4d83dca97257d0da851a444e7d50a181bde6f4debd6f47f931b163f0e6ffa",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "dashboard/src/topology/constel.test.ts"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "5cd90de22d3d3f04486ad0a2e6b381a9a947f997",
+            "content": "sha256:a43f92d53bff2a94cf80bfa307c990669fc82f457b873a8343bb97e4d35ae6e9",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 41
+            },
+            "path": "dashboard/src/topology/constel.test.ts"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "The React wrapper that mounts this renderer once and pushes new models through `update()`.\n\nAnchor: `Topology`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "df6406b5558760d99e709731298749fbf82c081d",
+            "content": "sha256:5071a8ac1ab49420778bd00f5977347b64f4717b2896905b84a6a4acf290ea7f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/Topology.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

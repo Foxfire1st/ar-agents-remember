@@ -1,24 +1,49 @@
 # mcp/src/agents_remember/models/tools/public_roster.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/tools/public_roster.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-12T22:55+02:00 |
-| lastVerifiedCommitHash | `9c8a7a42a3d761b13c462874c7b312313a11c0ae` |
-| lastVerifiedCommitDate | 2026-09-13T19:56:50+02:00|
-| governingOverview | `../overview.md` |
+## Current operative account — R113 after the R112 roster reduction
+
+The ordinary public roster includes explainer_control for Architect Update, Retire and claim.
+
+`PUBLIC_TOOLS` is the one cycle-free literal owner, currently44 unique ordinary-surface names in the composed source after R109 removes resolve_context and R113 removes dispatch_agent, read/re-exported by its model/MCP consumers rather than duplicated. The landed L74 source had73 names and its knowledge tail was narrowed to read/diff/integrity; that73-name snapshot and the older parked74-name prose are historical populations, not the current advertised count. The current tuple ends knowledge_read, knowledge_diff, knowledge_integrity_check, the writer's knowledge_write and explainer_control; provider, lifecycle-signal, capsule/skill catalog and other retired names are not restored by retained comments or archival examples. The additions are `role_start_set`, native `retire_child`, `direct_execution_grant`, `user_settings_init`, `explainer_control` and `citation_note_revision`; the other removed tools remain absent. A tuple inspection establishes the source advertisement only, not runtime list_tools or host-actual ambient suppression. CODE freeze/disposition remains Worker/Reviewer-owned.
+
+The Owner retained both complete original reference objects in roster-head-copy.json and roster-stash-copy.json; their byte-bound durable capture is the Curator `.sync3-roster-first-repair-refused.json` account. Original headings, dated source/closure prose and evidence below are explicitly historical, not instructions to call deleted tools.
+
+## Current numbered roster witnesses and historical custody
+
+`citation_note_revision` is one public roster member beside the existing fixer. It raises the literal population from 43 to 44 names and supplies no write authority by its presence alone.
+
+The independent A7 and incoming L10941-name observations remain historical in the retained before evidence and sealed predecessor packets. The two numbered groups below are explicitly re-authored against the current44-name ordinary source, with their predecessor epochs named rather than passed off as unchanged original anchors. This source declaration is not runtime list_tools or execution evidence.
+
+
+
+
+
+- Historical incoming whole-source qualification: Current synced source supports the qualified account; declarations, mirrors and fixture assertions are not executed acceptance.
+
+
+## Historical landed L74 card — preserved, not the current operative account
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+<details>
+<summary>Landed73-name source account and original numbered custody</summary>
 
 ## Governing Overview
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
 [models overview](../overview.md)
 
 ## Purpose
 
-`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the 63 tool
-names the MCP server advertises as its public surface (62 until 260831-LOCR-L37 added
-`worktree_pause`). It is a **zero-runtime-import leaf**: it
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **73** tool
+names the MCP server advertises as its public surface. It is a
+**zero-runtime-import leaf**: it
 imports nothing, defines nothing else, and exists only so a `models` response model can read the
 roster without importing `mcp`.
 
@@ -27,11 +52,25 @@ it. The relocation changed the object's home and nothing else — same tuple, sa
 consumer is unchanged and `agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the identical
 object. The tuple held 62 unique names from L30 until 260831-LOCR-L37 added `worktree_pause`
 immediately after `worktree_sync`, which is a membership change made here and in
-`mcp/registration/worktrees.py` in the same leaf.
+`mcp/registration/worktrees.py` in the same leaf. 260915-CAPS-L4 made the next membership change: three
+names **appended at the tail**, together with the new `capsule_serving.py` registrar and its three
+`TOOL_RESPONSE_MODELS` rows in one change, so the roster, the registrar and the registry never
+disagreed. 260915-KS-L20 is the **second append-only membership change**: the five `knowledge_*`
+operation names go on at the tail, together with the fourteenth `TOOL_REGISTRARS` entry
+(`registration/knowledge.py`) and five `TOOL_RESPONSE_MODELS` rows in the same change, so no earlier
+name's advertised position moved and there is no interleaving to verify.
+
+Owns the one cycle-free literal advertised MCP tool roster.
 
 ## Code Commentary
 
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
 ### Logic
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
 The module body is one module docstring and one literal:
 
@@ -39,14 +78,27 @@ The module body is one module docstring and one literal:
 PUBLIC_TOOLS = (
     "ping",
     ...
-    "message_child",
+    # The capsule operation and the skill discovery/read surface.
+    "role_capsule_compile",
+    "skill_catalog_list",
+    "skill_catalog_read",
+    # Role start and role messaging by role agents.
+    "role_start",
+    "role_message",
+    # Knowledge operations over a memory tree: read, diff and integrity.
+    "knowledge_read",
+    "knowledge_diff",
+    "knowledge_integrity_check",
 )
 ```
 
-`PUBLIC_TOOLS` spans **L22-L86**; the file is 86 lines. The only other statement is
+`PUBLIC_TOOLS` spans **L22-L99**; the file is 99 lines. The only other statement is
 `from __future__ import annotations` at L20 — no imports, no helpers, no package-level side effects.
 
 ### Conventions
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
 - The tuple's order is the order `mcp/registration/` publishes tools in; order is part of the
   advertisement contract, so an edit here is a wire change and not a cosmetic reorder.
@@ -54,6 +106,9 @@ PUBLIC_TOOLS = (
   object through `__all__`; it must never re-declare a second tuple.
 
 ### Invariants And Boundaries
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
 - **Zero runtime imports, deliberately.** `models/worktree.py` imports this module at module scope,
   and it does so while `models.tools.tool_registry` may still be initializing. Any import added here
@@ -66,7 +121,17 @@ PUBLIC_TOOLS = (
 - Do not add a second roster, a frozenset mirror, or a derived copy. `PUBLIC_TOOL_RESPONSE_MODELS`
   derives the response-model subset; nothing derives the tuple.
 
+### Role Runtime and Scope
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+PUBLIC_TOOLS adds role_start and role_message at the existing literal owner. It stays import-free; downstream MCP/model consumers re-export/read this tuple instead of redefining role tools or introducing an upward import cycle.
+
 ## Why The Roster Lives In `models`
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
 This is the whole point of the relocation, so it is recorded rather than left to be re-derived.
 
@@ -90,32 +155,254 @@ special-cased, and it matches `layers.toml`'s own doctrine: wire vocabulary is d
 and imported by whoever decides it. The layering checker returned to its exact baseline of 16
 violations with no `models → mcp` edge and no new cycle.
 
-## Repo-Internal References
+## 260928-MIK-L74 The Roster Tail Holds Three Knowledge Names
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The roster's single definition, 63 ordered names, in a module that imports nothing. | `PUBLIC_TOOLS` | mcp/src/agents_remember/models/tools/public_roster.py:22-86 |
-| The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. | `worktree_pause` | mcp/src/agents_remember/models/tools/public_roster.py:58-58 |
-| The adapter re-exports this object through `__all__` instead of declaring its own tuple. | "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/mcp/tools/base.py:19-19 |
-| The response model that reads the roster to enforce the worktree surface's next-move vocabulary. | `_require_registered_public_next_tool` | mcp/src/agents_remember/models/worktree.py:331-369 |
-| The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. | `TOOL_RESPONSE_MODELS`; `INTERNAL_COMPAT_TOOL_NAMES` | mcp/src/agents_remember/models/tools/tool_registry.py:120-139; mcp/src/agents_remember/models/tools/tool_registry.py:147-225 |
-| The live registered-order comparison that treats this tuple as the advertised authority. | `PublicSurfaceInventoryTests` | mcp/tests/test_tools.py:220-281 |
-| The executor that pins the worktree surface's enforcement of this roster in both directions. | `test_next_tool_must_name_a_registered_public_tool`; `test_the_worktree_surface_refuses_a_registered_but_non_public_tool` | mcp/tests/test_worktree_status_terminal_next_tool.py:231-278 |
 
-## Cross-Repo References
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+> Historical landed-L74 roster scope only: the 73-name inventory, capsule/provider/lifecycle call claims and executor/closure statements below do not define current advertisement or execution. Incoming L109 source held41 names; composed L113 holds40, with no resolve_context or dispatch_agent; retained private compatibility is not a public tool.
+
+`knowledge_change` and `knowledge_project` are gone from the tail: the roster ends `knowledge_read`,
+`knowledge_diff`, `knowledge_integrity_check` under the comment "Knowledge operations over a memory
+tree: read, diff and integrity", and holds **73** names. The KS-L20 five-name append above is the
+history of how the tail arrived; this section is its current state.
+
+
+- PUBLIC_TOOLS is the single ordered 44-name roster; its tail is knowledge_read, knowledge_diff, knowledge_integrity_check, knowledge_write and explainer_control.
+
+
+## Evidence
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+### Repo-Internal References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+
+- PUBLIC_TOOLS is the single ordered 44-name roster; its tail is knowledge_read, knowledge_diff, knowledge_integrity_check, knowledge_write and explainer_control. [1]
+
+
+- The stop's advertised name, placed immediately after its sync sibling in the working half of the tuple. [2]
+
+
+- The capsule/skill-serving names role_capsule_compile, skill_catalog_list and skill_catalog_read appear consecutively in PUBLIC_TOOLS. (historical reference3, retained in memory base c855ef3ee; no current target or fresh validation claimed)
+
+
+- The knowledge family at the roster tail is knowledge_read, knowledge_diff, knowledge_integrity_check and knowledge_write; knowledge_change and knowledge_project are not advertised. [4]
+
+
+- The adapter re-exports this object through `__all__` instead of declaring its own tuple. [5]
+
+
+- The response model that reads the roster to enforce the worktree surface's next-move vocabulary. [6]
+
+
+- The by-name TOOL_RESPONSE_MODELS registry declares the response model for each advertised tool; public_roster.py names it as the registry against which the single public roster is pinned. [7]
+
+
+- The live registered-order comparison that treats this tuple as the advertised authority. [8]
+
+
+- The executor that pins the worktree surface's enforcement of this roster in both directions. [9]
+
+
+- The registrar that publishes the three capsule/skill names, whose order the tuple must match. [10]
+
+
+- register_knowledge_tools registers the three read/diff/integrity tools and does not register the retired knowledge_change or knowledge_project tools. [11]
+
+
+### Cross-Repo References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
 
 No cross-repository implementation dependency governs this repository-local tuple.
 
-## Update History
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37: the advertised tuple gained `worktree_pause` (63 ordered
-  names, extent `L22-L86`, the name at `:58` immediately after `worktree_sync`) in the same leaf that
-  registered the tool and gave it a response model, so the roster, the registrar and the registry never
-  disagreed. The relocation account above is unchanged: the object still has one definition and
-  `mcp/tools/base.py` still re-exports it. Verification metadata remains closeout-owned; no acceptance
-  claim.
-- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: created the card for the new zero-import `models`
-  leaf. Recorded that the relocation is what makes the worktree next-move vocabulary enforceable at
-  the model boundary (the `models → mcp` layering violation, the unwritable `PLC0415` local import,
-  and the circular module-level imports that ruled the roster's old home out), and that the tuple is
-  identical and still re-exported from `mcp/tools/base.py`, so no consumer changed. Verification
-  metadata remains closeout-owned; no acceptance claim.
+### Runtime Source References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+
+- PUBLIC_TOOLS is the single ordered 44-name roster; its tail is knowledge_read, knowledge_diff, knowledge_integrity_check, knowledge_write and explainer_control. [12]
+
+</details>
+
+## Historical parked pre-sync card — preserved verbatim
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+<details>
+<summary>Parked pre-sync prose; old reference numbers belong to its retained companion copy, not this current sidecar</summary>
+
+# mcp/src/agents_remember/models/tools/public_roster.py
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+## Governing Overview
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+[models overview](../overview.md)
+
+## Purpose
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+`public_roster.py` holds the single definition of `PUBLIC_TOOLS` — the ordered tuple of the **74** tool
+names the MCP server advertises as its public surface (66 until 260915-KS-L20 appended the five
+`knowledge_*` operations; 63 until 260915-CAPS-L4 added `role_capsule_compile`, `skill_catalog_list`
+and `skill_catalog_read`; 62 until 260831-LOCR-L37 added `worktree_pause`). It is a
+**zero-runtime-import leaf**: it
+imports nothing, defines nothing else, and exists only so a `models` response model can read the
+roster without importing `mcp`.
+
+Since 260831-LOCR-L32 the tuple lives here rather than in `mcp/tools/base.py`, which now re-exports
+it. The relocation changed the object's home and nothing else — same tuple, same order — so every
+consumer is unchanged and `agents_remember.mcp.tools.base.PUBLIC_TOOLS` still resolves the identical
+object. The tuple held 62 unique names from L30 until 260831-LOCR-L37 added `worktree_pause`
+immediately after `worktree_sync`, which is a membership change made here and in
+`mcp/registration/worktrees.py` in the same leaf. 260915-CAPS-L4 made the next membership change: three
+names **appended at the tail**, together with the new `capsule_serving.py` registrar and its three
+`TOOL_RESPONSE_MODELS` rows in one change, so the roster, the registrar and the registry never
+disagreed. 260915-KS-L20 is the **second append-only membership change**: the five `knowledge_*`
+operation names go on at the tail, together with the fourteenth `TOOL_REGISTRARS` entry
+(`registration/knowledge.py`) and five `TOOL_RESPONSE_MODELS` rows in the same change, so no earlier
+name's advertised position moved and there is no interleaving to verify.
+
+Owns the one cycle-free literal advertised MCP tool roster.
+
+## Code Commentary
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+### Logic
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+The module body is one module docstring and one literal:
+
+```python
+PUBLIC_TOOLS = (
+    "ping",
+    ...
+    # The capsule operation and the skill discovery/read surface.
+    "role_capsule_compile",
+    "skill_catalog_list",
+    "skill_catalog_read",
+    # Role start and role messaging by role agents.
+    "role_start",
+    "role_message",
+    # The knowledge operation family: read, change, diff, integrity and projection.
+    "knowledge_read",
+    "knowledge_change",
+    "knowledge_diff",
+    "knowledge_integrity_check",
+    "knowledge_project",
+)
+```
+
+`PUBLIC_TOOLS` spans **L22-L100**; the file is 100 lines. The only other statement is
+`from __future__ import annotations` at L20 — no imports, no helpers, no package-level side effects.
+
+### Conventions
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+  advertisement contract, so an edit here is a wire change and not a cosmetic reorder.
+  object through `__all__`; it must never re-declare a second tuple.
+
+### Invariants And Boundaries
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+  and it does so while `models.tools.tool_registry` may still be initializing. Any import added here
+  can therefore create the cycle this relocation removed.
+  `mcp` charter forbids any import from below; a `models → mcp` edge is a layering violation.
+  registered (`models/tools/tool_registry.py`) and deliberately absent here — `session_retire` is the
+  live example.
+  derives the response-model subset; nothing derives the tuple.
+
+### Role Runtime and Scope
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+PUBLIC_TOOLS adds role_start and role_message at the existing literal owner. It stays import-free; downstream MCP/model consumers re-export/read this tuple instead of redefining role tools or introducing an upward import cycle.
+
+## Why The Roster Lives In `models`
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+This is the whole point of the relocation, so it is recorded rather than left to be re-derived.
+
+The roster was defined in `mcp/tools/base.py`. `application/worktree_status.py::_project_terminal_contract_status`
+writes a `nextAction` / `nextTool` / `nextArgs` triple into the `worktree_status` payload, and that
+payload is validated once against `TOOL_RESPONSE_MODELS["worktree_status"]` — `WorktreeStatusResponse`
+→ `WorktreeCommandResponse` → `FlexibleToolResponse` → `FlexibleResponseModel` (`extra="allow"`). The
+envelope declared **none** of those three keys, so the values crossed the wire verbatim and
+unchecked. Enforcing the vocabulary at the model boundary requires `models/worktree.py` to read
+`PUBLIC_TOOLS`, and while the tuple lived in `mcp` that read was not expressible:
+
+  charter forbids any import from below).
+  forbidden in this repository.
+  `mcp.tools.base`).
+
+Moving the tuple to a zero-import `models` leaf makes the check *expressible* instead of
+special-cased, and it matches `layers.toml`'s own doctrine: wire vocabulary is defined in `models`
+and imported by whoever decides it. The layering checker returned to its exact baseline of 16
+violations with no `models → mcp` edge and no new cycle.
+
+## Evidence
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+### Repo-Internal References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+- The roster's single definition, 74 ordered names, in a module that imports nothing. [1]
+- The three capsule/skill-serving advertised names, appended at the tail with the registrar and registry rows that publish them. (historical reference3, retained in memory base c855ef3ee; no current target or fresh validation claimed)
+- The five `knowledge_*` names 260915-KS-L20 appended at the tail, with the comment naming the family, published in the same change as their registrar and registry rows. [4]
+- The by-name response-model registry the roster is compared against, and the deliberate non-public names it excludes. [7]
+- The registrar that publishes the five `knowledge_*` names appended to `TOOL_REGISTRARS` in the same change. [11]
+
+### Cross-Repo References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+No cross-repository implementation dependency governs this repository-local tuple.
+
+### Runtime Source References
+
+
+> Historical custody only. This section is not current advertisement, a callable-tool instruction or executed acceptance; the incoming L109 source held41 names; the composed L113 declaration holds40 names, with both resolve_context and dispatch_agent absent.
+
+- Frozen implementation of PUBLIC_TOOLS supporting the stated file behavior. [12]
+
+</details>
+
+## Current source evidence
+
+
+- The tuple declares 44 unique ordinary public names including user_settings_init, knowledge_write, citation_note_revision and explainer_control; prior 41/40/73/74 populations are historical source epochs. [14]
+
+- The current source declaration excludes dispatch_agent and resolve_context; tuple inspection is not live list_tools or execution. [16]
+
+- The ordinary public roster includes explainer_control for Architect Update, Retire and claim. [17]

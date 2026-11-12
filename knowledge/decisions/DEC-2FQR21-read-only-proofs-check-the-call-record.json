@@ -1,0 +1,77 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Checked call records were chosen over disabling logging, moving it outside observation or excluding logs wholesale, because those alternatives would conceal required telemetry or unruled product writes in future read-only proofs."
+  },
+  "alternatives": [
+    {
+      "option": "Preserve and validate the daily tool-log and completed-call river records while comparing all other product state.",
+      "reason": "A call remains observed and unrelated product writes remain detectable.",
+      "status": "chosen"
+    },
+    {
+      "option": "Disable the log, move its transcript root outside coordination, skip tests or exclude the logs tree wholesale.",
+      "reason": "The packet and first ruling explicitly reject these ways of obtaining a green comparison because they remove observation and can hide mutations.",
+      "reconsider_when": "Only if the owning requirement authority deliberately retires these call records or changes the required installation layout and observation contract.",
+      "status": "rejected"
+    },
+    {
+      "option": "Admit the workspace event by name without checking it.",
+      "reason": "The river ruling requires byte-prefix, actual completed-call tool accounting and a rewritten-earlier-event negative case; mere exclusion does not prove a record of the call.",
+      "reconsider_when": "Only if the owning authority changes the completed-call event contract and supplies an alternative proof that detects unexpected writes.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Registered read-only proofs distinguish product publication from required telemetry and validate admitted records instead of hiding them.",
+    "An unruled third product write remains a finding routed to its code/requirement owner, never permission to expand the allowlist."
+  ],
+  "context": "A registered preview cannot be proved read-only by universal root equality after daily tool logging and completed-answer events became required call records. MIK-R131 rule8 and the river ruling preserve those producers while bounding the proof.",
+  "decider": "Architect rulings recorded by Manager 1110e042 under D47/D125/D126 and MIK-R131@v1; notes/run3/L131-THE-PREVIEW-TESTS-ARE-A-TASK-OF-THEIR-OWN-RULING.json and L131-THE-RIVERS-EVENT-IS-ALSO-THE-RECORD-OF-THE-CALL-RULING.json.",
+  "id": "DEC-2FQR21",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-GAKDNC"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R131",
+        "packet": "requirements/MIK-R131-v1-a-read-only-proof-admits-the-record-of-the-call.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "7cf302eb50c45f037ae310ce5db71ccb9e0f5be3",
+        "content": "sha256:64d28d5db2468949a9721097cbaaa884c086821e600d20b67ad8ab364ea93f95",
+        "locator": {
+          "kind": "symbol",
+          "name": "assert_preview_read_only"
+        },
+        "path": "mcp/tests/preview_read_only_test_support.py"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L131-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L131-checked-call-record-decision",
+    "leaf": "260928-MIK-L131",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

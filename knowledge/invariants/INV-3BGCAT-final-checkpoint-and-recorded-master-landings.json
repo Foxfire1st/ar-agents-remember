@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake",
+      "guarded_by_test"
+    ],
+    "justification": "A foreign master commit or merge could otherwise land without any leaf judgment on three distinct public routes."
+  },
+  "applicability": "Final, checkpoint and recorded converted master landings.",
+  "conditions": [
+    "Final requires all canonical non-abandoned leaves; checkpoint/recorded routes select already landed leaves.",
+    "Recorded landing uses the supplied endpoints and the recorded series code base."
+  ],
+  "exclusions": [
+    "Legacy sync records without produced heads retain their explicit admission.",
+    "Abandoned rows retain their separately governed policy."
+  ],
+  "id": "INV-3BGCAT",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152/role-launch/260928-MIK-L52-worker-7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152.md (SHA-256 ef7cff4d9b5140ebecdc1997c2df1fa8dc3ad81222e17dc63b2746cccab1bdf6); mcp/tests/test_master_chain_public_routes.py (9-cell matrix); mcp/tests/test_master_chain_offenders.py"
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "MIK-R52@v1 rule 4 master-chain-proof",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Final, checkpoint and recorded master landings run validator, staleness, the landing chain proof over landed leaves, and rule 5; merges must be sync heads, leaf history, or parent line; foreign commits are named.",
+  "status": "proposed",
+  "supersedes": []
+}

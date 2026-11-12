@@ -1,0 +1,61 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The explicit ruling resolves literal start-home versus observable import-home and prevents later support changes from inventing false provenance."
+  },
+  "alternatives": [
+    {
+      "option": "Compare against the earliest home observed at guard import and identify it honestly in refusal.",
+      "reason": "It implements the ruled comparison without claiming an unavailable earlier observation.",
+      "status": "chosen"
+    },
+    {
+      "option": "Treat import-time HOME as a proven process-start home or require recovery of the pre-import value.",
+      "reason": "The module cannot reconstruct a HOME change preceding import; the claim would be false.",
+      "reconsider_when": "A trustworthy earlier home observation is supplied, or a path is shown to write real settings on this fallback branch.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Matching fallback paths refuse; nonmatches return normally; no packet revision or unconditional unknown-home refusal is implied."
+  ],
+  "context": "The v1 wording said process-start home, but a module cannot observe environment mutations preceding its import.",
+  "decider": "Architect 97e0320d-431f-4f4c-8c86-66a6dca880a7, explicit L135 first-observed-home ruling",
+  "id": "DEC-AP5YFY",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-GT2391"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R135",
+        "packet": "requirements/MIK-R135-v1-test-support-never-writes-the-users-settings-file.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L135-THE-HOME-THE-PROCESS-STARTED-WITH-IS-THE-EARLIEST-THE-GUARD-SEES-RULING.json; full architect ruling sealed by CODE R4; requirement v1 retained."
+      ],
+      "path": "knowledge-handoff.json"
+    },
+    "handoffEntry": "L135-D-OBSERVED-HOME",
+    "leaf": "260928-MIK-L135",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

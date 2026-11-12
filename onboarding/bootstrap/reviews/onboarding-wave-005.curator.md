@@ -61,7 +61,9 @@ not become new PDLS implementation scope.
 
 None in the wave-owned onboarding delta.
 
-## Remaining Master Evidence
+## Evidence
+
+### Remaining Master Evidence
 
 Rerun the approved Q5-Q8 experimental protocols against the exact successor bundle, freeze the
 memory and task candidates, append the candidate-bound worker attempt records, and submit the

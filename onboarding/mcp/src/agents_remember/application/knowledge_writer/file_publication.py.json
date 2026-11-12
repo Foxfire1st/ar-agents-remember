@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_writer/file_publication.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b529adeef96a62d38971e720e9f4169fc6929b31",
+        "content": "sha256:562aee8411aab85775a9d11047a275533203823f526520b026782d62b04557be",
+        "locator": {
+          "kind": "symbol",
+          "name": "publish_files"
+        }
+      },
+      "id": "RLZ-158QX5",
+      "invariant": "INV-TW1224",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 5",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This publication transaction records affected bytes and delegates restoration after a failed replacement.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "b529adeef96a62d38971e720e9f4169fc6929b31",
+        "content": "sha256:e1bbe9e1a68eb294cb07129bdc59dc5ed22b871c2f2dc7299f91176792b80e1f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_rollback"
+        }
+      },
+      "id": "RLZ-S7B3EN",
+      "invariant": "INV-TW1224",
+      "origin": {
+        "handoffEntry": "MIK-R54@v1 rule 5",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This recovery attempts every independent restoration and verifies surviving bytes rather than declaring an unproved undo.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Publishes an already validated file candidate and reports both the original filesystem failure and any incomplete rollback. This is filesystem publication, not Git commit or validation authority. Rollback is verified best-effort rather than an unconditional atomicity promise: an incomplete restore is explicitly reported, never disguised as a clean refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b529adeef96a62d38971e720e9f4169fc6929b31",
+            "content": "sha256:379d445ba2084eb2297f75bd20047250ea50e96fa17f3bdf69ef1e1c3623efcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

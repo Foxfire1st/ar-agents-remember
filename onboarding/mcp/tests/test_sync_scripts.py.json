@@ -1,0 +1,303 @@
+{
+  "path": "mcp/tests/test_sync_scripts.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
+        "locator": {
+          "kind": "symbol",
+          "name": "BoundaryPropagationTests.test_every_declared_copy_carries_the_corrected_boundary_clauses"
+        }
+      },
+      "facet": "Every declared packaged copy carries the corrected boundary clauses after regeneration.",
+      "id": "PRF-0M7GR5",
+      "invariant": "INV-J70XZA",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 7",
+        "leaf": "260928-MIK-L101"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeclaredProjectionInventoryTests.test_profile_projection_changes_only_the_declared_skill_input"
+        }
+      },
+      "facet": "Source-defined check, not executed by Curator: changing the declared skill targets changes only the generated-skills scopes/declaration source and canonical profile digest, while projected_profile_bytes leaves original profile bytes unchanged.",
+      "id": "PRF-3YWQ8Y",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeclaredProjectionInventoryTests.test_generator_uses_the_repository_copy_declaration"
+        }
+      },
+      "facet": "Source-defined regression check; not executed by Curator: A fixture repository can supply its own generated-copy declaration and skill_targets(root) reflects its label/path without editing the generator.",
+      "id": "PRF-ABWCA5",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-proof-MIK-R55-v1-rule-11-wave-78",
+        "leaf": "260928-MIK-L54"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "content": "sha256:d14f832e04e37b46f60b246384ae87c2ae4d04665cdb778d0be630131b6f9c80",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_normal_sync_prevalidates_profile_before_any_target_mutation"
+        }
+      },
+      "facet": "Source-defined four-shape check, not executed by Curator: missing, invalid-JSON and digest-mismatch profiles refuse with an unchanged synthetic world; valid profile input produces the expected profile bytes and equal declared fixture copies.",
+      "id": "PRF-VZN6AH",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+        "content": "sha256:875fcf4be4ec36c73771b353e1cda604414bfc547fcbbd286670731d055377a5",
+        "locator": {
+          "end": 119,
+          "kind": "line_range",
+          "start": 115
+        }
+      },
+      "id": "RLZ-KZSY9R",
+      "invariant": "INV-J70XZA",
+      "origin": {
+        "handoffEntry": "MIK-R101@v1 rule 7",
+        "leaf": "260928-MIK-L101"
+      },
+      "rationale": "This comment records the retired-register guard without task-history provenance.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The projection mechanism whose behavior this module pins.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The generated-skills profile scope and declaration select the single MCP package tree from canonical skills.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+            "content": "sha256:17a81bccd3430a978370b90c55371ea8454ff195ab33a67e332de78e81cb11c7",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/certification-profile-v1.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The boundary clauses are checked across canonical skills and every declaration-backed package target; synthetic missing-copy controls keep their original facets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:f1849a57f486634563cfdfd5baccdd42da460e84a73375cc474cc0a904bcd284",
+            "locator": {
+              "end": 204,
+              "kind": "line_range",
+              "start": 176
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The doctrine guard that owns which clauses each surface owes, whose wording this table quotes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d03ef2c9b4fe73d56a70d6fc6f1477107721b82",
+            "content": "sha256:3c470419ee3a2821d24d0030d593942d83aacd5609323c0cc3fc4ea5e266a664",
+            "locator": {
+              "kind": "symbol",
+              "name": "OWED_STATEMENTS"
+            },
+            "path": "mcp/tests/test_lifecycle_turn_truth_doctrine.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The projected current acceptance and Worker boundaries retain their canonical owners and must reach every declared package copy; this is propagation evidence rather than a second meaning definition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:392f4bbcd7b196c6b248883903b91670cea94afdb08769b75af2141e0780b3b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTED_BOUNDARY_CLAUSES"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:713db2fc9a66c6019298bca81e6a4cb4edfc4fc287002d1dfc5cd7b2893bb53a",
+            "locator": {
+              "end": 619,
+              "kind": "line_range",
+              "start": 601
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:3855579ed58f760ba8ec846d6d2803feaf8f14e1bb1b7cc661449bace67a6f9a",
+            "locator": {
+              "end": 639,
+              "kind": "line_range",
+              "start": 621
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Declaration-backed targets, pure profile projection and the normal-sync prevalidation matrix preserve unrelated profile fields and refuse bad profiles before target mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:8964d88607d9a4930e00748d124b947a47eb3ec038b99c815a7a6baa2e4f9c66",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 287
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:40b893cb03e01c4531019ce3bd905a44ce6ab2db2d7b2d1eddb98fb896e0f812",
+            "locator": {
+              "end": 354,
+              "kind": "line_range",
+              "start": 330
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:e398991d72cf06771641a6a073f313211e5baf864bd393c7321fb2d91557b6b3",
+            "locator": {
+              "end": 430,
+              "kind": "line_range",
+              "start": 371
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The writing-profile marker participates in the positive canonical/copy loop; the seeded missing-copy case selects the Worker acceptance clause, not the profile. The three completion-truth markers and retired omissions remain.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf530824b0aee7e9b74abed2891f2e7c1ee0aff4",
+            "content": "sha256:392f4bbcd7b196c6b248883903b91670cea94afdb08769b75af2141e0780b3b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "PROJECTED_BOUNDARY_CLAUSES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

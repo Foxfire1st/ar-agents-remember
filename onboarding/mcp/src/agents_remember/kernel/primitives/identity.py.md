@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/kernel/primitives/identity.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/primitives/identity.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-06-04T23:15+02:00                     |
-| lastVerifiedCommitHash | `8bf6edad7e7e65e27cf735be0822f604531d0c8a`                         |
-| lastVerifiedCommitDate | 2026-08-16T10:54:02+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [kernel primitives overview](overview.md)
@@ -32,20 +22,23 @@ The module normalizes arbitrary workspace, worktree, benchmark, provider, and re
 - Do not let provider-specific modules duplicate ownership label keys or Docker name formatting.
 - The helper derives names only; lifecycle modules still own Docker inspection and mutation.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| MCP config uses `provider_instance_id()` when provider settings omit an explicit `instanceId`. | `parse_provider_config` | mcp/src/agents_remember/kernel/primitives/runtime_config.py:459-475 |
-| Generated lifecycle settings derive GrepAI and CGC runtime names and ownership labels through the settings builders. | `_grepai_names`; `_grepai_settings`; `_cgc_settings` | mcp/src/agents_remember/providers/settings.py:71-79; mcp/src/agents_remember/providers/settings.py:195-234; mcp/src/agents_remember/providers/settings.py:237-327 |
-| Worktree CGC isolated settings derive workflow-local instance ids through this helper. | `isolated_cgc_settings` | mcp/src/agents_remember/providers/cgc/setup.py:42-54 |
-| Worktree GrepAI isolated settings derive workflow-local instance ids through this helper. | `isolated_grepai_settings` | mcp/src/agents_remember/providers/grepai/isolated.py:36-74 |
+### Repo-Internal References
 
-## Update History
+- MCP config uses `provider_instance_id()` when provider settings omit an explicit `instanceId`. [1]
+- Worktree CGC isolated settings derive workflow-local instance ids through this helper. [3]
+- Worktree GrepAI isolated settings derive workflow-local instance ids through this helper. [4]
 
-- 2026-08-02T17:12:10+02:00 — W1-B04 curator: repaired 6 citation anchors across 4 reference claims; scoped recheck clean (0 findings).
+## Historical provider account
 
-- 2026-06-04T23:15+02:00: `stable_slug()` now normalizes dots to hyphens so dotted worktree names produce Docker Compose-safe provider instance IDs (for example `release-mcp-2.3.3-ar` -> `release-mcp-2-3-3-ar`). Verification metadata pinned until closeout.
-- 2026-06-01T13:30+02:00: `scoped_name()` now bounds its joined output to `MAX_SCOPED_NAME` (63) via deterministic truncation + `short_hash`, so container/host/network names stay valid DNS labels (fixes worktree cgc FalkorDB `label too long`; mcp 1.0.1). Verification metadata pinned until closeout.
-- 2026-05-31T12:50+02:00 — Source added `stable_provider_id()`, a behaviour-preserving wrapper over `stable_slug()` with fallback `"repo"`; noted it in the Logic section (1.0.0 review remediation).
-- 2026-05-27T18:10:12+02:00: Created for the provider workflow compatibility slice.
+The following source-epoch wording is retained as history. It does not restore a removed provider consumer or operation.
+
+<details>
+<summary>Superseded provider passages</summary>
+
+> Generated lifecycle settings derive GrepAI and CGC runtime names and ownership labels through the settings builders. [2]
+
+</details>
+
+- Generated lifecycle settings emit no provider entries. Instance naming and ownership-label helpers remain available to retained internal isolation/layout callers; the former GrepAI/CGC settings builders no longer consume them. [2]

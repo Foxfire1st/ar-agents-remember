@@ -1,0 +1,215 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/role_reports.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_report_folder"
+        }
+      },
+      "id": "RLZ-05KTST",
+      "invariant": "INV-Z1HWDF",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-12",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Source and canonical stamps allow unchanged copies to be skipped without rereading complete payload bytes.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_group_role_folders"
+        }
+      },
+      "id": "RLZ-8K7G9B",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      },
+      "rationale": "remove_group_role_folders collects all role artifacts before reclaiming request locators.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:1f9511937df21297f649ae38c73213d31257c221dfa45b811585a73871cc405b",
+        "locator": {
+          "kind": "symbol",
+          "name": "_copy_report"
+        }
+      },
+      "id": "RLZ-EFYADF",
+      "invariant": "INV-N70HF0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-10",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The collector owns copied-temp fsync, source-stamp validation and the unchanged atomic replacement in that order; it inlines the retired helper body rather than restoring another export.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:b1e7d9ecc88a6a7945c6db1705d79ffc520b5d0a6c080177d759daa775e8865f",
+        "locator": {
+          "kind": "symbol",
+          "name": "remove_group_role_folders"
+        }
+      },
+      "id": "RLZ-F76ZKS",
+      "invariant": "INV-N70HF0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-10",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Removal first completes the same collection owner and only then deletes local reports/scratch/task-documents; a legacy symlink is unlinked as a link.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_group_reports"
+        }
+      },
+      "id": "RLZ-FKS7D8",
+      "invariant": "INV-8XCZY1",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-09",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Group collection understands each recorded legacy layout without making the old alias a new default or dereferencing it during deletion.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:cef6aa881c187a14c3b5b9f06ce38dbd12940ec9f31ed1b22cbdfaf96e69b2b2",
+        "locator": {
+          "kind": "symbol",
+          "name": "_prune_file_state"
+        }
+      },
+      "id": "RLZ-H7PP6Q",
+      "invariant": "INV-Z1HWDF",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-12",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The bounded cache removes paths absent from the current report inventory, preventing create/collect/delete cycles from growing stale rows.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_execution_reports"
+        }
+      },
+      "id": "RLZ-JK292T",
+      "invariant": "INV-Z1HWDF",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-12",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "The existing receipt collector retires cache when collection no longer needs it and preserves collected-closed truth when the local directory is absent.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+        "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
+        "locator": {
+          "kind": "symbol",
+          "name": "collect_report_folder"
+        }
+      },
+      "id": "RLZ-KQ7PCP",
+      "invariant": "INV-N70HF0",
+      "origin": {
+        "handoffEntry": "L71-CURRENT242-W-10",
+        "leaf": "260928-MIK-L71"
+      },
+      "rationale": "Only safe regular report files are copied with size and link checks; collection errors are named and canonical readback establishes each copied identity.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Report folders copy safe regular files with stamp checks, fsynced staging and atomic replacement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "content": "sha256:b0fd75db266249dc184d51fdc14f5e8e679669b8ee3b8fa79b337df06cb8107e",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_report_folder"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Execution receipts collect through the same collector.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "content": "sha256:b383884d5fd979d25ec4170406b2bccb264cb72d69e34af2653c01c7319a09f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_execution_reports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Group collection serves terminal cleanup and abandon paths.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "content": "sha256:7a3d4f425fe9a17dc9d36942249cf188fce3b7ba0d62f7333213771360e4a03e",
+            "locator": {
+              "kind": "symbol",
+              "name": "collect_group_reports"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Folder removal collects first and only then deletes.\n\nAnchor: `remove_group_role_folders`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7e0a8d845635d5d0d3a1061a113d2c01687d655b",
+            "content": "sha256:725585688b760e5247852a20d50e3cef020e41db6fa871005d737ba11f408c5f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

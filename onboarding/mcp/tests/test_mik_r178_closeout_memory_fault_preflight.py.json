@@ -1,0 +1,350 @@
+{
+  "path": "mcp/tests/test_mik_r178_closeout_memory_fault_preflight.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:efa572261d30fc4c47f7fa78ee2646079bc22b2804aaac3fd5bfda6a074af849",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unreadable_route_index_is_refused_before_the_code_commit"
+        }
+      },
+      "facet": "A route cache held as undecodable bytes stops the preview and the apply with the step and the path named and both HEADs unchanged.",
+      "id": "PRF-1ZGA79",
+      "invariant": "INV-PRT9AA",
+      "origin": {
+        "handoffEntry": "L176-7-record",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:2ecec07b3ea4236e223261212bdc7fa899873aaee9506f59516cd210754b7e6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_unexpected_git_failure_in_the_refresh_names_its_step_path_and_tree"
+        }
+      },
+      "facet": "An unexpected Git failure in the refresh is reported with its step, its evidence paths and the tree it read.",
+      "id": "PRF-2DJC4W",
+      "invariant": "INV-1ZQS29",
+      "origin": {
+        "handoffEntry": "L176-2-record",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:8ba1fec7b732a4940bbb9e91152bf44b0fb5fcde7c2a7e82beca32ae5ca96744",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_row_whose_only_evidence_the_leaf_deletes_is_refused_before_the_code_commit"
+        }
+      },
+      "facet": "A row the refresh plan never selects is still refused before the code commit, naming the catalog, the row and the path.",
+      "id": "PRF-6SCQ2Y",
+      "invariant": "INV-0723AN",
+      "origin": {
+        "handoffEntry": "L176-6-record",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:5908da2724700646b83b9a401c7fbf263bf7f4d68fdc53ccacd856ff60f21b33",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_re_pointing_a_kept_row_lets_that_leaf_close_out"
+        }
+      },
+      "facet": "The same leaf lands once the row is re-pointed at a retained file, so the refusal is a clearing action and not a dead end.",
+      "id": "PRF-C6TVBX",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:6bff74a0b1c7040b5cb20f30af2963f92012de5ab7b3401be003372ba45ea146",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_deleted_evidence_path_stops_the_preview_and_the_preflight_before_the_code_commit"
+        }
+      },
+      "facet": "A leaf deleting a cited evidence path is refused at the preview and at the apply's preflight with the catalog file, the row, the path and the re-point remedy named, and neither HEAD advances.",
+      "id": "PRF-CQV6NP",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L176-INV-HWAWFT",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:93c88688496df2233bf3762442d99f07639ede8e0d6306c588af0956359ad169",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_repointed_row_is_recomputed_and_the_closeout_lands"
+        }
+      },
+      "facet": "Both parameters: a row re-pointed to a set that keeps a changed path and one that names unchanged files only are recomputed, and each committed value equals an independent git-blob-set-v1 over the set at the code commit.",
+      "id": "PRF-EAWMDE",
+      "invariant": "INV-B1AEEG",
+      "origin": {
+        "handoffEntry": "L176-3-record",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:140dee2bf199adc9fbb4485efde791381b36d193385ce7b3369ed446e7748b07",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_memory_quality_check_names_an_entity_row_citing_a_path_the_candidate_lacks"
+        }
+      },
+      "facet": "The curator run reports the row and the absent path once, curatorActionableCount rises by exactly one, and no finding remains once the row is re-pointed.",
+      "id": "PRF-GMAQC8",
+      "invariant": "INV-0QW95B",
+      "origin": {
+        "handoffEntry": "L176-4-record",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:0e05da5a634f1c75a6ff9fbc858901202e2d225b9e48a0015960dfe9eea55d1d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_an_add_only_leaf_closes_out_as_today_and_keeps_an_unchanged_rows_value"
+        }
+      },
+      "facet": "The preview answers would-closeout, the closeout lands, the touched row equals the independently computed digest and the untouched row keeps its recorded value.",
+      "id": "PRF-Q6HE97",
+      "invariant": "INV-8RRWT2",
+      "origin": {
+        "handoffEntry": "L176-5-record",
+        "leaf": "260928-MIK-L176"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+        "content": "sha256:105af753a712066ea9bbd6fb2c7210973488b8dfe78efb7c0f30d52b245bdfbc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_compound_row_names_its_algorithm_and_every_absent_path_in_one_refusal"
+        }
+      },
+      "facet": "One refusal names an unsupported algorithm and every absent evidence path of the same row, each with its remedy, in the preview and in the apply.",
+      "id": "PRF-QN1NX4",
+      "invariant": "INV-1ZQS29",
+      "origin": {
+        "handoffEntry": "L176-2-record",
+        "leaf": "260928-MIK-L176"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "A deleted evidence path stops the preview and the apply's preflight, naming the catalogue, the row, the path and the re-point remedy, with both HEADs unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:6bff74a0b1c7040b5cb20f30af2963f92012de5ab7b3401be003372ba45ea146",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_deleted_evidence_path_stops_the_preview_and_the_preflight_before_the_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A row whose evidence is all present names only the algorithm, so no absent path is invented.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:4b4bb2320f64ab85d622bd701c6ebf958036cd576f7c3f4d1d9ebced6e849805",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unsupported_row_with_all_evidence_present_names_only_the_algorithm"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A planned row without a fingerprint value is still refused, naming the missing value and the row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:bffc1908c4a184e8f70d83d8ae4b7d1f712c25c06c9f6bdcf69dc569d9e0d668",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_planned_row_without_a_value_is_refused_naming_the_clearing_action"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A re-pointed row is recomputed over the code commit's tree, both when its new set keeps a changed path and when it names unchanged files only, and the value equals an independent `git-blob-set-v1`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:93c88688496df2233bf3762442d99f07639ede8e0d6306c588af0956359ad169",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_repointed_row_is_recomputed_and_the_closeout_lands"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:3c9ac172082511d02c359f8f480b3f99896482b4bb543b6b3be4b6794951b7a7",
+            "locator": {
+              "end": 279,
+              "kind": "line_range",
+              "start": 255
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An add-only leaf still previews `would-closeout` and lands, and an existing row whose evidence set is unchanged from the memory base and touches no changed path keeps its recorded value; an edited or new row is recomputed even when no changed path touches it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:0e05da5a634f1c75a6ff9fbc858901202e2d225b9e48a0015960dfe9eea55d1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_add_only_leaf_closes_out_as_today_and_keeps_an_unchanged_rows_value"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The curator's memory-quality check names the row and the absent path and counts it as one actionable finding, and reports nothing once the row is re-pointed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:140dee2bf199adc9fbb4485efde791381b36d193385ce7b3369ed446e7748b07",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_memory_quality_check_names_an_entity_row_citing_a_path_the_candidate_lacks"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unexpected Git failure inside the refresh is reported with its step, its evidence paths and the tree it read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:2ecec07b3ea4236e223261212bdc7fa899873aaee9506f59516cd210754b7e6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unexpected_git_failure_in_the_refresh_names_its_step_path_and_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A row whose only evidence the leaf deletes is refused before the code commit even though the refresh plan never selects it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:8ba1fec7b732a4940bbb9e91152bf44b0fb5fcde7c2a7e82beca32ae5ca96744",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_row_whose_only_evidence_the_leaf_deletes_is_refused_before_the_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The same leaf lands once the row is re-pointed at a retained file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:5908da2724700646b83b9a401c7fbf263bf7f4d68fdc53ccacd856ff60f21b33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_re_pointing_a_kept_row_lets_that_leaf_close_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An unreadable route-index cache is refused before the code commit, naming the step and the offending path, with both HEADs unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:efa572261d30fc4c47f7fa78ee2646079bc22b2804aaac3fd5bfda6a074af849",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unreadable_route_index_is_refused_before_the_code_commit"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "One refusal names an unsupported algorithm together with every absent evidence path of the same row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b78058d621db878326cd27504300bd707ba9fffb",
+            "content": "sha256:105af753a712066ea9bbd6fb2c7210973488b8dfe78efb7c0f30d52b245bdfbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_compound_row_names_its_algorithm_and_every_absent_path_in_one_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

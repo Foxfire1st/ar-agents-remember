@@ -1,0 +1,731 @@
+{
+  "path": "mcp/tests/test_knowledge_reopen.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:a419a2ef4205b62694f493a82b89b312796cde352d825bea1937452355964fdc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_closeout_preview_answers_what_the_apply_will_do"
+        }
+      },
+      "facet": "With an item open the preview answers knowledge-gate-refused with the findings, no commit approval and no next tool, and writes nothing; once answered it answers would-closeout with the gate's pass, and the apply that follows evaluates only the exact tree at the commit.",
+      "id": "PRF-2JW677",
+      "invariant": "INV-WV1YQE",
+      "origin": {
+        "handoffEntry": "L37-preview-is-the-apply",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:940aec90e9ea7497e04672b139fdab524843739e360e88f8440515dfcd16ea83",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
+        }
+      },
+      "facet": "With nothing left to commit the closeout still judges the commit it records, and with a new item open on a clean memory worktree it refuses and leaves the attempt file open.",
+      "id": "PRF-38BW2P",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+        }
+      },
+      "facet": "A card rewritten in place while the gate runs is refused before the memory commit's Git mutation, with the closing and .gitignore restored; on the rerun the commit's tree and its proof's expected tree are the judged tree, and files written after the check stay uncommitted.",
+      "id": "PRF-5DW4E9",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:e37564961770e99ef26c9cb88d5c38598e5f88f378810e9f5c9533a50791a2dc",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_latest_row_about_a_subject_governs_across_attempts"
+        }
+      },
+      "facet": "A row named again in attempt 2 is the one the merged history, the gate's currentness and the validator's re-anchor rule read; the first attempt's row about that subject no longer decides.",
+      "id": "PRF-9Z1ZZS",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+        }
+      },
+      "facet": "Entered through closeout_result: with an invariant item and its family item open the closeout raises naming both before either side is committed and with the history file unchanged; once the rows exist the same closeout commits both sides, closes the history file and records itself in the contract.",
+      "id": "PRF-HDJRCR",
+      "invariant": "INV-HWAWFT",
+      "origin": {
+        "handoffEntry": "L37-gate-at-closeout",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:940aec90e9ea7497e04672b139fdab524843739e360e88f8440515dfcd16ea83",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_leaf_that_continues_after_its_closeout_writes_its_next_attempt"
+        }
+      },
+      "facet": "After a closeout that was not integrated the first attempt may not be edited, later rows land in attempt 2, the second closeout closes attempt 2 and leaves the first byte-identical, and the landing check freezes the first attempt only once the contract records that closeout.",
+      "id": "PRF-HSJSNA",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file"
+        }
+      },
+      "facet": "A leaf reopened after its integration writes attempt 2 while its closed file keeps its bytes; the gate, the index and the onboarding gate read both files, an edit of the frozen file is refused, and the closeout closes attempt 2.",
+      "id": "PRF-PX3B3D",
+      "invariant": "INV-MS9BMJ",
+      "origin": {
+        "handoffEntry": "L37-frozen-attempts",
+        "leaf": "260928-MIK-L37"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+        "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+        }
+      },
+      "facet": "The staging snapshot taken through the copied index reads the card as rewritten in that second, and equals the exact tree.",
+      "id": "PRF-PYPX5S",
+      "invariant": "INV-656CYW",
+      "origin": {
+        "handoffEntry": "L37-index-copy-keeps-its-time",
+        "leaf": "260928-MIK-L37"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "25": {
+      "note": "`test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file` owns the current boundary described above.\n\nAnchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "`test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "`test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "`test_the_latest_row_about_a_subject_governs_across_attempts` owns the current boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:e37564961770e99ef26c9cb88d5c38598e5f88f378810e9f5c9533a50791a2dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_latest_row_about_a_subject_governs_across_attempts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "29": {
+      "note": "The shared owner establishes a same-size rewrite in the index-write second.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91a458aeeb1ea642a75f5bcbc6490d09fa0cfc1e",
+            "content": "sha256:427a3170de3c18a4b9b2fa18b40b88af6155a0aacd80a820c91eff7804374dd4",
+            "locator": {
+              "kind": "symbol",
+              "name": "rewrite_in_the_second_of_the_index_write"
+            },
+            "path": "mcp/tests/knowledge_index_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "30": {
+      "note": "The module docstring: reopen after a converted closeout.\n\nAnchor: `test_a_reopened_leaf_writes_its_next_attempt_and_its_history_is_every_file`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81dfba7f6f3c245fe35c30f25383b666c6fc0c3745a716991863dbe0cfe9149f",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "31": {
+      "note": "Reopening after a new source edit asks invariant, family and file/route traces again in attempt 2; the first history stays byte-identical.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 688
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Attempt files are named, ordered and backward compatible.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempt_files_are_named_ordered_and_backward_compatible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "33": {
+      "note": "The closeout closes the latest attempt and never reopens a closed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:7336d93c3b92459bec563bcd7cfc58878776a4a3af5dd15c274c7376da0c66b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_closes_the_latest_attempt_and_never_reopens_a_closed_one"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "34": {
+      "note": "The gate names the attempt the writer writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:42d698d6d5a57601141e324cf8d1b1385a279dcabd6fcca186537e83e130e427",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_gate_names_the_attempt_the_writer_writes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "35": {
+      "note": "Record landing refuses when the landed history cannot be listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:7c5fd9389c28b73495b562404614d80788b130604525bd0dbf8b085698f5dd12",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_record_landing_refuses_when_the_landed_history_cannot_be_listed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "36": {
+      "note": "The history target under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:b0ff4581aa200f8e280f0e90cc7973ea4e1151e64d4e8b6f1d627b1a15fe3602",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_attempt_files_are_named_ordered_and_backward_compatible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "37": {
+      "note": "The merged reading includes refreshed attempt-2 traces, and `_history_rows` keeps the winning row's own closed flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8f6110c95b537fefb7947932717f78acfa26df04f6e18b493990747f38d99548",
+            "locator": {
+              "end": 274,
+              "kind": "line_range",
+              "start": 196
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 688
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "The public closeout refuses an open item and commits once it is answered.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8031e67c7934ff8119bdbf79371644a07e0bc3347e70be2523b4ccf952bbc24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_public_closeout_refuses_an_open_item_and_commits_once_it_is_answered"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "39": {
+      "note": "The closeout preview answers what the apply will do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:a419a2ef4205b62694f493a82b89b312796cde352d825bea1937452355964fdc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_closeout_preview_answers_what_the_apply_will_do"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "40": {
+      "note": "Legacy preview refuses without evaluating the invariant gate or changing the compared sides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:588c1d1ace1607293b82d6c1209d6e0e998b4cf6ca9fb7927159b87a1aa0feeb",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unconverted_leafs_preview_carries_no_gate_verdict"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "41": {
+      "note": "A continued leaf writes its next attempt, including file/overview source-bound traces after the new edit; frozen invariant history remains separate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:940aec90e9ea7497e04672b139fdab524843739e360e88f8440515dfcd16ea83",
+            "locator": {
+              "end": 700,
+              "kind": "line_range",
+              "start": 624
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 688
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "A file rewritten while the gate runs is never committed unjudged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:134f8d0daa116b1c0896411dacc6e423ee88b9738675913d670b364cf0aeadfe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_file_rewritten_while_the_gate_runs_is_never_committed_unjudged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "43": {
+      "note": "The latest row about a subject governs across attempts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:e37564961770e99ef26c9cb88d5c38598e5f88f378810e9f5c9533a50791a2dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_latest_row_about_a_subject_governs_across_attempts"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "44": {
+      "note": "A world whose contract records the leaf's completed closeout that was not integrated.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:b2913766d98deb980382926340e843a26a599e4ae78542376a8aa78bd7ccb2e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_Continued"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "45": {
+      "note": "The public closeout, run whole.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:68322f2420d1ab8a5c547174c23d08f577df481c5c429d5f0e041be7e83245cf",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_closeout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "46": {
+      "note": "Current source delta inspected statically: Replace closed-trace presence claims with refreshed source bindings and own-file closed provenance; retain freeze and exact-tree assertions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:ec03967e89acd359a1d1babd4d304e2879d7d3f7dd762a7036471b08e6af001b",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 121
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:8f480888357bfd4b91995b31264bbe54c6d864aa23136f629afc64a8b75ef20c",
+            "locator": {
+              "end": 219,
+              "kind": "line_range",
+              "start": 214
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:81728a4c16872e0d71cbc257374b2d5d5ac0069460862f616883c116e24f5e9f",
+            "locator": {
+              "end": 239,
+              "kind": "line_range",
+              "start": 237
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "fab9c050d0fb6bc1c2f06b575252bcc0a3a6fe93",
+            "content": "sha256:e3d91ac1bfee7d31b95bfa35bd0365fdb63afdba07b98d959659f57c6c50b092",
+            "locator": {
+              "end": 690,
+              "kind": "line_range",
+              "start": 688
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:2c66b6ba3ac994d958ba76bd1021d7fe77ec2d5139eef1c658b75f473b62daac",
+            "locator": {
+              "end": 473,
+              "kind": "line_range",
+              "start": 468
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

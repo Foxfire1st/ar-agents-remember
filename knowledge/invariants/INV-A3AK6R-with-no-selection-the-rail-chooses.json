@@ -1,0 +1,39 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A selection failure here would show a dead frame or an invented Architect while the developer asked for the architect/projects pane when nothing is selected; the backend read is guarded by its focused tests."
+  },
+  "applicability": "The Operations right rail with no task document selected and no current exact launched request for that selection.",
+  "conditions": [
+    "Absent a current exact launched-request agent, the frame opens the Projects workspace on the tab of the last-started recorded Architect the host still holds and has not archived.",
+    "A current exact launched request from the bound row or an exact Projects start is shown instead of the default until the selection changes or that exact target is gone or archived; the default then applies again.",
+    "With no matching agent the panel offers the bound Projects launcher instead of a dead frame.",
+    "The host's read-only state decides existence and archival; a record alone is never shown as live."
+  ],
+  "exclusions": [
+    "Several Architects are reached through the host's own tabs; only the newest is selected.",
+    "The developer has not ruled on which Architect should win when there are several.",
+    "No actor-selection code, multiple-Architect policy or exact-request reconciliation is changed by this scope."
+  ],
+  "id": "INV-A3AK6R",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Current packet ef014c94; 0f030b39-current-qualification-20261007/manifest.json, raw command logs and candidate.patch SHA256 268fd6d7815eda90270537510dd0cb0db82027b3b0d99dde5425faaab333e1ac",
+        "Memory review notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.md SHA256 03da9b2843b4421adf865681a1cbca6b06726e2573496fe4ac0697c88b16d276; producer list notes/reports/role-launch/260928-MIK-L95-reviewer-d292b89d-aa9a-4fa8-9969-aad69f71ba3f.memory-r1.curator-handoff.json SHA256 3a511e51a2d242d65a38e5011fb8b137985cae8d23d732ddbec6e36d16ed16c8; exact passed code d5f2207722e71601819dc64bd298a5a073dff41e and memory candidate 6598e6150ae5a7c515fcdc12bce9efa7cc1b9a85"
+      ],
+      "path": "notes/reports/role-launch/260928-MIK-L95-curator-fda7e7d6-5424-45e5-831a-f5387774d331-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R95@v1 rule3",
+    "leaf": "260928-MIK-L95",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "With no selection the rail chooses the last-started recorded architect that the host confirms exists and is unarchived.",
+  "status": "proposed",
+  "supersedes": []
+}

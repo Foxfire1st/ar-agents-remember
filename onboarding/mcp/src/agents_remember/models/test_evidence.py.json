@@ -1,0 +1,88 @@
+{
+  "path": "mcp/src/agents_remember/models/test_evidence.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No external domain source is required to establish this repository-owned implementation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3698ecccaefbec01238063e738b89a996c9e188a",
+            "content": "sha256:b46c843e5b49620e65cbed38e3432334eba3079612244b6ca638a3f8d4ad7f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_SCHEMA_VERSION"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The private authority, non-constructible capability, accepting-consumer guard, and certifying serializer are implemented here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3698ecccaefbec01238063e738b89a996c9e188a",
+            "content": "sha256:d3902263ab0b922e7d4db1ae377559db581f6f661d2a0dc3111065637597268b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_DAGGER_AUTHORITY"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3698ecccaefbec01238063e738b89a996c9e188a",
+            "content": "sha256:b2c4953f4faf45864dc016069720d3ce59dad0b1e0813e87dfbc03eec9e482cb",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertifyingTestEvidence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3698ecccaefbec01238063e738b89a996c9e188a",
+            "content": "sha256:a677275867220ac159f7a5f646b6fc316e2b125e996dca5babbb2e0750a38a6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_certifying_evidence"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "3698ecccaefbec01238063e738b89a996c9e188a",
+            "content": "sha256:e5898f6d31ac10ea6e930625681b05fe87406b25d26ce65f44f02438235eaa9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "evidence_payload"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "No meaningful cross-repository reference applies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3698ecccaefbec01238063e738b89a996c9e188a",
+            "content": "sha256:b46c843e5b49620e65cbed38e3432334eba3079612244b6ca638a3f8d4ad7f78",
+            "locator": {
+              "kind": "symbol",
+              "name": "EVIDENCE_SCHEMA_VERSION"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

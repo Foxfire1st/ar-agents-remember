@@ -1,0 +1,87 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Prefix removal and no removal at all were weighed and rejected, and the exact-name list now binds the product, the sandbox tooling and every future harness whose names are added."
+  },
+  "alternatives": [
+    {
+      "option": "The product holds one exact-name list of session identities; every host start removes those names and keeps logins and credentials; the sandbox tooling reads the product's list and adds its own.",
+      "reason": "Exact names remove exactly the session ties and leave OAuth tokens and home selectors intact; one list keeps the product and the fixture from drifting.",
+      "status": "chosen"
+    },
+    {
+      "option": "Remove variables by the CLAUDE_ and CODEX_ prefixes.",
+      "reason": "Prefix removal would also discard logins, configuration and credentials of those harnesses, which sessions need.",
+      "reconsider_when": "No harness login or configuration lives under those prefixes.",
+      "status": "rejected"
+    },
+    {
+      "option": "Remove nothing; let the host inherit and pass on the starter's environment.",
+      "reason": "An agent started by such a host re-enters the starter's session and the host keeps state the user did not choose to give it.",
+      "reconsider_when": "The host stops handing its own environment to the agents it starts.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "A running host that carries a listed name is left running and named by status; the remedy is paseo stop and a start at a time the user chooses.",
+    "The list's coverage of harnesses nobody has listed yet (Pi, Hermes, Cursor) stays an open truth gap."
+  ],
+  "context": "The Paseo daemon keeps the environment of the process that started it and hands it to every agent it starts; this machine's supervisor carried CODEX_* names and the dashboard carried CLAUDE_* and PASEO_* ones. The sandbox tooling already removed a list of exact names and its docstring states the rule.",
+  "decider": "architect's refinement under D75, frozen in MIK-R96@v1 rule 10",
+  "id": "DEC-QWB1Z2",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "39638c80596020e507e49021c3300935b8be9281",
+        "content": "sha256:db2be433384e17f373255c0b619ddd896b6ce114371547a3993aa20bdb242596",
+        "locator": {
+          "kind": "symbol",
+          "name": "host_environment"
+        },
+        "path": "mcp/src/agents_remember/kernel/primitives/host_environment.py"
+      }
+    },
+    {
+      "relation": "explains",
+      "target": {
+        "blob": "c482b50b466b20ca2808aecbc389938cf12af982",
+        "content": "sha256:ee7112d40e2448b42ed62d7d20a4c5b7aafb7a724e2392ec57242b300f2839ab",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "scripts/pnt_sandbox/environment.py"
+      }
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R96",
+        "packet": "requirements/MIK-R96-v1-one-install-and-one-start-bring-up-the-host.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "/home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/restart-b/checks/final-unit-v2.log; manifest 1d1f404e04e282f568cfa601317e4cad75d22392b1c9a2f28bc96a1e46091b4f; current source manifest cd7706b9b3c7dbb3d64684ec054c55b6f9eac22dbe1b6d76779bdab5e47abe08; current qualification /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-l51-current/catalog-qualification.json; current manifest 5cdfbd41e9079195a3cd318d4a26263392ab8031aead02c2459faa39445bbf3f; exact reuse /home/firefox/projects/ar-coordination/worktrees/agents-remember/260928-mik-l96-ar/task-reports/role-launch/260928-MIK-L96-worker-c9abaa5b-c066-404b-a276-fcb39fcd4a79.evidence/post-L39-sync/exact-input-proof-reuse.json"
+      ],
+      "path": "notes/reports/260928-MIK-L96-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "MIK-R96@v1 §10",
+    "leaf": "260928-MIK-L96",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

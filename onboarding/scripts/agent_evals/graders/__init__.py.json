@@ -1,0 +1,40 @@
+{
+  "path": "scripts/agent_evals/graders/__init__.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "44b1b631df1b4da1c0fe949727cff7f4b62063f0",
+        "content": "sha256:51a32d83963e4d024cdbb4a0885e527486455604c8b3e87543ef8d92bb910fa8",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-YRFZZX",
+      "invariant": "INV-XKDZD4",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-evidence-values",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "It exposes the shared Grade type without a separate baseline-grading implementation.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "44b1b631df1b4da1c0fe949727cff7f4b62063f0",
+            "content": "sha256:51a32d83963e4d024cdbb4a0885e527486455604c8b3e87543ef8d92bb910fa8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

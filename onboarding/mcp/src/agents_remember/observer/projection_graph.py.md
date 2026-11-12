@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/observer/projection_graph.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/observer/projection_graph.py` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-08-24T13:43+02:00                           |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2`       |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview      | `overview.md`                                    |
-
 ## Governing Overview
 
 [observer overview](overview.md)
@@ -37,7 +27,10 @@ live in `agents_remember.tasks`.
 - `TaskExecutionPredecessorNode` / `TaskExecutionNodeView` / `TaskExecutionGraphView`
   (`extra="forbid"`): the served per-node model. `nodeId` is a stable semantic identity — a
   lump's master ref key, or the ref key plus a segment ordinal for a segmented master
-  (`node_identity`). `waveIndex` is the 1-based derived wave.
+  (`node_identity`). `waveIndex` is producer-supplied: sprint waves are positive, while ordinary-master state anchors can be zero; it is not stored execution permission.
+  `TaskExecutionNodeView.cycle` defaults to `None`; the sprint builder leaves it unset.
+  The ordinary-master Order adapter sets it to `True` for cycle members. It is a
+  display annotation, not a stored dependency, ordering field, or start gate.
 - `MasterGraphFacts`: primitives-only per-master facts (task status, execution nature,
   per-leaf declared statuses) the frontier derivation needs; missing entries project a
   conservative frontier state (never landed, never in-flight).
@@ -48,9 +41,12 @@ live in `agents_remember.tasks`.
   cannot overwrite the projected title; an absent qualified key falls back only to the local raw
   leaf id.
 - `_frontier_state`: mechanical precedence — landed (master `Completed`, or every sampled
-  leaf `Completed`) → waiting (any predecessor not landed) → in-flight (master or any
-  sampled leaf `inProgress`/`blocked`) → ready. Reads statuses and edges only; never
-  invents priority/reason judgment.
+  leaf `Completed`) → abandoned (master abandoned, or a non-landed sampled segment with an
+  abandoned leaf) → waiting (any predecessor unresolved) → in-flight (master or any
+  sampled leaf `inProgress`/`blocked`) → ready. A predecessor resolves through Completed
+  or abandoned status; resolved does not mean landed. Missing facts are never landed or
+  in-flight and fall to ready only if no unresolved predecessor keeps them waiting.
+  Reads statuses and edges only; never invents priority/reason judgment.
 - `build_execution_graph_view`: takes `nodes` in declaration order, `waves` ordered by
   derived wave (nodes within a wave in declaration order), `predecessor_edges` keyed by
   successor node, per-master facts, and joined titles; emits the view ordered by derived
@@ -59,8 +55,10 @@ live in `agents_remember.tasks`.
 ### Conventions
 
 - Missing masters project ref-key/leaf-id fallback labels and a conservative frontier.
-- A missing-master frontier falls back to `ready` (never landed, never in-flight) — the
-  optimistic-mechanical default, documented and test-pinned (reviewer finding F6).
+- A missing-master frontier falls back to `ready` only when no unresolved predecessor
+  makes it waiting (never landed, abandoned, or in-flight from missing facts). The
+  earlier F6 ready-default account remains the historical motivation, not an
+  unconditional rule or a test-run claim.
 
 ### Invariants And Boundaries
 
@@ -74,48 +72,22 @@ live in `agents_remember.tasks`.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation sources are configured for this repository-internal projection seam.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation was available after checking the configured source registry. | n/a | n/a |
+No relevant external documentation was available after checking the configured source registry.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The structural title protocol requires master-qualified leaf keys. | `GraphNodeLike`; `GraphTitlesLike` | mcp/src/agents_remember/observer/projection_graph.py:35-44; mcp/src/agents_remember/observer/projection_graph.py:47-54 |
-| `_node_view` projects titles only through `(node.ref, leaf_id)` and retains local raw-id fallback. | `_node_view` | mcp/src/agents_remember/observer/projection_graph.py:226-263 |
-| Public projection forcing proves duplicate local numbers retain the owning master's title. | `TaskDocumentsGraphViewProjectionTests` | mcp/tests/test_task_documents_graph_projection.py:31-197 |
+- The structural title protocol requires master-qualified leaf keys. [1]
+- `_node_view` projects titles only through `(node.ref, leaf_id)` and retains local raw-id fallback. [2]
 
-## Cross-Repo References
+- Public projection forcing proves duplicate local numbers retain the owning master's title. [3]
+
+
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
-
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_node_view` repointed to mcp/src/agents_remember/observer/projection_graph.py:226-263. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-06T22:41:21+00:00: Generated citation repair: `TaskDocumentsGraphViewProjectionTests` repointed to mcp/tests/test_task_documents_graph_projection.py:31-197. No content impact: mechanical anchor-range projection bound to citation source snapshot 250eac92295fa399589ccf1c9726bfb4cd28a1a0b20dca126769403fba09b52d; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-06T22:00:40+00:00 — Preserved production knowledge while retiring deleted test-owner citations and reconciling current testing configuration. Previous verification commit/date and history remain unchanged; no test execution or acceptance claim.
-
-
-- 2026-08-24T13:43+02:00 — DAGQC L1: the primitives-only title protocol and `_node_view`
-  now retain `(owning master ref, local leaf id)` through projection, preventing cross-master
-  same-number title overwrite. Verification metadata remains pinned until closeout.
-
-- 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R4): the primitives-only render-ready
-
-sprint graph view builder — per-node kind/title/leaf/wave/frontier/nature/predecessor
-
-projection, mechanical frontier derivation, stable node identity. Verified at code commit
-
-b7f2c8e2.
-
-
-
-- 2026-08-20T10:45+02:00 — Created for 260815-DAG-L12 (R4): the primitives-only render-ready
-  sprint graph view builder — per-node kind/title/leaf/wave/frontier/nature/predecessor
-  projection, mechanical frontier derivation, stable node identity. Verified at code commit
-  b7f2c8e2.

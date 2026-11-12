@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "family_guarantee"
+    ],
+    "justification": "Log-only sizing with tolerated framing is proved by the named passing stats test; single-file member of the family."
+  },
+  "applicability": "The tool-log-stats command over a log folder and day span.",
+  "conditions": [
+    "Sizes are read from the log lines only.",
+    "Blank and malformed lines are skipped."
+  ],
+  "exclusions": [
+    "Writing, repairing or pruning the log, which the command never does.",
+    "Live server state, which the command does not observe."
+  ],
+  "id": "INV-KJFNBQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "docs/reference/settings-json.md:317-331; mcp/src/agents_remember/cli/tool_log_stats.py (passing in the R6 run)"
+      ],
+      "path": "handoff-2.json"
+    },
+    "handoffEntry": "MIK-R108@v1 §8 stats",
+    "leaf": "260928-MIK-L108",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The read-only tool-log-stats command sizes per-tool/operation calls, medians, p90, max, sums and guard-cut rates from the log folder only, skipping blank and malformed lines.",
+  "status": "proposed",
+  "supersedes": []
+}

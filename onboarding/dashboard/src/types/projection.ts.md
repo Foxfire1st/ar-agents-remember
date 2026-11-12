@@ -1,30 +1,42 @@
 # dashboard/src/types/projection.ts
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/types/projection.ts`              |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview      | `../overview.md`                                 |
-
 ## Governing Overview
 
-[dashboard/src/ overview](../overview.md)
+[overview](../overview.md)
 
 ## Purpose
 
 Generated TypeScript mirror of the served workspace projection plus its enumerable runtime
-vocabularies. It carries canonical `TaskDocumentRef` values on task-aware analytics without
-turning runtime session/lifecycle ids into work identity. Since 260831-CCR (commit `99dc249b`)
-it also mirrors the canonical `TaskIntentIdentity` wire shape (`task-intent/v1` schema + 64-hex
+vocabularies, one of which is the attention row's class: `ATTENTION_ITEM_CLASSES` (operational, action,
+notice) beside the widened `ATTENTION_LANES` (repo, worktree, agent, task), with `AttentionItem` carrying a
+required `itemClass` and `dismissible` and the optional task, agent, prompt, held-message and occurrence
+identities a row may open. It carries canonical `TaskDocumentRef` values on native task entries/dependencies, not removed pickup/expectation DTOs, without
+turning runtime session/lifecycle ids into work identity. It also mirrors the canonical `TaskIntentIdentity` wire shape (`task-intent/v1` schema + 64-hex
 digest) and attaches it optionally to the lifecycle operation projection.
 
 ## Code Commentary
 
-The lifecycle phase vocabulary now includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard. Evidence: dashboard/src/types/projection.ts:352-352.
+### Task-reader wire fields
+
+`TaskSummary` requires `form` (`sprint`/`master`/`task`), `type`, `headerNotes` and
+`statusNoteTruncated`; `integrationBranch`, `statusNote`, `headerNotesTotal` and `reviewState`
+remain optional. Its required reader fields also include `bodyRevision`, `codeExamples`,
+`createdAt`, `decisions`, `executionWaves`, `kind`, `objective`, `openQuestions`, `orchestrates`,
+`references`, `requirements`, `seats`, `sections` and `steps`; acceptance/design/completion,
+direct-grant, discard, graph and dependency additions remain optional as declared.
+`TaskStepNode` requires `noteTruncated` and `outcomeTruncated` beside optional `note`/`outcome`;
+`TaskSubStepNode` has optional `note` without a note-truncation flag. A present
+`TaskReviewStateNode` still requires whole-round `openFindings` and `totalFindings`, independently
+of its findings preview. Supported older-recording recovery is not permission to invent a
+malformed present review object missing those counts. `TaskEntry` separately owns key/id/title,
+served stage, ordered membership, counts, major-step totals and worktrees; its `reference`,
+`activity`, `summary` and `waitingSeats` are optional. `activity` is `works`, `waiting`, `paused` or `unknown`; `waitingSeats` is a `WaitingSeat[]` whose members require `agentId`, `waitsFor` (`subagent` and/or `background`) and `since` and carry optional `role`, `checkDueAt` and `detail`; `TaskCounts` requires a `waiting` count. Optional `TaskListDisagreement[]` carries served list/record
+discrepancies with required kind and record reference and optional row id, recordMaster reference,
+original masterLiteral or actual parent key. It is neither a second task entry nor a
+browser-authored membership edge. `TaskSummary` is reader content, not a second status authority.
+
+
+The lifecycle phase vocabulary includes `recovering-private-preparation`. This exposes the existing private-preparation recovery phase without granting publication or lifecycle authority to the dashboard.
 
 ### Logic
 
@@ -32,29 +44,33 @@ The generated `LifecycleOperationProjection.phase` union has no `ledger-commit` 
 `direct-ledger-commit` member. It mirrors the Python lifecycle vocabulary: code and memory output
 publication remain observable, while the downstream ledger cache creates no separate commit phase.
 
-The generator emits lifecycle, task, attention, engine, and metrics wire shapes together with checked
-state vocabularies. Structural additions share one `TaskDocumentRef` interface. Task documents
-remain the hierarchy authority; lifecycle and hosted-occupant fields are optional runtime
-attachments.
+One TaskEntry/TaskCounts grammar replaces session lifecycle state constants and duplicate analytics document/series joins. The browser consumes stage/activity and counts rather than inferring them. TaskSummary is content, not a second task-status authority. TaskEntry carries eventAt but declares no task-event ageSeconds; the browser owns its event-age display. Other projection age fields are separate contracts.
 
-`LifecycleOperationProjection` gains the optional `taskIntent?: TaskIntentIdentity` (line 349),
-and the new `TaskIntentIdentity` interface (line 750-754) mirrors the JSON Schema refinements:
+`LifecycleOperationProjection` carries the optional `taskIntent?: TaskIntentIdentity`,
+and the `TaskIntentIdentity` interface mirrors the JSON Schema refinements:
 the required 64-hex `digest` and the closed `schema: "task-intent/v1"` union.
 
-Since 260913-LCA-L6 the mirror carries no refinement comment on `CloseoutQueueNode.members`: the
+The mirror carries no refinement comment on `CloseoutQueueNode.members`: the
 candidate population is unbounded, so the generated interface declares the array as a plain
-`members: CloseoutCandidateNode[]` (line 144). The 256-entry refinements that remain in this
-generated file belong to other collections — `CloseoutCandidateNode.reasons` (line 130) and
-`CloseoutQueueNode.sourceProblems` (line 149).
+`members: CloseoutCandidateNode[]`. The 256-entry refinements that remain in this
+generated file belong to other collections — `CloseoutCandidateNode.reasons` and
+`CloseoutQueueNode.sourceProblems`.
 
 ### Conventions
+
+
+The client type is what the dashboard reads the projection as, so each served fact's shape is declared here.
+
+## Product-Record Wire Flag
+
+`TaskDecisionNode` carries `product_record: boolean`: the server classifies legacy exact finalizer strings and remove/skip prefixes as product records, while the stored entry shape is unchanged. Existing finalizer-shaped records remain marked; current finalization does not emit a new decision. Authored-only preview numbering/counts exclude such records, and the whole-log page preserves them in the muted end disclosure. The type declaration itself does not call a writer or prove classification.
 
 This file is generated from the Python projection schemas; edit the model/generator and resynchronize
 rather than hand-maintaining parallel declarations.
 
 ### Invariants And Boundaries
 
-- The task-document reference is repository-qualified and level-explicit.
+- The task-document reference carries repository and path; task level/form is represented separately on task projections rather than as a field of TaskDocumentRef.
 - Runtime ids remain projections/correlation, not structural seat identity.
 - Generated TypeScript and schema artifacts must remain synchronized.
 - Only refinements the producer's Python schema actually carries are emitted, so a collection the
@@ -66,299 +82,144 @@ rather than hand-maintaining parallel declarations.
 
 None.
 
-## Docs References
+## Optional direct grant display
+
+TaskSummary carries optional directGrant giver/time evidence for display. Backend grant mutation and task authoring retain separate authority; generated declarations are not hand-maintained permission rules.
+
+## Dependency Display Shape
+
+TaskDependencyNode requires id/title; its canonical reference is optional. A file-less dependency has no reference to resolve, task-state word or navigation target. TaskSummary carries optional fixed prose/completion/dependencies; graph display nodes retain optional cycle. Default-null producer fields become optional non-null output properties under exclude_none serialization. These are declarations, not membership validation or scheduling functions.
+
+
+
+
+- Core nullable properties are emitted as optional non-null output properties; non-null defaults remain required on the output contract. [15]
+
+- Current CloseoutCandidateNode uses string classification/priority; queue members reference that interface. [16]
+
+## Evidence
+
+
+- The generated TaskEntry wire type carries optional structured list disagreements beside its canonical membership and cached summary. [22]
+
+
+- TaskSummary separates required reader fields from optional branch/note/review, content and graph additions. [19]
+- TaskStepNode requires note/outcome truncation booleans beside optional prose; TaskSubStepNode has optional note without a truncation flag. [20]
+- A present TaskReviewStateNode requires openFindings and totalFindings independently of its findings array. [21]
+
+
+- A dependency keeps id/title without inventing a reference; TaskEntry event time is not a served age. [18]
+
+
+
+
+### Docs References
 
 No Domain Documentation source is configured.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+No configured external domain-documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The lifecycle phase union mirrors the code/memory-only vocabulary. | L352-L352 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Structural analytics fields use the shared task-document reference. | L698-L701 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Generated task documents carry real hierarchy and optional runtime attachment. | L647-L681 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Execution nodes name their kind, leaf-id segment and task reference. | L724-L728 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| An execution endpoint carries a task reference and optional leaf id. | L710-L713 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. | L703-L708 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The graph contains typed node and edge arrays. | L715-L718 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| Workspace projection remains the generated top-level wire contract. | L816-L829 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The optional canonical task-intent identity on lifecycle operations. | L361-L361 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated `task-intent/v1` identity interface. | L750-L754 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-| The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
+- The lifecycle phase union mirrors the code/memory-only vocabulary. Anchor: `refinements` [1]
 
-## Cross-Repo References
+- Execution nodes retain kind/leafIds/ref; display nodes add cycle?: boolean and retain graph-rendering fields. Shared DTO declarations are not order derivation. [4]
+
+- An execution endpoint carries a task reference and optional leaf id. [5]
+- Execution edges bind predecessor and successor endpoints with a reason and optional judgment id. [6]
+- The graph contains typed node and edge arrays. [7]
+
+- The optional canonical task-intent identity on lifecycle operations. [9]
+- The generated `task-intent/v1` identity interface. Anchor: "task-intent/v1" [10]
+- The generated closeout-queue node carries an unbounded `members` array beside its 256-bounded `sourceProblems`. Anchor: `string` [11]
+
+- `BuildCurrentness` declares the required mode and state vocabularies and the optional digests, first-seen time, reason and remedy. [23]
+- The served tail fields, including buildCurrentness and servingProcessId, are optional on `WorkspaceProjection`. [24]
+
+### Cross-Repo References
 
 No cross-repository implementation dependency governs this file.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+No separate external implementation source applies to this file.
 
-## L23 Source-Lineage Mirror
+## Source-Lineage Mirror
 
 The frontend projection declares strict edge, recovery, and aggregate lineage
 shapes and attaches the aggregate optionally to each Engine Process. Its closed
 relations, sides, states, and `worktree_sync` tool mirror the server model; the
 dashboard does not accept an open-ended string vocabulary here.
 
-## 260815-DAG-L4 Projection Contract
+## Projection Contract Boundary
 
-The L4 delta keeps the generated dashboard contract aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
-
-
-## 260815-DAG-L12 Render-Ready Graph View Types
-
-The generated mirror gains the render-ready sprint graph wire shapes (L12-R4): `TaskExecutionGraphView` (nodes), `TaskExecutionNodeView` (kind `lump`/`segment`, masterRef + masterTitle, leafIds + leafTitles, waveIndex, frontierState, optional executionNature, predecessors), and `TaskExecutionPredecessorNode` (predecessorRef + predecessorTitle + reason + optional judgmentId); `TaskDocNode` gains the optional `executionGraphView` field. Regenerated by `scripts/sync-projection-types.py`.
+The generated dashboard contract stays aligned with the backend's organizational `super-to-leaf` lineage and lifecycle-operation guidance. The dashboard remains a projection consumer: it does not gain branch-mutation authority.
 
 
-## 260821-CLIVE-L2 Lifecycle Operation Projection Contract
+## Render-Ready Graph View Types
 
-The generated TypeScript mirror now carries optional lifecycle-operation `generation`, the
+The generated mirror carries the render-ready sprint graph wire shapes: `TaskExecutionGraphView` (nodes), `TaskExecutionNodeView` (kind `lump`/`segment`, masterRef + masterTitle, leafIds + leafTitles, waveIndex, frontierState, optional executionNature, predecessors), and `TaskExecutionPredecessorNode` (predecessorRef + predecessorTitle + reason + optional judgmentId); `TaskSummary` carries the optional `executionGraphView` field. Regenerated by `scripts/sync-projection-types.py`.
+
+
+## Lifecycle Operation Projection Contract
+
+The generated TypeScript mirror carries optional lifecycle-operation `generation`, the
 `direct-landing` kind, required opaque `legalControls`, and the termination-required/unreadable
 status vocabulary. These fields describe root-journal-owned operation state to dashboard consumers;
 they do not make the dashboard or disposable closeout projection an operation authority.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. | L334-L363 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
 
-## 260821-CLIVE Disposable Queue And Discard Audit Mirror
+## Disposable Queue And Discard Audit Mirror
 
-The generated mirror removes `AtomicBlockerNode` and the old mutable queue candidate fields.
-`CloseoutQueueNode` now exposes exact-current service/source condition, bounded problems, and
-generation-keyed `CloseoutProjectionMemberNode` rows; member classification is the closed
-`ready | waiting | blocked` display vocabulary. These interfaces describe a disposable producer view
+`CloseoutQueueNode` exposes exact-current service/source condition, bounded problems, and
+generation-keyed `CloseoutCandidateNode` rows; the current generated declaration types
+`classification` and `priority` as `string`, not a closed `ready | waiting | blocked` union. These interfaces describe a disposable producer view
 only and transfer no scheduling or operation authority to the browser. The `members` array itself
-carries no item ceiling since 260913-LCA-L6 — see that section below — while `sourceProblems` and
+carries no item ceiling, while `sourceProblems` and
 each row's `reasons` keep their 256-entry refinements.
 
 `DiscardUnstartedProofNode` and `DiscardedSubTaskNode` expose audited discard-before-start evidence.
-Required series and optional task-document discard count/history fields remain distinct from live
-subtasks and completed progress. Supported runtime-only schema constraints are emitted immediately
+TaskSummary discard count/history remains distinct from live child membership/counts and completed progress. Supported runtime-only schema constraints are emitted immediately
 above their TypeScript properties as stable `JSON Schema refinements` comments, including nested item
 constraints; TypeScript shape alone is not runtime validation.
 
-## 260913-LCA-L6 Unbounded Closeout Queue Members
+## Invalidation Outcome Mirror
 
-The regenerated mirror no longer documents a `maxItems` refinement on `CloseoutQueueNode.members`:
-`members: CloseoutCandidateNode[]` is emitted with no refinement comment because the producer's
-Python schema dropped the candidate cap, and a sprint may now declare any number of leaves. The
-neighbouring refinements are untouched — `CloseoutCandidateNode.reasons` keeps
-`{"maxItems":256}` and `CloseoutQueueNode.sourceProblems` keeps its own. No dashboard-side behaviour
-changes: the panel still renders whatever rows the producer serves.
-
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. | L143-L152; L124-L133 | [dashboard/src/types/projection.ts](dashboard/src/types/projection.ts) |
-
-## 260824-PDLS Invalidation Outcome Mirror
-
-`ProjectionInvalidationResult.outcome` no longer includes `not-created`. The producer always
+`ProjectionInvalidationResult.outcome` has no `not-created` member. The producer always
 materializes invalid-empty state when invalidating a projection, so dashboard consumers receive an
 explicit non-admitting result rather than interpreting file absence as lifecycle or queue evidence.
 
-## ARSPAWN-L4 Serving-Build Mirror
+## Served-Only Tail Mirror
 
-The generated `ServingBuild` interface now includes optional `sourceDigest`, `pythonExecutable`, and
-`packageRoot` beside the existing version, boot, checkout, dashboard, and dirtiness fields. These
+The served-only tail declares servingBuild, watcherHealth, checkoutBinding, buildCurrentness and servingProcessId as optional fields of `WorkspaceProjection`. `BuildCurrentness`, folded from the Python `BuildCurrentnessPayload`, carries a required `mode` (`installed` or `checkout`) and `state` (`current`, `stale` or `unknown`) and optional `loadedDigest`, `installedDigest`, `firstSeenAt`, `reason` and `remedy`; `servingProcessId` is a plain number.
+
+The current served-only diagnostics retain their own generated vocabularies and optional-field semantics. Native task state/activity and landing-operation phase/status remain separate contracts.
+
+The file remains generated by `scripts/sync-projection-types.py` and drift-checked; nothing in it is
+hand-edited, and adding a serve-time key here implies the companion updates described in
+[the dashboard overview](../overview.md) and in the `contract.test.ts` card.
+
+## Serving-Build Mirror
+
+The generated `ServingBuild` interface includes optional `sourceDigest`, `pythonExecutable`, and
+`packageRoot` beside the version, boot, checkout, dashboard, and dirtiness fields. These
 are serve-time diagnostic facts, not persisted projection authority. They let dashboard and MCP
 evidence distinguish equal-version candidates and name the runtime that actually answered.
 
-## 260831-CCR-R02 Task-Intent Mirror
+## Task-Intent Mirror
 
-The generated mirror adds the `TaskIntentIdentity` interface (closed `task-intent/v1` schema plus
+The generated mirror has the `TaskIntentIdentity` interface (closed `task-intent/v1` schema plus
 64-hex digest) and attaches it optionally to `LifecycleOperationProjection`. Dashboard consumers
 observe the exact identity a door/journal/operation binds; no intent authority transfers to the
 browser.
 
-## 260831-CCR-L15 Meaningful Revision Wire Field
+## Meaningful Revision Wire Field
 
-The generated `LifecycleOperationProjection` interface gains the optional
+The generated `LifecycleOperationProjection` interface carries the optional
 `meaningfulRevision?: number` field (JSON Schema refinement `minimum: 1`), the
-dashboard mirror of the durable CCR-R15 wait cursor that the lifecycle status-change wait tool
+dashboard mirror of the durable wait cursor that the lifecycle status-change wait tool
 returns on snapshots.
 
-## Update History
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Reconciled the generated TypeScript lifecycle phases with the two-output transaction. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 5
-  claim(s) whose anchor no longer sat in its cited range and normalised 1 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). No claim wording changed; every rewritten range was read
-  back at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T22:22+02:00 — L6 (260913-LCA): the regenerated mirror dropped the `JSON Schema refinements: {"maxItems":256}` comment from `CloseoutQueueNode.members` with the closeout candidate cap, so the mirror now states that the candidate population is unbounded and only `CloseoutCandidateNode.reasons` and `CloseoutQueueNode.sourceProblems` keep 256-entry refinements. Added the L6 section plus two evidence rows (queue node 143-152, candidate node 124-133) and rebound the drifted anchors `TaskDocumentRef` 699-702 → 698-701, `TaskDocNode` 648-682 → 647-681, `TaskIntentIdentity` 751-755 → 750-754 and `WorkspaceProjection` 817-830 → 816-829. Source is a read-only uncommitted change set; verification metadata remains closeout-owned and no stamp advanced.
-- 2026-09-06T21:51:23+00:00 — Reconciled the landed IAS source delta and actual preparation/fixture boundaries; existing verification pins and history are preserved.
-
-- 2026-09-05T07:19:22+00:00 — L31-MR-02 history recovery: restored the original dated L18 entry verbatim from memory commit fd41221f11dfe5ac2993520c0d7176ada59ce2ba (its recorded code provenance: f93ac631ca161e5880db3a937728cb256686b13b). This preserves sibling curation history; current body and verification metadata are unchanged.
+- The lifecycle operation wire type keeps generation optional, controls opaque, and kind/status vocabularies closed. Anchor: `string` [12]
+- The queue members remain unbounded while sourceProblems and candidate reasons retain their bounds. Anchor: `string`; "sourceProblems: CloseoutProjectionProblemNode[]" [13]
 
 
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocumentRef` repointed to dashboard/src/types/projection.ts:699-702. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskDocNode` repointed to dashboard/src/types/projection.ts:647-681. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `WorkspaceProjection` repointed to dashboard/src/types/projection.ts:817-830. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `taskIntent` repointed to dashboard/src/types/projection.ts:362-362. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `TaskIntentIdentity` repointed to dashboard/src/types/projection.ts:750-754. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec (lifecycle status-change waiting): recorded the optional `meaningfulRevision` field on the generated `LifecycleOperationProjection` interface.
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 memory pass: recorded the regenerated lifecycle envelope types (schema/state-matrix versions, incoherent status, identity/componentBindings/worker/approval/recommendedAction cells). Verified at code commit f93ac631ca161e5880db3a937728cb256686b13b.
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  regenerated-mirror card updated for the optional `LifecycleOperationProjection.taskIntent` and
-  the new `TaskIntentIdentity` interface (closed `task-intent/v1` + digest pattern with JSON Schema
-  refinements); documented the observation-only boundary. Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
-
-- 2026-08-30T15:15:36+02:00 — Regenerated the serving-build mirror with source digest,
-  interpreter, and package-root identity. Verification remains closeout-owned.
-
-- 2026-08-25T17:21+02:00 — Regenerated the TypeScript invalidation outcome union without the
-  impossible `not-created` member. Verification remains closeout-owned.
-
-- 2026-08-24T15:04+02:00 — Regenerated and documented the disposable closeout projection,
-  discard audit types, and deterministic runtime-refinement comments while preserving the newer
-  lifecycle-operation/root-journal mirror.
-
-- 2026-08-24T00:51+02:00 — 260821-CLIVE-L2: documented the generated lifecycle-operation TypeScript contract and its projection-only authority boundary. Verified at code commit `1d446724`.
-
-
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   generated mirror adds `TaskExecutionGraphView`/`TaskExecutionNodeView`/`TaskExecutionPredecessorNode` and `TaskDocNode.executionGraphView` (L12-R4). Verified at code commit b7f2c8e2.
-
-- 2026-08-20T04:38+02:00 — 260815-DAG-L14: `TaskDocNode` gains `seats: TaskSeatNode[]` (new
-  `TaskSeatNode` interface: role/label/state + optional identity), `TaskSubTaskRefNode` gains the
-  optional typed `masterRef: TaskDocumentRef`, and the schema mirrors both. Regenerated by
-  `scripts/sync-projection-types.py`; verified at code commit 9c3180c1.
-
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11: regenerated types add `TaskExecutionNode` /
-  `TaskExecutionEndpointNode`, `TaskExecutionEdgeNode.judgmentId`, and node-typed
-  `executionWaves` — the leaf-segmented sprint graph surface. Verification remains closeout-owned.
-
-- 2026-08-18T13:00+02:00 — No content impact: 260815-DAG-L8 added the closeout-queue projection surface (closeoutQueues); the behavior this card describes is unchanged.
-
-- 2026-08-15T23:38+02:00 — Reconciled projection parity for organizational direct-super lineage and lifecycle guidance. Verification metadata remains closeout-owned.
-
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1: regenerated TaskDocNode types now expose optional
-  execution nature/graph and required mechanically derived waves without scheduler judgment.
-- 2026-08-12T20:10+02:00 — L23 curator: documented the strict dashboard lineage mirror; verification remains closeout-owned.
-- 2026-08-12T15:19+02:00 — L23 curator: re-read the current source-backed claims and retained their wording while the sanctioned MCP citation-fix wave regenerated exact ranges; verification provenance remains closeout-owned.
-
-- 2026-08-11T19:58+02:00 — Aligned the current data-contract card for `projection.ts` with task-document identity, qualified seat state, and terminal projections represented by this source.
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 completion round (curator): refreshed this sidecar body for the supervisor -> agent-notifier rename (module paths, identifiers, settings keys, wire keys, prose) and the compat seams; verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-04T13:01:29+02:00 — 260731-EFA-L6 S18-B04 — same-reviewer semantic correction: reconciled generated projection citations against the frozen source, removed unsupported or duplicate claims, and regenerated scoped citation ranges.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: rewrote the live card for generated
-  provenance. Removed the deferred-codegen/`LATE MIRROR` contract, made schema-required fields
-  explicit, and stopped attributing historical rationale or diagnostic commentary to generated
-  source. New or rewritten source bindings are resolved by the scoped citation fixer.
-
-- 2026-08-01T10:45+02:00 — 260731-EFA-L4 curator: reconciled the state-partition rewrite,
-  compile-time uniqueness guard, runtime duplicate coverage, and moved reference ranges against
-  the landed source. Corrected stale claims and contradictory counts; verification metadata remains
-  pinned until closeout.
-
-- 2026-08-01T09:05+02:00 — 260731-EFA-L4 curator: body corrected against the landed diff. Removed the
-  false claim that this is a pure type module (it now exports eight vocabulary tuples plus
-  `stateCountField`/`metricsFor`); removed the false `TaskSubTaskRefNode.createdAt` claim from Purpose,
-  Logic and the citation table (the field moved to the new `SeriesSubTaskNode`); rewrote the slice-05o
-  paragraph, which described `refusedPolarity` and a `refused` edge state as live wire signals — both
-  were mirror inventions with no Python model behind them and are now REMOVED. Added the L4 subsection
-  (tuple-first vocabularies, derived `Metrics` buckets, the reconciled camel rule, the two un-collapsed
-  model pairs, `LATE MIRROR`, `LandingRefNode.at?` / `EngineProcessNode.carryoverDoneAt?` /
-  `ExpectationRowNode`) and six invariants. Recorded three limits rather than flattening them: the
-  terminal/live split is NOT a composed partition on this side (`projection.py` L199-L217 says so and
-  names the fix), `SeriesSectionNode` is a slot and not a check, and the mirror-to-server link is held by
-  no test because `snapshot.json` is hand-maintained. Re-derived all 12 pre-existing citations — every
-  range had moved (e.g. `WorkspaceProjection` L389-L397 to L674-L689, `EngineProcessNode` L332-L373 to
-  L566-L608, `ProcessFactState`/`ProcessHealth` L269-L287 to L487-L519) — and added 17 more. Verification
-  metadata pinned to the leaf base until closeout stamps the L4 code commit.
-
-- 2026-07-24T13:17:50Z — Documented optional dirty serving-build evidence and comment-only cleanup.
-  Verification hash/date remain pinned to the pre-commit source stamp.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded the optional app-injected dashboard fingerprint and
-  its unknown-on-absence boundary; verification metadata remains pinned pending closeout.
-- 2026-07-17T23:54+02:00 — 260715-FEUI-L7 mirrored optional pickup owner identity and
-  redelivery/escalation timestamps/counts. Optionality preserves pre-field persisted projections;
-  consumers must not synthesize missing facts. Verification metadata remains pinned to the leaf
-  base until closeout.
-- 2026-07-12T17:30+02:00 — 260712-TRH-L7: kept the projection wire contract in lockstep by typing stale landing facts and observed/attempt/age freshness fields.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6: added optional `TaskDocNode.bodyRevision`, the
-  cache invalidation token for on-demand reader bodies omitted from the summary broadcast.
-  Verification metadata remains pinned until closeout stamps the eventual L13 code commit.
-
-- 2026-07-08T23:59+02:00 — 260707-HFX2-L8 (dead-seat storm observability, R6): extended
-  `SupervisorHeartbeat` with `pendingInboxCount`, `redeliverableInboxCount`, and
-  `lastSweepDurationSeconds`, matching the app-injected `/api/state` payload. Verification metadata
-  pinned until closeout stamps the 260707-HFX2-L8 commit.
-- 2026-07-08T18:45+02:00 — 260707-HFX2-L2 (supervisor sweep, R5): added `SupervisorHeartbeat`
-  (`lastTickAt: string | null`, `ageSeconds: number | null`, `staleCutoffSeconds: number`,
-  `stale: boolean`) and the optional `WorkspaceProjection.supervisorHeartbeat?` — a SECOND
-  app-injected, non-`projection.py` field alongside `servingBuild?` (same posture: injected onto
-  `/api/state`/the SSE snapshot only, excluded from the ETag revision, absent from persisted
-  `latest-state.json`). `lastTickAt: null` (never ticked) is documented as distinct from
-  `stale: true`. Verification metadata pinned until closeout stamps the 260707-HFX2-L2 commit.
-- 2026-07-07T05:22+02:00 — 260703-L15 S3: added `ServingBuild` (`version`, `bootedAt`,
-  `commit?`) and the optional `WorkspaceProjection.servingBuild?` — the app-injected boot-time
-  serving stamp (NOT a `projection.py` mirror; wire-only, absent in persisted projections).
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-07-06T23:57:12+02:00 — 260703-L14 (visual hierarchy + chat grouping): mirrored
-  `TaskDocNode.orchestrates?: string[]` — the orchestration-command relation from `projection.py`;
-  optional for forward-compat with pre-L14 persisted projections (consumers guard with
-  `?? []`). Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T03:00+02:00 — 260703-L11: mirrored the new required
-  `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` existence-truth flags (stat'ed server-side
-  at snapshot time; the tasks-surface visibility rule). Verification metadata pinned until closeout
-  stamps the L11 commit.
-- 2026-07-04T12:31+02:00 - L3: mirrored the expanded `AgentPickupNode`
-  metadata for agent-to-agent inbox delivery state. Verification metadata pinned
-  until closeout stamps the L3 commit.
-- 2026-06-28T07:32+02:00 — Task 29 S7 follow-up: mirrored drift snapshot provenance fields
-  (`checkedAt`, `sourceRoot`, `memoryRoot`, `reportPath`) used for actionable-drift detail and targetless
-  dismissal freshness. Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-28T07:30+02:00 — Task 33: mirrored the new required `WorkspaceProjection.activeWorktreeGroups:
-  string[]` (the bounded active worktree-group set the Topology filters on; required because the server
-  field is a list default, never `exclude_none`-dropped). Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-28T03:52+02:00 — Task 28 S5.2 after source sync: mirrored
-  `LifecycleProjection.stateEnteredAt` / `AttentionItem.signalTs?` as the current-occurrence
-  acknowledgement anchors for lifecycle-scoped attention dismissals. Verification metadata pinned until
-  closeout stamps the task-28 code commit.
-- 2026-06-27T23:08+02:00 — Task 31 provider-state honesty: mirrored `ProviderBootNode.runtimeState="missing"` for expected provider slots with no observed runtime fact. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T20:18+02:00 — Task 21 series token rollup: mirrored `SeriesNode.seriesTokenTotal`, the
-  server-derived aggregate token count displayed by the master reader. Verification metadata pinned until
-  closeout stamps the code commit.
-- 2026-06-25T13:20+02:00 — Task 23/24: mirrored `AttentionItem.gateId`, `AgentPickupNode`, and `Analytics.agentPickups` for gate deletion actions and task-row pickup feedback.
-- 2026-06-24T18:11+02:00 — Task 17 live-data numbering: mirrored required `TaskDocNode.id`, the
-  JSON-primary task id used by dashboard labels for authored leaf rows. Verification metadata pinned
-  until closeout stamps the code commit.
-- 2026-06-24T16:33+02:00 — Task 17 task-document-first Operations: mirrored optional
-  `TaskDocNode.lifecycleId?` and `SeriesNode.createdAt?` from the server projection so planning-only
-  documents remain readable and master rows keep structured creation-order metadata. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-24T12:21+02:00 — Task 17 projection mirror: added the optional `createdAt` ordering fields
-  on task/sub-task rows, the folder-keyed `SeriesNode.objective`/master shape, and `Analytics.series`
-  as the master reader surface consumed by `DetailPanel`. Verification metadata pinned until closeout
-  stamps the code commit.
-- 2026-06-24T08:59+02:00 — Task-document sections correction: clarified that
-  `TaskDocNode.sections` mirrors JSON task-document sections, including non-master freeform sections,
-  and does not carry `series-contract.md` content. Verification metadata pinned until closeout stamps
-  the code commit.
-- 2026-06-24T08:09+02:00 — Engine Room leaf identity: mirrored `EngineProcessNode.leafId` from the server projection so dashboard renderers can label concrete leaf enclosures separately from their parent `taskName`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: `EnclosureNode` gained `enclosureId`, `leafId`, and `taskRoot` so dashboard views can distinguish root task folders, leaf enclosure contracts, and stable leaf identity. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-23T21:46+02:00 — Task 12 S2: clarified `ProviderNode.repoId` as covered-repo metadata for
-  workspace providers and owning-repo metadata for worktree providers, with `worktreeGroup` documented as
-  the precedence join key. Verification metadata pinned until closeout stamps the S2 code commit.
-- 2026-06-22T11:00 — slice 05o refused-conduit signal: added a `refused` member to the `EngineProcessEdge.state` union plus an optional `refusedPolarity?: "amber" | "red"` field (amber = a soft reroute/fallback, red = a fault/conflict), the projection signal that drives the new refused-conduit flash (T9B red, T9C amber, T14C red); lockstep with projection.py (`?` = the server's `exclude_none` omission). Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T02:44+02:00 — Slice 6g: mirrored the master-navigation additions from `projection.py` — `TaskSubTaskRefNode` (+`linkedLifecycleId?`), `TaskSectionNode`, and `subTasks`/`sections`/`masterLifecycleId?` on `TaskDocNode`. Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-19T06:39+02:00 — engine-room crash fix: relaxed `EngineProcessNode.landing` to optional (`landing?`) — a pre-5h/persisted projection omits it, and `EnclosureCanvas` was crashing on `node.landing.find`. Forward-compat, not an `exclude_none` change. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T21:25+02:00 — slice 5h Tier 2: mirrored the four optional `LedgerRefNode` fields `codeSubject?`/`codeDate?`/`memorySubject?`/`memoryDate?` (lockstep with projection.py; `?` = the server's `exclude_none` omission). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T18:00+02:00 — slice 5h ledger popover: mirrored `LedgerRefNode` + `LedgerNode.rows` + `EngineProcessNode.ledgerRows`/`ledgerRowCount` (lockstep with projection.py). Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T14:05 — Task 6 slice 6c Part A: mirrored `GateNode` + the optional `LifecycleProjection.gate` from `projection.py`. Verification metadata pinned until closeout stamps the 6c Part A code commit.
-- 2026-06-18T08:51+02:00 — slice 5h H1: mirrored `LandingRefNode` + the additive `landing[]` / `integrationStrategy?` fields on `EngineProcessNode` (lockstep with projection.py). Verification metadata pinned until closeout stamps the 5h code commit.
-- 2026-06-15T19:35 — Created for slice 5e: TS mirror of the served projection contract; slice 5e adds CommitRefNode/ProviderBootNode/EngineProcessEdge/EngineProcessNode + ProcessFactState/ProcessHealth + Analytics.engineProcesses. Verification metadata pinned until closeout stamps the 5e code commit.
+- Generated TaskEntry retains stage/activity and eventAt without a task-event ageSeconds field. [17]

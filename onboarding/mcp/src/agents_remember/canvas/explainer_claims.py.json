@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_claims.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "with_authored_claims carries an admitted claim map into the published revision without touching the evidence input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ab218dd64b9e2695e2ffd9e261ce01dd165bb3c",
+            "content": "sha256:b7cae154901469125b7a00b008ac9e16350ae504c19a0e949c1da0c2d1a1b436",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_authored_claims"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

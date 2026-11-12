@@ -1,0 +1,200 @@
+{
+  "path": "dashboard/src/panels/notes-reader",
+  "references": {
+    "1": {
+      "note": "The read-only notes routes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d1f1be6c7c8cb30d03e132b8f4f34d2bdd0cd4fd",
+            "content": "sha256:588ddec25312110e5e0f19ec9721f196c744466d8edea4c97b9f100cd90cab6e",
+            "locator": {
+              "kind": "symbol",
+              "name": "list_folder"
+            },
+            "path": "mcp/src/agents_remember/serving/notes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The same-origin notes client (`listFolder`/`readNote`/`resolveNoteReferences`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e23e68eb2a31165781bb22894b445d6d8bc18b66",
+            "content": "sha256:2d24c867ca31e1b03d8f8e8a739931b87d1d7942b4cf007041b870ea2b1b29a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "listFolder"
+            },
+            "path": "dashboard/src/data/notes.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The reused File Viewer content pane maps both notes and requirement packets to markdown/code/placeholder rendering.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:d1f3a9e5586965cd322a4773002f7ede9fab3e1c9f3dd2c871aedd49bfc9223f",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:68a2b4d382437dadb4bbbe1d75607d067e34315faef5c4dd340524dfa4c6235d",
+            "locator": {
+              "end": 270,
+              "kind": "line_range",
+              "start": 270
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Cockpit defines the note-opening callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:9ea3c4fbf6f5ddd79b5328731a9c926c86173f74e6316a9609d11e63e78be30e",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 380
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Cockpit defines the note-selection callback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:64f414cda89089973a374327ed488a3765461f4707421fd5c134a499e960c79e",
+            "locator": {
+              "end": 399,
+              "kind": "line_range",
+              "start": 390
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cockpit renders NotesReaderViewer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+            "content": "sha256:7f19b6d0ed8709053a492349b0a9e648c1731e868dd5d70b75b925d37690fb47",
+            "locator": {
+              "end": 465,
+              "kind": "line_range",
+              "start": 465
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "TaskNotes resolves registered requirement references first; a requirement address never falls through to a note target.\n\nAnchor: `TaskNotes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f02c66bf634f3db709b05706fd41125d90092f39",
+            "content": "sha256:86768c2f73aaf4211588f49da8c710642ab6022be7819a385f6c57cfec332997",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/panels/TaskNotes.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The task-body fixture returns the path-addressed native entry summary or 404; the cockpit seed uses canonical native wire fixture builders.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:a377081a233a4d51374df30b6e2894df93bfdb93868ec5894db13d7e2270128c",
+            "locator": {
+              "kind": "symbol",
+              "name": "stubNotesApi"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:f6188f8b32ffa555cdbd34de70979b9eec4b9df43808fcd1fadf8308a6de4ca3",
+            "locator": {
+              "kind": "symbol",
+              "name": "masterDoc"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6e4fa860ed82c382b919d20a08e564ea69c9f2f4",
+            "content": "sha256:6ae5d75afe0113c5e9bcd6ed32849d8526f988c3ead338da53a7d54babcdf05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "seedMaster"
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "ReaderLayout exposes the shared left toggle only for a present rail and applies the same visibility state to the panel and handle.\n\nAnchor: \"function ReaderLayout(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ada2a7f8a47f7355bd83f5d5cd6ce220572fd0e0",
+            "content": "sha256:0feee1581c4b1c5ba393a48a119463de00ae7accda236131a17ddf7f31eaa592",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 512
+            },
+            "path": "dashboard/src/panels/notes-reader/NotesReaderViewer.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

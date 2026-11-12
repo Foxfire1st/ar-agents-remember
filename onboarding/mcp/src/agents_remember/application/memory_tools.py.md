@@ -1,64 +1,88 @@
 # mcp/src/agents_remember/application/memory_tools.py
 
-| Field                  | Value                                                      |
-| ---------------------- | ---------------------------------------------------------- |
-| repository             | agents-remember                                            |
-| path                   | `mcp/src/agents_remember/application/memory_tools.py`       |
-| doc_type               | `file-level-onboarding`                                    |
-| lastUpdated | 2026-09-15T01:13+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview      | `overview.md`                                              |
-
 ## Governing Overview
 
 [Application layer overview](overview.md)
 
 ## Purpose
 
+`citation_census_tool` measures captured leaf-pair inputs, returns at most 200 target rows and writes the complete population to a named artifact with digest, measured identities and retention. `citation_note_revision_tool` requires a converted leaf card, reference key, replacement note and exact base digest. It records the repairing leaf, preserves targets and numbering, and returns named no-write refusals for admission or revision errors. Preview is distinct from write, and a successful unchanged note reports `changed=false`.
+
 `memory_tools.py` is the typed application entry point surface for onboarding drift, citation work,
 route-index refresh, memory initialization, baseline adoption, and memory carryover. Memory-quality
 scope, execution, and async control now belong to the dedicated typed controller.
+
+Provides the memory-facing application entry points and the ordinary leaf writer guard. Citation fixing and route-index apply also share one measured pre-baseline admission on the configured converted memory root.
+
+`memory_init_tool` scaffolds the memory root and reports the measured knowledge state; it does not author
+knowledge. For a complete resolved tree reported as `not-recorded` or `recorded`, the next action names
+that state and asks the developer to start the Architect, which runs the foundation as a regular task
+with a Curator. A nonlegacy `PublishedIntentUnavailable` answer retains its measured state, dataset path,
+code and detail and uses the same handover. This can include `unusable` from unavailable publication; it
+is distinct from a resolved partial index, whose next action remains to repair the named knowledge files
+and rebuild their derived index. Admission failures keep their own next action, and legacy-format
+publication keeps conversion guidance. The handover neither invokes a role nor retires the separately
+registered knowledge-bootstrap CLI.
 
 ## Code Commentary
 
 ### Logic
 
-`memory_baseline_status_tool` reports `ok=false` for both `blocked-drift` and `unavailable`.
+`drift_check_tool` binds the application-owned converted base when the call names a contract, so a leaf
+that deleted a file carries that anchor as carried and stale rather than refusing it as newly written;
+without a contract the base is the memory checkout's converted `HEAD`, as the converted check already
+does. On an existing unconverted directory, `drift_check_tool` returns `ok=false`,
+`status: "error"` and the shared `legacy_format_refusal` message before measuring drift.
+`memory_baseline_status_tool` reports `ok=false` for `blocked-drift`, `blocked-invalid`,
+`blocked-legacy-cards`, `unavailable` and `legacy-format`.
 The baseline owner returns `unavailable` when an existing memory HEAD resolves but its Git
-attribution history cannot be read. An unborn repository can remain `ready` under the existing
-drift rules. This adapter preserves the owner's state and details; cache-file availability does
+attribution history cannot be read. An unborn converted repository can remain `ready`
+under the existing drift rules; an existing unconverted directory receives `legacy-format` first. This adapter preserves the owner's state and details; cache-file availability does
 not become a new admission requirement.
 
-`CarryoverCommitMessages` contains only the memory-content subject. The apply adapter forwards
-that subject to `CarryoverApplyOptions`; the carryover owner attributes the memory commit and may
-refresh the consumer ledger cache. No ledger subject or third commit intent crosses this boundary.
+`CarryoverApplyOptions` contains the approval intent and explicit review selections, not a memory commit subject. The apply adapter forwards those fields to the converted worktree import and sets `ok` from whether its state is `refused`. Carryover creates no commit and refreshes no ledger; baseline adoption remains the separate attributed-commit producer.
 
-The module defines three parameter objects for separate application contracts:
-`MemoryBranches` carries optional source/work branch overrides for baseline adoption
-cit:([`MemoryBranches`], mcp/src/agents_remember/application/memory_tools.py:309-314);
-`CarryoverSelection` carries the repository, memory/code refs, base, and replacement choice for
-carryover planning/apply cit:([`CarryoverSelection`], mcp/src/agents_remember/application/memory_tools.py:322-338);
-and `CarryoverCommitMessages` carries the memory-content commit subject for apply
-cit:([`CarryoverCommitMessages`], mcp/src/agents_remember/application/memory_tools.py:342-345).
-`intent_note` remains a separate apply approval argument.
+The module defines three parameter objects for separate application contracts: `MemoryBranches` carries optional source/work branch overrides for baseline adoption; `CarryoverSelection` carries the repository, exact target contract, memory/code refs, base and replacement choice; `CitationOperationScope` carries only `document` or `documents`. `intent_note` remains a separate apply approval argument.
+
+`CitationOperationScope.documents` admits a finite fix list beside singleton `document`. Both selectors together, an empty list and a list over `MAX_CURATOR_SOURCE_CANDIDATES` refuse before resolving trees; that shared constant is the only list bound. Only fix passes `allow_documents=True`; check rejects a multi-card selector. Each fix member has singleton authoring/refresher semantics, and a refused member does not prevent other named cards from being processed. No snapshot or caller-exclusion operand remains. Unconverted check/fix refuse instead of acquiring or repairing legacy citations.
+
+Converted fixing forwards each selected document to card authoring and reference repair, excluding authoring-refused sidecars from mechanical refresh. This internal exclusion set protects refused cards; it is not a caller-glob interface. The removed `_citation_trees`, citation source-index build and internal citation migration helpers supply no fallback.
+
+Citation selection is application-owned. The CLI and registered fixer construct the same document-only scope; converted reference authoring and mechanical refresh remain distinct stages. Neither public surface exposes legacy snapshot, caller-exclude, source-index-build or migration operands.
 
 Memory-quality resolution, checklist composition, sync/start/poll control, and public run outcomes
-were extracted to `application/memory_scope.py` and `application/memory_quality_controller.py`.
+were extracted to `application/memory_scope.py` and `application/memory_quality/controller.py`.
 This module no longer implements or wraps that failure family. Its remaining operations retain
 their existing configured-authority and typed parameter-object boundaries.
 
 `route_index_refresh_tool` then forwards the resolver-owned code root, onboarding root, repository
-identity, and storage authority into `build_route_indexes`
-cit:([`route_index_refresh_tool`], mcp/src/agents_remember/application/memory_tools.py:254-290).
-Ordinary drift artifacts stay under the coordination temp root. The curator checklist is the
+identity and storage authority into `build_route_indexes`.
+Ordinary drift reads file no temp report (`DriftSummaryOutput(write_report=False)`). The curator checklist is the
 explicit enclosure-local exception and remains outside both Git worktrees. Baseline and carryover
 entry points preserve their separate service contracts.
+
+**On a converted memory tree, `citation_check` and `citation_fix` work over sidecar references
+(MIK-R24 rule 5).** Both tools first ask `memory_quality/reference_state.is_converted_memory` whether the
+memory root (the onboarding root's parent) holds `knowledge/layout.json`. If it does, they return
+`reference_state.check_references` or, for the fixer, `_converted_citation_fix` instead of building citation
+`Trees`. A stale reference is reported here and refused as a gate finding by the validator's
+`R198.1-reference-anchor` at publication and in the full quality run (MIK-R198 rule 5). Since L37 (fix round P1b)
+`_converted_citation_fix` does two things: it authors the cards' citation rows into resolved sidecar
+references (`memory/conversion/card_authoring.author_card_references`), then re-records the anchors whose
+bytes moved mechanically (`reference_state.fix_references`). With one `document` named, both steps touch
+that card and its sidecar only, and the result is `ok` only when no card was refused. On converted memory a
+`document` needs no `expected_snapshot`: `CitationOperationScope.validate(allow_documents=True)` admits the fixer selection; check uses the default single-document validation. Source-index and internal migration operations are removed. An unconverted
+tree receives `ok=false`, `code: "legacy-format"` and the shared conversion guidance from
+`legacy_format_refusal` for both check and fix, including fix dry runs. There is no legacy
+citation-table check/fix fallback. Route-index apply also refuses unconverted memory;
+its `dry_run=true` preview is preserved. These refusals do not depend on converted memory
+elsewhere. The existing contractless pre-baseline admission still requires a converted root.
 
 ### Conventions
 
 Application entry points translate validated tool arguments into service calls and JSON-compatible payloads.
-Path confinement and repository authorization use the shared `_guards` helpers rather than local
+Path confinement and repository authorization use the shared `kernel/authority` helpers
+(`require_repo`, `require_within_coordination`) rather than local
 filesystem checks.
 
 ### Invariants And Boundaries
@@ -68,7 +92,7 @@ filesystem checks.
   must not re-grow quality scope, registry, or checklist implementations.
 - Route-index refresh must forward resolver-owned repository and storage authority explicitly; it
   must not reconstruct path rules from directory layout or parser defaults.
-- Drift reports are temporary coordination artifacts, not durable onboarding content.
+- A drift read is read-only content and files no per-call report; it must not re-grow quality scope, registry, or checklist implementations.
 - Effectful refresh/init/baseline operations act by default and expose `dry_run` for preview;
   carryover remains an explicit plan/apply operation.
 
@@ -76,36 +100,60 @@ filesystem checks.
 
 None known for the MX-FIX-4 application entry point boundary.
 
-## Docs References
+### Role Runtime and Scope
+
+When a task-scoped config has replaced repo.memory_root with a leaf root, `_refuse_official_memory` obtains the original configured repository only after `require_configured_contract_repositories` proves repository lineage and candidate worktree identity. That guard remains the ordinary leaf route. Without a contract, the existing fixer and route-index apply admit only a declared repository whose resolved memory root is the declared converted root, has no attributed baseline, and has no linked memory worktree. An unreadable worktree list refuses. The result names `admission: pre-baseline`; a failed condition writes nothing.
+Unconverted format names the shared conversion procedure; other admission failures
+retain their missing-condition and leaf-route guidance. Once a baseline exists the contractless write is refused. This is a card/index admission, not permission to author knowledge or to commit.
+
+Both converted fixer admissions use the same authoring and mechanical-refresh composition. Sidecars of cards refused by authoring are excluded from mechanical refresh, so neither stage changes that card or its sidecar. Successful siblings may still be authored; a refused run is not a claim that the whole bootstrap is complete.
+
+## MIK-R46 R8: refusal envelope at the application boundary
+
+The shared `_carryover_legacy_refusal` accepts an operation name (default `memory_carryover_apply`) and uses generic unconverted-memory guidance for either source or target. The MCP plan adapter supplies `memory_carryover_plan`; the lower application plan retains its raised format refusal. This changes envelope labeling, not layout admission, guards or commit authority.
+
+`memory_carryover_apply_tool` catches only a `RuntimeError` recognized by `is_legacy_format_refusal`; other runtime errors are re-raised. `_carryover_legacy_refusal` returns `ok=false`, `state=refused`, code `legacy-format`, one short refusal `message`, full rule text in logged `detail`, and conversion/retry guidance in `nextAction`/`nextStep`. Matching converted source/target versions now enable carryover through the exact recovery-leaf authority route. Format mismatches and unrelated authority errors are not this recognized legacy refusal and still raise; the adapter reports `ok=false` for a returned `state=refused`. This is not a catch-all error envelope or a new commit producer.
+
+The unconverted `citation_fix_tool` whole result now explicitly carries `nextAction=citation_fix`, matching its delivered projection. It still refuses before citation authoring/refresh; the converted card-writer and pre-baseline admissions retain their boundaries.
+
+
+## Evidence
+
+Inherited numbered findings [3], [12], [9], [13], [36], [21], [26], [27] retain their separate historical custody; no currentness is inferred from those inherited targets. The source-bound account below distinguishes surviving owners from the legacy implementation removed by this task. Removed projection, source-index and prepared-continuation captions are not retained as executable behavior.
+
+- Carryover options forward approval intent and explicit review selection without a commit subject. [37]
+
+- The carryover adapter forwards converted worktree import, derives ok from refused state and translates only the recognized legacy RuntimeError. [38]
+
+- Converted fixing authors selected cards then refreshes references, excluding authoring-refused sidecars. [39]
+
+- The document-only scope refuses conflicting, empty or oversized selections; only fix admits a multi-card list. [40]
+
+- The converted fixer and route-index apply retain ordinary leaf and measured pre-baseline admissions. [41]
+
+
+### Docs References
 
 No Domain Documentation source is configured for this repository; this card is grounded in the
 package application entry point and resolver contracts.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured domain documentation could be checked. | — | — |
+No configured domain documentation could be checked.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. | L352-L359 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. | L236-L275 | [mcp/src/agents_remember/memory/baseline.py](mcp/src/agents_remember/memory/baseline.py) |
-| Carryover has one memory subject and forwards it without a ledger-message option. | L342-L345; L391-L408 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| Canonical quality scope is owned by the focused scope module. | L105-L142; L145-L169 | [mcp/src/agents_remember/application/memory_scope.py](mcp/src/agents_remember/application/memory_scope.py) |
-| Typed quality execution and public run translation are owned by the controller. | L111-L121; L124-L156; L159-L221 | [mcp/src/agents_remember/application/memory_quality/controller.py](mcp/src/agents_remember/application/memory_quality/controller.py) |
-| The route-index application entry point forwards resolver-owned authority. | L254-L290 | [mcp/src/agents_remember/application/memory_tools.py](mcp/src/agents_remember/application/memory_tools.py) |
-| The route-index builder. | L184-L235 | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py) |
-| The route-index builder receives storage authority explicitly in its typed signature. | L184-L235 | [mcp/src/agents_remember/kernel/route_index.py](mcp/src/agents_remember/kernel/route_index.py) |
 
-## Cross-Repo References
+
+
+
+### Cross-Repo References
 
 The application entry point can target configured sibling repositories, but no external implementation governs
 this package-local dispatch contract.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | — | — |
+No meaningful cross-repo references found.
+
+### Runtime Source References
+
 
 ## 260815-DAG-L4 Authority Boundary
 
@@ -114,57 +162,114 @@ L4 routes this file's existing application, configuration, task, model, registra
 ## 260821-DAGQC-L2 Quality Ownership Extraction
 
 The quality-specific authority, complete execution identity, bounded registry orchestration, and
-checklist publication moved to `memory_scope.py` and `memory_quality_controller.py`. This leaves
+checklist publication moved to `memory_scope.py` and `memory_quality/controller.py`. This leaves
 `memory_tools.py` focused on the other memory operations and prevents each transport/application
 caller from reimplementing the controller's failure vocabulary.
 
-## Update History
+## KS-R23@v1 The Citation Responses Name Their Ruler
 
-- 2026-09-15T01:13+00:00 — LCA-L9 current candidate: documented the baseline status adapter's `ok=false` result for unavailable Git attribution, preserving the unborn-repository and existing drift distinction without a cache guard. Rechecked both source owners and repaired the citation-table spacing. Existing verification commit/date and earlier history remain unchanged; no test-execution claim.
+KS-R23 introduced the serving-build stamp because the fixed MCP serving build can differ from the candidate under curation. That historical motivation does not make every current citation-fix result stamped. In this source, `citation_fix_tool` adds `measuring_build_stamp()` to the pre-baseline result and the unconverted-memory refusal. The converted-leaf branch instead returns `_citation_fix_result`, which adds failure recovery guidance but no serving-build stamp. Citation census and note revision retain their own explicit stamp calls.
 
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Documented the single carryover commit-message input and the cache-only ledger boundary. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
+The ordinary leaf writer guard and measured pre-baseline admission remain. The old internal citation-migration entry point and `_citation_trees` are removed.
+
+## 260918-TSIP-L6 Branch Authority Unavailable, Answered In The Envelope
+
+`memory_baseline_adopt_tool` (`:393-432`) now catches `BranchAuthorityUnavailable` — the typed
+condition raised when a repository's default-branch authority was never **recorded** — and answers
+through `_baseline_adopt_refusal` (`:433-459`) instead of letting a traceback take `ok`, `status`
+and `nextAction` with it (`T34`). That is the shape its sibling `memory_baseline_status_tool`
+(`:383-392`) already uses for the same repository: a memory repository that has never recorded its
+default-branch authority is an ordinary precondition, not a crash.
+
+The catch is deliberately narrow. `BranchAuthorityUnavailable` means *the authority this operation
+needs was never recorded*, and its own message names the remedy (`memory_init` records it). The
+other `RuntimeError`s on this path — *memory baseline adoption is a bootstrap-only exception on the
+checked-out repository-default branch*, *memory root does not exist* — refuse a state the caller
+must understand and change, and they keep raising: widening the catch to `RuntimeError` would hide
+a misuse behind an envelope.
+`mcp/tests/test_memory_branch_authority.py::test_baseline_adoption_refuses_a_branch_the_memory_repository_does_not_record`
+is the case that holds that boundary, and the docstring states it.
+
+## 260928-MIK-L37 The Card Writers Stay Unlocked On An Unconverted Line
+
+This L37 exception is historical and superseded by MIK-R46@v2. `citation_fix_tool`
+refuses unconverted memory in every mode; `route_index_refresh_tool` refuses apply
+while preserving its read-only preview. The MCP `citation_migrate` tool and CLI
+`memory-citations --migrate` option are unregistered; the internal migration function is now removed, not a supported workaround. The prior
+DEC-VMMJDN exception does not authorize any of these writes on unconverted memory.
+
+### Current Source-Inspection References
+
+- Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [1]
+- The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [2]
+
+- Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields. [3]
+
+- Canonical quality scope is owned by the focused scope module. [4]
 
 
-- 2026-09-10T04:35+02:00 — CCR-L42 final citation curation: re-anchored the quality-scope row to
-  the current `resolve_memory_scope` and `resolve_leaf_memory_scope` implementations; the
-  focused resolver remains the sole authority and verification metadata remains closeout-owned.
 
-- 2026-09-04T01:48+02:00 — 260831-CCR-L08 Gate-5 memory pass: re-anchored the controller request-surface row (67-144 to 98-208) shifted by the CCR-R08 +57-line controller insertion. Citation-only re-anchor; no content impact.
+- The route-index application entry point forwards resolver-owned authority. [6]
 
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: removed memory-quality scope/controller/registry ownership from this general application module and routed that contract through focused typed APIs. Verification metadata remains pinned until architect-owned closeout.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: import paths updated to the moved package locations (`worktrees/queue`, `worktrees/integration`, `application/task_docs`, `models/queue`); reviewed — no content impact on the documented contracts. Verified at code commit e5cb139f.
+- The route-index builder uses explicit repository and storage authority. [7]
 
 
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15: added the async start/poll wrappers over the bounded
-  background run registry (R7) with the `ok`-header bug fixed at the gate-repair round; the
-  synchronous `memory_quality_check_tool` contract is unchanged. Verified at code commit de3a0fd9.
+- The route-index builder receives storage authority explicitly in its typed signature. [8]
 
-- 2026-08-15T23:38+02:00 — Reconciled this file's L4 role in task-derived integration authority and protected code/memory boundaries. Verification metadata remains closeout-owned.
 
-- 2026-08-11T16:54+02:00 — Added the full scoped curator checklist composition and stable
-  enclosure report path while keeping subset/official calls and code/memory content unchanged.
-- 2026-08-11T14:58+02:00 — Made the temporary-provenance evidence one-to-one with the application
-  declaration and its two exact scope regressions after preflight exposed the generic anchor's
-  multiple current resolutions.
-- 2026-08-11T14:40+02:00 — Documented contract-scoped temporary comparison provenance for
-  unstamped dirty-tree claims, preserved closeout ownership of real verification stamps, and
-  regenerated shifted application citations.
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
+- The apply entry point that forwards that subject and nothing else. [9]
 
-- 2026-08-04T08:03:35+02:00 — 260731-EFA-L6 S18-B07 curator: repaired the bounded citation findings from the recovered Avicenna and Kuhn ledgers, splitting or narrowing claims to the frozen source and normalizing scoped citation ranges.
+- Baseline status reports unsuccessful `ok` for unavailable Git history as well as blocked drift, while preserving the owner's payload. [10]
+- The baseline owner distinguishes unreadable attribution behind a resolvable HEAD from an unborn repository, retaining the existing drift decision. [11]
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — 260731-EFA-L6 curator: source moved. `mcp/src/agents_remember/controllers/` was renamed to `application/`, so this sidecar moved with its source; path metadata and every in-body path follow, and the prose adopts "the application layer" / "an application entry point" for what it used to call a controller. Behavior is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2: added `MemoryBranches`, `CarryoverSelection` and
-  `CarryoverCommitMessages` (plus their shared defaults) and moved the baseline-adopt and carryover
-  keyword lists onto them; `intent_note` deliberately stays outside the selection. Resolver
-  authority, drift artifacts and the plan/apply split are unchanged. Verification metadata pinned
-  until closeout stamps the L2 code commit.
-- 2026-07-18T20:03+02:00 — FEUI-MX-FIX-4: documented explicit resolved repository/storage
-  authority at the route-index controller boundary.
-- 2026-05-31T12:30+02:00 — Repo/path guards moved to shared `_guards`
-  (`require_repo`/`require_within_coordination`) raising `AuthorityError`, and
-  `memory_baseline_status` now returns `ok=False` on blocked drift (1.0.0 review remediation).
-- 2026-05-28T19:52+02:00 — Created when memory/onboarding MCP controllers moved into their own
-  domain module.
+- Carryover's options carry the approval intent and the explicit review selections, not a memory commit subject, and the apply adapter forwards those fields. [12]
+
+
+- The apply entry point that forwards that subject and nothing else. [13]
+
+- Canonical quality scope is owned by the focused scope module. [14]
+- Its resolver, which binds a repository to the scope the quality surface runs against. [15]
+
+
+
+
+
+
+
+- On a converted tree the citation check reports sidecar references instead of reading citation tables. [18]
+
+- The shared converted fixer authors references, then refreshes mechanical moves, excluding every authoring-refused sidecar; one named document scopes both stages. [19]
+
+- The scope object the caller's named documents ride with, validated at construction. [21]
+
+- **The memory initializer now reports the knowledge foundation beside the memory root it scaffolds (`ICR-R29@v1`).** [23]
+- **The admission whose location this block reports, so the location a curator is told to populate is the one the bootstrap publishes to.** [24]
+- The read that decides the block's state, and the unavailable form its states come from. [25]
+
+- The scope's own check: one named `document`, or a `documents` list only for `citation_fix`, refused before the memory tree is resolved. [26]
+
+
+- The two card writers, which ask no cutover lock. Anchor: `citation_fix_tool`, `route_index_refresh_tool` [27]
+
+- Frozen implementation of _refuse_official_memory supporting the stated file behavior. [28]
+- Frozen implementation of _leaf_memory_writer_scope supporting the stated file behavior. [29]
+- The drift tool binds the leaf's converted base with a contract, else the checkout HEAD. [30]
+- Contractless writes share the measured declared-root, converted-format, no-baseline and no-linked-worktree admission; every failed condition names the leaf route. [31]
+
+- This application function selects pre-baseline admission or the ordinary leaf contract. Its pre-baseline and unconverted-refusal returns explicitly add measuring_build_stamp(); its converted-leaf return calls _citation_fix_result. [32]
+
+- Route-index apply uses the same pre-baseline admission; scoped operations still use the resolver-owned roots and storage. [33]
+- Finite fix selection is validated before reads with the shared bound. [34]
+
+- The operation-specific shared legacy refusal preserves short-message/full-detail conversion guidance; only recognized caller RuntimeErrors are translated. [35]
+
+- The public apply catches only the recognized legacy refusal; success and converted-target refusal remain distinct. [36]
+
+
+- Memory initialization reports the foundation without authoring records. Complete resolved states and nonlegacy unavailable publication name the measured state before the Architect/regular-task/Curator handover; partial-index repair, legacy conversion and admission refusals retain their distinct next actions. [42]
+
+- Typed quality execution and public run translation are owned by the controller. [5]
+
+- This controller function revalidates the scope, calls the scoped memory-quality check and composes its result. [16]
+
+- The controller attaches the curator checklist and enclosure-local worklist for the full scoped publication. [17]

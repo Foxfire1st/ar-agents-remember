@@ -1,943 +1,513 @@
 # dashboard/src/panels/ — Cockpit Panels Overview
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| sourceRoute            | `dashboard/src/panels/`                          |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview      | `../overview.md`                                 |
-
-## Hot Path Summary
-
-Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. `detail-panel/taskReader.tsx` mounts the requirement-link context; `notes-reader/NotesReaderViewer.tsx` owns the kind-aware content transport and takeover.
-
 ## Governing Overview
-
 [dashboard/src overview](../overview.md)
-
-## Current Structural Panel Contract
-
-Panels receive real task-document hierarchy and current occupant facts from the data route. RailChat
-and the session cockpit select structural document+role seats; task assignment posts that identity,
-and replacement changes only the occupant. No panel derives hierarchy from spawn ancestry or treats
-a lifecycle/session id as the task address.
-
-## 260713-TES-L5F2 Change
-
-The shared `SessionComposer` and contextual `RailChat` regression suites now prove that composer
-answer mode does not require a lifecycle or gate. Both follow the same session-owned protocol as
-the canonical cockpit: read the hosted session's bridge epoch, POST the answer to that exact
-session's `interaction-response` route, lock duplicate sends, and never route an adapter answer
-through reliable `/submit`.
-
-## 260731-EFA-L8 Split Layout
-
-### 260713-TES-L1 Reviewed — Heartbeat Wording In Session Cockpit
-
-Route body reviewed for the supervisor → agent-notifier rename: the session-cockpit heartbeat UI
-(`BusPane`, `SeatInspector`, `SessionRail`, `sessionRailParts`, sessions-view) now uses
-`AgentNotifierHeartbeat` / `agentNotifierHeartbeat` and "Agent notifier heartbeat" labels. No
-panel-shape or layout change; per-file detail lives in the session-cockpit overview and the file
-sidecars.
-
-The frontend-rail size remediation (R4/R5) re-shaped this route: `DetailPanel.tsx`
-→ `detail-panel/` (canonical entry + `state.ts`, `model.ts`, `lifecycleBody.tsx`,
-`taskReader.tsx`, `taskDocPanels.tsx`, `changeSetBar.tsx`, `styles.ts`, seven
-behavior-split test files + `test-utils.tsx`); `LifecycleList.tsx` →
-`lifecycle-list/` (four behavior-split test files + `test-utils.tsx`);
-`SessionsView.tsx` → `session-cockpit/sessions-view/` (controller/body/palette/
-styles + six test files); `ConversationTimeline.tsx` →
-`session-cockpit/conversation/conversation-timeline/` (12 machinery modules +
-seven test files); `engineRoomStyles.ts` → engine-room style domains + `styles.ts`
-barrel; `EnclosureCanvas.tsx` → eight engine-room sibling modules. Shared panels
-also gained parts/styles modules (`sessionComposer*`, `terminalSession.ts`,
-`interactionParts*`, `launchFlowParts*`, `sessionRailParts*`, `stageLayers.tsx`,
-`conversationSurfaceParts*`, `chatsStageStyles.ts`). The naming rule
-(kebab-case folder, one canonical entry, short responsibility-based siblings) is
-now a repository guideline. Behavior is preserved.
 
 ## Purpose
 
-### 260731-EFA-L23 Route Delta
+This route contains reusable cockpit panels and focused reading and interaction surfaces. Its parent is the dashboard/src overview. The product bar offers Chats, Operations, Knowledge and File Viewer. Chats is the default; a Knowledge reader hash opens Knowledge. Operations, File Viewer, Knowledge and Chats have retained shell layers so switching destinations preserves their mounted state. Engine Room and other retained layouts are not additional product-bar destinations.
 
-L23 makes Hangar expose optional durable lifecycle-operation kind, status, phase, and
-`currentCommand` as one compact enclosure badge without inventing an operation when none is
-projected. The live command stays single-line and width-responsive through CSS ellipsis, with its
-complete value retained in `title`; it is not truncated once by character count.
+No session-cockpit directory remains as a current owner. Full-page native Chats belongs to cockpit/RoleChats.tsx; lifecycle-list and detail-panel compose Operations navigation and task reading; engine-room owns enclosure/process visualization; file-viewer, changeset and notes-reader own their readers; sprint-graph owns the optional execution graph. ReviewSurface composes the review page through review/reading and review/tree, governed in detail by the [review route overview](review/overview.md). Knowledge-reader composition remains governed here.
 
-TES-L6 changes the command-seat panel boundary from one global spine to sprint-qualified groups.
-`FlowTab` consumes bound fixtures, while the session cockpit delegates group derivation to the data
-model and renders legacy unbound seats only as migration state.
+`review/canvas/` holds the generated page's panel and its transport: `canvasApi` types the saved-first answer and carries a server refusal as its own error, `canvasModel` derives the panel's phase and keeps a saved page tied to the comparison number and entrypoint it was published against, `canvasHooks` reads a frame state and issues the one explicit start, `canvasDocument` watches the mounted frame for entry, departure and challenge answers so a departed document's channel is revoked, and `CanvasPanel` mounts the sandboxed frame above the untouched deterministic detail. Mounting the panel performs a read and starts no model; authoring begins only from its Generate, Replace presenter or Resume controls, each of which requires an admitted comparison or a recorded attempt. Native task-document chat lives under cockpit/document-chat/, outside this panels directory, and occupies the Operations right rail rather than another full-page Chats destination.
 
-This route contains reusable cockpit panels plus focused child routes. Its strategic UI owners are:
+Panels present canonical task hierarchy, structural document-and-role seats, current occupants, source comparisons, knowledge and operational state. The inherited structural contract addresses a seat by document plus role; replacement changes its occupant. Spawn ancestry and lifecycle/session identifiers do not substitute for the task address. Native chat launch, submission and host-state authority belong to RoleChatsPane and document-chat with their retained backend ports; no removed session-cockpit owner is implied.
 
-- [session-cockpit](session-cockpit/overview.md) — the sole full-page Chats destination.
-- [engine-room](engine-room/overview.md) — the Engine Room process visualization.
-- lifecycle-list/LifecycleList.tsx + detail-panel/DetailPanel.tsx — Operations task navigation and reader.
-- RailChat.tsx — contextual task-side chat, not a second full-page chat product.
-- Terminal.tsx, SessionComposer.tsx, and HighlightComposer.tsx — shared interactive surfaces
-  consumed by the canonical cockpit.
+Family-center member order follows the sidebar's served outline under the same stored order, while retaining per-revision content and a no-outline fallback. Currentness state marks keep their exact entry/state/side words with supplied reasons beside them outside disclosures. Selected one-sided statements and non-authored field rows retain the explicit absent/unreadable/recorded-empty distinctions in the main reading area; Technical details remains an identity/provenance owner.
 
-Detailed session state, submission, withdrawal, cleanup, and authority behavior belongs in the
-[data overview](../data/overview.md). This parent intentionally keeps only composition boundaries.
 
-## FEUI-L9R Recovery Composition
+## Hot Path Summary
 
-The shared `Terminal` panel preserves its mounted xterm and scrollback while performing at most one
-explicit socket reattach for each changed serving boot. The canonical Chats chooser owns a fixed,
-bounded viewport dialog with explicit loading/empty/timeout/error states and operator Retry; it does
-not render a pre-session adapter process or create a second catalog store. On an empty narrow
-cockpit, responsive layout keeps the sole chat-creation entrance available.
+Ordinary masters now compose Now then the shared derived Order and ready-next rows. Task heads show both dependency directions; optional Non-goals and Acceptance occupy fixed slots. The complete native task identity/state/head chrome precedes Objective; there is no separate selected lifecycle/series page. Compact progress uses major steps only with cached pointer-rest child details and full nested task reading. Completed master lists use completion time, a newest-five preview and ephemeral reversible sorting; these are display, not start/closeout authority.
 
-## FEUI-MX-FIX-2 Open Failure Composition
+Operations selects a projected task/document and mounts its reader. Task prose and references can open registered requirement packets through TaskRequirementLinks. TaskNotes shows a Notes root-folder count, references and recorded role-start reports without constructing a notes-tree total. TaskArtifactReaderTarget currently distinguishes notes, requirements, task-report and decisions. DecisionPreview shows the five newest authored decisions, excluding product-written records from that preview; an omitted-entry link opens the complete log and names the authored decision count. The shared artifact reader owns the corresponding takeover and transport.
 
-Shared callers do not infer session creation from a completed request. `HighlightComposer.tsx`
-shows a failed create before readiness or submit and sends no selected context. `RailChat.tsx`
-shows the same typed failure and withholds contextual delivery. Both consume the accepted-row result
-from the data route; neither writes a private row, focuses a requested id, or retries through paste.
+A leaf's Intent review control opens task context without requiring a returned subject. Its resolved task/worktree facts label the entry as recorded rather than changing which record it opens: the entry supplies `review: {}` for a live and a closed leaf alike, and liveness gates the working change-set action, not the intent-review entry. The entry reads changed-intent summary counts, with a separate attribution count, rather than borrowing source-line totals. Pending, partial, unavailable, refused and unrecorded states remain distinct from measured zero. Summary revalidation follows the leaf's own facts and the entry generation; the inherited policy does not promise live delivery while an unchanged detail panel remains open.
 
-## Route Model
+The cockpit mounts ReviewSurface through ReviewMain inside Operations’ railed grid for a target carrying review context, with optional family/invariant selector and history. Its tree and ReadingColumn share one comparison-bound change-set model; the page opens unselected unless explicitly addressed. Pending or unavailable subject reads retain the page structure while the selected slot names the requested state. TechnicalDetails receives only the subject’s current answer as that subject’s records.
 
-### Canonical Chats
+Knowledge is a task-independent, read-only repository reader addressed by URL hash and memory-tree selection. A followed document opens at its top; Back restores the place left. Citations open beside the document on wide screens and navigate as a page at 70rem and below. Phone browsing exposes the tree through Browse while preserving the document place.
 
-FEUI-L8 retires the legacy Chats.tsx and SessionList.tsx path. CockpitShell now exposes one
-Chats destination backed by the persistent session-cockpit layer; Operations remains the default.
-The right inspector is closed by default and toggleable. The replacement duty and deletion map lives
-in the [session-cockpit overview](session-cockpit/overview.md).
+## Construction And Ownership
 
-- SessionRail + data/railModel replace SessionList + data/sessionGroups.
-- ChatContextBar carries launch, task/leaf context, local lifecycle routing, and authoritative leaf
-  attach/move duties.
-- SessionsView owns smart focus, live action routing, persistent PTY composition, key/palette zones,
-  and the optional inspector.
-- LandedCleanupNotice and EndedSessionState retain unavailable cleanup and ended-row truth without
-  pretending an empty PTY is a live conversation.
+The review page preserves its tree and reading-column structure across subject reads. Its opening reads task context, catalogue, comparison summary, leaf-wide trees, shown-invariant cards and the lane; card batches start after leaf-wide code facts and catalogue settlement. Selecting a subject reads its own semantic answer and uses the page’s existing card set. ReadGate separates opening work from gesture-gated in-view work. Family guarantee wording keeps its authored operands and separate owner. The document chat may show shared host-start and shown-agent waiting/loading/failure reasons without taking host navigation authority.
 
-### Shared Interactive Panels
+### Operations task column
 
-- Terminal.tsx is the xterm/socket wrapper. Since 260718-CHATS-L4 a controlled session's runner
-  line-log appears only inside the read-only terminal-diagnostics drawer (the structured
-  `ConversationSurface` is the controlled-session default); legacy raw sessions still host a vendor
-  TUI. Terminal.tsx is not the structured conversation renderer — that lives in the
-  [session-cockpit](session-cockpit/overview.md) `conversation/` grammar.
-- SessionComposer.tsx is the shared CodeMirror reliable-submit surface. It consumes effective
-  keymap/profile state and uses authoritative withdrawal for pop-back.
-- HighlightComposer.tsx sends a selected context package only after acceptance; selection and target
-  choice cannot move active route/focus on rejection or ambiguity. Its pre-projection task-document
-  fallback is a stable module-level snapshot, so the always-mounted composer cannot force React into
-  an external-store update loop while analytics is still absent.
-- RailChat.tsx renders contextual task-side chat under the same registry, not a competing destination.
+LifecycleList owns the complete served native task tree, entry-own need bands, terminal folds and selection/keyboard reach; AttentionQueue overlays its height with source-scoped dismissal of every served row, Clear all over the whole queue, newest first in the reducer's served order, and accessible severity, and each row offers the task and agent controls its own served identity can open. rowState formats each TaskEntry stage/activity through shared status presentation; its hover names current state/stage, repository, current step, progress, host event and unauthored-document facts rather than reporting-lifecycle or inferred worktree state. Removed ChatActivityIndicator and PickupDismiss are not current presentation/action owners. TaskGroupDisclosure retains its shared caret and held-selected-descendant policy. None of these presentation facts changes worktree admission or authors task state.
 
-### Operations And Other Routes
+Task detail prose, `TaskNotes.tsx`, and the shared notes reader use `TaskArtifactReaderTarget` for notes or registered requirement packets. A task page shows one Notes line with the root-folder count, its references, and its recorded role-start reports — no notes tree, no total over the tree. The Operations reader has one fixed skeleton per sprint/master/task form: one complete
+head followed by the objective as its first block, before Now or Steps, with omitted empty blocks,
+bounded previews and full own views. `detail-panel/taskReader.tsx` owns
+form order and identity-keyed reader state; docHead/taskBlocks/skeletons/docViews/task-groups own their
+head, tables, shared blocks/views and grouped indexes. Task references/reports have one placed heading,
+Notes stays one root-count line, and current summary facts remain authoritative through body hydration.
+The page-local appearance lives in pageStyles without repainting shared Panel/Markdown/tokens.
+`detail-panel/taskReader.tsx` mounts the shared requirement-link context on every form and composes
+the relocated five-newest decision preview from skeletons; `notes-reader/NotesReaderViewer.tsx` owns the kind-aware content transport and takeover, with the shared `ExplorerTree` fed one folder at a time.
 
-Operations, Detail, Engine Room, notes reader, file viewer, changeset, and lifecycle-design retain
-their existing responsibilities. Focused child overviews and one-to-one file cards are authoritative;
-the Chats refactor does not move those routes.
+The shared task head is the task document’s tray collection surface: it supplies one `AddToTray` offer beside the task identity/status only when a canonical document reference exists, and builds that pick from the reference, ID and title. The head does not own tray deduplication or message delivery.
+
+The reviewer adds supplementary recorded-effect badges to eligible changed outline rows. MeaningEffects owns the open Recorded steps block and keyboard explanations; missing current fields do not become none. Worklist displays the supplied gate verdict, appending effect only from its exact delivered witness rather than inferring a governing row from disposition or reason.
+
+The meaning-state join never changes the selected subject, primary change badge, family roster paging or source inspection state. Keyboard explanations use a native button; the complete Recorded steps block is open, while existing source/evidence disclosures keep their own owners. Older authored-envelope effect lists remain retired and are not the new recorded-history block.
+
+### Shell and shared interaction surfaces
+
+The removed session-cockpit, hosted-session chooser/rail, context bar, terminal, composer, reliable submit/withdraw and keyboard/palette surfaces have no current panels owner. Native full-page Chats is RoleChatsPane. Operations and review share cockpit/document-chat in the same retained right rail; review binds its own canonical task reference, preloads while closed and names pending or missing task resolution. The shell’s TrayLayer accepts chat picks and dashboard highlights, with its separate Tray button beside the four view tabs. Native hosts retain unavailable, Retry, acceptance and delivery authority.
+
+### Operations and operational diagnostics
+
+LifecycleList navigates the one served TaskEntry forest and formats its own canonical stage and optional host activity. Unknown host activity is not paused, a browser clock does not infer state, and the removed raw-lifecycle-over-document precedence and awaiting-developer partition are historical only. Selection initially opens its ancestors and terminal fold. An explicit parent-caret or completed-fold click can release that hold, as can the existing plain arrow action on a focused parent; completed folds gain no arrow path. Releases expire on every selection change, even while the retained list is hidden. Modified browser chords and the list's other keyboard reach remain separate. Unknown activity uses the started word and suppresses row works/waiting/paused figures while the shell reports host unavailability once. A task served as waiting reads `waiting for subagents`, `waiting for background` or both in its row and page word, names each waiting seat (role, agent, what it waits for since when, the check due and the seat's words) in the row hover and the word's title, forms its own `waiting` BY PHASE group between works and paused, and adds a waiting count to a parent's child figures and the header only when nonzero. The wait words come from `detail-panel/waitWords.ts`, exact times from `detail-panel/limitTime.ts` and the child figure from `detail-panel/activityPhrase.ts`, so the row, the page, the hover and the master cells say the same thing. Master-page list disagreements are served facts with their own count and present-record navigation, never browser membership repair. A started Order target retains the golden in-work graph accent independently of host activity. Shared decorative Dot usage still requires a containing semantic state/severity name; native task status/age presentation has its own shared owner.
+
+DetailPanel resolves one native selected entry, hydrates only its addressed authored document, and composes the task reader with the worktree lanes each bound enclosure contributes — code and memory checkout presence, and cleanup state — and reads no provider facts. The old lifecycle/series target adapters and SeriesSubTaskNode navigation/creation-sort path are removed, not equivalent aliases. Qualified document references and opaque entry keys stay distinct; a file-less native dependency shows id/title without a document jump or invented state.
+
+The sprint execution graph is optional. CloseoutQueue mounts independently when no execution-graph view is supplied; this rendering support does not prove graph-less atomic task authoring is admitted, and displays the producer's service/source/problem/member projection, including invalid-empty repair actions. The browser does not reconstruct readiness or mutate the queue. Discarded-before-start audit rows retain reason, timestamp and proof fingerprint; discarded counts are displayed separately and do not count as completion.
+
+Hangar displays optional lifecycle-operation kind/status/phase/currentCommand only when projected; the command is ellipsized with full value in title. Engine Room composes selected enclosure processes, official ledger, boot and diagnostics without gate response. Source-lineage diagnostics are read-only, and recovery stays backend worktree-owned. Retirement of provider/gate presentation does not retire ledger/landing authority. FlowTab/flowModels are removed, not current design or runtime owners; eventSummary retains only its actual display seam.
+
+### Intent reviewer reads and navigation
+
+ReviewNavigation owns the catalogue, explicit subject choice and observed comparison generation. A target may name a subject; otherwise the page opens unselected and a catalogue answer selects nothing. Live-review memory input revalidates through the existing stream.
+
+ReviewReadCycle owns keyed answers, retained frame, exact refresh identity and newest-read sequence. It also rejects an older memory-input epoch before the compatible superseded whole-task unshown-cache exception. Selected-subject superseded answers never become current panes or that exception.
+
+One mounted ReviewReadCache retains at most 24 whole-review answers. Generation changes invalidate incompatible whole-review entries; memory invalidation clears them while preserving the observed generation. Explicit refresh forgets the selected review and carries its digest only for the captured key/read. Cache reuse is a prior answer, not fresh verification. Card/source reads have their own transport owners; the removed SourceContent cache is no longer part of ReviewReadCache.
+
+familyWalkMerge owns an admitted roster continuation's merged payload. Admission requires the same comparison, candidate, revision selection, family-side walk and published cursor; stale/refused or conflicting continuations are rejected. Sparse later claims do not erase previously delivered exact member content. The latest admitted response still owns primary statements, inventory, evidence and assessments. Refresh and subject/history changes are replacement reads, not roster merges.
+
+The walked tree remains presentation state derived from admitted answers. In-page selections normally keep the walk under a compatible comparison; previously read families retain their last admitted answer without rereading or replacing the current payload. useReviewPage supplies those kept rows to changeSetModel, and the resulting shared order drives the tree and reading column. Kept-family roster continuation uses its held published cursor.
+
+Explicit task-context substitution, marker follow/return, target or restored outside selection, refresh and incompatible comparisons start the walk afresh. Ordinary in-page subject/block selection keeps it. Search affects the tree alone; sort, view and the existing All changes overlay preserve page ownership. No returned roster is promoted to complete by retained navigation. The page-level selection, URL and kept semantic context remain distinct.
+
+Focus requests are tied to the selection’s tree intent and a later layout effect. Once an answer is available, focus lands on the selected tree row with preventScroll and local tree reveal, provided the reader has not moved focus. Failed/refused answers land once and keep the request for retry. Refresh scrollOnly requests reveal without focusing and wait for a new answer. Page scrolling belongs to the selection’s separate one-scroll owner.
+
+Page controls request only server-published cursors and the declared collection union, including family_members. A refused cursor shows the owner's refusal plus a first-page route for the requested collection. Reported remainder alone does not invent a next-page action. Historical task comparison is explicitly named and published on the surface root.
+
+### Family, subject, source and record presentation
+
+ReviewSurface provides comparison-scoped intent markers and composes ReviewGrid, PageTree and ReadingColumn. reading/useChangeSet owns one leaf-wide trees read plus the page’s summary, lane and shown-invariant card reads; its one changeSetModel feeds both tree and reading order. ReviewWorkspace now supplies selected semantic content and focus helpers, not the whole page’s rail, center or marker provider. The existing ChangeSetViewer opens separately over the retained page.
+
+tree/ReviewTree draws family headings, subject rows, changed locations and explicit unchanged/not-comparable groups from the shared model. Its Changed/All view, one Sort control, tree-only filter and roving focus belong to the new tree. FamilyTree retains exact-revision roster helpers and published-cursor continuation. FamilyReviewCenter and SubjectReview provide a selected subject’s guarantees, statements, semantic facts and revision-specific evidence. Confirmed no-family, unknown membership and ambiguous revisions remain distinct; family context cannot replace an invariant’s own answer.
+
+On measured tree comparisons, the page’s card read supplies exact realization/proof entries to changeSetModel. Shared regions draw one ReviewBlockCard with each entry’s rationale and tray action; currentness keeps its exact entry/state/side and supplied reason. Changed ranges show real before/after diffs; unchanged ranges appear once. The one Changes only / Full context control governs every code range, while content width chooses split or unified layout. Whole-file inspection follows the tree’s All changes and path links. Unmeasured tree comparisons keep code locations unavailable and perform no card read. Worklist marks require the displayed comparison’s matching leaf-wide answer.
+
+The inherited family excerpt arithmetic has a narrower meaning than Git change inventory: it groups realization claims by path plus recorded source identity. exact_recorded_blob is resolved; recorded_object_unavailable, not_requested and missing path/resolution are unmeasured; other supplied resolution values enter the changed collection. The named historical changed states include recorded_blob_mismatch, path_absent, unsupported_locator and entry_not_blob. Observed identities are attached per side, never added to the grouping key. All carried membership rows contribute, including divergent readings of one revision across sides. Rows retain revision identities so repeated display labels cannot erase different revisions. This resolution classification must not be described as the comparison's measured changed-path set.
+
+SourceExplorer and SourceContent are absent. ChangeSetViewer owns comparison-bound changed-file lists and whole-file expansion, with a held lane answer for filters and badges; byte-form All code paths remain explicitly nonopenable. Within review, ReadingColumn shows the Code without invariant lane and exact comparison-bound file diffs, with named non-text, unavailable and truncated states. No per-card Full file surface or dataset expression renderer is mounted.
+
+reading/TechnicalDetails owns one closed provenance disclosure at the reading column’s end: raw movement and comparison records, task/subject identities, origins and hand-off evidence, revision/family context and entry identifiers. Main subject slots retain required judgments, statements and currentness reasons outside it. ReviewRecordPanes still renders selected field rows and supplied record identities. Current judgments and independent proof are distinct from retired assessment/signal/evidence envelopes; none grants approval or waiver.
+
+KnowledgeStatements preserves present/absent/unresolved semantic operands and exact selected revision identity. Two present sides can be diffed; a known absent side differs from an unavailable/unresolved one. Non-authored fields still distinguish missing from recorded empty. Binary belongs to physical source expansion rather than the semantic statement-side union.
+
+ReviewOutcome owns non-payload states and the shared problem block. It states code, detail, offending input or its absence, and next action or its absence. Only a network problem with a retry handler offers retry. An intent-only refusal can offer an explicitly requested task-context/source review; it is not silent substitution. A first refused read has no review payload. With an admitted frame, a later unavailable selection can retain navigation/context while its reading area states the problem and technical records remain unanswered.
+
+### Tree-comparison extensions
+
+Tree comparisons are identified through the review:trees:<n> limitation. Dataset reviews do not acquire these tree-only extensions.
+
+Semantic change-kind facts remain supplied facts, not source-hunk classification. changeSetOrder combines the served outline, admitted card/code/currentness facts and kept rows into one model for tree and reading order. Changed/All controls which subjects and locations the model shows; the tree filter narrows tree rows without filtering the reading page. The one Sort preference uses review.tree-order.v1, with Priority as default, legacy triage interpreted as Priority, Authored retained, and unavailable memory sorts disclosed rather than guessed.
+
+ChangeBadges states supplied change, membership and guarantee facts with their reasons. Subject content keeps semantic badges separate from the one-line tree’s compact state. j/k traversal uses displayed changed block identities, followed by loaded lane hunks in file order; shared-region aliases are one stop. Unknown/unchanged blocks and roster-continuation controls are excluded. Traversal selects through the page owner, reports either end without moving selection, and is disabled while the comparison overlay is open.
+
+Code without invariant is an inline reading section and a tree destination with its lane files. Unexplained and Unknown attribution also offer Full page links into a comparison-bound ChangeSetViewer. One scoped lane answer supplies their counts, file membership and held overlay filters; pending, unavailable and unmeasured scope remain distinct from zero. Worklist replaces the change-set body in the reading column and keeps its currentness, problems, history/gate facts and changed-knowledge links. The task entry’s attribution count remains independent of source-line totals.
+
+Hunk markers consume the same per-file classification, not a second client intersection. Confirmed-unregistered or wholly unreadable files receive file-level notes; other files expose owner-hunk marks with realizations and proofs separately. Family occurrences retain membership state and unknown reason; unknown attribution is not No recorded family. Compact labels apply below 40rem. Placement uses the owner's side line numbers and only hunks/changed lines the pane actually draws.
+
+Marker scope shares in-flight classification acquisition for listed changed paths and retains successful answers within comparison scope; non-ready attempts can be reacquired. A complete inventory’s unlisted path causes no marking read, while partial inventory retains an explicit unlisted state. Card excerpts compare only drawn sides, require differing side blobs and place drawn owner hunks. Loading, unavailable and content-mismatch notes remain explicit, including intent marks loading…; SourceContent’s full-source marking branch has been removed.
+
+Following a marker selects the invariant’s own review through ordinary page navigation, retaining an explicit family/member context when supplied. Back restores the prior subject, family selection and worklist choice, clears the tree focus request and returns focus to the originating marker. The visible Back control owns that return. Opened-path, local diff-layout and Full file state no longer belong to workspaceState; code context is page-wide and code layout follows reading width. Pane/gutter expansion and passive-hold cleanup retain their separate owners, and off-screen editor marks are not promised tab stops.
+
+Tree-only IntentWordDiff presents the supplied exact text and per-revision conditions/exclusions/guarantees without creating semantic approval. textDiff compares ordered non-whitespace tokens: whitespace-only changes preserve those tokens, whereas joining or splitting a word changes them. Its bounded token matrix can fall back to exact coarse runs; rewrite uses a strict ratio above0.5. List alignment separately refuses guessed pairs over its cell budget and pairs remaining in-bound gaps only at equal cardinality after exact moved matches. Layout preference and exact-text disclosure remain presentation owners.
+
+One comparison-bound leaf-wide read feeds subject worklist content and the separate Worklist view. PageReading places LeafWorklistView in ReadingColumn’s replacement slot. Selected semantic details still join canonical identity through SubjectKnowledge/SubjectWorklistItems and name absent identities, mismatched comparisons, incomplete worklists and failed reads. Shared memory-diff content remains outside the family/member/unselected semantic centers.
+
+### Knowledge reader
+
+KnowledgeReader owns toolbar, independently scrolling tree/document/aside composition, address-bound read, citation and outline. ReaderToolbar owns repository/tree selection, record lookup, selection/pin notes and named side-read failures. A single selection acquisition is shared with the Records branch. KnowledgeTree adapts shared ExplorerTree, consuming optional hasKnowledge/hasOverview/coverage facts, entry counts, Show every path and count rows. The Records branch includes families, decisions and other records; invariants remain in path views.
+
+The Knowledge document column keeps its shared tree/outline toggles outside the panels they hide. Left/right `knowledge` state controls the corresponding mounted panel and resize handle; a citation opened in the local aside first shows that aside. The tree toggle is hidden where Browse owns the full-screen tree at 40rem and below, and the outline toggle is hidden where its aside is not shown beside the text at 70rem and below. The reader’s mounted citation case checks reopening an initially hidden aside without replacing the prose or changing its scroll/hash; this is stubbed-media DOM evidence, not a browser geometry measurement.
+
+PathViews orders prose, invariant states, local/routed families, linked records and references last; directories use bounded summaries and paged subtrees, with without-proof and census views. Empty sections are omitted. TruthView renders record fields, invariant/family details, complete decisions using derived status, both link directions with unreadable links named, and timeline source states. History rows show effect and because: record targets navigate and requirements are named. Incoming history links identify the record the row concerns rather than inventing a history-row page. Reader parts link numbered markers in text nodes only; shared Markdown and referenceMarkers own headings/markers, and ReaderCode reuses FilePane. The inherited backend ownership assigns tree coverage to a code pass plus memory enumeration, with paths delegating tree listing rather than files enumerating directories.
+
+The native role-chat model selects canonical role occupants without buildRailModel or a hosted session rail. FlowTab is removed and supplies no current drawing/prose, live chat or store authority.
 
 ## Invariants And Boundaries
 
-- Exactly one full-page Chats destination; no legacy Chats layer and no Sessions navigation item.
-- Operations is initial. The Chats inspector is supplementary, default closed, and toggleable.
-- Shared panels consume canonical data stores and authority clients; they do not create private
-  session catalogs, conversation indexes, or submission ledgers. The 260718-CHATS-L4 structured
-  surface holds only a reconstructable projection — no durable browser conversation index.
-- Create-dependent panel actions proceed only after the shared opener returns an accepted server
-  row; visible failure precedes readiness, focus, and delivery.
-- The structured conversation surface (260718-CHATS-L4) is the controlled-session default and
-  consumes adapter-normalized history/index/resume from the landed L1/L2/L3 contracts; the PTY
-  line-log is now the read-only diagnostics drawer + legacy-raw body, not the message renderer.
-- Reliable submit, withdrawal, interaction answers, bus replies, and control actions remain separate
-  channels and never fall back to shared paste.
-- No Domain Documentation source is configured; direct same-repository source, tests, reviewed task
-  evidence, and recovered project history govern this route.
+The policies above are inherited semantic intent alongside specifically inspected source predicates. They are not newly adopted invariant or family records. Historical candidate lists for L31–L35 remain proposals, not ingestion or present acceptance.
 
-## Child Route Onboarding Map
+Panels consume canonical stores and authority clients; they must not create private durable session catalogues, conversation indexes or submission ledgers. Native document chat and full-page host chat keep their distinct selection/creation contracts and host-owned delivery/readiness. The removed project-session submission, withdrawal and interaction controls are not restored by these panel projections or by compatibility event rendering.
 
-| Child route | Governing overview |
+Review remains display/navigation only: it cannot author assessment, waiver, approval or publication. Source inventory is complete within its declared scope regardless of attribution; partial knowledge, unreadable sides, missing totals and unmeasured counts retain their states and reasons. Cached content and kept families are prior reads, not current verification. Bound code trees, memory trees, history context, subject and page identity must remain visible rather than being silently re-resolved.
+
+Keep-alive memoization is an inherited performance boundary: shell rerenders should not rebuild unchanged panels, and their own subscriptions stay live except the hidden task list, which remains mounted with a no-op subscription and catches up when active. Naming/splitting conventions use a canonical entry and short responsibility-based siblings. Hand-maintained sample/fixture builders demonstrate mirror-conforming shapes, not producer completeness; generated TypeScript schema and its stale check own the producer contract. Dot naming remains the containing component's responsibility.
+
+The parent delegates detailed child mechanisms and preserves source-lineage ownership. Retired provider presentation, static flow prose and event-label fallback are distinct seams. No broad no-impact assertion or runtime tool availability follows from static source drawings.
+
+## Historical And Verification Limits
+
+This proposal read all original card prose and inspected bounded present-source witnesses at the stated source head. It ran no tests, imported no product entrypoint, exercised no browser or service, and produced no execution/acceptance verdict. Original test populations, mutation outcomes, fixture digest checks, provenance receipts, delivery approvals and rendered measurements are historical claims rather than fresh checks. Their original references remain the parent's preservation responsibility.
+
+ICR-L33's Operations landed-leaf admission and second opened-key collapse store were explicitly withdrawn by the recorded a9a1a41b emergency revert. Their historical 110 landed rows, 19 auto-closed masters, 161-row subtree and count-tooltip behavior are not current claims. The inspected collapse hook has only operations.tasks.collapsed.v1 and toggleCollapsed; LifecycleList has the bare Tasks count. The separate change-set includeLeaves/generation behavior survived. The card's characterization of that emergency commit as lacking a curator pass is inherited history, not reconstructed Git adjudication.
+
+ICR-L44's mixed fixture generations and inaccessible current-route reproduction were recorded as superseded by MIK-L31 recapture, including the six formerly retained old bodies and refreshed case headers. L31/L32/L34/L35 merge, rerun and Todo resolutions remain recorded history; no recapture or digest verification was repeated here. The historical claim that 29 unconverted reads were unchanged before MIK-R37 remains bounded to that rerun, not all current datasets or leaves.
+
+ICR-L36's divergent family rendering was evidenced through a labelled captured familyReview.walkFinal fixture, not discovered live data. Its historical live scan attempted 36 leaves, resolved one leaf serving three families, and received candidate_dataset_absent from the other 35, including ICR-L36 itself. Zero divergence among those three served families says nothing about the 35 unreachable leaves. The named f1/raw/live-truth.json and f1v/raw/vf1-live-scan.json witnesses were not available as examined evidence in this source-only adjudication; preserve their exact historical scope and refusal rather than declaring live divergence absent. The recorded grouping measurements of eight side-counted instances into two keys are fixture/build measurements, not present acceptance. Use each side's reading/resolution wording; the superseded phrase implying every changed address was resolved collides with exact_recorded_blob.
+
+ICR-L25's responsive verification used the review-surface root, not just the inner workspace. Its historical correction measured 51 reviewer descendants past the edge becoming zero while 13 cockpit-chrome elements remained, pane widths 565→294px, user-scrollable count 0→1 and wheel movement 0→800px. Those browser witnesses were not re-examined here. Present source instead gives ReadingColumn the scrollport above 40rem and the stacked ReviewMain the scrollport below it; styling alone does not re-establish those measurements or clear the remaining shell-owned chrome.  The shell's hidden viewport overflow and internally scrolling panels remain separate composition responsibilities.
+
+The historical amber repair removed copied wash literals through an oklab mix of var(--amber); it did not establish zero computed oklch values, since tokens themselves use oklch. Browser acceptance and keyboard traversal assigned to ICR-R24, and assembled acceptance assigned to ICR-R25/A14/A15, are not supplied by this source adjudication or by mounted fetch-stubbed component evidence. Earlier paging/history/applicability leaves explicitly retained those ownership limits.
+
+L47's late-catalogue remount/focus and file-size findings were recorded as delivered by L48; obsolete line counts are not current architecture. Superseded early entry gates, catalogue-derived entry state, removed catalogue refresh/invalidation controls, three-pane-first composition and whole-file-only expressions must not be presented as active behavior.
+
+Historical notes below retain their epochs, not current predicates: whitespace deletion previously could join words while being called whitespace-only; the current token-boundary predicate corrects that. Prior control-placement, repeated-unknown and sticky-step observations remain historical rather than new execution or acceptance.
+
+The card historically reported no configured Domain Documentation and no governing cross-repository implementation source. Provider/settings configuration and all production import destinations were not re-audited here; retain these as inherited scope statements, not newly verified whole-repository absence.
+
+## Retained Route And Coverage Metadata
+
+These inherited tables are retained verbatim for navigation and custody. Their status/coverage cells are not a new lifecycle, test, or acceptance verdict.
+
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| sourceRoute            | `dashboard/src/panels/`                          |
+
+| Responsibility | File onboarding |
 | --- | --- |
-| `session-cockpit/` | [Canonical Chats](session-cockpit/overview.md) |
-| `engine-room/` | [Engine Room](engine-room/overview.md) |
-| `file-viewer/` | [File Viewer](file-viewer/overview.md) |
-| `changeset/` | [Change-Set Viewer](changeset/overview.md) |
-| `notes-reader/` | [Notes Reader](notes-reader/overview.md) |
-
-## Docs References
-
-The curator checked `system/sources.md`; no Domain Documentation source is configured. This compact
-parent was refreshed from its repository-local child overviews, source/tests, and reviewed L8 record.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found for panels. | — | — |
-
-## Cross-Repo References
-
-No cross-repository implementation source governs the panels route; all production imports resolve
-inside agents-remember.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Repo-Internal References
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The `Cockpit` view map contains the declared view map. | `VIEWS` | dashboard/src/cockpit/Cockpit.tsx:72-80 |
-| The Chats cockpit keeps its `SessionsView` mounted and toggles its display rather than unmounting it. | "The sole product-facing Chats cockpit is never unmounted"; "<SessionsView" | dashboard/src/cockpit/Cockpit.tsx:777-790 |
-| The persistent Chats layer renders `SessionsView` with active, selected lifecycle/leaf, task-document, and context props. | "<SessionsView"; "active={view === \"chats\" && !takeover}"; "selectedLeafKey={viewedLeafKey}" | dashboard/src/cockpit/Cockpit.tsx:782-790 |
-| Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. | `DashboardState`; `dashboardStore`; `applySnapshot` | dashboard/src/data/store.ts:19-50; dashboard/src/data/store.ts:225-347 |
-| The production application route is owned by `App`. | `App` | dashboard/src/App.tsx:10-19 |
-| The production route returns `Cockpit`. | `Cockpit` | dashboard/src/cockpit/Cockpit.tsx:359-383 |
-| `CockpitShell` defaults `initialView="operations"`. | "export function CockpitShell({ initialView = \"operations\"" | dashboard/src/cockpit/Cockpit.tsx:860-860 |
-| The terminal panel owns the shared terminal surface. | `Terminal` | dashboard/src/panels/Terminal.tsx:110-202 |
-| The shared composer surface is implemented by `SessionComposer`. | `SessionComposer` | dashboard/src/panels/SessionComposer.tsx:57-117 |
-| Selection-send behavior builds context and submits it to a selected or routed target, committing only on accepted or queued delivery. | `HighlightComposerImpl`; `submitTo`; `successful` | dashboard/src/panels/HighlightComposer.tsx:710-780; dashboard/src/panels/HighlightComposer.tsx:244-696; dashboard/src/panels/HighlightComposer.tsx:238-238 |
-| Contextual task-side chat builds a leaf context package and resolves the current occupant from structural task identity. | `buildLeafContextPackage`; `RailChatImpl`; `findSessionForTask` | dashboard/src/data/sessions.ts:596-608; dashboard/src/panels/RailChat.tsx:255-289; dashboard/src/panels/RailChat.tsx:469-537 |
-| `LifecycleList` owns Operations navigation, row grouping, the selection callback, and hidden-list re-show behavior. | "function LifecycleListImpl({" | dashboard/src/panels/lifecycle-list/LifecycleList.tsx:294-294; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:224-224; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:307-307; dashboard/src/grammar/ModeBar.tsx:65-65; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:350-350; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:329-329 |
-| `DetailPanel` resolves the selected task/lifecycle/series reader target and renders the task document content. | "function DetailPanelImpl({"; "export function displayedReaderDoc({"; "export function TaskReader({" | dashboard/src/panels/detail-panel/DetailPanel.tsx:18-18; dashboard/src/panels/detail-panel/model.ts:102-102; dashboard/src/panels/detail-panel/taskReader.tsx:638-649 |
-| The lifecycle state vocabulary is the live/terminal partition consumed by the lifecycle panel; the `State`/`Phase` literals moved to `models/lifecycle.py` by 260731-EFA-L9 while the live/terminal sets stay in observer. | "State = Literal[LiveState"; "LIVE_STATES: tuple[LiveState"; "TERMINAL_STATES: frozenset[str] = frozenset(vocabulary_names(TerminalState, label=\"TerminalState\"))"; "export const LifecycleList = memo(LifecycleListImpl);" | mcp/src/agents_remember/models/lifecycles/responses.py:19-19; mcp/src/agents_remember/observer/lifecycle_state.py:105-105; mcp/src/agents_remember/observer/lifecycle_state.py:108-108; dashboard/src/panels/lifecycle-list/LifecycleList.tsx:357-357 |
-| The shared fixture builders seed lifecycle and projection nodes from served fixtures, with required lifecycle fields copied from the served lifecycle. | `SERVED_LIFECYCLE`; `BASE_LIFECYCLE`; `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:78-78; dashboard/src/test/fixtures/wire.ts:95-107; dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
-| The typed fixture factories provide lifecycle and projection nodes. | `lifecycle`; `projection` | dashboard/src/test/fixtures/wire.ts:241-246; dashboard/src/test/fixtures/wire.ts:329-345 |
-| The hand-kept snapshot payload provides the generated timestamp. | "\"generatedAt\": \"2026-06-14T09:01:00+00:00\"" | dashboard/src/fixtures/snapshot.json:1823-1823 |
-| `Dot` renders its state glyph inside `aria-hidden="true"`. | `Dot`; "aria-hidden=\"true\"" | dashboard/src/grammar/Dot.tsx:119-129 |
-## Current L5I Route State
-
-The panels route now treats keep-alive shells as an explicit performance boundary: persistent
-top-level panels memoize unchanged shell rerenders, while their own store subscriptions remain live.
-Interactive controls also favor evidence-bounded wording, including reopened gate failures and
-viewport-measured leaf-picker placement.
-
-## 260727-CHATS-IM-L2 No Route-Model Impact
-
-The Engine Room effects overlay and session-cockpit child-history behavior are internal to their
-existing child routes. Panel inventory, cross-panel ownership, and the shared panel primitive are
-unchanged.
-
-## 260731-EFA-L4 Typed Vocabulary Route Impact
-
-The panel inventory is unchanged. What changed is the vocabulary the panels consume, and four rules
-now hold across the route rather than inside one file.
-
-- **The state mark is named by the panel, never by `Dot`.** `grammar/Dot` renders `aria-hidden="true"`,
-  so the accessible name for a severity or a lifecycle state is the wrapper's duty. `AttentionQueue.tsx`
-  wraps it in a `severityMark` span carrying `role="img"` + `aria-label="Severity: <severity>"`;
-  `LifecycleList.tsx`'s `data-testid="task-state"` span carries the same kind of label with NO role and
-  is correct only because it sits inside React Aria's `role="option"`, whose name-from-content absorbs
-  it. Drop the role from the AttentionQueue wrapper and the severity leaves the accessibility tree
-  entirely — `aria-label` on a bare `<span>` names a `generic`, which ARIA prohibits (axe-core
-  `aria-prohibited-attr`, `serious`) and no screen reader announces. Any new panel that renders a `Dot`
-  inherits this: supply a role that can hold a name, or sit inside one.
-- **Two vocabularies reach one dot, and only one of them is the document's.** Both Operations row
-  builders compute `lifecycle?.state ?? statusVariant(doc.status)` (`LifecycleList.tsx` `docRow` L595,
-  `seriesRow` L644; `lifecycleRow` L717 passes `lifecycle.state` straight through), so a bound lifecycle
-  hands `Dot` the RAW server state string and `statusVariant` only ever sees `TaskDocNode.status` /
-  `SeriesNode.status` — whose entire vocabulary is `models/task_document.py::DocStatus`
-  (planning · inProgress · Completed), assigned verbatim by `snapshots.py` at both build sites. That is
-  why L4 could delete its `blocked` / `paused` / `abandoned` arms with no behaviour change: they sat on
-  the right of the `??` and no served payload could enter them. Adding an `awaiting-developer` arm here
-  would repeat the same defect — the live state already arrives on the left.
-- **`awaiting-developer` is a rendered Operations state.** The lifecycle vocabulary is six states
-  composed from named halves server-side (`observer/lifecycle_state.py`: `LiveState` + `TerminalState`,
-  with `State = Literal[LiveState, TerminalState]` and `check_state_partition` refusing at import any
-  state filed on neither side); `awaiting-developer` is LIVE, not terminal. `LifecycleList.test.tsx`
-  pins the handover rather than the paint: an `awaiting-developer` row's mark must equal a bare
-  `<Dot variant="awaiting-developer">` and must NOT equal what an unrecognised variant renders, and a
-  `paused` row's mark must differ from an `abandoned` row's in the same list.
-- **Rollup buckets are derived, not restated.** `Metrics extends LifecycleStateCounts` in the mirror and
-  the bucket field names come from `ACTIVE_STATES` through `StateCountField<>`, so a seventh state adds
-  a REQUIRED field and every object claiming to be a `Metrics` stops compiling until it counts it. The
-  panels suites stopped hand-listing buckets: `LifecycleList.test.tsx` and `DetailPanel.test.tsx` build
-  metrics with `metricsFor(lifecycles)`, the client twin of `reducer.py::_metrics`.
-
-`DetailPanel`'s sub-task index now renders two different server rows. `SubTaskIndex` takes
-`SubTaskRow`, the union of `TaskSubTaskRefNode` and `SeriesSubTaskNode` — two `extra="forbid"` server
-models that share the common task-row fields but have distinct optional navigation/time fields. Only `TaskSubTaskRefNode` declares
-`linkedLifecycleId`, so the cross-series `→` jump is reachable only from a master task document; the
-branch is guarded by
-`"linkedLifecycleId" in ref` and is structurally unreachable for a series rendered through
-`seriesAsMasterDoc`. Only `SeriesSubTaskNode` declares `createdAt`, so creation ordering moved OFF the
-index — where it could never have sorted a master's rows — and onto `seriesAsMasterDoc`, the one path
-whose rows carry the field; `snapshots.py::_series_subtask_nodes` has normally already applied it, and
-both sides skip the sort unless every row carries a `createdAt`.
+| Review child route — the shared change-set model, tree and reading page | [overview](review/overview.md) · [changeSetOrder.ts](review/changeSetOrder.ts.md) · [ReviewTree.tsx](review/tree/ReviewTree.tsx.md) · [ReadingColumn.tsx](review/reading/ReadingColumn.tsx.md)  |
+| Review child route — the workspace and comparison-bound source navigation | [ReviewWorkspace.tsx](review/ReviewWorkspace.tsx.md) · [ChangeSetViewer.tsx](changeset/ChangeSetViewer.tsx.md) |
+| Review child route — the leaf's knowledge panel and its notice | [LeafKnowledgeChanges.tsx](review/LeafKnowledgeChanges.tsx.md) · [LeafKnowledgeNotice.test.tsx](review/LeafKnowledgeNotice.test.tsx.md) |
+| Review child route — the mounted family composition cases | [ReviewWorkspace.family.test.tsx](review/ReviewWorkspace.family.test.tsx.md) |
+| Review child route — the walked tree and the traversal between changes | [walkedTree.ts](review/walkedTree.ts.md) · [changeTraversal.ts](review/changeTraversal.ts.md) |
+| Review child route — the captured family bodies those cases are driven with | [familyReview.complete.captured.json](review/familyReview.complete.captured.json.md) · [familyReview.continued.captured.json](review/familyReview.continued.captured.json.md) · [familyReview.emptyRoster.captured.json](review/familyReview.emptyRoster.captured.json.md) · [familyReview.identical.captured.json](review/familyReview.identical.captured.json.md) · [familyReview.oneSided.captured.json](review/familyReview.oneSided.captured.json.md) · [familyReview.truncated.captured.json](review/familyReview.truncated.captured.json.md) · [familyReview.walkFinal.captured.json](review/familyReview.walkFinal.captured.json.md) · [familyReview.capture-provenance.json](review/familyReview.capture-provenance.json.md) |
 
-**What the fixture conversion does and does not pin.** `EventRiver.test.tsx`, `RailChat.test.tsx` and
-`SessionComposer.test.tsx` no longer author wire nodes: every projection node comes from
-`dashboard/src/test/fixtures/wire.ts`, whose bases are assembled from `dashboard/src/fixtures/snapshot.json`
-and annotated with the mirror type, so a fixture that compiles is a shape the MIRROR can produce. Be
-exact about the reach — `wire.ts` and `snapshot.json` are hand-maintained fixture/sample artifacts,
-while `types/projection.ts` is generated and stale-checked from the Pydantic projection schema.
-`tsc -b` binds `test/fixtures/wire.ts` to that generated mirror (annotated bases,
-`Overrides<O, Node>` at every call site, `test/wireFixtureGuard.test.ts` refusing one-token opt-outs),
-and `test/contract.test.ts` measures how completely `snapshot.json` exercises it in three type-level
-directions plus runtime vocabulary assertions. The producer-to-TypeScript contract is held by the
-generator and its stale check; the manual boundary is sample coverage.
+## Task reader grant control
 
-## 260731-EFA-L7 — Conversation Split Absorbed
+taskReader renders one Direct execution switch only on a document-backed subTask's own page when its native entry stage is planned, bare giver words on other granted task states, and nothing on grantless states. Master/sprint index rows carry neither a grant control nor a grant mark. The grant hook posts only through the existing adapter and preserves real state on refusal; client affordance/status is not the backend start-evidence gate.
 
-The panels route absorbed the L7 live-thinking change on top of the L8 split: the session-cockpit conversation family carries the coalesced live-thinking indicator and its pins; the over-limit dashboard files were split by L8 and the armed file-size rail now covers this route's TS/TSX.
 
-## L23 Engine Room Admission Evidence
+## Current Behavior
 
-Panel-level operations now expose the control plane's source-lineage state as a
-diagnostic fact. Rendering stays read-only and uses the projected summary for
-operator context; recovery remains a backend worktree operation.
+the detail panel's change-set bar now aborts its own counter read on a task switch and renders no failure for it. The task-reuse and task-switch cases pin the other side: the left page's change set, summary and body end with the selection, while a revisited task is answered from the body the first visit retained with no second request. The mounted chat case pins the operation-level promise that the newly selected task's chat is dispatched and bound while four abandoned page producers remain slow.
 
-## 260815-DAG-L14 Detail-Panel Route
+MIK-R174 and MIK-R175 changed two visible Operations contracts. The started band now orders the paused rows the host timed newest first, ahead of the paused rows it did not time, which keep the server's order; a missing time is never read as zero or as now. And a step dot shows only its own tooltip: the row line and the figure box carry no native title, the row's hover text lives on its own cells, and the tooltip keeps its id and status word whole while only the title wraps. Both are presentation facts — served order, task state and row admission are unchanged.
 
-`detail-panel/` threads `docPathForRef` so typed `masterRef` sprint rows open their commanded
-master document (the sprint → master leg of the drill-down); the reader renders `MasterRefIndexRow`
-for projected targets and falls back for unprojected ones.
+**L184.** The task word says rate limited in place of paused when the served limit holds the task, row hovers carry each limited seat's provider, window and exact reset, and new cases pin the sidebar, the task page, the graphs and the accessible names.
 
+## Evidence
 
-## 260815-DAG-L12 Route Impact
+- The mounted tree-review cases word-diff member prose and the family guarantee, and never label one guarantee revision unchanged when its before/after texts differ. These source cases do not provide a dataset-review execution claim.
 
-New child route [sprint-graph](sprint-graph/overview.md): the optional sprint execution graph wave-grid view (≤3 boxes per row, ellipsized leaf lines, atomic lumps, textual predecessor labels, narrow single-column fallback). `detail-panel/taskReader.tsx` mounts graph content when present and mounts the sprint-scoped `CloseoutQueue` independently, so graph-less atomic-sequential sprints still expose scheduling state (L12-R5); `detail-panel/model.ts` `MasterDocView` carries optional `executionGraphView` (L12-R4).
+- The current Chats cockpit keeps RoleChatsPane mounted while hidden; the former SessionsView topology is historical, not a current mount. 
 
-## 260821-CLIVE Projection And Discard Panels
+- The current persistent Chats layer mounts one RoleChatsPane; the former SessionsView selected-context wiring is historical, not a current mount. 
 
-`CloseoutQueue` renders the producer's disposable service/source/problem/member projection. Typed
-`invalid-empty` source problems include their repair action; the browser does not reconstruct
-readiness or mutate queue state. Graph presence is not a prerequisite for this scoped projection.
+- `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. 
 
-The detail reader has a separate `Discarded before start` audit section with reason, timestamp, and
-proof fingerprint. `LifecycleList` appends `N discarded` beside ordinary done/total progress. Both
-surfaces preserve the same boundary: audited removal stays visible but never counts as completion.
+- **The entry threading the published generation into the viewer target.**
 
+- **The generation state the button carries from a successful master read.**
 
-## 260815-DAG Master Full-Gate Repair Route Impact
+- The page controls: a next page only for a published cursor, and the refusal of a requested page. 
 
-`session-cockpit` test suites (BusPane, ChatsStageBody, ConversationSurface, stageSurface) now flush the virtualizer scroll-observer debounce in an async `afterEach` before jsdom teardown.
+- The mounted case on real data: the seven changes are listed first, each is selected by its row with one read apiece, and the first family is kept.
 
-## 260831-CCR-L23 Task-Artifact Reader Routing
+- Superseded successful whole-task reads have a guarded unshown-cache exception
 
-L23 routed task-local requirement packets through the existing reader chrome: `DetailPanel.tsx`,
-`taskReader.tsx`, `TaskNotes.tsx`, and the takeover now carry the shared discriminated
-`TaskArtifactReaderTarget` (kind notes/requirements); the task reader mounts the
-`TaskRequirementLinks` provider so task prose and References can open registered
-`requirements/...` packets in the internal reader. The notes-reader child route owns the
-viewer change; file-level detail lives in the panel sidecars.
+- Master change-set read includes leaves and carries published generation
 
-## CCR-R18@v1 Hangar Fixture Versions
+- The mounted family-tree example asks for sorted distinct subjects at the same comparison, renders changed proof/realization expression cards and unchanged location groups, and exposes the subject worklist separately. These are source assertions over served fixtures.
 
-260831-CCR-L18 updated the Hangar render-test fixture so its hand-built `lifecycleOperation` sample carries the new `schemaVersion` and `stateMatrixVersion` literals required by the generated mirror. File-level detail lives in that sidecar.
+- The one case: the landed workspace over a converted leaf's trees.
 
-## Update History
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewSurface.walk.test.tsx:43-90 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 10e466b17feee2530c06b2670fef496c6c9e755f; dashboard/src/panels/detail-panel/changeSetBar.tsx:112-126 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; dashboard/src/panels/detail-panel/changeSetBar.tsx:120-135 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/review/ReviewSurface.wordDiff.test.tsx:78-130 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 07d6584afba8a9504e4a3cf2e80eac41f68b28a9; dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:143-205 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit 20624f979e2b89067a3e42019c9611a8e18ff848; dashboard/src/panels/review/ReviewSurface.gitTrees.test.tsx:84-129 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/detail-panel/changeSetBar.tsx:123-136 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/detail-panel/changeSetBar.tsx:82-92 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/panels/detail-panel/changeSetBar.tsx:104-139 - the region it cited is not in the file at the candidate and no re-point was possible; dashboard/src/cockpit/Cockpit.tsx::CockpitShell - the bytes it recorded now occur 13 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/review/ReviewSurface.tsx::PageControls - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): the
-  `dashboard/src/panels/` route changed since the recorded verification commit. Re-read the card
-  against the frozen on-disk source and re-checked its claims and cited ranges: nothing this card
-  asserts is falsified by the change, so no wording changed. Verification metadata remains
-  closeout-owned; no verification stamp advanced.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): a route file moved since
-  the recorded verification commit — `sprint-graph/styles.ts` gained the `abandoned` frontier
-  variant in the dormant tone. Re-read the route card: it makes no claim about that variant, so no
-  wording changed. The drift predates this task line (the change landed with an earlier route
-  change, not with this master). Verification metadata remains closeout-owned.
-- 2026-09-11T23:05:00+00:00: Curator citation reconciliation: `RailChatImpl`, `buildLeafContextPackage`, `findSessionForTask` repointed to dashboard/src/data/sessions.ts:596-608, dashboard/src/panels/RailChat.tsx:255-289, dashboard/src/panels/RailChat.tsx:469-537. No content impact: mechanical anchor-range projection against citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged.
+## Retirements
 
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycle.ts:208-216 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a5bec6c3b3b413cd3066d0e8d302b4854d1b513a; dashboard/src/panels/review/ReviewReadCycle.ts:169-227 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+- The started band orders host-timed rows newest first and leaves untimed rows in the server's order. [197]
 
+- The row's native title is gone from every ancestor of a step mark while its own cells keep the hover text. [198]
 
-- 2026-09-05T07:24+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Corrected current panel paths, status ownership and distinct sub-task row shapes; verified requirement-reader composition. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
+- The list combines selection-episode releases with parent-only unmodified arrows and observes hidden selectedId changes. [194]
 
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
+- The shared master-page disagreement renderer draws served rows and offers jumps only to records in the task map. [195]
 
-- 2026-09-04T10:05+02:00 — 260831-CCR-L18 Gate-5 route impact: recorded the Hangar fixture gaining lifecycle envelope version literals.
+- Marks only from the owner's response, placed on its side lines. [5]
 
+- Every owner hunk a pane draws is placed; the list and the reveal of a return. [6]
 
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 route impact: recorded the requirement-artifact routing through the detail panel, task reader, and TaskNotes (shared `TaskArtifactReaderTarget` + `TaskRequirementLinks` provider).
+- The unknown-membership state in the rail. [9]
 
+- The explorer's and the details' labels from the lane. [10]
 
-- 2026-08-31T09:06+02:00 — 260821-ARSPAWN-L5 A005 citation reconciliation refreshed
-  the contextual-chat route citations after reviewed source movement; the panels-route ownership
-  contract is unchanged. Verification remains closeout-owned.
+- The entry's count as its own element. [14]
 
-- 2026-08-24T15:04+02:00 — Recorded projection-only closeout rendering, typed invalid-empty repair
-  evidence, graph-less sprint visibility, and distinct discard-before-start audit/progress behavior.
+- The decision, the ratio and rule 1a. [15]
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: session-cockpit tests gained async `afterEach` virtualizer-debounce flushes. Verified at code commit e5cb139f.
+- The tree-comparison scope, the statement area and the changed guarantee. [16]
 
+- Each side's text from its own row, the filtered field rows, and the text-first decision. [17]
 
+- The receipt of the captured bodies (five since L31). [29]
 
-- 2026-08-20T10:45+02:00 — 260815-DAG-L12:   L12 adds the sprint-graph child route; DetailPanel mounts the wave-grid view plus the scoped closeout queue on the sprint page. Verified at code commit b7f2c8e2.
+- The header count itself: the h2 is a bare `Tasks · {count}` with no tooltip saying what the count counts. [39]
 
-- 2026-08-20T05:06+02:00 — 260815-DAG-L14 route impact: the detail panel opens commanded master
-  documents from typed `masterRef` rows. Verified at code commit 8071a644.
+- The bar's request for the net's per-leaf attribution. [40]
 
+- The `Cockpit` view map contains the declared view map. [41]
 
-- 2026-08-18T13:00+02:00 — No route impact: 260815-DAG-L8 added the closeout-queue projection surface; route purpose unchanged.
+- Dashboard state authority is held by `DashboardState`, `dashboardStore`, and `applySnapshot`. [44]
 
-- 2026-08-15T02:16:50+02:00 — No route impact: panel test fixtures were extended with the required
-  empty `executionWaves` cell after TaskDocNode gained the field. No panel behavior changed in L1.
+- The production application route is owned by `App`. [45]
 
-- 2026-08-14T06:25+02:00 — No route impact: L23's final dashboard delta is confined to the
-  session-cockpit child route (shared sprint/master/leaf fixture coverage, rail width containment,
-  and deterministic fake-timer cleanup). The panels inventory and ownership remain unchanged;
-  verification stays closeout-owned.
+- The production route returns `Cockpit`, which wires the live streams and renders `CockpitShell`, opening it on the Knowledge view for a `#knowledge?…` reader URL (MIK-R29). [46]
 
-- 2026-08-13T12:26+02:00 — L23 live-progress clarification: Hangar now displays the plane-owned
-  lifecycle `currentCommand` in the existing operation badge using responsive single-line ellipsis
-  plus a full-value title; focused render coverage pins the projection boundary. Verification
-  provenance remains closeout-owned.
+- LifecycleList consumes native entry rows and preserves grouping, selection and one-shot reveal without the removed lifecycle hierarchy adapter. [52]
 
-- 2026-08-13T09:05+02:00 — No route impact: L23's current source delta changes backend lifecycle,
-  lineage, runtime packaging, and tests only; `dashboard/src/panels/` has no changed source path and
-  its eight-panel UI model remains unchanged. Verification provenance remains closeout-owned.
-- 2026-08-12T20:20+02:00 — L23 curator: documented panel routing of source-lineage admission evidence; verification remains closeout-owned.
+- DetailPanel resolves the selected native entry through its state owner and renders TaskDocumentPanel, rather than separate lifecycle/series reader targets. [53]
 
-- 2026-08-12T15:56+02:00 — 260731-EFA-L23 curator route review: L23 makes Hangar expose optional durable lifecycle-operation kind, status, and phase as a compact enclosure badge without inventing an operation when none is projected. Verification provenance remains closeout-owned.
+- Native task stage/activity/eventAt replaces the removed session State/Phase live-terminal partition as the Operations state input. This is a distinct model, not a renamed session vocabulary. [54]
 
-- 2026-08-12T04:04+02:00 — Recorded the shared-panel startup invariant exposed by the live dashboard
-  repair: an always-mounted Zustand consumer must return a referentially stable selector fallback
-  before the first projection. Verification metadata remains pinned until governed closeout.
+- Native entry fixture defaults copy specific sampled identities while explicitly declaring planned/count/collection defaults; there is no current lifecycle factory or claim that every value is server-derived. [55]
 
-- 2026-08-11T23:40+02:00 — No route impact: helper extractions in `HighlightComposer.tsx`,
-  `RailChat.tsx`, and detail-panel state preserve explicit reliable submission, structural
-  document-and-role selection, and pure selected-task projection. Verification metadata remains
-  pinned until governed closeout.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled the panels route with the
-  document-and-role cockpit control surface; affected child overviews own the exact UI behavior.
-
-- 2026-08-10T04:39+02:00 — 260713-TES-L6: recorded sprint-group panel projection and the legacy
-  migration boundary. Verification metadata remains pinned until closeout.
+- The typed native projection factory supplies tasks/taskCounts and analytics defaults. Mirror-conforming sampled shape is not producer completeness or fresh test/runtime acceptance. [56]
 
-- 2026-08-09T22:22+02:00 — No route impact: a test-only scroll-memory teardown repair is
-  confined to the conversation timeline fixtures and suites. Panel production surfaces and
-  hierarchy remain unchanged; detail lives in the conversation overview.
+- `Dot` renders its state glyph inside `aria-hidden="true"`. [58]
 
-- 2026-08-09T20:25+02:00 — 260713-TES-L5F2 route impact: replaced shared-panel lifecycle-gate
-  answer fixtures with lifecycle-free exact-session interaction-response coverage.
-
-- 2026-08-08T22:10+02:00 — 260713-TES-L1 route impact: route body reviewed and updated for the supervisor -> agent-notifier rename (see the route-specific body section above); verification metadata pinned until closeout stamps the 260713-TES-L1 commit.
-- 2026-08-07T23:35:00+02:00 — 260731-EFA-L7 route impact (trace delta): recorded the conversation split absorption and the file-size rail coverage. Verification metadata stays pinned until closeout stamps the 260731-EFA-L7 commit.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Split Layout section (kebab-case folders, canonical entries, parts/styles modules). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-04T15:29:35+02:00 — 260731-EFA-L6 S18-B11 same-reviewer residual correction: rebound Chats mount/props, lifecycle navigation/reader ownership, and served-fixture seeding to the packet-specified operative spans. Verification metadata unchanged.
-
-- 2026-08-03T23:26:43+02:00 — 260731-EFA-L6 S18-T3: corrected panel-route provenance: panels
-  consume a generated schema mirror, while fixture builders and the manual snapshot remain measured
-  consumers of it. New ranges are explicit scoped fixer output.
-
-- 2026-08-01T15:10+02:00 — 260731-EFA-L4 curator (citation pass): repaired the two
-  `observer/projection.py` citations inside the 12:20 entry below, after that module was
-  restructured. `L542-L559` → `L552-L569` (`TaskSubTaskRefNode`, ending on `linkedLifecycleId`
-  L569) and `L624-L639` → `L634-L649` (`SeriesSubTaskNode`, ending on `createdAt` L649). No body
-  claim changed.
-
-- 2026-08-01T14:05+02:00 — 260731-EFA-L4 curator (correction pass), body only. "What the fixture
-  conversion does and does not pin" said *"`fixture ⊆ mirror` is what the dashboard tests enforce.
-  `mirror ⊆ server` is enforced by nothing"* — the outer two nodes of a four-node chain, which reads as
-  though nothing measures the mirror against the snapshot. It does: `test/contract.test.ts` measures
-  `types/projection.ts` against `fixtures/snapshot.json` in three TYPE-level directions
-  (`mirror ⊇ served`, `served ⊇ mirror`, `fixture ⊇ mirror` — L29-L53) plus runtime `VOCABULARIES`
-  assertions (L269, L348, L368) for the string unions `resolveJsonModule` widens to `string`. The
-  paragraph now names all three links and states the unheld one as **`snapshot.json` ↔
-  `observer/projection.py`, by hand** rather than as "`mirror ⊆ server`" — one letter from
-  "`mirror ⊆ served`", which *is* enforced. Also brought the no-generator claim to the strength the
-  evidence carries: no in-repo generator **and no in-repo mechanism keeping the two sides in step**.
-  Same correction applied to the 12:20 entry's restatement below. No component claim, table row, or
-  verification field changed.
-
-- 2026-08-01T12:20+02:00 — 260731-EFA-L4 route impact (wire contracts and typed vocabularies): added
-  the "Typed Vocabulary Route Impact" section. Both component changes in this route are real, not
-  incidental. `AttentionQueue.tsx` gained the `role="img"` `severityMark` wrapper because `Dot` is
-  `aria-hidden` and a bare-span `aria-label` names a `generic` (ARIA-prohibited; axe-core
-  `aria-prohibited-attr`, `serious`) — recorded as a route-wide rule with the reason `LifecycleList`
-  needs no role (React Aria `role="option"` name-from-content). `LifecycleList.tsx`'s `statusVariant`
-  lost its `blocked`/`paused`/`abandoned` arms; I verified this is behaviour-identical by reading both
-  call sites (`docRow` L595, `seriesRow` L644 — `lifecycle?.state ?? statusVariant(...)`, so the live
-  state never reaches the map) and the input vocabulary end to end
-  (`tasks/document.py::DocStatus` L30 = planning/inProgress/Completed → `snapshots.py` `status=doc.status`
-  at L1304 for `SeriesNode` and L1398 for `TaskDocNode`). Recorded `awaiting-developer` as a LIVE state
-  of the server-side partition (`observer/lifecycle_state.py`) with the two new `LifecycleList.test.tsx`
-  handover regressions, `Metrics extends LifecycleStateCounts` with `metricsFor` replacing hand-listed
-  buckets, and the `SubTaskRow` union with the two `extra="forbid"` server models it unions
-  (`projection.py` L552-L569 `TaskSubTaskRefNode` — no `createdAt`; L634-L649 `SeriesSubTaskNode` — no
-  `linkedLifecycleId`), which is why the `→` cross-series jump is master-task-doc-only and why the
-  creation sort moved to `seriesAsMasterDoc`. Stated the fixture chain's honest reach: `wire.ts` and
-  `snapshot.json` are hand-maintained with no generator anywhere in this repository, the fixture→mirror
-  and mirror→snapshot links are both test-enforced, and the `snapshot.json` ↔ `observer/projection.py`
-  crossing is held by nothing. (This bullet originally read "`fixture ⊆ mirror` is test-enforced and
-  `mirror ⊆ server` is enforced by nothing", which dropped the middle link; corrected in the 14:05
-  entry.) Added four two-cell
-  `Repo-Internal References` rows (this table is two columns; no ranges added to it). Evidence: the six
-  suites over this route's files run green (106 tests). Verification metadata pinned until closeout
-  stamps the commit.
-
-- 2026-07-30T12:51+02:00 — No route-model impact for 260727-CHATS-IM-L2. The
-  Engine Room effects-root isolation is governed by the `engine-room/` child overview and the
-  selected-child history surface by `session-cockpit/`; the panels inventory and ownership split
-  remain unchanged. Verification metadata remains pinned until closeout.
-
-- 2026-07-24T13:17:17Z — Curator: documented cross-panel persistent-subtree memoization and the
-  current evidence/placement conventions introduced by this route's owned sources. Verification
-  metadata remains pre-commit.
-
-- 2026-07-21T11:30+02:00 — No route impact: the `dashboard/src/panels` route model is unchanged by
-  260718-CHATS-L5F (half-time functional fixes, PASS-WITH-NOTES). No DIRECT `panels/` child changed;
-  the leaf's single panels-tree edit is `session-cockpit/SessionsView.tsx` (the R9 focused-seat
-  live-turn merge), governed by the [session-cockpit/](session-cockpit/overview.md) child route and
-  recorded there and in its sidecar. Verification metadata advances with closeout stamping only.
-  260718-CHATS-L5P (cockpit chrome visual polish, PASS-WITH-NOTES; dashboard-only, zero backend edits).
-  Two DIRECT `panels/` children got styling polish captured in their own sidecars, not this route body:
-  `SessionComposer.tsx` — the editor frame joins the terminal `well` (FB7.1) + gains a `:focus-within`
-  amber ring (V4), the footer hint is capability-derived on legacy-raw terminal seats (V9), `draft saved`
-  is exception-only (V14), and the send button holds width/single-line under the inspector (V3);
-  `Terminal.tsx` — the host `background` `#070b0f` literal migrated to the `well` token (V31). The bulk of
-  the leaf's chrome polish lives under [session-cockpit/](session-cockpit/overview.md) (its "Cockpit chrome
-  conventions" section). Verification metadata unchanged.
-- 2026-07-20T22:30+02:00 — 260718-CHATS-L4 route impact (structured Chats renderer, reviewer FINAL
-  PASS): corrected the stale shared-panel claims — the controlled-session runner line-log is now the
-  read-only terminal-diagnostics drawer + legacy-raw body (the structured `ConversationSurface` is the
-  controlled default), and UA-1 history/index/resume is landed as a reconstructable projection with no
-  durable browser conversation index. The two new `conversation/` and `conversation-library/`
-  grandchild routes are governed by the [session-cockpit](session-cockpit/overview.md) overview; this
-  compact parent's route inventory is otherwise unchanged. `SessionComposer.tsx`'s L4 change is a
-  presentation-only hint-line regrouping (no authority change). Verification metadata remains pinned
-  pending L4 candidate closeout.
-
-- 2026-07-18T15:22+02:00 — FEUI-MX-FIX-2: recorded visible create failures and accepted-row gates
-  for HighlightComposer and RailChat, including zero context delivery and zero private row/focus
-  mutation on failure. Verification metadata remains pinned pending candidate closeout.
-
-- 2026-07-18T12:43+02:00 — FEUI-L9R: recorded xterm-preserving boot reattach, bounded chooser
-  recovery, and empty-narrow entrance preservation. Verification metadata remains pinned pending
-  candidate closeout.
-
-- 2026-07-18T07:22+02:00 — 260715-FEUI-L8 strategic refactor: reduced this packed parent to
-  composition boundaries, made session-cockpit the sole Chats owner, routed data-plane detail to
-  the new data overview, and recorded legacy retirement without claiming the future structured
-  conversation UI. Metadata remains pinned to the leaf base.
-
-- 2026-07-18T00:08+02:00 — 260715-FEUI-L7 curator closeout delta: replaced the interim inspector
-  scaffolding with the stable-mounted Evidence/Capabilities/Bus host, documented explicit mark-seen
-  and post-removal residual behavior, separated exact-session capability truth, recorded fleet Bus
-  sender-only reply and entry-state/virtualization invariants, and added the honest ordered StatusLine.
-  Detailed component and test routing remains in the `session-cockpit/` child overview.
-- 2026-07-17T21:39+02:00 — 260715-FEUI-L5 curator: replaced current bracketed/draft-paste
-  descriptions for SessionComposer, RailChat leaf context, and HighlightComposer with the shared
-  epoch-bound reliable-submit path, provenance, create-ready handling, and the raw-PTY boundary.
-- 2026-07-17T08:33+02:00 — 260715-FEUI-L4 route impact: the `session-cockpit/` child route gains
-  `ModelEffortControl`, `AcceptanceChip`, `CockpitLiveRegions`, and `SetOutcomeToasts` with their
-  focused suites; existing HeaderStrip/SeatInspector/SessionRail/SessionsView surfaces gain the
-  one control, collapsed acknowledging ledger, worded rail attention/named dots, cycle-effort,
-  queued hint, watchers, and persistent outcome plumbing. Pure policy and I/O remain in the L4
-  `data/` layer named above. No other panel or MCP package-data route changed because the worker
-  did not run dashboard bundle sync. Verification metadata is pinned to the contract base until
-  code commit.
-- 2026-07-17T06:30+02:00 — 260715-FEUI-L3 route impact (capability catalog client and launch
-  flow): the `session-cockpit/` child route gains its LAUNCH layer — `LaunchFlow.tsx` (the
-  palette-opened catalog-driven launch overlay) + `FailedLaunchBanner.tsx` (verbatim failed-seat
-  refusal surface) with their jsdom suites; `SessionsView` registers `session.launch` and mounts
-  both (pure appends); `HeaderStrip`/`SeatInspector` derive the R7 evidence tier from row
-  control-state truth and render `grammar/EvidenceBadge`; `SessionStage`'s empty-state copy
-  points at the palette launcher. No OTHER panel changed in this leaf (Chats/Terminal untouched).
-  Detail lives in the `session-cockpit/` overview and the touched sidecars. Verification
-  metadata pinned to the leaf base until closeout stamps the L3 code commit.
-- 2026-07-17T04:20+02:00 — 260715-FEUI-L6 route impact (PTY stage surface, structured
-  interactions, session lifecycle actions): the `session-cockpit/` child route gains
-  `PtySurface`/`InteractionBar`/`WorkingLine`/`StopResidualNotes`/`lifecycleCopy` (+ four jsdom
-  suites) — the stage body is filled with keep-alive real xterm panes (DOM renderer by
-  measurement) and the gate-only interaction bar; `Terminal.tsx` gains additive optional props
-  (renderer seam with lazy webgl escalation, screenReaderMode live options mutation, observe-only
-  harvesting hooks, keyEventFilter, onResizeCols, ariaLabel) with byte-compatible defaults for
-  the legacy call sites, plus a guaranteed named `role="group"` landmark (sessionId fallback);
-  `Chats.tsx`/`RailChat.tsx` pass real `ariaLabel`s at their Terminal call sites (one prop per
-  call site — review F6). No panel was removed; per-file detail lives in the sidecars and the
-  `session-cockpit/` overview. Verification metadata pinned to the leaf base until closeout
-  stamps the L6 code commit.
-- 2026-07-17T02:30+02:00 — 260715-FEUI-L2 route impact (session data layer, rail, and stage
-  container): the `session-cockpit/` child route is FILLED — `SessionRail`/`SessionStage`/
-  `HeaderStrip`/`StateDot`/`SeatInspector` (+ two jsdom suites) land and `SessionsView` becomes
-  the once-derived model/rollup seam with smart-default focus, focus handoff, and dynamic palette
-  commands; `Chats.tsx` hands its 2.5s catalog poll to the shared `data/catalogPoll.ts` driver
-  (consumer semantics byte-equivalent); `file-viewer/FileViewer.tsx` gains a reviewer-accepted
-  one-line defensive repos-catalog guard. Detail lives in the `session-cockpit/` overview and the
-  touched sidecars; no panel was removed. Verification metadata pinned to the leaf base until
-  closeout stamps the L2 code commit.
-- 2026-07-17T00:30+02:00 — 260715-FEUI-L1 route impact: the route gains the **`session-cockpit/`**
-  child route — the Sessions cockpit view shell (rail/stage/inspector PanelGroup + narrow rules +
-  ~80-col floor chip + rail calibration), the non-portal cmdk CommandPalette (commands/keys pages
-  from one options source), and the useKeyboardZones tinykeys binding — registered in
-  `cockpit/Cockpit.tsx` as the fourth keep-alive full-bleed layer. Panel content is labeled
-  scaffolding for L2/L4/L5/L6/L7. Added the bullet + child-route link; no existing panel changed.
-  Verification metadata pinned to the task base until closeout stamps the L1 code commit.
-- 2026-07-14T13:59+02:00 — 260713-PHA-L5: reviewed route impact for the accepted hosted cutover.
-
-- 2026-07-12T17:50+02:00 — 260712-TRH-L6 route impact: documented the new Operations chat-activity indicator,
-  shared Chats catalog ownership, exact-leaf-first/lifecycle-fallback identity, deterministic multi-seat
-  precedence, static inbox acknowledgment state, missing/landed/stale omission behavior, and the three
-  independent signaling axes. No new dashboard route was introduced. Reviewer F1–F6 are recorded as
-  follow-up residuals in the relevant sidecars.
-- 2026-07-12T13:36+02:00 — No route impact: 260712-TRH-L2 body review confirms the `DetailPanel` change-set entry and `panels/changeset` child-route refinements do not alter the broader panels inventory or navigation model. Verification metadata remains pinned until closeout.
-- 2026-07-12T12:58+02:00 — 260712-TRH-L3 route impact: refreshed the existing `LifecycleList.tsx`
-  route model for BY REPO-only persisted sprint/master disclosure, independent nested collapse,
-  selection-safe native controls, and unchanged BY PHASE/total-count semantics. No new route or entity
-  was introduced; the two concrete helper modules are covered by file sidecars.
-- 2026-07-12T12:55+02:00 — No additional route impact from 260712-TRH-L2: its `DetailPanel` change-set entry and `panels/changeset` child-route refinements do not alter the broader panels inventory or navigation model. Verification metadata pinned until closeout stamps the L2 code commit.
-- 2026-07-12T12:07+02:00 — 260712-TRH-L1 route impact: added the body-state data hook and made
-  `DetailPanel` defer notes plus reader/enclosure change-set requests until visible body hydration
-  succeeds or fails. Summary fallback and panel inventory remain intact; verification metadata stays
-  pinned until closeout.
-
-- 2026-07-10T21:52+02:00 — 260707-HFX2-L21 route impact: the existing Chats full-bleed layout now
-  has a bounded, persisted, pointer/keyboard-resizable session-tree rail. Panel inventory and routing
-  are unchanged; focused coverage pins restoration, ARIA values, drag, arrow steps, and persistence.
-  Verification metadata remains pinned to the task base until closeout.
-
-- 2026-07-10T15:07+02:00 — 260707-HFX2-L17 panels route impact: added explicit seat-role picker,
-  pair-aware attach/move, and binding-first rail/fleet rendering; no route layout change.
-
-- 2026-07-10T13:41+02:00 — 260707-HFX2-L16 route impact: refreshed the existing SessionList and
-  DetailPanel responsibilities for complete spawn forests, manager-only collapse, bounded hover-
-  recoverable rows, merged task bodies, explicit summary fallback, and one implementation-step list.
-  Panel inventory/routing is unchanged. Verification metadata stays pinned until closeout.
-
-- 2026-07-10T01:14+02:00 — 260707-HFX2-L13 F6 route impact: migrated `DetailPanel` to fetch only
-  the displayed task body on demand, cache it by path/revision, and keep summary fallback behavior;
-  test fetch doubles now serve that endpoint. Verification metadata remains pinned until closeout
-  stamps the eventual L13 code commit.
-
-- 2026-07-09T14:05+02:00 — 260707-HFX2-L11 route impact (landed chat archive + group cleanup):
-  `Chats.tsx` and `SessionList.tsx` gain a collapsed "landed archive" group for `status:"landed"`
-  rows (role/leaf/master/label/turn-state/landed-reason/timestamp/provenance surfaced, non-live but
-  inspectable) plus a "Close landed archive" group-cleanup control (backend-rechecked, reports
-  closed/skipped); `Terminal.tsx` gains a `readOnly` prop so a landed seat's terminal stays viewable
-  without accepting input. No new panel module or routing change — per-file detail lives in each
-  file's own sidecar. Verification metadata pinned until closeout stamps the 260707-HFX2-L11 commit.
-- 2026-07-08T04:25+02:00 — 260707-HFX-L12 route impact (docs-parity fold-in, master-exit Finding
-  3): `SessionList`'s `ROLE_VALUES`/`roleChip` registry gains `designer` (gold) and
-  `system-specialist` (cyan), matching the existing four-tier color convention (no new token) —
-  both roles were already spawnable but rendered as the muted base chip; the panels route inventory
-  itself is unchanged (same mechanism, two more registered Literal members). Verification metadata
-  pinned until closeout stamps the HFX-L12 commit.
-- 2026-07-07T23:55+02:00 — 260707-HFX-L6 route impact: `SessionList`/`Chats`
-  role rendering and the dormant `FlowTab` model now carry architect/curator seats, matching the
-  architect/default developer-facing split and curator closeout chain while keeping the panels route
-  inventory unchanged. Verification metadata pinned until closeout stamps the HFX-L6 commit.
-- 2026-07-07T14:00+02:00 — agent-orchestration L17 route impact: the route gains the **`notes-reader/`**
-  child route (the Notes Reader takeover — a notes-tree rail + a content pane that REUSES the File Viewer
-  `DualPane`, over the unchanged L9 `/api/notes/*` API). `TaskNotes.tsx` becomes the compact ENTRY SURFACE
-  only (its inline reader retired; list + references now call `onOpenNotes`), `DetailPanel.tsx` threads
-  `onOpenNotes` to it, and `LifecycleList.tsx`'s `gateHint` drops the wait-loop `ask` fallback (durable gate
-  kind only). Added the `notes-reader/` bullet + child-route link, rewrote the `TaskNotes` bullet, and
-  de-staled the `DetailPanel`/`LifecycleList` bullets. Verification metadata pinned until closeout stamps the
-  L17 commit.
-- 2026-07-07T10:55+02:00 — L15 route impact (body): the four age panels' served-ages local-advance pattern documented. Verification metadata pinned until closeout stamps the L15 commit.
-
-- 2026-07-07T05:40+02:00 — 260703-L15 route impact (small): the four age-display panels
-  (`Hangar.tsx`, `AttentionQueue.tsx`, `MemoryMirror.tsx`, `LifecycleList.tsx`) now advance served
-  ages locally — `servedAgeSeconds(node, …Seconds, nowMs)` + a panel-level `useNowMs()` 10 s tick
-  (`data/servedAges.ts`) — because the L15 change gate stopped re-serving nodes whose only
-  movement is their age. No layout/behavior change otherwise; the panels route model is unchanged.
-  Verification metadata pinned until closeout stamps the L15 commit.
-- 2026-07-06T23:57:24+02:00 — 260703-L14 route impact (visual hierarchy + chat grouping): the tasks tab
-  gained the orchestration tier (gold/purple V4 command rows over `TaskDocNode.orchestrates`, N-depth
-  `BY REPO` hierarchy, 22px indent grammar, `grammar/RankBadge` insignia — see `LifecycleList.tsx`),
-  and the Chats sidebar gained the G1 command tree (`SessionList` collapsible groups over the new
-  `data/sessionGroups` model threaded by `Chats.tsx`, spawn-role chips from the catalog's
-  AR_SPAWN_ROLE). The GOLD tier is orchestration-gated (D3): the orchestration row and the sprint deck appear only when an orchestration task exists; master grouping + the landed archive are the chats pane's BASELINE organization (grouping-always, owner-ratified at review L14R-1), mirroring the tasks tab's master>leaf nesting. The tasks tab itself renders flat runs exactly as before.
-  Verification metadata pinned until closeout stamps the L14 commit.
-- 2026-07-06T15:40+02:00 — 260703-L12 route impact (three-party loops, canvas ride-along): `flowModels.ts` gains the STRATEGIST model (FLOW_MODELS census 7 → 8; placed between designer and orchestrator) and loop-doctrine lines on the manager/worker/reviewer/comms/orchestrator drawings; `FlowTab.test.tsx` grows to 11 cases (strategist model + cross-model loop invariants). FlowTab.tsx itself is unchanged (pure renderer over the registry). Verification metadata pinned until closeout stamps the L12 commit.
-- 2026-07-06T12:10+02:00 — 260703-L10 route impact (small): the FlowTab canvas was verified against the converged `l-01-agent-lifecycles` doctrine (S2 reduced to verification after L8 shipped the redraw); the one residual vocabulary drift fixed is the designer model's reframe-agreement node phase label, `"frame"` → `"reframe"`. Tests (41 files / 385) stay green — no invariant string changed. Verification metadata pinned until closeout stamps the L10 commit.
-- 2026-07-06T10:30+02:00 — L11 adversarial-review follow-up: the anchor fallback annotation is deterministic (greatest lastEventTs), closing L11R-2. Verification metadata pinned until closeout stamps the L11 commit.
-- 2026-07-06T02:50+02:00 — 260703-L9 route impact (friction F-M): the route gains `TaskNotes.tsx`
-  (+ its component suite), the read-only coordination-notes surface — series notes list over
-  `/api/notes/*`, opened notes rendered as formatted markdown (sidecar treatment), and task-doc
-  references resolved into openable links; `DetailPanel.tsx`'s `TaskReader` delegates its
-  References section to it and `MasterOverview` appends it. Verification metadata pinned until
-  closeout stamps the L9 commit.
-- 2026-07-06T02:45+02:00 — 260703-L11 route impact (tasks tab shows worktree truth): `Hangar` and
-  `LifecycleList` visibility flipped from cleanup-state proxies to the shared `hasLiveWorktree`
-  existence rule over the new `EnclosureNode.codeWorktreeExists`/`memoryWorktreeExists` flags — a
-  reopened contract stays hidden until `worktree_start` recreates its worktrees; `LifecycleList` adds
-  the one-row-per-`enclosureId` identity rule with `lifecycleForEnclosure` annotating the single doc row (deterministically: greatest `lastEventTs` wins the anchor fallback, L11R-2)
-  instead of duplicating the leaf as a lifecycle card. Verification metadata pinned until closeout
-  stamps the L11 commit.
-- 2026-07-05T19:55+02:00 — 260703-L8 route impact (cycle 7, AR4-3/AR4-4): the seam-channel sentence rescoped to what the canvas draws — the manager raise node now names `enclosure="<master task name>"` as the exact address integration enforcement matches the gate by (AR4-4), so the enclosure clause is true as-drawn; the cycle-6 owner follow-up's "exactly … integration enforces the verdict by master identity" overclaim is dropped (enforcement itself is not a drawn node). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:25+02:00 — 260703-L8 route impact (cycle 6, owner follow-up): body de-staled — the FlowTab paragraph's leftover build-job/frame tail (deleted models, the "8 static models" reference row, the "other seven" phrasing) replaced with the converged 7-model census and the exact ruled seam channel (wait=false raise, enclosure address, packet-carried gateId, identity-addressed enforcement). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T19:10+02:00 — 260703-L8 route impact (cycle 6, small): the flowModels seam nodes now draw the ruled channel exactly — the manager's raise carries wait=false with the returned gateId riding the packet, and the orchestrator decides by the packet-carried gateId; FlowTab tests pin the new prose. Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-05T16:32+02:00 — 260703-L8 route impact (small): the FlowTab registry now draws the converged lifecycle doctrine — ROUTER model (three conditions + D·P·O event loop + the invariant ladder) replaces the retired FRAME and BUILD-JOB models; worker/manager/orchestrator/reviewer/comms models redrawn to the ruled seam semantics; FlowTab tests rewritten (9). Verification metadata pinned until closeout stamps the L8 commit.
-- 2026-07-04T12:31+02:00 - L3 route impact: task-row pickup feedback now
-  mirrors message-kind and hosted-delivery metadata from `AgentPickupNode`.
-  Verification metadata pinned until closeout stamps the L3 commit.
-- 2026-07-04T09:40+02:00 — 260703-L0 (Canvas & playground) route impact: reworked the `FlowTab.tsx` bullet
-  from the dormant single-model Lifecycle Flow diagnostic into the **lifecycle-design canvas** — a pure
-  segment renderer + radiogroup model nav (still zero store reads) over the **new `flowModels.ts`**
-  flow-model registry (8 static models: build-job · frame · designer · orchestrator · manager · worker ·
-  reviewer · comms, encoding the orchestration series' agreed invariants). The build-job model preserves
-  the task-26 chain and stays the `next_step.py` SPEC; the source is now **mounted dev-only at `/dev/flows`**
-  via `dev/DevApp.tsx` (kept out of the cockpit `View` union per task 29) and covered by the new
-  `FlowTab.test.tsx`. Added `panels/flowModels.ts.md` + `panels/FlowTab.test.tsx.md` sidecars. Verification
-  metadata pinned until closeout stamps the L0 commit.
-- 2026-07-03T00:35+02:00 — L11 route impact: LifecycleList excludes abandoned enclosures from the active rows and drops the -rN startsWith doc-admission heuristic (task_reopen keeps leaf ids stable).
-- 2026-07-02T21:45+02:00 — L10 route impact: `LifecycleList`'s `enclosureForDoc` admission is now
-  case-insensitive on every leafId comparison (stem, doc id, and the lifecycle-guarded reopen-suffix
-  rule) — enclosure leaf ids are slugified lowercase while doc ids are authored uppercase, so active
-  series leaf docs failed the admission and rendered as doc-less runtime rows with no task content and
-  no viewed-leaf chat chain. Verification metadata pinned until closeout stamps the L10 commit.
-- 2026-07-02T20:55+02:00 — L8-r1 route correction (developer feedback): the direct leaf-chat paste is
-  now triggered by the visible "Add to chat" pill CLICK instead of firing automatically on selection —
-  the auto-paste made the interaction invisible and pasted unintended highlights. The pill stays for
-  every selection with one consistent label; only the post-click routing differs (direct draft paste vs
-  generic composer), and an unconfirmed direct paste opens the composer. Verification metadata pinned
-  until closeout stamps the L8-r1 commit.
-- 2026-07-02T20:15+02:00 — L8 route impact: highlight handling split into a **direct leaf-chat draft
-  paste** primary path (selection inside the viewed leaf's task reader + active rail chat + bound leaf
-  chat → `pasteDraftToSession`, no popover, popover fallback on failed paste) with the generic
-  `HighlightComposer` popover as fallback only; `GateResponder` lost its message-only **Chat** mode
-  (durable approve/reject/dismiss remain); `DetailPanel` no longer raises the responder for proto
-  `ask`-only items and tags the task-doc reader with `data-task-leaf-key`. Covered by the updated
-  `HighlightComposer/DetailPanel/GateResponder` tests and `selection.test.ts`. Verification metadata
-  pinned until closeout stamps the L8 commit.
-- 2026-07-02T17:04+02:00 — L9 route impact: extended the existing `Chats.tsx` / `RailChat.tsx` route model
-  for hosted chat leaf reassignment. Attached chats keep the picker as a move control, successful moves
-  emit `"leaf"` catalog invalidations and draft the destination leaf context, and out-of-session catalog
-  changes live-refresh through BroadcastChannel or polling. Verification metadata pinned until closeout
-  stamps the L9 commit.
-- 2026-07-02T16:35+02:00 — Reopened L6 wheel-precedence route impact: the shared `Terminal` wrapper now
-  defers wheel input to xterm's native mouse-report path whenever the attached app tracks the mouse
-  (`term.modes.mouseTrackingMode !== "none"`). Combined with the backend's per-session tmux `mouse on`,
-  wheel scrolling works for both normal-buffer TUIs (tmux copy-mode pane history — Codex) and
-  mouse-aware alternate-screen TUIs (pass-through — Claude Code); synthesized PageUp/PageDown remains
-  only as the mouse-less alternate-buffer fallback. `pasteDraftToSession` deliveries are now
-  echo-confirmed with boot-deadline retries (`pasteAndConfirm`), fixing the leaf-context draft silently
-  discarded by a booting Claude Code. Verification metadata pinned until closeout stamps the follow-up
-  commit.
-- 2026-07-02T15:03+02:00 — Reopened L6 served-page route impact: live 8770 inspection showed Codex-style
-  chat panes in xterm's alternate buffer with no viewport scrollback, so the shared `Terminal` wrapper now
-  keeps normal-buffer viewport scrolling but maps alternate-buffer wheel movement to PageUp/PageDown
-  navigation. Verification metadata pinned until closeout stamps the follow-up commit.
-- 2026-07-02T14:28+02:00 — Reopened L6 route impact: the existing shared `Terminal` wrapper now captures
-  wheel input, swallows partial pixel deltas, and routes accumulated movement to xterm viewport scrolling,
-  preventing mouse wheel movement from becoming PTY up/down input in Chats and right-rail panes. No new
-  route or panel surface was added; verification metadata pinned until closeout stamps the follow-up commit.
-- 2026-07-02T13:07+02:00 — Reopened L6 route impact: leaf-context handoff remains in the existing
-  `RailChat` route, but now pastes the packet as editable draft input instead of submitting it. The shared
-  `Terminal` wrapper also enables xterm scrollback for Chats and right-rail panes. Verification metadata
-  pinned until closeout stamps the follow-up commit.
-- 2026-07-01T01:19+02:00 — L6 route impact: extended the `Chats.tsx` / `RailChat.tsx` route-model
-  description with bind-time leaf context handoff. The route still owns the existing hosted chat surfaces;
-  `RailChat` now sends a projected context package only after start-on-leaf or successful free-chat attach,
-  using `taskDocuments` plus `engineProcesses` for task/worktree facts. Verification metadata pinned until
-  closeout stamps the L6 commit.
-- 2026-06-30T00:00:00+02:00 — L5 follow-up route impact: reshaped the **`RailChat`** route-model description — it is now a
-  per-(leaf, role) **chat (agent harness) + terminal (shell) vertical split** with a harness-choice start
-  picker (`fetchHarnesses`), a separate ＋ Terminal, and an independent **terminate** per pane (replacing the
-  pre-fix single "＋ Start chat for this leaf"); added `RailChat.test.tsx` coverage. The Chats/`SessionList`
-  leaf key now comes from the **displayed** leaf via `DetailPanel.onViewLeaf` (not the master selection),
-  and `SessionList` rows gained a hover `title` (full label + bound leaf, fix 4). Verification metadata
-  pinned until closeout stamps the L5 commit.
-- 2026-06-30T00:00:00+02:00 — L5 (Sidebar chat) route impact: added **`RailChat.tsx`** (the single-instance right-rail
-  leaf chat the cockpit `RailToggle` swaps in for the Event River, reusing the shared `Terminal` +
-  `SessionComposer` + connection registry) to the Route Model, and extended the **Chats** bullet with
-  leaf-keyed attachment — `Chats` gains an "Attach to leaf" control (`attach-leaf`, `200` bind / `409`
-  "leaf already has a chat") + a bound-leaf badge, and `SessionList` gains a `leafNameFor` per-row leaf
-  label (task-doc title, fallback leaf id). Verification metadata pinned until closeout stamps the L5
-  commit.
-- 2026-06-29T23:00+02:00 — No route impact: L4a added change-set buttons on the task-document reader
-  (`DetailPanel`'s `DocChangeSetBar` — series on a master, committed/working on a leaf) and refined the
-  `changeset/` child route (leaf committed/working views + a diff-highlight rectangle). The `panels/`
-  route model — the panel list + the `file-viewer/`/`changeset/` child routes — is unchanged; the detail
-  lives in the `DetailPanel.tsx` sidecar and the `changeset/` overview. Verification metadata pinned until
-  closeout stamps the L4a commit.
-- 2026-06-29T16:40+02:00 — Operations Integration L4 route impact: added the `changeset/` child route — the **Change-Set Viewer** screen (a task-scoped takeover over the L3 `/api/changeset/*` API; a read-only `@codemirror/merge` diff with split/inline/full-file/highlight-off toggles; a code↔sidecar partner column), opened from a `DetailPanel` change-set button as a Cockpit full-bleed takeover. See the new [changeset/ overview](changeset/overview.md). Verification metadata pinned to the task base until closeout stamps the L4 code commit.
-- 2026-06-29T09:06+02:00 — Operations Integration L2 route impact: added the `file-viewer/` child route —
-  the **File Viewer** centre tab (a read-only code + paired-onboarding browser over the L1 files API; a
-  reusable CodeMirror dual-pane; bidirectional code↔onboarding pairing; kept mounted across tab switches).
-  See the new [file-viewer/ overview](file-viewer/overview.md). Verification metadata pinned to the task
-  base until closeout stamps the L2 code commit.
-- 2026-06-28T16:17+02:00 — Task 35 route impact: `LifecycleList` now also admits a **reopened** leaf's
-  suffixed-leaf enclosure (`leafId` = stem/`id` + cycle suffix, e.g. `…-s7`) on the combined shared-lifecycle
-  + suffixed-leaf match (never a bare shared master lifecycle), and runtime-only enclosure-backed rows nest
-  under their master via a computed parent key — so a re-opened/edited task no longer renders as a standalone
-  phantom node. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-28T13:54+02:00 — Task 34 route impact: `EventRiver.tsx` now **virtualizes** the activity feed
-  with `@tanstack/react-virtual` over the store's bounded sliding window (newest ~2000 rows), mounting
-  only the visible rows (no hard display cap) while staying memory-bounded; the `/api/events` backend
-  also now filters `lifecycle.heartbeat` out of the raw river, so the formatter's heartbeat hiding is
-  belt-and-braces. Updated the `EventRiver.tsx` Route Model bullet. Verification metadata pinned until
-  closeout stamps the task-34 code commit.
-- 2026-06-28T07:45+02:00 — Task 33 route impact: `Topology.tsx` now filters to active worktree groups via
-  `activeTopologyInputs` (reading the store's `activeWorktreeGroups`) before `buildTopology`. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-28T07:43+02:00 — Task 29 S7 route impact: Event River no longer has a frontend newest-row
-  cap and waits for the raw stream `ready` event before showing an empty feed, AttentionQueue
-  dismiss/clear now optimistically suppresses lifecycle/gate/actionable-drift rows while writes are in
-  flight, and `FlowTab.tsx` is documented as dormant because the Lifecycle Flow tab is hidden from the
-  cockpit. Verification metadata pinned until closeout stamps the task-29 code commit.
-- 2026-06-28T05:38+02:00 — Task 29 route impact: Event River rendering now gates
-  lifecycle-bound rows until lifecycle/enclosure/task-document context is available, while lifecycle-less
-  workspace diagnostics can still render raw fallbacks. Verification metadata pinned until closeout
-  stamps the task-29 code commit.
-- 2026-06-28T03:21+02:00 — Task 31 route impact: `LifecycleList` now matches active leaf task documents
-  against either the file stem or the authored `TaskDocNode.id`, restoring browser-dashboard leaf 31 under
-  its parent master in Operations; the Engine Room panel route also renders expected-but-missing provider
-  roles using the new provider boot-node state. Verification metadata pinned until closeout stamps the
-  task-31 code commit.
-- 2026-06-27T18:43+02:00 — Task 26 route impact: added the `FlowTab.tsx` **Lifecycle Flow** view to the
-  panels inventory — a static (no-store) diagnostic of the build-job lifecycle in two regimes (a prose
-  `RUNDOWN` front half emitted by `lifecycle_start` and a `LINEAR` worktree_start→lifecycle_end chain with
-  gate `rides` annotations), wired as a full-bleed cockpit `flow` view and serving as the human-readable
-  SPEC the task-27 `next_step.py` engine matches; dev frontend only (production bundle not rebuilt this
-  task). Verification metadata pinned until closeout stamps the task-26 code commit.
-- 2026-06-27T03:04+02:00 — Task 22 follow-up: Chats removed the local Hide row action; End is now the
-  only session-list action, and id-bearing terminate invalidations remove rows across tabs without
-  allowing stale catalog echoes to repaint them.
-- 2026-06-27T01:25+02:00 — Task 22 follow-up: Chats now listens for cross-tab terminal catalog
-  invalidations, re-fetches durable rows when another tab opens/ends sessions, and broadcasts after
-  backend-confirmed End so multiple browser tabs stay in sync.
-- 2026-06-27T01:03+02:00 — Task 22 follow-up: Chats treats End/terminate as label release, so terminated
-  Claude chats do not force the next Claude label upward.
-- 2026-06-27T00:25+02:00 — Task 22 follow-up: corrected the Chats route model for mount-on-first-selection
-  after refresh; hidden restored xterms no longer initialize before they are selected, and visited tabs
-  still keep their xterm buffers.
-- 2026-06-26T23:15+02:00 — Task 22 route impact: `Chats.tsx` and `SessionList.tsx` now expose durable
-  catalog sessions, status badges/panels, last-active restore, and backend terminate for dashboard-owned
-  terminals. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T20:18+02:00 — Task 21 route impact: `DetailPanel` master readers now show the
-  server-projected `seriesTokenTotal` aggregate, with component coverage in `DetailPanel.test.tsx`.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-26T19:40+02:00 — Task 20 reopened: Event River route model now records
-  the task-document title fallback for retained event-history rows whose
-  lifecycle id no longer has a live lifecycle projection. Verification metadata
-  pinned until closeout stamps the reopened task-20 code commit.
-- 2026-06-26T18:14+02:00 — Task 20 route impact: Event River now includes the
-  new `eventSummary.ts` formatter module and renders a readable activity feed
-  over known observer events while preserving raw-event diagnostics and trust
-  provenance. Verification metadata pinned until closeout stamps the task-20
-  code commit.
-- 2026-06-25T14:02+02:00 — Task 24 reopened: `AttentionQueue` Clear now includes stale gate-only rows and sends gate-id-only cancel through the serving route.
-- 2026-06-25T13:20+02:00 — Task 23/24: panels route now covers gate Dismiss/delete, attention Clear, and the `AgentPickupIndicator` waiting-for-agent/check-chat task-row feedback.
-- 2026-06-25T07:26+02:00 — Task 19 gate interaction polish: `GateResponder` now has separate durable
-  Yes/No decision paths and a message-only Chat path, renders readable gate previews with diagnostics
-  behind details, and gives leaf prompt previews a 480px resizable area. `AttentionQueue` now renders
-  lifecycle-bound rows with task id/title first. Verification metadata pinned until closeout stamps the
-  code commit.
-- 2026-06-25T02:53+02:00 — Operations title-overflow correction: `LifecycleList` now constrains the
-  listbox/section grid tracks, row minimum widths, and secondary metadata chips so long task titles
-  ellipsize inside the left rail instead of creating a horizontal scrollbar or disappearing. Detail
-  lives in the `LifecycleList.tsx` and `LifecycleList.test.tsx` sidecars. Verification metadata pinned
-  until closeout stamps the code commit.
-- 2026-06-24T21:49+02:00 — Task 17 route correction: cleanup-completed leaf enclosures no longer count
-  as active sidebar enclosures; their task docs remain reachable through master/taskdoc navigation.
-  Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T18:13+02:00 — Empty-state backdrop zoom-stability pass: refreshed the
-  `EmptyStateBackdrop.tsx` route-model bullet for the final static direct-video contract. The shared panel
-  still provides the same effects-gated boomerang-video atmosphere, but runtime zoom layers are excluded;
-  the 60fps MP4 assets own the slow zoom/cadence. Detail lives in the `EmptyStateBackdrop.tsx` and
-  `EmptyStateBackdrop.test.tsx` sidecars. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-24T18:11+02:00 — Task 17 route correction: Operations and Detail now label authored leaf rows
-  from the child `TaskDocNode.id`, with parent sub-task `number` only as fallback data. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-24T18:02+02:00 — Task 17 route correction: Operations and Detail now display structured
-  sub-task numbers for leaf labels, while creation metadata controls ordering/placement and no filename
-  parsing is introduced. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T17:51+02:00 — Task 17 Operations hierarchy route update: `LifecycleList` now nests
-  admitted active leaves beneath their parent/root task in `BY REPO`, and `DetailPanel` gives directly
-  opened leaf documents a structured parent/root backlink. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-24T17:20+02:00 — Task 17 sidebar/master navigation route correction: `LifecycleList` now scopes
-  the Operations sidebar to root/master docs, enclosure-matched leaves, series fallbacks, and
-  enclosure-backed runtime fallbacks, while `DetailPanel` keeps master sub-task navigation wired to the
-  full projected sibling document pool. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-24T16:39+02:00 — Task 17 Operations route correction: `LifecycleList` is task-document-first
-  with typed `taskdoc:` / `series:` / `lifecycle:` row keys, completed unarchived docs stay visible,
-  and `DetailPanel` renders concrete selected documents before lifecycle/series fallbacks. Verification
-  metadata pinned until closeout stamps the code commit.
-- 2026-06-24T15:37+02:00 — Task 17 follow-up route correction: live projection inspection showed
-  `analytics.series` is the master surface while leaf rows carry parent `taskName`; the DetailPanel route
-  now bridges to the master only for root task identity and otherwise requires projected leaf task docs
-  for leaf reader content. Verification metadata pinned until closeout stamps the follow-up code commit.
-- 2026-06-24T15:23+02:00 — Task 17 follow-up route impact: clarified the DetailPanel identity rule
-  that `taskName` is parent/root-series metadata for leaf lifecycles; direct leaf task documents render
-  before the folder-keyed master bridge. Verification metadata pinned until closeout stamps the
-  follow-up code commit.
-- 2026-06-24T13:59+02:00 — Task 17 follow-up route impact: refreshed the `DetailPanel.tsx` route model
-  for top-level implementation-step progress summaries in master sub-task rows and leaf reader
-  progress fills; nested substeps no longer inflate those orientation counts. Verification metadata
-  pinned until closeout stamps the follow-up code commit.
-- 2026-06-24T12:53+02:00 — Task 17 follow-up route impact: refreshed the `DetailPanel.tsx` route model
-  for root master rows that select an inferred task-id lifecycle; the panel now uses projected
-  enclosure `taskName` to find the folder-keyed `analytics.series` master. Verification metadata pinned
-  until closeout stamps the follow-up code commit.
-- 2026-06-24T12:37+02:00 — Operations title-overflow fix: refreshed the `LifecycleList.tsx` route model
-  for single-line title ellipsis and native hover titles carrying the full task label plus row context.
-  Detail lives in the `LifecycleList.tsx` and `LifecycleList.test.tsx` sidecars. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-24T12:21+02:00 — Task 17 route impact: refreshed the `DetailPanel.tsx` route model for
-  folder-keyed `analytics.series` master rendering, labelled master sub-task rows, structured
-  creation-order sorting, and the new top Progress section in leaf readers. Verification metadata
-  pinned until closeout stamps the code commit.
-- 2026-06-24T08:59+02:00 — Detail task-document correction: refreshed the `DetailPanel.tsx` route model
-  for promoted leaf lifecycles whose visible title comes from enclosure metadata while readable content
-  remains limited to matching JSON task documents. Verification metadata pinned until closeout stamps
-  the code commit.
-- 2026-06-24T08:40+02:00 — Operations label fix: refreshed the `LifecycleList.tsx` Route Model bullet
-  for enclosure/task-backed row labels, covering promoted fleeting lifecycles that should display the
-  leaf enclosure name rather than the stable raw lifecycle id. Detail lives in the `LifecycleList.tsx`
-  and `LifecycleList.test.tsx` sidecars. Verification metadata pinned until closeout stamps the code
-  commit.
-- 2026-06-24T06:26+02:00 — Engine Room official-strip aggregation: the route model now records that
-  `EngineRoom.tsx` groups official workspace providers by provider label + runtime state, rendering duplicate
-  same-state CGCs as counted chips with hover-title repo detail. Detail lives in the `EngineRoom.tsx` and
-  `EngineRoom.test.tsx` sidecars. Verification metadata pinned until closeout stamps the official-strip
-  aggregation code commit.
-- 2026-06-23T15:05+02:00 — Task 10 dashboard fallback: `GateResponder` now routes missing-hosted-session responses to the external operator inbox through `data/operatorInbox`, with queued/error status coverage in `GateResponder.test.tsx`. Verification metadata pinned until closeout stamps the task-10 code commit.
-- 2026-06-23T13:45+02:00 — Task 11: added `GateResponder.tsx` / `.test.tsx` and updated the panel route
-  model for chat-routed Gate Respond. `DetailPanel` now uses the responder for durable gates and proto
-  asks; `LifecycleList` shows gate badges; `Chats` / `SessionList` / `HighlightComposer` carry hosted
-  chat lifecycle identity; Hangar and Engine Room diagnostics use the responder as the secondary
-  worktree-gate surface. Verification metadata pinned until closeout stamps the task-11 code commit.
-- 2026-06-23T13:35+02:00 — No route impact: slice-12 topology render fix — `Topology.tsx` made the constellation canvas absolutely-positioned (out of flow → no ResizeObserver growth loop) and rendered the `Panel` with `fill` (so it fills the slot). Behaviour-preserving layout fix; the panels route model is unchanged.
-- 2026-06-23T07:25+02:00 — UI copy rename (user-facing lifecycle → task): refreshed the `LifecycleList.tsx`
-  Route Model bullet for the operations panel's "Tasks" copy (header `Tasks · {n}`, empty state `No tasks.`,
-  aria-labels "Group tasks by" / "Tasks") and the `DetailPanel.tsx` bullet for its task-facing placeholders
-  ("Select a task to inspect…", "No task document bound to this task."). Display copy only — the unit is still
-  the `lifecycle` under the hood; the eight-panel route inventory is unchanged. Detail lives in the
-  `LifecycleList.tsx` / `DetailPanel.tsx` sidecars. Verification metadata pinned until closeout stamps the
-  rename code commit.
-- 2026-06-23T04:20+02:00 — Slice 07b polish: added the shared `EmptyStateBackdrop.tsx` panel — a faint,
-  effects-gated boomerang-video atmosphere behind centered empty-state text (lifted from the engine-room
-  G6 backdrop) — and wired it into `DetailPanel`'s no-selection state (battle cruiser) and `Chats`'s
-  no-session state (adjutant); covered by `EmptyStateBackdrop.test.tsx`. Added a Route Model bullet for
-  the new shared panel; detail lives in its sidecar + the `DetailPanel` / `Chats` sidecars. Verification
-  metadata pinned until closeout stamps the slice-07b code commit.
-- 2026-06-23T01:40+02:00 — No route impact: slice 07b v1 gives `EventRiver.tsx` its one per-kind treatment (a `read.packet` renders "Read: <basename>" + the read's repo + full-path-on-hover, everything else generic) and adds `EventRiver.test.tsx`; no new panel enters the route inventory and the eight-panel route model this overview describes is unchanged — detail lives in the `EventRiver.tsx` / `EventRiver.test.tsx` sidecars. Verification metadata pinned until closeout stamps the slice-07b code commit.
-- 2026-06-22T16:00+02:00 — Route refresh (05o review round): `EngineRoom.tsx` keys its process-map canvas by the store `gen` so a dev-bench scenario switch remounts it cleanly (no cross-scenario overlay bleed), and the right-panel `BootTimeline` now renders a THREE-WAY sequence — Boot / Steady state / Tear-down — with the contract anchor leading the boot order and the abandon/conflict tear-down step states corrected; detail lives in the per-file sidecars under `panels/` and `panels/engine-room/`. Verification metadata pinned until closeout stamps the 05o code commit.
-- 2026-06-21T02:44+02:00 — slice 6g: `DetailPanel` became the task-document **master-series reader** — master overview + clickable sub-task index (pinned in the sticky head + in-section), in-panel drill-in into a slice reader with the back/parent up-link in the sticky panel header, markdown-rendered prose (`grammar/Markdown`), and cross-master "→" links + parent breadcrumb that jump lifecycles (`onOpenLifecycle`). Verification metadata pinned until closeout stamps the 6g code commit.
-- 2026-06-19T15:59+02:00 — Task 6 slice 6f-1: added `HighlightComposer.tsx` (+ `data/selection.ts`) — a cockpit-wide composer a text selection raises to send a context package (selection + message) into a chat session (single/selector/create-on-Enter + ＋ new chat), reusing the live stdin channel. No silent action. Covered by `HighlightComposer.test.tsx` + `data/selection.test.ts`. Verification metadata pinned until closeout stamps the 6f-1 code commit.
-- 2026-06-19T14:05+02:00 — Task 6 slice 6e-4: the **Chats** view's session registry moved into the `data/sessions` store, and every open session's `Terminal` now stays mounted (inactive ones hidden via CSS) so switching tabs no longer unmounts a live terminal; the backend PTY spawn (`serving/terminal.py`) gained a controlling terminal (`os.login_tty`) so tmux honors resize. Persistence covered by `Chats.test.tsx` + the new `data/sessions.test.ts`. Verification metadata pinned until closeout stamps the 6e-4 code commit.
-- 2026-06-19T06:39+02:00 — No route impact: an engine-room crash fix guards the `landing` read in `engine-room/EnclosureCanvas` (a node without the slice-5h `landing` field no longer crashes); the `panels/` route model this overview describes is unchanged — detail lives in the `engine-room/` overview + sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-19T05:48+02:00 — Task 6 slice 6e-3: the **Chats** view gained a `SessionComposer` (context injection) docked below the terminal — it sends a block of text into the active session's stdin as a bracketed paste (the on-ramp to 6f); covered by `SessionComposer.test.tsx`. Verification metadata pinned until closeout stamps the 6e-3 code commit.
-- 2026-06-19T04:38+02:00 — Task 6 slice 6e-2c: the **Chats** view's horizontal session tab strip became a left-rail **`SessionList`** switcher (extracted to a React Aria `GridList` component — single-select = active session, per-row close ✕; `SessionList.test.tsx`), and the per-harness launch buttons now share ＋ Terminal's golden look (the grey ones read as disabled). Refreshed the Chats Route Model bullet + the React Aria note. Verification metadata pinned until closeout stamps the 6e-2c code commit.
-- 2026-06-18T21:27+02:00 — Task 6 slice 6e-2b: the **Chats** view gained per-harness launch buttons — `fetchHarnesses` (`GET /api/harnesses`) renders a button per **detected** harness (Claude Code/Codex/Pi.dev, icon-left/name-right) beside ＋ Terminal; added `Chats.test.tsx` (detection-driven render). Refreshed the Chats Route Model bullet. Verification metadata pinned until closeout stamps the 6e-2b code commit.
-- 2026-06-18T18:00+02:00 — No route impact: slice 5h's ledger popover threads `officialLedger` through `EngineRoom` → `EnclosureProcessMap` (resolved from `analytics.ledgers` by repo) for the official coupler; the `panels/` route model this overview describes is unchanged — detail lives in the `engine-room/` overview + the `EngineRoom.tsx` / `EnclosureProcessMap.tsx` sidecars. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-18T17:40+02:00 — Task 6 slice 6e-2a: the **Chats** view became a **create** surface — a "＋ Terminal" control spawns a dashboard-owned shell session via the `POST /api/terminal` opener (no longer attaching to a store lifecycle), rendered as a closable tab. Refreshed the Chats Route Model bullet. Verification metadata pinned until closeout stamps the 6e-2a code commit.
-- 2026-06-18T16:50+02:00 — Task 6 slice 6e-1: added the **Chats** view (`Chats.tsx` + the lazy `Terminal.tsx` xterm wrapper) — the visible Mode B2 surface, the panels' first bidirectional-interactive surface (keystrokes/resize ↔ PTY over the `data/terminal` WebSocket). Updated the Route Model + the near-read-only invariant. Verification metadata pinned until closeout stamps the 6e-1 code commit.
-- 2026-06-18T15:00+02:00 — Task 6 slice 6c Part B: `DetailPanel`'s display-only gate banner became the **Gate Review drawer** — the durable gate's decision verbs POST to `/api/actions` via the new `data/actions.ts` (the panels' first write path); the proto-gate `ask` falls back to the display banner. Verification metadata pinned until closeout stamps the 6c Part B code commit.
-- 2026-06-17T22:45+02:00 — No route impact: the engine-room visual-parity pass (the 5g G6 backdrop + the restored
-  SVG decal layer + the `grammar/Panel` `fill` height fix) is internal to the `engine-room/` route and the
-  `grammar/Panel` primitive; the panels route model (the eight panels + their roles) this overview describes
-  is unchanged — detail lives in the `engine-room/` + `grammar/` overviews and the `EngineRoom` sidecar.
-- 2026-06-17T16:15+02:00 — No content impact: slice 5g G5 (Engine Room live/teardown overlays t12b/t14c/t18 +
-  the green=active engine palette + the enclosure-rail scroll fix) is internal to the `engine-room/` route;
-  the panels route model (the eight panels + their roles) this overview describes is unchanged — detail
-  lives in the `engine-room/` overview + sidecars.
-- 2026-06-16T03:50+02:00 — No content impact: slice 5f S5 added the Engine Room header's lifecycle-phase pulse (the `phaseChip` animates while the selected enclosure is in a human-gated landing phase, T12–T18) + `EngineRoom.test.tsx`; the panels route model (the eight panels + their roles) this overview describes is unchanged.
-- 2026-06-16T03:35+02:00 — No content impact: slice 5f S3 added `AttentionQueue.test.tsx` (a §9 blocked-start alarm-parity render test — no `AttentionQueue` source change; the panel renders items generically by severity) and the Engine Room T4 promotion morph (internal to `engine-room/`); the panels route model this overview describes is unchanged.
-- 2026-06-16T02:30+02:00 — No content impact: slice 5f S1 gave `EngineRoom.tsx` a full-width 3-zone layout (header + stack list | pod stage | boot+diagnostics-right, §4.2); the panels route model (the eight panels + their roles) this overview describes is unchanged — detail lives in the `engine-room/` overview + sidecars.
-- 2026-06-16T01:55+02:00 — No content impact: slice 5f S0's Engine Room motion foundations (the `useShouldAnimate` honest-motion gate, SVG conduits, and `worktreeGroup` keying) are internal to the `engine-room/` route — captured in its overview + file sidecars; the panels route model this overview describes is unchanged.
-- 2026-06-15T19:35+02:00 — slice 5e: reworked `EngineRoom.tsx` into an enclosure-centered process map
-  backed by the new `engine-room/` module (pure `buildEngineRoomModel` + Panda/React Aria
-  components: stack list, process map, boot timeline, diagnostics); added the `engine-room/` child route.
-- 2026-06-15T17:00+02:00 — Created for slice 5d: all eight panels migrated onto the `Panel` primitive +
-  co-located Panda styling, with React Aria `ListBox` (LifecycleList) and `ToggleButtonGroup`
-  (pivot). Verification metadata pinned until closeout stamps the 5d code commit.
+- Family excerpt arithmetic groups recorded addresses and distinguishes changed, resolved and unmeasured realization readings. [110]
+
+- Per-side resolution and observed identities attach to the same recorded-address key. [111]
+
+- **The new unit lane for the same arithmetic, its own statement of which inputs are constructed, and the pair of cases that state the whole key contract between them (recorded keeps two blobs at one path apart; observed may not, because two sides of one address legitimately see different bytes).** [114]
+
+- The compact control, its brief states and its disclosure (since MIK-L32 with the lane's count beside `+N −N`). [115]
+
+- The entry mounted in place of a change-set button. [116]
+
+- The leaf-scoped facts and re-validation generation. [117]
+
+- A history row's line: its effect, and its because targets as links. [120]
+
+- An incoming link from a history row names the record the row is about. [121]
+
+- The worklist panel: status line, degraded knowledge sides, currentness, worklist groups and gate linkage, with changed knowledge files opened in the change-set viewer. [125]
+
+- The read notice states the loading read, the unavailable read's failure and next action, the not-converted explanation, and a fallback that the leaf's worklist is unavailable. [126]
+
+- The notice says that it is computing, as a status region. [128]
+
+- The notice names the failure and its action. [129]
+
+- The surface's hook composes navigation, read cycle, cache, selection, refresh and retry, and the reading status. [131]
+
+- The read cycle: the read state bound to its question, and the task-context frame. [133]
+
+- The bounded cache of one mounted surface and its generation test. [134]
+
+- The one failure and refusal block, with the retry control of a network failure. [135]
+
+- One step of the walk: an in-tree selection keeps, any other selection and another comparison replace. [144]
+
+- A refresh starts the tree afresh and asks only for a scroll; the retry of a failed refresh is the refresh again. [147]
+
+- The mounted cases of the reviewer between a selection and its answer. [153]
+
+- Current ownership/control, without execution or runtime tool exposure inferred. [159]
+
+- The recorded-history block owns full step fields, strict states and native keyboard explanations, not a computed verdict. [163]
+
+- The intent entry always opens task-context review, supplying `review: {}` for a live and a closed leaf alike; liveness reaches only the `(recorded)` label, while summary state labels rather than gates the button. [59]
+
+- The subject-catalogue hook serves reviewer navigation, not task-entry admission; the task entry reads a summary and no catalogue. [60]
+
+- `DocChangeSetBar` checks whether any entry worktree has `codeWorktreeExists` or `memoryWorktreeExists`; that liveness labels the entry context recorded rather than selecting it, and is not catalogue-subject admission. [61]
+
+- The catalogue client and subject shape serve reviewer subject navigation; task-entry summary and clickability are separate. [62]
+
+> Retained earlier citation wording: - Artifact reader includes task reports and whole decision logs [165]
+
+- Non-authored field rows distinguish an absent value from a recorded empty string. The decision list and its preview number authored decisions from the oldest, draw the five newest, exclude product records, and keep the whole log one link away. Source caption: `fieldValue` [166]
+
+> Retained earlier card wording; superseded by the current account above: - The decision list and its preview: authored decisions numbered from the oldest, the five newest drawn, product records excluded, and the whole log one link away. [166]
+
+Retired at the fifth freeze d59c3493: dashboard/src/panels/review/ReviewReadCycle.ts:208-216 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit a5bec6c3b3b413cd3066d0e8d302b4854d1b513a; dashboard/src/panels/review/ReviewReadCycle.ts:169-227 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit ae2fd5c864aa2609ae45b5c7dbbaa693569aefc6. Retired means the anchor no longer stands, not that the cited subject was deleted [167]
+
+- Continuation admission checks identity and cursor; sparse claims preserve earlier content [170]
+
+- Walked families preserve prior reads but reset across incompatible comparison/selection [171]
+
+- Semantic triage counts returned facts, states unknown totals and keeps scoped weight at least unknown [172]
+
+- Classification cache shares successful acquisition but releases non-ready attempts [174]
+
+- Unlisted reads render the partial-inventory explanation. Excerpt marker loading renders its own status paragraph: `data-marks-state="loading"` with `intent marks loading…` for an excerpt and `reading this file's intent marks…` otherwise. Unavailable reads render the owner's problem code and detail, and content mismatches render the not-placed explanation. When none of those states applies, it returns no paragraph. [175]
+
+> Retained earlier card wording; superseded by the current account above: - Excerpt marker loading states the `intent marks loading…` note rather than staying quiet. [175]
+
+- Family expression keys use recorded identity; observed readings stay per side [178]
+
+- Network-only retry and intent-only source alternative remain explicit [181]
+
+- The comparison page's All code list identifies byte-form inventory paths as explicitly nonopenable [182]
+
+- Current intent entry uses liveness for the `(recorded)` label rather than to hide the entry or to choose a different record [183]
+
+- Collapse hook has one stored key set and toggle API [185]
+
+- Knowledge reads bind to address; reader shares records and responsive citation navigation [186]
+
+- Exact currentness mark words coexist with an open supplied-reason sibling.  Artifact reader includes task reports and whole decision logs [165]
+
+- The task list head owns the attention bell and the actual row renderer. [190]
+
+- The bounded Popover/Dialog retains source-scoped queue actions. [191]
+
+- The remaining Operations rowState and treeRows modules own task-row facts and hierarchy; the removed chat activity indicator supplies no current state owner. [192]
+
+- The hand-kept snapshot payload provides the generated timestamp. [57]
+
+- **The two readers share one hoisted helper — `unlistedPathNote` (`FamilyReviewCenter.tsx:87`), called by the member attribution at `:139` and by the family expression row at `:275` — while each renders a listed path separately: the attribution inlines its own branch and the family side uses `listedOrPlainPath` (`:286`), so no two-shared-owner guarantee holds.** [112]
+
+- Selected family and invariant centers join recorded steps to their own identities and preserve independent guarantee/statement/source/evidence content. [162]
+
+- Four product destinations, Chats default and retained Operations/File/Knowledge composition Family-center order shares the outline ranking while retaining the semantic revision roster. [164]
+
+- The task-page grant switch keys on native planned stage and the document subTask kind; other granted states show bare words. This does not move grant authority into the browser. [193]
+
+- Whitespace-only classification preserves ordered non-whitespace tokens; rewrite ratio is strict, and bounded list alignment is a separate no-guessed-pairs mechanism. [177]
+
+- Technical details projects the current payload without restoring retired assessment/evidence envelopes; open main facts remain a separate owner. [136]
+
+- Semantic statement states and selected-revision operands govern rendering; missing/unresolved is not known absence. [180]
+
+- Current composition owners for the review page account. [199]
+
+- Current shell owners for the review page account. [200]
+
+- Current navigation owners for the review page account. [201]
+
+- Current reads owners for the review page account. [202]
+
+- Current selection owners for the review page account. [203]
+
+- Current chat owners for the review page account. [204]
+
+- Current tray owners for the review page account. [205]
+
+- Current watch owners for the review page account. [206]
+
+- Current cache owners for the review page account. [207]
+
+- Current model owners for the review page account. [208]
+
+- Current markers owners for the review page account. [209]
+
+- Current tree owners for the review page account. [210]
+
+- Current family owners for the review page account. [211]
+
+- Current source owners for the review page account. [212]
+
+- Current lane owners for the review page account. [213]
+
+- Current details owners for the review page account. [214]
+
+- Current sort owners for the review page account. [215]
+
+- Current traversal owners for the review page account. [216]
+
+- Current worklist owners for the review page account. [217]
+
+- Current layout owners for the review page account. [218]
+
+- Current focus owners for the review page account. [219]
+
+- Family/member semantic slots preserve guarantees, meanings, realization resolution, evidence and subject worklist; the reading page owns code blocks. [109]
+
+- Inline lane content and Full page actions share one comparison-bound lane read and retained overlay filters. [11]
+
+- Selected semantic details retain the subject worklist/knowledge notice owner; page-level Worklist is separate. [122]
+
+- ReadingContext passes only the matching leaf-wide worklist to page cards and selected semantic content. [123]
+
+- PageReading places WorklistView in the reading-column replacement slot; selected semantic details retain their own subject worklist. [124]
+
+- useChangeSet owns leaf-wide trees, shown-invariant cards, summary and lane; one model feeds both columns. [127]
+
+- useChangeSet supplies one comparison-scoped lane read to page content and held comparison-page facts. [13]
+
+- Operations’ ReviewMain mounts the optional-subject/history reviewer beside the stable shared task chat. [130]
+
+- Page structure persists over an admitted frame; TechnicalDetails labels subject records from shown answers only. [132]
+
+- ReadingColumn is the persistent reading scrollport with page-level notes, summary, subject sections, lane, canvas and details. [137]
+
+- changeSetModel applies the shared sort to subjects/locations without inventing semantic or source facts. [138]
+
+- One Sort uses review.tree-order.v1; Priority defaults and legacy triage maps to Priority. [139]
+
+- Traversal follows displayed changed blocks then loaded lane hunks and excludes continuation controls. [140]
+
+- useBlockTraversal selects through the page owner and binds the reviewer-zone commands only while the overlay is closed. [141]
+
+- Traversal end status is scoped to the committed stop identities. [142]
+
+- ReviewTree renders the shared model, tree-only filter, Changed/All view and one Sort. [143]
+
+- useReviewPage advances the walk and supplies one selection/model to the tree and reading column. [145]
+
+- Every page selection advances tree intent; ordinary in-page selections keep the walk while explicit outside callers reset it. [146]
+
+- Kept families feed the shared change-set model; ReviewNavigation no longer mounts a separate family catalogue control. [148]
+
+- Previously read kept families retain admitted semantic context under the shared page model. [149]
+
+- Selection focus lands locally on the tree after the relevant answer, preserves moved focus and keeps failed/refused requests for retry. [150]
+
+- The page’s subject content renders recorded effect facts while compact tree rows keep their own single-line presentation. [160]
+
+- ReviewTree’s compact rows are navigation over the shared model; semantic records remain in reading subject slots. [161]
+
+- Reading page context remains mounted while selected answer status changes; the comparison overlay retains the hidden inert page underneath. [168]
+
+- ReviewSurface owns the keyboard zone; ReadingColumn or stacked ReviewMain owns vertical scrolling. [169]
+
+- Block traversal excludes unknown/unchanged blocks and admits loaded lane hunks in file order. [173]
+
+- Marker Back restores subject, family selection and worklist, then returns focus to the origin marker. [176]
+
+- Page cards and selected subject worklist content require the same comparison’s matching leaf-wide worklist. [179]
+
+- Compact tree row labels and reasons come from the shared model, preserving one line and complete accessible names. [18]
+
+- useChangeSet shares one leaf-wide comparison with model/cards/worklist; useSurface wires active live memory invalidation. [196]
+
+- ReviewBlockCard renders a shared region with entry-specific rationale and tray actions. [24]
+
+- changeSetModel groups shared regions and gives one order to tree and reading content. [25]
+
+- Page card reads are tree-comparison-bound; worklist marks use the matching leaf-wide comparison. [26]
+
+- ReviewSurface owns page markers around ReviewGrid and ReadingColumn; ReviewWorkspace supplies selected semantic content. [8]
+
+- The task document head offers one canonical-reference task pick only when that reference exists. [220]
+
+- A locally opened citation shows the Knowledge aside before selecting its citation. [221]
+
+- The Knowledge document column provides shared tree and outline toggles. [222]
+
+- Knowledge sidebar toggles follow the responsive tree and aside layouts. [223]
+
+- The Knowledge toggles stay in the document column while the aside and its resize handle are hidden in place. [224]
+
+- The mounted citation case checks recovery from a hidden aside while retaining the same prose node, scroll position and path address. [225]
+
+- The mounted current capture renders four distinct family-expression rows for five recorded membership occurrences. The collapse counts sum to five, the largest is two, the verdict names both counts and distinguishes them from the comparison's measured change set, and five membership openers remain. This current case does not assert every row's data-sides or per-side readings. The former every-row side-check claim is superseded historical evidence, not current execution. Historical former note (superseded): **The mounted case: the rendered count is the body's distinct excerpt set, every row's collapse count is the body's own group size, and EVERY rendered row's `data-sides` is checked against the sides the body resolves that excerpt on — the page's own both-sides sentence verified row by row against the body, not read from the page.**  Anchor: "renders the family's changed expression excerpts, deduplicated, over the captured family"; `dataset.sides` [226]
+
+- The Chats cockpit keeps RoleChatsPane mounted while hidden; no SessionsView is mounted. [42]
+
+- The persistent Chats layer mounts one RoleChatsPane; no SessionsView selected-context wiring is mounted. Anchor: `RoleChatsPane` [43]
+
+- `CockpitShell` defaults `initialView="chats"`; `VIEWS` is the four-entry product bar. [47]

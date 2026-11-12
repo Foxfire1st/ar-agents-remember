@@ -1,0 +1,50 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/legacy.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The bounded legacy proof retains unfinished memory intent after verified code without a ledger message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb0549bd6378472daeb27dd2811a0d538195502b",
+            "content": "sha256:1ea30eeca47a40d1d3034b394e8eb58e3a4a978fb4ed39b560805d337ad5697e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_exact_original_bytes"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fb0549bd6378472daeb27dd2811a0d538195502b",
+            "content": "sha256:f76ea65e453bb804baa5c297f8aac663eb59feb7aa8e0f752068aec5c0f8a4e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LegacyCloseoutMigrationProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The module defines `LegacyCloseoutMigrationProof` as its public seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "fb0549bd6378472daeb27dd2811a0d538195502b",
+            "content": "sha256:f76ea65e453bb804baa5c297f8aac663eb59feb7aa8e0f752068aec5c0f8a4e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "LegacyCloseoutMigrationProof"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

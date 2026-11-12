@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "test_mcp_reference_rows_name_exception fails when either row drops \"Bounded pre-locator exception\" or \"records the why in the surviving contract\"."
+  },
+  "applicability": "The worktree_cleanup and worktree_abandon rows of docs/reference/mcp-tools.md.",
+  "conditions": [
+    "docs/reference/mcp-tools.md is the one MCP tool reference; it has no packaged copy."
+  ],
+  "exclusions": [
+    "Product behavior itself, owned by the code entries.",
+    "Whole-sprint archive authority, which no current reference or skill text states since this leaf removed the w-02 closeout workflow that held it."
+  ],
+  "id": "INV-4ST2K1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "M1 verdict L82-MEM-M1-F01 + R4 evidence: test_enclosure_doctrine_parity.py (seven tests); notes/reports/l82-code-review-R2/doctrine-parity.json (20/20 match); notes/reports/l82-code-review-R2/focused-pytest.json + .stdout"
+      ],
+      "path": "notes/reports/260928-MIK-L82-curator-handoff-list-m2.json"
+    },
+    "handoffEntry": "L82-MEM-M1-S-08",
+    "leaf": "260928-MIK-L82",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The MCP tool reference's worktree_cleanup and worktree_abandon rows state the bounded pre-locator (no-remains) exception and that it records the why in the surviving contract.",
+  "status": "retired",
+  "supersedes": [
+    "INV-NY15B8"
+  ]
+}

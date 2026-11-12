@@ -1,0 +1,131 @@
+{
+  "path": "mcp/tests/test_stored_gates.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stored-gate refusal preservation: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_by_a_stored_gate_names_the_way_out_and_no_removed_tool"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The stored-gate refusal matrix now includes closeout-preview and integration-dry-run alongside real integration and prior refusal cases. Each requires the removed-stores way out and forbids removed tools/new gate channels; direct handover refusal retains its exact coded blocker, reason and non-tool nextOperation. These are source/assertion facts, not new executed evidence.\n\nAnchor: `REFUSALS` `test_a_refusal_by_a_stored_gate_names_the_way_out_and_no_removed_tool` `test_an_integration_refused_by_a_stored_handover_gate_names_no_next_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:6583539e8dcfb693f1ff5b7eb29c0b118b006f5b138c91355ba854ed96adc291",
+            "locator": {
+              "kind": "symbol",
+              "name": "REFUSALS"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:b3dd2f993f595eba3195a65747f9bd64f06cac1535f68f46dc424656288bed8a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_refusal_by_a_stored_gate_names_the_way_out_and_no_removed_tool"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:476b900cd02c924eef93e09ba981d1fa4a8edc4a52c8689f895b85baa8af783c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_integration_refused_by_a_stored_handover_gate_names_no_next_tool"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:999bdb7975365f379c3498fc4472c1605a79356831cd722b74c41df694591784",
+            "locator": {
+              "end": 265,
+              "kind": "line_range",
+              "start": 251
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:4acfeb0c62fbcf3de5a63c9e1a4fc2c4443eedfa3757c5cff107fbaae756026d",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Absent approval has no store footprint; an existing approval is spent exactly once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:e992f9c11ed1454cd7cba91ffb9d0d96ad78ce94a4546a9c22fe3daac8d86cfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_gateless_claim_leaves_no_lock_and_existing_approval_is_spent_once"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The retained closeout refusal assertion preserves the exact gate-enforcement reason and removed-stores way out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:8cd559879d28ef51f47323cfe8c44f46a4390502a1427eed3e29e59cf7b91c53",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_closeout_refused_by_a_stored_gate_keeps_its_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Stored gate read and claim refusal stays on the retained closeout route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a6aba75c6b1c883ea06ccb9308b890b0fb46cea0",
+            "content": "sha256:19680dbf9a0ae6ca140df60ca87416f39295a4e69f5c47e8c98ec3d17778227d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closeout_gate_refusal"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

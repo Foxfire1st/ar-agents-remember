@@ -1,0 +1,92 @@
+{
+  "path": "mcp/tests/test_paseo_runtime.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "a625f100c801bea1cb9717637d2070e265404514",
+        "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
+        }
+      },
+      "facet": "Runs all three commands without the block and checks named refusal, exit two and no process operation.",
+      "id": "PRF-RS8GEW",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §2",
+        "leaf": "260928-MIK-L90"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a625f100c801bea1cb9717637d2070e265404514",
+        "content": "sha256:8231e420630317f165fea1146ac7cb9f724e0579c8428f36d48c43eb9e2af86b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment"
+        }
+      },
+      "facet": "an absent block is the named no-host state and the three commands refuse it before any process runs",
+      "id": "PRF-SBF68B",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "L96 reconciliation: settings version is not the pin (INV-9XEW06)",
+        "leaf": "260928-MIK-L96"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "a625f100c801bea1cb9717637d2070e265404514",
+        "content": "sha256:40a62f1c987b26223a1cbf9bcd1fc4e67b2dfba0f7716dc3c107f6b2a9d2231d",
+        "locator": {
+          "kind": "symbol",
+          "name": "PaseoRuntimeTests.test_other_version_is_replaced_and_a_failed_install_changes_nothing"
+        }
+      },
+      "facet": "Checks a mismatched install is replaced and a failed staged installation preserves the preceding install and daemon.",
+      "id": "PRF-ZJCHJP",
+      "invariant": "INV-2MWAYK",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §7",
+        "leaf": "260928-MIK-L90"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Provision, reload, restart, failure, rollback, process-record, status and stop behaviour is asserted in this file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a625f100c801bea1cb9717637d2070e265404514",
+            "content": "sha256:0563a45fff8d47b45806ec4c7ddae0dcaa2dd4bc6f90425d2cbf458bc7f5cb9d",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoRuntimeTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The runtime cases are contract-sourced: each recorded call is checked against what the pass was allowed to do.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a625f100c801bea1cb9717637d2070e265404514",
+            "content": "sha256:606b1bf54d5745fcb7088bc909065ddfee5403da1f4b64edd5e95d58aec40799",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_reload_or_untouched_follows_what_changed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

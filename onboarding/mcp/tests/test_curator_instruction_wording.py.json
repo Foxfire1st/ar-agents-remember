@@ -1,0 +1,277 @@
+{
+  "path": "mcp/tests/test_curator_instruction_wording.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The Manager and Orchestrator decision lists, the three durable files and the four developer-needed categories with the once-only final report are present at the candidate.",
+      "id": "PRF-0DCHVF",
+      "invariant": "INV-NFV5VJ",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-rules3-4-decisions",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:2784247703adc1e43cba86b6ac1f4f9a4319aaf49d06b318f6c2465ae04c16ba",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_manifest_descriptions_follow_the_coordination_default"
+        }
+      },
+      "facet": "The four composition-manifest seat and purpose descriptions state the one-Manager/one-Orchestrator default and the developer's choice.",
+      "id": "PRF-0E0V75",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The coordination leaf-repair sentence and the Architect's delegated-versus-direct repair and evidence sentences are present at the candidate.",
+      "id": "PRF-0TFF0B",
+      "invariant": "INV-5KBX7C",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-repair-and-evidence-actor",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "Each Architect, Manager, Orchestrator, planning, coordination and router sentence that states the one-agent default and the two developer choices is present at the candidate.",
+      "id": "PRF-0YJ58R",
+      "invariant": "INV-A6GAKX",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-one-coordinating-agent",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The second-master instruction, the existing-Manager reuse, the durable reporting-recipient record and the developer-answer relay are present at the candidate.",
+      "id": "PRF-4FX9HW",
+      "invariant": "INV-683GA3",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-second-master-transition-and-answer-relay",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The pinned clause list requires the Architect Boundaries paragraph with the freedom, its custody limit and the kept landing-step sentence, and the same clause reports a sub-failure when the old prohibition is restored (evidence/wording-fail-before.txt).",
+      "id": "PRF-5448EZ",
+      "invariant": "INV-P2WRNQ",
+      "origin": {
+        "handoffEntry": "MIK-R184@v1/A1/CODE-R1",
+        "leaf": "260928-MIK-L182"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "Requires the delivered curator text to state the full-intake worklist duty that remains after D92 replaced the fixed fan-out policy.",
+      "id": "PRF-D682YJ",
+      "invariant": "INV-208SQT",
+      "origin": {
+        "handoffEntry": "R99-curator-worklist",
+        "leaf": "260928-MIK-L99"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The wording case requires non-leaf checks to be assigned to Investigator by the actual permitted coordinating role; a forbidden start is routed to the known parent/reporting recipient, and a parentless role reports in its own chat without inventing an Architect. This is source-clause coverage, not a runtime role-start result or a fourteen-tool census.",
+      "id": "PRF-EP4JYF",
+      "invariant": "INV-NC6F6V",
+      "origin": {
+        "handoffEntry": "L112-current-coordinating-investigator-proof",
+        "leaf": "260928-MIK-L112"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "Pins normal mounted/admitted serving-build authoring and the scoped same-tool/input-class correct-write exception in the Curator role; it does not assert an absolute no-other-route ban.",
+      "id": "PRF-PC91ZT",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "L62-CUR-6414-replacement-proof-PRF-N575P7",
+        "leaf": "260928-MIK-L62"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_current_coordination_and_curator_rules"
+        }
+      },
+      "facet": "The Architect's answer-first sentence and the role-agent message reading are present at the candidate.",
+      "id": "PRF-RFP8Q1",
+      "invariant": "INV-PEVJ6G",
+      "origin": {
+        "handoffEntry": "L72/MIK-R72@v2-developer-answered-first",
+        "leaf": "260928-MIK-L72"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+        "content": "sha256:9404f28c9b94cc34cfbbd423df8400ef457ee2266028cfb6269885c6a3aa7b17",
+        "locator": {
+          "kind": "symbol",
+          "name": "CuratorInstructionWordingTests.test_the_curator_writer_is_admitted_for_the_selected_runtime"
+        }
+      },
+      "facet": "Requires the Curator's role and operation text to carry the writer admission by reference and the parser to refuse the retired publication options.",
+      "id": "PRF-S4JV63",
+      "invariant": "INV-945YZ4",
+      "origin": {
+        "handoffEntry": "MIK-R194@v1 rule 10",
+        "leaf": "260928-MIK-L186"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The Curator wording guard names mounted knowledge_write or the admitted serving-build CLI, explicit file-write commit, and the scoped correct-write recovery exception; it does not assert unconditional route exclusivity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e8836e6629aac4f9d8b4422d7d025fc4968e05f71838806c1fa4726c187b0a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_current_coordination_and_curator_rules"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The writer admission is pinned in the role, serving-build detail, publication report and operation texts, and the parser refuses the removed options with exit 2",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:9404f28c9b94cc34cfbbd423df8400ef457ee2266028cfb6269885c6a3aa7b17",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_curator_writer_is_admitted_for_the_selected_runtime"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The foundation and correction cases require a real task/enclosure, producer handoff-check evidence and correction of every contradicted body claim. Manager publication is distinguished from organizational completion, and sentence/card scope controls remove each actual clause to prove the guard fails. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:cceba0f912b6ae3b1d9e0a2807d0bd64d67132cfb257aa9ddacf1b5180750436",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_foundation_intake_and_correction_keep_their_task_and_truth_boundaries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The coordination detail must be offered at each of the eight failed-scenario steps of the compiled capsules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:6372bb12bab919bbcb9a627dcadaf8a4d2e294d5d40843b7948bd3bd41c687c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_coordination_detail_is_offered_at_all_eight_failed_scenario_steps"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The compiled-capsule helper comes from the capsule-delivery proof module.\n\nAnchor: `_compiled_outcome`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e93d8f10bc735da4775908e8a6a7274e3f2fa9e",
+            "content": "sha256:4e298a5480a7e34d6a4b766218a8b16a81f9cd613f17dfd641bafce984120ad5",
+            "locator": {
+              "end": 39,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

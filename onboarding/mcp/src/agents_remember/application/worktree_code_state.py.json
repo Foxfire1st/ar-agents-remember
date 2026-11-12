@@ -1,0 +1,43 @@
+{
+  "path": "mcp/src/agents_remember/application/worktree_code_state.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e0e16888c5a50b682656243fe3fc8bfa44ae76c9",
+        "content": "sha256:c1ea68c946496886de9d538264ef3ce55d73377c7083c4ab9f0ee56360883a15",
+        "locator": {
+          "kind": "symbol",
+          "name": "ObservedCodeTree"
+        }
+      },
+      "id": "RLZ-XE7S1W",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The observed tree is a value with its state, so every caller states commit or working-tree from the same fact instead of re-deriving it.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "e0e16888c5a50b682656243fe3fc8bfa44ae76c9",
+        "content": "sha256:cc9360bc2e8ee841ddd920f49139c44b5dee5f4623199c81ab3e041f76f208de",
+        "locator": {
+          "kind": "symbol",
+          "name": "hold_observed_code_tree"
+        }
+      },
+      "id": "RLZ-Z0AMVN",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is the single decision that turns a checkout into the tree a read answers at: a clean tree is the commit, a dirty one is captured, and the capture is returned for the caller to hold.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                            |
-| path                   | `mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-03T12:30:00+02:00                  |
-| lastVerifiedCommitHash | `99dc249bd507c20b09ece1169c2b1fa2af8e8c1b` |
-| lastVerifiedCommitDate | 2026-09-02T05:53:10+02:00                  |
-| governingOverview      | `overview.md`                             |
-
 ## Governing Overview
 
 [closeout integration overview](overview.md)
@@ -63,19 +53,19 @@ the census from reading outside its own tree.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The configured Domain Documentation registry is empty; no external documentation claim is made.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Exact owning record-class enumeration. | `LEGACY_INTENT_RECORD_CLASSES` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py:20-25 |
-| The census model with bounded unreadable rows and zero-population proof. | `TaskIntentLegacyCensus`; `remaining` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py:40-54 |
-| The four live-container scanners and the per-row intent classifier. | `task_intent_legacy_census`; `_count_intent` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py:61-85; mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py:213-230 |
-| The removal refusal until readable zero population. | `require_task_intent_decoder_removal` | mcp/src/agents_remember/worktrees/integration/closeout/task_intent_legacy_census.py:88-98 |
-| The validator shared for current rows. | `TaskIntentIdentity` | mcp/src/agents_remember/models/task_intent/__init__.py:55-59 |
+- Exact owning record-class enumeration. [1]
+- The census model with bounded unreadable rows and zero-population proof. [2]
+- The four live-container scanners and the per-row intent classifier. [3]
+- The removal refusal until readable zero population. [4]
+- The validator shared for current rows. [5]
 
 ## CCR-R02@v2 Legacy Cutover
 
@@ -84,11 +74,3 @@ decoder/currentness boundary may materialize a typed `missing-intent` sentinel, 
 compatibility decoder is removed when a deterministic census reaches zero across every owning
 record class. This module implements that census and removal gate for the landed L25 candidate
 (`99dc249b`).
-
-## Update History
-
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  created this card for the new legacy task-intent census (`task_intent_legacy_census`,
-  `require_task_intent_decoder_removal`, the four scanning owners, bounded-problem handling);
-  documented the zero-population decoder-removal gate and the exclusion of historical generations.
-  Verified at code commit 99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.

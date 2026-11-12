@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/gitTrees.capture-provenance.json",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "When, by what command and at which source tree the bodies were captured, and over which scratch leaf.\n\nAnchor: \"captured_at\"; \"scratch\"; \"source_tree\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:c35791c31bc6e89c51d738f75c496a889510b100989380cd41a2e80a470df016",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 2
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "One receipt row per captured body, the cards read's with its seven invariants.\n\nAnchor: \"fixtures\"; \"gitTrees.cards.captured.json\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:39cc2399b220fdba027f055c95da187fc57971e07038dd05874d1455d044d1af",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 9
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The tree the capture ran at, and why the later sync keeps it representative.\n\nAnchor: \"tree_note\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "209e45f182a9af6d8819dc68e9669752abef54bf",
+            "content": "sha256:e36c465779b8551ae05b5ab406f6d3f4e5e8a421c52cfb4dd21489093ba6397a",
+            "locator": {
+              "end": 82,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

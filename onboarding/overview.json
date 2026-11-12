@@ -1,0 +1,3929 @@
+{
+  "path": "overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The skill describes immediate-parent identity assertions; actual leaf target resolution requires the exact leaf/master/row and refuses the retired standalone fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:4357c9332bc368600523e68b45bd67bec7d54f4a8ecb52de5c90b49808bc6bc0",
+            "locator": {
+              "end": 189,
+              "kind": "line_range",
+              "start": 113
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "100": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The mutation classes that invalidate the closeout queue projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "85f114bd0c22ec4da82807255db52e5107afd7ff",
+            "content": "sha256:4e77b2a1a88bc765ec36507e0e735caefa2e8b5fc79ab93ed78346ea10fddc65",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentMutationClassification"
+            },
+            "path": "mcp/src/agents_remember/tasks/document_field_effects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "101": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The observer's graph projection reads the resolved row statuses directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "126c6bf624775635e3e6217632fd90455ba23e8f",
+            "content": "sha256:fd1c703a68b94ebeedb8ab979e4db17dd77105e98fec1da998c4f2bd4c7251d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_node_is_resolved"
+            },
+            "path": "mcp/src/agents_remember/observer/projection_graph.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "102": {
+      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A review comparison on converted memory is four Git trees pinned by refs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a443dea86729b9cb6bb9c1c0d74a1d53931c6c93",
+            "content": "sha256:d5f3a51648e530c865d620beda11d1ea1d153ffb54066f09fde040e685a9038e",
+            "locator": {
+              "end": 30,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/review_tree_comparison.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "103": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The route rules are reported inside the writer and refused by every commit route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d0fd44f3dd129ddde8d51e1df229c8c44f0e57a",
+            "content": "sha256:9c18ade5d132bce2e8f70b617cdf9b870e42b5ec6ac1db0de0359af9a9a747c3",
+            "locator": {
+              "end": 15,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "104": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The file-writer route of the two commands and the crossing route.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "19dcfe69c391f0df0341bdd52a11db4c0fcb86ff",
+            "content": "sha256:40f1b466c4acc52f29a8ed19955bc907f19bdf9f258e0d11c8b922e65cb4e241",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_write_route.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "105": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The worklist kind for an invariant that was already stale at the base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4d09d46688a0edd9240b5868622586bc0edf9a66",
+            "content": "sha256:602d624a4f96ea3eb3fb0d25e86b632c8067ab37a2aeeac9d0feafd0ae9a5423",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 129
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "107": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The host-scoped provider setup lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ac272c408cc58c4f2a7d8cf98b30da3abf86280",
+            "content": "sha256:ea936089f21faf4a8748d82af548fa84c5d35333e4b7d5f373f78e53c0275e11",
+            "locator": {
+              "kind": "symbol",
+              "name": "fleet_setup_lock_path"
+            },
+            "path": "mcp/src/agents_remember/providers/provider_setup.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "109": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The GrepAI clone has a stall watchdog and no total-time cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "094678c6dc73c99b45194420c9826d4575046ed6",
+            "content": "sha256:3e13866b731f79488de6fc1864b3f95a0acb7c3fa3f27b8d96838581b16a1c34",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 257
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "110": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The CodeGraphContext seed export is bounded by the provider-setup cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4b5990d104c1997d9e7a787055251def913e3e45",
+            "content": "sha256:57d07d2b4d565bdfd29a6abe5640e72b299b0ff8374068a570fc8a05b48260c2",
+            "locator": {
+              "end": 587,
+              "kind": "line_range",
+              "start": 583
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/seed.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "111": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The states of the CodeGraphContext graph probe.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ec7a73699adfcbd97c4752de13a557e699b4e3",
+            "content": "sha256:e96d62bde35059a957f9896085c5831526d9e18f654483b214341d51cba4ba71",
+            "locator": {
+              "end": 295,
+              "kind": "line_range",
+              "start": 282
+            },
+            "path": "mcp/src/agents_remember/providers/cgc/lifecycle/installation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "117": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The serving layer is transport over the observer projection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b3d3defdb4cf080e6022f767185d7447886a8b42",
+            "content": "sha256:f725e9d4cb8b83dffab582cd18922c337540380cc785b98a8550186933fffea5",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "121": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The dashboard bundle placement, its freshness proof and its check mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+            "content": "sha256:b6c6aeb3f720739e03b990c223bfd53d713153e615ff8f630f7631c60295d3eb",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/sync-dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "122": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hook gate's tiers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "content": "sha256:5da6bcb1e5bc4e198aed174974ca82030cb1458a4810fd23bf6dd5511de2d96b",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "123": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The fast tier parks unstaged and untracked content and restores it on every exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "content": "sha256:7e9f1dc3267afa3d829234b9768060fabdd0a2e2bc3a16d07d5cec96307df0d8",
+            "locator": {
+              "end": 319,
+              "kind": "line_range",
+              "start": 249
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "124": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The fast tier's checks, with the validator of the two test catalogs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "content": "sha256:c3990657ce48bfc68ba7d342108feb8e693c0ae75c9a8f25654718abd5ba5dd2",
+            "locator": {
+              "end": 234,
+              "kind": "line_range",
+              "start": 195
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "125": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The staged-quality preparation refuses a checkout that is not a task worktree, then resets and stages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:9e444b5766680f6fd5f95f66dc6ba8553de7109a84a8a492a0497b7f6476e7f7",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "126": {
+      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): A candidate tree is captured through a private index.\n\nAnchor: `worktree_candidate_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "127": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The pair identity of a memory candidate and what its digest covers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc66e6f6c1b8a6c8eb95a91ba4eca67a44262441",
+            "content": "sha256:7c4048ca018b3131c8a49a59b28eea3d4ff94ff7c0de017977badeb31170f8d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryCandidatePairIdentity"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/memory_candidate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "128": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The final full memory-coherence certification.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b6b3583faa1c4f99e451e008340a2a6fea724ccf",
+            "content": "sha256:55d62711708c12afbc553c96932bee256fa7714690df803c6b5d8e81136b3736",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/memory_quality/final_certification/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "129": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The charters of the certification and control-plane packages.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:51c33a8cb5b558bd1035c6fa5fd9d8eff75a98a7eb57c60c8e83d93c29b3866e",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "130": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Ruff's complexity rules and the one per-file ignore.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:22b47af4643ca57af5fc2b20ea693b15dc794169080cdd900465ea6c0361df12",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 7
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "131": {
+      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The Git runner gives the child no standard input unless text is passed.\n\nAnchor: `run_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "132": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The vendored vocabulary is verified before tiktoken reads it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b71d7410af34a31e3cb8133c3c785b598e2b6cc8",
+            "content": "sha256:ca6cefaa9df2a35bfd70801ecd52aefb39ce45e5ed8f96d22ba93a92f265089d",
+            "locator": {
+              "end": 48,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/models/tokens.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "134": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Requirement revisions and delivery attempts are separate.\n\nAnchor: `Keep requirement revisions and attempts distinct`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "501b96a5acb3bdfadafb7523aac5e9561ea9fbca",
+            "content": "sha256:a66e9b5d8ddc4563dd8b825b990dfac971f4b2bf3f06491854fa3928bf526db3",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 62
+            },
+            "path": "skills/l-01-agent-lifecycles/core/acceptance.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "137": {
+      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): The launcher seam: AR resolves the role hierarchy, task capsule and report scope, Paseo owns the agent session, and the receipt updates no AR state.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:d464b721ab61acb5e0c79ad3210870eadeddf5510a8dc5f096c0c0468b32f7e5",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "138": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The reader config of a call that carries a task context comes from the leaf's admitted enclosure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:c77efbfb050d869b9f27ef2d986531d94886b51cb75ed7194758cf016ae87393",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "139": {
+      "note": "build_parser requires a subcommand, registers dashboard, and delegates memory, knowledge and runtime/settings command registration to three helpers. main parses the public command arguments and calls the selected handler; its internal leaf-enclosure entry is handled before that public parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "140": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The lane loader refuses a catalog that is not in canonical form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "141": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The lifecycle loader refuses a catalog that is not in canonical form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:23518a0af72ef4dc3997947891ca4d6ee6f7de8ec29e32be72acc5c6a234b851",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "142": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Launch-capable provider operations re-read the providers map from disk.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:8a68d04e793048821ea0d878219221b984f7f099d44d098ca49782e676f796e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderAuthority"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "143": {
+      "note": "The carryover request names its code/source/target roots and candidate kinds. Plan and apply require both memory roots to be converted and to share a compatible layout; unconverted or incompatible memory is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:a9ea3272fd38fe4c1bf85435dc265806b7ab4b4d03b6ca15f171e44fd2842ee6",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:c27596101e202c7522936c11acda0030fe36562a4e79b608bfcefa46ac9f005b",
+            "locator": {
+              "end": 210,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:cedf8b3b35cfdfc50a69cd82486c319ac593b34beda7f787a48e29642a0ca178",
+            "locator": {
+              "end": 323,
+              "kind": "line_range",
+              "start": 315
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b75a555341ba3c926124abb7a74b388b1c9d2a9",
+            "content": "sha256:42c95a084160351066eecc155bd26856ac26e41c4d89bf90896078f9ff2e72c6",
+            "locator": {
+              "end": 286,
+              "kind": "line_range",
+              "start": 271
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "144": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The shared host entry the install composes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+            "content": "sha256:ebab7a90111a508b1555ff8649d4494215fcd6c5cb72754a2ae8e05003b771f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "install_host"
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "145": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The start-only supervision.\n\nAnchor: `start-only supervision`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "26dcce17a3c64c18fe86c72366bf2522c16cc810",
+            "content": "sha256:ec4fa578e3998dcb58bb8340a16da758166aca5cd3d16624acc51f0c86a257d6",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/paseo/paseo_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "146": {
+      "note": "The Investigator examines one scoped concern and writes a report, distinguishes observed facts from hypotheses, and names the owning Worker or Curator for needed code or memory changes. It edits no code checkout, memory or task document and starts no role; a separate order grants no Worker or Curator authority.\n\nAnchor: `A separate order never grants this role Worker or Curator authority`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "23bfca4e88babb87f154a00a7d88d117d67c4614",
+            "content": "sha256:4a0dfeab70995c88c469397b1f859e6244c27cbf55e00ccb7cb3047b3ca31b73",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/investigator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Historical pre-R53/L53 rollout account, not current ordinary admission: a changed source file’s card and its governing overview used counted change or history row. The explicit amended L53 changed-card exception remains bounded to L53; ordinary source-current rows are required by the successor doctrine.\n\nAnchor: `onboarding_trace_result` `onboarding_item_open`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:03c5c38551d226a35e616eecb92955463412ef3dd7d176f0ebda53d699fbe1ea",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Proofs are read back for the invariant and family views, and the invariants without proof are listed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:a93149acd13b28d7cc7269bf7f544c108ebe08ce280d1bf40c5793d63595321a",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_view_proofs"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_proofs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:8333fbf13d5462c4ac2852b0cd31fd32c954fec10fd08db8e7cc7d97e6202200",
+            "locator": {
+              "kind": "symbol",
+              "name": "invariants_without_proof"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_proofs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Text files in the memory repository are the source of truth for knowledge.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8ac4dd703c29a4c4d267adce8f4f66840cef8cb",
+            "content": "sha256:2e29e388b3594920e9b7e4327d3998538a9c35ac76fa5d4980d4496a723b775e",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's writer input section.\n\nAnchor: `## The writer's input sections`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:d3c1273715f3b7fcc23d52d26d9e97f95de76f183b00dd1411403b29f9e9b21b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The curator file writer refuses a memory tree that is not converted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCONVERTED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's family-routes subsection.\n\nAnchor: `### Family routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:232c783c7ade9b3d42addb6e01b45f65db2eebbfff4e51e48877c51f02bab19c",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A converted memory tree is selected as a tree, and the database file inside it is not read.\n\nAnchor: `converted_memory_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2257653c8f42c1861ece020b7afb0ebe068ff1e",
+            "content": "sha256:ed945298901c54ce9411f7391b4d3b19bb0e13b0f246be1cbad4704f98383880",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "258": {
+      "note": "The curator role's pointer to preserving governing decisions.\n\nAnchor: `governing-sources.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "260": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's admission section, mirrored into the package copy.\n\nAnchor: `Admission of new records`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:42ccd373d58b66c5eaaed5d3fc930f224b98bd91de3a8cfe7dca2b21e9ba42f4",
+            "locator": {
+              "end": 594,
+              "kind": "line_range",
+              "start": 530
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "261": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): OM-4, mirrored into the package copy.\n\nAnchor: `OM-4 — Admission justifications are plausible`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:177ccdf446e7ee1e94eb8c168d1c1b0a72873b277b9344336de05a9833392fdc",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "263": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's planned-row paragraph, mirrored into the package copy.\n\nAnchor: `#### Planned effects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:96952fe2b6e3e3803e98684dad12ee79cab8b00b0a24cf35db01ff7daf0ea906",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 384
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "264": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The reviewer's declaration check, mirrored into the package copy.\n\nAnchor: `expectedKnowledgeEffects`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:57b461db3dcb97557fa3361023f8de23e327901659cd1425b5889f368fd94649",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "266": {
+      "note": "The ingestion template's onboarding-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Onboarding judgments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "267": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The history-file gate's rule.\n\nAnchor: `onboarding_trace_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:03c5c38551d226a35e616eecb92955463412ef3dd7d176f0ebda53d699fbe1ea",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "268": {
+      "note": "The ingestion template's proof guidance.\n\nAnchor: `proof_written`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:4b174f522ee608fc284dbb773f1105135b7cd2e97b115c5c6f55b68e53fcc47b",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "269": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The two readings of proofs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:a93149acd13b28d7cc7269bf7f544c108ebe08ce280d1bf40c5793d63595321a",
+            "locator": {
+              "kind": "symbol",
+              "name": "tree_view_proofs"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_proofs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "270": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The format declaration's own statement that text files become the source of truth.\n\nAnchor: `Text files in the memory repository are the source of truth for knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a8ac4dd703c29a4c4d267adce8f4f66840cef8cb",
+            "content": "sha256:603d32db058964d03c9d8343f3e47b14ceebb6b7889b548c6592eaf08ea23b00",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "271": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The writer refuses an unconverted memory tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d57f5e72106d585fa162f6937f58c0baba10d26",
+            "content": "sha256:ddc54a1d609b26aa73aab617bb80e631c4b24c0510c9aa059a1015bb8f084f8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNCONVERTED"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_writer/writer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "272": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The ingestion template's family-routes subsection.\n\nAnchor: `### Family routes`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:232c783c7ade9b3d42addb6e01b45f65db2eebbfff4e51e48877c51f02bab19c",
+            "locator": {
+              "end": 130,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "273": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`, and those package tables carry matching ranks 3 and 4.\n\nAnchor: `order = [`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:04d5f0e9ddf2afdf016e7361a131f4ae802f07bc690f5c1eb5fb900e5751d5fa",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "274": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The production checker loads that one contract, rejects undeclared package directories, and reports invalid dependency direction.\n\nAnchor: `undeclared_dirs`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:4683166de6f428f41e20246f9435f30b187e1890b916d4e136bed36d91fb4651",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 118
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "275": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout distinguishes installed runtime work from sibling-repo work and keeps implementation approval separate from commit approval.\n\nAnchor: `It is not the live`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:1b1590e56accd85c30135880973b7612b252ec792739bf0e5b8b80c6a8af632c",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "276": {
+      "note": "The docs index owns the start-here, install, operational and reference map. Anchor: `Start here`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3ceb132dfa3453008d7038f5e4e3e2359e74fc",
+            "content": "sha256:863afb7007e06103c25dae486479e5a051696f8e4c47cbdaac5126da3015563a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "277": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Runtime asset sync treats root runtime folders as canonical and exposes a check form.\n\nAnchor: `sync_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "278": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves main reachability instead of regating.\n\nAnchor: `Refuse a tag whose commit has not landed on main`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "content": "sha256:a67ead41d8812af7ec0ae3734f78643f1415cbcdde121e64fc5fc7ac4e896b04",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "279": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The staged-quality boundary refuses unsafe linked/conflicted worktrees, binds the accepted candidate tree, stages exactly what will commit, and invokes targeted Dagger quality; the transaction-only closeout no longer imports it.\n\nAnchor: `def gate_staged_code(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:6a397879cbc4d963a08e6aa3c7f44e1e98de9ea8c70ea086dc00cb14ca867937",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "280": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The staged-quality owner enforces its exact-candidate delivery boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "281": {
+      "note": "Contributor guidance separates host feedback from Dagger-owned certifying evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245db25a9abfd0d99d27675f48f86635765d48d8",
+            "content": "sha256:178c2a9d92a86da14bcdbf4e90c36114219ec67a9feedcbfbf7cf7eaee59fca0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "282": {
+      "note": "The runtime layout reference states that no part of the product starts, indexes or queries a search provider.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ac6dbda5c19bbba4ee44bbe65f14a5e403bb0cc",
+            "content": "sha256:7a83e584abbbf5d92ae0ec338ff4d6974fb4095eecd139efad119ceaa0a98d16",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/runtime-layout.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "283": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The MCP settings example declares repository and coordination authority. Anchor: `coordinationRoot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02488160059666d9bd7383472baa03db8c36105b",
+            "content": "sha256:2ee514f05c21421ac22d0854bbef8499216bdbc69fd375ea42e493051ac1eb06",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "examples/mcp/settings.example.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "284": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The memory-repo tools example provides the `Code Quality` section. Anchor: `Code Quality`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "483497baee86549a21ba1671e8846c9df81e9edf",
+            "content": "sha256:a33ad759b2c5267f4ee99730fc00f30339e6c882cab9f9f3f3c2150f560175ed",
+            "locator": {
+              "end": 20,
+              "kind": "line_range",
+              "start": 11
+            },
+            "path": "system/defaults/examples/memory-repo/tools.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "285": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, full check and curator worklist publication.  Anchor: `_resolve_execution`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "286": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Interactive catalog names missing authority without eligibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_final_full_catalog"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "287": {
+      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically.\n\nAnchor: `compile_gate_certificate`, `_require_current_predecessors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_gate_certificate"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:eea560170c532c4491b61505102e8f74d0b810250dcb0891b1e063fd2bf990d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_predecessors"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "288": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one actual memory-content output (since MIK-R09, on converted memory, after closing the leaf's history file and validating and gating the exact tree).\n\nAnchor: `external_closeout_commits`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "289": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Closed admission and one public projector.\n\nAnchor: `admit_configured_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dbad775386ff530ac950360a2ca49d6e9fc02678",
+            "content": "sha256:579b44b5511fc3a31adf41f56e4f5f9c97bf384bf2acf8ca12c8131a67c4df6f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/lifecycle/configured_contract_admission.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "290": {
+      "note": "**Historical source-bound reference account, not an operative override:** Retained reference account (no fresh execution or acceptance inferred): Root manifest/journal location authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationLocation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "291": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Task-addressed lifecycle controls.\n\nAnchor: `control_operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:3f90c50c3cf755de33cd7969389cbafe4078f75f930504c6cdc2b24542b3dd9a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "292": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Retained-generation projection derives public legal controls and recovery surfaces without owning evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:2a93ceb2cd2bba8b07d2ce242e2567ae6207922b3170f8e0fbd6884bf970f530",
+            "locator": {
+              "kind": "symbol",
+              "name": "operation_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "293": {
+      "note": "Current read_ar_files_tool is a names/locations-only route; the earlier published-intent mount-point account is superseded by L109.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "296": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): **The case that holds the carrier, now the response-contract module `models/read_files.py`, to the payload's real field spellings.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4934e7f7214bacbb2cf29d07fde6a5e05000eaed",
+            "content": "sha256:f3ab3f5f550064a33b571010a4b2b533e8d00dce981cbfbf811be0d30c03ac82",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_carrier_uses_the_field_spellings_the_answer_returns"
+            },
+            "path": "mcp/tests/test_read_ar_files.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "298": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The canonical template's per-target rationale section.\n\nAnchor: `Realization rationale and role`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25ccdee3a72d8b54b4ef991f862a406836b5e531",
+            "content": "sha256:aaf2340ae213ee3261b3e4d689eb8f4f963600ec7ac942ad96d6b78ef6c57435",
+            "locator": {
+              "end": 135,
+              "kind": "line_range",
+              "start": 95
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "The registrar mounts the knowledge read, diff, integrity and write operations; change and project are removed.\n\nAnchor: `register_knowledge_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "302": {
+      "note": "The ingestion template's no_invariant-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Changes with no invariant`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:0772ab426655bb9cabbb8843bde61bb96fa44a5e3d4dc93d14e0c145a152c00c",
+            "locator": {
+              "end": 410,
+              "kind": "line_range",
+              "start": 399
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "303": {
+      "note": "The ingestion template's decision-record section is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `Decision records`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:9b642ac7b31e57dbf18e34e1fe06b93824ae50350a9c471a9ca163aa01b06498",
+            "locator": {
+              "end": 662,
+              "kind": "line_range",
+              "start": 595
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "304": {
+      "note": "The curator role's pointer to preserving governing decisions.\n\nAnchor: `governing-sources.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:589f2cf80782d37464131fb8068c59515ac08c384d15c0618850501e0161bff4",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 73
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "305": {
+      "note": "The ingestion template's reconsideration-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Reconsidering a rejected alternative`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:ccd9e3d67103b6c60abda2ff13052d5622116c07eace6a130db924956e51fb24",
+            "locator": {
+              "end": 476,
+              "kind": "line_range",
+              "start": 411
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "306": {
+      "note": "The decision section's reorder refusal.\n\nAnchor: `moved to another index`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:a33ad250e5a93cd08005a63314140fbd0850b7d84bd6544215836d0382df3079",
+            "locator": {
+              "end": 638,
+              "kind": "line_range",
+              "start": 635
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "307": {
+      "note": "The ingestion template's proof guidance.\n\nAnchor: `proof_written`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:4b174f522ee608fc284dbb773f1105135b7cd2e97b115c5c6f55b68e53fcc47b",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 233
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "308": {
+      "note": "The ingestion template's onboarding-row paragraph is mirrored into the byte-identical packaged runtime template.\n\nAnchor: `#### Onboarding judgments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "309": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Worktree bootstrap consumes the calling root's lock and source, with explicit replacement and successful-backup removal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:544c28678bb114caa0ad5f87f81b77fe9850cfafd8e799460b2c73b795afb592",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "31": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The order declares `certification` between `models` and `controlplane`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:da8fd4e12cb9fe2618bf026fdca96d4741d7b425aaec55764d5aa79e3aa7d12e",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:51c33a8cb5b558bd1035c6fa5fd9d8eff75a98a7eb57c60c8e83d93c29b3866e",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "310": {
+      "note": "Workers build each worktree's environment as the tool notes say, report missing commands and record the interpreter each run used.\n\nAnchor: `system/tools.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4760d9f16b1afaad9f6f7d02942efbd8b62be229",
+            "content": "sha256:527858aaaf2a6ebe16c028201fbd79c8c09ed72cf4237f0f087a999d6d5295c3",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/worker.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "311": {
+      "note": "Retrieval guidance keeps the names-only read route: `read_ar_files` names the knowledge governing up to twenty paths and returns no file text.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e785b2097ef29c0a26417b23bca9afac2ad2627e",
+            "content": "sha256:13e24d33d5bca5c8696ae421be1ae1eb3afc7eedc645d9aae338fa362b732552",
+            "locator": {
+              "end": 79,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/knowledge/commands.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "312": {
+      "note": "New files outside onboarding/, knowledge/ and system/ are listed with individual sizeBytes and summed bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:1fb555cee42b2d9f78cda94fd3df6ccfef7dab25458d2912ac85e12dd7621257",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "313": {
+      "note": "Current source literal PUBLIC_TOOLS has 44 names; converted MQC status answers carry cut-card and added-file counts and bounded first rows. Complete lists are log data when retained, not a promise that an overflow kept the whole result. Static source census, no fresh live-advertisement or CODE execution.\n\nAnchor: `carry_landing_answer` `quality_result_answer` `PUBLIC_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:e5f32156b9e95ddc8e9e6da0ee71602ca6bd411bdd98f8a1b95f5401a648f6ba",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "314": {
+      "note": "Knowledge authoring is in memory; evidence/working files are outside it, with report/task and scratch custody separated. Retired provider IDs are disabled by the shared predicate; installation reports unused keys and continues after a failed old-watcher stop. Anchor: provider_enabled and install watcher phase\n\nAnchor: `workspace.outsideScratchRoot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:adb8bc6672eb5d8e744cb5cfce52ef86901751d39a8ae5772a2b985655ca8acc",
+            "locator": {
+              "end": 196,
+              "kind": "line_range",
+              "start": 194
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80950be36296616946275f2d5e7cc7e752fd4185",
+            "content": "sha256:9a2ad7dd6bc6091f4ed89d7eedfef456c37e13de2b4de7e86ab5e0f2fdf94ee3",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 81
+            },
+            "path": "mcp/src/agents_remember/providers/setup_common.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+            "content": "sha256:ba0b7f0e3d725b8ba0c42f4edad6df046c6b298cff8664b0118dd49bc96e4c6d",
+            "locator": {
+              "end": 830,
+              "kind": "line_range",
+              "start": 812
+            },
+            "path": "mcp/src/agents_remember/install/runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "315": {
+      "note": "For every card the quality check cuts, the Curator names the source evidence that makes the removed text untrue; text is not removed merely to clear a quality finding. Task-scoped readers derive roots only from a canonical admitted leaf; repository and enclosure bindings must agree. Anchor: Reader scope admission\n\nAnchor: `cut by the quality check`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:6038be5814e8f452acee52a8e9f79ebec01003bfacf61434586409c39243e5d7",
+            "locator": {
+              "end": 112,
+              "kind": "line_range",
+              "start": 112
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:17df578b5e73e52a6b79bf11643479b083b18956c05b1c857e4cf610a76d9d19",
+            "locator": {
+              "end": 56,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:d4fca248ca967e7e66a0fe999be72734cb38cd515247eb59a1daba68fd00500a",
+            "locator": {
+              "end": 124,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/application/task_scoped_mcp.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "316": {
+      "note": "Independent memory review inspects the quality result's removed-text and added-file reports: text removed without a named change, and a file added outside the knowledge without a place in the task's requirement, are findings.\n\nAnchor: `cutCards`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9645276f52613268918d3cc73e87a07e5b604703",
+            "content": "sha256:3975ddc1f60620446aeac3015498f3a7bf168671a74106312224692c56a7b0a4",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/reviewer.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "317": {
+      "note": "The invariant gate recomputes and treats open/incomplete/refusing inputs as repair findings; the local legacy applicability rule does not own cutover refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf1a7a3024b89c4ce174451e062bcf2cf3fa4a98",
+            "content": "sha256:b98f34753d256efb09111e7053b5f37280f7e2a8c1c75fcfa48463b43eb35366",
+            "locator": {
+              "end": 27,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_gate/gate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "318": {
+      "note": "Graph-less atomic execution declares no dependencies or serialization; graph presence selects dependency-aware scheduling.\n\nAnchor: resolve_scheduling_mode",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d726047c998e661b9558afbb303820ddfb5deb18",
+            "content": "sha256:9e9aba826fa0daed5207a81cd78a7641b44da2a3105dfa65191c96a6c46cbe77",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 48
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d726047c998e661b9558afbb303820ddfb5deb18",
+            "content": "sha256:ee472822624d10e36f6c9abcf78265ad22ff32c8583c58164bee5575b6fe4a01",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 97
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "319": {
+      "note": "Whole-sprint archive is an additional explicit authority with terminal/readiness predicates, recorded moves and cleanup retry.\n\nAnchor: archive_sprint contract and Completed predicate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+            "content": "sha256:692b566b5b49f47d0ad0b5c587e8e5564ba025cfbdbfea45ab94f833470cb0dc",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+            "content": "sha256:db5cb5363443b7dfe26c318c4cb3a6baa680b65a232bc84fe762cf52d9711fd8",
+            "locator": {
+              "end": 490,
+              "kind": "line_range",
+              "start": 478
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "32": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The layering checker loads that one contract, rejects undeclared package directories and reports an invalid dependency direction.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:c2135577af56fef6259bdd88624b15a56d7ebd55ca82f9dcd856f6753d7ff747",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_contract"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "58bed39351fa6ef52a3f683eb1f301edc9e5de27",
+            "content": "sha256:1b576d7fbc2a1006492580fa975dff2209c7a2cbcc12f93fbda48a9d1df3835f",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_report"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/layering.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "320": {
+      "note": "Proofs describe demonstrations, never execution success; absent proof is informational.\n\nAnchor: Proof consumers",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "95b575103e0f298cd05f6fb5267cb5a926002985",
+            "content": "sha256:990302472973ace2755137240969f919484d2dcc23885354902e5dca05866b90",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_proofs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "321": {
+      "note": "Gate-less admission preserves existing approval; applied approval recovers only its bound operation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5957cd60d790dc89aa33796a021dd2bf70c7f7",
+            "content": "sha256:8a6be861c5c92b9a7226e7f0646bfa176a65512cf928383b639b00cd216c05c5",
+            "locator": {
+              "end": 106,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "322": {
+      "note": "Context freshness is opt-in, and this packet disables provider discovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+            "content": "sha256:6a35006ce9e9c2a227392a01f3e95af4f8e9de177952e5a18a6abcddbae3e8a8",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "mcp/src/agents_remember/application/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "323": {
+      "note": "**Historical source-bound reference account, not an operative override:** Git reads disable optional locks; supplied input is distinct from the default DEVNULL transport boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:b344ad01251b5c2a7a392f415aef4c0dfec5822d46dbf58007b94725f0252e88",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 143
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "324": {
+      "note": "Report retention is write-time, five files/seven days; this writer alone does not establish whole-read-path enforcement.\n\nAnchor: write_tool_report and prune_tool_reports",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "96d40632f177b320536d7d5714aa414da5585df1",
+            "content": "sha256:188a5e73c3d88b5e06c8c1e13f31fda70533d29b8c271931952620aef38c6288",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "325": {
+      "note": "Candidate environment bootstrap is frozen, explicit replacement restores on failure, and successful replacement removes the backup.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+            "content": "sha256:2be83d6c8008d85a022c0d9098a898ac8e007d341423edca4f0f7969cdc16a91",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 53
+            },
+            "path": "scripts/bootstrap-mcp-venv.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "326": {
+      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically.\n\nAnchor: `compile_gate_certificate`, `_require_current_predecessors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_gate_certificate"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:eea560170c532c4491b61505102e8f74d0b810250dcb0891b1e063fd2bf990d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_predecessors"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "327": {
+      "note": "Source charters distinguish strict dependency order from future package construction and the named sequencing deviation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:da8fd4e12cb9fe2618bf026fdca96d4741d7b425aaec55764d5aa79e3aa7d12e",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 19
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:fe3b1e9de81ef816efc4088659d300c7d0f13107dff5256df7703b2270a5946b",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 272
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "94d6fc691485163fc02f117a88b8cd350ecc9889",
+            "content": "sha256:e7afba7c85bb8777c5bafcf45b322141e8f7fac753e182d9ac3ebd8b947a9dea",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 385
+            },
+            "path": "layers.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "328": {
+      "note": "The runtime synchronizer declares three targets without docs — benchmarks, providers and system; packaged docs and tool details are not a generator target.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:5878d501febc1c0680371d9eb5e808cefcae684dc59f28d5d5049be367ad0738",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "329": {
+      "note": "Canonical independent non-author statement/diff/omission duty.\n\nAnchor: `OM-2 — Independent fact-check of curated knowledge`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3c630271da1672f6d2ecf2500c8e31150e38bce6",
+            "content": "sha256:371e6b459d70ba212b0a758faf4aecc549b068cf604baede42b3cfce4a13db8a",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 21
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/onboarding-memory.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "33": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The source checkout separates installed-runtime work from work on this repository and keeps implementation approval separate from commit approval.\n\nAnchor: `It is not the live`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:1b1590e56accd85c30135880973b7612b252ec792739bf0e5b8b80c6a8af632c",
+            "locator": {
+              "end": 11,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:ddb39a87110c6db54287f64a332217958985154ead93d9d494429d0ef3afa2d8",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 131
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "330": {
+      "note": "Named validator route policies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f13aa36add4fd90f876d70606d7d3d78fb18891",
+            "content": "sha256:372195841d094e06b210b477bcb0e83a251450c677f6fc3d8982d5ef57c5bf22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_validate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "331": {
+      "note": "Canonical source-bound onboarding and separate row domains.\n\nAnchor: `#### Onboarding judgments`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:bd27d39bc2630d02815698d413a388bd45d1b29ced1eb46bc3a697acd1eae241",
+            "locator": {
+              "end": 362,
+              "kind": "line_range",
+              "start": 350
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "332": {
+      "note": "The current 44-name roster carries the settings initializer and the mounted knowledge writer, and retains the native grant, retire_child and role_start_set boundaries; source declaration is not fresh live advertisement.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:80377872702b56644d88e0950f44352601e8b003c926376d446829b06503f07b",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "333": {
+      "note": "Landing rows are report-only: no refusing findings/actionable count; unreadable memory-base input is named.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d6b1ee561c5e43e75c716d3761df322e279052a",
+            "content": "sha256:2b673dbb1e353edd22ee5953c7732b6aa49cb7396075b14f9819e3c4f2ea6f8c",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_landing_report"
+            },
+            "path": "mcp/src/agents_remember/memory_quality/landing_report.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "334": {
+      "note": "Canonical declaration data drives copy recognition; only exact regular candidate source/copy equality suppresses a copy obligation, while present nonregular declarations remain named refusals. This is not synchronization or delivery evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f7d81663443ba0fafe18885b1e6e9c84ca6f1b3a",
+            "content": "sha256:293fbbfd933a1daf6d3661c605ac8dfb4fcb81e177558d68f8cf13f5dab84957",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/generated_copies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "content": "sha256:ab2d1870feb094de29e4d04437eefe49a20c1bc949e4e6926fe96408cbb78683",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0312a433230b5868e6030419096bdc9a1bdd0e19",
+            "content": "sha256:da0b54225087c70b68ff362613557c5860bca7d5204c26c5b19d565be6316b87",
+            "locator": {
+              "end": 182,
+              "kind": "line_range",
+              "start": 173
+            },
+            "path": "mcp/src/agents_remember/memory/conversion/code_objects.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "335": {
+      "note": "The server builds entries from authored documents and declared relations, independently binding worktrees.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:8ca067a86d2ee83d9c1b56d58218d06b03dc5fe4f8d930335be216512b7848c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_task_entries"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:6c429c875db19fdc9ee8d700401a84c60ec6f922410d1526babcd79dbdcc0f52",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "336": {
+      "note": "Host authority requires a complete current-boot reconciliation and armed supervisor observation before role-agent task binding.\n\nAnchor: `read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:bdff12ea41d26dcc2816d777441d8833df29687f28f3ba4c08c94a05d7897673",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ce1357b19b87897a111544e0477ef1d7bb1450f",
+            "content": "sha256:df2d59936624d3cd1d59a7b6615ca58d30c8b6ae4b0021a6bb4218781d78f63e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/host_activity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "337": {
+      "note": "Manager instructions assign task-stage publication and master-row mirroring to start, finalize and abandon; a separate status write does not follow those acts. task_doc set_status remains the route for an explicit correction and organizational-master completion.\n\nAnchor: `task_doc set_status`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "14a05250e7c49642f359039fbcb72db1e900d3bc",
+            "content": "sha256:a24f755e11a82ef6d761c57256837868637f7e78a729919a467e01ed265caf03",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/manager.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "338": {
+      "note": "The dashboard store retains bounded body/preparation resources by document reference and revision without taking task-state authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:f84ed2a76a7268fc2a12bae414f235f2421836427dcf7a3023e9bf77a845dd57",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentResources"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:52fc6ed0dd1f6deb5653f7e970743ee425e46ab185d503db7797ab1f17459050",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "91a45a737a391b17be5e44f0de88da7af08dc61c",
+            "content": "sha256:47df2d81e453a6579042dff7f941e53c0a6c344e821447974664f4f2d2100f2b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "dashboard/src/data/taskDocuments.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "339": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "34": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Repository instructions define certifying delivery, enforcing checks, and diagnostic-only coverage and production CRAP.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:e3c8a94181a7d1874dc250f9be9690b52e73b10385f4e704aa157cf28cde7559",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 136
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "340": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "341": {
+      "note": "The frozen historical registry `capsule-budgets.json` declares 38 role-operation capsules and 27 step-detail rows, separate handover budgets (at most 3,300 tokens), a shared digest budget and per-role ceilings of its epoch: Architect 4,631, Manager 4,513, Curator 4,100, Reviewer/Bootstrap 4,000 and other roles 3,700; step files 2,700 and shared digest 1,474. Only its handover budgets are still read by the live guard; current ceilings are in `capsule-budgets-current.json`. Declarations do not prove a fresh run or acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:e9c480832d01d436ce625cf9a43f02412d89a493e26a1543b048691ec813cf28",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0a1724926037ee0d26c0e5c5b8ffdd0356a95157",
+            "content": "sha256:4046669f91e3e119b4476bfa0502b32057ae19e496e68d0fcfd40d6d138ba981",
+            "locator": {
+              "end": 3521,
+              "kind": "line_range",
+              "start": 3509
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 476
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "342": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "343": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "344": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "345": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "346": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "347": {
+      "note": "The Manager coordinates one master and starts leaf stages individually: Worker first, Reviewer at freeze and Curator after code PASS. Review and memory passes keep settings-owned limits and recorded extra-round approval; whole-stage boundaries and correct-input refusal stops remain explicit. These source declarations prove no execution, review result, curation result or acceptance.\n\nAnchor: `Worker first, Reviewer at the freeze`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "50f942047109e8b83e0f6f81b66509d0431bf296",
+            "content": "sha256:d20df717b378f566eed4a0b8759c045e05844f53711d396f36e5d77c8d44a2bb",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 34
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/coordination.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "348": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "349": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "35": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The docs index owns the start-here, install, operational and reference map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2d3ceb132dfa3453008d7038f5e4e3e2359e74fc",
+            "content": "sha256:863afb7007e06103c25dae486479e5a051696f8e4c47cbdaac5126da3015563a",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/README.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "350": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "351": {
+      "note": "Role-stage selection, precise authoring, narrow own-step completion and independent recorded memory lane; source declarations, no execution acceptance.\n\nAnchor: `\"operations\"`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:a78ec387271df3f6650ad651a4d3bf4bb7f3abaf61a9e2252315f8f32d31bb02",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 36
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "352": {
+      "note": "After a supported leaf sync with no path changed on both sides, focused tests run again and the Manager closeout preview decides without a new freeze or review round. A shared changed path or failing focused test is repaired and sent once to the same Reviewer. Memory conflict content goes to the Curator; the Manager stages the resolution and the Worker continues the supported sync.\n\nAnchor: `Synchronize the leaf`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70f9c9b7b971a88ca122d8d482d8c7b89fa3a414",
+            "content": "sha256:ccc8390918d834c06073f607a6aaf9bffcd58acbbe4d032ccd858b44c0690592",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "skills/l-01-agent-lifecycles/operations/implementation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "353": {
+      "note": "Closeout uses the bounded clean-sync predicate without weakening its other evidence checks.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0940b70289d43e211b8e08dbeafc3769dc23b64",
+            "content": "sha256:86a20ff12327bbf2f7875dfe057efb888ad604a89225dc396dd6a0d01e677ac4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_review_provenance"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "354": {
+      "note": "Converted carryover prepares equal-format paired content and missing records in a recovery worktree without importing history or committing; ordinary leaf judgments and gated closeout own publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f2012e3d1b6cfcf742adc9b3bf25460b4073950",
+            "content": "sha256:747038ba884874ecd061048d8ad0b0e56b0a848bf7026b05a24e652f1632a675",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9686c82c42aa92ccb30902e632de9bc6f3dfc207",
+            "content": "sha256:19cfdc182aaa3507362169f9d2b1166cbe09295f05bb1e7ede20664e0e966194",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/carryover_apply.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5eaeacce0e041eee509dbe76a090ad0f1ce18c83",
+            "content": "sha256:63d10d85beb30c291c55e0c3c0f1d966415ac5d00cbcc08dc24d68316b2bbbc4",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_converted_carryover.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "355": {
+      "note": "Canonical skills have one generated packaged serving destination.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:3e317251168bcda42f7a0f9a00a7e1763990a7d2204d6512415b528df6a006f1",
+            "locator": {
+              "end": 13,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "356": {
+      "note": "The public source roster includes the settings initializer among 44 names. Anchor: `PUBLIC_TOOLS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:fdef15e2ca9d39f66c8570a7147cb894dda16f47c7d3558bb4454e5b4714875f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "357": {
+      "note": "Host preparation reads and conditionally creates the MCP-file authority, distinct from developer user settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5e98565595261000309d4af6931b1bd494a558b",
+            "content": "sha256:6e66c6a6fc0331c7d2cda8334a9c9a331e39d6425882035cea80deb4967893ab",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/paseo_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "358": {
+      "note": "Current PUBLIC_TOOLS has 44 names, including mounted knowledge_write and user_settings_init; converted MQC answers carry cut/added counts and bounded first rows, with complete lists in retained logs. Static source, not execution or live-advertisement acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:80377872702b56644d88e0950f44352601e8b003c926376d446829b06503f07b",
+            "locator": {
+              "end": 71,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0be87d00a47ea321e70ece47c29392d112e29571",
+            "content": "sha256:8bef79894c0947f448c7278f193249786d766046c9866c84aa1e39235f388db3",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/answer.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "359": {
+      "note": "Setup reports memory/baseline state and hands the user to Architect; actual foundation authorship requires its regular task, task document and enclosure under the Curator.\n\nAnchor: `Who Runs It`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f434607253888f6864767fd1e65d695cb36c0fb7",
+            "content": "sha256:cedcdbd5cf960e1ec08e535abc2e8d739e43963cb736ad9bbcb1faed388ca748",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/reference/curator/repository-foundation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "36": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Runtime asset sync treats the root runtime folders as canonical and has a check form.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:57627fe8c46dbb7f9833a18972cf210c70421890f6af07344303322694766733",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_targets"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "360": {
+      "note": "The measurement records spawn-to-initialize/tool-list arrival and environment/load context; no tool invocation or fresh result inferred.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "edc6252aad3b2fd77a040162d5cf60d5cf71c92b",
+            "content": "sha256:6281b0b575a3141a9e01dd29bd804acc477d24b3f47b40fd07e3c52aa7c9f622",
+            "locator": {
+              "kind": "symbol",
+              "name": "measure"
+            },
+            "path": "scripts/measure-ar-server-start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "362": {
+      "note": "Current 44-name ordinary literal includes user_settings_init, explainer_control and `citation_note_revision`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:1fb6648038747e81d570f9ad351220a00136d0b755b7e968bc05d1bba6bcf351",
+            "locator": {
+              "end": 73,
+              "kind": "line_range",
+              "start": 22
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "364": {
+      "note": "Development evaluation commands, concrete trial orchestration and attempt accounting have separate responsibilities.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9829c85469f6567f78c02cbdd5ded57935235641",
+            "content": "sha256:d8ccf9d7821606081b1f14f5a64770e9d8914585996d13ad93bbda9a7a38a823",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "scripts/agent_evals/trials.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d950d14d90314b8229a636873c196e6114992be8",
+            "content": "sha256:5ed177cc2fcc5cec1aee61e4dd19aff01648bec9d1167bd612441c9df2149b07",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/run_curator.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3d9dac5508226545350568731334244889727d36",
+            "content": "sha256:c898a0cf2c0a95586154664c0d4dbc2faa54e3fac40fd6bdf4d5391428e4488c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "scripts/agent_evals/accounting.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "365": {
+      "note": "Current capsule limits live in `skills/l-01-agent-lifecycles/capsule-budgets-current.json`, which the live budget guard enforces: role ceilings Architect 5,474 words; Manager 4,562; Curator 4,537; Reviewer 4,112; Bootstrap 4,000; other roles 3,742. Its current sub-record is `measuredCurrentRenewalWaitsAndCodingGuidelines`; the current measurements cover 34 capsules and 38 declared step details, declared step details have a 2,500-word ceiling, and the every-role digest measures 2,327 words against an equal 2,327-word ceiling. A limit rises to the actual size only where the actual size exceeds it. `capsule-budgets.json` is the frozen historical registry; the guard checks its bytes by hash and still reads only its handover token budgets from it. These are stored declarations, not a new compilation or test run.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:0182ac1d6688241bfe9ccfc2cdcacf4e1cdd183ad89fd9219578032fa7214ba2",
+            "locator": {
+              "end": 6371,
+              "kind": "line_range",
+              "start": 6362
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:5564dd1bee04cc41fc567342a0aaf8ff0373ab568c48725432fe2dbb59df1054",
+            "locator": {
+              "end": 6361,
+              "kind": "line_range",
+              "start": 6322
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "214707ebce4f6867647ac01bef003737d3ad5390",
+            "content": "sha256:ae3e14fc87c83ab3e43b3323dcd28d144a54032b1733e1cca4c96821504beb0d",
+            "locator": {
+              "end": 5481,
+              "kind": "line_range",
+              "start": 5481
+            },
+            "path": "skills/l-01-agent-lifecycles/capsule-budgets-current.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6bbaa8006b5418ef6bb2712754d9027a173cccde",
+            "content": "sha256:2853efdc91be3b79e781e0e42d7c2967b425e1cceb513f1573df3511220693cf",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 476
+            },
+            "path": "mcp/tests/test_role_capsule_budgets.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c8318c7529a92a28e65eb4163a582e66d3bb3d62",
+            "content": "sha256:2fb05d08cfa4eb8da599b6c3fd9bcc24e545a5f6d9ac5646fbf6a2ba594ceb0c",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 115
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/capsule_budget_d695.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "366": {
+      "note": "AR's role launcher resolves hierarchy, canonical selection, workspace, capsule and report scope, chooses the agent identity and records launch/reconciliation. Paseo owns the actor, workspace identity and agent execution. Execution receipts do not update task, review, curation or Git truth. Manager-owned `role_start_set` prepares Worker, Reviewer and Curator as sibling leaf seats: Worker opens immediately, Reviewer and Curator are held for their first addressed work, with optional immediate Reviewer work. The leaf resolver refuses multiple live occupants. AR persists held messages and a serving-lifetime loop attempts later delivery without a sender/model turn; permission-held messages retain the named-chat notice and are not resent by the parent. The capsule router launches architect, investigator, orchestrator, manager, worker, reviewer, curator and bootstrap; other manifest entries are not automatically launchable. Past-epoch composition account: A capsule contains the selected role and one operation; `core/` is compiler metadata, not shared injected instructions. Current delivery: The instruction stream still contains the selected role and one operation. The admitted `core/every-role.md` digest is delivered separately in the first message; its revision contributes to capsule semantic identity, without injecting the larger core doctrine into rendered instructions. Missing or unsupported selection fields refuse rather than being inferred from nearby documents.\n\nAnchor: `core/every-role.md`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "698ef437745d95fc93558c2a1526f16a38f2adbb",
+            "content": "sha256:2e51a5def39631ecf88eff89382e0d6de91a92b70f2054b7ad0aca04f5beebac",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 158
+            },
+            "path": "skills/l-01-agent-lifecycles/composition-manifest.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a9ebc25e9f72b32db990eb7c7582f967d6fbd021",
+            "content": "sha256:d11cef6c005f45844f7586e6723416924cdeeed44ed9c89c350f30aa33bc2b50",
+            "locator": {
+              "end": 61,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/compilation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a744d8de93cda92f20309cc2f735c24a2bf27ce4",
+            "content": "sha256:9ac522a29bfcca8ff89d6b6eed651afd56910cb742b9c5915a58e0658942b63c",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/src/agents_remember/models/role_capsules/compiler.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "367": {
+      "note": "A converted sidecar change counts only when its references move beyond mechanical anchor fields; `realizes`/`proves`-only changes and unreadable sidecars do not count.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f6091818f7a3fdfaef7337e48da6b832bbe01f71",
+            "content": "sha256:266b7ac1771e0c0136b192e656857ab601375c666c12ffe79ff3e967ee63f8e1",
+            "locator": {
+              "kind": "symbol",
+              "name": "counted_sidecar_change"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding_trace.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "368": {
+      "note": "Current budget guidance agrees with the root declaration. Target: pyproject.toml.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:030596cef7d9fea970513ce9975de6839a71c38510ba0531432b1dc3f75be9a8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "369": {
+      "note": "Current budget guidance agrees with the root declaration. Target: CONTRIBUTING.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245db25a9abfd0d99d27675f48f86635765d48d8",
+            "content": "sha256:178c2a9d92a86da14bcdbf4e90c36114219ec67a9feedcbfbf7cf7eaee59fca0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "37": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): GitHub runs the deterministic non-test gate on pull requests only; tag publishing proves reachability from main.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d969ca03f76455f4e78a2d6f184bb6af34afe26d",
+            "content": "sha256:38fcf23399a457059ce530487704ab54c6b75ad4e6a64f9292cab3b5d06044f0",
+            "locator": {
+              "end": 7,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": ".github/workflows/quality-checks.yml"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ac4fee67df694e79257e618d06e72035a8d1a04a",
+            "content": "sha256:7e5032dfe9580d47c27d20ed8b1ca199d0694321f2af03fccd866e04ca633606",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 28
+            },
+            "path": ".github/workflows/publish-mcp-to-pypi.yml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The staged-quality owner prepares the staged candidate, runs the targeted quality gate and requires published evidence for exactly that tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "18634fac33fb932b08876aab377c40c076e39b72",
+            "content": "sha256:69b6583851ff001f90bcade81bab11138e8a279543178865f287b4c0dc26ffd5",
+            "locator": {
+              "kind": "symbol",
+              "name": "gate_staged_code"
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Contributor guidance separates host feedback from Dagger-owned certifying evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "245db25a9abfd0d99d27675f48f86635765d48d8",
+            "content": "sha256:178c2a9d92a86da14bcdbf4e90c36114219ec67a9feedcbfbf7cf7eaee59fca0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "CONTRIBUTING.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The MCP settings example: coordination root, workspace root, transcript root, repositories, providers, timeout caps, and the dashboard, provider-degradation and retirement settings.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "02488160059666d9bd7383472baa03db8c36105b",
+            "content": "sha256:a1f35f5c78ff9ac45290256da4932d53d10a169096b9964d7184adc4210590c5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "examples/mcp/settings.example.json"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "44": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Development commands, budgets, diagnostic metrics and isolation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1b37e4512c41640d3bfdcf863bb702060adeefb",
+            "content": "sha256:7a6ce2acaef43c714cd4cf042d5a40ca0c4f26254778df5705b8e6558cc0ee4e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/python-pytest-bootstrap.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "45": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Certifying publication and accepting consumers.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "345e9e4cdeb8701bb31e267faa00c4e6b6bbeb44",
+            "content": "sha256:18466b9f2e8066e1d7eb376d22cb06a18e97de4d6193b7f1006074ebe18687f6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/design/python-test-evidence.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "46": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Exact contract scope, the full check and the curator worklist publication.  Anchor: `_resolve_execution` `_execute_memory_quality` `_attach_curator_checklist`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:86b9f991a82d2cf8b7a6604799d421f5a3c8a07dec010204994f79f6296011e1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "47": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The interactive catalog names missing authority without eligibility.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:d81b89961aa9f6111073416b7d9db6242c5d1caddb566ef889f16800de227eb4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_attach_final_full_catalog"
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "48": {
+      "note": "Core Gate-5 certificate issuance requires the exact ordered green Gate 1–4 prefix for the admitted candidate and exact memory inputs; no removed adapter is thereby bound and ordinary closeout does not acquire this certificate automatically.\n\nAnchor: `compile_gate_certificate`, `_require_current_predecessors`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:712b54990ca1539b93cff58fe67e12aea3e7c81eff0079439068eae35ffcd10e",
+            "locator": {
+              "kind": "symbol",
+              "name": "compile_gate_certificate"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c11019f54828e85f82676c738e6eb2bef78d6d21",
+            "content": "sha256:eea560170c532c4491b61505102e8f74d0b810250dcb0891b1e063fd2bf990d8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_current_predecessors"
+            },
+            "path": "mcp/src/agents_remember/certification/certificate_authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "50": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Git attribution is the source of the consumer ledger.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_cache.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "51": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Closeout writes or reuses one memory-content output; on converted memory it first closes the leaf's history file and validates and gates the exact tree.\n\nAnchor: `external_closeout_commits` `_commit_memory_content`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eecdaff3bad79ebac4230c53a03b1b6e2e47c1cf",
+            "content": "sha256:b4b64e690f1183dff4dd72d8c7499aa007f8a2bb01db4e82338a750dd4f62f15",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout_external.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "52": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Integration proves exact memory source ancestry independently of cache rows.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e45cbd6127d560f2f834a2b326c1f9a481c697ac",
+            "content": "sha256:ef564c710b907427001e9603a40253491e4142e02a3a221ae967282adf1b550c",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_integrated_memory_ancestry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's decision-record section.\n\nAnchor: `Decision records`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:9b642ac7b31e57dbf18e34e1fe06b93824ae50350a9c471a9ca163aa01b06498",
+            "locator": {
+              "end": 662,
+              "kind": "line_range",
+              "start": 595
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "61": {
+      "note": "Historical paired content carrier, superseded by MIK-R109: current read_ar_files names cards/states/overviews and returns no published_intent block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+            "content": "sha256:6eccfc7bad90429057021cc74333df2047d6908f67136c2d9faf1624ddae3a75",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/read_files.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "The Curator marks only its completed curation step done through task_doc; incomplete work is not marked done, and this act changes neither task status nor acceptance or landing. The stage ends when task knowledge is written and checked and quality is clean.\n\nAnchor: `set_step`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c6130587d4f2590f3d1de5c1db622ce320e6c8da",
+            "content": "sha256:0444cb8a8a73eb0a6819da8feda60678cb07f14a34b7b96efcb287a7e07f9276",
+            "locator": {
+              "end": 174,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The three attribute entries and their reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:4cbb77b0e957d5709d6ff27b831c8c2cfdbf61c17faf73baa716a55a984e0fde",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": ".gitattributes"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "70": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The rewrite that the `--write` command runs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:3c9676fa36460061169e8c4df01ac67a7edd52424e98825058fa20151a6f494d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_canonical_catalogs"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "71": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The command entry: validation of both catalogs on one source graph, or the rewrite.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:567c7ad94a855fa98285824fec3450a8f1303866188684047bad505173acf641",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "73": {
+      "note": "The retained internal8,000-token threshold constant; the mounted naming pager applies the separate4,000-token delivered bound and list cap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+            "content": "sha256:3504100873b1cf1bdee93cacf9e2a2bd3627f8fa7fdfb656115c919f8f06decd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_ANSWER_LIST_MAX"
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7cfaacdbd561aed6643e8b2cbc4d2f4092d037cb",
+            "content": "sha256:c1390829d706c5e8374c4b9ba16d703c8e7eb47e86a136c37580f8380b8eb3a2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/threshold.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2e48a7f6cc081b63ab5137fc50e99d764788f520",
+            "content": "sha256:e19c94b6f01431198d3ed4919b379a66f760aa92c5e528c0ec635c8a82d1d9b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_paging/tree_read.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "74": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The cutover lock refuses an unconverted memory line and names the crossing sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:299e20bd8b429ee9b9bd297e5e884b38171e7a4d9e485b633f99fbb8d7188da1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "75": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The closeout preview asks the mandatory gate and answers with the refusal when the gate refuses.\n\nAnchor: `closeout_preview_payload`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16170495bfefc7b4695e565427ce20e47d6cf726",
+            "content": "sha256:a11094f88726f11a7585137e1178fc6dcf269a675547ec964b8021ff835a467d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/closeout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "76": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The two declared case budgets.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+            "content": "sha256:a45f05c153d1b724bd7bfe5527b5534499d94b58cd5742e0a22db07b37cb65f7",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 334
+            },
+            "path": "pyproject.toml"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "77": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The scheduling mode of a sprint without an execution graph.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d726047c998e661b9558afbb303820ddfb5deb18",
+            "content": "sha256:9e9aba826fa0daed5207a81cd78a7641b44da2a3105dfa65191c96a6c46cbe77",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_scheduling_mode"
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "78": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The statuses that resolve a master's row.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2cfd1fbb4b8d66acb95b9561c8157a660db5e3c5",
+            "content": "sha256:fe87e6fea9857a89ef36bc6f68cc4872de6fe1dd130b9ebbe34085cd32c32d1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "RESOLVED_MASTER_ROW_STATUSES"
+            },
+            "path": "mcp/src/agents_remember/models/task_document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "79": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The judgement of a terminal master that the task routes and the closeout queue read.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9a4dadaca3d9016d1bb15ecc4b32f28703d8697b",
+            "content": "sha256:7f28306c886b1b52741e3ebc61fe68455459adcd69b875eed46a30bd2b01c491",
+            "locator": {
+              "kind": "symbol",
+              "name": "master_is_terminal"
+            },
+            "path": "mcp/src/agents_remember/tasks/readiness.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "80": {
+      "note": "The runtime asset targets: benchmarks, providers and system, each copied into its own package-data folder.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+            "content": "sha256:5878d501febc1c0680371d9eb5e808cefcae684dc59f28d5d5049be367ad0738",
+            "locator": {
+              "kind": "symbol",
+              "name": "TARGETS"
+            },
+            "path": "scripts/sync-runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "83": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The supported memory modes and the refusal of the removed one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+            "content": "sha256:e8ba98ce0101ce65e145d4bbaf67bbb99f153c0fd927cd24e6fb8e8791eb2bde",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "85": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The role-capsule router's selection rule and its unsupported-field refusal.\n\nAnchor: `Select the supplied role and operation`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "eba07966bc4155f1702344a1164d28329c9016ad",
+            "content": "sha256:9b13b2c29613e964860f439882787353afd9fc65f9b5a29b12d83e7e9140bd5e",
+            "locator": {
+              "end": 12,
+              "kind": "line_range",
+              "start": 10
+            },
+            "path": "skills/l-01-agent-lifecycles/SKILL.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "86": {
+      "note": "The launcher and role-start tool share one locked dispatch path for preparation, launch, receipts and same-request reconciliation. The role-start facade accepts an AR-bound caller or a genuinely unbound chat caller; malformed bindings, bound policy violations and other caller refusals return their named refusal rather than switching to the unbound route. The unbound caller has no parent and cannot replace a seat holder.\n\nAnchor: `Handle a developer-declared takeover`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "61e68c0819957758f07b59ca3c123836392cc749",
+            "content": "sha256:81d7ff8fc8c18376dcadb68e747b9ee15ff4e928242e7fc0a8c710a84c89cb19",
+            "locator": {
+              "end": 55,
+              "kind": "line_range",
+              "start": 39
+            },
+            "path": "skills/l-01-agent-lifecycles/core/authority.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:e7268b9f4c5403a6a21dbbab92cdcb9c1b618744aa3bb35686d800f61282bbf1",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 213
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+            "content": "sha256:fdfabe9aeeafc86f1e349dab1e6e2ad832f1860b144a923121c92e8fc45d0009",
+            "locator": {
+              "end": 329,
+              "kind": "line_range",
+              "start": 252
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+            "content": "sha256:7a2998b8a51aa687f2dd434bad08d920d5b891c756400a798a9f519dfc01ce7f",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 32
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "fa7edd155c1b68898b05d219f757fec23ddf56b6",
+            "content": "sha256:7d1e77434f1ece959cd8f20db179a9a3f78d0a06c010410e11bbf2635a3c8323",
+            "locator": {
+              "end": 132,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "mcp/src/agents_remember/cli/paseo_role_caller.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+            "content": "sha256:7928e80a269ad98095e1ab1f7a6085424da6acfb557dc9969c3f5f15ec78cbbb",
+            "locator": {
+              "end": 301,
+              "kind": "line_range",
+              "start": 262
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "89": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The pause releases one master's activation selection and publishes nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8d04298e98df4d5f82d3f636b06a324307aff3ac",
+            "content": "sha256:c6adf85d1f03b1bea9d72524ce129e6ab7282226d1c7851bbb12d2f9fe60888b",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/pause.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The hand-off ingestion template's admission rule for new records.\n\nAnchor: `Admission of new records`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "16398354f1504a4b5d8dd813d6d93f912f801bf1",
+            "content": "sha256:42ccd373d58b66c5eaaed5d3fc930f224b98bd91de3a8cfe7dca2b21e9ba42f4",
+            "locator": {
+              "end": 594,
+              "kind": "line_range",
+              "start": 530
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "90": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The activation record is one replace-in-place snapshot per canonical series contract.\n\nAnchor: `AtomicSeriesActivationRecord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "001fa8a374f859c5ea85997053f826c5a3f06f23",
+            "content": "sha256:370e42bfb4c36180e5f33c5b29f18bbb17ae3b49c6b2ba83a09cb828ceaeeef2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/structural/atomic_series_activation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "91": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Where the record of a sync transaction lies.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:3b0c228ab352698cf746ed3ee50615da3a505370ac106c479079610e6fa0d5be",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_operation_path"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "92": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The locations of a master's contract and of a leaf's enclosure contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:07aa32c0e77d63c049371f15d5886529004d1e17196a290f9ee4b2fd00c8539b",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_contract_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "c3404824cd6df7779b6ca88e482e08e63727d831",
+            "content": "sha256:5a6fa392e1f7610062dd278030098648d72aabda7cf4cacb138194006dfed9b2",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_enclosure_path"
+            },
+            "path": "mcp/src/agents_remember/tasks/task_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "93": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): An external-memory start requires the memory repository and its source branch and creates the worktree.\n\nAnchor: `prepare_memory_for_start`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3d03d1156feb8cb90d29def263383953677fd5a7",
+            "content": "sha256:9521d62d81f66d4836a88a56bd5f56ca58d42e326541ae70f829cb5d64445c43",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/startup/start_memory.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "94": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): A moved source blocks `ff-only`, and `replay` asks for a resolution instead of creating a replay commit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f67d47b47455dbb360a0884ecaa0e4aa1da3383",
+            "content": "sha256:486ac4704274ab0dc4c8466c607ce5e8f4b4e771a68afc2b4691c87fc62ea68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_continue_integration"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/integrate.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "95": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Gate enforcement: a model-decided approval does not satisfy it, and a lifecycle without a gate of the kind is gateless.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5957cd60d790dc89aa33796a021dd2bf70c7f7",
+            "content": "sha256:9030948cf84080ac44a30a43bad42d453d7e908a1e45a42f5c9ff8d3645668a0",
+            "locator": {
+              "end": 16,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "96": {
+      "note": "The retention of gate records and of the approval kinds whose applied snapshot is an authority record: an applied snapshot of a consumed kind never ages out, while withdrawn and superseded gates go immediately and live ones age out on the TTL.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:209bfead74581e4f1aa175552e3d74b4ad748d2e6463be103d54894531377079",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "97": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): The roles of each task altitude; a reviewer sits on a leaf, master or sprint document.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:90ad4593ded7d016e0b9ec3b24847c8e1240cf40a81cdd5b187f04f2938e79d9",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 82
+            },
+            "path": "mcp/src/agents_remember/tasks/document.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "98": {
+      "note": "In task_doc construction, _build_doc refuses kind=\"light\" with a TaskDocError directing the caller to a master or subTask; when kind is omitted, a leaf contract selects subTask and otherwise the default is master.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+            "content": "sha256:ac79289be96ec4ae39eb257c5d7f746466b05dc237ddb41377085cffaca6b20e",
+            "locator": {
+              "end": 838,
+              "kind": "line_range",
+              "start": 821
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "99": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Under a sprint without a graph every commanded master executes atomically whatever it declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d726047c998e661b9558afbb303820ddfb5deb18",
+            "content": "sha256:a6cb2f2495d516f8ed57f18d4c8ef5c7e22d45ff883adb7d05eb8046ecb09cb7",
+            "locator": {
+              "kind": "symbol",
+              "name": "effective_execution_nature"
+            },
+            "path": "mcp/src/agents_remember/worktrees/scheduling_mode.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

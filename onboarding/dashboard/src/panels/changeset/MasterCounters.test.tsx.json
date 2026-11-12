@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/changeset/MasterCounters.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Button totals are shown before leaf rows, a pinned open target survives a refresh, and a button whose total is not measured is shown as unmeasured rather than as zero",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cde1b126fb9c052e297b197e587c896644326ba7",
+            "content": "sha256:e6c94762c8dc75127a6e827e9c018535d45d0dd9c657234d090ba08e57d481dd",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 23
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

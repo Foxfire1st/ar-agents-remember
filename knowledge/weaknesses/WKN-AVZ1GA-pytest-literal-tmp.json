@@ -1,0 +1,36 @@
+{
+  "anchor": {
+    "blob": "bd1a2126e08ac2799cb49adbfa34b81aeafbf768",
+    "content": "sha256:54f824e9151d19eb5521b4673ae91316fa7ec6e6c0da9bb51118eed115f9006e",
+    "locator": {
+      "kind": "symbol",
+      "name": "_TEMPORARY"
+    },
+    "path": "mcp/tests/conftest.py"
+  },
+  "id": "WKN-AVZ1GA",
+  "kind": "storage",
+  "measurement": {
+    "commit": "6f81148c90e0d0db595034e111f696697cc40c7e",
+    "date": "2026-10-23",
+    "how": "the ordinary lane at 2026-10-23T10:23:51+02:00 died with OSError ENOSPC on /tmp/ar-pytest-zlf02cwi; on this host findmnt /tmp reports fstype tmpfs (24 G, 10% used after recovery), so the fixture path that ignores TMPDIR placed the fixtures on tmpfs - the observation is this host's, not a claim about every host",
+    "number": 1,
+    "unit": "aborted lane run"
+  },
+  "origin": {
+    "handoff": {
+      "path": "L197-A1-curator"
+    },
+    "handoffEntry": "worker-weakness-3",
+    "leaf": "260928-MIK-L197",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928_maintained-invariant-knowledge"
+  },
+  "state": "open",
+  "statement": "The test suite creates its shared temporary directory at the literal path /tmp, so a run's TMPDIR cannot redirect that directory; on the host measured here /tmp is tmpfs, and one ordinary lane there died with ENOSPC on tmpfs inode exhaustion while its own TMPDIR and XDG_CONFIG_HOME were correctly set."
+}

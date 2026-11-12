@@ -1,0 +1,61 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/worker/termination.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Linux launch refuses an interpreter without both native pidfd APIs and gives the canonical bootstrap recovery.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b1d44cad82eed04e05993a8b2b2a40bd7e9363",
+            "content": "sha256:65d350450c3bad0cc70d6d09389fb12a62d81fa26519caa5f644c83435c55db0",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_linux_worker_runtime"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Process fingerprint, native-pidfd signaling, and public recovery evidence remain the termination seam.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08b1d44cad82eed04e05993a8b2b2a40bd7e9363",
+            "content": "sha256:f0891f82667e6c2401f4b4c5d453ecf905932f749f95aeb02e728d577769fb75",
+            "locator": {
+              "kind": "symbol",
+              "name": "worker_process_fingerprint"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08b1d44cad82eed04e05993a8b2b2a40bd7e9363",
+            "content": "sha256:ef6bec55003ffde45946b90322b7a1cb9f7be99f0a00c5818492e1014a0d15b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "signal_worker_and_prove_exit"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "08b1d44cad82eed04e05993a8b2b2a40bd7e9363",
+            "content": "sha256:e93458a4ca864c14e9fb53ac382e3a8142523b9f6ac8f9e65141fc25748cc268",
+            "locator": {
+              "kind": "symbol",
+              "name": "public_worker_termination_evidence"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

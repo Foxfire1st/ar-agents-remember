@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "family_guarantee"
+    ],
+    "justification": "Read-cycle, surface and workspace owners retain the admitted shell while rendering the requested subject's own failure, keeping navigation usable without presenting previous-subject content as its answer."
+  },
+  "applicability": "A newly selected subject whose review read fails in transport or is refused by the owner while the task context has an admitted frame.",
+  "conditions": [
+    "The requested subject labels one reading-area ReviewProblemBlock, with retry on transport failure and the task-context/source-changes recovery offered by the current owner.",
+    "The retained workspace/tree are not a mounted complete SourceExplorer; the existing comparison viewer owns All changes and non-card paths."
+  ],
+  "exclusions": [
+    "The first read's failure or refusal, which has no frame and keeps the surface-level R16 rendering.",
+    "A failed refresh of the displayed subject, which keeps its retained coherent payload and surface-level failure (R17)."
+  ],
+  "id": "INV-WQZ2WFCN",
+  "origin": {
+    "leaf": "260921-ICR-L48",
+    "legacyId": "6195e16b-78d5-46e8-83c0-20c6ed6a6979",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "With an admitted task frame, a newly selected subject's failure or refusal keeps the mounted workspace and compact navigation usable. The reading area alone states that requested subject's owner problem and displays no previous-subject content; source inventory is reached through the recorded comparison-page action, with named unavailability when its range is missing.",
+  "status": "proposed",
+  "supersedes": []
+}

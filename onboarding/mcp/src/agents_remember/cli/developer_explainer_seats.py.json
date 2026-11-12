@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/cli/developer_explainer_seats.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "explainer_recipient resolves a leaf explainer's seat as its own recipient class.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bae1921c3eeb579a3517761f13fc4e3cc0a45ece",
+            "content": "sha256:a99c105c8651ec459a2f7aef4c85fec9d72dd2b0da2f2fcec08e518fdf3a4866",
+            "locator": {
+              "kind": "symbol",
+              "name": "explainer_recipient"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

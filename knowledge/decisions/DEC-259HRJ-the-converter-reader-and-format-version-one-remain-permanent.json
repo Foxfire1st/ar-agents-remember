@@ -1,0 +1,66 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Retirement at master landing was explicitly rejected, and the retained command, database reader and version bind later cleanup work."
+  },
+  "alternatives": [
+    {
+      "option": "Retain knowledge-convert, its read-only legacy database reader and conversion-format version 1 as permanent product parts.",
+      "reason": "They remain the only supported path for an unseen legacy line to reach the text format.",
+      "status": "chosen"
+    },
+    {
+      "option": "retire when this master lands",
+      "reason": "Landing this master supplies no census of unconverted lines in other clones or machines.",
+      "reconsider_when": "A separate developer breaking-change decision explicitly authorizes removing the command, read-only reader or conversion-format version.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No task cleanup silently retires any of the three.",
+    "The converter validates before file writes and makes no Git commit; first conversion/adoption/landing remain with their own owners."
+  ],
+  "context": "Legacy lines can remain in other clones and machines, so this build cannot know that the last unconverted line is gone. MIK-R46 rule 7 explicitly weighs retirement when the master lands.",
+  "decider": "Developer direction and approved MIK-R46@v2 rule 7.",
+  "id": "DEC-259HRJ",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/memory/conversion"
+    },
+    {
+      "relation": "constrains",
+      "target": "route:mcp/src/agents_remember/cli"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R46",
+        "packet": "requirements/MIK-R46-v2-conversion-precedes-ordinary-memory-operations.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v2"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "requirements/MIK-R46-v2-conversion-precedes-ordinary-memory-operations.md under D39(b)/D47; rule 7 rejects retire when this master lands."
+      ],
+      "path": "curator-writer-rebound-42201818.json"
+    },
+    "handoffEntry": "authority-permanent-converter",
+    "leaf": "260928-MIK-L46",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

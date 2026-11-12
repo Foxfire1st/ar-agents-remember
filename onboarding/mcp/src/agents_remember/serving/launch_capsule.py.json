@@ -1,0 +1,140 @@
+{
+  "path": "mcp/src/agents_remember/serving/launch_capsule.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Anchor: Current orientation operation, without a legacy seat/channel gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:fa8b741094611f7411a293642034a01bf54152b49dd6fb57001f728eb88d1e5d",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Anchor: The retained application compiler owns resolution above the pure value module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9ed77cba4caacd019fd87b683ea11e0653cb7ad1",
+            "content": "sha256:c50c7ecd23847fd84872c128c914ad5909f82a26145ba3ff51ece2f0aff6d330",
+            "locator": {
+              "end": 320,
+              "kind": "line_range",
+              "start": 293
+            },
+            "path": "mcp/src/agents_remember/application/role_capsules/launch.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Anchor: Current static test checks exactly capsule/refused outcomes, not legacy channels.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5d6364a3e0174cccc37d69d4ad9edcb9a76681c2",
+            "content": "sha256:3af4cd2a0cc0480a338416e063c01aa9b5d1800e376218e5478ce2a176f1eccd",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 209
+            },
+            "path": "mcp/tests/test_capsule_launch_wiring.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "Anchor: Current LaunchCapsuleRequest fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:6def7e5e97cbbaa9fb5e50a52f26ce0827c66e1414fff0982249024963553cb6",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Anchor: Only capsule/refused modes and their result carrier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:a4716d5124522f69f52c63920ecd307dcb0363bf9cc29e2cc27e7fc3fdd25ba8",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 39
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:7c56b2c85e3e62a8af070538ae72ba78bda3f47388c6a412a2bfb1c307e8d8dc",
+            "locator": {
+              "end": 90,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Anchor: Launch request identity and explicit project-task flag.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:6def7e5e97cbbaa9fb5e50a52f26ce0827c66e1414fff0982249024963553cb6",
+            "locator": {
+              "end": 64,
+              "kind": "line_range",
+              "start": 47
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Anchor: Named fail-closed result constructor.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29fcf81063bb258507e45da4a75c16d0a9db554f",
+            "content": "sha256:0c47af355ed74b1fc1cda640c5de75b0baecadb9e8972b2618fca2823b32866f",
+            "locator": {
+              "end": 101,
+              "kind": "line_range",
+              "start": 93
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

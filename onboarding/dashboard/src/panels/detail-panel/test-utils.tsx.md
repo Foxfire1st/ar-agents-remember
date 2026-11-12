@@ -1,24 +1,12 @@
 # dashboard/src/panels/detail-panel/test-utils.tsx
 
-| Field                  | Value                                                       |
-| ---------------------- | ----------------------------------------------------------- |
-| repository             | agents-remember                                             |
-| path                   | `dashboard/src/panels/detail-panel/test-utils.tsx`          |
-| doc_type               | `file-level-onboarding`                                     |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `../overview.md`                                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
 
 ## Purpose
 
-Shared fixture builders for the split DetailPanel test files, extracted from
-`DetailPanel.test.tsx` by the 260731-EFA-L8 split. Seeds task documents, series,
-enclosures, projections, promoted-lifecycle scenarios, and counter stubs.
+Shared typed TaskEntry/TaskSummary fixtures for split DetailPanel suites, with explicit membership/counts, qualified body answers and ancillary refusal/counter stubs; not native producer acceptance.
 
 
 ## 260831-CCR-L23 Requirement-Listing Stub
@@ -32,20 +20,25 @@ task-document branches are unchanged.
 
 ## Code Commentary
 
-Since 260815-DAG-L14 the `taskDoc` fixture factory defaults `seats: []` (the new required `TaskDocNode` field).
+TaskSummary construction supplies required seats and other neutral defaults explicitly; native entries carry identity, membership and counts separately.
 
 ### Logic
 
-`seed` / `taskDoc` / `seriesNode` / `enclosure` build minimal typed nodes;
-`seedProjection` assembles a workspace projection; `seedPromotedLeaf` and
-`seedSeriesOrdering` prepare the promoted-identity and ordering scenarios;
-`stubCounters` installs deterministic counter hooks.
+seedTaskEntries and taskTree seed native entry maps with explicit parent/children/counts. seedSeries/ordering/promoted fixture scenarios use that same grammar, not lifecycle or SeriesNode builders. stubCounters remains a deterministic ancillary HTTP stub.
+`seedProjection`, `seedPromotedLeaf` and `seedSeriesOrdering` retain their projection/scenario roles; the former gallery `seed(name)` helper remains removed.
+
+
+**`stubCounters` takes one optional argument, and it is what lets a test choose which answer the Intent review control reads.** It is `stubCounters(reviewSummary?: unknown)` and answers `/api/review/intent/summary` with whatever the caller passes — counts, partial counts, or an unavailable refusal; when the argument is omitted the route falls through to the counters body, which is what a caller that does not exercise the entry wants. The three answers are deliberately *different* answers that the bar must treat the same way, which is why the argument is untyped at the call site: the stub's job is to reproduce the wire, not to constrain it.
+
+`stubNotes` dispatches an explicit first-matching route table. D229 factors response construction,
+query parsing, task-body selection, folder pagination, reference resolution and empty report payloads
+into named helpers, avoiding one oversized fetch callback. `noteResolutions` reads the reference list
+from the POST body; this is a test double, not a live read. `stubCounters` gives the reports route a
+well-shaped empty reports object instead of its generic counters payload.
 
 ### Conventions
 
-Fixtures are typed through the projection mirror so a fixture that compiles is a shape
-the mirror can produce. Task-document fixture paths use `/tasks/<repository>/...`, so tests exercise
-the same repository-qualified document topology as production selection and projection code.
+Fixtures are checked against the generated mirror but their values are fabricated. Body stubs resolve qualified repository/path addresses from seeded entries; shape validity does not establish producer-value provenance.
 
 ### Invariants And Boundaries
 
@@ -55,49 +48,40 @@ Test-only module; never imported by production code.
 
 None recorded.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 The curator checked `system/sources.md`; no Domain Documentation source is
 configured for this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The shared fixture builders. | `seed`; `seedProjection`; `seedPromotedLeaf`; `stubCounters` | dashboard/src/panels/detail-panel/test-utils.tsx:14-45; dashboard/src/panels/detail-panel/test-utils.tsx:276-305; dashboard/src/panels/detail-panel/test-utils.tsx:373-479 |
 
-## Cross-Repo References
+
+- The retained shared fixture builders include seedProjection, seedPromotedLeaf and stubCounters; the removed gallery seed helper is not a current owner. [1]
+
+
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this file.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
+No applicable cross-repository source was found.
 
 ## 260821-CLIVE Projection Fixture Alignment
 
-No helper behavior changed. `seriesNode()` now defaults the required `discardedCount: 0` and
-`discardedSubTasks: []` fields so every detail-panel fixture remains a valid projected series. The
-existing required `seats` and repository-qualified topology defaults remain intact.
+`TaskSummary.discardedCount` and `discardedSubTasks` are optional; the shared summary builder does not install discarded-audit defaults. Cases that exercise discarded history supply it explicitly, separately from native child counts. No seriesNode builder remains.
 
-## Update History
 
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: recorded the `/api/requirements/list` branch + requirement-listing argument added to the shared `stubNotes` fixture.
+- The fetch route table delegates to named payload helpers; task body and empty recorded-report payloads have dedicated branches. [2]
 
-- 2026-08-24T15:04+02:00 — No content impact: completed the shared `SeriesNode` fixture with the
-  required empty discard-history cells.
 
-- 2026-08-20T04:36+02:00 — 260815-DAG-L14: `taskDoc` fixture factory defaults `seats: []`. Verified at code commit 9c3180c1.
+Anchor: `seedProjection` `seedPromotedLeaf` `stubCounters` 
 
-- 2026-08-15T02:16:50+02:00 — No content impact: 260815-DAG-L1 only makes shared detail-panel TaskDocNode fixtures carry
-  the required empty `executionWaves` projection field; rendered detail behavior is unchanged.
 
-- 2026-08-11T19:58+02:00 — Canonicalized DetailPanel fixture document paths under the
-  repository-qualified `/tasks/<repository>/...` topology.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: created this sidecar for the shared
-  test fixtures extracted from `DetailPanel.test.tsx`. Verification pinned to the
-  leaf base until closeout stamps the code commit.
+Anchor: `seedProjection` `seedPromotedLeaf` `stubCounters` 
+
+- Retired at the fifth freeze d59c3493: dashboard/src/panels/detail-panel/test-utils.tsx::seedProjection - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; dashboard/src/panels/detail-panel/test-utils.tsx:None-None - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

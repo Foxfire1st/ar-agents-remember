@@ -1,0 +1,53 @@
+{
+  "path": "mcp/src/agents_remember/package_data/runtime/system/defaults/examples/memory-repo/sources.md",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The memory-repo sources example tells users to install it into a memory layer and defines task, domain, tech-stack, and schema sections.\n\nAnchor: \"Copy or rename this file\", `## Task Sources (e.g. Github/Gitlab, MCPs, etc.)`, `## Domain Documentation`, `## Techstack Documentation`, `## Database Schema`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1a669ceda664ca5a6a1cd3f259a70b209294d20",
+            "content": "sha256:b6bdc9be484f2c0338606907697741f046abd7019211e0f711c83e5f6e6b0cef",
+            "locator": {
+              "end": 3,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f1a669ceda664ca5a6a1cd3f259a70b209294d20",
+            "content": "sha256:9f48f16cf79aae343a812380a17a8322138cac17335dac44ec7c154147c7f51f",
+            "locator": {
+              "end": 22,
+              "kind": "line_range",
+              "start": 7
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Domain documentation placeholders name the authoritative live source and retrieval tool/MCP, treat local mirrors as orientation caches, and require live retrieval before recording that no domain docs exist.\n\nAnchor: \"authoritative online/intranet source\", \"Treat local mirrors as orientation caches only\", \"live retrieval path named above\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f1a669ceda664ca5a6a1cd3f259a70b209294d20",
+            "content": "sha256:ccb85781ab1c9a7f6e7301493b06da71543a19bed8b671e7c1e3bba68a81ca70",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

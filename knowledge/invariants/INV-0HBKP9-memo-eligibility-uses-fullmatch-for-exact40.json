@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Successful object lookups inside one request-local Git memo. Losing this boundary would fabricate currentness, attribute another owner's work, hide an external change, or repeat an unsafe host/landing action rather than exposing the actual observation."
+  },
+  "applicability": "Successful object lookups inside one request-local Git memo.",
+  "conditions": [
+    "Repository, work directory, complete execution environment, output mode and literal argv form the key.",
+    "Exact object IDs and the supported replace-proof forms alone qualify."
+  ],
+  "exclusions": [
+    "Failures, refs, mutable worktrees, replacement-sensitive forms and suffixed malformed IDs execute fresh."
+  ],
+  "id": "INV-0HBKP9",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_git_object_memo.py"
+      ],
+      "path": "curator-handoff-L81-A001-b1fd-03.json"
+    },
+    "handoffEntry": "L81-R1-F20",
+    "leaf": "260928-MIK-L81",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Memo eligibility uses fullmatch for exact40/64-character object and supported peel forms; newline, CRLF, space and extra-line suffixes execute natively without entering the memo, whose native success/environment/replacement controls remain.",
+  "status": "proposed",
+  "supersedes": []
+}

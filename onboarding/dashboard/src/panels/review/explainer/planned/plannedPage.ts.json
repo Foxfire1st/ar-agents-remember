@@ -1,0 +1,129 @@
+{
+  "path": "dashboard/src/panels/review/explainer/planned/plannedPage.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+        "content": "sha256:fe9e9c71f16840f7ea2f7051bbac67768219a78a10cf0f372819f9a40281dfd6",
+        "locator": {
+          "kind": "symbol",
+          "name": "readPlannedPage"
+        }
+      },
+      "id": "RLZ-D88M6W",
+      "invariant": "INV-JFJ3Y3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE06-planned-intent",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Accepts only a planned-mode payload and reads known fields instead of letting the payload create controls or activity.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+        "content": "sha256:d914e2dced838bd3c2e1e7a8d61dc393ba81a4ac75dd122c164f63b0e82dde92",
+        "locator": {
+          "kind": "symbol",
+          "name": "sortRows"
+        }
+      },
+      "id": "RLZ-P4YQQQ",
+      "invariant": "INV-JFJ3Y3",
+      "origin": {
+        "handoffEntry": "L183-CUR-FE06-planned-intent",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Offers declared, subject and effect orders with declaration order retained for equal keys.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Only a body whose mode is planned is read as a page, and the product's sorts replace whatever the payload names\n\nAnchor: `export function readPlannedPage(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "content": "sha256:fe9e9c71f16840f7ea2f7051bbac67768219a78a10cf0f372819f9a40281dfd6",
+            "locator": {
+              "end": 321,
+              "kind": "line_range",
+              "start": 298
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The declared order is the payload's own, and the other two orders are stable on their key\n\nAnchor: `export function sortRows(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "content": "sha256:d914e2dced838bd3c2e1e7a8d61dc393ba81a4ac75dd122c164f63b0e82dde92",
+            "locator": {
+              "end": 335,
+              "kind": "line_range",
+              "start": 324
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "A row's second line is the current statement, the hand-off label, or a measured absence\n\nAnchor: `export function rowDetail(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "content": "sha256:3bd98276275ef04da131e001ce7d602e4728d4db6130f9c4f749cc44500bc868",
+            "locator": {
+              "end": 342,
+              "kind": "line_range",
+              "start": 338
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "A scope path is shown as an address at the code tip or as plain text\n\nAnchor: `export function scopeCaption(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "content": "sha256:de75c8fad6591b7ccd926fd32aa1bf61061e3e0a0219fd5c65cd1914fcf6c506",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 345
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Exactly three deterministic sorts exist, and a judgment order is not among them\n\nAnchor: `export const PLANNED_SORTS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8b2f59b920502d4ed639f3ee10f8466521ef9cec",
+            "content": "sha256:9f2685a8869862f568ae410e5a9c29c198fcbd7a2375b61e6f851a0a37c91908",
+            "locator": {
+              "end": 42,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

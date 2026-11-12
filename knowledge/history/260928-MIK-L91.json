@@ -1,0 +1,288 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L91",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-09MAJ5",
+      "items": [
+        "sha256:a4c0d35f828acb4ac438cc332368084fc9ba167fce9f349624e5baaed001221f"
+      ],
+      "reason": "The docstring's obsolete 'Requires Python 3.10+' floor is corrected to 3.14; the card states no Python floor and the module's behavior is unchanged.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0NNSE0",
+      "items": [],
+      "reason": "The file lies under no include path of the onboarding path rules; its range is now >=3.14,<3.15, realized by the package-range invariant.",
+      "subject": "onboarding:.dagger/pyproject.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-201XJF",
+      "items": [
+        "sha256:4f4b82de4b8faecaeb1d232e0405070af0c54b6b49ce7e7bcb6965478d3fa300"
+      ],
+      "reason": "The curation-doctrine `__all__` sort changes no behavior; the overview's account of the testing support route is unaffected.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-23NW0Z",
+      "items": [
+        "sha256:8a6079f9dcf5c72aee851433034eb45f6a3fb0b31dffa5a8c3d0f65abb8b45a2"
+      ],
+      "reason": "The docstring's obsolete 'Requires Python 3.10+' floor is corrected to 3.14; the card states no Python floor and the module's behavior is unchanged.",
+      "subject": "onboarding:mcp/src/agents_remember/memory/baseline.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-24V9T7",
+      "items": [
+        "sha256:cd845ae0a494d8b3164936948f6dd5285ab9aaadc15ea0e73e420334aecd54b0"
+      ],
+      "reason": "Formatter layout only: the same `with` context managers in the same order; no behavior or assertion changed.",
+      "subject": "onboarding:mcp/tests/test_route_index_memory_scope.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2J03ZV",
+      "items": [
+        "sha256:852357c09387fd450d575928f2492bd7aa14b95d0bbf77502cff64c6dcb8fc95"
+      ],
+      "reason": "The typing-only correction adds explicit public-port types and compile-only assertions; the emitted JavaScript is byte-identical, so the card's account of the injected seam still holds.",
+      "subject": "onboarding:dashboard/src/test/paseoPluginPage.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8CDJRD",
+      "items": [],
+      "reason": "The file is not an included file type under the onboarding path rules; the lock resolves the package's 3.14 range with only wheel records changed, and the consequences are recorded in the dependency-pins decision.",
+      "subject": "onboarding:mcp/uv.lock"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9XYDVN",
+      "items": [
+        "sha256:7c103bc77f07f133cc8b4480e8857083c110ef1fea6c3ad4adcc2a87ff34a2e7"
+      ],
+      "reason": "The docstring's obsolete 'Requires Python 3.9+' floor is corrected to 3.14; the card states no Python floor and the facade's behavior is unchanged.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/drift.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9Z2JE3",
+      "items": [
+        "sha256:c076dd00d5e4317736a5edd6e51b076f12c1eed29042786aed712af2a126c206"
+      ],
+      "reason": "The correction sorts two imported names (I001); no behavior or assertion changed, so the card still holds.",
+      "subject": "onboarding:mcp/tests/test_role_instruction_corpus.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A0T48F",
+      "items": [
+        "sha256:b1d211f6fb2a01fb9f2403598b9cb703f5fb785069bcde913f671ec744a07e11"
+      ],
+      "reason": "Typing-only casts and `Any` annotations; the assertions are unchanged and the proof entry of INV-K6Q2R4 is re-anchored by this leaf's invariant row.",
+      "subject": "onboarding:mcp/tests/test_reader_task_context_protocol.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C60VN4",
+      "items": [],
+      "reason": "The file lies under no include path of the onboarding path rules; the workflow writes the release as a literal (python-version: 3.14.8), which the checker's contract comparison keeps agreeing with the contract. The managed-runtime invariant has no realization in this file.",
+      "subject": "onboarding:.github/workflows/publish-mcp-to-pypi.yml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ED52YR",
+      "items": [
+        "sha256:5a18a971128230a066462951ff9ee811c44d40c846696fcaaaa90c1b788d2703"
+      ],
+      "reason": "Five test files change typing, lint or format only, plus the runtime-contract test's new negative witness, which its card carries; the overview's account of the test population is unaffected.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FEPBFQ",
+      "items": [
+        "sha256:1b7f9bcd206c5020eeeca1b906fa641cd63f1112b0640e1f142e429152e059a3"
+      ],
+      "reason": "The hunk corrects the module docstring's obsolete Python floor from 3.10+ to 3.14; it changes no behavior and carries no invariant, and the file's onboarding trace answers its card.",
+      "subject": "hunk:sha256:1b7f9bcd206c5020eeeca1b906fa641cd63f1112b0640e1f142e429152e059a3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FSNDDK",
+      "items": [
+        "sha256:a17b713b39f8f1315a2943360d9811202a2327390ae8eb8959a967645c849246"
+      ],
+      "reason": "The correction sorts two names in `__all__` (RUF022); no name, value or behavior changed, so the card's account still holds.",
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GTXTEG",
+      "items": [],
+      "reason": "The root pyproject.toml lies outside the onboarding include paths, so a card change is not counted for it. Its two changed lines are the Ruff target-version comment (an explicitly reasoned NON-runtime syntax policy) and Pyright's declared Python version (3.14); the card onboarding/pyproject.toml.md states both.",
+      "subject": "onboarding:pyproject.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JS97B9",
+      "items": [
+        "sha256:d6d79e8c76136ecb6606436b78d5fc58214cc9738f7577e03ce382772e84fe07"
+      ],
+      "reason": "The ulid card carries the removed uuid7 note; the overview's account of the observer modules is unaffected.",
+      "subject": "onboarding:mcp/src/agents_remember/observer/overview"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-7VGMWY",
+          "revision": 1
+        },
+        {
+          "id": "INV-XG226D",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y2SXDZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NKQH0C",
+      "items": [],
+      "reason": "Family authored from three obligations that only hold together: the managed runtime selection from the contract, the package's admitted 3.14 range, and the checker's named refusal. Each member was read against its source and evidence (install/bootstrap scripts, mcp/pyproject.toml, both READMEs, the checker and the new witness); the worklist reaches no family and holds no entry of an existing invariant in the changed files. The managed-runtime member's statement was corrected on the reviewer's K2 so it claims only what the two host scripts enforce.",
+      "subject": "FAM-Z69A94"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "01537fd522b89d227e77ec4276d7322fa2832ebb",
+            "content": "sha256:234b2d3df4a6761ec19cc6f3fdafc15461359c232e524d497ea649178ddacef4",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "before": {
+            "blob": "c04d8b2e16b270031def07271eababec0d59bfb7",
+            "content": "sha256:f12d781b2c954e57fe68923263eba6ba6eea6fa09d545dcc75f84addabdce9e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "RegisteredTaskReaderContextProtocolTests.test_registered_readers_use_call_local_admitted_leaf_context"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "id": "PRF-W1HHQB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-PDA4EP",
+      "items": [
+        "sha256:13d02c9d33163b24aa34a5e65f7bed401197612b71c77503a2b9b6269f71c4a8"
+      ],
+      "reason": "The typing-only correction to test_reader_task_context_protocol.py changed the anchored test symbol's bytes but preserved its assertions and runtime values, so the invariant's meaning is unchanged; the proof entry is re-anchored at the frozen tree.",
+      "revision": 1,
+      "subject": "INV-K6Q2R4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PE3GP8",
+      "items": [
+        "sha256:da0e01dd519a59ae5fc373f7650d188bf564594664a287b57f20323c7f761ac3"
+      ],
+      "reason": "The docstring's obsolete 'Requires Python 3.10+' floor is corrected to 3.14; the card states no Python floor and the module's behavior is unchanged.",
+      "subject": "onboarding:mcp/src/agents_remember/memory/carryover.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PXDRXJ",
+      "items": [],
+      "reason": "The file is not an included file type under the onboarding path rules; the contract pins the exact release 3.14.8, the minor line 3.14 and the range >=3.14,<3.15, realized by the managed-runtime invariant and the build-dependency decision.",
+      "subject": "onboarding:scripts/python-runtime-contract.env"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QTHX9C",
+      "items": [
+        "sha256:9b004e18e049d2e8a09cf0e1325f3495fc525df4d2dceaed162fa39a8ad8dd29"
+      ],
+      "reason": "The typing-only correction adds explicit public-port types, generics and compile-only assertions; the emitted JavaScript is byte-identical and the test's runtime values and assertions are unchanged, so the card's account of the test's behavior still holds.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoHierarchy.test.ts"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S536DX",
+      "items": [
+        "sha256:761ec2a88e76c52682832f72d3b9102079ae6268382352b9afdc6dcade1847c8"
+      ],
+      "reason": "The execution-registry card carries the runtime identity change and the drift docstring floor is corrected; the overview's account is unaffected.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TJ8QM4",
+      "items": [],
+      "reason": "The file lies under no include path of the onboarding path rules; it selects the Dagger module's own interpreter as a literal and is not realized by the managed-runtime invariant. Nothing in the tree reads it or compares it with the contract; the quality module runs the checker inside the runtime it builds from the contract (.dagger/src/agents_remember_quality/main.py:113-114 and 194-195), not under this interpreter. The root overview's runtime paragraph does not name this file.",
+      "subject": "onboarding:.dagger/.python-version"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TZZ98N",
+      "items": [],
+      "reason": "The file lies under no include path of the onboarding path rules; the workflow writes the release as a literal (python-version: 3.14.8), which the checker's contract comparison keeps agreeing with the contract. The managed-runtime invariant has no realization in this file.",
+      "subject": "onboarding:.github/workflows/quality-checks.yml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WF25RT",
+      "items": [
+        "sha256:375b20869580fc3041923031ba4681c4185222586969bba3e493bc41fa47eb13"
+      ],
+      "reason": "Typing-only casts and one raw-MCP annotation; the existing assertion expressions and the runtime AST are unchanged, so the card's account of the settings tests still holds.",
+      "subject": "onboarding:mcp/tests/test_agentic_settings.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WHF2CW",
+      "items": [
+        "sha256:16236c3d3bc4da4ab74c875ee720c0da92cd2d326431edd67f896f591293bd82"
+      ],
+      "reason": "The two docstring floor corrections change no behavior and the overview states no Python floor.",
+      "subject": "onboarding:mcp/src/agents_remember/memory/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WR81BC",
+      "items": [
+        "sha256:b38628ef4a81236a8e995c53ac05ac6ca45e244120420291aef6c8c501c05854"
+      ],
+      "reason": "The docstring floor correction changes no behavior and the overview's account of the worktree support is unaffected.",
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XXRT89",
+      "items": [],
+      "reason": "The file lies under no include path of the onboarding path rules; the quality image's interpreter path now names python3.14.",
+      "subject": "onboarding:.dagger/src/agents_remember_quality/main.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YYF7EE",
+      "items": [
+        "sha256:2dc8cbb63d459668352a017ac418aee77d7d681f2cafc7830dec39509e99ac87"
+      ],
+      "reason": "The route overview's account of the mcp package is unaffected: the changed mcp/README, mcp/pyproject.toml, certification profile and uv.lock runtime statements are carried by their file cards, and no mcp-overview statement became false.",
+      "subject": "onboarding:mcp/overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,0 +1,61 @@
+{
+  "path": "dashboard/src/panels/review/ReviewSurface.walkUnavailable.test.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "83011fa4b3ac2e0a1c1a7eccd94015d26aa7d838",
+        "content": "sha256:349118c3786d00aac7689ea792d95d0f04bd3cb7431ccb7138bf6208233e42fd",
+        "locator": {
+          "end": 148,
+          "kind": "line_range",
+          "start": 33
+        }
+      },
+      "id": "RLZ-F9DWNZ",
+      "invariant": "INV-BMFR2T",
+      "origin": {
+        "handoffEntry": "OR-R033-D1.a/fixed",
+        "leaf": "260928-MIK-L39"
+      },
+      "rationale": "The existing mounted failure/refusal test guard includes its subject-row/section selectors, 40rem viewport shim and eight-case tree/column activation matrix, then asserts requested-subject labeling, one settled heading landing, eligible row focus and retained shell. The held-read cases assert reader scrolling and moved focus disarm the automatic movement. These are controlled jsdom declarations and call observations, not a browser geometry measurement.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "6": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(cases)(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83011fa4b3ac2e0a1c1a7eccd94015d26aa7d838",
+            "content": "sha256:ab61698cfb39f3e6d06474f3054b319ea3d06e762530c452c2158acd7a4ce2b8",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 67
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Declared check and its fixture assertions.\n\nAnchor: \"it.each(['failed', 'refused'])(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "83011fa4b3ac2e0a1c1a7eccd94015d26aa7d838",
+            "content": "sha256:a18a77d6c49d414722f94e4907e148072351d26884d5746f0f29561b06b1952c",
+            "locator": {
+              "end": 157,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

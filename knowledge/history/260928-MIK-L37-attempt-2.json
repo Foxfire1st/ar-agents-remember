@@ -1,0 +1,1177 @@
+{
+  "attempt": 2,
+  "closed": true,
+  "leaf": "260928-MIK-L37",
+  "rows": [
+    {
+      "because": [
+        {
+          "id": "MIK-R32",
+          "packet": "requirements/MIK-R32-v1-unexplained-changes-lane.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "before": {
+            "blob": "9f16a4ea899010aae0203cfd8712a007026dabf6",
+            "content": "sha256:087f9600600b0b76e0eb0c421d8a83a2909722e81f9467a1d97d0ecba7029bf3",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+          },
+          "id": "RLZ-DDY3VDR2"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-1Q59VA",
+      "items": [
+        "sha256:333c861f0c201aaee7cec209862863ebd8c3742efc635c3dd46c078ce647f623",
+        "sha256:7f6063d45f9473c2b201b0f5d78aa6afe944d4c34572a6e7ffddaf70bbdb43b9"
+      ],
+      "reason": "The control now also carries the unexplained-changes lane's summary for a tree comparison (MIK-R32 rule 9), with its detail in a closed disclosure beside the control. It is still the one control: the source of +N −N, the absent picker and refresh, and the opened target are unchanged. The effect is strengthen, not clarify: stating the attribution of the changed files is a new obligation, and the new statement implies the earlier one. The rationale of RLZ-DDY3VDR2 now names the attribution count.",
+      "revision": 3,
+      "subject": "INV-T0EWDB7H"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPanes"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "before": {
+            "blob": "1a025b5589f8be0bc6a1f86a24c8e0c67ecc48dc",
+            "content": "sha256:bba8130e7e5738ce194cf62ba56d0343a009b3bee32441ac2a9027770f8aca48",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewPanes"
+            },
+            "path": "dashboard/src/panels/review/ReviewSurface.tsx"
+          },
+          "id": "RLZ-1EJ1NP47"
+        },
+        {
+          "after": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:6f4392bffde82cb144f49437db6e73c9ea7a0001dac6b46a09e3c4917a322b79",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceCenter"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:6f4392bffde82cb144f49437db6e73c9ea7a0001dac6b46a09e3c4917a322b79",
+            "locator": {
+              "kind": "symbol",
+              "name": "WorkspaceCenter"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "id": "RLZ-TS5M83QM"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-3K13YB",
+      "items": [
+        "sha256:de09b15567ba26bb6a4965b8c780f03ad8d25d333073c16b5aa65757fc37c9cf"
+      ],
+      "reason": "ReviewPanes now reads the unexplained-changes lane once for the comparison on screen and hands it to the workspace and the technical details; it still chooses the answered payload or the task frame. WorkspaceCenter is still one DOM node whose content alone changes: the pending statement, the answered reading, or the lane's reading for a tree comparison. The rationale of RLZ-TS5M83QM now names that third content.",
+      "revision": 1,
+      "subject": "INV-KKJYVB40"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3WNQVJ",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.cursor/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-428P75",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.agents/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-470JC4",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.codex/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R31",
+          "packet": "requirements/MIK-R31-v1-focused-expression-cards.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:b8ceaccec69326358db9f3848aca2b3ba4261a406ccb0cf6a1e834c53d267845",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link_undetermined"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "before": {
+            "blob": "4045c2ca127be7f0ab31fffbf315b503780d0973",
+            "content": "sha256:b8ceaccec69326358db9f3848aca2b3ba4261a406ccb0cf6a1e834c53d267845",
+            "locator": {
+              "kind": "symbol",
+              "name": "_link_undetermined"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_admission.py"
+          },
+          "id": "RLZ-9EC7B6PN"
+        },
+        {
+          "after": {
+            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
+            "content": "sha256:f17f1fac35685d723b396fe3ab0f16850dad7d409ed3c9f8215e03adc5bbf52f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_reading"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_realization_link.py"
+          },
+          "before": {
+            "blob": "c44437cfac6ee519a532c3ce675f46baa01148fe",
+            "content": "sha256:f17f1fac35685d723b396fe3ab0f16850dad7d409ed3c9f8215e03adc5bbf52f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_side_reading"
+            },
+            "path": "mcp/src/agents_remember/application/review_source_realization_link.py"
+          },
+          "id": "RLZ-CHBR2MK5"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-4JNCMP",
+      "items": [
+        "sha256:1b70b24bef83cc0de7d614cad2b2dffeaee51f6ae0e80064e4028bbb8e9cc108",
+        "sha256:b6d0c74a1a5a9ce67d26e2a1c42525b03c7165f34892b489654e8233e24a82fc"
+      ],
+      "reason": "The refusal now chooses its remedy (MIK-R31 leaf): when every unread snapshot file is absent the knowledge was never created, and the next action is to initialize it, not to repair it. The exclusion that left this remedy to a later leaf no longer holds. _side_reading marks an absent snapshot and, in an index-backed comparison, also reads a proof at the path as linked; it still reports an unread snapshot as unread, never as not linked. The rationales of both entries are rewritten for this: RLZ-9EC7B6PN said the refusal directs repair only, and RLZ-CHBR2MK5 did not name the proof query.",
+      "revision": 3,
+      "subject": "INV-XTXZESS6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4XAB7A",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.github-vscode/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-76DV96",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.claude/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7HS26W",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.cursor/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:96fbae51c041a77b745790c2267462b9abef6aff06ca3489390ded77a0b6e35a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCenterBody"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "before": {
+            "blob": "b87a0c1d2510c8056181b8fdbd2ec7a3c0631511",
+            "content": "sha256:96fbae51c041a77b745790c2267462b9abef6aff06ca3489390ded77a0b6e35a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ReviewCenterBody"
+            },
+            "path": "dashboard/src/panels/review/FamilyReviewCenter.tsx"
+          },
+          "id": "RLZ-1PT6BEVC"
+        },
+        {
+          "after": {
+            "blob": "aabdb0205910ea625a61e6f59e5b711182c48afa",
+            "content": "sha256:e147f3e2f54b176f022c7cd49657a45093bc4f086de34e4d7d63a1fc0dac8e0b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cardScope"
+            },
+            "path": "dashboard/src/panels/review/focusedCards.ts"
+          },
+          "before": "absent",
+          "id": "RLZ-HSKQNM"
+        },
+        {
+          "after": {
+            "blob": "7df7fdf55ac873fb7b9cc26e52cdf9a9797977fc",
+            "content": "sha256:32cabadfc61cc0f183651fd230ebe785d4857ded556394afc431e1452e7fdc0c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ScopeLine"
+            },
+            "path": "dashboard/src/panels/review/ExpressionCards.tsx"
+          },
+          "before": "absent",
+          "id": "RLZ-QQMRX6"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-7WXZEA",
+      "items": [
+        "sha256:c07a5e84a09a69ac83ed0e0aa8a51506e4ef98147663bdcfd58a6a8ea628af06"
+      ],
+      "reason": "FamilyReviewCenter became a wrapper that scopes the word diff (MIK-R35), and its body moved into ReviewCenterBody in the same file, where RLZ-1PT6BEVC is anchored. The body did not move unchanged: it renders CenterExpressions, which shows ExpressionCards for a tree comparison and ReviewExpressions for a dataset review. linksIncomplete reaches only ReviewExpressions. For a tree comparison the statement that the links are not fully loaded is made by cardScope and ScopeLine ('These cards cover the loaded N of M members'), which carried no entry; both are attached now. The statement itself is unchanged and holds for both paths. Evidence (L37-R2-tree-scope-notice): dashboard/src/panels/review/ExpressionCards.test.tsx (\"says a bounded roster's cards cover only the loaded members and points to the walk (F2)\"); review notes/reports/260928-MIK-L37-curation-review.md finding S1",
+      "revision": 2,
+      "subject": "INV-VPX81HXV"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8F4S87",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.openclaw/workspace/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-95ZH1V",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:47406ff73ec273dce6a55647fa21f4c8efd923a4841cf6828e55d8eacd5d1b60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-7VHY091X"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9TSQ95",
+      "items": [
+        "sha256:32aa81955072f04de2087e7039a6b1dd96577510c807e64f5c29b90fae92270e"
+      ],
+      "reason": "The template grew sections for text storage. The fix round added to the template's History section: the writer fills a row's items, a cover may revise a realization entry's rationale in place, and the rules for naming a row again and for the governing row of a changed invariant or family. Its rule to omit governing_route when no route governs a place, and the refusal of the word absent, are unchanged.",
+      "revision": 1,
+      "subject": "INV-E8655Z54"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AZ7BTP",
+      "items": [],
+      "reason": "The canonical skill source. Its mirror card under onboarding/skills/ lies outside the onboarding path rules, so the gate does not count it; it was updated all the same. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BH7ZFV",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.codex/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BZ6GFK",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.pi/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R25",
+          "packet": "requirements/MIK-R25-v1-reviewer-on-git-trees.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-YZA7E4"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "before": {
+            "blob": "f1950eaa1da83687a4057e31a07d75638b1400ed",
+            "content": "sha256:7dcac80a8b8df7ac06900093814815776479539dfcb1e54347cbf683c7babbe7",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_committed_leaf_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_committed_leaf.py"
+          },
+          "id": "RLZ-8S8VDEJ3"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-DQN7HY",
+      "items": [
+        "sha256:11e0ef75a5659b8ee3039e7e8c07320bd4c178eb39685a5ea84cbea4a5239a79",
+        "sha256:9f69640353894779fa92f0c2bc3cd6a6518b67eb4afa9f0be34abf79b8f1d071"
+      ],
+      "reason": "Revision 4, the second step of this leaf's change; revision 3 is recorded by ROW-VT6B4T (weaken). The statement now opens with its exception, the dataset-only leaf on a converted line, instead of a general clause that its own last sentence contradicted. The obligation is the one revision 3 states. The rationale of RLZ-8S8VDEJ3 is rewritten for the code as it is: the converted-repository resolution is asked between the contract and the generation reopen.",
+      "revision": 4,
+      "subject": "INV-9NCBGQSY"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R32",
+          "packet": "requirements/MIK-R32-v1-unexplained-changes-lane.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:bb0d9f515ee13eb130a26e08f9a727b6e40dbbc0108c07a81bf7573b83277128",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceAttribution"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:bb0d9f515ee13eb130a26e08f9a727b6e40dbbc0108c07a81bf7573b83277128",
+            "locator": {
+              "kind": "symbol",
+              "name": "sourceAttribution"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "id": "RLZ-M82RW0QW"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-EFQRMG",
+      "items": [
+        "sha256:f20730e4a932341d67168b4e95f97e616865d72c6146181e1b170f35eb7edffc",
+        "sha256:f63075b23237d9dd4d87103622757555732d7b9b68c39b181ed04bf80a9a64c2"
+      ],
+      "reason": "For a tree comparison sourceAttribution now takes each label from the unexplained-changes lane's bucket of the path (MIK-R32), so no surface of that comparison classifies a file differently, and shows 'Attribution pending' while the lane is read. A dataset review keeps the mapped and unmapped partitions. Every inventory entry is still labelled, and a path the backend does not classify is still unknown. The effect is replace, not clarify: for a tree comparison the labels come from another source and have a new pending state, so the earlier statement ('from the backend partition') is false there, and the new one says nothing more about a dataset review. The rationale of RLZ-M82RW0QW is rewritten to say so.",
+      "revision": 3,
+      "subject": "INV-4DVNECH3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FDT7GF",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.hermes/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-HVZJ3E",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.github-vscode/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R37",
+          "packet": "requirements/MIK-R37-v1-cutover-to-text-storage.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
+            "content": "sha256:eab6325c343f30543209edd0ceea70a71c300d8ba2b2e2969d3464cd90a236ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:eab6325c343f30543209edd0ceea70a71c300d8ba2b2e2969d3464cd90a236ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_no_read_selects_the_database_of_a_converted_tree"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-JR10RF"
+        },
+        {
+          "after": {
+            "blob": "90778dd09d7e85a447986a031836c791319c8ebf",
+            "content": "sha256:f49c336c5661885a88f130b8a01f6c6aeea2756491bbeaa06808f7f0170d5ce7",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_unchanged_knowledge_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_unchanged_knowledge.py"
+          },
+          "before": {
+            "blob": "90778dd09d7e85a447986a031836c791319c8ebf",
+            "content": "sha256:f49c336c5661885a88f130b8a01f6c6aeea2756491bbeaa06808f7f0170d5ce7",
+            "locator": {
+              "kind": "symbol",
+              "name": "freeze_unchanged_knowledge_review"
+            },
+            "path": "mcp/src/agents_remember/application/review_unchanged_knowledge.py"
+          },
+          "id": "RLZ-J6A978YS"
+        },
+        {
+          "after": {
+            "blob": "90778dd09d7e85a447986a031836c791319c8ebf",
+            "content": "sha256:08123bbfae8135d11ca5da9d6c825537dfd7eeab6bc393cdb08e102191c96352",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dataset_resolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_unchanged_knowledge.py"
+          },
+          "before": {
+            "blob": "90778dd09d7e85a447986a031836c791319c8ebf",
+            "content": "sha256:08123bbfae8135d11ca5da9d6c825537dfd7eeab6bc393cdb08e102191c96352",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dataset_resolution"
+            },
+            "path": "mcp/src/agents_remember/application/review_unchanged_knowledge.py"
+          },
+          "id": "RLZ-M72V18"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "strengthen",
+      "id": "ROW-JH3HNH",
+      "items": [
+        "sha256:b0fcdc54c1fe9a7fb2988eeff9fc38517b282e6faec57f83e0df4daa145ce33d"
+      ],
+      "reason": "This leaf makes the unchanged-knowledge freeze refuse a converted leaf first (the L23 F8 carry, MIK-R37 rule 3): _dataset_resolution returns the tree-comparison refusal before the memory base is read, so the frozen database is never selected. For a dataset pair the match rule is unchanged. The statement and its exclusions say so, and the helper is attached as a realization with its proof. The rationale of RLZ-J6A978YS now names that first refusal.",
+      "revision": 3,
+      "subject": "INV-T9M21FB4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KHQ5BH",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.claude/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R12",
+          "packet": "requirements/MIK-R12-v2-curator-writer-for-all-knowledge-kinds.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        },
+        {
+          "id": "MIK-R24",
+          "packet": "requirements/MIK-R24-v1-conversion-and-boundary-crossing.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        {
+          "id": "MIK-R07",
+          "packet": "requirements/MIK-R07-v2-per-leaf-history-files.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v2"
+        },
+        "DEC-YZA7E4"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "3d5ab012645a59c43d66a805479a40ef63038e39",
+            "content": "sha256:3b6fe5185a2b640c3284f85aba451b53060a107a21f021326c4141f072351e10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_database_writer_is_frozen_on_a_converted_tree_and_names_the_file_writer"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "before": {
+            "blob": "21d1479aea3a4a461bb8b3e63cf53bc5c2fa2e31",
+            "content": "sha256:3b6fe5185a2b640c3284f85aba451b53060a107a21f021326c4141f072351e10",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_database_writer_is_frozen_on_a_converted_tree_and_names_the_file_writer"
+            },
+            "path": "mcp/tests/test_knowledge_cutover.py"
+          },
+          "id": "PRF-TMK4N3"
+        },
+        {
+          "after": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "before": {
+            "blob": "5dd8b04a0ac5cc0a5ba63ede47b7a6ead7a860ba",
+            "content": "sha256:199fd749c8d68e4c9fe056cecbe19f15e263505227e16733da828a1bc153b05f",
+            "locator": {
+              "kind": "symbol",
+              "name": "run"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_ingest.py"
+          },
+          "id": "RLZ-6HAWT71R"
+        },
+        {
+          "after": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ingest_curator_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "before": {
+            "blob": "6c264ad4baa933504af480b247b65dd3c5a52ea3",
+            "content": "sha256:1e68e38b1d88e42cbf232455a533b8ff42545fd09694ebe83890024f9cd1ccb8",
+            "locator": {
+              "kind": "symbol",
+              "name": "ingest_curator_list"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_curator_ingest.py"
+          },
+          "id": "RLZ-6X7QPYQ5"
+        },
+        {
+          "after": {
+            "blob": "32e12e6260e6ac8d919a555b2802d33ea4a26afd",
+            "content": "sha256:ec3c06ac2e930c4375dc7574d34a4dd945a1dff5cd26c632d47b45f4312ba879",
+            "locator": {
+              "kind": "symbol",
+              "name": "frozen_database_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "before": {
+            "blob": "32e12e6260e6ac8d919a555b2802d33ea4a26afd",
+            "content": "sha256:ec3c06ac2e930c4375dc7574d34a4dd945a1dff5cd26c632d47b45f4312ba879",
+            "locator": {
+              "kind": "symbol",
+              "name": "frozen_database_refusal"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/publication.py"
+          },
+          "id": "RLZ-CW5BZG"
+        },
+        {
+          "after": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:0fd1011447c58683e2f8903a3e6e6afaaf079b83579e9e1028228d4cf63719c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py"
+          },
+          "before": {
+            "blob": "73eecf58061cb3ef3f87695242319bb9d426e63c",
+            "content": "sha256:0fd1011447c58683e2f8903a3e6e6afaaf079b83579e9e1028228d4cf63719c1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_run"
+            },
+            "path": "mcp/src/agents_remember/cli/knowledge_bootstrap.py"
+          },
+          "id": "RLZ-Y766ENWA"
+        },
+        {
+          "after": {
+            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
+            "content": "sha256:53a8af530313c38a96cbfea5c9104fa1b680e214c37b33760bf32b1619f74071",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unfrozen_database"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_admission.py"
+          },
+          "before": {
+            "blob": "f1835f850e272e93c572dee8c07d07f8680882af",
+            "content": "sha256:53a8af530313c38a96cbfea5c9104fa1b680e214c37b33760bf32b1619f74071",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_unfrozen_database"
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_write_admission.py"
+          },
+          "id": "RLZ-Y9GSNQ"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "weaken",
+      "id": "ROW-KY2EJG",
+      "items": [
+        "sha256:11f24960bd1e84a12f07e7f44c2799fe2fbb96c0e0f4a5970f7faed825be6723",
+        "sha256:43b47ef6147834d41c8032e39a6cc416cdb99036e3ec0415bf672477720c5eeb"
+      ],
+      "reason": "Revision 4, the second step of this leaf's change; revision 3 is recorded by ROW-A2NA0E (replace). Revision 3 kept the universal 'every reachable knowledge write', which text storage breaks: the conversion and the crossing sync write the whole knowledge tree, the formatter rewrites knowledge files, and the closeout routes write the closed flag of the leaf's history file, two of them through MCP tools. The statement now claims authored writes only and names those mechanical writers as exclusions; the applicability and the dated condition carried from the database export are replaced. The entries are unchanged. Correction to ROW-A2NA0E's reason: RLZ-Y766ENWA was stale because the symbol run never resolved under the converted extractor; its recorded blob already held both bindings of run. Re-anchoring it to _run, where the writer is selected, stands.",
+      "revision": 4,
+      "subject": "INV-1XKX9ERN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MKQDW1",
+      "items": [],
+      "reason": "The canonical skill source. It lies outside the onboarding path rules, so it has no card. Its byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MNK16Q",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.agents/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-1XKX9ERN",
+          "revision": 4
+        },
+        {
+          "id": "INV-753SKJFF",
+          "revision": 2
+        },
+        {
+          "id": "INV-QN53GPRB",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-N46VKD",
+      "items": [
+        "sha256:86b8ad9504c4bec6beffe4616496ed2c737b72df460a9ed14593bebd4270cf14",
+        "sha256:d5ab4c1e66997f2ab70e09d93f028112606d6fffceacbd8650eb63fe4b4711dc"
+      ],
+      "reason": "Examined all 3 members. The guarantee is restated as a claim about authored knowledge writes, with the mechanical writers named as outside it (conversion, crossing sync, formatter, the closeout's closed flag). INV-1XKX9ERN carries the same restatement at revision 4, and INV-753SKJFF now states that a converted memory layer publishes no dataset and that its frozen database is never selected. INV-QN53GPRB is unchanged. The routes assigned earlier in this leaf stand: the two command lines, the application's admission and publication owners, the publication sink in the knowledge store, and the checkout confinement primitive.",
+      "subject": "FAM-7B6N3Y4Q"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N5WNWD",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.pi/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NM2BQC",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.agents/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PHNRYS",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.codex/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PRYR7B",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.openclaw/workspace/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R37",
+          "packet": "requirements/MIK-R37-v1-cutover-to-text-storage.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        },
+        "DEC-YZA7E4"
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_dataset_path"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "before": {
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "content": "sha256:a271026abd8eb0197a4b94a37c5a65774298125ef46d349c48fbff378cfc94a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "published_dataset_path"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "id": "RLZ-7J2QHFP8"
+        },
+        {
+          "after": {
+            "blob": "4be19bfc4f0db366151478c0195bb8e5278c7351",
+            "content": "sha256:cf99837a0a835809c8b221705f2ba36642e7f0b3589f9e2216ef1dc4a0760978",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "before": {
+            "blob": "c0231a8a7bfda8e3be26f3c673d794841f526879",
+            "content": "sha256:38c9b05133b665ee1d7d4cf015170877e31dbbef0cdc4a9462337c2b320137c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_published_intent"
+            },
+            "path": "mcp/src/agents_remember/application/published_intent.py"
+          },
+          "id": "RLZ-K64BDQNF"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-QKZG0K",
+      "items": [
+        "sha256:d4637c00bbfda7d32bdf964727d0f91dd3c5faedec61f6b08de9b60991cb1a32"
+      ],
+      "reason": "This leaf makes resolve_published_intent answer not-recorded for a converted memory tree, naming the tree, without opening its frozen database (MIK-R37 rule 3; the L23 F8 carry): under text storage the tree's text files, read through its derived index, are its published knowledge. For an unconverted layer the one declared location, knowledge.sqlite, and the memory-root rule are unchanged, and published_dataset_path itself is unchanged. The applicability carried from the database export named hand-off entries and is replaced. The rationale of RLZ-K64BDQNF is rewritten for the function as it is; the other two entries keep theirs.",
+      "revision": 2,
+      "subject": "INV-753SKJFF"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:df9b2dbcbe0c579d8ffba828a78137321ccb8c5e887f0cd435e51d4fdfd5c432",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "before": {
+            "blob": "cfec25b1fea3859e299dc47f8f8978fed2bb2c52",
+            "content": "sha256:df9b2dbcbe0c579d8ffba828a78137321ccb8c5e887f0cd435e51d4fdfd5c432",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/roles/curator.md"
+          },
+          "id": "RLZ-K569QYAK"
+        },
+        {
+          "after": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:47406ff73ec273dce6a55647fa21f4c8efd923a4841cf6828e55d8eacd5d1b60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-RSTSK683"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-R1PD90",
+      "items": [
+        "sha256:7ce80191efac4334a9ff9ed770b63d8ce83ff4e5b5c00019b6b107ec9d4e5e68"
+      ],
+      "reason": "Both skill files grew sections for text storage (the file writer's sections, family routes, the admission rule, decision records, and the curator's converted-memory steps). The fix round added to the template's History section: the writer fills a row's items, a cover may revise a realization entry's rationale in place, and the rules for naming a row again and for the governing row of a changed invariant or family. The target shape {path, locator, governing_route, rationale, role} in the template and the curator's step to author a missing rationale before ingest are unchanged.",
+      "revision": 1,
+      "subject": "INV-0FBA8M52"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RX07TC",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-09-git-worktree-manager/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-09-git-worktree-manager/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.github-vscode/skills/c-09-git-worktree-manager/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VEHBJY",
+      "items": [],
+      "reason": "A generated harness copy of skills/l-01-agent-lifecycles/templates/curator-handoff-list.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.hermes/skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VV746D",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.cursor/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "assigned",
+      "examined": [
+        {
+          "id": "INV-0FBA8M52",
+          "revision": 1
+        },
+        {
+          "id": "INV-4N43MNN2",
+          "revision": 1
+        },
+        {
+          "id": "INV-CKHJ0M7J",
+          "revision": 1
+        },
+        {
+          "id": "INV-E8655Z54",
+          "revision": 1
+        },
+        {
+          "id": "INV-H6A6JS63",
+          "revision": 1
+        },
+        {
+          "id": "INV-J7179RG5",
+          "revision": 1
+        },
+        {
+          "id": "INV-VVMNM9B6",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-W1M51Q",
+      "items": [
+        "sha256:044a37647afd82e1d87918394853d3bc5292cd1e117576bfefff066f70491f18",
+        "sha256:a7143692eb4a04ac6b9d1d11c9254f85c7ec26ce7d109b2cf7045d720e223d86"
+      ],
+      "reason": "Examined all 7 members. The three stale members are anchored on the two skill files, which grew text-storage sections around unchanged rules. The fix round's cover form {id, rationale} replaces a stored realization entry's rationale in place, and the guarantee's last clause, 'stored history is never rewritten', and INV-H6A6JS63's exclusion, 'Realization claims already stored ... are never rewritten', still hold; checked in the code. Both clauses are said of the database ingest's store: INV-H6A6JS63's applicability names the ordinary curator writer reached through ingest_curator_list (application/knowledge_curator_ingest.py), and the replay members (INV-4N43MNN2, INV-VVMNM9B6) name its candidate, its realization claims and its allocation journal. The new cover belongs to the file writer (application/knowledge_writer/authoring.py::_revise_rationale): its one caller is the cover of a history row, and it edits a realization entry in an onboarding sidecar of the leaf's memory worktree. knowledge_curator_ingest.py, curator_realization_authoring.py and curator_stored_revisions.py import nothing from knowledge_writer, and knowledge-ingest runs the file writer on a converted tree and the database ingest only on an unconverted one (cli/knowledge_ingest.py::run), so no path of the database ingest rewrites a stored claim. The first half of the guarantee stands for the revised text too: it is authored by the curator for that exact place and is never generated by the writer; and the file writer rewrites no closed history file, since the revision is recorded under the invariant's row in the leaf's open attempt file. The file writer applies the members' refusal through the shared realization_refusal (application/knowledge_writer/handoff.py), which already carries entries of INV-H6A6JS63 and INV-J7179RG5. Routes assigned as three local trees (D12): the curator ingest and realization authoring modules, the curator role skill, and the hand-off template.",
+      "subject": "FAM-KQQE74ZT"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R34",
+          "packet": "requirements/MIK-R34-v1-per-hunk-intent-markers.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:cfa1459f3e099937884de39d60a0285484de4f079336e26147ddfa1b46b69a43",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSelectionFocus"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "before": {
+            "blob": "245b9956c28ac549f1b39fa6413482d1cc3b422c",
+            "content": "sha256:cfa1459f3e099937884de39d60a0285484de4f079336e26147ddfa1b46b69a43",
+            "locator": {
+              "kind": "symbol",
+              "name": "useSelectionFocus"
+            },
+            "path": "dashboard/src/panels/review/ReviewWorkspace.tsx"
+          },
+          "id": "RLZ-WZNMZVS9"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-XH10AH",
+      "items": [
+        "sha256:4c23afd8918d15c4b1624893fa7ff279bd36eb18567ea8124965f104f047b593",
+        "sha256:e5f19eec5b5816465f29df4233848a683df70e7068390f790f2aaafe6c8384cc"
+      ],
+      "reason": "The lookup of the node to focus moved into selectionNode, which now prefers the rail's target-state notice of a marker target (MIK-R34) over the selected tree node. The guard is unchanged: focus moves only when the active element is still the selecting control or body. The effect is replace, not clarify: for a marker target whose notice is shown the earlier statement sent focus to the selected tree node and the new one sends it to the notice, so neither statement implies the other.",
+      "revision": 2,
+      "subject": "INV-MCVSM81V"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "42cd9f6bc94408e2db0397759dbe09c5df2b254e",
+            "content": "sha256:c3e9aa6444ed04f0e57e765dcd1f9b41a75cf141f745cd4440d566119420c542",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "before": {
+            "blob": "64ce67cb56fec67a9169e20365e724b883c818bd",
+            "content": "sha256:47406ff73ec273dce6a55647fa21f4c8efd923a4841cf6828e55d8eacd5d1b60",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/templates/curator-handoff-list.md"
+          },
+          "id": "RLZ-A2D6Y9T1"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XHM4QG",
+      "items": [
+        "sha256:1c991f48c07025432b9b0041eab32f653ce7fcf6c199db1164389186628dba0a"
+      ],
+      "reason": "The template grew sections for text storage. The fix round added to the template's History section: the writer fills a row's items, a cover may revise a realization entry's rationale in place, and the rules for naming a row again and for the governing row of a changed invariant or family. Its value, vocabulary and length rules for rationale and role, with their refusal names, are unchanged.",
+      "revision": 1,
+      "subject": "INV-J7179RG5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-XK89VT",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.pi/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-09FC73JC",
+          "revision": 2
+        },
+        {
+          "id": "INV-453ZPCZ5",
+          "revision": 2
+        },
+        {
+          "id": "INV-53MJW8V0",
+          "revision": 2
+        },
+        {
+          "id": "INV-7W11WKKN",
+          "revision": 2
+        },
+        {
+          "id": "INV-8Q6DZTDB",
+          "revision": 2
+        },
+        {
+          "id": "INV-9BH2BNCT",
+          "revision": 2
+        },
+        {
+          "id": "INV-9NCBGQSY",
+          "revision": 4
+        },
+        {
+          "id": "INV-B3GYVZTJ",
+          "revision": 2
+        },
+        {
+          "id": "INV-S26EBC8P",
+          "revision": 3
+        },
+        {
+          "id": "INV-T9M21FB4",
+          "revision": 3
+        },
+        {
+          "id": "INV-VXA7SZ0Z",
+          "revision": 2
+        }
+      ],
+      "id": "ROW-YJ7CG3",
+      "items": [
+        "sha256:951b31a70d830846e47d56c9b54bc667e8e349d173e4c2524513bf33140bd8af",
+        "sha256:f9891bd52758b139c681ff4cd23ec1c13a81688b858095dab06aeb0a27e15ca1"
+      ],
+      "reason": "Examined all 11 members. The guarantee said a reopened review 'preserves its recorded operands'. INV-9NCBGQSY, weakened in this leaf for MIK-R25 rule 4, says that on a converted official line a dataset-only leaf reports its knowledge sides legacy-unavailable and no database is read, so its recorded knowledge operands are not preserved for the review. The guarantee is restated for both storage formats. INV-T9M21FB4 states that the unchanged-knowledge freeze refuses a converted leaf, and INV-453ZPCZ5 only gained the gate call. The routes assigned earlier in this leaf stand: the review comparison owners, the closeout's curator coherence modules, the coherence model, the comparison record command line, and the scope header that labels a reconstruction.",
+      "subject": "FAM-XZ5BR65G"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YQX2FK",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.claude/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Z73QAP",
+      "items": [],
+      "reason": "A generated harness copy of skills/c-12-closeout/SKILL.md (scripts/sync-skills.py), outside the onboarding path rules, so it has no card. The byte-identical packaged copy mcp/src/agents_remember/package_data/runtime/skills/c-12-closeout/SKILL.md is onboarded, and that card carries this change.",
+      "subject": "onboarding:.hermes/skills/c-12-closeout/SKILL.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "content": "sha256:9635725047309d8545115e099e722d59e8889d6751caa802181b917a1bf43821",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedStatement"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "before": {
+            "blob": "3752a210e35717d0b1b067a89cd0dec33e988ea4",
+            "content": "sha256:9635725047309d8545115e099e722d59e8889d6751caa802181b917a1bf43821",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedStatement"
+            },
+            "path": "dashboard/src/panels/review/SubjectReview.tsx"
+          },
+          "id": "RLZ-4BD3B78H"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZE3TB0",
+      "items": [
+        "sha256:57cd33a9fb65d3cfd1bf04337403452fbdfe767dbd21783197df2d5d1ae4e6aa"
+      ],
+      "reason": "SelectedStatement now word-diffs a tree comparison's wording (MIK-R35). The statement text that is shown or diffed still comes from the knowledge pane's before and after statements; the member rows of the selected revisions decide which fields changed and supply applicability, conditions and exclusions. The pair still comes only from selectedRevision; an ambiguous or unresolved selection still shows the per-side states and no diff, now in StatementBody.",
+      "revision": 2,
+      "subject": "INV-21SDZECS"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-49E649",
+          "revision": 1
+        },
+        {
+          "id": "INV-656CYW",
+          "revision": 1
+        },
+        {
+          "id": "INV-HWAWFT",
+          "revision": 1
+        },
+        {
+          "id": "INV-MS9BMJ",
+          "revision": 1
+        },
+        {
+          "id": "INV-WV1YQE",
+          "revision": 1
+        },
+        {
+          "id": "INV-XN0FG8",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-ZK9VRZ",
+      "items": [],
+      "reason": "This leaf created the family in its round 2 and corrected it after review R2 (S1, N7), before it reached the parent line, so this is the family's first row. The guarantee is now stated for the worktree closeout, its recovery paths and the commit it records, and names a recorded landing and direct landing as outside it. INV-656CYW joins the members: the judged-tree check of INV-49E649 reads the staging snapshot that INV-656CYW protects. The routes are six local trees: application replaces its three sub-routes because review_tree_knowledge.py sits in it, memory/knowledge_index is added for INV-656CYW, and worktrees/modules is dropped as nested in worktrees. Examined all 6 members against the restated guarantee.",
+      "subject": "FAM-61DY2V"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

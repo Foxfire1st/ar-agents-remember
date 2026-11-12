@@ -1,0 +1,735 @@
+{
+  "path": "mcp/src/agents_remember/application/worktree_tools.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b55831de01a31229148df21d4199d8411b00f926",
+        "content": "sha256:cf58cc0256d90a4890876d33d0545cbeb4029c462716d4ae6b2fa17c35424e5a",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_closeout_apply_tool"
+        }
+      },
+      "id": "RLZ-268YEV",
+      "invariant": "INV-F029P2",
+      "origin": {
+        "handoffEntry": "L94-CODE-F14",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The public closeout-apply entry whose exact responses the parity proof compares across the baseline, pristine and unrelated-grant worlds, pinning grant-inertness at the leaf and series levels.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b55831de01a31229148df21d4199d8411b00f926",
+        "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_integrate_tool"
+        }
+      },
+      "id": "RLZ-F3YR21",
+      "invariant": "INV-F029P2",
+      "origin": {
+        "handoffEntry": "L94-CODE-F14",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "The public integrate entry whose exact responses complete the leaf-then-series chain the parity proof compares, so integration cannot smuggle a grant dependence.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b55831de01a31229148df21d4199d8411b00f926",
+        "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
+        "locator": {
+          "kind": "symbol",
+          "name": "worktree_sync_tool"
+        }
+      },
+      "id": "RLZ-N0H3XM",
+      "invariant": "INV-STH8F0",
+      "origin": {
+        "handoffEntry": "MIK-R60@v5.1",
+        "leaf": "260928-MIK-L60"
+      },
+      "rationale": "Forwards the requested sync source to the worktree manager as sync_source.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Integration, checkpoint, landing recording, and resume normalize code/memory authority without ledger subjects.\n\nAnchor: `worktree_integrate_tool` `worktree_checkpoint_landing_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:438b89c6e0cc2297422d8e105e2d76877828e4f5288bf43a2f07e995c7b3c960",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_integrate_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:0d4e525b9f0d0ea995c2107c65791ebdbdef60caea4202924a769f7353ff6465",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The closeout preview and closeout apply return paths now carry this leaf's final-output projection (ICR-R21@v1): the preview is decorated with the selected comparison generation and `prepared_is_reviewed_candidate`, the apply with the recorded receipt, and integration with the refs it landed — all attached after the Git transaction, so none of them can gate it.**\n\nAnchor: `attach_prepared_selection`; `attach_closeout_receipt`; `attach_integration_receipt`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:b419d7e08f9f0add5be0ae490f9339aacb7053f6473099b8228503cf0534983a",
+            "locator": {
+              "end": 937,
+              "kind": "line_range",
+              "start": 937
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:f93c813b1a66458b9632dad282744dc7f0741c545c1917c7de93be1a542f2088",
+            "locator": {
+              "end": 940,
+              "kind": "line_range",
+              "start": 940
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:645963c4485cea41bd7caed2105f8bcc10c15cb649e8b03297ef4fe90038eb52",
+            "locator": {
+              "end": 449,
+              "kind": "line_range",
+              "start": 449
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:e35595c929d11d6a728aa94457216f7e1b53f8d6aee0567c502d06119f575955",
+            "locator": {
+              "end": 513,
+              "kind": "line_range",
+              "start": 513
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Worktree service behavior is owned by the worktree manager and modules.\n\nAnchor: `agents_remember`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:2a4d96a6908a181b96ff731c4bae392acd085d293bdb97d3ad83642b6af34caf",
+            "locator": {
+              "end": 35,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Shared repo/path authority guards (`require_repo`, `require_within_coordination`).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d388f031da44e1f2092162e77e55cabbdfbf82ad",
+            "content": "sha256:cae5d208c1d8ec05196503e1db089c686c65b9c7216370666479dc5709c237b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_repo"
+            },
+            "path": "mcp/src/agents_remember/kernel/authority.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Lifecycle finalization behavior is delegated to the worktree finalizer module.  Anchor: `finalize_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:52b5c0761eb8d202bf1a85e9e7aee1041bb145fcefaa0de93e0be6ea0a9c9664",
+            "locator": {
+              "end": 133,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The on-disk provider authority reload consumed before provider setup (containment R1).\n\nAnchor: `worktree_start_tool` `reload_provider_authority` `provider_setup_config`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:3b540a0d83735a37840bf0b3f94a7a430c21e9d782753b587483243203c358f6",
+            "locator": {
+              "kind": "symbol",
+              "name": "reload_provider_authority"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:d45aa1785cf5eb85f9b0e36a3f3205802d150161a09b9c2c6aa487f0d7d8a716",
+            "locator": {
+              "kind": "symbol",
+              "name": "provider_setup_config"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Public status observes the stable journal through the canonical locator and preserves it in the result.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "None",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:b1e4c9ab22c38e3d829ba7aec4b53d63a123dd47157b5bd10cb499df3ed8b0b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_status_tool"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The finalizer behind `lifecycle_finalize_task`: it refuses a disabled contract, answers the contract's readiness blockers, verifies cleanup, then reconciles the task documents and returns the finalized result.  Anchor: `finalize_result`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dcbcb92eb8805a1f241603ea248fdac21fb64a9d",
+            "content": "sha256:7972b4c3a85720af04c1adbcc0d7821ffdc3785b6c25d8fc7f510e6bd3f92317",
+            "locator": {
+              "end": 214,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Worktree service behavior is owned by the worktree modules, which this manager module re-exports.\n\nAnchor: `__all__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:9d6f4b44f86c4f75f224c349c7020e2091f9bdeedbcf7b7dde40d0a2a778c47e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:3c294d3a17340e4e6b985100c020ae9fffb142f3cdcc949ab058f591828caf6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "**The sync measures its own rebinding after the Git transaction and its contract write, so no review obligation can gate or refuse a completed sync; what it measured is a carrying sync's own resolved pair, published additively on the result.** \\|  \\| Anchor: `worktree_sync_tool` `rebinding_result_block` `resolved_pair_completed`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:84902733d9a837e315a051bfb5a9c4288401531c2b00eb2c6280caf60788f30d",
+            "locator": {
+              "kind": "symbol",
+              "name": "rebinding_result_block"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:864b4a2b09b5bf0d4e5813682e9d748b63ca37c57cd1e5c4dadc4f3e1a24a28d",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolved_pair_completed"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a87313efddebbe22e85115a332b6bd7ce33ecd7e",
+            "content": "sha256:464ee3d601b884965ab249e1f8e43dc259f09001c722b5f427612f3560cd8ef2",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/review_sync_rebinding.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "The facade's start entry point consumes the extracted task-start request types at this boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:3fd7dc985e59bef427b4594a86c60921dccc4b6fa3874cb48c220075593be308",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_start_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "The start entry point: it refuses a direct leaf start, reloads the on-disk provider authority before setup, and answers the worktree manager's start result with the provider veto and the start eligibility.\n\nAnchor: `worktree_start_tool`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Public sync forwards typed memory choice, continue/cancel control and the repository-default source after configured-contract admission. \\|  \\| Anchor: `worktree_sync_tool` `_configured_control_refusal`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:dbb1647026df85a91309b56ca3e076a14929ef298647d97757fc004d9b0ffae8",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_sync_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:7844e3efd353d419c1b45ad41233b53a7a4fba7737ef17ca6320981f05f41787",
+            "locator": {
+              "kind": "symbol",
+              "name": "_configured_control_refusal"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The checkpoint landing entry point admits the contract and delegates the whole decision to the worktree layer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:0d4e525b9f0d0ea995c2107c65791ebdbdef60caea4202924a769f7353ff6465",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_checkpoint_landing_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The pause entry point admits the contract, builds the typed args with the configured gate policy, and delegates to the stop route; it performs no publication work of its own.\n\nAnchor: `worktree_pause_tool` `_gate_policy_snapshot`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:46b51cbb5c6f0c8b9573f5ee38ce6baf5899bdb8e95618951660aa3acdf46cef",
+            "locator": {
+              "kind": "symbol",
+              "name": "worktree_pause_tool"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:b05086aeb8d2c5c4ecbae68c73eb201ea9752fe2024d179121a394a049afe0b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "_gate_policy_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Stable sync projection is read from the enclosure-root journal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:3d9b939eb29f132e44d631724a82208fb910a5a42a3da32fb3c2a6b242b0316f",
+            "locator": {
+              "kind": "symbol",
+              "name": "observe_sync_operation"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:f2d48e829c48e0115cac7a0d635247156399f2224432ba170608f7bb0f1157d9",
+            "locator": {
+              "kind": "symbol",
+              "name": "SyncJournalReadError"
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:c521c1b8c49d71b804d98ca9e0c0177113fd0e4b705512fe43a030c50e6d8e25",
+            "locator": {
+              "end": 225,
+              "kind": "line_range",
+              "start": 218
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:7589d51a4d6e9c7a67f55144cbe1b6a4b471362ce4ec250739a63f8227bced88",
+            "locator": {
+              "end": 222,
+              "kind": "line_range",
+              "start": 215
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5ebf57a7d381d703c7609d82b59f60ff5763e728",
+            "content": "sha256:06bab63fb9ab27153221140baab7aceef098f405436923f24d87eef153a5b704",
+            "locator": {
+              "end": 162,
+              "kind": "line_range",
+              "start": 155
+            },
+            "path": "mcp/src/agents_remember/worktrees/sync_transaction_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Worktree service behavior is owned by the worktree manager and its worktree modules, which this manager module re-exports.\n\nAnchor: `__all__`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:9d6f4b44f86c4f75f224c349c7020e2091f9bdeedbcf7b7dde40d0a2a778c47e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7bc03a9ceb2a78f7bfe09c9a66097cdff2e7cf97",
+            "content": "sha256:3c294d3a17340e4e6b985100c020ae9fffb142f3cdcc949ab058f591828caf6d",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/worktrees/git_worktree_manager.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Worktree response models define the public tool envelopes and context summary, including activation/admission fields and the checkpoint-landing envelope.  Anchor: `WorktreeSummary` `WorktreeCheckpointLandingResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4256fcf98abdcfef09419c77d7621a182828a0aa",
+            "content": "sha256:3bf5f45572fa44d4383d26cf41210e411f18d8e6cc65793077dbe6f348f37358",
+            "locator": {
+              "end": 564,
+              "kind": "line_range",
+              "start": 222
+            },
+            "path": "mcp/src/agents_remember/models/worktree.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Route-review refusals are projected once with exact contract guidance at start/admission and closeout.\n\nAnchor: `_worktree_closeout` `route_review_refusal_projection`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:7b1238dd5c9dcd47627fdee7e844489f083bbdcd991f0981c753d26b7a806888",
+            "locator": {
+              "kind": "symbol",
+              "name": "route_review_refusal_projection"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:79952cf8f4c7175d8e82c7233e9af45298f3883b14df027d71471f873d5c9469",
+            "locator": {
+              "kind": "symbol",
+              "name": "_worktree_closeout"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:4341e46efbdfae6a0ca5076bf8c944921cd5c547f25c3a131015ad56962a41fa",
+            "locator": {
+              "end": 625,
+              "kind": "line_range",
+              "start": 625
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:f0d9f734be5aa03935c499b71411355cefac2a2bf57989e1246d35a7352c7e9a",
+            "locator": {
+              "end": 554,
+              "kind": "line_range",
+              "start": 554
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f77659efee8d80f8c6cfa6dab23a63501ab76013",
+            "content": "sha256:28f91e1f645dd0e8946a9e15c5b3dcd0fd513bc4342a259de6fcc55edc1a594f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

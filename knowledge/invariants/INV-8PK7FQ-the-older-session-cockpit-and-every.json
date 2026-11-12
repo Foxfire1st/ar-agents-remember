@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A stale panel instruction can direct users to dead controls or encourage rebuilding a second chat plane."
+  },
+  "applicability": "The dashboard surfaces remaining after removal of the former session cockpit.",
+  "conditions": [
+    "Host agents, reader, reviewer, task views and Event River retain their owners.",
+    "Operations empty-state guidance names current task information, not a retired gate surface."
+  ],
+  "exclusions": [
+    "No new product-owned chat UI or session transport is introduced."
+  ],
+  "id": "INV-8PK7FQ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "dashboard/src/cockpit/Cockpit.operationsDetail.test.tsx; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/freeze/pictures/; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-worker-a4868b83-d390-4b5e-9761-5097bcca689d.md, sections 3 and 5"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R113@v1 rule 8",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The older session cockpit and every panel, view and server route that shows or drives a session of the earlier kind are removed; what shows the host's agents, the reader, the reviewer, the task views and the Event River stay, and the Operations detail without a selection names no gate.",
+  "status": "accepted",
+  "supersedes": []
+}

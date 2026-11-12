@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/startup/series_contract_activation.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Shared bootstrap, lock ordering and reconciliation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:4642f7a53e4c7a1b6f2948b255bf0108f328719f0a81b908c95da06376a082ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "activate_master_series"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Read-only dry-run and task-stage preflight.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:d8aab68e111259222bbb9456e71cdd4f10d91d12c431b59b65891dc0de36a94f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stage_preflight"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Post-activation stage publication and typed failure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0bfe4ab16af2c6dd0b8b1b96c98c1bd3d1378dde",
+            "content": "sha256:26efd9f00f9d015163a2d649a359e8955bf5ed3a360a7a5fda684677ad4896ba",
+            "locator": {
+              "kind": "symbol",
+              "name": "_publish_stage"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

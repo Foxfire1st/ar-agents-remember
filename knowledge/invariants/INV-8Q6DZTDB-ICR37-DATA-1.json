@@ -1,0 +1,29 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Delivered-comparison tests reject missing memory cells and noncommit or unavailable endpoint IDs while preserving the actual landed code commit, preventing historical review from opening a substitute delivery pair."
+  },
+  "applicability": "Review of a leaf whose enclosure records a delivery: its closeout or its integration reached a completed or checkpointed state, so the delivery's code and memory endpoints are the records the enclosure holds.",
+  "conditions": [
+    "The enclosure records which commit its successful landing produced and which memory content commit its closeout published.",
+    "A recorded commit is a full commit id that the repository its record names holds as a commit; only then is its tree derived."
+  ],
+  "exclusions": [
+    "The last numbered review record, today's source-line tip, a branch name or a sibling's pair as a delivered endpoint.",
+    "The landing record's memory cell standing for the closeout's memory content commit.",
+    "A current database or an invented empty memory side replacing an operand the delivery records cannot establish."
+  ],
+  "id": "INV-8Q6DZTDB",
+  "origin": {
+    "leaf": "260921-ICR-L46",
+    "legacyId": "f724cf8f-699b-47bf-883c-b70780d84676",
+    "task": "260921-ICR"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "A closed leaf's review establishes its delivered sides — the recorded code and memory bases, the commit its successful landing produced and the closeout's memory content commit — from the enclosure's own delivery records, and refuses by name any side it cannot establish as that exact commit and tree; a missing or unestablishable operand is never replaced.",
+  "status": "proposed",
+  "supersedes": []
+}

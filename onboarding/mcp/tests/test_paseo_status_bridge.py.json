@@ -1,0 +1,116 @@
+{
+  "path": "mcp/tests/test_paseo_status_bridge.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+        "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
+        "locator": {
+          "kind": "symbol",
+          "name": "AgentStateScriptTests.test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone"
+        }
+      },
+      "facet": "The production Node listing script with a controlled daemon leaves both unreached recorded IDs unknown on a cursorless incomplete census; a completed census returns the live manager and known-empty archived orchestrator.",
+      "id": "PRF-ZF7HYP",
+      "invariant": "INV-GD0F05",
+      "origin": {
+        "handoffEntry": "L140-R1-F04",
+        "leaf": "260928-MIK-L140"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "State reads without a timeline, pagination bounds, archived filtering and resume are covered here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:a7f97523b2b838577374e08c5d2b272667bae94271afc28195c5016b0f5ea8aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "AgentStateScriptTests"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The scripted daemon client enforces 200-entry pages, `hasMore` without a cursor and archived entries; the listing case asserts the paging, archived filtering and the ten-page bound.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:4841d4269b0ac434529b00a560dbf86697b40f7a5422b6276f6233f10965c775",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_agents_live_lists_in_pages_and_says_when_the_listing_did_not_end"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Complete and incomplete listings are applied to the document tree and the developer seat list alike.\n\nAnchor: \"def test_a_recorded_agent_a_listing_did_not_reach_is_unknown_to_the_tree_and_not_gone(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:0f323e399faab1a46d28c9384d8a0d313747138bb890dd3afd5a3ff8e74217e0",
+            "locator": {
+              "end": 448,
+              "kind": "line_range",
+              "start": 400
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:fecf2d36460f0d06cd70a9387f9e3cef3944f37bd03ea66d3aa37b3f968095ea",
+            "locator": {
+              "end": 464,
+              "kind": "line_range",
+              "start": 416
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The native listing's page and termination bounds.\n\nAnchor: \"def test_agents_live_lists_in_pages_and_says_when_the_listing_did_not_end(self) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:32da7dfd170f15bde5d90f7e810d6c69a8c8a12ebec048615d3ffe9d1d6d449d",
+            "locator": {
+              "end": 398,
+              "kind": "line_range",
+              "start": 351
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "cfbb83e3dc094b54bf3d722ce09d2e71be1313ea",
+            "content": "sha256:4841d4269b0ac434529b00a560dbf86697b40f7a5422b6276f6233f10965c775",
+            "locator": {
+              "end": 414,
+              "kind": "line_range",
+              "start": 367
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

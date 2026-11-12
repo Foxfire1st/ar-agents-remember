@@ -1,56 +1,30 @@
 # mcp/src/agents_remember/models/__init__.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/models/__init__.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated | 2026-08-24T00:51+02:00 |
-| lastVerifiedCommitHash | `1d446724d099517f6f52d596b47827ae2391a2a4` |
-| lastVerifiedCommitDate | 2026-08-24T00:21:10+02:00 |
-| governingOverview      | `overview.md`                              |
+## Governing Overview
+
+[overview.md](overview.md)
 
 ## Purpose
 
-`__init__.py` re-exports the public Pydantic response-contract model surface.
+Exports-only model initializer: concrete strict/flexible MCP response contracts, token helpers, canonical memory mode and retained domain response names.
 
 ## Code Commentary
 
-The package initializer collects base response primitives, domain response
-models, token helpers, and the public tool response model registry into one
-import surface with an explicit `__all__`.
+Token-count exports remain in the package vocabulary and are resolved from the canonical models.tokens module on first access; importing the model package alone no longer loads tiktoken.
 
-## Invariants And Boundaries
+Actual imports and __all__ expose TOOL_RESPONSE_MODELS from models.tools.tool_registry, not the removed public-registry projection. The conversations package is not imported or re-exported. SlimContextPacket and ContextPacketV2 remain distinct reader/internal model names; PingResponse, ResolveContextResponse and the role start/message/binding trio are not facade exports. A model export advertises no tool or agent allocation. Behavior authority stays in the defining modules; this initializer declares only the import surface.
 
-- Keep this file as exports only; contract behavior belongs in the concrete
-  model modules.
-- Export additions should follow actual public model additions and registry
-  changes.
+## Evidence boundary
 
-## Repo-Internal References
+Current source interpretation only; no fresh execution or grade.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| This initializer declares the public model export list. | `__all__` | mcp/src/agents_remember/models/__init__.py:90-90 |
+## Source-bound reference inputs
 
-## 260731-EFA-L9 Change
+- [1]
+- [2]
 
-The initializer now also re-exports the curated conversation wire-model surface from
-`models/conversations/` (R6) — the shared evidence/control-wire contracts, conversation
-primitives/identity/cursors/content/capabilities/status/stream/history/operation DTOs, and
-telemetry — keeping the package initializer exports-only.
+## The skill-install export is gone
 
-## Update History
+`SkillsInstallResponse` is no longer imported or exported: the skills install surface it described is removed, and the models package exposes no replacement, because the tool server serves skills from the packaged copy instead of installing them into a harness root.
 
-- 2026-08-24T00:51+02:00 — No content impact: 260821-CLIVE-L2 the package export only repoints the public tool registry to its moved `models.tools` package. Verified at code commit `1d446724`.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the conversation-model export
-  additions; the L9 change section above documents them. Verification metadata pinned until
-  closeout stamps the L9 code commit.
-- 2026-08-04T11:39+02:00 — 260731-EFA-L6 S18-B13 curator: bound the public model-export claim to exact initializer anchors and normalized scoped citation evidence.
-
-- 2026-06-11T06:47+02:00 — No content impact: `DirectCloseoutPreviewResponse`/`DirectCloseoutApplyResponse` left the export surface (import block and `__all__`) with the issue #62 worktree-only closeout; the exports-only contract this sidecar describes is unchanged.
-- 2026-06-01T20:45+02:00 — Added `WorktreeAbandonResponse` to the response-model export surface for the `worktree_abandon` tool.
-- 2026-05-31T12:50+02:00 — Dropped `CodexExecutionPolicy` from the export surface (removed from the `agents_remember.models.benchmarks` import block and from `__all__`); behaviour-preserving export-surface reduction, no sidecar prose named the removed symbol (1.0.0 review remediation).
-- 2026-05-30T22:29+02:00: Added `finalize_payload_tokens` to the token-helper export surface (import and `__all__`) for the S6 token-counter wiring. Verification metadata stays pinned until closeout commits the change.
-- 2026-05-28T19:52+02:00: Created for the response-contract package export surface.
+- Token-count exports remain in the package vocabulary and are resolved from the canonical models.tokens module on first access; importing the model package alone no longer loads tiktoken. [3]

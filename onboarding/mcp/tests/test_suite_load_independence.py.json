@@ -1,0 +1,177 @@
+{
+  "path": "mcp/tests/test_suite_load_independence.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:9d63e36ce56e7b59b7775386d903d71553ef0e2e333db646e9ef3724ade05eb8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_timing_scan_reports_patterns"
+        }
+      },
+      "facet": "Synthetic timing patterns are rejected rather than hidden by the source population.",
+      "id": "PRF-9D69PZ",
+      "invariant": "INV-5VQQ6S",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 13",
+        "leaf": "260928-MIK-L87"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_product_process_state_has_an_exact_register"
+        }
+      },
+      "facet": "The discovered mutable-state population equals the authored treatment register.",
+      "id": "PRF-G0D88M",
+      "invariant": "INV-KE2ZHT",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 4",
+        "leaf": "260928-MIK-L87"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:7cfc7bea20d2b41d9ab59dae315882fef5542e243198eec3b5d024a778eee3b8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_wait_helpers_name_the_unreached_condition"
+        }
+      },
+      "facet": "Each shared wait exposes the named unmet condition under its hang guard.",
+      "id": "PRF-TZWV5S",
+      "invariant": "INV-EGK83G",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 5",
+        "leaf": "260928-MIK-L87"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:9bbfb09d0b16b067a99d7a25949ea7efe69ba7382ea8eff5a2f51f14ba396695",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_python_waits_are_load_independent"
+        }
+      },
+      "facet": "The current Python test population has no unmarked packet-defined timing pattern.",
+      "id": "PRF-X4T1BQ",
+      "invariant": "INV-5VQQ6S",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 13",
+        "leaf": "260928-MIK-L87"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:ba9ffbc2313d303e00e86760981dc550833fc7470125edcf633d89c60cecdb64",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JPKMED",
+      "invariant": "INV-5VQQ6S",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 13",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The Python scanner compares explicit state treatment to discovered state and enforces the bounded timing AST patterns.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+        "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_product_process_state_has_an_exact_register"
+        }
+      },
+      "id": "RLZ-RS88T2",
+      "invariant": "INV-KE2ZHT",
+      "origin": {
+        "handoffEntry": "MIK-R87@v1 4",
+        "leaf": "260928-MIK-L87"
+      },
+      "rationale": "The exact-register test compares the register to the current source census and rejects missing or extra state rows.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Timing violations are path-line-rule findings from the bounded AST scanner.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:d3f77d13170ffd7a8ed92fd69802fac5728257545930a19577ce496687ee96e3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_TimingScan"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The state guard compares syntactically found owners with the closed register in both directions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:6e02ec73f045ffee4a37f453b73d798e0f46159bb89986e6ea37f6da4002e018",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_product_process_state_has_an_exact_register"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Real comments exempt explained patterns while string literals do not.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:6e02e76bb96a0274f57ddfc330fa6940ed027148b5a076002147012f9011b2df",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_timing_scan_accepts_condition_poll_and_reasoned_marker"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shared waits report the unreached sync or async condition.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e397069f3231d7d911fc12a2979717eac26c7325",
+            "content": "sha256:7cfc7bea20d2b41d9ab59dae315882fef5542e243198eec3b5d024a778eee3b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_wait_helpers_name_the_unreached_condition"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

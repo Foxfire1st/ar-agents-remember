@@ -1,0 +1,145 @@
+{
+  "path": "mcp/src/agents_remember/cli/paseo_runtime.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+        "content": "sha256:6ee3c44ed991593d237b6f8abf8f776322178bf100ca92faa2cf07ae9bffa4f8",
+        "locator": {
+          "end": 69,
+          "kind": "line_range",
+          "start": 64
+        }
+      },
+      "id": "RLZ-MSPF6T",
+      "invariant": "INV-E4E4N1",
+      "origin": {
+        "handoffEntry": "L84-K3C-E4E4N1-01",
+        "leaf": "260928-MIK-L84"
+      },
+      "rationale": "Provisioning records the harness homes a running daemon inherited and refuses a restart that would change them unless the change is accepted.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+        "content": "sha256:a8956ffbecbf8efe37f6c55c30d5a27ef99d074e26b78139abcdd68a6a799e40",
+        "locator": {
+          "kind": "symbol",
+          "name": "run"
+        }
+      },
+      "id": "RLZ-S9GB8C",
+      "invariant": "INV-9XEW06",
+      "origin": {
+        "handoffEntry": "PNT-R01@v1 §2",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Returns exit two on the named unconfigured state before starting a runtime command.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "`add_arguments` declares the three commands, each with a required `--config`, and `--accept-harness-home-change` on `provision` alone.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "content": "sha256:1e001412aaa35cbc4eae996fa86cdb2994fb08a6e367925866155f740e777d31",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`run` reads the named settings file's `paseoRuntime` block, refuses with exit two before any operation when it is missing or unusable, dispatches the command and prints one JSON report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "content": "sha256:a8956ffbecbf8efe37f6c55c30d5a27ef99d074e26b78139abcdd68a6a799e40",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 72
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Runs all three commands without the block and checks named refusal, exit two and no process operation.\n\nAnchor: `PaseoRuntimeTests.test_commands_refuse_without_a_runtime_block_and_drop_paseo_environment`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a625f100c801bea1cb9717637d2070e265404514",
+            "content": "sha256:7ffc35ee71bc53b5b2ed530bb1431b79af7189b49ebb4718948e75aeef5fe3eb",
+            "locator": {
+              "end": 1015,
+              "kind": "line_range",
+              "start": 941
+            },
+            "path": "mcp/tests/test_paseo_runtime.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The command dispatch over the shared host modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "content": "sha256:9fcfcb10381b163a3d6f5cf33b7c287426ad4a0d0090233966e69f2d6c633b2f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_COMMANDS"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The argument surface the three commands keep: a required `--config` on each, and `--accept-harness-home-change` on `provision` only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "content": "sha256:1e001412aaa35cbc4eae996fa86cdb2994fb08a6e367925866155f740e777d31",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`run` routes `provision --accept-harness-home-change` to the accepting provisioning and marks an unverifiable process record's harness homes unknown.\n\nAnchor: `provision_with_home_change`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cf7b7ece411cb28fc0bfa90b6c8f44398fca571d",
+            "content": "sha256:aba4107adf89ea41b0c598fb47e6fccc2254c28419e234b59a24a2117c3ee3f6",
+            "locator": {
+              "end": 96,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

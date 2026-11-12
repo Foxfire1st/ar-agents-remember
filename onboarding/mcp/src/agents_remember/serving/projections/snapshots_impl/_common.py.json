@@ -1,0 +1,171 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
+        "locator": {
+          "end": 107,
+          "kind": "line_range",
+          "start": 87
+        }
+      },
+      "id": "RLZ-7Q8K452E",
+      "invariant": "INV-1BRT5DX6",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Returns the canonical-enumeration paths whose <task>/<file>.json tail is named, matched under every repository folder through the same _task_directories, _json_entries and archive/enclosure filter as _iter_task_json, and sorted the same way. The result is exactly that subset of the canonical enumeration in the same order, which keeps duplicate-key last-wins behaviour.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "content": "sha256:09837c3f4a9d15771ad50e51cfdeae570643f2fe920589fadc4f8e85328c417e",
+        "locator": {
+          "kind": "symbol",
+          "name": "_iter_task_json"
+        }
+      },
+      "id": "RLZ-BKE7NYA4",
+      "invariant": "INV-P0YZDCS9",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Enumerates task documents as the direct *.json entries of each tasks/<repository>/<task>/ folder, drops any path through 0_archive or enclosures, and sorts only those entries. Notes, report and enclosure folders are never walked just to be filtered afterwards.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+        "content": "sha256:128d80f70959b34f4d52fa7cc2e4442fa137a4564b1182cbbb591376c0aaf526",
+        "locator": {
+          "end": 227,
+          "kind": "line_range",
+          "start": 203
+        }
+      },
+      "id": "RLZ-EMQ775",
+      "invariant": "INV-D9T2BC",
+      "origin": {
+        "handoffEntry": "L168-CUR-M1-21-A013-15",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "surface_paths distinguishes an absent directory from a failed listing: non-missing OSError marks observation.complete=False, preventing negative evidence from authorizing cleanup.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "2": {
+      "note": "The named-tail probe, an exact same-order subset of the enumeration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_task_json_candidates"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "One listing level: real directories only; an unreadable folder contributes nothing.\n\nAnchor: `_walked_directories`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:8c6724ba5e24d992a7803dce55fa86db60d0d6cb0d74ab85e21e5fa22ba3a647",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The rationale for the removed summary bound, which is unchanged and now sits two lines lower.\n\nAnchor: \"A task-document summary limit\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:35d2c236b7be1a224a5fd1487bf4e8bfbe84f319d762016f3b6343e8cf035a49",
+            "locator": {
+              "end": 65,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Regression evidence: the enumeration equals the earlier recursive glob, including its exclusions and symlink behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:e4e7373a4db7d90ca804d5ca71f2dc4ad4f836df93ffe5d686418a483ba0799a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_enumeration_keeps_exactly_the_canonical_depth_documents_the_recursive_glob_kept"
+            },
+            "path": "mcp/tests/test_task_document_body_lookup.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Current projection inputs import common reader helpers and carry enclosure, task, drift, start, tool, host and repository-surface facts, without a provider reader domain or collection.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:a8191ef83faa3d3da3c32fe178c7d4734f5879c0fbb2c64cc3463c93f76a9372",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 61
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:a5c24549e28b30175723f439c6cd15a79e703557a54cb355ed36d4e4d2f6debe",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 100
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:929d002d8fbf58c11fe63feccfb8e192bb6d289a2af54144921d167f0b882549",
+            "locator": {
+              "end": 501,
+              "kind": "line_range",
+              "start": 489
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

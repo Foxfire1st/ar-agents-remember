@@ -1,0 +1,77 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskEntryPage.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
+        "content": "sha256:97bd482a37a903525295a3e8cbbb5094b8922daf9b19cea722c0ba1a3bfd1819",
+        "locator": {
+          "kind": "symbol",
+          "name": "one served task entry across row, page and counts > keeps the document visible before pending or failed counters"
+        }
+      },
+      "facet": "The task reader keeps its objective during loading and failed counter states; counters are not requested until body availability, and a 503 counter reply does not remove the objective.",
+      "id": "PRF-M41HDH",
+      "invariant": "INV-C1RTSG",
+      "origin": {
+        "handoffEntry": "L168-W-R168-05",
+        "leaf": "260928-MIK-L168"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Addressless and unauthored row/page boundaries\n\nAnchor: keeps an addressless planning row visible and counted, without navigation or a body request",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
+            "content": "sha256:34c5c6e05e8ec985aa5e4040325c9ec468216fc16e769250abd3cf5536fe0f95",
+            "locator": {
+              "end": 111,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Shared served word",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
+            "content": "sha256:8c9be8921490a19a299b3c038d7d64447e2b9612bdeef3a3f36f83e512ced18f",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 114
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Bounded preview construction\n\nAnchor: constructs only the five preview rows before opening the 109-task completed list",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2384ba06d4248111eba2f798ddea95d75836ce01",
+            "content": "sha256:8ddb6035080313a8ac94971b4381fe009bae08dde8002971a4da2c4543b6a1e5",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 156
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

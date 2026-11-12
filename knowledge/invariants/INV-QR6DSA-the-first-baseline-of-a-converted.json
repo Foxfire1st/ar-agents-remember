@@ -1,0 +1,38 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "The detector and adoption gate together prevent attributed converted trees containing unanchored old-format cards; drift acceptance must not erase that boundary."
+  },
+  "applicability": "Status and adoption of the first converted-tree baseline.",
+  "conditions": [
+    "Legacy signs are a metadata-key first cell and a numbered metadata table; a stale anchor is a non-current code or test reference.",
+    "The result lists the affected cards, and correcting them permits the normal adoption checks.",
+    "accept_drift waives no refusing finding; a stale anchor refuses the baseline as a legacy card does."
+  ],
+  "exclusions": [
+    "A legacy card without blocking structure is reported, not silently accepted.",
+    "Deleting the offending cards is not an acceptance route."
+  ],
+  "id": "INV-QR6DSA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_bootstrap_converted_onboarding.py (all-sign positives through status and adoption with both accept_drift values, prose/code-mention negatives, correction rerun adopts, adopted trees stay adopted)",
+        "L45-M1-F01: the previous PRF-1PFM1K exact-already-adopted facet is withdrawn as stronger than its assertion. Its historical producer evidence remains immutable. The replacement describes the complete test assertion, not a fresh execution.",
+        "mcp/tests/test_bootstrap_converted_onboarding.py::test_legacy_cards_cannot_refuse_an_adopted_repository (395-409, assertion 406-409; accepts already-adopted or ready)"
+      ],
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "MIK-R45@v2 rule 3",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The first baseline of a converted tree holds no old-format card and no stale reference anchor: status and adoption report blocked-legacy-cards and the refusing anchor findings with the cards they name, and accept_drift lifts neither.",
+  "status": "proposed",
+  "supersedes": []
+}

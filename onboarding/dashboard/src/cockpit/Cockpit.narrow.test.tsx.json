@@ -1,0 +1,43 @@
+{
+  "path": "dashboard/src/cockpit/Cockpit.narrow.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "c1c5d7aea51b5efe72dea5df3ae49b1639434a85",
+        "content": "sha256:c5c6b1581aab0a21dd8046f76c5f3cfc86463b3a1d6598dddf0e23d0489dc15c",
+        "locator": {
+          "kind": "symbol",
+          "name": "stacks Operations at 40rem without gutters and restores the stored rail widths above it"
+        }
+      },
+      "facet": "With stubbed 40rem media and stored 430px/250px rail widths, the shell has one track in narrow mode, restores 430px/minmax380/250px tracks above it, and leaves stored widths unchanged; this is a DOM/style assertion, not browser geometry.",
+      "id": "PRF-S2Y1YA",
+      "invariant": "INV-7QYXJP",
+      "origin": {
+        "handoffEntry": "RP16",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Mounted CockpitShell with synthetic matchMedia asserts one-column ASIDE/MAIN/ASIDE, hidden gutters, narrow CSS classes and restoration/preservation of stored 430/250 rail widths above 40rem. CSS class/inline-style assertions are not real 390px overflow measurements.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c1c5d7aea51b5efe72dea5df3ae49b1639434a85",
+            "content": "sha256:e96b453029644d71e9ec1cc97f32c0cfc422860bb7a63e1aab251202f2b791ee",
+            "locator": {
+              "end": 38,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

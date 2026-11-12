@@ -1,0 +1,109 @@
+{
+  "path": "mcp/tests/test_agent_eval_recorder_plugin.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The driver registers the plugin's open and turn-ended handlers through `addHook`.\n\nAnchor: `addHook`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "content": "sha256:a7f4fafb5f784a3ec0a25895afc43996b08faa9c8b749b8ea0ee523dd4bd03d7",
+            "locator": {
+              "end": 36,
+              "kind": "line_range",
+              "start": 30
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The turn-ended event carries an empty timeline and the turn is read through a whole-tail refetch.\n\nAnchor: `direction`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "content": "sha256:a60c133db924a9ff84504ddbf03d549656b3184ff1df1dd4e813b9416eb5d45e",
+            "locator": {
+              "end": 63,
+              "kind": "line_range",
+              "start": 57
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The plugin source runs in Node with type stripping.\n\nAnchor: `--experimental-strip-types`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "content": "sha256:936dff3fc0c37ec05d8e28f603c2efae5f842880bac9799d5653f5dbe3e5acfa",
+            "locator": {
+              "end": 100,
+              "kind": "line_range",
+              "start": 86
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Three host-event rows are written, the first for the helper, and the window is complete.\n\nAnchor: `host_window`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "content": "sha256:cd248618d3b870f202f94491be680abc36e20636f7fafae77f255d5e5b45d3de",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 102
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The merged capture has no unknowns and its last event holds the refetched turn.\n\nAnchor: `unknowns`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "content": "sha256:6fe2d6a7314f410cf345360f3948cf0326912a7dbed93ff172859ba3a01ace6a",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A recorded subscription error makes the window incomplete.\n\nAnchor: `actual subscription gap`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "020031c4301317d51df8640bf749685ba5d3c661",
+            "content": "sha256:0a3fdac546b0584bc08587c6524c0980814c19e92a9f74fba729c03966d11dcf",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 120
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

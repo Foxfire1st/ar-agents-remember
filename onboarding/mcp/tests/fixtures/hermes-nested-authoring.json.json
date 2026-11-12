@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/fixtures/hermes-nested-authoring.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e24384e45c9938a7951d3faa4244da8c9e112069",
+        "content": "sha256:7be6c2b286b92310c28309c4e3c6a30cf9792acc836c378e514bdd8ef740d02a",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-57M10X",
+      "invariant": "INV-A0B83R",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-hermes-capture",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "These real nested authoring rows pin arguments.calls extraction rather than synthetic schema assumptions.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e24384e45c9938a7951d3faa4244da8c9e112069",
+            "content": "sha256:7be6c2b286b92310c28309c4e3c6a30cf9792acc836c378e514bdd8ef740d02a",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

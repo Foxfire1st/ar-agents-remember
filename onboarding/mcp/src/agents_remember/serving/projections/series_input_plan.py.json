@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections/series_input_plan.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "work_branch_ref_paths names the exact ref inputs the plan watches.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90c554297ef39aa74c7d0a77598b7b3fe36223c5",
+            "content": "sha256:7410d2aac66e4d9cf1799b37a2d3268532efd63bab18185301195bd8e094fa99",
+            "locator": {
+              "kind": "symbol",
+              "name": "work_branch_ref_paths"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

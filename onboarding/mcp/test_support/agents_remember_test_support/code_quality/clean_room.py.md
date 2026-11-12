@@ -1,15 +1,5 @@
 # mcp/test_support/agents_remember_test_support/code_quality/clean_room.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/test_support/agents_remember_test_support/code_quality/clean_room.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-03T12:30:00+02:00 |
-| lastVerifiedCommitHash | `685f83c4405570ca8356e7481e0e2a9a16945757` |
-| lastVerifiedCommitDate | 2026-09-02T11:38:00+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [mcp overview](../../../overview.md)
@@ -38,31 +28,20 @@ The command delegates all orchestration and reporting to `clean_quality_executor
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external Domain Documentation source is configured in `system/sources.md`.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured external documentation is cited by this internal adapter. | — | — |
+No configured external documentation is cited by this internal adapter.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The parser and main routine preserve the exact executor inputs and exit status. | `main` | mcp/test_support/agents_remember_test_support/code_quality/clean_room.py:15-42 |
+- The parser and main routine preserve the exact executor inputs and exit status. [1]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No cross-repository contract is owned here.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The adapter is confined to one resolved code worktree and enclosure. | `main` | mcp/test_support/agents_remember_test_support/code_quality/clean_room.py:25-42 |
-
-## Update History
-- 2026-09-03T12:30+02:00 -- 260831-CCR memory curation pass for 685f83c44055 (CCR-R22@v1/L22): recorded the new --repository-id / --certification-profile CLI arguments forwarded into CleanQualityRequest; the thin Dagger boundary is otherwise unchanged.
-
-
-- 2026-08-26T10:44:52+02:00 — No content impact: reviewed the `clean_quality_executor` to `quality.clean_executor` import relocation; the documented thin Dagger CLI boundary and behavior are unchanged.
-- 2026-08-12T15:19+02:00 — Created for L23's clean-Linux Dagger quality entry point; verification provenance remains closeout-owned.
+- The adapter is confined to one resolved code worktree and enclosure. [2]

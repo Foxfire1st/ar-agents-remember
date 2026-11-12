@@ -1,0 +1,40 @@
+{
+  "path": "mcp/tests/test_agent_eval_d641_effects.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "e76911a0f22281add58c6b516c5e966d1f74a2fd",
+        "content": "sha256:bedf20fccb2be44eaa475fd5f8d30ba79a24b70c3a31f88193f88a07ff0cd503",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-JJ2Y34",
+      "invariant": "INV-A8FVPH",
+      "origin": {
+        "handoffEntry": "L62-fd6462b8-trial-isolation",
+        "leaf": "260928-MIK-L62"
+      },
+      "rationale": "This regression module checks this obligation through test_real_empty_stderr_has_header_only_patch, test_real_deterministic_questions_reach_attempt_cause, test_runtime_context_carries_receipts_and_bounded_completeness, test_partial_capture_never_gets_a_complete_evidence_assertion.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The source defines this file's responsibility and the boundaries described here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e76911a0f22281add58c6b516c5e966d1f74a2fd",
+            "content": "sha256:bedf20fccb2be44eaa475fd5f8d30ba79a24b70c3a31f88193f88a07ff0cd503",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

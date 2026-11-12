@@ -1,0 +1,57 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Local styling achieves the approved contrast without silently repainting other dashboard views. The shared colour difference needs separate architect authority and was not admitted as a local repair."
+  },
+  "alternatives": [
+    {
+      "option": "Use proposal ground/colours through task-page-local styles and code-block ground.",
+      "reason": "Local styling achieves the approved contrast without silently repainting other dashboard views.",
+      "status": "chosen"
+    },
+    {
+      "option": "Change shared panel, global Markdown or colour tokens to match the task-page proposal.",
+      "reason": "The shared colour difference needs separate architect authority and was not admitted as a local repair.",
+      "reconsider_when": "A new ruled shared design change includes those other views and their contrast evidence.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Page-local bg and code oklch(0.24 0.02 250) remain scoped; shared tokens/panel/Markdown stay unchanged."
+  ],
+  "context": "D223 requests the proposal contrast/colours; architect a407a3e3/60b66dab constrain fixes to the page rather than shared tokens or Markdown. D227 accepts the second comparison including its three disclosed differences.",
+  "decider": "developer D223/D227; architect a407a3e3 and60b66dab",
+  "id": "DEC-AW66E3",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:dashboard/src/panels/detail-panel"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "b12753830424a32d7286762c1cd2208018d75133",
+        "content": "sha256:acb85c390b03af68f49bd83647a39065f8f95afec7ff74b3dbb849d6e6f8e231",
+        "locator": {
+          "kind": "file"
+        },
+        "path": "dashboard/src/panels/detail-panel/pageStyles.ts"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "ingest-decisions-family.json"
+    },
+    "handoffEntry": "task-page-local-proposal-ground",
+    "leaf": "260928-MIK-L127",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

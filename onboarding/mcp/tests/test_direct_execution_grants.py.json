@@ -1,0 +1,120 @@
+{
+  "path": "mcp/tests/test_direct_execution_grants.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+        "content": "sha256:c3d2a903ffa2e462f99b9d5f00cefbc2eebfa42ca2b3108397554ddd992085bb",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectExecutionGrantTest.test_revoke_restores_grant_when_start_interleaves_before_removal"
+        }
+      },
+      "facet": "Both permitted owner routes refuse a start-interleaved revoke and preserve the exact prior grant.",
+      "id": "PRF-QW0VXP",
+      "invariant": "INV-X16RQH",
+      "origin": {
+        "handoffEntry": "L94-CODE-F08",
+        "leaf": "260928-MIK-L94"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+        "content": "sha256:749282dbbdb0ff4ff5ce54d8a2e29c9fd1826fdfa67be3d88460f5ae7a42e6aa",
+        "locator": {
+          "kind": "symbol",
+          "name": "DirectExecutionGrantTest.test_reclaim_preserves_started_abandoned_leaf"
+        }
+      },
+      "facet": "An abandoned started leaf retains its grant under rule 5.",
+      "id": "PRF-TMA0BP",
+      "invariant": "INV-Y6DF2N",
+      "origin": {
+        "handoffEntry": "L94-CODE-F09",
+        "leaf": "260928-MIK-L94"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Pins shared grant authority, startedness, concurrency, census, reclamation and plan projection contracts",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+            "content": "sha256:d23b64d67774fe2d66a48571324a4832130e9cb35f209939942b6b478a0eb777",
+            "locator": {
+              "end": 213,
+              "kind": "line_range",
+              "start": 163
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+            "content": "sha256:58b5f21e3ec457c82e1352c2c537625d86d1165b7fa5c5fa7d9b1b4e42e65374",
+            "locator": {
+              "end": 306,
+              "kind": "line_range",
+              "start": 240
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+            "content": "sha256:a0858d9618f02974cc66f653b1ebef23aab0ca8f86bc81ae5e80c08c491ff80c",
+            "locator": {
+              "end": 566,
+              "kind": "line_range",
+              "start": 530
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+            "content": "sha256:cc940ebfed0b3fab646314d5151982f096743448bafc8c2ba211c3732d56a252",
+            "locator": {
+              "end": 854,
+              "kind": "line_range",
+              "start": 826
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+            "content": "sha256:1df0142d9fb8cc649f7ee8104931fda30be842fcd49cfbab46f10120c59ab1ae",
+            "locator": {
+              "end": 894,
+              "kind": "line_range",
+              "start": 863
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6386a3c00849683c4af9cd09bb5f295841fa8946",
+            "content": "sha256:a7b041792f5e33b6ab41ecc903623928a9383ab6f3e6591faca867abcc197b83",
+            "locator": {
+              "end": 1575,
+              "kind": "line_range",
+              "start": 1542
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

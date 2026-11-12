@@ -1,0 +1,42 @@
+{
+  "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "PR-4 defines both explicit-graph and graph-less topology review.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c22c62bbdfe2fc23b5f422bcee103184e44fb6d7",
+            "content": "sha256:fee6866a71234582d9b0e7bc94392983e4472883398224f1a40dc2dba24e43e4",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 33
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The authored source owns this contract; the distribution copy is not a separate authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c22c62bbdfe2fc23b5f422bcee103184e44fb6d7",
+            "content": "sha256:ef11ea20138cd2e6693b3158b879528a8ecbb31f399a0e0021ee098e868ed281",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

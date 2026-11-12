@@ -1,0 +1,99 @@
+{
+  "path": "mcp/tests/test_fixture_recorded_paths.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Recorded-path fixtures with developer-local paths are refused; recorded `/tmp` paths pass.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db3c463141a01f04bb33acaf4ba27ddad3a6e463",
+            "content": "sha256:241af180a595be4cdf27b54b53adeabe4502feed3459407c8ffc5415b24f8ed8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "`fixture_text` decompresses .gz bytes before both recorded-path scans. Planted developer-local and /tmp payloads exercise the unchanged path rule; malformed gzip raises rather than becoming an empty recording. The tests do not open the recorded payload paths. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "db3c463141a01f04bb33acaf4ba27ddad3a6e463",
+            "content": "sha256:2b51618c0909e24a95a55f66260045b657b3e89ed5fed3fb350d3687a5829128",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 13
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db3c463141a01f04bb33acaf4ba27ddad3a6e463",
+            "content": "sha256:dae7eaa43fd17f986232ab99ac3a66111961cd615aef0be02d0b21ad14e842f8",
+            "locator": {
+              "end": 47,
+              "kind": "line_range",
+              "start": 42
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db3c463141a01f04bb33acaf4ba27ddad3a6e463",
+            "content": "sha256:1af48f402c6cdf26c812b373e8fccb0c06975cbe338b9b995725c590090f0324",
+            "locator": {
+              "end": 88,
+              "kind": "line_range",
+              "start": 81
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db3c463141a01f04bb33acaf4ba27ddad3a6e463",
+            "content": "sha256:c547fb6d0dd0f03861620eb1bbbce2e6434e76d820b5a7aaf72c1ef74780d5a2",
+            "locator": {
+              "end": 108,
+              "kind": "line_range",
+              "start": 91
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db3c463141a01f04bb33acaf4ba27ddad3a6e463",
+            "content": "sha256:b8ed735b2b757bcfec768ee506b5b59431a172510a8e0444a971474bb9a52edf",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 111
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "db3c463141a01f04bb33acaf4ba27ddad3a6e463",
+            "content": "sha256:71c9fee8d89ef45928231bd63f754dab298e34f82c2f791a11b5e557c96832dd",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 126
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,636 @@
+{
+  "path": "mcp/src/agents_remember/controlplane/overview",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Retained gate logs have strict authority reads and a separate tolerant projection reader; their namespace is not a current lifecycle event stream.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:9f24c794129ed2f1561cab7af2168d354922b82d488e59294d9ca82615c46e7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "GateStore"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:2f4fb268f341674810c951cf6fff2b4d08fd52b5a88ac028ceb133ff28675c10",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_for_projection"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Durable-store role declaration follows application entry paths: `prepare_mcp_process` declares the MCP role, while dashboard `_dev_app` declares in the reload worker and `run` declares on the foreground/daemon command path.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "186284cc5a3f3e1d6a49a2378e0605ddfc5b1724",
+            "content": "sha256:0587e488ebdd2c60ba224ea263a4091c251e638b6ab089354e9f7a59c21a02b2",
+            "locator": {
+              "end": 91,
+              "kind": "line_range",
+              "start": 79
+            },
+            "path": "mcp/src/agents_remember/application/runtime/startup.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:74cd97abd5406b17a2c7a00a502a873c545bfd7c790ef3cf3225bc0e788103e3",
+            "locator": {
+              "end": 676,
+              "kind": "line_range",
+              "start": 656
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:cd162c9dc16ebab0c70a9b30b436d0b395dca696a73594d90cc13757e6fed8dd",
+            "locator": {
+              "end": 777,
+              "kind": "line_range",
+              "start": 771
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "JSONL admission precedes shared locking; appends fsync and replacement requires a held lock  Anchor: exclusive_access; append_line; append_lines; rewrite_lines\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:ee7d10966885efb5b3d71703725d97303b12467af342735b33babd8882b5d4f2",
+            "locator": {
+              "end": 358,
+              "kind": "line_range",
+              "start": 294
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Daemon ownership checks are advisory and independent of unconditional locking; schema admission rejects unknown majors, without preserving an inbox ownership register.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:a7932cb1c5dcd2ae38fe2b12299731934e069b3fb5dfdc61e7c2cf485feb4463",
+            "locator": {
+              "kind": "symbol",
+              "name": "StoreOwnership"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:a71288d370592aafc207460d9f442cc9d640f82b9fd50f219a7220431a17d397",
+            "locator": {
+              "kind": "symbol",
+              "name": "schema_version_supported"
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Mutex/flock exclusion is reentrant and capability-probed  Anchor: exclusive_file_lock; _verify_lock_capability",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:d34fcbf6bdb4b23193f38e66001e94fe3281de57fb127a1d782435db350a406b",
+            "locator": {
+              "end": 202,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Atomic publication fsyncs content and replaces before directory flush; Windows directory flush is unavailable  Anchor: atomic_write_bytes; _fsync_directory",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89d28e15fd681587d33624b1665393538e1957ec",
+            "content": "sha256:ca5a1e6448aa1d47b612890f0af446f7f9d933c9c69371e4d7208c375283ccb3",
+            "locator": {
+              "end": 161,
+              "kind": "line_range",
+              "start": 92
+            },
+            "path": "mcp/src/agents_remember/kernel/atomic_write.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Undeclared checkout targets are restricted; primary checkout is refused",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+            "content": "sha256:d78b11204602a0c8f95a38201fcf0f286c7b0c3b69cbab9dd8d5afe9b9629f5b",
+            "locator": {
+              "end": 155,
+              "kind": "line_range",
+              "start": 111
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Approval spending folds/evaluates/applies under one log lock  Anchor: claim_approval",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:1f37488773028038d8a93b9643a944a273b0867d67c6043fdfb14bd88974ad33",
+            "locator": {
+              "end": 249,
+              "kind": "line_range",
+              "start": 202
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Retained reference account (no fresh execution or acceptance inferred): Gate policy validation and delegated decision checks.\n\nAnchor: \"class GatePolicy:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:8d9487b3076ca1d8cfda80f3bb6275600830c76684c06abda4eb102af1a7946f",
+            "locator": {
+              "end": 54,
+              "kind": "line_range",
+              "start": 54
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Applied gate permits only matching exact-operation recovery",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ce5957cd60d790dc89aa33796a021dd2bf70c7f7",
+            "content": "sha256:c496a545fd9a3235a1308d6072b37585f76eea468ecbc7b8b7d501994ddef554",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "mcp/src/agents_remember/controlplane/enforcement.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Default human policy and explicit delegation/pinned kinds are kernel-owned\n\nAnchor: GatePolicy; make_gate_policy",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "35226811a3b772b515e1d353fd6b76a7caeb93cf",
+            "content": "sha256:e91d65ec7549288d140fda9206e41131447a34cb1c1bc0aabc525a7ae4fcc09e",
+            "locator": {
+              "end": 105,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Delegation rejects owning-lifecycle decisions and missing required reviewer evidence\n\nAnchor: delegated_decision_failure_reason",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b96e941c6e9a776260822ea07d54e1a57981bfd",
+            "content": "sha256:caf7a0f021609cdf7f1adf3343e7ec6f16a0d9888c8693a08ed422c732ba4a03",
+            "locator": {
+              "end": 83,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/controlplane/gate_policy.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "Consumed approval kinds keep applied authority without TTL; explicit removed-stores removal is distinct from native-census-qualified lock-only residue. Old inbox caps/expiry have no current owner here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:c43409f84bf7bc84003c36ae0e676299be6a2244c72101edcdb80cfbc057dac0",
+            "locator": {
+              "kind": "symbol",
+              "name": "CONSUMED_APPROVAL_GATE_KINDS"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6406e9c672efe030b99804ddf6ef6d1485a64bdc",
+            "content": "sha256:8d6f0070efbb54d7e2eb3582332406b20b8356387839b427ac2d18585a884fc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_keep_gate"
+            },
+            "path": "mcp/src/agents_remember/controlplane/interaction_retention.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "38": {
+      "note": "Projection requires exact source identity and owns scratch rather than semantic WAL\n\nAnchor: read_effective; invalidate; publish_build",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82fefcaace2946165b5c0ed8bc77bedecedd8fe9",
+            "content": "sha256:d4066911fd50214a492d2d792dbfe9f8557c47010d783d45841d6bde6ec7e877",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "39": {
+      "note": "Canonical publication precedes projection invalidation/rebuild and returns refresh failures as effects\n\nAnchor: publish_task_fact_mutation",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+            "content": "sha256:51c71c325cda52ea89e46620bcaac74a90165279b50b3668573225bec6712f9d",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 38
+            },
+            "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The structural gate facade re-exports kernel vocabulary only, not removed public gate-response operations or a native task-state model.\n\nAnchor: `GateKind`; `GateState`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0293e1f8c2efa7f2159e4e430fe6aa292dd78162",
+            "content": "sha256:15624091d624bc3490aead19b05aa7a1b08bd56114b307aad0d0245e9355c2d2",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            },
+            "path": "mcp/src/agents_remember/models/structural/gates.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "40": {
+      "note": "Current role_identity canonicalizes the one earlier specialist spelling to investigator; the removed orchestration packet router has no current ownership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+            "content": "sha256:78495cf20f8a2b13010cebc23fbee4e53a72cdfe35205c9474fff799aa8c99ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_role"
+            },
+            "path": "mcp/src/agents_remember/models/role_identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "42": {
+      "note": "Approval claiming keeps fold/evaluate/applied append under one log lock; no existing log yields gateless policy before opening a lock.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bbb005d14f4c90cbe56e3aecbbd4e5ca9cf52cd5",
+            "content": "sha256:4d6b9a16d976b064cf3916a01fcfcb59edaeed4b2143e8d016fc2b49ee434277",
+            "locator": {
+              "kind": "symbol",
+              "name": "claim_approval"
+            },
+            "path": "mcp/src/agents_remember/controlplane/store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "43": {
+      "note": "Workspace acknowledgements admit actionable-drift, blocked-start, permission-wait, held-message, task-stalled, task-landed and task-abandoned once per current occurrence; acknowledgement does not end a live cause. Source-based reconciliation protects unread/incomplete kinds and newer acknowledgements and reclaims absent/healthy/changed occurrences only from complete time-qualified observations. Rewrites remove admission-dropped malformed or retired provider rows, and count/serialized-byte bounds may evict the oldest acknowledgements even while their occurrences remain live.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:7bb56f102ba5348d81f8cb722e94fd667bb44bd51441a040e218001709707289",
+            "locator": {
+              "end": 74,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
+            "locator": {
+              "end": 131,
+              "kind": "line_range",
+              "start": 83
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:1dcc68f7fdbb8adf76fff8050d44630c2189d288412b92924a06e90d728f74a5",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:3b08dcaeba81c516d6d4b82e8ed1b16408e50c635d09faedd0f4c450d88176a4",
+            "locator": {
+              "end": 236,
+              "kind": "line_range",
+              "start": 196
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:3f402acf9a58d056e00a6a247dd11215c0201a6a94208beb895907352496d6d3",
+            "locator": {
+              "end": 289,
+              "kind": "line_range",
+              "start": 275
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Workspace acknowledgements admit only published kinds and reclaim only with complete, time-qualified native observations; partial/unread kinds and newer clicks remain protected.\n\nAnchor: `AttentionDismissalRecord` `AttentionObservation` `reconcile`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:a8b3b787b3be3c08fb2dbdd08f5d83e98edf0ee1b488790f6543ebb22b427dfc",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionDismissalRecord"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:0a7bc5a96c604f4fa5eda34411cd1f051bd79e89f5f61210472af06892927215",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttentionObservation"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:3b08dcaeba81c516d6d4b82e8ed1b16408e50c635d09faedd0f4c450d88176a4",
+            "locator": {
+              "kind": "symbol",
+              "name": "reconcile"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:b9fa9b1ea936faf990fddb121b071d765dca6e41a98e0d5975b32ee0e9d6e2db",
+            "locator": {
+              "end": 150,
+              "kind": "line_range",
+              "start": 139
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8fc8a5487a7d0bfd52efcf027cbcd3607d671f9",
+            "content": "sha256:27613be17c429e3017b4b88958e9ae658e9c81d1993c1d424ecf5ca8002c0c0b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/controlplane/attention_dismissals.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Provider degradation records its own state/events and can stop a critical provider; no removed operator-inbox posting occurs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2edff51be75051062a682ac9a09910ffdb4db13a",
+            "content": "sha256:40d7816d0c5b9185a064f230407906af290c62cd2792e5c7a5ee80c0234aaf03",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/providers/degradation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Guarded durable-store composition preserves coordinator containment and held-lock rewrite.\n\nAnchor: actual current supporting source",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:d260e889dbb0ffafb0ab1dbac18137b0f3bf1040432c20bf21313017974629f0",
+            "locator": {
+              "end": 263,
+              "kind": "line_range",
+              "start": 225
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:18e19347826e5c2e9e70f9ba584a22c80264b29fda28921c215e951f9fd2e5ca",
+            "locator": {
+              "end": 284,
+              "kind": "line_range",
+              "start": 266
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "59a148a711df3a07d0424f5448d9871b6aac6930",
+            "content": "sha256:8c0f0428a50f72a5b10c5cb639e33fa58ae8e6acc131bff8d36937b871b54c9f",
+            "locator": {
+              "end": 348,
+              "kind": "line_range",
+              "start": 337
+            },
+            "path": "mcp/src/agents_remember/controlplane/durable_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Shared kernel exclusion is independent of caller authorization.\n\nAnchor: `exclusive_file_lock` `lock_held`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:e6215a71b64bbbaf314085e12c561af5ab131b13a04ff6e28d38b951f6922140",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:b5fbc44c9c78607266f10080567a3c94aa2aedcb0a0937fb7c8e3faf7d10509e",
+            "locator": {
+              "kind": "symbol",
+              "name": "exclusive_file_lock"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1c8709e75ca22ed12ab5182e676a05d389075a96",
+            "content": "sha256:938a7ee0fafc28cb146d0acc1fb7fb46383b87b1f68ba3708f3341c547450d0a",
+            "locator": {
+              "kind": "symbol",
+              "name": "lock_held"
+            },
+            "path": "mcp/src/agents_remember/kernel/file_lock.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

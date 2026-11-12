@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A stale stored closeout verdict could substitute for judgment of the different pair that actually lands."
+  },
+  "applicability": "Converted external-memory leaf pair judgments in closeout recovery, recorded landing and integration.",
+  "conditions": [
+    "The caller supplies validator comparison bases.",
+    "Recorded closeout parent history freezes only for that commit or its descendants."
+  ],
+  "exclusions": [
+    "Unconverted cutover policy.",
+    "Master chain proof."
+  ],
+  "id": "INV-M0J963",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "role-reports/worker/7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152/role-launch/260928-MIK-L52-worker-7c2e9d14-6a1b-4f53-8e20-52a0c3d9b152.md (SHA-256 ef7cff4d9b5140ebecdc1997c2df1fa8dc3ad81222e17dc63b2746cccab1bdf6); mcp/tests/test_landing_unreadable_inputs.py; mcp/tests/test_record_landing.py"
+      ],
+      "path": "knowledge-wave.json"
+    },
+    "handoffEntry": "MIK-R52@v1 rule 1 one-pair-judgment",
+    "leaf": "260928-MIK-L52",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "One function judges a leaf contract's code+memory pair exactly as the closeout judges its candidate (validator as leaf publication, gate with recomputed worklist); require_gated_recovery calls it.",
+  "status": "proposed",
+  "supersedes": []
+}

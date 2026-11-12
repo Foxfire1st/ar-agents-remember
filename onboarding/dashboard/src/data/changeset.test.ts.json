@@ -1,0 +1,147 @@
+{
+  "path": "dashboard/src/data/changeset.test.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Stubs `fetch` and unstubs globals after each test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:880bace7135f6c67e8bb4ac7242de5e7e02f08c25534c33a876ee25f27bb8db2",
+            "locator": {
+              "end": 14,
+              "kind": "line_range",
+              "start": 6
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Asserts the task / file-diff / master URLs (including `%2F` path encoding).",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:f7c3c6ceece411d9c3959c785696bd7bcbca8902ab0a3496ddae3978e636ba9c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Asserts generation pins ride the master URLs and unset pins are omitted.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:088ae4650a848e76e1782b58d75d78848b92679957c439051f0e6cdd2ac95934",
+            "locator": {
+              "end": 77,
+              "kind": "line_range",
+              "start": 59
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Asserts a non-ok (404) response throws `FilesApiError`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:475db2e2dda9520015be9545d83f26d138a61e0023028f60be47404a661037bb",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The test imports and exercises taskChangeset and FilesApiError in its URL and error cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:46f44f4f715d93e05e23c7a63415f9119b21d7dc114ec0e0e654c3f0eb93ad10",
+            "locator": {
+              "end": 4,
+              "kind": "line_range",
+              "start": 3
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:f7c3c6ceece411d9c3959c785696bd7bcbca8902ab0a3496ddae3978e636ba9c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 16
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "79c1804f7f0534d3aa66a7557d6f5430c3d16f53",
+            "content": "sha256:475db2e2dda9520015be9545d83f26d138a61e0023028f60be47404a661037bb",
+            "locator": {
+              "end": 57,
+              "kind": "line_range",
+              "start": 54
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Contract counterpart: the serving layer emits the 404/400 codes this test stubs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:0f932be651681689db31ae37917d6dfcaa4834321373b7a2fb17521322c2f924",
+            "locator": {
+              "end": 605,
+              "kind": "line_range",
+              "start": 605
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:e4edb7d19e6feb771c212a3d227a85334f9630457949ea7ddcfee68a79d81c46",
+            "locator": {
+              "end": 675,
+              "kind": "line_range",
+              "start": 675
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

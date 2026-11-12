@@ -1,0 +1,174 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 4 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "CONTRIBUTING.md",
+  "id": "DPD-78737N",
+  "origin": {
+    "handoff": {
+      "path": "curator-handoff-v2.json"
+    },
+    "handoffEntry": "dependent-1",
+    "leaf": "260928-MIK-L202",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "abb3d0e320df1c428284a14d602ec93ad778bdbe",
+      "kind": "file",
+      "path": "pyproject.toml"
+    },
+    {
+      "blob": "0b038d80d7b6c69f20e9a71e4f06de788fc04f87",
+      "kind": "file",
+      "path": "scripts/bootstrap-mcp-venv.sh"
+    },
+    {
+      "blob": "82f5032efd68a6a8f06f4a79d9e4f47574a04567",
+      "kind": "file",
+      "path": "scripts/install-python-runtime.sh"
+    },
+    {
+      "blob": "ba5c21e9bd2eb25305b05fb1f1e7a9c032cf24d5",
+      "kind": "file",
+      "path": "scripts/check-python-runtime.py"
+    },
+    {
+      "blob": "181c81f78275cfbda8aad2b96e8db82ddfacf341",
+      "kind": "file",
+      "path": "scripts/python-runtime-contract.env"
+    },
+    {
+      "blob": "d5a1dabf24a0b1773332c6bcff89f4ef3b6c8684",
+      "kind": "file",
+      "path": "setup-hooks.sh"
+    },
+    {
+      "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+      "kind": "file",
+      "path": ".githooks/_gate.sh"
+    },
+    {
+      "blob": "5525d438c942b2a69ee259d8298c5d62dd65b6df",
+      "kind": "file",
+      "path": "mcp/tests/conftest.py"
+    },
+    {
+      "blob": "5691b694e756469475d783c426d9781ef14c8633",
+      "kind": "file",
+      "path": "mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+    },
+    {
+      "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
+    },
+    {
+      "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+      "kind": "file",
+      "path": ".dagger/src/agents_remember_quality/main.py"
+    },
+    {
+      "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+      "kind": "file",
+      "path": "mcp/certification-profile-v1.json"
+    },
+    {
+      "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+      "kind": "file",
+      "path": "scripts/check-public-docs.py"
+    },
+    {
+      "blob": "9505dcb3507b3f40698a2998f35188701cb7e895",
+      "kind": "file",
+      "path": "scripts/pnt-sandbox.py"
+    },
+    {
+      "blob": "2630946c35dd86bc184c6dcedd7c8234c1829901",
+      "kind": "file",
+      "path": "scripts/sync-dashboard.py"
+    },
+    {
+      "blob": "a679628bfc97d851c7d3246fbeddcdcd95364844",
+      "kind": "file",
+      "path": "scripts/sync-projection-types.py"
+    },
+    {
+      "blob": "338cc0a8f410f09b4cdf632fdb2cc1f5f59aefc1",
+      "kind": "file",
+      "path": "scripts/sync-runtime.py"
+    },
+    {
+      "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+      "kind": "file",
+      "path": "scripts/sync-skills.py"
+    },
+    {
+      "blob": "7c97c7c7ff9454f53518e78e4f7df2b4d0dc5cf0",
+      "kind": "file",
+      "path": "scripts/test-under-load.sh"
+    },
+    {
+      "blob": "e640511ffad3eb7e67c1de5b38581748a9214a53",
+      "kind": "file",
+      "path": "dashboard/package.json"
+    },
+    {
+      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    },
+    {
+      "blob": "f46c901c30e3cecad97dcf399005a5a768c8eb61",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/checkout_coordination.py"
+    },
+    {
+      "blob": "fff6d1b371fb4fe0a233004fbd3522c895a94e7d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py"
+    },
+    {
+      "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+    },
+    {
+      "blob": "8fbe2e519b5448fefb73065d075615300f042042",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py"
+    },
+    {
+      "blob": "00db969fae087cb513430ec22b1da9f4ee290c44",
+      "kind": "file",
+      "path": "scripts/pnt_sandbox/cli.py"
+    },
+    {
+      "blob": "83e8145b5df21b1518a83ba5bde8d3c089e739cf",
+      "kind": "file",
+      "path": "scripts/pnt_sandbox/operations.py"
+    },
+    {
+      "blob": "e7e0857ffef6d6d48aeb8df07e08537a2d5a2ce8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/host-harness-homes.json"
+    },
+    {
+      "blob": "eb407f537fc9b17727f49c3119b15d231f4ebfbc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/host-session-environment.json"
+    }
+  ]
+}

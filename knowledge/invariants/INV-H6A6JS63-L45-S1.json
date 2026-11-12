@@ -1,0 +1,27 @@
+{
+  "admission": {
+    "criteria": [
+      "family_guarantee"
+    ],
+    "justification": "Authored realization explanation requires refusing an unexplained target before writes, because generated filler would otherwise be stored and displayed as an author's account of the obligation."
+  },
+  "applicability": "Realization targets supplied to the converted curator file writer through knowledge-ingest or knowledge-bootstrap.",
+  "conditions": [
+    "At least one supplied realization target lacks a rationale at both levels."
+  ],
+  "exclusions": [
+    "Targetless task rulings, which create no realization.",
+    "Stored historical claims; this admission check does not rewrite them."
+  ],
+  "id": "INV-H6A6JS63",
+  "origin": {
+    "leaf": "260921-ICR-L45",
+    "legacyId": "8d9a3176-7c67-4284-8385-be419ab9f692",
+    "task": "260921-ICR"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "A converted file-writer handoff target with neither its own nonblank rationale nor a nonblank entry default refuses the entry as realization_rationale_absent, naming the entry and offending targets before record or sidecar writes. The writer never invents the explanation.",
+  "status": "proposed",
+  "supersedes": []
+}

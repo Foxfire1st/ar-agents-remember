@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/worktrees/modules/quality/execution/__init__.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/worktrees/modules/quality/execution/__init__.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-06T15:15:01+00:00 |
-| lastVerifiedCommitHash | `c69d5171187fa1957025e393270db9f5a864ab14` |
-| lastVerifiedCommitDate | 2026-09-06T16:32:29+02:00 |
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Governing route overview](overview.md)
@@ -37,24 +27,16 @@ Import concrete owners directly: `models` for selected execution validation, `re
 
 None recorded for this file's bounded responsibility.
 
-## Docs References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The resolved registry supplies no applicable external Domain Documentation source for this card. | — | — |
+### Docs References
 
-## Repo-Internal References
+The resolved registry supplies no applicable external Domain Documentation source for this card.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The package marker documents its scope and contains no executable initialization. | "Selected certification suffix authority and retained report transport." | mcp/src/agents_remember/worktrees/modules/quality/execution/__init__.py:1-1 |
+### Repo-Internal References
 
-## Cross-Repo References
+- The package marker documents its scope and contains no executable initialization. [1]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No separately configured cross-repository source is used for this card. | — | — |
+### Cross-Repo References
 
-## Update History
-
-- 2026-09-06T15:15:01+00:00 — Created from the complete source at `c69d5171187fa1957025e393270db9f5a864ab14`. Documented the selected-original, terminal or transport responsibility and its actual neighboring owners. Source verification is not execution or acceptance evidence.
+No separately configured cross-repository source is used for this card.

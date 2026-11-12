@@ -1,0 +1,135 @@
+{
+  "path": "mcp/src/agents_remember/models/lifecycles/certification.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "`RetainedCertificationBytes` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:33f1ca440ecbd4513794e5edd4ac0d9101c3464d2f56cdf2bc33d0589def80c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "RetainedCertificationBytes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`SelectedRecoveryDecision` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:3d424558af6febb66ad2c2e95421b01da1bb4ac007a422595a3e6517ef186cbc",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedRecoveryDecision"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "`CertificationPredecessor` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:3aae1e5d8a2c0dbe8e0236b03668727b560859f48d547778d7887b15857a0a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "CertificationPredecessor"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "`SelectedGateTerminal` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:352ba30324d89b9c8ecfe5108bd503195913bfe7fb79c7ddfd879a29bfd03829",
+            "locator": {
+              "kind": "symbol",
+              "name": "SelectedGateTerminal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "`OperationCertificationState` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:cf5929b618a3c71a378a3a9b3b9a757bd3fb196be8701f8ade901080ee69b96c",
+            "locator": {
+              "kind": "symbol",
+              "name": "OperationCertificationState"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "`validate_certification_owner` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:90e9d7f750876483c9d6d1d113a86e5d332924c48f6bdcd75ee3555dadb4b18e",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_certification_owner"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "`validate_certification_transition` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:f12cc3d5827806c2a5f2a3d527034eea13acaedf92bec60097e89e598d17c859",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_certification_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "`_validate_terminal_transition` owns the described value or transition boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "545766bc6c4b260bf83509b77b16b072f2baa763",
+            "content": "sha256:25a5168f439b2928ab868d499e87164ce92d8fa65004f58b038450d23346e78a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_validate_terminal_transition"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

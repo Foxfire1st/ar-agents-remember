@@ -1,0 +1,73 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The route design had real forks (extend the code-root routes, add a caller path, build a second viewer) and the choice fixes the only way a report may be read from the dashboard."
+  },
+  "alternatives": [
+    {
+      "option": "One read-only route addressed by the launcher's execution selection and its recorded request ID, serving only the report file the launch recorded, under the exact product report root, with a launch-derived file name and named refusals for missing, unreadable or outside-root files.",
+      "reason": "The route adds no path input and no listing, so a caller cannot select a file; the deterministic name keeps a rewritten receipt from substituting a sibling file; the existing notes reader remains the viewer.",
+      "status": "chosen"
+    },
+    {
+      "option": "Extend the existing file routes to accept the reports root and take a path from the caller.",
+      "reason": "A caller-selected path is exactly the admission the packet forbids: it would let the dashboard read any file under the root, not only the recorded report.",
+      "reconsider_when": "The product grows a general reports reader with its own confinement and an approved requirement.",
+      "status": "rejected"
+    },
+    {
+      "option": "Build a second bespoke report viewer in the dashboard beside the notes reader.",
+      "reason": "The packet requires the existing reader; a second viewer duplicates the display path and its confinement work.",
+      "reconsider_when": "A later requirement needs a report-specific display contract.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "The route serves every launchable role, task-bound or taskless, and answers the report's absence in rule 3's line.",
+    "A report absent from the root, unreadable, non-regular or recorded outside the root is refused by name.",
+    "An absent report-access alias no longer hides a written canonical report; a genuinely retargeted alias keeps a distinct refusal."
+  ],
+  "context": "Removing the printed report path made the report reachable only through Result, and Result needs to open it. The existing readers refuse a role's report: the file routes read code roots only (a request for a canonical report answered HTTP 400 bad-path) and the notes reader admits a task's notes, not the report of a role without a task. The backend had to gain a route or the report would be lost.",
+  "decider": "The run's architect amended MIK-R75@v1 with rule 4a on the worker's report and the orchestrator's recommendation (2026-10-05); orchestrator ruling OR-R014 sealed the review-round interpretations, and the current report-route suite (54 cases inside the 203-test, 15-module focused run) passes on the candidate.",
+  "id": "DEC-W361W6",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-TA2JW5"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-DH5NRM"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R75",
+        "packet": "requirements/MIK-R75-v1-the-launcher-strip-does-not-repeat-the-chat.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/python-focused-current.log; notes/reports/role-launch/260928-MIK-L75-reviewer-e90aa7a7-6651-4eb6-ab32-c6bfb33a38ac-evidence/sealed-evidence-inspection.json"
+      ],
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1 current rule 4a",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

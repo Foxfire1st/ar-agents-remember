@@ -1,0 +1,46 @@
+{
+  "admission": {
+    "criteria": [
+      "joint_guarantee"
+    ],
+    "justification": "The same guarantee now covers the reviewer's recorded answers: exact-input retention, unreadable-input fallback and bounded age are what the two new members add, and no member promises that whole joint result alone."
+  },
+  "guarantee": "Native change-set computation remains authoritative while reusable results are retained only under complete stable input generations. Qualified body revisions and conditional ETags let bounded dashboard-owned content survive navigation without reparsing or retransmitting unchanged bodies; unchanged working viewer content retains its editor. Every introduced content/pending owner has named retention or cancellation limits. Missing, changing or unreadable generation evidence falls back to native reads without retention, with one admitted exception: a refusal may be retained on the named unknown-status stamp, never a successful result. An exact-id-keyed change-set result is served from its key with no observation; that accepted gap is named and is not a claim about unreadable generations. Current refusals stay visible, and counter latency/failure never gates the document. Cold reads, actual mutations, eviction, oversized content and changed editor content are outside unchanged-reuse promises.",
+  "id": "FAM-EASWS6",
+  "members": [
+    "INV-7TMGB0",
+    "INV-WNHAWD",
+    "INV-C1RTSG",
+    "INV-QK8XNM",
+    "INV-GDWJKR",
+    "INV-ZNXX7H",
+    "INV-M46Y3E",
+    "INV-BRGWKX",
+    "INV-NPEQB1",
+    "INV-YTPBCF",
+    "INV-WC3BS4"
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sync-L81-primary-regressions.txt; backend-candidate11.json master repeat0Git/working repeat0Git; conditional-candidate11-settled.json six304/zero-byte/zero-Git routes; cold intent25then23Git retained"
+      ],
+      "path": "A011-bounded-generation-content-33.json"
+    },
+    "handoffEntry": "L168-W-R168-02",
+    "leaf": "260928-MIK-L168",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "routes": [
+    "dashboard/src/data",
+    "dashboard/src/panels",
+    "mcp/src/agents_remember/serving",
+    "dashboard/src/grammar",
+    "mcp/src/agents_remember/worktrees/modules",
+    "mcp/src/agents_remember/application"
+  ],
+  "schema": "ar-family/v1",
+  "status": "proposed",
+  "title": "Bounded generation-qualified content reuse"
+}

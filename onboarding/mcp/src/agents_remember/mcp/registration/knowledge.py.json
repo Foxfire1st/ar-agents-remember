@@ -1,0 +1,595 @@
+{
+  "path": "mcp/src/agents_remember/mcp/registration/knowledge.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "content": "sha256:78e83592b213ecb099716542f26a923e3696e51b893d6798fb40bac36a3fbec3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_knowledge_read"
+        }
+      },
+      "id": "RLZ-8907S7",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "These registered handlers resolve their canonical request and payload through the lazy tools adapter inside invocation; the public declaration stays available without eager operation imports.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "content": "sha256:f58d64f0f2b089ba2ea8fdeaad07ea16024320aba7ec5ef63f5c7db369457bbf",
+        "locator": {
+          "kind": "symbol",
+          "name": "knowledge_write"
+        }
+      },
+      "id": "RLZ-8M3H7V",
+      "invariant": "INV-AG8G8C",
+      "origin": {
+        "handoffEntry": "R73-R1",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This registration is what puts the writer on the agent's tool list, with its description stating that a refusal lists every problem.",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_knowledge_integrity_check"
+        }
+      },
+      "id": "RLZ-CXX0PE",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "These registered handlers resolve their canonical request and payload through the lazy tools adapter inside invocation; the public declaration stays available without eager operation imports.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "content": "sha256:af5bc3d53ac74fde60450bcb05450ed18d8201c7533d803475ec675d4e314053",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_knowledge_write"
+        }
+      },
+      "id": "RLZ-KA308Z",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+        "locator": {
+          "kind": "symbol",
+          "name": "register_knowledge_tools"
+        }
+      },
+      "id": "RLZ-M64DW4",
+      "invariant": "INV-W3FW03",
+      "origin": {
+        "handoffEntry": "MIK-R26@v1 (advisory delivery)",
+        "leaf": "260928-MIK-L26"
+      },
+      "rationale": "The registration owns the surviving tool set after the database paths are removed.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "content": "sha256:f3078a4e98981f5d6e048c7f7fb374f92a598b01f561b1203460b72c8507ccf7",
+        "locator": {
+          "end": 34,
+          "kind": "line_range",
+          "start": 34
+        }
+      },
+      "id": "RLZ-S3TJ3S",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The declaration module now binds the lazy tools adapter instead of importing every operation payload/request eagerly; handlers keep their existing canonical request construction and load through this one deferred adapter on invocation.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+        "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
+        "locator": {
+          "kind": "symbol",
+          "name": "_register_knowledge_diff"
+        }
+      },
+      "id": "RLZ-Y1TRRQ",
+      "invariant": "INV-990KQM",
+      "origin": {
+        "handoffEntry": "L183-deferred-discovery-implementation",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "These registered handlers resolve their canonical request and payload through the lazy tools adapter inside invocation; the public declaration stays available without eager operation imports.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "10": {
+      "note": "The statement of what the runtime configuration supplies to this family — the workspace root a read falls back to as a **default repository**, never half of a resolution pair, and the coordination root under which a converted memory tree's derived index is cached — and the configuration type whose `workspace_root` is the first value.\n\nAnchor: `McpRuntimeConfig`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:c81044bcca1bebd8e9882cf2186e6a9e265245c2c3a5d233d233422ff01f1e94",
+            "locator": {
+              "end": 85,
+              "kind": "line_range",
+              "start": 80
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e2d83560666924530b06c82fcd178952932211795b5d29970b35d162ce3a4e47",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+            "content": "sha256:e7791119b1e18159ebfbbbd83a14da6aa29442e78892e2f9d570688969689704",
+            "locator": {
+              "kind": "symbol",
+              "name": "McpRuntimeConfig"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:68c92743fa0578a21f3a218d54838b2a109c91279fc3153c3b97fc99cb509649",
+            "locator": {
+              "end": 76,
+              "kind": "line_range",
+              "start": 71
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The four registered handlers: the read registrar that forwards the caller's own root and the configured workspace root as two separate arguments plus the configured coordination root, the write and diff registrars that take the configuration beside the server, and the integrity registrar that takes the server alone.\n\nAnchor: `_register_knowledge_read` `_register_knowledge_diff` `_register_knowledge_integrity_check`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The published read contract: the named views with their filters, rows that name ID, kind, state and location and never text, and the optional `sourcePath` seed the signature carries into `ReadToolRequest.source_path`.\n\nAnchor: `knowledge_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The family entry point as the package door's contract requires it: one `register_*_tools(server, config)` public function for this family, delegating to the payload builders.\n\nAnchor: `register_knowledge_tools`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The comparison registrar and handler return the knowledge files' Git diff, grouped by record and source path, without inferring a semantic effect label.\n\nAnchor: `_register_knowledge_diff` `knowledge_diff`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:462eafa5b1361a6c9e781fea4ba3dfd5cb3f6a441b4d85111a77abbcfe0ee0e0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_diff"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:8c0674e47cd64339db13b3e2620199f7cfefa2f7bbf1ff913a001294b2964268",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_diff"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The integrity registrar and handler report validator counts and violations and add a leaf's latest worklist when contractPath is named; runId, inputDigest and compatible are not fields of the current registered contract.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:996856950511320ea19a5c78de08ab93cba16a5c5e9b8c0ad5787ddfdd412f28",
+            "locator": {
+              "kind": "symbol",
+              "name": "_register_knowledge_integrity_check"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:79fa732d612509a624a09e79e3e8da5aed6af660c6713eed0f3d8c2f9ab12542",
+            "locator": {
+              "kind": "symbol",
+              "name": "knowledge_integrity_check"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The request value objects and payload builders this module delegates to, imported rather than re-declared here.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:a1f16b45885148fac14d82548380f25a2c15b678876d308ab40e6f5f41c27ca6",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 32
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The registry the family is appended to, where the import and the tail tuple entry are the family's whole integration, and the live-registration test that compares the resulting order against the advertised roster.\n\nAnchor: `TOOL_REGISTRARS` `test_live_registration_matches_the_public_inventory_in_order`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:ba5f80c4312577cf05ce7edf0740f0539e8ca3817e94705c6d618c18813ab107",
+            "locator": {
+              "kind": "symbol",
+              "name": "TOOL_REGISTRARS"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:81b381ab8ef9d70679dc502b1e04ec59f307345d6a59cad1ab4ae0f7ad132988",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:a745162e8d77df72379e28b49e4dacde7a65f41774cbd89653b9ab790c0174e3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:a1e4d314feb531d1035a87ca865b4aec6d628128b791f4f2639ff61a7399da89",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "d0620d3a6b3d0466f16d6b6d715eb161641e387f",
+            "content": "sha256:9b5dae6c11fe566eb7b371edc887037e07c8a9706b502cc29849e48a4b701248",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_live_registration_matches_the_public_inventory_in_order"
+            },
+            "path": "mcp/tests/test_tools.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+            "content": "sha256:4d00597b06931051fba913b1eef9ab4e3c924c942aaa052c93d0fe12e1f8a8a4",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 25
+            },
+            "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The three advertised names this registrar publishes, appended at the roster tail in the same order the handlers are registered in.\n\nAnchor: \"\\\"knowledge_read\\\",\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:c7336ed48d05821e1ed79fb1c27b8f9cc90855247bf34b5b9d875bde90eb5195",
+            "locator": {
+              "end": 70,
+              "kind": "line_range",
+              "start": 68
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:309a611cc8d773f899de1875fc66442a2a03026bc0714ff7849f3f2eb367af6a",
+            "locator": {
+              "end": 69,
+              "kind": "line_range",
+              "start": 67
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+            "content": "sha256:7414a453c602b347f45352d4cc34c516e668bfad6631ad58191f2e1a0c5c7626",
+            "locator": {
+              "end": 67,
+              "kind": "line_range",
+              "start": 65
+            },
+            "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The three response-model rows that validate these operations' payloads, added at the registry's own tail.\n\nAnchor: \"\\\"knowledge_read\\\": KnowledgeReadResponse,\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:6097689f38804f991da7fac414a2d2002f37af6fd432bfdd4fcc9b744507ba9d",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:72d64292840bc0a101731ce071a40da0ac5b2da6b2b95c39cd456f4ad74a2247",
+            "locator": {
+              "end": 125,
+              "kind": "line_range",
+              "start": 123
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ca5af906298a90f3101a98a5542005e3549b3c0a",
+            "content": "sha256:37d525e2cd534b34d4a8aaba57562488748596ca549d2949971767866232f7b5",
+            "locator": {
+              "end": 122,
+              "kind": "line_range",
+              "start": 120
+            },
+            "path": "mcp/src/agents_remember/models/tools/tool_registry.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "The strict response classes preserve the read view's payload, the diff's file changes and the validator's report/worklist as distinct responsibilities; the current integrity response has no compatible field.\n\nAnchor: `KnowledgeReadResponse` `KnowledgeDiffResponse` `KnowledgeIntegrityCheckResponse`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:160816c7bee58615d164d30b3d62b33d769e45d203cc1ff66445ac3f3619cef5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:c6e2600e9ba932eb405f3c40a9306f46b26f47e8bfd80c6ee7d37c8a1120282d",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeReadResponse"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:56378eecacf2289549c32aa3be01be39ff48699acd6d564caa98ce7f3a1f9f15",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeDiffResponse"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0b97b80d44d3d0a2bd5e469d8c0c966b71f28fa7",
+            "content": "sha256:ff68ce0fc9bc2b83bb37171633d836ca0617299821e55922d8e477a2db9c0f3f",
+            "locator": {
+              "kind": "symbol",
+              "name": "KnowledgeIntegrityCheckResponse"
+            },
+            "path": "mcp/src/agents_remember/models/tools/knowledge_responses.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Knowledge read/write/diff/integrity handlers resolve the existing request classes and payload builders through the lazy tools adapter at call time. No second writer or schema is introduced.\n\nAnchor: `_register_knowledge_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The family module's own statement of its scope — appended rather than inserted, the three operations in the design's spelling, no domain reasoning and nothing mounted for the reviewer — together with the one entry point whose four `_register_*` calls are made in the read, diff, integrity, write order.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:6940317dcf65978f081aea3eaa77d0c44ee8dee0c297217398cdb6b0f3926173",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_knowledge_tools"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:5c366de560a4c27865c213800f58e9f76617a44c965ccd2d618af79be758865f",
+            "locator": {
+              "end": 25,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+            "content": "sha256:0d9ea0a0c1efae38c0f2bddbff7f150e27f5bb25ef1d000544c38fd164d10b78",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

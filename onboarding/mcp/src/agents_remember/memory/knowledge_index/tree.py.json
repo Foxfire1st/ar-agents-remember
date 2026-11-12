@@ -1,0 +1,432 @@
+{
+  "path": "mcp/src/agents_remember/memory/knowledge_index/tree.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+        "content": "sha256:32bc74b80edd95d50932572792ffcff965811133b5ae9e8292c8b84eb3f7819d",
+        "locator": {
+          "kind": "symbol",
+          "name": "capture_tree_into"
+        }
+      },
+      "id": "RLZ-16H323",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The capture itself is the index's own isolated mechanism, reused rather than reimplemented for the reader.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+        "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_capture"
+        }
+      },
+      "id": "RLZ-5VBRRY",
+      "invariant": "INV-656CYW",
+      "origin": {
+        "handoffEntry": "L37-index-copy-keeps-its-time",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Copies the repository's index with that function before it adds the working tree to the copy, so the directory key, and the cached index served for it, follow a rewrite made in the second the index was written.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The two sources, the captured-state key and what the capture never writes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:850c703c1382729ca90d15985a3d67475619a02d928f2f0d6cfd1952ae61ab46",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A rewrite in the second of the index write changes the key, and the cache builds a new index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:3007d8585749684673308283898e1f6eaf462f5e65c7fae88c8cb098dc6a8c22",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_rewrite_in_the_second_of_the_index_write_is_never_answered_from_the_old_content"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Snapshot selection retains nonexcluded onboarding Markdown and indexed-record Markdown companions as comparison bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:c77b2e30ff8713de34339f4acfa6ffd2a3426edd3f10eb9b47e3a1a6f8ef211a",
+            "locator": {
+              "kind": "symbol",
+              "name": "with_prose_companions"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The snapshot value and the read error.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:8831b5ebf0b198554d591226affe2fc269569c598d70b2772803282d07604f84",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryTreeSnapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:d4e33c81f422699f0b992028e2335ef954d00d97daabc504bea3f9cc1733bfe2",
+            "locator": {
+              "kind": "symbol",
+              "name": "MemoryTreeError"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The indexed JSON filter, sharing the validator's exclusion predicate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:c8f3617e60a552ac6ed46dc46a9d31804229f2ed6d7a6f4084a91aed24fd024d",
+            "locator": {
+              "kind": "symbol",
+              "name": "is_indexed_path"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The Git-object reader: one batch read, nothing checked out.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:e70fd64cf24693b7ce3eaff463bfec6e3a8b2485539c76d5f929e1c626524dcd",
+            "locator": {
+              "kind": "symbol",
+              "name": "git_tree_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:d1b8c0db0e18e582f9b1ae541d260aead57801ed55ee1914babe91c410ffbb9b",
+            "locator": {
+              "end": 94,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The directory reader and its key, with the blob-id check and retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:b0aab9fa4ff35fa98d257c8cc68305cc45903451e4a5a348bf6dc04678e8fd2d",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_snapshot"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:7533862bf260a31d0b8e01d10c0bfab20c7bf053da5d5893177e372620c8da05",
+            "locator": {
+              "kind": "symbol",
+              "name": "directory_key"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:cb1e87d9dade93080b3a8f57130b378089e9f2bccf89e33d1b48433964294797",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blob_id"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:8c5b4f99dff71a4cfad8a924effda4001dc2033863d3e38ae5adb4183d690360",
+            "locator": {
+              "end": 115,
+              "kind": "line_range",
+              "start": 97
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:de640f5bb615ffac784f3707f20126e5484780338c9777e96add99747f248bfd",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:d2963032f408ee35d1e6db3f9548a6248541f8572e94e336a89b1d389a6d1488",
+            "locator": {
+              "end": 252,
+              "kind": "line_range",
+              "start": 247
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The isolated capture and the index-flag clearing on the scratch copy.\n\nAnchor: `_capture` `_clear_index_flags`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:b495a008cd21af0c07cb2bb10571bf0922a36d31a29464149c08b2a50f05d576",
+            "locator": {
+              "kind": "symbol",
+              "name": "_clear_index_flags"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:ed198f3652d3690f812e5c3f4b5c56f2afb954702b4246607bcc1f067389932f",
+            "locator": {
+              "end": 205,
+              "kind": "line_range",
+              "start": 167
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:a03bad9d2d1411340c45ef861aa66367dd3fc0e6da7b13584792eb0f5a34f457",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Source and key cases: directory and Git tree agree, a historical tree needs no checkout, the key is the captured tree id and content-only, capture writes nothing, a plain directory has no key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:4f5e7839a69f10608877cc1e90b137beb7881916f32d53fcb8fd89d73784cf0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_working_tree_and_its_git_tree_index_to_the_same_key_and_answers"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:776552925e0329a0aea2d430a2c5ff23230b95817d9ac17828d91e7b61df93ee",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_historical_git_tree_is_read_through_objects_without_a_checkout"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:0192a81c7926b0136d85730b4afd3e3c01ffbaf42fff78921cb5e0a354c184a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_key_is_the_tree_id_of_the_captured_state_and_depends_on_content_only"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:4f22ceac571421f9d57e3ea62ed673bd5a691939d2d751aa34a7fc51b8103a01",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_capturing_a_key_writes_nothing_into_the_repository"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:ee3d6ba56bbcc79bd02686428c920ff24e9353edbb4aab6fc2a2f2c87836f1d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_directory_outside_git_has_no_key"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "An index flag never hides an edit; the index reads the files the validator reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:93866b5f5e3c1acbc66fc058c05a4d6d69319c43571f8b292bdbf91a9fa09d13",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_index_flag_never_hides_an_edit_from_the_key"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "21d471fd2afb3c773c9c4b2b4eeeabecb946fb1c",
+            "content": "sha256:c8999ab04c577798d25a8c6bd580dfcbb840665bd0ef9d95e844a0aabdf20f76",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_index_reads_the_files_the_validator_reads"
+            },
+            "path": "mcp/tests/test_knowledge_index.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The capture copies the index with its time.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:1be104f151ba2e36a25c7964d8f0f289639e01b01c3d840dd472ddd4467bdc4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_capture"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:71cd9f164d50483d6fe89fd2d2bcb077de7835b06afef57f10204d90550a8384",
+            "locator": {
+              "end": 164,
+              "kind": "line_range",
+              "start": 140
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f5325f7f2d4261ca771af6d3b5ea6ffe7aa33a96",
+            "content": "sha256:a03bad9d2d1411340c45ef861aa66367dd3fc0e6da7b13584792eb0f5a34f457",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

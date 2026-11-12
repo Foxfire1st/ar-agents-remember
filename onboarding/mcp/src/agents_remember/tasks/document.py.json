@@ -1,0 +1,1001 @@
+{
+  "path": "mcp/src/agents_remember/tasks/document.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:cd77a15030a327ff4d2e4236b919b99d3cb8c04f12787e2684a292aeb3825200",
+        "locator": {
+          "end": 1087,
+          "kind": "line_range",
+          "start": 1087
+        }
+      },
+      "id": "RLZ-0937DQ",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for non-goals without requiring an old document to invent the field.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:d6c0c3e7a4daebb04143f6ee37b6dade1cac0d2a1c76f7a535216fa1f4614596",
+        "locator": {
+          "end": 1054,
+          "kind": "line_range",
+          "start": 1054
+        }
+      },
+      "id": "RLZ-0H4VAS",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional document field retains completion time independently of decision records and permits old completed documents to omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:3bf0f8c2c2f24ea52bd1b254619db026e8a8d8ba4c014d5b6552580cce51bd12",
+        "locator": {
+          "kind": "symbol",
+          "name": "_refuse_symlink_parents"
+        }
+      },
+      "id": "RLZ-1CFZXW",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The agreement owner validates the strict record and physical path. Digest acceptance explicitly permits either exact manifest-byte SHA or its declared artifactDigest/artifact_digest matching the recorded SHA; this anchor must not be described as blanket manifest-byte tamper refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:fccde7dea90e1ee0b550ee6e67e3cd30c2bcb3b2e1dd98f1b5258e3c2609abb7",
+        "locator": {
+          "end": 1088,
+          "kind": "line_range",
+          "start": 1088
+        }
+      },
+      "id": "RLZ-23AWS9",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for acceptance text without changing the validity of documents that omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:c23f524fb637ebdce3e0dcc0ea64981509ce347d98d4ab94ffd6d8b9c1b95921",
+        "locator": {
+          "kind": "symbol",
+          "name": "_check_expected_knowledge_effects"
+        }
+      },
+      "id": "RLZ-23MZX6",
+      "invariant": "INV-HX6ZN5",
+      "origin": {
+        "handoffEntry": "MIK-R55@v1 rule 5",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "This model boundary checks declared requirement references against the leaf’s own packet references.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:cd77a15030a327ff4d2e4236b919b99d3cb8c04f12787e2684a292aeb3825200",
+        "locator": {
+          "end": 1087,
+          "kind": "line_range",
+          "start": 1087
+        }
+      },
+      "id": "RLZ-2R29WN",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for non-goals without requiring an old document to invent the field.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:fccde7dea90e1ee0b550ee6e67e3cd30c2bcb3b2e1dd98f1b5258e3c2609abb7",
+        "locator": {
+          "end": 1088,
+          "kind": "line_range",
+          "start": 1088
+        }
+      },
+      "id": "RLZ-4JAJH2",
+      "invariant": "INV-T3TNTX",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 6",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional Markdown field provides the typed home for acceptance text without changing the validity of documents that omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:2fff2d6b4d7b6b4a8fd6dca9e9821fd408f99eed6aef84d272b195f39f7e04ad",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentReview"
+        }
+      },
+      "id": "RLZ-8BRFS4",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:9bbc8a91966811b2b0baa614ee4223efe09a97fa5e3699a782d146095067d44f",
+        "locator": {
+          "end": 1055,
+          "kind": "line_range",
+          "start": 1055
+        }
+      },
+      "id": "RLZ-BF10PN",
+      "invariant": "INV-TXS01Y",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 preservation optional fields",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional schema field is the canonical persisted home for same-master prerequisite IDs; absence remains valid for old documents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:a03dff3650ab47062ea801f7caa6bae1e56d94aa401d707dafe34259f8c467a1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_manifest_carries_digest"
+        }
+      },
+      "id": "RLZ-D2HCGQ",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The agreement owner validates the strict record and physical path. Digest acceptance explicitly permits either exact manifest-byte SHA or its declared artifactDigest/artifact_digest matching the recorded SHA; this anchor must not be described as blanket manifest-byte tamper refusal.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:80ef05a2017c1dd74aff6dc8eb9893564a5b796f64de7e32b2e03f3f0f5cc68c",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocument.is_sprint"
+        }
+      },
+      "id": "RLZ-ER1AK1",
+      "invariant": "INV-JQFXCQ",
+      "origin": {
+        "handoffEntry": "L41-R7 finding 4",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This property is the one test of whether a master document is a sprint: it commands masters, or it holds a retired row.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:e8e2dae6744dcc63c390d0b44afa61ed6df86fb1d6c4748b9ef0b08bcb6bff1a",
+        "locator": {
+          "kind": "symbol",
+          "name": "intent_review_stage_refusal"
+        }
+      },
+      "id": "RLZ-F6SCW4",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:d6da14c6a8c0b19a846b40ef7c08b229361903687089261e79dc4e101de153b1",
+        "locator": {
+          "kind": "symbol",
+          "name": "intent_review_refusal"
+        }
+      },
+      "id": "RLZ-G6RYWK",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:7afedfa4a66c5a9076b56d4e4faa6e246a0842203125ab7be0c7fc009f6bb5ac",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocument"
+        }
+      },
+      "id": "RLZ-KX3NVE",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:9bbc8a91966811b2b0baa614ee4223efe09a97fa5e3699a782d146095067d44f",
+        "locator": {
+          "end": 1055,
+          "kind": "line_range",
+          "start": 1055
+        }
+      },
+      "id": "RLZ-NWTXT1",
+      "invariant": "INV-8W6XYQ",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 1",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional schema field is the canonical persisted home for same-master prerequisite IDs; absence remains valid for old documents.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
+        "locator": {
+          "kind": "symbol",
+          "name": "SubTaskRef._retired_row_is_plain"
+        }
+      },
+      "id": "RLZ-PXN1S9",
+      "invariant": "INV-MVYAQ0",
+      "origin": {
+        "handoffEntry": "L41-R8-O3",
+        "leaf": "260928-MIK-L41"
+      },
+      "rationale": "This validator now lets a retired row carry a file cell, which is what makes the master sync of the seat document find the protected row.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:d6c0c3e7a4daebb04143f6ee37b6dade1cac0d2a1c76f7a535216fa1f4614596",
+        "locator": {
+          "end": 1054,
+          "kind": "line_range",
+          "start": 1054
+        }
+      },
+      "id": "RLZ-T61Y2X",
+      "invariant": "INV-TRENNF",
+      "origin": {
+        "handoffEntry": "MIK-R128@v1 rule 16",
+        "leaf": "260928-MIK-L162"
+      },
+      "rationale": "This optional document field retains completion time independently of decision records and permits old completed documents to omit it.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:178befa6e9425a249b71b8a09175e9f615c86b39ea77b65033d6fb8ff49775f1",
+        "locator": {
+          "kind": "symbol",
+          "name": "resolve_agreed_revision"
+        }
+      },
+      "id": "RLZ-TMSZSB",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The canonical agreement resolver validates the strict revisionId/sha256/packetVersions record and retained physical path. Digest verification accepts either exact manifest-byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; neither mode is a blanket authentication of every manifest byte. Unresolved/unverified revisions supply no pin and symlinked agreement paths refuse.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:95fbc0f6e572d9309481769bda1cccb6877bb53beb4d5cb43db19db86fbe374b",
+        "locator": {
+          "kind": "symbol",
+          "name": "is_product_record_decision"
+        }
+      },
+      "id": "RLZ-TRSP69",
+      "invariant": "INV-NBCGCF",
+      "origin": {
+        "handoffEntry": "MIK-R126@v1 rule 6",
+        "leaf": "260928-MIK-L126"
+      },
+      "rationale": "This predicate marks product-written records from the writers own constants, so the page matches no text and stored shape is unchanged.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:515fd777de66b1f664ec6f3109c42931fee5b47ec6a223733dfa98a7b724f3fd",
+        "locator": {
+          "kind": "symbol",
+          "name": "intent_review_erasure_refusal"
+        }
+      },
+      "id": "RLZ-VAQFV8",
+      "invariant": "INV-7AJ0ZW",
+      "origin": {
+        "handoffEntry": "L183-intent-review-start-gate",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The strict native review state and field exist only on a leaf; open-review, initial stage transition and erasure predicates supply the named refusal to all write/start routes, while an absent older-leaf answer is admitted.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+        "content": "sha256:311ee52fa979f9e3beaff4ed2be9040f56c92a42879c7020d25c8eaeafe41b4f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_strict_agreement"
+        }
+      },
+      "id": "RLZ-Z64MPD",
+      "invariant": "INV-ZQKNTV",
+      "origin": {
+        "handoffEntry": "L183-agreed-revision-custody",
+        "leaf": "260928-MIK-L183"
+      },
+      "rationale": "The agreement owner validates the strict record and physical path. Digest acceptance explicitly permits either exact manifest-byte SHA or its declared artifactDigest/artifact_digest matching the recorded SHA; this anchor must not be described as blanket manifest-byte tamper refusal.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The optional field and its comment.\n\nAnchor: \"MIK-R08 definition 5: a knowledge-maintenance leaf classifies every entry of its memory base\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:fe527ac72f6dcfb35046946f2aaae515023edbe4faf06f161d5484ffa04b2c0e",
+            "locator": {
+              "end": 1074,
+              "kind": "line_range",
+              "start": 1074
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Node equality/hash are structural while legacy bare-ref parse/serialize compatibility remains a separate wire concern.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:542add22319edf16d9261747894ffc133e9b95cf87f19387da3795cde510bbfb",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionNode"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The persisted graph delegates admission and waves to one indexed analysis while preserving the schema validation surface.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:cd1d33519541245a873eee5269a5fa220a1674e2396ff94e629c6ca601b5430d",
+            "locator": {
+              "kind": "symbol",
+              "name": "SprintExecutionGraph"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Public endpoint resolution remains available, but canonical admission no longer performs repeated public scans.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:6ebfab34f5e4da086f68937803178e20cdbbfe4116b44c641f12cff8458160ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "resolve_graph_endpoint"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The route-review record validates its typed dependency declaration and self-digest.\n\nAnchor: `RouteReviewRecord`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c2275b9792d563997e82c391c04d0f6d885acd58",
+            "content": "sha256:dec1e870f6476ae35e3eb90c61301c71553bf75141daf92defe26a0422a24f71",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/tasks/route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "EvidenceDependencies and its required-kind/currentness and canonical-hash helpers own the R03 declaration vocabulary; preserve the unchanged helper targets while relocating the stale model definition extent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:d494eee35e72faaa38064fb46eed8c686a13113da442f34a75052a5faaeb04dc",
+            "locator": {
+              "end": 148,
+              "kind": "line_range",
+              "start": 126
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:c8927de77cb08539e36e313e6eff3cb3667e095cb90dfe85e801a2556a2359b1",
+            "locator": {
+              "end": 331,
+              "kind": "line_range",
+              "start": 296
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d641c183171962d4b4496d7d8daaa1f74b440e10",
+            "content": "sha256:ad0862ac2a1361ae755a88c92e51edca629d34721ef01d299f45cf4037086b8c",
+            "locator": {
+              "end": 387,
+              "kind": "line_range",
+              "start": 383
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/evidence_dependencies.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Derived placement treats a terminal master (`Completed` or `abandoned`) as resolved, so abandonment stops gating its successor segment.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:de083a3ccb2ff5c3c153fe764e71894d9576297fe6f68e11f48dc2457674021e",
+            "locator": {
+              "kind": "symbol",
+              "name": "derived_leaf_placement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:256c7233d8ec35bb9a24f2456fe797b31c9351c37e34d295cb4093e211129eac",
+            "locator": {
+              "kind": "symbol",
+              "name": "_latest_unblocked_segment"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "A retirement proof requires an abandoned row without a live master reference; a legacy seat file may remain.\n\nAnchor: `SubTaskRef._retired_row_is_plain`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:31d1061fd41033680594b708b8ba282eafb5212fb75a985d87230138f8a60e0c",
+            "locator": {
+              "end": 527,
+              "kind": "line_range",
+              "start": 519
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The edge and endpoint models the graph uses are imported from the shared edge module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a34d2a801e7b63315e46af96838110416ffb7c",
+            "content": "sha256:5da0285befa83e2f29446475525fe819e343fb6df43a9b10f3bd6bb1e4d8d155",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/models/task_execution_edges.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Series progress excludes abandoned rows from the total and reports them separately.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:2d4a1dd578a5da15c4a8be69e7c73caa1e165ff34215981b8024fc1821b6321a",
+            "locator": {
+              "kind": "symbol",
+              "name": "series_abandoned"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Sprint identity includes retired-only masters; seats and integrationBranch use that predicate.\n\nAnchor: `TaskDocument.is_sprint`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:e664c98c094efa6cd37780093c0c1bc3009e294aa3d30c2d556f801133a39d51",
+            "locator": {
+              "end": 1275,
+              "kind": "line_range",
+              "start": 1226
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The worklist reads it, since MIK-R09 through the strict lookup inside the run's fail-closed read (an unreadable document is `incomplete`, never the default scope).\n\nAnchor: \"def leaf_maintenance_scope(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ad49bbea3aa27328b16a81b38c0fac81b3448485",
+            "content": "sha256:18ee4b1d0c09a23dfc1a56cf10714819955eb03c6ce71eda3a90eac8eb2324b8",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 162
+            },
+            "path": "mcp/src/agents_remember/application/knowledge_worklist/leaf.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Canonical role constants include Investigator at sprint altitude and Reviewer at sprint/master/leaf altitudes; this is role vocabulary, not launch authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:660d9b2fdc52c99c60da36695056ca5b89069b0cc3154b926ec36483f860c2a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "SPRINT_ROLES"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Exact legacy Finalize text and removed/skip-step prefixes still classify product records by text; collisions remain possible. Current finalization stamps own completedAt and leaves logs intact, so this constant is not a claim of current Finalize decision writing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:d1a563ac63d3b034a80cef5eb62399fc6e2130c297bdc9a937b8d0771deee6d2",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 160
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b8bda143860aa43bd6865974d210d639a5ffe665",
+            "content": "sha256:172bb77e79b3df6f8c918b1367be4731184955c5b5c48373fddfba4340ab0162",
+            "locator": {
+              "end": 379,
+              "kind": "line_range",
+              "start": 356
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/finalize_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Expected effect requirement references must name a listed stableId/version when typed packet references are present; no packet is resolved by this schema check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:c23f524fb637ebdce3e0dcc0ea64981509ce347d98d4ab94ffd6d8b9c1b95921",
+            "locator": {
+              "end": 1038,
+              "kind": "line_range",
+              "start": 1008
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Worker/Curator typed review census, record-only exclusion and unknown history.\n\nAnchor: L175–L240",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+            "content": "sha256:89c09fd0491880de2f7b715bffbe2d6b0605a6dea7400689519c43f40f7b119d",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 175
+            },
+            "path": "mcp/src/agents_remember/worktrees/review_history.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Reason admission, threshold and differing-harness/model inheritance boundary.\n\nAnchor: L23–L84",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f341c13a99f485178e73c4ff8bf4de16267ee662",
+            "content": "sha256:5a3727f4901933c44cd5f7edc8b16220285a82a9e080326edf482cbb126f0b2f",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/cli/role_step_up.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "25": {
+      "note": "Launch scope opts in to review-only tolerance and forwards the same request reason.\n\nAnchor: L21–L65",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2180646ada633e3ccf9e292f1c4fd632d5d32a6f",
+            "content": "sha256:5fe1ad5d62604e25c59f356dfc0cd2c60397b74344624a2d74a62b5a49fedc9a",
+            "locator": {
+              "end": 68,
+              "kind": "line_range",
+              "start": 24
+            },
+            "path": "mcp/src/agents_remember/cli/role_start_execution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "Child start opts into tolerance after root identity validation; context does not cross exec.\n\nAnchor: L207–L216",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f89c07d5c76650bfb7a058e9cdd8e721a48e1e5a",
+            "content": "sha256:cb09339423a25dd1049b0da0ed04667f7160a9c1b9ec8d5dd02513c4c94dbca9",
+            "locator": {
+              "end": 216,
+              "kind": "line_range",
+              "start": 207
+            },
+            "path": "mcp/src/agents_remember/cli/leaf_enclosure_start.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "Record-only memory identity comes from memory authority, never the sibling code root.\n\nAnchor: L251–L296",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f5edfbc3d469737fdadc36945e0204f336dc4eb8",
+            "content": "sha256:90f0dd1b3aad214ad2d499dda3753cc514d16cabd606ee0021a9a7c6e84ed456",
+            "locator": {
+              "end": 296,
+              "kind": "line_range",
+              "start": 251
+            },
+            "path": "mcp/src/agents_remember/application/task_docs/task_doc_route_review.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L26–L40",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:8ed242eadb1b4de31976d805099716d3479052f27552b2471a9b93213a3bcc68",
+            "locator": {
+              "end": 43,
+              "kind": "line_range",
+              "start": 29
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence.\n\nAnchor: L735–L796",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:d12e2d2d75143b1f144d4d8049bae91880486980f4c8e64e022bca0c52cc1046",
+            "locator": {
+              "end": 1153,
+              "kind": "line_range",
+              "start": 1092
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "One declaration: subject form, effect label and requirement reference.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:b7073534eac3f4df0419c5df44e853a6378c3c6d1c07ca9fd5885220f8010212",
+            "locator": {
+              "kind": "symbol",
+              "name": "ExpectedKnowledgeEffect"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "30": {
+      "note": "IntentReview admits only pending/review-first/go; agreedRevision rides go and carries nonblank revisionId, sha256 and unique packetVersions. Agreement resolver searches retained decimal revision directories and refuses symlink parents/entries. digest_verified accepts either the retained manifest byte SHA-256 or its declared artifactDigest/artifact_digest matching the recorded digest; otherwise it is false. This does not authenticate every manifest byte in declared-artifact mode.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:550a539ed995de387b5ed22663e837a524e609c09ef19a4f50045a83bb2f7177",
+            "locator": {
+              "end": 696,
+              "kind": "line_range",
+              "start": 667
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:2fff2d6b4d7b6b4a8fd6dca9e9821fd408f99eed6aef84d272b195f39f7e04ad",
+            "locator": {
+              "end": 729,
+              "kind": "line_range",
+              "start": 699
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:178befa6e9425a249b71b8a09175e9f615c86b39ea77b65033d6fb8ff49775f1",
+            "locator": {
+              "end": 872,
+              "kind": "line_range",
+              "start": 811
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:a03dff3650ab47062ea801f7caa6bae1e56d94aa401d707dafe34259f8c467a1",
+            "locator": {
+              "end": 1005,
+              "kind": "line_range",
+              "start": 993
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The refusals: a master document, an empty list, a requirementRef naming no packet, and a repeated subject and effect.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:c23f524fb637ebdce3e0dcc0ea64981509ce347d98d4ab94ffd6d8b9c1b95921",
+            "locator": {
+              "kind": "symbol",
+              "name": "_check_expected_knowledge_effects"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The optional field and its comment.\n\nAnchor: \"MIK-R11: the invariant and family effects the leaf expects\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:0b5470421412c2136767f4ea27ff882448054a5aecb7997919508708ce94143e",
+            "locator": {
+              "end": 1079,
+              "kind": "line_range",
+              "start": 1077
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The check runs in the document validator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:216a1907ff987f77601d06c71dd93ca445e0854388ce2583a35dd0e125477c8f",
+            "locator": {
+              "end": 1109,
+              "kind": "line_range",
+              "start": 1109
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The shared patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:75b301649e713f35b2c329bd46e5327926038ed9a3dc2610ebf226dc6903b68b",
+            "locator": {
+              "kind": "symbol",
+              "name": "DECLARED_SUBJECT_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/planned.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "afdf823cf2c4166590f16c1dee56f27346651b24",
+            "content": "sha256:c6c763d63dacaf9645772fb8acb024a87974b05cf28a102979649307b6914f72",
+            "locator": {
+              "kind": "symbol",
+              "name": "REQUIREMENT_REF_PATTERN"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge_files/planned.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The field's tests: optional, normative, settable, rendered and refused when malformed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "108235abe04cbe9d3271f3ba202cca2b7e43bab9",
+            "content": "sha256:a4b55beff92a7fb4509fcb741f6d4ac50d42fe32d4532ef9508e12b3c318c8a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_field_is_optional_normative_intent_settable_and_refuses_malformed_declarations"
+            },
+            "path": "mcp/tests/test_planned_knowledge_effects.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The step unit now declares `note` beside `outcome`/`status`/`substeps`, so a top-level note has somewhere to be stored.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+            "content": "sha256:c0b35101ebddd305e1084c4b0c86624ace558643ff7c2d5964e5f30b76b8ffc2",
+            "locator": {
+              "kind": "symbol",
+              "name": "Step"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

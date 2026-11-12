@@ -1,14 +1,8 @@
 # mcp/src/agents_remember/memory_quality/check.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/memory_quality/check.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-02T01:05+02:00                     |
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532` |
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview      | `../../../overview.md`                     |
+## Governing Overview
+
+[overview.md](../../../overview.md)
 
 ## Purpose
 
@@ -17,116 +11,108 @@ payload for MCP closeout workflows.
 
 ## Code Commentary
 
+### Landing-report scope
+
+`DriftCheckContext.landing_base` is an optional independent landing resolver. The converted drift-slot dispatch forwards it to `converted_knowledge_check` alongside the existing `knowledge_base`: contract-bound reports compare with the admitted leaf base, while validator classification keeps its operation-base semantics. This is context propagation, not another refusing check or registry entry.
+
+
+
+
+- The converted dispatch forwards independent validator and landing base ports.  Anchor: `_converted_check` [18]
+
+
 ### Logic
 
-The module registers style checks by name, defines the drift integrity check
-name, and exposes `run_memory_quality_check()`. Without drift context, the
-default run is style-only. With `DriftCheckContext`, the default run combines
-`integrity.onboarding_drift_check.summary` with
-`style.update_history.history_order`.
+The surviving style registry contains diff-marker, entity-catalog-alignment and table-shape checks. A default call without drift context selects those checks; with context it also selects the drift slot. The pre-metadata phase contains entity alignment only, and the post-metadata population contains drift plus the surviving style checks. These are registry declarations, not evidence that ordinary closeout invokes the full quality sequence.
 
-`StyleCheckInputs` carries the selected prepared code-history anchors alongside the code root and
-temporary unstamped base. `run_check()` forwards those anchors to `claim_reopen`, so a prepared
-closeout can verify current working-tree bytes against an explicit predecessor chain while
-standalone checks remain strict. `DriftCheckContext` owns the same history tuple at the combined
-runner boundary; it is comparison context, never a new verification stamp.
+`StyleCheckInputs` carries the onboarding root only. The retained `DriftCheckContext` fields include comparison/landing-base ports and historical provenance/output options; no legacy claim-reopen executor consumes a prepared-history tuple here.
 
-Drift rows from `run_drift_summary()` are normalized into quality findings so
-the MCP response has one finding list even when checks come from different
-subdomains. Internal callers may request all report-only rows and all drift rows for a file report;
-the ordinary wire response keeps its bounded samples. `DriftCheckContext` also carries explicit
-report output options so the full leaf checklist can defer Markdown publication to the unified
-renderer while preserving the observer snapshot's final report path.
+On a converted tree the drift slot runs `converted_knowledge_check` under the result key `knowledge.converted`; all surviving document-shape checks run normally. The legacy Update History, citation-range and claim-reopen registry members and their not-applicable compatibility results were removed. Explicitly selecting a removed name raises `ValueError`. Public memory-quality admission refuses unconverted operational input before this runner rather than interpreting missing legacy checks as a pass.
 
-The closeout gate consumes this registry through two declared phase lists.
-`BEFORE_METADATA_REFRESH_CHECKS` begins with the tree-only
-`entity_catalog_alignment` check, then runs the citation gate (`range_resolution` +
-`claim_reopen`). This phase runs before staging, hooks, the code commit, and the strict test
-wrapper, so orphaned entity fingerprint rows and broken citations reject before Pyright or
-pytest. `AFTER_METADATA_REFRESH_CHECKS` repeats citations without temporary provenance and adds
-drift, document shape, and history order after metadata refresh. Closeout supplies the leaf base
-only while evaluating dirty unstamped cards in the preflight; the post-refresh repetition has no
-fallback, so every such card must receive the real code-commit stamp before memory commits.
-`claim_reopen` splits detected change three ways: absent/ambiguous anchors and
-unverifiable provenance are hard; a changed construct whose citation stays current (anchor
-resolves uniquely, range covers it) is the report-only review surface; only a changed construct
-with a stale pointer is enforced. The curator runs the same `memory_quality_check` during the
-leaf, so gate findings are the exception, not the rule (260731-EFA-L16, repairing the L6
-placement that deadlocked this leaf's own closeout with 115 unresolvable findings).
+**The converted check's base (L37 review R3-1).** `DriftCheckContext.knowledge_base` is an optional
+`KnowledgeBasePort`; `_converted_check` passes it to `converted_knowledge_check(..., base=...)`. The
+application binds it to the shared converted-base cache, so a converted working tree on an unconverted `HEAD`
+is validated against `HEAD`'s conversion (MIK-R24 rule 7). Without it the check uses a converted `HEAD`.
 
-`run_drift_quality_check(drift_context)` branches on the packet's
-status first: anything other than `checked` returns `ok: False` with one synthetic
-`onboarding_drift_check_failed` finding built from `packet.get("error", ...)`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:171-212).
-Only past that guard does it read the checked-status keys. Since
-260731-EFA-L4 `run_drift_summary` returns the typed `DriftSummaryPacket`, whose
-`count`/`reportPath`/`actionableCount` are `NotRequired`, so those three reads are
-`.get` rather than `[...]`: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:171-212) — the guard has established the status, but
-the TypedDict cannot carry that narrowing across the branch. No emitted value
-changed: `summarize_rows` always sets all three on a `checked` packet.
+The converted checker supplies refusing validator findings, a stale reference anchor among them, and report-only landing observations. A supplied comparison-base failure is a named `R24.7-converted-base` finding, and base-dependent anchor-path refusals are withheld rather than evaluated against an invented empty base. This is not the removed source-index acquisition/error guard. The aggregate runner retains each checker's declared finding count, complete refusing findings, bounded report-only samples and opt-in complete report-only findings.
 
 ### Invariants And Boundaries
 
 - Unknown check names raise `ValueError`.
 - Drift integrity requires `DriftCheckContext`; style checks can run with only
   an onboarding root.
-- The top-level finding count uses each checker result's declared
-  `findingCount`, so bounded drift samples can report fewer concrete findings
-  than the total count. `run_memory_quality_check` coerces it with
-  `int(result.get("findingCount", 0))`: cit:([`run_memory_quality_check`, "result.get(\"findingCount\", 0)"], mcp/src/agents_remember/memory_quality/check.py:103-130), which assumes a checker never puts
-  a literal `None` under that key — the drift checker's `.get` reads are safe only
-  because the `checked` guard above guarantees the key is present.
-- **The drift packet's shape is owned by `onboarding_drift_check/models.py`.**
-  This runner narrows on `status` and reads the status-conditional keys
-  defensively; it must not re-declare the status vocabulary or assume a key that
-  `DriftSummaryPacket` marks `NotRequired`.
+- The top-level finding count uses each checker result's declared `findingCount`, coerced with `int(result.get("findingCount", 0))`; this still assumes the checker does not supply literal `None`. Complete refusing findings are retained.
+- A supplied converted-base failure is reported by the converted checker; the old source-index exception class and guard are absent. Unreadable input must not be credited as measured absence.
 - Full internal detail is opt-in and is removed before the public response. Bounded samples remain
   the default transport contract; report generation must not expand normal MCP payloads.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `memory_quality_check` MCP tool builds drift context and calls this runner. | `memory_quality_check` | mcp/src/agents_remember/mcp/registration/memory.py:57-75 |
-| Update-history ordering is the first style checker. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/update_history/history_order.py:47-56 |
-| Drift summary provides the integrity checker payload, now typed `-> DriftSummaryPacket`. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
-| The declaration of the packet's status vocabulary (in `models/drift.py`) and its `NotRequired` keys. | "DriftStatus = Literal["; `DriftSummaryPacket` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/models.py:11-19; mcp/src/agents_remember/models/drift.py:11-11 |
-| The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. | `check_onboarding_root` | mcp/src/agents_remember/memory_quality/style/document_shape/entity_catalog_alignment.py:70-130 |
-| Style checks receive retained prepared-history anchors and forward them through the citation gate while current bytes remain the comparison surface. | `StyleCheckInputs`; `run_check` | mcp/src/agents_remember/memory_quality/check.py:37-76; mcp/src/agents_remember/memory_quality/check.py:144-162 |
+### Repo-Internal References
 
-## Update History
 
-- 2026-09-10T04:35+02:00 — CCR-L42 final predecessor-history curation: documented the retained
-  code-history tuple flowing through `StyleCheckInputs`, `DriftCheckContext`, and `run_check()`
-  into current-byte citation validation; verification metadata remains closeout-owned.
 
-- 2026-08-11T16:54+02:00 — Added opt-in complete drift/report-only materialization and report
-  output control for the unified enclosure curator checklist; default quality payloads stay bounded.
-- 2026-08-10T12:46+02:00 — L9 fail-fast repair: registered
-  `style.document_shape.entity_catalog_alignment` and placed it first in
-  `BEFORE_METADATA_REFRESH_CHECKS`, ahead of citations and every code rail. This moves pure
-  catalog-structure failures out of the post-refresh drift phase without moving source/hash drift,
-  which can only clear after real commit metadata exists. Verification metadata stays pinned until
-  closeout stamps the repair commit.
 
-- 2026-08-10T08:20+02:00 — 260805-ARG-L1 closeout-order hardening: recorded the explicit
-  pre-code-quality citation preflight, temporary base provenance for dirty unstamped cards, and
-  the no-fallback post-refresh citation repetition that proves real stamps exist before memory
-  commits. Verification metadata remains pinned until closeout stamps ARG-L1.
-- 2026-08-05T22:55+02:00 — 260731-EFA-L16 curator: recorded the citation-gate semantics and placement. The L6 closeout placement ran `style.citations.claim_reopen` before the code commit with a clearing condition that required the commit to exist — unreachable, and it deadlocked this leaf's closeout with 115 unresolvable findings. Now: detected change splits into hard (absent/ambiguous anchor, unverifiable provenance, stale pointer) versus report-only review surface (changed construct with a current citation — anchor resolves uniquely, range covers it, clearing needs no commit), and the citation gate (`range_resolution` + `claim_reopen`) runs before the strict wrapper and the code commit, so failures reject in seconds. The curator runs the same `memory_quality_check` during the leaf; gate findings are the exception. Verification metadata stays pinned until closeout stamps the L16 commit.
-- 2026-08-03T03:59:59+02:00 — Curated 8 citation findings (1 table row, 6 prose citations, 1 source-form repair): added exact anchors and source paths; scoped fixer generated the final ranges.
 
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No content impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T01:03+02:00 — 260731-EFA-L4 curator: the card documented `run_memory_quality_check`
-  and the finding-normalization but never described `run_drift_quality_check`'s own result shape,
-  which is what this leaf changed. Verified against the diff and the current source: the three
-  checked-status reads `packet["count"]`/`packet["reportPath"]`/`packet["actionableCount"]` are
-  now `.get`, because `run_drift_summary` returns the new `DriftSummaryPacket` TypedDict: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170)
-  whose keys are `NotRequired` — the `status != "checked"` guard above establishes them: cit:([`run_drift_quality_check`], mcp/src/agents_remember/memory_quality/check.py:137-170),
-  but the type cannot carry that narrowing across the branch. Emitted values are unchanged.
-  Documented the guard and the branch, sharpened the `findingCount` invariant to name the
-  `int(result.get("findingCount", 0))` coercion: cit:([`run_memory_quality_check`], mcp/src/agents_remember/memory_quality/check.py:86-113), which depends on those keys actually being
-  present, and added an invariant that the packet shape is owned by
-  `onboarding_drift_check/models.py`. Added one reference row and citations for the two existing
-  drift rows; the Repo-Internal References header was two columns and is now three.
-- 2026-05-24T02:47+02:00: Created for the first combined memory quality runner.
+
+
+
+
+
+- The packet's `status` field typed by the imported status vocabulary, plus its `NotRequired` keys. [4]
+
+- The first pre-code check enforces entity inventory/fingerprint alignment without requiring code metadata. [5]
+
+
+
+- StyleCheckInputs now carries only the onboarding root; surviving style runners do not execute claim reopening or prepared-history citation gates. [6]
+
+
+
+
+- Converted dispatch replaces the drift slot with the validator/reference report and runs the surviving document-shape checks; legacy compatibility checks are absent. [7]
+
+
+
+
+- The surviving runner aggregates selected check results; it has no source-index acquisition exception guard. [8]
+
+
+
+
+- The converted checker reports named base-build failure rather than inventing an empty comparison. [9]
+
+
+
+
+- When a supplied converted base cannot be built, its named finding is retained and base-dependent anchor-path refusals are withheld. [10]
+
+
+
+
+- run_check dispatches only the surviving STYLE_CHECKS and refuses an unknown name. [11]
+
+
+
+
+- The aggregate runner retains declared refusing counts and complete findings, with bounded report-only samples and optional complete report-only rows. [13]
+
+
+
+
+- The drift context carries the converted tree's comparison base.  Anchor: `DriftCheckContext` [16]
+
+
+
+
+- The converted check receives the base port.  Anchor: `_converted_check` [17]
+
+Converted full-quality dispatch constructs `QualitySourceFiles` from the paired code repository root. The validator base and landing base remain separate inputs.
+
+- Converted dispatch supplies the per-check source reader and both comparison ports. [19]
+
+- The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation.
+
+- The registered `memory_quality_check` dispatches typed sync/start/poll requests to their payload builders; its description names candidate leaf-contract scope and required coherence validation. [1]
+
+- The retained drift-summary entry point returns DriftSummaryPacket; full-quality dispatch calls the converted checker directly. [3]

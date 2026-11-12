@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A public page that called this build a release candidate, or named a version other than the installable one, would misdirect a reader deciding what to install; the sentence guards that plausible mistake."
+  },
+  "applicability": "The public Status page sentence that names the repository's current package version.",
+  "conditions": [
+    "The sentence is the only public page claim about the current package version."
+  ],
+  "exclusions": [
+    "Release notes, historical pages and captured fixtures."
+  ],
+  "id": "INV-MG3HK1",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "git grep -n \"3\\\\.0\\\\.0rc\" on tree dbdeb041 lists no README hit; the sentence reads 'The version of the package in this repository is `3.0.0`. It requires Python 3.14.'"
+      ],
+      "path": "l36-part2-invariant-ingest"
+    },
+    "handoffEntry": "MIK-L36@v10 e2",
+    "leaf": "260928-MIK-L36",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The public Status page states the repository's package version as 3.0.0, and no public page calls this build a release candidate or one that awaits a release.",
+  "status": "proposed",
+  "supersedes": []
+}

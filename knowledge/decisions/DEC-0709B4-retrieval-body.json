@@ -1,0 +1,54 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Future link-target work must distinguish content edits from the implemented removed-path/route/symbol obligations, and reader work cannot infer content currentness from serialization or locator resolution."
+  },
+  "alternatives": [
+    {
+      "option": "Raise no removed-target item for a content-only edit at a still-existing retrieval target; do not promise reader stale-body observation.",
+      "reason": "A non-reconsideration record link is a retrieval pointer: a content-only edit at a still-existing target raises no link_target obligation. Removal of a previously present path, route or symbol has its existing literal-target repair domain. The inspected reader serializes stored anchors without a stale-body comparison; R73 attribution in the historical appendix does not prove that display is delivered.",
+      "status": "chosen"
+    },
+    {
+      "option": "Raise a worklist obligation merely because that retrieval pointer body changed.",
+      "reason": "A non-reconsideration record link is a retrieval pointer: a content-only edit at a still-existing target raises no link_target obligation. Removal of a previously present path, route or symbol has its existing literal-target repair domain. The inspected reader serializes stored anchors without a stale-body comparison; R73 attribution in the historical appendix does not prove that display is delivered.",
+      "reconsider_when": "Only if the owning approved requirement is explicitly revised to authorize this changed boundary; this prose is not a computed trigger.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "No content-only link_target obligation is introduced; removed-target obligations remain.",
+    "A body-stale reader label is not certified by this decision or by the historical R73 attribution."
+  ],
+  "context": "MIK-R55 appendix entry 50 retains the no-content-only-link_target-obligation boundary. Its historical assertion that the reader shows changed link bodies as stale is not an implemented guarantee of the inspected knowledge_reader truth/decision path; only stored anchor rendering and locator resolution are established.",
+  "decider": "Architect-approved MIK-R55 v1 corpus; Curator records its continuing choice under R54.13/R55.10.",
+  "id": "DEC-0709B4",
+  "links": [
+    {
+      "relation": "explains",
+      "target": {
+        "id": "MIK-R55",
+        "packet": "requirements/MIK-R55-v1-worklist-and-gate-corrections.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "wave-83-complete-history.json"
+    },
+    "handoffEntry": "L54-by-design-retrieval-body",
+    "leaf": "260928-MIK-L54",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

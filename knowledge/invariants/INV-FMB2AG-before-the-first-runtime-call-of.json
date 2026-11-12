@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Persisting the call under a minted UUID before creation prevents an interrupted launch allocating a second role on retry."
+  },
+  "applicability": "Saved workspace/agent launch operations after catalog validation.",
+  "conditions": [],
+  "exclusions": [
+    "Pre-launch catalog discovery may precede the receipt; first runtime call here means the saved launch call."
+  ],
+  "id": "INV-FMB2AG",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "RoleFolderAndIdentityTests::test_each_role_class_gets_one_agent_in_its_folder_with_title_and_labels (the observer reads the receipt at every launch call); RepeatAndConflictTests::test_a_repeated_request_converges_on_the_same_agent ('the process ended between the receipt and the call'); l4-review/evidence/h1-…"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R03@v1 §4 / D2",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Before the first runtime call of a launch AR mints the agent id (a UUID) and creates the receipt with status `starting`, the agent id and the whole launch call; the runtime creates the agent under that id.",
+  "status": "proposed",
+  "supersedes": []
+}

@@ -1,0 +1,669 @@
+{
+  "path": "mcp/tests/test_terminal_blocker_reasons.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Public abandon preview is non-mutating and does not invent a removal failure.\n\nAnchor: \"would-abandon\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "An unnameable blocker reason raises at the call site that detected it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:15e31756ce997512a9f95951f44bc3b36d17e3c916896483f3e0b88d07ad2ea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unnameable_blocker_reason_is_refused_at_its_own_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A blank producer reason cannot reach an operator as `reason: \"\"`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:75ee39bd9dd102c67c6bfe1ba3198c50f96169d33cfaa95f8e7bbd3232ad0d4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_empty_provider_reason_is_replaced_by_a_named_statement"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "The sole provider-runtime producer answers with a reason whenever it reclaimed nothing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:7a0f04ef049f20ca4ad3b0521fb3759e492f6eb1a71061d927835a47c101e421",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remove_tree_answers_with_a_reason_whenever_it_reclaimed_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "The post-reclaim branch that could answer silently now names its own cause.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:cf0fca4dddba6037a11a2aace70fc52c6799556318aa5d803988f4061d6b7cd9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reclaimed_but_surviving_provider_runtime_reports_why_it_survived"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The landed fixture and the public calls the whole-tool cases drive.\n\nAnchor: `_landed_leaf` `_landed_leaf_config` `_landed_leaf_document` `_finalize`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:a597f33e530c15659f6dfd7f7d422799d8992abcacef8b04e558e5fde41dfbcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:cec06ef5195e135c49156b0fbfd28187e9ed521eae2c5daeba113afe90597f04",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landed_leaf"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:fb48a76e166387c83128805390f4c481147ddd7e2db41f5c251fe79cd586bb7e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landed_leaf_config"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:0c3adb92d5029d3e4efd16eb83d6d65f62199b2181b18d11ff4147ed835a958c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_landed_leaf_document"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:60b9272666f23543440529305b45126190228f0ec8313d2d11b78a2c63383279",
+            "locator": {
+              "kind": "symbol",
+              "name": "_finalize"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "The service rebinding and the citation-guard double the whole-tool cases run against.\n\nAnchor: `bound_worktree_services` `_NoManagedCitationCache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:a597f33e530c15659f6dfd7f7d422799d8992abcacef8b04e558e5fde41dfbcf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:067156edcd1985325594228bc9a81d9123ac54efc9027b795637d097e84c49af",
+            "locator": {
+              "kind": "symbol",
+              "name": "bound_worktree_services"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:1e2ca2291c3e156561001938afa139bbd2c34a8b278152778f54ed4c0ddd226d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_NoManagedCitationCache"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The only construction path for a terminal blockage; it refuses a missing, blank or non-string reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:2bf5ef9510cee9d12cb70d348c38e61d94c553e31d1a993be4560d6a311be771",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocker"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The operator-language answer for a reasonless or malformed result item.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:2c1889fa043a9231ac5191ee55fe3d1dff0bd0623a7913206e5c119138283c88",
+            "locator": {
+              "kind": "symbol",
+              "name": "_blocked_reason"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The bundle and the builder the invariant-owner cases drive directly.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:7e524ab2da1ff9f98bcf389858f79a16569bb012367c7f625500eec228c237cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalResult"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "45bde9d2eae6681ae74e8f1a36fbf6efed8e8d23",
+            "content": "sha256:6fecff16f222bd802f30b28b67b5cbf6cd44c932e3b29945d84bfd9496aafb78",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_result_blockers"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/terminal_validation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "The producer whose reason the refusal carries, including the post-reclaim branch this module forces.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+            "content": "sha256:8f1226779d8cabe09fc5bf84b4a3e3964ec2727373b556a444a5a660b698e605",
+            "locator": {
+              "kind": "symbol",
+              "name": "remove_tree"
+            },
+            "path": "mcp/src/agents_remember/application/provider_runtime.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "20": {
+      "note": "The port the L6 teardown answer is substituted on, and the services builder the fixture rebinds.\n\nAnchor: `ProviderLifecyclePort` `build_default_worktree_services`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:2665ec8d8057f17cb77be87f4eb3f548215b155e7de4e990a0c253336cfbc4d1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:a219236a73954634734073e091b79e55d120b08e493a482435b84adb37cc3092",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "04542ceda7ef4559f29f3c1241a1d65ea7972a8f",
+            "content": "sha256:3d6f92d4fd05bcf8bd9fa3cf903fb62b86a74954e4a3189df33cecea220b7d9c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderLifecyclePort"
+            },
+            "path": "mcp/src/agents_remember/worktrees/services.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "The public terminal route the whole-tool cases call.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:4e8196e941fb43e63fb6854a5666176542e8a6ae1c28085ce979fa1f060ee59d",
+            "locator": {
+              "kind": "symbol",
+              "name": "lifecycle_finalize_task_tool"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b55831de01a31229148df21d4199d8411b00f926",
+            "content": "sha256:9e0fed7e7fdb7bb043959686200dd6704ab20f6788a4e64d887e1de767cb99c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_tools.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The landing fixture and the public configuration the whole-tool cases build on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "content": "sha256:3c374ff71c4e416366cd5e820d288f99342604fb18524e60c2bff7f3a92d7e65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_config"
+            },
+            "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_fixture"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_external_leaf_worktrees"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "The integration lane declares test_terminal_blocker_reasons.py; membership is not execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 748,
+              "kind": "line_range",
+              "start": 748
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "The landing fixture and the public configuration the whole-tool cases build on.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c4c2e6e9b793b3bea84c7f895795bcd29f34177f",
+            "content": "sha256:3c374ff71c4e416366cd5e820d288f99342604fb18524e60c2bff7f3a92d7e65",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_config"
+            },
+            "path": "mcp/tests/transaction_only_worktree_delivery_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_fixture"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_external_leaf_worktrees"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The lane manifest declares test_terminal_blocker_reasons.py in integration. Membership selects evidence and establishes no invocation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:06a67c632b602d07cfac5d4d9d68bc41b1ccc49755c8de3da23a46a236adaa70",
+            "locator": {
+              "end": 748,
+              "kind": "line_range",
+              "start": 748
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The landing world each whole-tool case builds is a real temporary repository pair.\n\nAnchor: `_authority_fixture` `_closed_external_leaf_worktrees`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:76c0424bf11aec97a0ee9c6038dfc300a65ef31a19e041bd0a418255e6ae9d35",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:1b0e14efb0ce8099a1d12cfa226a6526329fbe743227ca4cdb7db15b99a2e56f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_authority_fixture"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c5d65d4784a7f3f6f66c3e2e40f0a70bd6cebcfe",
+            "content": "sha256:72074ef59564f7876078c9cccdd5397989718b3d2f0741923ae1683aa2e6c5cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_closed_external_leaf_worktrees"
+            },
+            "path": "mcp/tests/integration_branch_authority_test_support.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "28": {
+      "note": "The exact-consumer declaration that gives this module ownership for targeted selection: this module's entry inside the ownership catalog's repository-test-input mapping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "82360cec3b9a90193f4e9d7dbdf68cf5340dabb6",
+            "content": "sha256:0e731958b83fac41f0f763efd42be7ae979cbc685606300b198461b8fc42a12b",
+            "locator": {
+              "end": 176,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact L6 input — `{\"removed\": False}` with no reason — is answered in operator language instead of becoming a null reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:a07b6d6b107867555601d4c5b9d9daa97bdc2e9ab048273ccea0878e7aff1989",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unnameable blocker reason raises at the call site that detected it.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:15e31756ce997512a9f95951f44bc3b36d17e3c916896483f3e0b88d07ad2ea3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unnameable_blocker_reason_is_refused_at_its_own_source"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Public abandon preview is non-mutating and does not invent a removal failure.\n\nAnchor: \"would-abandon\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The L6 shape finalizes on the first call: the terminal archive is proven, the provider runtime is already gone, and an empty `notRemoved` inventory is reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:6811b9303c31e9f8161e57c76cd74aa2e0703c01140277f377b6b3a8843ef7a7",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_torn_down_provider_runtime_finalizes_on_the_first_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The genuine counterpart: a provider runtime that cannot be removed blocks with its own reason, closes nothing, and refuses identically on retry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:0a35eedfdf93940b1382b8b784fd34c2318a07d0f4376c1b581dda2701b79418",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_provider_runtime_that_cannot_be_torn_down_blocks_with_its_own_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The exact L6 input — `{\"removed\": False}` with no reason — is answered in operator language instead of becoming a null reason.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92648ac628a92b6576d03fa288851f25c0d4876c",
+            "content": "sha256:a07b6d6b107867555601d4c5b9d9daa97bdc2e9ab048273ccea0878e7aff1989",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_reasonless_provider_result_is_named_instead_of_becoming_a_null_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/panels/detail-panel/taskSwitchAbort.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "09cddc1031db8f659bbe9a553cb17e1f60622845",
+        "content": "sha256:87044a94fbc5a95d02727e92da36fb7fc9ca409b27cad3e7aacf64c8ec8e9acd",
+        "locator": {
+          "kind": "symbol",
+          "name": "aborts the change set, the review summary and the body, and shows no error"
+        }
+      },
+      "facet": "A mounted task switch aborts the three page reads and shows no error.",
+      "id": "PRF-M6YCF3",
+      "invariant": "INV-M46Y3E",
+      "origin": {
+        "handoffEntry": "L174-R1-01",
+        "leaf": "260928-MIK-L174"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

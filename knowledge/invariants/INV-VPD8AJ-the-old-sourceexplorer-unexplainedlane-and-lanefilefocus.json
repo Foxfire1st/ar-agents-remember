@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "New reviewer obligation from MIK-R86@v1 (packet a78d9ae3, Architect qualification 2026-10-08 11:18:45 UTC); implemented on the W03 successor tree 95f61633, whole-primary CODE PASS verdict 3663bf07. Evidence: candidate.json removed paths; IntentMarkers.test.tsx"
+  },
+  "applicability": "Removed reviewer file lists.",
+  "conditions": [
+    "The former reviewer file-list/lane-focus modules and their exclusive helpers remain absent.",
+    "Cards keep their per-hunk intent marks on the excerpt; the review page exposes no per-card full-file expansion.",
+    "No server source-content answer field is removed by retiring the dashboard renderer."
+  ],
+  "exclusions": [
+    "Removing inventory/lane-classification readers (marker scope, cards, details, page keep them)."
+  ],
+  "id": "INV-VPD8AJ",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "candidate.json removed paths; IntentMarkers.test.tsx"
+      ],
+      "path": "notes/reports/l86-curator-W03/handoff-phase1.json"
+    },
+    "handoffEntry": "MIK-R86@v1 rule 18",
+    "leaf": "260928-MIK-L86",
+    "task": "260928-MIK"
+  },
+  "revision": 2,
+  "schema": "ar-invariant/v1",
+  "statement": "The old SourceExplorer, UnexplainedLane, LaneFileFocus and SourceContent review renderers remain removed. Review cards render their recorded excerpts through the shared code panes, while whole files open through the existing comparison viewer.",
+  "status": "proposed",
+  "supersedes": []
+}

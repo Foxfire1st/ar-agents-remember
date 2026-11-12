@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "Ceiling, crossing-cut, sibling-admission and one-function cases pin the bound; without the record a burst could pass the ceiling."
+  },
+  "applicability": "Every append to the workspace river, one writer or many, dashboard running or stopped.",
+  "conditions": [
+    "Admission under the river lock; size plus row bytes over the ceiling cuts oldest rows to trim first."
+  ],
+  "exclusions": [
+    "Rows that fit no cut even after removal, which are refused and counted.",
+    "The dashboard age compaction, which keeps its own hour and interval."
+  ],
+  "id": "INV-PHS9T7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "cases test_every_append_lands_at_or_under_the_ceiling, test_one_function_serves_the_age_cut_and_the_size_cut, test_a_row_that_does_not_fit_after_removal_is_not_written, test_failed_removal_counts_and_leaves_the_file_ungrown, test_bound_values_are_the_packets in mcp/tests/test_tool_event_river.py; pytest mcp/tests/test_tool_event_river.py -p no:cacheprovider -n 0 -q -> 16 passed; notes/reports/role-launch/260928-MIK-L114-worker-4b5eb1b1-ea79-4dac-b8dd-ef796451e0b6.md"
+      ],
+      "path": "notes/reports/l114-curator-handoff-list.json"
+    },
+    "handoffEntry": "L114-W06",
+    "leaf": "260928-MIK-L114",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Rule-5 bound: 16 MiB ceiling, 8 MiB trim level, one age/size cut function, per-append admission under the river lock.",
+  "status": "proposed",
+  "supersedes": []
+}

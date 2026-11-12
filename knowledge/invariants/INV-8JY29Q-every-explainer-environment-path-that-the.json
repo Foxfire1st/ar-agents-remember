@@ -1,0 +1,37 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Path admission is shared by environment/state writers and archive cleanup; planted ancestor/workspace/counter/ledger/lock and nested-removal links are tested with unchanged outside bytes. This prevents following an outside target during a write or cleanup."
+  },
+  "applicability": "Paths written or removed by the explainer environment builder, Update, Retire and task retirement/archive hook beneath the explicitly resolved explainer task root, and their separately admitted task-owned grade/receipt paths.",
+  "conditions": [
+    "Each component beneath the admitted physical root is checked for symlinks and the resolved target stays within that root before the operation.",
+    "Archive cleanup retires the environment before removing its workspace, generation counter and task-owned grade/receipt artifacts."
+  ],
+  "exclusions": [
+    "No arbitrary outside-task path becomes writable: the explainer root is a named departure from ordinary task-folder confinement.",
+    "These guards and tests establish rejection of planted links; they do not claim an atomic filesystem transaction against concurrent path replacement.",
+    "The leaf lock file is retained, and pending retirement retains its folder, counter and receipt."
+  ],
+  "id": "INV-8JY29Q",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_explainer_confinement.py::test_every_metadata_writer_refuses_a_planted_task_folder_ancestor_link; mcp/tests/test_explainer_confinement.py::test_binding_and_marker_writers_refuse_a_planted_workspace_link; mcp/tests/test_explainer_confinement.py::test_the_seat_lock_refuses_a_planted_lock_link_before_locking; mcp/tests/test_explainer_confinement.py::test_workspace_removal_holds_a_nested_link_instead_of_rmtree_following_it; mcp/tests/test_explainer_retirement_hooks.py::test_a_symlink_inside_a_workspace_holds_the_leaf_and_what_lies_behind_it; source inspection at 0b7e887a130fe432fef9e59f44917c8419d1c111"
+      ],
+      "path": "L183-current-guarantees-and-proofs-W9"
+    },
+    "handoffEntry": "the-explainers-folder-is-confined",
+    "leaf": "260928-MIK-L183",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Every explainer-environment path that the builder, Update, Retire and archive cleanup write or remove is admitted physically within the named explainer task root: a symlink on the way or a path resolving outside that root is held and reported rather than followed. Task-owned grades and receipts use their separately admitted task scope. Pending retirement keeps the recovery material it needs, and cleanup never removes the leaf’s lock file.",
+  "status": "proposed",
+  "supersedes": []
+}

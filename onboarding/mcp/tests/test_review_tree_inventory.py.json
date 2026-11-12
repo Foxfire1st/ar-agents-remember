@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_tree_inventory.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Entry selection is focused, the sidebar inventory is complete, and line counts are authoritative",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2104c3870cec03a546fd3abd9fc8aacf10ce57ac",
+            "content": "sha256:b6c454c7ecfda901501c2b006d2bdb1d6fc293cc5748c0b0304f79992c6a6b3d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_entry_selection_rejects_incomplete_or_combined_questions"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

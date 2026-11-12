@@ -1,0 +1,207 @@
+{
+  "path": "mcp/tests/test_memory_mode_removal.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+        "content": "sha256:447c4d08122d8772ffbb4a60055feda8f0a52e89a317f73c989d56c39d947b64",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_declared_vocabulary_has_no_removed_member"
+        }
+      },
+      "facet": "The declared vocabulary holds no removed member.",
+      "id": "PRF-7XV937",
+      "invariant": "INV-V3N6NW",
+      "origin": {
+        "handoffEntry": "L50-MIK-R50-rule-2-vocabulary-removed",
+        "leaf": "260928-MIK-L50"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+        "content": "sha256:e4910a773ed01ec31d7a4c1bba99bfe6616321322b9302f28da036069eb2a807",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_require_supported_memory_mode_refuses_disabled_as_an_opt_out"
+        }
+      },
+      "facet": "The vocabulary refuses the disabled mode by name.",
+      "id": "PRF-EB442T",
+      "invariant": "INV-8R2CRC",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F06",
+        "leaf": "260928-MIK-L50"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+        "content": "sha256:0d86da66a5c69dbf38c3b899a030a3ab7285ff9bc4badb9c751d7f977d0c275c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cli_never_advertises_a_removed_member"
+        }
+      },
+      "facet": "Rendered start --help excludes the removed enum choice and documents external/removal-refusal words; this case does not exercise unknown-token parsing.",
+      "id": "PRF-WF6JMA",
+      "invariant": "INV-8R2CRC",
+      "origin": {
+        "handoffEntry": "L94-M1-F02-help-only-proof",
+        "leaf": "260928-MIK-L94"
+      }
+    }
+  ],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+        "content": "sha256:0d86da66a5c69dbf38c3b899a030a3ab7285ff9bc4badb9c751d7f977d0c275c",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_cli_never_advertises_a_removed_member"
+        }
+      },
+      "id": "RLZ-RV1A73",
+      "invariant": "INV-8R2CRC",
+      "origin": {
+        "handoffEntry": "L50-CODE-R1-F06",
+        "leaf": "260928-MIK-L50"
+      },
+      "rationale": "The rendered CLI help excludes the removed enum member and includes supported external/removal-refusal prose; this help-only test does not pass or parse an unknown token.",
+      "role": "unclassified"
+    }
+  ],
+  "references": {
+    "20": {
+      "note": "Supported set is external alone; both removals named",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:9f08d9550971438f439f292c5c7bf8bbf078bff5f983b1206fd482f85c5b7e9f",
+            "locator": {
+              "kind": "symbol",
+              "name": "EXPECTED_MODES"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "21": {
+      "note": "Internal refused by name, disabled refused as an opt-out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:e4910a773ed01ec31d7a4c1bba99bfe6616321322b9302f28da036069eb2a807",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_require_supported_memory_mode_refuses_disabled_as_an_opt_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "22": {
+      "note": "Topology narrowers keep the same split",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:aa346b740de18f2decf62b44a98f8a575cbc39817b70b71a91dd8240bcfe5f5d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_require_supported_topology_refuses_disabled_as_an_opt_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Start refuses a disabled mode as an opt-out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:2998597ded4b6b77abb6903aacdbec10359829a4b4af0a7a320e7a86376bb4b6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_worktree_start_refuses_a_disabled_memory_mode_as_an_opt_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Contract writers refuse disabled as an opt-out",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:b93953b4f387b1fcf9cf39196e70f376b0729644e593d61ea54e19eeccabc0c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_contract_writers_refuse_a_disabled_request_as_an_opt_out"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "A disabled contract stays readable and byte-identical",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:bd4868dc0c7d5c72ab3c4e870726e158e32677f544d197a10f3d30786d16b2af",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_contract_recording_disabled_stays_readable_and_byte_identical"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Removed tokens refused while unknown tokens still degrade",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:4835eff102a83ac9071365c3153d42b20025d640199716386412b107da1672e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_removed_token_is_refused_while_an_unknown_token_still_degrades"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "27": {
+      "note": "The compact start-tool registration points to docs/reference/mcp-tools.md and the verbose mode wording is read from the `start --help` text instead of the registration. Actual named memory-mode refusals stay tested at their original surfaces; retired wording is not restored to the registration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+            "content": "sha256:c6a84df6005ead973f46acc8c9c0e527c77737ab868aa3726ee248afd0f61e36",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_start_tool_documentation_names_external_only_and_both_refusals"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,25 @@
+{
+  "path": "dashboard/src/panels/review/familyPaging.captured.json",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "6": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2b2ced8a0540db9834d72d5c5850966bbc10340c",
+            "content": "sha256:6d5d68b212521a483a779535a7b6f2c58d5bdc1a40a6742ff8e19324c31db1d7",
+            "locator": {
+              "end": 31353,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

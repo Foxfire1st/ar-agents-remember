@@ -1,0 +1,38 @@
+{
+  "path": "dashboard/src/types/event.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Closed provenance vocabularies and event field shape\n\nAnchor: `Trust` `Actor` `ObserverEvent`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "25b46051e848ed30ec884515068da4de250b2117",
+            "content": "sha256:ad737b334a9d79e13b1ab2b81a6e1a25a8ccc71cfb4c4f2a07ca3e974d61049e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Python envelope supplies the corresponding wire names and provenance values\n\nAnchor: `Trust` `Actor` `Event`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b5f4a15e3c26371377e98403ffbb1c7888478853",
+            "content": "sha256:518bd25c4403f72a906def18c2fb03586944d8cf73cc0928f2e644ec98c2be22",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/observer/events.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

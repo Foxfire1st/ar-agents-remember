@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/models/lifecycles/mutation_evidence.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/models/lifecycles/mutation_evidence.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-15T00:51+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [lifecycle models overview](overview.md)
@@ -55,30 +45,26 @@ Keep actual Git object fields distinct from optional content-comparison fields. 
 
 No open todo is owned here. Direct landing uses the sibling lifecycle direct-landing accepted-input model; closeout mutation evidence remains deliberately repository-leg-specific.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 See task `260821-CLIVE-L1` L1-R4 and L1-R6.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No configured external domain-documentation source applies. | N/A | N/A |
+No configured external domain-documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. | L9-L9; L18-L30; L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| The four-state vocabulary is closed and explicit. | L10-L15 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| Snapshot identity includes reflog, index, candidate, and status facts. | L18-L30 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-| State-specific proof is model validated. | L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
+- Only code/memory are mutation legs; memory snapshots may separately bind contentHeadTree without changing raw Git identity. [1]
+- The four-state vocabulary is closed and explicit. [2]
+- Snapshot identity includes reflog, index, candidate, and status facts. [3]
+- State-specific proof is model validated. [4]
 
-## Cross-Repo References
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| No separate external implementation source applies to this file. | N/A | N/A |
+No separate external implementation source applies to this file.
 
 ## 260821-CLIVE-L2 Current Contract
 
@@ -86,22 +72,4 @@ The current source seams include `GitMutationSnapshot`, `GitMutationEvidence`. C
 
 ### Reconciled Source Evidence
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. | L18-L30; L33-L63 | [mcp/src/agents_remember/models/lifecycles/mutation_evidence.py](mcp/src/agents_remember/models/lifecycles/mutation_evidence.py) |
-
-## Update History
-
-- 2026-09-15T00:51+00:00 — LCA-L9 current candidate: Bounded mutation legs to code/memory and documented the separate cache-free HEAD content tree. Reviewed the uncommitted source and current references; existing verification commit/date and all prior history are retained. No landed or test-execution claim.
-
-
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: reconciled this card with the accepted full L2 candidate; verification metadata remains pinned until architect-owned closeout stamps the real code commit.
-
-- 2026-08-22T11:29+02:00 — 260821-CLIVE-L1 candidate12 rebind: recorded the
-  all-non-commit-proven commit prohibition and the legitimate preservation of a differing bound
-  expected tree after exact restoration; corrected the pre-existing candidate11 symbol-name drift
-  against source. Bound to reviewed candidate tree `8f03b256fe24aa77262da805f1538ee39ccb4dd6`,
-  full diff SHA `ccb36a898b455cd67ca00c378e5ba0f18851be01faf3d26eced3b9af062f429e`,
-  same-reviewer PASS; first landed verification stamp remains closeout-owned.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: created from accepted candidate tree `4241908c`; first landed verification stamp remains closeout-owned.
+- The current module exposes `GitMutationSnapshot`, `GitMutationEvidence` at this ownership boundary. [5]

@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Both fixer/index public writes and mechanical refresh must preserve authority and refused bytes; a bypass could corrupt a root that leaves depend on."
+  },
+  "applicability": "Contractless citation_fix / memory-citations --fix and route_index_refresh apply on a declared converted external memory root before attributed adoption.",
+  "conditions": [
+    "Declared repository and exact declared/resolved root, layout marker, no attributed baseline, no linked worktree; unreadable worktree listing fails closed.",
+    "Both admissions compose the existing writer; refusal preserves a refused card and its sidecar."
+  ],
+  "exclusions": [
+    "Caller-asserted bypass flags, a fabricated leaf, commits or knowledge-record writes.",
+    "Contractless writes after attribution or when a leaf may depend on the root.",
+    "Contractless migration, index-build and citation-check CLI modes."
+  ],
+  "id": "INV-13QTT2",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_bootstrap_converted_onboarding.py (five admission conditions one by one, pre-baseline authoring with sidecars, post-baseline refusals for fixer and route-index, refused-reauthor byte-identical regression); mcp/tests/test_tool_entry_point_controls.py (optional contract_path pin, 17 passed); journey45.py + run-cli-probes.txt (admit rc=0, refuse rc=1)"
+      ],
+      "path": "knowledge-authoring.json"
+    },
+    "handoffEntry": "MIK-R45@v2 rule 2",
+    "leaf": "260928-MIK-L45",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The existing fixer runs before the first baseline under one measured admission (declared repo, declared root, layout marker, no adopted baseline, no linked worktrees) and answers admission pre-baseline; every other uncontracted call refuses naming the leaf route.",
+  "status": "proposed",
+  "supersedes": []
+}

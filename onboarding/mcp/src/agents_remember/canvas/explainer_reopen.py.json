@@ -1,0 +1,55 @@
+{
+  "path": "mcp/src/agents_remember/canvas/explainer_reopen.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "reopen_unavailable answers with the receipt's own reason rather than a generic refusal.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ccc32e5d119401758088cac2eab7e7b9aa0c48f",
+            "content": "sha256:af3ac216ca42ad85f0f140cf7af0c2703df99f1edb54945650d65dcdbe643fab",
+            "locator": {
+              "kind": "symbol",
+              "name": "reopen_unavailable"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "reclaimed_explainers names, per leaf, the revisions and counter an archive took.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ccc32e5d119401758088cac2eab7e7b9aa0c48f",
+            "content": "sha256:092a0d212dae4ece4b6d2ea9988abc444211e0c9a994650fb2bc9f1937da1665",
+            "locator": {
+              "kind": "symbol",
+              "name": "reclaimed_explainers"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "archived_refusal states why a reopen after an archive is unavailable.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1ccc32e5d119401758088cac2eab7e7b9aa0c48f",
+            "content": "sha256:ca6193500acaa81054792c0097375b2cfd49532f28e9ef50fba393b5c8127cec",
+            "locator": {
+              "kind": "symbol",
+              "name": "archived_refusal"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

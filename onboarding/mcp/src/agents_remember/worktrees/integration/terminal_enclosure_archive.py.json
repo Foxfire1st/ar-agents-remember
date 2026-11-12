@@ -1,0 +1,165 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_archive.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The terminal preparation boundary refuses retained private preparation and ambiguous Git mutation intent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:9971739aa120d8ca8aae2f34e9d940284b27c1fade5e8827d60275d291c5c8a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_resolved_mutations"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Repository-owned canonical lifecycle evidence defines terminal operation-record filename patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:6b24c3bfb05ad819362ccbb4bbd42e094aecef3389ecb771cab4444c5e746aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_OPERATION_RECORD"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The public terminal archive entry publishes or re-observes the archive before deletion; the evidence owner admits and bounds canonical lifecycle files.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
+            "content": "sha256:82bd75e61cab5ed4053e17c48428a418a317411caea5f88538830609b97e91d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_archive_required_result"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:73b6c0c46e8dd8ffe603625162c9210b1e6323a65f7070dbf104b1c316697c56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_entries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Missing-intent generation archives are owned canonical artifacts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:1389ce43559d66fca9d69e2ebea3f92a43277c22db963cb8aec4f249fea0bec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_LEGACY_MISSING_INTENT_RECORD"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:73b6c0c46e8dd8ffe603625162c9210b1e6323a65f7070dbf104b1c316697c56",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_entries"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Repository-owned canonical lifecycle evidence defines terminal operation-record filename patterns.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:6b24c3bfb05ad819362ccbb4bbd42e094aecef3389ecb771cab4444c5e746aab",
+            "locator": {
+              "kind": "symbol",
+              "name": "_OPERATION_RECORD"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The archive builder takes the canonical lifecycle evidence from the evidence module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "679738f5c67a232503aaba3bd574cfe307d33620",
+            "content": "sha256:7b167e9d5b7d98e5937478d9ba759c81ff92f854f5a3505184fa4445d32882d6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_terminal_archive"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "A canonical operation record is parsed, must match its canonical file name, and must be archivable before it becomes an archive entry.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:159b6cd49e24246db8e8c0f03357b879647ce85dee5324c27af8bd7e84465114",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_evidence_entry"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Retained operation records are read without adoption for the master-retirement readiness check, refusing any that cannot establish terminal authority.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4cde6f27891564d461061ee78d31e963ae6d74ba",
+            "content": "sha256:8f280956a4c54e3e7bf29c4c4f73ae4b4095a8c3b4f15db4eec11cad838ee3d7",
+            "locator": {
+              "kind": "symbol",
+              "name": "terminal_operation_evidence"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/terminal_enclosure_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

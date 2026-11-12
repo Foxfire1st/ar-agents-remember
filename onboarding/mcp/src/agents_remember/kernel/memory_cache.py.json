@@ -1,0 +1,250 @@
+{
+  "path": "mcp/src/agents_remember/kernel/memory_cache.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+        "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+        "locator": {
+          "kind": "symbol",
+          "name": "ignore_memory_cache"
+        }
+      },
+      "id": "RLZ-1TR608",
+      "invariant": "INV-49E649",
+      "origin": {
+        "handoffEntry": "L37-judged-tree-commit",
+        "leaf": "260928-MIK-L37"
+      },
+      "rationale": "Is the one write the cache preparation makes to memory content, split out so that the closeout records the ignore rule before it judges the tree.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+        "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_memory_cache"
+        }
+      },
+      "id": "RLZ-929JJ1",
+      "invariant": "INV-ZCRMS7",
+      "origin": {
+        "handoffEntry": "L44-M1-01",
+        "leaf": "260928-MIK-L44"
+      },
+      "rationale": "Performs the cache exclusion against the private index file when asked and returns the prepared ignore bytes, so the refusing route can tell its own change apart from a concurrent edit.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+        "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+        "locator": {
+          "kind": "symbol",
+          "name": "prepare_memory_cache"
+        }
+      },
+      "id": "RLZ-F8FPNC",
+      "invariant": "INV-DZB7MC",
+      "origin": {
+        "handoffEntry": "L44-C1-03",
+        "leaf": "260928-MIK-L44"
+      },
+      "rationale": "Performs the cache exclusion against the private index file when asked and returns the prepared ignore bytes, so the refusing route can tell its own change apart from a concurrent edit.",
+      "role": "support"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Terminal removal discards only the root memory cache.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:3ce2dafbfeb64e05c0e9d47e4ff9e69d06c53c8adc7ffbac6089f73b70f7d392",
+            "locator": {
+              "kind": "symbol",
+              "name": "discard_memory_cache_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "The ignore rule is the one content write, and its exact bytes are returned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ignore_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Derivation reads Git attribution and computes current/base metadata.\n\nAnchor: \"def derive_memory_ledger\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:ea1d987c140051b594ad30280582128ace4e4fb085a34d95d14fc369a5a66131",
+            "locator": {
+              "kind": "symbol",
+              "name": "derive_memory_ledger"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Preparation excludes the cache and refresh reports materialization outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Committed attribution and row mapping have one reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+            "content": "sha256:5312462f9cbaef429f83037bf04d70d5eaf62ff55593fc25bf4d15aed3486d75",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributed_commits"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "2ec6a4844bc78d46a50f54f10b97d1ea2d328aba",
+            "content": "sha256:a47f579480dbf6595e8da37d0a54d1e4da5172f99f9e0f52a743353313b35db9",
+            "locator": {
+              "kind": "symbol",
+              "name": "ledger_rows_from_attribution"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_attribution.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The consumer representation supports empty derived history.\n\nAnchor: \"class MemoryLedger\"; \"an empty memory ledger cannot claim a current mapping\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:87ddbdc5c5355bdd30f9ca03bddf68a52d88db51159b38c0b309d75abb11dabd",
+            "locator": {
+              "kind": "symbol",
+              "name": "validate_ledger"
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "125f9e150c83c61988656ca8750c0ee9e6c7563b",
+            "content": "sha256:3e6a39d79a5889b07049a719cf3d76706f766a74d393226b497a33314f53074a",
+            "locator": {
+              "end": 46,
+              "kind": "line_range",
+              "start": 37
+            },
+            "path": "mcp/src/agents_remember/kernel/memory_ledger.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Cache independence and exact local-ref derivation are exercised by the retained projection tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5b2a7785167b5b1fae642f49cf94d95ae263f57c",
+            "content": "sha256:b058f96c73f94fefb1220563a85cdbc7630c4b4375238fc0de5d917c5caa54dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_cache_misses_preserve_contract_and_named_ref_history"
+            },
+            "path": "mcp/tests/test_memory_ledger.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The ignore rule alone: the one write the preparation makes to content.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:c391838ec9de06b1a7883cda8aad7a7051b54b8ad0e80bfa8c1359001fe9de53",
+            "locator": {
+              "kind": "symbol",
+              "name": "ignore_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The preparation records the rule first, then removes the cache from the index.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Preparation writes a private index file when asked, and returns the prepared ignore bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a62e25249db9a1da4bcc623e29b4af7faaf91e9",
+            "content": "sha256:5893805cb01008e3ddc3e197d8f95acc2686af8fd50333197501ed7aaa9d213d",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_memory_cache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

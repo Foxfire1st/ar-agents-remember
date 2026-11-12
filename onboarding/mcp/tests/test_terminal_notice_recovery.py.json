@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_terminal_notice_recovery.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "1ceb3e8264c3e4ea5bb1783a44018343ee729b82",
+        "content": "sha256:e31c8f8000ed059c3a3ccfa203bf814e28639b448cbfa119bb5fdb836684d829",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_ordinary_landing_recovery_matrix"
+        }
+      },
+      "facet": "Disposable ordinary-landing intent/cell fixtures recover one notice from the matching completed cell, make an exact retry idempotent, refute a different commit or foreign repository, and retain undecided intents when publication is unproved or the contract unreadable.",
+      "id": "PRF-GC10YK",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "1ceb3e8264c3e4ea5bb1783a44018343ee729b82",
+        "content": "sha256:dfa7bf49b87d87e5bcb54fc88921749f0113f953f36e7dec66b4b1511efda9af",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_abandonment_recovery_matrix"
+        }
+      },
+      "facet": "A pending abandonment stays undecided until the native receipt commits it.",
+      "id": "PRF-KCAJ1S",
+      "invariant": "INV-976SFG",
+      "origin": {
+        "handoffEntry": "L190-R1-F06",
+        "leaf": "260928-MIK-L190"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {},
+  "schema": "ar-onboarding-file/v1"
+}

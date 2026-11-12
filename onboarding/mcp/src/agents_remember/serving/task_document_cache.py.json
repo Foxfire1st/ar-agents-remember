@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/serving/task_document_cache.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "857eb6cbd01cfd193deb00b866acfe3ed5a3aa13",
+        "content": "sha256:4ef96577968fa196bc17bc5619ab1a3bc88ce0f360e9ba9a23629771e1597db6",
+        "locator": {
+          "kind": "symbol",
+          "name": "TaskDocumentBodyCache"
+        }
+      },
+      "id": "RLZ-ZVHCDM",
+      "invariant": "INV-GDWJKR",
+      "origin": {
+        "handoffEntry": "L168-W-R168-07",
+        "leaf": "260928-MIK-L168"
+      },
+      "rationale": "Full server bodies have1024entries/16MiB and unchanged generations bypass parsing.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Current generations bypass re-parsing; stale bodies are dropped before the existing reader runs.\n\nAnchor: `TaskDocumentBodyCache.read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857eb6cbd01cfd193deb00b866acfe3ed5a3aa13",
+            "content": "sha256:64a394db9d6cdb89f68a6a952e3c8eb0bb6fd6c5cc280f14a8280215b44ae837",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 41
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The app-owned cache has positive entry/byte bounds and exact retained-byte accounting.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "857eb6cbd01cfd193deb00b866acfe3ed5a3aa13",
+            "content": "sha256:4ef96577968fa196bc17bc5619ab1a3bc88ce0f360e9ba9a23629771e1597db6",
+            "locator": {
+              "kind": "symbol",
+              "name": "TaskDocumentBodyCache"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

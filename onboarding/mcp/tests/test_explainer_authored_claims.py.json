@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_explainer_authored_claims.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "An authored claim map is admitted and carried into the published revision rather than rewriting the evidence the page was generated from, and readiness checks it against that input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d6144a78c5ab3270cc52a5d4a8dfbf19bdc8b4fa",
+            "content": "sha256:afc937c3c6345cc5c6f68a07f719bcdab11f40d592a95ff1eddd802f1287b570",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_authored_claims_reach_browser_readiness_and_published_manifest"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

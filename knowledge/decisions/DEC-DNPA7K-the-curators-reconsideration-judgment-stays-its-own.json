@@ -1,0 +1,74 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Two automatic alternatives were weighed and rejected, and the choice binds every reconsideration route and the Reviewer's check of a re-pointed link."
+  },
+  "alternatives": [
+    {
+      "option": "The Curator judges each fired link and writes a re-point with its reason, or raises when the condition may be met.",
+      "reason": "The judgment stays with the seat that holds the decision's meaning, the row records both targets, and the Reviewer checks the reason.",
+      "status": "chosen"
+    },
+    {
+      "option": "Re-point a fired link automatically to wherever the code moved.",
+      "reason": "It answers a decision's condition without a judgment and hides that the condition may now be met.",
+      "reconsider_when": "A link whose target is a single symbol with one unique successor and no judgment of the condition is needed.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep the rejection automatically when the code is gone.",
+      "reason": "It silences the developer's question and leaves a rejection standing on code that no longer exists.",
+      "reconsider_when": "Never: a removed target is exactly the case the developer asked to hear about.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "repoint is authored only through a hand-off row.",
+    "A fired link with no row still reaches the worklist and blocks closeout.",
+    "raise stays admitted wherever it was."
+  ],
+  "context": "When a leaf removes or moves the code a decision's reconsider_on link names, the link fires. The developer asked whether the Curator can re-point the link to where the code now lives, and answered that the Curator asking again when the code changed is the behaviour wanted.",
+  "decider": "The developer's ruling D430, with MIK-R194 v1 rules 4 to 8",
+  "id": "DEC-DNPA7K",
+  "links": [
+    {
+      "relation": "explains",
+      "target": "INV-054R7P"
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "blob": "883dc748c08fbd631020b50d34ea959d2a72eb8b",
+        "content": "sha256:a4fe56aef5fd967e6bbf54548d1651e081cb950633fdb3f99ef1a47ad61f7c6d",
+        "locator": {
+          "kind": "symbol",
+          "name": "RepointRowAuthoring"
+        },
+        "path": "mcp/src/agents_remember/application/knowledge_writer/repoint.py"
+      }
+    },
+    {
+      "alternative": 1,
+      "relation": "reconsider_on",
+      "target": "INV-J7YKSB"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "DEVELOPER-DIRECTION.md D430; MIK-R194 v1 Preservation Boundaries; the requirement packet's rule 8"
+      ],
+      "path": "handoff-run1a.json"
+    },
+    "handoffEntry": "D430",
+    "leaf": "260928-MIK-L186",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

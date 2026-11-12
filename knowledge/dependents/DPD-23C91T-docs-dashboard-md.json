@@ -1,0 +1,268 @@
+{
+  "confirmed": {
+    "codeTree": "883cd99bf39d98ad9a295289db97c05e2f89e73a",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "curator",
+    "statement": "The page is re-read at A005: the Census clause at docs/dashboard.md:613-615 is removed and the view description stands; the rest of the page is unchanged from A004 and its dependent statements stand.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/dashboard.md",
+  "id": "DPD-23C91T",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-dashboard-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "2fb866b49a10a29bae1626ccca17ab31450e1d44",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/Cockpit.tsx"
+    },
+    {
+      "blob": "40c7ba7f8ba356ee8d7abe94a7b0c1785c0de21b",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+    },
+    {
+      "blob": "9587f2f625e895a2933a3474ec4cfab7f630fdc0",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts"
+    },
+    {
+      "blob": "d40f60e246eaa870ff228d5f4a6582788c2104ee",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/roleLaunchModel.ts"
+    },
+    {
+      "blob": "0b222683100abd582daa85755533e41d9728ce83",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/paseoFrameModel.ts"
+    },
+    {
+      "blob": "3c1fc9b507b9358e632a0fbcb31c6f9c66435151",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/document-chat/model.ts"
+    },
+    {
+      "blob": "e90aae0d64e762edaf39473dd73648709dc17544",
+      "kind": "file",
+      "path": "dashboard/src/panels/lifecycle-list/LifecycleList.tsx"
+    },
+    {
+      "blob": "9a241376aca7807abc7dd1661a6e38297b723ab7",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/pageParts.tsx"
+    },
+    {
+      "blob": "d25262c3e75cb900805602c122e9f8f6605ec733",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/taskReader.tsx"
+    },
+    {
+      "blob": "c12094244f7358af502e88ac603fcd73652b80ad",
+      "kind": "file",
+      "path": "dashboard/src/panels/AttentionQueue.tsx"
+    },
+    {
+      "blob": "ec46a3a25c36c5a79747ac7d9485027c7a7e7973",
+      "kind": "file",
+      "path": "dashboard/src/panels/EventRiver.tsx"
+    },
+    {
+      "blob": "a4f07bffe14341a99eb320bdf2a28ac21454914a",
+      "kind": "file",
+      "path": "dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx"
+    },
+    {
+      "blob": "81655a44142c4db5bab58f55903e9197f5b8f16d",
+      "kind": "file",
+      "path": "dashboard/src/tray/TrayPanel.tsx"
+    },
+    {
+      "blob": "e2db8b0a0ff10909e397778d10d756bf5eb9eb64",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/reducer_impl/_attention_native.py"
+    },
+    {
+      "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/task_entries.py"
+    },
+    {
+      "blob": "68e2d51ebb8ea45e0c7af84c4e56f0ef6ce46ced",
+      "kind": "file",
+      "path": "dashboard/src/panels/lifecycle-list/rowState.ts"
+    },
+    {
+      "blob": "a774a5e57ae8f781cdd06597ba61c3fdeba9edd8",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/StepDot.tsx"
+    },
+    {
+      "blob": "2e696ca5b2ebe948a00eedcdfd5893b121074fad",
+      "kind": "file",
+      "path": "dashboard/src/grammar/SidebarToggle.tsx"
+    },
+    {
+      "blob": "69cbbc6f292f0a0158e9bd88499acacc6cab21d2",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/roleChatResult.ts"
+    },
+    {
+      "blob": "8676eb120a4c39cca9adb74f2a11445a49866a87",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+    },
+    {
+      "blob": "ea76263611577cad45322c53e6e5c0e2c1b80251",
+      "kind": "file",
+      "path": "dashboard/src/panels/eventSummary.ts"
+    },
+    {
+      "blob": "c06a628412f1c9c91f1b69c56ce9f4d203eb3312",
+      "kind": "file",
+      "path": "dashboard/src/tray/TrayDock.tsx"
+    },
+    {
+      "blob": "29bb5137456bd658ad4c32ae410ebdd8e500a8b4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_warmup.py"
+    },
+    {
+      "blob": "ca91b8b32d84671a4a9fe069a35e3f83c452bdec",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts"
+    },
+    {
+      "blob": "54a788a16637a596ec8c014ed26785119c17306e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts"
+    },
+    {
+      "blob": "488a64d6f312cfee515a31864870bf15f9877317",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts"
+    },
+    {
+      "anchor": {
+        "blob": "aeecc2f8dab2b0b79f811ea855055ad72fb5e6d3",
+        "content": "sha256:de76bee4e74da0194ae142dbc65b2be6bb861bad77ccd3ca2550c4538ed0a36f",
+        "locator": {
+          "kind": "symbol",
+          "name": "archive_terminal_agents"
+        },
+        "path": "mcp/src/agents_remember/worktrees/modules/terminal_agents.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "anchor": {
+        "blob": "edf0fbb7f0b42b3939d6da42c0b98a6cbb49f988",
+        "content": "sha256:34b956fc0cc8e53f661805c9b9c3cf97f635f7166966600af1f083303699f396",
+        "locator": {
+          "kind": "symbol",
+          "name": "document_chats"
+        },
+        "path": "mcp/src/agents_remember/cli/role_document_chats.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_status.py"
+    },
+    {
+      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "blob": "b38e0ed5dfa469d3e1d51a887dfe4a7fbd654d41",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_remedy.py"
+    },
+    {
+      "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/changeset_endpoints.py"
+    },
+    {
+      "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/provider_limits.py"
+    },
+    {
+      "blob": "ec40485bf84f3d2794d8683a7e8f92e7a05283ca",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/host_activity.py"
+    },
+    {
+      "blob": "fa329467be28b558f2516086c2e67a82ec134f26",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/tool_events.py"
+    },
+    {
+      "blob": "b5d120de09128b72ce518321cc008426a1384f97",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py"
+    },
+    {
+      "blob": "cc94281379ec05363f5271bd286a082c5e8529ae",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/entryState.tsx"
+    },
+    {
+      "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx"
+    },
+    {
+      "blob": "3be95c5b972460e2635e7ad50f9c0682bddd23a0",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/model.ts"
+    },
+    {
+      "blob": "d59f6f4f1003b950cbdf978c2588f8a55b945e3e",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/task-groups.tsx"
+    },
+    {
+      "blob": "87f5a55db2acb9fae9c92056766f119caca5fd57",
+      "kind": "file",
+      "path": "dashboard/src/panels/detail-panel/docHead.tsx"
+    },
+    {
+      "blob": "aa5aeef9b5ccd6ce48001162347974b95ed036f7",
+      "kind": "file",
+      "path": "dashboard/src/panels/knowledge-reader/PathViews.tsx"
+    },
+    {
+      "blob": "269029073b4592e81229eed6cbcae8eb1df77b5c",
+      "kind": "file",
+      "path": "dashboard/src/cockpit/layout.tsx"
+    },
+    {
+      "blob": "bcc511bf68fd8d89365ba2b47d20c43a86469f44",
+      "kind": "file",
+      "path": "dashboard/src/grammar/ModeBar.tsx"
+    },
+    {
+      "blob": "62251f313ef49ee93fea2fbbf69165052b43f298",
+      "kind": "file",
+      "path": "dashboard/src/panels/CloseoutQueue.tsx"
+    },
+    {
+      "blob": "d7b32dd73eac8bdb5be126db5ff1fa9738f1e447",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+    }
+  ]
+}

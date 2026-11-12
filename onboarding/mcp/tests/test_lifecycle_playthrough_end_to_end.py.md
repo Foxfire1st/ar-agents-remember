@@ -1,15 +1,5 @@
 # mcp/tests/test_lifecycle_playthrough_end_to_end.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/tests/test_lifecycle_playthrough_end_to_end.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-14T20:00+02:00 |
-| lastVerifiedCommitHash | `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| lastVerifiedCommitDate | 2026-09-14T19:36:04+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tests overview](overview.md)
@@ -53,6 +43,7 @@ publication is a visible difference rather than a payload claim.
 
 The module's public drivers, each one call into a registered tool:
 
+
 | Driver | Public entry point |
 | --- | --- |
 | `_status` | `worktree_status_tool` |
@@ -90,13 +81,15 @@ the run, in eight ordered beats:
 - Support is composed, never re-implemented: `QueueFixture`/`REPO` come from `test_closeout_queue`,
   `close_out_leaf` is imported from `checkpoint_landing_test_support`, and `git` comes from
   `test_worktree_support`.
-- The module docstring states exactly where the public route is used and where it is not, so the
-  exception is deliberate rather than an oversight: leaf start and leaf closeout use the fixture's
-  structural equivalents (`QueueFixture.start_leaf`, which is what `worktree_start` records, and the
-  same closeout recording the checkpoint module uses), because the registered start route needs the
-  harness lifecycle and provider scaffolding that a coordination-root fixture deliberately does not
-  carry. The master-level interactions — status, integrate, checkpoint, pause, resume — are the
-  registered tools themselves.
+- Leaf start and leaf closeout use the fixture's structural equivalents
+  (`QueueFixture.start_leaf` and the imported closeout recorder); master-level
+  status, integrate, checkpoint, pause and resume use registered tools. The module
+  docstring still attributes this split to missing harness lifecycle/provider
+  scaffolding. That rationale does not describe a current start prerequisite:
+  `worktree_start_tool` creates its own stable identity, can skip provider setup,
+  and generated lifecycle settings contain no retired providers. This fixture is
+  still not public `worktree_start` coverage, and these facts do not establish
+  that it can use that route unchanged.
 
 ### Invariants And Boundaries
 
@@ -123,94 +116,107 @@ the run, in eight ordered beats:
 
 None recorded. Verification metadata on this card remains closeout-owned.
 
-## Docs References
+## Evidence
+
+- The fixture split and public-start coverage limit remain; current application identity and provider-skip behavior refute the inherited provider-scaffolding necessity rationale. [16]
+
+### Docs References
 
 No external Domain Documentation source is configured for this memory root. These assertions concern
 this repository's own ref movement, contract cells and activation state, so the retained source is the
 direct evidence.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No external domain claim is required. | N/A | N/A |
+No external domain claim is required.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The ref snapshot the "publishes nothing" beat is measured with. | `_snapshot` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:51-59 |
-| The one-class, one-case fixture: one real temporary Git world per case, master-b's canonical series contract, external memory. | `LifecyclePlaythroughTests` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:62-173 |
-| The six public drivers the run is expressed in, each a registered tool call. | `_status`; `_integrate`; `_checkpoint`; `_pause`; `_attach`; `_reload` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:78-82; mcp/tests/test_lifecycle_playthrough_end_to_end.py:84-90; mcp/tests/test_lifecycle_playthrough_end_to_end.py:92-98; mcp/tests/test_lifecycle_playthrough_end_to_end.py:100-104; mcp/tests/test_lifecycle_playthrough_end_to_end.py:106-110; mcp/tests/test_lifecycle_playthrough_end_to_end.py:112-113 |
-| The ordered run and the eight beats, including step 8 — a leaf commanded after the checkpoint landing still starts on a new base. | `test_the_lifecycle_plays_through_from_an_unstarted_master_to_a_resumed_one` | mcp/tests/test_lifecycle_playthrough_end_to_end.py:117-173 |
-| The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. | `pause_result`; `_already_stopped_result`; `require_parent_series` | mcp/src/agents_remember/worktrees/modules/pause.py:80-128; mcp/src/agents_remember/worktrees/modules/pause.py:131-150; mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:309-330 |
-| The public tools the master-level beats drive. | "def worktree_attach_tool("; "def worktree_integrate_tool("; "def worktree_checkpoint_landing_tool("; "def worktree_pause_tool(" | mcp/src/agents_remember/application/worktree_tools.py:265-275; mcp/src/agents_remember/application/worktree_tools.py:371-425; mcp/src/agents_remember/application/worktree_tools.py:427-468; mcp/src/agents_remember/application/worktree_tools.py:470-500 |
-| The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. | `checkpoint_landing_eligibility`; "contract.integration_status in {\"completed\", \"checkpointed\"}" | mcp/src/agents_remember/worktrees/integration/integration_branch_authority.py:265-265; mcp/src/agents_remember/worktrees/modules/integrate.py:424-469 |
-| The shared world fixture and Git helper this module composes instead of re-implementing. | "class QueueFixture:"; "REPO = \"repo-a\""; "def git(repo: Path, *args: str) -> str:" | mcp/tests/test_closeout_queue.py:186-727; mcp/tests/test_closeout_queue.py:56-56; mcp/tests/test_worktree_support.py:83-83 |
-| The leaf closeout recording it imports rather than duplicating. | `close_out_leaf` | mcp/tests/checkpoint_landing_test_support.py:66-101 |
-| The integration lane row the fail-closed manifest requires. | "mcp/tests/test_lifecycle_playthrough_end_to_end.py" | mcp/tests/test-evidence-lanes.toml:157-157 |
-| The two shared-support consumer edges this module adds to the lifecycle catalog, one in each artifact block. | "mcp/tests/closeout_input_test_support.py"; "mcp/tests/curator_coherence_test_support.py" | mcp/tests/evidence-lifecycle.toml:283-283; mcp/tests/evidence-lifecycle.toml:363-363 |
-| The integration-case budget this module's membership is accounted against. | `integration_case_budget` | pyproject.toml:149-150 |
+- The ref snapshot the "publishes nothing" beat is measured with. [1]
+- The one-class, one-case fixture: one real temporary Git world per case, master-b's canonical series contract, external memory. [2]
+- The six public drivers the run is expressed in, each a registered tool call. [3]
+- The ordered run and the eight beats, including step 8 — a leaf commanded after the checkpoint landing still starts on a new base. [4]
 
-## Cross-Repo References
+- The deleted child-admission seal this module is the regression proof for: its module and call sites are gone, and masters are no longer locked by their own landing. The stop the module plays is `pause_result`, whose already-stopped branch answers an unselected master. [5]
+
+
+- The public tools the master-level beats drive. [6]
+
+
+- The one eligibility decision the checkpoint preview and apply both read, and the `checkpointed` cell this module asserts after the landing. [7]
+
+
+- The shared world fixture and Git helper this module composes instead of re-implementing. [8]
+
+
+- The leaf closeout recording it imports rather than duplicating. [9]
+
+
+
+
+
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support.
+
+
+
+
+
+- The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [12]
+
+
+> Retained earlier citation wording: - The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py"
+
+
+
+
+
+
+
+
+- The integration-case budget this module's membership is accounted against.  Anchor: `integration_case_budget` [15]
+
+
+### Cross-Repo References
 
 These are contract, ref and ledger assertions against repositories created in a temporary directory
 by the module's own fixture; no sibling repository or external system participates.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No meaningful cross-repo references found. | N/A | N/A |
+No meaningful cross-repo references found.
 
-## Update History
 
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (drift re-verification): corrected three numbering
-  claims in the body — the class and case spans are `:62-173` and `:117-173`, the lane row is 157,
-  and this module's evidence-lifecycle consumer rows are `:318` and `:398` inside the blocks
-  declared at `:282-341` / `:362-421`. Verification metadata remains closeout-owned.
-- 2026-09-14T20:00+02:00 — 260913-LCA-L12 curator (provenance repair): the gate could not compare
-  this claim with its verification provenance because one or more of its anchors resolved more than
-  once at the verification commit, so no historical location was unique. Repaired the citation, not
-  the claim: each anchor that named a construct by bare name now names its exact declaration text,
-  which resolves once in the code tree, and any range that had drifted off its construct was re-read
-  at the declaration. The claim wording is unchanged, and the construct each range covers is the one
-  the claim is about. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (frozen-tree re-read): the code worktree is frozen
-  and this module declares its checkpoint driver as `_checkpoint` again (line 92), the shape the row
-  names. I had changed the anchor to `checkpoint` during the in-flight window, when an intermediate
-  state spelled it without the underscore; that change is reverted and the row reads `_status`;
-  `_integrate`; `_checkpoint`; `_pause`; `_attach`; `_reload` with the range 92-98 confirmed at the
-  declaration. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (flag resolved): the code worktree is frozen, so
-  the earlier flag is now measured rather than conditional. `mcp/tests/evidence-lifecycle.toml`
-  carries the inserted `checkpoint_landing_test_support.py` artifact block at `:342-361`, which
-  leaves `path = "mcp/tests/curator_coherence_test_support.py"` at `:363` — the position this row
-  already cites — and `path = "mcp/tests/closeout_input_test_support.py"` at `:283`. The pair
-  `283-283` / `363-363` is confirmed against the frozen tree, and the flag above stands as the
-  record of the interim state it described. Verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (drift re-verification): this row cites the
-  curator-coherence artifact path at `mcp/tests/evidence-lifecycle.toml:363`, which is its position
-  in the current working tree, where the in-flight `checkpoint_landing_test_support.py` artifact
-  block sits above it. The committed HEAD still carries that path at `:343`; the two forms differ
-  only by that uncommitted insertion, so the citation is correct for the tree this leaf is being
-  curated against and must be re-measured if the insertion does not land. Flagged rather than
-  silently chosen; verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (reopened-claim judgement): the checker reopened
-  this claim because the module did not exist at the recorded verification commit. Re-read the
-  module claim against the current card and source: the test file exists, its lane row is
-  registered, and the claim that it is the ordered lifecycle playthrough for the seal-removal change
-  set still holds. Retained; verification metadata remains closeout-owned.
-- 2026-09-14T19:00+02:00 — 260913-LCA-L12 curator (citation pass): re-derived the source ranges of 3
-  claim(s) whose anchor no longer sat in its cited range and normalised 4 further range(s) in this
-  card from their anchors against the frozen source snapshot (`agents-remember memory-citations
-  --fix --document`, snapshot 188b8ecd). 1 claim(s) were declined as ambiguous or not the subject
-  and were left for a reading curator. No claim wording changed; every rewritten range was read back
-  at its current position. Verification metadata remains closeout-owned.
-- 2026-09-13T20:42+02:00 — Created by the curator pass for the uncommitted child-admission-seal
-  removal / already-vacant change set on `ar/260831_lifecycle-owned-completion-relay`. Documents the
-  module as the ordered lifecycle playthrough and the regression proof for the deleted
-  `worktrees/atomic_series_seal.py`: the eight beats and their assertions, the public-driver-only
-  discipline for the master-level steps, the module docstring's stated exception for leaf start and
-  closeout, the ref-snapshot measurement of "publishes nothing", the support composition
-  (`QueueFixture` + `close_out_leaf` + `git`, no new support module), the integration lane row 153 and
-  the two evidence-lifecycle consumer edges (rows 316 and 372). Verification metadata is pinned to the
-  branch's recorded verified baseline
-  (`9c8a7a42a3d761b13c462874c7b312313a11c0ae`, the ledger's `lastVerifiedCodeCommit`) because the code
-  this card describes is uncommitted; the stamp remains closeout-owned and no acceptance claim is made.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [10]
+
+
+- The lifecycle catalog lists this suite under checkpoint-landing and curator-coherence shared support. 
+
+
+- The integration lane row the fail-closed manifest requires. Source caption: "mcp/tests/test_lifecycle_playthrough_end_to_end.py" [13]
+
+
+
+- The lifecycle catalog names this suite among the consumers of the checkpoint-landing and curator-coherence shared-support artifacts. [11]
+
+- Retired at the fifth freeze d59c3493: mcp/tests/evidence-lifecycle.toml:353-358 - the region it cited is not in the file at the candidate and no re-point was possible; it was removed in commit c861abfeff33c9ef8f1ca066604c8f971b613361; mcp/tests/evidence-lifecycle.toml:386-391 - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one; mcp/tests/evidence-lifecycle.toml:1034-1034 - the bytes it recorded now occur 93 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.

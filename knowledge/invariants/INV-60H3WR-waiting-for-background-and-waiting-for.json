@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "The line recognizer and the remembered declaration are in two files, so one statement keeps every harness's seat treated alike."
+  },
+  "applicability": "Declarations of helper and background waits from any seat.",
+  "conditions": [
+    "The seat ends its turn with either declaration line."
+  ],
+  "exclusions": [
+    "The ACP progress check, which keeps its own behaviour."
+  ],
+  "id": "INV-60H3WR",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "plugin tests; scratch-host proof partD/step-log.md (harness wake at 12:14:06, wait ended 12:14:09)"
+      ],
+      "path": "l60-plan4"
+    },
+    "handoffEntry": "MIK-R60@v9.8",
+    "leaf": "260928-MIK-L60",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "`WAITING FOR BACKGROUND:` and `WAITING FOR SUBAGENTS:` are accepted from any seat (Claude, Codex, ACP or not); a harness wake is the seat's own continuation and the wait ends at its next undeclared end; MIK-R216's ACP progress check stays as built.",
+  "status": "proposed",
+  "supersedes": []
+}

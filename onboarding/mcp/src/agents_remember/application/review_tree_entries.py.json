@@ -1,0 +1,147 @@
+{
+  "path": "mcp/src/agents_remember/application/review_tree_entries.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+        "content": "sha256:f84c2e7b3c2e890204d0da426f1263aa184ecc21ce906b8d56651948ac01a392",
+        "locator": {
+          "kind": "symbol",
+          "name": "_unavailable"
+        }
+      },
+      "id": "RLZ-3REGQ9",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It preserves the named tree and typed failure reason while returning no invented values.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+        "content": "sha256:5e3532464cc4f947b0e42f557d45da101ff16bbf8516158341331cfe8e427324",
+        "locator": {
+          "kind": "symbol",
+          "name": "_after_side"
+        }
+      },
+      "id": "RLZ-5TP6PX",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It opens exactly the after knowledge database once for both entry enumeration and memory facts.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+        "content": "sha256:95f542909c88f32a55a0df6f4c846272d0670efa2fb5c428d516ada325b63ed3",
+        "locator": {
+          "kind": "symbol",
+          "name": "_memory_values"
+        }
+      },
+      "id": "RLZ-KCYF0G",
+      "invariant": "INV-8F35XR",
+      "origin": {
+        "handoffEntry": "RP04",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "It asks the four owner index queries at the located path and invariant and caches repeated queries within the read.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "12": {
+      "note": "The focused result includes entries and explicit after-memory state from one index opening.\n\nAnchor: \"class CardEntries:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:90eab7e21bbfe1062de95e0db4a7ad7f185f6c5a2bb060cdbd8e2fc6d0965368",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 98
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Memory measurements share the after index and fail independently with a bounded unavailable reason.\n\nAnchor: \"def _unreadable(knowledge: TreeKnowledge) -> str:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:535bae96df6290a9d91611861f72947a7a865cafba5dffc93d08c89b135ca4e0",
+            "locator": {
+              "end": 316,
+              "kind": "line_range",
+              "start": 275
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Each card preserves own-side authored/currentness values, carries the locator symbol and derives change conservatively.\n\nAnchor: \"def _change(before: ReviewTreeEntrySide, after: ReviewTreeEntrySide) -> ReviewEntryChange:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:8b8c26c416e2fd2b027ed9a616ec75fcfbafb0abd6b16f45e234dbed4ddf7df1",
+            "locator": {
+              "end": 400,
+              "kind": "line_range",
+              "start": 394
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The observation-key cache stores answers only; unsupported locators and failed resolution keep named outcomes.\n\nAnchor: \"def _resolve(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:2ef3adcdd6aaa1205d161ded4d2a7407b49691921c0450a330f7052e7451c18d",
+            "locator": {
+              "end": 547,
+              "kind": "line_range",
+              "start": 510
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The placement memo is bounded at 8192 entries.\n\nAnchor: \"__all__ = [\"PLACEMENTS\", \"CardEntries\", \"tree_entries\"]\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "86cb580f9a8694354d61564b316e02c78fa2dc0d",
+            "content": "sha256:957f4f7778bf2c1eaadfd9dc0a75ad24b8ab19b0e155c9663b2b13c8e266bd00",
+            "locator": {
+              "end": 84,
+              "kind": "line_range",
+              "start": 82
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

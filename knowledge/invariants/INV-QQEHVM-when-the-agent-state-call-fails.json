@@ -1,0 +1,31 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test"
+    ],
+    "justification": "Preserving saved receipt on failed reads prevents temporary transport failure erasing lifecycle facts or permitting duplicate launch."
+  },
+  "applicability": "Explicit execution refresh after failed or unreadable agent-state.",
+  "conditions": [],
+  "exclusions": [
+    "Unknown launch outcomes are written by launch execution, not refresh."
+  ],
+  "id": "INV-QQEHVM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "StatusTableTests::test_row_01_a_host_that_cannot_be_reached_leaves_the_receipt_as_it_is; l7-run/evidence/sbx-04-daemon-stopped.txt; l7-review/evidence/rv-04-daemon-stopped.txt; l7-verify/evidence/vf-05-f1-other-failures.txt"
+      ],
+      "path": "notes/curation/261005-MIK-PNT-curator-handoff.json"
+    },
+    "handoffEntry": "PNT-R07@v1 §1 row 1 / A6 / F2",
+    "leaf": "260928-MIK-L90",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "When the `agent-state` call fails for any reason, or its answer cannot be read, the receipt file is not written at all and the answer is the saved public execution plus `hostUnreachable: true` and `hostUnreachableReason`; no refresh ever writes the status `unknown`.",
+  "status": "proposed",
+  "supersedes": []
+}

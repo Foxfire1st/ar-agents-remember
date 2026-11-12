@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/ReviewChangePage.test.tsx",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Hook scheduling controls use real comparison operands: an already open change page gains only same-comparison worklist, never another comparison answer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7a6ae247693f7924ae9939f166e2798494bddd10",
+            "content": "sha256:8db617500ad4fc75c589f62e69cad9934ef8dcf96a2b7c5bf5efbfc2b98c365e",
+            "locator": {
+              "end": 34,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

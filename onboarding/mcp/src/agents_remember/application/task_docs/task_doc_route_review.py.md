@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/application/task_docs/task_doc_route_review.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/application/task_docs/task_doc_route_review.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-08T16:45:00+02:00 |
-| lastVerifiedCommitHash | `3b552f5a215648274dc5e6e4d5f0a01c2ee80be2` |
-| lastVerifiedCommitDate | 2026-09-12T01:54:48+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [application overview](overview.md)
@@ -30,23 +20,16 @@ selected_path)`) into `build_route_review`, so the stamped review binds the cano
 
 ## Code Commentary
 
+### Settings and record-only seams
+
+`review_settings_limit` loads `orchestration.loops.defaults.maxRounds` afresh and translates a settings refusal to `review-settings-unreadable`. `_begin_task_review_bound` passes the selected number to the transition. `candidate_root_for_review` selects the contract memory worktree or configured memory root for memory reviews; code/default still prefers an existing leaf code worktree and otherwise uses the configured repository root; unresolved identity cannot admit a same-round result. Generic and route recorders pass both the settings limit and authority-resolved identity. `_state_payload` takes `candidateTree` from the route builder, not from caller route evidence.
+
+
 ### Logic
 
-`TaskDocCall(dry_run, branch_addressed)` are call-level knobs that are not part of the edit;
-`DEFAULT_TASK_DOC_CALL` is the ordinary call (real mutation, worktree-contract binding).
-`_enforce_branch_addressed_policy` refuses a `branch_addressed` call the policy does not sanction:
-the flag is defined only for `record_route_review` and requires `config.direct_execution_enabled`
-(policy-gated, L16-R6).
+`TaskDocCall(dry_run, branch_addressed)` are call-level knobs, not a task edit. Ordinary record_route_review uses the exact leaf enclosure. Branch-addressed review opts in for the exact canonical task_name/slug subTask, requires its current readable external grant, and uses the exact task-root series contract. Missing/unreadable authority names that leaf and the grant givers, never a settings switch. Review evidence still binds the selected document intent and the exact contract mode; create/replace cannot author it. A grant does not waive atomic-child review policy.
 
-`_RouteReviewBinding` captures how a route-review call binds its leaf: a worktree contract
-(`contract`, `task_root`, `selected_path`) plus the `branch_addressed` opt-in. The binding form
-`_record_route_review_bound` refuses a master doc, requires a review object, proves the binding via
-`_require_route_review_binding`, then builds the stamped `RouteReviewRecord` through
-`build_route_review(contract, ResolvedTaskDocument(ref=document_ref(contract, selected_path),
-path=selected_path, document=doc), payload, branch_addressed=...)` (line 156-163) and re-validates
-the whole document. The legacy positional `_record_route_review` (line 120-132) preserves the
-pre-wave-2 call shape and its error dialect (master -> "record_route_review is valid only for a leaf
-task document"; no contract -> "requires the leaf worktree contract").
+`_RouteReviewBinding` captures the contract, task root, exact selected path and branch-addressed opt-in. `_record_route_review_bound` requires a review object and refuses memory kind: memory publication uses record_review with reviewKind=memory. For a master it requires the canonical series/task.json binding and calls `build_master_route_review`; for a leaf it enforces exact leaf or sanctioned branch-addressed binding, rejects atomic-child route review, and calls `build_route_review` with the exact `ResolvedTaskDocument`. Both branches pass the plane-stamped route candidate and independently resolved candidate identity into the shared fixed-list transition, then revalidate the whole document. The legacy positional `_record_route_review` preserves the call shape and delegates to the same binding form.
 
 `_require_route_review_binding` is the L16-R9 error-dialect owner: a missing binding names the
 recovery ("re-stamp the series contract (series-contract.md) or use branch_addressed=true for
@@ -67,7 +50,7 @@ dialect.
 - `branch_addressed` is exact per contract kind: a leaf contract with `branch_addressed=true`
   refuses ("requires the task-root series contract") and a series contract without it refuses
   ("requires the leaf worktree contract... use branch_addressed=true"); no silent cross-mode.
-- Policy gate (`direct_execution_enabled`) and per-call opt-in are both enforced.
+- Live canonical-leaf grant and per-call branch opt-in are both enforced; an open direct sibling refuses.
 - Route-review evidence can only be stamped through this machinery; `create`/`replace` cannot
   author or change it.
 - A recorded review always binds the current canonical task intent of the exact selected leaf
@@ -78,24 +61,52 @@ dialect.
 
 None recorded.
 
-## Docs References
+## Current Contract
+
+Explicit reviewKind=memory selects the independent memory candidate: contract.memory_worktree when present, otherwise the configured memory root. Default/code still selects an existing leaf code worktree or repository root. `candidate_identity_for_review` validates the lane before resolving its actual byte identity. `with_review_lane_result` retains present memory state and labels review mutations, with memory-specific updated phrases. Route evidence stays code-only: memory results use record_review and are refused by record_route_review before route stamping. Generic create cannot seed memoryReviewState, and replace cannot change or erase it. Existing branch grants, exact task binding and route/intent authority remain separate.
+
+
+The governing workflow opens an independent memory review after CODE PASS on the same task using begin_review/record_review with reviewKind=memory. It has its own immutable baseline and shrinking IDs, under the same settings limit and extra-round approval rule, and never resets code reviewState. The signed rollout applies only to memory reviews begun after L88 lands; already-underway reviews (L168, L56, L57, L59) finish with their sealed-report workflow, with no migration/backfill. This describes the candidate contract, not a claim that the serving build already supports it.
+
+This account is bound to the candidate source, not a claim of a running serving build or a fresh execution/acceptance verdict. Existing historical accounts remain historical.
+
+## Evidence
+
+
+- Worker/Curator typed review census, record-only exclusion and unknown history. [10]
+- Reason admission, threshold and differing-harness/model inheritance boundary. [11]
+- Record-only memory identity comes from memory authority, never the sibling code root. [12]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [13]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [14]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [15]
+- File-local implementation of the stated contract; caller-owned effects and governing workflow are separate evidence. [16]
+
+### Docs References
 
 No configured Domain Documentation source applies.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Call-level knobs and the branch-addressed policy gate. | `TaskDocCall`; `_enforce_branch_addressed_policy` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:36-45; mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:52-67 |
-| The binding form that records a review over the resolved candidate document and re-validates. | `_record_route_review_bound` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:124-168 |
-| The legacy positional recorder passing the resolved leaf document. | `_record_route_review` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:90-136 |
-| Exact-binding refusal with the L16-R9 recovery dialect. | `_require_route_review_binding` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:235-274 |
-| The route-review authority rule (create/replace cannot author or change evidence). | `_enforce_route_review_authority` | mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:293-312 |
-| The stamping owner it delegates to; now takes the resolved candidate document. | `build_route_review` | mcp/src/agents_remember/worktrees/route_review.py:292-347 |
-| The typed candidate ref derived from the selected path. | `document_ref` | mcp/src/agents_remember/worktrees/route_review.py:418-431 |
-| The facade that dispatches into this module. | `task_doc_tool` | mcp/src/agents_remember/application/task_docs/task_doc_tools.py:191-284 |
 
-## Cross-Repo References
+- Call-level knobs and the branch-addressed policy gate. [1]
+
+
+- The binding form that records a review over the resolved candidate document and re-validates. [2]
+
+- The legacy positional recorder passing the resolved leaf document. [3]
+- Exact-binding refusal with the L16-R9 recovery dialect. [4]
+
+- The route-review authority rule (create/replace cannot author or change evidence). [5]
+
+
+- The stamping owner it delegates to; now takes the resolved candidate document. [6]
+
+- The typed candidate ref derived from the selected path. [7]
+
+- The facade that dispatches into this module.
+
+
+### Cross-Repo References
 
 No meaningful cross-repository reference applies.
 
@@ -107,26 +118,7 @@ to normative task intent: the recorders now pass the exact `ResolvedTaskDocument
 missing/stale refuses. The application seam itself performs no review and owns no intent
 semantics. Part of the landed L25 candidate `99dc249b`.
 
-## Update History
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `build_route_review` repointed to mcp/src/agents_remember/worktrees/route_review.py:292-347. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `document_ref` repointed to mcp/src/agents_remember/worktrees/route_review.py:418-431. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `_record_route_review_bound` repointed to mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:124-168. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `_require_route_review_binding` repointed to mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:235-274. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `_enforce_route_review_authority` repointed to mcp/src/agents_remember/application/task_docs/task_doc_route_review.py:293-312. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `build_route_review` repointed to mcp/src/agents_remember/worktrees/route_review.py:294-349. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: `document_ref` repointed to mcp/src/agents_remember/worktrees/route_review.py:447-460. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-08T16:45:00+02:00 — CCR-L38 final preparation repair: repointed frozen-source citations after the final contract diagnostic; no behavioral prose change, no verification or acceptance claim.
 
-- 2026-09-03T12:30+02:00 — 260831-CCR memory curation pass for 99dc249bd507 (CCR-R02@v2/L25):
-  both recorders now build the exact `ResolvedTaskDocument` (`document_ref(contract,
-  selected_path)`) for `build_route_review`, so stamped reviews bind the canonical task-intent
-  identity; documented the intent-bound review invariant. Verified at code commit
-  99dc249bd507c20b09ece1169c2b1fa2af8e8c1b.
+- Branch review is canonical-leaf opt-in under the live grant, not a runtime setting. [9]
 
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair: source moved to `mcp/src/agents_remember/application/task_docs/task_doc_route_review.py` (new package route); the citation fixer repointed in-body references; import paths updated inside the module. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16: created for L16-R6/R9 — the route-review binding
-  machinery extracted from `task_doc_tools.py` with the branch-addressed series-contract mode,
-  the direct-execution policy gate, and the error dialect naming binding + recovery. Verified at
-  code commit a9d50e08.
+- The facade that dispatches into this module. Anchor: `task_doc_tool` [8]

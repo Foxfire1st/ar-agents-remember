@@ -1,48 +1,28 @@
 # mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `5920ea2b4bdd5d5ee969ae064ff9a8e1fc6b4060` |
-| lastVerifiedCommitDate | 2026-08-05T12:41:24+02:00|
-| governingOverview      | `../../../../../overview.md`               |
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## Purpose
 
-`inline.py` extracts inline onboarding blocks embedded in source files and
-classifies them by source digest. Inline onboarding reuses the same content model
-as sidecars but is verified through an embedded `sourceDigest`.
+`inline.py` extracts old inline onboarding blocks from supplied source text for retained conversion and missing-block reads. It does not enumerate sources, compute source digests or classify drift.
 
 ## Code Commentary
 
 ### Logic
 
-`line_bounds` and `expand_inline_bounds` grow the block to include the surrounding
-comment delimiter; `extract_inline_onboarding_block` parses metadata between the
-`@ar-onboarding` / `@ar-onboarding-end` markers; `compute_inline_source_digest`
-hashes the source with the block removed; `classify_inline_source` compares the
-recorded `sourceDigest` to the computed digest; `discover_inline_onboarding_sources`
-finds inline-eligible sources via storage resolution.
+`line_bounds` locates the enclosing line. `expand_inline_bounds` includes an immediately preceding recognized comment opener and matching following closer, plus the final newline when present. `extract_inline_onboarding_block` returns `None` for absent/reversed markers; otherwise it retains the exact expanded raw text and parses colon-separated metadata while skipping blank, marker and comment-delimiter lines through kernel scalar cleaning.
 
 ### Invariants And Boundaries
 
-- The digest is computed over the source **with the block removed**, so editing
-  the block contents does not register as drift.
-- Non-UTF-8 sources are reported as unsupported rather than parsed.
-- Reports drift only.
+- Parsing operates on text and performs no source-digest/currentness verdict.
+- Non-UTF-8 source handling belongs to filesystem callers such as missing-onboarding; this module does not read or decode files.
+- Inline raw block bytes, marker order and delimiter expansion remain the extraction contract.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Inline source enumeration reads repo files through `git_ops.list_repo_sources`. | `list_repo_sources` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:41-45 |
-| Inline block parsing is owned here; CLI behavior is separate and no deleted-suite pass is asserted. | `extract_inline_onboarding_block` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/inline.py:61-82 |
+### Repo-Internal References
 
-## Update History
 
-- 2026-08-03T04:00:52+02:00 — 260731-EFA-L6 W3-B06 curator: curated 4 citation findings for inline source enumeration and drift-test coverage.
-
-- 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
+- Inline block parsing is owned here; CLI behavior is separate and no deleted-suite pass is asserted. [2]

@@ -1,135 +1,95 @@
 # mcp/src/agents_remember/kernel/coordination_context/resolver.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/kernel/coordination_context/resolver.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-08-22T10:39+02:00 |
-| lastVerifiedCommitHash | `eb7ea60ab9919f009fef58f81afe5861aa1709da`
-| lastVerifiedCommitDate | 2026-08-22T11:44:33+02:00|
-| governingOverview      | `overview.md`                              |
-
 ## Governing Overview
 
 [coordination_context overview](overview.md)
 
 ## Purpose
 
-`resolver.py` owns `c-08-ar-coordination-context-resolver` skill coordination context detection and assembly.
+Detects which memory root a code repository uses and assembles the `CoordinationContext`: roots, settings,
+storage and path rules, cross-repository settings, and the facts of a worktree contract when the request
+selects one. The resolver reads; it initializes no memory, writes no file and moves no branch.
 
 ## Code Commentary
 
-### Logic
+### Selection
 
-The module resolves the code repository, chooses internal or external memory,
-parses settings, loads optional worktree contract facts, computes effective
-task/docs/system roots, resolves cross-repo settings, and returns one
-`CoordinationContext`. The effective memory root is the contract's
-`memory_worktree` when present and otherwise the resolved `memory_root`; it is
-not influenced by `memory_mode`.
+`detect_coordination_selection(name, code_root, requested_topology, coordination_root_hint, settings_path)`
+returns a `CoordinationSelection` (topology, coordination root, memory root, settings path).
 
-**The public signature (changed in 260731-EFA-L2):**
+1. `_selection_roots` computes the coordination root, the external root
+   `<coordination root>/memory-repos/ar-<name>` and the two paths of the removed repository-sidecar layout.
+2. A requested topology is narrowed first (`require_supported_topology`), so a request for `internal` is
+   refused by name before any root is inspected.
+3. An explicit `settings_path` selects through `memory_roots_from_settings`; a memory root that does not
+   exist raises `MissingMemoryError`.
+4. Without one, an existing `<code root>/ar-memory` is refused as the removed mode, naming that path.
+5. A requested `external` topology requires the external root. Without a request the external root is
+   selected when it exists. In every other case `MissingMemoryError` names the coordination root and the
+   external root.
 
-```python
-resolve_coordination_context(
-    code_repository_name=None, workspace_root=None, code_repository_root=None,
-    *, hints: CoordinationHints | None = None, selector: EnclosureSelector | None = None,
-) -> CoordinationContext
-```
+The only topology is `external`.
 
-The eight former positional/keyword arguments (`requested_topology`, `coordination_root`,
-`settings_path`, `onboarding_root`, `contract_path`, `task_name`, `parent_task`, `leaf_id`,
-`worktree_name`) now live in the two frozen bundles defined in `models.py`. Both default to
-`None` and are replaced by empty instances, so a bare `resolve_coordination_context("repo")` still
-works. **`hints.onboarding_root is not None` is still the branch** that selects
-`_context_from_onboarding_root` over `_context_from_selection`.
+### Context
 
-Every private helper was re-signed to match: `_resolve_code_repository` now returns a typed
-`CodeRepository` instead of a `dict[str, Path | str]` (so the `Path(repo["root"])` /
-`str(repo["name"])` casts at each read are gone); `_context_from_onboarding_root(repo, hints,
-onboarding_root, selector)` and `_context_from_selection(repo, hints, selector)` take the bundles;
-and `build_coordination_context(repo, *, roots: CoordinationRoots, storage, cross_repo,
-selector=None)` takes the resolved roots as one object. `workspace_root` is no longer a separate
-parameter of `build_coordination_context` — `repo.workspace` is always the workspace passed to
-`resolve_cross_repo_settings`, where the old code fell back to `code_repository_root.parent`;
-`_resolve_code_repository` already applies exactly that fallback when constructing the
-`CodeRepository`, so the behaviour is preserved.
+`resolve_coordination_context(name, workspace_root, code_root, *, request)` requires
+`request.contract_reader`. `request.hints.onboarding_root` selects `_context_from_onboarding_root`;
+otherwise `_context_from_selection` runs the selection above. In that second path the coordination root
+comes from the selected contract when `selector.contract_path` exists and loads
+(`_contract_coordination_root`); a contract that is missing or fails to load leaves the hint in place.
 
-Contract resolution is unchanged in behaviour: `build_coordination_context` hands the whole
-`EnclosureSelector` to `resolve_contract`, which tries the explicit `contract_path`, then
-`find_task_contract` (task-based, leaf-enclosure-aware via `parent_task`/`leaf_id`), then
-`find_worktree_contract` as a fallback that resolves a contract from `worktree_name` alone
-(matched by worktree-group folder name) when no task name is known. Task-based resolution takes
-precedence; the `worktree_name` fallback is only consulted when it yields nothing.
+`build_coordination_context` resolves the contract through `resolve_contract` and fills the context. The
+task root, worktree group, memory mode, worktrees and ledger path come from the contract when there is one.
+The effective memory root is the contract's memory worktree when it has one. `system_root` and the docs
+root fall back to the coordination root's `system` and `docs` when the memory root has none. The onboarding
+root is always the contract memory worktree's `onboarding` child when that worktree is named, even when the child is absent. Without a contract memory worktree, the existing effective-child selection applies.
+Cross-repository settings are resolved against the workspace and the coordination root.
 
-### Invariants And Boundaries
+### What is recorded
 
-- The resolver is facts-only and performs no memory initialization, onboarding
-  writes, worktree mutation, or Git branch movement.
-- Explicit onboarding roots and contract paths are accepted as overrides only
-  for context resolution.
-- Callers pass `hints=` / `selector=` keyword-only. Adding a new resolution input means adding a
-  defaulted field to `CoordinationHints` or `EnclosureSelector`, not a new resolver parameter.
-- Missing memory roots raise `MissingMemoryError` instead of silently creating a
-  context.
+The selection path performs its path operations through the kernel's read recorder:
 
-## Docs References
+- the existence of the external root, of the removed `<code root>/ar-memory` root and of a memory root
+  implied by explicit settings: `observed_path_exists`, one `exists:` row each;
+- the resolution of an explicit settings path, and of a contract path before it is loaded:
+  `observed_resolve`, one `resolve:` row each;
+- the probe of the contract path in `_contract_coordination_root`: `observed_exists`.
 
-No external documentation is needed for this package-local resolver flow.
+Inside a recording block a computation that selected its memory root this way keeps these rows with its
+result, so the result is recomputed when a root appears, disappears or is retargeted, also when the new
+target holds settings with identical bytes. A probe that raises is recorded as `unreadable (...)` and the
+error is raised. Outside a recording block the resolver records nothing and its answers and errors are the
+same. The path through an onboarding-root hint and the fallbacks of `build_coordination_context`
+(`_system_root`, `_effective_child_root`, `_existing_path_settings`) use plain path calls and record
+nothing for those probes and resolutions. What they consume downstream is still recorded: the settings
+parsers record the settings they read, `build_coordination_context` resolves the contract through the
+recorded contract resolver, and the included-memory adjacent-repository path records the ledger it loads
+(or its absence or failure). The three pre-request context selections of the admitted B5 limitation —
+settings presence in `contract_context`, the code root in `_resolve_code_repository` and the task root in
+`resolve_terminal_leaf_doc` — remain outside the recording contract; this correction neither moves nor
+widens that exception.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is needed. | n/a | n/a |
+## Evidence
 
-## Repo-Internal References
+- The selection order: request, explicit settings, removed layout, external root, missing memory. [4]
+- An existing repository-sidecar root is refused by its path. [5]
+- The four roots a selection starts from. [6]
+- Explicit settings must imply an existing memory root. [7]
+- The public entry requires a contract reader and branches on the onboarding-root hint. [8]
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Data models and missing-memory errors are defined separately. | `CoordinationHints` | mcp/src/agents_remember/kernel/coordination_context/models.py:93-106 |
-| Settings parsing, contract loading (task-based + worktree-name fallback), and cross-repo resolution are delegated to focused modules. | `# mcp/src/agents_remember/kernel/coordination_context/ — Coordination Context Modules` | onboarding/mcp/src/agents_remember/kernel/coordination_context/overview.md:1-131 |
-| Context construction owns resolved task/worktree/memory roots and ledger selection. | `build_coordination_context` | mcp/src/agents_remember/kernel/coordination_context/resolver.py:272-328 |
 
-## Cross-Repo References
+- The coordination root of a selected contract, with the path probe and resolution recorded. [10]
 
-No cross-repository evidence is needed; cross-repo facts are read dynamically from configured adjacent repos.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No static cross-repo references are required. | n/a | n/a |
+- Root absence, appearance, retargeting and removal each recompute a kept view; a present removed root is refused by name. [12]
+- A root probe that raises is recorded as unreadable and nothing is kept. 
 
-## Series-Contract Notes
+- The fallback context reads the contract and records the bytes consumed. [14]
 
-Resolver assembly threads `selector.parent_task` and `selector.leaf_id` into contract and task-root selection, so user-facing calls can keep using task names while the source API resolves nested active roots. Independently, `selector.worktree_name` resolves a contract by its worktree-group folder when no task name is available; the two mechanisms coexist (task-based resolution wins, worktree-name is the fallback). All five live on one `EnclosureSelector`.
 
-## 260731-EFA-L9 Change
+- The onboarding gate's settings resolution records the absent memory settings and the contract it read, and no file it did not open. [15]
 
-The resolver now consumes a "ContractReaderPort" (cit:(["class ContractReaderPort"], mcp/src/agents_remember/kernel/coordination_context/models.py:108-108))
-so it never imports `worktrees` directly; the production binding is
-`worktrees/modules/contract_reader.py::WorktreeContractReader`, and reader failures degrade to a
-reported missing/unreadable contract instead of a crash.
+- Retired at the fifth freeze d59c3493: mcp/tests/test_reviewer_worklist_reads.py::_root_errors - the bytes it recorded now occur 2 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-## Update History
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1 candidate-11 curation rebind: refreshed formatter-moved source coordinates against accepted tree `4241908c`; where applicable, replaced a deleted coordinator anchor with the sole current owner. Verification metadata remains pinned until governed closeout.
-
-- 2026-08-08T14:38+02:00 — 260731-EFA-L9 curator: recorded the contract-reader port seam and
-  degradation behavior; the L9 change section above documents it. Verification metadata pinned
-  until closeout stamps the L9 code commit.
-- 2026-08-02T21:03:24+02:00 — 260731-EFA-L6 curator W2-B10: repaired 7 citation findings (3 reference rows); scoped recheck clean.
-
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  **public API change.** `resolve_coordination_context` now takes keyword-only
-  `hints: CoordinationHints` + `selector: EnclosureSelector` in place of nine individual
-  arguments; `build_coordination_context` takes `(repo: CodeRepository, *, roots:
-  CoordinationRoots, storage, cross_repo, selector=None)`; `_resolve_code_repository` returns a
-  typed `CodeRepository` rather than an untyped dict; `_context_from_onboarding_root` /
-  `_context_from_selection` take the bundles. `build_coordination_context` lost its separate
-  `workspace_root` parameter — `repo.workspace` already carries the same value including the
-  `code_repository_root.parent` fallback. Resolution order, the onboarding-root branch, contract
-  lookup precedence and the returned `CoordinationContext` are all unchanged. Verification
-  metadata pinned until closeout stamps the L2 commit.
-- 2026-06-28T18:55+02:00 — Main-carryover reconciliation (PR #95, code 84e95ad): `build_coordination_context` now also threads `worktree_name`, and `resolve_contract` gained a `find_worktree_contract` fallback (MCP 2.9.3) that resolves a contract from a worktree-group name when no task name is known. Reconciled with the series' `parent_task`/`leaf_id` task-based resolution — both coexist, task-based first.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: context resolution now plumbs `parent_task` and `leaf_id`, derives task roots with the active-task resolver, and can resolve leaf enclosure contracts without requiring users to pass filesystem paths. Verification metadata pinned until closeout stamps the code commit.
-- 2026-05-31T12:50+02:00 — `_effective_memory_root` dropped its unused `memory_mode` parameter and its dead `disabled`-mode branch (both returned `memory_root`); behaviour-preserving, and added a Logic note that the effective memory root is not influenced by `memory_mode` (1.0.0 review remediation).
-- 2026-05-25T20:57+02:00: Created by extracting coordination context selection and assembly from the monolithic resolver.
+- The selection path of the context.  Anchor: `_context_from_selection` [9]
+- The context is filled from roots, settings and the optional contract.  Anchor: `build_coordination_context` [11]

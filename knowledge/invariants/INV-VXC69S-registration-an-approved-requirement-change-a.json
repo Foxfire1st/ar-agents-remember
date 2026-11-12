@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A landing closed before both changed sides are published and verified reports a delivery the remote does not hold, and a private board hides the work the sprint claims to show; both misstate delivered work to the reader the board exists for."
+  },
+  "applicability": "Each refresh event of a published issue (registration, an approved requirement change, a start, a landing, an abandonment) and the Projects board the publication sets up.",
+  "conditions": [
+    "The event happens while the resolved memory carries this file."
+  ],
+  "exclusions": [
+    "AR's own transactions, which keep their owners and are not changed here.",
+    "A rejected or blocked change, which publishes nothing and keeps the last approved truth."
+  ],
+  "id": "INV-VXC69S",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Plan operations include both PR-gate rulesets, the landing-workflow controls, the public board title/visibility and the Status-grouped view; no rule-13 public text is in this plan."
+      ],
+      "path": "l194-curator-handoff.json"
+    },
+    "handoffEntry": "PUB-06-triggers-board-and-landing",
+    "leaf": "260928-MIK-L194",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Registration, an approved requirement change, a start, a landing and an abandonment refresh the named content; the board is public with a Status-grouped view; landing comments and pull-request prose follow the same public rules while the B/H/M and authority facts stay private.",
+  "status": "proposed",
+  "supersedes": []
+}

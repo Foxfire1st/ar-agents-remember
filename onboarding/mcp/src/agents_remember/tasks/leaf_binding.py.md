@@ -1,15 +1,5 @@
 # mcp/src/agents_remember/tasks/leaf_binding.py
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `mcp/src/agents_remember/tasks/leaf_binding.py` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-01T03:58+02:00 |
-| lastVerifiedCommitHash |  `47c8d102c2430d5337dbe207d4601efb4844fec0`|
-| lastVerifiedCommitDate |  2026-09-01T08:53:56+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
 [Tasks overview](overview.md)
@@ -46,23 +36,18 @@ wrong-directory, and source-mismatch cases.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external source is needed for this repository-owned identity contract.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Typed source and binding records carry one exact composite identity. | `CanonicalLeafBindingError`; `CanonicalLeafSource`; `CanonicalLeafBinding` | mcp/src/agents_remember/tasks/leaf_binding.py:14-43 |
-| Parent-row selection and source derivation reject ambiguous or non-canonical rows. | `require_leaf_parent_row`; `canonical_leaf_source` | mcp/src/agents_remember/tasks/leaf_binding.py:46-102 |
-| Full binding verifies parent, child, address, row, id, and stem together. | `require_canonical_leaf_binding` | mcp/src/agents_remember/tasks/leaf_binding.py:104-252 |
+- Typed source and binding records carry one exact composite identity. [1]
+- Parent-row selection and source derivation reject ambiguous or non-canonical rows. [2]
+- Full binding verifies parent, child, address, row, id, and stem together. [3]
 
-## Cross-Repo References
+### Cross-Repo References
 
 None.
-
-## Update History
-
-- 2026-09-01T03:58+02:00 — 260831-CCR-L01 Attempt 8: created the canonical composite leaf-binding
-  card. Verification remains closeout-owned.

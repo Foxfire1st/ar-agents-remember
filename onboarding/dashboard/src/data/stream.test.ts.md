@@ -1,22 +1,12 @@
 # dashboard/src/data/stream.test.ts
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `dashboard/src/data/stream.test.ts` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-08-02T01:42+02:00|
-| lastVerifiedCommitHash |  `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`|
-| lastVerifiedCommitDate |  2026-08-14T14:36:50+02:00|
-| governingOverview | `overview.md` |
-
 ## Governing Overview
 
-[data overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-Verify state-stream sleep/wake recovery and the open-deadline honesty boundary.
+Verify state-stream sleep/wake recovery, the open-deadline honesty boundary and delivery of named state deltas such as build currentness.
 
 ## Code Commentary
 
@@ -24,7 +14,12 @@ Verify state-stream sleep/wake recovery and the open-deadline honesty boundary.
 
 A controlled EventSource proves that an open channel quietly cycles after a sleep-sized clock jump,
 hidden tabs are exempt from watchdog cycling, ordinary transport errors still signal loss, and a replacement
-that neither opens nor errors is eventually marked signal-lost and retried.
+that neither opens nor errors is eventually marked signal-lost and retried. A `buildCurrentness` event fired on the open source reaches the store without opening a second source.
+
+### Ready Last-Feed Cases
+
+Two cases prove the ready-marker parsing the store hydration depends on: the marker's
+last feed reaches the opener, and an unreadable marker still opens the gate.
 
 ### Conventions
 
@@ -39,33 +34,32 @@ connection state.
 
 None.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation entries are configured in this memory worktree's source registry.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant external documentation is configured. | — | — |
+No relevant external documentation is configured.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Controlled state-stream cases cover wake, hidden, error, and never-open paths. | "connectState liveness (260723 sleep/wake)" | dashboard/src/data/stream.test.ts:36-120 |
-| Production state-stream transport owns the deadline. | `connectState` | dashboard/src/data/stream.ts:30-114 |
 
-## Cross-Repo References
+- Controlled state-stream cases cover wake, hidden, error, and never-open paths.
+
+
+- Production state-stream transport owns the deadline. [2]
+
+- Build currentness arrives on the existing state stream without a reconnect. [5]
+
+
+### Cross-Repo References
 
 No meaningful cross-repository references found.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The test covers dashboard-local state transport. | "connectState liveness (260723 sleep/wake)" | dashboard/src/data/stream.test.ts:36-120 |
 
-## Update History
+- The test covers dashboard-local state transport.
 
-- 2026-08-02T16:44:03+02:00 — W1-B07 curator: repaired 3 repository-reference citations (3/3 anchored and sourced; scoped citation check clean).
+The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements.
 
-- 2026-08-02T01:42+02:00 — No content impact: re-derived line range(s) that ended past the end of the file the row names (`memory_quality/style/citations`, `citation_range_out_of_bounds`). Each range was rewritten by reading the cited construct at its current location; no claim was changed to fit a range, and no range was interpolated. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-07-24T13:17:50Z — Created for state-stream half-open and open-deadline regression coverage.
-  Verification hash/date remain pinned to the pre-commit source stamp.
+- The moved-notice cases drive ControlledSource through the named review.explainer.moved event: a matching mounted subscriber receives the exact payload, another leaf does not, and no-work and cleared notices reach the same subscriber without reopening the page. These are event-wiring assertions over a stubbed EventSource, not live transport latency measurements. [4]

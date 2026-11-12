@@ -1,27 +1,12 @@
 # mcp/src/agents_remember/worktrees/start_progress.py
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `mcp/src/agents_remember/worktrees/start_progress.py` |
-| doc_type               | `file-level-onboarding`                          |
-| lastUpdated            | 2026-07-31T00:00+02:00                                 |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432`       |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../../../overview.md`                           |
-
 ## Governing Overview
 
 [worktrees overview](../../../overview.md)
 
 ## Purpose
 
-Writes and clears a small, transient "start progress" file for the pre-contract window of
-`worktree_start` (slice 5e, §5.4). A start can block on external memory, providers, or a stale
-base *before* a `contract.md` is written, leaving the Engine Room's enclosure surface (which reads
-contracts) blind to that gated start. This module records each blocked early return and clears it
-once the contract supersedes it, so the enclosure-centered Engine Room process map can show a start
-that is stuck before it ever produces a contract.
+Writes and clears a small, transient "start progress" file for the pre-contract window of `worktree_start` (slice 5e, §5.4). External-memory or stale-base blocks can precede the leaf enclosure contract, so progress supplies the Engine Room with admitted pre-contract facts until the contract supersedes them. This module publishes no source-lineage-blocked beat. Provider blocking is a retired case: `provider-blocked` is explicitly classified as obsolete progress, not a current provider setup gate.
 
 ## Code Commentary
 
@@ -54,6 +39,8 @@ unlinks the file with `missing_ok=True`, also swallowing `OSError`. cit:([`read_
 parses one file by path, returning `None` on `OSError`/`JSONDecodeError` or when the payload is not
 a dict carrying the exact `START_PROGRESS_SCHEMA`.
 
+`RETIRED_START_PHASES` contains `provider-blocked`; `is_retired_start_progress(payload)` tests that phase without adding a new active start state. `read_start_progress` remains the schema-gated file parser; the separate retired-phase predicate lets its consumers reject obsolete provider progress.
+
 ### Invariants And Boundaries
 
 - Lives in the worktrees layer so `start.py` writes and `observer.snapshots` reads it without
@@ -65,30 +52,37 @@ a dict carrying the exact `START_PROGRESS_SCHEMA`.
 - The file is transient: it exists only while a start is pre-contract and is cleared once the
   contract lands.
 
-## Repo-Internal References
+`write_start_progress` returns immediately for `beat.phase == "source-lineage-blocked"`, before payload construction or directory/file publication. Its existing best-effort writes apply only after that admission boundary; clearing and schema-gated reads are unchanged.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Schema tag gating reads | `START_PROGRESS_SCHEMA` | mcp/src/agents_remember/worktrees/start_progress.py:23-23 |
-| Path layout under `temp/worktree-start/<repo>/<worktree>.json` | `start_progress_path` | mcp/src/agents_remember/worktrees/start_progress.py:62-63 |
-| Best-effort write that never raises | `write_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:66-95 |
-| `blockedReason` only emitted when present | `blockedReason` | mcp/src/agents_remember/worktrees/start_progress.py:89-89 |
-| Clear on contract supersession | `clear_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:98-103 |
-| Schema-gated read returning `None` on miss | `read_start_progress` | mcp/src/agents_remember/worktrees/start_progress.py:106-114 |
-| Layer placement avoids observer<->worktrees cycle | "observer<->worktrees cycle" | mcp/src/agents_remember/worktrees/start_progress.py:10-12 |
+## Evidence
+
+### Repo-Internal References
+
+- Schema tag gating reads [1]
+- Path layout under `temp/worktree-start/<repo>/<worktree>.json` [2]
+
+- Best-effort write that never raises [3]
+
+- `blockedReason` only emitted when present [4]
+- Clear on contract supersession [5]
+- Schema-gated read returning `None` on miss [6]
+- Layer placement avoids observer<->worktrees cycle [7]
 
 ## Series-Contract Notes
 
 Start-progress remains the transient pre-contract surface, but the durable endpoint it waits for is now the leaf `series-contract.md` enclosure file.
 
-## Update History
+- Lineage-refused start beats publish no transient progress artifact. [8]
 
-- 2026-08-04T18:34+02:00 — 260731-EFA-L6 S18-B14 curator: repaired 6 citation rows with exact anchors (`START_PROGRESS_SCHEMA`, `start_progress_path`, `write_start_progress`, `clear_start_progress`, `read_start_progress`, and the "observer<->worktrees cycle" literal) and ledger-verified ranges — including re-pointing the schema-gated read row from the write payload region (85-93) to `read_start_progress` (106-114); converted 5 garbled/stale prose line citations to cit form. Scoped citation recheck is green. Verification metadata remains pinned until closeout.
+- Provider-blocked is an obsolete pre-retirement phase, classified separately by is_retired_start_progress; no surviving producer writes that provider start path. [9]
 
-- 2026-07-31T00:00+02:00 — 260731-EFA-L2 (gate honesty, `PLR0913` armed with no exemptions):
-  `write_start_progress` was re-signed from thirteen keywords to `(coordination_root, enclosure:
-  StartingEnclosure, beat: StartBeat)`, and the two new frozen dataclasses were added. The written
-  JSON payload is byte-identical, so `observer.snapshots` and the Engine Room are unaffected.
-  Verification metadata pinned until closeout stamps the L2 commit.
-- 2026-06-24T06:35+02:00 - Series-contract leaf enclosure slice: the transient start-progress module prose now names leaf `series-contract.md` files as the durable dashboard anchor rather than task-root `contract.md`. Verification metadata pinned until closeout stamps the code commit.
-- 2026-06-15T19:35 — Created for slice 5e: slice 5e §5.4: transient durable progress for the pre-contract window of worktree_start (write/clear/read); lives in worktrees layer to avoid an observer<->worktrees cycle; every write best-effort. Verification metadata pinned until closeout stamps the 5e code commit.
+## Historical provider-blocked start
+
+These former current claims are retained as history, not as instructions or present implementation evidence.
+
+> Writes and clears a small, transient "start progress" file for the pre-contract window of
+> `worktree_start` (slice 5e, §5.4). A start can block on external memory, providers, or a stale
+> base *before* a `contract.md` is written, leaving the Engine Room's enclosure surface (which reads
+> contracts) blind to that gated start. This module records admitted pre-contract progress, but not a source-lineage-blocked beat, and clears it
+> once the contract supersedes it, so the enclosure-centered Engine Room process map can show a start
+> that is stuck before it ever produces a contract.

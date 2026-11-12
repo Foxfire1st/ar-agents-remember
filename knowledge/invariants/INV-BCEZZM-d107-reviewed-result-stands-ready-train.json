@@ -1,0 +1,35 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across operations/orientation.md (the serving-build home at 97-99 and the permission non-bypass sentence at 50), the pointers and rulings in operations/curation.md and operations/recovery.md, templates/curator-handoff-ingestion.md:53-60 (external-document reference shape) and reference/knowledge/serving-build.md; several files carry the obligation."
+  },
+  "applicability": "The six ruled sentences, each standing in exactly one place: review, recovery, coordination, curation (producer and origin-evidence), orientation.",
+  "conditions": [
+    "The selected serving build and clean main ruler stay inline in Curator orientation; the curation and recovery operations point to that section before any memory decision or write.",
+    "The common reviewed-result, ready-train, external-document provenance and permission non-bypass homes remain unchanged in meaning.",
+    "Only the separately admitted same-tool/input-class correct-write ladder qualifies normal tool-produced writes; its disclosure and retained checks remain mandatory."
+  ],
+  "exclusions": [
+    "Rulings owned by other leaves packets.",
+    "Installation, disabled guards, alternate/older serving producers, unrelated tool classes or any permission/validation/transaction bypass."
+  ],
+  "id": "INV-BCEZZM",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "sweep-evidence.json rule8_writeins; producer curation.md 84-90; origin-evidence curation.md 127-129 + handoff-list 330-334; permission orientation.md 15 in all start operations via required-input pointers; old database-era passages absent"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 8",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 4,
+  "schema": "ar-invariant/v1",
+  "statement": "Common D107, reviewed-result-stands, ready-train, external-sources and permission non-bypass rulings retain their governing homes and are delivered; the serving-build producer boundary is stated once, in Curator orientation, and the curation and recovery operations send the reader there before any memory decision or write.",
+  "status": "proposed",
+  "supersedes": []
+}

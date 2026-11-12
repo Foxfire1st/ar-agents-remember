@@ -1,0 +1,36 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "Prevents reusing a passed review result after candidate bytes or Git entry kind/target/executable representation changes, or interpreting failed reads as equality."
+  },
+  "applicability": "Same-round record-only publication through generic and route fixed-list review paths for the authority-selected candidate.",
+  "conditions": [
+    "The Reviewer has recorded candidate evidence; remaining findings only shrink.",
+    "The actual resolver uses successful HEAD-tree and tracked diff reads plus untracked entry representations selected without following links.",
+    "Failed required reads remain unproven and cannot establish unchanged equality."
+  ],
+  "exclusions": [
+    "Caller candidate strings are not independent authority evidence.",
+    "A different or unproven candidate requires begin_review.",
+    "Native representation tests are bounded construction evidence, not an exhaustive proof of every concurrent mutation or Git configuration."
+  ],
+  "id": "INV-4DNDW7",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "link-hunk-tests.json:16 native identity tests passed including three ruling cases and missing-target behavior; link-hunk-reading.md maps lstat/kind/readlink/exec/content construction to ruling77f3ae46."
+      ],
+      "path": "handoff-final-wave.json"
+    },
+    "handoffEntry": "L116-F01",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "rule5's same-round exception is admitted only on the actual byte-identical candidate previously reviewed; absence of candidate evidence is not proof of equality. The candidate guard must apply to all repeat-publication paths and preserve the sealed shrinking-only semantics.",
+  "status": "proposed",
+  "supersedes": []
+}

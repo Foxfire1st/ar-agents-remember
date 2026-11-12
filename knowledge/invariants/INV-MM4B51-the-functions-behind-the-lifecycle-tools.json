@@ -1,0 +1,33 @@
+{
+  "admission": {
+    "criteria": [
+      "prevents_costly_mistake"
+    ],
+    "justification": "A recovery notice pointing at a removed gate tool would strand an installation or reintroduce the old control plane."
+  },
+  "applicability": "Former session lifecycle/gate artifacts found in an installation after their owners are removed.",
+  "conditions": [
+    "No current product route decides an old stored gate.",
+    "Name leftover gate files and the explicit user-owned removal command."
+  ],
+  "exclusions": [
+    "Task and landing lifecycle contracts retain their separate current owners."
+  ],
+  "id": "INV-MM4B51",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_stored_gates.py; notes/reports/worker/a4868b83-d390-4b5e-9761-5097bcca689d/role-launch/260928-MIK-L113-worker-a4868b83-d390-4b5e-9761-5097bcca689d.md, section 3"
+      ],
+      "path": "new-contracts-writer-list-v2.json"
+    },
+    "handoffEntry": "MIK-R113@v1 rule 7",
+    "leaf": "260928-MIK-L113",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The functions behind the lifecycle tools and the gate store are removed with the hooks that called them and with their place in the dashboard; no part of the product decides a stored gate any more, and where a gate log remains the product says so and names the command.",
+  "status": "accepted",
+  "supersedes": []
+}

@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The two guards plus their installation are three places, the cases prove the refusal and the header precedence, and an unguarded local dashboard is a cross-site write surface."
+  },
+  "applicability": "Every request the dashboard serves.",
+  "conditions": [
+    "The request names this dashboard's host and port, or comes from no browser page at all."
+  ],
+  "exclusions": [
+    "A browser request carrying neither Fetch Metadata nor Origin, which is a non-browser caller."
+  ],
+  "id": "INV-HDXPMA",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_canvas_serving.py::test_a_foreign_or_opaque_origin_cannot_write; ::test_the_write_guard_reads_fetch_metadata_before_the_origin_fallback"
+      ],
+      "path": "curation-list.json"
+    },
+    "handoffEntry": "MIK-R104-r15-request-guards",
+    "leaf": "260928-MIK-L104",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A state-changing dashboard request is refused before any route unless it comes from the dashboard's own page, and every request, reads included, answers only the dashboard's own host and port.",
+  "status": "proposed",
+  "supersedes": []
+}

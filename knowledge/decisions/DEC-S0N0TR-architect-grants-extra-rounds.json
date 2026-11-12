@@ -1,0 +1,49 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "D147 delegates that decision to the Architect while preserving recorded attribution and sealed findings."
+  },
+  "alternatives": [
+    {
+      "option": "Record Architect or developer approval; Manager asks the task Architect, who grants a useful concrete repair check or rules instead of another unchanged attempt.",
+      "reason": "D147 delegates that decision to the Architect while preserving recorded attribution and sealed findings.",
+      "status": "chosen"
+    },
+    {
+      "option": "Require only the developer to authorize every beyond-limit pass.",
+      "reason": "D147 delegates that decision to the Architect while preserving recorded attribution and sealed findings.",
+      "reconsider_when": "The developer withdraws the delegation or changes its bounds.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Future review-budget, approval and role-text changes must preserve this selected authority and the separate code/memory counts without reset."
+  ],
+  "context": "Beyond-budget reviews repeatedly returned to the developer even when a concrete sealed-list repair was ready.",
+  "decider": "Developer D147 (you can decide that now yourself to give additional review rounds as long as it makes sense), approved MIK-R116@v1 rule3.",
+  "id": "DEC-S0N0TR",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_review_state.py (approval shape, legacy readability); evidence-attempt3/focused-pytest.log"
+      ],
+      "path": "handoff-independent-wave.json"
+    },
+    "handoffEntry": "L116-W3-beyond-limit-approval",
+    "leaf": "260928-MIK-L116",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

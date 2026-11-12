@@ -1,0 +1,56 @@
+{
+  "path": "mcp/tests/test_paseo_bridge_agents.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Workspace, creation, message, get and archive commands against the real script and fake client.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "content": "sha256:88e4726b19c54c4c99242bdaeabad9e709b1447c41411ccd4e6b75d30eb3ce54",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_workspace_open_reuses_or_creates_through_the_public_client"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Feature discovery may precede a refusal, but refused features send no agent create or message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "content": "sha256:228b1cc3cf1f005098c942a50ca5ea775720284d5c8817a1bb1818145713e7ae",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_service_tier_is_native_creation_data_and_unsupported_is_rejected_before_create"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Keyed completed creation replay, pre-refresh current identity and selectively hidden live listing support the real-bridge archive tests.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3e9a4d12bf8633b9abb9436528e77bae366981e",
+            "content": "sha256:2b65b9c73e88e00e53428936bb9e7ab495e8532da493ba1346a982c61350d3e2",
+            "locator": {
+              "end": 166,
+              "kind": "line_range",
+              "start": 141
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

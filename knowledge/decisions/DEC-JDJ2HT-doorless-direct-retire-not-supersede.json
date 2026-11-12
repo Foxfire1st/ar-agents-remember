@@ -1,0 +1,81 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "Doorless supersede and adding a first door were explicitly weighed and rejected; later lifecycle work must not fabricate door authority to revive those controls."
+  },
+  "alternatives": [
+    {
+      "option": "Owner retire for audit, then a new request for changed code.",
+      "reason": "Retire changes only disposition, preserves audit evidence and needs no claimed door.",
+      "status": "chosen"
+    },
+    {
+      "option": "Build a doorless supersede and successor offer.",
+      "reason": "Supersede is a door operation; the direct record claims none.",
+      "reconsider_when": "A separately approved redesign gives direct operations a different, genuine supersession authority.",
+      "status": "rejected"
+    },
+    {
+      "option": "Create a first closeout door for direct landing.",
+      "reason": "It invents closeout authority contrary to request-admitted direct execution.",
+      "reconsider_when": "The direct-admission contract is explicitly redesigned to claim and own closeout doors.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "Direct supersede is neither offered nor admitted; its refusal names a new direct_landing request.",
+    "Readable earlier-shape door-bearing direct records offer no controls.",
+    "Changed requests may replace retired terminal generations; exact replays retain them and converted histories remain owner-scoped."
+  ],
+  "context": "Direct admission records a request without a claimed door; earlier controls assumed door authority that this record cannot possess.",
+  "decider": "Architect97e0320d under the Manager-accepted durable e55c0093 ruling for MIK-R143@v1.",
+  "id": "DEC-JDJ2HT",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-3N9432"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "blob": "9b7db9a4c0ef21b2436803c43282f3d23bd08417",
+        "content": "sha256:5bedb4d477e589a1f647965eef23bbd9f809962dd24cacb3bbb368e05b23f0e7",
+        "locator": {
+          "kind": "symbol",
+          "name": "direct_supersede_refusal"
+        },
+        "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+      }
+    },
+    {
+      "relation": "constrains",
+      "target": {
+        "id": "MIK-R143",
+        "packet": "requirements/MIK-R143-v1-a-completed-direct-landing-is-recognised-as-its-owners.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "notes/run3/L143-A-DIRECT-LANDING-IS-RETIRED-BY-ITS-OWNER-AND-NEVER-SUPERSEDED-BECAUSE-IT-HAS-NO-DOOR-RULING.json points1-8; replaces point2 only of ruling08236bba."
+      ],
+      "path": "knowledge-handoff-ea40194f.json"
+    },
+    "handoffEntry": "L143-retire-choice",
+    "leaf": "260928-MIK-L143",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

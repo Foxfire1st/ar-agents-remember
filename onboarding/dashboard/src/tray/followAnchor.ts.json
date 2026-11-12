@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/tray/followAnchor.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Keeps small fixed tray popups attached to their anchor.\n\nAnchor: \"export function useFollowAnchor(active: boolean, measure: () => void, observed: () => readonly (Element \\| null \\| undefined)[]): void {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0be9551cc08bff9738b7cb37ad7710c86121b9af",
+            "content": "sha256:a069f7339a10d70982c72b3c754c72730129323c66fa940cd2ec5a93ca1dab1b",
+            "locator": {
+              "end": 23,
+              "kind": "line_range",
+              "start": 11
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

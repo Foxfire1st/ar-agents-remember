@@ -1,0 +1,229 @@
+{
+  "path": "mcp/tests/test_task_document_body_lookup.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module protects bounded named-input body reads and corpus admission; its RF01 docstring names owning masters and explicit children, not a one-file-only closure.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:8ffee803f6bdd67a4251ed9f4de7abc75b132843b165156877b982558700e831",
+            "locator": {
+              "end": 6,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The lane registration. Source caption: \"mcp/tests/test_task_document_body_lookup.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:e482c45e3d110a00982634d3608a4d43b38463d26bd5f3a5a4a7a06ab59ea07a",
+            "locator": {
+              "end": 572,
+              "kind": "line_range",
+              "start": 572
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Reference body projection uses validated corpus documents and documents_by_ref without a lifecycle map.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:535b8ae1bafbcadcf608335bb012e15eb91d93e66f0035bd7000a1d8bb2cf986",
+            "locator": {
+              "kind": "symbol",
+              "name": "_corpus_wide_body"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The corpus fixture and its decoys, including the schema-less master the schema filter alone excludes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:4863ce9cde2ec96c8439f7ae4ee87549025c043435f3f474def99fe3780fa531",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 70
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Original fixture-specific serialized body comparison, sprint graph titles/fallback and absent-path refusal remain; RF01 separately asserts owner/listed-child schema admission by comparing dependency/graph fields with the corpus reader.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:9f467645df0be9a1ebf9f1330f77db5a1cfab010105dc4febf0bed641b3cf2a4",
+            "locator": {
+              "end": 160,
+              "kind": "line_range",
+              "start": 139
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:a6a576ef3a3e81645abfd56f3cfa8bcf5a20a525f935ac7030179be3e30ef59e",
+            "locator": {
+              "end": 317,
+              "kind": "line_range",
+              "start": 272
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The recorder counts listings and task JSON reads through all three reader modules; a separate counted-ready wrapper asserts one ready-tuple indexing pass per graph at two sizes and entry points.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:577184d3f1cf64cdd1f0aa8e0df4c29374a676435216f7da008a6f738e4dd238",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 169
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:23a307c26f627861deb9e2ff0b673dca347ba7ac48cbd7ca125b99fdfbfedb1a",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 317
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "At 4/40 unrelated tasks, the fixture asserts identical touched-file lists: leaf plus owner, master alone, or sprint plus graph-named candidates; leaf/master fixtures list no directories.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:f0bd94fb7fda89c9f0abe70d9fbabf9b63c5616e3c0770660ce90339a686011c",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 193
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The enumeration equals the earlier recursive glob, including its exclusions and symlink behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6524de15cb8e3481454eaa8e94d67a6e646fa201",
+            "content": "sha256:e4e7373a4db7d90ca804d5ca71f2dc4ad4f836df93ffe5d686418a483ba0799a",
+            "locator": {
+              "end": 264,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The production body read uses separate sprint graph-master and addressed ordinary owner/listed-child Order joins; newly read Order inputs are raw-schema-filtered before tolerant parsing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:4815eebdb684b29edb9b94d72b89244c3cbf387d070afc5782ba1f1fe6b49ad4",
+            "locator": {
+              "end": 171,
+              "kind": "line_range",
+              "start": 128
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:754f347fb7467347aca3d7b6ccdb8f097724a1e58ce211fafc700a2a60490854",
+            "locator": {
+              "end": 194,
+              "kind": "line_range",
+              "start": 174
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+            "content": "sha256:c001db207453a412253909b005914a7740033977baafa0a4ff9d71a6f63eafc8",
+            "locator": {
+              "end": 158,
+              "kind": "line_range",
+              "start": 124
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The bounded enumeration and the named-path probe under test.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ebd43acfbc3ada61f3802752cbe36506c5dbecb6",
+            "content": "sha256:c6b237de108b6ea7d4c34958fb206df82f5a72a176c8ec5ef95073f71101534a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_canonical_task_json_candidates"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_common.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

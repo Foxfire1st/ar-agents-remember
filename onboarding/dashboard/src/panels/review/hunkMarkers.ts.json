@@ -1,0 +1,58 @@
+{
+  "path": "dashboard/src/panels/review/hunkMarkers.ts",
+  "realizes": [],
+  "references": {
+    "15": {
+      "note": "hunkMarkers.ts current behavior at this source owner.\n\nAnchor: \"export function hunkMark(file: ReviewFileClassification, hunk: ReviewLaneHunk): HunkMark {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e591fedeacaa570334e4560fc5278ac91343add4",
+            "content": "sha256:a22b7148953b5a14819277d6254996ed17108e53d50566214dba2d985fb46c9b",
+            "locator": {
+              "end": 119,
+              "kind": "line_range",
+              "start": 104
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "hunkMarkers.ts current behavior at this source owner.\n\nAnchor: \"function addOccurrence(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e591fedeacaa570334e4560fc5278ac91343add4",
+            "content": "sha256:fcbd4d7c159ae77a41ec0e977de2b73a1cb87bebfc8c514a58ea3711b43b13f6",
+            "locator": {
+              "end": 185,
+              "kind": "line_range",
+              "start": 170
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "hunkMarkers.ts current behavior at this source owner.\n\nAnchor: \"export function markAnchor(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e591fedeacaa570334e4560fc5278ac91343add4",
+            "content": "sha256:1bddce5f9c00710167d40a899ef5b18e07bfb16629f8b3fd893ff778b1e449f8",
+            "locator": {
+              "end": 313,
+              "kind": "line_range",
+              "start": 300
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

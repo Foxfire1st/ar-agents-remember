@@ -1,0 +1,23 @@
+{
+  "path": "mcp/src/agents_remember/serving/series_preparation_events.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "offer_series_changes offers one batch without I/O and names overload once.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0fd381f31b99b9e266cac0d2fdaa9ca4f3cc5244",
+            "content": "sha256:664ad1ed6e90e65477c2e397083482127d0ce803db3542efc81fd783feecdd45",
+            "locator": {
+              "kind": "symbol",
+              "name": "offer_series_changes"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

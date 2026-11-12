@@ -1,0 +1,60 @@
+{
+  "path": "dashboard/src/panels/lifecycle-list/stepTitles.test.tsx",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "b68b1ad727052f3291e9e41d9d9a2d0c18cd6c38",
+        "content": "sha256:0ff2300cf714d74f14061714dfab994a4821d44276c841967b3f0eb483d5d05b",
+        "locator": {
+          "kind": "symbol",
+          "name": "leaves no native title on any ancestor of a step mark, and the row text keeps its hover"
+        }
+      },
+      "facet": "no ancestor of a step mark carries a native title and the row text keeps its hover",
+      "id": "PRF-T3KWD6",
+      "invariant": "INV-JW28W1",
+      "origin": {
+        "handoffEntry": "MIK-R175@v2",
+        "leaf": "260928-MIK-L102"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "No ancestor of a step mark carries a native title, and the row text keeps its hover.\n\nAnchor: the first case",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b68b1ad727052f3291e9e41d9d9a2d0c18cd6c38",
+            "content": "sha256:0ff2300cf714d74f14061714dfab994a4821d44276c841967b3f0eb483d5d05b",
+            "locator": {
+              "end": 66,
+              "kind": "line_range",
+              "start": 38
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The tooltip's id and status parts stay whole; only the title shrinks and wraps.\n\nAnchor: the second case",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b68b1ad727052f3291e9e41d9d9a2d0c18cd6c38",
+            "content": "sha256:5fd68f451dec1866064ecbcf2019346d7d7e593628f809344eb7ca35608c48c0",
+            "locator": {
+              "end": 75,
+              "kind": "line_range",
+              "start": 68
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

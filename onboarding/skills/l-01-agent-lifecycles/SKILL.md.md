@@ -1,63 +1,32 @@
 # skills/l-01-agent-lifecycles/SKILL.md
 
-| Field | Value |
-| --- | --- |
-| repository | agents-remember |
-| path | `skills/l-01-agent-lifecycles/SKILL.md` |
-| doc_type | `file-level-onboarding` |
-| lastUpdated | 2026-09-09T14:45+02:00|
-| lastVerifiedCommitHash | `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`|
-| lastVerifiedCommitDate | 2026-09-10T07:24:09+02:00|
-| governingOverview | `skills/l-01-agent-lifecycles/overview.md` |
-
 ## Governing Overview
 
-[l-01-agent-lifecycles overview](overview.md)
+[overview](overview.md)
 
 ## Purpose
 
-This is the canonical lifecycle router and shared doctrine for every agent role. It selects exactly
-one session path, defines the minimal frame every session may rely on, registers role-owned
-lifecycle files, and owns the common structural dispatch, authority, continuity, supervision, and
-three-party-loop contracts.
+This canonical router reference describes how a native role capsule is selected from an explicit supported role and one applicable operation. Besides the role and operation files, the capsule's first message carries the every-role digest and the handover facts; no other core file is loaded. Canonical task/workspace facts travel in the separate AR handover; the composition manifest owns routing metadata.
 
 ## Logic
 
-The router has three ordered conditions: a bound spawn role loads that role lifecycle; a fresh role
-brief loads the named role lifecycle; otherwise the session is the free-chat launcher. For
-ordinary role-shaped work, that launcher compiles `templates/architect-brief.md` and calls
-`dispatch_agent` once on the canonical sprint document. An explicit developer-declared task-seat
-takeover instead dispatches the named role on that role's canonical task document. Role seats bind to canonical task documents at the
-appropriate altitude plus role. A plane-hosted dispatching role supplies the child document, role,
-and complete brief through the same public request. Caller kind is derived only from the presence
-or absence of plane identity; ambient target-document authority never substitutes for a failed
-plane authorization. The control plane privately resolves/creates the occupant, establishes
-readiness, and exact-pins only the initial brief. A stale/unavailable source-lineage refusal routes
-through ordered contract-addressed sync; retained conflicts remain resumable through the advertised
-continuation, with escalation reserved for semantic ambiguity. Repeating the same dispatch after
-that recovery converges on the existing viable occupant or durable queued brief; a developer
-takeover never means manually replacing a live incumbent.
+The native launcher supports eight roles: Architect, Investigator, Orchestrator, Manager, Worker, Reviewer, Curator and Bootstrap. Missing, unsupported, inapplicable or conflicting role/operation/task bindings are reported rather than inferred. Projects is an execution location, not a repository identity. A manually selected taskless Architect asks only for missing outcome or registered repository details. An Investigator accepts a scoped concern of any kind from its actual parent's first message and asks that parent for missing concern/report scope; without a parent it uses the developer's request and own chat. Investigator may be selected at Projects, on a sprint, or on a sprint and master, never on a leaf. No synthetic repository, sprint, master, task or parent is created.
 
-Malformed hosted identity never falls into ambient/free-chat behavior: an unknown
-`AR_SPAWN_ROLE`, or a role environment without its plane-injected hosted-session identity, fails
-closed before any pasted brief is interpreted. Reviewer uses one role across leaf, master, and
-sprint documents; the dispatching manager, architect, or orchestrator stamps the exact structural
-parent on each generation so plan and super reviewers can share an address without sharing
-authority.
+Paseo hosts the role agents, keeps their sessions and shows their chats. AR tools come from the launching build’s bound `agents-remember-task` server; native role agents start/reach one another with `role_start` and `role_message`, retaining actual returned identities. A reply in the same turn reaches a sender only when that sender waits on its own call; otherwise the answer goes with `role_message`. With a parent named in `host.parent` a developer question goes to that parent, and only a parentless or unreachable-parent agent asks in its own chat; dashboard-started roles need no parent. An Architect first delegates coordination to one Manager for one master, or to one Orchestrator on the sprint when two or more masters are worked on at the same time; direct coordination is the developer’s exception, who may also ask for an Orchestrator above a single master.
 
-Continuity lives in task documents and durable artifacts rather than transcripts or a particular
-occupant. The agent-notifier relays mechanical facts; owners interpret them without seat-local
-watchers or an escalation ladder. Role files own the detailed loops and authority limits.
+After reconnect or compaction, restore the same role, operation, canonical task, agent IDs and report from the durable handover and recorded approvals. Reconcile an uncertain start with the same request ID. A finished turn, review, curation, semantic acceptance and paired-Git publication remain separate owning facts. Inside an assignment the seat organises its own work with its harness, including sub-agents; it answers for their work and alone performs boundary acts. A sub-agent holds no AR seat, starts no role and cannot supply independent review of its seat's own work; Curator authoring still uses one writer.
+
+The following requirement/attempt constraints remain related standing preservation context, owned by the applicable approved packet, role/review and task records. Their retention here does not make them core blocks delivered by this router.
 
 Requirement acceptance is upstream and revision-exact: approved requirements live in immutable,
 version-addressed canonical packets carrying their durable corpus ruling. Managers, workers, and
 reviewers refuse an absent, unapproved, or mismatched packet instead of reconstructing intent from
 task prose or accepting an aggregate completion claim.
 
-Requirement acceptance is an exact-set contract keyed by stable IDs. The owner gives the same
-applicable set to worker and reviewer. The worker supplies one delivery/verification evidence
-envelope per ID, while the reviewer independently inspects the cited artifacts and adjudicates
-each ID. Aggregate prose cannot close a requirement, and any rejection prevents an overall pass.
+Requirement acceptance is keyed by stable ID and version. The owner puts the leaf's one owned
+primary revision in the builder brief, with dependency and preservation context listed separately.
+The worker supplies one acceptance block for that revision, while the reviewer independently
+inspects the cited artifacts and adjudicates that exact manifestation. Aggregate prose cannot close a requirement, and any rejection prevents an overall pass.
 
 Semantic requirement versions, delivery attempts, and internal protocol events are separate.
 Semantic versions change only through explicit developer approval. The worker advances an attempt
@@ -69,8 +38,8 @@ Each worker attempt is an immutable lightweight requirement-specific record boun
 candidate and a content-addressed expanded-evidence anchor; it does not duplicate the complete
 master acceptance corpus or protocol log. The reviewer appends an independent record without
 modifying it. Rejection creates a linked successor at the next review handoff. Accepted attempts
-reopen only after independent regression proof plus owner-recorded bounded invalidation, or after a
-developer-approved semantic revision.
+stay closed; a requirement change needs a new version, durable developer approval and invalidation
+of affected acceptance.
 
 Detailed leaf records are authority. The master summary is rebuilt from them and exposes attempts,
 rejections, current state, and dominant open failure class only for observation; it cannot gate or
@@ -79,25 +48,25 @@ separate protocol events as delivery attempts.
 
 ## Conventions
 
-- `skills/l-01-agent-lifecycles/` is canonical. Package and harness trees are synchronized outputs.
-- One self-contained role file owns each role lifecycle; templates carry dispatch inputs, not
-  alternate doctrine.
-- Roles communicate through structural parent/child operations and durable artifacts.
-- Exact runtime ids, readiness correlations, inbox ids, lifecycle ids, and gate ids remain
-  control-plane details.
+- `skills/l-01-agent-lifecycles/` is canonical. The packaged runtime skill tree is its generated distribution output.
+- One self-contained role file owns each role lifecycle; templates carry dispatch inputs and
+  hand-off shapes, not alternate doctrine.
+- `templates/curator-handoff-list.md` is the one **producer output shape** among them: the
+  requirement-shaped items the builder and the reviewer hand directly to the curator, one
+  entry per item with its statement, kind, place, evidence and disposition. Producers emit it as
+  data; the curator fills the curator-side fields. It is a hand-off artifact rather than a
+  brief schema. The composition manifest registers the shared template; the router names that manifest as the routing metadata authority.
+- Native starts and peer messages use bound role tools and durable handovers; a developer question goes to the parent when one exists, and only a parentless or unreachable-parent agent asks in the own chat.
+- Preserve actual returned agent IDs and canonical task/workspace bindings. Never invent a parent, recipient or delivery outcome.
 
 ## Invariants And Boundaries
 
-- Exactly one routing condition wins for a session.
-- `(canonical task document, role)` is the stable seat address; replacement changes the occupant.
-- Agents never poll readiness, retain another seat's runtime address, or duplicate an initial brief.
-- `dispatch_agent` is the sole public spawn choice. Ambient launcher and plane-hosted authority are
-  disjoint modes of that one transaction, with no caller-mode field or fallback.
-- Invalid role environment is a refusal, never a fourth routing entry or free-chat fallback.
-- Reviewer parentage is task-altitude- and generation-specific; runtime occupant ids are not parent
-  authority.
-- Role-table `dispatch` and `tools` rows describe structural authority/capability, not settings
-  keys; only the documented launch knobs participate in settings overrides.
+- One explicit supported role and applicable operation selects the native capsule; missing or conflicting bindings are reported.
+- Apart from the every-role digest, no core file is loaded into the capsule; canonical task/workspace facts are separate handover data.
+- A first delegation to one coordinating agent is the default; direct coordination is the developer’s choice, and dashboard starts need no parent.
+- Native role starts/messages use the launching build’s task server and actual resolved identities.
+- Preserve the same task/role/request/report through uncertainty; no duplicate owner or alternate transport is created.
+
 - Durable artifacts, delegated authority, and human-only gates retain their owning altitudes.
 - The three-party loop separates builder work, independent review, curator coherence, and owner
   decision; verdicts are evidence rather than gate decisions.
@@ -106,120 +75,46 @@ separate protocol events as delivery attempts.
 - Worker/reviewer attempt records are append-only and bind one exact candidate; summaries never
   substitute for them or invalidate accepted work.
 
-
 ## CCR-R12@v5 Transaction Boundary
 
-Current lifecycle contract: workers run relevant targeted checks after changes and fixes and before handoff; curators update affected onboarding and run scoped checks with honest failed or not-run status. Closeout and integration then perform the authorized Git transaction, whose commit legs suppress automatic quality and test hooks while ordinary explicit Git hook policy outside the transaction remains unchanged. Full code quality, full tests, full memory quality, certification, and independent review run only after an explicit developer request. When review is requested, its sealed three-round monotonic finding-set rule remains in force.
+Current role duty remains targeted/scoped evidence with failed or unrun results visible, followed by the existing authorized paired Git transaction under its real contract. Requested independent review preserves the sealed finding set and counts rounds against the settings limit (`orchestration.loops.defaults.maxRounds`); a round beyond it needs Architect or developer approval, recorded by the Manager. The normal Curator authoring pass remains the standing full memory-quality/coherence exception; an explicitly report-only admission claims none of that normal pass complete. No finished turn or green check supplies semantic acceptance or Git publication.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No external domain source governs this repository-owned lifecycle doctrine.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No configured domain documentation was available. | — | — |
+No configured domain documentation was available.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The router is exactly three ordered conditions. | "## Which Lifecycle Am I? (the router — exactly three conditions, in order)" | skills/l-01-agent-lifecycles/SKILL.md:13-51 |
-| The registry assigns one canonical file to each role. | "## The Role Registry" | skills/l-01-agent-lifecycles/SKILL.md:119-119 |
-| The minimal frame binds roles to canonical task-document altitude and relays silence mechanically. | "## The Minimal Frame (the only machinery every session shares)" | skills/l-01-agent-lifecycles/SKILL.md:140-175 |
-| Shared continuity and authority invariants are explicit. | "## Shared Invariants (every role can count on these)" | skills/l-01-agent-lifecycles/SKILL.md:203-203 |
-| Dispatch has two process-derived caller kinds and one shared transaction. | "Caller kind comes only from process context"; "Every launcher or role that dispatches a hosted role calls" | skills/l-01-agent-lifecycles/SKILL.md:466-466; skills/l-01-agent-lifecycles/SKILL.md:473-473 |
-| Ambient bootstrap compiles and pins one complete architect brief. | "# Template — Architect Brief"; "Compiler notes for the launcher" | skills/l-01-agent-lifecycles/templates/architect-brief.md:1-84 |
-| Requirement acceptance is exact, per-ID, independently adjudicated, and separate from evidence promotion. | "Requirement acceptance is per stable ID and version, never aggregate." | skills/l-01-agent-lifecycles/SKILL.md:295-295 |
-| Attempt lineage separates semantic versions from candidate-bound delivery history and gives regression invalidation to independent proof plus the owning seat. | "Requirement revisions and delivery attempts are separate axes." | skills/l-01-agent-lifecycles/SKILL.md:320-320 |
-| Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. | "The detailed per-leaf worker and reviewer records are authority." | skills/l-01-agent-lifecycles/SKILL.md:361-361 |
+- One explicit supported role and applicable operation select the role and operation files; the first message adds the every-role digest and the handover facts, and no other core file is loaded. [11]
 
-## L23 Dispatch Admission
+- The native launcher names eight role IDs, including Bootstrap. [12]
 
-Canonical lifecycle dispatch now proves the task-derived ancestry applicable to
-the target role before process creation. Stale or unavailable edges create no
-child and carry ordered contract-addressed synchronization; agents do not retain
-commit ids, branch ids, or occupant ids to make routing work.
+- Canonical task/workspace facts arrive separately in the handover; task-bound selection uses its supplied canonical reference and paired workspace. Projects is an execution location. [13]
 
-## 260815-DAG-L2 Dependency-Aware Execution Plane
+- Restore the same role, operation, task, agent and report through reconnect; reconcile an uncertain start with its same request ID and retain separate acceptance/publication authorities. [14]
+- Native role starts and messages use the launching build's task server and actual returned identities. Developer questions follow the actual parent channel when a parent exists. [15]
+- First delegation to a coordinating agent, developer-chosen direct coordination and parentless dashboard admission have their stated scopes. [16]
 
-The shared lifecycle doctrine now separates tool-derived execution facts from role-owned
-judgment. Portfolio planning is an architect-owned loop: an approved strategist drafts the plan,
-or the orchestrator builds it only after a sanctioned strategist skip; the architect rules it and
-the orchestrator adopts it. Organizational masters are logical ownership groups whose leaves use
-the direct super edge, while atomic masters retain the isolated super → master → leaf edge.
+The following requirement and attempt references retain their source-epoch evidence. Applicable approved packets and owning role records determine current authority; this router loads no core file other than the every-role digest.
 
-The lifecycle records worker targeted checks and curator scoped onboarding checks before handoff.
-Closeout and integration then publish the authorized code, memory-content, and ledger Git
-transaction; full code quality, full tests, full memory quality, certification, and review are
-explicit developer-requested operations rather than automatic altitude gates. Transaction-owned
-commit legs suppress automatic quality and test hooks; ordinary explicit Git hook policy outside
-the transaction remains unchanged.
+- Requirement acceptance binds one requirement revision, needs a complete acceptance block and is judged independently for that exact manifestation; an aggregate claim never closes one. [7]
 
-## 2026-08-27 Attempt Boundary Clarification
+- Leaf journals are authority and the master summary is explicitly rebuildable and non-gating. [9]
 
-Attempt publication is phase-sensitive: validate before append, and treat append plus the exact
-review handoff as one formal boundary. A malformed row that never reached review is preserved by a
-non-attempt correction/void record without consuming the next attempt ID; after handoff, only an
-independent reviewer rejection permits a successor.
+## Current intake and developer-question evidence
 
-## Update History
-- 2026-09-10T07:30+02:00 — CCR-R12@v5 transaction-only curation: updated the current onboarding boundary; verification metadata remains preserved for the coordinated final stamp.
+- Investigator takes a scoped concern from the actual parent's first message, or the developer without a parent; its selected scope creates no fake task identity. Developer decisions go to the actual parent when one is named. [17]
 
-- 2026-09-09T14:45+02:00 — CCR-L42 curator reconciliation: re-read affected claims against the frozen current source and corrected only their source anchors/ranges; verification stamps remain closeout-owned.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement acceptance is per stable ID and version, never aggregate." repointed to skills/l-01-agent-lifecycles/SKILL.md:295-295. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "Requirement revisions and delivery attempts are separate axes." repointed to skills/l-01-agent-lifecycles/SKILL.md:320-320. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-09T12:22:46+00:00: Generated citation repair: "The detailed per-leaf worker and reviewer records are authority." repointed to skills/l-01-agent-lifecycles/SKILL.md:361-361. No content impact: mechanical anchor-range projection bound to citation source snapshot 06f99a0e57ce8b514dd7ed6685874da5285e3ec2e8c4a3f6a5d768b622094451; claim bytes unchanged; generated by ccr-r10@v1.
+## Canonical Source Ownership
 
-- 2026-08-31T04:50+02:00 — 260821-ARSPAWN-L5 independent-review repair: documented fail-closed
-  malformed hosted role identity and the plane-stamped polymorphic reviewer parent contract.
-  Verification remains closeout-owned.
+The byte-equal package copy is a distribution carrier, not an independent role, task or permission authority. Whole-file source evidence does not certify inherited statements, execution, grading or the whole card.
 
-- 2026-08-30T12:57+02:00 — 260821-ARSPAWN-L3 review correction: clarified that an explicit
-  task-seat takeover converges idempotently on the canonical seat and never authorizes manual
-  incumbent replacement or duplicate brief publication. Verification remains closeout-owned.
+- Canonical role-capsule doctrine and the packaged byte-equal carrier have one authored owner; the package is a generated distribution extent. [18]
 
-- 2026-08-30T12:34+02:00 — 260821-ARSPAWN-L3 recorded the one-call ambient launcher,
-  separated ordinary architect bootstrap from explicit named-role takeover, made lineage-conflict
-  continuation explicit, and kept structural authority outside settings overrides. Verification
-  remains closeout-owned.
+- `curator-handoff-list.md` is the producers' contract for the Curator hand-off: Workers and Reviewers send their own lists directly, and Managers and Orchestrators relay none. [19]
 
-- 2026-08-28T14:18+02:00 — Reconciled lifecycle-router citations against the committed PDLS
-  candidate after the final role-routing wording settled; behavior is unchanged.
-
-- 2026-08-28T11:32+02:00 — No content impact: re-read the v25 role/topology clarification; this
-  card already describes one leaf-owned primary revision, adjacent contextual constraints, and
-  the source-specific worker/reviewer/manager/curator boundary.
-
-- 2026-08-27T22:15+02:00 — Distinguished pre-handoff non-attempt correction from post-handoff
-  reviewer rejection and successor lineage.
-
-- 2026-08-27T21:53+02:00 — M40@v2/M44@v2: delivery attempts now advance only at review handoff or
-  after rejection; internal protocol events remain separate, and lightweight records link frozen
-  expanded evidence instead of duplicating the master corpus.
-- 2026-08-27T19:59+02:00 — M42 clarification: distinguished pre-adjudication candidate replacement
-  from unrelated post-acceptance candidate movement, which cannot silently reopen accepted work.
-- 2026-08-27T18:06+02:00 — M40-M45: documented immutable worker/reviewer attempt lineage, exact
-  candidate binding, the closed failure taxonomy, owner-recorded bounded regression invalidation,
-  and leaf-authoritative/rebuildable non-gating summary semantics.
-- 2026-08-27T14:04+02:00 — Clarified M39's revision authority: approved packets are immutable,
-  version-addressed, and carry the durable corpus ruling consumed by every downstream seat.
-- 2026-08-27T13:32+02:00 — M39@v1: recorded the upstream requirement-compilation gate and exact
-  ID + version propagation into acceptance. Canonical packets and developer corpus approval now
-  precede task topology. Verification remains closeout-owned.
-
-- 2026-08-27T12:43+02:00 — M38: documented the mandatory per-requirement worker envelope,
-  independent reviewer adjudication, exact stable-ID set, and separate durable-evidence hold
-  point. Verification metadata stays pinned until governed closeout stamps the PDLS commit.
-
-- 2026-08-15T04:32+02:00 — 260815-DAG-L2: documented fact-versus-judgment ownership,
-  architect-owned plan review, organizational/atomic lineage, and the pre-landing full-master gate.
-  Verification remains closeout-owned.
-- 2026-08-12T20:10+02:00 — L23 curator: documented canonical source-lineage dispatch admission; verification remains closeout-owned.
-
-- 2026-08-11T14:10+02:00 — Reconciled the sidecar directly to current structural lifecycle
-  doctrine and removed duplicated task-delta/history blocks. Verification remains pinned pending
-  governed closeout.
-- 2026-08-09T12:08+02:00 — Fact-relay supervision replaced timed escalation-ladder doctrine.
-- 2026-08-08T02:00+02:00 — Quality checks were assigned to leaf and master altitudes.
-- 2026-07-12T14:20+02:00 — Established canonical lifecycle route coverage and generated-copy
-  ownership.
+- Semantic requirement versions and exact-candidate formal attempts keep separate immutable lineage; internal reruns mint no attempt. Reviewer records bind the exact attempt and candidate. Accepted attempts stay closed, and observations outside the sealed findings list go through the parent to the developer without adding or reopening findings or resetting review. [8]

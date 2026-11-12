@@ -1,36 +1,20 @@
 # mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py
 
-| Field                  | Value                                      |
-| ---------------------- | ------------------------------------------ |
-| repository             | agents-remember                         |
-| path                   | `mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-05-29T12:10+02:00                     |
-| lastVerifiedCommitHash | `5aff1e8f01dfa949efc8f68e46bc62a99ed31432` |
-| lastVerifiedCommitDate | 2026-08-14T14:36:50+02:00|
-| governingOverview      | `../../../../../overview.md`               |
+## Governing Overview
+
+[overview.md](../../../../../overview.md)
 
 ## Purpose
 
-`report.py` renders drift results and resolves the report output path. It is the
-reporter/formatter for the package: output only, no discovery or policy.
+`report.py` derives branch-aware report filenames and resolves output paths. It performs path construction/containment only, not rendering, discovery, classification or memory mutation.
 
 ## Code Commentary
 
 ### Logic
 
-`counts` tallies classifications; `write_markdown_report` builds the Markdown
-report (summary + actionable findings); `print_text`/`print_json`/`print_csv`
-emit stdout formats; `resolve_report_path` decides the output path;
-`sanitize_report_token` and `default_report_*` derive default filenames.
+`default_report_filename` sanitizes repository and current-branch tokens; `default_report_dir/path` place reports under temp `drift-reports`. `resolve_report_path` redirects absolute durable-memory targets and absolute targets outside coordination into the default directory, preserves allowed coordination paths, and accepts relative paths only when their resolved candidate stays under temp. Escaping relative paths fall back to the default directory and requested basename.
 
-Two git facts reach the rendered output, and since 260731-EFA-L3 they arrive by different routes.
-The report header's HEAD stamp is read here through the single kernel runner —
-`head = run_git(repo_root, ["rev-parse", "--short", "HEAD"])`, with the literal `unknown`
-substituted when that call fails, so a git failure degrades the header instead of aborting the
-report. The branch name in the default filename still comes from `git_ops.current_branch_name`.
-`run_git` is imported from `agents_remember.kernel.git_command`; it used to be imported from
-`git_ops`, which no longer defines it.
+Only branch lookup remains here through `git_ops.current_branch_name`; the converted Markdown renderer is `_write_converted_report` in `summary.py`. This module no longer reads a HEAD stamp.
 
 ### Conventions
 
@@ -42,23 +26,13 @@ at durable memory, so temporary drift reports never land inside a memory repo.
 - Output only: it must not discover, mutate, or make classification decisions.
 - Durable memory repo paths are not valid locations for temporary drift reports.
 
-## Repo-Internal References
+## Evidence
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The drift summary and CLI facade call these renderers and the path resolver. | `run_drift_summary` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py:25-73 |
-| Branch facts (`current_branch_name`, for the default report filename) come from `git_ops`. | `current_branch_name` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/git_ops.py:15-19 |
-| The HEAD stamp in `write_markdown_report` runs on the single kernel git runner. | `write_markdown_report` | mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/report.py:112-173 |
+### Repo-Internal References
 
-## Update History
 
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 curator: body verified against the current worktree after the model-extraction/caller-rewrite wave; stale moved-path references repaired and the L9 change recorded. Verification metadata pinned until closeout stamps the L9 code commit.
 
-- 2026-08-02T22:10:00+02:00 — 260731-EFA-L6 W2-B05 curator: anchored 2 citation items; scoped citation check now passes.
 
-- 2026-07-31T20:56+02:00 — 260731-EFA-L3 curator: `run_git` is now imported from
-  `kernel.git_command` instead of `git_ops`, which no longer defines it, so the reference row
-  "Branch/HEAD facts come from `git_ops`" was half false. Split it, and documented the previously
-  undocumented `rev-parse --short HEAD` stamp in `write_markdown_report` and its `unknown`
-  fallback. Rendered output is unchanged.
-- 2026-05-29T12:10+02:00: Created when `drift.py` was split into focused modules; metadata pending closeout refresh to the split commit.
+- Branch facts (`current_branch_name`, for the default report filename) come from `git_ops`. [2]
+
+- The converted summary resolves its operational report path through the retained path helper; legacy renderer/CLI facade APIs are absent.  Anchor: `run_drift_summary` `resolve_report_path` `_run_converted_summary` [1]

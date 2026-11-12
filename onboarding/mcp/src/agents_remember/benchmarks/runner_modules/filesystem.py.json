@@ -1,0 +1,94 @@
+{
+  "path": "mcp/src/agents_remember/benchmarks/runner_modules/filesystem.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
+        "content": "sha256:5ece4ee308c57cc5e3c0077bbc0629492c3395f44281c9f4b42727fa2a4693b7",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_runtime_assets"
+        }
+      },
+      "id": "RLZ-15TGJH",
+      "invariant": "INV-6526WA",
+      "origin": {
+        "handoffEntry": "L188-B19",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The runtime asset sync retains admitted assets without copying a coordination skills tree.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The public benchmark facade re-exports this module's public functions and classes for compatibility.\n\nAnchor: \"from agents_remember.benchmarks.runner_modules.filesystem import *\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9fe21bfe0097d04bda1dd5d0436b8962d1f188c2",
+            "content": "sha256:12ca7890da8fdfa47300185e94abbc2480a231edb4e55fca7966aa903a1ef03c",
+            "locator": {
+              "end": 18,
+              "kind": "line_range",
+              "start": 18
+            },
+            "path": "mcp/src/agents_remember/benchmarks/runner.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The runtime-asset sync that writes no skill tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
+            "content": "sha256:5ece4ee308c57cc5e3c0077bbc0629492c3395f44281c9f4b42727fa2a4693b7",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_runtime_assets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The benchmark scaffold creates the central `logs/mcp` and `logs/providers/...` directories beside provider data and runner roots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
+            "content": "sha256:dd46dde1f4c216180d4c157a22af19ec9ca10a017cc44b9d169ddc9b1800f3bd",
+            "locator": {
+              "end": 151,
+              "kind": "line_range",
+              "start": 131
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The sync removes the retired coordinator startup files before replacing provider assets\n\nAnchor: `RETIRED_STARTUP_TARGETS`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c0972a2d2c0e2d6103130df63a7de142c225bdf7",
+            "content": "sha256:afa138bc9a856ac5b948587ffe234fbbdadf6eff55b018d1c9d42dd9e7637a3f",
+            "locator": {
+              "end": 129,
+              "kind": "line_range",
+              "start": 110
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,3372 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L97",
+  "rows": [
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "examined": [
+        {
+          "id": "INV-63Z0MN",
+          "revision": 3
+        },
+        {
+          "id": "INV-DKN3CG",
+          "revision": 4
+        },
+        {
+          "id": "INV-NNQR91",
+          "revision": 3
+        }
+      ],
+      "id": "ROW-01WSXG",
+      "items": [
+        "sha256:a91a1fae22ae9d96019cbdef71d3f93b6dd5672a4f79c6a6c77aa862df0121b4",
+        "sha256:f0476b00c132e257b6a2160514b2c1fda6ffd314fcbf62d9ba131bce365eacf7"
+      ],
+      "reason": "All three members of the memory base were examined at the candidate. INV-63Z0MN and INV-NNQR91 stay members. INV-DKN3CG is retired by this leaf and leaves the family: its last realization stood on the card of docs/reference/harnesses.md, which this leaf removes under MIK-R124 rule 9. With that entry the family's route docs is gone, and five routes remain. The text of the joint guarantee is not edited.",
+      "revision": 7,
+      "subject": "FAM-GDXSJG"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-04AJ74",
+      "items": [
+        "sha256:a4289f3cdb3b327fa1ac0aa9d00935874e3fb5bdece4aa279b8ae6a852001409"
+      ],
+      "reason": "The dependent's document docs/features.md is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 6,
+      "subject": "DPD-EG5TYT"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-05XBWK",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-VXKNMA; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "3f2b321014647800912880d2f2dd6b38449ccbea",
+          "path": "benchmarks/docs/benchmarks-methodology.md"
+        }
+      ],
+      "subject": "onboarding:benchmarks/docs/benchmarks-methodology.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0C7MGW",
+      "items": [
+        "sha256:6376a0f027eb2137df00fdacc3c39938782db02932360263ccb2fd77f00aceeb"
+      ],
+      "reason": "The hunk relaxes a test assertion that no invariant states: a migration command of an earlier installation is no longer required to have a documentation row. The module's card was updated.",
+      "subject": "hunk:sha256:6376a0f027eb2137df00fdacc3c39938782db02932360263ccb2fd77f00aceeb"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0ET5TZ",
+      "items": [],
+      "reason": "Reference 3 and its evidence line are removed. They said that the package README points harness setup at the common example and says that JSON argument arrays do not expand `~`; the package README at the candidate names neither the example file nor that expansion. The two other references are unchanged.",
+      "sources": [
+        {
+          "blob": "83d266c17ed12c87af617e7bf2e0253b3d658475",
+          "path": "examples/mcp/server.example.json"
+        }
+      ],
+      "subject": "onboarding:examples/mcp/server.example.json"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0JDVVW",
+      "items": [
+        "sha256:5137b4e551b8b7c04be409a7cfb6a0066cce421ed27d209a66a6dea85672b9bb"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:5137b4e551b8b7c04be409a7cfb6a0066cce421ed27d209a66a6dea85672b9bb"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0QV9WF",
+      "items": [
+        "sha256:32e9606cdce64b4d50d9be73b8c1db85b37745037985be60ddcc7cf1782b5a6f"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:32e9606cdce64b4d50d9be73b8c1db85b37745037985be60ddcc7cf1782b5a6f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0RCXST",
+      "items": [
+        "sha256:8ea4cf6033b81518e78e2c890d2291d645af933e7b7ec37bb0ea80b6aea2ca49"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:8ea4cf6033b81518e78e2c890d2291d645af933e7b7ec37bb0ea80b6aea2ca49"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-11WFGB",
+      "items": [
+        "sha256:53a47ea7a6498807a7f2457dca64f1b4b3a74c989721a4a8ff421ca4bf393ec9"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/reference/execution-topology-migration.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/execution-topology-migration.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1408W9",
+      "items": [
+        "sha256:e69017130b581bae8bab8cffd65d2db2e569c6c0f23976e959ef134cd62b1d23"
+      ],
+      "reason": "The tasks overview's changed source is serving_preflight.py; the message it describes now names the remedy and no page, and the overview's route account remains current.",
+      "sources": [
+        {
+          "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+          "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-15XVP4",
+      "items": [
+        "sha256:4dccc66a5d7767345cc9f6504884c9a42912d6be884466249f671e57557ee990"
+      ],
+      "reason": "The route's source mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py changed in this leaf: its map of documentation homes for nine commands became the set UNDOCUMENTED_COMMANDS. The overview says of that helper only that it checks that the commands, tools, task_doc operations and paths named in skills, docs and README exist, and that holds at the candidate. The card needs no change and has none between the memory base and the candidate.",
+      "sources": [
+        {
+          "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/overview"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-1AY0KC",
+      "items": [
+        "sha256:17aaffe092a23c1192e06b6ede891a317d263f712387c782806a236493cbd245"
+      ],
+      "reason": "The dependent's document docs/tool-details.md is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 6,
+      "subject": "DPD-10YCT2"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_memory_location"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "before": {
+            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "content": "sha256:d18b97551fc9ee9481aeddd0ffeb4e95f6a6914c99773eeae81f2b574f669443",
+            "locator": {
+              "kind": "symbol",
+              "name": "converted_memory_location"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "id": "RLZ-JPVV25"
+        },
+        {
+          "after": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:fe0d438f128714db3b51045189e66d0007833cb7c8f28611ae9c2a6dbf8dae60",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_format_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "before": {
+            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "content": "sha256:a7f75592c437f5b3b3cd2a0070ad444aa23559e75145bf73969b24924497d31a",
+            "locator": {
+              "kind": "symbol",
+              "name": "legacy_format_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "id": "RLZ-JRGRCT"
+        },
+        {
+          "after": {
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "before": {
+            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
+            "locator": {
+              "kind": "symbol",
+              "name": "cutover_lock_refusal"
+            },
+            "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+          },
+          "id": "RLZ-MQKF7W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1FGQGB",
+      "items": [
+        "sha256:14d6193938383a741f30338040e713001501f6ac65e2bd0cb5324b2de96baf7a"
+      ],
+      "reason": "All three refusal symbols are re-anchored at C; the first-conversion message now names the conversion command and no page, and the invariant's meaning is unchanged.",
+      "revision": 3,
+      "subject": "INV-JT28KJ"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-1MG2HB",
+      "items": [
+        "sha256:d11ba13b5d0578d38ca5459fd4349a26e9d3915d3c21b5dcf4646b08c4d9086a"
+      ],
+      "reason": "The tracked-files rule is a new documentation-check obligation; no family's joint guarantee covers it. Families examined: FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94.",
+      "revision": 1,
+      "subject": "membership:INV-QHYG86"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1MQWED",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-T3PEFV; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "083e75a442cc38732000f5bd47565b442c67e6e8",
+          "path": "docs/reference/path-rules.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/path-rules.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-1V4G7H",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-QFGFS0. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "0cd4e4274c50c95e561d3cf2b41370e7a4f5f3ab",
+          "path": "docs/reference/role-capsules.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/role-capsules.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-1YDHDB",
+      "items": [
+        "sha256:281089929b8a23e4faa84e7471a7027c952cdb61d72a91ef95e7cb47f39779a4"
+      ],
+      "reason": "The hunk is the mechanical part of removing a documentation page name from the first-conversion message; the obligation is authored as the new clause entry MIK-R97@v9 part F item 8, whose primary target is the enclosing refusal symbol.",
+      "subject": "hunk:sha256:281089929b8a23e4faa84e7471a7027c952cdb61d72a91ef95e7cb47f39779a4"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-21W1F6",
+      "items": [
+        "sha256:679e37094374d86518a4a5f93f30163ad59bc5e43c357021211191b579c8dd1b"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-KZ2JWB"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+            "content": "sha256:37ab52d75cfba4752d4e9a645af8035b5afdf0b780c127d4bb69f64466a4dc51",
+            "locator": {
+              "end": 1199,
+              "kind": "line_range",
+              "start": 1199
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-FFEWN8"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-2ATDB3",
+      "items": [
+        "sha256:80d0c3b03f1f2f8602a5b622d09c3e8f9f60b3005b117c65edee49d423a935b1"
+      ],
+      "reason": "The settings-reference card that stated the raise-row refusal is removed under MIK-R124 rule 9; the code and skill realizations of the record are untouched.",
+      "revision": 1,
+      "subject": "INV-8VNSKJ"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
+            "content": "sha256:901b313c67a63da5d4ce6afe55808d66fb0db672e89348353b2817232eea8601",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BJ41EY"
+        },
+        {
+          "after": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "fcaa096a9a747d9ac1a914646d1e75f46e22a1a6",
+            "content": "sha256:7348889f7381f48d0e5451f71f151ac591edda4024756281091b6168c60e55a0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-H44S0N"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-2E9JFH",
+      "items": [
+        "sha256:f0bb46f5cb5f5c99634f90c0861f3b5fc756260f5caf3d3882d75c1086cbe426"
+      ],
+      "reason": "Both evidence-table files are re-anchored at C after the evidence registrations; the outside-scratch meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-T8672G"
+    },
+    {
+      "disposition": "no_impact",
+      "examined": [
+        {
+          "id": "INV-7VGMWY",
+          "revision": 1
+        },
+        {
+          "id": "INV-XG226D",
+          "revision": 1
+        },
+        {
+          "id": "INV-Y2SXDZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-2FVEPH",
+      "items": [
+        "sha256:b0a8c6f0c9af35e209a4ee7a26910d9b3b86d6cc0d56b7cac8f8a88c3a6acc06"
+      ],
+      "reason": "All 3 members were examined at C. The leaf touched INV-7VGMWY's two documentation realizations, which are removed because the rewritten pages no longer state the 3.14 range against the historical artifact; its package-manifest realization remains. The family's guarantee and routes are unchanged.",
+      "revision": 2,
+      "subject": "FAM-Z69A94"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2G7C2J",
+      "items": [
+        "sha256:9fd9f6812a99524282d6ad61672bdcbfdadabc1fd7caa8220165384e11a529b8"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/session-cockpit-closeout-evidence.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/dashboard/session-cockpit-closeout-evidence.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-2JXZKW",
+      "items": [],
+      "reason": "The note of reference 10 and its evidence line name the sections of the package README as the page has them at the candidate: What you need, Install steps, Start and stop the dashboard and the host, Tools, and More. The reference is anchored at the whole page. The 17 other references are unchanged.",
+      "sources": [
+        {
+          "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+          "path": "mcp/pyproject.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/pyproject.toml"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-2KMDED",
+      "items": [],
+      "reason": "The clause is the A005 text: a marker allows every finding of its kind on the lines it covers, its own line and the next line or the block it opens. The conditions and justification are corrected to match.",
+      "revision": 1,
+      "subject": "INV-2A1WKN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2KVZ4N",
+      "items": [
+        "sha256:f1bbdc9066b8bee9c18fe962b289aeafda0b90e84bbab99691f0176b4d3db4d4"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/diagrams/worktree-lifecycle/worktree-lifecycle.png"
+        }
+      ],
+      "subject": "onboarding:docs/diagrams/worktree-lifecycle/worktree-lifecycle.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2P677D",
+      "items": [],
+      "reason": "The card is removed under MIK-R124 rule 1 and MIK-R97 v2 because the document carries the dependent record DPD-Q4APMS; the dependent holds the document's truth.",
+      "sources": [
+        {
+          "blob": "4b56225df1e1b9484032b43ded65f6d976b27340",
+          "path": "mcp/README.md"
+        }
+      ],
+      "subject": "onboarding:mcp/README.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-34A2BP",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-F7QBDJ; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "da5b2cc1947b7501219211e54234f50f81032071",
+          "path": "docs/benchmarks-methodology.md"
+        }
+      ],
+      "subject": "onboarding:docs/benchmarks-methodology.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-35CEAJ",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-ZMQ523; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "d41a67a3304e4b26e25cf5513344b5f3df647e1e",
+          "path": "docs/design/python-evidence-system.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/python-evidence-system.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-3ESXKT",
+      "items": [
+        "sha256:c006fa34c51ca00ad4ddea196e8904205475943786de71b47cf7958a123dc830"
+      ],
+      "reason": "The card is brought up to date with A004: load_tree reads only the files Git tracks, and the identifier check also names product-shown rule codes and sandbox names.",
+      "sources": [
+        {
+          "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+          "path": "scripts/check-public-docs.py"
+        }
+      ],
+      "subject": "onboarding:scripts/check-public-docs.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-3J1DJP",
+      "items": [
+        "sha256:dd4b948b41a0f17e1e475143c263a901593cd55ce6784398ba2cd6a3eec6a9e8"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:dd4b948b41a0f17e1e475143c263a901593cd55ce6784398ba2cd6a3eec6a9e8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3RTASA",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-EJ2Y7Z; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "bbb1fe47db28dade152edd276cab29f20278a47d",
+          "path": "docs/reference/resolver-c08.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/resolver-c08.md"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3VZAG7",
+      "items": [],
+      "reason": "Applicability is corrected: reach judges every tracked file under docs/, not only .md and .txt files; the statement already says so.",
+      "revision": 1,
+      "subject": "INV-6TJFDH"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3Z1N8G",
+      "items": [
+        "sha256:d5a71081364cb25ac706d7942c543f03aa24af6c36902fc35f9c4d7bb1768010"
+      ],
+      "reason": "The weakness is closed: no file imports application.provider_tools and ruff PLR0915/F401 passes on both files at the candidate; the record no longer names a live defect.",
+      "revision": 2,
+      "subject": "WKN-GFFS7F"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-45E4SK",
+      "items": [
+        "sha256:ec309282393cc97ab5ac6cc44f7cf5154aed9b1970694ef827a2352395967c65"
+      ],
+      "reason": "The weakness is anchored again: from mcp/README.md to the served description of runtime_install in mcp/src/agents_remember/mcp/registration/core.py. Its statement is rewritten for that place: the description names provider assets and the stop of leftover provider watchers. The guidance to install and index with a search provider and to start its watchers, and the claim context_packet(include_providers=true), which the statement named at the memory base, are gone from the public pages. Three public pages name the stop of leftover watchers, which the install performs: docs/reference/settings-json.md, docs/reference/runtime-layout.md and docs/tool-details.md.",
+      "revision": 2,
+      "subject": "WKN-BZ8WK1"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-46GQZ6",
+      "items": [
+        "sha256:044d3af3d83c7c81c2e2b544edda205ff405f2a710cad085c80b297cb572a2d9",
+        "sha256:307cf7b2d63abae4f6662d52eb37eeb0d5b1055a788fba8d93cb75f2f1426bf4",
+        "sha256:460da8d29b374483daac9c546bc2d56754bae844ad846c4446b42927a8de5cb7",
+        "sha256:6d727a726438ed137143aaadf5017a4d7697cf584c9d1ad2f4e7e6142c1522cd",
+        "sha256:df50ad7156c6175a37e92309deaf048fa0b4fa99df676aad29e9205eeb81ac17",
+        "sha256:eaadf50a5be18ca60c70bb2766e896a3f9736676324bf147d9b5be50a583512e",
+        "sha256:f6ecd4e1972be9b5852a7c80399d5504ad3266c5a5dec66f0453858b4df26f59"
+      ],
+      "reason": "This leaf replaces the helper's map COMMAND_DOCUMENTATION by the set UNDOCUMENTED_COMMANDS and removes command_documentation_findings: the check no longer requires each of the nine commands at a declared documentation section. The card is brought up to date with that. Its commentary no longer names those findings; it says that no documentation row is required for such a command name, that a row of the agents' command table that names one is refused, and that a mention is not refused. The note of reference 4 follows. The four references are anchored at the whole file, and their notes say so. The sidecar gains the realization entries RLZ-3FRRQP and RLZ-MRXRMP of INV-SJ6T7P.",
+      "sources": [
+        {
+          "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+          "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4F2YVN",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The evidence-lifecycle card's source changed by the evidence registration; its references were re-anchored at C and its account of the file remains current.",
+      "sources": [
+        {
+          "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4J1DXS",
+      "items": [
+        "sha256:fd65147037d0322bad53b3731ab50b63751a88068b1db49de8996d1b5f0005c6"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:fd65147037d0322bad53b3731ab50b63751a88068b1db49de8996d1b5f0005c6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-4NBYT2",
+      "items": [
+        "sha256:4c927c9641c33237ffd91624b3e1e17e0df59fb1f1a550dc4fd167a283096ebf"
+      ],
+      "reason": "The hunk relaxes a test assertion that no invariant states: a migration command of an earlier installation is no longer required to have a documentation row. The module's card was updated.",
+      "subject": "hunk:sha256:4c927c9641c33237ffd91624b3e1e17e0df59fb1f1a550dc4fd167a283096ebf"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-4SQRV7",
+      "items": [
+        "sha256:57865ef5f860f4d87023d37e357310b9ff60d39920c888fb9bdb3c45e2b91741"
+      ],
+      "reason": "The dependent's document docs/llms.txt is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 6,
+      "subject": "DPD-633P3W"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4T46T1",
+      "items": [
+        "sha256:a92b5d60b24b752703be320b3deab6baacb8d85045c437cab11523c1985e6f08"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/install/vscode-copilot.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/vscode-copilot.md"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "54ba5807713ceb7536c2573e08caa3d59f05de56",
+            "content": "sha256:e92c86ac2d7966bf54bac03d673e8181f08a211dd2c8030f09df40c983991fb6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-R4M3J6"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-4VH82W",
+      "items": [
+        "sha256:906afbab24b3f1f91cd57c58990043badfc522d8b0f66262352a6fbb073230e1"
+      ],
+      "reason": "The reference card that carried this invariant's held-receipt row is removed under MIK-R124 rule 9; the same obligation remains realized in the code and test entries of this record, which are untouched.",
+      "revision": 2,
+      "subject": "INV-4DQMNE"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4XRER5",
+      "items": [
+        "sha256:cee38d5dafe8f180dfe7078b2141aa1cf5a3f0646745f41978369c2a3c4832b3"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/owned-methods.md"
+        }
+      ],
+      "subject": "onboarding:dev-skills/dashboard-experience-review/owned-methods.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-4XYVXM",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-3E9E2R. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "7aa417ee22dfe5cedb89f4d394c8e42b80c58ebf",
+          "path": "docs/install/claude-code.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/claude-code.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-55EQ5A",
+      "items": [
+        "sha256:52671243c481d6cfc10d98e7e73b9e5d16a39102d106d7cddb0873d1eb093697"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:52671243c481d6cfc10d98e7e73b9e5d16a39102d106d7cddb0873d1eb093697"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-57DHEG",
+      "items": [],
+      "reason": "Applicability names the six entry points and the harness pages; condition 3 is corrected to the same number, order and titles, and no command line that the source page does not show.",
+      "revision": 1,
+      "subject": "INV-XHXZSA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5BM0V1",
+      "items": [
+        "sha256:a02f6b83afe9fd35301c48bf19db589d9abc518c241bc5828b94ef3cefd1aef5"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/delegation-map.md"
+        }
+      ],
+      "subject": "onboarding:dev-skills/dashboard-experience-review/delegation-map.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-5HQR18",
+      "items": [],
+      "reason": "The card gains reference 4 and its evidence line: the daemon-settings tuple that writes the idle-runtime cleanup key as false (paseo_settings.py:44-53) and the key's constant (:16-17). The three other references are unchanged.",
+      "sources": [
+        {
+          "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+          "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "fcaa096a9a747d9ac1a914646d1e75f46e22a1a6",
+            "content": "sha256:7348889f7381f48d0e5451f71f151ac591edda4024756281091b6168c60e55a0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-8RHQED"
+        },
+        {
+          "after": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
+            "content": "sha256:901b313c67a63da5d4ce6afe55808d66fb0db672e89348353b2817232eea8601",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-MC12B0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-5V933H",
+      "items": [
+        "sha256:9123215dda38585f6c11284414d8e9034481954960a9671d1b13f53141168330"
+      ],
+      "reason": "Both evidence-table files are re-anchored at C after the evidence registrations; the invariant's evidence-lane meaning is unchanged.",
+      "revision": 2,
+      "subject": "INV-H1BCMX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6231FF",
+      "items": [
+        "sha256:67055cf0bdccac110214309d52aea7fdf01274cc126c116aa4442227ce8307cf"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:67055cf0bdccac110214309d52aea7fdf01274cc126c116aa4442227ce8307cf"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-62ARGP",
+      "items": [
+        "sha256:62e8693705268f2ccfaa7a97641429d38489e0f23f3c377d92290726105f6ceb"
+      ],
+      "reason": "The dependent's document CONTRIBUTING.md is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 2,
+      "subject": "DPD-78737N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-62JFF7",
+      "items": [
+        "sha256:24fb3721a937db24286ab0727734c9c1fb8bcff82809ceb0377e67646e783f97"
+      ],
+      "reason": "The hunk relaxes a corrected-surface assertion that no invariant states, so the test still refuses a removed memory mode without requiring one exact sentence. The module's card needs no change.",
+      "subject": "hunk:sha256:24fb3721a937db24286ab0727734c9c1fb8bcff82809ceb0377e67646e783f97"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-66FEMT",
+      "items": [
+        "sha256:bda96dd878266a9454a24072356c4a74b51f23ec8436c1462e0601e6b95af52f"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "a264e929d8665c9bde729443c21a52b9f8da1783",
+          "path": "assets/agents-remember-welcome.png"
+        }
+      ],
+      "subject": "onboarding:assets/agents-remember-welcome.png"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-6A78CX",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "This leaf adds mcp/tests/test_public_docs_check.py to the lane catalog. The card is brought up to date with the catalog at the candidate: its statements of the catalog's size and the notes of references 864, 867, 869 and 870 say 772 modules where they said 771, and 637 unit-regression members where they said 636. The other references keep their notes; references 837, 841, 845, 853 and 860 are anchored one line lower.",
+      "sources": [
+        {
+          "blob": "5691b694e756469475d783c426d9781ef14c8633",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6ER6X7",
+      "items": [
+        "sha256:5731bf0d5b5b6930be884617b82c7c6433f9cf185cbe94f7132057e7a2e7083c"
+      ],
+      "reason": "The hunk relaxes a corrected-surface assertion that no invariant states, so the test still refuses a removed memory mode without requiring one exact sentence. The module's card needs no change.",
+      "subject": "hunk:sha256:5731bf0d5b5b6930be884617b82c7c6433f9cf185cbe94f7132057e7a2e7083c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6GWBXT",
+      "items": [
+        "sha256:b8704768f1e2dd61b6fdf8abd0174d68a0a9b5088dfb67d07c0fd3183fe0e954"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:b8704768f1e2dd61b6fdf8abd0174d68a0a9b5088dfb67d07c0fd3183fe0e954"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
+            "content": "sha256:6fe196a093f0db79a902b8a5b01fd41db223390679bb223e905753094647872c",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 59
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-HRPJ1A"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-6XZH5C",
+      "items": [
+        "sha256:3732462a813a08f7dbba7b2cf32d22e6811864a6ae14fe67626fca6c961c3210"
+      ],
+      "reason": "The README card that carried the primary-authority realization is removed under MIK-R124 rule 1 because the document carries DPD-CZBR1Q; the realization is retired with it, while the invariant keeps its pnt_sandbox realization and its proofs.",
+      "revision": 2,
+      "subject": "INV-R1E181"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-78JMCY",
+      "items": [
+        "sha256:e0988ef708be7e71919c637798186ba9570776a42fc9f3be02c9861b8073fa45"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-XANH4K"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7M56A0",
+      "items": [
+        "sha256:28b2e42ecf417dbc06e7486fb2e9709a38605a4861654f40e97604facf420739"
+      ],
+      "reason": "The hunk relaxes a test assertion that no invariant states: a migration command of an earlier installation is no longer required to have a documentation row. The module's card was updated.",
+      "subject": "hunk:sha256:28b2e42ecf417dbc06e7486fb2e9709a38605a4861654f40e97604facf420739"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-7SMRTF",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-ZN7CD9; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "1ed43a0bc585075c24dc8be6b128a7082a7f6316",
+          "path": "docs/guides/adopt-existing-memory.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/adopt-existing-memory.md"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+            "content": "sha256:eb492c0f0960ad99c02c5eaa495514433ef989d5886a8905f08d590fae501a85",
+            "locator": {
+              "end": 60,
+              "kind": "line_range",
+              "start": 27
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-KM0Q5C"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-7YT1E2",
+      "items": [
+        "sha256:b25fd66b97bcb7be6ca4ad09a4393ba3bc1cefb2ba77c36cfa40d020ca6b774f"
+      ],
+      "reason": "The settings-reference card that carried this user-settings realization is removed under MIK-R124 rule 9; the installer's command helper remains the code realization.",
+      "revision": 2,
+      "subject": "INV-R34KP2"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-83H99H",
+      "items": [],
+      "reason": "The statement and conditions now carry the A004 clause whole, including the product-shown names; the check's PRODUCT_NAMES symbol is added as a primary-authority realization.",
+      "revision": 1,
+      "subject": "INV-BNDZWK"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+            "content": "sha256:f0e1d52696c658b709c9b9dd31cf0c6abca3d1e69b6a5c1514639c579aaaaaaa",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-GS9JTC"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-8A96WH",
+      "items": [
+        "sha256:04a69dd8c567f97cb9105c0a1a6f17b8c2d8bf81186b0ad48cbb379fa203a7a6"
+      ],
+      "reason": "The settings-reference card that stated the task-document copy rule is removed under MIK-R124 rule 9; the code and test realizations are untouched.",
+      "revision": 1,
+      "subject": "INV-QZP9PM"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8HWC6Q",
+      "items": [
+        "sha256:d726c5e97acbfd382afa19741ffc77a06f3a8e194c51f342946164cde06a47d3"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/review-doctrine.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/dashboard/review-doctrine.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8KF63G",
+      "items": [
+        "sha256:c9df2b9602504beba068222a544c925ecc6db50773765919a42dc882896db146"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+          "path": "mcp/tests/test_instruction_consistency.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_instruction_consistency.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8KXA0G",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-T00S78; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "2ea6fa9a885b9fdd74f174e6b60396a55afb3eb9",
+          "path": "docs/guides/onboard-existing-repo.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/onboard-existing-repo.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8MKYKN",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-9K25G8. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "0c6c20e9222ec9800d48e087ab0aa6a3032fc0ed",
+          "path": "docs/reference/worktrees-c09.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/worktrees-c09.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-8X2J73",
+      "items": [
+        "sha256:33ca0ca7852542398e1036cd725efc7cd1f08cd74e149cfe915084e14869ae4b"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "f228b53357d555a895da03cff5afd945ea2335ae",
+          "path": "docs/images/dashboard-attention.png"
+        }
+      ],
+      "subject": "onboarding:docs/images/dashboard-attention.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-95AV8Y",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-6528VF. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "78bc216a37238f80f1dc0d6406c1ca219fcb0996",
+          "path": "docs/install/openclaw.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/openclaw.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-95Q05B",
+      "items": [],
+      "reason": "The card now names the separate _DUTY_IDENTIFIER constant: the served description may show the duty's identifier, a public page may not.",
+      "sources": [
+        {
+          "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+          "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "2724eb1313568ff1a35bc2691196a4164afbb9a0",
+            "content": "sha256:0ab67ce0b4ff4082fa7ab08ea556ec6da6be46c89f41627f48f82c302696ec02",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/harnesses.md"
+          },
+          "id": "RLZ-5Z84K2"
+        }
+      ],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-96R37T",
+      "items": [
+        "sha256:75347477fdf5df1d673897a4e09e9a877099b6acccfb2c61a61f44f41e5afbe7"
+      ],
+      "reason": "The record is retired: its last realization is removed with the deleted documentation card, and the row covers it.",
+      "revision": 4,
+      "subject": "INV-DKN3CG"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-97Y96X",
+      "items": [
+        "sha256:f10f910187dd776c8fc1c26dc1d40aeecf58c63fdfff3d45f591daddb4885e9a"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/diagrams/worktree-lifecycle/worktree-lifecycle.drawio"
+        }
+      ],
+      "subject": "onboarding:docs/diagrams/worktree-lifecycle/worktree-lifecycle.drawio"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9DVR37",
+      "items": [
+        "sha256:8c5de6b920d81d7ab6bbe86e7f46dd3f42facaec796bf1f993642bff1be773eb"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:8c5de6b920d81d7ab6bbe86e7f46dd3f42facaec796bf1f993642bff1be773eb"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A05P9K",
+      "items": [
+        "sha256:524f21fc36dc056eb45853675a7d2809f396fa0b5c051e18f5e3e838e08d510d"
+      ],
+      "reason": "The worktrees overview's changed source is cutover_lock.py; the first-conversion message now names the conversion command and no page, and the route account remains current.",
+      "sources": [
+        {
+          "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+          "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-A43GJX",
+      "items": [
+        "sha256:dd1c24363ad1cb7486bf250c6069cc40537fd61b98751b86557729c8f9a0211a"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:dd1c24363ad1cb7486bf250c6069cc40537fd61b98751b86557729c8f9a0211a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-A6QKBK",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-6ZHCCN; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "345e9e4cdeb8701bb31e267faa00c4e6b6bbeb44",
+          "path": "docs/design/python-test-evidence.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/python-test-evidence.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ABK1Q6",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-FR0VZP. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "04f396cf58da1e18025507f44a37a02347151ab9",
+          "path": "docs/reference/repository-certification-profile.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/repository-certification-profile.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-AH8AZ6",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-PMZ21Z; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "e95ffbed21199c1569a1e811f7701c72dd3802d4",
+          "path": "docs/guides/review-page-and-explainer.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/review-page-and-explainer.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ATHXYT",
+      "items": [
+        "sha256:4bab746850b7c35a8485a6a6cb213bac86085c98bcbbd0299ffd17be5491142e"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "7ba4e5f8205c66ab5702eb92cdae98e239309225",
+          "path": "docs/images/dashboard-operations-task.png"
+        }
+      ],
+      "subject": "onboarding:docs/images/dashboard-operations-task.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-BGPGFY",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-ZQB4YZ. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "a855741a566f56b6631d4a8312061c87161e2418",
+          "path": "docs/reference/skills.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/skills.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C0FGHE",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-71WYH4. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "9bcdb167add6397ce6e3a05aa184d9476eee05d3",
+          "path": "docs/concepts.md"
+        }
+      ],
+      "subject": "onboarding:docs/concepts.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-C2Z6JX",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-TCXJRQ; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "c6b951eeb942aa41b61fb1671e13261014857feb",
+          "path": "docs/guides/refresh-stale-onboarding.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/refresh-stale-onboarding.md"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-3HQNH1",
+          "revision": 2
+        },
+        {
+          "id": "INV-B7D1WM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-CMCD0Z",
+      "items": [
+        "sha256:e6aa07414ca7ec7fd358142a446d7303969f49cbf4de86701a515bbbedd25e91"
+      ],
+      "reason": "All members were examined at C. The leaf removes the documentation cards under MIK-R124 rule 9, so the family's docs route holds no realization any more and is removed; the joint guarantee and the remaining routes are unchanged.",
+      "revision": 2,
+      "subject": "FAM-6M4B49"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-CRFMW5",
+      "items": [
+        "sha256:faec839afea7e3c09bfe67771799ffd78b2e846c2932bf49c907a2e213fb8c36"
+      ],
+      "reason": "The record is re-confirmed at the candidate: the scaffold still has no .gitignore, so the adoption of a fresh scaffold commits the derived overview.index.json.",
+      "revision": 2,
+      "subject": "WKN-Q74XVJ"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "89ecc502ddc0532ded53d31e1a392a3307573da7",
+            "content": "sha256:4b2bfdd974f85fe6f8255c2d1be689f1e727dee83fd3c671e5d9e989a08d362e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/tool-details.md"
+          },
+          "id": "RLZ-SF7FRZ"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "54ba5807713ceb7536c2573e08caa3d59f05de56",
+            "content": "sha256:e92c86ac2d7966bf54bac03d673e8181f08a211dd2c8030f09df40c983991fb6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-SS2V9X"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-D53QK1",
+      "items": [
+        "sha256:e48261b96d234cddad25c93b7b6d7aeb7730b5c20bd9ca4a11d8a11ab0d658a7"
+      ],
+      "reason": "The two documentation cards that stated the removed-parameter rule are removed under MIK-R124 rule 9; the record's proof entries and its code realization remain.",
+      "revision": 1,
+      "subject": "INV-8YX6P5"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "54ba5807713ceb7536c2573e08caa3d59f05de56",
+            "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-F6DSAT"
+        }
+      ],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-D5S46V",
+      "items": [
+        "sha256:4d5a6b9b2c4aa7b7eaea60e35b5e7b06369feebd10a94d54a9a1a546eaa62adb"
+      ],
+      "reason": "The record is retired: its last realization is removed with the deleted documentation card, and the row covers it.",
+      "revision": 2,
+      "subject": "INV-4ST2K1"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-D7PB7Y",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-3P9XTZ; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "aea3f91850e82875762348cd5c92a3525a30a89a",
+          "path": "ROADMAP.md"
+        }
+      ],
+      "subject": "onboarding:ROADMAP.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DHBZV9",
+      "items": [
+        "sha256:da8f4b49f805f6c003ef20d0518f432a4592c8e41e9e7519d813d6008bffc575"
+      ],
+      "reason": "The page is deleted at the candidate and has no dependent record; its card is removed with it.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/engine-room/engine-room-visual-language.html"
+        }
+      ],
+      "subject": "onboarding:docs/design/engine-room/engine-room-visual-language.html"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DQWHYA",
+      "items": [
+        "sha256:db5118ac020d7f832fc0593f58b0ff62b18d6c4edc052feb54691109e01fe477"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dev-skills/README.md"
+        }
+      ],
+      "subject": "onboarding:dev-skills/README.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DWMP9E",
+      "items": [
+        "sha256:66c75f52da78b2c8eb5e95dfedebee545b3a8f743c769b5cb0b06e784969d77c",
+        "sha256:72a0f8006c7b3bd4dad6f03060a86a41b444bcaab04fde1a50151af45f8c0f0c"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "f513b2ca4ca642a0a4f0c1982b26f7e98ac8e6fb",
+          "path": "mcp/tests/test_l192_root_advice_has_no_removed_parameter.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l192_root_advice_has_no_removed_parameter.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-DZC63F",
+      "items": [
+        "sha256:79d7629d304a5ecb199c208fa9255cb213f34c58ef7810cd4de8620767164ee0",
+        "sha256:8773c79137a6fb63626ae7c2558c648a170f33f5d7ee16025596caf145322dce"
+      ],
+      "reason": "The card is brought up to date with A004: the command-line cases add the untracked-file case and the identifier case names product-shown names.",
+      "sources": [
+        {
+          "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+          "path": "mcp/tests/test_public_docs_check.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_public_docs_check.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-E2NCKA",
+      "items": [
+        "sha256:07364b18c13d30442d96e8b8a772903ff40dbf3765426745525790f34d9915fe",
+        "sha256:d66208686b5ae638e6c4b40b187535758274b93d23e25e78ab3e9ed2d2371df4"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "5edff91c427661cc617bc9022414d7bf4dddbf24",
+          "path": "mcp/src/agents_remember/cli/knowledge_convert.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/knowledge_convert.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EDFB3P",
+      "items": [
+        "sha256:ba870c55043f73a2ef9c3d49bd7edbf789c17ef3f1f0f0c6ff5ffbc1d7bc4419"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "70b9d89c8577f1de0977db0b42dc7e0a11395ba7",
+          "path": "docs/images/review-explainer-column.png"
+        }
+      ],
+      "subject": "onboarding:docs/images/review-explainer-column.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-EEQ7KS",
+      "items": [
+        "sha256:075da8cccd4a889781f25cd795e8a45528e5852698366a46cc5fa6b5b98ce5d6",
+        "sha256:194ad6f14456bf880b0139c4953d62d3b458442f356aa8d565b0f535da0d3792",
+        "sha256:1cc91f67d88a9028f8b06bebfe3be2c701607142fcd9f34dd2a757f91cf29993",
+        "sha256:3520eca33826d98380f21cb9eb1c984c10a071e24958be5a8e31f8af1ff72dc8",
+        "sha256:3627119673e0e251b10d746c33bdee86477c7182cbd5dd57ab34d1795cfb830b",
+        "sha256:417314010de49f3f899952b6ec385409376497e482ed10a267636d765a4cfd03",
+        "sha256:4575a75de9d1ae6c2a6e9ac1607af8e7e12fa993c04373d108e761742d0f1a70",
+        "sha256:4db0539f00c225032c710551997e91d1b651970f55c179c556bd5bfc759ac60a",
+        "sha256:546b5cfee4ad369110b9da4be4461ed90237a2f474df3b96a6dfa04b9e836b90",
+        "sha256:551886e1c514c107e5328d418e9e7b86e783a2d657e0ce8e9d1f453933752f5b",
+        "sha256:5696db91ce5cb5f3cc4c36a4918232c6af50f83f98244b72b8244055e20adfbc",
+        "sha256:67b066ee4353b3d2a2efac4da88251e1bbac434a5b0db8d76ed729a8d46f0c2a",
+        "sha256:680878f286e0454c0e49817bbf71e436038f2e4a46ba327ec612e5d26fdfa65a",
+        "sha256:6874981462cf880a267fe660e2caf3256f0a9aa3539e28777dbd32e9ab8694a6",
+        "sha256:6b6eefeaa9bb1cf170a9be3e9fd291fb24e66d7731795eb14452062988775a57",
+        "sha256:7b904dca171bf9902d16bedb5d433b495db4d56fc0e11064f92a9c00f0993da2",
+        "sha256:8448ab89a5350fd0e1284680f912bfeee1445760f1950dc35c146f69751dc90c",
+        "sha256:89e754881c0bc325b5224182044229287aae423aff151384dfc26515083b22c2",
+        "sha256:93773200b239a7c5219acace96be63bcbc2ed838b89657fc96d336ce8e12d2ca",
+        "sha256:9b8d5cae993d74dba2e46342f082ea2c4b58ba1a920010d2e7bc8dba19325c18",
+        "sha256:b55d32b094129437c28fdddc1840459fa3441ae029ce53859e98f6816d0a642c",
+        "sha256:b5ba328327527b08eafa5202303412c2013099935091db14ea72cc009176f662",
+        "sha256:ba56e48e39d035b281d34365deef5ed18d70c0cdaa146b63ca708f8aaadb0a22",
+        "sha256:ff93b608e924eedf1a3a3999def9cd90416501faadb90dc424d618194737625e"
+      ],
+      "reason": "No card exists at either tree for the packaged copy. The copy is generated from benchmarks/docs/benchmarks-methodology.md, whose onboarding row records the documentation rewrite; the copy adds no separate knowledge.",
+      "sources": [
+        {
+          "blob": "3f2b321014647800912880d2f2dd6b38449ccbea",
+          "path": "mcp/src/agents_remember/package_data/benchmarks/docs/benchmarks-methodology.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/benchmarks/docs/benchmarks-methodology.md"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-EZZRBC",
+      "items": [
+        "sha256:703749238019417fb9d626484be0c5ee9c7a63f881355a90a4914c55e949d835"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-BNDZWK"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-F1FBYD",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-GNFCSM. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "d287c7684aa01368056831c5f2b408d7e5710ad3",
+          "path": "docs/install/codex.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/codex.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-F4VFTJ",
+      "items": [
+        "sha256:62a8586e44b87cb3caefb2116d09cce36e995ada421af52b8fa78228160c43c1"
+      ],
+      "reason": "The hunk follows the served tool descriptions of the candidate; no invariant states the changed expectation and the module's card keeps its account.",
+      "subject": "hunk:sha256:62a8586e44b87cb3caefb2116d09cce36e995ada421af52b8fa78228160c43c1"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+            "content": "sha256:429b1492467e8ef27167c02841dd311729e0b1a9a9a1400b6d4116179aa1b766",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 298
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-T59PTD"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-FB0W4E",
+      "items": [
+        "sha256:1fcd15417ce3ad3f90a4846dbd4683171f68c460dce0ef597dbfa6bff9ea31a2"
+      ],
+      "reason": "The settings-reference card is removed under MIK-R124 rule 9, retiring its documentation entry RLZ-T59PTD. The invariant keeps its code realizations: RLZ-PTCH31 (primary-authority) and RLZ-AHMJ5V (support) on paseo_settings.py, and RLZ-Y5XYXW in the Paseo test support; the statement remains realized at the candidate.",
+      "revision": 1,
+      "subject": "INV-MAZGMS"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FBVAGV",
+      "items": [
+        "sha256:e3eeeb3965718e3a0c0520abf305fb83f119d521cdbaa24fa2b4e8ba2986beee"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:e3eeeb3965718e3a0c0520abf305fb83f119d521cdbaa24fa2b4e8ba2986beee"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-FGDC39",
+      "items": [
+        "sha256:d271bf3e54928f58bd2d85162f2bf52367bc334d5c6f6389e47347fd0d656855"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-SJ6T7P"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FVT1VW",
+      "items": [
+        "sha256:327beb46a58e943a43f9bb5442eaa6eee162e8065e0b0c08fe783398317bdb65",
+        "sha256:b5ccac2f6298480ad7275bdc419b051a284945ee459a2b42d7fd66b333b7fcd6",
+        "sha256:c85081d1b55507dca24915a0f9873d3e071129822252a761e24c8525885b8570"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+          "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/tasks/serving_preflight.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "68668ad9039682eadfa94109a556dd5505b134ec",
+            "content": "sha256:867f0752d4ae2affe36ec51f3d801f5a0304da4f8c45c4256242d592f5c9a740",
+            "locator": {
+              "kind": "symbol",
+              "name": "UNDOCUMENTED_COMMANDS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/instruction_consistency.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3FRRQP"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-G054WV",
+      "items": [],
+      "reason": "The record is this leaf's own, and its statement is the producer's clause: the check requires no row and no mention for the nine names of UNDOCUMENTED_COMMANDS and refuses a row for one of them in the agents' command table, and three lines of two guide pages name knowledge-convert. The fields beside the statement are corrected to agree with it. Condition 2 no longer says that no public document describes the names. Condition 4 and the admission justification no longer say that a mention is refused. The applicability and the exclusion name the nine by their set and no longer call all nine commands of an earlier installation. The rationale of RLZ-3FRRQP is the producer's: the set holds the nine names for which the check demands no row and no mention. The obligation of the statement is unchanged.",
+      "revision": 1,
+      "subject": "INV-SJ6T7P"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G4VQ64",
+      "items": [
+        "sha256:3ae37e0b2986b927278b454afe2db9562d236ff9676f239f7aca06905907fcea"
+      ],
+      "reason": "The hunk is the mechanical part of removing a documentation page name from the first-conversion message; the obligation is authored as the new clause entry MIK-R97@v9 part F item 8, whose primary target is the enclosing refusal symbol.",
+      "subject": "hunk:sha256:3ae37e0b2986b927278b454afe2db9562d236ff9676f239f7aca06905907fcea"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G8A55J",
+      "items": [
+        "sha256:d96d9f79c110095c9dbc050d560b6d0cdf4e4b687fdd91d829ab7084dd13b4e2"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md"
+        }
+      ],
+      "subject": "onboarding:dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "54ba5807713ceb7536c2573e08caa3d59f05de56",
+            "content": "sha256:789c07c35bb07b48125149f8d927a74707c811ea4548e4b14a347d9b741504dd",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 219
+            },
+            "path": "docs/reference/mcp-tools.md"
+          },
+          "id": "RLZ-N47KE8"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-GAT985",
+      "items": [
+        "sha256:f766e43f5218650570b6ea776090cfa12d154b836fc8c81235e8e33536f31c18"
+      ],
+      "reason": "The record is already retired at B; the reference card that carried its last realization is removed under MIK-R124 rule 9.",
+      "revision": 1,
+      "subject": "INV-NY15B8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GGYVS4",
+      "items": [
+        "sha256:0014f61177a9b0a11272951751f82f5d4025260c0f5d4e95f033397fd93e0213"
+      ],
+      "reason": "The card stands at both trees and needs no change; the leaf changed the source it documents, not its account.",
+      "sources": [
+        {
+          "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+          "path": "mcp/tests/test_memory_mode_removal.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_memory_mode_removal.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GQCHB3",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-7YCJ2B. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "c50998c3ecce77515a3a18d13df7a33699be35c8",
+          "path": "docs/design/canvas-host.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/canvas-host.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GRMYYR",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-GHEXS9. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "1eb823fa43a40d2de1b7ed32ee894cffe0dc8ed8",
+          "path": "docs/install/hermes.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/hermes.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GXCG03",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-GRXQW5; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "152fd03a3059ed7cd54526fab3481b482d5d2ff6",
+          "path": "docs/reference/drift-c02.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/drift-c02.md"
+    },
+    {
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-GYP1R5",
+      "items": [],
+      "reason": "Condition 2 is corrected: the link check treats a link to an ignored file that is present as a broken link; only named paths in backticks exempt an ignored path. The statement and entries are unchanged.",
+      "revision": 1,
+      "subject": "INV-XANH4K"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-GYSD3Y",
+      "items": [
+        "sha256:06e49bb9a76680102ce5879f7a57aa974c1009e9f585635280f0a69b88ed2536"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md"
+        }
+      ],
+      "subject": "onboarding:dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H01R9C",
+      "items": [
+        "sha256:008690fb3a59466577169a94a8ef47a9b90d6d5966e60dd1656b7f06c95dfa3e"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:008690fb3a59466577169a94a8ef47a9b90d6d5966e60dd1656b7f06c95dfa3e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H6EBGT",
+      "items": [
+        "sha256:cf808c87dd1a3d66522ef4d882de0b904b99fa228fa976c3883348bc9c5f6ce9"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:cf808c87dd1a3d66522ef4d882de0b904b99fa228fa976c3883348bc9c5f6ce9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H79XYJ",
+      "items": [
+        "sha256:7d6f0373005871ff7a8a7a44bb079697909e1e3badc82d13c05f3440d4c64ef4"
+      ],
+      "reason": "The hunk relaxes a test assertion that no invariant states: a migration command of an earlier installation is no longer required to have a documentation row. The module's card was updated.",
+      "subject": "hunk:sha256:7d6f0373005871ff7a8a7a44bb079697909e1e3badc82d13c05f3440d4c64ef4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HP3HME",
+      "items": [
+        "sha256:c4d4ba3e228e8c3e1de93a5c339834a184d8ac0250b6c71507641d4cc8eaa658"
+      ],
+      "reason": "The hunk is the mechanical part of removing a documentation page name from the first-conversion message; the obligation is authored as the new clause entry MIK-R97@v9 part F item 8, whose primary target is the enclosing refusal symbol.",
+      "subject": "hunk:sha256:c4d4ba3e228e8c3e1de93a5c339834a184d8ac0250b6c71507641d4cc8eaa658"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HPZPKN",
+      "items": [
+        "sha256:3b8b04fe5b883a0b2cfe60b66ca1e5d4f44d8ee85bbade60fe9011b5eceb7211"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:3b8b04fe5b883a0b2cfe60b66ca1e5d4f44d8ee85bbade60fe9011b5eceb7211"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HZBMKQ",
+      "items": [
+        "sha256:4649b6d2b6e5fc59e1b10fd9f57ec6a7066f5766916c7635e88c32efdf5ac8b2"
+      ],
+      "reason": "The hunk relaxes a corrected-surface assertion that no invariant states, so the test still refuses a removed memory mode without requiring one exact sentence. The module's card needs no change.",
+      "subject": "hunk:sha256:4649b6d2b6e5fc59e1b10fd9f57ec6a7066f5766916c7635e88c32efdf5ac8b2"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "c54e0f95b7707ac110df1e31e2b482202f33e269",
+            "content": "sha256:e100b4735e8c0da517bfc0af1ae67eacefedb4393f66fd361684311f5159fb6b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/getting-started.md"
+          },
+          "id": "RLZ-1HX0AS"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "e4763c08ef2aac7ac438ccabd472d592ccacc1d4",
+            "content": "sha256:d7c8b35248f4a69c7d63ba04e761cf4aeca8fc3f1891dd6a532a405d741b2483",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/architecture.md"
+          },
+          "id": "RLZ-3QTYBN"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "1409098bd311ea360111a168a058e9668e6fe951",
+            "content": "sha256:eb7ddac29a82e87047c07d7da83d66f693aa882f33e1ba6b58483774894f4eb3",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/features.md"
+          },
+          "id": "RLZ-8W2HVW"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "610331a03c3b00f815d925ed4f569ad146a46b0d",
+            "content": "sha256:180f25fc57d9c4441418d763f11c0884086730978c497216bd1a7d20bd900a3b",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/llms.txt"
+          },
+          "id": "RLZ-FYQW3E"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "cbe4d811fb65009206986c45ac951ee676a08a79",
+            "content": "sha256:6611d28a5093fadd5313e6284730577185b8bc8be26ede51dacaf069e900dac8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/README.md"
+          },
+          "id": "RLZ-HHJWSK"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "f869993d1b42e4233b17121f03d2f40e775a7986",
+            "content": "sha256:f23e9d30377488b6636ed34262d1bf401128baa33d84326b87d3dc2dc9ce56a9",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/guides/providers.md"
+          },
+          "id": "RLZ-N8RQ0F"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "a6655b3181f48f871718a77e5fe34549bbb2e25b",
+            "content": "sha256:65290a737d4d082439b353ac1e81b84456751324f5c5714b07e07ee50a578cae",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/guides/README.md"
+          },
+          "id": "RLZ-PZ7W0M"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "cae16cbf9cef348457becf00b90fbda8cd8fda71",
+            "content": "sha256:64de8730a3d8e17058807d5f67a6c11e75fa08d554f58fce1f57d360253f0319",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/FAQ.md"
+          },
+          "id": "RLZ-RB4FYX"
+        }
+      ],
+      "disposition": "deleted",
+      "effect": "retire",
+      "id": "ROW-J0GFKK",
+      "items": [
+        "sha256:196c04bc217fa7f25559511d6fbf4e5eb890f36871a82d53efe5690b314867a3"
+      ],
+      "reason": "The record is retired: its eight realizations are removed with the deleted documentation cards, and the row covers each removed realization.",
+      "revision": 1,
+      "subject": "INV-8JYRE4"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-4GV8PF",
+          "revision": 1
+        },
+        {
+          "id": "INV-9E86TC",
+          "revision": 1
+        },
+        {
+          "id": "INV-R34KP2",
+          "revision": 2
+        },
+        {
+          "id": "INV-R4DZS7",
+          "revision": 1
+        },
+        {
+          "id": "INV-R4QNJW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-J757ZT",
+      "items": [
+        "sha256:09e4bac1a73cc64c57f5d6454ff804a7c24d3bc24f0d03d371a9911ce361b0f5"
+      ],
+      "reason": "All members were examined at C. The leaf removes the documentation cards under MIK-R124 rule 9, so the family's docs route holds no realization any more and is removed; the joint guarantee and the remaining routes are unchanged.",
+      "revision": 3,
+      "subject": "FAM-23CS4N"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J76MKV",
+      "items": [
+        "sha256:45d9564630ec117548907b466ea284171e48b7c905474214334382093121f488"
+      ],
+      "reason": "The hunk relaxes a test assertion that no invariant states: a migration command of an earlier installation is no longer required to have a documentation row. The module's card was updated.",
+      "subject": "hunk:sha256:45d9564630ec117548907b466ea284171e48b7c905474214334382093121f488"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JJJ61X",
+      "items": [
+        "sha256:62dc2e276a2019fcd234c7c2299c56644afc5d45a50bf222d8ad841f515d8099"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:62dc2e276a2019fcd234c7c2299c56644afc5d45a50bf222d8ad841f515d8099"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-JYENY0",
+      "items": [
+        "sha256:9e4d993f1a0464ff7f0f9d92df3f749e5f429b84fb396ec8ead70224a81785bc"
+      ],
+      "reason": "The dependent's document docs/reference/settings-json.md is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 8,
+      "subject": "DPD-W0T9V9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K2K0PS",
+      "items": [
+        "sha256:434e8a106c5efc3a7ab0c67db71fd9d135022117cff5faf8e29ec862d8160bbf"
+      ],
+      "reason": "The hunk is the mechanical part of removing a documentation page name from the first-conversion message; the obligation is authored as the new clause entry MIK-R97@v9 part F item 8, whose primary target is the enclosing refusal symbol.",
+      "subject": "hunk:sha256:434e8a106c5efc3a7ab0c67db71fd9d135022117cff5faf8e29ec862d8160bbf"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K4EN8R",
+      "items": [
+        "sha256:b90d7b8b660b1c5dc0c9ddeff95afa2525aeac43b7e94544ece980ef26c00c81"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:b90d7b8b660b1c5dc0c9ddeff95afa2525aeac43b7e94544ece980ef26c00c81"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K4J0Z4",
+      "items": [
+        "sha256:8021712bb31973fd25e07d6a3da0cdc31d0b92765fdc973a5a9fd6044b9e3e41"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:8021712bb31973fd25e07d6a3da0cdc31d0b92765fdc973a5a9fd6044b9e3e41"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-A87E4H",
+          "revision": 1
+        },
+        {
+          "id": "INV-HJ9MR9",
+          "revision": 1
+        },
+        {
+          "id": "INV-KD90E4",
+          "revision": 1
+        },
+        {
+          "id": "INV-PRVEVY",
+          "revision": 1
+        },
+        {
+          "id": "INV-VH983B",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-K7CDG6",
+      "items": [
+        "sha256:b316aa018b109cebb19769795b12b0adb240a78617375538e25e3d7acca9984d"
+      ],
+      "reason": "All members were examined at C. The leaf removes the documentation cards under MIK-R124 rule 9, so the family's docs route holds no realization any more and is removed; the joint guarantee and the remaining routes are unchanged.",
+      "revision": 2,
+      "subject": "FAM-ZWJ8XR"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KB4SB8",
+      "items": [
+        "sha256:af31560da3e0e8a05156927f6fc190fff2cbd0c69f8a313559c12d7dda218abe"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:af31560da3e0e8a05156927f6fc190fff2cbd0c69f8a313559c12d7dda218abe"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KJQJR0",
+      "items": [
+        "sha256:9d77be436b7abd5367acb7959111f885e2fb9c5e718a4722ea4ac20ff90a61cb"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/guides/first-conversion.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/first-conversion.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-KY8X6A",
+      "items": [
+        "sha256:bfcc129b84e7484bd4b01c333c6c0da7adf4f00663cba3e0a5a87735c2710467"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/SKILL.md"
+        }
+      ],
+      "subject": "onboarding:dev-skills/dashboard-experience-review/SKILL.md"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-MBC3TZ",
+      "items": [
+        "sha256:288880dd4845f6db15103fa623a0acf661823032042f00e220b026d82b12e360"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-FK565S"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+            "content": "sha256:012d7f3d967f181785205f452f928dff02fd7fe94ebb2a02a58b7aecf0995ad2",
+            "locator": {
+              "end": 1042,
+              "kind": "line_range",
+              "start": 1027
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-DYXENX"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-MD3NDB",
+      "items": [
+        "sha256:e2849e4fbfcd400e5b6932658afdbedb11ca840e0fbdffa0b7d7e4370a1103c2"
+      ],
+      "reason": "The settings-reference card that stated the role-message limit is removed under MIK-R124 rule 9; the limit's code realizations are untouched.",
+      "revision": 1,
+      "subject": "INV-A87E4H"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MESBHT",
+      "items": [
+        "sha256:1a694173d0cca4335ed51878901328fd01f70d173ff524f687f2c16df81093d1"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "agents-remember.png"
+        }
+      ],
+      "subject": "onboarding:agents-remember.png"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-MV8A7M",
+      "items": [
+        "sha256:1a22b7ae29c4b05583db41d2fd34a63bd990a7da6c4384d2eecd97a410a49fc0"
+      ],
+      "reason": "This leaf adds mcp/tests/test_public_docs_check.py to the lane catalog and to two consumer lists of the lifecycle catalog. The card is brought up to date: its statements of the lane catalog's size and the notes of references 1498, 1529, 1530, 1647 and 1808 say 772 distinct modules, where they said 771. References 1718, 1750, 1752, 1754 and 1806, which hold 18 targets together, are replaced by the 17 one-target references 1814 to 1822 and 1824 to 1831: one for each target but the third target of reference 1754, docs/design/python-pytest-bootstrap.md, which has none. The new notes carry the same sentences and name their target; those that replace references 1718, 1752 and 1806 lose the anchor line. The notes of references 1678 and 1723 lose their anchor line. The other references keep their notes; 32 of them are anchored at a new locator.",
+      "sources": [
+        {
+          "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "5691b694e756469475d783c426d9781ef14c8633",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+          "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
+        },
+        {
+          "blob": "cff0054ca616a2e98ceee779074d7a700f7c69b5",
+          "path": "mcp/tests/test_instruction_consistency.py"
+        },
+        {
+          "blob": "7d188f24b77caa6a17c0a0b4f9d8e9b3a2166252",
+          "path": "mcp/tests/test_knowledge_correction_guidance.py"
+        },
+        {
+          "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
+          "path": "mcp/tests/test_l192_provider_safety_prose.py"
+        },
+        {
+          "blob": "f513b2ca4ca642a0a4f0c1982b26f7e98ac8e6fb",
+          "path": "mcp/tests/test_l192_root_advice_has_no_removed_parameter.py"
+        },
+        {
+          "blob": "2238ceb99875cfa4b26e50ba2aa269ab83542be1",
+          "path": "mcp/tests/test_memory_mode_removal.py"
+        },
+        {
+          "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+          "path": "mcp/tests/test_public_docs_check.py"
+        },
+        {
+          "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+          "path": "mcp/tests/test_role_instruction_corpus.py"
+        },
+        {
+          "blob": "2f75e5a3457e2b3669fc2a008abe2f37bca4aae9",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-MW0GHA",
+      "items": [
+        "sha256:d3082de47290401c3f9172bc7dc8457a744fda5065e9d566b430ffac4e767849"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/observable-lifecycle.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/observable-lifecycle.md"
+    },
+    {
+      "disposition": "rerouted",
+      "examined": [
+        {
+          "id": "INV-1Q4W04",
+          "revision": 1
+        },
+        {
+          "id": "INV-QZP9PM",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-MXH872",
+      "items": [
+        "sha256:f73fe831d168e5d5fb032f061ede1763c0976c73bed31e02fbc40bad0dfda51d"
+      ],
+      "reason": "All members were examined at C. The leaf removes the documentation cards under MIK-R124 rule 9, so the family's docs route holds no realization any more and is removed; the joint guarantee and the remaining routes are unchanged.",
+      "revision": 2,
+      "subject": "FAM-XX4TGY"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-N0X4VG",
+      "items": [
+        "sha256:9d90af5d169b30e3dae75488f06fb33819b3960ff84bf11f98b5e7c31e688b2c"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "onboarding-example.png"
+        }
+      ],
+      "subject": "onboarding:onboarding-example.png"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NCJM7A",
+      "items": [
+        "sha256:6dd3b86e4d5daf36c2df626741a934837aef1f2056e7641c4ddad391065809c6"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:6dd3b86e4d5daf36c2df626741a934837aef1f2056e7641c4ddad391065809c6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NQSZ6M",
+      "items": [
+        "sha256:0403a81a516d9f7ce9af2645b9725a8b76ae81e6bc236a8d7ad1949e9f7ec76c"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "8d0ee14cfe3ea604bf6201813aec40faf89a64ca",
+          "path": "assets/agents-remember-explainer.mp4"
+        }
+      ],
+      "subject": "onboarding:assets/agents-remember-explainer.mp4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NT0MZ5",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-W34WCW; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "7ffb2dd393f277cd5e456a945e2951235c520b27",
+          "path": "docs/reference/execution-topology.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/execution-topology.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-NZJE5X",
+      "items": [
+        "sha256:8353baad06a1f9e9c54b54abe5db3721d6d93cf3d84ed046b31ceaf7681d3426"
+      ],
+      "reason": "The card is corrected with the candidate: the help names the first step of the first-conversion procedure (MIK-R46 rule 6), not a skill or a page.",
+      "sources": [
+        {
+          "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/cli/__main__.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P2MP78",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-B540GW; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "f4b701d27abe2242be2c9cb0573d6483eaf9dc39",
+          "path": "docs/roles.md"
+        }
+      ],
+      "subject": "onboarding:docs/roles.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P4TWJF",
+      "items": [
+        "sha256:b1b4c51c5ce3d05996bba0e0ef3a6d11cf49325aa9f967a70b42ae4bf6864291"
+      ],
+      "reason": "The hunk relaxes a corrected-surface assertion that no invariant states, so the test still refuses a removed memory mode without requiring one exact sentence. The module's card needs no change.",
+      "subject": "hunk:sha256:b1b4c51c5ce3d05996bba0e0ef3a6d11cf49325aa9f967a70b42ae4bf6864291"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PMMAS1",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-21GMJ5. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "0d22e8881af6762091dbd844fb1d2b99a6a80685",
+          "path": "docs/install/cursor.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/cursor.md"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-PP2HX0",
+      "items": [
+        "sha256:4c7a15d20750ba8c0a94274bbbf4e1849627f9bad70009ff0710a960c2a9e7af"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-6TJFDH"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-PPJV8W",
+      "items": [
+        "sha256:195f6ce2cdd7a9694cfb5eefc5ea936d693d4cdf06830aeec0cc07689db00996",
+        "sha256:7d13f224651788b16801933edb2b7450e61e35fb22883813536547ecb712f557"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
+          "path": "mcp/tests/test_l192_provider_safety_prose.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_l192_provider_safety_prose.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PPMNZD",
+      "items": [
+        "sha256:11a6f760a347a15f32582a753b8551bf53ae897feb79797aab50c41b6e2d0c3c"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:11a6f760a347a15f32582a753b8551bf53ae897feb79797aab50c41b6e2d0c3c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PT52RE",
+      "items": [
+        "sha256:65df3642b8065d15e57afe0e5de6d814558bd1e8721980dfaafd100f8a72cdef"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:65df3642b8065d15e57afe0e5de6d814558bd1e8721980dfaafd100f8a72cdef"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Q7N0YM",
+      "items": [
+        "sha256:2d3274ad2e83fb1a2e0d7a0e4676f3277fd0c4c09eb6ead8a3ea4d0c0f4a05cb"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
+          "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/cutover_lock.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q7Q9DK",
+      "items": [
+        "sha256:92c0a375b9657c44778aa11dff5648511ea9d4fadabc84764d19500b36889447"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/diagrams/worktree-lifecycle/worktree-lifecycle.svg"
+        }
+      ],
+      "subject": "onboarding:docs/diagrams/worktree-lifecycle/worktree-lifecycle.svg"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Q8N9E5",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-327MNX. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "0ac6dbda5c19bbba4ee44bbe65f14a5e403bb0cc",
+          "path": "docs/reference/runtime-layout.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/runtime-layout.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QG8ECV",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-8PE0G9; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "15554995eb5b792d3b6ca5e39f84f05968f00ee6",
+          "path": "SECURITY.md"
+        }
+      ],
+      "subject": "onboarding:SECURITY.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QKMJEE",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-23C91T; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "657df7caddcef12d399ba9c0698505053ccc8f7c",
+          "path": "docs/dashboard.md"
+        }
+      ],
+      "subject": "onboarding:docs/dashboard.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QKTDYQ",
+      "items": [
+        "sha256:4cf28fedc327e5e74b05a36cedec56cfae80d613819d58e2a3c4693b5bb8fdf3"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:4cf28fedc327e5e74b05a36cedec56cfae80d613819d58e2a3c4693b5bb8fdf3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-QR6NWP",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-K2QMWQ; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "7c31a97f0930f24dda24564ecf8c84b5f08be9dd",
+          "path": "docs/host.md"
+        }
+      ],
+      "subject": "onboarding:docs/host.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-QWWQD9",
+      "items": [
+        "sha256:20c3c70b7e339732e7a084ec2bc47b45e35d8331503ae8712a7e6fbd8395ed4a",
+        "sha256:409abf1e80a6750cdb0c71192bb3838aa165424b1e9167910da8fb42964710c8",
+        "sha256:fe9eddaec63242901e9c9ab052c356db2a6ad488613dc9de348229af5ab5a80b"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "7d188f24b77caa6a17c0a0b4f9d8e9b3a2166252",
+          "path": "mcp/tests/test_knowledge_correction_guidance.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_knowledge_correction_guidance.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-R4ZT4W",
+      "items": [
+        "sha256:21ccc8f8a1f2c56548de691dbc2b6447739b7f5b8e25a12a858ba1fce97c456a"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:21ccc8f8a1f2c56548de691dbc2b6447739b7f5b8e25a12a858ba1fce97c456a"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RB7V2J",
+      "items": [
+        "sha256:41fb1d27849e66beb9e133a04ecdb17834c6f2ccdbc0b9c94f28570284bf8810"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:41fb1d27849e66beb9e133a04ecdb17834c6f2ccdbc0b9c94f28570284bf8810"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-REPNQ1",
+      "items": [],
+      "reason": "The card is removed under MIK-R124 rule 1 and MIK-R97 v2 because the packaged copy carries the dependent record DPD-NGC2F6; the dependent holds the document's truth.",
+      "sources": [
+        {
+          "blob": "026b25cfc0f0c7c01ed4aeebd60f00747b7b7c52",
+          "path": "mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/package_data/runtime/docs/tool-details.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RF96BF",
+      "items": [
+        "sha256:0304c6087896736e2b742ff2a16628b7b0e7cd245fc0c9c5c0c11ab7dc76f577"
+      ],
+      "reason": "The reference index page changed at A004; its card was removed with the docs cards under MIK-R124 rule 9, and the page is an index that carries no dependent record. Its account is its links, which the public-docs check holds.",
+      "sources": [
+        {
+          "blob": "180816fbcd3cfbc3ff210e767069764434aaf95e",
+          "path": "docs/reference/README.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/README.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RG2CH9",
+      "items": [
+        "sha256:e4c4a523f354ea0574dc365f44a618c2d61140ee0e7d45eed5b3600bd883bf65"
+      ],
+      "reason": "The route overview's changed sources are the CLI, conversion, scaffold and packaged benchmark documentation this leaf edited or removed; its account of the mcp route remains current and no prose change is needed.",
+      "sources": [
+        {
+          "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+          "path": "mcp/src/agents_remember/cli/__main__.py"
+        },
+        {
+          "blob": "5edff91c427661cc617bc9022414d7bf4dddbf24",
+          "path": "mcp/src/agents_remember/cli/knowledge_convert.py"
+        },
+        {
+          "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+          "path": "mcp/src/agents_remember/kernel/memory_init.py"
+        },
+        {
+          "blob": "3f2b321014647800912880d2f2dd6b38449ccbea",
+          "path": "mcp/src/agents_remember/package_data/benchmarks/docs/benchmarks-methodology.md"
+        }
+      ],
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-RZWTCP",
+      "items": [
+        "sha256:b55bc174b6af7a4f307a51fe5fb7eb752436b60dcfd1e1d96ad6a7e809695ace"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-XHXZSA"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-S58NH6",
+      "items": [
+        "sha256:8ba3eee1e1f33393addb4398ffa25268c0b4f951213590a1f346c5ef494a0c77"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/scenario-catalog.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/dashboard/scenario-catalog.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SHWTV9",
+      "items": [
+        "sha256:e2a960f2f7fea123af3ceb835d568e3742d21257feb51b61dbdc217a7f66ffaa"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/session-cockpit-upstream-register.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/dashboard/session-cockpit-upstream-register.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SQ6HM8",
+      "items": [],
+      "reason": "The card is removed under MIK-R124 rule 1 and MIK-R97 v2 because the document carries the dependent record DPD-CZBR1Q; its realization RLZ-HRPJ1A is retired with the card, and the dependent holds the document's truth.",
+      "sources": [
+        {
+          "blob": "df8866c4ebf882021023379d500abee5a388ba2f",
+          "path": "README.md"
+        }
+      ],
+      "subject": "onboarding:README.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T1M2FG",
+      "items": [
+        "sha256:bad672f622c4fc35f5ba59ee4dfef0b9e35c51d1101fdcdfd531e23f55780485"
+      ],
+      "reason": "The hunk relaxes a test assertion that no invariant states: a migration command of an earlier installation is no longer required to have a documentation row. The module's card was updated.",
+      "subject": "hunk:sha256:bad672f622c4fc35f5ba59ee4dfef0b9e35c51d1101fdcdfd531e23f55780485"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T1PB12",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-2B7PTY. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "f864990a2321ca0c44d06c637e16f4537a99df54",
+          "path": "docs/install/pi.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/pi.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T1PBFN",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-6WW03D. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "1edca68afa84b2a3b1d31713824ff746ce36beb1",
+          "path": "docs/guides/carryover-from-branch.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/carryover-from-branch.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T6Z036",
+      "items": [
+        "sha256:caf264e41c39af36acc017d57ee0d374f53507dea89b4db61aea4bc8fc548551"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "agents-remember-welcome.png"
+        }
+      ],
+      "subject": "onboarding:agents-remember-welcome.png"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T76CHS",
+      "items": [
+        "sha256:ab0fc39a168de8a1a6b6e5e3fd5b4381814457f796f67a4f553af53daf777eef"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:ab0fc39a168de8a1a6b6e5e3fd5b4381814457f796f67a4f553af53daf777eef"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-T7ETM2",
+      "items": [
+        "sha256:4de6a99947c46049c96313c8c48c431ba5ad59d289ac602082c5f8df7d30331f"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/harness-matrix.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/harness-matrix.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TD7JXZ",
+      "items": [
+        "sha256:471b4186c161402bea18e4912eae0f01095a52042e7c7dd2ff58417dd38f8edb"
+      ],
+      "reason": "The dependent's document docs/design/python-pytest-bootstrap.md is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 2,
+      "subject": "DPD-ZT8YY7"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TKCAX2",
+      "items": [
+        "sha256:9bcc93e6a6c7375a9fd074692dc40a3c4dc8ed8e814998ad879f6f23850ca7cc"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/install/antigravity.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/antigravity.md"
+    },
+    {
+      "covers": [
+        {
+          "after": "absent",
+          "before": {
+            "blob": "c97404162b4fcabd667a70a44a1c2326d22d9bbb",
+            "content": "sha256:f4ca5e13275b0cd1d091c7f396334d9ae2ab8ec871d53d894395b54cff42576f",
+            "locator": {
+              "end": 80,
+              "kind": "line_range",
+              "start": 40
+            },
+            "path": "mcp/README.md"
+          },
+          "id": "RLZ-16EXW2"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "076902aa90ac5ade01f0041fdb48ed03a3d762f5",
+            "content": "sha256:03976d0884745ebcb81bf413b489a981683f962b97829625dab51bded6fd411a",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 88
+            },
+            "path": "README.md"
+          },
+          "id": "RLZ-P3Q7TF"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-TPZFSB",
+      "items": [
+        "sha256:5743fb58b503ef357892185a07a45fda0a22da2e54f1841f10664b978d47deaf"
+      ],
+      "reason": "The rewritten front page and package page state the supported Python range but no longer separate it from the historical 3.13 artifact or name the managed 3.14.8 pin, so the two documentation realizations are removed; the package manifest realization at mcp/pyproject.toml still states the admitted range.",
+      "revision": 1,
+      "subject": "INV-7VGMWY"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-TQX2XM",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-XV7QBE. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "fd6fcdc5d781ad05cafac10e91ed523f961efd7f",
+          "path": "docs/install/README.md"
+        }
+      ],
+      "subject": "onboarding:docs/install/README.md"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-TXJQCT",
+      "items": [
+        "sha256:c971abc9c0f5e64385a647e0dc7a9e195d041848d17821c3c4dd94fff5f467f8"
+      ],
+      "reason": "The dependent's document mcp/src/agents_remember/package_data/runtime/docs/tool-details.md is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 6,
+      "subject": "DPD-NGC2F6"
+    },
+    {
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-V0T9TS",
+      "items": [
+        "sha256:7a2e7b76523409c671a82df3b4e387d85f2297c31a7e1b9d2b90104718d1dd6b"
+      ],
+      "reason": "The dependent's document docs/reference/mcp-tools.md is rewritten or re-confirmed at C; the record is re-confirmed at the task's tip with its derived anchors at the candidate.",
+      "revision": 3,
+      "subject": "DPD-X6G7K3"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-V1AMRN",
+      "items": [
+        "sha256:7f5fdb19d251461a4e2181670c624d6fb5e899ec1c7a2055bbce8cfae007dafd"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:7f5fdb19d251461a4e2181670c624d6fb5e899ec1c7a2055bbce8cfae007dafd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-V6R12Y",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-0K35N0. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "ae9f616a91e090b8d5b0f1d645dfac209db0e5f5",
+          "path": "docs/release-checklist.md"
+        }
+      ],
+      "subject": "onboarding:docs/release-checklist.md"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-VBAAKF",
+      "items": [
+        "sha256:370d1ab42dce27a0a8ef563f2fa75459be3fd214579ebcdf75fc62d3ea964d3e",
+        "sha256:489f535d9f9b0c1e2df5bd65aea8fa572a5ee2e18782cccf15adb58f0e189d95"
+      ],
+      "reason": "The card is brought up to date with the candidate's source: its prose now states what the file does at C and its numbered references were re-authored against the same file.",
+      "sources": [
+        {
+          "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+          "path": "mcp/src/agents_remember/kernel/memory_init.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/kernel/memory_init.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VFS32W",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-9F0Q8G; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "ab45e251aa1f2f59abf8ebbd1ecf423ce8b422c5",
+          "path": "docs/guides/use-external-memory.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/use-external-memory.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "before": {
+            "blob": "14c64a93cfdee1ea751b35280444aae0bf50eafa",
+            "content": "sha256:d90cd30b05a5d3b40d32437042370e19b15967731fa072ce70b44d17522a32d6",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "id": "RLZ-57VSEG"
+        },
+        {
+          "after": "absent",
+          "before": {
+            "blob": "06e81f0add7f4cba7b720233e42324c1b4980eac",
+            "content": "sha256:c1d8008db2562e414b16242dddf7a3d460e6ed3ef52e590cb835a8e1feb3e99d",
+            "locator": {
+              "end": 530,
+              "kind": "line_range",
+              "start": 521
+            },
+            "path": "docs/reference/settings-json.md"
+          },
+          "id": "RLZ-JV8KJG"
+        }
+      ],
+      "disposition": "deleted",
+      "id": "ROW-VMEFHM",
+      "items": [
+        "sha256:a65e2d3cc9de445ceb7faa463dc9ec6d67fab4a0cd2c2dd9ed5c6a6961db5b6e"
+      ],
+      "reason": "The command module's file anchor is re-anchored at C. The settings-reference line that stated the user-settings upgrade is removed with the reference card under MIK-R124 rule 9; the invariant's code realizations and meaning are unchanged.",
+      "revision": 2,
+      "subject": "INV-3HQNH1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
+            "content": "sha256:901b313c67a63da5d4ce6afe55808d66fb0db672e89348353b2817232eea8601",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-XQXYDT"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-W7HPK5",
+      "items": [
+        "sha256:90a8ecaefad6eb193ca6f8d922acaa9ec06fff7a2783ef65b807e076d1e5324a"
+      ],
+      "reason": "The evidence-lanes file is re-anchored at C after its evidence registration; the invariant's certification meaning is unchanged.",
+      "revision": 1,
+      "subject": "INV-BXWQRD"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WCF8KS",
+      "items": [
+        "sha256:16c4dde4317056e1b93002fa980783fed1cf9e4f33ee72b774f59ac2b4309fef",
+        "sha256:3369df2b3ca4a23371b1392fcc1929dadb1f08bc3214d0bcc7938600dfc1b97c",
+        "sha256:416726c8113110c929b63d741233ee7dd998d8910e5c671ad9c2470e8ec7ca00",
+        "sha256:7b3f1f3291cd948092216f6a645f293fc0f1cd7531ade334bcd46b53f1baa429",
+        "sha256:8dada72f8d4d43b316b99ba3e03d22ae546751078492fbcbaf44aeef55403e61",
+        "sha256:c076dd00d5e4317736a5edd6e51b076f12c1eed29042786aed712af2a126c206"
+      ],
+      "reason": "This leaf changes what the module's command test mutates. The helper misplace_command_documentation no longer moves a command's documentation away from a declared owner: it takes the command's row out of the agents' command table, or, for a name of the set UNDOCUMENTED_COMMANDS, adds a row for it to that table. The card's sentence on test_each_public_command_requires_its_documentation_owner is brought up to date with that. The card's other sentences and its notes are unchanged.",
+      "sources": [
+        {
+          "blob": "fcea192008fd1214a3a615afe58b187b5c3eaaf7",
+          "path": "mcp/tests/test_role_instruction_corpus.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_role_instruction_corpus.py"
+    },
+    {
+      "considered": [
+        "FAM-6M4B49",
+        "FAM-GDXSJG",
+        "FAM-XX4TGY",
+        "FAM-Z69A94"
+      ],
+      "disposition": "no_family",
+      "id": "ROW-WF2SFX",
+      "items": [
+        "sha256:d13aec97c64efe94d3020e992d2f88239ccd17c356750b0be89a6f12adc764a8"
+      ],
+      "reason": "This leaf authored the invariant from its own documentation clause. It states a public-documentation or instruction-consistency obligation, and no family's joint guarantee covers that obligation; the families examined (FAM-6M4B49, FAM-GDXSJG, FAM-XX4TGY, FAM-Z69A94) cover settings, propagation, instruction composition and the runtime contract, not this documentation truth.",
+      "revision": 1,
+      "subject": "membership:INV-2A1WKN"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WF3Y6W",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-QH1N0S. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "1b79aaf702efa67f2c7d3b54154f2d60b2ac9410",
+          "path": "docs/design/canvas-kit.md"
+        }
+      ],
+      "subject": "onboarding:docs/design/canvas-kit.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WMGQCM",
+      "items": [
+        "sha256:2b14e8c2c7f2ad2032296b78f9f77830d725682f10fcdcabba4ba85a39062b53"
+      ],
+      "reason": "The hunk rewrites the package page into the package description, install steps, dashboard and host commands and the tool-group table. The change carries no invariant, and the page's card is brought up to date under its onboarding row.",
+      "subject": "hunk:sha256:2b14e8c2c7f2ad2032296b78f9f77830d725682f10fcdcabba4ba85a39062b53"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WP17KQ",
+      "items": [
+        "sha256:5e08484f7d903b4fac0632458eccb7e6ab4f2f8e0e708909dc52344ef94c6a90"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:5e08484f7d903b4fac0632458eccb7e6ab4f2f8e0e708909dc52344ef94c6a90"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-WYBASE",
+      "items": [
+        "sha256:e9bafe2898df13a8793d76ba3a9f19ab86ee77d57262bf2e7d4ea7fc646f1c69"
+      ],
+      "reason": "The page is deleted at C (MIK-R97 v9 part F removes pages that serve only an earlier installation), so its card is removed with it; the document's surviving truth is its confirmed dependent record where a document remains.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/templates/review-report-template.md"
+        }
+      ],
+      "subject": "onboarding:dev-skills/dashboard-experience-review/templates/review-report-template.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X1F2D5",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-XAARS1. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "daf9974b0500c86b145bd4be891047ed2a7176c3",
+          "path": "docs/workflows.md"
+        }
+      ],
+      "subject": "onboarding:docs/workflows.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X1XNFW",
+      "items": [],
+      "reason": "The document stays at the candidate and carries the dependent record DPD-TXRND9. Its card stood at the memory base; this leaf removes the card under MIK-R124 rule 9. The dependent record holds the code links the document stands on.",
+      "sources": [
+        {
+          "blob": "06b03b74622cd689ce6842b3921bbaa865bcc85f",
+          "path": "docs/reference/knowledge-system.md"
+        }
+      ],
+      "subject": "onboarding:docs/reference/knowledge-system.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X4Q38H",
+      "items": [
+        "sha256:00a2f789cad6d1035f863ce6da93614c4420516dadde1ee7f3cd13a6987c6662"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "agents-remember-infographic.png"
+        }
+      ],
+      "subject": "onboarding:agents-remember-infographic.png"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XVC0JP",
+      "items": [
+        "sha256:6feb2a743c74bc61795bc0a74b95ae8de1a82c552c516a9b23cda52f06f5d95e"
+      ],
+      "reason": "The hunk follows the served tool descriptions of the candidate; no invariant states the changed expectation and the module's card keeps its account.",
+      "subject": "hunk:sha256:6feb2a743c74bc61795bc0a74b95ae8de1a82c552c516a9b23cda52f06f5d95e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:4dd4f065652c07eb2cd7b78619ae9fed320efbd7c4c5fc074d3d6b2c87dbc551",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "before": {
+            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
+            "content": "sha256:901b313c67a63da5d4ce6afe55808d66fb0db672e89348353b2817232eea8601",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "id": "RLZ-BNMQ79"
+        },
+        {
+          "after": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:f3c97cea90d6874137c31a702bc9f64c898199a273c0aede415fdef641e6c6c7",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "fcaa096a9a747d9ac1a914646d1e75f46e22a1a6",
+            "content": "sha256:7348889f7381f48d0e5451f71f151ac591edda4024756281091b6168c60e55a0",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GEMVNE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-XWH3KY",
+      "items": [
+        "sha256:01988b2948b357372beaba75a39e7df18e25392a43304a1b80ae2cd996d2fa58"
+      ],
+      "reason": "The two evidence-table files this invariant anchors (mcp/tests/evidence-lifecycle.toml and mcp/tests/test-evidence-lanes.toml) changed in this leaf only by the evidence registration; both entries are re-anchored at C and the invariant's meaning is unchanged.",
+      "revision": 6,
+      "subject": "INV-1ZKP4R"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-Y0VNVZ",
+      "items": [
+        "sha256:6be4786eab2ea27c9022d9580f807984308d4df58790a94632b6e0dfff342464"
+      ],
+      "reason": "The card stands at both trees and needs no change; the leaf changed the source it documents, not its account.",
+      "sources": [
+        {
+          "blob": "2f75e5a3457e2b3669fc2a008abe2f37bca4aae9",
+          "path": "mcp/tests/test_tool_descriptions.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_tool_descriptions.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YPHY71",
+      "items": [
+        "sha256:b630487dfc37c895bd009feab6199effdaad4ca20fe9f4883424d0cf6d17d42a"
+      ],
+      "reason": "The card is brought up to date with the public pages at the candidate. Reference 276 names the heading Start here of the docs index as the page writes it. Reference 281 no longer says that the contributor guidance defines a retained protection policy. Reference 282 no longer speaks of provider runtime paths: it says that the runtime layout reference states that no part of the product starts, indexes or queries a search provider. These three notes and their card lines drop the prefix of a retained account, because the three pages were read again at the candidate. Reference 363, with two targets, is replaced by the one-target references 368 (pyproject.toml) and 369 (CONTRIBUTING.md) with the same sentence. The notes of references 35 and 74 lose their anchor line, and references 35, 40, 44, 45, 276, 281 and 282 are anchored at their whole file.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "agents-remember-infographic.png"
+        },
+        {
+          "blob": "absent",
+          "path": "agents-remember-welcome.png"
+        },
+        {
+          "blob": "absent",
+          "path": "agents-remember.png"
+        },
+        {
+          "blob": "8d0ee14cfe3ea604bf6201813aec40faf89a64ca",
+          "path": "assets/agents-remember-explainer.mp4"
+        },
+        {
+          "blob": "a264e929d8665c9bde729443c21a52b9f8da1783",
+          "path": "assets/agents-remember-welcome.png"
+        },
+        {
+          "blob": "absent",
+          "path": "dev-skills/README.md"
+        },
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/SKILL.md"
+        },
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/delegation-map.md"
+        },
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/owned-methods.md"
+        },
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/templates/missing-view-matrix-template.md"
+        },
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/templates/review-report-template.md"
+        },
+        {
+          "blob": "absent",
+          "path": "dev-skills/dashboard-experience-review/templates/scenario-catalog-template.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/review-doctrine.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/scenario-catalog.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/session-cockpit-closeout-evidence.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/dashboard/session-cockpit-upstream-register.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/engine-room/engine-room-visual-language.html"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/engine-room/podstage.html"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/harness-matrix.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/design/observable-lifecycle.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/diagrams/worktree-lifecycle/worktree-lifecycle.drawio"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/diagrams/worktree-lifecycle/worktree-lifecycle.png"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/diagrams/worktree-lifecycle/worktree-lifecycle.svg"
+        },
+        {
+          "blob": "9a510e55fdea509a944c2b7d4e78c045816f7858",
+          "path": "docs/guides/README.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/guides/first-conversion.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/guides/providers.md"
+        },
+        {
+          "blob": "f228b53357d555a895da03cff5afd945ea2335ae",
+          "path": "docs/images/dashboard-attention.png"
+        },
+        {
+          "blob": "96a99a34e4690659a0e2a2706de732678335219b",
+          "path": "docs/images/dashboard-chats.png"
+        },
+        {
+          "blob": "7ba4e5f8205c66ab5702eb92cdae98e239309225",
+          "path": "docs/images/dashboard-operations-task.png"
+        },
+        {
+          "blob": "70b9d89c8577f1de0977db0b42dc7e0a11395ba7",
+          "path": "docs/images/review-explainer-column.png"
+        },
+        {
+          "blob": "0176e992cac9ddec2416238e1fc3f85aad160119",
+          "path": "docs/images/review-rule.png"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/install/antigravity.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/install/vscode-copilot.md"
+        },
+        {
+          "blob": "180816fbcd3cfbc3ff210e767069764434aaf95e",
+          "path": "docs/reference/README.md"
+        },
+        {
+          "blob": "absent",
+          "path": "docs/reference/execution-topology-migration.md"
+        },
+        {
+          "blob": "absent",
+          "path": "onboarding-example.png"
+        },
+        {
+          "blob": "da62c4629fddb5339c234d881ff920936a6e157f",
+          "path": "scripts/check-public-docs.py"
+        }
+      ],
+      "subject": "onboarding:overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YS3MQY",
+      "items": [
+        "sha256:5067f647ead1e22db42e073d892d7c1d165d7418c15c85b083510626c413cf24"
+      ],
+      "reason": "The hunk relaxes a corrected-surface assertion that no invariant states, so the test still refuses a removed memory mode without requiring one exact sentence. The module's card needs no change.",
+      "subject": "hunk:sha256:5067f647ead1e22db42e073d892d7c1d165d7418c15c85b083510626c413cf24"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YTPQQR",
+      "items": [
+        "sha256:9509da7bce1fbe72b8727bb32ac83e56784973c16320910c9aef8f4f83349da6"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "0176e992cac9ddec2416238e1fc3f85aad160119",
+          "path": "docs/images/review-rule.png"
+        }
+      ],
+      "subject": "onboarding:docs/images/review-rule.png"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-YYP8E7",
+      "items": [],
+      "reason": "The document carries the dependent record DPD-1DXK6Q; no card stood at either tree, so rule 9 had no card to remove. The dependent holds its truth.",
+      "sources": [
+        {
+          "blob": "3d686feb389dd78c8fd90d351b67bf1f55fa433a",
+          "path": "docs/guides/cost-aware-bootstrap.md"
+        }
+      ],
+      "subject": "onboarding:docs/guides/cost-aware-bootstrap.md"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZDDPXP",
+      "items": [
+        "sha256:089a95e7a63961fb568eb3c48a5285e2f0c99929eb746eff98aa4c9564481972"
+      ],
+      "reason": "The root image set changed: three root images are removed, the welcome image moves under assets/, the explainer video and the dashboard and review captures are added. No card exists at either tree, and an image is an illustration rather than a knowledge source.",
+      "sources": [
+        {
+          "blob": "96a99a34e4690659a0e2a2706de732678335219b",
+          "path": "docs/images/dashboard-chats.png"
+        }
+      ],
+      "subject": "onboarding:docs/images/dashboard-chats.png"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZGTMP0",
+      "items": [
+        "sha256:253533ede4faeb744e3c20f3c2b97016a8a29bd8b44304553b04b4d7e93b4e23"
+      ],
+      "reason": "The row answers one of the 21 hunk items that an earlier worklist of this leaf held for the public front page README.md, which this leaf rewrites into the product's current documentation. The change of the page's prose carries no invariant. The page carries the dependent record DPD-CZBR1Q; its card is removed (ROW-SQ6HM8), and the current worklist holds no hunk item for the page.",
+      "subject": "hunk:sha256:253533ede4faeb744e3c20f3c2b97016a8a29bd8b44304553b04b4d7e93b4e23"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-ZS8CJ7",
+      "items": [],
+      "reason": "Reference 5 and its evidence line are removed: their target, the design page docs/design/observable-lifecycle.md, is removed by this leaf. The eight other references are unchanged.",
+      "sources": [
+        {
+          "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+          "path": "mcp/src/agents_remember/serving/projections/paths.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/paths.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-ZTX572",
+      "items": [
+        "sha256:92b20c13679085acc2eec1d6b04a6fdbac28f5f2b1c90da3ce75a378602d4b97"
+      ],
+      "reason": "The page is deleted at the candidate and has no dependent record; its card is removed with it.",
+      "sources": [
+        {
+          "blob": "absent",
+          "path": "docs/design/engine-room/podstage.html"
+        }
+      ],
+      "subject": "onboarding:docs/design/engine-room/podstage.html"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZZ0ET5",
+      "items": [
+        "sha256:4a06912353efc8f9a924156183c6b09d50feb55aaa0ce1c94c6df1751606216b"
+      ],
+      "reason": "The hunk relaxes a corrected-surface assertion that no invariant states, so the test still refuses a removed memory mode without requiring one exact sentence. The module's card needs no change.",
+      "subject": "hunk:sha256:4a06912353efc8f9a924156183c6b09d50feb55aaa0ce1c94c6df1751606216b"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

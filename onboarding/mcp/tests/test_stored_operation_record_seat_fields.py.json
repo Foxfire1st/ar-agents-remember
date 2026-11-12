@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_stored_operation_record_seat_fields.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Old seat-field record compatibility: implementation/assertion boundary described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c3ea99ab653ca9233cc76a525d9805dfea8c0b8d",
+            "content": "sha256:a1896eec67c835fd0130b37ddf057e719eac6d5c24c0283e77104e5750959607",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_stored_record_of_today_s_shape_that_holds_the_four_fields_still_loads"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

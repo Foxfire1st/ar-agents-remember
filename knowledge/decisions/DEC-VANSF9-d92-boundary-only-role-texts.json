@@ -1,0 +1,60 @@
+{
+  "admission": {
+    "criteria": [
+      "constrains_future_work"
+    ],
+    "justification": "Binds every future edit of the l-01-agent-lifecycles role and operation texts to the input/output/boundary test."
+  },
+  "alternatives": [
+    {
+      "option": "Boundary-only role texts: each role states its inputs, outputs, boundaries and needed product facts; inside-work rules go or become one marked advice part.",
+      "reason": "Developer direction D92 (2026-10-07) via the MIK-R101@v1 packet.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep prescribing inside-work order, technique, delegation and check cadence in every role text.",
+      "reason": "Prescriptive rules age fastest and contradict across files; the packet problem statement documents the cost.",
+      "reconsider_when": "Role operators show boundary-only texts cost more than the incidents the prescriptive rules prevented.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "All future edits of the l-01-agent-lifecycles role and operation texts obey the stays/goes/advice test."
+  ],
+  "context": "Role and operation texts had grown prescriptive over months of incident-driven rules, becoming the run bottleneck; the developer ruled agents are operators that receive inputs and owe outputs.",
+  "decider": "developer (direction D92, 2026-10-07) via the MIK-R101@v1 packet",
+  "id": "DEC-VANSF9",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "route:skills/l-01-agent-lifecycles"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R101",
+        "packet": "requirements/MIK-R101-v1-the-role-texts-state-what-goes-in-and-what-comes-out.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Manager Result contract roles/manager.md 36-38; Orchestrator Result contract roles/orchestrator.md 34-36; handover protocol in operations/coordination.md"
+      ],
+      "path": "notes/reports/260928-MIK-L101-curator-handoff-list.json"
+    },
+    "handoffEntry": "MIK-R101@v1 rule 2",
+    "leaf": "260928-MIK-L101",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

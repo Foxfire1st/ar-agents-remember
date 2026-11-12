@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test"
+    ],
+    "justification": "The receipt's remainder and continuation are what a presenter trusts, so an unmeasured distance between the returned range and a requested end line reads as source that exists, and a continuation at or past the object's end invents a line no byte holds."
+  },
+  "applicability": "A bounded source read of an existing file at a bound comparison side, on a first read and on any page a continuation reaches.",
+  "conditions": [
+    "The requested range is not answered from existing lines alone: the object ends before the requested end line, the requested start line lies at or past the object's end, or a window, page or byte bound stops before the examined bytes hold the requested end."
+  ],
+  "exclusions": [
+    "A missing path, which is measured absence, and an unreadable tree, which is unavailable.",
+    "A line the window cut, whose decoded-prefix text and advancing byte offset the long-line rule owns."
+  ],
+  "id": "INV-18QNN3",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Worker A2 freeze report (role-launch/260928-MIK-L180-A2-freeze-report.md, sha256 5c77365ae7eb7d9b2cdacaaa549694f6036d3548a490d2f9f3c9f25c12b20bbf) at the frozen tree f0df52d2494d44c98b400dbeb98470ec98a29dd9, patch 5825e86ca6f08c3e7670e8f24b4233f2766019c3395b9d6a7e947329ff189bb9. Rule 5's four cases plus the one-past-end case in mcp/tests/test_review_evidence_eof.py (test_f03_r182_a_read_past_the_object_end_is_present_at_its_last_line, test_f03_r182_a_page_past_the_object_end_stops_at_its_last_line, test_f03_r182_an_unmeasured_remainder_is_unknown_not_the_requested_difference, test_f03_r182_a_read_started_at_the_object_end_is_a_measured_absence, test_f03_r182_a_start_line_one_past_the_object_end_is_a_measured_absence): 5 failed on the base reader in 6.63 s (evidence/r182-A2-before.txt, 553517817bc3cce87c1581f16f2a3725cb85b06335ab57b12224f8a87f60f771) and 5 passed on the candidate in 7.10 s (evidence/r182-A2-after.txt, 7e728cbc1d93aeac2f4545af491d718137f5534c1ac17645c9b707cb9572da2c); 88 focused cases pass. Independent code round 2: PASS, exactly L180-R1-F01 and L180-R1-F02 fixed, none remaining.",
+        "Worker A2 freeze report at tree f0df52d2494d44c98b400dbeb98470ec98a29dd9 (patch sha256 5825e86ca6f08c3e7670e8f24b4233f2766019c3395b9d6a7e947329ff189bb9): the detail assertion 'line 6' / 'runs past it' in test_f03_r182_a_read_past_the_object_end_is_present_at_its_last_line and 'line 450' in the page case are carried by _window_detail, and the page-bound 50-line count is assembled by _window_receipt."
+      ],
+      "path": "l180-curator-list.json"
+    },
+    "handoffEntry": "MIK-R182@v1",
+    "leaf": "260928-MIK-L180",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "A bounded source read counts only lines that exist: a requested range that runs past the object's end ends at its last line and is present, a remaining count is stated as known only where the read measured it, and no continuation leads at or past the object's end, so a start line no byte can hold is a measured absence rather than an empty line.",
+  "status": "proposed",
+  "supersedes": []
+}

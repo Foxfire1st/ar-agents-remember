@@ -1,0 +1,110 @@
+{
+  "path": "mcp/src/agents_remember/tasks/semantic_topology.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Strict frozen models define the complete v2 identity and its two placement modes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:af01c4a96d73609242b5697982d2944cc1c492163b9fb22aafb55c4e453e85cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "SemanticTopologyV2"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:c39ca12481588c36ec830acda12832dcf0830254a8fa3469e778c0e5f0647b7c",
+            "locator": {
+              "kind": "symbol",
+              "name": "SemanticTopologyDagPlacement"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:cfa32ad848bbe854392a0fca0eaa1b5653e4194527df50d0622010d07b26d7d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "SemanticTopologyAtomicPlacement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Projection and fingerprint share one canonical structural value and exact work report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:5e1ace78eb4c81f55b17211498b67908c04c1e748f513854d151b87f61e3f116",
+            "locator": {
+              "kind": "symbol",
+              "name": "semantic_topology_projection_with_work"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:3671f77172346aaf328cc83e71ae1d2b8947b892cdf1049deec30b6ac1147d31",
+            "locator": {
+              "kind": "symbol",
+              "name": "semantic_topology_fingerprint_with_work"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Version, taxonomy, composite binding, execution nature, and placement all fail closed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:1245e1dc04d880cd8273ffb6e9446415bbe2d9e862d4209d2868bf754b88eb5a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_schema_version"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:d5ea525ebb03c2339ad32fd8c685a098bffc4f7dfb84c835c75d150b073f346a",
+            "locator": {
+              "kind": "symbol",
+              "name": "_owning_parent_row"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "21574a76ae9c0d26491e4973a94966cbc4636fce",
+            "content": "sha256:baf960cca5839e1246e75b66151b6d3aec780fc6f4d934b14e76d64f82d3213c",
+            "locator": {
+              "kind": "symbol",
+              "name": "_dag_placement"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

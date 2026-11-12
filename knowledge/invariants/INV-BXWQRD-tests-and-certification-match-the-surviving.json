@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "Realized in the binding table that names artifacts and in the lane catalog that names test modules, which fail differently: a dangling binding fails when the rail runs, a missing module fails when the lane is selected. The mistake it prevents is a certification rail that passes while the file it publishes no longer exists."
+  },
+  "applicability": "The certification profile, its adapter binding table and the governed test-evidence lane catalogs.",
+  "conditions": [
+    "The adapter source can change, and the digest the profile records is the one measured from it."
+  ],
+  "exclusions": [
+    "A rail whose real subject survives.",
+    "A digest written in by hand rather than measured."
+  ],
+  "id": "INV-BXWQRD",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "mcp/tests/test_agents_remember_quality.py (3 passed) and evidence_lifecycle PASS over 76 governed artifacts; the profile's runtime/profile digests are the measured values for these sources. The binding table that mechanically followed the retirement, `.dagger/src/agents_remember_quality/rail_bindings.py`, is fixture configuration under a dot-directory: this product's memory writer accepts no card there, so it is named here as the follow-through and is not a target."
+      ],
+      "path": "handoff-list.l192.json"
+    },
+    "handoffEntry": "L192-W-R199-08",
+    "leaf": "260928-MIK-L192",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "Tests and certification match the surviving operations: the shipped rail list no longer declares the provider-runtime integration rail, the profile's digests are renewed against the sources they measure rather than left stale, and the lane catalogs list only test modules that exist on this tree.",
+  "status": "proposed",
+  "supersedes": []
+}

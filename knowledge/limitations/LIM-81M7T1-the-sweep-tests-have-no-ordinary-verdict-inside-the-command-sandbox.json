@@ -1,0 +1,31 @@
+{
+  "boundary": "On the frozen candidate both tests end with an ordinary pytest verdict where the process runs with NoNewPrivs 0 and Seccomp 0. Inside the Worker's command sandbox (NoNewPrivs 1, Seccomp 2, private namespaces) neither does: the sweep's own 60-second limit fires by name at `role_start`, and afterwards the asyncio runner's shutdown of its default executor does not complete, so the outer limit ends the process.",
+  "id": "LIM-81M7T1",
+  "limited": "An ordinary pytest verdict of the two raiser-pin sweep tests inside the Worker's command sandbox.",
+  "links": [
+    {
+      "relation": "bounds",
+      "target": "INV-W4XGR4"
+    },
+    {
+      "relation": "bounds",
+      "target": "FAM-TG3WK0"
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "notes/reports/260928-MIK-L70-curator-evidence/handoff.json"
+    },
+    "handoffEntry": "L70-f5-in-sandbox-boundary",
+    "leaf": "260928-MIK-L70",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-limitation/v1",
+  "status": "proposed",
+  "unsupported": [
+    "No cause is established for the missing completion inside the command sandbox.",
+    "No equivalence between the command sandbox and the outside route is claimed beyond the recorded runs.",
+    "Whether an ordinary verdict inside the command sandbox is required belongs to MIK-R87 carry item 17, not to this leaf."
+  ]
+}

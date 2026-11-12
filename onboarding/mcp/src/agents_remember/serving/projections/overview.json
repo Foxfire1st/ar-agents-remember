@@ -1,0 +1,637 @@
+{
+  "path": "mcp/src/agents_remember/serving/projections",
+  "references": {
+    "1": {
+      "note": "The observer store-root conventions are kernel-owned.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "55b370f0c63cc924e024f719d082ae36c33558a4",
+            "content": "sha256:ae1a2ceefafb1d5985391b9d96db4a5c69760c13cea6f4d50a5553b6b5ac1d2a",
+            "locator": {
+              "kind": "symbol",
+              "name": "observer_logs_root"
+            },
+            "path": "mcp/src/agents_remember/kernel/primitives/observer_paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Closeout projection has strict sprint admission and an invalid-empty effective-state boundary.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d7b32dd73eac8bdb5be126db5ff1fa9738f1e447",
+            "content": "sha256:0a50c7b047377d17742dea2d7cbed00f4a1cccd93947e1a1bb500aff47307c45",
+            "locator": {
+              "end": 745,
+              "kind": "line_range",
+              "start": 667
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "82fefcaace2946165b5c0ed8bc77bedecedd8fe9",
+            "content": "sha256:83ce9de0948fee32591c1fdf56170616bcf8f4966d95a432dbb49e0ea7faaff6",
+            "locator": {
+              "end": 138,
+              "kind": "line_range",
+              "start": 104
+            },
+            "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3e069851661179ed1c44ff11d7044e62432f23be",
+            "content": "sha256:23a15d08b92545f09732df9f02e2d711d860a495140f9744e4765a18639169e2",
+            "locator": {
+              "end": 238,
+              "kind": "line_range",
+              "start": 138
+            },
+            "path": "mcp/src/agents_remember/worktrees/queue/closeout_projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Landing observation excludes historical repair and evicts the exact parsed-final entry after successful publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:9fefec9434c437aaefc4f22675c106414220e26ecb9e01adcb45ecd6d2dd173c",
+            "locator": {
+              "end": 506,
+              "kind": "line_range",
+              "start": 197
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Projection files publish separately; the route also invokes durable housekeeping.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:085be7eb1808d854defb75387f0b94cade3f8e1eebe6db3d644f32d488a5161e",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 93
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:0560e25f6fab77979abed46ab66982b7fe1e566b5e3642c468d016d22d6ebe9f",
+            "locator": {
+              "end": 235,
+              "kind": "line_range",
+              "start": 171
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:27f85b0e5fcc97c749dc667d6ec9223474cb0655312aa3e45dd824745eab8710",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:dd1393684ef6a05d51a14c7db6c8acdfe5f659df2223a30cc691fdd06949b13b",
+            "locator": {
+              "end": 287,
+              "kind": "line_range",
+              "start": 269
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "dddcce3e33bed7ffbd8bec7c711954dc794d4e8d",
+            "content": "sha256:272567458d3601509bc651b1bc8f600b210330efbf3ae7ae9bf69d663fb57e18",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 23
+            },
+            "path": "mcp/src/agents_remember/serving/projections/drift_snapshots.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:27f85b0e5fcc97c749dc667d6ec9223474cb0655312aa3e45dd824745eab8710",
+            "locator": {
+              "end": 272,
+              "kind": "line_range",
+              "start": 265
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Direct serving callers pass retained tick state and request one task-document body.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "46ddab7108c481e5f7516f270db8ed27e640c225",
+            "content": "sha256:9e3ca36b4187af178d2fded4adb76671a227dfa6242fbcdbda5a78bf94efc337",
+            "locator": {
+              "end": 461,
+              "kind": "line_range",
+              "start": 438
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Actual bound page interest gates discovery and admission; skipped work does not advance publication or terminal attempts.\n\nAnchor: `LandingStateRefresher.refresh_once`; `LandingStateRefresher._observe_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:a86f6f348996f8ae207c89e91e5a1eaf0fe0bbf88cf61814b64e77b9121452a6",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 261
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Transient due state retains current identities and uses semantic-answer age rather than observation noise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+            "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingProbeSchedule"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "Canonical task sources retain declared children, the resolved record master and its original literal for one downstream producer, preserving absent versus unresolvable input.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:344445d0ab83e2546d8cce1eb1abcce26c5bd8f13d089d016b179f8303763ac6",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_task_sources"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "Full task refresh prepares contracts, enclosures and sources before assigning the retained trio.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:c45e7a0608de050654ad6d540056877975d60d1e6253c034b5f642c5a0d49f43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_tasks_full"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:c45e7a0608de050654ad6d540056877975d60d1e6253c034b5f642c5a0d49f43",
+            "locator": {
+              "kind": "symbol",
+              "name": "_refresh_tasks_full"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "Incremental task reprojection replaces the whole affected closure and drops newly unreadable/invalid sources.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:5a60ab73ccef7d9232887bbb84293b43cb48302b60f3c3927b9e22d954144b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reproject_task_documents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:5a60ab73ccef7d9232887bbb84293b43cb48302b60f3c3927b9e22d954144b37",
+            "locator": {
+              "kind": "symbol",
+              "name": "_reproject_task_documents"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "Startup and explicit host-domain invalidations trigger host intake; ordinary full healing excludes that domain.\n\nAnchor: \"self._host_activity_started\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:aaec3e5e3a6a192b4348b930347fd109138915a5f8fa8ae3a46005e9877b8b18",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 418
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:aaec3e5e3a6a192b4348b930347fd109138915a5f8fa8ae3a46005e9877b8b18",
+            "locator": {
+              "end": 420,
+              "kind": "line_range",
+              "start": 418
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The projection tick consumes these readers.\n\nAnchor: `project_and_write`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "80f68a14806839156738f156091e776e566e18b6",
+            "content": "sha256:3dfabfe5745c213923ce0843a0db6ab71e1623aa0a5cd99c1153efed4f73c050",
+            "locator": {
+              "kind": "symbol",
+              "name": "project_and_write"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Requested bodies read only their named graph masters/declared children rather than enumerating the canonical corpus.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph_master_docs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Body generation tracks link/target identities and rejects unreadable or changing captured inputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2dd44d08efc626126c686e8990755305a7b91ce5",
+            "content": "sha256:480f658ced887006140e055b6b8e42e96749f9728c560fffeb81b604c3e52550",
+            "locator": {
+              "kind": "symbol",
+              "name": "BodyGeneration"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/task_body_generation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "Master validation in placement applies only to documented subTasks; other listed kinds retain list placement under existing identity/cycle guards, not a kind-rejection or own-master-validation rule.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:48de0c9a5927d664ad57b424366a96de5cbe63165fa355809fa071a02ce44225",
+            "locator": {
+              "kind": "symbol",
+              "name": "_place_listed_child"
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "70b10ba89ec770fccf5d12945ce3acef8f80900c",
+            "content": "sha256:ee9a7b94ba0aa56862d632811a4d0b128aa495307d53aec69f208cb1afadc314",
+            "locator": {
+              "end": 493,
+              "kind": "line_range",
+              "start": 417
+            },
+            "path": "mcp/src/agents_remember/observer/task_entries.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The on-demand body reader validates the requested canonical task document, joins only graph-named masters and their declared children through _graph_master_docs, and also obtains ordinary order/dependency fields through read_order_fields, which reads the owning master and its explicitly listed children. It avoids enumeration of the canonical task corpus; the body join is not graph-only.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:743f5a4309c292bff25529b424208385ef192a9ad191e055dc6a7187a0aabea8",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_task_document_body"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:9b6373ba9eeb22e690729f48e7140cac9740485c12a5a1116269682dfa1cf12f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_graph_master_docs"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "438d84c0d09d0074e5914af96d7e5babdb5a4eaf",
+            "content": "sha256:390c20d8eb1169ccdb88d5cbd8d3df0183783f9f2683e40f51c0bd452f73ee1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_order_fields"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Serving locally defines equivalent observer paths rather than importing the kernel definitions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "199d14e1e97d80f9655d7de2eaa66aa556c4f69f",
+            "content": "sha256:7b2a15da424bc5c829e72acabdb15cca6543d96bf08ebcd1f3887ed1b793146d",
+            "locator": {
+              "end": 41,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/serving/projections/paths.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Full task-domain construction stages contracts, enclosures and task_sources in locals and assigns the retained trio only after construction succeeds. Complete incremental dependency refresh is not whole-trio rollback atomic: contracts/enclosures are assigned before affected document closure projection can fail. Any failed read leaves _task_refresh_pending set; a later read forces full healing-domain reconciliation and clears the flag only after success. These guarantees are about the retained trio, not rollback of every cache or aged slot.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 358
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:8ea3a4195058770b535a3919a609c3cd3a136803f2f890bb57769d3c453cad0d",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 531
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+            "content": "sha256:2c79e0280bf3463d41c1893990c25b1c81b2d715ca381785a6fddb7ad821f936",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:7d8adfdb6418d0e64ef6c45a1c0fa71e0041a5e39dbd50db4efeb581d800baf0",
+            "locator": {
+              "end": 383,
+              "kind": "line_range",
+              "start": 358
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:8ea3a4195058770b535a3919a609c3cd3a136803f2f890bb57769d3c453cad0d",
+            "locator": {
+              "end": 652,
+              "kind": "line_range",
+              "start": 531
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Task projection tolerates addressed unknown keys, projects graph and typed reader fields, and hashes full semantic values.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c7f9860a40aaff1cb52f2b1c2c8b62be034bc3c",
+            "content": "sha256:5613184f682356e6e55af3ba98c27bec13b00b11942f4bcad5db4ecf3700c550",
+            "locator": {
+              "end": 44,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_parse.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:8441fe2ebef8daad4a897a74aefbf111ce93913d89d0a4763e1eb6e78caf7553",
+            "locator": {
+              "end": 504,
+              "kind": "line_range",
+              "start": 481
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8553750157ecbc4d4c86582aec77207f1b043431",
+            "content": "sha256:7a65f7775f2b252903788fcf406997ae115820add50778526ad4e32d18c74a6c",
+            "locator": {
+              "end": 656,
+              "kind": "line_range",
+              "start": 622
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_documents.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Current enclosure readers project lifecycle operations with the durable operation reader's tolerant boundary. Earlier inbox/expectation-copying and inbox-compaction accounts are historical, absent from current runtime readers and input slots.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1d18eca6aa7f7a47d12546c8e5b12a68370fb69c",
+            "content": "sha256:dda08059c825960502a94c07c87deea5f3bc3e05fab59cd04c5934431d777248",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_runtime.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "content": "sha256:d907c9484a2ead65f2153d7b0e7a9f61bcae09803ca16cbcb03b5ed56898beb6",
+            "locator": {
+              "end": 99,
+              "kind": "line_range",
+              "start": 56
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7441ab31d2dbb655e2be4d5a04571166c9ee1a2a",
+            "content": "sha256:e0b4c08185b3078698f81fe0dffb76c403d1be2e2549968dfc47c4e16367135e",
+            "locator": {
+              "end": 282,
+              "kind": "line_range",
+              "start": 264
+            },
+            "path": "mcp/src/agents_remember/serving/projections/projection_inputs.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

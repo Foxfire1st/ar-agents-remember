@@ -1,0 +1,359 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L135",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-47YF1W",
+      "items": [
+        "sha256:e676f0a1d01deb5ace3640112a88edee5a1a0860e7d9a7d0ed665c4a9733f52c"
+      ],
+      "reason": "The added lane line registers the new guard test module in the existing unit-regression population. It changes no lane-selection or settings behavior beyond the named guard obligations; no separate invariant is asserted for the registry line.",
+      "subject": "hunk:sha256:e676f0a1d01deb5ace3640112a88edee5a1a0860e7d9a7d0ed665c4a9733f52c"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R135",
+          "packet": "requirements/MIK-R135-v1-test-support-never-writes-the-users-settings-file.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:d7e7db52a695705d6439ab63d07741d4d444299200e08aabe5ae45bdc99a855b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_building_the_world_with_the_users_own_environment_is_refused"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-MNNATB"
+        },
+        {
+          "after": {
+            "blob": "4611e1b78fe905a5471ade22a6898199f4e36bf7",
+            "content": "sha256:1f0c42321f5cda4078a160ab97b3423e87920be442afb48c44ee7455338d49ad",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_structural_settings"
+            },
+            "path": "mcp/tests/structural_seat_test_support.py"
+          },
+          "before": "absent",
+          "id": "RLZ-2E71DX"
+        },
+        {
+          "after": {
+            "blob": "b3cb8e0cfe6a4097ac4a7d31fb86e95f21af545c",
+            "content": "sha256:8c3c5d3728d2f34a1a55cb8db5683da7421ccbbbbcd2e3257887fa4d7315b9f8",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_shared_runtime"
+            },
+            "path": "mcp/tests/paseo_runtime_test_support.py"
+          },
+          "before": "absent",
+          "id": "RLZ-8VGT3J"
+        },
+        {
+          "after": {
+            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
+            "content": "sha256:60a3eaef7f215666bc91a3354e002d4ba968e31026d48649bf154b74efb62603",
+            "locator": {
+              "kind": "symbol",
+              "name": "EntryPointWorld.__init__"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": "absent",
+          "id": "RLZ-R7XCMX"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-9Z0PWC",
+      "items": [],
+      "reason": "New admitted support settings obligation with source realizations and explicit test facets; preserves existing product settings ownership and pytest isolation.",
+      "revision": 1,
+      "subject": "INV-P3ZYFW"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "1ccfbf29072d91472336f538f2f9820ebf797c6e",
+            "content": "sha256:f4e9e0affcdbfab5659e8b401096111c9fb6fd718f2fda0d691c6c7b343b7148",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "before": {
+            "blob": "f4be837b83c0700b9610797cc84a4f26d0590cde",
+            "content": "sha256:4e539c923db0d4a0dc1f73fd61140a55f7f331665ed0b94fc6a0ca2caa99533d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/tool_entry_point_world.py"
+          },
+          "id": "RLZ-20QKDA"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JN8RVG",
+      "items": [
+        "sha256:8df572e961cd80358a8d69d6584f2d56105a774f9f42708fbea088154de28a46"
+      ],
+      "reason": "Preserve incoming INV-TG334W revision2 and its explicit separation of the retired self-contained sweep from the shared world. Renew only existing RLZ-20QKDA to the composed world and bind this leaf row to current revision2; keep the landed whole-world rationale and all historic CODE observations as historical. L135 changes guarded settings fixture admission, not the new source sweep inventory.",
+      "revision": 2,
+      "subject": "INV-TG334W"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "94cc38ce27dcb9da546d651241fb271f366268bb",
+            "content": "sha256:ac705e058d346b0a7fc90b95ea99f374a4f34de27116debd35c7ec7e91c7a82e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "before": {
+            "blob": "908c9d8274b9314534231d9905ba6cc57f128c9e",
+            "content": "sha256:aa2e1d1846f7e28a63ea5abbcb76b5650b864bd3d285b3210b1796ad2384787c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "id": "RLZ-GRTJG0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VSKE8S",
+      "items": [
+        "sha256:a300b09858f1c007b4d8d91aed68bdece5ad53b710afebfde348577eb7cf404c"
+      ],
+      "reason": "Preserve the retired invariant and existing ROW-VSKE8S/RLZ-GRTJG0 on owner-admitted stationary228fd5ca/4dd6eef8. L136 adds only the worktree-environment test to the Node lockfile consumers and lane catalog; guard/helper/test bodies and accepted L135 meanings are unchanged. Renew this returned whole-catalog current tuple and automatically carry existing anchors only; no original proof/semantic ingest replay, new identity or semantic pass. Keep all landed L136 knowledge and documentation.",
+      "revision": 1,
+      "subject": "INV-MSCRAN"
+    },
+    {
+      "disposition": "changed",
+      "effect": "introduce",
+      "examined": [
+        {
+          "id": "INV-GT2391",
+          "revision": 1
+        },
+        {
+          "id": "INV-P3ZYFW",
+          "revision": 1
+        },
+        {
+          "id": "INV-W6WXHZ",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-WVEDSQ",
+      "items": [],
+      "reason": "Author a joint support-mutation guarantee, not a grouping by directory. Guard, consumers and future-support syntactic scan are each necessary; route mcp/tests contains all realizations.",
+      "revision": 1,
+      "subject": "FAM-N1K4XP"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R135",
+          "packet": "requirements/MIK-R135-v1-test-support-never-writes-the-users-settings-file.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:c2ad6d2f6e9d17270911a608716a8f0ff557d0ad777661491f2165ed41e057f1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_support_write_of_the_user_settings_goes_through_the_guard"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-3EBCWB"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:5e3b4c35315950e0037d72419acca75d64666bdf9d6d595ab8423380b8f0503a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_check_fails_aliased_and_literal_bypasses"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-A9J06N"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:72bbacf0cc5fa7cb85ab1ef99cd5f202732ee74cf6d0c5976002bae193bfdd8e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_check_fails_a_support_module_that_writes_directly"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-M5625E"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:e8a2f377a2506f11a5ac57b794351955b13dca866d13907078331b7d03d1ef6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_support_modules"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "RLZ-81YJ6H"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:4ce90af7b4d43ccfc6de8c35198f15778c02aa6f6bfc5082c789ce9cd1fb464d",
+            "locator": {
+              "kind": "symbol",
+              "name": "_direct_user_settings_calls"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "RLZ-VGKH2N"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-Z1NZ7R",
+      "items": [],
+      "reason": "New admitted support settings obligation with source realizations and explicit test facets; preserves existing product settings ownership and pytest isolation.",
+      "revision": 1,
+      "subject": "INV-W6WXHZ"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R135",
+          "packet": "requirements/MIK-R135-v1-test-support-never-writes-the-users-settings-file.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:fd75d20e15d338e251f11c603d26451a59ec3fd74f3b5b83c1d1ea9b200ada4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_without_an_account_database_allows_a_moved_folder"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-8RBSTW"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:1086f0bca87e96daa6b77117cf0fb82e88510715caa4d639998aef7f4491ce87",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_without_an_account_database_compares_and_refuses_a_match"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-HHAKQH"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:1b3def6ee9edcb760cc16838f2eec1d6866a17808fb93f1637828e217bd8a953",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_refuses_the_made_up_real_path_and_creates_nothing"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-TQGFYD"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:62d86514da1f3753f46102d810f000de013d179562e778006de176ed3339250e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_reports_the_home_it_actually_observed"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-W3K52H"
+        },
+        {
+          "after": {
+            "blob": "b92f7935419bd59d0800b55710c876e9c4cbd114",
+            "content": "sha256:4e311444a668db9c6b70d564e6a0575436e87c306576af3d8ec8bf35902d6c6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_guard_allows_a_moved_configuration_folder_and_creates_nothing"
+            },
+            "path": "mcp/tests/test_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "PRF-YG1K3V"
+        },
+        {
+          "after": {
+            "blob": "c28f8d301406f9c06a5068ba12f9e8f65395eecf",
+            "content": "sha256:7b048e270464dbeae383d75e7d1e76bf5361c0a5aa89db90ffbac83dbcbff9f3",
+            "locator": {
+              "kind": "symbol",
+              "name": "user_settings_path_for_write"
+            },
+            "path": "mcp/tests/_user_settings_guard.py"
+          },
+          "before": "absent",
+          "id": "RLZ-W1FVPN"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-ZX1228",
+      "items": [],
+      "reason": "New admitted support settings obligation with source realizations and explicit test facets; preserves existing product settings ownership and pytest isolation.",
+      "revision": 1,
+      "subject": "INV-GT2391"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

@@ -1,0 +1,218 @@
+{
+  "path": "mcp/src/agents_remember/application/knowledge_paging/pager.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+        "content": "sha256:04ca359fde767e301b48e20c510c00fd09eb5dc6f231f8e557e1c47ec8c323ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "page_block"
+        }
+      },
+      "id": "RLZ-BHDFEA",
+      "invariant": "INV-QQGSAN",
+      "origin": {
+        "handoffEntry": "R73-NO-FALSE-COMPLETE",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is where a page's completeness is decided; taking the index state as an input is what stops a partial index from being presented as a finished enumeration.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+        "content": "sha256:04ca359fde767e301b48e20c510c00fd09eb5dc6f231f8e557e1c47ec8c323ec",
+        "locator": {
+          "kind": "symbol",
+          "name": "page_block"
+        }
+      },
+      "id": "RLZ-XY34DY",
+      "invariant": "INV-09H4VC",
+      "origin": {
+        "handoffEntry": "R73-R7",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "Every page states the observed tree and its state, which is the sentence the packet requires a caller to read.",
+      "role": "presentation"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The module statement: indivisible rows, the header reference, the exact walk.\n\nAnchor: \"Cutting one ordered selection into pages\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:31f3169ddb62ad69e4066a25a0b9cdf20964ec4a1c91f04c6a25864d1b0aa64f",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The flag an oversized single-row page carries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:19c161b0258f5bd5919f9cd4ded8f119d0a5c160c7dc147388585723a31afed2",
+            "locator": {
+              "kind": "symbol",
+              "name": "OVERSIZED_ROW"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The row, the cut and the binding.\n\nAnchor: `PageRow` `PageCut` `PageBinding`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7cb3eb8a72f5c9159b67e7296f006b50c8b11369a63ae1bcdb8a85ebecff4466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:ece26bbe3dc2d39dc0a5073d0f38cb7375a951e31aada67b962de4ee231052d0",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageRow"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:b35dd60dbc8bd881b2817a16ebe3bbfec7c7f4785ec16b5bad826c3cc01e6467",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageCut"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:cef5c0d3fcc4284568d57c2b8ca7858cea8da4c6d0d10a86b0f5db894d7720be",
+            "locator": {
+              "kind": "symbol",
+              "name": "PageBinding"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Only a page starting inside a group continues a family.\n\nAnchor: `header_reference`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:009f165a7f6fd763c4a397f9a4ca8427d06a17ab34d9a9d8c15aff3c82c740c5",
+            "locator": {
+              "end": 142,
+              "kind": "line_range",
+              "start": 127
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:1c00010f96aaaffb9157b95207b94358ffbed8527225327b7963d1006082a428",
+            "locator": {
+              "end": 134,
+              "kind": "line_range",
+              "start": 119
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "The cut: estimate, verify, shorten; blocked versus oversized.\n\nAnchor: `cut_page` `_estimated_end`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7cb3eb8a72f5c9159b67e7296f006b50c8b11369a63ae1bcdb8a85ebecff4466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:ceb9fca9a7609622fe435196a98b7b32b1357ca31533b483671d585a83361370",
+            "locator": {
+              "kind": "symbol",
+              "name": "cut_page"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7929ce7357119908166542f454764985676fa5a84b0228aff2d0f3aaa9c0f0a3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_estimated_end"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The page facts every bounded response states.\n\nAnchor: `page_block`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:7cb3eb8a72f5c9159b67e7296f006b50c8b11369a63ae1bcdb8a85ebecff4466",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "a3659136033c017cf54220a70cf6fee1566065ef",
+            "content": "sha256:04ca359fde767e301b48e20c510c00fd09eb5dc6f231f8e557e1c47ec8c323ec",
+            "locator": {
+              "kind": "symbol",
+              "name": "page_block"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,369 @@
+{
+  "path": "scripts/sync-skills.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-3N2P7D",
+      "invariant": "INV-NNQR91",
+      "origin": {
+        "handoffEntry": "MIK-R196@v1 rule7",
+        "leaf": "260928-MIK-L188"
+      },
+      "rationale": "The retained generator owns canonical-to-package propagation, rather than generating harness mirrors.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+        "locator": {
+          "kind": "symbol",
+          "name": "check_targets"
+        }
+      },
+      "id": "RLZ-4DDM1B",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Reports mismatch when stored profile bytes differ from the owner-derived projection as well as checking declared target payloads.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_targets"
+        }
+      },
+      "id": "RLZ-7Y7JDK",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Computes profile bytes before the first target replacement, then writes those bytes and invokes the consistency check.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
+        "locator": {
+          "kind": "symbol",
+          "name": "projected_profile_bytes"
+        }
+      },
+      "id": "RLZ-DETY0K",
+      "invariant": "INV-5X4C74",
+      "origin": {
+        "handoffEntry": "L54-curator-generator-profile-prevalidation",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Validates the original profile and derives only the declared generated-skills row plus owner-derived profile digest without writing the input file.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "skill_targets"
+        }
+      },
+      "id": "RLZ-Q212ZW",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-11-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "Declared target labels/paths become generator targets relative to the selected repository root.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
+        "locator": {
+          "kind": "symbol",
+          "name": "sync_target"
+        }
+      },
+      "id": "RLZ-VZ6CNGRW",
+      "invariant": "INV-GRVXS8R9",
+      "origin": {
+        "leaf": "260921-ICR-L30"
+      },
+      "rationale": "The repository sync script produces and checks the single packaged runtime skill tree from canonical skills; no harness starter installation is part of this current distribution guarantee.",
+      "role": "propagation-persistence"
+    },
+    {
+      "anchor": {
+        "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+        "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
+        "locator": {
+          "kind": "symbol",
+          "name": "_skill_projection"
+        }
+      },
+      "id": "RLZ-XSR659",
+      "invariant": "INV-0NEA6F",
+      "origin": {
+        "handoffEntry": "L54-curator-MIK-R55-v1-rule-11-actual-guards-wave-70",
+        "leaf": "260928-MIK-L54"
+      },
+      "rationale": "The generator reads its repository declaration through the same parser and requires one skills source rather than using a second target census.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The script defines `skills/` as canonical and derives the sole MCP package-data serving target.\n\nAnchor: `CANONICAL_SKILLS` `skill_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:556c2515bac2a5348f19a93d199ce8620848ee26c5e67dea565240287f582394",
+            "locator": {
+              "kind": "symbol",
+              "name": "CANONICAL_SKILLS"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "skill_targets"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "`--check` compares canonical and target file digests, reports missing/extra/changed paths, and exits non-zero when a target is out of sync.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "locator": {
+              "kind": "symbol",
+              "name": "check_targets"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:898338fcf0c6c168c8cdc67208a611993659524c94462aee8fbb5987b755524c",
+            "locator": {
+              "end": 192,
+              "kind": "line_range",
+              "start": 179
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Normal sync mode refuses self-sync, replaces each target skill folder, copies canonical skills into place, and then reruns the check.\n\nAnchor: `sync_targets` `sync_target` `replace_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_targets"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:8709794621f52dd88ffdb68cdd6fbb9e75456e29d064c408c7de86cf99fd2899",
+            "locator": {
+              "kind": "symbol",
+              "name": "sync_target"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:f35d9bc1c4491781420f8987e479b45f3169879ccd845e11bc9cadd2fbeaf700",
+            "locator": {
+              "kind": "symbol",
+              "name": "replace_tree"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:18f5305bfc2ccce4612104b4ebef09d6badbaf527908201fd3b08413cb78941e",
+            "locator": {
+              "end": 203,
+              "kind": "line_range",
+              "start": 195
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The root AGENTS instructions tell contributors to edit root `skills/` first and run `python3 scripts/sync-skills.py` rather than editing generated skill copies directly. Anchor: `scripts/sync-skills.py`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:c758639aea783e18ccd0ab371a31e0d47150df727c5eb30b055ed3b4934ce32b",
+            "locator": {
+              "end": 102,
+              "kind": "line_range",
+              "start": 98
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6a3830c6bf53c3b25fe50352a8dee3a94d41d012",
+            "content": "sha256:e2465a35a9857ff80e7a0eb05bc7828ab328b473439b35fa029ba46d99f1a8d3",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 122
+            },
+            "path": "AGENTS.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Targets/ignore policy come from the declaration and profile bytes are validated before target replacement, then published and checked beside copy bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:6dce61266f887ddd4885b0d9dc5f3cb2611063dc7757d28c606c3417a570f74c",
+            "locator": {
+              "end": 32,
+              "kind": "line_range",
+              "start": 20
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:85a6ecbf26f073eb808b51188d26c5a82d2fab9a4fe948b844219a67de9e60c5",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 56
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:91cb42634a67f678e64d6d12e221e6b2386ad52818788b7a445d68782d9b9054",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 190
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:8a708c228cb1c5ae2d195b62d9f39f63c6cf457f6fee943a1a36015a3f79dd99",
+            "locator": {
+              "end": 243,
+              "kind": "line_range",
+              "start": 232
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:1c8dbc9ac78cd4e8aecbfeaece0b1cee9d5e1ab7d1d4ae36c7dc40afff255e22",
+            "locator": {
+              "end": 229,
+              "kind": "line_range",
+              "start": 212
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The script derives the single packaged target from generated-copies.json and checks bytes plus the generated-skills certification projection.\n\nAnchor: `skill_targets`, `check_targets`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:753adb3ef38e223969853a4fa937b2e7eeda92d641fe862b8ea7ec19e6bbbe28",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

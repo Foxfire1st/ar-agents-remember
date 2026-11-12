@@ -1,0 +1,428 @@
+{
+  "path": "mcp/src/agents_remember/serving/changeset_endpoints.py",
+  "proves": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+        "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
+        "locator": {
+          "kind": "symbol",
+          "name": "recorded_committed_range"
+        }
+      },
+      "id": "RLZ-AV44SX",
+      "invariant": "INV-7TMGB0",
+      "origin": {
+        "handoffEntry": "L174-7T-ENDPOINTS",
+        "leaf": "260928-MIK-L174"
+      },
+      "rationale": "The pair presence check is itself a keyed read: a successful check is kept with no per-hit observation and a refusal is never kept.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "**The module's own statement of what a committed range is, why `HEAD` may not stand in for it, and why the three absences are separated.**\n\nAnchor: `HEAD`; `working`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:2925830bea9503802178878736eb52b90234b8b7db166972af74e5aac13327a3",
+            "locator": {
+              "end": 19,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "**The resolvability probe: the repository is asked, per commit, and the first object it does not hold is named.**\n\nAnchor: `_unresolvable` `run_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:e6cfb6af663bf6854da778c6d63017f1afe3d4ebf18fb08c3a549078db35c8b9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:71f68120e935fccaeb6eee2a77531d7c1e4a3649634192293a2db8092bfda15e",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:d16e27445f0be607407521a36c50610a99dccb150aef5a0a45a434152a23b028",
+            "locator": {
+              "kind": "symbol",
+              "name": "_unresolvable"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "5dfbf6cd67f7e14564e4273b5de10a80b4b3e2e1",
+            "content": "sha256:2581abe22f96abd5eed654d6bbd4024993314e94a5eb2eae6b9f4df000dcba6c",
+            "locator": {
+              "kind": "symbol",
+              "name": "run_git"
+            },
+            "path": "mcp/src/agents_remember/kernel/git_command.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "The contract whose recorded cells this module reads, and the cells themselves.  Anchor: `WorktreeContract` `load_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "758a00879439672a413425ed6c40686fe3626bd9",
+            "content": "sha256:e4018d774645cce7dce0c51cbf04e207718d8685255da4379ea1c0691d889378",
+            "locator": {
+              "end": 491,
+              "kind": "line_range",
+              "start": 246
+            },
+            "path": "mcp/src/agents_remember/worktrees/worktree_contract.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "The caller resolves code and memory independently. A missing selected repository returns an empty result before endpoint admission. Among entered endpoint-owner failures, NOT_RECORDED carries code detail or empties memory; other failures propagate. leaf_changeset publishes the code detail as state/stateDetail alongside counters.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:e108a3c317e025490ff19943c9e4cf5b0ac1c619561eb8f36991dd011867056b",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_range"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:87dd40a7ecbeb73a030c4de09704e045d3e3d9d85a5a7ad11b6556ea86e0907c",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_changeset"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0f706aca5d794854b37a20fe80ac91ef9f72530c",
+            "content": "sha256:7ea5a0c462acdae6785d07dfc32269df86c64c5edaad40f655ecfb5f2a020f63",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_file_diff"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "**The case module that measures the bound range, the immovable endpoint, the state answered instead of a refusal, the route's own `200`, and the one-half degradation.**\n\nAnchor: `test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it` `test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head` `test_the_route_answers_an_unrecorded_committed_view_without_a_status_error` `test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:91c1b85a30cbccf442e19689900ba8562dfe13602e76ff33b891c159b3c82ba1",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:fff151a6307bda42be3463b93fa856c06d89c102c0b0b1145dea883cfd4e0541",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_committed_range_binds_the_recorded_commit_and_a_later_commit_does_not_move_it"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:b3ec6e7db7a750909e0cec4db8326ba6803ae8f9a6bccafe1e21cab116283d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_committed_endpoint_is_answered_with_its_own_state_rather_than_read_from_head"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:1f76b2f5730cd5afddf1be51ba95a35027e6de25d2def8094c0c17227f264944",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_route_answers_an_unrecorded_committed_view_without_a_status_error"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:f284d3f654cf707b2d61c77f2fd3beeca6f990d0761cdc646f39151fb0c71f34",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_unrecorded_memory_half_empties_only_itself_and_keeps_the_code_half"
+            },
+            "path": "mcp/tests/test_knowledge_review_source_endpoints.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The endpoint resolver imports the serving cached reader as its local `run_git`; successful reads use the sole kernel Git runner.\n\nAnchor: `read_git`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:99e53bef1f907657972a65b889dd016fcbb1827d874f8ceb12d11f3e0d940353",
+            "locator": {
+              "end": 29,
+              "kind": "line_range",
+              "start": 28
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:83e37400860eadb6a861d04f8903f8a187caf59aec360961d3a98d2ab9f3cab5",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "0ea106246ac1a8053fa263b23190863c57ebd295",
+            "content": "sha256:dd099c4bd2f02bee810fd358ff83063db964c4fd9c98372b4ab42716a2c162ca",
+            "locator": {
+              "kind": "symbol",
+              "name": "read_git"
+            },
+            "path": "mcp/src/agents_remember/serving/changeset_reads.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:7918b6d8f91eb8d7854a1324544a1345c874697c916a1b7f78389c924db99559",
+            "locator": {
+              "end": 28,
+              "kind": "line_range",
+              "start": 27
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The published surface: the range value, the two absence types, the kind constant and the resolver.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:e6873cc199fa18e58d5d55ac21ca2e585af1e001b1f72bd879e5ca5e69b0c2e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "__all__"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The two side names, which are the words the change-set payload already uses for its halves.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:8e79de13eb7ada024421bd93b58f47234b96da2262afc9d0cee56111f4604f52",
+            "locator": {
+              "kind": "symbol",
+              "name": "CODE_SIDE"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:3f5986bd26df8b160f66402a96861c09c23591c4f9d02fbc301b1862547a3700",
+            "locator": {
+              "kind": "symbol",
+              "name": "MEMORY_SIDE"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The three absence kinds and the single degradable one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:0b304ba146c2638a99af4e060730974a7cb926e96ec1f0aac370bf04bcb3f86b",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedEndpointAbsenceKind"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:0bd52fb074a9a9cf53d881f2c43ca86bade63063eb80290e44b0322dcf009da9",
+            "locator": {
+              "kind": "symbol",
+              "name": "NOT_RECORDED"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "**The range value: the two recorded ids plus the repository that holds them, because an id without its repository is not resolvable.**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:a2419f88ad58e75ef6ef214300fb5f4033e370cbb42c19711947a67ce56427bd",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedRange"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "**The absence type: a `FileNotFoundError`, with `kind` carrying the reason apart — the code side's `not-recorded` instance is caught by `_leaf_range` and published as the body's state rather than reaching the route as a 404 (260921-ICR-L25).**",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:5a28d4a0c426597856d7485be42352e3ed838fc9dfe210e30ae6652b0a109d39",
+            "locator": {
+              "kind": "symbol",
+              "name": "RecordedEndpointAbsent"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "**The whole resolver: the recorded-base precondition, the two missing-cell refusals, and the resolvability probe — in that order.**\n\nAnchor: `recorded_committed_range`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:e6cfb6af663bf6854da778c6d63017f1afe3d4ebf18fb08c3a549078db35c8b9",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:b7a164140ee93dc815b88289ebc9427873fbda7c77a9bb4087fb5a0fa999b6c5",
+            "locator": {
+              "kind": "symbol",
+              "name": "recorded_committed_range"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The two recorded cells per side, with the closeout cell preferred over the integration cell and the base side having no fallback.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:86184c8855a6fcd9adcd59739457e4a4e4e9da5bff23ad577c30fd3c19e9e5c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "_recorded_commits"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The leaf name a refusal carries, with the task id as the fallback for a contract that records no leaf.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "48e667c9305d3cf101beae36d282b6f77fd8ca28",
+            "content": "sha256:4e0be6c5e8861a56cd1ab182c052ae7ae270c08b94b6772b1361bb433c33d8c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

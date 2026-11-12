@@ -1,0 +1,566 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/integration/lifecycle",
+  "references": {
+    "1": {
+      "note": "The receipt check before anything moves, and the restore after publication.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:d4b115a4363dc6c1eb7ee57c506a6f40ed0d3f8abbddc9e57271451090fd4d91",
+            "locator": {
+              "kind": "symbol",
+              "name": "_require_readable_direct_closings"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:c34b5ce53e415f359075c88545deefa2d5a872d873a81867c1c8d37640857249",
+            "locator": {
+              "kind": "symbol",
+              "name": "_restore_direct_closing"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:f01a963ac1aef5e323a572026ceaab7efd23ad657264b0fd8f3dcba77d2597a7",
+            "locator": {
+              "end": 178,
+              "kind": "line_range",
+              "start": 166
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:dc680561971caad799d5745adf17c96c9e8d05ecd8881f2be8c39ca5fb6fd098",
+            "locator": {
+              "end": 163,
+              "kind": "line_range",
+              "start": 152
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "No-output cancellation preserves successor candidate differences and refuses moved protected output identities.\n\nAnchor: lifecycle_operation_control_evidence.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9d4bdbff20752e646d50f9d805834cbb2eb1edca",
+            "content": "sha256:6fa0d9288a8d66cbbde9b01e36329e50a4ddb13fb6a6306d9bce6d73d68d499a",
+            "locator": {
+              "end": 232,
+              "kind": "line_range",
+              "start": 35
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_evidence.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "11": {
+      "note": "Direct-closing receipts precede journal admission, preserve later edits, and preserve closings already landed in HEAD.\n\nAnchor: direct_landing.py; knowledge_gate.py; control/cancellation.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ae56f6c72b4720e9cd1ae2abdd42551a79d4c1d4",
+            "content": "sha256:454f09c97996f36eba226f3606a87364288fa0758d8130cd5bc5a7d1bcfe25ef",
+            "locator": {
+              "end": 1350,
+              "kind": "line_range",
+              "start": 1314
+            },
+            "path": "mcp/src/agents_remember/worktrees/direct_landing.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:fe94fc0f9ee9750398bae54828f9478f789aebe190df4eae0c48f2dce43708d2",
+            "locator": {
+              "end": 631,
+              "kind": "line_range",
+              "start": 542
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "8c8023bb3a59c12b7c1099777b123d40bf7deb6c",
+            "content": "sha256:30fc4080e2bf89e4ab19c0c947e909b9e8bb39f4805c91253539a1f9d64a364b",
+            "locator": {
+              "end": 720,
+              "kind": "line_range",
+              "start": 710
+            },
+            "path": "mcp/src/agents_remember/worktrees/knowledge_gate.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7452aecf55d6aab0157c4c071cbe949911296810",
+            "content": "sha256:470a586e0c01cdf0a6387606123893474ae3cb47773f1f193c2fa119d5adf755",
+            "locator": {
+              "end": 149,
+              "kind": "line_range",
+              "start": 74
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/control/cancellation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "12": {
+      "note": "Current store mutation serialization and waiting-door claims contradict the blanket plane-deletion account.  Anchor: lifecycle_operation_store.py; lifecycle_operations.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:94280504cd2c263472e4a248597887d1d7de7676178c2cd6008e77c2cea64689",
+            "locator": {
+              "end": 728,
+              "kind": "line_range",
+              "start": 552
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:0b1ca0ec207ab5d2afe8033a53ecdb899e7104cdbfd9330d51ab7afcce5c058d",
+            "locator": {
+              "end": 481,
+              "kind": "line_range",
+              "start": 367
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "Historical pre-change completed-disposition diagnosis: the former direct-owner tuple had unequal lengths. Current disposition delegates to lifecycle_operation_identity.completed_direct_owner and retains integration/publication-claim/worker-exit restrictions.  Anchor: lifecycle_completed_disposition.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc69b9d1a4ee21d7057406891463fd33f0d5c094",
+            "content": "sha256:53d31283356ec302a0b445f371907321dc4d70ae49387f5df3645cbe5c0aa309",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_completed_disposition.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9107b5019d9bb739b613b282a8cf0f86ba47b7e7",
+            "content": "sha256:2598ada6b0987daa5657795526360b663db68fae94d13e83c85977adee62bb34",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_identity.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "Converted memory is judged through the onboarding-trace gate, which reports missing traces and incomplete sides while unnecessary rows report only. External-memory helpers separately plan entity fingerprints and refresh route indexes; they do not restore the removed sidecar/route-body gate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:bb1e4654147146462bd319bb37fdd0381d2a77b78720f305b8c591560dead28f",
+            "locator": {
+              "end": 175,
+              "kind": "line_range",
+              "start": 151
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "9630e224ca25dac1b22edca9732c6130b1cffaf1",
+            "content": "sha256:261360cc53456518e6e9c505bc9d3b6571679db63361a8cea94697d121702f05",
+            "locator": {
+              "end": 641,
+              "kind": "line_range",
+              "start": 631
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f3bf4bfa27b8bfd44cd242540d16a2dbf31ec1c4",
+            "content": "sha256:6463ae48eea95244cea5e8b82e5a35b01859fb3bd5d564f7493aa05b81af995b",
+            "locator": {
+              "end": 968,
+              "kind": "line_range",
+              "start": 895
+            },
+            "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "Default production services bind the ordinary memory-quality, citation, certification-memory, knowledge validation/crossing/gate and archive adapters; they do not install the removed prepared-closeout continuation or selected certificate producer.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfe5fc779f3234e5cf2d83eee7be9897b4668cb",
+            "content": "sha256:f1ac9e4c9ca53c18f1cb7439db85510df5446e1e4a2a18e12523d8e4fb0cd1a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_default_worktree_services"
+            },
+            "path": "mcp/src/agents_remember/application/worktree_services.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Recovery state contains the actual two commit outputs.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e1ada63c35b3f48475b69b334552ab7d895c1498",
+            "content": "sha256:d4945166328f159cff259a52f805972a28f69bea9e3327b38aeea8b992c026b1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LifecycleOperationRecoveryCommits"
+            },
+            "path": "mcp/src/agents_remember/models/lifecycles/operation.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Store transition validation requires recordRevision to advance once and meaningfulRevision to advance only when semantic state changes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:642b0d14e1131806c169eaf07d6a1d6d26e5be3c3f36863560e662c0920ada92",
+            "locator": {
+              "end": 324,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:2db7b08d8020950dfc2fb48a7b15f2d61afdc6a98f2df20c65ce0d6f38e511ee",
+            "locator": {
+              "end": 309,
+              "kind": "line_range",
+              "start": 309
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The exact-generation observer returns bounded change/timeout outcomes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b1fdef150ff0c4296ea02094499df128b00e397e",
+            "content": "sha256:745b21800186b5a4a6b8aa1b858ad4004b44f3961ec43699ebbf71c20b692a48",
+            "locator": {
+              "end": 146,
+              "kind": "line_range",
+              "start": 105
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/status_wait.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Direct recovery is admitted independently of closeout doors and settles its retained receipt on completion.  Locator and manifest determine per-kind journal addresses independently of task-document reads.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "a80df4903ac866d31ac7495d03f6ca3827bc1ebf",
+            "content": "sha256:e0353a308bd74aaca0768371f2dc78fdfdf5b43b168ff53c867a77848088011d",
+            "locator": {
+              "end": 390,
+              "kind": "line_range",
+              "start": 344
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:abc5c389ad0d9255383d2c2dee1fb6a8e391b5af0ee6c36ba544e3ed81fe4f9b",
+            "locator": {
+              "end": 126,
+              "kind": "line_range",
+              "start": 91
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+            "content": "sha256:05924e83ec58994b1f610cc6a7cee4f237ee22e83a5c7425aeaaedaa25d670ff",
+            "locator": {
+              "end": 644,
+              "kind": "line_range",
+              "start": 583
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "content": "sha256:bb3755458836e4ba83bff04180dce736de1ec62bfab66d20cf9a6b8a475b8130",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 172
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Completed direct retire is offered using the shared record-based owner predicate.\n\nGeneration construction is in memory; retained resume preserves evidence and requires recorded exit; durable creation owns initial certification selection.\n\nAnchor: generation/creation.py; generation/resume.py; lifecycle_operation_store.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:cadf3b92b7d49152696d69d21238fd85898b5caa826eceae3786c70bcc965510",
+            "locator": {
+              "kind": "symbol",
+              "name": "_completed_direct_controls"
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "51a9188dad28815812b0eb2d21e66cd431a59911",
+            "content": "sha256:53d31e955e3f6d78e4a644ab71babc210bfd0b29df179ef25cbfcb3e11d409be",
+            "locator": {
+              "end": 137,
+              "kind": "line_range",
+              "start": 33
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/creation.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "03ee9d0ee0a5e88ec312bc65b08a788b3b70324b",
+            "content": "sha256:91439a63b37721bc9542fa47250aab8856372225c42ab2c5f1095029b7712647",
+            "locator": {
+              "end": 58,
+              "kind": "line_range",
+              "start": 14
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/generation/resume.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:71b21edaba884f52d33f0ab9772802d479371058db765ab2dbe6339a9cdb0a47",
+            "locator": {
+              "end": 750,
+              "kind": "line_range",
+              "start": 707
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "Public identity, component rebinding, incoherence handling, and termination controls derive from current generation evidence.  Anchor: lifecycle_operation_projection.py; lifecycle_operation_control_projection.py; observation/projection.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:0a3a4357e0e6b32994729daf41be5a4ea80490995904ae6249e1a7a849a70299",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 78
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "3817015634326a5b2bb6b5c6e57309a5f7fb4250",
+            "content": "sha256:7537c295627b8d30b52c2daabad1d6643e083750b52d0a18ace87c5353596155",
+            "locator": {
+              "end": 339,
+              "kind": "line_range",
+              "start": 292
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "ec15ac742cf6d1c0f36be58ace69dbd8f600c128",
+            "content": "sha256:5884f7e5b1da124a38230354bd29ef1fd46c3b4155367bccc879e8bd6ce40ae3",
+            "locator": {
+              "end": 123,
+              "kind": "line_range",
+              "start": 55
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_control_projection.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b39bda9a05cb1565bf94a6572d1fee7a98ed2d75",
+            "content": "sha256:89d8a546bae84fa5c0e1d5101d100ad72ce3ed88215b5b67ac64452f5a406d67",
+            "locator": {
+              "end": 220,
+              "kind": "line_range",
+              "start": 153
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/observation/projection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Failed-generation replacement is explicit; cancelled closeout succession uses the current door, journal disposition, and exit proof.  Anchor: lifecycle_operations.py; lifecycle_operation_store.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:9b64d0b964bcdf77311ec5edfad1a9eda41c4b4cb65e70b763314decdf16faff",
+            "locator": {
+              "end": 733,
+              "kind": "line_range",
+              "start": 622
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:c66fadbaa602d2752925b6d6ab60f4b258eb14d90275e12b665ce25b50808931",
+            "locator": {
+              "end": 943,
+              "kind": "line_range",
+              "start": 822
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "Closeout admission binds task intent; direct-landing writes are exempt from that leaf-intent requirement, although shared legacy predicates still mention direct landing.  Anchor: lifecycle_operations.py; lifecycle_operation_store.py",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:357c6f4920819a5de68b457493cb9e0c8e59e72bde6ac70dd4737996ae79cdfc",
+            "locator": {
+              "end": 531,
+              "kind": "line_range",
+              "start": 484
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "6b36b051ca23a33cea3fdae5d8e787d82936b6ed",
+            "content": "sha256:fbfa476b51531307ee27e965730efb10920cacfc2fcca7ec7dcc76bbea02147e",
+            "locator": {
+              "end": 655,
+              "kind": "line_range",
+              "start": 622
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "e90c6130ac0c24bea52a5c0f5f7c1b810857a1b9",
+            "content": "sha256:ca045dbe1471bcce198dafeb3ed0fb83df81deff44b3432744c3a20d1b9b2f55",
+            "locator": {
+              "end": 1002,
+              "kind": "line_range",
+              "start": 945
+            },
+            "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/_quality_admission.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Explicit modeled input with no process-environment mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9b5d4de72b25523174f5eee6fd55dcea112ac02d",
+            "content": "sha256:10b3ef7f7407271639e07007669f8afff3d44153d1ccec28d9ac92d17c17c218",
+            "locator": {
+              "kind": "symbol",
+              "name": "QUALITY_TEST_ADMISSION"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

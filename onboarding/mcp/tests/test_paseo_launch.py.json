@@ -1,0 +1,56 @@
+{
+  "path": "mcp/tests/test_paseo_launch.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
+        "content": "sha256:f0f9a5e4c0af53589b67b72220b5355183cdd3e1625994fa8a50537ca21ed247",
+        "locator": {
+          "kind": "symbol",
+          "name": "DeepLaunchFolderTests.test_the_note_and_the_path_it_names_tell_the_same_at_any_depth"
+        }
+      },
+      "facet": "At a shallow and a deep report folder the note stays within 600 characters and names the same locator and SHA-256 as the first message's first line, which opens the frozen bytes.",
+      "id": "PRF-D6D8M2",
+      "invariant": "INV-B31E3G",
+      "origin": {
+        "handoffEntry": "restore-l199-proof-inv-b31e3g",
+        "leaf": "260928-MIK-L188"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
+            "content": "sha256:a8990b0207d7102eb08de50307f0d286147cb3c2c55ebe5eefc3250d01c1fe3e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The launch fixture now imports `FakeRuntime`, `CATALOG` and `SERVER_ID` from `paseo_launch_test_support`; `CATALOG` remains exported for suites built on this fixture. `PaseoLaunchTestCase.setUp` wires the shared fake into catalog/launch/status bridge calls. This is fixture-owner relocation, not a change to launch identity, retry or holder-replacement semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7630b4f03f2e79c3a03b3552892457f28bd0cb98",
+            "content": "sha256:a8990b0207d7102eb08de50307f0d286147cb3c2c55ebe5eefc3250d01c1fe3e",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

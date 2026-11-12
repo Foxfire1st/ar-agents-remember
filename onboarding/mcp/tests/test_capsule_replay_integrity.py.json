@@ -1,0 +1,171 @@
+{
+  "path": "mcp/tests/test_capsule_replay_integrity.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+        "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
+        }
+      },
+      "facet": "Source assertions: equal detail bytes cannot authorize a rebound canonical folder; restoration recreates an absent valid legacy report-access link and validation succeeds again.",
+      "id": "PRF-2607SK",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+        "content": "sha256:8a46591742facec3f20354e1a4addf1e3725784b5b990da40c6ce8c3fd9ee270",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_real_leaf_preparation_restores_details_beside_local_handover"
+        }
+      },
+      "facet": "Source assertions: actual preparation/receipt restore handles real local role-report directories for Worker/Reviewer/Curator detail cases and preserves frozen bytes; Worker detail is injected at the compiler seam and no host is launched.",
+      "id": "PRF-PN3CXR",
+      "invariant": "INV-7KDG7C",
+      "origin": {
+        "handoffEntry": "L170-curator-detail-enforcement",
+        "leaf": "260928-MIK-L170"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Source assertion: test_replay_checks_every_frozen_revision_without_reading_the_current_corpus. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:a016751694f517d95f771a9fd24683288623338f80bc150bdc5210dc1886dd06",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_checks_every_frozen_revision_without_reading_the_current_corpus"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Source assertion: test_replay_refuses_missing_or_nonregular_detail_targets. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:ebd4c8f1b571e5e0e4fd608dbe636a7377baa91c781919f978461b863fd940ac",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_refuses_missing_or_nonregular_detail_targets"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The canonical-folder case refuses a rebound link despite matching bytes and restores an absent valid legacy link. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:974ddafaa5bca02dcb531fc26ef2a93ed3850ce2b5493de1d6e58b601e58a470",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_refuses_a_rebound_report_folder_even_when_detail_bytes_are_unchanged"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Shape controls also refuse mismatched source-derived detail names, given paths and malformed or non-sibling saved handover references. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:dcafaeea8d16380430e14fd5d18650df515a7601d80e2a7802af91112626650b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_replay_refuses_incomplete_detail_references_instead_of_skipping_them"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Source assertion: test_saved_start_replay_refuses_missing_details_before_the_host_call. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:140012d8899387d059b9e033e011bf0db1448125b40f693f41cf32aeea064279",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_saved_start_replay_refuses_missing_details_before_the_host_call"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Source assertion: test_held_opening_refuses_changed_details_and_preserves_waiting_messages. The declaration is not an execution receipt.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:166c230ed1abed522ea3807eaa5e12ec65cb2ce592fd91c92c565be0cc15176a",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_held_opening_refuses_changed_details_and_preserves_waiting_messages"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Real local preparation and receipt restoration preserve frozen detail bytes for three role cases; Worker detail is supplied at the compiler seam, and no host is launched.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:8a46591742facec3f20354e1a4addf1e3725784b5b990da40c6ce8c3fd9ee270",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_real_leaf_preparation_restores_details_beside_local_handover"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The fixture closes its private override stack before cleanup and checks the captured compiler identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d3597a8c769c981f6dc3d933c895420c3b6e9766",
+            "content": "sha256:43509db1f0690d78ae02af4fcbe2ffa5fdf93e63bf3451b20f70e093e88e8ee3",
+            "locator": {
+              "kind": "symbol",
+              "name": "leaf_preparation"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

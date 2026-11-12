@@ -1,0 +1,22 @@
+{
+  "path": "dashboard/e2e/sidebar-chat-stays-loaded.spec.ts",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The fixture walk samples iframe/src transitions per leg and asserts only the final sampled total is one.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5987a7099724c1a36ba8ec1c2c9df15c50bdd180",
+            "content": "sha256:69cc9c3b38aa8924feca7b676258bc36f7af27eae55e3369f8b6e0ee2efb1f63",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "path": "scripts/pnt_sandbox/fixture.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scoped current source carries the module/document behavior described above.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1b07d3169a50d86d99b479b840c87abdaee4fa4c",
+            "content": "sha256:75f03b14c5f9d30834bf80620f026132c41e160c7172eb6fc1e3797bef387516",
+            "locator": {
+              "end": 363,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

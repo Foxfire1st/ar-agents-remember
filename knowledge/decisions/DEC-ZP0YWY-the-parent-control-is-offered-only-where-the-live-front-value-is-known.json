@@ -1,0 +1,70 @@
+{
+  "admission": {
+    "criteria": [
+      "real_alternatives",
+      "constrains_future_work"
+    ],
+    "justification": "The narrow-layout route had several real candidates (command panel, title, cache, picker) and the removal decision fixes that no such control is drawn without the live value every later change must also use."
+  },
+  "alternatives": [
+    {
+      "option": "Draw the Parent pill only while the plugin knows the agent in front by the same live value the unchanged bridge checks; at the narrow layout no pill is drawn, and the host's own list is the navigation.",
+      "reason": "The developer decided 'no such control on the phone'. A control that cannot act is worse than no control; the wide layout keeps its working Parent navigation unchanged.",
+      "status": "chosen"
+    },
+    {
+      "option": "Keep the pill and give the narrow layout its own route: open the host's command panel and run the parent command, or read the value from the title, a remembered earlier selection or the picker.",
+      "reason": "The command route lies three taps away and would add a second navigation; the title carries no agent ID and no remembered or picker value is the live front agent. The packet excludes all of them as sources.",
+      "reconsider_when": "The host exposes a live front-agent value at its narrow layout, or gives the plugin a supported navigation command.",
+      "status": "rejected"
+    },
+    {
+      "option": "Keep the pill and let the bridge refuse after the click.",
+      "reason": "That is the dead button the developer reported; the packet accepts no button that does nothing at any width.",
+      "reconsider_when": "The bridge can act on a click at every width.",
+      "status": "rejected"
+    }
+  ],
+  "consequences": [
+    "At the wide layout a known selected chat keeps the checked Parent pill and its target check (rule 9a).",
+    "At the narrow layout the message box holds no Parent pill; the parent's chat is reached through the host's list.",
+    "The hierarchy receives the same live selection notification as the bridge, without a second identity parser or a retained earlier selection."
+  ],
+  "context": "This leaf's witness at width 390 found that the host draws its narrow layout there without the tab buttons the plugin's selection scan reads, so the plugin knew no agent in front, the unchanged bridge refused the way to the parent, and a click on 'Back to parent' did nothing. Two probes showed the host gives a plugin no live value for the chat in front, and the one working route — a command in the host's command panel — lies three taps away.",
+  "decider": "Developer decision D86 (2026-10-07), delivered to the retained worker and the new reviewer; the worker chose the shared selection publisher inside the decision's scope and the current reviewer's pass accepted it.",
+  "id": "DEC-ZP0YWY",
+  "links": [
+    {
+      "relation": "constrains",
+      "target": "INV-XQMXT2"
+    },
+    {
+      "relation": "constrains",
+      "target": "INV-0286SX"
+    },
+    {
+      "relation": "motivated_change_to",
+      "target": {
+        "id": "MIK-R75",
+        "packet": "requirements/MIK-R75-v1-the-launcher-strip-does-not-repeat-the-chat.md",
+        "task": {
+          "path": "260928_maintained-invariant-knowledge",
+          "repository": "agents-remember"
+        },
+        "version": "v1"
+      }
+    }
+  ],
+  "origin": {
+    "handoff": {
+      "path": "handoff.json"
+    },
+    "handoffEntry": "MIK-R75@v1-9a-shared-notification",
+    "leaf": "260928-MIK-L75",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-decision/v1",
+  "status": "active",
+  "supersedes": []
+}

@@ -1,0 +1,249 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L146",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-33GPNW",
+      "items": [
+        "sha256:5360a5d48ebe5f1d2f7d67c49e3812289f724079dcdd66ffb4c733aa15105fda"
+      ],
+      "reason": "Only the source policy paragraph is brought from its obsolete 1000 unit figure to the already authored current5000/1000 declaration. There is no dedicated card at this excluded source path. The root overview already delegates values to pyproject.toml and the root declaration card and current-budget family own this obligation; no new invariant or route guarantee is introduced.",
+      "subject": "onboarding:CONTRIBUTING.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3a4d121b34da8f3d7ac876fdc06e0e16d8748744",
+            "content": "sha256:5c18690b41dc93d669e251363ba9a0101cd93d7956d24647d8c268f2cc90264c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": "absent",
+          "id": "PRF-9RBGZS"
+        },
+        {
+          "after": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:ea38bd02048757c226c712940d3afe9bfb62df60a3c7b191c001c9b0384d4d32",
+            "locator": {
+              "end": 299,
+              "kind": "line_range",
+              "start": 299
+            },
+            "path": "pyproject.toml"
+          },
+          "before": "absent",
+          "id": "RLZ-WMQ90H"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-39PWB5",
+      "items": [],
+      "reason": "Adopt the enduring current rail/mirror clause with bounded source inspection and a precise assertion facet; historical execution evidence is retained at its original freeze, not re-labelled post-sync.",
+      "revision": 1,
+      "subject": "INV-3NAQA6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3a4d121b34da8f3d7ac876fdc06e0e16d8748744",
+            "content": "sha256:5c18690b41dc93d669e251363ba9a0101cd93d7956d24647d8c268f2cc90264c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": "absent",
+          "id": "PRF-JXWKFQ"
+        },
+        {
+          "after": {
+            "blob": "6fdaf3bc5c0ebf2ced1c450d5973ed55b2515f3c",
+            "content": "sha256:aa2545dd84aeacc48cd6f0d64b019b9e53453d60579bee15ae65878cfb55d8c4",
+            "locator": {
+              "end": 298,
+              "kind": "line_range",
+              "start": 298
+            },
+            "path": "pyproject.toml"
+          },
+          "before": "absent",
+          "id": "RLZ-YH43T3"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-679HMP",
+      "items": [],
+      "reason": "Adopt the enduring current rail/mirror clause with bounded source inspection and a precise assertion facet; historical execution evidence is retained at its original freeze, not re-labelled post-sync.",
+      "revision": 1,
+      "subject": "INV-Q2VTFP"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-JBXAK2",
+      "items": [
+        "sha256:b7002f9c3aa3077fd586372d2f2071c36b34d6bc41d418b577046b7804617c5b"
+      ],
+      "reason": "Only the stale source doc numerals become the already authored5000 unit/1000 integration policy. This excluded docs source has no dedicated card; the affected docs/design overview and root declaration card already state the current pair and unchanged guard/tradeoff contract. No new obligation or source-realization entry is justified.",
+      "subject": "onboarding:docs/design/python-pytest-bootstrap.md"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
+            "content": "sha256:dfb975b002026525cc8ccdf35158210f1e10fc85d8496eecbe06b240ce745b48",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_stub_matches_the_declared_pair"
+            },
+            "path": "mcp/tests/test_suite_budget.py"
+          },
+          "before": "absent",
+          "id": "PRF-W4G24B"
+        },
+        {
+          "after": {
+            "blob": "d1776ec98316a40e56eb96143c777bc04b370a56",
+            "content": "sha256:8ec6c33f5ab18ba03eec2ab4d1020aed5517e1e9075283b3b3dc01818a94d1d9",
+            "locator": {
+              "end": 17,
+              "kind": "line_range",
+              "start": 16
+            },
+            "path": "mcp/tests/test_suite_budget.py"
+          },
+          "before": "absent",
+          "id": "RLZ-40PJ49"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-NWXTRZ",
+      "items": [],
+      "reason": "Adopt the enduring current rail/mirror clause with bounded source inspection and a precise assertion facet; historical execution evidence is retained at its original freeze, not re-labelled post-sync.",
+      "revision": 1,
+      "subject": "INV-F0WP8H"
+    },
+    {
+      "disposition": "assigned",
+      "examined": [
+        {
+          "id": "INV-3NAQA6",
+          "revision": 1
+        },
+        {
+          "id": "INV-F0WP8H",
+          "revision": 1
+        },
+        {
+          "id": "INV-Q2VTFP",
+          "revision": 1
+        },
+        {
+          "id": "INV-RBJQVS",
+          "revision": 1
+        },
+        {
+          "id": "INV-Z3DDAX",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-QH8B0Z",
+      "items": [],
+      "reason": "A separately authored joint guarantee ties the declaration and independent screen views; root configuration requires the root route and test realizations occupy mcp/tests. Existing runtime/environment/catalog families are not grouped into this guarantee.",
+      "revision": 1,
+      "subject": "FAM-QH2SJV"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "3a4d121b34da8f3d7ac876fdc06e0e16d8748744",
+            "content": "sha256:5c18690b41dc93d669e251363ba9a0101cd93d7956d24647d8c268f2cc90264c",
+            "locator": {
+              "kind": "symbol",
+              "name": "BudgetAgreementTests.test_the_declaration_is_the_ceiling_this_module_screens"
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": "absent",
+          "id": "PRF-MRRSF6"
+        },
+        {
+          "after": {
+            "blob": "3a4d121b34da8f3d7ac876fdc06e0e16d8748744",
+            "content": "sha256:333264a4012449bb968dcf106016bc6966990893f8405dec10421afc30d2acb3",
+            "locator": {
+              "end": 840,
+              "kind": "line_range",
+              "start": 840
+            },
+            "path": "mcp/tests/test_memory_citation_agreement.py"
+          },
+          "before": "absent",
+          "id": "RLZ-Z3MFC9"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-SXKJH9",
+      "items": [],
+      "reason": "Adopt the enduring current rail/mirror clause with bounded source inspection and a precise assertion facet; historical execution evidence is retained at its original freeze, not re-labelled post-sync.",
+      "revision": 1,
+      "subject": "INV-Z3DDAX"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
+            "content": "sha256:2339248abd1341a806450d008527a393ea10dfa6cee82decb60383120897f1ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "SeriesExtensionRouteTests.test_the_declared_case_rails_carry_the_developer_ruling"
+            },
+            "path": "mcp/tests/test_task_reopen_series_extension.py"
+          },
+          "before": "absent",
+          "id": "PRF-RGEXBJ"
+        },
+        {
+          "after": {
+            "blob": "5ba5bc35ee1abc11e1bb23387ef79702dd7c2e95",
+            "content": "sha256:46e7f3eaf85fb12768f47a99d31cc0972226562e183ab86bed3d6df4b701d676",
+            "locator": {
+              "end": 93,
+              "kind": "line_range",
+              "start": 87
+            },
+            "path": "mcp/tests/test_task_reopen_series_extension.py"
+          },
+          "before": "absent",
+          "id": "RLZ-PTRC2W"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-VMHS39",
+      "items": [],
+      "reason": "Adopt the enduring current rail/mirror clause with bounded source inspection and a precise assertion facet; historical execution evidence is retained at its original freeze, not re-labelled post-sync.",
+      "revision": 1,
+      "subject": "INV-RBJQVS"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-X7547J",
+      "items": [
+        "sha256:85bcf8b23bf3e434aa456d4b1993e50e0f366cb03388e92eddf527fbf941a0c9"
+      ],
+      "reason": "The root overview names the two root-declared budget keys and over-budget refusal without fixing their values. The unit-only policy change preserves that route contract; changed operative numerals are owned by the file card and narrower testing overviews.",
+      "subject": "onboarding:overview"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

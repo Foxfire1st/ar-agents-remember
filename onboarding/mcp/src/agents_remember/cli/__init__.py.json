@@ -1,0 +1,74 @@
+{
+  "path": "mcp/src/agents_remember/cli/__init__.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The package docstring names the CLI adapter role.\n\nAnchor: \"Command-line adapters for the application layer\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "caeaac19b8116d8298943561ddc2e3663abeb74b",
+            "content": "sha256:fff5d9f6b43a0a986befe2d5bcc3c6d665580ce335c8e60b0c16eabe54458de4",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The umbrella entrypoint dispatches subcommands for this package. Anchor: `main`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "6f3a69cae0b8febac949097f08a925389a945baa",
+            "content": "sha256:c3265ddb8c210f72aa1356bda0f44001e43cd5f72960b694cb536b1b264119cc",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/__main__.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "The dashboard subcommand adapter registered by the umbrella parser.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+            "content": "sha256:86afd27ad7077b2ddd2728f4d4068790fd96c2796a14cb1961c45b0e23d2e975",
+            "locator": {
+              "kind": "symbol",
+              "name": "add_arguments"
+            },
+            "path": "mcp/src/agents_remember/cli/dashboard.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "The context-packet CLI adapter peer.\n\nAnchor: `main`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8695830492651c2480f98ae0111805f5fd7e1783",
+            "content": "sha256:4dc0e23cd58a72177f4ea11d2b05d955fe48eb865f489519ec98090d572d4c7d",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/cli/context_packet.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

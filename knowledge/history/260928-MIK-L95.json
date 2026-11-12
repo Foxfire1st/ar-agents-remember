@@ -1,0 +1,1745 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L95",
+  "rows": [
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-0EABBC",
+      "items": [
+        "sha256:54b3f086f14c193d5ff5f376002e9339ee414b6c623c7aaf69968d58beeb842e"
+      ],
+      "reason": "Test-lane catalog adjustment for the changed evidence files. No product behavior is realized at a catalog row; the lane's obligation is the catalog's own checked invariant.",
+      "subject": "hunk:sha256:54b3f086f14c193d5ff5f376002e9339ee414b6c623c7aaf69968d58beeb842e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-109NXF",
+      "items": [
+        "sha256:41e39b6a5e197458b349a431aadacfa83b1127d3e258c445c4dc435277b5bbc1"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_memory_document_shape.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:715a3fe61cfbc727b54bcfea19c6a9eaea4ec237e27e412a4d0f335ca17d516f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "f30210acc59542693c5689f40f2e36d6d00508e6",
+            "content": "sha256:4e9b68767b6a96b30d0b0d1f45964423703f44c8ba184d0995190b7d2ea98858",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-PDSMW4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-1DZ571",
+      "items": [
+        "sha256:8f77ea2f2168e4dc7d14227775e812259d09bc0ff13056bce6f7066de7eeccd0"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-87JRHY"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-28SE65",
+      "items": [
+        "sha256:c76162c01bcc32ef68afca34cbe78f3dedc24f241e4e3a5cafd390ae3fa5bf6a"
+      ],
+      "reason": "Brief-template correction: the manager brief no longer tells a leaf role to prepare a worktree before role_start. The self-preparing-start obligation is recorded by the start invariant at the preparation owner; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:c76162c01bcc32ef68afca34cbe78f3dedc24f241e4e3a5cafd390ae3fa5bf6a"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-4S93MX",
+          "revision": 1
+        },
+        {
+          "id": "INV-7D9QDG",
+          "revision": 1
+        },
+        {
+          "id": "INV-7QV5CQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-A3AK6R",
+          "revision": 1
+        },
+        {
+          "id": "INV-QS9SRX",
+          "revision": 1
+        },
+        {
+          "id": "INV-STRQX4",
+          "revision": 1
+        },
+        {
+          "id": "INV-WEZ24E",
+          "revision": 1
+        },
+        {
+          "id": "INV-X60KEC",
+          "revision": 1
+        },
+        {
+          "id": "INV-XQMXT2",
+          "revision": 1
+        },
+        {
+          "id": "INV-YJ2H50",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-297MWA",
+      "items": [
+        "sha256:839c2100f344a4a81cf27b0b5be43b993ba9afde831cf53a1672214f21032f08",
+        "sha256:fdd3b8a1fd883bc25a9a369e79e067350ba7ea856a94970f723a5c2fa55e0751"
+      ],
+      "reason": "Membership and routes: the document-page policy, panel, Projects default, removed panel and storage wrapper joined the family on revision 2, and the route set now also names dashboard/src/panels and mcp/src/agents_remember/cli where their realizations live; the earlier members keep their invariant revisions.",
+      "subject": "FAM-8GST1A"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2B7W7X",
+      "items": [
+        "sha256:0365f5fbdf260bca44133ac397f04f80632a970e016f97c2eba4a704089cfaf0"
+      ],
+      "reason": "Bridge edit for the created/found versus opened outcome and the bounded command shape. The outcome obligation is recorded by the prepared-outcome invariant; this hunk is the bridge edit itself.",
+      "subject": "hunk:sha256:0365f5fbdf260bca44133ac397f04f80632a970e016f97c2eba4a704089cfaf0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-2GP9J7",
+      "items": [
+        "sha256:2d65692c40364fd768753782daa5b73333f359e7fea7a4ebed65d53ee1ca8179"
+      ],
+      "reason": "The card describes the highlight composer tests; the direct-target cases were removed with the panel and its account still holds.",
+      "subject": "onboarding:dashboard/src/panels/HighlightComposer.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-2MESJ1",
+      "items": [
+        "sha256:a88ac0f4736923a506b624ae72d725fa9902ecff47cb6f59fa8708659de6dc49"
+      ],
+      "reason": "Workspace-owner extraction bookkeeping: the preparation owner moved to role_launch_workspace.py and this module now imports it. The start-preparation obligation is recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:a88ac0f4736923a506b624ae72d725fa9902ecff47cb6f59fa8708659de6dc49"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-385SNB",
+      "items": [
+        "sha256:a9c1d336b518ee91f1446d2001b12a4086b1b675d2979c2d7145d701f23d3213"
+      ],
+      "reason": "Launcher extraction bookkeeping: the row moved to role-launcher/RoleLauncher.tsx and this module now renders it. The bound-row and strip obligations are recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:a9c1d336b518ee91f1446d2001b12a4086b1b675d2979c2d7145d701f23d3213"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-38MSF7",
+      "items": [
+        "sha256:4dfd480a40a6e43fcef6644b12cc98e469720fc234136b79dcc76606969ced1c"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:4dfd480a40a6e43fcef6644b12cc98e469720fc234136b79dcc76606969ced1c"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-3HPX8Q",
+      "items": [
+        "sha256:46287fa90df6f076ff08f97d96be84a15d37ba99da4e3f65d87f1101e022c02d"
+      ],
+      "reason": "The card describes the plugin client regression suite; the page-mode and open-generation cases were added to it and its account still holds.",
+      "subject": "onboarding:dashboard/src/cockpit/paseoPluginClient.test.ts"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
+            "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-9G4ASB"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-43HSCQ",
+      "items": [
+        "sha256:0236f76a12854d606f6aee152ad0892e756b2560721c693ef433e6723cef1d37"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-STRQX4"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-43WS2Z",
+      "items": [
+        "sha256:ce3a221e806fa29eba36b2639ff6318b07cd1d89c4e360e473491c96675eae2e"
+      ],
+      "reason": "No route meaning changed: the added answer model is covered by the role_agents.py card; the route's account still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/models/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-46M3YY",
+      "items": [
+        "sha256:4ddb1139c19e2782c8d99eecb44867ab937068fa3dfc14447f5ebdf9b68ea98a"
+      ],
+      "reason": "Launch-outcome plumbing for the workspace preparation value and the starting phase. The prepared-outcome obligation is recorded at the receipt and note owners; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:4ddb1139c19e2782c8d99eecb44867ab937068fa3dfc14447f5ebdf9b68ea98a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-51E44A",
+      "items": [
+        "sha256:50670156cc9d3a8f043eae8cb9e7612c6a9025699aaade95885c4adcbeb79072"
+      ],
+      "reason": "No route meaning changed: the manager-brief template edit is covered by its card; the route's account still holds.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5695QJ",
+      "items": [
+        "sha256:2e09f87a6b21d3084db2722ae74126daacb23b074acf974f4bab29fd373892b2"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:2e09f87a6b21d3084db2722ae74126daacb23b074acf974f4bab29fd373892b2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-5HZNTN",
+      "items": [],
+      "reason": "The catalog's contextual-panel sentence was corrected to describe the removed panel and the document rail. The design document is outside the memory path rules (no card exists), and the change is a wording correction of the same route whose obligation is recorded on the panels overview and the removed-panel invariant; no onboarding artifact needs to change.",
+      "subject": "onboarding:docs/design/dashboard/scenario-catalog.md"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-5NX7V3",
+      "items": [],
+      "reason": "Memory review repair: the cited proof bound a fixture/setup symbol or an over-claimed facet rather than the assertion it claimed; the entry is removed and the assertion-bearing evidence is retained as the test card's references.",
+      "revision": 1,
+      "subject": "INV-7D9QDG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-5V2F09",
+      "items": [
+        "sha256:386ea39a9a77e8290af44dcd2df3abcd3f6dffd4e78239c39cd91b07fe0a8139"
+      ],
+      "reason": "Workspace-owner extraction bookkeeping: the preparation owner moved to role_launch_workspace.py and this module now imports it. The start-preparation obligation is recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:386ea39a9a77e8290af44dcd2df3abcd3f6dffd4e78239c39cd91b07fe0a8139"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6HX3D4",
+      "items": [
+        "sha256:b0a2698b98c673a8877f7537e504ab85cf36377d0136e21bbcc2bc3f08334249"
+      ],
+      "reason": "Page-mode and availability plumbing on the shared frame. The panel-follows-selection obligation is recorded at the frame and the document state; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:b0a2698b98c673a8877f7537e504ab85cf36377d0136e21bbcc2bc3f08334249"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-6QTP7F",
+      "items": [
+        "sha256:07e4b5e4fe57d78148942bf809c6e6d4005732b0f2ae43904e4869e98e92dcd7"
+      ],
+      "reason": "The card describes the memo regression surface; the rail prop rename adjusted its fixtures and the card's account still holds.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.memo.test.tsx"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-6R7FG5",
+      "items": [],
+      "reason": "Memory review repair: the cited proof bound a fixture/setup symbol or an over-claimed facet rather than the assertion it claimed; the entry is removed and the assertion-bearing evidence is retained as the test card's references.",
+      "revision": 1,
+      "subject": "INV-ZVQ7E3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-72NJ1B",
+      "items": [],
+      "reason": "The brief template no longer tells a manager to prepare a worktree before role_start; the changed file's own card was updated for it, and the skills route overview's account of the lifecycle skill still holds.",
+      "subject": "onboarding:skills/l-01-agent-lifecycles/templates/manager-brief.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-757J7E",
+      "items": [
+        "sha256:61b20bd12f60118e42b94afdf51f032e9905d89194b7fbe2d94f4058e72a9103"
+      ],
+      "reason": "Route registration and dispatch bookkeeping for the progress notice, the document read and the preparation value. The recording owners are the new modules; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:61b20bd12f60118e42b94afdf51f032e9905d89194b7fbe2d94f4058e72a9103"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-784CRS",
+      "items": [
+        "sha256:7a7ad7925ed5ffaa0964d21138dad8161ed6a059e35d13d51f8b017e9fa95855"
+      ],
+      "reason": "The card describes the fixture mirror guard; the cast inventory changed with the new document-chat fixtures and its account still holds.",
+      "subject": "onboarding:dashboard/src/test/wireFixtureGuard.test.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7KYPCZ",
+      "items": [
+        "sha256:e83e7d3de27507aaa33c4496dce7a74115b2faf3fc8ec8cac7351143a2de9d7b"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:e83e7d3de27507aaa33c4496dce7a74115b2faf3fc8ec8cac7351143a2de9d7b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-821M07",
+      "items": [
+        "sha256:724857eeea242b27c386e9f9c3f1152dbc40bab933b60405779341a8eae3ca06"
+      ],
+      "reason": "Launcher extraction bookkeeping: the row moved to role-launcher/RoleLauncher.tsx and this module now renders it. The bound-row and strip obligations are recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:724857eeea242b27c386e9f9c3f1152dbc40bab933b60405779341a8eae3ca06"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleLauncherGrid"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:1687dd751b97a7f56ed19607bf786050f7e969c393691f73db4bdc94c858e497",
+            "locator": {
+              "kind": "symbol",
+              "name": "roleLauncherGrid"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-TNTSC0"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-8XQFY5",
+      "items": [
+        "sha256:20e5db541bc7d0cafd077b473a5be5623d8be30638e692638e8e708b801ee8a8"
+      ],
+      "reason": "The construct this realization names moved to its new owning module during the role-launch workspace/launcher extraction; the invariant's statement and scope are unchanged.",
+      "revision": 1,
+      "subject": "INV-43CXH6"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "content": "sha256:8f45fa15e8afda704f68961f25e28e57f5dcab29adaf517cbd865bcfa37498a2",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
+            "content": "sha256:ec908983843fd8147d73603fe8b6fbc340c8ed518bdcc25e0684c32705f0fece",
+            "locator": {
+              "kind": "symbol",
+              "name": "register_role_launch_routes"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-D8B07W"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-93NHY3",
+      "items": [
+        "sha256:9e18b6832e0ca3d0d49489b5374e4f2776e513b659e6f22e4e9612c86846c82a"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-TA2JW5"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-9FJJPA",
+      "items": [
+        "sha256:70c0fa3e055e24584b099d28d8996f0ac1d752ed933f8b249222ca02ec3104bd"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_leaf_enclosure_start.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9HJC0H",
+      "items": [
+        "sha256:47a31e85c7d269bd5ab633d6927666ac5b6a16957889d34b67c794435d307909"
+      ],
+      "reason": "Answer projection for the preparation block, the refusal mapping and the Projects note. The refusal and outcome obligations are recorded at their owners; this hunk is the projection edit itself.",
+      "subject": "hunk:sha256:47a31e85c7d269bd5ab633d6927666ac5b6a16957889d34b67c794435d307909"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:83c8e513bbf464c7ea5fff600040a189fedae14ab0181893060f7f3963351035",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "f30210acc59542693c5689f40f2e36d6d00508e6",
+            "content": "sha256:755f3acacad3a8d7c322e64f295b45bea03ac9770e49576024b74fa5eefc1fda",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-DDBBDE"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9JDEQP",
+      "items": [
+        "sha256:b88549c11f25e6ca9c89bfbc5246b5da5470ababdd838a926bcd733d8ef97d74"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-72PQ2M"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-9SPRMK",
+      "items": [
+        "sha256:b790e1b2fdf9d1539f7d78eac50bdc11967d2c528622a12a901d05922124afb3"
+      ],
+      "reason": "Launch-outcome plumbing for the workspace preparation value and the starting phase. The prepared-outcome obligation is recorded at the receipt and note owners; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:b790e1b2fdf9d1539f7d78eac50bdc11967d2c528622a12a901d05922124afb3"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
+            "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-1P5780"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-9TYQ0G",
+      "items": [
+        "sha256:341841f509956b3f78d942564e62af17dc827b03ac6f77b8e26f61b25318de20"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-XENPC7"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:715a3fe61cfbc727b54bcfea19c6a9eaea4ec237e27e412a4d0f335ca17d516f",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "f30210acc59542693c5689f40f2e36d6d00508e6",
+            "content": "sha256:4e9b68767b6a96b30d0b0d1f45964423703f44c8ba184d0995190b7d2ea98858",
+            "locator": {
+              "kind": "symbol",
+              "name": "_execute_prepared_launch"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-QCS3DH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-A65ACX",
+      "items": [
+        "sha256:3bcccc7433901eb3e9c5b1300f7ef45c03b437a230d0578a8bd34bd84e587542"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-ZD9BK1"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "5c854a3f4fb42b7385dc2da866a85fd295a20cdf",
+            "content": "sha256:7313736abc6b0ffd0d6fe6e09627cf2d3f5e2e59e23efb8ffeac36f5751e472e",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "before": {
+            "blob": "67f54e7e6f85d3aaf077669550630e002621ee92",
+            "content": "sha256:3aba7b6e888d4c3d1e2d8306354b7d5660c5090fef0b269b44abd2fdb09133cd",
+            "locator": {
+              "kind": "symbol",
+              "name": "start"
+            },
+            "path": "dashboard/src/cockpit/paseoFrameControl.ts"
+          },
+          "id": "RLZ-9XE68C"
+        },
+        {
+          "after": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
+            "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-PG0AHJ"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-AJ64HF",
+      "items": [
+        "sha256:b4fa48347905c590c475bb2d15ab77a75eb61c203d70617329ef4d8e9fe48d79"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-C71CTF"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-AQ479Z",
+      "items": [
+        "sha256:962dac744ded4b89cdcadbfe4e144a79613797516fb7f8f20104b0561317dbe7"
+      ],
+      "reason": "Load-time bookkeeping for the document page mode and the write transform. The sidebar-isolation obligation is recorded at the sidebar module; this hunk is the load edit itself.",
+      "subject": "hunk:sha256:962dac744ded4b89cdcadbfe4e144a79613797516fb7f8f20104b0561317dbe7"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B2131G",
+      "items": [
+        "sha256:5cf2025cb32134d122ef17b3ac15551f3318ca28b5fb15b7fb840e319a94b111"
+      ],
+      "reason": "Route registration and dispatch bookkeeping for the progress notice, the document read and the preparation value. The recording owners are the new modules; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:5cf2025cb32134d122ef17b3ac15551f3318ca28b5fb15b7fb840e319a94b111"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-B2F541",
+      "items": [
+        "sha256:852357c09387fd450d575928f2492bd7aa14b95d0bbf77502cff64c6dcb8fc95"
+      ],
+      "reason": "The card describes the shared plugin page harness; the write-watcher transform and page-mode helpers were added to it and its account still holds.",
+      "subject": "onboarding:dashboard/src/test/paseoPluginPage.ts"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-B7KCWZ",
+      "items": [
+        "sha256:c57ad5b89e5051b46d42ed2ac79d70cae6433085faf1599d514a79aac6514d50"
+      ],
+      "reason": "Test-lane catalog adjustment for the changed evidence files. No product behavior is realized at a catalog row; the lane's obligation is the catalog's own checked invariant.",
+      "subject": "hunk:sha256:c57ad5b89e5051b46d42ed2ac79d70cae6433085faf1599d514a79aac6514d50"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-BAA1MK",
+      "items": [],
+      "reason": "Memory review repair: the cited proof bound a fixture/setup symbol or an over-claimed facet rather than the assertion it claimed; the entry is removed and the assertion-bearing evidence is retained as the test card's references.",
+      "revision": 1,
+      "subject": "INV-4S93MX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-BN9NAA",
+      "items": [
+        "sha256:ece24cab997f3333b5600346cf4bf9357bb7b88207cc9b8537d602403bdf1c8d"
+      ],
+      "reason": "Launcher extraction bookkeeping: the row moved to role-launcher/RoleLauncher.tsx and this module now renders it. The bound-row and strip obligations are recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:ece24cab997f3333b5600346cf4bf9357bb7b88207cc9b8537d602403bdf1c8d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-CHD0ZH",
+      "items": [
+        "sha256:40f25069f64643985c5608a60e059ae85ed74ef21ab3feb7d5c9111f9e8ecb9f"
+      ],
+      "reason": "Launcher extraction bookkeeping: the row moved to role-launcher/RoleLauncher.tsx and this module now renders it. The bound-row and strip obligations are recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:40f25069f64643985c5608a60e059ae85ed74ef21ab3feb7d5c9111f9e8ecb9f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-D8ADAQ",
+      "items": [
+        "sha256:aab5bd659d1c4daef3de9551742fff196ff8bfcfa2dd24f838fd6430d27d63e0"
+      ],
+      "reason": "Answer projection for the preparation block, the refusal mapping and the Projects note. The refusal and outcome obligations are recorded at their owners; this hunk is the projection edit itself.",
+      "subject": "hunk:sha256:aab5bd659d1c4daef3de9551742fff196ff8bfcfa2dd24f838fd6430d27d63e0"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-DN1JW7",
+      "items": [
+        "sha256:9b884339f6f923405023287bd4fbd18397af3051cffa4767d2e13ee77e062330"
+      ],
+      "reason": "No route meaning changed: a new test module and adjusted catalogs are covered by their own cards and the mcp/tests card's account still holds.",
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-DQD9QD",
+      "items": [
+        "sha256:6305275fb368b504f9f5194ec7d0c43dd446e465189437e50038326e88e8e985"
+      ],
+      "reason": "Design-document correction: the register combines the landed Chats default with the L95 native contextual frame and retires the old panel sentence. The panel obligation is recorded by the document-panel invariant; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:6305275fb368b504f9f5194ec7d0c43dd446e465189437e50038326e88e8e985"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E27BJZ",
+      "items": [
+        "sha256:05f4b68736b83f6cd4f4574568e2d9060a5ecaf247624d30a5b719ec592ba40c"
+      ],
+      "reason": "Workspace-owner extraction bookkeeping: the preparation owner moved to role_launch_workspace.py and this module now imports it. The start-preparation obligation is recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:05f4b68736b83f6cd4f4574568e2d9060a5ecaf247624d30a5b719ec592ba40c"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-E522VW",
+      "items": [
+        "sha256:6daf7ea942cb03a3043988a8fc2cf5b665e0a2d8a1954ae235dfc5e1901a4f48"
+      ],
+      "reason": "Workspace-owner extraction bookkeeping: the preparation owner moved to role_launch_workspace.py and this module now imports it. The start-preparation obligation is recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:6daf7ea942cb03a3043988a8fc2cf5b665e0a2d8a1954ae235dfc5e1901a4f48"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-EACARR",
+      "items": [
+        "sha256:6d58f241cc754b93b2e3881d3cfdf24b2e4bfbc7997440b8e10bc65a78339380"
+      ],
+      "reason": "Bridge edit for the created/found versus opened outcome and the bounded command shape. The outcome obligation is recorded by the prepared-outcome invariant; this hunk is the bridge edit itself.",
+      "subject": "hunk:sha256:6d58f241cc754b93b2e3881d3cfdf24b2e4bfbc7997440b8e10bc65a78339380"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "content": "sha256:31b1fe4ca46d389d7bf2dad92128e633bd36b901eb6d3c38d5848b1d9474de32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
+            "content": "sha256:e8a059b68cc289058961c5797f988372d339f407fed8b78d8166d5650b84fb98",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-3WT1SY"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-EBYRJ2",
+      "items": [
+        "sha256:021fc5e062811b1819602d24098d37ff8fc2695c71d1d87995c1e6653f6a6614"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-X9GE8J"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "36e6100bac6aeb44a77c7c45bdbb9aaca07ce821",
+            "content": "sha256:5b1580705e72da59cfb1a652810d566d90f9e96ff7ee1c0599f38dd4fb535b01",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "before": {
+            "blob": "1d20018dbafcc9ddb0cec36643841d008e7cdab2",
+            "content": "sha256:6f914d7fda19d6e47fb814b4cbe2453d17292f7a0af18c515b21d43a042637f5",
+            "locator": {
+              "kind": "symbol",
+              "name": "installBridge"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts"
+          },
+          "id": "RLZ-W98CK3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-FE398S",
+      "items": [
+        "sha256:903f8683c2776472c827456ecc2d91ae0fd3f01e027556aa00316b87e40379a9"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-0286SX"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FGKG7W",
+      "items": [
+        "sha256:221494c3ad35063a3e5c18f1ece30fb7940099f985ad5a2e1d560b13ae78b59e"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:221494c3ad35063a3e5c18f1ece30fb7940099f985ad5a2e1d560b13ae78b59e"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-FGWXDH",
+      "items": [
+        "sha256:861ed88282f1492bddab6bf8de56de11e9cc593216ebc6a415e140681eb0a4ad"
+      ],
+      "reason": "No route meaning changed: the new cli modules are covered by their own cards and the cli route's overview lists routes, not modules.",
+      "subject": "onboarding:mcp/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-FRR6S8",
+      "items": [
+        "sha256:2d93f53905f83f25bed3186a634dc5a68f2b2639a4c7b921d851f691a78adb1e"
+      ],
+      "reason": "Workspace-owner extraction bookkeeping: the preparation owner moved to role_launch_workspace.py and this module now imports it. The start-preparation obligation is recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:2d93f53905f83f25bed3186a634dc5a68f2b2639a4c7b921d851f691a78adb1e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-G653DW",
+      "items": [
+        "sha256:4d26ce949e9d5618c94d109f94de234a553ac826730af7554fff7a2c8007e4b2"
+      ],
+      "reason": "Answer projection for the preparation block, the refusal mapping and the Projects note. The refusal and outcome obligations are recorded at their owners; this hunk is the projection edit itself.",
+      "subject": "hunk:sha256:4d26ce949e9d5618c94d109f94de234a553ac826730af7554fff7a2c8007e4b2"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-G6J7HJ",
+      "items": [
+        "sha256:918ccc4f8176249d2001c08cbaf07082c82ea173e0fad181165ab791dc520f9a"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_paseo_bridge_agents.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-GH3WTW",
+      "items": [
+        "sha256:99fba7b96b633715c3441cdb98a00e56c4af54470d73ab9e7d9a8e062611cf7a"
+      ],
+      "reason": "Bridge edit for the created/found versus opened outcome and the bounded command shape. The outcome obligation is recorded by the prepared-outcome invariant; this hunk is the bridge edit itself.",
+      "subject": "hunk:sha256:99fba7b96b633715c3441cdb98a00e56c4af54470d73ab9e7d9a8e062611cf7a"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "content": "sha256:31b1fe4ca46d389d7bf2dad92128e633bd36b901eb6d3c38d5848b1d9474de32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
+            "content": "sha256:e8a059b68cc289058961c5797f988372d339f407fed8b78d8166d5650b84fb98",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-8H3HVX"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-H33PYB",
+      "items": [
+        "sha256:318d196805111ec46b9a7f0916eb539db0cdaa7f973a69433fd45a11b85ff260"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-FMB2AG"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-H75AJ8",
+      "items": [
+        "sha256:1ec05383ee92fcf3d7adb602a24c75317ec59089bec32d5c60934e32aba969c9"
+      ],
+      "reason": "Document steering plumbing: the page mode travels with the pane and the ready move carries the workspace. The panel-follows-selection obligation is recorded at the controller; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:1ec05383ee92fcf3d7adb602a24c75317ec59089bec32d5c60934e32aba969c9"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-HQK7CW",
+      "items": [
+        "sha256:9a1bc7bfb838545066d974d8edf8fafb986429a8b0be3a6c6bf8aa685bbeaca0"
+      ],
+      "reason": "Document steering plumbing: the page mode travels with the pane and the ready move carries the workspace. The panel-follows-selection obligation is recorded at the controller; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:9a1bc7bfb838545066d974d8edf8fafb986429a8b0be3a6c6bf8aa685bbeaca0"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J4XKE4",
+      "items": [
+        "sha256:9be195f87b4d223454935bf84902f695550c8d7c7606ff41709829c537be66ab"
+      ],
+      "reason": "Document steering plumbing: the page mode travels with the pane and the ready move carries the workspace. The panel-follows-selection obligation is recorded at the controller; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:9be195f87b4d223454935bf84902f695550c8d7c7606ff41709829c537be66ab"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-J5SBMJ",
+      "items": [
+        "sha256:5237991039f9ae0e7aa14438f388e898287dfa8c978be93c24851f9991fd8aae"
+      ],
+      "reason": "Document steering plumbing: the page mode travels with the pane and the ready move carries the workspace. The panel-follows-selection obligation is recorded at the controller; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:5237991039f9ae0e7aa14438f388e898287dfa8c978be93c24851f9991fd8aae"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-J61AEK",
+      "items": [],
+      "reason": "Memory review repair: the cited proof bound a fixture/setup symbol or an over-claimed facet rather than the assertion it claimed; the entry is removed and the assertion-bearing evidence is retained as the test card's references.",
+      "revision": 1,
+      "subject": "INV-YJ2H50"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "dbd3ef46e609e178b20798093e2c399bdf3e9b0f",
+            "content": "sha256:19ba28765718f373b4b70dd594224499bd1aeb2c6cf77d848967a7e4dc4ade1f",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "before": {
+            "blob": "c824a4f657c2e56caff14a81123bfdb84a0dc837",
+            "content": "sha256:2ff8ea33e60c4571590774ea44be30aed5fab74dc64180208c31caf3cb114879",
+            "locator": {
+              "kind": "symbol",
+              "name": "CockpitShell"
+            },
+            "path": "dashboard/src/cockpit/Cockpit.tsx"
+          },
+          "id": "RLZ-Z2FC1D"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JBS041",
+      "items": [
+        "sha256:ed81a2e9fa2197c3b3ac8386d190881108e10ef00ac8bb7f4e2b097452795b83"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-XB45X4"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JDD427",
+      "items": [
+        "sha256:bf697cfaafb463630c1b5915cf62a8cc72d29286fb0e0f4cf3fb1f6c98f395dd"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:bf697cfaafb463630c1b5915cf62a8cc72d29286fb0e0f4cf3fb1f6c98f395dd"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JDGZZC",
+      "items": [
+        "sha256:b53f48dd42d6633ef5591ba849a61346caee72cc96092cc6dcf3c650ff0e727e"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:b53f48dd42d6633ef5591ba849a61346caee72cc96092cc6dcf3c650ff0e727e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:a0dac7182f6d4f1f2a1b5f1f308fb65d3106ab9c08a9d7ec73eba3736a0ea26d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-MKCYCH"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-JS9CRY",
+      "items": [
+        "sha256:78d521830237fdce455ae67c609439e9ebb014f70e81cfdf4fab098d9aa635f8"
+      ],
+      "reason": "The construct this realization names moved to its new owning module during the role-launch workspace/launcher extraction; the invariant's statement and scope are unchanged.",
+      "revision": 1,
+      "subject": "INV-WEZ24E"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-JV82B8",
+      "items": [],
+      "reason": "Memory review repair: the cited proof bound a fixture/setup symbol or an over-claimed facet rather than the assertion it claimed; the entry is removed and the assertion-bearing evidence is retained as the test card's references.",
+      "revision": 1,
+      "subject": "INV-5MP23G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K03F44",
+      "items": [
+        "sha256:f161fba85762d17d1ea42cdfe4751d9ffc350649794fb3873e2b5bf1753ae37d"
+      ],
+      "reason": "Page-mode and availability plumbing on the shared frame. The panel-follows-selection obligation is recorded at the frame and the document state; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:f161fba85762d17d1ea42cdfe4751d9ffc350649794fb3873e2b5bf1753ae37d"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K083FJ",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+            "content": "sha256:732ad30d942e3371b616a1d77863a69fb72c772e1d23ff8a19a5db498b19043b",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrapEmbed"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+          },
+          "before": {
+            "blob": "d93ddb1f6f385bcc76a5bf6685670089219de695",
+            "content": "sha256:441fa51c8cd9a63f96ad3c9bed8c0d6520fa4991b50ad016fdd4a9839c9e700f",
+            "locator": {
+              "kind": "symbol",
+              "name": "bootstrapEmbed"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+          },
+          "id": "RLZ-TZ0Y3A"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-K121TM",
+      "items": [
+        "sha256:ccb8d62810bfd5175405f0c390d128e6fb7d29d7c60cf02d89dfac65cf4fdc58"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-7QV5CQ"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-KCAJND",
+      "items": [
+        "sha256:df227a6393b1ebbaf5758e7ffa0db83d02e74e931e57c9d218134d80ac0cf08b"
+      ],
+      "reason": "Launcher extraction bookkeeping: the row moved to role-launcher/RoleLauncher.tsx and this module now renders it. The bound-row and strip obligations are recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:df227a6393b1ebbaf5758e7ffa0db83d02e74e931e57c9d218134d80ac0cf08b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-MZ8HM2",
+      "items": [
+        "sha256:c7d73171629533c7bbdd4b60ef6f68b51c6e1a9514c8b91a3fea48f8b45b010f"
+      ],
+      "reason": "Workspace-owner extraction bookkeeping: the preparation owner moved to role_launch_workspace.py and this module now imports it. The start-preparation obligation is recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:c7d73171629533c7bbdd4b60ef6f68b51c6e1a9514c8b91a3fea48f8b45b010f"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "63cdd4af0f74c96d9ea324025b176003dc6269d8",
+            "content": "sha256:54dcef3cf9e26597b1446734e030a9cba88a037132c80c974d9c0283bfc082d4",
+            "locator": {
+              "kind": "symbol",
+              "name": "takeOwnLookBack"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+          },
+          "before": {
+            "blob": "d93ddb1f6f385bcc76a5bf6685670089219de695",
+            "content": "sha256:d4ef84d84c3beb6f973bed6216e5c941b3bc424018574c20530beeb27e5c7683",
+            "locator": {
+              "kind": "symbol",
+              "name": "takeOwnLookBack"
+            },
+            "path": "mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts"
+          },
+          "id": "RLZ-JVAAV2"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-N8NRPV",
+      "items": [
+        "sha256:beca44106e171a0f1a4f4db030b075701df5f66c4425069de8a7b89d2cd82783"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-CJ4VN0"
+    },
+    {
+      "disposition": "changed",
+      "examined": [
+        {
+          "id": "INV-43CXH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-5MP23G",
+          "revision": 1
+        },
+        {
+          "id": "INV-6SGHBB",
+          "revision": 1
+        },
+        {
+          "id": "INV-8J056T",
+          "revision": 1
+        },
+        {
+          "id": "INV-C7AT8R",
+          "revision": 1
+        },
+        {
+          "id": "INV-DH5NRM",
+          "revision": 1
+        },
+        {
+          "id": "INV-EFDE52",
+          "revision": 1
+        },
+        {
+          "id": "INV-TA2JW5",
+          "revision": 1
+        },
+        {
+          "id": "INV-ZVQ7E3",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-NNPFDQ",
+      "items": [
+        "sha256:ad55b085e66cb13361da78948ccd59b1838dce470ef61e0956ab2a6cdfc4de7a",
+        "sha256:d6bb43011fc4a75777e9b28adba74b5598c65a59ad6baa04915e506010b061ae"
+      ],
+      "reason": "Membership and routes: the bound launcher row, the progress/outcome answer and the refusal remedy joined the family on revision 2, and the route set now also names mcp/src/agents_remember and mcp/src/agents_remember/models where errors.py and the answer model live; the earlier members keep their invariant revisions.",
+      "subject": "FAM-RT2XDA"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NW662Z",
+      "items": [
+        "sha256:12d121b2c8b2c45e9a56280141e4262ddf130e06be6fdaa858ef507b4bfce349"
+      ],
+      "reason": "Workspace-owner extraction bookkeeping: the preparation owner moved to role_launch_workspace.py and this module now imports it. The start-preparation obligation is recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:12d121b2c8b2c45e9a56280141e4262ddf130e06be6fdaa858ef507b4bfce349"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-NZ396E",
+      "items": [
+        "sha256:916d8cc3314545a56504c12a497a2e684d32f17fc5212f9aeb877783c206e6bd"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:916d8cc3314545a56504c12a497a2e684d32f17fc5212f9aeb877783c206e6bd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-P5WCT5",
+      "items": [
+        "sha256:19bbcd0a530066897d00d32d9ac60fdb4bb18027b4d780239feaa88443a34670"
+      ],
+      "reason": "No route meaning changed: the only file edit is the inline scanner's removed docstring citation; the route's account still holds.",
+      "subject": "onboarding:mcp/src/agents_remember/memory_quality/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PB705W",
+      "items": [],
+      "reason": "The register combines the landed Chats default with the L95 native contextual frame. The design document is outside the memory path rules (no card exists); the correction is covered by the panels overview and the document-panel invariant, so no onboarding artifact needs to change.",
+      "subject": "onboarding:docs/design/dashboard/session-cockpit-upstream-register.md"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PHHV9P",
+      "items": [
+        "sha256:5eecfbdf1d01af0dfed1c465a02c6fd2e5c199890cca8c92ba0105910f578e2b"
+      ],
+      "reason": "Design-document correction: the catalog no longer describes the removed contextual session panel as a retained product route. The removal's obligation is recorded by the removed-panel invariant; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:5eecfbdf1d01af0dfed1c465a02c6fd2e5c199890cca8c92ba0105910f578e2b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-PP4CDN",
+      "items": [
+        "sha256:425a21b2395bf0d02aece58297bf825d64f7966efa88cbd32d13bff525d2b3aa"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:425a21b2395bf0d02aece58297bf825d64f7966efa88cbd32d13bff525d2b3aa"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Q1PD0E",
+      "items": [
+        "sha256:50cd459c7bd8c617f9acd4b082633128ce35c3ed2fd1a2125397c9aa78611e51"
+      ],
+      "reason": "Route registration and dispatch bookkeeping for the progress notice, the document read and the preparation value. The recording owners are the new modules; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:50cd459c7bd8c617f9acd4b082633128ce35c3ed2fd1a2125397c9aa78611e51"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-QDSGMF",
+      "items": [
+        "sha256:32bb6f461eab54a8dc8e33e432bdf323e335a4e52d682da5b3ff19c79e36cd5d"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:32bb6f461eab54a8dc8e33e432bdf323e335a4e52d682da5b3ff19c79e36cd5d"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "b1a881404e3c96e9033bee68b81e6c639eebb2ff",
+            "content": "sha256:a23cf9cfa008bf8a2ee317fb605d5039754507de4e00f40c91703884303d46c6",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_contract_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+          },
+          "before": {
+            "blob": "68429e14329e3bfb1069b23976f85f62127e7788",
+            "content": "sha256:7624490692ab58393fecf5cac0d904a303bdf7fbe49b9eba7fe6172bdfda5cc9",
+            "locator": {
+              "kind": "symbol",
+              "name": "_leaf_contract_path"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+          },
+          "id": "RLZ-ZKGBXA"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-QPM1CM",
+      "items": [
+        "sha256:c3afc01ffab2038d07c66b7af371146acc770fd312ba451fce475f6b3cb10805"
+      ],
+      "reason": "The construct this realization names moved to its new owning module during the role-launch workspace/launcher extraction; the invariant's statement and scope are unchanged.",
+      "revision": 1,
+      "subject": "INV-MFVW1K"
+    },
+    {
+      "covers": [],
+      "disposition": "no_impact",
+      "id": "ROW-QWQF0G",
+      "items": [],
+      "reason": "Memory review repair: the cited proof bound a fixture/setup symbol or an over-claimed facet rather than the assertion it claimed; the entry is removed and the assertion-bearing evidence is retained as the test card's references.",
+      "revision": 1,
+      "subject": "INV-8J056T"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-R6FMH3",
+      "items": [
+        "sha256:24c8ded9fe1a9c8b403b1e63f614bb7477a2c6468145f82430319f4c31b30349"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_role_launch_routes.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+            "content": "sha256:4a8f272b9b4028fc1225c29c07b60d1e240352b10f1810cadee8b638b7041294",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:007bdd0c908e809a852c368dba65b0484767dfaa24cbd32eaf65360bc909065f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-YGH2ER"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-RBB68V",
+      "items": [
+        "sha256:4dfdfed1a29d4a09e36512a01547cc6c2500a9e2e4b164643884f41afaec1eae"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-EFDE52"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-RC96XH",
+      "items": [
+        "sha256:7ff6e68adef0f658d70b621d156fc0566ed1a6414147823c98e1cf350ae3bac9"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:7ff6e68adef0f658d70b621d156fc0566ed1a6414147823c98e1cf350ae3bac9"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RMATST",
+      "items": [
+        "sha256:af5618de6a2ab559dc169fecca62824ac6f6f96d2cfb9169cbbde6e4b4f27b9c"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_paseo_role_tools.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-RV9VMR",
+      "items": [
+        "sha256:e89437b8197fd06b2a0733edf5b61723eb0351200a5b853f664cbb67811489de"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_role_report.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S29S2F",
+      "items": [
+        "sha256:312296e7b203b568058446406724d4342e6b213f025b1a49205d7d2f8b74ef18"
+      ],
+      "reason": "Bridge edit for the created/found versus opened outcome and the bounded command shape. The outcome obligation is recorded by the prepared-outcome invariant; this hunk is the bridge edit itself.",
+      "subject": "hunk:sha256:312296e7b203b568058446406724d4342e6b213f025b1a49205d7d2f8b74ef18"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SG8CPS",
+      "items": [
+        "sha256:624cc8a1661c44de34c2ba3aa0f66af5ae0e06ae569b775f3c13799815e3126e"
+      ],
+      "reason": "The card describes the shell and its layers; this leaf's shell change is the rail mount recorded on the Cockpit.tsx card, and the test module's assertions were adjusted for it without changing the card's account.",
+      "subject": "onboarding:dashboard/src/cockpit/Cockpit.test.tsx"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SNPATS",
+      "items": [
+        "sha256:2b1d7308c88ddb07d03e0fecd1b1605b919e016b1b70ac5b8d035cd1b898273b"
+      ],
+      "reason": "Load-time bookkeeping for the document page mode and the write transform. The sidebar-isolation obligation is recorded at the sidebar module; this hunk is the load edit itself.",
+      "subject": "hunk:sha256:2b1d7308c88ddb07d03e0fecd1b1605b919e016b1b70ac5b8d035cd1b898273b"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SS8EG4",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SXYHQQ",
+      "items": [
+        "sha256:bd099ad8f5636cc9ce5b485423592ee7d3ccb0d1a3057bc8559ac12c5c7e64fd"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:bd099ad8f5636cc9ce5b485423592ee7d3ccb0d1a3057bc8559ac12c5c7e64fd"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-SZ1E7Q",
+      "items": [
+        "sha256:a135ff8035de65ae559db9c84927288f6f2918f3e32222269bc7bb141216409a"
+      ],
+      "reason": "No route meaning changed: no overviewed module was added or removed in data/ (the removed railChatSelection was summarized in the panels and src overviews where the panel lived).",
+      "subject": "onboarding:dashboard/src/data/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T12B83",
+      "items": [
+        "sha256:34e50590329ef7c5de766f717ba636d2f674d568f9361c05061a240c14956ed8"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:34e50590329ef7c5de766f717ba636d2f674d568f9361c05061a240c14956ed8"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T1CMZ7",
+      "items": [
+        "sha256:f8996803280400be928589ca3f2f6a6fee9b35419ab1a47e2eee48b7a4770f7e"
+      ],
+      "reason": "Bridge edit for the created/found versus opened outcome and the bounded command shape. The outcome obligation is recorded by the prepared-outcome invariant; this hunk is the bridge edit itself.",
+      "subject": "hunk:sha256:f8996803280400be928589ca3f2f6a6fee9b35419ab1a47e2eee48b7a4770f7e"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T3K7D4",
+      "items": [
+        "sha256:f7bf600f1cada5bab6c706e13111ceb2cfd9a2904a7e5601e77ab2597b84a93b"
+      ],
+      "reason": "Bridge bookkeeping for the page-mode message and the open generation. Both obligations are recorded at installBridge; this hunk is the bookkeeping edit itself.",
+      "subject": "hunk:sha256:f7bf600f1cada5bab6c706e13111ceb2cfd9a2904a7e5601e77ab2597b84a93b"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-T4A9PQ",
+      "items": [
+        "sha256:967bf396c23399503b957e121c8c428ad0e3fa226b3b940157f1d9b8820e7584"
+      ],
+      "reason": "Page-mode and availability plumbing on the shared frame. The panel-follows-selection obligation is recorded at the frame and the document state; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:967bf396c23399503b957e121c8c428ad0e3fa226b3b940157f1d9b8820e7584"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TGZV5G",
+      "items": [
+        "sha256:611e50635c2b61eb16250fd04bf23170598d8863a4746cebe0f74f22f3e075f6"
+      ],
+      "reason": "Launch-outcome plumbing for the workspace preparation value and the starting phase. The prepared-outcome obligation is recorded at the receipt and note owners; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:611e50635c2b61eb16250fd04bf23170598d8863a4746cebe0f74f22f3e075f6"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TQRRVS",
+      "items": [
+        "sha256:662d1a84f4071622e76f2b59d6a1c10efe5866bb7a073b37f99c56a85e6abb01"
+      ],
+      "reason": "Page-mode and availability plumbing on the shared frame. The panel-follows-selection obligation is recorded at the frame and the document state; this hunk is the plumbing edit itself.",
+      "subject": "hunk:sha256:662d1a84f4071622e76f2b59d6a1c10efe5866bb7a073b37f99c56a85e6abb01"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-TWZMD1",
+      "items": [
+        "sha256:338d291e13f72436e4798df4ae8e4c37600b307f89579b8cd6a1eb3ec8b09fb2"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:338d291e13f72436e4798df4ae8e4c37600b307f89579b8cd6a1eb3ec8b09fb2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VB0796",
+      "items": [
+        "sha256:0840e701c9ad8c7bf02c808dcbaab8ed350595d7a7a5d859973d8dbdc8cb918b"
+      ],
+      "reason": "Route registration and dispatch bookkeeping for the progress notice, the document read and the preparation value. The recording owners are the new modules; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:0840e701c9ad8c7bf02c808dcbaab8ed350595d7a7a5d859973d8dbdc8cb918b"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "30a4e1199324d773e4b19ec734f75103f710a5c8",
+            "content": "sha256:e7f10478f69c9621b522854511bfaa1b47d7d6169d38cb3baf719cbd473dd0dc",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "before": {
+            "blob": "5c603cb9d7ced3e28cb6b5cd7709fe8f4e937527",
+            "content": "sha256:a7e703b60ba6542cb670431a28e85291b3d655a63fcbd3c3df680370921430f2",
+            "locator": {
+              "kind": "symbol",
+              "name": "PaseoChatFrame"
+            },
+            "path": "dashboard/src/cockpit/PaseoChatFrame.tsx"
+          },
+          "id": "RLZ-7BAFW6"
+        },
+        {
+          "after": {
+            "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+            "content": "sha256:4a8f272b9b4028fc1225c29c07b60d1e240352b10f1810cadee8b638b7041294",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:007bdd0c908e809a852c368dba65b0484767dfaa24cbd32eaf65360bc909065f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-XXYE2Y"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-VEC3FC",
+      "items": [
+        "sha256:6151d72dde4ea1fac82cf36bd7ef32cfac025d9cef3ea87fb59d30dc8edaf93e"
+      ],
+      "reason": "The leaf's candidate changed lines at these realizations; the invariant's statement, applicability, conditions and exclusions remain as recorded. The RLZ-7BAFW6 rationale is corrected in place to the persistent frame/channel role the code actually plays.",
+      "revision": 2,
+      "subject": "INV-D0QATN"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-VFDA57",
+      "items": [
+        "sha256:14b9583a173e1c57f665004d716983e46503b5a05da281ff8e28333a73da50b3"
+      ],
+      "reason": "Launch-outcome plumbing for the workspace preparation value and the starting phase. The prepared-outcome obligation is recorded at the receipt and note owners; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:14b9583a173e1c57f665004d716983e46503b5a05da281ff8e28333a73da50b3"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-VKEGY5",
+      "items": [
+        "sha256:bdb9f13f46a4212e6dfd6aba49c29ad1389b6a59024fffc2f1f7ffd6e3e4d7e7"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_role_handover_binding.py"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W13SYN",
+      "items": [
+        "sha256:f0cf5a70d46e6a2f158f884ad12f6c452abf2418feca2c54fdbbf4ee2b898630"
+      ],
+      "reason": "The card was reviewed against the changed file and its account of current intent still holds; no card change is needed.",
+      "subject": "onboarding:mcp/tests/test_paseo_launch.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "69cb958794374f27a0d3517b1cd0494781a2cfc8",
+            "content": "sha256:31b1fe4ca46d389d7bf2dad92128e633bd36b901eb6d3c38d5848b1d9474de32",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "before": {
+            "blob": "123d2775569c24c0bdc27f59d60dbf426866262d",
+            "content": "sha256:e8a059b68cc289058961c5797f988372d339f407fed8b78d8166d5650b84fb98",
+            "locator": {
+              "kind": "symbol",
+              "name": "_launch_prepared_role_session"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+          },
+          "id": "RLZ-XG75PH"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-W4R0Q8",
+      "items": [
+        "sha256:86f3c5d7970b4f60e697ae6b4a85ec8531407bf224e074b8c61e5773f2e2ed2d"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-HE16XQ"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-W9C029",
+      "items": [
+        "sha256:9bb1911385940cc0805f1e8e0583bffe6006b036ddb8a163456118c17e3495b0"
+      ],
+      "reason": "No route meaning changed for docs/design; the dated certificate exclusion is recorded on the RV-01 finding and the two current design documents only.",
+      "subject": "onboarding:docs/design/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-WHE1Q6",
+      "items": [
+        "sha256:200be9c1619c422d908d62fcff22ba887a851fde6a3d685a7e5a6e4b9a802b94"
+      ],
+      "reason": "Bridge edit for the created/found versus opened outcome and the bounded command shape. The outcome obligation is recorded by the prepared-outcome invariant; this hunk is the bridge edit itself.",
+      "subject": "hunk:sha256:200be9c1619c422d908d62fcff22ba887a851fde6a3d685a7e5a6e4b9a802b94"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-X1KB05",
+      "items": [
+        "sha256:b1a8aeb03860c34a26424cfe06f7e82dcb4bbf527251d6ee70365ac5e6617051"
+      ],
+      "reason": "Rail wiring: the Chat side now mounts the document chat and its props changed with it. The obligation is recorded by the new document-panel invariant at RightRail; this hunk is the wiring edit itself and carries no separate invariant beyond that target.",
+      "subject": "hunk:sha256:b1a8aeb03860c34a26424cfe06f7e82dcb4bbf527251d6ee70365ac5e6617051"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "a6bf62377bc27e8be7806a0b5f78dccfb76e9295",
+            "content": "sha256:83c8e513bbf464c7ea5fff600040a189fedae14ab0181893060f7f3963351035",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "before": {
+            "blob": "f30210acc59542693c5689f40f2e36d6d00508e6",
+            "content": "sha256:755f3acacad3a8d7c322e64f295b45bea03ac9770e49576024b74fa5eefc1fda",
+            "locator": {
+              "kind": "symbol",
+              "name": "_public_execution"
+            },
+            "path": "mcp/src/agents_remember/cli/role_launch_receipts.py"
+          },
+          "id": "RLZ-N8SXH0"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-Y5WVV5",
+      "items": [
+        "sha256:3fa397614086c10788502f24f30e802a222255bba75cec19281c64d248786ae5"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-4E130M"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-Y97NP2",
+      "items": [
+        "sha256:62598045574bfb2a686bdb6429e08043ec574c61cc0aacbf3b31f050da9075ea"
+      ],
+      "reason": "Launcher extraction bookkeeping: the row moved to role-launcher/RoleLauncher.tsx and this module now renders it. The bound-row and strip obligations are recorded at the extracted module; this hunk is the extraction edit itself.",
+      "subject": "hunk:sha256:62598045574bfb2a686bdb6429e08043ec574c61cc0aacbf3b31f050da9075ea"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YFT80M",
+      "items": [
+        "sha256:e577f5ae553412563ea164a2dea1f6d27f3629a015e9831fd8370d41d86f4ac2"
+      ],
+      "reason": "Answer projection for the preparation block, the refusal mapping and the Projects note. The refusal and outcome obligations are recorded at their owners; this hunk is the projection edit itself.",
+      "subject": "hunk:sha256:e577f5ae553412563ea164a2dea1f6d27f3629a015e9831fd8370d41d86f4ac2"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YGV707",
+      "items": [
+        "sha256:975da6db0528083aa631916c8ce4106a360205f3e072c3e692feaab9bd73b5d5"
+      ],
+      "reason": "Launch-outcome plumbing for the workspace preparation value and the starting phase. The prepared-outcome obligation is recorded at the receipt and note owners; this hunk carries no separate invariant.",
+      "subject": "hunk:sha256:975da6db0528083aa631916c8ce4106a360205f3e072c3e692feaab9bd73b5d5"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+            "content": "sha256:4a8f272b9b4028fc1225c29c07b60d1e240352b10f1810cadee8b638b7041294",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:007bdd0c908e809a852c368dba65b0484767dfaa24cbd32eaf65360bc909065f",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleChatsPane"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-A0VKEA"
+        },
+        {
+          "after": {
+            "blob": "9f752b273394af50fa654c5c4f9db9d0cd90fe31",
+            "content": "sha256:0b78196fac2630c0e10609170d931f3efccedabc0dae740f0474a1d34b22841d",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "before": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:788685a38a6293920b5237ca3823825f4f6c90d039b3238a80767b46aadb5905",
+            "locator": {
+              "kind": "symbol",
+              "name": "dispatch"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-GMD7W4"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-YZ0CXJ",
+      "items": [
+        "sha256:0a17a2c53010c042daf71f3e5154473c6b70e04b822f9bbef445094f9bac4855"
+      ],
+      "reason": "The leaf's candidate changed lines at this realization; the invariant's statement, applicability, conditions and exclusions remain as recorded, so the entry is re-anchored in place without a new revision.",
+      "revision": 1,
+      "subject": "INV-C7AT8R"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-ZJ7646",
+      "items": [
+        "sha256:78b527496eff1795d92c30cc7aff4b79dbc85c863032f05de12548d4f2e7365e"
+      ],
+      "reason": "Answer projection for the preparation block, the refusal mapping and the Projects note. The refusal and outcome obligations are recorded at their owners; this hunk is the projection edit itself.",
+      "subject": "hunk:sha256:78b527496eff1795d92c30cc7aff4b79dbc85c863032f05de12548d4f2e7365e"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "9799a906ed01ee6a2ed87e36a8388ba740a78428",
+            "content": "sha256:d9a6f83856a6329fc85372432bf7acd74f68ad03951f0bf80d9f0b5f63597e8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/role-launcher/RoleLauncher.tsx"
+          },
+          "before": {
+            "blob": "b7bdf18c1b7a8bc1b8116a385ad1961831ee3d6b",
+            "content": "sha256:a0dac7182f6d4f1f2a1b5f1f308fb65d3106ab9c08a9d7ec73eba3736a0ea26d",
+            "locator": {
+              "kind": "symbol",
+              "name": "RoleLauncher"
+            },
+            "path": "dashboard/src/cockpit/RoleChats.tsx"
+          },
+          "id": "RLZ-2RCSQR"
+        }
+      ],
+      "disposition": "moved",
+      "id": "ROW-ZRRJZQ",
+      "items": [
+        "sha256:30712a4eeebb3ee8e4e2e9899e893e185acaa79651e1403a85640b687452ef6f"
+      ],
+      "reason": "The construct this realization names moved to its new owning module during the role-launch workspace/launcher extraction; the invariant's statement and scope are unchanged.",
+      "revision": 1,
+      "subject": "INV-6SGHBB"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

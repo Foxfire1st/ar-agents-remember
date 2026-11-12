@@ -1,0 +1,280 @@
+{
+  "path": "dashboard/src/panels/detail-panel/intentReviewEntry.tsx",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+        "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentReviewEntry"
+        }
+      },
+      "id": "RLZ-5A8ZP1",
+      "invariant": "INV-HAJ9SH",
+      "origin": {
+        "handoffEntry": "L187-HAJ",
+        "leaf": "260928-MIK-L187"
+      },
+      "rationale": "The task entry asks for the page's default on a landed leaf, so the entry and the page agree on which comparison a review of that leaf opens.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+        "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+        "locator": {
+          "kind": "symbol",
+          "name": "IntentReviewEntry"
+        }
+      },
+      "id": "RLZ-DDY3VDR2",
+      "invariant": "INV-T0EWDB7H",
+      "origin": {
+        "leaf": "260921-ICR-L46"
+      },
+      "rationale": "Renders the entry's single Intent review button: it reads useIntentReviewSummary for this leaf, labels the button '(recorded)' for a closed leaf, shows IntentCounts' +added −removed from that summary (or a brief loading or unavailable state) and, through AttributionCount, the summary's attribution of the changed files when the summary carries one. AttributionDetails explains a partial or unmeasured attribution beside the button. It always calls onOpen with the task-context target, live or historical. No catalogue read, picker or refresh control appears here.",
+      "role": "primary-authority"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Revision counts come from the comparison summary, not line totals/catalogue size; targeting is task-context, unavailable is not measured zero, and attribution stays separate.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:6e8ac5418ae5e6e7cf8523783226c6c09c7a9f1033308ab0ed2dfd7cf7991bf3",
+            "locator": {
+              "end": 24,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "A closed leaf's entry opens the page's own default, so a landed leaf reaches the comparison it delivered rather than its last recorded number; the summary read, the count label and the one-control shape are unchanged.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "IntentCounts displays loading/refusal or supplied revision counts, with a partial marker where appropriate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d90e0701c32b94f95b08c778b49acac7a630ddfa39f11574d3447cf9435fff4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentCounts"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "IntentDetails places the actual refusal or unresolved-subject explanation beside the control rather than fabricating revision counts.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:77fecd1eeae9453b3270ad60809bfccbb6821eb2243395c6e790efc6a8e89146",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Attribution uses 'without an invariant' plus a separate unknown count, preserves partial/unavailable/zero-zero suppression, and retains its own detail block.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:ee3d0e19d4489a43379f96fd41b7314f5c9bb708b17cb268857684244f3dd9e7",
+            "locator": {
+              "kind": "symbol",
+              "name": "attributionText"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:74b86a2d5cf6499dc5873623d25167273233ce65b9e3dd4b84cfbceeb88aac6b",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionCount"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:9eaedccc6ca06590a5d2f9d74aff66c235196a10c5aab2cd8da4b9763ea0cc25",
+            "locator": {
+              "kind": "symbol",
+              "name": "AttributionDetails"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "IntentReviewEntry retains one task-context summary control, live/historical targeting and the recorded label; it now also mounts the independent open-work span.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "Stored assertion bodies keep revision and attribution elements separate, use the current without-an-invariant wording, exercise partial/unknown/zero cases and assert one summary request; these are source assertions, not a new run.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e00968b1dc3795394c0decc980f766b22dd901f",
+            "content": "sha256:910ddbdaad104bb67a26b6bf732d7ba29170d913987c5af8cbef7d7c8bb485db",
+            "locator": {
+              "end": 139,
+              "kind": "line_range",
+              "start": 58
+            },
+            "path": "dashboard/src/panels/detail-panel/intentReviewEntry.attribution.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "LeafEntries mounts the control; DocChangeSetBar derives its facts from leaf lifecycle facts plus the shared revalidation generation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:14e80730ab07d7d43dc99018799af181b630e96b07f7bc9ba74c1111b4c462a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "LeafEntries"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1f434d49ec1adbb3ff324745748345f4ce909fce",
+            "content": "sha256:c9916dfeff8632353c5ff9e5577530b17de00762552e772fd092288914935ec3",
+            "locator": {
+              "kind": "symbol",
+              "name": "DocChangeSetBar"
+            },
+            "path": "dashboard/src/panels/detail-panel/changeSetBar.tsx"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "Stored refusal/compact-entry cases retain one control, task-context open and no false revision counts while preserving the actual refusal explanation; these are not fresh execution.\n\nAnchor: inclusive source ranges",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:f3916ee06943d068c3cf6af8a7aac0ec2c2f55558cacae4be1999834345fecad",
+            "locator": {
+              "end": 167,
+              "kind": "line_range",
+              "start": 144
+            },
+            "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "56e48c445177308f7420c6a934e402bebf797664",
+            "content": "sha256:46c1500f8ce73eeb3e26ac248436654e92a818065f2990d71d309d035151b025",
+            "locator": {
+              "end": 215,
+              "kind": "line_range",
+              "start": 188
+            },
+            "path": "dashboard/src/panels/detail-panel/reviewEntryRefusal.test.tsx"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "OpenWorkCount suppresses loading/undefined values, renders a separate open/all-answered span otherwise and follows supplied optional unexplainedOpen even on a refused intent answer; it is not a MEMORY acceptance grade.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:ddc7236c8af1b6ef56df4db5a4b399ad6deeb329f3054bef5d6135177e7e880f",
+            "locator": {
+              "kind": "symbol",
+              "name": "OpenWorkCount"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "7589f63f1bb655f537e84d56ad377746d725da2b",
+            "content": "sha256:d09036356fae7b2a04899e49a0febebfb3313b1b3cbdd72c51b1834551a94c95",
+            "locator": {
+              "kind": "symbol",
+              "name": "IntentReviewEntry"
+            }
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "1b88a5d8391b7e00d3ee0155a662a004bca0654c",
+            "content": "sha256:df8044be5c2eb9474ae910ca0b23e95d22be15de5d45d1553d05cd791a91ea71",
+            "locator": {
+              "end": 107,
+              "kind": "line_range",
+              "start": 76
+            },
+            "path": "dashboard/src/data/reviewIntentSummary.ts"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

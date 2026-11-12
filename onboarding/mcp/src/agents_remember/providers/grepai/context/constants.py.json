@@ -1,0 +1,65 @@
+{
+  "path": "mcp/src/agents_remember/providers/grepai/context/constants.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "GrepAI layout consumes these constants for provider-owned runtime paths through `grepai_runtime_layout`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0aa99c577ebd8e202dbe53fec26d5e8f6df1d117",
+            "content": "sha256:c4afc87a64f4d24cd7343b296ad6ab7c72e9ff36cd9d2395b3542dcbdbdcd0e5",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_runtime_layout"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/context/layout.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "GrepAI lifecycle modules consume Docker container/image constants through `grepai_network_name`, `grepai_runner_settings`, and `grepai_backend_settings` in `providers.context`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:56b12c4a4b340de52127e414eadc4be43d8c533b66b5206075baa6a4ff2a13c7",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_network_name"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:9dc8b3975d1a44f8f95019b86d5c704ae28d85fdd77967794ff05b780ed523c8",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_runner_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "618703550dec261067f2f3d5f5476f309b3776ad",
+            "content": "sha256:c70a7392e4d3ebb00c18e8f9054b0d0815021ddac5e6f425476984032dfbb295",
+            "locator": {
+              "kind": "symbol",
+              "name": "grepai_backend_settings"
+            },
+            "path": "mcp/src/agents_remember/providers/grepai/lifecycle/core.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

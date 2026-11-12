@@ -1,0 +1,528 @@
+{
+  "path": "mcp/test_support/agents_remember_test_support/testing",
+  "references": {
+    "1": {
+      "note": "The ordinary bootstrap carries no certifying or external-service capability.\n\nAnchor: pytest_bootstrap.py module contract",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "content": "sha256:8871d41faeb01e4371a59eeaaa76181e2fbaf1d9f69eea9aaabeea8b1bda5a5a",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "10": {
+      "note": "Seeded ordering uses its own random generator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e69cd7c5bdb5263e61e045e61fd8374abd2cc8cf",
+            "content": "sha256:5cb81759cd80d26f8e077fe007a734b989b9d5bce470f824ce45a8bcbe723821",
+            "locator": {
+              "kind": "symbol",
+              "name": "shuffle_items"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/random_order.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "13": {
+      "note": "The curation-doctrine registry of retired statements. The statements a compact canonical instruction source must make.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:3659fd2d0978bf74bc0402c6b69bea03dd81b2c7c2e6765977a54c8bd65a88ff",
+            "locator": {
+              "kind": "symbol",
+              "name": "CURATION_POLICY_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "14": {
+      "note": "The synchronization owner projects canonical skills to the sole declared package target, preserving every declared-copy check without harness mirrors.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "74a8d41dcbdc4e464b14c732a08b61f0b89ceda9",
+            "content": "sha256:a8269d77ff04383c8f99546b76d35f94d616e3bb91b96a61d3634cb5b8a85c95",
+            "locator": {
+              "end": 10,
+              "kind": "line_range",
+              "start": 3
+            },
+            "path": "generated-copies.json"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "00b5dd8aa2698993636ba72c416beaf0d07dff3f",
+            "content": "sha256:feef0c72f5c316fdcc3ccab56fcfee10f85f35434fb00094bae33acb96a82275",
+            "locator": {
+              "end": 59,
+              "kind": "line_range",
+              "start": 20
+            },
+            "path": "scripts/sync-skills.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "15": {
+      "note": "The lifecycle loader starts with canonical-form findings and then validates against the source tree.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:23518a0af72ef4dc3997947891ca4d6ee6f7de8ec29e32be72acc5c6a234b851",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_evidence_inventory"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane loader reports noncanonical lane lists and compares declared files with test modules.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7c9e6055c4762f48d788bd37701f28ec08d09fa4",
+            "content": "sha256:9d33dc4b305b91a5d8ccb5ea96d4d492877331c8a0d85a46e99cc7de96d3cbe9",
+            "locator": {
+              "kind": "symbol",
+              "name": "load_lane_manifest"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/lane_manifest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "17": {
+      "note": "The registry of retired curation sentences.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "efbba31da935e0aee9b2b8cfb41d6565fb0195ec",
+            "content": "sha256:dfd6425f4100d327b5028d4c89ab11499500bb2ce487d53dcaa689c2b14e3666",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_CURATION_STATEMENTS"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/curation_doctrine.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "18": {
+      "note": "The shared parse refusal explains possible row interleaving and restoration of the landed file.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:44f4a6242429ee8e8bc907f199eaada6fc4e17e7b86dc08834c385caab1ce1aa",
+            "locator": {
+              "kind": "symbol",
+              "name": "unreadable_catalog"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "19": {
+      "note": "**Historical source-bound reference account, not an operative override:** The register assigns distinct reset, restored and constant treatments.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Certifying setup admits Dagger before it resolves the candidate.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "8ddfbc85fc5f45313589051580d96912e39b3a7e",
+            "content": "sha256:a500dbafd07c3152de1eb1ca29dc220699d6b225160005b1113116953b6ba2a8",
+            "locator": {
+              "kind": "symbol",
+              "name": "prepare_certifying_pytest_bootstrap"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/certifying_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "20": {
+      "note": "Condition readiness is separate from the shared hang guard.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9af2bed27c4fcb4d87f128685e1efc140f6c4d48",
+            "content": "sha256:62add609bec3e5ad9ab06cb419a0e6f22f1d372d31f4923f07ae25794403a26f",
+            "locator": {
+              "kind": "symbol",
+              "name": "wait_until"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/waits.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "21": {
+      "note": "Content identities reuse per-file facts without freezing current graph membership.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:12ebec5f719b18267dcac638b4d165b515580aff32beafd212fe4ed5d99585a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "22": {
+      "note": "The rewrite preserves an entirely missing consumer list when no nonempty derived replacement exists.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:462acacf2301ac8bf2ced44806a3417ee059af318b6e301e1a3f321b60a676a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "_drop_gone_consumers"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "23": {
+      "note": "Cached facts are checked for shape and reused under their content key, without a fresh-parse equality check.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:01b637eb68f84f7ff0c37b9ddafd42ef86cf0eda7316e7daf3c9a3f2c1156e78",
+            "locator": {
+              "kind": "symbol",
+              "name": "_stored_file_facts"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "b4447f012e0a159da29a8f802259e78e3f659c30",
+            "content": "sha256:12ebec5f719b18267dcac638b4d165b515580aff32beafd212fe4ed5d99585a1",
+            "locator": {
+              "kind": "symbol",
+              "name": "build"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/dependency_facts.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "24": {
+      "note": "Retired handover wording is source/sentence data. Affirmative wording uses normalized clause alternatives. Each retired sentence is detected only on its own source, and a removed source stays absent.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "92b5ae07412e9128cf1c8bf269b09e148e265df2",
+            "content": "sha256:fc35aac64fce022ca7b9a7c853ef45011675ddf20931f3a9e6329a2835fbb4a6",
+            "locator": {
+              "kind": "symbol",
+              "name": "RETIRED_LEAF_HANDOVER_WORDING"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/retired_leaf_handover_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "d5871897935e8536a81be6ff610c46d9cd9e5494",
+            "content": "sha256:559a620ddf3cecf6031fca15109270df200731fea2295943100dabd6cf7ba67e",
+            "locator": {
+              "kind": "symbol",
+              "name": "missing_clauses"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/leaf_instruction_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07fb1ba05181fb4f0c5748dcd295674974c546bf",
+            "content": "sha256:4fea96e541b8daf2d9fd6892f750f4237d26bf2af1fd4e79ae0c4c5216a7f1fd",
+            "locator": {
+              "kind": "symbol",
+              "name": "REMOVED_INSTRUCTION_SOURCES"
+            },
+            "path": "mcp/tests/test_leaf_retirement_wording.py"
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "92b5ae07412e9128cf1c8bf269b09e148e265df2",
+            "content": "sha256:167044c7326a5b132b3532c6e91dc0ad0f68e21769eb6d4dee063dda62e9cd7d",
+            "locator": {
+              "end": 8,
+              "kind": "line_range",
+              "start": 1
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/retired_leaf_handover_wording.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "07fb1ba05181fb4f0c5748dcd295674974c546bf",
+            "content": "sha256:2c0ac44c32a8ab1f7e6e7c0a89ac5995737d14be3619dba9f6e8e4304e615d26",
+            "locator": {
+              "end": 81,
+              "kind": "line_range",
+              "start": 70
+            },
+            "path": "mcp/tests/test_leaf_retirement_wording.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "The deterministic Git hook fast tier invokes the lifecycle-catalog command; the targeted tier calls that same fast tier.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "cc9e582bcd4f203b2cb6710d9b1db35999d1341e",
+            "content": "sha256:d8d2d36ffff46631e2af79007d82177e086ea879656904d2bcfd1dc6afcb32e1",
+            "locator": {
+              "end": 240,
+              "kind": "line_range",
+              "start": 224
+            },
+            "path": ".githooks/_gate.sh"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "26": {
+      "note": "The closed product-process register now includes agents_remember.kernel.primitives.runtime_config._LEGACY_GATE_DELEGATION_WARNED with the default reset treatment and existing _clear resetter between test modules. It is not a per-test-restored lock. The shared guard and treatment rules remain unchanged; registration is not execution of the reset control.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "27": {
+      "note": "The closed register also gives the existing closeout digest-file stats, lifecycle location cache and lifecycle operation-record cache ordinary `_clear` resets at module boundaries. It adds no scanner exemption or production reset; restored rows retain their per-test treatment.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "28": {
+      "note": "The current closed register omits retired ambient-session/log owners while retaining closeout and worktree landing-chain cache resets.\n\nAnchor: `PROCESS_MUTABLE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "29": {
+      "note": "The collection register and explicit kernel service-holder reset are separate module-isolation paths; new explainer and watcher collections join the closed register.\n\nAnchor: `reset_process_state_at_module_boundaries`, `PROCESS_MUTABLE_STATES`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "content": "sha256:8c3af6fff1c4b93d4f691cdcd4b598866af27bf07bbcd8701e833a27940cdd99",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "153394407b89ebb6659b037b26feccfd3b595508",
+            "content": "sha256:8e6312eb1938d6b6090f8cd4d78992bb3fc0b4cf9de5ba20f76e4e66f07caf86",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/global_state.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Retry execution keeps only explicitly supplied files of the collected population; dependency ownership is supplied by the caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "81f720761fefb6324ddcadc1765b211667d6ca3c",
+            "content": "sha256:716e3b8067e9eb1957cc60dab531e0d731a9e90b2a1fadc0830d99ea9a4f5482",
+            "locator": {
+              "kind": "symbol",
+              "name": "pytest_collection_modifyitems"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/retry_selection.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The rewrite computes both new catalogs before it writes either.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "2e8dd72b490c3556329054d80b4dac24f3758de7",
+            "content": "sha256:3c9676fa36460061169e8c4df01ac67a7edd52424e98825058fa20151a6f494d",
+            "locator": {
+              "kind": "symbol",
+              "name": "write_canonical_catalogs"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "7": {
+      "note": "The command validates both catalogs on one cached source graph, or rewrites them with `--write`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5ec5ab93e02ad626b0a4ea38ef8644508a1ae0f3",
+            "content": "sha256:567c7ad94a855fa98285824fec3450a8f1303866188684047bad505173acf641",
+            "locator": {
+              "kind": "symbol",
+              "name": "main"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The union merge attribute for both catalogs.\n\nAnchor: .gitattributes catalog attributes",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "110c18c1f535297e4ae79fc7652ff22f29ed0820",
+            "content": "sha256:34df96ed5a8a5386d6d09ea07dc5c3776e4a71e3428e8298efe846d699887986",
+            "locator": {
+              "end": 21,
+              "kind": "line_range",
+              "start": 15
+            },
+            "path": ".gitattributes"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "A leaked change of owned module-level state fails the test after restoration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "d16a0570f1fd9422fd58d798ffb4ae34aaac4327",
+            "content": "sha256:4373829e34c7085b32f70678c4dc4ab31cf2f9624fcddefdf4ee64e369df496c",
+            "locator": {
+              "kind": "symbol",
+              "name": "reject_owned_global_state_leaks"
+            },
+            "path": "mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-route/v1"
+}

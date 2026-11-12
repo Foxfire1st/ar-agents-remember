@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/application/review_comparison_records.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "comparison_records reads the record inputs with their observed bytes.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89325af458c2e6a906f10ecb264fd0976cf132f5",
+            "content": "sha256:94672e4904c5165e0269b1d26a83b097380611286b985e69cc30bde699f4102c",
+            "locator": {
+              "kind": "symbol",
+              "name": "comparison_records"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "latest_record answers the newest record or names why there is none.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "89325af458c2e6a906f10ecb264fd0976cf132f5",
+            "content": "sha256:baa469d5a5c0f4a81461940ba999deafa9671244f3e5210de06b8b1d3b33833a",
+            "locator": {
+              "kind": "symbol",
+              "name": "latest_record"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

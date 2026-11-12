@@ -1,0 +1,32 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations"
+    ],
+    "justification": "Realized across 2 files that together perform the obligation."
+  },
+  "applicability": "The ordinary closeout's documentation of its publication and preparation-restoration boundary.",
+  "conditions": [
+    "The documentation distinguishes publication raising after partial ref movement from proof validation after a successful publication return."
+  ],
+  "exclusions": [
+    "A claim that documentation repairs the retained runtime race or publication policy."
+  ],
+  "id": "INV-JZD1F5",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Corrected actual docstring, unchanged restoration try/except and proof outside it, prior unchanged _move_admitted_ref mechanism, and independent executable AST/token/API equality."
+      ],
+      "path": "handoff-stage1.json"
+    },
+    "handoffEntry": "R4-O2 (post-takeover documentation)",
+    "leaf": "260928-MIK-L26",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The closeout docstring states that a partial publication with failed expected-old takeback may retain a reachable commit while preparations restore, whereas proof failure after successful publication return leaves preparations in place.",
+  "status": "proposed",
+  "supersedes": []
+}

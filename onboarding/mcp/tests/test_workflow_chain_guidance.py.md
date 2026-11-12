@@ -1,0 +1,422 @@
+# mcp/tests/test_workflow_chain_guidance.py
+
+## Governing Overview
+
+[mcp/tests overview](overview.md)
+
+Source-inspection boundary: this module already has committed history. The L8 working-candidate
+account and its measured run/census/mutation evidence below are historical, not the identity or
+acceptance status of the present L46 candidate. Current prose describes source assertions only;
+verification metadata remains closeout-owned.
+
+## Current owners and assertion bounds
+
+The main module retains `WorkflowChainTests`; its world, walk, classifier and declaration pins moved to `workflow_chain_guidance_test_support.py`. Existing inline line captions and explicitly historical measurements below retain their earlier source epoch, rather than naming current owner locations. The current own-address case checks each present truthy path and requires at least as many checks as observed hops. The sibling case requires a raw hint, rejects the sibling only for present paths, and checks public membership only when a top-level next tool exists. Callability claims stay bounded to the observed reachable hops and producers. Extraction does not widen them to every channel or every possible state.
+
+## Purpose
+
+The AR workflow as **one ordered path**, kept true by a test run rather than by a document. A trace
+that lives in a task root is not a landing, so the workflow statement this leaf owns is re-derived at
+every revision: the operations run in order through the registered entry points, each response's
+guidance is checked against **the caller's own contract**, and every step the guidance recommends is
+**called** rather than read.
+
+The defect class it exists for is `T44`/`T108` — *a machine-readable next action that does not work*.
+Every unit test of the guidance passed while the guidance was internally consistent and externally
+unusable, because nothing walked the chain and followed its own advice. Three properties are asserted
+over populations **derived at run time**: the hops come from executing the chain, the guidance
+channels come from each response the chain produced, and the arguments a recommendation supplies are
+read from the product's own guidance state machine over the contract on disk. The only literal
+sequences in the module are `WORKFLOW_OPERATIONS` — which *is* the workflow statement, and is
+asserted against what the walk observed — and value fixtures for arguments a recommendation leaves to
+the caller.
+
+It also carries the module-level statement of three register findings it does **not** repair:
+`T108` (a recommendation naming an operation its own argument model refuses), `T109` (the
+`nextRequiredArgs` channel that cannot declare what the operational triple omits), and `T87`/`T34`'s
+stale-base raiser.
+
+## Code Commentary
+
+### Logic
+
+The shared disposable world drives registered operations and contract-addressed landing hints, with `unittest.TestCase` and no module pytest marks. Earlier case/pass totals and mutation reports below retain their historical epoch, not renewed collection or execution.
+
+- **The order** (`test_the_chain_runs_in_the_declared_order_through_the_registered_entry_points`,
+  `:1094-1109`; `…reaches_every_declared_state_and_the_terminal_contract`, `:1111-1124`;
+  `…each_hop_was_the_move_the_previous_response_named`, `:1126-1160`). `WORKFLOW_OPERATIONS`
+  (`:99-109`) is nine operations, with `worktree_integrate` and `lifecycle_finalize_task` appearing
+  **twice on purpose** — each is a preview followed by its apply, and the preview is the step `T62`
+  broke. Case 1 asserts tuple equality against the observed hops, so a skipped or reordered hop
+  changes the tuple and reds it; it also asserts every hop is on `PUBLIC_TOOLS` and that no hop lost
+  its envelope. Case 2 asserts each operation's own state vocabulary (`EXPECTED_STATES`, `:113-122`)
+  plus the terminal `cleanup` cell, and the phase progression (`EXPECTED_PHASES`, `:125-130`) read
+  from the product's state machine over the real contract file. Case 3 *derives* the order from the
+  guidance rather than asserting it beside it: a named move must be the next hop or occur later
+  in the remaining chain when the workflow interleaves a step; the case bounds its derivation (`forward >= 4`, `holds >= 1`).
+- **The two guidance channels.** Top-level nextAction/nextTool/nextArgs come from the response's own contract; nextStep/compact next comes from that addressed target path and is filtered by bound_next_step. The observation translates compact next back into its hint model. Both channels remain independent of any session lifecycle; withholding one does not erase a top-level operational move.
+- **The address guard and sibling premise.** The fixture starts a sibling without ending an ambient session. Raw guidance is computed for the target contract, and the sibling case requires `hop.raw_next` to be non-null. For each emitted channel it checks only present, truthy `contract_path`, `enclosure_path`, `contractPath` or `enclosurePath` values and asserts that none names the sibling. If `hop.top_next_tool is not None`, it also asserts that tool belongs to `PUBLIC_TOOLS`. It does not require an operational tool to exist, a path on every channel, or a present path to name this task; the separate own-task channel case supplies the positive address pin over the observed chain hops. That case checks each present address against the own contract and requires at least as many checked address values as hops, not a nonempty address on every individual channel. The old assertion that unguarded ambient guidance names the sibling is retired, not current coverage.
+- **The derived callability population** (`callability_population`, `:1053-1068`; `_as_given_call`,
+  `:709-729`; `classify_call`, `:238-252`; `missing_required_args`, `:275-283`;
+  `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS`, `:166-168`;
+  `test_every_recommended_step_is_callable_with_the_args_its_guidance_supplies`, `:1222-1241`). Each
+  hop is called first with **exactly what its own guidance supplied** (plus the arguments that
+  guidance itself declares as required), then again with only the fields the tool's own argument model
+  named as absent — so the chain can continue, because a check that stopped at the refusal could not
+  tell an unusable recommendation from a broken chain. The two failure arms are separated by **model
+  identity**, never by wording: the generated `<tool>Arguments` model refusing the call is an unusable
+  recommendation, any other raise lost the envelope. The pin is asserted **equal in both directions**,
+  so a recurrence and a widening both fail.
+- **The operational-triple probe** (`_probe_operational_triples`, `:957-973`; `_call_recommendation`,
+  `:943-955`; `RecommendedCall`, `:341-354`;
+  `…every_response_that_published_an_operational_triple_was_called_with_it`, `:1243-1293`). Every hop
+  that publishes a `nextTool`/`nextArgs` triple is called **verbatim**, and the second producer of the
+  same recommendation — `worktree_start(retry_provider_setup=True)` answering `blocked` — is **driven**
+  in the same world rather than cited (`_retry_provider_setup_arrangement`, `:975-1049`). The
+  population is asserted so it cannot silently shrink, and the negative fact is stated rather than left
+  implicit: the only operations publishing no triple are the two terminal `lifecycle_finalize_task`
+  calls (`:1290-1293`).
+- **The classifier's own control** (`test_the_callability_arm_can_actually_fail`, `:1295-1325`).
+  `worktree_closeout_apply` called with nothing must be refused by **its own** model with
+  `{contract_path, intent_note}`, the one-field-short shape must classify alike (the singular and
+  plural refusal spellings), and a call that loses its envelope entirely must classify `raised` —
+  otherwise an "answered" classification could be satisfied by a classifier that never refuses.
+- **The withhold, counted.** Responses lacking their own declared address still withhold unverifiable guidance. The test retains its exact tool/count pin and non-vacuity discriminator; it does not establish equality with a withheld overlay or prove every absent move is carried. This guard is independent of the removed session-state source.
+- **The previews and `T62`'s trigger** (`_walk`, `:773-852`;
+  `…every_preview_step_answered_and_the_drift_snapshot_was_actually_read`, `:1352-1392`). The drift
+  snapshot is planted at the producer's own path (`drift_snapshot_path`,
+  `mcp/src/agents_remember/kernel/primitives/drift_snapshot.py:21-21`) before the cleanup and finalize
+  previews; the case asserts it was **present** when they ran, that every preview answered
+  (`would-*`/`closed`), that the snapshot **survived** the previews, and that the **real** finalize
+  reclaimed it — so the preservation claim is not an artefact of nothing ever touching the file.
+- **The stale base and its raiser** (`STALE_BASE_RAISERS`, `:197-197`; `_stale_base_arrangement`,
+  `:904-939`; `test_a_stale_base_closes_the_envelope_by_raising_and_is_counted`, `:1394-1423`). The
+  arrangement is measured, not described: the sibling enclosure's source branch is advanced the way a
+  sibling's landing advances it, `worktree_sync` must answer `would-sync` (or the arm tested nothing),
+  and the closing operations are driven in exactly that state. `worktree_closeout_preview` raises
+  `SourceLineageRefusal` (`mcp/src/agents_remember/worktrees/modules/closeout_lineage.py:68-68`), so
+  the caller loses `ok`, `status` and every recovery key; the remedy (`worktree_sync`) is asserted to
+  exist **in the exception text only**. The pin is asserted equal in both directions.
+- **The declared-requirement channel, `T109`**
+  (`test_the_declared_requirement_channel_is_real_and_its_one_needed_case_is_unreachable`,
+  `:1427-1498`). Three measured facts in order: where the channel is reachable the product uses it
+  (the `cleanup-pending` phase declares `contract_path` for `lifecycle_finalize_task`, read at the one
+  walk moment that phase is live); the phase that declares `intent_note` (`closeout-pending`) is
+  **unreachable from the tools' own writers**, because the real apply leaves `approved_for_commit` and
+  `closeout_status: completed` in the *same* contract write
+  (`mcp/src/agents_remember/worktrees/modules/closeout.py::_amended_closeout_contract` (current lines 595-629)); and the declaration is
+  nonetheless real, asserted on the contract state that defines it — the real post-apply contract with
+  only `closeout_status` rewritten.
+
+### Conventions
+
+One hermetic world per class (`WorkflowWorld`, `:357-598`): converted memory is scaffolded
+with the layout marker and a `Code-Commit` trailer pairing the code base. After start, `_walk`
+writes the real work file first, captures the actual code worktree with `CodeSnapshot`, then
+seeds open canonical leaf history with an `onboarding:{CODE_CHANGE}` `no_impact` row whose
+`sources` path/blob names that edited file. This is fixture setup, not an additional declared workflow operation.
+The world uses a single `TemporaryDirectory`, two real
+Git repositories with remote-tracking authority, real task documents, a real server built by
+`create_server`, and a real in-memory MCP client session per call (`:431-443`, through
+`create_connected_server_and_client_session`). `declare_test_process()` is called on
+construction (`:361-361`). No Docker, no network, no writes outside the temporary tree.
+
+Every call goes through the **production entry point** — a registered tool over an MCP session — and
+`call` returns a three-way arm (`RAISED ToolError` with the payload, `RAISED <Exception>`, or
+`RETURNED` with `structuredContent`), so "did it raise" is itself the measurement.
+
+The current lane row is `unit-regression` (`mcp/tests/test-evidence-lanes.toml:362-362`, inside
+the array opening at `:5-5`). Registry placement is a source fact, not this survey’s collection
+or execution evidence. The original L8 loader refusal and **10 passed** budget/registry result
+are historical receipts, not a new result for the present candidate.
+
+### Invariants And Boundaries
+
+- **The pins are the workflow statement's, and they are exact in both directions.**
+  `GUIDANCE_STEPS_MISSING_REQUIRED_ARGS` (`:166-168`) carries exactly one entry,
+  `worktree_closeout_apply` → `{intent_note}`, which is a **registered residual** rather than a
+  tolerated omission: the fix belongs to the tool surface and the module's comment says so. Rule
+  stated at `:133-136`: repair it and delete the entry in the same change; never delete the constant,
+  never widen it.
+- **"Every recommended step is callable" is not what this module proves, and the honest statement is
+  narrower.** What it pins is the callability of the recommendations **the walk reaches**, over the
+  union of each hop's as-given call and every hop's own operational triple plus the one driven retry
+  producer. Three residuals lie outside that producer set and are registered, not repaired:
+  **`T127`** — the lifecycle-operation `recommendedAction` channel
+  (`mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_projection.py:450-453`,
+  where `:450` is the call and `:452` the `tool=` argument) recommends `worktree_status` with
+  `{"contract_path"}` only, on a key that is *not* `nextTool`/`nextArgs`, so the module's probe
+  structurally cannot see it; **`T130`** — a fourth `nextTool`/`nextArgs` producer,
+  `_projection_without_control` (`mcp/src/agents_remember/application/task_docs/task_unstarted_evidence.py:535-545`),
+  whose `RecoveryRoute` tuple (`:48-48`) is unpacked and published as `nextTool`/`nextArgs` by
+  `public_payload` (`:68-81`); and **the phase channel's second repaired site** below.
+- **The phase channel is pinned at ONE of its two repaired sites.** `guidance.py` carries
+  `repo_id=contract.repo_name` on two `worktree_status` recommendations — `_post_integration_phase` (repo_id at current line 352) (the
+  `integration_status == "checkpointed"` branch of `_post_integration_phase`, phase
+  `worktree-started`) and `_pre_integration_phase` (repo_id at current line 414) (`_pre_integration_phase`, the pre-integration step). The walk
+  reaches only the second, so a **targeted** removal of `repo_id` at the checkpoint recommendation leaves this module at
+  **12 passed**. The successor verification's two-site mutation reds the module, but its red is fully
+  explained by `_pre_integration_phase` (repo_id at current line 414) alone, and that evidence shape must not be read as covering both. The bytes
+  are correct at both sites; this is a coverage boundary, and it is `T114`'s class.
+- **The coverage case's population is every hop plus one named producer, not "every response".** Its
+  `expected` and `observed` sets are *both* derived from `self.hops` (`:1254-1260`), so it
+  structurally cannot notice a triple-bearing response that is not a hop. The successor verification
+  measured the gap rather than assuming it: in this fixture the only responses built outside the walk
+  publish no triple, so the derivation is safe here — but the honest statement of the population is
+  the narrower one.
+- **The historical `A5c` account needs a current boundary.** The test docstring describes four
+  requirement sites, but current `guidance.py` declares three: carryover, cleanup and closeout.
+  Published-authority integration now changes summary text without `required_args`. The case
+  asserts cleanup and closeout; its four-site docstring is stale, not current population proof. Deleting the
+  `carryover-pending` declaration (`_post_integration_phase`, current line 304) leaves the module green — green **by
+  design**, and reproduced as such by the verification's `A5c` mutation.
+- **The module proves the mechanism and pins the populations; it repairs neither.** `T108`'s residual,
+  `T109`'s missing field and `T34`'s stale-base raiser are statements this module carries for their
+  owners, and the `### Todos` below record the same.
+- **Dead code and an unread field, recorded rather than smoothed.** `_apply_half` (`:634-642`) is
+  defined and never called, and `Hop.as_given_arm` — the field that carries *whether the guidance was
+  followable at all* — is written and read by no assertion; the callability signal that survives into
+  a case is `missing_args` alone, which case 6 pins. In case 10's preview predicate the arm
+  `hop.state == "closed"` cannot be satisfied by any preview the walk takes (every preview answers
+  `would-*`), so it is an assertion arm that cannot fail; case 2's `EXPECTED_STATES` is what would
+  catch a preview that actually applied.
+
+### Todos
+
+Verification metadata remains closeout-owned; this card records source inspection only. Owed to
+whatever change next touches the module: the three registered residuals above (`T127`, `T130`, the
+`guidance.py:369-369` coverage boundary), the dead `_apply_half` and the unread `Hop.as_given_arm`
+(either assert them or delete them), and the `nextRequiredArgs` pin `T109` asks for once the tool
+surface ships the field.
+
+Both closeout and would-integrate previews retain an argument-addressed approval stop: the emitted hint must exist, contain stop in its summary, and have no nextArgs. Removing session inference does not retire the landing operation chain or lifecycle_finalize_task. Existing reachable-hop callability, stale-base, drift-preview/reclamation and scope boundaries remain; historical counts are not re-certified.
+
+## Evidence
+
+- Both previews retain stop guidance and no executable nextArgs. [52]
+
+
+### Docs References
+
+No external Domain Documentation source is configured in this memory root. These are
+repository-owned contract and assertion facts; no external library behaviour is inferred.
+
+No configured domain evidence applies to the file-local claims above.
+
+### Repo-Internal References
+
+The anchors below identify current behaviour of this module; they are not execution evidence and they
+make no acceptance claim.
+
+
+### Cross-Repo References
+
+No cross-repository implementation evidence is required for these local contract claims.
+
+No repository or external-system boundary is proved by this module.
+
+## 260918-TSIP-L8 The Workflow Statement's Own Acceptance Module
+
+This card is created by the leaf's **curator**, not by the worker who wrote the module: a worker
+editing the memory tree is the role boundary this master registered as `T105`. The module is **new in
+this leaf** — 1442 lines, 12 cases, sha256 `2225c95b…` — and before this card it had no file-level
+onboarding at all, which the leaf's own fix round recorded as a handoff (`T120`).
+
+**The trees, both named (`T100`).** Every number this card states was measured on the **leaf memory
+worktree** at `877a5a003af6c6a11b488f8cc30ad4b4dfb05fb1` paired with the **leaf code worktree's**
+`d9214edf3388ee862f8c8f2ed59cf40af710d8bb` plus this leaf's five uncommitted entries. That pair is
+**one behind the master on both axes** — L7's landing is this leaf's code base and L9 has landed since
+(`eca18fe6`, memory `f396e830`) — and the scoped `memory_quality_check` **refuses** on it with
+`memory-candidate-pair-base-stale` (field `codeBaseCommit`, expected `d9214edf`, observed
+`eca18fe6`). The refusal is **not** cleared here: the standing brief forbids syncing for curation and
+the closeout syncs.
+
+**What that refusal costs, stated rather than worked around.** The checklist, its attestation and the
+census are bound to the pair identity — `controller.py::_curator_candidate_inputs` raises
+*"curator publication has no exact code/memory pair identity"* and `census.py::prepare_memory_census`
+returns `None` — so **those three artifacts cannot exist at this scope at all**, and this pass reports
+no sha256 for them. The measurement they are built from was driven instead through the product's own
+root-parameterised entry points, in the controller's own composition order, on two code arms:
+
+```
+[A] leaf code worktree  d9214edf + L8's five entries       : 292 / 121 / 3 / 2, report-only 491
+[B] clean HEAD          d9214edf, a real clone, full history: 283 / 120 / 3 / 2, report-only 488
+```
+
+Arm B reproduces **L7's own frozen pin exactly** (`mcp/tests/test_memory_citation_agreement.py:498-499`
+pins `283 / 120` and the `T58` pair `3 / 2`), which is what makes the delta attributable instead of
+merely observed. Keyed on row identity rather than on the message (which embeds the line that moves),
+the whole delta is this leaf's **code** change set, and it is named:
+
+- **+9 enforced**, every one `citation_anchor_absent_from_range`: `closeout.py.md:438` (1),
+  `landing.py.md:26` (2) and `:140` (3), `start.py.md:281` (1), and the lane registry's own card at
+  `test-evidence-lanes.toml.md:1499` (1) and `:1551` (1) — the last two from inserting this leaf's row.
+- **+3 report-only**, including the single row that moves the `T52` definition pin **120 → 121**:
+  `onboarding/mcp/src/agents_remember/worktrees/modules/startup/start_result.py.md:60`, whose anchor's
+  definition the round-2 repair to `start_result.py` shifted. That row is why the pin reads 121 on the
+  pair this leaf lands, and it is **not** this card's.
+
+The module's live arm is hermetic (`AR_ONBOARDING_ROOT` unset → the population cases `skipTest`), so a
+green lane run is not evidence that the pin holds; the re-derivation belongs to the last writer
+(`T122`), and this card does not move it.
+
+**That last claim is proved on the pair it lands, and its boundary is stated.** On arm A the card
+carries **0 rows in the enforced class, 0 in the report-only class and 0 in the missing-onboarding
+class**, and `292 / 121 / 3 / 2` with report-only `491` are **identical before and after** it; the only
+movement the card causes anywhere is `missingOnboardingCount` 1 → 0, which is the deliverable itself.
+On a **pre-landing** arm the same card carries 36 enforced and 1 report-only row
+(`citation_source_vanished` / `citation_anchor_absent_from_range` on this document), because the module
+it documents does not exist there — which is precisely why a pin measured on a checkout that does not
+contain the module is not evidence about the tree that survives, and why the re-pin is the last
+writer's.
+
+**Does a lane someone actually runs reach the module?** Yes: the row is `unit-regression`
+(`mcp/tests/test-evidence-lanes.toml:203-203`), the lane the default selection collects, and on this
+candidate the registry loader plus the budget screen read **10 passed** (measured by this pass, `-n0`,
+no `-o` override; the declared rails are `pyproject.toml:278-279`'s `4000 / 1000`, raised from `3000 / 600` by `260918-TSIP-L13` after this pass measured them). The row is load-bearing —
+the round-1 worker ran the module before the row existed and the loader refused it — so a module
+cannot enter this tree unreached.
+
+**And the second registry is a known, deliberately unrepaired obligation (`T129`).** Measured with the
+product's own consumer-completeness oracle on this leaf's tree, `load_evidence_inventory` reports
+**2 findings**, both naming this module's arrival: the node lockfile row
+`mcp/tests/fixtures/repository_profiles/node/package-lock.json` is missing
+`mcp/tests/test_workflow_chain_guidance.py` as a consumer, alongside the pre-existing
+`mcp/tests/tool_refusal_census_support.py` gap that is `T106`'s. Neither is repaired here: the repair
+is a code change to `mcp/tests/evidence-lifecycle.toml` and the pin files
+(`test_dependency_ownership_ast_helpers.py:44-46`), this pass may not edit any code file, and the
+ruling already assigns it to **L10** as a scope addition — which is also the correct sequencing,
+because the rows name modules that only exist once L8 and L9 have landed.
+
+### Current Source-Inspection References
+
+
+
+
+
+
+
+
+
+
+
+
+> Retained earlier citation wording: - The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation.
+
+
+> Retained earlier citation wording: - The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
+
+- The overlay's model, which can declare what it leaves to the caller and the operational triple cannot. [37]
+
+- The guard that withholds a hint which cannot name the response's own place. [38]
+
+- The sibling case requires a non-null raw hint, excludes the sibling only from present address values, and checks PUBLIC_TOOLS only when top_next_tool exists; it does not assert every channel names the own task. [53]
+- Closeout and would-integrate previews retain approval-stop summaries and no executable nextArgs. [54]
+- The producer that writes `approved_for_commit` and `closeout_status: completed` in one contract write. [40]
+- The snapshot path the preview's drift collection actually reads, derived from worktree and branch. [41]
+- The real reclamation the preservation claim is measured against. [42]
+- SourceLineageRefusal carries status and payload internally; the workflow case asserts stale-lineage and remedy strings in rendered tool-error detail. [43]
+
+- The pre-integration worktree_status recommendation carries repo_id; this is the phase arm the workflow reaches. [44]
+
+- The checkpoint worktree_status recommendation also carries repo_id; this arm is not reached by the workflow module. [45]
+
+- The closeout intent_note requirement is declared by _pre_integration_phase and asserted on a constructed declaring contract. [46]
+
+- The declaration `A5c` shows is not asserted (`carryover-pending`).  Anchor: `required_args` [47]
+- The `recommendedAction` residual (`T127`): the call at `:450`, the `tool=` argument at `:452`.  Anchor: `LifecycleRecommendedAction` [48]
+- The `RecoveryRoute` producer (`T130`) that publishes an uncallable triple as `nextTool`/`nextArgs`. [49]
+- The tuple shape `T130` rests on: the value is a tuple element, not a tool-shaped key. [50]
+- Where the tuple becomes the operational triple a seat reads. [51]
+
+
+- The workflow statement: nine operations, with the two preview/apply pairs appearing twice on purpose. [1]
+
+
+- One operation, what its own guidance supplied, and what came back. [10]
+
+
+- One response's own operational triple, and what calling it exactly as published produced. [11]
+
+
+- The disposable world: real repositories, a real server, one session per call. [12]
+
+
+- Invoking one registered tool exactly as a consumer does, with the raise itself as the arm.  Anchor: `call` [13]
+
+
+- The single walk of the chain, the hops it produced, and the three arrangements. [14]
+
+
+- What the guidance supplies for a hop, and the arguments it declares as required. [15]
+
+
+- The addressed-sibling case first asserts that the sibling produced a landing hint, then checks every returned contract-path channel remains outside that sibling enclosure and any next tool is public. [19]
+
+
+- Each operation's own state vocabulary, and the terminal cleanup cell. [2]
+
+
+- The stale base driven through the tools, with `worktree_sync` required to answer `would-sync`. [20]
+
+
+- Every hop's own triple called verbatim, so the channel a case does not call is not a channel it can see. [21]
+
+
+- The second producer of the same recommendation, driven in the same world rather than cited. [22]
+
+
+- The union of the walk's own as-given calls and every probe, asserted equal to the pin. [23]
+
+- The order, asserted against what the run actually did rather than stated beside it. [24]
+- A named forward move must be the next hop or a later remaining hop when interleaved; forward/hold lower bounds are asserted. [25]
+- The separate own-task case checks each present address value against the own contract and requires checked >= observed hops; it does not require an address on each individual channel. [26]
+
+- Sibling fixtures must exist and the raw hint must be non-null before present address values are checked not to name the sibling; PUBLIC_TOOLS membership is conditional on top_next_tool. [27]
+- The derived population, asserted equal to the pin over both channels. [28]
+- The population of the case above, so it cannot silently shrink — with its own boundary stated. [29]
+
+- Expected phase labels are literal test inputs; observed phase membership and endpoints come from product guidance over the walk’s contract. [3]
+
+- The classifier's control: an unusable recommendation must be seen as one. [30]
+- The withhold is real, counted, and explained in both directions. [31]
+- `T62`'s trigger: the snapshot present, every preview answering, preserved, then reclaimed. [32]
+- The stale base driven, and the raiser pinned by set equality. [33]
+- Cleanup and closeout requirement declarations are asserted; the test docstring’s historical four-site account disagrees with current three-site guidance. [34]
+
+- The callability pin, with the repair rule stated at the constant. [4]
+
+
+- The withhold pinned by tool and count, so repairing the producers is a visible edit. [5]
+
+
+- The raisers that escape as an exception instead of a typed refusal (`T34` on `T87`'s state). [6]
+
+
+- Values for arguments a recommendation leaves to the caller — values, never a population. [7]
+
+
+- The two refusal arms separated by model identity, never by wording. [8]
+
+
+- The fields a tool's own argument model named as required and absent. [9]
+
+
+## Current source evidence
+
+- Own/sibling checks apply to present truthy path channels, with conditional public-tool membership and observed-hop bounds. [55]
+
+- The first call exactly as given, then again with only what the model named as missing. [56]
+
+- Execute one recommended step as given, then again with only the arguments it omitted. [57]
+
+- The ordered walk, the sibling arrangement, the retry producer, the stale base, the probe. [58]
+
+
+
+
+- The operational triple's declared home, and the reason it is a channel of the response's own contract.  Anchor: `nextArgs` [36]
+
+
+
+- The lane manifest declares test_workflow_chain_guidance.py in unit-regression; membership selects evidence and establishes no invocation. [35]

@@ -1,0 +1,306 @@
+{
+  "path": "mcp/tests/test_route_review_clean_sync_door.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:12f5cb198586b1ccf7db68092c56954d25711573af569417f3679b1b286c000b",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_door_refuses_a_review_recorded_on_an_unrelated_base"
+        }
+      },
+      "facet": "A rewritten unrelated base prevents clean-sync carry and is refused as stale. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-0F69JQ",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:0dda862326a06c426d531d778db40a6a97333bc3ca87fe5dc706941cca2e96e8",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_plane_stamps_the_base_a_leaf_review_was_recorded_on"
+        }
+      },
+      "facet": "The source assertion requires the recorded baseCommit to equal the fixture's actual leaf base. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-3KKPB2",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:e6ac40f06ca6ec16403c0b43d415c9d010325158ab33b8e6f83f71715adf2b1e",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_route_review_without_a_stamped_base_is_refused_as_today"
+        }
+      },
+      "facet": "A legacy record reconstructed without baseCommit gains no changed-tree clean-sync exception. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-E8DGRM",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:46478b90f3a88ee4d5195cf8696d38ae9ba29f024993064dc6a8d31308aa056f",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_door_refuses_any_other_tree_difference"
+        }
+      },
+      "facet": "After a disjoint incoming commit, an extra candidate path and a changed executable mode are independently refused as stale. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-F48QPQ",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:25c741d94161c95733c596fe7ddbea9fb6eca3133d2f6d698278cf9014d1d835",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_disjoint_cr_versus_lf_incoming_path_does_not_falsely_overlap"
+        }
+      },
+      "facet": "A reviewed CR pathname and distinct incoming LF pathname remain disjoint, preserving proven provenance and the original digest. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-J1DAPG",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:ebec4bb99d86ac76564df8872520ec73c33dec6ac4cf27887af4c6bdcda3b730",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_door_accepts_a_route_review_after_a_clean_sync"
+        }
+      },
+      "facet": "After an incoming disjoint commit, the door reports proven provenance with exactly the original record digest. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-N52DR9",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:d96fab3f9272b3161dff87786c87df0607327a71ee844030b079330638531ec0",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_two_paths_in_one_diff_keep_their_own_entries"
+        }
+      },
+      "facet": "Two CR/LF pathname entries in the same reviewed map do not collapse; deleting one is detected and refused. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-THBM1W",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:f6491325e2c5b2ff56ad613fefdfc556cb8173c7ecd1984f31db5ef06cc1404d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_cr_path_replaced_by_an_lf_path_is_not_the_reviewed_change"
+        }
+      },
+      "facet": "Replacing a reviewed CR pathname with an LF pathname of equal blob/mode is detected and refused. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-V6FMGA",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+        "content": "sha256:4a92f35f15d732bbc1a61a852329aa446043f50e794fc55ae0c0c911caffb768",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_the_door_refuses_a_sync_that_changed_a_reviewed_path"
+        }
+      },
+      "facet": "A merged candidate on a path changed by both the review and incoming line is refused with closeout-door-route-review-stale. This records the test's own source assertions, not a new Curator execution receipt.",
+      "id": "PRF-WRG0KA",
+      "invariant": "INV-X22A1K",
+      "origin": {
+        "handoffEntry": "L170-curator-clean-sync-review-gate",
+        "leaf": "260928-MIK-L170"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The plane stamps the actual leaf review base.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:0dda862326a06c426d531d778db40a6a97333bc3ca87fe5dc706941cca2e96e8",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_plane_stamps_the_base_a_leaf_review_was_recorded_on"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "Disjoint sync keeps proven provenance and the original review digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:ebec4bb99d86ac76564df8872520ec73c33dec6ac4cf27887af4c6bdcda3b730",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_door_accepts_a_route_review_after_a_clean_sync"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "An overlapping reviewed/incoming path is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:4a92f35f15d732bbc1a61a852329aa446043f50e794fc55ae0c0c911caffb768",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_door_refuses_a_sync_that_changed_a_reviewed_path"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Extra paths and changed executable mode are refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:46478b90f3a88ee4d5195cf8696d38ae9ba29f024993064dc6a8d31308aa056f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_door_refuses_any_other_tree_difference"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "An unrelated recorded base is refused.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:12f5cb198586b1ccf7db68092c56954d25711573af569417f3679b1b286c000b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_door_refuses_a_review_recorded_on_an_unrelated_base"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Legacy evidence without a base stamp gains no clean-sync admission.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:e6ac40f06ca6ec16403c0b43d415c9d010325158ab33b8e6f83f71715adf2b1e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_route_review_without_a_stamped_base_is_refused_as_today"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Replacing a CR path with an LF path cannot preserve the reviewed delta.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:f6491325e2c5b2ff56ad613fefdfc556cb8173c7ecd1984f31db5ef06cc1404d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_cr_path_replaced_by_an_lf_path_is_not_the_reviewed_change"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Distinct CR/LF reviewed and incoming paths do not falsely overlap.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:25c741d94161c95733c596fe7ddbea9fb6eca3133d2f6d698278cf9014d1d835",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_disjoint_cr_versus_lf_incoming_path_does_not_falsely_overlap"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Two same-diff CR/LF paths retain separate entries.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "08d77328d9c963df8740e2b17e8fe15ae6c4f4e1",
+            "content": "sha256:d96fab3f9272b3161dff87786c87df0607327a71ee844030b079330638531ec0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_two_paths_in_one_diff_keep_their_own_entries"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

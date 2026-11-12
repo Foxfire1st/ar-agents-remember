@@ -1,0 +1,113 @@
+{
+  "path": "dashboard/src/tray/traySeats.ts",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "dc9eb88d6d737bcb5414d0effde377857b0f6a1f",
+        "content": "sha256:63aa1853df73b85fd271671221ddb305a993b98874a0ab4392c82d9d667521e9",
+        "locator": {
+          "kind": "symbol",
+          "name": "parseSeatPage"
+        }
+      },
+      "id": "RLZ-5EWABE",
+      "invariant": "INV-EMBZ17",
+      "origin": {
+        "handoffEntry": "TRAY11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the seat page answer strictly.",
+      "role": "support"
+    },
+    {
+      "anchor": {
+        "blob": "dc9eb88d6d737bcb5414d0effde377857b0f6a1f",
+        "content": "sha256:bb88f94080eaf377e000bc26033e66da9d40b59856ff8948739a2f4e5b2aaaef",
+        "locator": {
+          "kind": "symbol",
+          "name": "useChatNames"
+        }
+      },
+      "id": "RLZ-7ZN7EE",
+      "invariant": "INV-ZF7G5B",
+      "origin": {
+        "handoffEntry": "TRAY07",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Names the default target by its seat row as soon as the seat list arrives, else says why it shows the id (D2-7).",
+      "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "dc9eb88d6d737bcb5414d0effde377857b0f6a1f",
+        "content": "sha256:14308969a99a701c66611954f6c07a3ed78e7cbafd13ccdf49a4099591176233",
+        "locator": {
+          "kind": "symbol",
+          "name": "loadSeats"
+        }
+      },
+      "id": "RLZ-QBC46H",
+      "invariant": "INV-EMBZ17",
+      "origin": {
+        "handoffEntry": "TRAY11",
+        "leaf": "260928-MIK-L89"
+      },
+      "rationale": "Reads the first or the next page into the tray's list.",
+      "role": "propagation-persistence"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Loads bounded existing AR seat pages and presents unambiguous role/task labels.\n\nAnchor: \"export function parseSeatPage(answer: unknown): TraySeatPage {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9eb88d6d737bcb5414d0effde377857b0f6a1f",
+            "content": "sha256:e0f5ee5cac884b43ffc3d1f671e8dfbb63f49fb5a6203f2a18756a30c451b64b",
+            "locator": {
+              "end": 49,
+              "kind": "line_range",
+              "start": 37
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Loads bounded existing AR seat pages and presents unambiguous role/task labels.\n\nAnchor: \"export async function loadSeats(more = false, fetcher: typeof fetch = fetch): Promise<void> {\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9eb88d6d737bcb5414d0effde377857b0f6a1f",
+            "content": "sha256:2184704644ced31c41bf94771b23317c572e40ceb5bb9baa4bbd4743f64f985c",
+            "locator": {
+              "end": 89,
+              "kind": "line_range",
+              "start": 77
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Loads bounded existing AR seat pages and presents unambiguous role/task labels.\n\nAnchor: \"export const seatStore = createStore<SeatListState>(() => IDLE);\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc9eb88d6d737bcb5414d0effde377857b0f6a1f",
+            "content": "sha256:e814a312c52c3629a68cbe75b6236929c947c3cdfcdd3c8820dabfd4605bb49c",
+            "locator": {
+              "end": 86,
+              "kind": "line_range",
+              "start": 74
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

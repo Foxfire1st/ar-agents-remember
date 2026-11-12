@@ -1,0 +1,129 @@
+# mcp/src/agents_remember/application/knowledge_writer/history_check.py
+
+## Governing Overview
+
+[application route overview](../overview.md)
+
+## Purpose
+
+**Every row of the owner's history file agrees with the candidate the operation produces (MIK-R07;
+architect ruling F1).** After all edits, `owner_history_problems` checks every row of
+`knowledge/history/<owner>.json`, not only this run's rows, with L07's writer-support checks.
+
+## Code Commentary
+
+### Logic
+
+- `unknown_subjects`: the subject names a record of the candidate, or a record this same write removed. A
+  removal is answered by a row about the record, so that row's subject is consistent with a tree the record
+  has already left.
+- On the writable history target, when the base does not hold that file closed,
+  `invalid_history_items` also checks every row's `items` for `sha256:<64 hex>` spelling. Each
+  malformed token gets a row-specific problem carrying the applicable re-authoring remedy.
+  This additional token check is skipped for base-frozen history, not for an open-base file
+  merely hand-marked closed; the existing row-consistency checks still run.
+- `reanchor_mismatches`: each covered entry's `after` equals its anchor in the candidate (`absent` when
+  gone), MIK-R07 rule 4; candidate anchors come from `sidecar_entry_anchors` over the edited sidecars.
+- `invariant_revision_violation`: an invariant row's revision is the candidate revision and binds the base
+  revision, rule 2.
+- `stale_examined_members`: a family row examined each member at its candidate revision, rule 5.
+- The remedy is "name this row again in 'history' so the writer rewrites it"; on a file
+  closed in the base it is `_FROZEN` ("closed and frozen (MIK-R07 rule 7) … a correction
+  belongs to a new leaf's rows"); on a hand-closed file the base still holds open, the
+  remedy gains the reopen step.
+- **L37.** The file checked is the owner's writable history file (`state.history_target(owner)`), so a reopened
+  leaf's rows are checked in its latest attempt and its closed file is not a refusal reason. A `changed` row's
+  revision counts from `_base_revision`: the higher merge side's revision while a merge leaves the record unmerged
+  (MIK-R24 rule 8 step 4), else the base's. So the writer accepts a crossing's resolution at maximum plus one.
+- **A `changed` row at an unchanged revision (L37, INV-XN0FG8).** `_earlier_attempts` reads the owner's earlier
+  attempt files from the writer's base, latest first; these are the leaf's frozen files, and a wave or a crossing
+  has none. `_restated_revision` returns the revision of the latest earlier row about the subject when that row is
+  a `changed` row, else nothing. `_row_messages` hands it to `invariant_revision_violation`, which accepts a
+  `changed` row whose revision equals the base revision only when it equals that restated revision: the leaf
+  closed out, was not integrated, and corrects the row's effect, because or reason, or does entry work under it.
+  The record is not edited.
+
+### Conventions
+
+- A history file that does not parse is skipped here; the render step reports its shape.
+
+### Invariants And Boundaries
+
+- The writer refuses rather than refreshing `after` on its own (MIK-R07's failure rule).
+
+### Todos
+
+- The module docstring still says "The remedy is always the same", although a base-closed file gets the
+  `_FROZEN` remedy and a hand-closed file gains the reopen step; the code is right and the sentence is stale.
+- Open question to the architect from the worker: `reanchor_mismatches` and `unknown_subjects` could also
+  run as a registered validator rule over open history files (owner MIK-R09 or R22).
+
+## Own-Revision Drift Check (MIK-R48)
+
+`owner_history_problems` compares a family row's recorded own revision with the
+candidate family record: on drift it refuses with the name-the-row-again remedy
+(a changed row with its effect again). The refusal depends on where the file stands:
+a file closed in the base is frozen, so the existing frozen-history text carries the
+refusal instead; a hand-closed file the base still holds open keeps the re-authoring
+remedy and gains the reopen step.
+
+
+- Drift refuses until the row is named again at the current revision. [9]
+
+
+### Writable-history item validation
+
+After selecting `state.history_target(owner)` and validating the history document shape, `owner_history_problems` computes frozen status from the base copy of that exact target. For each non-frozen row it reports every `invalid_history_items(row.items)` result as `invalid item ...: new history items must be sha256:<64 hex>`, naming the file, row ID and subject. The remedy is the ordinary name-the-row-again instruction, with the reopen step when only the candidate has been hand-closed.
+
+This format check does not reinterpret or normalize malformed tokens. It also does not apply retroactively to a history file the base already holds closed: the new item-format loop is skipped there. Unknown subjects, anchor/revision agreement and family member checks retain their separate behavior; skipping this new loop is not a blanket exemption from history consistency validation.
+
+
+## Evidence
+
+### Docs References
+
+No domain documentation source is configured for this repository (`system/sources.md` carries no
+`Domain Documentation` entries). The design authority is the requirement packet `MIK-R12@v2` of task
+`260928_maintained-invariant-knowledge` (with its architect rulings in the task's leaf document
+`12_category-authoring-through-the-curator-workflow.json`) and the coordination-root note Doc14
+(`notes/ar-intent-reviewer-and-beyond/Doc14-text-canonical-knowledge-layout.md`); they live outside the
+code and memory repositories, so they are named here and not cited as rows.
+
+No configured live documentation source was available for this pass.
+
+### Repo-Internal References
+
+The check and its per-row messages.
+
+- The two remedies. [1]
+
+
+- Every row of the owner's file, as problems. [2]
+
+
+- Invariant and family row checks. [3]
+
+
+
+- A contradicted row refuses until it is named again; a base-closed file is frozen, while a hand-closed file gains the reopen step with the re-authoring remedy. [4]
+
+
+- The revision a row's change counts from: the higher merge side's for an unmerged record. [5]
+
+- The owner's earlier attempts as the base holds them. [6]
+- The revision a changed row may restate: the leaf's latest earlier row, when it is a changed row. [7]
+
+
+- A change already on the parent line may be answered by a later row; the leaf-owned changed-record rule remains distinct. [8]
+
+
+
+- Every non-base-frozen history row reports invalid item tokens with the row identity and current re-authoring remedy; base-frozen rows skip this added token check. [10]
+
+
+### Cross-Repo References
+
+No cross-repo boundary is crossed: the writer reads the paired code worktree and writes the paired memory
+worktree of one repository.
+
+No cross-repo boundary is crossed by this file.

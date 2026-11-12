@@ -1,0 +1,23 @@
+{
+  "path": "mcp/tests/test_review_invariant_changes.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Every field of the row is named and compared unless it is shown volatile",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9791a50a5629d0e539f37dfe59f55d5804f79ee0",
+            "content": "sha256:1420de2759ee6a1e6ee7c9f69c5c5795549342faaa7446395565981023a79151",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_every_field_of_the_row_is_named_here_and_compared_unless_shown_volatile"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

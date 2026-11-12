@@ -1,0 +1,39 @@
+{
+  "path": "mcp/src/agents_remember/serving/paseo/paseo_start_outcome.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The settings-bound attempt key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90766f77c69062344de351c0be62d06cd89f1b5c",
+            "content": "sha256:f82dafcfed6e9a8e16183d7bc843ca1af2d74640573dfd24c43c558747b19d31",
+            "locator": {
+              "kind": "symbol",
+              "name": "_key"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The join rule for a contending caller.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "90766f77c69062344de351c0be62d06cd89f1b5c",
+            "content": "sha256:d68e9dff5f8fe9d03d561c513183be8cf71589539582bc88c811e3d9a1179d01",
+            "locator": {
+              "kind": "symbol",
+              "name": "joined_outcome"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

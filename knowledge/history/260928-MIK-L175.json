@@ -1,0 +1,253 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L175",
+  "rows": [
+    {
+      "because": [
+        {
+          "id": "MIK-R177",
+          "packet": "requirements/MIK-R177-v1-the-gate-groups-identical-copies-as-the-worklist-does.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [],
+      "disposition": "changed",
+      "effect": "clarify",
+      "id": "ROW-3Q9A09",
+      "items": [
+        "sha256:f64d8851b004bb92438324718a0ee5028fa1164ae778521b4822b8a97ffd404f"
+      ],
+      "reason": "The record's exclusions are corrected in the same leaf that changed the gate, so its meaning is not left claiming an unchanged gate. Evidence (L175-INV-7V4K9G-exclusions): mcp/tests/test_mik_r177_gate_groups_identical_copies.py (the row that answers the worklist now answers both gates); this leaf's card change to onboarding/mcp/src/agents_remember/worktrees/modules/onboarding.py.md",
+      "revision": 2,
+      "subject": "INV-7V4K9G"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-7K980Y",
+      "items": [
+        "sha256:5bf37503da0bb3b574499cc6ded9a55c10f0acfa02448b45bfbf20731380699d"
+      ],
+      "reason": "The third import line of the same block, split into its own hunk. Import placement carries no contract; the behaviour it enables is recorded on the gate entries and the reader.",
+      "subject": "hunk:sha256:5bf37503da0bb3b574499cc6ded9a55c10f0acfa02448b45bfbf20731380699d"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-8WN84Q",
+      "items": [
+        "sha256:9976a972bcf6c9e9bea6e55a951676015bfa5aedc3c00bb4a857f8dee4a1fa1a"
+      ],
+      "reason": "Two imports of the shared inputs and the strict group reader into the memory-quality controller. An import states no behaviour of its own: the contract the imported names carry is recorded where they are defined and used, so no invariant is minted for this hunk.",
+      "subject": "hunk:sha256:9976a972bcf6c9e9bea6e55a951676015bfa5aedc3c00bb4a857f8dee4a1fa1a"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-CDXSHN",
+      "items": [
+        "sha256:2cb2f5b407d4233b6aea29884ed77970d8263f442ac55e17da9f1e0b20e62b27",
+        "sha256:5d268bac1d00c9e84176a97b77779d11e7eacdc556c1ff552819fc17cf3c9ddd",
+        "sha256:60bb4faf99f3a9367adac5039a8a64a123241a23f982a7f2ff440a11cd74f565",
+        "sha256:8c081e805d59544f0ea9472d79b261054a485e3b28b0188fcb79a114aa01d952",
+        "sha256:a54dda34faee8c96e549ba780f128cf850971b6267b9198069d7ff82e7c92de3",
+        "sha256:b6aef8571b5600c2789b26d9a57e8a470358dc888829624dd79c11ee23c16968",
+        "sha256:ed8239761ddce8cce9ec3c634510eb87cdd75215f78a5b2a6031357163f6885f"
+      ],
+      "reason": "The cases assert the same MIK-R30 behaviour; the diff only builds the new inputs object at three call sites, so the card's contract is unchanged.",
+      "sources": [
+        {
+          "blob": "266a3882c299b195dd597ff7f31ce3d28aebe2b0",
+          "path": "mcp/tests/test_onboarding_trace_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_onboarding_trace_gate.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-FVM66B",
+      "items": [
+        "sha256:132d1a4b41cddb4e3292d9059499e8595edaa2f645fa745febafb3a47e5e1d3f",
+        "sha256:2b019b7cea324f16867c0476e60786caa83ec2af227808a95da0628cb31a5380",
+        "sha256:4f176b8360a4c0dd07f6dfbd523224c533a467c7a9a825d21938545d13d12b52",
+        "sha256:94a08883900f30b341ee7c37ac794e7964c54fddfc95d0b7d3c63e78e7ec3739",
+        "sha256:b20cb194bce1880124c60f767f888fb8b5397356eae4cde08f04305bba39a23f",
+        "sha256:b6ae56c0d7db6b8f04ed8a59c8b037b6f4fc46342ece1a8f8645431b9da1a87f",
+        "sha256:e5d204c566156f29167bcc0c2445559e2580bf1050868e51330d848b743d251f",
+        "sha256:ec62e93e4ee54499bae936afbc5c534f26f23e21d222125d569c794308b3c8a4",
+        "sha256:f5c2b7857082bce96c8465449fe377fdbd264173bc9013f10602234abdec809e"
+      ],
+      "reason": "The closeout gate section now states that the persisted run's groups are admitted only for the certified candidate, and that a stale run fails closed with the recompute.",
+      "sources": [
+        {
+          "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
+          "path": "mcp/src/agents_remember/application/prepared_certification.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/prepared_certification.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HSCZ33",
+      "items": [
+        "sha256:924c60c1980586f6acbcd2ff6b18059d62dadd600f3174423d8fed8177a532d8"
+      ],
+      "reason": "The gate dispatch section now states the _OnboardingGateInputs value object and the named onboarding-trace-incomplete finding for a run without readable groups.",
+      "sources": [
+        {
+          "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+          "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/memory_quality/controller.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-HTJDEZ",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "The merge kept L57's lanes card whole (references 857-859 included) and re-appended this leaf's own gate-group module section, so the card differs from L57 by those four lines only; no lane, population ceiling or case budget changed. Its reference anchors follow the same split as the lifecycle card: the ones citation_fix could map now name the merged catalog, the rest still name pre-merge bytes and are carried as they stand.",
+      "sources": [
+        {
+          "blob": "609c318a6823c95fd588c369f07024a3c65336d2",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-J093Y1",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "After the L57 sync this leaf's merge kept L57's card whole (its rewritten [271] and [297], and references 300-304 that this leaf never had) and re-appended this leaf's own derived-consumer section; the card differs from L57 by those four lines only. Across the two merged catalogs 85 targets still name pre-merge catalog blobs: 33 whole-file locators (25 in this card's sidecar, 8 in the lanes sidecar), 44 line_range anchors whose recorded text still occurs at two or more positions in the merged catalog (between two and ten matches each, every candidate position enumerated in the M4-48 index and none chosen), and 8 whose recorded text occurs nowhere in the merged catalog because L57 rewrote that region (6 in this card, 2 in the lanes card). All 52 line_range targets still hash to their recorded blob at their recorded lines, and citation_fix re-recorded the rest against the merged catalog. M4-48 admits these retained anchors and classifies them; this row binds them as they stand rather than claiming a complete re-anchor.",
+      "sources": [
+        {
+          "blob": "08862c3da49225e6e9242848bac004c71f693f17",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-K22ND7",
+      "items": [
+        "sha256:84b3ca692d740ed695321d24f104f2b682d6e589940530038ef9bb88e60d4f10"
+      ],
+      "reason": "No route appears or disappears; the two changed application modules keep their purpose and ownership.",
+      "sources": [
+        {
+          "blob": "440928374d4ca08582c2dc790cb791d2e588d27d",
+          "path": "mcp/src/agents_remember/application/memory_quality/controller.py"
+        },
+        {
+          "blob": "3595200cda48184f4f34a7033f283b136e9c5f50",
+          "path": "mcp/src/agents_remember/application/prepared_certification.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/application/overview"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-K4QHRY",
+      "items": [
+        "sha256:081c72e2b4e31a8a9844061662af4e237d985f8ad5ef4c582bb5673f1a37d6d6"
+      ],
+      "reason": "One added lane member for the new module in the evidence-lanes catalog. Lane membership classifies selection and cost, neither executes the case nor states a contract, so no invariant is minted for it.",
+      "subject": "hunk:sha256:081c72e2b4e31a8a9844061662af4e237d985f8ad5ef4c582bb5673f1a37d6d6"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-M389VP",
+      "items": [
+        "sha256:72e53460790e3b34cae3e04b8b27f854812441c6e5ff6376fcdc0fb06db3c152"
+      ],
+      "reason": "No route appears or disappears and the module's purpose is unchanged; the change refines one gate input inside it.",
+      "sources": [
+        {
+          "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+          "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/overview"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-NNC9F4",
+      "items": [
+        "sha256:935c26a4d86b72b1895538caa62b761208b2ef94617012c9cbcc4d8af4c625cb"
+      ],
+      "reason": "The directory's file population changed only by test files this leaf already records in its own cards; no overview statement changed, and its row is re-bound to the merged catalog blobs.",
+      "sources": [
+        {
+          "blob": "08862c3da49225e6e9242848bac004c71f693f17",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "609c318a6823c95fd588c369f07024a3c65336d2",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "b25e9d41e34cbddd321fa44b6b426c420c71598d",
+          "path": "mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+        },
+        {
+          "blob": "266a3882c299b195dd597ff7f31ce3d28aebe2b0",
+          "path": "mcp/tests/test_onboarding_trace_gate.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-P1M6RR",
+      "items": [
+        "sha256:09731071e456c0a87e312d59b9e5dc6d454d2d204bfe5636522a9b0e9788ad97",
+        "sha256:0be384b3b24740bb923c640b8d67e911d930c7471024062dadd14729d7255a40",
+        "sha256:5246780c83c643e4ff85871b5865231eb42aa93e1408c779ae4466cf23fd52ed",
+        "sha256:6fba2dc8a445792215c13c40122b8b88472c3bfe00356ac62d7450d705dcfb9d",
+        "sha256:7c66c076820f2a43433ae142b518a2be9d321d22b135dde8abdfab7b9927b9e9",
+        "sha256:80f42be766326360346ff983f4ec23cf3f5ca0e727f5d3ec6080d35a358c97c4",
+        "sha256:ca2eb1302b7433307945ad7d818b8c4127533b4cd0cb3bb07c5ecc4b48461e7c",
+        "sha256:ea310c26bf2b6efdcfd6ccb6da1cf284b79af0c6031e29f888e9b8d990111f34"
+      ],
+      "reason": "The MIK-R30 section now states the one OnboardingTraceInputs both entries take, the required identical-copy groups and identical_changes_from_run's named refusals.",
+      "sources": [
+        {
+          "blob": "5b856c0c9cf903a1e17c83a7076d61d5590b1cc2",
+          "path": "mcp/src/agents_remember/worktrees/modules/onboarding.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/worktrees/modules/onboarding.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-XR00E5",
+      "items": [
+        "sha256:9b185348b5d5a8f69d5832c315d57aa8a4ce01f37c0f861497b881ef39613870"
+      ],
+      "reason": "Three derived consumer-list additions in the evidence-lifecycle catalog, written by the catalog owner. Consumer membership is dependency accounting: it neither executes a case nor states a contract, so no invariant is minted for it; the behaviour the selected module protects is recorded on its own card.",
+      "subject": "hunk:sha256:9b185348b5d5a8f69d5832c315d57aa8a4ce01f37c0f861497b881ef39613870"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YZGG0H",
+      "items": [
+        "sha256:6d2768fe1af7ae624f6c1bae9558d38524377f18a6c75e30049c047766ee7a0d"
+      ],
+      "reason": "Authored the new module's card: its purpose, the one-group-three-consumers proof, the refusal side and its bounds, with nine cited test symbols.",
+      "sources": [
+        {
+          "blob": "b25e9d41e34cbddd321fa44b6b426c420c71598d",
+          "path": "mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_mik_r177_gate_groups_identical_copies.py"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

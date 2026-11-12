@@ -1,0 +1,44 @@
+{
+  "admission": {
+    "criteria": [
+      "spans_locations",
+      "prevents_costly_mistake"
+    ],
+    "justification": "The bound crosses the lane preview and the existing viewer’s destination lists: an unbounded new file can dominate the review, while a continuation sent to the wrong filter opens another file and hides the omitted evidence. The exact-file continuation keeps the cap from becoming accidental loss of the reviewable remainder."
+  },
+  "applicability": "Added text-file previews in the review reading column’s Code without invariant lane, including unexplained and unknown-attribution destinations.",
+  "conditions": [
+    "Apply the 30-line cap only when the recorded before side is absent and the supplied after text has more than 30 lines.",
+    "Supply the first 30 text lines to the inline diff and state the remaining supplied line count in the continuation control.",
+    "A final newline terminates the last text line and contributes no extra line.",
+    "The continuation requests that lane file’s exact path in the filter whose lane destination lists it.",
+    "At 30 lines or fewer draw the complete supplied after text and no remaining-line continuation."
+  ],
+  "exclusions": [
+    "Modified or removed text files do not receive this added-file cap.",
+    "Non-text files and unavailable text keep their separately named states rather than an invented text preview.",
+    "The full change-set viewer’s diff is not capped by this inline preview policy.",
+    "Reader-line pixel stability, browser visual acceptance, read scheduling and file-pick semantics are separate obligations."
+  ],
+  "id": "INV-K2NVKC",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "Immutable Worker ordinal0 143, exact id MIK-R89@v2 rule 7 · 30-line cap; original disposition retained verbatim in RP19_LANECAP.review-map.json.",
+        "Approved MIK-R89 v2 rule 7 requires the first 30 added-file lines and the remaining-line continuation; inherited MIK-R86 rule 14 names selected-file/filter behavior.",
+        "Static assertion evidence: dashboard/src/panels/review/reading/LaneSection.test.tsx lines 65-94 tests both lane destinations with a 45-line added file, asserts 15 remaining and exact filter/path on one click. Parameterized it.each is not a named proof definition.",
+        "Static assertion evidence: dashboard/src/panels/review/reading/ReviewPage.opening.test.tsx lines 219-233 tests 30 and 143 newline-terminated lines: no continuation at 30, and exactly 113 more at 143. Parameterized it.each is not a named proof definition.",
+        "A4-F5 code tree 25756231aa86f63ba59f91bec01146d27461e470, base cd0e68f0410f2de2d1955ecdbee6628630631d9a, captured change SHA-256 936825218f4a7144e0d0ba68901733c25f0b82ae32fbf8946a2f57df389032a0. No new execution, browser acceptance or D417 page-jump conclusion."
+      ],
+      "path": "authoring-wave6.final-input.json"
+    },
+    "handoffEntry": "RP19_LANECAP",
+    "leaf": "260928-MIK-L89",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "An added text file longer than 30 lines in the review lane shows its first 30 and its true remaining-line count; its continuation opens that same file in the matching change-set filter.",
+  "status": "proposed",
+  "supersedes": []
+}

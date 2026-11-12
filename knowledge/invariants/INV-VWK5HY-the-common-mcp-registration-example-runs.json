@@ -1,0 +1,34 @@
+{
+  "admission": {
+    "criteria": [
+      "guarded_by_test",
+      "prevents_costly_mistake"
+    ],
+    "justification": "A registration whose refresh option swallows the server spec leaves uvx without a command and makes it reject --config, so the documented install path never starts the server; the pin splits the example as uvx does and fails on that form."
+  },
+  "applicability": "The args of examples/mcp/server.example.json, the one common MCP registration example.",
+  "conditions": [
+    "uvx takes --refresh-package with the package name agents-remember-mcp, then the package command agents-remember-mcp@latest, which receives --config and the settings path."
+  ],
+  "exclusions": [
+    "Harness-specific configuration envelopes, which each install guide names.",
+    "The behaviour of uvx itself beyond its argument order."
+  ],
+  "id": "INV-VWK5HY",
+  "origin": {
+    "handoff": {
+      "evidence": [
+        "A013 freeze report /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/260928-MIK-L84-worker-88048054-fcd8-4402-831d-ec1434384185.md (sha256 28e2609440c2bf36a4c5c1639d76197b0b51f94e9db651b800f49d944d6db973); records /home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/worker/88048054-fcd8-4402-831d-ec1434384185/role-launch/L84-A013-records/ (manifest sha256 8a6cd958d656452f4c3ba0254639704682d09c0bb6b6b8bd22f485e654d5b02c): checks-bounded.log (pin module test_cli_discovery.py: 35 passed, 0 failed), fast gate PASS, Ruff/format/Pyright exit 0, on the clean copy of b42c8d51; Reviewer mutation (example at A012 bytes) fails the pin; last full suite on A007 8d974809 (L84-A007-records/gate325-8d974809.log); the Architect's landing check reruns both full lanes on A013; Reviewer P5 round-9 code PASS on A012 (/home/firefox/projects/ar-coordination/worktrees/agents-remember/84_installed-copies-and-running-servers--f9ff935141-ar/role-reports/reviewer/f347a616-f3b7-49c6-9cbb-086da0e40734/260928-MIK-L84-P5-round9-fix-verification-verdict.md, sha256 cdf8212fa54d623d7a5a3bfa5cf9ac106ed8a9f26613e9c4b6bb16aa4de34449), reopened for L84-LC-03 only; round-10 fix-verification pending"
+      ],
+      "path": "handoff-runF.json"
+    },
+    "handoffEntry": "L84-LC-03",
+    "leaf": "260928-MIK-L84",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-invariant/v1",
+  "statement": "The common MCP registration example runs uvx with its refresh option given the package name, then the server's package spec, then --config for the server: uvx --refresh-package agents-remember-mcp agents-remember-mcp@latest --config <absolute user settings file>.",
+  "status": "proposed",
+  "supersedes": []
+}

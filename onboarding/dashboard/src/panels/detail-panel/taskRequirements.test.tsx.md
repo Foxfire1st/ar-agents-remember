@@ -1,15 +1,5 @@
 # dashboard/src/panels/detail-panel/taskRequirements.test.tsx
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| path                   | `dashboard/src/panels/detail-panel/taskRequirements.test.tsx` |
-| doc_type               | `file-level-onboarding`                    |
-| lastUpdated            | 2026-09-04T01:06+02:00 |
-| lastVerifiedCommitHash | `1993dd25bdf8331a2c1e28171dff2bf92ea090e2` |
-| lastVerifiedCommitDate | 2026-09-04T00:57:29+02:00 |
-| governingOverview      | `../overview.md`                            |
-
 ## Governing Overview
 
 [panels/ overview](../overview.md)
@@ -28,10 +18,7 @@ collision on the Series notes surface.
 
 ### Logic
 
-`seedRequirementTask` builds a sub-task document with `taskDoc`, seeds it
-through `seedTaskDocuments`, and configures `stubNotes` with the notes
-listing plus the requirement listing (the stub's third argument). The requirement
-packet fixture mirrors the data-route fixture shape (`address/size/sha256`).
+seedRequirementTask builds a native TaskEntry with qualified reference and taskSummary objective/References, then seeds it through seedTaskEntries. stubNotes supplies the notes listing and registered requirement listing (its third argument); the requirement fixture retains address/size/sha256. This is fixture adaptation, not a change to requirement routing.
 
 - **prose link** — a registered address in the objective renders as a
   `requirement-link` button (never an `<a>`); clicking it calls
@@ -57,39 +44,31 @@ Requirement addresses open only when the fetched listing registers them; an abse
 packet is a visible refusal, never a dead hyperlink or a crash. External/anchor links
 are untouched by the requirement interceptor.
 
-## Docs References
+## Evidence
+
+### Docs References
 
 No Domain Documentation source is configured for this repository-local component suite.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No relevant domain documentation was found. | — | — |
+No relevant domain documentation was found.
 
-## Repo-Internal References
+### Repo-Internal References
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The detail-panel entry under test. | `DetailPanel` | dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75 |
-| seedTaskDocuments seeds the selected task documents into the shared projection fixture. | "export function seedTaskDocuments(" | dashboard/src/panels/detail-panel/test-utils.tsx:256-278 |
-| stubNotes responds to task-document, notes-list/read and requirements-list requests. | "export function stubNotes(" | dashboard/src/panels/detail-panel/test-utils.tsx:452-503 |
-| taskDoc supplies the required generated task-document fields before caller overrides. | "export function taskDoc(over:" | dashboard/src/panels/detail-panel/test-utils.tsx:20-45 |
-| The requirement anchor rendering exercised through Markdown. | `requirementAnchor` | dashboard/src/grammar/Markdown.tsx:116-133 |
-| The reference resolution rules under test. | `resolveRequirementReference` | dashboard/src/data/requirements.ts:64-69 |
+- The detail-panel entry under test. [1]
+- seedTaskEntries seeds the supplied native TaskEntry list into the shared projection via seedProjection, which calls dashboardStore.applySnapshot(projection(over)); tasks are applied after other caller overrides. The requirement fixture supplies its selected entry through this helper, not seedTaskDocuments. [2]
 
-## Cross-Repo References
+- stubNotes responds to task-document, notes-list/read and requirements-list requests. [3]
+
+- taskEntry and taskSummary are re-exported from the shared wire fixtures. They supply typed native-entry and reader-content defaults before caller overrides; taskEntry derives a qualified key from an overridden reference unless the caller supplies a key. The requirement fixture composes taskEntry with taskSummary, rather than taskDoc. [4]
+
+- The requirement anchor rendering exercised through Markdown. [5]
+
+
+
+- The reference resolution rules under test. [6]
+
+### Cross-Repo References
 
 No cross-repository implementation source governs this test module.
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| No applicable cross-repository source was found. | — | — |
-
-## Update History
-
-- 2026-09-05T06:38:58+00:00 — CCR L31 dashboard citation curation: re-read the scoped claims against frozen source `ea35964985f30080488270e71ac81657ac40682b`, split pooled evidence and corrected current source boundaries. Historical claims retain their recorded provenance. This is scoped claim review; existing whole-file verification metadata is unchanged.
-- 2026-09-05T06:24:16+00:00: Generated citation repair: `DetailPanel` repointed to dashboard/src/panels/detail-panel/DetailPanel.tsx:75-75. No content impact: mechanical anchor-range projection bound to citation source snapshot ad34c1284f637cc2e60117d5a156ddfdd2236402d2c1332758dd691c2cbef881; claim bytes unchanged; generated by ccr-r10@v1.
-
-- 2026-09-04T01:06+02:00 — 260831-CCR-L23 Gate-5 memory pass: created for the
-  detail-panel requirement-navigation suite (prose/References opening, missing-packet
-  refusal, external/anchor preservation, notes-collision routing). Verified at code
-  commit 1993dd25.
+No applicable cross-repository source was found.

@@ -1,0 +1,124 @@
+{
+  "path": "mcp/tests/test_knowledge_review_source_endpoints.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+        "content": "sha256:da90beecb6e8227cdf3e0580e0e8d6bce4b1510f4ecfcc582ffce813df66b68d",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_memory_head_only_movement_rechecks_and_refuses_equal_physical_files"
+        }
+      },
+      "facet": "The exact controlled source case memory head only movement rechecks and refuses equal physical files; this is a focused executable facet, not installed-runtime or full performance acceptance.",
+      "id": "PRF-5MQ20M",
+      "invariant": "INV-N3M9G4",
+      "origin": {
+        "handoffEntry": "L81-R1-F17",
+        "leaf": "260928-MIK-L81"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+        "content": "sha256:84e896178f95f5b455a12673239c99b93dbef512fa8389c0992780e32e188365",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all"
+        }
+      },
+      "facet": "With unconverted knowledge, the task-context staleness sentence names All changes, contains no second sentence, and no payload text names the removed Source pane; the source inventory remains complete.",
+      "id": "PRF-XJ7PEW",
+      "invariant": "INV-ZMW639",
+      "origin": {
+        "handoffEntry": "RP10",
+        "leaf": "260928-MIK-L89"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "22": {
+      "note": "Fixture builder defaults to external memory",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:7a71c6aa065e4c675cc52debce57c452cc234e283c30bce536b251b1bb363146",
+            "locator": {
+              "kind": "symbol",
+              "name": "build_endpoint_fixture"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "23": {
+      "note": "Leaf contract with real source branch, worktree and memory plan",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:54fc393d744a4cb0001e63d4d16307e8a1de3530bc8e255dc5a9731a72a551a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "_enclosure"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "24": {
+      "note": "Live candidate binds recorded base and captured tree",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:564140faa47e724db0dd9192e84cf504d73c80c27791a19f1e9cb654eb79b75d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_live_candidate_binds_the_recorded_base_and_the_captured_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "25": {
+      "note": "Rendered review publishes endpoints across the whole candidate",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:bd833bff981ce44b5d48d4023459bf29448eca3d87d21cab1d828c8044005eb6",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_rendered_review_publishes_the_endpoints_and_reaches_the_whole_candidate"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "26": {
+      "note": "Task-context returned wording names All changes and retains truthful unresolved/currentness/inventory states.\n\nAnchor: \"def test_a_task_context_review_lists_the_complete_source_inventory_with_no_knowledge_at_all(\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "003b509b7309b3cd122be4091f29d71b1335eb1a",
+            "content": "sha256:84e896178f95f5b455a12673239c99b93dbef512fa8389c0992780e32e188365",
+            "locator": {
+              "end": 738,
+              "kind": "line_range",
+              "start": 700
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

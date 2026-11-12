@@ -1,0 +1,55 @@
+{
+  "path": "mcp/tests/test_knowledge_correction_guidance.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Describes source-level checks that canonical curator/planner guidance and writer/gate docstrings explain supported corrections. Marker assertions protect documentation compatibility, not implementation behavior, runtime installation or full semantic acceptance of every sentence in the referenced guides.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d188f24b77caa6a17c0a0b4f9d8e9b3a2166252",
+            "content": "sha256:3cac98fc3c324f83abac1d66c3d279d19cb21b8768aa6b9b0541d0d4b6c4ca37",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_writer_and_gate_do_not_teach_the_retired_installed_cutover"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A compiled addressed-Curator positive guard keeps distinct authority/outcome clauses. The handoff/role marker check follows declared detail placeholders and the linked handoff-ingestion template. The shared profile must teach actor/trigger/required/forbidden/quantifier/condition/exception preservation, independent boundary-case review, verbatim producer fields through its link to the handoff contract's verbatim-carry rule, frozen history and no semantic validator; actual authoring links resolve to the single profile, and the Worker role points to the turn-report template and the explainer guide at their own actions.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d188f24b77caa6a17c0a0b4f9d8e9b3a2166252",
+            "content": "sha256:d8b14e3114a494bff51b5c4c4ad1f01b9c58e9e9c9c2e0429486cd969a736dad",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_shared_writing_profile_teaches_preservation_and_detectable_meaning_drift"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The foundation-authority check reads the actual delivered detail and its mutation controls. The served refused-write file, reached through the shared every-role paragraph's single link rather than a Curator detail, must retain the actual refusal, each input, same-tool/input-class limit, owner notice, provenance, working checks and issue/report evidence, and its permission action's relative links must resolve inside the served package. A missing writer remains distinct from a refused correct write; Git and acceptance authority do not follow from file-write admission. These are source assertions/support behavior, not a fresh invocation, host result or AR acceptance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7d188f24b77caa6a17c0a0b4f9d8e9b3a2166252",
+            "content": "sha256:cac5b46535abf85d018997cd75e9ea095245cb34ae22dbacd94b5ba12fcb5337",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_curator_deduplication_keeps_distinct_authority_and_outcome_clauses"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

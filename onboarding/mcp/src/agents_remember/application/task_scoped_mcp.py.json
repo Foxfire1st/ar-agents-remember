@@ -1,0 +1,176 @@
+{
+  "path": "mcp/src/agents_remember/application/task_scoped_mcp.py",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_scoped_mcp_config_for_reader"
+        }
+      },
+      "id": "RLZ-3X9CJV",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Chooses original roots without context or the repository-matching admitted canonical leaf.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+        "locator": {
+          "kind": "symbol",
+          "name": "task_scoped_mcp_config_for_reader"
+        }
+      },
+      "id": "RLZ-J4PG55",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "This is the admission boundary a reader call passes: it refuses a stated contract whose worktrees are gone and answers the official line when no task context was given, so a read cannot silently fall back.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-KPSJJ9",
+      "invariant": "INV-PH30YW",
+      "origin": {
+        "handoffEntry": "L94-CUR-grant-workspace-readers",
+        "leaf": "260928-MIK-L94"
+      },
+      "rationale": "This module owns call-local canonical task/contract admission and root derivation for enclosed and grant-backed direct readers.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:1460ca90869fc035851ad5804bb2a2b724ca61a3bca8622559f17bc45f988ca1",
+        "locator": {
+          "kind": "symbol",
+          "name": "_config_from_admitted_task"
+        }
+      },
+      "id": "RLZ-PRJR2N",
+      "invariant": "INV-YHCVE3",
+      "origin": {
+        "handoffEntry": "F09",
+        "leaf": "260928-MIK-L73"
+      },
+      "rationale": "The leaf's reader configuration is derived here from the admitted task context, which is what points the read at the leaf's own code and memory worktrees instead of the official line.",
+      "role": "primary-authority"
+    },
+    {
+      "anchor": {
+        "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+        "content": "sha256:0a854a9697a0201e89c3d1e9fd7b73fde65bc8acdc1aa31cca7cd242f3b30263",
+        "locator": {
+          "kind": "symbol",
+          "name": "_admit_task_scope"
+        }
+      },
+      "id": "RLZ-VWBJY8",
+      "invariant": "INV-K6Q2R4",
+      "origin": {
+        "handoffEntry": "PNT-R04@v1 §4 / F10",
+        "leaf": "260928-MIK-L90"
+      },
+      "rationale": "Derives roots only after canonical task/enclosure and configured-contract authority admission.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "Frozen implementation of task_scoped_mcp_config_for_reader supporting the stated file behavior.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:a5dc08bd317587a0ce6088e2234366da59c57de5ef248675425c721652fefc86",
+            "locator": {
+              "kind": "symbol",
+              "name": "task_scoped_mcp_config_for_reader"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Frozen implementation of _admit_task_scope supporting the stated file behavior.\n\nAnchor: `_admit_task_scope`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Frozen implementation of _canonical_leaf_contract supporting the stated file behavior.\n\nAnchor: `_canonical_leaf_contract`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:b80f9f3d8fe83b34866640bdbc4a54bf311a5d8cbe191016cacd7342436adc59",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Alternating/concurrent registered base and leaf calls preserve their source/memory roots; wrong repository, canonical contract and malformed pairs refuse.\n\nAnchor: `test_registered_readers_use_call_local_admitted_leaf_context`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "dc497e2837c489670650776c799b50df249c049f",
+            "content": "sha256:3d9f3de88b6f6e1fd6dcf3a8b699c0bbe77859c13612343566455ddc53eb2788",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/tests/test_reader_task_context_protocol.py"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The two canonical leaf reader branches preserve product-derived roots and call-local configuration.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9dfc1293d27d539ce40fd6f6e61b4e4093dc2d01",
+            "content": "sha256:e63fde19e97e4a977467e85b9b440427e57a6eba395ae8ed2b59b0b698454297",
+            "locator": {
+              "end": 187,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

@@ -1,0 +1,368 @@
+{
+  "path": "mcp/tests/test_knowledge_currentness.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The module statement: real Git code, a converted memory tree, raw-Git edits.\n\nAnchor: \"outside any managed flow\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:1766614ca2ff3dc6d607db22b2083451c97ef167d8ec9d20624bfd1abed0184c",
+            "locator": {
+              "end": 9,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Per side.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:60b320f601e7c8aa1bb63fbb20ff9286b0e7f505071fb2c7e3b361d8cbb22e39",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_one_function_computes_each_side_of_a_comparison"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "The cache key.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:267d3264fac15b309b96232f0ebfd76909e72bb0603438c3ddf3e231d9a86923",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_observations_are_keyed_by_blob_locator_and_extractor_version_and_reused"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "`knowledge_read` with a named tree.\n\nAnchor: `test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:9efc720ab517913f39dcd59be2b27eca879b03cf17bfded52ea1f46f0339d7c0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_flags_a_stale_invariant_and_keeps_it_visible"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "`knowledge_read` without one.\n\nAnchor: `test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:f661cccb6214678afe8e668525b5f561ef5c285207806be7772f5e89089c066c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_knowledge_read_without_a_named_tree_is_unverifiable_and_never_reads_head"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "The published-intent block.\n\nAnchor: `test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:5888a3849044750fc90692e577d0dcdb3379c238072c72637419ac0ab3d79988",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_published_intent_block_flags_returned_invariants_at_its_resolved_tree"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "A failing step never refuses.\n\nAnchor: `test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:8eafa74e77e1208a1bc9f6b56f8deb48035926357fd13502a59e0e4d8f265a4d",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failing_currentness_step_degrades_to_a_reason_and_never_refuses_the_read"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "The lane row.  Anchor: \"mcp/tests/test_knowledge_currentness.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:ea533393f6ab58b54c02b6526a92b2a9d597d162f1fd77dbfe7a1fbceab5cbb8",
+            "locator": {
+              "end": 221,
+              "kind": "line_range",
+              "start": 221
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The fixture world, with a fresh private cache by default.\n\nAnchor: `World` `world`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:410632331ef1e9f1c8ad1513eb5d56649053efa76a2ecca824efaf7bc158d963",
+            "locator": {
+              "kind": "symbol",
+              "name": "World"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:2426d928340128b6d9e856d2bcf2e2187b7685c3c214516082acf67c9017cb1b",
+            "locator": {
+              "kind": "symbol",
+              "name": "world"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The packet's conforming example.\n\nAnchor: `test_a_raw_git_body_edit_flags_only_its_invariant_and_names_the_entry`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:7ed03d37ccbd9c5de8cb51062107e433f2bc446f3a90c8fed9932877dfc34ccc",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_raw_git_body_edit_flags_only_its_invariant_and_names_the_entry"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Stale reasons.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:a598b8a1610b62d906cfaffa6af5b0b139a534d4de5fa92f5e1afdf08132663f",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_stale_covers_an_absent_path_an_ambiguous_symbol_and_an_unmappable_range"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Unverifiable reasons and the N1 order.\n\nAnchor: `test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:cda3d34f58560584f2afc46023aa50b6b813fe885530ca364cd9c3e79d65ddc1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_unverifiable_names_why_for_no_tree_an_unreadable_tree_and_an_unsupported_locator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Git failures and no caching of them.\n\nAnchor: `test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:e6a12fb3e414bb8b9b3d368a8c6b5a5a4cb475722ec9f460b65408220f29d169",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_failed_or_timed_out_git_call_is_unverifiable_with_its_reason"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "A missing recorded line-range blob.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:de0e19812ae05428df7cde62743eef7159f5ebef830931a487ad7cf3a9173b32",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_line_range_recorded_against_a_blob_the_store_lacks_is_unverifiable"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Precedence and `unrealized`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:33ede548960e0a284c923df27a572df43a517aef48c54fddb10366218fcea731",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_precedence_stale_before_unverifiable_before_unrealized"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Stale proofs.\n\nAnchor: `test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:b8fe1b612c4a4d2852e14ba1cdd4e8afb3014a60c205d1f6f560e72115f39daf",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        },
+        {
+          "anchor": {
+            "blob": "c64091cd2f1a3a0d73504db0df74632caf04d235",
+            "content": "sha256:4038fa75f9c49e9de6d94aa1bf5a2a167bee1665fe447f1631ef584d26315ac1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_proof_whose_test_changed_or_disappeared_is_flagged_stale"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

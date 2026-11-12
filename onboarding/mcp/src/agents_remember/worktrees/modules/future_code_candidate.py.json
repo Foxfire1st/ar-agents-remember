@@ -1,0 +1,115 @@
+{
+  "path": "mcp/src/agents_remember/worktrees/modules/future_code_candidate.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The frozen strict route model prohibits mutation and undeclared identity fields.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
+            "content": "sha256:37cdc53a78e18c59f4375c7ba9e1f69ebacd7dc1380018220ecefe3c08d96a1d",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateIdentity"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "Capture observes HEAD around the one canonical isolated-index add-all tree calculation.\n\nAnchor: `capture_future_code_candidate`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
+            "content": "sha256:777220ef238380cec7dc741f8164393c60d3a2b29c88373ffdd887fc0ad282bc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "Reuse requires exact equality of the complete bound route identity.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
+            "content": "sha256:17f16f59ace55fdd047bff323298ebe96c6d6196baee84abe362aaa5e242d4c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "require_current_future_code_candidate"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "Each capture gives the canonical helper a private index inside `TemporaryDirectory(prefix=\".future-code-candidate-\")` without an explicit `dir=`. Its root follows the process default temporary-directory selection, rather than being explicitly allocated under enclosure reports.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "1feda3e0e721c91e435f6b638b26c88dc538b55b",
+            "content": "sha256:777220ef238380cec7dc741f8164393c60d3a2b29c88373ffdd887fc0ad282bc",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "Capture and stale-input outcomes use the package's central typed error family.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:7554da3806fc2d0ce11a64cabeefe38b24837d2eeecbb6ca99c1d2d327554eff",
+            "locator": {
+              "kind": "symbol",
+              "name": "FutureCodeCandidateError"
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+            "content": "sha256:4b0616c2aa418fb761c6ef249a751e7b4e48e43a2cd50f6f9091db5550888218",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 176
+            },
+            "path": "mcp/src/agents_remember/errors.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "6": {
+      "note": "The helper first copies/normalizes the real index, clears trust flags, adds all and writes the tree; on _IndexCopyUnusable it instead seeds an empty private index from HEAD. Both scratch indices are cleaned on exit.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "9cfaea0658dd0c7c7e4ab655d0031da3b206961d",
+            "content": "sha256:4a019192b889ba5cf0845cd636dced6093f739b662c16ac927926c9bf4d0472f",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/worktrees/modules/git.py"
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

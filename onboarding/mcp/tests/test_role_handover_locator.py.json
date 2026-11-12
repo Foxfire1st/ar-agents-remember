@@ -1,0 +1,388 @@
+{
+  "path": "mcp/tests/test_role_handover_locator.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:3a9797d2a5b91091712c27a5999e97ad9b69d5e7cfb4c10f6639ddfc1ec9affe",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocatorLifeTests.test_the_end_of_resumability_removes_the_alias_and_never_the_reports"
+        }
+      },
+      "facet": "Removal deletes the alias, keeps the report, and reports a repeat removal as no-locator.",
+      "id": "PRF-0RVHG7",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:7409bc4cab81e22f0634e10cf0158dde98d2b1d5c7ec67404b5ba66fe963782b",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishedArtifactTests.test_the_locator_is_as_long_at_any_folder_depth"
+        }
+      },
+      "facet": "The locator path is exactly the same length at a shallow and a deep report folder, and is the product root plus the request id plus the artifact name.",
+      "id": "PRF-ABAV86",
+      "invariant": "INV-AV4AMJ",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §1",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:61a4e3414afdfeb6cc314c9d991e6844f3de4a3937b45f84cd0cfe980b74d4c3",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocatorLifeTests.test_a_groups_cleanup_removes_its_launches_locators_and_keeps_the_collected_reports"
+        }
+      },
+      "facet": "Group cleanup previews and then removes each launch locator while every collected report stays readable.",
+      "id": "PRF-H84XC1",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:e897e8926f2312791bafc34eb2ad7848969dbc82a61c18cf4814071abf57b8d1",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishedArtifactTests.test_an_artifact_name_link_is_still_never_followed_through_a_locator"
+        }
+      },
+      "facet": "A link planted at the artifact's own name inside the report folder is refused rather than followed through the locator.",
+      "id": "PRF-HT4SHX",
+      "invariant": "INV-AV4AMJ",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §1",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:d2280da88f3fa7930af05ea49c353acde9286626435f9d5a8788939be3eaa428",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocatorLinkTests.test_the_locator_is_one_link_of_the_report_folder_and_its_request_reuses_it"
+        }
+      },
+      "facet": "One request's locator is a single directory link to its report folder, and a repeat of the request reuses the link it made.",
+      "id": "PRF-J58273",
+      "invariant": "INV-AV4AMJ",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §1",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:dcf2a639603386ab3f76f4e4e033164304502ac873d338294bfdce907c5cfb04",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocatorLinkTests.test_a_locator_that_would_lead_elsewhere_is_refused_before_anything_else_happens"
+        }
+      },
+      "facet": "A locator already aimed at another folder, or a real directory standing at its name, is refused and leaves everything as it stood.",
+      "id": "PRF-M441WS",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:ce10d2ea2950f64bfbbfce7b6ca5e9b20adb14a8f90866af18faefaacb9793b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishedArtifactTests.test_a_deep_report_folder_publishes_one_bounded_locator_that_opens_its_bytes"
+        }
+      },
+      "facet": "The artifact line and the first message name the locator, whose path opens exactly the read-only bytes and digest the reference records.",
+      "id": "PRF-NB9ZSY",
+      "invariant": "INV-B31E3G",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §2",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:ce10d2ea2950f64bfbbfce7b6ca5e9b20adb14a8f90866af18faefaacb9793b4",
+        "locator": {
+          "kind": "symbol",
+          "name": "PublishedArtifactTests.test_a_deep_report_folder_publishes_one_bounded_locator_that_opens_its_bytes"
+        }
+      },
+      "facet": "A report folder deeper than the note's whole budget publishes a locator whose path opens the artifact's exact read-only bytes.",
+      "id": "PRF-QKJ2FE",
+      "invariant": "INV-AV4AMJ",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §1",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:00e8eb9d342fbc230a974b524fa2ba905d187038e5511b8b4ead4bba18d773ed",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocatorLifeTests.test_closing_an_execution_removes_its_locator_and_keeps_its_reports"
+        }
+      },
+      "facet": "Closing an execution removes its locator while its report and hand-over are collected to their durable place.",
+      "id": "PRF-S6XRNB",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:65194bff0ba9a28d5435463b30d9a5fc74163f590298c8fec6b0ad80d3b54559",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocatorLifeTests.test_a_locator_that_leads_outside_the_reclaimed_folders_is_left_standing"
+        }
+      },
+      "facet": "A locator aimed outside the folders being reclaimed is left standing and reported.",
+      "id": "PRF-T1EFEY",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    },
+    {
+      "anchor": {
+        "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+        "content": "sha256:fea9c0c3fcee0a07809199fb0368d309e924577c0acc8375b68bdae6dc85f203",
+        "locator": {
+          "kind": "symbol",
+          "name": "LocatorLinkTests.test_a_lost_locator_is_rebuilt_at_the_same_place_over_the_same_bytes"
+        }
+      },
+      "facet": "A deleted locator is rebuilt at the recorded folder and the artifact keeps its inode, modification time and bytes.",
+      "id": "PRF-VCE6DC",
+      "invariant": "INV-Q9AV3B",
+      "origin": {
+        "handoffEntry": "MIK-R208@v1 §3",
+        "leaf": "260928-MIK-L199"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The locator is one link of the report folder, and a repeat of the same request reuses the link it made.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:d2280da88f3fa7930af05ea49c353acde9286626435f9d5a8788939be3eaa428",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_locator_is_one_link_of_the_report_folder_and_its_request_reuses_it"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "A group cleanup previews and removes its launches' locators while every collected report survives.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:61a4e3414afdfeb6cc314c9d991e6844f3de4a3937b45f84cd0cfe980b74d4c3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_groups_cleanup_removes_its_launches_locators_and_keeps_the_collected_reports"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "A name that cannot be a request id names no locator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:383a9e6ea820f34babec6e5ecaadd4a9ef142ff68228251b841980d08592994b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_name_that_cannot_be_a_request_id_names_no_locator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "A failed collection raises before any alias is removed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:e1a1d6b5dce96f1c4ec3cb0f58ec6379f89374fd3aeb143a1dc266148013f24b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_report_folder_is_collected_before_its_locator_is_removed"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A locator that would lead to another folder, or a real directory standing at its name, is refused and nothing is changed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:dcf2a639603386ab3f76f4e4e033164304502ac873d338294bfdce907c5cfb04",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_locator_that_would_lead_elsewhere_is_refused_before_anything_else_happens"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "A lost locator is rebuilt at the same place over the same bytes, leaving the artifact's inode and modification time as they were.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:fea9c0c3fcee0a07809199fb0368d309e924577c0acc8375b68bdae6dc85f203",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_lost_locator_is_rebuilt_at_the_same_place_over_the_same_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "A deep report folder publishes one bounded locator whose path opens the artifact's own read-only bytes and is named by the artifact line and the first message.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:ce10d2ea2950f64bfbbfce7b6ca5e9b20adb14a8f90866af18faefaacb9793b4",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_deep_report_folder_publishes_one_bounded_locator_that_opens_its_bytes"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The locator path is exactly as long at a shallow and a deep folder, and is the product root plus the request id plus the artifact name.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:7409bc4cab81e22f0634e10cf0158dde98d2b1d5c7ec67404b5ba66fe963782b",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_locator_is_as_long_at_any_folder_depth"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "A link at the artifact's own name is never followed through a locator.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:e897e8926f2312791bafc34eb2ad7848969dbc82a61c18cf4814071abf57b8d1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_an_artifact_name_link_is_still_never_followed_through_a_locator"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The end of resumability removes the alias and never the report folder or its report.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:3a9797d2a5b91091712c27a5999e97ad9b69d5e7cfb4c10f6639ddfc1ec9affe",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_end_of_resumability_removes_the_alias_and_never_the_reports"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "A locator that leads outside the reclaimed folders is left standing and reported.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:65194bff0ba9a28d5435463b30d9a5fc74163f590298c8fec6b0ad80d3b54559",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_locator_that_leads_outside_the_reclaimed_folders_is_left_standing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Closing an execution removes its locator while its reports and hand-over are collected to their durable place.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e2e070130adcc507b51808479ae7c1eab04d887b",
+            "content": "sha256:00e8eb9d342fbc230a974b524fa2ba905d187038e5511b8b4ead4bba18d773ed",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_closing_an_execution_removes_its_locator_and_keeps_its_reports"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

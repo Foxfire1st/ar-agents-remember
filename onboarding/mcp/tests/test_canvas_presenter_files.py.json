@@ -1,0 +1,42 @@
+{
+  "path": "mcp/tests/test_canvas_presenter_files.py",
+  "proves": [
+    {
+      "anchor": {
+        "blob": "657b5fcdf2ed4d2f7d56332c64d684ccd60a2fa4",
+        "content": "sha256:8b3c201ec02669eddf85802dc12ddc3c5f70728def1db90133445f7cf2ee9a33",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_native_io_keeps_the_admitted_physical_parent"
+        }
+      },
+      "facet": "Native IO keeps the admitted physical parent.",
+      "id": "PRF-GEE2ZC",
+      "invariant": "INV-FQC46N",
+      "origin": {
+        "handoffEntry": "MIK-R105-r2-confined-paths",
+        "leaf": "260928-MIK-L104"
+      }
+    }
+  ],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The case `test_native_io_keeps_the_admitted_physical_parent` protects this behaviour.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "657b5fcdf2ed4d2f7d56332c64d684ccd60a2fa4",
+            "content": "sha256:8b3c201ec02669eddf85802dc12ddc3c5f70728def1db90133445f7cf2ee9a33",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_native_io_keeps_the_admitted_physical_parent"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

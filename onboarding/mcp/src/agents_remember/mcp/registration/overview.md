@@ -1,561 +1,239 @@
 # mcp/src/agents_remember/mcp/registration
 
-| Field                  | Value                                            |
-| ---------------------- | ------------------------------------------------ |
-| repository             | agents-remember                                  |
-| sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
-| doc_type               | `route-local-overview`                           |
-| lastUpdated | 2026-09-15T00:56:17+00:00 |
-| lastVerifiedCommitHash | `7cbda30d9a9a4c2944382fbef46ac58b85329935` |
-| lastVerifiedCommitDate | 2026-09-15T05:15:42+02:00|
-| reviewedWorkingCandidate | `ar/260913-lca-l9` uncommitted source; base `bb65a2073228c5e143b055a470f39c6c9e2f4d9d` |
-| governingOverview      | `../../../../../overview.md`                     |
+## Governing Overview
 
-## IAS Worktree Advertisement
+Ordinary registration declares payload handlers lazily through registration.lazy; valid explainer binding selects the 22-tool surface separately, and dispatch checks the same allowlist and launched-seat identity. Core keeps both task_context readers and the removed-refresh refusal; read-only marks cover the actually selected roster after registration.
 
-The worktree surface advertises contract-addressed source reconciliation as an operation an agent can
-start, observe, continue after resolving a retained conflict, or cancel. The public shape carries
-the chosen memory-sync policy and explicit resolution action, never a private journal key or Git-ref
-capability. Start/attach selecting paths can return the same reconciliation guidance instead of
-exposing an uncurrent atomic master.
-
-Task-document authoring remains independently advertised and wholly upstream. No queue/activation
-lock field or whitelist is added to its schema. Exact parameter descriptions and response-state
-vocabulary are reconciled to the frozen implementation; this source review grants no lifecycle acceptance.
+[overview](../../../../../overview.md)
 
 ## Purpose
 
-`mcp/registration/` is the **advertised MCP tool surface**: every `@server.tool()`
-declaration in this repository lives here, one module per tool family. It was carved out of
-`mcp/server.py` in 260731-EFA-L2; `server.py` kept only process wiring (compact-content shim,
-ambient lifecycle, the `FastMCP` instance) and now loops over `TOOL_REGISTRARS` from this
-package's `__init__.py`.
-
-Most tools retain the flat-schema rule established by EFA. DAGQC L2 introduces one deliberate
-model-typed exception: `memory_quality_check(request=...)` publishes a strict discriminated
-sync/start/poll object because mutual exclusion between execution and poll fields is the public
-contract. Task-addressed lifecycle operations still keep private operation identity off the wire.
-
-Each module exposes exactly one `register_<family>_tools(server, config) -> None`, declares its
-tools as nested functions decorated with `@server.tool()`, and forwards each call to one payload
-builder in `mcp/tools/`. Nothing else belongs here.
-
-## The Defining Contract: The Signature IS The Published Schema
-
-**FastMCP derives each tool's published JSON input schema from the Python signature.** A flat
-parameter list publishes flat properties; a model-typed parameter republishes the tool as a single
-nested object. Measured against the installed mcp 1.28.1 and recorded verbatim in `pyproject.toml`:
-
-```
-def flat(repo_id, task_name, leaf_id)  -> properties: [repo_id, task_name, leaf_id]; no $defs
-def nested(args: SomeModel)            -> properties: [args];                        has $defs
-```
-
-So changing a flat structural signature such as `dispatch_agent(task_document_ref, role, brief)`
-into one model-typed argument is not an internal refactor: it republishes the MCP input schema as a
-nested object. Structural vocabulary and flatness are both part of the registered contract.
-
-That is why these modules — and only these — are exempt from `PLR0913` (the ≤5-argument rule that
-260731-EFA-L2 armed at full strength across the rest of the tree, refactoring 274 of 293 offenders
-into 163 parameter objects rather than listing them). The exemption is a single per-file-ignore in
-`pyproject.toml`:
-
-```toml
-"mcp/src/agents_remember/mcp/registration/*.py" = ["PLR0913"]
-```
-
-The remaining long signatures in the repository are `@server.tool()` declarations under this path.
-There is no ratchet, baseline, grandfather list or burn-down behind it — the
-developer ruled all four forbidden — and no `noqa` anywhere holds an argument-count finding down.
-
-**Do not turn either shape into a habit.** Flatness remains the default; a model parameter requires
-an explicitly approved public nested contract, as memory quality now has. The configured exemption is scoped to the registration path. Removed signature-exemption
-tests do not provide current enforcement; the public schema boundary remains the reason
-for keeping registration declarations separate from implementation.
-
-## Layout
-
-| Module              | Family                                                                    |
-| ------------------- | ------------------------------------------------------------------------- |
-| `__init__.py`       | `TOOL_REGISTRARS` (the ordered tuple `create_server` loops over) and the `ToolRegistrar` alias. |
-| `core.py`           | `ping`, `server_info`, `context_packet`, `read_ar_files`, `resolve_context`, `runtime_install`, `skills_install`. |
-| `sessions.py`       | `dispatch_agent`, `retire_child`, `rename_child`, `rename_self`; `dispatch_agent` accepts both plane-hosted and ambient (no plane identity) callers, with the caller-kind matrix documented in its published description; runtime allocation stays plane-owned. |
-| `memory.py`         | `drift_check`, `citation_fix`, strict discriminated-request `memory_quality_check`, `route_index_refresh`, `memory_init`, `memory_baseline_status`, `memory_baseline_adopt`, `memory_carryover_plan`, `memory_carryover_apply`; full contract-scoped quality also publishes its digest-bound structured attestation. |
-| `providers.py`      | `provider_status`, `provider_diagnostics`, `provider_watchers`.            |
-| `code_search.py`    | `grepai_search`, `grepai_trace`, and the six `cgc_*` graph tools.          |
-| `worktrees.py`      | `worktree_start`, `worktree_attach`, `worktree_status`, `worktree_sync`, `worktree_pause` — the working half of a task, including the stop. |
-| `closeout.py`       | `direct_landing`, `worktree_closeout_preview`, `worktree_closeout_apply`, `worktree_integrate`, `worktree_checkpoint_landing`, `worktree_record_landing`, `worktree_operation_control`, `worktree_cleanup`, `worktree_abandon` — the landing half. `worktree_legacy_operation` was removed from this registrar and exists nowhere in the tree. |
-| `tasks.py`          | `task_reopen`, `lifecycle_finalize_task`, `task_doc`, `curator_coherence`, `closeout_queue`; task-doc advertises the judgment-provenanced `author_execution_graph` mutation batch (which also bootstraps a graph-less sprint — the first `add_node` batch creates the graph), the classification/wave previews, and the policy-gated `branch_addressed` direct-execution mode (L16-R6), while closeout-queue mutations use a strict action-specific request and the hosted seat or — when none exists — a request-carried declared caller (L16-R2). `closeout_door` was deleted from this registrar with the door-operation-journal cut (commit `6982c6a7`). |
-| `benchmarks.py`     | `codex_benchmark_prepare`, `codex_benchmark_run`.                          |
-| `lifecycle.py`      | The six session-lifecycle signals: `lifecycle_start`, `lifecycle_resume`, `lifecycle_turn_end_notification`, `lifecycle_end`, `switch_lifecycle`, `lifecycle_phase`. |
-| `gates.py`          | Structural `lifecycle_gate`, `gate_decide`, `gate_list`; an ambient caller with no plane seat declares `caller` (role + task_document_ref) on each (L16-R3); public gate/lifecycle ids are absent. |
-| `orchestration.py`  | `message_parent`, `message_child`; ordinary whole-message traffic resolves current structural occupants. |
-
-Twelve registrars and 63 tools registered by decorator, and the advertised tuple `PUBLIC_TOOLS` lists
-the same 63 names. 260831-LOCR-L37 added the last one: `worktree_pause`, declared by
-`worktrees.py::_register_worktree_stop_tools`, which is the fourth registrar in that family. It went to
-both sides at once — the decorator and the tuple — for the reason the L29 repair exists. Since 260831-LOCR-L32 that tuple's one definition is
-`mcp/src/agents_remember/models/tools/public_roster.py:22-85`, a zero-import `models` leaf;
-`mcp/tools/base.py` re-exports the identical object, so nothing in this route changed. The two sets
-are equal, and since 260831-LOCR-L29 that equality is checked
-directly: `mcp/tests/test_tools.py::PublicSurfaceInventoryTests` registers every `TOOL_REGISTRARS`
-entry against a probe `FastMCP` and compares the live `list_tools()` order against `PUBLIC_TOOLS`.
-`mcp/public_surface.py` asserts the same live order together with response-model projection, dispatch
-schema, and description, so a tool missing from that list is a surface violation until both sides
-agree. The L29 repair is what made the sets agree — before it `worktree_record_landing` was
-registered by `closeout.py` while absent from `PUBLIC_TOOLS` — and 260831-LOCR-L30 added
-`worktree_checkpoint_landing` to both sides at once. 260831-LOCR-L34 changed only that tool's
-**published docstring**: it had listed two of the three completion assumptions the checkpoint route
-drops, omitting the completed-closeout requirement, which is why the route was unreachable from both
-sides. A published refusal list is a promise about what will *not* happen, so it is kept complete
-whenever the gate changes; the tool surface, registration order and payload owners are unchanged.
-
-260831-LOCR-L36 corrected the same description's **name for the route**. It opened "Use this to pause
-a master", which invited an agent to reach for a protected-branch publication on an ordinary stop
-request: the call moves the master's committed code and memory refs onto its super branch, where every
-other master sees them, under an explicitly required developer approval. It is a partial
-**publication**, and the description now says so and states that pausing is a separate matter which is
-NOT this call — a pause stops the master's work, publishes nothing, moves no ref, and leaves its
-branch, worktrees and enclosure private, and no tool on this route performs it — at that point no tool
-anywhere did, which L37 then changed by adding the stop to the sibling working-half registrar. Only the
-description changed at L36: the signature, the registration order, the payload owner and `PUBLIC_TOOLS`
-were untouched, and `mcp/tests/test_tools.py` pins the new wording.
-
-260831-LOCR-L37 then **added the stop that correction pointed at**, as its own verb rather than as a
-reinterpretation of the publication. `worktree_pause` lives in the working half of the surface
-(`worktrees.py`), not in `closeout.py` beside the checkpoint, and its description carries the three
-claims an agent needs: it **PAUSES an atomic master** and hands control back to the developer; it
-**publishes NOTHING** — no ref move, no commit, no landing, no ledger row — while releasing the
-master's atomic-series activation selection and leaving the master's code and memory work branches,
-worktrees, enclosure and every unstarted leaf exactly as they were; and it proposes no next step, so
-resuming is the ordinary attach/start route. It names `worktree_checkpoint_landing` as the separate,
-explicitly requested PUBLICATION and states that pausing never does that. The two descriptions are now
-a matched pair pointing at each other across the two halves, and `mcp/tests/test_tools.py` pins both:
-the checkpoint's case from L36 and the pause's case from L37. Signature, family placement and the
-`PUBLIC_TOOLS`/response-model rows were added together, so no advertised name is unanswerable.
+`mcp/registration/` composes the advertised MCP tool families and the skill resource/protocol surface. Public Python signatures and registered descriptions live here; application behavior and response completion belong to their delegates. The server constructs its transport and application wiring, then invokes the ordered `TOOL_REGISTRARS` tuple.
 
 ## Hot Path Summary
 
-The closeout registrar publishes only code/memory commit-message arguments. Memory registration removes ledger commit-message controls from carryover. Cache status remains consumer output, while the typed lower-layer owners enforce actual Git authority.
+MIK-R109: core registration removes `resolve_context`; `context_packet` advertises roots/task/actions/build/pair, not the full resolver blocks. `read_ar_files` accepts up to twenty string paths and returns knowledge locations, not document text; `refresh` is absent from the advertised schema but any supplied value reaches `argument-removed`, as do object-form entries. Knowledge registration names paged records and whole comparison reports. `create_server` applies every tool’s annotation from `mcp/read_only.py` after the registrars, refusing unlisted names. `read_ar_files`/`knowledge_read` are marked true; the freshness-capable context and report/capture-capable diff are false.
 
-## Detailed Route Context
+The current ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
 
-The closeout registrar accepts typed corrective catalog dispositions and forwards them to the existing application owner; registration creates no alternative approval or retry authority.
+An ordinary `create_server` calls ten registrars in order: core, native seat retirement, memory, worktrees, closeout, tasks, capsule/skill resources, native role agents, knowledge and explainer control. Nine declare tools; the capsule registrar publishes resources and installs skill protocol support without declaring tools. The current source `PUBLIC_TOOLS` literal contains 44 ordinary names, including native `retire_child`, `role_start_set`, the mounted `user_settings_init`, `citation_note_revision` and `explainer_control`, with `dispatch_agent` absent. This is the current source declaration, not a claim that adding those names to an old population alone computes its size or that a live server was interrogated.
 
-Registration publishes the task-addressed lifecycle-control, explicit enclosure-adoption, and bounded legacy-operation schemas while keeping operation identity private.
+> **Retained historical source account — superseded by the current route account:**
+> A tool handler normally constructs its request value and forwards it to a payload builder. Memory quality dispatches its typed request by mode; native role calls use `asyncio.to_thread` around their payload builders. The shared `_tool_payload` adapter delegates the whole result and an optional compact answer to the application boundary; the boundary validates and logs the whole result and guards the delivered answer. Registration does not independently grant approval, retry, publication, or actor authority.
 
-A tool body usually packs flat MCP arguments into the parameter objects the payload builder and its
-application entry point take, then returns the builder's result unchanged. Memory quality instead
-dispatches its already validated request DTO by mode and returns the matching builder result. Packing is
-the whole content — `TaskRef`, `SpawnSeat`, `GateVerdict`, `CarryoverSelection`,
-`CloseoutCommitMessages`, `TaskIdentity`/`TaskBases`/`StartExecution`, `BenchmarkSelection`/
-`BenchmarkPreparation`/`CodexBenchmarkRun`, `TaskDocTarget`/`TaskDocEdit`, `InboxAddress`/
-`InboxMessage`/`InboxPoster`, `NudgeTarget`/`NudgeSubject`, `GrepaiSearchQuery`/`GrepaiRepoScope`/
-`ProviderQueryScope`.
+## Construction
 
-The published docstring is the model-visible description of the tool and is checked for presence by
-`test_tools.py`; it is the only place a caller learns the semantics, so it carries the refusal
-vocabulary and the act-by-default `dry_run` contract in prose.
+The closeout/direct-landing registrar adds the launch-bound architect direct_execution_grant function; the task registrar retains its document/reopen/finalizer/coherence/queue groups. Direct landing selects exact leaf/grant, either existing-code verification or previewed exact-pair creation with code_commit_message/memory_commit_message and same-generation recovery. Ordinary closeout/integration retains its separate no-test/review execution contract.
 
-For `author_execution_graph`, that description names the exact mutation cells (node, edge with
-predecessor/successor/reason, leaf move, nature set with its judgment row), the graph-less
-bootstrap, and the structured classifications and derived waves returned by preview; callers do not
-have to infer the shape from prose examples. The `closeout_queue` description likewise carries the
-degraded `status` readout (mode/registers/laneOwner/legalNextOperations) and the sync-first
-`worktree_sync` recovery naming for stale-base refusals.
+### Family composition
 
-Structural tool registration fixes attribution and caller identity in the plane: a hosted seat wins,
-an ambient caller with no plane seat declares `caller` (role + task_document_ref) and the same
-authorization validates it exactly like a seat (L16-R3). `dispatch_agent` is the one public spawn
-tool for both caller kinds: since 260821-ARSPAWN-L1 an ambient caller (no `AR_HOSTED_SESSION_ID`) is
-resolved from the process environment rather than request data, spawns with the pinned brief + the
-same rollback, has no parent seat (so seat-authority and child-scope checks do not apply), and still
-gets role-altitude validation — the published description documents the caller-kind matrix. Gate
-decisions use the ambient or declared caller for authority; message tools derive the sender from the
-hosted context. No agent-facing signature accepts an actor/session/lifecycle/inbox/gate id.
+| Module | Current surface |
+| --- | --- |
+| `__init__.py` | Ordered `TOOL_REGISTRARS` tuple and `ToolRegistrar` callable type. |
+| `core.py` | `server_info`, `context_packet`, `read_ar_files`, `runtime_install`; public `resolve_context` is removed by MIK-R109. |
+| `seat_retirement.py` | Native receipt-tracked `retire_child`; sessions.py and dispatch_agent are removed. |
+| `memory.py` | `memory_quality_check`, `citation_fix`, `citation_note_revision`, `route_index_refresh`, `memory_init`, baseline status/adoption, and carryover planning/apply. |
+| `worktrees.py` | Start, enclosure adoption, attach, status, sync, and pause. |
+| `closeout.py` | Direct landing, closeout preview/apply, integration, checkpoint publication, landing recording, operation control, cleanup, and abandonment. |
+| `tasks.py` | Reopen, lifecycle finalization, task-document authoring, curator coherence, and closeout projection inspection/rebuild. |
+| `capsule_serving.py` | Skill index/file resources, extension declaration, and protocol-method installation; no tools. |
+| `role_agents.py` | `role_start`, Manager-owned `role_start_set`, and `role_message`, in that order. |
+| `knowledge.py` | `knowledge_read`, `knowledge_diff`, and `knowledge_integrity_check`. |
+| `skills_extension.py` | Skill request/result types, dispatcher support, and `skills/list` / `skills/get` handlers; no tool declarations. |
 
-`register_lifecycle_tools` takes `_config` and does not use it: its six payloads act on the
-process-wide ambient lifecycle rather than on resolved settings. The parameter stays so every
-module in the package has the one registrar signature `TOOL_REGISTRARS` is typed against.
+The roster is defined in the zero-import models leaf `models/tools/public_roster.py` and re-exported by `mcp/tools/base.py`. `public_surface.py` compares observed names with that roster in exact order and checks inventory/response-model and dispatch-advertisement contracts. This describes source checks, not a newly executed verification result.
+
+### Published schemas and delegates
+
+The standing schema contract is that FastMCP derives tool inputs from Python signatures: replacing flat parameters with one model parameter changes the published shape. Flatness remains the default; memory-quality, closeout-queue, and curator-coherence request parameters are deliberate model-shaped contracts. Preserve the registration-scoped argument-count exemption's intent rather than using it to shelter implementation logic. The root per-file ignore at pyproject.toml:38 exempts only registration modules from PLR0913; adjacent comments state the schema rationale. This source declaration is not test execution.
+
+Native `retire_child` accepts the receipt-tracked agent_id and interrupt_turn through seat_retirement.py and delegates to the original-starter retirement owner. It is not a hosted-seat dispatch adapter. role_start/role_start_set/role_message keep their actual native selection, starter, held-message and permission-feature refusal boundaries; no undeclared-dispatch schema hook remains.
+
+The core readers accept a task-scoped reader context where applicable. Their descriptions require the task-document reference and contract path together for canonical leaf reads; configured Projects scope applies when it is omitted. Retained attach/status resolution uses the shared `TaskRef` locator vocabulary; it does not restore public `resolve_context`.
+
+`runtime_install` constructs `RuntimeInstallRequest`, including the optional `experiment` input, and forwards it unchanged. Its current description covers preservation of user data, scaffold replacement, pruning legacy binaries, reporting unused provider keys, provisioning the build-pinned host/plugin from the active MCP authority's `paseoRuntime` block (daemon settings may be reconciled; user-settings protections and host-restart deferrals remain), reporting running-server currentness and every host action, and refreshing a running dashboard. There is no host-selection parameter. The older experiment-selection and absent-block result promises are not stated by this registrar's current description; their application semantics remain an explicit verification gap.
+
+### Memory and knowledge contracts
+
+`citation_fix` retains flat arguments — `document`/`documents`, an optional `contract_path` and `dry_run` — and no caller glob argument: the `exclude` list and the `CitationOperationScope` packing it fed were removed with the legacy citation router. What survives is internal: the fixer skips authoring-refused sidecars, which is not a caller interface. Mutually exclusive `document` and finite `documents` selectors address one card or several; empty and oversized lists are refused by the scope owner. Converted-memory authoring records citation rows into sidecar references and re-records moved anchors; selected cards need no `expected_snapshot` in that mode. The description distinguishes a count-bearing status answer from the whole result in the log detail file. The description also distinguishes leaf-contract admission from pre-baseline bootstrap admission. Validation of individual exclude patterns belongs to the scope/application owner and is not independently established here.
+
+Memory quality receives one mode-discriminated request and dispatches sync/start/poll to their corresponding builders. Its registered description distinguishes official repository diagnostics from exact contract-scoped candidate runs, raw checklist status from coherence readiness, and structured report-digest-bound attestation from semantic certification. It describes deterministic same-input publication and contract-scoped census/report output; these are advertised owner contracts, not evidence of a run performed for this overview.
+
+The knowledge family selects converted memory roots rather than exposing database-path or caller-namespace inputs. Read receives the workspace default repository and coordination-root cache location separately; the caller's `repositoryRoot` is forwarded as supplied. Diff and integrity have separate delegates and do not receive that configuration pair. The registered family contains no change or project tool. The family mounts four operations: read, diff, integrity and write. `knowledge_write` carries the command's leaf, crossing and wave target selection, takes server settings for a raise, plans by default and writes only with the explicit file-write flag, then returns the report or a refusal — the same plan, write, refusal and report behaviour as the command route, with its admission boundary and no Git commit.
+
+The read description names three paged views, `source_context`, `invariant` and `family`, plus an unpaged `record` view selected by a `recordId` text identity that returns a bounded link-state, timeline, count and location projection instead of record prose; stable ordering is effective when `orderingInput` is omitted. Pages and continuations share the bounded knowledge-read contract, including supported tokens from retained internal published-intent computation. Mounted `read_ar_files` now names files without a published-intent body or continuation. The following full-selection account describes internal computation; the mounted knowledge reader projects record names and locations. `currentness` is described at the walk's code tree, including the continuation's tree on resumed pages; without one, invariants are unverifiable. A source-path read includes the path's invariants, containing-family headers and remaining members, advertised families, then compact route-chain family rows. A family ID without a source path selects the full family, and invariant views name their families.
+
+Integrity now accepts `memoryRoot`, `codeRoot`, `contractPath`, and `baseCommits`, constructing `IntegrityCheckRequest`. Its description names validator output and the leaf's latest change-to-knowledge worklist. The former `databasePath`/`repositoryId` and `runId`/`inputDigest` registration accounts no longer describe this wire signature.
+
+The knowledge family mounts four operations — read, diff, integrity and write — and `knowledge_write` is curator authoring through the same plan, write, refusal and report behaviour as the command route, with server settings for a raise, a default plan, an explicit file-write flag and no Git commit. That statement must not be read as a promise of zero storage writes: the diff description explicitly says a working-tree comparison creates loose unreferenced Git objects while changing no ref, branch, index, or working file. The read description and delegate also distinguish the derived index/cache from authored knowledge.
+
+`context_packet` describes optional drift as reference-anchor and tree-validity measurement, with invariant currentness assigned to knowledge read/integrity and no repair performed there. The current memory registrar has no `drift_check` tool. The memory registrar mounts `citation_note_revision` with the leaf contract, card/reference identity, note, base digest and dry-run flag; it advertises in-place note replacement and named refusal without changing targets or anchors. Baseline adoption's current short description distinguishes lifting the actionable drift gate from the paired-anchor validator: a stale code/test reference still refuses as `R198.1-reference-anchor`. These descriptions advertise owner contracts rather than proving a write or an adoption.
+
+### Worktree, task, and publication descriptions
+
+Worktree registration advertises contract-addressed reconciliation with memory-sync choice, continue/cancel actions and the `repository-default` sync source. Status constructs a `TaskRef` and delegates read-only observation; it has no registered wait counterpart. Enclosure adoption is present in both the current registrar and roster.
+
+The pause/checkpoint distinction remains explicit in the registered descriptions. Pause releases atomic-series activation and hands control to the developer without publication, ref movement, commit, landing, or ledger row; it retains the master's branches, worktrees, enclosure, and unstarted leaves. Checkpoint landing publishes an unfinished master's accumulated committed pair to its source branch under explicitly requested developer approval, keeps the master open, and does not retire or clean it up. These are distinct verbs in separate families.
+
+> **Retained historical source account — superseded by the current route account:**
+> Closeout wiring is divided into direct-landing, closeout-command, integration-command, and reclamation helpers. The public message vocabulary is code and memory only; the canonical input model forbids extras. Enabled commit legs require explicit nonblank messages according to the descriptions; direct landing verifies existing code rather than accepting a code-message input. Operation control is task-addressed and publishes a generation, while keeping private operation keys and process IDs off the wire. Registration forwards corrective dispositions rather than deciding them.
+
+> **Retained historical source account — superseded by the current route account:**
+> The standing transaction-only account says closeout/integration delegate publication and do not automatically acquire certification, strict quality, coherence, or independent-review authority. The older automatic altitude-gate account conflicts with that standing account and is not retained as a current promise. The lower application owners were not completely examined here, so neither account is promoted to fresh lifecycle acceptance.
+
+> **Retained historical source account — superseded by the current route account:**
+> Task-document authoring remains separate from activation/publication. Its operation is a plain string; the published description carries the operation vocabulary. The step plane distinguishes update, create, reasoned removal, and focused read, addresses a unit by `step={id,parent?}`, and describes reasoned removal of a done unit or on a Completed document. Execution-graph authoring describes a validated mutation batch, graph-less bootstrap, judgment-bearing changes, and structural constraints; registration forwards the typed target/edit/call values.
+
+> **Retained historical source account — superseded by the current route account:**
+> The task description identifies retirement as the operation that archives a master, distinguishes sprint-commanded and standalone retirement, and states readiness refusals, explicit edge removal for unfinished successors, preview, and same-request recovery. It also says an abandoned row does not block a master and that a sprint-commanded master stays in place when finalized. These facts belong to the task description, not the native-role source attached to inherited reference 24.
+
+> **Retained historical source account — superseded by the current route account:**
+> Lifecycle finalization's current description derives the exact leaf row from an existing immediate parent or a folder `task.json` master listing it; a sub-task with neither is refused. Optional parent assertions must match the derived edge. It refuses unresolved declared steps, does not auto-check steps or complete recursive ancestors, and requires landed-state/carryover checks before cleanup.
+
+Curator coherence's compact description names all nine conditional publication identity/caller fields, inline or file-backed judgments and structured-manifest authority, and points to docs/tool-details.md for the longer explanation. The request/application owners retain action-specific validation, candidate-set file/rendering, exact evidence namespaces, duplicate-input refusal and publication/readiness semantics; shortening the docstring does not make those detailed clauses current registration promises or confer acceptance. Closeout queue now advertises inspection or idempotent rebuild of a disposable projection: exact-current valid-built or non-admitting invalid-empty, with current task/door truth as inputs. It explicitly does not declare, select, defer, withdraw, or mutate closeout intent; the inherited action-specific scheduling-mutation account is obsolete.
+
+### Skill transport
+
+After proving the catalog servable, skill registration declares the extension and installs its mandatory methods together, then adds the server's index resource and each served skill file. The extension installer adds request-union and dispatcher support and installs handlers in the SDK request-handler map. Both method handlers use the catalog registry. The index resource retains this server's own well-known-discovery shape; extension enumeration is `skills/list`, not that index. The optional directory-read method/capability is deliberately absent.
+
+Resource construction delegates reads to the served-file owner; registration does not activate skills or confer local-file trust. Resource and skill counts depend on the actual catalog and are not fixed here at the inherited 85-resource/14-skill values. The formerly advertised capsule/catalog tools are absent from the current registrar and roster.
+
+Closeout and landing descriptions separate each route's exact invariant judgment from broad quality/certification/review. Direct landing exposes optional leaf_id; leaf integration rejudges its closeout pair; master final/checkpoint/recorded routes declare validator, net staleness, chain and history checks.
+
+> **Retained historical source account — superseded by the current route account:**
+> The existing role_message registration adds file-only body, attachments and filed-message/reply/hash/limit/successor response fields through its strict models. Registered tool identity remains the same while input/result shape extends; no message index/search/public dashboard tool is introduced. Whole payloads are not copied into wake text.
 
 ## Invariants And Boundaries
 
-- **Preserve the approved public schema shape.** Flat signatures remain the default; the existing
-  discriminated memory-quality, queue and coherence request contracts intentionally use model-typed parameters. This is the reason for the
-  `PLR0913` exemption and the reason nobody may "tidy" these functions.
-- Keep bodies to packing + one forwarded call. Any ordinary logic added under this path fails
-  `ToolSignatureExemptionTests::test_every_function_in_the_exempted_path_is_a_published_tool_declaration`.
-- Keep the registration exemption scoped to published declarations; helpers belong in their implementation owners.
-- A new tool means editing one family module and appending to `PUBLIC_TOOLS`, the response-model
-  registry, and `docs/reference/mcp-tools.md`; a new family means a new module plus one entry in
-  `TOOL_REGISTRARS`.
-- Registration order in `TOOL_REGISTRARS` is the order the server advertises tools in; the
-  `PUBLIC_TOOLS` equality check is exact-order for both `list_tools()` and `server_info`.
-- Semantic request validation belongs in payload builders and application entry points; response
-  validation belongs to `base._tool_payload`. The transport boundary additionally rejects
-  undeclared `dispatch_agent` inputs because FastMCP otherwise drops them silently. This narrow
-  closed-schema enforcement does not duplicate registration or application behavior.
-- Do not add a raw shell or arbitrary-command tool to this surface.
+- Preserve approved public schema shapes and registration order. A new advertised tool requires coordinated registrar, roster, response-model, and reference-document changes; a new family requires a tuple entry.
+- Keep ordinary tool bodies focused on request construction and delegation. This is standing intent, not a claim that every function in this directory is a decorated tool: resource constructors, extension wiring, registrars, and helpers are present.
+- Keep semantic decisions and validation with their deciding owners. The narrow dispatch-input check closes the transport schema without moving application authority into registration.
+- Keep runtime actor identity and private operation capabilities out of caller-invented identifiers. Native role registration constructs typed calls and delegates to the Paseo role adapter; registration alone does not prove exact replay, model/effort/tier validation, or real native bindings.
+- Do not add arbitrary-shell or arbitrary-command tools.
+- Published descriptions must identify operation intent and refusal vocabulary accurately, including publication versus pause and preview versus mutation.
 
-## Repo-Internal References
+## Verification And Authority Limits
 
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| `create_server` loops over `TOOL_REGISTRARS` and owns nothing else about the tool surface. | `create_server` | mcp/src/agents_remember/mcp/server.py:58-70 |
-| The payload builders every declaration forwards to. | `_tool_payload` | mcp/src/agents_remember/mcp/tools/base.py:22-24 |
-| `PUBLIC_TOOLS` — the advertised name list this package must match (63 names), defined in `models` and re-exported by the adapter. | "PUBLIC_TOOLS = ("; "__all__ = [\"PUBLIC_TOOLS\", \"RESERVED_TOOLS\", \"TRANSPORT\"]" | mcp/src/agents_remember/models/tools/public_roster.py:22-22; mcp/src/agents_remember/mcp/tools/base.py:19-19 |
-| The `PLR0913` per-file-ignore and the reasoning recorded beside it. | "mcp/src/agents_remember/mcp/registration/*.py" | pyproject.toml:38-38 |
-| `TaskRef` — the shared task locator three read-side tools pack. | `TaskRef` | mcp/src/agents_remember/application/task_docs/task_ref.py:14-28 |
+Lifecycle status and acceptance are outside these operative descriptions. No tests, quality tools, native-host exchanges, installations, commits, or acceptance operations were executed for this proposal. Missing lifecycle authority is an uncertainty, not a new current status.
 
-Current working-candidate evidence for this route:
+Historical assertions about signature-exemption tests, fixture pinning, seeded mutation outcomes, SDK measurement, historical offender counts, import-migration effects, refresh-validator parity, automatic integration gates, and application-only experiment/baseline behavior were not established by the bounded source review. They remain named verification gaps rather than executable promises. The standing schema and delegation intent survives above; discrepancies in current implementation are disclosed rather than silently repaired.
 
-| Finding | Citations | Source Path |
-| --- | --- | --- |
-| Canonical closeout input rejects a ledger message field. | L46-L52 | [mcp/src/agents_remember/models/closeout/input.py](mcp/src/agents_remember/models/closeout/input.py) |
+The following inherited metadata is retained verbatim and is not lifecycle or acceptance authority:
 
-## Historical 260731-EFA-L17 Change
+| Field                  | Value                                            |
+| ---------------------- | ------------------------------------------------ |
+| sourceRoute            | `mcp/src/agents_remember/mcp/registration`       |
 
-The closeout-family docstrings now state the quality altitude ladder: preview/apply name the
-leaf change-set-scoped contract (`--targeted`: changed files + reverse-import closure + derived
-test subset, mandatory CRAP over changed modules) and say the full wrapper is NOT a leaf gate;
-`worktree_integrate` states it runs the altitude-routed gate itself before any merge (leaf
-targeted; master full with host-managed RAM/swap by default and an optional
-`orchestration.qualityGate.memoryCapBytes`). The L8
-bare-`*` keyword-only remediation is completed here: `worktree_cleanup` and `worktree_abandon`
-now carry the separator too, so every `@server.tool()` declaration in the module is
-keyword-only. The registered tool surface is unchanged.
+## Citation preview registration
 
-L22 applies the same Python-only keyword boundary to `message_child`'s content fields. FastMCP
-continues publishing the identical named JSON fields; no agent-visible address or payload changes.
+The memory family extends the existing `citation_fix` declaration with flat `mode` and `run_id` fields. It preserves synchronous repair and admits background start only for preview. Mode validation and projection remain in the payload owner; registration does not create another registry.
 
-## 260731-EFA-L9 Route Impact — Caller Re-Points
 
-The registration callers were rewritten by the L9 caller wave: conversation/evidence/control-wire models now import from `models/conversations/`, the runtime config record from `kernel/primitives/runtime_config.py`, and the terminal-catalog row vocabulary from `models/terminal_catalog.py`. Registration/tool wiring behavior is unchanged.
 
-## L23 Closeout Registration Composition
+- **Retained historical source account — superseded by the current route account:** Finalization description includes folder-master derivation and refusal.
+- **Retained historical source account — superseded by the current route account:** Read description retains route-chain rows and family selection.
+- **Retained historical source account — superseded by the current route account:** Current family-complete read description; former range crossed into request construction.
+- **Retained historical source account — superseded by the current route account:** Bounded paging, continuation, and walk-currentness description.
+- **Retained historical source account — superseded by the current route account:** Current walk-code-tree currentness description.
+- **Retained historical source account — superseded by the current route account:** Current tree/contract integrity signature and delegate replace the database/run-selection account.
+- **Retained historical source account — superseded by the current route account:** Three-operation knowledge composition.
+- **Retained historical source account — superseded by the current route account:** Server invokes the ordered registrar tuple after application/transport wiring.
+- **Retained historical source account — superseded by the current route account:** Shared response adapter delegates whole-result and optional answer completion.
+- **Retained historical source account — superseded by the current route account:** Roster declaration and unchanged adapter export; current count is 41.
 
-`closeout.py` still owns one public closeout tool family, but its internal wiring is divided among
-`_register_closeout_command_tools`, `_register_integration_command_tools`, and
-`_register_reclamation_command_tools`. Their `_tools` suffix keeps the route's narrow structural
-exemption attributable exactly to tool declarations and registrar helpers. Published signatures
-and descriptions stay at the registration boundary while the public tool names, arguments, and
-model-visible authority remain unchanged.
+- Current single literal PUBLIC_TOOLS contains 44 ordinary public names (the predecessor41 plus user_settings_init, explainer_control and citation_note_revision) and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object.
+- **Retained historical source account — superseded by the current route account:** Inherited argument-count exemption target retained pending location confirmation.
+- **Retained historical source account — superseded by the current route account:** Shared task locator.
+- **Retained historical source account — superseded by the current route account:** Canonical message input and refused-field vocabulary retain both named co-targets.
+- **Retained historical source account — superseded by the current route account:** Current worktree registrar composition replaces the old import-range target.
+- **Retained historical source account — superseded by the current route account:** Attach import retained; enclosure adoption is also currently imported.
+- **Retained historical source account — superseded by the current route account:** Existing status-related range retained with the complete current handler as deciding witness.
+- **Retained historical source account — superseded by the current route account:** Three-operation knowledge family, without mounted change/project.
+- **Retained historical source account — superseded by the current route account:** Read receives runtime roots; diff and integrity keep separate delegates.
+- **Retained historical source account — superseded by the current route account:** Current citation handler includes converted-memory, finite card selection, status-answer and caller-exclude descriptions.
+- **Retained historical source account — superseded by the current route account:** Native role registration declares start, set start and messaging; it does not witness task retirement.
+- **Retained historical source account — superseded by the current route account:** Core identity, reader-context, and install registration.
+- Ordered composition uses seat retirement, not a removed sessions registrar, and retains the capsule resource position between task and role-agent registration.
 
-## R39 Registration Route
+- **Retained historical source account — superseded by the current route account:** Server wiring and strict dispatch boundary.
+- **Retained historical source account — superseded by the current route account:** Runtime request construction and current installation description.
 
-The integration tool contract now reports leaf acceptance as certified at closeout rather than
-rerunning targeted mode. Master integration remains the sole full acceptance owner and always uses
-the pinned Dagger executor.
+- Current composed PUBLIC_TOOLS declares 44 ordinary names (the predecessor 41 plus user_settings_init, citation_note_revision and explainer_control); the41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution.
 
-## 260815-DAG-L3 Closeout Queue Route
+- **Retained historical source account — superseded by the current route account:** Skill resources, declaration coupling, and index/file construction.
+- **Retained historical source account — superseded by the current route account:** Extension installation and catalog-backed methods.
+- **Retained historical source account — superseded by the current route account:** Task descriptions, including coherence transport, retirement and current queue projection.
+- **Retained historical source account — superseded by the current route account:** Pause and sync descriptions and forwarding.
+- **Retained historical source account — superseded by the current route account:** Closeout descriptions, message inputs, and delegate composition.
+- **Retained historical source account — superseded by the current route account:** Native-role adapters forward typed single-start, set-start and message calls to Paseo owners.
 
-`tasks.py` now advertises `closeout_queue` beside the task-document and lifecycle-finalization
-surfaces. The published request is deliberately one strict action-discriminated model: status has
-no mutation fields; every mutation carries a stable request id and expected revision; manager
-declaration cannot smuggle a grade; and blocker, admission, grading, selection, and release fields
-are legal only for their owning action. The caller is the plane-injected hosted seat when one
-exists; an ambient caller with no plane seat declares `caller` (role + task_document_ref) instead
-(260815-DAG-L16, L16-R2) — the declaration is validated like a seat and grants no authority beyond
-the same role/document pair. No actor, session, lifecycle, operation key, or arbitrary queue id
-enters the wire contract.
+- The current ordinary source has 44 public names, including the mounted user_settings_init, citation_note_revision and explainer_control. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. Source declaration only; no live advertisement, execution or acceptance is inferred.
 
-The tool description makes the detection/judgment boundary explicit. It reports recomputed
-mechanical facts and deterministic order, while priority and blocker exceptions must resolve to
-exact canonical sprint register rows. The same route binds the structured memory-quality
-attestation, whose Markdown report digest and exact source-change dispositions are published only
-by a full contract-scoped `memory_quality_check`. Public registration remains packing plus one
-payload builder; queue logic stays in the application/worktree/control-plane owners.
+## The settings initializer's registration
 
-## 260815-DAG-L4 L4 Public Lifecycle Surface
+`role_agents.py` mounts `user_settings_init` beside the three role tools and reads the caller's harness name from the served request's own client info, so a launch is told which harness the calling chat runs and is told nothing when the client named none.
 
-Registered worktree and memory tools expose journaled closeout/integration and read-only conflict/carryover planning while keeping protected writes behind configured authority. Response schemas and next-tool literals match the executable registration surface.
+- The transport's own client name, or no name at all.
+- The registration that mounts the role tools and the settings initializer.
 
-## 260815-DAG-L14 Task-Doc Registration
 
-`mcp/registration/tasks.py` documents the sprint linkage operations (`attach_master`,
-`detach_master`, `linkage_report`) on the `task_doc` tool.
-
-## 260815-DAG Master Full-Gate Repair Route Impact
-
-Registration modules import the moved `application/task_docs/*`; `registration/tasks.py` extracts the `task_doc` description constant; `registration/closeout.py` renames the direct-landing helper.
-
-## Current Closeout Tool Contract
-
-The advertised closeout surface accepts code and memory message observations and reports `effectiveInput` or structured refusal. Optional schema fields are not defaults: enabled legs require explicit stripped nonblank messages at runtime. Direct landing exposes the memory message because its code output is verified-existing/not-applicable. No public ledger message, commit or intent remains. Validation still precedes integration authority, the landing lock and Git.
-
-## 260821-CLIVE-L2 Current Architecture
-
-This route composes public signatures only. It exposes the one closed application boundary and never owns configured-contract exception families, journal state, queue lifecycle, or compatibility policy.
-
-### Reconciled Source Evidence
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| Worktree registration composition, re-read and re-cited by the L37 curator at the current declaration. | "def register_worktree_tools(" | mcp/src/agents_remember/mcp/registration/worktrees.py:26-31 |
-| Public payload builders — the enclosure-adoption payload builder was removed; this route now consumes the start, attach, status and sync builders. | "worktree_attach_payload," | mcp/src/agents_remember/mcp/registration/worktrees.py:17-22 |
-
-## 260821-DAGQC-L2 Published Quality Schema
-
-`memory_quality_check` deliberately publishes one nested request discriminated by mode. Sync/start
-execution fields and poll identity are mutually exclusive and extra-forbid; registration dispatches
-the validated DTO and owns no compatibility reader or lower-level failure vocabulary.
-
-## MCAR-L02 Published Coherence Surface
-
-The task registrar advertises one `curator_coherence(request=...)` tool with four concise actions.
-Its typed request publishes one nested schema rather than overlapping flat tools. The description
-states that structured authority is canonical, evidence roots are explicit, identity classes stay
-separate, historical Markdown is never searched, and `validate` is the shared admission check.
-The memory registrar exposes raw `qualityChecklistStatus` separately from combined readiness and
-documents deterministic same-input attestation behavior.
-
-## MCAR-L03 Memory Tool Advertisement
-
-The memory-quality tool schema and description distinguish official diagnostics from exact leaf
-candidate runs. Candidate poll carries the original contract address; the public contract does not
-advertise repository id as acceptance authority.
-
-## Status-Change Wait Registration
-
-`worktrees.py` no longer registers `worktree_status_wait`: the wait tool, its payload builder and
-its response registration were removed. `_register_worktree_observation_tools` now declares only
-the read-only `worktree_status` addressing and refusal behavior, plus `worktree_sync` as the sole
-pull-forward command, and no wait-specific operation key, PID, expected generation or bounded
-timeout survives on this route.
-
-| Finding | Anchor | Source |
-| --- | --- | --- |
-| The removed wait registration has no public replacement; the observation registration now declares read-only addressing, refusal behavior and typed request construction for `worktree_status`. | "def worktree_status(" | mcp/src/agents_remember/mcp/registration/worktrees.py:139-166 |
-
-## CCR-L42 Refresh Validation Parity
-
-The parity candidate composes the sidecar and governing route body/history checks in `worktrees/modules/onboarding.py::validate_memory_refresh_attestations`; curator memory preparation and closeout call that shared validator independently for both surfaces. This route's existing ownership and source behavior remain unchanged by the validation wiring.
-
-
-## CCR-R12@v5 Current Registration Boundary
-
-The closeout-family registration advertises transaction-only preview/apply/integration behavior.
-Public calls preserve explicit developer approval, candidate/source checks, and ref safety, then
-delegate code, external-memory or prepared-pair publication to existing owners. The
-registered routes do not automatically invoke strict code quality, memory quality, selected
-certification, curator coherence, or independent review; full suites are an explicit developer
-request. The historical altitude-ladder section above remains context for the superseded contract.
-
-## 260831-LOCR-L33 Step-Plane Vocabulary
-
-`registration/tasks.py`'s `_TASK_DOC_TOOL_DESCRIPTION` now advertises the step plane split by intent:
-`set_step` updates exactly one existing unit and never creates, `add_step` creates exactly one and
-refuses an existing id, `remove_step` deletes exactly one behind a mandatory nonblank reason, and
-`read_steps` is the read-only focused checklist read. All of them address one exact existing unit by
-`step={id, parent?}`, where `parent` selects the namespace. The description also states the two
-developer rulings: a reasoned `remove_step` may remove a `done` unit and may operate on a `Completed`
-document.
-
-Nothing else on this route moved. `operation` is a plain `str`, not an enum and not a schema member,
-so the operation vocabulary exists **only** in this description text — the change touched no
-signature, no `PUBLIC_TOOLS` entry, and no response model, and the tool count and registration order
-are unchanged. A reader looking for the operation set in the published schema will not find it;
-the description is the contract.
 
-## Update History
 
-- 2026-09-15T00:56:17+00:00 — LCA ledger-retirement working-candidate curation: Aligned advertised tool contract with two input legs and informational cache outputs. Existing verified commit/date remain historical provenance until producer-owned closeout. Source inspection only; no aggregate acceptance claim.
 
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 citation review (curator-authored, not a mechanical
-  projection): re-read the worktree-registration claim against the current source and re-cited it to the
-  declaration itself, `"def register_worktree_tools("` at
-  `mcp/src/agents_remember/mcp/registration/worktrees.py:26-31`. The construct the range now covers is
-  the function the claim names, and the wording holds unchanged. Recorded because the previous range
-  arrived from a generated anchor-range projection, which is not evidence that a claim still holds.
-- 2026-09-13T19:02+02:00 — 260831-LOCR-L37 route impact: recorded the new `worktree_pause`
-  declaration in `worktrees.py::_register_worktree_stop_tools` (the family's fourth registrar), the
-  advertised count moving 62 -> 63 on both sides together, the description's three claims and its
-  naming of `worktree_checkpoint_landing` as the separate publication, and the fact that the two
-  descriptions now point at each other across the two halves of the surface. The family table and the
-  count line were corrected; verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-13T17:44+02:00 — 260831-LOCR-L36 route impact: the published description of
-  `worktree_checkpoint_landing` now names the route a partial **publication** and denies it is the
-  pause. The old opening ("Use this to pause a master") invited an agent to publish unfinished work
-  for an ordinary stop request, because the call moves the master's committed code and memory refs
-  onto its super branch under explicit developer approval. Recorded in the public-surface section
-  that only the description changed — signature, registration order, payload owner and `PUBLIC_TOOLS`
-  are untouched — and that `mcp/tests/test_tools.py` pins the new wording. Verification metadata
-  remains closeout-owned; no acceptance claim.
-- 2026-09-13T09:43+00:00 -- 260831-LOCR-L34 curator citation review: every claim this card carries was re-read against its cited range in the code worktree; anchors were rebound to the exact literal bytes at the cited location, ranges stale by a line shift were repaired, and claims the generated projection left unsupported were re-cited or re-worded. No verification stamp advanced.
-- 2026-09-13T09:15+00:00 — 260831-LOCR-L34: recorded that this route's only change is the corrected
-  published docstring for `worktree_checkpoint_landing` — it had listed two of the three completion
-  assumptions the checkpoint route drops, omitting the completed-closeout requirement that made the
-  route unreachable — plus the rule that a published refusal list stays complete. Tool surface,
-  registration order and payload ownership are unchanged. Verification metadata remains
-  closeout-owned; no acceptance claim.
-- 2026-09-13T00:40+02:00 — 260831-LOCR-L33 curator: recorded the new step-plane vocabulary the
-  `task_doc` description advertises (`add_step`/`remove_step`/`read_steps`, `set_step` update-only,
-  `add_step` create-only, `remove_step` delete-only with a mandatory reason, one exact addressing
-  rule, and the `done`-unit / `Completed`-document rulings) and that the vocabulary exists only in
-  the description because `operation` is a plain `str`. No registrar, family module, tool name,
-  signature, or registration order changed.
-- 2026-09-12T22:55+02:00 — 260831-LOCR-L32 curator: no route impact on registration behavior;
-  `PUBLIC_TOOLS` moved its definition out of `mcp/tools/base.py` into the zero-import `models` leaf
-  `models/tools/public_roster.py` (L22-L85) and is re-exported unchanged, so the exact-order
-  comparison this route documents still compares the same object. Corrected the census prose and the
-  reference row that named `mcp/tools/base.py::PUBLIC_TOOLS` as the definition site. No registrar,
-  family module, tool name, or registration order changed.
-- 2026-09-12T20:53:11+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:22-24. No content impact: mechanical anchor-range projection bound to citation source snapshot cbb452b5d35b5c1c088ad26c07bb5da009aa64032684a124b62b2b598ff0be0a; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-12T02:50+02:00 — 260831-LOCR-L30 checkpoint landing: added `worktree_checkpoint_landing` to the
-  `closeout.py` registrar row, and corrected the route census to the measured state — 12 registrars,
-  62 decorator-registered tools, 62 names in `PUBLIC_TOOLS`, the two sets equal. The previous count
-  line still described the pre-L29 gap (`worktree_record_landing` registered but unadvertised,
-  `task_doc` helper-registered), which the L29 repair closed. Re-derived the shifted reference ranges.
-  Verification metadata remains closeout-owned; no acceptance claim.
-- 2026-09-11T23:20:00+00:00: Route inventory corrected against the current registrars. The `closeout.py` row now lists this change's new `worktree_record_landing` and records that `worktree_legacy_operation` exists nowhere; the `tasks.py` row drops `closeout_door`, deleted with the door-operation-journal cut (`6982c6a7`); and the count line no longer claims 64 advertised tools. That line now records the provable relationship instead of an equality: 12 registrar modules, 60 tools registered by decorator, 60 names in `PUBLIC_TOOLS`, with `worktree_record_landing` registered but absent from `PUBLIC_TOOLS` and `task_doc` in `PUBLIC_TOOLS` but helper-registered — which is what `public_surface.py` compares. Content change, not a range repoint.
-- 2026-09-11T23:05:00+00:00: The route no longer owns `worktree_enclosure_adopt_payload` or a `worktree_status_wait` registration: `registration/worktrees.py:17-22` imports only the start, attach, status and sync payload builders and registers `worktree_start`, `worktree_attach`, `worktree_status` (139-166) and `worktree_sync`, while enclosure adoption survives only as the lifecycle-owned `preview_lifecycle_enclosure_adoption`/`apply_lifecycle_enclosure_adoption` service with no public payload builder or registered tool. Both evidence rows and the Status-Change Wait section were rewritten to that current state, and the `worktrees.py` Layout row now lists the four registered tools.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `_tool_payload` repointed to mcp/src/agents_remember/mcp/tools/base.py:75-77. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-11T22:39:01+00:00: Generated citation repair: `register_worktree_tools` repointed to mcp/src/agents_remember/mcp/registration/worktrees.py:25-29. No content impact: mechanical anchor-range projection bound to citation source snapshot b911c7c4c4eb354cf78d2a53e1538fc36a5f9a5e36a3702e5953739b48812830; claim bytes unchanged; generated by ccr-r10@v1.
-- 2026-09-10T07:33:57+02:00 — CCR-R12@v5 scoped runtime curation against code commit `6f3e3fde75a1ca0202c9b07557cf86a7893e8532`: reconciled the normal transaction boundary and preserved earlier history. This records source documentation only; it makes no acceptance or certification claim.
-- 2026-09-10T02:27:58+02:00 — CCR-L42 parity curation: No route impact: curator preparation and closeout now run the shared sidecar and route body/history validators independently; this route's ownership and source semantics remain unchanged. No acceptance claim is made.
 
-- 2026-09-09T02:35:47+02:00 — CCR-L38 inherited route reconciliation: re-read this route's purpose, member inventory, route summary, and invariants against frozen candidate code tree `4c6b7bc2362bc03d50fc7a0643f34b591b805d45`; the candidate's changed paths are outside source route `mcp/src/agents_remember/mcp/registration`, so no route/member/prose/invariant change is required. route-member-count=13; source inspection only; verification metadata remains unchanged pending producer-owned realization. No acceptance or certification claim.
+ pyproject.toml — lines 38-38
 
 
 
 
-- 2026-09-05T07:22+00:00 — L31 cumulative source review at `ea35964985f30080488270e71ac81657ac40682b`: Updated the public inventory to 64 tools, preserved approved nested schema exceptions, and reviewed the read-only status-wait declaration. Verification records source review, not execution or acceptance.
-- 2026-09-05T06:21+00:00 — Re-read the affected source declarations and repaired citation ranges shifted by CCR additions. Preserved the route contract and existing history; literal anchors identify the exact current construct where shared identifiers were ambiguous.
 
-- 2026-09-05T06:12+00:00 — Composed retained CCR route contributions without replacing sibling knowledge; preserved prior source-verification metadata and historical entries.
 
-- 2026-09-04T20:19:44+02:00 — 260831-CCR-L15 Gate-5 memory pass for e375f2ebdc87f6843bc76168b646d606fa79caec: route coverage refreshes the `worktree_status_wait` server-tool registration; route index regenerated.
 
 
-- 2026-08-31T20:30+02:00 — No route impact: the direct-landing MCP description now advertises
-  only the explicit leaf-without-enclosure path and excludes ordinary series/master closeout and
-  integration. Registered tools and route ownership are unchanged.
+## Evidence
 
-- 2026-08-30T15:15:36+02:00 — 260821-ARSPAWN-L4 route impact: documented the 63-tool exact-order
-  public surface, the permanent cross-authority validator, and the narrow transport-owned refusal
-  of undeclared dispatch inputs. No fallback or duplicate registrar was introduced; verification
-  remains closeout-owned.
+- \[7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
 
-- 2026-08-29T21:46+02:00 — MCAR-L03: advertised exact contract-bound candidate start/poll
-  semantics. Verification remains closeout-owned.
+- Retired at the fifth freeze d59c3493: mcp/src/agents_remember/mcp/server.py::create_server - the bytes it recorded now occur 3 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
-- 2026-08-29T08:52+02:00 — MCAR-L02 A005: advertised the one structured curator-coherence API and
-  combined memory-readiness contract. Verification remains closeout-owned.
 
-- 2026-08-26T08:20+02:00 — Final frozen reconciliation of the contract-addressed sync
-  advertisement and independently unlocked task-authoring surface; verification remains
-  closeout-owned.
 
-- 2026-08-24T14:19+02:00 — 260821-DAGQC-L2: published the one canonical discriminated memory-quality request and removed flat wait/run-id dispatch. Verification metadata remains pinned until architect-owned closeout.
 
+- The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn.
+ mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_start_set; mcp/src/agents_remember/mcp/registration/role_agents.py — symbol role_message
+ mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_closeout_queue_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_curator_coherence_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_reopen_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_finalizer_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _TASK_DOC_TOOL_DESCRIPTION; mcp/src/agents_remember/mcp/registration/tasks.py — symbol _register_task_document_tools; mcp/src/agents_remember/mcp/registration/tasks.py — symbol register_task_tools
+ mcp/src/agents_remember/models/tools/public_roster.py — code file; mcp/src/agents_remember/mcp/registration/tasks.py — code file; mcp/src/agents_remember/mcp/registration/worktrees.py — code file; mcp/src/agents_remember/mcp/registration/closeout.py — code file; mcp/src/agents_remember/mcp/registration/role_agents.py — code file
+ mcp/src/agents_remember/mcp/registration/role_agents.py — symbol register_role_agent_tools
 
-- 2026-08-23T16:08+02:00 — 260821-CLIVE-L2: refreshed current route intent and source evidence for the accepted full L2 candidate; verification provenance and contract-scoped quality enforcement remain architect-closeout-owned.
-
-- 2026-08-22T10:39+02:00 — 260821-CLIVE-L1: route claims reconciled to accepted candidate tree `4241908c`; verification metadata remains closeout-owned.
-
-- 2026-08-21T02:50+02:00 — 260821-ARSPAWN-L1 route impact: `dispatch_agent` documents the caller-kind matrix (plane seat vs ambient launcher resolved from the process environment); one public spawn tool, `spawn_agent_session` stays internal. Verification metadata pinned until closeout stamps the 260821-ARSPAWN-L1 commit.
-
-- 2026-08-21T00:45+02:00 — 260815-DAG master full-gate repair route impact: registration import paths updated; `task_doc` description constant extracted; direct-landing helper renamed. Verified at code commit e5cb139f.
-
-
-- 2026-08-20T21:30+02:00 — 260815-DAG-L15 route impact: memory_quality_check wait/run_id keyword-only async surface (L15-R7). Verified at code commit de3a0fd9.
-
-
-- 2026-08-20T09:35+02:00 — 260815-DAG-L16 route impact: `closeout.py` registers the
-  `direct_landing` tool (L16-R8); `tasks.py`'s `task_doc` gains `branch_addressed`
-  (L16-R6); `gates.py`'s structural declarations accept an optional request-carried `caller`
-  (L16-R3). The advertised surface is now 59 tools. Verified at code commit a9d50e08.
-
-
-- 2026-08-20T05:04+02:00 — 260815-DAG-L14 route impact: `task_doc` registration gains the sprint
-  linkage operations. Verified at code commit 8071a644.
-
-
-- 2026-08-19T22:32+02:00 — 260815-DAG-L13 route impact: `tasks.py`'s `task_doc` declaration no
-  longer advertises the removed `migrate_execution_topology`; `author_execution_graph` is
-  documented as the bootstrap seam, and the `closeout_queue` declaration documents the degraded
-  `status` readout and sync-first recovery naming. The advertised surface stays 56 tools.
-  Verification remains closeout-owned.
-
-- 2026-08-19T08:55+02:00 — 260815-DAG-L11 route impact: `tasks.py`'s `task_doc` declaration now
-  also advertises the `author_execution_graph` operation; the advertised surface stays 56 tools
-  (one new operation on an existing tool, no new tool). Verification remains closeout-owned.
-
-- 2026-08-18T09:05+02:00 — Renamed the atomic 'barrier' concept to 'blocker' throughout (terminology unification; no behavioral change). Verification remains closeout-owned.
-
-- 2026-08-15T23:38+02:00 — 260815-DAG-L4: reconciled this governing route with the frozen integration-authority implementation and forcing surface. Verification remains closeout-owned.
-
-- 2026-08-15T09:32+02:00 — 260815-DAG-L3 curator: documented the new strict `closeout_queue`
-  registration, plane-owned caller authority, and digest-bound memory-quality attestation. The
-  advertised surface is now 56 tools; registration remains a schema/forwarding boundary.
-- 2026-08-15T02:42:41+02:00 — 260815-DAG-L1 review repair: registration now documents the exact
-  nested migration graph and master-classification request/response cells rather than only naming
-  the migration at a high level.
-- 2026-08-15T02:16:50+02:00 — 260815-DAG-L1 route impact: task registration advertises the exact
-  multi-document migration request and derived-wave preview returned by the task-doc application.
-
-- 2026-08-14T11:29+02:00 — R39 curator: reconciled public integration wording with the final
-  altitude policy. Verification remains closeout-owned.
-
-- 2026-08-14T06:25+02:00 — No public route impact: L23's final registrar delta narrows internal
-  closeout registration composition and preserves the same task-addressed tool schemas; route-review
-  and Dagger enforcement remain application/worktree responsibilities. Verification stays
-  closeout-owned.
-
-- 2026-08-13T12:26+02:00 — L23 structural-rail repair: corrected the closeout registration
-  composition to the exact closeout/integration/reclamation helper names and recorded why every
-  registrar ends in `_tools`; no public tool or schema changed. Verification provenance remains
-  closeout-owned.
-
-- 2026-08-13T09:05+02:00 — L23 route review: closeout registration remains one public tool family
-  while its internal construction is split into cohesive preview, apply, and shared registration
-  helpers. Public names/signatures and registry authority remain unchanged; final provenance
-  remains closeout-owned.
-- 2026-08-13T08:47+02:00 — L23 integration-gate repair: recorded the closeout route's internal split into closeout, integration, and reclamation registration groups without changing the public tool surface. Verification metadata remains closeout-owned.
-
-- 2026-08-12T15:19+02:00 — L23 curator: recorded task-addressed lifecycle operation declarations and the guarded public citation-fix surface; verification provenance remains closeout-owned.
-
-- 2026-08-12T07:10+02:00 — 260731-EFA-L24: aligned registered
-  closeout/integration descriptions with host-managed master memory and the
-  optional explicit cap. Verification metadata remains pinned until closeout
-  stamps L24.
-
-- 2026-08-12T01:38+02:00 — 260731-EFA-L22 curator: recorded `message_child`'s keyword-only Python
-  boundary and unchanged named MCP schema; refreshed the shifted exemption-test citation.
-
-- 2026-08-11T19:58+02:00 — 260731-EFA-L19 curator: reconciled registration with the structural
-  `dispatch_agent`, parent/child messaging, gate, retire, and rename surface and the removal of
-  agent-visible exact-session controls.
-
-- 2026-08-08T17:18+02:00 — 260731-EFA-L9 route impact: L9 caller/import re-points recorded and body updated.
-
-- 2026-08-08T02:00+02:00 — 260731-EFA-L17 route impact: recorded the altitude-ladder tool
-  docstrings and the completed keyword-only signatures. Verification metadata stays pinned
-  until closeout stamps the 260731-EFA-L17 commit.
-- 2026-08-07T08:19Z — 260731-EFA-L8 curator: added the L8 Change section (bare-`*` keyword-only signatures). Verification metadata stays pinned until closeout stamps the code commit.
-
-- 2026-08-03T02:53:38+02:00 — W3-B05 curator: anchored 6 Tier-2 table citations and normalized one pre-existing transient source range with exact anchors and paths; fixer generated all ranges.
-- 2026-08-02T01:05+02:00 — No content impact: `mcp/src/agents_remember/tasks/reopen.py` moved to `mcp/src/agents_remember/worktrees/reopen.py` (reopen rewrites the leaf's enclosure contract, and ranking it as a task operation made `tasks` and `worktrees` mutually dependent per `layers.toml`). Re-pointed the reference here; the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-02T00:17+02:00 — No route impact: 260731-EFA-L6 renamed `mcp/src/agents_remember/controllers/` to `application/` and moved `worktrees/status.py` to `application/worktree_status.py`. Updated the references and the vocabulary here ("the application layer" for the package, "an application entry point" for one function); the behavior this document describes is unchanged. Verification metadata pinned until closeout stamps the L6 code commit.
-- 2026-08-01T00:00+02:00 — No route impact: 260731-EFA-L4 touches exactly one file under this
-  path, `closeout.py` (+16/-7), and the change is **entirely inside two published docstrings** —
-  `worktree_closeout_preview` and `worktree_closeout_apply` now describe closeout's new
-  stage-before-gate step and its two refusals (not a task worktree; unresolved merge conflicts).
-  Proven rather than eyeballed: I parsed the file at `abc7cbcc` and at the current revision,
-  stripped every module/class/function docstring from both syntax trees, and the two dumps are
-  identical — so no signature, parameter, default, annotation, return type, decorator or
-  forwarding call moved. That matters here more than elsewhere, because on this route **the
-  signature IS the published JSON schema**: a docstring edit changes the model-visible
-  description and nothing on the wire, which is exactly the split this overview's defining
-  contract describes. The two tools stay in the `closeout.py` family, `TOOL_REGISTRARS` and the
-  58-name `PUBLIC_TOOLS` set are untouched, and no new function entered the `PLR0913`-exempted
-  path, so `ToolSignatureExemptionTests` sees the same AST it did before. This overview's
-  claim that "the published docstring … carries the refusal vocabulary … in prose" is not
-  merely still true — L4 is an instance of it. Verification metadata pinned until closeout
-  stamps the L4 commit.
-- 2026-07-31T15:31+02:00 — 260731-EFA-L2 curator: route created. The `@server.tool()` surface moved
-  out of `server.py` into this package (12 family modules + `TOOL_REGISTRARS`), and the route
-  records its defining contract — the signature IS the published MCP schema — together with the
-  single `PLR0913` per-file-ignore that follows from it and the AST/`--ignore-noqa` suite that holds
-  the carve-out shut. Verification metadata is pinned to the pre-change commit until closeout stamps
-  the L2 code commit.
+- The role-agent registrar mounts role_start, role_start_set and role_message; the callables preserve their declared argument shapes and delegate to their application payload owners. [24]
+- The task registrar composes closeout queue, curator coherence, task reopen and finalizer tools with task_doc registration; the shared task_doc description names write operations and alignmentSweep. [33]
+
+- The current composed ordinary source has 44 public names, including the mounted user_settings_init, explainer_control and citation_note_revision. Family registrars keep their existing request/response/application owners while using compact descriptions and docs/reference/mcp-tools.md for the longer account. Task write operations accept forwarded fields_file/section_body_file inputs; removed reads guide canonical file reading. Sync accepts the exact continue/cancel action and the `repository-default` sync source, not a knowledge_resolution input; memory content resolution remains file-authored and staged under its transaction owner. Reachable task-state refusals and role outcomes are bounded answers, not new authority from a docstring or a finished tool turn. [38]
+
+- register_role_agent_tools owns the mounted role-agent declarations and dispatches them to their existing application payload owners. [40]
+
+- One registered citation operation forwards the extended signature. [42]
+[1] mcp/src/agents_remember/mcp/registration/tasks.py — symbol lifecycle_finalize_task
+- Current single literal PUBLIC_TOOLS contains 44 ordinary public names, including mounted `user_settings_init`, `explainer_control` and `citation_note_revision`, and excludes dispatch_agent; native role, retirement and knowledge vocabulary remains. Source census only, no live advertisement, new CODE grade or MEMORY acceptance. The retained base export is the same roster object. [10]
+- Current composed PUBLIC_TOOLS declares 44 ordinary names; the 41-name predecessor membership is historical. This is source declaration only, not runtime advertisement or execution. [29]
+[2] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 95-97
+[3] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 90-99
+[4] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 85-98
+[5] mcp/src/agents_remember/mcp/registration/knowledge.py — lines 89-91
+[6] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
+[7] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
+[9] mcp/src/agents_remember/mcp/tools/base.py — symbol _tool_payload
+[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__
+[12] mcp/src/agents_remember/application/task_docs/task_ref.py — symbol TaskRef
+[13] mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutMessageInput; mcp/src/agents_remember/models/closeout/input.py — symbol CloseoutInvalidField
+[14] mcp/src/agents_remember/mcp/registration/worktrees.py — lines 32-37
+[17] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol register_knowledge_tools
+[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check
+[26] mcp/src/agents_remember/mcp/registration/__init__.py — symbol TOOL_REGISTRARS
+[29] mcp/src/agents_remember/models/tools/public_roster.py — code file
+[31] mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 69-116; mcp/src/agents_remember/mcp/registration/capsule_serving.py — lines 126-183
+[32] mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 133-214; mcp/src/agents_remember/mcp/registration/skills_extension.py — lines 235-294
+- \[10] mcp/src/agents_remember/models/tools/public_roster.py — symbol PUBLIC_TOOLS; mcp/src/agents_remember/mcp/tools/base.py — symbol __all__ The root PLR0913 exception supports the flat MCP registration signatures; it is not itself the PUBLIC_TOOLS or __all__ declaration. [11]
+- \[22] mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_read; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_diff; mcp/src/agents_remember/mcp/registration/knowledge.py — symbol _register_knowledge_integrity_check [23]
+
+- The ordered ordinary registrar tuple includes explainer control, and the same server adds the bound explainer surface only for a launch that bound it as an explainer seat. [41]

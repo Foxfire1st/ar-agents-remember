@@ -1,0 +1,59 @@
+{
+  "path": "mcp/src/agents_remember/package_data/paseo_host/package.json",
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
+        "content": "sha256:3701fff665e313f7dc7efc2a3308eb6b9e35b58e9c79a186ab901fd1d43f752c",
+        "locator": {
+          "kind": "file"
+        }
+      },
+      "id": "RLZ-RFH53Y",
+      "invariant": "INV-JS6GJ7",
+      "origin": {
+        "handoffEntry": "INV-JS6GJ7",
+        "leaf": "260928-MIK-L184"
+      },
+      "rationale": "The package's own version is declared here and read by the pin checker.",
+      "role": "enforcement"
+    },
+    {
+      "anchor": {
+        "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
+        "content": "sha256:f53bb68bdb399a366a95e315242b2db8de7fd81b79819c4f6d702cbfd1328f3a",
+        "locator": {
+          "end": 3,
+          "kind": "line_range",
+          "start": 3
+        }
+      },
+      "id": "RLZ-ZGMB8Z",
+      "invariant": "INV-JS6GJ7",
+      "origin": {
+        "handoffEntry": "MIK-R123@v1:pin-0.11.1",
+        "leaf": "260928-MIK-L123"
+      },
+      "rationale": "Provisioning copies this file and runs npm ci from it, so it must name the pinned CLI.",
+      "role": "enforcement"
+    }
+  ],
+  "references": {
+    "1": {
+      "note": "The exact host dependency the manifest declares.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "bc4857ecc21c177ccbe282d9fcd560a3826b571c",
+            "content": "sha256:3701fff665e313f7dc7efc2a3308eb6b9e35b58e9c79a186ab901fd1d43f752c",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

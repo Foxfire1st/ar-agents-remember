@@ -1,0 +1,87 @@
+{
+  "path": "dashboard/src/panels/engine-room/scene.ts",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The scene packet and its resolving entry point.\n\nAnchor: `EnclosureScene` `resolveScene`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:673ca7fee98a94e57d21c3c4993782254e226ce9a3d540f6e64ebfeb7c731325",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "2": {
+      "note": "The per-aspect resolvers consumed by the layers.\n\nAnchor: `resolveEngines` `resolveBlocks` `resolveRecovery`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:673ca7fee98a94e57d21c3c4993782254e226ce9a3d540f6e64ebfeb7c731325",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "3": {
+      "note": "resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof.\n\nAnchor: `export interface EnclosureScene {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:b2f49c64fd452f7a9daf799d77013122c333e70ac3fde9a61bf2082277cef257",
+            "locator": {
+              "end": 120,
+              "kind": "line_range",
+              "start": 17
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "4": {
+      "note": "resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof.\n\nAnchor: `export function resolveBlockPointer(`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:7e47d5a4af61363947c875f3f607466d5df33698e6646e7986af1a2d55888648",
+            "locator": {
+              "end": 186,
+              "kind": "line_range",
+              "start": 152
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "5": {
+      "note": "resolveEngines(node) now derives hasMemory only. EnclosureScene drops provider nodes/predicted runtimes/workspace provid — source ownership, not executed visual proof.\n\nAnchor: `export function resolveScene(node: EngineProcessNode): EnclosureScene {`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "97051d4d41f68adb2f44945b0980df38f23ad791",
+            "content": "sha256:673ca7fee98a94e57d21c3c4993782254e226ce9a3d540f6e64ebfeb7c731325",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

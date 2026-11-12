@@ -1,0 +1,260 @@
+{
+  "path": "mcp/tests/test_knowledge_read_boundary.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Selected knowledge reads, refusals, diff, integrity and published intent leave only the allowed footprint.\n\nAnchor: `test_every_registered_read_leaves_nothing_but_cache`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "Baseline adoption dry run preserves the converted fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:19def97c240bedafb45d15377960ff50d79409d1b23282c321abbfc1ac2f1053",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_adopt_dry_run_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "11": {
+      "note": "Freshness is opt-in: no unrequested fetch, and a requested fetch changes only its bounded Git footprint.\n\nAnchor: `test_context_packet_freshness_fetch_is_bounded`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "12": {
+      "note": "Adopted-seat status, preview, integrate and reopen dry runs respect the oracle's preview allowance.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:b4321b57435254c6139ce6673143b99ccd7d1e31d0b8afbb710a816d8f13d9c9",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_adopted_seat_status_preview_and_dry_runs"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "13": {
+      "note": "Remaining preview, carryover and queue paths answer or name their refusals without landing or protected-state mutation.\n\nAnchor: `test_remaining_preview_plan_and_queue_reads_write_nothing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "14": {
+      "note": "Current source declarations support the qualified naming or fixture account; no executed test or acceptance is inferred — mcp/tests/test_knowledge_read_boundary.py:1-1037.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:24f536192dbb0406753d7eefa8308a049036e7d494249a7adb3c3352bbc21d24",
+            "locator": {
+              "end": 1037,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "15": {
+      "note": "Two formerly raised boundary cases assert their exact returned refusal codes, while unrelated authority and queue errors still raise.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "16": {
+      "note": "Server-info, gate and file calls preserve the synthetic seat; resolve_context is not called and file inputs do not prove successful naming.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:229d83bd2be96d5c403080aa6fa8b223d5ef00a81798d9a05b622615211ae6a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_miscellaneous_description_called_reads_write_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "17": {
+      "note": "The summary port accepts `_number`; all three GETs retain the before/after oracle.\n\nAnchor: \"def test_review_get_routes_read_without_writing(tmp_path: Path, worktree_services: Any) -> None:\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:899a21a58ff7cf8bd4be9d3e1e1af19397a00a5d66b0ef75cee60cbcae89142f",
+            "locator": {
+              "end": 376,
+              "kind": "line_range",
+              "start": 278
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "A mutated read is caught, so the roster cannot pass vacuously.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:477a55b059b7eeeca6409cf1b6466f05c1803dc3e451c1c240bcd31fa335766c",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_a_mutated_read_is_caught"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "Enclosure reads attribute comparison objects and allow only preview effects.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:1d064e20942fb4eab7468fc660ac0549fea8deb06ca98d4314df77edc5764676",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_enclosure_reads_record_only_comparisons_and_previews"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Review GET routes read without other protected-state changes.\n\nAnchor: `test_review_get_routes_read_without_writing`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:e4da051ef659645dd219c71c4abb872e01ff4861353d2ccdba85ba8ee5af2a15",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Remaining dashboard GETs read without writing.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:70c9f83cd51184503b0b74e39bc9099c3e16d712970ff8581b821620fa7fd039",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_remaining_dashboard_gets_read_without_writing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Converted drift and registered baseline status use the filing oracle; dictionary assertions and the array-valued fixture do not establish clean-card or returned-field semantics.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:f52a08e56ca15af64b4c27180c08d8e8131fffe916fbfbd4ff042b31d009ce70",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_converted_drift_check_read_writes_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "Context-packet, internal drift and baseline-status paths preserve the selected memory-backed seat, including ok=False and state=\"legacy-format\" for unconverted baseline status.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:9814eaca47855c7619925788073005507e10a218d83b8f96086ed7d532a735b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_memory_backed_reads_write_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "Skill catalog list, advertised-URI read and bogus-URI refusal preserve the fixture.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "e08265d997aed2eebd1c08f3c51604da78148c91",
+            "content": "sha256:87a7db096e1c7ff7c155e019995a19e3eedf7ae8b10905b12de86d541078e5dd",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_diagnostic_watcher_and_skill_reads_write_nothing"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

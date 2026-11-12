@@ -1,0 +1,891 @@
+{
+  "closed": true,
+  "leaf": "260928-MIK-L166",
+  "rows": [
+    {
+      "disposition": "no_impact",
+      "id": "ROW-0JZW2N",
+      "items": [
+        "sha256:24525506b5077231b959f58befd9a6c8e8199a2ce57c7e11076b7388e7149bb1"
+      ],
+      "reason": "Reviewed the complete HEAD-to-passed catalog delta: only ordinary memberships/derived consumers for the two regression modules are added. Existing card already explains exact selection/consumer accounting, canonical ordering and unchanged artifact authority/lifetime, never invocation or PASS; no new catalog contract is introduced.",
+      "sources": [
+        {
+          "blob": "155b1a215717e4033626bc68aae204ed35aa5f9c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/evidence-lifecycle.toml"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-0MWVFA",
+      "items": [
+        "sha256:c213a7d9f7cf8ad5d6affca264231b889b3699576b9cc2acc9f61aaa922a4394"
+      ],
+      "reason": "Test route now identifies separate actual landing-interest and periodic-safety protection and its controlled-evidence limits. L166-M1-03/04: current catalog declaration is 12 contracts/70 artifacts and three exact landing-report artifact memberships, not runtime fixture use; reference 1723 includes actual membership clauses and preserves independent tool-sweep witnesses. Explicitly supersede 14/94 only in its current clause, preserve historical captions. Reference 1766 distinguishes the real two-subscriber runtime case from direct controlled-refresher disconnect/clock/identity cases.",
+      "sources": [
+        {
+          "blob": "155b1a215717e4033626bc68aae204ed35aa5f9c",
+          "path": "mcp/tests/evidence-lifecycle.toml"
+        },
+        {
+          "blob": "4230a4b18fd8ea649c2136327cb025803436c6de",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        },
+        {
+          "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+          "path": "mcp/tests/test_landing_page_cadence.py"
+        },
+        {
+          "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+          "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-1FJXSE",
+      "items": [
+        "sha256:0f834c62161b9eee01545c6bec4e4fde168ab46caf525cc254b557a6bad6579c",
+        "sha256:361a7b6a5262c2a0db8acdacca5182dd93463d08e51eba47a2b2824d7e711984"
+      ],
+      "reason": "New ordinary card describes real-loop periodic safety under revoked/restarted/malformed authority rather than the withdrawn helper.",
+      "sources": [
+        {
+          "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+          "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_serving_provider_metrics_activity.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-464KXC",
+      "items": [
+        "sha256:83275cc70769b24a0ffce4672d469c132cd39c7e225f3e8fc9f4cf8ac503088f"
+      ],
+      "reason": "Import, constructor retention or binding plumbing for the explicit scoped landing-interest/due obligations; the app/refresh/admission/schedule realizations carry their semantic boundary, not a separate new guarantee per storage/import statement.",
+      "subject": "hunk:sha256:83275cc70769b24a0ffce4672d469c132cd39c7e225f3e8fc9f4cf8ac503088f"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-6Q1P7K",
+      "items": [
+        "sha256:7fd1933b856b2602f89923baa06a10af63867102d73ed0aa782ffa3b9932783d"
+      ],
+      "reason": "Catalog membership/derived consumer addition selects the retained regression under existing evidence ownership and lifetime. It changes no invariant meaning, artifact identity or execution authority.",
+      "subject": "hunk:sha256:7fd1933b856b2602f89923baa06a10af63867102d73ed0aa782ffa3b9932783d"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-8F5E03",
+      "items": [
+        "sha256:30d595dc337e4b9bdd1708497bfe91c80d48628a2fa48a2071bbe8ab4983bbbd",
+        "sha256:8e47bd3eaf296618a51f5a6e8dbd4a2a7dfca4a3a769560cf1f3f33e074a1cf9"
+      ],
+      "reason": "New ordinary card explains transient current-identity policy, semantic fields/ordering, clock regression and exact age bands with source/test references.",
+      "sources": [
+        {
+          "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+          "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/landing_cadence.py"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+            "content": "sha256:78d89e6069be31031cfcbb539b9ef70a9fc14dc56567aa72e3ac8385db0cd53c",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderMetricsActivityTests.test_empty_launch_authority_does_not_prove_fleet_retirement"
+            },
+            "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+          },
+          "before": "absent",
+          "id": "PRF-0MHR9Z"
+        },
+        {
+          "after": {
+            "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+            "content": "sha256:fb2fcfaf33fe954ee874fd800e5e8919e943774f33a930a55216480ec677eafd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderMetricsActivityTests.test_live_admission_between_ticks_and_restart_keep_leftovers_observable"
+            },
+            "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+          },
+          "before": "absent",
+          "id": "PRF-0SKZJP"
+        },
+        {
+          "after": {
+            "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+            "content": "sha256:6d623ac5f58962dafe8cda812dcfca1e9105e8d0141c3c9db83291a8f192dc3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderMetricsActivityTests.test_malformed_authority_does_not_stop_safety_or_reclaim"
+            },
+            "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+          },
+          "before": "absent",
+          "id": "PRF-N4FCP8"
+        },
+        {
+          "after": {
+            "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+            "content": "sha256:fb2fcfaf33fe954ee874fd800e5e8919e943774f33a930a55216480ec677eafd",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderMetricsActivityTests.test_live_admission_between_ticks_and_restart_keep_leftovers_observable"
+            },
+            "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+          },
+          "before": "absent",
+          "id": "RLZ-78S71Q"
+        },
+        {
+          "after": {
+            "blob": "af862b2b13613ef69a676e86200bcda556044d23",
+            "content": "sha256:6d623ac5f58962dafe8cda812dcfca1e9105e8d0141c3c9db83291a8f192dc3a",
+            "locator": {
+              "kind": "symbol",
+              "name": "ProviderMetricsActivityTests.test_malformed_authority_does_not_stop_safety_or_reclaim"
+            },
+            "path": "mcp/tests/test_serving_provider_metrics_activity.py"
+          },
+          "before": "absent",
+          "id": "RLZ-9FJFGZ"
+        },
+        {
+          "after": {
+            "blob": "fff797d50bb152439f7d2805314942ed27286b5b",
+            "content": "sha256:ad2bae9b4636ad639cb42c916442297460ce550fb8cae6845509efd7c5ff0e2e",
+            "locator": {
+              "kind": "symbol",
+              "name": "_metrics_loop"
+            },
+            "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+          },
+          "before": "absent",
+          "id": "RLZ-QA4499"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-CFSJZX",
+      "items": [],
+      "reason": "Introduce the scoped current-intent obligation and its independently authored facets while preserving producer statement, disposition and target attribution.",
+      "revision": 1,
+      "subject": "INV-5C5086"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:958b6efb6306eece4ea769e18708855ee41ce772810860da123311a45221dff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_unchanged_answers_use_all_age_bands_and_changed_answer_resets"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "PRF-7TPCGJ"
+        },
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:faba8aa137e1b1f6b7773edb75d5472904d8214e8f16cf334fcc57c094f73f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_rewrites_reopen_new_and_removed_contracts_reset_bounded_schedule"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "PRF-CJFA83"
+        },
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:958b6efb6306eece4ea769e18708855ee41ce772810860da123311a45221dff3",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_unchanged_answers_use_all_age_bands_and_changed_answer_resets"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "RLZ-3R4PWG"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher.refresh_once"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": "absent",
+          "id": "RLZ-DKE751"
+        },
+        {
+          "after": {
+            "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+            "content": "sha256:1074b49a6e7ede4e0756db60b961d8c2600d9694d3704f7e44be0322e8e001c4",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingProbeSchedule"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+          },
+          "before": "absent",
+          "id": "RLZ-EGA61Q"
+        },
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:faba8aa137e1b1f6b7773edb75d5472904d8214e8f16cf334fcc57c094f73f01",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_rewrites_reopen_new_and_removed_contracts_reset_bounded_schedule"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "RLZ-KH0Y1D"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-CR1K2M",
+      "items": [],
+      "reason": "Introduce the scoped current-intent obligation and its independently authored facets while preserving producer statement, disposition and target attribution.",
+      "revision": 1,
+      "subject": "INV-BY8XBH"
+    },
+    {
+      "because": [
+        {
+          "id": "MIK-R165",
+          "packet": "requirements/MIK-R165-v1-the-dashboards-server-rests-while-nothing-changes.md",
+          "task": {
+            "path": "260928_maintained-invariant-knowledge",
+            "repository": "agents-remember"
+          },
+          "version": "v1"
+        }
+      ],
+      "covers": [
+        {
+          "after": {
+            "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+            "content": "sha256:24b6c537a0808c1e9c6dee9df55a700bfe20ad853e2858d2562f2d93f3ff90a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "before": {
+            "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+            "content": "sha256:24b6c537a0808c1e9c6dee9df55a700bfe20ad853e2858d2562f2d93f3ff90a0",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_history_is_not_probed_and_open_landing_finishes_once_or_reopens"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "id": "PRF-1XA4WX"
+        },
+        {
+          "after": {
+            "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+            "content": "sha256:7472ee20485dcba1696e01169a6ef04b2b39505637566f462066bc680fabac4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "before": {
+            "blob": "69da50a482ffaeaf9a0309120c4c200f9d604f32",
+            "content": "sha256:7472ee20485dcba1696e01169a6ef04b2b39505637566f462066bc680fabac4f",
+            "locator": {
+              "kind": "symbol",
+              "name": "BackgroundLandingTests.test_failed_finishing_probe_stays_missing_and_does_not_retry_history"
+            },
+            "path": "mcp/tests/test_serving.py"
+          },
+          "id": "PRF-JEZARM"
+        },
+        {
+          "after": {
+            "blob": "96a71fd525fc0de04c0e7fcaf95941ad2366f740",
+            "content": "sha256:56862358134b9ecc2ef922d56f71e164f631a93835e595f10f32417525d804b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalSweepBudgetTests.test_startup_success_failure_final_loss_and_reopen_keep_four_admissions"
+            },
+            "path": "mcp/tests/test_landing_final_trust.py"
+          },
+          "before": {
+            "blob": "96a71fd525fc0de04c0e7fcaf95941ad2366f740",
+            "content": "sha256:56862358134b9ecc2ef922d56f71e164f631a93835e595f10f32417525d804b8",
+            "locator": {
+              "kind": "symbol",
+              "name": "TerminalSweepBudgetTests.test_startup_success_failure_final_loss_and_reopen_keep_four_admissions"
+            },
+            "path": "mcp/tests/test_landing_final_trust.py"
+          },
+          "id": "PRF-YW1HJV"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:c428a94bdf02b347c9e6a1796e3347bb81a76582829ccc5c51e59a811d09550f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher._maybe_freeze"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": {
+            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "content": "sha256:c428a94bdf02b347c9e6a1796e3347bb81a76582829ccc5c51e59a811d09550f",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher._maybe_freeze"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "id": "RLZ-6JJFZY"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher.refresh_once"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": {
+            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "content": "sha256:01b2e5ece6cb5ae3c9eb351a414c306eed532b215cc4d42a459448726eb4a873",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher.refresh_once"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "id": "RLZ-AMDN7R"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:7d5859b65fbddda5728e6f598061588206bd82f046b7309321ff9fe9cebb6078",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher._needs_live_probe"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": {
+            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "content": "sha256:7d5859b65fbddda5728e6f598061588206bd82f046b7309321ff9fe9cebb6078",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher._needs_live_probe"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "id": "RLZ-BYHXFB"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:889b4fe6ddc74090edb55df8abb07a590d724ac6b1427f04e106c88e301af1c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher.current"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": {
+            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "content": "sha256:889b4fe6ddc74090edb55df8abb07a590d724ac6b1427f04e106c88e301af1c2",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher.current"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "id": "RLZ-DYM2N8"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:48df91965f6febf70079e7e87aefca1080c3a2777948aa85d5683a0d8856ce0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher._landing_contracts"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": {
+            "blob": "a1430c54022a8369724801f3da1da693a7e07bf2",
+            "content": "sha256:48df91965f6febf70079e7e87aefca1080c3a2777948aa85d5683a0d8856ce0e",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher._landing_contracts"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "id": "RLZ-Z6XCC8"
+        }
+      ],
+      "disposition": "changed",
+      "effect": "replace",
+      "id": "ROW-DM6N35",
+      "items": [
+        "sha256:dd9d43c3813550b7a5323ffc10eb99538944123dcf6f08bba7815bd3e8872a91"
+      ],
+      "reason": "The exact completed-arc guarantee and statement are retained; revise the ancillary open-work condition to distinguish serving-bound interest/due eligibility from explicit unbound callers. A skipped disconnect probe consumes no terminal attempt.",
+      "revision": 3,
+      "subject": "INV-D0551J"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-EC202S",
+      "items": [
+        "sha256:4349cec7ca6ccc6d45df82ebd63e49a6ebe9bd00b6f88a3c404baa17ab0e2e68"
+      ],
+      "reason": "Current card replaces fixed serving-open cadence with actual interest and due-state boundaries while retaining terminal/final/reopen/accounting protections.",
+      "sources": [
+        {
+          "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+          "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/landing_state.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-JJ08G9",
+      "items": [
+        "sha256:5bef47f44dced7fc9a52d75c85658b2f0808b377582a82d506b377c42d50182c"
+      ],
+      "reason": "Import, constructor retention or binding plumbing for the explicit scoped landing-interest/due obligations; the app/refresh/admission/schedule realizations carry their semantic boundary, not a separate new guarantee per storage/import statement.",
+      "subject": "hunk:sha256:5bef47f44dced7fc9a52d75c85658b2f0808b377582a82d506b377c42d50182c"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "00854ae6aced8fa39aeb680f81836366daa826ff",
+            "content": "sha256:2c79e0280bf3463d41c1893990c25b1c81b2d715ca381785a6fddb7ad821f936",
+            "locator": {
+              "kind": "symbol",
+              "name": "doc_projection_closure"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py"
+          },
+          "before": {
+            "blob": "ba4b4d6186626d46a2c296a16868c9b97948228b",
+            "content": "sha256:94c95f847da54aa659e9516f471b1e0595c68686dd5284494f7c92b1477d9b0f",
+            "locator": {
+              "kind": "symbol",
+              "name": "doc_projection_closure"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/snapshots_impl/_task_document_closure.py"
+          },
+          "id": "RLZ-0QQ4J3"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-JSX1J9",
+      "items": [
+        "sha256:e232a51078bca0bb555ccb2e0426da3ec2b821080aeca33f959b5db52e0d2b6d"
+      ],
+      "reason": "Current doc_projection_closure still closes retained changed-document/parent/forward/reverse dependencies to a fixpoint with canonical validation and full fallback owned by its caller; L166 changes neither the closure nor its proof. Renew the inherited stale symbol anchor, not the invariant meaning.",
+      "revision": 1,
+      "subject": "INV-FKE909"
+    },
+    {
+      "disposition": "changed",
+      "effect": "strengthen",
+      "examined": [
+        {
+          "id": "INV-0NSFFW",
+          "revision": 1
+        },
+        {
+          "id": "INV-1F0XGE",
+          "revision": 1
+        },
+        {
+          "id": "INV-3XG15P",
+          "revision": 1
+        },
+        {
+          "id": "INV-5C5086",
+          "revision": 1
+        },
+        {
+          "id": "INV-84PT5A",
+          "revision": 1
+        },
+        {
+          "id": "INV-AD1MRN",
+          "revision": 1
+        },
+        {
+          "id": "INV-BMZ47D",
+          "revision": 1
+        },
+        {
+          "id": "INV-BY8XBH",
+          "revision": 1
+        },
+        {
+          "id": "INV-D0551J",
+          "revision": 3
+        },
+        {
+          "id": "INV-FKE909",
+          "revision": 1
+        },
+        {
+          "id": "INV-GDTTHF",
+          "revision": 1
+        },
+        {
+          "id": "INV-GP90VQ",
+          "revision": 1
+        },
+        {
+          "id": "INV-H9TEKD",
+          "revision": 1
+        },
+        {
+          "id": "INV-RGGEX3",
+          "revision": 1
+        },
+        {
+          "id": "INV-RJWTW8",
+          "revision": 1
+        },
+        {
+          "id": "INV-RQNDH6",
+          "revision": 1
+        },
+        {
+          "id": "INV-S8GHB9",
+          "revision": 1
+        },
+        {
+          "id": "INV-TMY6DW",
+          "revision": 1
+        }
+      ],
+      "id": "ROW-P4YZ8K",
+      "items": [
+        "sha256:910444c0e6ac59f0bf4598911c679131721066870bb4c7d8ecf312172f411db1"
+      ],
+      "reason": "Examined all 15 existing member statements/scopes and their change classifications. Preserve native watch/pacing, accounting, healing/pending invalidation, locked-write, path closure, watcher health, terminal final and worklist-publication obligations; extend the joint guarantee with actual landing interest/due state and independent periodic provider safety. The tests route contains explicitly support-role realizations, never production launch authority. Existing three production routes remain.",
+      "revision": 3,
+      "subject": "FAM-CAG581"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-P59VPC",
+      "items": [
+        "sha256:ca077c2aaee9582a01bbc34f91bbb7b4eebb9a5b093cbdc4f8ca185960f058e8"
+      ],
+      "reason": "Catalog membership/derived consumer addition selects the retained regression under existing evidence ownership and lifetime. It changes no invariant meaning, artifact identity or execution authority.",
+      "subject": "hunk:sha256:ca077c2aaee9582a01bbc34f91bbb7b4eebb9a5b093cbdc4f8ca185960f058e8"
+    },
+    {
+      "disposition": "no_impact",
+      "id": "ROW-PM3Q14",
+      "items": [
+        "sha256:8e46b8920913a7ea3cedcc64753a6f2a7a9a138f7860d9ebcb29460bd4818a5c"
+      ],
+      "reason": "Reviewed the complete HEAD-to-passed catalog delta: only ordinary memberships/derived consumers for the two regression modules are added. Existing card already explains exact selection/consumer accounting, canonical ordering and unchanged artifact authority/lifetime, never invocation or PASS; no new catalog contract is introduced.",
+      "sources": [
+        {
+          "blob": "4230a4b18fd8ea649c2136327cb025803436c6de",
+          "path": "mcp/tests/test-evidence-lanes.toml"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test-evidence-lanes.toml"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:096e2dc021f39a35d8d37c8e57708c69969e61fd152ffff39040d3bef1961765",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_disconnect_during_discovery_admits_no_probe"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "PRF-576CM5"
+        },
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_composed_runtime_probes_only_until_the_last_subscriber_leaves"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "PRF-V2AHXV"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:d3f943ee23f297e5ca6dcd1903e12a652025340f85c79f8800c20e969a7a5d8d",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher._observe_contract"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": "absent",
+          "id": "RLZ-26ZG1Z"
+        },
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:096e2dc021f39a35d8d37c8e57708c69969e61fd152ffff39040d3bef1961765",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_disconnect_during_discovery_admits_no_probe"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "RLZ-83H5TP"
+        },
+        {
+          "after": {
+            "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+            "content": "sha256:93938db965dc5cb662fceaaf4e77b2fff0c3c5003fb497ec8ad83c27d444c7fa",
+            "locator": {
+              "kind": "symbol",
+              "name": "Projector.has_subscribers"
+            },
+            "path": "mcp/src/agents_remember/serving/projector.py"
+          },
+          "before": "absent",
+          "id": "RLZ-ASMCG7"
+        },
+        {
+          "after": {
+            "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+            "content": "sha256:b42df87008df02e6b9183098c8b0d038d57846a31a02700689179eda34a11fdd",
+            "locator": {
+              "kind": "symbol",
+              "name": "_build_serving_runtime"
+            },
+            "path": "mcp/src/agents_remember/serving/app.py"
+          },
+          "before": "absent",
+          "id": "RLZ-K8504A"
+        },
+        {
+          "after": {
+            "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+            "content": "sha256:c6a174684edf9456e84a7dde831342ca64dbad3632bc13c6c63129fb16d46d32",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingPageCadenceTests.test_composed_runtime_probes_only_until_the_last_subscriber_leaves"
+            },
+            "path": "mcp/tests/test_landing_page_cadence.py"
+          },
+          "before": "absent",
+          "id": "RLZ-MRSWBJ"
+        },
+        {
+          "after": {
+            "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+            "content": "sha256:9eae21981338f9167dc06ee9a66786fa8d80ac48aa8252d110ca23b97a9b612b",
+            "locator": {
+              "kind": "symbol",
+              "name": "LandingStateRefresher.refresh_once"
+            },
+            "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+          },
+          "before": "absent",
+          "id": "RLZ-V5S9BY"
+        }
+      ],
+      "disposition": "extended",
+      "id": "ROW-R16279",
+      "items": [],
+      "reason": "Introduce the scoped current-intent obligation and its independently authored facets while preserving producer statement, disposition and target attribution.",
+      "revision": 1,
+      "subject": "INV-BMZ47D"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RBTPS1",
+      "items": [
+        "sha256:eeca7a45e7349318ba40ede047729dda1f792a02bd817b246451d741a7d8be7d"
+      ],
+      "reason": "Serving route now distinguishes conditional landing probes from continuing local projection/healing and periodic provider safety. L166-M1-05: all sealed comparison/entry/expansion/parser/status/registration selectors now include their supporting bodies; worklist construction and third-port collateral selectors select actual owners, not a blank line/import/first-route constant. Correct routing prose and historical boundaries remain.",
+      "sources": [
+        {
+          "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+          "path": "mcp/src/agents_remember/serving/app.py"
+        },
+        {
+          "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+          "path": "mcp/src/agents_remember/serving/projector.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-RGH2H6",
+      "items": [
+        "sha256:36e0512794773c18e8129047ca8cb709bb4714dd87e4311bf253ac7c4ec5f562",
+        "sha256:7e6305b5b256d1f7da3a2fa299ff74c072217a2835fd2ac9026b38473962390a"
+      ],
+      "reason": "New ordinary card distinguishes actual composition/controlled clock assertions from native CPU/egress or live installation proof.",
+      "sources": [
+        {
+          "blob": "20d7bfe9c7003c2b6acab4c3157a7b4485fba9e5",
+          "path": "mcp/tests/test_landing_page_cadence.py"
+        }
+      ],
+      "subject": "onboarding:mcp/tests/test_landing_page_cadence.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-S2F88B",
+      "items": [
+        "sha256:6015aed6e21af7903e89d5d93c23c129c1efd4e99e0cc777a1682f14c1f95387"
+      ],
+      "reason": "Catalog membership/derived consumer addition selects the retained regression under existing evidence ownership and lifetime. It changes no invariant meaning, artifact identity or execution authority.",
+      "subject": "hunk:sha256:6015aed6e21af7903e89d5d93c23c129c1efd4e99e0cc777a1682f14c1f95387"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-SWY040",
+      "items": [
+        "sha256:e8390864970891396462e978a788808d255ebb6a88825cb677dad885fe225a3f"
+      ],
+      "reason": "Import, constructor retention or binding plumbing for the explicit scoped landing-interest/due obligations; the app/refresh/admission/schedule realizations carry their semantic boundary, not a separate new guarantee per storage/import statement.",
+      "subject": "hunk:sha256:e8390864970891396462e978a788808d255ebb6a88825cb677dad885fe225a3f"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-WAW64W",
+      "items": [
+        "sha256:1ac6cfb73e7934c0b0a2c604f5d8f70846b728abcb5c8ae42c0a4f9b157e3559"
+      ],
+      "reason": "Current composition now states the single shared landing instance, actual subscriber binding before startup and distinction from periodic provider safety; obsolete terminal/notifier accounts are explicitly historical. L166-M1-05: replace the historical closing-parenthesis selector with the actual current _build_serving_runtime shutdown-callable copy; keep other historical constructor accounts intact.",
+      "sources": [
+        {
+          "blob": "58281d9cb62afbcee6f8b6ad2efb331bb29b98e4",
+          "path": "mcp/src/agents_remember/serving/app.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/app.py"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-Y210BM",
+      "items": [
+        "sha256:d50239e0a6434d0b639b2a818a0b2909262c806ff779ef69e496fb15512a1032"
+      ],
+      "reason": "Projection route now locates transient landing due policy and preserves explicit unbound reads, final/reopen and other input owners. L166-M1-02: explicitly historicize removed inbox/expectation copying and inbox compaction in all three active clauses and reference 9. Preserve current lifecycle-operation projection/tolerant boundary and lifecycle/drift/attention housekeeping.",
+      "sources": [
+        {
+          "blob": "09b582a0f8143eba360527769647f80fd552ab2c",
+          "path": "mcp/src/agents_remember/serving/projections/landing_cadence.py"
+        },
+        {
+          "blob": "f78cd0b0ccc7bef3d26f33529137c09da56e2e03",
+          "path": "mcp/src/agents_remember/serving/projections/landing_state.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projections/overview"
+    },
+    {
+      "disposition": "updated",
+      "id": "ROW-YF6V6Z",
+      "items": [
+        "sha256:6c0a6aa6269a48b5efb472de218cf0a7f5e22bb021ed372ee73ffca900140894"
+      ],
+      "reason": "Current card states the read-only shared subscriber predicate and preserves atomic registration/capture/finally cleanup and projection publication. L166-M1-01/05: current caption and reference 3 now name build/optional watcher-health snapshot-only tails and missing-fact omission, with actual stream_events closure/decoration and served-tail declaration extents rather than off-by-one singleton/docstring witnesses.",
+      "sources": [
+        {
+          "blob": "941a70a1df5c5222acbc4406144f6ef096c74b18",
+          "path": "mcp/src/agents_remember/serving/projector.py"
+        }
+      ],
+      "subject": "onboarding:mcp/src/agents_remember/serving/projector.py"
+    },
+    {
+      "disposition": "no_invariant",
+      "id": "ROW-YT9A6X",
+      "items": [
+        "sha256:c8a9dffb1e302df1e2a9a030e13bca564a2ca498446f2e1dcde5775340dc0618"
+      ],
+      "reason": "Catalog membership/derived consumer addition selects the retained regression under existing evidence ownership and lifetime. It changes no invariant meaning, artifact identity or execution authority.",
+      "subject": "hunk:sha256:c8a9dffb1e302df1e2a9a030e13bca564a2ca498446f2e1dcde5775340dc0618"
+    },
+    {
+      "covers": [
+        {
+          "after": {
+            "blob": "fb6624fd88b109b0c342c8e6cdec3d91daa3fe68",
+            "content": "sha256:a59dc76e2252180bac54d810a0a0005a5db0436cc7bee4983796d965e3778b4b",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_state_tail"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "before": {
+            "blob": "5d9706f19d45f3924fd5479d69902c1048f7e4c7",
+            "content": "sha256:13de6dd9b653c15154585f8dc9fb6c8a04ee8c03cd03c28b648d01a7761ba80a",
+            "locator": {
+              "kind": "symbol",
+              "name": "served_state_tail"
+            },
+            "path": "mcp/src/agents_remember/serving/served_state.py"
+          },
+          "id": "RLZ-RHMYS8"
+        }
+      ],
+      "disposition": "no_impact",
+      "id": "ROW-ZPNCB3",
+      "items": [
+        "sha256:8bc1e337d9e8ae648c1d4c9a75a23471a5b2cf138e72103d5f0f01b3209453b7"
+      ],
+      "reason": "Current served_state_tail still validates WatcherHealthPayload then serializes exclude_none; missing watcher input omits the entire field. L166 adds only a subscriber predicate and does not alter health typing/serialization. Renew the inherited stale anchor without changing the obligation.",
+      "revision": 1,
+      "subject": "INV-GDTTHF"
+    }
+  ],
+  "schema": "ar-history/v1"
+}

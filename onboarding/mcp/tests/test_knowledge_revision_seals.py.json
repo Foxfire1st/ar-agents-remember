@@ -1,0 +1,157 @@
+{
+  "path": "mcp/tests/test_knowledge_revision_seals.py",
+  "proves": [],
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "Why this module owns the shared seal evidence rather than either single-graph module.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:d2fd2497ccf76e2867930bb35af0ba2f03f03adc482a4bad36d800179ea4a2fc",
+            "locator": {
+              "end": 5,
+              "kind": "line_range",
+              "start": 5
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "10": {
+      "note": "The knowledge identity-branching fixture artifact names contract:knowledge-identity-branching-fixture as its replacement and test_knowledge_revision_seals.py as an exact consumer. These declarations do not establish execution.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "0556945441335e93cd0b1783dba11d3b2eb279a7",
+            "content": "sha256:a7875a9b9d4a97340a24a005157cfba2ca7940f77a7eef1ec939e5c57b7d144d",
+            "locator": {
+              "end": 3472,
+              "kind": "line_range",
+              "start": 3457
+            },
+            "path": "mcp/tests/evidence-lifecycle.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The field-isolating digest node for the invariant payload.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:70df648e200218ec63c68df203a8431e36a88aa48993c3762972465e6a7320c1",
+            "locator": {
+              "end": 95,
+              "kind": "line_range",
+              "start": 63
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "The family revision test detects a stored guarantee cell rewritten behind its seal and requires decode_family_revision_row to refuse with payload digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:751c3a23516ea55d8e89f96036e9d894ba7aa1fb7ba9e3b745682d3f6d30e076",
+            "locator": {
+              "end": 209,
+              "kind": "line_range",
+              "start": 184
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "The invariant revision test detects a stored statement cell rewritten behind its seal and requires decode_revision_row to refuse with payload digest.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "15ae9eaacc0cf4a348b42f767bc4c766f36c5e41",
+            "content": "sha256:08f23a567e91b79e33c0065a58a891a4811bad3e18d7523f553b9f3d4bf17e26",
+            "locator": {
+              "end": 181,
+              "kind": "line_range",
+              "start": 150
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "The payloads that seal the predecessor set, one per revision kind.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "content": "sha256:bf82a17c91fe9724b782c711419f091eeecdebe93cc2087b9d7194c9a48bdce3",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_revision_payload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        },
+        {
+          "anchor": {
+            "blob": "f503fa94c4c7bed4f52d64b967754439519f5b6a",
+            "content": "sha256:f987f04351f9a963408d04353decdced875c8d570d21bdeb16852ae8f8f75efc",
+            "locator": {
+              "kind": "symbol",
+              "name": "canonical_family_revision_payload"
+            },
+            "path": "mcp/src/agents_remember/models/knowledge/digest.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "8": {
+      "note": "The read-path recomputation that turns a row whose stored cells were rewritten behind its seal into a storage defect.\n\nAnchor: `decode_revision_row` `decode_family_revision_row`",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "4a64ad09c79633786d6408b2e814119580ad51e7",
+            "content": "sha256:92d4353cb71f442af226829358fd09ea8dd54591ffed608d4b7a3779190116b8",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "mcp/src/agents_remember/memory/knowledge/records.py"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "9": {
+      "note": "The unit-regression lane row this module is registered by.  Anchor: \"mcp/tests/test_knowledge_revision_seals.py\"",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
+            "content": "sha256:b7b1484eb0fa1e1fb3744e4db9c6a29b9026c328733a26254ee84d07cde416e7",
+            "locator": {
+              "end": 267,
+              "kind": "line_range",
+              "start": 267
+            },
+            "path": "mcp/tests/test-evidence-lanes.toml"
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

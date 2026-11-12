@@ -1,0 +1,24 @@
+{
+  "path": "dashboard/src/panels/review/subjectReview.successorInvariant.captured.json",
+  "realizes": [],
+  "references": {
+    "2": {
+      "note": "The current retained JSON input supplies the literal identities, response states and populations summarized above; these are fixture facts, not live project knowledge or fresh execution evidence.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "350311a024a614ecc3bc095ca7925c1519985f82",
+            "content": "sha256:c5afaba7ee5e8ea8c2fd003d4e2d0422c49304cbd71fa40a0bfc654f08018797",
+            "locator": {
+              "end": 1,
+              "kind": "line_range",
+              "start": 1
+            }
+          },
+          "kind": "code"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}
