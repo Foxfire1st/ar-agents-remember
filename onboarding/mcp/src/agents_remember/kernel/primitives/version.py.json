@@ -1,14 +1,33 @@
 {
   "path": "mcp/src/agents_remember/kernel/primitives/version.py",
-  "realizes": [],
+  "realizes": [
+    {
+      "anchor": {
+        "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+        "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
+        "locator": {
+          "kind": "symbol",
+          "name": "_resolve_server_version"
+        }
+      },
+      "id": "RLZ-YGKGJR",
+      "invariant": "INV-BQFZCR",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e1",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "Everything above the kernel reads the version through this resolver, so the fallback branch is the identity a source checkout reports.",
+      "role": "unclassified"
+    }
+  ],
   "references": {
     "1": {
       "note": "Package metadata and source-checkout fallback are selected through the explicit resolver.",
       "targets": [
         {
           "anchor": {
-            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
-            "content": "sha256:8ba8940d7686bf3dd467ec8790e7670c5edfd14b6f842150163d0a6bc041b93c",
+            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_server_version"
@@ -23,8 +42,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
-            "content": "sha256:8ba8940d7686bf3dd467ec8790e7670c5edfd14b6f842150163d0a6bc041b93c",
+            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_server_version"

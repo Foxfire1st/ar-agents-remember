@@ -12,8 +12,8 @@ message for an existing unconverted root, before drift measurement or adoption;
 adoption returns exit code 2 even in dry-run mode. With no attributed baseline,
 convert the root in place using `agents-remember knowledge-convert MEMORY_ROOT
 --code CODE_REPOSITORY`, then adopt. With an official line, first convert one new
-leaf and land it using the procedure in `c-13-install-and-onboard` and
-`docs/guides/first-conversion.md`. This refusal is independent of converted memory
+leaf and land it using the first-conversion command `agents-remember
+knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` (MIK-R46 rule 6). This refusal is independent of converted memory
 elsewhere, and cannot be bypassed by `accept_drift`. Adoption creates an attributed
 memory-content commit; the consumer ledger is computed from Git and refreshed as
 a disposable cache. On a converted tree the first baseline is validated before

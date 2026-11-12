@@ -10,7 +10,7 @@ The converted knowledge CLI's file-write routes share admission, owner identity,
 
 ## Code Commentary
 
-Leaf writes use the supplied enclosure and its leaf owner; named waves use their admitted repository root. Crossing writes retain their separately admitted crossing owner. Each delegates to the file writer rather than selecting a canonical database. `unconverted_write_refusal` refuses unconverted memory unconditionally with shared conversion guidance: cross from a converted source through `worktree_sync` with `merge-memory`, otherwise make the first conversion described by `c-13-install-and-onboard` and `docs/guides/first-conversion.md`. A missing memory worktree retains its own named error. Database-publication arguments are refused by their CLI front door, not accepted here as an alternative destination.
+Leaf writes use the supplied enclosure and its leaf owner; named waves use their admitted repository root. Crossing writes retain their separately admitted crossing owner. Each delegates to the file writer rather than selecting a canonical database. `unconverted_write_refusal` refuses unconverted memory unconditionally with shared conversion guidance: cross from a converted source through `worktree_sync` with `merge-memory`, otherwise make the first conversion with `agents-remember knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` (MIK-R46 rule 6). A missing memory worktree retains its own named error. Database-publication arguments are refused by their CLI front door, not accepted here as an alternative destination.
 
 ### Logic
 

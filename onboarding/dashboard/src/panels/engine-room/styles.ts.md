@@ -76,8 +76,7 @@ animated value under `initial={false}` (the class wins on a static frame) — ex
 worktree wires dangling with no engine. The 5h H3 `prBadgeSub`/`remoteConnector`/`remoteConnectorCarry`
 recipes remain exported but unused (their call sites were removed in the 5i dock rework).
 
-**05o T3B failure-mode primitives.** Two new atoms back the engine-room failure-modes spec (§10,
-`docs/design/engine-room/engine-room-visual-language.html`): **`scanRing`** — the cyan pre-block verify
+**05o T3B failure-mode primitives.** Two new atoms back the engine-room failure-mode primitives: **`scanRing`** — the cyan pre-block verify
 sweep (a `<circle data-fx='scan'>` on the lane under check): `fill: none` / cyan `stroke` / 2px / a 4px
 cyan `drop-shadow` glow / **`opacity: 0` at rest** (transient, no settled state like `flowPacket`/`warpSurge`;
 GSAP `useEngineTimeline buildFx` drives the r/opacity expand-fade, `repeat:-1`, and the `<circle>` is only

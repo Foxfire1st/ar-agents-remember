@@ -206,8 +206,8 @@
         },
         {
           "anchor": {
-            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
-            "content": "sha256:27d3ca453ff9336b9cbc0026b85ade58cc0aa2731dae0c68b2ae4d3b7fd9a64b",
+            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+            "content": "sha256:c73624355fe66664cca7a19bf59c07f02cdd6d01fb66c12ab5005967e0a3c6e5",
             "locator": {
               "kind": "file"
             },

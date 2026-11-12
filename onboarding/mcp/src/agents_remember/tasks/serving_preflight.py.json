@@ -4,7 +4,7 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+        "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
         "content": "sha256:a828a1a48ab25657eb35d0865484ba389ad596c71b4e3863104e2b99fafbaf9e",
         "locator": {
           "kind": "symbol",
@@ -19,6 +19,25 @@
       },
       "rationale": "Its refusal tells the user to upgrade the served build and names no page.",
       "role": "presentation"
+    },
+    {
+      "anchor": {
+        "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+        "content": "sha256:0930c0b07c079357a44b3da8dfcd71c60d8d3f95e1f4419731b10532376029f3",
+        "locator": {
+          "end": 6,
+          "kind": "line_range",
+          "start": 1
+        }
+      },
+      "id": "RLZ-QSSF1B",
+      "invariant": "INV-RARXRD",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e3",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "The module docstring is what a maintainer reads before changing the preflight; naming a shipped candidate there would date the guidance to a version that no longer exists.",
+      "role": "unclassified"
     }
   ],
   "references": {
@@ -27,8 +46,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
-            "content": "sha256:6842d39f56830b9abdeec0977f834b840e41957004e372706cadf4f0c88e1ab2",
+            "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
+            "content": "sha256:fac227a51a54c44e4733c2e7d0f21732f9e26ae459d49d9d00af124e8c25c15d",
             "locator": {
               "kind": "file"
             }
@@ -151,7 +170,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+            "blob": "c6e11097e656d8498dbf5547fc69b3c6e2c2415b",
             "content": "sha256:82fd6bdc8ca3bc80cd92dc3a3b9769dcbf9c20bd5282766e4764b7105b23401e",
             "locator": {
               "kind": "symbol",

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
-    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
-    "role": "worker",
-    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
-    "task": "260928-MIK-L97",
+    "codeTree": "dbdeb04197e5773b81709fd4a31a61049f93384e",
+    "commit": "a7c6d8996797c2378e658ee459f9b95f7c77c0fc",
+    "role": "curator",
+    "statement": "I confirmed the record's content against the changed mcp/README.md and the code it stands on at the L36 freeze tree in this session; the page carries no version number, its statements were checked, and every link resolves at that tree.",
+    "task": "260928-MIK-L36",
     "uncommitted": true
   },
   "document": "mcp/README.md",
@@ -17,11 +17,11 @@
     "leaf": "260928-MIK-L97",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
-      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
       "kind": "file",
       "path": "mcp/pyproject.toml"
     },

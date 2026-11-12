@@ -3,7 +3,26 @@
   "realizes": [
     {
       "anchor": {
-        "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+        "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+        "content": "sha256:bdbeda11d0a593dc6101786ff4e0731e3715622b4bfee63cb83fa5ea981d5fd7",
+        "locator": {
+          "end": 7,
+          "kind": "line_range",
+          "start": 6
+        }
+      },
+      "id": "RLZ-A4TZZ0",
+      "invariant": "INV-BQFZCR",
+      "origin": {
+        "handoffEntry": "MIK-L36@v10 e1",
+        "leaf": "260928-MIK-L36"
+      },
+      "rationale": "This is the distribution's own metadata; the version line here is what a build and an install report.",
+      "role": "unclassified"
+    },
+    {
+      "anchor": {
+        "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
         "content": "sha256:80c99862448ab92d6ee65fde88d7667d360c1d35eedfa1e7fe46ebea3024294a",
         "locator": {
           "end": 16,
@@ -272,7 +291,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
             "content": "sha256:67390565a8665a2378ea8acf015a4c3ac444ae57f5394d6f15e32a44bf786726",
             "locator": {
               "end": 19,
@@ -289,8 +308,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
-            "content": "sha256:52ce6efc9a14ec0cfd364028d6cdc76ed7e49d3a6abe01acd18a095350334b9d",
+            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
+            "content": "sha256:da4b32bb99eeb73505aa82ec468b1ac54456badf36e7c9db9aafc345a0ae3569",
             "locator": {
               "kind": "file"
             }
@@ -348,7 +367,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
             "content": "sha256:e6b563e4acbcd80bd201904b19939ce2f5ff3a1958b8d7af3c1296e2e7249a98",
             "locator": {
               "end": 23,
@@ -360,7 +379,7 @@
         },
         {
           "anchor": {
-            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
             "content": "sha256:9c5ba653b34073b7260267abaceaece0ed46baa9e23deed1dff116c6916189c2",
             "locator": {
               "end": 30,
@@ -377,7 +396,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+            "blob": "f2ecc90c812371f1e0ea27f3a18dbe6ae5b60535",
             "content": "sha256:896fdd7b511626d78b5cabb93db1be4c16a9e801b46276eef3d039c681d2cdbb",
             "locator": {
               "end": 26,
@@ -412,7 +431,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "d07475d177eb4075c3a88809317f929aa4c070aa",
+            "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
             "content": "sha256:6dc0cecbeac8ccc41e1a05a96799d5652d7940b5d02dc7f4ca1f476d278107e1",
             "locator": {
               "end": 43,
@@ -425,7 +444,7 @@
         },
         {
           "anchor": {
-            "blob": "d07475d177eb4075c3a88809317f929aa4c070aa",
+            "blob": "c63f85e4d9aa4a0076032816190f431cc18b1ffa",
             "content": "sha256:580b200c0d480ad867ae427f11fe588174b8408f3b0487eb5068933f04f651b0",
             "locator": {
               "end": 111,
@@ -478,8 +497,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "399133b8ee3a3b135583d82aaf52a02845cb608a",
-            "content": "sha256:8ba8940d7686bf3dd467ec8790e7670c5edfd14b6f842150163d0a6bc041b93c",
+            "blob": "ba8f919dc79e3daf6a51228201842447d6b49654",
+            "content": "sha256:e5d2c589169f0e48d7f5c4c033a2b33255af40069685ea1a124d29996cfec01f",
             "locator": {
               "kind": "symbol",
               "name": "_resolve_server_version"

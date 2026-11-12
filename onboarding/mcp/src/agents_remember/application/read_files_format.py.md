@@ -25,7 +25,8 @@ the new one.
   `agents-remember knowledge-convert MEMORY_ROOT --code CODE_REPOSITORY` in place
   before baseline adoption when no attributed baseline exists, or on one new leaf
   as its first memory change when an official line exists, then close out and land.
-  The refusal names `c-13-install-and-onboard` and `docs/guides/first-conversion.md`.
+  The refusal names the first-conversion command `agents-remember knowledge-convert
+  MEMORY_ROOT --code CODE_REPOSITORY` (MIK-R46 rule 6).
 - `converted_card_parts(root, onboarding_rel)` reads `onboarding/<rel>.json` and returns `format:
   "text/v2"`, the sidecar, and the references resolved in number order:
   - a `code` or `test` target has its anchor `path` filled in from the sidecar's own path;
