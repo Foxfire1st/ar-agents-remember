@@ -1,0 +1,129 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 3 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/reference/runtime-layout.md",
+  "id": "DPD-327MNX",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-reference-runtime-layout-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "9a41033fc07aef6a59604fa9f24f4080cc086acc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/runtime.py"
+    },
+    {
+      "blob": "ac4670747f78a91e49fbf29b8155530085c4747d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/mcp_settings.py"
+    },
+    {
+      "blob": "aa1a36d2b0380291d77aa3ff81c12026b03c214e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/install/provider_watchers.py"
+    },
+    {
+      "blob": "d2b3ea0cd51a15c2ec8828868eb9c03a98b0991b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/providers/settings.py"
+    },
+    {
+      "blob": "42e87d16f6942eb793617b78e693781c881667d5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/providers/watcher_service.py"
+    },
+    {
+      "blob": "bb587de04548f61668aee9d1d12cd35ff6ed4493",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/providers/metrics.py"
+    },
+    {
+      "blob": "0e2463b90f71bcd28b72ac636a93d7c5bd7fdf47",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/_app_lifespan.py"
+    },
+    {
+      "blob": "50bd9d52d5897dd02c4f86b80c9440ed02616ac4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_preparation.py"
+    },
+    {
+      "blob": "72075734fbef78540ef61ec74cf4e43c21260b72",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_workspace.py"
+    },
+    {
+      "blob": "3a7f93e5f50bcda7643c1a230a560a3da46ba374",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/role_identity.py"
+    },
+    {
+      "blob": "11e660d9404b0722bf125faf2bc737da0d27d3c0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/outside_scratch.py"
+    },
+    {
+      "blob": "e21930a61940ac50f090bb4ee6e1d9f45e35b19f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/role_handover_locator.py"
+    },
+    {
+      "blob": "ab649fa5dd2402a61b2ddd4c6fb9e3a2be7ee979",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/server_registry.py"
+    },
+    {
+      "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/daemon.py"
+    },
+    {
+      "blob": "96d40632f177b320536d7d5714aa414da5585df1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/tool_reports.py"
+    },
+    {
+      "blob": "ff9215b1a2f313985809b74a48a92580c95cea2c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py"
+    },
+    {
+      "blob": "22ab4aa0627357a04c04fe027fc19236295a6fbd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/workspace.py"
+    },
+    {
+      "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
+      "kind": "file",
+      "path": "mcp/tests/test_l192_provider_safety_prose.py"
+    },
+    {
+      "blob": "1163730323bb54006aede86eb251a53e97a8ecc5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/build_currentness.py"
+    },
+    {
+      "blob": "505ca868c7f3c031f538ca7709e1c2888ecc1ded",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/observer/provider_limits.py"
+    },
+    {
+      "blob": "2319cd59f5fe4cb132f6cf2dc90b3c4a2a718e60",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/benchmarks/runner_modules/execution.py"
+    }
+  ]
+}

@@ -120,8 +120,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
-            "content": "sha256:34aa5fe550bf695fef9838dd5996defb5c91bd3ecdf2a7e59cbcb880ced929e5",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:8817e1b1aecb2f4de8c68c77faf28b8f403a4a6f4173a959631c0736acf7bd17",
             "locator": {
               "kind": "file"
             },
@@ -136,7 +136,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
             "content": "sha256:341c2a6e29b416b644eb870c9f430bf31176a17301c15a41025633ac2a556f9d",
             "locator": {
               "kind": "symbol",
@@ -153,12 +153,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
             "content": "sha256:116f20c356ac4d340fa3f2c4cc126016f9fa8fd202979134bdfc71d523be9c94",
             "locator": {
-              "end": 528,
+              "end": 530,
               "kind": "line_range",
-              "start": 491
+              "start": 493
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -184,8 +184,8 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
-            "content": "sha256:34aa5fe550bf695fef9838dd5996defb5c91bd3ecdf2a7e59cbcb880ced929e5",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
+            "content": "sha256:8817e1b1aecb2f4de8c68c77faf28b8f403a4a6f4173a959631c0736acf7bd17",
             "locator": {
               "kind": "file"
             },
@@ -200,7 +200,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
             "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
               "kind": "symbol",
@@ -301,12 +301,12 @@
         },
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
             "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
-              "end": 363,
+              "end": 365,
               "kind": "line_range",
-              "start": 318
+              "start": 320
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -314,12 +314,12 @@
         },
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 360,
+              "end": 362,
               "kind": "line_range",
-              "start": 360
+              "start": 362
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -343,12 +343,12 @@
         },
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
             "content": "sha256:f58216ad6c1dec6c5c208a9730cf42e09686fff31688f595d74e0488b25a3c68",
             "locator": {
-              "end": 363,
+              "end": 365,
               "kind": "line_range",
-              "start": 318
+              "start": 320
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },
@@ -356,12 +356,12 @@
         },
         {
           "anchor": {
-            "blob": "17b3b3bf76e47846ad284959629e9f478c7ed2e0",
+            "blob": "8fcb8b68695bb8b7931cc4da20fd2d8d38690923",
             "content": "sha256:d1020bcb1bf04503d4cecf3f0ae6f8d1398a1184165f192fa8164e97d9af7119",
             "locator": {
-              "end": 360,
+              "end": 362,
               "kind": "line_range",
-              "start": 360
+              "start": 362
             },
             "path": "mcp/tests/test_converted_onboarding_drift_leaf_route.py"
           },

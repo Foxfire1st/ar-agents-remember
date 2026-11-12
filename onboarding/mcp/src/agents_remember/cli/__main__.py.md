@@ -55,8 +55,7 @@ installed runtime never calls it; it exists so the file shapes can be formatted 
 `knowledge.sqlite` into text knowledge. Card citations remain anchored at the code
 commit named by `lastVerifiedCommitHash`, read through `--code`; the whole result
 validates before writes and only conversion-format version `1` is supported. The
-command commits nothing. Its help names `c-13-install-and-onboard` and
-`docs/guides/first-conversion.md`: without an attributed baseline convert the root
+command commits nothing. Its help names the first step of the first-conversion procedure (MIK-R46 rule 6): without an attributed baseline convert the root
 in place, then adopt; with an official line convert one new leaf’s memory worktree
 as its first memory change, then close out and land. Other open lines cross through
 `worktree_sync` with `merge-memory`. The command, its read-only legacy-database
@@ -167,5 +166,7 @@ Source: mcp/src/agents_remember/cli/__main__.py
 
 - The current umbrella additionally registers providers-remove as an explicit operator command; it does not restore any provider setup or MCP provider tool. [19]
 
+
 - Frozen implementation of build_parser supporting the stated file behavior. [16]
+
 - The current runtime-command registry still registers upgrade-user-settings with its existing adapter; this leaf adds handoff-check separately in the knowledge-command registry. [18]

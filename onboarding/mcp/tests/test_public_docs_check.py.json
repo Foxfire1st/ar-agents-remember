@@ -1,0 +1,146 @@
+{
+  "path": "mcp/tests/test_public_docs_check.py",
+  "realizes": [],
+  "references": {
+    "1": {
+      "note": "The docstring states the clean-checkout case, the mutation method and the Git-backed command-line cases.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "2": {
+      "note": "The script is imported by file location as `check_public_docs`.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:c44d8849e685fbfa9e59ae1bb068ca2078436210980d5bda80c38a4135c759b3",
+            "locator": {
+              "kind": "symbol",
+              "name": "_load"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "3": {
+      "note": "The clean checkout must have no finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:17a49e50f135fecda1c13f918f7fd8c09d211921ab0542141fbec169d438ddb1",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_checkout_has_no_finding"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "4": {
+      "note": "Each link, anchor and path finding kind is proved by one mutation.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "5": {
+      "note": "Reach, step and identifier findings are proved on every page.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "6": {
+      "note": "Entry-link and package-description findings are proved.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "7": {
+      "note": "Markers allow their line and are findings when malformed.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:d20461a56d07aae562e98aa8b45ca56440610084d5b885afbb7c3c8126707ef8",
+            "locator": {
+              "kind": "file"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "8": {
+      "note": "The command line names file, line and target and fails on a finding.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:461e4036f1c4fcbd56d269d024b0d093c6c306c764be12a7f5ce8ef96856545e",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_script_names_file_line_and_target_and_fails"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    },
+    "9": {
+      "note": "The script passes on this checkout.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "5e4e48d46fc3453c8a335b465aa9b0b1cdd3570c",
+            "content": "sha256:377c5df30b4715a4cdf2a2e7b1464d97253b7b44991b6865d02a3ba1115bfe52",
+            "locator": {
+              "kind": "symbol",
+              "name": "test_the_script_passes_on_this_checkout"
+            }
+          },
+          "kind": "test"
+        }
+      ]
+    }
+  },
+  "schema": "ar-onboarding-file/v1"
+}

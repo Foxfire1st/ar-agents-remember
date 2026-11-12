@@ -1,0 +1,74 @@
+{
+  "confirmed": {
+    "codeTree": "883cd99bf39d98ad9a295289db97c05e2f89e73a",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 2 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "README.md",
+  "id": "DPD-CZBR1Q",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-README-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    },
+    {
+      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "blob": "7625b34c2c0d36ce1713bb7436c5e24a114b1ef8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py"
+    },
+    {
+      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+    },
+    {
+      "blob": "8d1b5e00d1cf12fac5ed5c9fbf2ad95dfd878573",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/operations/bootstrap.md"
+    },
+    {
+      "blob": "181c81f78275cfbda8aad2b96e8db82ddfacf341",
+      "kind": "file",
+      "path": "scripts/python-runtime-contract.env"
+    },
+    {
+      "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+    },
+    {
+      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    },
+    {
+      "blob": "026b25cfc0f0c7c01ed4aeebd60f00747b7b7c52",
+      "kind": "file",
+      "path": "docs/tool-details.md"
+    },
+    {
+      "blob": "0d22e8881af6762091dbd844fb1d2b99a6a80685",
+      "kind": "file",
+      "path": "docs/install/cursor.md"
+    }
+  ]
+}

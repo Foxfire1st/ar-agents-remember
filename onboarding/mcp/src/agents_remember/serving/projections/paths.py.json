@@ -85,24 +85,6 @@
         }
       ]
     },
-    "5": {
-      "note": "The store-layout + one-read-abstraction design.\n\nAnchor: `### 2.3 Store layout`",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "66849a0b573249f620bfbe8d70538cd8ae11cd38",
-            "content": "sha256:7e36ee1c3550c28c52b2b70c6efc634fc591a11d6d742d00595ceac075b300c9",
-            "locator": {
-              "end": 199,
-              "kind": "line_range",
-              "start": 177
-            },
-            "path": "docs/design/observable-lifecycle.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "6": {
       "note": "create_server invokes the application startup owner; it does not install an ambient lifecycle. Anchor: server startup call",
       "targets": [

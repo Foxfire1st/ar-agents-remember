@@ -19,11 +19,10 @@
     "leaf": "260928-MIK-L71",
     "task": "260928-MIK"
   },
-  "revision": 1,
+  "revision": 2,
   "routes": [
     "mcp",
-    "scripts",
-    "docs"
+    "scripts"
   ],
   "schema": "ar-family/v1",
   "status": "proposed",

@@ -173,4 +173,5 @@ and in `test_the_memory_quality_controller_persists_the_worklist_and_renders_it_
 
 Current source: The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
 
+
 - The current lifecycle catalog declares test_knowledge_worklist_leaf.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json. This is the complete declared two-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [40]

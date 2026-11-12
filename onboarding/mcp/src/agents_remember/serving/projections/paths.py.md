@@ -61,7 +61,7 @@ between the two sides (North-Star #5).
 - The drift snapshot reader using `drift_snapshot_dir` + the schema (3b). [3]
 
 - The drift-run producer that writes the snapshot to `drift_snapshot_dir` (3b). [4]
-- The store-layout + one-read-abstraction design. [5]
+
 
 - The serving module separately defines observer_logs_root, observer_root and drift_snapshot_dir; its single-owner docstring is not an importer inventory. [9]
 

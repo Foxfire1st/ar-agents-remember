@@ -22,9 +22,8 @@
     "leaf": "260928-MIK-L113",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "routes": [
-    "docs/reference",
     "mcp/src/agents_remember/install",
     "mcp/src/agents_remember/mcp/tools",
     "mcp/src/agents_remember/models",

@@ -1,10 +1,10 @@
 {
   "confirmed": {
-    "codeTree": "7e0a86a75b0d857cbf5e7a66598843db75cb4dc4",
-    "commit": "700979c170c47e6cc072b6c6e651eff3339e8df6",
-    "role": "curator",
-    "statement": "The tool reference's worktree_sync row now describes sync_source=\"repository-default\" (kept base pair, journalled sources and pinned tips, one sync-log entry, sync-source-moved on continue) as the code does, and its contract-scoped leaf measurement and quality-versus-coherence statements are unchanged and still true.",
-    "task": "260928-MIK-L60",
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 77 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
     "uncommitted": true
   },
   "document": "docs/reference/mcp-tools.md",
@@ -17,7 +17,7 @@
     "leaf": "260928-MIK-L204",
     "task": "260928-MIK"
   },
-  "revision": 2,
+  "revision": 3,
   "schema": "ar-dependent/v1",
   "stands_on": [
     {
@@ -37,6 +37,251 @@
       "blob": "1aa84cfdcb5c7c6a23646593b11f05bd874192c7",
       "kind": "file",
       "path": "mcp/src/agents_remember/application/memory_quality/knowledge_inputs.py"
+    },
+    {
+      "blob": "d0b0ddd9f150e32116b430ecc74907fcf68fee97",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/public_roster.py"
+    },
+    {
+      "blob": "de6a43ed2001fc740bfc55163c3d1a0d70ae39bb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/__init__.py"
+    },
+    {
+      "blob": "5865a5625745237980b5f2727a2b258b47488104",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/capsule_serving.py"
+    },
+    {
+      "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+    },
+    {
+      "blob": "16d2f8b54e6573f04af7ec37ad1b16d7f02f4e05",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/core.py"
+    },
+    {
+      "blob": "fb6082f143e28bb9f441482475286bbcec140d6b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/explainer.py"
+    },
+    {
+      "blob": "567816510b3d22da93f35b7d067b56bc73bc4893",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/explainer_surface.py"
+    },
+    {
+      "blob": "6c13d6defc09364b2088c4232b31b6f3d492a66b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/explainer_tools.py"
+    },
+    {
+      "blob": "b7ef5fc94fc32347b301880b444fe2a2f85775a9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/knowledge.py"
+    },
+    {
+      "blob": "8a44a33b7d21bf257d8af143ae86666f3177c995",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/lazy.py"
+    },
+    {
+      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+    },
+    {
+      "blob": "3f91234661460904091f50cb41164456aa515f04",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+    },
+    {
+      "blob": "78d1d879651aca07ed8ab09f7022678801d0b38d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/seat_retirement.py"
+    },
+    {
+      "blob": "ad4c89063b2e17da424c2cd56cec5fe24a47f564",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/skills_extension.py"
+    },
+    {
+      "blob": "88eee5a3e412e261ceee4f1d858eb283ef3138d4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/tasks.py"
+    },
+    {
+      "blob": "b6b26f36ebef5b6f3b46cfe94907ed6cd6acec33",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/worktrees.py"
+    },
+    {
+      "blob": "cb94c1223dd008cb60244403811e27e2e4192bfe",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/tools/tool_answer.py"
+    },
+    {
+      "blob": "73f449a8a73b02e407e06f3fc0c74fa5ac04f65b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/read_only.py"
+    },
+    {
+      "blob": "374d6d9650fe069cc8eb9ad69a39e036c1edfa82",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_start.py"
+    },
+    {
+      "blob": "caa8c6e923b4efaeb1c61856c613d10771f7a6c3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/role_launch_context.py"
+    },
+    {
+      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+    },
+    {
+      "blob": "8183e6a4500619df5c2fa51001dd0324d701085e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_liveness.py"
+    },
+    {
+      "blob": "02149a35f0d9aee6a3081da6d8a9868a47b4ee8c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_role_tools.py"
+    },
+    {
+      "blob": "8b3478d4129b44ccd822ac71a494feee127f3a92",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts"
+    },
+    {
+      "blob": "d35463d6c2b0bc1953df6b6e2cd1fcca533a515d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/landing_commit_check.py"
+    },
+    {
+      "blob": "d0b8e6fa2c415dec4821469774f9dc8f0bcccb63",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_doc_tools.py"
+    },
+    {
+      "blob": "030a9c583f38ba2151341a9a2c7218f88f6be12f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_master_retirement.py"
+    },
+    {
+      "blob": "1e308455648753fc68a4bdf38ffa249281f4a7df",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_sprint_archive.py"
+    },
+    {
+      "blob": "291ae855f5b9d6d4da7103cf8a6e266f8fee6ebb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py"
+    },
+    {
+      "blob": "29bbfb919fa2a5e25fc3e3ee172407e92e192fc0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/review_history.py"
+    },
+    {
+      "blob": "2dab02aff19ebd46538748a1862f8b9ee4192c26",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/tasks/document.py"
+    },
+    {
+      "blob": "235bbb664d2f527abfdfa47f8cbbcb96c8714650",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/read_files.py"
+    },
+    {
+      "blob": "fb78e142d61cf5b5b5abb2cba8f6b442d16968b7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/tools/explainer_control.py"
+    },
+    {
+      "blob": "597bca990a3cc373fbed97e7ae26e3f8c7da5d52",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py"
+    },
+    {
+      "blob": "88ece6e1110590381723a65e8df129899ebd3266",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py"
+    },
+    {
+      "blob": "7da9d6abdce7275958e06ed2baf8cbf04674a2e2",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/provider_runtime.py"
+    },
+    {
+      "blob": "b555b5f62a631803d7a2e8a66f6f1fc85a305913",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/leaf_refs.py"
+    },
+    {
+      "blob": "d926d3af762b8b31579204690834fb6f694fae7f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_message_files.py"
+    },
+    {
+      "blob": "c0dd4c37619f916f75c34be98b90018a3ccb6061",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/task_document_copies.py"
+    },
+    {
+      "blob": "a0b5ad238d8c829320217d9994826ecc6c88a546",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py"
+    },
+    {
+      "blob": "6327e089b3c2ef77df1cb26ed8516bd6a23a48a3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py"
+    },
+    {
+      "blob": "b221b8b684176f86cf5b09cb168417670aac51dd",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py"
+    },
+    {
+      "blob": "28609cb56fc37a22b7f120e629c7d3b968d23072",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/knowledge_write_route.py"
+    },
+    {
+      "blob": "c5c547f2f6818f886972bce92087be9d041c1fc9",
+      "kind": "file",
+      "path": "skills/l-01-agent-lifecycles/reference/refused-write.md"
+    },
+    {
+      "blob": "b814692a49df324c2495b8abf40a050f54a211f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/queue/closeout_queue.py"
+    },
+    {
+      "blob": "722fb3802ab8976d280ff37de4824015cd5bece7",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/closeout_queue.py"
+    },
+    {
+      "blob": "82fefcaace2946165b5c0ed8bc77bedecedd8fe9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/controlplane/closeout_queue_store.py"
+    },
+    {
+      "blob": "476c1c24ac02e05fb96b654322bf771287e6cbff",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/task_fact_publication.py"
+    },
+    {
+      "blob": "5a6864bbe774b036d2edc5d127c595590afe8aca",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/integration/master_review_gate.py"
     }
   ]
 }

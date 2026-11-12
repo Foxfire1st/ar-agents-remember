@@ -1,61 +1,2046 @@
 {
   "conversion": "1",
   "dependent_links": {
+    "file:.dagger/src/agents_remember_quality/main.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json",
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:.dagger/src/agents_remember_quality/profile_execution.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:.dagger/src/agents_remember_quality/selection_result.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:.githooks/_gate.sh": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:.github/workflows/publish-mcp-to-pypi.yml": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:.github/workflows/quality-checks.yml": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:benchmarks/cases/tensorflow-check-numerics-xla/case.json": [
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:dashboard/package-lock.json": [
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:dashboard/package.json": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:dashboard/src/cockpit/Cockpit.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
     "file:dashboard/src/cockpit/RoleChatsView.tsx": [
       "knowledge/dependents/DPD-99CBY7-rolechatsview-frame-target.json"
     ],
+    "file:dashboard/src/cockpit/document-chat/model.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/cockpit/layout.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/cockpit/paseoFrameControl.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:dashboard/src/cockpit/paseoFrameModel.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/cockpit/reviewChat.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/cockpit/reviewHash.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/cockpit/role-launcher/RoleLauncher.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
+    ],
+    "file:dashboard/src/cockpit/role-launcher/roleLauncherReadiness.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/cockpit/roleChatResult.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/cockpit/roleLaunchModel.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/explainer/ExplainerColumnPanels.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/explainer/FirstRequestForm.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/explainer/columnState.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/explainer/model.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/grammar/ModeBar.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/grammar/SidebarToggle.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/AttentionQueue.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/CloseoutQueue.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/EventRiver.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/changeset/DiffPane.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/StepDot.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/docHead.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/entryState.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/intentReviewEntry.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/model.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/pageParts.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/task-groups.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/detail-panel/taskReader.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/eventSummary.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/knowledge-reader/KnowledgeReader.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/knowledge-reader/PathViews.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/lifecycle-list/LifecycleList.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/lifecycle-list/rowState.ts": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/panels/review/ChangeBadges.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/FamilyReviewCenter.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/MeaningEffects.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:dashboard/src/panels/review/ReviewHeader.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/ReviewOutcome.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/ReviewSurface.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/SubjectJudgment.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/canvas/canvasModel.ts": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:dashboard/src/panels/review/changeSetRanks.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/changeTriage.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/explainer/ExplanationSwitch.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/explainer/ExplanationView.tsx": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:dashboard/src/panels/review/explainer/RevisionFrame.tsx": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:dashboard/src/panels/review/explainer/RevisionSelector.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/explainer/explainerModel.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/explainer/planned/PlannedReview.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/reading/SubjectSection.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/reading/pageParts.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/tree/ReviewTree.tsx": [
+      "knowledge/dependents/DPD-3P9XTZ-roadmap-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/tree/SortMenu.tsx": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/panels/review/worklistState.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:dashboard/src/tray/TrayDock.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/tray/TrayPanel.tsx": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:dashboard/src/tray/traySend.ts": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:docs/benchmarks-methodology.md": [
+      "knowledge/dependents/DPD-3P9XTZ-roadmap-md.json"
+    ],
+    "file:docs/concepts.md": [
+      "knowledge/dependents/DPD-3P9XTZ-roadmap-md.json"
+    ],
+    "file:docs/install/cursor.md": [
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
+    ],
+    "file:docs/reference/mcp-tools.md": [
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json"
+    ],
     "file:docs/tool-details.md": [
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
       "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:examples/mcp/server.example.json": [
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:examples/mcp/settings.example.json": [
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:mcp/certification-profile-v1.json": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/pyproject.toml": [
+      "knowledge/dependents/DPD-06057Y-docs-readme-md.json",
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/agent_binding.py": [
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/caller_harness.py": [
+      "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/closeout_queue.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/context_packet.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json",
+      "knowledge/dependents/DPD-T00S78-docs-guides-onboard-existing-repo-md.json",
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/direct_execution_grants.py": [
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_currentness/state.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_gate/gate.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_gate/landing.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_gate/predicates.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_worklist/generated_copies.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_worklist/link_targets.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_worklist/registry.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_worklist/route_context.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_worklist/unexplained.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_write_command.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_write_route.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/file_publication.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/handoff.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/reconsideration.py": [
+      "knowledge/dependents/DPD-3P9XTZ-roadmap-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/repoint.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/report.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/knowledge_writer/writer.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/landing_answer_shapes.py": [
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/master_architect_record.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/memory_quality/census.py": [
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json"
     ],
     "file:mcp/src/agents_remember/application/memory_quality/citation_runs.py": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
     ],
+    "file:mcp/src/agents_remember/application/memory_quality/controller.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json"
+    ],
     "file:mcp/src/agents_remember/application/memory_quality/knowledge_inputs.py": [
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/memory_quality/runs.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ],
     "file:mcp/src/agents_remember/application/memory_scope.py": [
       "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
     ],
+    "file:mcp/src/agents_remember/application/memory_tools.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json",
+      "knowledge/dependents/DPD-ZN7CD9-docs-guides-adopt-existing-memory-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/provider_runtime.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/read_files.py": [
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/review_artifact_cleanup.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/review_external_git_movement.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/review_frame_store.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/review_tree_comparison.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/review_worklist_answers.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/role_launch_context.py": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/runtime/install.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/skill_resources/catalog.py": [
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
     "file:mcp/src/agents_remember/application/skill_resources/provider.py": [
       "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
       "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
-      "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json"
+      "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
     ],
-    "file:mcp/src/agents_remember/application/user_settings_init.py": [
+    "file:mcp/src/agents_remember/application/task_docs/task_doc_field_homes.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_docs/task_doc_tools.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_docs/task_execution_graph_mutations.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_docs/task_execution_topology.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_docs/task_master_retirement.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_docs/task_review_step_up.py": [
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_docs/task_sprint_archive.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_docs/task_sprint_linkage.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/application/task_scoped_mcp.py": [
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/tool_answer_log.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json",
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
+    "file:mcp/src/agents_remember/application/tool_response.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/user_settings_init.py": [
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/worktree_code_state.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/worktree_tool_requests.py": [
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/application/worktree_tools.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/analysis.py": [
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/cli.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/constants.py": [
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/execution.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/mcp_registration.py": [
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/roots.py": [
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/services.py": [
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/benchmarks/runner_modules/workspace.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/evidence.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_access.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_maintenance.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_paths.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_server.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_service.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/explainer_workspace.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/kit.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/policy.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/presenter.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/presenter_host.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/presenter_store.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/presenter_tools.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/prospective.py": [
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/protocol.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/readiness.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/review-presenter.md": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/canvas/sessions.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/models.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/adapters.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/authority.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/canonical.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/environment_validation.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/models.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/planning.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/selection_results.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/certification/repository_profiles/validation.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/dashboard.py": [
+      "knowledge/dependents/DPD-06057Y-docs-readme-md.json",
+      "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/dashboard_daemon.py": [
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/discovery.py": [
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/knowledge_index.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/knowledge_validate.py": [
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_bridge.mjs": [
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
     "file:mcp/src/agents_remember/cli/paseo_catalog.py": [
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_explainer_host.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_frame.py": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_launch.py": [
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_role_caller.py": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_role_start.py": [
+      "knowledge/dependents/DPD-06057Y-docs-readme-md.json",
+      "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_role_tools.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_runtime.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_status.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/paseo_warmup.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_agent_override.py": [
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_document_chats.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_handover_artifacts.py": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_handover_file.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_handover_projection.py": [
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_instruction_details.py": [
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_instructions.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_launch_admission.py": [
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_launch_defaults.py": [
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
     "file:mcp/src/agents_remember/cli/role_launch_first_run.py": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-T00S78-docs-guides-onboard-existing-repo-md.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_launch_liveness.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_launch_preparation.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_launch_request_rules.py": [
+      "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_launch_routes.py": [
+      "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_launch_workspace.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_message_files.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_retire.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
       "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
     ],
+    "file:mcp/src/agents_remember/cli/role_start_answer.py": [
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/cli/role_step_up.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/tool_log_stats.py": [
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/cli/upgrade_user_settings.py": [
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/controlplane/closeout_queue_store.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/controlplane/held_store_layout.py": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:mcp/src/agents_remember/errors.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/install/experiment.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/install/mcp_settings.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/install/provider_watchers.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/install/runtime.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/_agentic_settings_core.py": [
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/_agentic_settings_sections.py": [
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/agentic_settings.py": [
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/cross_repo.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/json_settings.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/markdown_settings.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/models.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/paths.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/resolver.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
+      "knowledge/dependents/DPD-T00S78-docs-guides-onboard-existing-repo-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/serialize.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/setting_values.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/settings.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/coordination_context/storage.py": [
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/direct_execution_grants.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/generated_copies.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/git_command.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/git_facts.py": [
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/git_freshness.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/harnesses.py": [
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/memory_attribution.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/memory_cache.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/memory_init.py": [
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-T00S78-docs-guides-onboard-existing-repo-md.json",
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/memory_ledger.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/memory_mode.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
+      "knowledge/dependents/DPD-T00S78-docs-guides-onboard-existing-repo-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/checkout_coordination.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/control_vocabulary.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/fresh_host.py": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/gate_policy.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/host_environment.py": [
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/mcp_settings_location.py": [
+      "knowledge/dependents/DPD-06057Y-docs-readme-md.json",
+      "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
     "file:mcp/src/agents_remember/kernel/primitives/named_choices.py": [
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
     "file:mcp/src/agents_remember/kernel/primitives/paseo_authority.py": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
-      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
-    ],
-    "file:mcp/src/agents_remember/kernel/primitives/runtime_config.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
       "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
     ],
+    "file:mcp/src/agents_remember/kernel/primitives/paseo_node_paths.py": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/provider_degradation_settings.py": [
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/runtime_config.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/tool_reports.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/user_settings_location.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/primitives/version.py": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:mcp/src/agents_remember/kernel/route_index_census.py": [
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/build_staleness.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/read_only.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/__init__.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/capsule_serving.py": [
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/closeout.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/core.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/explainer.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/explainer_surface.py": [
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/explainer_tools.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/knowledge.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/lazy.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/memory.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
+      "knowledge/dependents/DPD-6WW03D-docs-guides-carryover-from-branch-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-T00S78-docs-guides-onboard-existing-repo-md.json",
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json",
+      "knowledge/dependents/DPD-ZN7CD9-docs-guides-adopt-existing-memory-md.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/role_agents.py": [
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
+      "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/seat_retirement.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/skills_extension.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/tasks.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/registration/worktrees.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
     "file:mcp/src/agents_remember/mcp/server.py": [
-      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/tools/core.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-PYMM5P-docs-reference-harnesses-md.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/tools/explainer_control.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/mcp/tools/knowledge.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/baseline.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-ZN7CD9-docs-guides-adopt-existing-memory-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/carryover.py": [
+      "knowledge/dependents/DPD-6WW03D-docs-guides-carryover-from-branch-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/carryover_apply.py": [
+      "knowledge/dependents/DPD-6WW03D-docs-guides-carryover-from-branch-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/carryover_documents.py": [
+      "knowledge/dependents/DPD-6WW03D-docs-guides-carryover-from-branch-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/carryover_evidence.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/carryover_records.py": [
+      "knowledge/dependents/DPD-6WW03D-docs-guides-carryover-from-branch-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/conversion/card_authoring.py": [
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory/knowledge_index/cache.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
     ],
     "file:mcp/src/agents_remember/memory_quality/converted_check.py": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
     ],
+    "file:mcp/src/agents_remember/memory_quality/curator_checklist.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/integrity/check_missing_onboarding.py": [
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/integrity/onboarding_drift_check/summary.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json",
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/knowledge_validator/family_routes.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/knowledge_validator/rules_admission.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/knowledge_validator/rules_decisions.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/knowledge_validator/rules_link_targets.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/knowledge_validator/rules_overviews.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/knowledge_validator/rules_reference_anchors.py": [
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/knowledge_validator/rules_routes.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/landing_report.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/legacy_cards.py": [
+      "knowledge/dependents/DPD-ZN7CD9-docs-guides-adopt-existing-memory-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/memory_census.py": [
+      "knowledge/dependents/DPD-T3PEFV-docs-reference-path-rules-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/reference_anchors.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/reference_state.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json"
+    ],
     "file:mcp/src/agents_remember/memory_quality/source_files.py": [
-      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json"
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/style/citations/test_case_ranges.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/memory_quality/style/citations/test_cases.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/build_currentness.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/certification/base.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/context_packet.py": [
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/drift.py": [
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json",
+      "knowledge/dependents/DPD-TCXJRQ-docs-guides-refresh-stale-onboarding-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge/effect.py": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge/review_evidence.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge/review_frame.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge/review_trees.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge_files/history.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge_files/records.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge_files/shapes.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/knowledge_files/sidecars.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/lifecycles/curator_coherence.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/lifecycles/door.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/lifecycles/enclosure.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/lifecycles/operation_kinds.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/memory.py": [
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/memory_content_excludes.py": [
+      "knowledge/dependents/DPD-ZN7CD9-docs-guides-adopt-existing-memory-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/role_agents.py": [
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/role_identity.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/role_launcher.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/skill_resources.py": [
+      "knowledge/dependents/DPD-2B7PTY-docs-install-pi-md.json",
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/task_document.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/task_document_ref.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/task_execution_edges.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/test_evidence.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/src/agents_remember/models/tools/public_roster.py": [
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/models/tools/tool_answer.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-EJ2Y7Z-docs-reference-resolver-c08-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/observer/acp_providers.py": [
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json"
+    ],
+    "file:mcp/src/agents_remember/observer/host_activity.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/observer/native_attention.py": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/observer/provider_limits.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/observer/reducer_impl/_attention.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/observer/reducer_impl/_attention_native.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/observer/task_entries.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/observer/tool_events.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/canvas/kit/ar-video/23fd71bf/VOCABULARY.md": [
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/canvas/kit/manifest.json": [
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/canvas/kit/open-generative-ui/0.1.0-8391a94/PROVENANCE.md": [
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/canvas/kit/open-generative-ui/0.1.0-8391a94/open-generative-ui-kit.js": [
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/host-harness-homes.json": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/host-session-environment.json": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_host/contract.json": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_host/package-lock.json": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_host/package.json": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/bridge.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/hierarchy.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/load.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/look.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/page.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/pick.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/selection.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/sidebar.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/client/start.ts": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/package.json": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/paseo-plugin.json": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/acp_providers.ts": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/background_wait.ts": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/protocol/dist/provider-manifest.js": [
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_ended.ts": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/package_data/paseo_plugin/server/turn_log.ts": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/providers/degradation.py": [
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/providers/metrics.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/providers/settings.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/providers/setup_common.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/providers/watcher_service.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/_app_lifespan.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/app.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/build_currentness.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/build_info.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/canvas.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/changeset_endpoints.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/daemon.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/explainer_routes.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/explainer_watcher.py": [
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_daemon.py": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-21GMJ5-docs-install-cursor-md.json",
+      "knowledge/dependents/DPD-6528VF-docs-install-openclaw-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py": [
+      "knowledge/dependents/DPD-3E9E2R-docs-install-claude-code-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-GNFCSM-docs-install-codex-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_install.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_install_plan.py": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_node.py": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_plugin_files.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_provision.py": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_remedy.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_run.py": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_settings.py": [
+      "knowledge/dependents/DPD-8PE0G9-security-md.json",
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/paseo/paseo_start.py": [
+      "knowledge/dependents/DPD-K2QMWQ-docs-host-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/projections/snapshots_impl/_analytics.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/projections/snapshots_impl/_closeout_queue.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/server_registry.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/serving/write_guard.py": [
+      "knowledge/dependents/DPD-7YCJ2B-docs-design-canvas-host-md.json",
+      "knowledge/dependents/DPD-8PE0G9-security-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/document.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-PMZ21Z-docs-guides-review-page-and-explainer-md.json",
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/document_refs.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/render.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/route_review.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/serving_preflight.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/store.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/task_intent.py": [
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/tasks/task_paths.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/cutover_lock.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-GRXQW5-docs-reference-drift-c02-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/direct_landing.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/closeout/curator_coherence_publication.py": [
+      "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",
+      "knowledge/dependents/DPD-NGC2F6-l188-mcp-src-agents_remember-package_data-runtime-docs-tool-details-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/closeout/door.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/closeout/door_evidence.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/direct_landing/direct_landing_execution.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/integration_ref_transaction.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/integration_resolution_handoff.py": [
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_enclosure_terminal.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_controls.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_location.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operation_store.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/lifecycle/lifecycle_operations.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/integration/master_review_gate.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/knowledge_gate.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/leaf_refs.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/ledger_projection.py": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/closeout.py": [
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/closeout_external.py": [
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/finalize.py": [
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/git.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/guidance.py": [
+      "knowledge/dependents/DPD-6WW03D-docs-guides-carryover-from-branch-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/integrate.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/landing_commit_check.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/onboarding.py": [
+      "knowledge/dependents/DPD-9F0Q8G-docs-guides-use-external-memory-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/quality/dagger_authority.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/quality/gate.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/record_landing.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/startup/start_contract.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/startup/start_memory.py": [
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/modules/terminal_agents.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/outside_scratch.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/publication_admission.py": [
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/queue/closeout_projection_members.py": [
+      "knowledge/dependents/DPD-23C91T-docs-dashboard-md.json",
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/queue/closeout_projection_publication.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/queue/closeout_queue.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/queue/closeout_queue_evidence.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json",
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/queue/closeout_queue_graph.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/queue/closeout_staged_quality.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/review_history.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/role_handover_locator.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json",
+      "knowledge/dependents/DPD-W0T9V9-l188-docs-reference-settings-json-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/role_reports.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/route_review.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/route_review_scope.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/scheduling_mode.py": [
+      "knowledge/dependents/DPD-W34WCW-docs-reference-execution-topology-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/series_closeout.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/series_merge_admission.py": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/task_document_copies.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/task_fact_publication.py": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/task_resolver.py": [
+      "knowledge/dependents/DPD-86HJGF-docs-architecture-md.json"
+    ],
+    "file:mcp/src/agents_remember/worktrees/worktree_contract.py": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/causal_preflight.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/clean_room.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json",
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/crap_calculator.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/dependency_ownership.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/diff_coverage.py": [
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/post_coverage.py": [
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/profile_selection.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/quality_plan.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/code_quality/retry_proof.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/cadence_runner.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/catalog_canonical.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/consumer_inventory.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/dagger_admission.py": [
+      "knowledge/dependents/DPD-6ZHCCN-docs-design-python-test-evidence-md.json",
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/evidence_lanes.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json",
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/evidence_lifecycle.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/lane_manifest.py": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/test_support/agents_remember_test_support/testing/pytest_bootstrap.py": [
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/tests/conftest.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/tests/evidence-lifecycle.toml": [
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json"
+    ],
+    "file:mcp/tests/test-evidence-lanes.toml": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-ZMQ523-docs-design-python-evidence-system-md.json",
+      "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
+    ],
+    "file:mcp/tests/test_canvas_kit.py": [
+      "knowledge/dependents/DPD-QH1N0S-docs-design-canvas-kit-md.json"
+    ],
+    "file:mcp/tests/test_l192_provider_safety_prose.py": [
+      "knowledge/dependents/DPD-327MNX-docs-reference-runtime-layout-md.json"
+    ],
+    "file:mcp/tests/test_transaction_only_worktree_delivery.py": [
+      "knowledge/dependents/DPD-FR0VZP-docs-reference-repository-certification-profile-md.json"
     ],
     "file:pyproject.toml": [
       "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
       "knowledge/dependents/DPD-ZT8YY7-docs-design-python-pytest-bootstrap-md.json"
     ],
+    "file:scripts/bootstrap-mcp-venv.sh": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/check-host-contract.py": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:scripts/check-public-docs.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/check-python-runtime.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/install-python-runtime.sh": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/pnt-sandbox.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/pnt_sandbox/README.md": [
+      "knowledge/dependents/DPD-0K35N0-docs-release-checklist-md.json"
+    ],
+    "file:scripts/pnt_sandbox/cli.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/pnt_sandbox/operations.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/python-runtime-contract.env": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json"
+    ],
+    "file:scripts/sync-dashboard.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json"
+    ],
+    "file:scripts/sync-projection-types.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:scripts/sync-runtime.py": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-F7QBDJ-docs-benchmarks-methodology-md.json",
+      "knowledge/dependents/DPD-VXKNMA-benchmarks-docs-benchmarks-methodology-md.json"
+    ],
     "file:scripts/sync-skills.py": [
-      "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json"
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json",
+      "knowledge/dependents/DPD-Y454FF-l188-AGENTS-md.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
+    "file:scripts/test-under-load.sh": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:setup-hooks.sh": [
+      "knowledge/dependents/DPD-78737N-CONTRIBUTING-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/SKILL.md": [
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/composition-manifest.json": [
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/core/authority.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/core/every-role.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/core/launcher.md": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/operations/bootstrap.md": [
+      "knowledge/dependents/DPD-06057Y-docs-readme-md.json",
+      "knowledge/dependents/DPD-633P3W-l188-docs-llms-txt.json",
+      "knowledge/dependents/DPD-CZBR1Q-readme-md.json",
+      "knowledge/dependents/DPD-MQCJK4-docs-getting-started-md.json",
+      "knowledge/dependents/DPD-Q4APMS-mcp-readme-md.json",
+      "knowledge/dependents/DPD-XV7QBE-docs-install-readme-md.json",
+      "knowledge/dependents/DPD-ZQB4YZ-docs-reference-skills-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/operations/closeout.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/operations/coordination.md": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/operations/implementation.md": [
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/operations/planning.md": [
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/operations/review.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-9K25G8-docs-reference-worktrees-c09-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/reference/curator/card-formats-and-citations.md": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/reference/curator/change-routing.md": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/reference/knowledge/serving-build.md": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/reference/message-handover.md": [
+      "knowledge/dependents/DPD-QFGFS0-docs-reference-role-capsules-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/reference/refused-write.md": [
+      "knowledge/dependents/DPD-X6G7K3-leaf-memory-tools-scope.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/reference/repository-research.md": [
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/architect.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/bootstrap.md": [
+      "knowledge/dependents/DPD-1DXK6Q-docs-guides-cost-aware-bootstrap-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/curator.md": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/investigator.md": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/manager.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/orchestrator.md": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/reviewer.md": [
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/roles/worker.md": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json",
+      "knowledge/dependents/DPD-B540GW-docs-roles-md.json",
+      "knowledge/dependents/DPD-EG5TYT-l188-docs-features-md.json",
+      "knowledge/dependents/DPD-GHEXS9-docs-install-hermes-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/templates/curator-handoff-ingestion.md": [
+      "knowledge/dependents/DPD-TXRND9-docs-reference-knowledge-system-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/templates/curator-handoff-list.md": [
+      "knowledge/dependents/DPD-71WYH4-docs-concepts-md.json"
+    ],
+    "file:skills/l-01-agent-lifecycles/templates/leaf-task.md": [
+      "knowledge/dependents/DPD-A3XZ3Q-docs-faq-md.json"
+    ],
+    "file:system/defaults/examples/memory-repo/settings.json": [
+      "knowledge/dependents/DPD-T00S78-docs-guides-onboard-existing-repo-md.json"
+    ],
+    "file:system/defaults/examples/memory-repo/task-publication.md": [
+      "knowledge/dependents/DPD-XAARS1-docs-workflows-md.json"
     ],
     "record:INV-033XSD": [
       "knowledge/dependents/DPD-10YCT2-l188-docs-tool-details-md.json",

@@ -99,6 +99,7 @@ edit writes topology schema bytes (`orchestrates`/`executionGraph`/`executionNat
 
 - Ordinary execution-topology edits are validated against canonical cross-document topology; graph-less sprints skip graph validation and authored graphs cannot be dropped. [5]
 
+
 - The served-build preflight refuses a topology write whose serving runtime's `TaskDocument` model lacks the topology fields; it is a model self-probe and checks no installed version. [6]
 
 - A move whose leaf samples an edge endpoint refuses with the named retargets-edge cause before any acyclicity check (L15-R8 F3). [7]

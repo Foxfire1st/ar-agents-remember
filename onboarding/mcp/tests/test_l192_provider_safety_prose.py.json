@@ -3,7 +3,7 @@
   "proves": [
     {
       "anchor": {
-        "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+        "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
         "content": "sha256:f7ea82e58baaf00eea2802e8030cdb23731b0b3235d03d48be4cf6e40dc1bf10",
         "locator": {
           "kind": "symbol",
@@ -26,7 +26,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:c767a119ccfbcaff9285bab95ef983385d5ffc032c093a4815cf649ff180c6fe",
             "locator": {
               "end": 18,
@@ -43,7 +43,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:69cbf6d2218d8976f8440f41543d687065d51d1122093817c4713f375f3b8218",
             "locator": {
               "kind": "symbol",
@@ -54,7 +54,7 @@
         },
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:f36968cfe15f6754f6e5a8ae0706b417a3c103b2aad14bfb32d8007fae1e9b29",
             "locator": {
               "kind": "symbol",
@@ -65,7 +65,7 @@
         },
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:703ba97dbfddf8c6a0db6b677ca7d3e456569f37840855e8dfc9a5db4d0d444e",
             "locator": {
               "kind": "symbol",
@@ -81,7 +81,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:b1ae8ef9fc2fba717510d3c29c588cd4dbecec12432d36aa15de3e212be0f8f4",
             "locator": {
               "kind": "symbol",
@@ -97,7 +97,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:decba251f4854e2ec6082efd7e9a26af1a748078a7a36733e4076d3ce8af78f3",
             "locator": {
               "kind": "symbol",
@@ -113,7 +113,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:ba4a8b12a192b9f50a5f8324a5d886240efb5005d2b62f0e8305b75fa64f5344",
             "locator": {
               "kind": "symbol",
@@ -129,7 +129,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
             "content": "sha256:90fb080436e2c7e742daa5faf7950f0555848640f9a3598da690cd92d03e99c0",
             "locator": {
               "kind": "symbol",
@@ -141,15 +141,14 @@
       ]
     },
     "8": {
-      "note": "Both documents must state which settings document each stop reader can select from and keep naming the install and cleanup routes.",
+      "note": "Both documents must state which settings document each stop reader can select from and keep naming the install route.",
       "targets": [
         {
           "anchor": {
-            "blob": "05e047480d7e4920f8a554cf5469ca99110cced6",
-            "content": "sha256:06aee00160e0aef39981bb24d836b642abe5f0e14c0db870ee4ce56caa0cd30a",
+            "blob": "25a6786f3f9bdba0f0a60e84842b9f309b259762",
+            "content": "sha256:afd437ecaf0ffe7899983a56cf6d40ac391fc6d375abe1976ed365cafd705e08",
             "locator": {
-              "kind": "symbol",
-              "name": "test_each_document_states_which_document_each_stop_reader_can_select_from"
+              "kind": "file"
             }
           },
           "kind": "test"

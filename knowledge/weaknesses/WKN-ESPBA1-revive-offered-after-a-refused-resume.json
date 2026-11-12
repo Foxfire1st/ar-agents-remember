@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "d47efafbf68e2cf79df9465341431390a52632ec",
+    "content": "sha256:8e4e06378e04e5ac0bc23c37488b0085ef9d782d39da67d25def824dd9f044a9",
+    "locator": {
+      "kind": "symbol",
+      "name": "STATUS_TABLE"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_status.py"
+  },
+  "id": "WKN-ESPBA1",
+  "kind": "context",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-39",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "Revive is offered for a session that closed while a turn was open also after an earlier resume of it was refused; only for other closed sessions does the offer depend on the refusal."
+}

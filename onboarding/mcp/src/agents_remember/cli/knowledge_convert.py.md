@@ -39,8 +39,7 @@ report's currentness counts.
   new leaf and convert its memory worktree with its paired code worktree as that
   leaf’s first memory change, then close out and land under the validator/invariant
   gate; the conversion itself counts as no change. Other open lines cross at their
-  next `worktree_sync` with `merge-memory`. See `c-13-install-and-onboard` and
-  `docs/guides/first-conversion.md`.
+  next `worktree_sync` with `merge-memory`. See `c-13-install-and-onboard`.
 - It writes only after the whole converted tree validated.
 - The conversion command, the read-only legacy-database reader
   (`memory/conversion/legacy_db.py`) and conversion-format version 1 are permanent.

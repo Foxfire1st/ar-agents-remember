@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+    "content": "sha256:9804b5413c76e17fcce6ac14a4351cb6fef6b8fcb578161c9b08bb0970cae73a",
+    "locator": {
+      "kind": "symbol",
+      "name": "browser_module"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+  },
+  "id": "WKN-04HWB8",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-32",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The explainer publishes a page only with the Playwright module and its browser, which an installation from the wheel does not bring; without them render answers unavailable and the review page shows no word about it."
+}

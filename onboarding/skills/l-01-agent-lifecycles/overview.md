@@ -156,6 +156,7 @@ Before escalating, Manager reads its own rulings and the Architect rulings for t
 - Bootstrap reports the foundation state and names starting the Architect as the next step; it can finish with `not-recorded` and claims no foundation. [29]
 - The bootstrap operation writes user settings in step 4, initializes the memory root in step 5, reads what the baseline will carry in step 6, adopts the baseline in step 7, and reports the knowledge foundation's state in step 8. [31]
 - The procedure these carriers delegate to, and its own statement that there is no taskless entry to it: a curator's authoring seat is opened on a task document, and reading the knowledge state before such a task exists stays with the bootstrap seat. [34]
+
 - Authored migration prose uses the shared writing profile, and proposed rewrites receive independent meaning review before the normal writer publishes. [91]
 
 

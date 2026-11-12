@@ -1,0 +1,28 @@
+{
+  "anchor": {
+    "blob": "53ffe2a0331299a366356ca0b1b3e0dc6317c750",
+    "content": "sha256:fa9c45e249cef9bb55a8f4c1eaa37c57eb7d4302034c40a3aa4659345047f0a7",
+    "locator": {
+      "kind": "file"
+    },
+    "path": "mcp/src/agents_remember/cli/paseo_explainer_host.py"
+  },
+  "id": "WKN-THTYAX",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-33",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The start of the explainer hands the host no rule that keeps the user's own tool server out, unlike role_start; an explainer on Claude Code loaded the machine's installed tool server and made one call to it."
+}

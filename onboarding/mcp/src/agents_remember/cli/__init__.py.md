@@ -36,4 +36,5 @@ The nearest route overview documents the umbrella CLI under `cli/`.
 
 - Retired at the fifth freeze d59c3493: mcp/src/agents_remember/cli/dashboard.py::run - the bytes it recorded now occur 26 times in the file, so no single home can be named and it is not given to the likelier one. Retired means the anchor no longer stands, not that the cited subject was deleted.
 
+
 - The umbrella entrypoint dispatches subcommands for this package. Anchor: `main` [2]

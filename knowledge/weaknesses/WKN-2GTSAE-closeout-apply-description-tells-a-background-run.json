@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "551d4ee801406a1faf1ccde0cfa641425c5ee4e0",
+    "content": "sha256:f758370554765050a6b45db6ccf10e088ddbc29d95e2186f32780660fca5649d",
+    "locator": {
+      "kind": "symbol",
+      "name": "_register_closeout_command_tools"
+    },
+    "path": "mcp/src/agents_remember/mcp/registration/closeout.py"
+  },
+  "id": "WKN-2GTSAE",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-20",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The served description of worktree_closeout_apply says that the call returns promptly and that worktree_status is polled for progress, while the call runs the whole closeout before it answers and leaves no record in the operation journal."
+}

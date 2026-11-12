@@ -87,12 +87,12 @@
       "targets": [
         {
           "anchor": {
-            "blob": "aba71ec71952433a1356dd2336cde60169db599a",
+            "blob": "5691b694e756469475d783c426d9781ef14c8633",
             "content": "sha256:8a4b6c56f0180bedc3c443a06d93c7c8674441a5c20feb3eac7e0f16dd5c29d4",
             "locator": {
-              "end": 724,
+              "end": 725,
               "kind": "line_range",
-              "start": 724
+              "start": 725
             },
             "path": "mcp/tests/test-evidence-lanes.toml"
           },
@@ -105,12 +105,10 @@
       "targets": [
         {
           "anchor": {
-            "blob": "f260fecfaf3eaa190474ddaabdf3b33e466a252b",
-            "content": "sha256:59c1906565dbfe011e824511f7a77e69deb73531ed789fd602b21b74aac23cf1",
+            "blob": "0c6c20e9222ec9800d48e087ab0aa6a3032fc0ed",
+            "content": "sha256:1aa33777ae7a33dfc51223b8fcff85df6157f2666df3ee3e15896a582e545153",
             "locator": {
-              "end": 159,
-              "kind": "line_range",
-              "start": 122
+              "kind": "file"
             },
             "path": "docs/reference/worktrees-c09.md"
           },

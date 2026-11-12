@@ -1,10 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations",
       "prevents_costly_mistake"
     ],
-    "justification": "The separation is realized in the package metadata and in both READMEs, and conflating the two ranges would either refuse a distribution's 3.14 release at install time or let development drift off the pinned managed runtime."
+    "justification": "The package manifest admits every 3.14 release while the managed runtime contract pins the exact 3.14.8 release; read as two separate statements, they prevent an install or a development run on the wrong interpreter."
   },
   "applicability": "The installable agents-remember-mcp package and the documentation that states its supported range.",
   "conditions": [

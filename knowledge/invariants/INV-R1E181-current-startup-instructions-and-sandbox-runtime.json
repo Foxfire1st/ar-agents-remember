@@ -1,9 +1,9 @@
 {
   "admission": {
     "criteria": [
-      "spans_locations"
+      "prevents_costly_mistake"
     ],
-    "justification": "Retired starter and copy commands survived in the setup skill, a sandbox expectation module and the settings reference at once, so the removal is durable only where all three agree."
+    "justification": "A startup instruction or a sandbox expectation that names a retired path makes the first call of every session fail; the record keeps the two surfaces agreeing on the one-call path."
   },
   "applicability": "Startup and install guidance that a user or sandbox runner follows to reach a working seat.",
   "conditions": [

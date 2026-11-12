@@ -1,0 +1,84 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/install/claude-code.md",
+  "id": "DPD-3E9E2R",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-install-claude-code-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "436a4caf23092264494e8678f2b27e99c20f69a1",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_catalog.py"
+    },
+    {
+      "blob": "feb5d42967a4ce04f393b44d43171ffab47f5558",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_launch.py"
+    },
+    {
+      "blob": "160e313efbefa3c044cc286261c123d7a9bad3ea",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/agent_binding.py"
+    },
+    {
+      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+    },
+    {
+      "blob": "54ec9f04b391dfafa4822a69b41c26fcf760201e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/caller_harness.py"
+    },
+    {
+      "blob": "f0866515684aa632f534294be7451aa0a58b5589",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/_agentic_settings_core.py"
+    },
+    {
+      "blob": "82bf56a294bd3dec8696c1d78382b5ac9e8a082b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/agentic_settings.py"
+    },
+    {
+      "blob": "2f783bd16246b9c1d169fd35ee33f0908e937c91",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/harnesses.py"
+    },
+    {
+      "blob": "dedd3c7307afdbd303da1409b5aabd3363ea93fb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/skill_resources.py"
+    },
+    {
+      "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
+    },
+    {
+      "blob": "6409c3b172fd81910a4386fa06cac88e5ba2580e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/landing_answer_shapes.py"
+    },
+    {
+      "blob": "edb7bda01a89f0f86e766fdd71c98193567c1ee6",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_plugin/server/fixtures/paseo-0-15/@getpaseo/protocol/dist/provider-manifest.js"
+    }
+  ]
+}

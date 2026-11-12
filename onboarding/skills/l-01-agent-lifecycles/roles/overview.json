@@ -171,37 +171,6 @@
         }
       ]
     },
-    "14": {
-      "note": "The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters.",
-      "targets": [
-        {
-          "anchor": {
-            "blob": "c22c62bbdfe2fc23b5f422bcee103184e44fb6d7",
-            "content": "sha256:41d82ed7f1a26f523b7f40d8599b6ac03656152135054b225d3f08b054b92fcf",
-            "locator": {
-              "end": 45,
-              "kind": "line_range",
-              "start": 45
-            },
-            "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
-          },
-          "kind": "code"
-        },
-        {
-          "anchor": {
-            "blob": "44f621b66ed8904f45825e9ac54b6edbe411f5c1",
-            "content": "sha256:5b9911f3e3d123971724fe016730d77998dbb6cb5245d823712ac831b2b54a88",
-            "locator": {
-              "end": 11,
-              "kind": "line_range",
-              "start": 5
-            },
-            "path": "docs/reference/execution-topology-migration.md"
-          },
-          "kind": "code"
-        }
-      ]
-    },
     "16": {
       "note": "Lifecycle publication and recovery carry the actual code/memory outputs.",
       "targets": [
@@ -1694,6 +1663,38 @@
               "start": 86
             },
             "path": "skills/l-01-agent-lifecycles/operations/curation.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "68": {
+      "note": "The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. Target: skills/l-01-agent-lifecycles/criteria/plan-review.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "c22c62bbdfe2fc23b5f422bcee103184e44fb6d7",
+            "content": "sha256:ef11ea20138cd2e6693b3158b879528a8ecbb31f399a0e0021ee098e868ed281",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "skills/l-01-agent-lifecycles/criteria/plan-review.md"
+          },
+          "kind": "code"
+        }
+      ]
+    },
+    "69": {
+      "note": "The graph-less atomic-sequential default describes sprint shape; nothing serializes the masters. Target: docs/reference/execution-topology.md.",
+      "targets": [
+        {
+          "anchor": {
+            "blob": "7ffb2dd393f277cd5e456a945e2951235c520b27",
+            "content": "sha256:39c7032f5d593dd498f8541c0878b18abdcfa2239f20cfeac2e1d20e2090721c",
+            "locator": {
+              "kind": "file"
+            },
+            "path": "docs/reference/execution-topology.md"
           },
           "kind": "code"
         }

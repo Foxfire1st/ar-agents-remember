@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "ba79fc48cc97689f936b1a0038c1cea35a33f307",
+    "content": "sha256:1569f53735df7c7c2653cd748d2274967f4bf796ecf59d689db6c621c8c1d102",
+    "locator": {
+      "kind": "symbol",
+      "name": "LIMITS"
+    },
+    "path": "mcp/src/agents_remember/canvas/policy.py"
+  },
+  "id": "WKN-GCCPMJ",
+  "kind": "debt",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-25",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The limit table names 64 files and 16 MiB as limits of a revision, and the store applies neither: every caller passes the default FrameLimits."
+}

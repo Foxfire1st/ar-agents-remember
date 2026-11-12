@@ -1,0 +1,136 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/reference/repository-certification-profile.md",
+  "id": "DPD-FR0VZP",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-reference-repository-certification-profile-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "f00422a28439082d2b7c652601a8e24931781fc8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/models.py"
+    },
+    {
+      "blob": "8a5013e5dd6b061868fe42e9419db636b67ef7a3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/validation.py"
+    },
+    {
+      "blob": "f68a57c94ffbd97a17bf284feb0f5345c496377b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/authority.py"
+    },
+    {
+      "blob": "10f7c90ddbd1e3735d3119c9a7765c34636b762d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/adapters.py"
+    },
+    {
+      "blob": "8d005fa360cbac2b426278eec6d3e499f056a462",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/canonical.py"
+    },
+    {
+      "blob": "41a5e3dcfca5d2ee259b4640ade64d418291d377",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/planning.py"
+    },
+    {
+      "blob": "762d4436e6a45a8917c12a61ca4a53c6271a3fc0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/environment_validation.py"
+    },
+    {
+      "blob": "3c7f9ec113b068f41a3976ddfa6ac2b9aefb5c0e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/models.py"
+    },
+    {
+      "blob": "6afba62c4e08748e497e2fb553252838af7e78ba",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/models/certification/base.py"
+    },
+    {
+      "blob": "92c22a4530c9ff9dbc70e6741fbba751a73d2d31",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/quality/clean_executor.py"
+    },
+    {
+      "blob": "ee971f9439bb92610e7057de9349aa72968a2eab",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/quality/execution/sandbox.py"
+    },
+    {
+      "blob": "b2f9f1624c63b2e7e58d9486c5d024f84fd7903e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/worktrees/modules/quality/gate.py"
+    },
+    {
+      "blob": "f44c8d99dcf91688bcc70c6659a03fbf91c40a5e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/errors.py"
+    },
+    {
+      "blob": "d29d100ea200d65a695333b54064543d7833f90e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/runtime_config.py"
+    },
+    {
+      "blob": "5c32446eac74ee6d2f127f7aa20b8504b3d53f23",
+      "kind": "file",
+      "path": "mcp/test_support/agents_remember_test_support/code_quality/clean_room.py"
+    },
+    {
+      "blob": "0c24e250bdad051ebbf801ab785d7bacd0ceb1f6",
+      "kind": "file",
+      "path": "mcp/certification-profile-v1.json"
+    },
+    {
+      "anchor": {
+        "blob": "5e8b6ed4fee3c6d9853f26988106bc0f2d4b0223",
+        "content": "sha256:66cada310dbc541a08fade0b82a0c6b3b7465ec50c95e11a52c7b1d93f43ecc7",
+        "locator": {
+          "kind": "symbol",
+          "name": "test_l56_required_references_separate_requested_dagger_from_ordinary_closeout"
+        },
+        "path": "mcp/tests/test_transaction_only_worktree_delivery.py"
+      },
+      "kind": "anchor"
+    },
+    {
+      "blob": "f3353426eefed3e05f356f1bbb0747ce628a6ae5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/certification/repository_profiles/source_selection/validation.py"
+    },
+    {
+      "blob": "111d8758e5ed4bfec7bdc56c84cce997e7294e50",
+      "kind": "file",
+      "path": ".dagger/src/agents_remember_quality/main.py"
+    },
+    {
+      "blob": "a1748d36eb104418d424c84a97a233c890f77a33",
+      "kind": "file",
+      "path": ".dagger/src/agents_remember_quality/profile_execution.py"
+    },
+    {
+      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    }
+  ]
+}

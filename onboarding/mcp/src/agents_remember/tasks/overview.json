@@ -621,7 +621,7 @@
       "targets": [
         {
           "anchor": {
-            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
+            "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
             "content": "sha256:82fd6bdc8ca3bc80cd92dc3a3b9769dcbf9c20bd5282766e4764b7105b23401e",
             "locator": {
               "kind": "symbol",
@@ -975,16 +975,14 @@
       ]
     },
     "46": {
-      "note": "Current preflight checks model fields rather than distribution versions\n\nAnchor: topology and retirement preflight",
+      "note": "Current preflight checks model fields rather than distribution versions",
       "targets": [
         {
           "anchor": {
-            "blob": "8e3ddf6d6df585c983e84488db22515b68d68a78",
-            "content": "sha256:45fd69326faadad7a25213bca6e5d55072ae33f2b536a94e22a682bc45fda254",
+            "blob": "20f58808c1d618e11ba44426f4a9998be9753891",
+            "content": "sha256:6842d39f56830b9abdeec0977f834b840e41957004e372706cadf4f0c88e1ab2",
             "locator": {
-              "end": 56,
-              "kind": "line_range",
-              "start": 1
+              "kind": "file"
             },
             "path": "mcp/src/agents_remember/tasks/serving_preflight.py"
           },

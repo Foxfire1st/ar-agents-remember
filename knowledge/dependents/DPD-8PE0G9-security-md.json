@@ -1,0 +1,119 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 2 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "SECURITY.md",
+  "id": "DPD-8PE0G9",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-SECURITY-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "11960a98eead6a9c175e735a90d526443314a73a",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/write_guard.py"
+    },
+    {
+      "blob": "79366831b556a7cf512bc53d396ac55a43734666",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/app.py"
+    },
+    {
+      "blob": "05fd300e87f1c47190482b0b69314db2f83729f5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/dashboard.py"
+    },
+    {
+      "blob": "418b476b368ff00c4acc18cdc93c9edbbb325edf",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/paseo_frame.py"
+    },
+    {
+      "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/server.py"
+    },
+    {
+      "blob": "096416e28ba831c922b782c7d3994ab2b726e6cb",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/tools/core.py"
+    },
+    {
+      "blob": "c4e5e32f70f7671f6d19a149f38772b186940c56",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon_config.py"
+    },
+    {
+      "blob": "3dcea459e6d09537cb45d687d719f677526cdbb4",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_install.py"
+    },
+    {
+      "blob": "8c04ba51e28132e2c051c120ed038b9f096cb595",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_node.py"
+    },
+    {
+      "blob": "17c7b4ba661d205be5d116ff99a93f0f19f34d39",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/paseo_runtime_settings.py"
+    },
+    {
+      "blob": "0eaef8fb2966ce40738225cccbbb3814c89da5c5",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/primitives/fresh_host.py"
+    },
+    {
+      "blob": "3f30237a53623bb13be7bf1d5d8dc8413ba64f6c",
+      "kind": "file",
+      "path": "mcp/pyproject.toml"
+    },
+    {
+      "blob": "5eeb602f4da70f8529c62831071976cf1cddd0ed",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_settings.py"
+    },
+    {
+      "blob": "39c03c109ea6657493ddd32b5171e1917e73ea61",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_harness_homes.py"
+    },
+    {
+      "blob": "9bb03aa95076ae8db462dd46dd333917f6aa58c9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_install_plan.py"
+    },
+    {
+      "blob": "9403a71011ae2e3b32c3e09d71b7141fa4b93ebe",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/daemon.py"
+    },
+    {
+      "blob": "b1fff467b7281a23b7caba62cd49c7dedac72cbc",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_start_answer.py"
+    },
+    {
+      "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+    },
+    {
+      "blob": "ea14b3fc4bd1e9a1885ee565de76ee39656ec26f",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_host/package-lock.json"
+    }
+  ]
+}

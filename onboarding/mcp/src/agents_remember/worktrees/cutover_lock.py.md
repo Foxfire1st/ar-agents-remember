@@ -18,8 +18,8 @@ unconditionally. Converted memory elsewhere changes recovery wording, never admi
 a non-directory, or a definite non-repository. An actual legacy memory repository receives the
 central `legacy_format_refusal` even when it has never converted. The message identifies the
 operation and line, absent `knowledge/layout.json`, and two recovery routes: `worktree_sync` with
-`merge-memory` from a converted source, or the first conversion in
-`docs/guides/first-conversion.md`.
+`merge-memory` from a converted source, or making the first conversion with the
+`knowledge-convert` command (MIK-R46 rule 6).
 
 `converted_memory_location` looks at local branch tips, then registered worktrees. `_converted_branch`
 asks for the marker at every tip in one `cat-file --batch-check`; `_converted_worktree` checks actual
@@ -50,7 +50,9 @@ format boundary and conversion/crossing guidance. A failed probe is never an
 unlock. Converted location only explains recovery, and does not certify the
 converted candidate or replace its ordinary gate/coherence checks.
 
+
 - The unchanged central text carries the single probe-made case used for conversion guidance. [5]
+
 - The central legacy refusal and conversion guidance survive retirement of the separate prepared-certification adapter. [13]
 
 

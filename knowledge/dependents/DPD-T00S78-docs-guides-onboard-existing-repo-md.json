@@ -1,0 +1,59 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole; 1 rows of the inventory of changes are told here.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/guides/onboard-existing-repo.md",
+  "id": "DPD-T00S78",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-guides-onboard-existing-repo-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_init.py"
+    },
+    {
+      "blob": "29c165efab4b87a3fa5656cc3f4c183bb7e8da84",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/memory_mode.py"
+    },
+    {
+      "blob": "e64d75e0a0f6f7457e8835ce83d3fc3f53ed0c7c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/kernel/coordination_context/resolver.py"
+    },
+    {
+      "blob": "da0d962d6a6ecb8139ab4de63016c4bff497a1c9",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/memory.py"
+    },
+    {
+      "blob": "a673eeb1120b0dbe4deacde0f0d4a69df363ba32",
+      "kind": "file",
+      "path": "system/defaults/examples/memory-repo/settings.json"
+    },
+    {
+      "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+    },
+    {
+      "blob": "37b2aac34d912943eff6a629b0d6906b3df837f0",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/context_packet.py"
+    }
+  ]
+}

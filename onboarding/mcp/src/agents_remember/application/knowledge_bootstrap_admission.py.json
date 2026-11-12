@@ -369,12 +369,12 @@
       ]
     },
     "50": {
-      "note": "The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one).\n\nAnchor: `initialize_memory`",
+      "note": "The memory initializer this module's authority document is shared with (since MIK-R24 it also writes `knowledge/layout.json` for a brand-new root, and never for an existing one).",
       "targets": [
         {
           "anchor": {
-            "blob": "f30dcc31374ad83426d9fc3e54da4f1ea830b8c3",
-            "content": "sha256:d4104e541c1700a7e77c2a65c172734de01b81d6ea9d9bc2e5fa8d318f54b401",
+            "blob": "edbe78dba8b31dd02f1122a2b036fa205b2f3ca8",
+            "content": "sha256:185d194248978a2a7e31eb93e2c8ca3358efe0a3ff6c7c09a0663a663c243fe1",
             "locator": {
               "kind": "file"
             },

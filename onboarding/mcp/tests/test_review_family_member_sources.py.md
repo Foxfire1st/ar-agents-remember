@@ -27,6 +27,7 @@ independently builds the after text-backed dataset from the remaining stale clai
 opens one side with `open_family_side`, reads the fixture family with `read_family_roster`, closes the side
 and indexes every carried source by claim id.
 
+
 | Case | What it pins |
 | --- | --- |
 | `test_two_members_in_one_file_carry_their_own_locators_ranges_and_rationale` | two members in one file are two sources with distinct locators, ranges (1-2 and 5-6), roles and stored rationales; a `line_range` resolves to its recorded range; a `file` locator is `whole_file` with no range; the JSON wire carries the structured values |
@@ -144,5 +145,6 @@ No meaningful cross-repo references found.
 - The shared-fixture consumer registration. In merged A3 this reference cites all 5 artifact blocks whose exact consumers list names this module. The earlier occurrence count and first-occurrence wording described unrelated narrow text, already unrelated in the parked source, and did not establish this module's consumer membership. Those targets are replaced by this complete membership set. Former member identity is not recovered or claimed. [Past-epoch source caption, detached from live reference 35. Recorded citation custody: mcp/tests/evidence-lifecycle.toml blob b9e272ef623574e517181e36b3dc949a3ac78e19 (available); mcp/tests/evidence-lifecycle.toml blob 0b04e782b9627695554aeeebd05967506794d78d (available); historical event commit not identified. No historical event or intent inferred.]
 
 Current source: The current lifecycle catalog declares test_review_family_member_sources.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. This is the complete declared five-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event.
+
 
 - The current lifecycle catalog declares test_review_family_member_sources.py as an exact consumer of mcp/tests/_user_settings_guard.py, mcp/tests/anchor_fixture_models.py, mcp/tests/fixtures/repository_profiles/node/package-lock.json, mcp/tests/knowledge_rows_test_support.py, mcp/tests/read_scope_test_support.py. This is the complete declared five-artifact set; it establishes no invocation or earlier occurrence/identity-recovery event. [35]

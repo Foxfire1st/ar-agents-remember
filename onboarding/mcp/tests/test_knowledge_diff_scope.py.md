@@ -42,6 +42,7 @@ a case names the record it is about rather than a position in the stream.
 
 **The two cases the review made load-bearing:**
 
+
 | Node | What it owns |
 | --- | --- |
 | `test_a_realization_the_candidate_removed_keeps_its_baseline_source_in_the_union` | The packet's **first non-conforming example**: the removed claim stays in the union with its before-side anchor at `exact_recorded_blob` and its path still in `attributed_changed_paths`. It is also the node mutation rows `M1` and `M2` kill — `M1` on `assert 'unchanged' == 'removed'` |
@@ -148,6 +149,7 @@ the comparison's source resolution is driven through the fixture's own committed
 
 No configured cross-repository evidence is claimed.
 > Retained earlier citation wording: - **The unit-lane row this module occupies, and the governed support artifact it consumes.**
+
 
 
 

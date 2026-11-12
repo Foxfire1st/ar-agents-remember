@@ -1,0 +1,59 @@
+{
+  "confirmed": {
+    "codeTree": "62c96dd89fdfb178debc970c8e09729eee7d0940",
+    "commit": "dcd296f49201548c394e748a3b83d65daea6a626",
+    "role": "worker",
+    "statement": "This task brought the page in line with the product: its statements about commands, tools, settings, files, numbers and behaviour were checked against the candidate, the false ones were corrected, and the page was read whole.",
+    "task": "260928-MIK-L97",
+    "uncommitted": true
+  },
+  "document": "docs/install/openclaw.md",
+  "id": "DPD-6528VF",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-handoff"
+    },
+    "handoffEntry": "L97-dependent-docs-install-openclaw-md",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-dependent/v1",
+  "stands_on": [
+    {
+      "blob": "6fa1ea0b40930f3f7b7eecbf2e1e53d6a88e6b7d",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_request_rules.py"
+    },
+    {
+      "blob": "54ec9f04b391dfafa4822a69b41c26fcf760201e",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/application/caller_harness.py"
+    },
+    {
+      "blob": "b7d5bcb01c2f0a57fc52879d47e6af720a1e8db3",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_routes.py"
+    },
+    {
+      "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+    },
+    {
+      "blob": "d2c4d7200862e9e53334db5468d41858438df1ea",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/serving/paseo/paseo_daemon.py"
+    },
+    {
+      "blob": "3f91234661460904091f50cb41164456aa515f04",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/mcp/registration/role_agents.py"
+    },
+    {
+      "blob": "6463b43ab293f7d1e7cb525891b1e346d2e8f98c",
+      "kind": "file",
+      "path": "mcp/src/agents_remember/package_data/paseo_host/contract.json"
+    }
+  ]
+}

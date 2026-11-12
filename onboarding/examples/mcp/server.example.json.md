@@ -19,4 +19,3 @@ Each harness wraps this declaration in its own configuration envelope, which its
 - The example declares `uvx` with `--refresh-package agents-remember-mcp`, the package command `agents-remember-mcp@latest` and a user-config `--config` path passed to that command. [1]
 
 - The tool-server settings file lives beside the user's role settings. [2]
-- The package README points harness setup at the common example and says JSON argument arrays do not expand `~`. [3]

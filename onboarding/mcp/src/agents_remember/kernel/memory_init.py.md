@@ -49,7 +49,7 @@ Results expose `repairAttempted` when that bounded retry path is entered.
 A missing coordination root is refused before any Git work
 (mcp/src/agents_remember/kernel/memory_init.py:246-252): Git would happily create the missing parents,
 so an absent coordination root would silently produce a memory repository under a path nothing else in
-the product reads. The refusal names `runtime_install` and the `c-13-install-and-onboard` skill.
+the product reads. The refusal names `runtime_install` and the guide `docs/getting-started.md`.
 
 **A new memory repository is created in the text format (MIK-R24 rule 9).** Beside the seed files,
 `initialize_memory` writes the layout marker `knowledge/layout.json`, whose bytes are
@@ -62,11 +62,9 @@ root**, and the payload's `layoutMarker` says which case applied:
 - `unconverted-existing-memory`: the root already holds `knowledge.sqlite` or any onboarding `*.md`
   (`_holds_legacy_memory`, mcp/src/agents_remember/kernel/memory_init.py:24-34). Writing the marker beside
   legacy cards would make the old format be read as the new one, so such a root converts through the
-  conversion command or a crossing sync, never by being marked. Its result now
-  includes `nextStep` naming `agents-remember knowledge-convert MEMORY_ROOT --code
-  CODE_REPOSITORY`, `c-13-install-and-onboard` and `docs/guides/first-conversion.md`: without
-  an attributed baseline convert the root then adopt; with an official line convert
-  one new leaf’s memory worktree as its first memory change, then close out and land;
+  conversion command or a crossing sync, never by being marked. Its result
+  includes `nextStep`, which names the command `agents-remember knowledge-convert MEMORY_ROOT --code
+  CODE_REPOSITORY` and MIK-R46 rule 6;
 - `existing-repository-unchanged`: the root already has `.git`. An existing repository is repaired, never
   re-founded;
 - `created`: a fresh root; the `knowledge/` directory and the marker join the planned scaffold

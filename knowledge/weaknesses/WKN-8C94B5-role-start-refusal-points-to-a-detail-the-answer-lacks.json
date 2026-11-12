@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "9125b43d7f08f23eb26bcfe0b5cf989ea3592615",
+    "content": "sha256:7e24d3ffa6b5a20a1b011b13d9d62cf9a8c6bcf06d6f31cc77385af97aec9590",
+    "locator": {
+      "kind": "symbol",
+      "name": "_RETRY"
+    },
+    "path": "mcp/src/agents_remember/cli/role_launch_first_run.py"
+  },
+  "id": "WKN-8C94B5",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-26",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The next action of a refused role_start says to resolve the reason named in detail, while an answer over its bound of 300 tokens is cut to the short form and holds no detail; the stage and the list of harnesses then stand only in the log file, and the list names harnesses that are not installed."
+}

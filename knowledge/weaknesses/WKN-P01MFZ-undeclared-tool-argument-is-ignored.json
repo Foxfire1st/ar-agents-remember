@@ -1,0 +1,29 @@
+{
+  "anchor": {
+    "blob": "bd8538ea80318fe1dd966289bfb6fd665968137b",
+    "content": "sha256:a571e32841ccb9c698b11cd858ac8355e509809fbace1fbb6d94a671233c793e",
+    "locator": {
+      "kind": "symbol",
+      "name": "AgentsRememberMCP"
+    },
+    "path": "mcp/src/agents_remember/mcp/server.py"
+  },
+  "id": "WKN-P01MFZ",
+  "kind": "fault",
+  "origin": {
+    "handoff": {
+      "path": "l97-curator-a004"
+    },
+    "handoffEntry": "L97-weakness-22",
+    "leaf": "260928-MIK-L97",
+    "task": "260928-MIK"
+  },
+  "revision": 1,
+  "schema": "ar-weakness/v1",
+  "seen": {
+    "role": "worker",
+    "task": "260928-MIK-L97"
+  },
+  "state": "open",
+  "statement": "The docstring says that every undeclared input of a tool call is rejected before the handler runs, while a call that carries an undeclared argument is answered as if the argument were absent."
+}

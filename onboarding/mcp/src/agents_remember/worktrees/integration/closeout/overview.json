@@ -315,12 +315,12 @@
         },
         {
           "anchor": {
-            "blob": "998d9b3b0114a9277889d447c3c6b46bc9f81293",
+            "blob": "3bd023143e8a8eaa549af0bc726fdb101140b570",
             "content": "sha256:03252c4f026fc4ca9eb71979cf74e05f79d49b371b09d2cf4a671102f0eb916b",
             "locator": {
-              "end": 228,
+              "end": 221,
               "kind": "line_range",
-              "start": 202
+              "start": 195
             },
             "path": "mcp/src/agents_remember/worktrees/cutover_lock.py"
           },
